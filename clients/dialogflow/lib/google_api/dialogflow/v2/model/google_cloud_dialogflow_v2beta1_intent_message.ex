@@ -30,10 +30,13 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessag
   - listSelect (GoogleCloudDialogflowV2beta1IntentMessageListSelect): Displays a list card for Actions on Google. Defaults to: `null`.
   - payload (%{optional(String.t) &#x3D;&gt; String.t}): Returns a response containing a custom, platform-specific payload. See the Intent.Message.Platform type for a description of the structure that may be required for your platform. Defaults to: `null`.
   - platform (String.t): Optional. The platform that this message is intended for. Defaults to: `null`.
-    - Enum - one of [PLATFORM_UNSPECIFIED, FACEBOOK, SLACK, TELEGRAM, KIK, SKYPE, LINE, VIBER, ACTIONS_ON_GOOGLE]
+    - Enum - one of [PLATFORM_UNSPECIFIED, FACEBOOK, SLACK, TELEGRAM, KIK, SKYPE, LINE, VIBER, ACTIONS_ON_GOOGLE, TELEPHONY]
   - quickReplies (GoogleCloudDialogflowV2beta1IntentMessageQuickReplies): Displays quick replies. Defaults to: `null`.
   - simpleResponses (GoogleCloudDialogflowV2beta1IntentMessageSimpleResponses): Returns a voice or text-only response for Actions on Google. Defaults to: `null`.
   - suggestions (GoogleCloudDialogflowV2beta1IntentMessageSuggestions): Displays suggestion chips for Actions on Google. Defaults to: `null`.
+  - telephonyPlayAudio (GoogleCloudDialogflowV2beta1IntentMessageTelephonyPlayAudio): Plays audio from a file in Telephony Gateway. Defaults to: `null`.
+  - telephonySynthesizeSpeech (GoogleCloudDialogflowV2beta1IntentMessageTelephonySynthesizeSpeech): Synthesizes speech in Telephony Gateway. Defaults to: `null`.
+  - telephonyTransferCall (GoogleCloudDialogflowV2beta1IntentMessageTelephonyTransferCall): Transfers the call in Telephony Gateway. Defaults to: `null`.
   - text (GoogleCloudDialogflowV2beta1IntentMessageText): Returns a text response. Defaults to: `null`.
   """
 
@@ -42,7 +45,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessag
   @type t :: %__MODULE__{
           :basicCard =>
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageBasicCard.t(),
-          :card => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageCard.t(),
+          :card =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageCard.t(),
           :carouselSelect =>
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageCarouselSelect.t(),
           :image =>
@@ -59,6 +63,12 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessag
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageSimpleResponses.t(),
           :suggestions =>
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageSuggestions.t(),
+          :telephonyPlayAudio =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageTelephonyPlayAudio.t(),
+          :telephonySynthesizeSpeech =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageTelephonySynthesizeSpeech.t(),
+          :telephonyTransferCall =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageTelephonyTransferCall.t(),
           :text => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageText.t()
         }
 
@@ -102,6 +112,23 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessag
   field(
     :suggestions,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageSuggestions
+  )
+
+  field(
+    :telephonyPlayAudio,
+    as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageTelephonyPlayAudio
+  )
+
+  field(
+    :telephonySynthesizeSpeech,
+    as:
+      GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageTelephonySynthesizeSpeech
+  )
+
+  field(
+    :telephonyTransferCall,
+    as:
+      GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageTelephonyTransferCall
   )
 
   field(:text, as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageText)

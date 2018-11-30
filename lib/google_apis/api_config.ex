@@ -14,7 +14,7 @@
 
 defmodule GoogleApis.ApiConfig do
 
-  defstruct [:name, :version, :url]
+  defstruct name: nil, version: nil, url: nil, publish: true
 
   def file(%{name: name, version: version}), do: "#{name}-#{version}.json"
 

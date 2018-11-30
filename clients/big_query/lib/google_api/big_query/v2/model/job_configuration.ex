@@ -26,6 +26,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfiguration do
   - dryRun (boolean()): [Optional] If set, don&#39;t actually run this job. A valid query will return a mostly empty response with some processing statistics, while an invalid query will return the same error it would if it wasn&#39;t a dry run. Behavior of non-query jobs is undefined. Defaults to: `null`.
   - extract (JobConfigurationExtract): [Pick one] Configures an extract job. Defaults to: `null`.
   - jobTimeoutMs (String.t): [Optional] Job timeout in milliseconds. If this time limit is exceeded, BigQuery may attempt to terminate the job. Defaults to: `null`.
+  - jobType (String.t): [Output-only] The type of the job. Can be QUERY, LOAD, EXTRACT, COPY or UNKNOWN. Defaults to: `null`.
   - labels (%{optional(String.t) &#x3D;&gt; String.t}): The labels associated with this job. You can use these to organize and group your jobs. Label keys and values can be no longer than 63 characters, can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. Label values are optional. Label keys must start with a letter and each label in the list must have a different key. Defaults to: `null`.
   - load (JobConfigurationLoad): [Pick one] Configures a load job. Defaults to: `null`.
   - query (JobConfigurationQuery): [Pick one] Configures a query job. Defaults to: `null`.
@@ -38,6 +39,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfiguration do
           :dryRun => any(),
           :extract => GoogleApi.BigQuery.V2.Model.JobConfigurationExtract.t(),
           :jobTimeoutMs => any(),
+          :jobType => any(),
           :labels => map(),
           :load => GoogleApi.BigQuery.V2.Model.JobConfigurationLoad.t(),
           :query => GoogleApi.BigQuery.V2.Model.JobConfigurationQuery.t()
@@ -47,6 +49,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfiguration do
   field(:dryRun)
   field(:extract, as: GoogleApi.BigQuery.V2.Model.JobConfigurationExtract)
   field(:jobTimeoutMs)
+  field(:jobType)
   field(:labels, type: :map)
   field(:load, as: GoogleApi.BigQuery.V2.Model.JobConfigurationLoad)
   field(:query, as: GoogleApi.BigQuery.V2.Model.JobConfigurationQuery)

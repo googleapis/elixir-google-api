@@ -22,6 +22,8 @@ defmodule GoogleApi.Slides.V1.Model.Line do
 
   ## Attributes
 
+  - lineCategory (String.t): The category of the line.  It matches the &#x60;category&#x60; specified in CreateLineRequest, and can be updated with UpdateLineCategoryRequest. Defaults to: `null`.
+    - Enum - one of [LINE_CATEGORY_UNSPECIFIED, STRAIGHT, BENT, CURVED]
   - lineProperties (LineProperties): The properties of the line. Defaults to: `null`.
   - lineType (String.t): The type of the line. Defaults to: `null`.
     - Enum - one of [TYPE_UNSPECIFIED, STRAIGHT_CONNECTOR_1, BENT_CONNECTOR_2, BENT_CONNECTOR_3, BENT_CONNECTOR_4, BENT_CONNECTOR_5, CURVED_CONNECTOR_2, CURVED_CONNECTOR_3, CURVED_CONNECTOR_4, CURVED_CONNECTOR_5, STRAIGHT_LINE]
@@ -30,10 +32,12 @@ defmodule GoogleApi.Slides.V1.Model.Line do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :lineCategory => any(),
           :lineProperties => GoogleApi.Slides.V1.Model.LineProperties.t(),
           :lineType => any()
         }
 
+  field(:lineCategory)
   field(:lineProperties, as: GoogleApi.Slides.V1.Model.LineProperties)
   field(:lineType)
 end

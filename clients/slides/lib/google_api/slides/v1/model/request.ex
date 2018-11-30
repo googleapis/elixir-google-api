@@ -46,12 +46,15 @@ defmodule GoogleApi.Slides.V1.Model.Request do
   - replaceAllShapesWithSheetsChart (ReplaceAllShapesWithSheetsChartRequest): Replaces all shapes matching some criteria with a Google Sheets chart. Defaults to: `null`.
   - replaceAllText (ReplaceAllTextRequest): Replaces all instances of specified text. Defaults to: `null`.
   - replaceImage (ReplaceImageRequest): Replaces an existing image with a new image. Defaults to: `null`.
+  - rerouteLine (RerouteLineRequest): Reroutes a line such that it&#39;s connected at the two closest connection sites on the connected page elements. Defaults to: `null`.
   - ungroupObjects (UngroupObjectsRequest): Ungroups objects, such as groups. Defaults to: `null`.
   - unmergeTableCells (UnmergeTableCellsRequest): Unmerges cells in a Table. Defaults to: `null`.
   - updateImageProperties (UpdateImagePropertiesRequest): Updates the properties of an Image. Defaults to: `null`.
+  - updateLineCategory (UpdateLineCategoryRequest): Updates the category of a line Defaults to: `null`.
   - updateLineProperties (UpdateLinePropertiesRequest): Updates the properties of a Line. Defaults to: `null`.
   - updatePageElementAltText (UpdatePageElementAltTextRequest): Updates the alt text title and/or description of a page element. Defaults to: `null`.
   - updatePageElementTransform (UpdatePageElementTransformRequest): Updates the transform of a page element. Defaults to: `null`.
+  - updatePageElementsZOrder (UpdatePageElementsZOrderRequest): Updates the Z-order of page elements. Defaults to: `null`.
   - updatePageProperties (UpdatePagePropertiesRequest): Updates the properties of a Page. Defaults to: `null`.
   - updateParagraphStyle (UpdateParagraphStyleRequest): Updates the styling of paragraphs within a Shape or Table. Defaults to: `null`.
   - updateShapeProperties (UpdateShapePropertiesRequest): Updates the properties of a Shape. Defaults to: `null`.
@@ -93,14 +96,18 @@ defmodule GoogleApi.Slides.V1.Model.Request do
             GoogleApi.Slides.V1.Model.ReplaceAllShapesWithSheetsChartRequest.t(),
           :replaceAllText => GoogleApi.Slides.V1.Model.ReplaceAllTextRequest.t(),
           :replaceImage => GoogleApi.Slides.V1.Model.ReplaceImageRequest.t(),
+          :rerouteLine => GoogleApi.Slides.V1.Model.RerouteLineRequest.t(),
           :ungroupObjects => GoogleApi.Slides.V1.Model.UngroupObjectsRequest.t(),
           :unmergeTableCells => GoogleApi.Slides.V1.Model.UnmergeTableCellsRequest.t(),
           :updateImageProperties => GoogleApi.Slides.V1.Model.UpdateImagePropertiesRequest.t(),
+          :updateLineCategory => GoogleApi.Slides.V1.Model.UpdateLineCategoryRequest.t(),
           :updateLineProperties => GoogleApi.Slides.V1.Model.UpdateLinePropertiesRequest.t(),
           :updatePageElementAltText =>
             GoogleApi.Slides.V1.Model.UpdatePageElementAltTextRequest.t(),
           :updatePageElementTransform =>
             GoogleApi.Slides.V1.Model.UpdatePageElementTransformRequest.t(),
+          :updatePageElementsZOrder =>
+            GoogleApi.Slides.V1.Model.UpdatePageElementsZOrderRequest.t(),
           :updatePageProperties => GoogleApi.Slides.V1.Model.UpdatePagePropertiesRequest.t(),
           :updateParagraphStyle => GoogleApi.Slides.V1.Model.UpdateParagraphStyleRequest.t(),
           :updateShapeProperties => GoogleApi.Slides.V1.Model.UpdateShapePropertiesRequest.t(),
@@ -150,9 +157,11 @@ defmodule GoogleApi.Slides.V1.Model.Request do
 
   field(:replaceAllText, as: GoogleApi.Slides.V1.Model.ReplaceAllTextRequest)
   field(:replaceImage, as: GoogleApi.Slides.V1.Model.ReplaceImageRequest)
+  field(:rerouteLine, as: GoogleApi.Slides.V1.Model.RerouteLineRequest)
   field(:ungroupObjects, as: GoogleApi.Slides.V1.Model.UngroupObjectsRequest)
   field(:unmergeTableCells, as: GoogleApi.Slides.V1.Model.UnmergeTableCellsRequest)
   field(:updateImageProperties, as: GoogleApi.Slides.V1.Model.UpdateImagePropertiesRequest)
+  field(:updateLineCategory, as: GoogleApi.Slides.V1.Model.UpdateLineCategoryRequest)
   field(:updateLineProperties, as: GoogleApi.Slides.V1.Model.UpdateLinePropertiesRequest)
   field(:updatePageElementAltText, as: GoogleApi.Slides.V1.Model.UpdatePageElementAltTextRequest)
 
@@ -161,6 +170,7 @@ defmodule GoogleApi.Slides.V1.Model.Request do
     as: GoogleApi.Slides.V1.Model.UpdatePageElementTransformRequest
   )
 
+  field(:updatePageElementsZOrder, as: GoogleApi.Slides.V1.Model.UpdatePageElementsZOrderRequest)
   field(:updatePageProperties, as: GoogleApi.Slides.V1.Model.UpdatePagePropertiesRequest)
   field(:updateParagraphStyle, as: GoogleApi.Slides.V1.Model.UpdateParagraphStyleRequest)
   field(:updateShapeProperties, as: GoogleApi.Slides.V1.Model.UpdateShapePropertiesRequest)

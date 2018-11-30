@@ -28,7 +28,7 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.GetIosPostInstallAttributionRe
   - iosVersion (String.t): iOS version, ie: 9.3.5. Consider adding \&quot;build\&quot;. Defaults to: `null`.
   - retrievalMethod (String.t): App post install attribution retrieval information. Disambiguates mechanism (iSDK or developer invoked) to retrieve payload from clicked link. Defaults to: `null`.
     - Enum - one of [UNKNOWN_PAYLOAD_RETRIEVAL_METHOD, IMPLICIT_WEAK_MATCH, EXPLICIT_WEAK_MATCH, EXPLICIT_STRONG_AFTER_WEAK_MATCH]
-  - sdkVersion (String.t): Google SDK version. Defaults to: `null`.
+  - sdkVersion (String.t): Google SDK version. Version takes the form \&quot;$major.$minor.$patch\&quot; Defaults to: `null`.
   - uniqueMatchLinkToCheck (String.t): Possible unique matched link that server need to check before performing fingerprint match. If passed link is short server need to expand the link. If link is long server need to vslidate the link. Defaults to: `null`.
   - visualStyle (String.t): Strong match page information. Disambiguates between default UI and custom page to present when strong match succeeds/fails to find cookie. Defaults to: `null`.
     - Enum - one of [UNKNOWN_VISUAL_STYLE, DEFAULT_STYLE, CUSTOM_STYLE]

@@ -25,13 +25,13 @@ defmodule GoogleApi.Calendar.V3.Api.CalendarList do
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
-  Deletes an entry on the user&#39;s calendar list.
+  Removes a calendar from the user&#39;s calendar list.
 
   ## Parameters
 
   - connection (GoogleApi.Calendar.V3.Connection): Connection to server
   - calendar_id (String.t): Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the \&quot;primary\&quot; keyword.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -47,8 +47,8 @@ defmodule GoogleApi.Calendar.V3.Api.CalendarList do
   """
   @spec calendar_calendar_list_delete(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
-  def calendar_calendar_list_delete(connection, calendar_id, opts \\ []) do
-    optional_params = %{
+  def calendar_calendar_list_delete(connection, calendar_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -64,21 +64,21 @@ defmodule GoogleApi.Calendar.V3.Api.CalendarList do
       |> Request.url("/users/me/calendarList/{calendarId}", %{
         "calendarId" => URI.encode_www_form(calendar_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
-  Returns an entry on the user&#39;s calendar list.
+  Returns a calendar from the user&#39;s calendar list.
 
   ## Parameters
 
   - connection (GoogleApi.Calendar.V3.Connection): Connection to server
   - calendar_id (String.t): Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the \&quot;primary\&quot; keyword.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -94,8 +94,8 @@ defmodule GoogleApi.Calendar.V3.Api.CalendarList do
   """
   @spec calendar_calendar_list_get(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Calendar.V3.Model.CalendarListEntry.t()} | {:error, Tesla.Env.t()}
-  def calendar_calendar_list_get(connection, calendar_id, opts \\ []) do
-    optional_params = %{
+  def calendar_calendar_list_get(connection, calendar_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -111,20 +111,20 @@ defmodule GoogleApi.Calendar.V3.Api.CalendarList do
       |> Request.url("/users/me/calendarList/{calendarId}", %{
         "calendarId" => URI.encode_www_form(calendar_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Calendar.V3.Model.CalendarListEntry{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Calendar.V3.Model.CalendarListEntry{}])
   end
 
   @doc """
-  Adds an entry to the user&#39;s calendar list.
+  Inserts an existing calendar into the user&#39;s calendar list.
 
   ## Parameters
 
   - connection (GoogleApi.Calendar.V3.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -142,8 +142,8 @@ defmodule GoogleApi.Calendar.V3.Api.CalendarList do
   """
   @spec calendar_calendar_list_insert(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.Calendar.V3.Model.CalendarListEntry.t()} | {:error, Tesla.Env.t()}
-  def calendar_calendar_list_insert(connection, opts \\ []) do
-    optional_params = %{
+  def calendar_calendar_list_insert(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -159,20 +159,20 @@ defmodule GoogleApi.Calendar.V3.Api.CalendarList do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/users/me/calendarList")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Calendar.V3.Model.CalendarListEntry{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Calendar.V3.Model.CalendarListEntry{}])
   end
 
   @doc """
-  Returns entries on the user&#39;s calendar list.
+  Returns the calendars on the user&#39;s calendar list.
 
   ## Parameters
 
   - connection (GoogleApi.Calendar.V3.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -194,8 +194,8 @@ defmodule GoogleApi.Calendar.V3.Api.CalendarList do
   """
   @spec calendar_calendar_list_list(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.Calendar.V3.Model.CalendarList.t()} | {:error, Tesla.Env.t()}
-  def calendar_calendar_list_list(connection, opts \\ []) do
-    optional_params = %{
+  def calendar_calendar_list_list(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -215,21 +215,21 @@ defmodule GoogleApi.Calendar.V3.Api.CalendarList do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/users/me/calendarList")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Calendar.V3.Model.CalendarList{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Calendar.V3.Model.CalendarList{}])
   end
 
   @doc """
-  Updates an entry on the user&#39;s calendar list. This method supports patch semantics.
+  Updates an existing calendar on the user&#39;s calendar list. This method supports patch semantics.
 
   ## Parameters
 
   - connection (GoogleApi.Calendar.V3.Connection): Connection to server
   - calendar_id (String.t): Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the \&quot;primary\&quot; keyword.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -247,8 +247,8 @@ defmodule GoogleApi.Calendar.V3.Api.CalendarList do
   """
   @spec calendar_calendar_list_patch(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Calendar.V3.Model.CalendarListEntry.t()} | {:error, Tesla.Env.t()}
-  def calendar_calendar_list_patch(connection, calendar_id, opts \\ []) do
-    optional_params = %{
+  def calendar_calendar_list_patch(connection, calendar_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -266,21 +266,21 @@ defmodule GoogleApi.Calendar.V3.Api.CalendarList do
       |> Request.url("/users/me/calendarList/{calendarId}", %{
         "calendarId" => URI.encode_www_form(calendar_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Calendar.V3.Model.CalendarListEntry{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Calendar.V3.Model.CalendarListEntry{}])
   end
 
   @doc """
-  Updates an entry on the user&#39;s calendar list.
+  Updates an existing calendar on the user&#39;s calendar list.
 
   ## Parameters
 
   - connection (GoogleApi.Calendar.V3.Connection): Connection to server
   - calendar_id (String.t): Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the \&quot;primary\&quot; keyword.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -298,8 +298,8 @@ defmodule GoogleApi.Calendar.V3.Api.CalendarList do
   """
   @spec calendar_calendar_list_update(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Calendar.V3.Model.CalendarListEntry.t()} | {:error, Tesla.Env.t()}
-  def calendar_calendar_list_update(connection, calendar_id, opts \\ []) do
-    optional_params = %{
+  def calendar_calendar_list_update(connection, calendar_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -317,11 +317,11 @@ defmodule GoogleApi.Calendar.V3.Api.CalendarList do
       |> Request.url("/users/me/calendarList/{calendarId}", %{
         "calendarId" => URI.encode_www_form(calendar_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Calendar.V3.Model.CalendarListEntry{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Calendar.V3.Model.CalendarListEntry{}])
   end
 
   @doc """
@@ -330,7 +330,7 @@ defmodule GoogleApi.Calendar.V3.Api.CalendarList do
   ## Parameters
 
   - connection (GoogleApi.Calendar.V3.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -353,8 +353,8 @@ defmodule GoogleApi.Calendar.V3.Api.CalendarList do
   """
   @spec calendar_calendar_list_watch(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.Calendar.V3.Model.Channel.t()} | {:error, Tesla.Env.t()}
-  def calendar_calendar_list_watch(connection, opts \\ []) do
-    optional_params = %{
+  def calendar_calendar_list_watch(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -375,10 +375,10 @@ defmodule GoogleApi.Calendar.V3.Api.CalendarList do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/users/me/calendarList/watch")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Calendar.V3.Model.Channel{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Calendar.V3.Model.Channel{}])
   end
 end

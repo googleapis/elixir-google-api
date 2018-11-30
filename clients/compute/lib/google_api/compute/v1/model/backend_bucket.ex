@@ -23,7 +23,7 @@ defmodule GoogleApi.Compute.V1.Model.BackendBucket do
   ## Attributes
 
   - bucketName (String.t): Cloud Storage bucket name. Defaults to: `null`.
-  - cdnPolicy (BackendBucketCdnPolicy): Cloud CDN Coniguration for this BackendBucket. Defaults to: `null`.
+  - cdnPolicy (BackendBucketCdnPolicy): Cloud CDN configuration for this BackendBucket. Defaults to: `null`.
   - creationTimestamp (String.t): [Output Only] Creation timestamp in RFC3339 text format. Defaults to: `null`.
   - description (String.t): An optional textual description of the resource; provided by the client when the resource is created. Defaults to: `null`.
   - enableCdn (boolean()): If true, enable Cloud CDN for this BackendBucket. Defaults to: `null`.

@@ -24,7 +24,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EntityType do
 
   - autoExpansionMode (String.t): Optional. Indicates whether the entity type can be automatically expanded. Defaults to: `null`.
     - Enum - one of [AUTO_EXPANSION_MODE_UNSPECIFIED, AUTO_EXPANSION_MODE_DEFAULT]
-  - displayName (String.t): Required. The name of the entity. Defaults to: `null`.
+  - displayName (String.t): Required. The name of the entity type. Defaults to: `null`.
   - entities ([GoogleCloudDialogflowV2EntityTypeEntity]): Optional. The collection of entities associated with the entity type. Defaults to: `null`.
   - kind (String.t): Required. Indicates the kind of entity type. Defaults to: `null`.
     - Enum - one of [KIND_UNSPECIFIED, KIND_MAP, KIND_LIST]

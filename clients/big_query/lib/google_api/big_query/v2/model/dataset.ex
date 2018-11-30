@@ -32,7 +32,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Dataset do
   - friendlyName (String.t): [Optional] A descriptive name for the dataset. Defaults to: `null`.
   - id (String.t): [Output-only] The fully-qualified unique name of the dataset in the format projectId:datasetId. The dataset name without the project name is given in the datasetId field. When creating a new dataset, leave this field blank, and instead specify the datasetId field. Defaults to: `null`.
   - kind (String.t): [Output-only] The resource type. Defaults to: `null`.
-  - labels (%{optional(String.t) &#x3D;&gt; String.t}): The labels associated with this dataset. You can use these to organize and group your datasets. You can set this property when inserting or updating a dataset. See Labeling Datasets for more information. Defaults to: `null`.
+  - labels (%{optional(String.t) &#x3D;&gt; String.t}): The labels associated with this dataset. You can use these to organize and group your datasets. You can set this property when inserting or updating a dataset. See Creating and Updating Dataset Labels for more information. Defaults to: `null`.
   - lastModifiedTime (String.t): [Output-only] The date when this dataset or any of its tables was last modified, in milliseconds since the epoch. Defaults to: `null`.
   - location (String.t): The geographic location where the dataset should reside. The default value is US. See details at https://cloud.google.com/bigquery/docs/dataset-locations. Defaults to: `null`.
   - selfLink (String.t): [Output-only] A URL that can be used to access the resource again. You can use this URL in Get or Update requests to the resource. Defaults to: `null`.

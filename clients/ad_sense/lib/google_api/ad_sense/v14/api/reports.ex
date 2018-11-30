@@ -32,7 +32,7 @@ defmodule GoogleApi.AdSense.V14.Api.Reports do
   - connection (GoogleApi.AdSense.V14.Connection): Connection to server
   - start_date (String.t): Start of the date range to report on in \&quot;YYYY-MM-DD\&quot; format, inclusive.
   - end_date (String.t): End of the date range to report on in \&quot;YYYY-MM-DD\&quot; format, inclusive.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -59,8 +59,14 @@ defmodule GoogleApi.AdSense.V14.Api.Reports do
   @spec adsense_reports_generate(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.AdSense.V14.Model.AdsenseReportsGenerateResponse.t()}
           | {:error, Tesla.Env.t()}
-  def adsense_reports_generate(connection, start_date, end_date, opts \\ []) do
-    optional_params = %{
+  def adsense_reports_generate(
+        connection,
+        start_date,
+        end_date,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -86,11 +92,13 @@ defmodule GoogleApi.AdSense.V14.Api.Reports do
       |> Request.url("/reports")
       |> Request.add_param(:query, :startDate, start_date)
       |> Request.add_param(:query, :endDate, end_date)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdSense.V14.Model.AdsenseReportsGenerateResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.AdSense.V14.Model.AdsenseReportsGenerateResponse{}]
+    )
   end
 
   @doc """
@@ -100,7 +108,7 @@ defmodule GoogleApi.AdSense.V14.Api.Reports do
 
   - connection (GoogleApi.AdSense.V14.Connection): Connection to server
   - saved_report_id (String.t): The saved report to retrieve.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -120,8 +128,13 @@ defmodule GoogleApi.AdSense.V14.Api.Reports do
   @spec adsense_reports_saved_generate(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.AdSense.V14.Model.AdsenseReportsGenerateResponse.t()}
           | {:error, Tesla.Env.t()}
-  def adsense_reports_saved_generate(connection, saved_report_id, opts \\ []) do
-    optional_params = %{
+  def adsense_reports_saved_generate(
+        connection,
+        saved_report_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -140,11 +153,13 @@ defmodule GoogleApi.AdSense.V14.Api.Reports do
       |> Request.url("/reports/{savedReportId}", %{
         "savedReportId" => URI.encode_www_form(saved_report_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdSense.V14.Model.AdsenseReportsGenerateResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.AdSense.V14.Model.AdsenseReportsGenerateResponse{}]
+    )
   end
 
   @doc """
@@ -153,7 +168,7 @@ defmodule GoogleApi.AdSense.V14.Api.Reports do
   ## Parameters
 
   - connection (GoogleApi.AdSense.V14.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -171,8 +186,8 @@ defmodule GoogleApi.AdSense.V14.Api.Reports do
   """
   @spec adsense_reports_saved_list(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.AdSense.V14.Model.SavedReports.t()} | {:error, Tesla.Env.t()}
-  def adsense_reports_saved_list(connection, opts \\ []) do
-    optional_params = %{
+  def adsense_reports_saved_list(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -188,10 +203,10 @@ defmodule GoogleApi.AdSense.V14.Api.Reports do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/reports/saved")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdSense.V14.Model.SavedReports{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdSense.V14.Model.SavedReports{}])
   end
 end

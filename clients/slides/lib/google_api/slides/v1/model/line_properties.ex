@@ -26,10 +26,12 @@ defmodule GoogleApi.Slides.V1.Model.LineProperties do
     - Enum - one of [DASH_STYLE_UNSPECIFIED, SOLID, DOT, DASH, DASH_DOT, LONG_DASH, LONG_DASH_DOT]
   - endArrow (String.t): The style of the arrow at the end of the line. Defaults to: `null`.
     - Enum - one of [ARROW_STYLE_UNSPECIFIED, NONE, STEALTH_ARROW, FILL_ARROW, FILL_CIRCLE, FILL_SQUARE, FILL_DIAMOND, OPEN_ARROW, OPEN_CIRCLE, OPEN_SQUARE, OPEN_DIAMOND]
+  - endConnection (LineConnection): The connection at the end of the line. If unset, there is no connection.  Only lines with a Type indicating it is a \&quot;connector\&quot; can have an &#x60;end_connection&#x60;. Defaults to: `null`.
   - lineFill (LineFill): The fill of the line. The default line fill matches the defaults for new lines created in the Slides editor. Defaults to: `null`.
   - link (Link): The hyperlink destination of the line. If unset, there is no link. Defaults to: `null`.
   - startArrow (String.t): The style of the arrow at the beginning of the line. Defaults to: `null`.
     - Enum - one of [ARROW_STYLE_UNSPECIFIED, NONE, STEALTH_ARROW, FILL_ARROW, FILL_CIRCLE, FILL_SQUARE, FILL_DIAMOND, OPEN_ARROW, OPEN_CIRCLE, OPEN_SQUARE, OPEN_DIAMOND]
+  - startConnection (LineConnection): The connection at the beginning of the line. If unset, there is no connection.  Only lines with a Type indicating it is a \&quot;connector\&quot; can have a &#x60;start_connection&#x60;. Defaults to: `null`.
   - weight (Dimension): The thickness of the line. Defaults to: `null`.
   """
 
@@ -38,17 +40,21 @@ defmodule GoogleApi.Slides.V1.Model.LineProperties do
   @type t :: %__MODULE__{
           :dashStyle => any(),
           :endArrow => any(),
+          :endConnection => GoogleApi.Slides.V1.Model.LineConnection.t(),
           :lineFill => GoogleApi.Slides.V1.Model.LineFill.t(),
           :link => GoogleApi.Slides.V1.Model.Link.t(),
           :startArrow => any(),
+          :startConnection => GoogleApi.Slides.V1.Model.LineConnection.t(),
           :weight => GoogleApi.Slides.V1.Model.Dimension.t()
         }
 
   field(:dashStyle)
   field(:endArrow)
+  field(:endConnection, as: GoogleApi.Slides.V1.Model.LineConnection)
   field(:lineFill, as: GoogleApi.Slides.V1.Model.LineFill)
   field(:link, as: GoogleApi.Slides.V1.Model.Link)
   field(:startArrow)
+  field(:startConnection, as: GoogleApi.Slides.V1.Model.LineConnection)
   field(:weight, as: GoogleApi.Slides.V1.Model.Dimension)
 end
 

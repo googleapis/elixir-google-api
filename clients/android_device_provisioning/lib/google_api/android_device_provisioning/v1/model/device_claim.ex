@@ -23,18 +23,21 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceClaim do
   ## Attributes
 
   - ownerCompanyId (String.t): The ID of the Customer that purchased the device. Defaults to: `null`.
+  - resellerId (String.t): The ID of the reseller that claimed the device. Defaults to: `null`.
   - sectionType (String.t): Output only. The type of claim made on the device. Defaults to: `null`.
-    - Enum - one of [SECTION_TYPE_UNSPECIFIED, SECTION_TYPE_ZERO_TOUCH]
+    - Enum - one of [SECTION_TYPE_UNSPECIFIED, SECTION_TYPE_SIM_LOCK, SECTION_TYPE_ZERO_TOUCH]
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :ownerCompanyId => any(),
+          :resellerId => any(),
           :sectionType => any()
         }
 
   field(:ownerCompanyId)
+  field(:resellerId)
   field(:sectionType)
 end
 

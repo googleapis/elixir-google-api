@@ -31,25 +31,25 @@ defmodule GoogleApi.Partners.V2.Api.Users do
 
   - connection (GoogleApi.Partners.V2.Connection): Connection to server
   - user_id (String.t): The ID of the user. Can be set to &lt;code&gt;me&lt;/code&gt; to mean the currently authenticated user.
-  - opts (KeywordList): [optional] Optional parameters
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
     - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :requestMetadata.experimentIds ([String.t]): Experiment IDs the current request belongs to.
-    - :requestMetadata.trafficSource.trafficSubId (String.t): Second level identifier to indicate where the traffic comes from. An identifier has multiple letters created by a team which redirected the traffic to us.
-    - :requestMetadata.userOverrides.userId (String.t): Logged-in user ID to impersonate instead of the user&#39;s ID.
+    - :requestMetadata.locale (String.t): Locale to use for the current request.
     - :requestMetadata.partnersSessionId (String.t): Google Partners session ID.
     - :requestMetadata.trafficSource.trafficSourceId (String.t): Identifier to indicate where the traffic comes from. An identifier has multiple letters created by a team which redirected the traffic to us.
-    - :requestMetadata.locale (String.t): Locale to use for the current request.
+    - :requestMetadata.trafficSource.trafficSubId (String.t): Second level identifier to indicate where the traffic comes from. An identifier has multiple letters created by a team which redirected the traffic to us.
     - :requestMetadata.userOverrides.ipAddress (String.t): IP address to use instead of the user&#39;s geo-located IP address.
+    - :requestMetadata.userOverrides.userId (String.t): Logged-in user ID to impersonate instead of the user&#39;s ID.
     - :body (CompanyRelation): 
 
   ## Returns
@@ -59,26 +59,31 @@ defmodule GoogleApi.Partners.V2.Api.Users do
   """
   @spec partners_users_create_company_relation(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Partners.V2.Model.CompanyRelation.t()} | {:error, Tesla.Env.t()}
-  def partners_users_create_company_relation(connection, user_id, opts \\ []) do
-    optional_params = %{
-      :access_token => :query,
-      :key => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :fields => :query,
-      :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
+  def partners_users_create_company_relation(
+        connection,
+        user_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :"requestMetadata.experimentIds" => :query,
-      :"requestMetadata.trafficSource.trafficSubId" => :query,
-      :"requestMetadata.userOverrides.userId" => :query,
+      :"requestMetadata.locale" => :query,
       :"requestMetadata.partnersSessionId" => :query,
       :"requestMetadata.trafficSource.trafficSourceId" => :query,
-      :"requestMetadata.locale" => :query,
+      :"requestMetadata.trafficSource.trafficSubId" => :query,
       :"requestMetadata.userOverrides.ipAddress" => :query,
+      :"requestMetadata.userOverrides.userId" => :query,
       :body => :body
     }
 
@@ -88,11 +93,11 @@ defmodule GoogleApi.Partners.V2.Api.Users do
       |> Request.url("/v2/users/{userId}/companyRelation", %{
         "userId" => URI.encode_www_form(user_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Partners.V2.Model.CompanyRelation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Partners.V2.Model.CompanyRelation{}])
   end
 
   @doc """
@@ -102,25 +107,25 @@ defmodule GoogleApi.Partners.V2.Api.Users do
 
   - connection (GoogleApi.Partners.V2.Connection): Connection to server
   - user_id (String.t): The ID of the user. Can be set to &lt;code&gt;me&lt;/code&gt; to mean the currently authenticated user.
-  - opts (KeywordList): [optional] Optional parameters
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
     - :alt (String.t): Data format for response.
-    - :requestMetadata.trafficSource.trafficSubId (String.t): Second level identifier to indicate where the traffic comes from. An identifier has multiple letters created by a team which redirected the traffic to us.
-    - :requestMetadata.partnersSessionId (String.t): Google Partners session ID.
-    - :requestMetadata.userOverrides.userId (String.t): Logged-in user ID to impersonate instead of the user&#39;s ID.
-    - :requestMetadata.trafficSource.trafficSourceId (String.t): Identifier to indicate where the traffic comes from. An identifier has multiple letters created by a team which redirected the traffic to us.
-    - :requestMetadata.locale (String.t): Locale to use for the current request.
-    - :requestMetadata.userOverrides.ipAddress (String.t): IP address to use instead of the user&#39;s geo-located IP address.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :requestMetadata.experimentIds ([String.t]): Experiment IDs the current request belongs to.
+    - :requestMetadata.locale (String.t): Locale to use for the current request.
+    - :requestMetadata.partnersSessionId (String.t): Google Partners session ID.
+    - :requestMetadata.trafficSource.trafficSourceId (String.t): Identifier to indicate where the traffic comes from. An identifier has multiple letters created by a team which redirected the traffic to us.
+    - :requestMetadata.trafficSource.trafficSubId (String.t): Second level identifier to indicate where the traffic comes from. An identifier has multiple letters created by a team which redirected the traffic to us.
+    - :requestMetadata.userOverrides.ipAddress (String.t): IP address to use instead of the user&#39;s geo-located IP address.
+    - :requestMetadata.userOverrides.userId (String.t): Logged-in user ID to impersonate instead of the user&#39;s ID.
 
   ## Returns
 
@@ -129,26 +134,31 @@ defmodule GoogleApi.Partners.V2.Api.Users do
   """
   @spec partners_users_delete_company_relation(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Partners.V2.Model.Empty.t()} | {:error, Tesla.Env.t()}
-  def partners_users_delete_company_relation(connection, user_id, opts \\ []) do
-    optional_params = %{
-      :access_token => :query,
-      :key => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :fields => :query,
-      :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
+  def partners_users_delete_company_relation(
+        connection,
+        user_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
-      :"requestMetadata.trafficSource.trafficSubId" => :query,
-      :"requestMetadata.partnersSessionId" => :query,
-      :"requestMetadata.userOverrides.userId" => :query,
-      :"requestMetadata.trafficSource.trafficSourceId" => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :"requestMetadata.experimentIds" => :query,
       :"requestMetadata.locale" => :query,
+      :"requestMetadata.partnersSessionId" => :query,
+      :"requestMetadata.trafficSource.trafficSourceId" => :query,
+      :"requestMetadata.trafficSource.trafficSubId" => :query,
       :"requestMetadata.userOverrides.ipAddress" => :query,
-      :"requestMetadata.experimentIds" => :query
+      :"requestMetadata.userOverrides.userId" => :query
     }
 
     request =
@@ -157,11 +167,11 @@ defmodule GoogleApi.Partners.V2.Api.Users do
       |> Request.url("/v2/users/{userId}/companyRelation", %{
         "userId" => URI.encode_www_form(user_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Partners.V2.Model.Empty{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Partners.V2.Model.Empty{}])
   end
 
   @doc """
@@ -171,26 +181,26 @@ defmodule GoogleApi.Partners.V2.Api.Users do
 
   - connection (GoogleApi.Partners.V2.Connection): Connection to server
   - user_id (String.t): Identifier of the user. Can be set to &lt;code&gt;me&lt;/code&gt; to mean the currently authenticated user.
-  - opts (KeywordList): [optional] Optional parameters
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
     - :alt (String.t): Data format for response.
-    - :requestMetadata.userOverrides.userId (String.t): Logged-in user ID to impersonate instead of the user&#39;s ID.
-    - :requestMetadata.partnersSessionId (String.t): Google Partners session ID.
-    - :userView (String.t): Specifies what parts of the user information to return.
-    - :requestMetadata.trafficSource.trafficSourceId (String.t): Identifier to indicate where the traffic comes from. An identifier has multiple letters created by a team which redirected the traffic to us.
-    - :requestMetadata.locale (String.t): Locale to use for the current request.
-    - :requestMetadata.userOverrides.ipAddress (String.t): IP address to use instead of the user&#39;s geo-located IP address.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :requestMetadata.experimentIds ([String.t]): Experiment IDs the current request belongs to.
+    - :requestMetadata.locale (String.t): Locale to use for the current request.
+    - :requestMetadata.partnersSessionId (String.t): Google Partners session ID.
+    - :requestMetadata.trafficSource.trafficSourceId (String.t): Identifier to indicate where the traffic comes from. An identifier has multiple letters created by a team which redirected the traffic to us.
     - :requestMetadata.trafficSource.trafficSubId (String.t): Second level identifier to indicate where the traffic comes from. An identifier has multiple letters created by a team which redirected the traffic to us.
+    - :requestMetadata.userOverrides.ipAddress (String.t): IP address to use instead of the user&#39;s geo-located IP address.
+    - :requestMetadata.userOverrides.userId (String.t): Logged-in user ID to impersonate instead of the user&#39;s ID.
+    - :userView (String.t): Specifies what parts of the user information to return.
 
   ## Returns
 
@@ -199,27 +209,27 @@ defmodule GoogleApi.Partners.V2.Api.Users do
   """
   @spec partners_users_get(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Partners.V2.Model.User.t()} | {:error, Tesla.Env.t()}
-  def partners_users_get(connection, user_id, opts \\ []) do
-    optional_params = %{
-      :access_token => :query,
-      :key => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :fields => :query,
-      :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
+  def partners_users_get(connection, user_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
-      :"requestMetadata.userOverrides.userId" => :query,
-      :"requestMetadata.partnersSessionId" => :query,
-      :userView => :query,
-      :"requestMetadata.trafficSource.trafficSourceId" => :query,
-      :"requestMetadata.locale" => :query,
-      :"requestMetadata.userOverrides.ipAddress" => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :"requestMetadata.experimentIds" => :query,
-      :"requestMetadata.trafficSource.trafficSubId" => :query
+      :"requestMetadata.locale" => :query,
+      :"requestMetadata.partnersSessionId" => :query,
+      :"requestMetadata.trafficSource.trafficSourceId" => :query,
+      :"requestMetadata.trafficSource.trafficSubId" => :query,
+      :"requestMetadata.userOverrides.ipAddress" => :query,
+      :"requestMetadata.userOverrides.userId" => :query,
+      :userView => :query
     }
 
     request =
@@ -228,11 +238,11 @@ defmodule GoogleApi.Partners.V2.Api.Users do
       |> Request.url("/v2/users/{userId}", %{
         "userId" => URI.encode_www_form(user_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Partners.V2.Model.User{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Partners.V2.Model.User{}])
   end
 
   @doc """
@@ -241,25 +251,25 @@ defmodule GoogleApi.Partners.V2.Api.Users do
   ## Parameters
 
   - connection (GoogleApi.Partners.V2.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
     - :alt (String.t): Data format for response.
-    - :requestMetadata.trafficSource.trafficSourceId (String.t): Identifier to indicate where the traffic comes from. An identifier has multiple letters created by a team which redirected the traffic to us.
-    - :requestMetadata.locale (String.t): Locale to use for the current request.
-    - :requestMetadata.userOverrides.ipAddress (String.t): IP address to use instead of the user&#39;s geo-located IP address.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :requestMetadata.experimentIds ([String.t]): Experiment IDs the current request belongs to.
-    - :requestMetadata.trafficSource.trafficSubId (String.t): Second level identifier to indicate where the traffic comes from. An identifier has multiple letters created by a team which redirected the traffic to us.
-    - :requestMetadata.userOverrides.userId (String.t): Logged-in user ID to impersonate instead of the user&#39;s ID.
+    - :requestMetadata.locale (String.t): Locale to use for the current request.
     - :requestMetadata.partnersSessionId (String.t): Google Partners session ID.
+    - :requestMetadata.trafficSource.trafficSourceId (String.t): Identifier to indicate where the traffic comes from. An identifier has multiple letters created by a team which redirected the traffic to us.
+    - :requestMetadata.trafficSource.trafficSubId (String.t): Second level identifier to indicate where the traffic comes from. An identifier has multiple letters created by a team which redirected the traffic to us.
+    - :requestMetadata.userOverrides.ipAddress (String.t): IP address to use instead of the user&#39;s geo-located IP address.
+    - :requestMetadata.userOverrides.userId (String.t): Logged-in user ID to impersonate instead of the user&#39;s ID.
     - :body (UserProfile): 
 
   ## Returns
@@ -269,26 +279,26 @@ defmodule GoogleApi.Partners.V2.Api.Users do
   """
   @spec partners_users_update_profile(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.Partners.V2.Model.UserProfile.t()} | {:error, Tesla.Env.t()}
-  def partners_users_update_profile(connection, opts \\ []) do
-    optional_params = %{
-      :access_token => :query,
-      :key => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :fields => :query,
-      :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
+  def partners_users_update_profile(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
-      :"requestMetadata.trafficSource.trafficSourceId" => :query,
-      :"requestMetadata.locale" => :query,
-      :"requestMetadata.userOverrides.ipAddress" => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :"requestMetadata.experimentIds" => :query,
-      :"requestMetadata.trafficSource.trafficSubId" => :query,
-      :"requestMetadata.userOverrides.userId" => :query,
+      :"requestMetadata.locale" => :query,
       :"requestMetadata.partnersSessionId" => :query,
+      :"requestMetadata.trafficSource.trafficSourceId" => :query,
+      :"requestMetadata.trafficSource.trafficSubId" => :query,
+      :"requestMetadata.userOverrides.ipAddress" => :query,
+      :"requestMetadata.userOverrides.userId" => :query,
       :body => :body
     }
 
@@ -296,10 +306,10 @@ defmodule GoogleApi.Partners.V2.Api.Users do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/v2/users/profile")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Partners.V2.Model.UserProfile{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Partners.V2.Model.UserProfile{}])
   end
 end

@@ -19,19 +19,38 @@
 defmodule GoogleApi.IAM.V1.Model.Expr do
   @moduledoc """
   Represents an expression text. Example:      title: \&quot;User account presence\&quot;     description: \&quot;Determines whether the request has a user account\&quot;     expression: \&quot;size(request.user) &gt; 0\&quot;
+
+  ## Attributes
+
+  - description (String.t): An optional description of the expression. This is a longer text which describes the expression, e.g. when hovered over it in a UI. Defaults to: `null`.
+  - expression (String.t): Textual representation of an expression in Common Expression Language syntax.  The application context of the containing message determines which well-known feature set of CEL is supported. Defaults to: `null`.
+  - location (String.t): An optional string indicating the location of the expression for error reporting, e.g. a file name and a position in the file. Defaults to: `null`.
+  - title (String.t): An optional title for the expression, i.e. a short string describing its purpose. This can be used e.g. in UIs which allow to enter the expression. Defaults to: `null`.
   """
 
-  @derive [Poison.Encoder]
-  defstruct [
-    :description,
-    :expression,
-    :location,
-    :title
-  ]
+  use GoogleApi.Gax.ModelBase
+
+  @type t :: %__MODULE__{
+          :description => any(),
+          :expression => any(),
+          :location => any(),
+          :title => any()
+        }
+
+  field(:description)
+  field(:expression)
+  field(:location)
+  field(:title)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.IAM.V1.Model.Expr do
-  def decode(value, _options) do
-    value
+  def decode(value, options) do
+    GoogleApi.IAM.V1.Model.Expr.decode(value, options)
+  end
+end
+
+defimpl Poison.Encoder, for: GoogleApi.IAM.V1.Model.Expr do
+  def encode(value, options) do
+    GoogleApi.Gax.ModelBase.encode(value, options)
   end
 end

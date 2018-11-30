@@ -31,18 +31,18 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
 
   - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
   - apps_id (String.t): Part of &#x60;parent&#x60;. Name of the parent Application resource. Example: apps/myapp.
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (AuthorizedCertificate): 
 
   ## Returns
@@ -52,19 +52,24 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
   """
   @spec appengine_apps_authorized_certificates_create(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.AppEngine.V1.Model.AuthorizedCertificate.t()} | {:error, Tesla.Env.t()}
-  def appengine_apps_authorized_certificates_create(connection, apps_id, opts \\ []) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
+  def appengine_apps_authorized_certificates_create(
+        connection,
+        apps_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -74,11 +79,11 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       |> Request.url("/v1/apps/{appsId}/authorizedCertificates", %{
         "appsId" => URI.encode_www_form(apps_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AppEngine.V1.Model.AuthorizedCertificate{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AppEngine.V1.Model.AuthorizedCertificate{}])
   end
 
   @doc """
@@ -89,18 +94,18 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
   - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
   - apps_id (String.t): Part of &#x60;name&#x60;. Name of the resource to delete. Example: apps/myapp/authorizedCertificates/12345.
   - authorized_certificates_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;appsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -117,20 +122,21 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         connection,
         apps_id,
         authorized_certificates_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
-      :quotaUser => :query
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -140,11 +146,11 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         "appsId" => URI.encode_www_form(apps_id),
         "authorizedCertificatesId" => URI.encode_www_form(authorized_certificates_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AppEngine.V1.Model.Empty{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AppEngine.V1.Model.Empty{}])
   end
 
   @doc """
@@ -155,18 +161,18 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
   - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
   - apps_id (String.t): Part of &#x60;name&#x60;. Name of the resource requested. Example: apps/myapp/authorizedCertificates/12345.
   - authorized_certificates_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;appsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :view (String.t): Controls the set of fields returned in the GET response.
 
   ## Returns
@@ -185,20 +191,21 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         connection,
         apps_id,
         authorized_certificates_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :view => :query
     }
 
@@ -209,11 +216,11 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         "appsId" => URI.encode_www_form(apps_id),
         "authorizedCertificatesId" => URI.encode_www_form(authorized_certificates_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AppEngine.V1.Model.AuthorizedCertificate{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AppEngine.V1.Model.AuthorizedCertificate{}])
   end
 
   @doc """
@@ -223,20 +230,20 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
 
   - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
   - apps_id (String.t): Part of &#x60;parent&#x60;. Name of the parent Application resource. Example: apps/myapp.
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :pageToken (String.t): Continuation token for fetching the next page of results.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :pageSize (integer()): Maximum results to return per page.
+    - :pageToken (String.t): Continuation token for fetching the next page of results.
     - :view (String.t): Controls the set of fields returned in the LIST response.
 
   ## Returns
@@ -247,21 +254,26 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
   @spec appengine_apps_authorized_certificates_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.AppEngine.V1.Model.ListAuthorizedCertificatesResponse.t()}
           | {:error, Tesla.Env.t()}
-  def appengine_apps_authorized_certificates_list(connection, apps_id, opts \\ []) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
+  def appengine_apps_authorized_certificates_list(
+        connection,
+        apps_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :pageToken => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :pageSize => :query,
+      :pageToken => :query,
       :view => :query
     }
 
@@ -271,11 +283,13 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       |> Request.url("/v1/apps/{appsId}/authorizedCertificates", %{
         "appsId" => URI.encode_www_form(apps_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AppEngine.V1.Model.ListAuthorizedCertificatesResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.AppEngine.V1.Model.ListAuthorizedCertificatesResponse{}]
+    )
   end
 
   @doc """
@@ -286,18 +300,18 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
   - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
   - apps_id (String.t): Part of &#x60;name&#x60;. Name of the resource to update. Example: apps/myapp/authorizedCertificates/12345.
   - authorized_certificates_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;appsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :updateMask (String.t): Standard field mask for the set of fields to be updated. Updates are only supported on the certificate_raw_data and display_name fields.
     - :body (AuthorizedCertificate): 
 
@@ -317,20 +331,21 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         connection,
         apps_id,
         authorized_certificates_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :updateMask => :query,
       :body => :body
     }
@@ -342,11 +357,11 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         "appsId" => URI.encode_www_form(apps_id),
         "authorizedCertificatesId" => URI.encode_www_form(authorized_certificates_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AppEngine.V1.Model.AuthorizedCertificate{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AppEngine.V1.Model.AuthorizedCertificate{}])
   end
 
   @doc """
@@ -356,20 +371,20 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
 
   - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
   - apps_id (String.t): Part of &#x60;parent&#x60;. Name of the parent Application resource. Example: apps/myapp.
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :pageToken (String.t): Continuation token for fetching the next page of results.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :pageSize (integer()): Maximum results to return per page.
+    - :pageToken (String.t): Continuation token for fetching the next page of results.
 
   ## Returns
 
@@ -379,21 +394,26 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
   @spec appengine_apps_authorized_domains_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.AppEngine.V1.Model.ListAuthorizedDomainsResponse.t()}
           | {:error, Tesla.Env.t()}
-  def appengine_apps_authorized_domains_list(connection, apps_id, opts \\ []) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
+  def appengine_apps_authorized_domains_list(
+        connection,
+        apps_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
@@ -402,11 +422,13 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       |> Request.url("/v1/apps/{appsId}/authorizedDomains", %{
         "appsId" => URI.encode_www_form(apps_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AppEngine.V1.Model.ListAuthorizedDomainsResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.AppEngine.V1.Model.ListAuthorizedDomainsResponse{}]
+    )
   end
 
   @doc """
@@ -415,18 +437,18 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
   ## Parameters
 
   - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (Application): 
 
   ## Returns
@@ -436,19 +458,19 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
   """
   @spec appengine_apps_create(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.AppEngine.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def appengine_apps_create(connection, opts \\ []) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
+  def appengine_apps_create(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -456,11 +478,11 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/apps")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AppEngine.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AppEngine.V1.Model.Operation{}])
   end
 
   @doc """
@@ -470,18 +492,18 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
 
   - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
   - apps_id (String.t): Part of &#x60;parent&#x60;. Name of the parent Application resource. Example: apps/myapp.
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :overrideStrategy (String.t): Whether the domain creation should override any existing mappings for this domain. By default, overrides are rejected.
     - :body (DomainMapping): 
 
@@ -492,19 +514,24 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
   """
   @spec appengine_apps_domain_mappings_create(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.AppEngine.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def appengine_apps_domain_mappings_create(connection, apps_id, opts \\ []) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
+  def appengine_apps_domain_mappings_create(
+        connection,
+        apps_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :overrideStrategy => :query,
       :body => :body
     }
@@ -515,11 +542,11 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       |> Request.url("/v1/apps/{appsId}/domainMappings", %{
         "appsId" => URI.encode_www_form(apps_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AppEngine.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AppEngine.V1.Model.Operation{}])
   end
 
   @doc """
@@ -530,18 +557,18 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
   - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
   - apps_id (String.t): Part of &#x60;name&#x60;. Name of the resource to delete. Example: apps/myapp/domainMappings/example.com.
   - domain_mappings_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;appsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -554,19 +581,25 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.AppEngine.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def appengine_apps_domain_mappings_delete(connection, apps_id, domain_mappings_id, opts \\ []) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
+  def appengine_apps_domain_mappings_delete(
+        connection,
+        apps_id,
+        domain_mappings_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
-      :quotaUser => :query
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -576,11 +609,11 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         "appsId" => URI.encode_www_form(apps_id),
         "domainMappingsId" => URI.encode_www_form(domain_mappings_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AppEngine.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AppEngine.V1.Model.Operation{}])
   end
 
   @doc """
@@ -591,18 +624,18 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
   - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
   - apps_id (String.t): Part of &#x60;name&#x60;. Name of the resource requested. Example: apps/myapp/domainMappings/example.com.
   - domain_mappings_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;appsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -611,19 +644,25 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
   """
   @spec appengine_apps_domain_mappings_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.AppEngine.V1.Model.DomainMapping.t()} | {:error, Tesla.Env.t()}
-  def appengine_apps_domain_mappings_get(connection, apps_id, domain_mappings_id, opts \\ []) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
+  def appengine_apps_domain_mappings_get(
+        connection,
+        apps_id,
+        domain_mappings_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
-      :quotaUser => :query
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -633,11 +672,11 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         "appsId" => URI.encode_www_form(apps_id),
         "domainMappingsId" => URI.encode_www_form(domain_mappings_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AppEngine.V1.Model.DomainMapping{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AppEngine.V1.Model.DomainMapping{}])
   end
 
   @doc """
@@ -647,20 +686,20 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
 
   - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
   - apps_id (String.t): Part of &#x60;parent&#x60;. Name of the parent Application resource. Example: apps/myapp.
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :pageToken (String.t): Continuation token for fetching the next page of results.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :pageSize (integer()): Maximum results to return per page.
+    - :pageToken (String.t): Continuation token for fetching the next page of results.
 
   ## Returns
 
@@ -670,21 +709,21 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
   @spec appengine_apps_domain_mappings_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.AppEngine.V1.Model.ListDomainMappingsResponse.t()}
           | {:error, Tesla.Env.t()}
-  def appengine_apps_domain_mappings_list(connection, apps_id, opts \\ []) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
+  def appengine_apps_domain_mappings_list(connection, apps_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
@@ -693,11 +732,13 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       |> Request.url("/v1/apps/{appsId}/domainMappings", %{
         "appsId" => URI.encode_www_form(apps_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AppEngine.V1.Model.ListDomainMappingsResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.AppEngine.V1.Model.ListDomainMappingsResponse{}]
+    )
   end
 
   @doc """
@@ -708,18 +749,18 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
   - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
   - apps_id (String.t): Part of &#x60;name&#x60;. Name of the resource to update. Example: apps/myapp/domainMappings/example.com.
   - domain_mappings_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;appsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :updateMask (String.t): Standard field mask for the set of fields to be updated.
     - :body (DomainMapping): 
 
@@ -734,19 +775,25 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.AppEngine.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def appengine_apps_domain_mappings_patch(connection, apps_id, domain_mappings_id, opts \\ []) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
+  def appengine_apps_domain_mappings_patch(
+        connection,
+        apps_id,
+        domain_mappings_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :updateMask => :query,
       :body => :body
     }
@@ -758,11 +805,11 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         "appsId" => URI.encode_www_form(apps_id),
         "domainMappingsId" => URI.encode_www_form(domain_mappings_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AppEngine.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AppEngine.V1.Model.Operation{}])
   end
 
   @doc """
@@ -772,18 +819,18 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
 
   - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
   - apps_id (String.t): Part of &#x60;name&#x60;. Name of the Firewall collection to set. Example: apps/myapp/firewall/ingressRules.
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (BatchUpdateIngressRulesRequest): 
 
   ## Returns
@@ -798,19 +845,24 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         ) ::
           {:ok, GoogleApi.AppEngine.V1.Model.BatchUpdateIngressRulesResponse.t()}
           | {:error, Tesla.Env.t()}
-  def appengine_apps_firewall_ingress_rules_batch_update(connection, apps_id, opts \\ []) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
+  def appengine_apps_firewall_ingress_rules_batch_update(
+        connection,
+        apps_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -820,11 +872,13 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       |> Request.url("/v1/apps/{appsId}/firewall/ingressRules:batchUpdate", %{
         "appsId" => URI.encode_www_form(apps_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AppEngine.V1.Model.BatchUpdateIngressRulesResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.AppEngine.V1.Model.BatchUpdateIngressRulesResponse{}]
+    )
   end
 
   @doc """
@@ -834,18 +888,18 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
 
   - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
   - apps_id (String.t): Part of &#x60;parent&#x60;. Name of the parent Firewall collection in which to create a new rule. Example: apps/myapp/firewall/ingressRules.
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (FirewallRule): 
 
   ## Returns
@@ -855,19 +909,24 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
   """
   @spec appengine_apps_firewall_ingress_rules_create(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.AppEngine.V1.Model.FirewallRule.t()} | {:error, Tesla.Env.t()}
-  def appengine_apps_firewall_ingress_rules_create(connection, apps_id, opts \\ []) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
+  def appengine_apps_firewall_ingress_rules_create(
+        connection,
+        apps_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -877,11 +936,11 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       |> Request.url("/v1/apps/{appsId}/firewall/ingressRules", %{
         "appsId" => URI.encode_www_form(apps_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AppEngine.V1.Model.FirewallRule{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AppEngine.V1.Model.FirewallRule{}])
   end
 
   @doc """
@@ -892,18 +951,18 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
   - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
   - apps_id (String.t): Part of &#x60;name&#x60;. Name of the Firewall resource to delete. Example: apps/myapp/firewall/ingressRules/100.
   - ingress_rules_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;appsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -920,20 +979,21 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         connection,
         apps_id,
         ingress_rules_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
-      :quotaUser => :query
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -943,11 +1003,11 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         "appsId" => URI.encode_www_form(apps_id),
         "ingressRulesId" => URI.encode_www_form(ingress_rules_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AppEngine.V1.Model.Empty{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AppEngine.V1.Model.Empty{}])
   end
 
   @doc """
@@ -958,18 +1018,18 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
   - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
   - apps_id (String.t): Part of &#x60;name&#x60;. Name of the Firewall resource to retrieve. Example: apps/myapp/firewall/ingressRules/100.
   - ingress_rules_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;appsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -982,19 +1042,25 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.AppEngine.V1.Model.FirewallRule.t()} | {:error, Tesla.Env.t()}
-  def appengine_apps_firewall_ingress_rules_get(connection, apps_id, ingress_rules_id, opts \\ []) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
+  def appengine_apps_firewall_ingress_rules_get(
+        connection,
+        apps_id,
+        ingress_rules_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
-      :quotaUser => :query
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -1004,11 +1070,11 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         "appsId" => URI.encode_www_form(apps_id),
         "ingressRulesId" => URI.encode_www_form(ingress_rules_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AppEngine.V1.Model.FirewallRule{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AppEngine.V1.Model.FirewallRule{}])
   end
 
   @doc """
@@ -1018,21 +1084,21 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
 
   - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
   - apps_id (String.t): Part of &#x60;parent&#x60;. Name of the Firewall collection to retrieve. Example: apps/myapp/firewall/ingressRules.
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :pageToken (String.t): Continuation token for fetching the next page of results.
-    - :pageSize (integer()): Maximum results to return per page.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :matchingAddress (String.t): A valid IP Address. If set, only rules matching this address will be returned. The first returned rule will be the rule that fires on requests from this IP.
+    - :pageSize (integer()): Maximum results to return per page.
+    - :pageToken (String.t): Continuation token for fetching the next page of results.
 
   ## Returns
 
@@ -1042,22 +1108,27 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
   @spec appengine_apps_firewall_ingress_rules_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.AppEngine.V1.Model.ListIngressRulesResponse.t()}
           | {:error, Tesla.Env.t()}
-  def appengine_apps_firewall_ingress_rules_list(connection, apps_id, opts \\ []) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
+  def appengine_apps_firewall_ingress_rules_list(
+        connection,
+        apps_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :pageToken => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :matchingAddress => :query,
       :pageSize => :query,
-      :matchingAddress => :query
+      :pageToken => :query
     }
 
     request =
@@ -1066,11 +1137,11 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       |> Request.url("/v1/apps/{appsId}/firewall/ingressRules", %{
         "appsId" => URI.encode_www_form(apps_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AppEngine.V1.Model.ListIngressRulesResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AppEngine.V1.Model.ListIngressRulesResponse{}])
   end
 
   @doc """
@@ -1081,18 +1152,18 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
   - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
   - apps_id (String.t): Part of &#x60;name&#x60;. Name of the Firewall resource to update. Example: apps/myapp/firewall/ingressRules/100.
   - ingress_rules_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;appsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :updateMask (String.t): Standard field mask for the set of fields to be updated.
     - :body (FirewallRule): 
 
@@ -1111,20 +1182,21 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         connection,
         apps_id,
         ingress_rules_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :updateMask => :query,
       :body => :body
     }
@@ -1136,11 +1208,11 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         "appsId" => URI.encode_www_form(apps_id),
         "ingressRulesId" => URI.encode_www_form(ingress_rules_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AppEngine.V1.Model.FirewallRule{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AppEngine.V1.Model.FirewallRule{}])
   end
 
   @doc """
@@ -1150,18 +1222,18 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
 
   - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
   - apps_id (String.t): Part of &#x60;name&#x60;. Name of the Application resource to get. Example: apps/myapp.
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -1170,19 +1242,19 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
   """
   @spec appengine_apps_get(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.AppEngine.V1.Model.Application.t()} | {:error, Tesla.Env.t()}
-  def appengine_apps_get(connection, apps_id, opts \\ []) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
+  def appengine_apps_get(connection, apps_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
-      :quotaUser => :query
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -1191,11 +1263,11 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       |> Request.url("/v1/apps/{appsId}", %{
         "appsId" => URI.encode_www_form(apps_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AppEngine.V1.Model.Application{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AppEngine.V1.Model.Application{}])
   end
 
   @doc """
@@ -1206,18 +1278,18 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
   - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
   - apps_id (String.t): Part of &#x60;name&#x60;. Resource name for the location.
   - locations_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;appsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -1226,19 +1298,25 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
   """
   @spec appengine_apps_locations_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.AppEngine.V1.Model.Location.t()} | {:error, Tesla.Env.t()}
-  def appengine_apps_locations_get(connection, apps_id, locations_id, opts \\ []) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
+  def appengine_apps_locations_get(
+        connection,
+        apps_id,
+        locations_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
-      :quotaUser => :query
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -1248,11 +1326,11 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         "appsId" => URI.encode_www_form(apps_id),
         "locationsId" => URI.encode_www_form(locations_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AppEngine.V1.Model.Location{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AppEngine.V1.Model.Location{}])
   end
 
   @doc """
@@ -1262,21 +1340,21 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
 
   - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
   - apps_id (String.t): Part of &#x60;name&#x60;. The resource that owns the locations collection, if applicable.
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :pageToken (String.t): The standard list page token.
-    - :pageSize (integer()): The standard list page size.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :filter (String.t): The standard list filter.
+    - :pageSize (integer()): The standard list page size.
+    - :pageToken (String.t): The standard list page token.
 
   ## Returns
 
@@ -1285,22 +1363,22 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
   """
   @spec appengine_apps_locations_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.AppEngine.V1.Model.ListLocationsResponse.t()} | {:error, Tesla.Env.t()}
-  def appengine_apps_locations_list(connection, apps_id, opts \\ []) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
+  def appengine_apps_locations_list(connection, apps_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :pageToken => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :filter => :query,
       :pageSize => :query,
-      :filter => :query
+      :pageToken => :query
     }
 
     request =
@@ -1309,11 +1387,11 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       |> Request.url("/v1/apps/{appsId}/locations", %{
         "appsId" => URI.encode_www_form(apps_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AppEngine.V1.Model.ListLocationsResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AppEngine.V1.Model.ListLocationsResponse{}])
   end
 
   @doc """
@@ -1324,18 +1402,18 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
   - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
   - apps_id (String.t): Part of &#x60;name&#x60;. The name of the operation resource.
   - operations_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;appsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -1344,19 +1422,25 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
   """
   @spec appengine_apps_operations_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.AppEngine.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def appengine_apps_operations_get(connection, apps_id, operations_id, opts \\ []) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
+  def appengine_apps_operations_get(
+        connection,
+        apps_id,
+        operations_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
-      :quotaUser => :query
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -1366,11 +1450,11 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         "appsId" => URI.encode_www_form(apps_id),
         "operationsId" => URI.encode_www_form(operations_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AppEngine.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AppEngine.V1.Model.Operation{}])
   end
 
   @doc """
@@ -1380,21 +1464,21 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
 
   - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
   - apps_id (String.t): Part of &#x60;name&#x60;. The name of the operation&#39;s parent resource.
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :filter (String.t): The standard list filter.
-    - :pageToken (String.t): The standard list page token.
     - :pageSize (integer()): The standard list page size.
+    - :pageToken (String.t): The standard list page token.
 
   ## Returns
 
@@ -1403,22 +1487,22 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
   """
   @spec appengine_apps_operations_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.AppEngine.V1.Model.ListOperationsResponse.t()} | {:error, Tesla.Env.t()}
-  def appengine_apps_operations_list(connection, apps_id, opts \\ []) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
+  def appengine_apps_operations_list(connection, apps_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :filter => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
@@ -1427,11 +1511,11 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       |> Request.url("/v1/apps/{appsId}/operations", %{
         "appsId" => URI.encode_www_form(apps_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AppEngine.V1.Model.ListOperationsResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AppEngine.V1.Model.ListOperationsResponse{}])
   end
 
   @doc """
@@ -1441,18 +1525,18 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
 
   - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
   - apps_id (String.t): Part of &#x60;name&#x60;. Name of the Application resource to update. Example: apps/myapp.
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :updateMask (String.t): Standard field mask for the set of fields to be updated.
     - :body (Application): 
 
@@ -1463,19 +1547,19 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
   """
   @spec appengine_apps_patch(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.AppEngine.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def appengine_apps_patch(connection, apps_id, opts \\ []) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
+  def appengine_apps_patch(connection, apps_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :updateMask => :query,
       :body => :body
     }
@@ -1486,11 +1570,11 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       |> Request.url("/v1/apps/{appsId}", %{
         "appsId" => URI.encode_www_form(apps_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AppEngine.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AppEngine.V1.Model.Operation{}])
   end
 
   @doc """
@@ -1500,18 +1584,18 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
 
   - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
   - apps_id (String.t): Part of &#x60;name&#x60;. Name of the application to repair. Example: apps/myapp
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (RepairApplicationRequest): 
 
   ## Returns
@@ -1521,19 +1605,19 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
   """
   @spec appengine_apps_repair(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.AppEngine.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def appengine_apps_repair(connection, apps_id, opts \\ []) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
+  def appengine_apps_repair(connection, apps_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -1543,11 +1627,11 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       |> Request.url("/v1/apps/{appsId}:repair", %{
         "appsId" => URI.encode_www_form(apps_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AppEngine.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AppEngine.V1.Model.Operation{}])
   end
 
   @doc """
@@ -1558,18 +1642,18 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
   - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
   - apps_id (String.t): Part of &#x60;name&#x60;. Name of the resource requested. Example: apps/myapp/services/default.
   - services_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;appsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -1578,19 +1662,25 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
   """
   @spec appengine_apps_services_delete(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.AppEngine.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def appengine_apps_services_delete(connection, apps_id, services_id, opts \\ []) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
+  def appengine_apps_services_delete(
+        connection,
+        apps_id,
+        services_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
-      :quotaUser => :query
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -1600,11 +1690,11 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         "appsId" => URI.encode_www_form(apps_id),
         "servicesId" => URI.encode_www_form(services_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AppEngine.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AppEngine.V1.Model.Operation{}])
   end
 
   @doc """
@@ -1615,18 +1705,18 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
   - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
   - apps_id (String.t): Part of &#x60;name&#x60;. Name of the resource requested. Example: apps/myapp/services/default.
   - services_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;appsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -1635,19 +1725,25 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
   """
   @spec appengine_apps_services_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.AppEngine.V1.Model.Service.t()} | {:error, Tesla.Env.t()}
-  def appengine_apps_services_get(connection, apps_id, services_id, opts \\ []) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
+  def appengine_apps_services_get(
+        connection,
+        apps_id,
+        services_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
-      :quotaUser => :query
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -1657,11 +1753,11 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         "appsId" => URI.encode_www_form(apps_id),
         "servicesId" => URI.encode_www_form(services_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AppEngine.V1.Model.Service{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AppEngine.V1.Model.Service{}])
   end
 
   @doc """
@@ -1671,20 +1767,20 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
 
   - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
   - apps_id (String.t): Part of &#x60;parent&#x60;. Name of the parent Application resource. Example: apps/myapp.
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :pageToken (String.t): Continuation token for fetching the next page of results.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :pageSize (integer()): Maximum results to return per page.
+    - :pageToken (String.t): Continuation token for fetching the next page of results.
 
   ## Returns
 
@@ -1693,21 +1789,21 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
   """
   @spec appengine_apps_services_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.AppEngine.V1.Model.ListServicesResponse.t()} | {:error, Tesla.Env.t()}
-  def appengine_apps_services_list(connection, apps_id, opts \\ []) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
+  def appengine_apps_services_list(connection, apps_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
@@ -1716,11 +1812,11 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       |> Request.url("/v1/apps/{appsId}/services", %{
         "appsId" => URI.encode_www_form(apps_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AppEngine.V1.Model.ListServicesResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AppEngine.V1.Model.ListServicesResponse{}])
   end
 
   @doc """
@@ -1731,20 +1827,20 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
   - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
   - apps_id (String.t): Part of &#x60;name&#x60;. Name of the resource to update. Example: apps/myapp/services/default.
   - services_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;appsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :migrateTraffic (boolean()): Set to true to gradually shift traffic to one or more versions that you specify. By default, traffic is shifted immediately. For gradual traffic migration, the target versions must be located within instances that are configured for both warmup requests (https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#InboundServiceType) and automatic scaling (https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#AutomaticScaling). You must specify the shardBy (https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services#ShardBy) field in the Service resource. Gradual traffic migration is not supported in the App Engine flexible environment. For examples, see Migrating and Splitting Traffic (https://cloud.google.com/appengine/docs/admin-api/migrating-splitting-traffic).
     - :updateMask (String.t): Standard field mask for the set of fields to be updated.
-    - :migrateTraffic (boolean()): Set to true to gradually shift traffic to one or more versions that you specify. By default, traffic is shifted immediately. For gradual traffic migration, the target versions must be located within instances that are configured for both warmup requests (https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#inboundservicetype) and automatic scaling (https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#automaticscaling). You must specify the shardBy (https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services#shardby) field in the Service resource. Gradual traffic migration is not supported in the App Engine flexible environment. For examples, see Migrating and Splitting Traffic (https://cloud.google.com/appengine/docs/admin-api/migrating-splitting-traffic).
     - :body (Service): 
 
   ## Returns
@@ -1754,21 +1850,27 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
   """
   @spec appengine_apps_services_patch(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.AppEngine.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def appengine_apps_services_patch(connection, apps_id, services_id, opts \\ []) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
+  def appengine_apps_services_patch(
+        connection,
+        apps_id,
+        services_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :updateMask => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :migrateTraffic => :query,
+      :updateMask => :query,
       :body => :body
     }
 
@@ -1779,11 +1881,11 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         "appsId" => URI.encode_www_form(apps_id),
         "servicesId" => URI.encode_www_form(services_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AppEngine.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AppEngine.V1.Model.Operation{}])
   end
 
   @doc """
@@ -1794,18 +1896,18 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
   - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
   - apps_id (String.t): Part of &#x60;parent&#x60;. Name of the parent resource to create this version under. Example: apps/myapp/services/default.
   - services_id (String.t): Part of &#x60;parent&#x60;. See documentation of &#x60;appsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (Version): 
 
   ## Returns
@@ -1819,19 +1921,25 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.AppEngine.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def appengine_apps_services_versions_create(connection, apps_id, services_id, opts \\ []) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
+  def appengine_apps_services_versions_create(
+        connection,
+        apps_id,
+        services_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -1842,11 +1950,11 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         "appsId" => URI.encode_www_form(apps_id),
         "servicesId" => URI.encode_www_form(services_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AppEngine.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AppEngine.V1.Model.Operation{}])
   end
 
   @doc """
@@ -1858,18 +1966,18 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
   - apps_id (String.t): Part of &#x60;name&#x60;. Name of the resource requested. Example: apps/myapp/services/default/versions/v1.
   - services_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;appsId&#x60;.
   - versions_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;appsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -1888,20 +1996,21 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         apps_id,
         services_id,
         versions_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
-      :quotaUser => :query
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -1912,11 +2021,11 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         "servicesId" => URI.encode_www_form(services_id),
         "versionsId" => URI.encode_www_form(versions_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AppEngine.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AppEngine.V1.Model.Operation{}])
   end
 
   @doc """
@@ -1928,18 +2037,18 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
   - apps_id (String.t): Part of &#x60;name&#x60;. Name of the resource requested. Example: apps/myapp/services/default/versions/v1.
   - services_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;appsId&#x60;.
   - versions_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;appsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :view (String.t): Controls the set of fields returned in the Get response.
 
   ## Returns
@@ -1959,20 +2068,21 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         apps_id,
         services_id,
         versions_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :view => :query
     }
 
@@ -1984,11 +2094,11 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         "servicesId" => URI.encode_www_form(services_id),
         "versionsId" => URI.encode_www_form(versions_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AppEngine.V1.Model.Version{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AppEngine.V1.Model.Version{}])
   end
 
   @doc """
@@ -2001,18 +2111,18 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
   - services_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;appsId&#x60;.
   - versions_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;appsId&#x60;.
   - instances_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;appsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (DebugInstanceRequest): 
 
   ## Returns
@@ -2034,20 +2144,21 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         services_id,
         versions_id,
         instances_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -2063,11 +2174,11 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
           "instancesId" => URI.encode_www_form(instances_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AppEngine.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AppEngine.V1.Model.Operation{}])
   end
 
   @doc """
@@ -2080,18 +2191,18 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
   - services_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;appsId&#x60;.
   - versions_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;appsId&#x60;.
   - instances_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;appsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -2112,20 +2223,21 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         services_id,
         versions_id,
         instances_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
-      :quotaUser => :query
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -2140,11 +2252,11 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
           "instancesId" => URI.encode_www_form(instances_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AppEngine.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AppEngine.V1.Model.Operation{}])
   end
 
   @doc """
@@ -2157,18 +2269,18 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
   - services_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;appsId&#x60;.
   - versions_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;appsId&#x60;.
   - instances_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;appsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -2189,20 +2301,21 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         services_id,
         versions_id,
         instances_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
-      :quotaUser => :query
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -2217,11 +2330,11 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
           "instancesId" => URI.encode_www_form(instances_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AppEngine.V1.Model.Instance{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AppEngine.V1.Model.Instance{}])
   end
 
   @doc """
@@ -2233,20 +2346,20 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
   - apps_id (String.t): Part of &#x60;parent&#x60;. Name of the parent Version resource. Example: apps/myapp/services/default/versions/v1.
   - services_id (String.t): Part of &#x60;parent&#x60;. See documentation of &#x60;appsId&#x60;.
   - versions_id (String.t): Part of &#x60;parent&#x60;. See documentation of &#x60;appsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :pageToken (String.t): Continuation token for fetching the next page of results.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :pageSize (integer()): Maximum results to return per page.
+    - :pageToken (String.t): Continuation token for fetching the next page of results.
 
   ## Returns
 
@@ -2266,22 +2379,23 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         apps_id,
         services_id,
         versions_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
@@ -2292,11 +2406,11 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         "servicesId" => URI.encode_www_form(services_id),
         "versionsId" => URI.encode_www_form(versions_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AppEngine.V1.Model.ListInstancesResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AppEngine.V1.Model.ListInstancesResponse{}])
   end
 
   @doc """
@@ -2307,20 +2421,20 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
   - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
   - apps_id (String.t): Part of &#x60;parent&#x60;. Name of the parent Service resource. Example: apps/myapp/services/default.
   - services_id (String.t): Part of &#x60;parent&#x60;. See documentation of &#x60;appsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :pageToken (String.t): Continuation token for fetching the next page of results.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :pageSize (integer()): Maximum results to return per page.
+    - :pageToken (String.t): Continuation token for fetching the next page of results.
     - :view (String.t): Controls the set of fields returned in the List response.
 
   ## Returns
@@ -2335,21 +2449,27 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
           keyword()
         ) ::
           {:ok, GoogleApi.AppEngine.V1.Model.ListVersionsResponse.t()} | {:error, Tesla.Env.t()}
-  def appengine_apps_services_versions_list(connection, apps_id, services_id, opts \\ []) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
+  def appengine_apps_services_versions_list(
+        connection,
+        apps_id,
+        services_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :pageToken => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :pageSize => :query,
+      :pageToken => :query,
       :view => :query
     }
 
@@ -2360,11 +2480,11 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         "appsId" => URI.encode_www_form(apps_id),
         "servicesId" => URI.encode_www_form(services_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AppEngine.V1.Model.ListVersionsResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AppEngine.V1.Model.ListVersionsResponse{}])
   end
 
   @doc """
@@ -2376,18 +2496,18 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
   - apps_id (String.t): Part of &#x60;name&#x60;. Name of the resource to update. Example: apps/myapp/services/default/versions/1.
   - services_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;appsId&#x60;.
   - versions_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;appsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :updateMask (String.t): Standard field mask for the set of fields to be updated.
     - :body (Version): 
 
@@ -2408,20 +2528,21 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         apps_id,
         services_id,
         versions_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :updateMask => :query,
       :body => :body
     }
@@ -2434,10 +2555,10 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         "servicesId" => URI.encode_www_form(services_id),
         "versionsId" => URI.encode_www_form(versions_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AppEngine.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AppEngine.V1.Model.Operation{}])
   end
 end

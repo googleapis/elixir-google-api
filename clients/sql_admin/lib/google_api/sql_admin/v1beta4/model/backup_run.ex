@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.BackupRun do
   @moduledoc """
-  A database instance backup run resource.
+  A BackupRun resource.
 
   ## Attributes
 
@@ -26,7 +26,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.BackupRun do
   - endTime (DateTime.t): The time the backup operation completed in UTC timezone in RFC 3339 format, for example 2012-11-15T16:19:00.094Z. Defaults to: `null`.
   - enqueuedTime (DateTime.t): The time the run was enqueued in UTC timezone in RFC 3339 format, for example 2012-11-15T16:19:00.094Z. Defaults to: `null`.
   - error (OperationError): Information about why the backup operation failed. This is only present if the run has the FAILED status. Defaults to: `null`.
-  - id (String.t): A unique identifier for this backup run. Note that this is unique only within the scope of a particular Cloud SQL instance. Defaults to: `null`.
+  - id (String.t): The identifier for this backup run. Unique only for a specific Cloud SQL instance. Defaults to: `null`.
   - instance (String.t): Name of the database instance. Defaults to: `null`.
   - kind (String.t): This is always sql#backupRun. Defaults to: `null`.
   - selfLink (String.t): The URI of this resource. Defaults to: `null`.

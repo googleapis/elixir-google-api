@@ -22,15 +22,18 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.RowDimensions do
 
   ## Attributes
 
+  - publisherIdentifier (String.t): The publisher identifier for this row, if a breakdown by [BreakdownDimension.PUBLISHER_IDENTIFIER](https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/bidders.accounts.filterSets#FilterSet.BreakdownDimension) was requested. Defaults to: `null`.
   - timeInterval (TimeInterval): The time interval that this row represents. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :publisherIdentifier => any(),
           :timeInterval => GoogleApi.AdExchangeBuyer.V2beta1.Model.TimeInterval.t()
         }
 
+  field(:publisherIdentifier)
   field(:timeInterval, as: GoogleApi.AdExchangeBuyer.V2beta1.Model.TimeInterval)
 end
 

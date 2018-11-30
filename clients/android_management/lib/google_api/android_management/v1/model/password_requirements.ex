@@ -34,6 +34,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.PasswordRequirements do
   - passwordMinimumUpperCase (integer()): Minimum number of upper case letters required in the password. Only enforced when password_quality is COMPLEX. Defaults to: `null`.
   - passwordQuality (String.t): The required password quality. Defaults to: `null`.
     - Enum - one of [PASSWORD_QUALITY_UNSPECIFIED, BIOMETRIC_WEAK, SOMETHING, NUMERIC, NUMERIC_COMPLEX, ALPHABETIC, ALPHANUMERIC, COMPLEX]
+  - passwordScope (String.t): The scope that the password requirement applies to. Defaults to: `null`.
+    - Enum - one of [SCOPE_UNSPECIFIED, SCOPE_DEVICE, SCOPE_PROFILE]
   """
 
   use GoogleApi.Gax.ModelBase
@@ -49,7 +51,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.PasswordRequirements do
           :passwordMinimumNumeric => any(),
           :passwordMinimumSymbols => any(),
           :passwordMinimumUpperCase => any(),
-          :passwordQuality => any()
+          :passwordQuality => any(),
+          :passwordScope => any()
         }
 
   field(:maximumFailedPasswordsForWipe)
@@ -63,6 +66,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.PasswordRequirements do
   field(:passwordMinimumSymbols)
   field(:passwordMinimumUpperCase)
   field(:passwordQuality)
+  field(:passwordScope)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AndroidManagement.V1.Model.PasswordRequirements do

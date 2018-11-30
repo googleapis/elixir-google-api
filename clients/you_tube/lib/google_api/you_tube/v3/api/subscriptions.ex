@@ -31,7 +31,7 @@ defmodule GoogleApi.YouTube.V3.Api.Subscriptions do
 
   - connection (GoogleApi.YouTube.V3.Connection): Connection to server
   - id (String.t): The id parameter specifies the YouTube subscription ID for the resource that is being deleted. In a subscription resource, the id property specifies the YouTube subscription ID.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -47,8 +47,8 @@ defmodule GoogleApi.YouTube.V3.Api.Subscriptions do
   """
   @spec youtube_subscriptions_delete(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
-  def youtube_subscriptions_delete(connection, id, opts \\ []) do
-    optional_params = %{
+  def youtube_subscriptions_delete(connection, id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -63,11 +63,11 @@ defmodule GoogleApi.YouTube.V3.Api.Subscriptions do
       |> Request.method(:delete)
       |> Request.url("/youtube/v3/subscriptions")
       |> Request.add_param(:query, :id, id)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -77,7 +77,7 @@ defmodule GoogleApi.YouTube.V3.Api.Subscriptions do
 
   - connection (GoogleApi.YouTube.V3.Connection): Connection to server
   - part (String.t): The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -94,8 +94,8 @@ defmodule GoogleApi.YouTube.V3.Api.Subscriptions do
   """
   @spec youtube_subscriptions_insert(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.YouTube.V3.Model.Subscription.t()} | {:error, Tesla.Env.t()}
-  def youtube_subscriptions_insert(connection, part, opts \\ []) do
-    optional_params = %{
+  def youtube_subscriptions_insert(connection, part, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -111,11 +111,11 @@ defmodule GoogleApi.YouTube.V3.Api.Subscriptions do
       |> Request.method(:post)
       |> Request.url("/youtube/v3/subscriptions")
       |> Request.add_param(:query, :part, part)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.YouTube.V3.Model.Subscription{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.YouTube.V3.Model.Subscription{}])
   end
 
   @doc """
@@ -125,7 +125,7 @@ defmodule GoogleApi.YouTube.V3.Api.Subscriptions do
 
   - connection (GoogleApi.YouTube.V3.Connection): Connection to server
   - part (String.t): The part parameter specifies a comma-separated list of one or more subscription resource properties that the API response will include.  If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a subscription resource, the snippet property contains other properties, such as a display title for the subscription. If you set part&#x3D;snippet, the API response will also contain all of those nested properties.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -152,8 +152,8 @@ defmodule GoogleApi.YouTube.V3.Api.Subscriptions do
   """
   @spec youtube_subscriptions_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.YouTube.V3.Model.SubscriptionListResponse.t()} | {:error, Tesla.Env.t()}
-  def youtube_subscriptions_list(connection, part, opts \\ []) do
-    optional_params = %{
+  def youtube_subscriptions_list(connection, part, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -179,10 +179,10 @@ defmodule GoogleApi.YouTube.V3.Api.Subscriptions do
       |> Request.method(:get)
       |> Request.url("/youtube/v3/subscriptions")
       |> Request.add_param(:query, :part, part)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.YouTube.V3.Model.SubscriptionListResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.YouTube.V3.Model.SubscriptionListResponse{}])
   end
 end

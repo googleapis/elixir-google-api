@@ -28,6 +28,7 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.IosInfo do
   - iosFallbackLink (String.t): Link to open on iOS if the app is not installed. Defaults to: `null`.
   - iosIpadBundleId (String.t): iPad bundle ID of the app. Defaults to: `null`.
   - iosIpadFallbackLink (String.t): If specified, this overrides the ios_fallback_link value on iPads. Defaults to: `null`.
+  - iosMinimumVersion (String.t): iOS minimum version. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -38,7 +39,8 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.IosInfo do
           :iosCustomScheme => any(),
           :iosFallbackLink => any(),
           :iosIpadBundleId => any(),
-          :iosIpadFallbackLink => any()
+          :iosIpadFallbackLink => any(),
+          :iosMinimumVersion => any()
         }
 
   field(:iosAppStoreId)
@@ -47,6 +49,7 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.IosInfo do
   field(:iosFallbackLink)
   field(:iosIpadBundleId)
   field(:iosIpadFallbackLink)
+  field(:iosMinimumVersion)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.FirebaseDynamicLinks.V1.Model.IosInfo do

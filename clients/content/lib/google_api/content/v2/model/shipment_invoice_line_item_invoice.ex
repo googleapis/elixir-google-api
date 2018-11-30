@@ -24,8 +24,8 @@ defmodule GoogleApi.Content.V2.Model.ShipmentInvoiceLineItemInvoice do
 
   - lineItemId (String.t): ID of the line item. Either lineItemId or productId must be set. Defaults to: `null`.
   - productId (String.t): ID of the product. This is the REST ID used in the products service. Either lineItemId or productId must be set. Defaults to: `null`.
-  - shipmentUnitIds ([String.t]): Unit IDs to define specific units within the line item. Defaults to: `null`.
-  - unitInvoice (UnitInvoice): Invoice details for a single unit. Defaults to: `null`.
+  - shipmentUnitIds ([String.t]): [required] Unit IDs to define specific units within the line item. Defaults to: `null`.
+  - unitInvoice (UnitInvoice): [required] Invoice details for a single unit. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

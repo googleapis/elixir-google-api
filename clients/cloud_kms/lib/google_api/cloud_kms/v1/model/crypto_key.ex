@@ -25,11 +25,12 @@ defmodule GoogleApi.CloudKMS.V1.Model.CryptoKey do
   - createTime (DateTime.t): Output only. The time at which this CryptoKey was created. Defaults to: `null`.
   - labels (%{optional(String.t) &#x3D;&gt; String.t}): Labels with user-defined metadata. For more information, see [Labeling Keys](/kms/docs/labeling-keys). Defaults to: `null`.
   - name (String.t): Output only. The resource name for this CryptoKey in the format &#x60;projects/*/locations/*/keyRings/*/cryptoKeys/*&#x60;. Defaults to: `null`.
-  - nextRotationTime (DateTime.t): At next_rotation_time, the Key Management Service will automatically:  1. Create a new version of this CryptoKey. 2. Mark the new version as primary.  Key rotations performed manually via CreateCryptoKeyVersion and UpdateCryptoKeyPrimaryVersion do not affect next_rotation_time. Defaults to: `null`.
-  - primary (CryptoKeyVersion): Output only. A copy of the \&quot;primary\&quot; CryptoKeyVersion that will be used by Encrypt when this CryptoKey is given in EncryptRequest.name.  The CryptoKey&#39;s primary version can be updated via UpdateCryptoKeyPrimaryVersion.  Defaults to: `null`.
-  - purpose (String.t): The immutable purpose of this CryptoKey. Currently, the only acceptable purpose is ENCRYPT_DECRYPT. Defaults to: `null`.
-    - Enum - one of [CRYPTO_KEY_PURPOSE_UNSPECIFIED, ENCRYPT_DECRYPT]
-  - rotationPeriod (String.t): next_rotation_time will be advanced by this period when the service automatically rotates a key. Must be at least one day.  If rotation_period is set, next_rotation_time must also be set. Defaults to: `null`.
+  - nextRotationTime (DateTime.t): At next_rotation_time, the Key Management Service will automatically:  1. Create a new version of this CryptoKey. 2. Mark the new version as primary.  Key rotations performed manually via CreateCryptoKeyVersion and UpdateCryptoKeyPrimaryVersion do not affect next_rotation_time.  Keys with purpose ENCRYPT_DECRYPT support automatic rotation. For other keys, this field must be omitted. Defaults to: `null`.
+  - primary (CryptoKeyVersion): Output only. A copy of the \&quot;primary\&quot; CryptoKeyVersion that will be used by Encrypt when this CryptoKey is given in EncryptRequest.name.  The CryptoKey&#39;s primary version can be updated via UpdateCryptoKeyPrimaryVersion.  All keys with purpose ENCRYPT_DECRYPT have a primary. For other keys, this field will be omitted. Defaults to: `null`.
+  - purpose (String.t): The immutable purpose of this CryptoKey. Defaults to: `null`.
+    - Enum - one of [CRYPTO_KEY_PURPOSE_UNSPECIFIED, ENCRYPT_DECRYPT, ASYMMETRIC_SIGN, ASYMMETRIC_DECRYPT]
+  - rotationPeriod (String.t): next_rotation_time will be advanced by this period when the service automatically rotates a key. Must be at least one day.  If rotation_period is set, next_rotation_time must also be set.  Keys with purpose ENCRYPT_DECRYPT support automatic rotation. For other keys, this field must be omitted. Defaults to: `null`.
+  - versionTemplate (CryptoKeyVersionTemplate): A template describing settings for new CryptoKeyVersion instances. The properties of new CryptoKeyVersion instances created by either CreateCryptoKeyVersion or auto-rotation are controlled by this template. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -41,7 +42,8 @@ defmodule GoogleApi.CloudKMS.V1.Model.CryptoKey do
           :nextRotationTime => DateTime.t(),
           :primary => GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion.t(),
           :purpose => any(),
-          :rotationPeriod => any()
+          :rotationPeriod => any(),
+          :versionTemplate => GoogleApi.CloudKMS.V1.Model.CryptoKeyVersionTemplate.t()
         }
 
   field(:createTime, as: DateTime)
@@ -51,6 +53,7 @@ defmodule GoogleApi.CloudKMS.V1.Model.CryptoKey do
   field(:primary, as: GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion)
   field(:purpose)
   field(:rotationPeriod)
+  field(:versionTemplate, as: GoogleApi.CloudKMS.V1.Model.CryptoKeyVersionTemplate)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudKMS.V1.Model.CryptoKey do

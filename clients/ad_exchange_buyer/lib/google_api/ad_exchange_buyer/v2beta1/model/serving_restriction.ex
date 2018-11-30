@@ -23,7 +23,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ServingRestriction do
   ## Attributes
 
   - contexts ([ServingContext]): The contexts for the restriction. Defaults to: `null`.
-  - disapprovalReasons ([Disapproval]): Any disapprovals bound to this restriction. Only present if status&#x3D;DISAPPROVED. Can be used to filter the response of the creatives.list method. Defaults to: `null`.
+  - disapproval (Disapproval): Disapproval bound to this restriction. Only present if status&#x3D;DISAPPROVED. Can be used to filter the response of the creatives.list method. Defaults to: `null`.
+  - disapprovalReasons ([Disapproval]): Any disapprovals bound to this restriction. Only present if status&#x3D;DISAPPROVED. Can be used to filter the response of the creatives.list method. Deprecated; please use disapproval field instead. Defaults to: `null`.
   - status (String.t): The status of the creative in this context (for example, it has been explicitly disapproved or is pending review). Defaults to: `null`.
     - Enum - one of [STATUS_UNSPECIFIED, DISAPPROVAL, PENDING_REVIEW]
   """
@@ -32,11 +33,13 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ServingRestriction do
 
   @type t :: %__MODULE__{
           :contexts => list(GoogleApi.AdExchangeBuyer.V2beta1.Model.ServingContext.t()),
+          :disapproval => GoogleApi.AdExchangeBuyer.V2beta1.Model.Disapproval.t(),
           :disapprovalReasons => list(GoogleApi.AdExchangeBuyer.V2beta1.Model.Disapproval.t()),
           :status => any()
         }
 
   field(:contexts, as: GoogleApi.AdExchangeBuyer.V2beta1.Model.ServingContext, type: :list)
+  field(:disapproval, as: GoogleApi.AdExchangeBuyer.V2beta1.Model.Disapproval)
   field(:disapprovalReasons, as: GoogleApi.AdExchangeBuyer.V2beta1.Model.Disapproval, type: :list)
   field(:status)
 end

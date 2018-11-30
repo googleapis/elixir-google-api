@@ -31,18 +31,18 @@ defmodule GoogleApi.Container.V1.Api.Projects do
 
   - connection (GoogleApi.Container.V1.Connection): Connection to server
   - name (String.t): The name (project, location, cluster id) of the cluster to complete IP rotation. Specified in the format &#39;projects/*/locations/*/clusters/*&#39;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :body (CompleteIpRotationRequest): 
 
   ## Returns
@@ -55,19 +55,24 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def container_projects_locations_clusters_complete_ip_rotation(connection, name, opts \\ []) do
-    optional_params = %{
-      :key => :query,
+  def container_projects_locations_clusters_complete_ip_rotation(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -77,11 +82,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       |> Request.url("/v1/{+name}:completeIpRotation", %{
         "name" => URI.encode_www_form(name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Container.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.Operation{}])
   end
 
   @doc """
@@ -91,18 +96,18 @@ defmodule GoogleApi.Container.V1.Api.Projects do
 
   - connection (GoogleApi.Container.V1.Connection): Connection to server
   - parent (String.t): The parent (project and location) where the cluster will be created. Specified in the format &#39;projects/*/locations/*&#39;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :body (CreateClusterRequest): 
 
   ## Returns
@@ -112,19 +117,24 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   """
   @spec container_projects_locations_clusters_create(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def container_projects_locations_clusters_create(connection, parent, opts \\ []) do
-    optional_params = %{
-      :key => :query,
+  def container_projects_locations_clusters_create(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -134,11 +144,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       |> Request.url("/v1/{+parent}/clusters", %{
         "parent" => URI.encode_www_form(parent)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Container.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.Operation{}])
   end
 
   @doc """
@@ -148,18 +158,18 @@ defmodule GoogleApi.Container.V1.Api.Projects do
 
   - connection (GoogleApi.Container.V1.Connection): Connection to server
   - parent (String.t): The parent (project and location) where the clusters will be listed. Specified in the format &#39;projects/*/locations/*&#39;. Location \&quot;-\&quot; matches all zones and all regions.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :projectId (String.t): Deprecated. The Google Developers Console [project ID or project number](https://support.google.com/cloud/answer/6158840). This field has been deprecated and replaced by the parent field.
     - :zone (String.t): Deprecated. The name of the Google Compute Engine [zone](/compute/docs/zones#available) in which the cluster resides, or \&quot;-\&quot; for all zones. This field has been deprecated and replaced by the parent field.
 
@@ -170,19 +180,24 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   """
   @spec container_projects_locations_clusters_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Container.V1.Model.ListClustersResponse.t()} | {:error, Tesla.Env.t()}
-  def container_projects_locations_clusters_list(connection, parent, opts \\ []) do
-    optional_params = %{
-      :key => :query,
+  def container_projects_locations_clusters_list(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :projectId => :query,
       :zone => :query
     }
@@ -193,11 +208,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       |> Request.url("/v1/{+parent}/clusters", %{
         "parent" => URI.encode_www_form(parent)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Container.V1.Model.ListClustersResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.ListClustersResponse{}])
   end
 
   @doc """
@@ -207,18 +222,18 @@ defmodule GoogleApi.Container.V1.Api.Projects do
 
   - connection (GoogleApi.Container.V1.Connection): Connection to server
   - parent (String.t): The parent (project, location, cluster id) where the node pool will be created. Specified in the format &#39;projects/*/locations/*/clusters/*&#39;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :body (CreateNodePoolRequest): 
 
   ## Returns
@@ -231,19 +246,24 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def container_projects_locations_clusters_node_pools_create(connection, parent, opts \\ []) do
-    optional_params = %{
-      :key => :query,
+  def container_projects_locations_clusters_node_pools_create(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -253,11 +273,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       |> Request.url("/v1/{+parent}/nodePools", %{
         "parent" => URI.encode_www_form(parent)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Container.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.Operation{}])
   end
 
   @doc """
@@ -267,22 +287,22 @@ defmodule GoogleApi.Container.V1.Api.Projects do
 
   - connection (GoogleApi.Container.V1.Connection): Connection to server
   - name (String.t): The name (project, location, cluster, node pool id) of the node pool to delete. Specified in the format &#39;projects/*/locations/*/clusters/*/nodePools/*&#39;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :projectId (String.t): Deprecated. The Google Developers Console [project ID or project number](https://developers.google.com/console/help/new/#projectnumber). This field has been deprecated and replaced by the name field.
-    - :zone (String.t): Deprecated. The name of the Google Compute Engine [zone](/compute/docs/zones#available) in which the cluster resides. This field has been deprecated and replaced by the name field.
     - :clusterId (String.t): Deprecated. The name of the cluster. This field has been deprecated and replaced by the name field.
     - :nodePoolId (String.t): Deprecated. The name of the node pool to delete. This field has been deprecated and replaced by the name field.
+    - :projectId (String.t): Deprecated. The Google Developers Console [project ID or project number](https://developers.google.com/console/help/new/#projectnumber). This field has been deprecated and replaced by the name field.
+    - :zone (String.t): Deprecated. The name of the Google Compute Engine [zone](/compute/docs/zones#available) in which the cluster resides. This field has been deprecated and replaced by the name field.
 
   ## Returns
 
@@ -294,23 +314,28 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def container_projects_locations_clusters_node_pools_delete(connection, name, opts \\ []) do
-    optional_params = %{
-      :key => :query,
+  def container_projects_locations_clusters_node_pools_delete(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :projectId => :query,
-      :zone => :query,
       :clusterId => :query,
-      :nodePoolId => :query
+      :nodePoolId => :query,
+      :projectId => :query,
+      :zone => :query
     }
 
     request =
@@ -319,77 +344,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       |> Request.url("/v1/{+name}", %{
         "name" => URI.encode_www_form(name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Container.V1.Model.Operation{})
-  end
-
-  @doc """
-  Retrieves the node pool requested.
-
-  ## Parameters
-
-  - connection (GoogleApi.Container.V1.Connection): Connection to server
-  - name (String.t): The name (project, location, cluster, node pool id) of the node pool to get. Specified in the format &#39;projects/*/locations/*/clusters/*/nodePools/*&#39;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :projectId (String.t): Deprecated. The Google Developers Console [project ID or project number](https://developers.google.com/console/help/new/#projectnumber). This field has been deprecated and replaced by the name field.
-    - :zone (String.t): Deprecated. The name of the Google Compute Engine [zone](/compute/docs/zones#available) in which the cluster resides. This field has been deprecated and replaced by the name field.
-    - :clusterId (String.t): Deprecated. The name of the cluster. This field has been deprecated and replaced by the name field.
-    - :nodePoolId (String.t): Deprecated. The name of the node pool. This field has been deprecated and replaced by the name field.
-
-  ## Returns
-
-  {:ok, %GoogleApi.Container.V1.Model.NodePool{}} on success
-  {:error, info} on failure
-  """
-  @spec container_projects_locations_clusters_node_pools_get(
-          Tesla.Env.client(),
-          String.t(),
-          keyword()
-        ) :: {:ok, GoogleApi.Container.V1.Model.NodePool.t()} | {:error, Tesla.Env.t()}
-  def container_projects_locations_clusters_node_pools_get(connection, name, opts \\ []) do
-    optional_params = %{
-      :key => :query,
-      :access_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :fields => :query,
-      :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :projectId => :query,
-      :zone => :query,
-      :clusterId => :query,
-      :nodePoolId => :query
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:get)
-      |> Request.url("/v1/{+name}", %{
-        "name" => URI.encode_www_form(name)
-      })
-      |> Request.add_optional_params(optional_params, opts)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Container.V1.Model.NodePool{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.Operation{}])
   end
 
   @doc """
@@ -399,21 +358,21 @@ defmodule GoogleApi.Container.V1.Api.Projects do
 
   - connection (GoogleApi.Container.V1.Connection): Connection to server
   - parent (String.t): The parent (project, location, cluster id) where the node pools will be listed. Specified in the format &#39;projects/*/locations/*/clusters/*&#39;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
+    - :clusterId (String.t): Deprecated. The name of the cluster. This field has been deprecated and replaced by the parent field.
     - :projectId (String.t): Deprecated. The Google Developers Console [project ID or project number](https://developers.google.com/console/help/new/#projectnumber). This field has been deprecated and replaced by the parent field.
     - :zone (String.t): Deprecated. The name of the Google Compute Engine [zone](/compute/docs/zones#available) in which the cluster resides. This field has been deprecated and replaced by the parent field.
-    - :clusterId (String.t): Deprecated. The name of the cluster. This field has been deprecated and replaced by the parent field.
 
   ## Returns
 
@@ -426,22 +385,27 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Container.V1.Model.ListNodePoolsResponse.t()} | {:error, Tesla.Env.t()}
-  def container_projects_locations_clusters_node_pools_list(connection, parent, opts \\ []) do
-    optional_params = %{
-      :key => :query,
+  def container_projects_locations_clusters_node_pools_list(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
+      :clusterId => :query,
       :projectId => :query,
-      :zone => :query,
-      :clusterId => :query
+      :zone => :query
     }
 
     request =
@@ -450,11 +414,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       |> Request.url("/v1/{+parent}/nodePools", %{
         "parent" => URI.encode_www_form(parent)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Container.V1.Model.ListNodePoolsResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.ListNodePoolsResponse{}])
   end
 
   @doc """
@@ -464,18 +428,18 @@ defmodule GoogleApi.Container.V1.Api.Projects do
 
   - connection (GoogleApi.Container.V1.Connection): Connection to server
   - name (String.t): The name (project, location, cluster, node pool id) of the node poll to rollback upgrade. Specified in the format &#39;projects/*/locations/*/clusters/*/nodePools/*&#39;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :body (RollbackNodePoolUpgradeRequest): 
 
   ## Returns
@@ -488,19 +452,24 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def container_projects_locations_clusters_node_pools_rollback(connection, name, opts \\ []) do
-    optional_params = %{
-      :key => :query,
+  def container_projects_locations_clusters_node_pools_rollback(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -510,11 +479,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       |> Request.url("/v1/{+name}:rollback", %{
         "name" => URI.encode_www_form(name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Container.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.Operation{}])
   end
 
   @doc """
@@ -524,18 +493,18 @@ defmodule GoogleApi.Container.V1.Api.Projects do
 
   - connection (GoogleApi.Container.V1.Connection): Connection to server
   - name (String.t): The name (project, location, cluster, node pool) of the node pool to set autoscaler settings. Specified in the format &#39;projects/*/locations/*/clusters/*/nodePools/*&#39;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :body (SetNodePoolAutoscalingRequest): 
 
   ## Returns
@@ -551,20 +520,21 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   def container_projects_locations_clusters_node_pools_set_autoscaling(
         connection,
         name,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :key => :query,
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -574,11 +544,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       |> Request.url("/v1/{+name}:setAutoscaling", %{
         "name" => URI.encode_www_form(name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Container.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.Operation{}])
   end
 
   @doc """
@@ -588,18 +558,18 @@ defmodule GoogleApi.Container.V1.Api.Projects do
 
   - connection (GoogleApi.Container.V1.Connection): Connection to server
   - name (String.t): The name (project, location, cluster, node pool id) of the node pool to set management properties. Specified in the format &#39;projects/*/locations/*/clusters/*/nodePools/*&#39;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :body (SetNodePoolManagementRequest): 
 
   ## Returns
@@ -615,20 +585,21 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   def container_projects_locations_clusters_node_pools_set_management(
         connection,
         name,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :key => :query,
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -638,11 +609,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       |> Request.url("/v1/{+name}:setManagement", %{
         "name" => URI.encode_www_form(name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Container.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.Operation{}])
   end
 
   @doc """
@@ -652,18 +623,18 @@ defmodule GoogleApi.Container.V1.Api.Projects do
 
   - connection (GoogleApi.Container.V1.Connection): Connection to server
   - name (String.t): The name (project, location, cluster, node pool id) of the node pool to set size. Specified in the format &#39;projects/*/locations/*/clusters/*/nodePools/*&#39;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :body (SetNodePoolSizeRequest): 
 
   ## Returns
@@ -676,19 +647,24 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def container_projects_locations_clusters_node_pools_set_size(connection, name, opts \\ []) do
-    optional_params = %{
-      :key => :query,
+  def container_projects_locations_clusters_node_pools_set_size(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -698,11 +674,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       |> Request.url("/v1/{+name}:setSize", %{
         "name" => URI.encode_www_form(name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Container.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.Operation{}])
   end
 
   @doc """
@@ -712,18 +688,18 @@ defmodule GoogleApi.Container.V1.Api.Projects do
 
   - connection (GoogleApi.Container.V1.Connection): Connection to server
   - name (String.t): The name (project, location, cluster, node pool) of the node pool to update. Specified in the format &#39;projects/*/locations/*/clusters/*/nodePools/*&#39;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :body (UpdateNodePoolRequest): 
 
   ## Returns
@@ -736,19 +712,24 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def container_projects_locations_clusters_node_pools_update(connection, name, opts \\ []) do
-    optional_params = %{
-      :key => :query,
+  def container_projects_locations_clusters_node_pools_update(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -758,11 +739,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       |> Request.url("/v1/{+name}", %{
         "name" => URI.encode_www_form(name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Container.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.Operation{}])
   end
 
   @doc """
@@ -772,18 +753,18 @@ defmodule GoogleApi.Container.V1.Api.Projects do
 
   - connection (GoogleApi.Container.V1.Connection): Connection to server
   - name (String.t): The name (project, location, cluster) of the cluster to set addons. Specified in the format &#39;projects/*/locations/*/clusters/*&#39;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :body (SetAddonsConfigRequest): 
 
   ## Returns
@@ -796,19 +777,24 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def container_projects_locations_clusters_set_addons(connection, name, opts \\ []) do
-    optional_params = %{
-      :key => :query,
+  def container_projects_locations_clusters_set_addons(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -818,11 +804,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       |> Request.url("/v1/{+name}:setAddons", %{
         "name" => URI.encode_www_form(name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Container.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.Operation{}])
   end
 
   @doc """
@@ -832,18 +818,18 @@ defmodule GoogleApi.Container.V1.Api.Projects do
 
   - connection (GoogleApi.Container.V1.Connection): Connection to server
   - name (String.t): The name (project, location, cluster id) of the cluster to set legacy abac. Specified in the format &#39;projects/*/locations/*/clusters/*&#39;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :body (SetLegacyAbacRequest): 
 
   ## Returns
@@ -856,19 +842,24 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def container_projects_locations_clusters_set_legacy_abac(connection, name, opts \\ []) do
-    optional_params = %{
-      :key => :query,
+  def container_projects_locations_clusters_set_legacy_abac(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -878,11 +869,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       |> Request.url("/v1/{+name}:setLegacyAbac", %{
         "name" => URI.encode_www_form(name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Container.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.Operation{}])
   end
 
   @doc """
@@ -892,18 +883,18 @@ defmodule GoogleApi.Container.V1.Api.Projects do
 
   - connection (GoogleApi.Container.V1.Connection): Connection to server
   - name (String.t): The name (project, location, cluster) of the cluster to set locations. Specified in the format &#39;projects/*/locations/*/clusters/*&#39;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :body (SetLocationsRequest): 
 
   ## Returns
@@ -916,19 +907,24 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def container_projects_locations_clusters_set_locations(connection, name, opts \\ []) do
-    optional_params = %{
-      :key => :query,
+  def container_projects_locations_clusters_set_locations(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -938,11 +934,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       |> Request.url("/v1/{+name}:setLocations", %{
         "name" => URI.encode_www_form(name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Container.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.Operation{}])
   end
 
   @doc """
@@ -952,18 +948,18 @@ defmodule GoogleApi.Container.V1.Api.Projects do
 
   - connection (GoogleApi.Container.V1.Connection): Connection to server
   - name (String.t): The name (project, location, cluster) of the cluster to set logging. Specified in the format &#39;projects/*/locations/*/clusters/*&#39;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :body (SetLoggingServiceRequest): 
 
   ## Returns
@@ -976,19 +972,24 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def container_projects_locations_clusters_set_logging(connection, name, opts \\ []) do
-    optional_params = %{
-      :key => :query,
+  def container_projects_locations_clusters_set_logging(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -998,11 +999,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       |> Request.url("/v1/{+name}:setLogging", %{
         "name" => URI.encode_www_form(name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Container.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.Operation{}])
   end
 
   @doc """
@@ -1012,18 +1013,18 @@ defmodule GoogleApi.Container.V1.Api.Projects do
 
   - connection (GoogleApi.Container.V1.Connection): Connection to server
   - name (String.t): The name (project, location, cluster id) of the cluster to set maintenance policy. Specified in the format &#39;projects/*/locations/*/clusters/*&#39;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :body (SetMaintenancePolicyRequest): 
 
   ## Returns
@@ -1036,19 +1037,24 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def container_projects_locations_clusters_set_maintenance_policy(connection, name, opts \\ []) do
-    optional_params = %{
-      :key => :query,
+  def container_projects_locations_clusters_set_maintenance_policy(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -1058,11 +1064,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       |> Request.url("/v1/{+name}:setMaintenancePolicy", %{
         "name" => URI.encode_www_form(name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Container.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.Operation{}])
   end
 
   @doc """
@@ -1072,18 +1078,18 @@ defmodule GoogleApi.Container.V1.Api.Projects do
 
   - connection (GoogleApi.Container.V1.Connection): Connection to server
   - name (String.t): The name (project, location, cluster) of the cluster to set auth. Specified in the format &#39;projects/*/locations/*/clusters/*&#39;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :body (SetMasterAuthRequest): 
 
   ## Returns
@@ -1096,19 +1102,24 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def container_projects_locations_clusters_set_master_auth(connection, name, opts \\ []) do
-    optional_params = %{
-      :key => :query,
+  def container_projects_locations_clusters_set_master_auth(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -1118,11 +1129,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       |> Request.url("/v1/{+name}:setMasterAuth", %{
         "name" => URI.encode_www_form(name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Container.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.Operation{}])
   end
 
   @doc """
@@ -1132,18 +1143,18 @@ defmodule GoogleApi.Container.V1.Api.Projects do
 
   - connection (GoogleApi.Container.V1.Connection): Connection to server
   - name (String.t): The name (project, location, cluster) of the cluster to set monitoring. Specified in the format &#39;projects/*/locations/*/clusters/*&#39;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :body (SetMonitoringServiceRequest): 
 
   ## Returns
@@ -1156,19 +1167,24 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def container_projects_locations_clusters_set_monitoring(connection, name, opts \\ []) do
-    optional_params = %{
-      :key => :query,
+  def container_projects_locations_clusters_set_monitoring(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -1178,11 +1194,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       |> Request.url("/v1/{+name}:setMonitoring", %{
         "name" => URI.encode_www_form(name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Container.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.Operation{}])
   end
 
   @doc """
@@ -1192,18 +1208,18 @@ defmodule GoogleApi.Container.V1.Api.Projects do
 
   - connection (GoogleApi.Container.V1.Connection): Connection to server
   - name (String.t): The name (project, location, cluster id) of the cluster to set networking policy. Specified in the format &#39;projects/*/locations/*/clusters/*&#39;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :body (SetNetworkPolicyRequest): 
 
   ## Returns
@@ -1216,19 +1232,24 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def container_projects_locations_clusters_set_network_policy(connection, name, opts \\ []) do
-    optional_params = %{
-      :key => :query,
+  def container_projects_locations_clusters_set_network_policy(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -1238,11 +1259,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       |> Request.url("/v1/{+name}:setNetworkPolicy", %{
         "name" => URI.encode_www_form(name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Container.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.Operation{}])
   end
 
   @doc """
@@ -1252,18 +1273,18 @@ defmodule GoogleApi.Container.V1.Api.Projects do
 
   - connection (GoogleApi.Container.V1.Connection): Connection to server
   - name (String.t): The name (project, location, cluster id) of the cluster to set labels. Specified in the format &#39;projects/*/locations/*/clusters/*&#39;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :body (SetLabelsRequest): 
 
   ## Returns
@@ -1276,19 +1297,24 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def container_projects_locations_clusters_set_resource_labels(connection, name, opts \\ []) do
-    optional_params = %{
-      :key => :query,
+  def container_projects_locations_clusters_set_resource_labels(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -1298,11 +1324,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       |> Request.url("/v1/{+name}:setResourceLabels", %{
         "name" => URI.encode_www_form(name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Container.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.Operation{}])
   end
 
   @doc """
@@ -1312,18 +1338,18 @@ defmodule GoogleApi.Container.V1.Api.Projects do
 
   - connection (GoogleApi.Container.V1.Connection): Connection to server
   - name (String.t): The name (project, location, cluster id) of the cluster to start IP rotation. Specified in the format &#39;projects/*/locations/*/clusters/*&#39;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :body (StartIpRotationRequest): 
 
   ## Returns
@@ -1336,19 +1362,24 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def container_projects_locations_clusters_start_ip_rotation(connection, name, opts \\ []) do
-    optional_params = %{
-      :key => :query,
+  def container_projects_locations_clusters_start_ip_rotation(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -1358,11 +1389,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       |> Request.url("/v1/{+name}:startIpRotation", %{
         "name" => URI.encode_www_form(name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Container.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.Operation{}])
   end
 
   @doc """
@@ -1372,18 +1403,18 @@ defmodule GoogleApi.Container.V1.Api.Projects do
 
   - connection (GoogleApi.Container.V1.Connection): Connection to server
   - name (String.t): The name (project, location, cluster) of the cluster to update. Specified in the format &#39;projects/*/locations/*/clusters/*&#39;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :body (UpdateMasterRequest): 
 
   ## Returns
@@ -1396,19 +1427,24 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def container_projects_locations_clusters_update_master(connection, name, opts \\ []) do
-    optional_params = %{
-      :key => :query,
+  def container_projects_locations_clusters_update_master(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -1418,11 +1454,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       |> Request.url("/v1/{+name}:updateMaster", %{
         "name" => URI.encode_www_form(name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Container.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.Operation{}])
   end
 
   @doc """
@@ -1432,18 +1468,18 @@ defmodule GoogleApi.Container.V1.Api.Projects do
 
   - connection (GoogleApi.Container.V1.Connection): Connection to server
   - name (String.t): The name (project and location) of the server config to get Specified in the format &#39;projects/*/locations/*&#39;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :projectId (String.t): Deprecated. The Google Developers Console [project ID or project number](https://support.google.com/cloud/answer/6158840). This field has been deprecated and replaced by the name field.
     - :zone (String.t): Deprecated. The name of the Google Compute Engine [zone](/compute/docs/zones#available) to return operations for. This field has been deprecated and replaced by the name field.
 
@@ -1454,19 +1490,24 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   """
   @spec container_projects_locations_get_server_config(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Container.V1.Model.ServerConfig.t()} | {:error, Tesla.Env.t()}
-  def container_projects_locations_get_server_config(connection, name, opts \\ []) do
-    optional_params = %{
-      :key => :query,
+  def container_projects_locations_get_server_config(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :projectId => :query,
       :zone => :query
     }
@@ -1477,11 +1518,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       |> Request.url("/v1/{+name}/serverConfig", %{
         "name" => URI.encode_www_form(name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Container.V1.Model.ServerConfig{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.ServerConfig{}])
   end
 
   @doc """
@@ -1491,18 +1532,18 @@ defmodule GoogleApi.Container.V1.Api.Projects do
 
   - connection (GoogleApi.Container.V1.Connection): Connection to server
   - name (String.t): The name (project, location, operation id) of the operation to cancel. Specified in the format &#39;projects/*/locations/*/operations/*&#39;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :body (CancelOperationRequest): 
 
   ## Returns
@@ -1512,19 +1553,24 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   """
   @spec container_projects_locations_operations_cancel(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Container.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
-  def container_projects_locations_operations_cancel(connection, name, opts \\ []) do
-    optional_params = %{
-      :key => :query,
+  def container_projects_locations_operations_cancel(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -1534,11 +1580,79 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       |> Request.url("/v1/{+name}:cancel", %{
         "name" => URI.encode_www_form(name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Container.V1.Model.Empty{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.Empty{}])
+  end
+
+  @doc """
+  Gets the specified operation.
+
+  ## Parameters
+
+  - connection (GoogleApi.Container.V1.Connection): Connection to server
+  - name (String.t): The name (project, location, operation id) of the operation to get. Specified in the format &#39;projects/*/locations/*/operations/*&#39;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :operationId (String.t): Deprecated. The server-assigned &#x60;name&#x60; of the operation. This field has been deprecated and replaced by the name field.
+    - :projectId (String.t): Deprecated. The Google Developers Console [project ID or project number](https://support.google.com/cloud/answer/6158840). This field has been deprecated and replaced by the name field.
+    - :zone (String.t): Deprecated. The name of the Google Compute Engine [zone](/compute/docs/zones#available) in which the cluster resides. This field has been deprecated and replaced by the name field.
+    - :zone (String.t): Deprecated. The name of the Google Compute Engine [zone](/compute/docs/zones#available) in which the cluster resides. This field has been deprecated and replaced by the name field.
+
+  ## Returns
+
+  {:ok, %GoogleApi.Container.V1.Model.Operation{}} on success
+  {:error, info} on failure
+  """
+  @spec container_projects_locations_operations_get(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+  def container_projects_locations_operations_get(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :operationId => :query,
+      :projectId => :query,
+      :zone => :query,
+      :zone => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode_www_form(name)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.Operation{}])
   end
 
   @doc """
@@ -1548,18 +1662,18 @@ defmodule GoogleApi.Container.V1.Api.Projects do
 
   - connection (GoogleApi.Container.V1.Connection): Connection to server
   - parent (String.t): The parent (project and location) where the operations will be listed. Specified in the format &#39;projects/*/locations/*&#39;. Location \&quot;-\&quot; matches all zones and all regions.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :projectId (String.t): Deprecated. The Google Developers Console [project ID or project number](https://support.google.com/cloud/answer/6158840). This field has been deprecated and replaced by the parent field.
     - :zone (String.t): Deprecated. The name of the Google Compute Engine [zone](/compute/docs/zones#available) to return operations for, or &#x60;-&#x60; for all zones. This field has been deprecated and replaced by the parent field.
 
@@ -1570,19 +1684,24 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   """
   @spec container_projects_locations_operations_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Container.V1.Model.ListOperationsResponse.t()} | {:error, Tesla.Env.t()}
-  def container_projects_locations_operations_list(connection, parent, opts \\ []) do
-    optional_params = %{
-      :key => :query,
+  def container_projects_locations_operations_list(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :projectId => :query,
       :zone => :query
     }
@@ -1593,11 +1712,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       |> Request.url("/v1/{+parent}/operations", %{
         "parent" => URI.encode_www_form(parent)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Container.V1.Model.ListOperationsResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.ListOperationsResponse{}])
   end
 
   @doc """
@@ -1609,18 +1728,18 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   - project_id (String.t): Deprecated. The Google Developers Console [project ID or project number](https://support.google.com/cloud/answer/6158840). This field has been deprecated and replaced by the name field.
   - zone (String.t): Deprecated. The name of the Google Compute Engine [zone](/compute/docs/zones#available) in which the cluster resides. This field has been deprecated and replaced by the name field.
   - cluster_id (String.t): Deprecated. The name of the cluster to upgrade. This field has been deprecated and replaced by the name field.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :body (SetAddonsConfigRequest): 
 
   ## Returns
@@ -1640,20 +1759,21 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         project_id,
         zone,
         cluster_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :key => :query,
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -1665,11 +1785,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "zone" => URI.encode_www_form(zone),
         "clusterId" => URI.encode_www_form(cluster_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Container.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.Operation{}])
   end
 
   @doc """
@@ -1681,18 +1801,18 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   - project_id (String.t): Deprecated. The Google Developers Console [project ID or project number](https://developers.google.com/console/help/new/#projectnumber). This field has been deprecated and replaced by the name field.
   - zone (String.t): Deprecated. The name of the Google Compute Engine [zone](/compute/docs/zones#available) in which the cluster resides. This field has been deprecated and replaced by the name field.
   - cluster_id (String.t): Deprecated. The name of the cluster. This field has been deprecated and replaced by the name field.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :body (CompleteIpRotationRequest): 
 
   ## Returns
@@ -1712,20 +1832,21 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         project_id,
         zone,
         cluster_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :key => :query,
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -1740,11 +1861,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           "clusterId" => URI.encode_www_form(cluster_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Container.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.Operation{}])
   end
 
   @doc """
@@ -1755,18 +1876,18 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   - connection (GoogleApi.Container.V1.Connection): Connection to server
   - project_id (String.t): Deprecated. The Google Developers Console [project ID or project number](https://support.google.com/cloud/answer/6158840). This field has been deprecated and replaced by the parent field.
   - zone (String.t): Deprecated. The name of the Google Compute Engine [zone](/compute/docs/zones#available) in which the cluster resides. This field has been deprecated and replaced by the parent field.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :body (CreateClusterRequest): 
 
   ## Returns
@@ -1780,19 +1901,25 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def container_projects_zones_clusters_create(connection, project_id, zone, opts \\ []) do
-    optional_params = %{
-      :key => :query,
+  def container_projects_zones_clusters_create(
+        connection,
+        project_id,
+        zone,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -1803,11 +1930,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "projectId" => URI.encode_www_form(project_id),
         "zone" => URI.encode_www_form(zone)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Container.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.Operation{}])
   end
 
   @doc """
@@ -1819,18 +1946,18 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   - project_id (String.t): Deprecated. The Google Developers Console [project ID or project number](https://support.google.com/cloud/answer/6158840). This field has been deprecated and replaced by the name field.
   - zone (String.t): Deprecated. The name of the Google Compute Engine [zone](/compute/docs/zones#available) in which the cluster resides. This field has been deprecated and replaced by the name field.
   - cluster_id (String.t): Deprecated. The name of the cluster to delete. This field has been deprecated and replaced by the name field.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :name (String.t): The name (project, location, cluster) of the cluster to delete. Specified in the format &#39;projects/*/locations/*/clusters/*&#39;.
 
   ## Returns
@@ -1850,20 +1977,21 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         project_id,
         zone,
         cluster_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :key => :query,
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :name => :query
     }
 
@@ -1875,11 +2003,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "zone" => URI.encode_www_form(zone),
         "clusterId" => URI.encode_www_form(cluster_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Container.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.Operation{}])
   end
 
   @doc """
@@ -1891,18 +2019,18 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   - project_id (String.t): Deprecated. The Google Developers Console [project ID or project number](https://support.google.com/cloud/answer/6158840). This field has been deprecated and replaced by the name field.
   - zone (String.t): Deprecated. The name of the Google Compute Engine [zone](/compute/docs/zones#available) in which the cluster resides. This field has been deprecated and replaced by the name field.
   - cluster_id (String.t): Deprecated. The name of the cluster to retrieve. This field has been deprecated and replaced by the name field.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :name (String.t): The name (project, location, cluster) of the cluster to retrieve. Specified in the format &#39;projects/*/locations/*/clusters/*&#39;.
 
   ## Returns
@@ -1917,19 +2045,26 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Container.V1.Model.Cluster.t()} | {:error, Tesla.Env.t()}
-  def container_projects_zones_clusters_get(connection, project_id, zone, cluster_id, opts \\ []) do
-    optional_params = %{
-      :key => :query,
+  def container_projects_zones_clusters_get(
+        connection,
+        project_id,
+        zone,
+        cluster_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :name => :query
     }
 
@@ -1941,11 +2076,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "zone" => URI.encode_www_form(zone),
         "clusterId" => URI.encode_www_form(cluster_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Container.V1.Model.Cluster{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.Cluster{}])
   end
 
   @doc """
@@ -1957,18 +2092,18 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   - project_id (String.t): Deprecated. The Google Developers Console [project ID or project number](https://support.google.com/cloud/answer/6158840). This field has been deprecated and replaced by the name field.
   - zone (String.t): Deprecated. The name of the Google Compute Engine [zone](/compute/docs/zones#available) in which the cluster resides. This field has been deprecated and replaced by the name field.
   - cluster_id (String.t): Deprecated. The name of the cluster to update. This field has been deprecated and replaced by the name field.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :body (SetLegacyAbacRequest): 
 
   ## Returns
@@ -1988,20 +2123,21 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         project_id,
         zone,
         cluster_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :key => :query,
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -2013,11 +2149,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "zone" => URI.encode_www_form(zone),
         "clusterId" => URI.encode_www_form(cluster_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Container.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.Operation{}])
   end
 
   @doc """
@@ -2028,18 +2164,18 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   - connection (GoogleApi.Container.V1.Connection): Connection to server
   - project_id (String.t): Deprecated. The Google Developers Console [project ID or project number](https://support.google.com/cloud/answer/6158840). This field has been deprecated and replaced by the parent field.
   - zone (String.t): Deprecated. The name of the Google Compute Engine [zone](/compute/docs/zones#available) in which the cluster resides, or \&quot;-\&quot; for all zones. This field has been deprecated and replaced by the parent field.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :parent (String.t): The parent (project and location) where the clusters will be listed. Specified in the format &#39;projects/*/locations/*&#39;. Location \&quot;-\&quot; matches all zones and all regions.
 
   ## Returns
@@ -2054,19 +2190,25 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Container.V1.Model.ListClustersResponse.t()} | {:error, Tesla.Env.t()}
-  def container_projects_zones_clusters_list(connection, project_id, zone, opts \\ []) do
-    optional_params = %{
-      :key => :query,
+  def container_projects_zones_clusters_list(
+        connection,
+        project_id,
+        zone,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :parent => :query
     }
 
@@ -2077,11 +2219,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "projectId" => URI.encode_www_form(project_id),
         "zone" => URI.encode_www_form(zone)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Container.V1.Model.ListClustersResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.ListClustersResponse{}])
   end
 
   @doc """
@@ -2093,18 +2235,18 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   - project_id (String.t): Deprecated. The Google Developers Console [project ID or project number](https://support.google.com/cloud/answer/6158840). This field has been deprecated and replaced by the name field.
   - zone (String.t): Deprecated. The name of the Google Compute Engine [zone](/compute/docs/zones#available) in which the cluster resides. This field has been deprecated and replaced by the name field.
   - cluster_id (String.t): Deprecated. The name of the cluster to upgrade. This field has been deprecated and replaced by the name field.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :body (SetLocationsRequest): 
 
   ## Returns
@@ -2124,20 +2266,21 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         project_id,
         zone,
         cluster_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :key => :query,
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -2149,11 +2292,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "zone" => URI.encode_www_form(zone),
         "clusterId" => URI.encode_www_form(cluster_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Container.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.Operation{}])
   end
 
   @doc """
@@ -2165,18 +2308,18 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   - project_id (String.t): Deprecated. The Google Developers Console [project ID or project number](https://support.google.com/cloud/answer/6158840). This field has been deprecated and replaced by the name field.
   - zone (String.t): Deprecated. The name of the Google Compute Engine [zone](/compute/docs/zones#available) in which the cluster resides. This field has been deprecated and replaced by the name field.
   - cluster_id (String.t): Deprecated. The name of the cluster to upgrade. This field has been deprecated and replaced by the name field.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :body (SetLoggingServiceRequest): 
 
   ## Returns
@@ -2196,20 +2339,21 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         project_id,
         zone,
         cluster_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :key => :query,
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -2221,11 +2365,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "zone" => URI.encode_www_form(zone),
         "clusterId" => URI.encode_www_form(cluster_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Container.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.Operation{}])
   end
 
   @doc """
@@ -2237,18 +2381,18 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   - project_id (String.t): Deprecated. The Google Developers Console [project ID or project number](https://support.google.com/cloud/answer/6158840). This field has been deprecated and replaced by the name field.
   - zone (String.t): Deprecated. The name of the Google Compute Engine [zone](/compute/docs/zones#available) in which the cluster resides. This field has been deprecated and replaced by the name field.
   - cluster_id (String.t): Deprecated. The name of the cluster to upgrade. This field has been deprecated and replaced by the name field.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :body (UpdateMasterRequest): 
 
   ## Returns
@@ -2268,20 +2412,21 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         project_id,
         zone,
         cluster_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :key => :query,
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -2293,11 +2438,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "zone" => URI.encode_www_form(zone),
         "clusterId" => URI.encode_www_form(cluster_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Container.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.Operation{}])
   end
 
   @doc """
@@ -2309,18 +2454,18 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   - project_id (String.t): Deprecated. The Google Developers Console [project ID or project number](https://support.google.com/cloud/answer/6158840). This field has been deprecated and replaced by the name field.
   - zone (String.t): Deprecated. The name of the Google Compute Engine [zone](/compute/docs/zones#available) in which the cluster resides. This field has been deprecated and replaced by the name field.
   - cluster_id (String.t): Deprecated. The name of the cluster to upgrade. This field has been deprecated and replaced by the name field.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :body (SetMonitoringServiceRequest): 
 
   ## Returns
@@ -2340,20 +2485,21 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         project_id,
         zone,
         cluster_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :key => :query,
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -2365,11 +2511,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "zone" => URI.encode_www_form(zone),
         "clusterId" => URI.encode_www_form(cluster_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Container.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.Operation{}])
   end
 
   @doc """
@@ -2382,18 +2528,18 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   - zone (String.t): Deprecated. The name of the Google Compute Engine [zone](/compute/docs/zones#available) in which the cluster resides. This field has been deprecated and replaced by the name field.
   - cluster_id (String.t): Deprecated. The name of the cluster to upgrade. This field has been deprecated and replaced by the name field.
   - node_pool_id (String.t): Deprecated. The name of the node pool to upgrade. This field has been deprecated and replaced by the name field.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :body (SetNodePoolAutoscalingRequest): 
 
   ## Returns
@@ -2415,20 +2561,21 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         zone,
         cluster_id,
         node_pool_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :key => :query,
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -2444,11 +2591,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           "nodePoolId" => URI.encode_www_form(node_pool_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Container.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.Operation{}])
   end
 
   @doc """
@@ -2460,18 +2607,18 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   - project_id (String.t): Deprecated. The Google Developers Console [project ID or project number](https://developers.google.com/console/help/new/#projectnumber). This field has been deprecated and replaced by the parent field.
   - zone (String.t): Deprecated. The name of the Google Compute Engine [zone](/compute/docs/zones#available) in which the cluster resides. This field has been deprecated and replaced by the parent field.
   - cluster_id (String.t): Deprecated. The name of the cluster. This field has been deprecated and replaced by the parent field.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :body (CreateNodePoolRequest): 
 
   ## Returns
@@ -2491,20 +2638,21 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         project_id,
         zone,
         cluster_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :key => :query,
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -2516,11 +2664,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "zone" => URI.encode_www_form(zone),
         "clusterId" => URI.encode_www_form(cluster_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Container.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.Operation{}])
   end
 
   @doc """
@@ -2533,18 +2681,18 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   - zone (String.t): Deprecated. The name of the Google Compute Engine [zone](/compute/docs/zones#available) in which the cluster resides. This field has been deprecated and replaced by the name field.
   - cluster_id (String.t): Deprecated. The name of the cluster. This field has been deprecated and replaced by the name field.
   - node_pool_id (String.t): Deprecated. The name of the node pool to delete. This field has been deprecated and replaced by the name field.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :name (String.t): The name (project, location, cluster, node pool id) of the node pool to delete. Specified in the format &#39;projects/*/locations/*/clusters/*/nodePools/*&#39;.
 
   ## Returns
@@ -2566,20 +2714,21 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         zone,
         cluster_id,
         node_pool_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :key => :query,
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :name => :query
     }
 
@@ -2595,11 +2744,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           "nodePoolId" => URI.encode_www_form(node_pool_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Container.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.Operation{}])
   end
 
   @doc """
@@ -2612,18 +2761,18 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   - zone (String.t): Deprecated. The name of the Google Compute Engine [zone](/compute/docs/zones#available) in which the cluster resides. This field has been deprecated and replaced by the name field.
   - cluster_id (String.t): Deprecated. The name of the cluster. This field has been deprecated and replaced by the name field.
   - node_pool_id (String.t): Deprecated. The name of the node pool. This field has been deprecated and replaced by the name field.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :name (String.t): The name (project, location, cluster, node pool id) of the node pool to get. Specified in the format &#39;projects/*/locations/*/clusters/*/nodePools/*&#39;.
 
   ## Returns
@@ -2645,20 +2794,21 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         zone,
         cluster_id,
         node_pool_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :key => :query,
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :name => :query
     }
 
@@ -2674,11 +2824,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           "nodePoolId" => URI.encode_www_form(node_pool_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Container.V1.Model.NodePool{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.NodePool{}])
   end
 
   @doc """
@@ -2690,18 +2840,18 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   - project_id (String.t): Deprecated. The Google Developers Console [project ID or project number](https://developers.google.com/console/help/new/#projectnumber). This field has been deprecated and replaced by the parent field.
   - zone (String.t): Deprecated. The name of the Google Compute Engine [zone](/compute/docs/zones#available) in which the cluster resides. This field has been deprecated and replaced by the parent field.
   - cluster_id (String.t): Deprecated. The name of the cluster. This field has been deprecated and replaced by the parent field.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :parent (String.t): The parent (project, location, cluster id) where the node pools will be listed. Specified in the format &#39;projects/*/locations/*/clusters/*&#39;.
 
   ## Returns
@@ -2722,20 +2872,21 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         project_id,
         zone,
         cluster_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :key => :query,
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :parent => :query
     }
 
@@ -2747,11 +2898,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "zone" => URI.encode_www_form(zone),
         "clusterId" => URI.encode_www_form(cluster_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Container.V1.Model.ListNodePoolsResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.ListNodePoolsResponse{}])
   end
 
   @doc """
@@ -2764,18 +2915,18 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   - zone (String.t): Deprecated. The name of the Google Compute Engine [zone](/compute/docs/zones#available) in which the cluster resides. This field has been deprecated and replaced by the name field.
   - cluster_id (String.t): Deprecated. The name of the cluster to rollback. This field has been deprecated and replaced by the name field.
   - node_pool_id (String.t): Deprecated. The name of the node pool to rollback. This field has been deprecated and replaced by the name field.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :body (RollbackNodePoolUpgradeRequest): 
 
   ## Returns
@@ -2797,20 +2948,21 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         zone,
         cluster_id,
         node_pool_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :key => :query,
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -2826,11 +2978,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           "nodePoolId" => URI.encode_www_form(node_pool_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Container.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.Operation{}])
   end
 
   @doc """
@@ -2843,18 +2995,18 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   - zone (String.t): Deprecated. The name of the Google Compute Engine [zone](/compute/docs/zones#available) in which the cluster resides. This field has been deprecated and replaced by the name field.
   - cluster_id (String.t): Deprecated. The name of the cluster to update. This field has been deprecated and replaced by the name field.
   - node_pool_id (String.t): Deprecated. The name of the node pool to update. This field has been deprecated and replaced by the name field.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :body (SetNodePoolManagementRequest): 
 
   ## Returns
@@ -2876,20 +3028,21 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         zone,
         cluster_id,
         node_pool_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :key => :query,
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -2905,11 +3058,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           "nodePoolId" => URI.encode_www_form(node_pool_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Container.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.Operation{}])
   end
 
   @doc """
@@ -2922,18 +3075,18 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   - zone (String.t): Deprecated. The name of the Google Compute Engine [zone](/compute/docs/zones#available) in which the cluster resides. This field has been deprecated and replaced by the name field.
   - cluster_id (String.t): Deprecated. The name of the cluster to update. This field has been deprecated and replaced by the name field.
   - node_pool_id (String.t): Deprecated. The name of the node pool to update. This field has been deprecated and replaced by the name field.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :body (SetNodePoolSizeRequest): 
 
   ## Returns
@@ -2955,20 +3108,21 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         zone,
         cluster_id,
         node_pool_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :key => :query,
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -2984,11 +3138,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           "nodePoolId" => URI.encode_www_form(node_pool_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Container.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.Operation{}])
   end
 
   @doc """
@@ -3001,18 +3155,18 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   - zone (String.t): Deprecated. The name of the Google Compute Engine [zone](/compute/docs/zones#available) in which the cluster resides. This field has been deprecated and replaced by the name field.
   - cluster_id (String.t): Deprecated. The name of the cluster to upgrade. This field has been deprecated and replaced by the name field.
   - node_pool_id (String.t): Deprecated. The name of the node pool to upgrade. This field has been deprecated and replaced by the name field.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :body (UpdateNodePoolRequest): 
 
   ## Returns
@@ -3034,20 +3188,21 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         zone,
         cluster_id,
         node_pool_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :key => :query,
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -3063,11 +3218,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           "nodePoolId" => URI.encode_www_form(node_pool_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Container.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.Operation{}])
   end
 
   @doc """
@@ -3079,18 +3234,18 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   - project_id (String.t): Deprecated. The Google Developers Console [project ID or project number](https://developers.google.com/console/help/new/#projectnumber). This field has been deprecated and replaced by the name field.
   - zone (String.t): Deprecated. The name of the Google Compute Engine [zone](/compute/docs/zones#available) in which the cluster resides. This field has been deprecated and replaced by the name field.
   - cluster_id (String.t): Deprecated. The name of the cluster. This field has been deprecated and replaced by the name field.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :body (SetLabelsRequest): 
 
   ## Returns
@@ -3110,20 +3265,21 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         project_id,
         zone,
         cluster_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :key => :query,
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -3138,11 +3294,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           "clusterId" => URI.encode_www_form(cluster_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Container.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.Operation{}])
   end
 
   @doc """
@@ -3154,18 +3310,18 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   - project_id (String.t): The Google Developers Console [project ID or project number](https://support.google.com/cloud/answer/6158840).
   - zone (String.t): The name of the Google Compute Engine [zone](/compute/docs/zones#available) in which the cluster resides.
   - cluster_id (String.t): The name of the cluster to update.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :body (SetMaintenancePolicyRequest): 
 
   ## Returns
@@ -3185,20 +3341,21 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         project_id,
         zone,
         cluster_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :key => :query,
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -3213,11 +3370,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           "clusterId" => URI.encode_www_form(cluster_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Container.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.Operation{}])
   end
 
   @doc """
@@ -3229,18 +3386,18 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   - project_id (String.t): Deprecated. The Google Developers Console [project ID or project number](https://support.google.com/cloud/answer/6158840). This field has been deprecated and replaced by the name field.
   - zone (String.t): Deprecated. The name of the Google Compute Engine [zone](/compute/docs/zones#available) in which the cluster resides. This field has been deprecated and replaced by the name field.
   - cluster_id (String.t): Deprecated. The name of the cluster to upgrade. This field has been deprecated and replaced by the name field.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :body (SetMasterAuthRequest): 
 
   ## Returns
@@ -3260,20 +3417,21 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         project_id,
         zone,
         cluster_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :key => :query,
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -3288,11 +3446,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           "clusterId" => URI.encode_www_form(cluster_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Container.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.Operation{}])
   end
 
   @doc """
@@ -3304,18 +3462,18 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   - project_id (String.t): Deprecated. The Google Developers Console [project ID or project number](https://developers.google.com/console/help/new/#projectnumber). This field has been deprecated and replaced by the name field.
   - zone (String.t): Deprecated. The name of the Google Compute Engine [zone](/compute/docs/zones#available) in which the cluster resides. This field has been deprecated and replaced by the name field.
   - cluster_id (String.t): Deprecated. The name of the cluster. This field has been deprecated and replaced by the name field.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :body (SetNetworkPolicyRequest): 
 
   ## Returns
@@ -3335,20 +3493,21 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         project_id,
         zone,
         cluster_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :key => :query,
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -3363,11 +3522,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           "clusterId" => URI.encode_www_form(cluster_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Container.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.Operation{}])
   end
 
   @doc """
@@ -3379,18 +3538,18 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   - project_id (String.t): Deprecated. The Google Developers Console [project ID or project number](https://developers.google.com/console/help/new/#projectnumber). This field has been deprecated and replaced by the name field.
   - zone (String.t): Deprecated. The name of the Google Compute Engine [zone](/compute/docs/zones#available) in which the cluster resides. This field has been deprecated and replaced by the name field.
   - cluster_id (String.t): Deprecated. The name of the cluster. This field has been deprecated and replaced by the name field.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :body (StartIpRotationRequest): 
 
   ## Returns
@@ -3410,20 +3569,21 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         project_id,
         zone,
         cluster_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :key => :query,
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -3438,11 +3598,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           "clusterId" => URI.encode_www_form(cluster_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Container.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.Operation{}])
   end
 
   @doc """
@@ -3454,18 +3614,18 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   - project_id (String.t): Deprecated. The Google Developers Console [project ID or project number](https://support.google.com/cloud/answer/6158840). This field has been deprecated and replaced by the name field.
   - zone (String.t): Deprecated. The name of the Google Compute Engine [zone](/compute/docs/zones#available) in which the cluster resides. This field has been deprecated and replaced by the name field.
   - cluster_id (String.t): Deprecated. The name of the cluster to upgrade. This field has been deprecated and replaced by the name field.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :body (UpdateClusterRequest): 
 
   ## Returns
@@ -3485,20 +3645,21 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         project_id,
         zone,
         cluster_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :key => :query,
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -3510,11 +3671,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "zone" => URI.encode_www_form(zone),
         "clusterId" => URI.encode_www_form(cluster_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Container.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.Operation{}])
   end
 
   @doc """
@@ -3525,18 +3686,18 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   - connection (GoogleApi.Container.V1.Connection): Connection to server
   - project_id (String.t): Deprecated. The Google Developers Console [project ID or project number](https://support.google.com/cloud/answer/6158840). This field has been deprecated and replaced by the name field.
   - zone (String.t): Deprecated. The name of the Google Compute Engine [zone](/compute/docs/zones#available) to return operations for. This field has been deprecated and replaced by the name field.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :name (String.t): The name (project and location) of the server config to get Specified in the format &#39;projects/*/locations/*&#39;.
 
   ## Returns
@@ -3550,19 +3711,25 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Container.V1.Model.ServerConfig.t()} | {:error, Tesla.Env.t()}
-  def container_projects_zones_get_serverconfig(connection, project_id, zone, opts \\ []) do
-    optional_params = %{
-      :key => :query,
+  def container_projects_zones_get_serverconfig(
+        connection,
+        project_id,
+        zone,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :name => :query
     }
 
@@ -3573,11 +3740,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "projectId" => URI.encode_www_form(project_id),
         "zone" => URI.encode_www_form(zone)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Container.V1.Model.ServerConfig{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.ServerConfig{}])
   end
 
   @doc """
@@ -3589,18 +3756,18 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   - project_id (String.t): Deprecated. The Google Developers Console [project ID or project number](https://support.google.com/cloud/answer/6158840). This field has been deprecated and replaced by the name field.
   - zone (String.t): Deprecated. The name of the Google Compute Engine [zone](/compute/docs/zones#available) in which the operation resides. This field has been deprecated and replaced by the name field.
   - operation_id (String.t): Deprecated. The server-assigned &#x60;name&#x60; of the operation. This field has been deprecated and replaced by the name field.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :body (CancelOperationRequest): 
 
   ## Returns
@@ -3620,20 +3787,21 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         project_id,
         zone,
         operation_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :key => :query,
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -3645,11 +3813,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "zone" => URI.encode_www_form(zone),
         "operationId" => URI.encode_www_form(operation_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Container.V1.Model.Empty{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.Empty{}])
   end
 
   @doc """
@@ -3661,18 +3829,18 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   - project_id (String.t): Deprecated. The Google Developers Console [project ID or project number](https://support.google.com/cloud/answer/6158840). This field has been deprecated and replaced by the name field.
   - zone (String.t): Deprecated. The name of the Google Compute Engine [zone](/compute/docs/zones#available) in which the cluster resides. This field has been deprecated and replaced by the name field.
   - operation_id (String.t): Deprecated. The server-assigned &#x60;name&#x60; of the operation. This field has been deprecated and replaced by the name field.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :name (String.t): The name (project, location, operation id) of the operation to get. Specified in the format &#39;projects/*/locations/*/operations/*&#39;.
 
   ## Returns
@@ -3692,20 +3860,21 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         project_id,
         zone,
         operation_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :key => :query,
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :name => :query
     }
 
@@ -3717,11 +3886,11 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "zone" => URI.encode_www_form(zone),
         "operationId" => URI.encode_www_form(operation_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Container.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.Operation{}])
   end
 
   @doc """
@@ -3732,18 +3901,18 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   - connection (GoogleApi.Container.V1.Connection): Connection to server
   - project_id (String.t): Deprecated. The Google Developers Console [project ID or project number](https://support.google.com/cloud/answer/6158840). This field has been deprecated and replaced by the parent field.
   - zone (String.t): Deprecated. The name of the Google Compute Engine [zone](/compute/docs/zones#available) to return operations for, or &#x60;-&#x60; for all zones. This field has been deprecated and replaced by the parent field.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :parent (String.t): The parent (project and location) where the operations will be listed. Specified in the format &#39;projects/*/locations/*&#39;. Location \&quot;-\&quot; matches all zones and all regions.
 
   ## Returns
@@ -3758,19 +3927,25 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Container.V1.Model.ListOperationsResponse.t()} | {:error, Tesla.Env.t()}
-  def container_projects_zones_operations_list(connection, project_id, zone, opts \\ []) do
-    optional_params = %{
-      :key => :query,
+  def container_projects_zones_operations_list(
+        connection,
+        project_id,
+        zone,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :parent => :query
     }
 
@@ -3781,10 +3956,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "projectId" => URI.encode_www_form(project_id),
         "zone" => URI.encode_www_form(zone)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Container.V1.Model.ListOperationsResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.ListOperationsResponse{}])
   end
 end

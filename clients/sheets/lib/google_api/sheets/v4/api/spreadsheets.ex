@@ -31,18 +31,18 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
 
   - connection (GoogleApi.Sheets.V4.Connection): Connection to server
   - spreadsheet_id (String.t): The spreadsheet to apply the updates to.
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (BatchUpdateSpreadsheetRequest): 
 
   ## Returns
@@ -53,19 +53,24 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
   @spec sheets_spreadsheets_batch_update(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Sheets.V4.Model.BatchUpdateSpreadsheetResponse.t()}
           | {:error, Tesla.Env.t()}
-  def sheets_spreadsheets_batch_update(connection, spreadsheet_id, opts \\ []) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
+  def sheets_spreadsheets_batch_update(
+        connection,
+        spreadsheet_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -75,11 +80,13 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
       |> Request.url("/v4/spreadsheets/{spreadsheetId}:batchUpdate", %{
         "spreadsheetId" => URI.encode_www_form(spreadsheet_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Sheets.V4.Model.BatchUpdateSpreadsheetResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Sheets.V4.Model.BatchUpdateSpreadsheetResponse{}]
+    )
   end
 
   @doc """
@@ -88,18 +95,18 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
   ## Parameters
 
   - connection (GoogleApi.Sheets.V4.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (Spreadsheet): 
 
   ## Returns
@@ -109,19 +116,19 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
   """
   @spec sheets_spreadsheets_create(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.Sheets.V4.Model.Spreadsheet.t()} | {:error, Tesla.Env.t()}
-  def sheets_spreadsheets_create(connection, opts \\ []) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
+  def sheets_spreadsheets_create(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -129,11 +136,11 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v4/spreadsheets")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Sheets.V4.Model.Spreadsheet{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Sheets.V4.Model.Spreadsheet{}])
   end
 
   @doc """
@@ -144,18 +151,18 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
   - connection (GoogleApi.Sheets.V4.Connection): Connection to server
   - spreadsheet_id (String.t): The ID of the spreadsheet to retrieve metadata from.
   - metadata_id (integer()): The ID of the developer metadata to retrieve.
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -172,20 +179,21 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
         connection,
         spreadsheet_id,
         metadata_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
-      :quotaUser => :query
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -195,11 +203,11 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
         "spreadsheetId" => URI.encode_www_form(spreadsheet_id),
         "metadataId" => metadata_id
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Sheets.V4.Model.DeveloperMetadata{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Sheets.V4.Model.DeveloperMetadata{}])
   end
 
   @doc """
@@ -209,18 +217,18 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
 
   - connection (GoogleApi.Sheets.V4.Connection): Connection to server
   - spreadsheet_id (String.t): The ID of the spreadsheet to retrieve metadata from.
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (SearchDeveloperMetadataRequest): 
 
   ## Returns
@@ -231,19 +239,24 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
   @spec sheets_spreadsheets_developer_metadata_search(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Sheets.V4.Model.SearchDeveloperMetadataResponse.t()}
           | {:error, Tesla.Env.t()}
-  def sheets_spreadsheets_developer_metadata_search(connection, spreadsheet_id, opts \\ []) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
+  def sheets_spreadsheets_developer_metadata_search(
+        connection,
+        spreadsheet_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -253,11 +266,13 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
       |> Request.url("/v4/spreadsheets/{spreadsheetId}/developerMetadata:search", %{
         "spreadsheetId" => URI.encode_www_form(spreadsheet_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Sheets.V4.Model.SearchDeveloperMetadataResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Sheets.V4.Model.SearchDeveloperMetadataResponse{}]
+    )
   end
 
   @doc """
@@ -267,20 +282,20 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
 
   - connection (GoogleApi.Sheets.V4.Connection): Connection to server
   - spreadsheet_id (String.t): The spreadsheet to request.
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :ranges ([String.t]): The ranges to retrieve from the spreadsheet.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :includeGridData (boolean()): True if grid data should be returned. This parameter is ignored if a field mask was set in the request.
+    - :ranges ([String.t]): The ranges to retrieve from the spreadsheet.
 
   ## Returns
 
@@ -289,21 +304,21 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
   """
   @spec sheets_spreadsheets_get(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Sheets.V4.Model.Spreadsheet.t()} | {:error, Tesla.Env.t()}
-  def sheets_spreadsheets_get(connection, spreadsheet_id, opts \\ []) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
+  def sheets_spreadsheets_get(connection, spreadsheet_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :ranges => :query,
-      :includeGridData => :query
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :includeGridData => :query,
+      :ranges => :query
     }
 
     request =
@@ -312,11 +327,11 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
       |> Request.url("/v4/spreadsheets/{spreadsheetId}", %{
         "spreadsheetId" => URI.encode_www_form(spreadsheet_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Sheets.V4.Model.Spreadsheet{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Sheets.V4.Model.Spreadsheet{}])
   end
 
   @doc """
@@ -326,18 +341,18 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
 
   - connection (GoogleApi.Sheets.V4.Connection): Connection to server
   - spreadsheet_id (String.t): The spreadsheet to request.
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (GetSpreadsheetByDataFilterRequest): 
 
   ## Returns
@@ -347,19 +362,24 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
   """
   @spec sheets_spreadsheets_get_by_data_filter(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Sheets.V4.Model.Spreadsheet.t()} | {:error, Tesla.Env.t()}
-  def sheets_spreadsheets_get_by_data_filter(connection, spreadsheet_id, opts \\ []) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
+  def sheets_spreadsheets_get_by_data_filter(
+        connection,
+        spreadsheet_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -369,11 +389,11 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
       |> Request.url("/v4/spreadsheets/{spreadsheetId}:getByDataFilter", %{
         "spreadsheetId" => URI.encode_www_form(spreadsheet_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Sheets.V4.Model.Spreadsheet{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Sheets.V4.Model.Spreadsheet{}])
   end
 
   @doc """
@@ -384,18 +404,18 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
   - connection (GoogleApi.Sheets.V4.Connection): Connection to server
   - spreadsheet_id (String.t): The ID of the spreadsheet containing the sheet to copy.
   - sheet_id (integer()): The ID of the sheet to copy.
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (CopySheetToAnotherSpreadsheetRequest): 
 
   ## Returns
@@ -405,19 +425,25 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
   """
   @spec sheets_spreadsheets_sheets_copy_to(Tesla.Env.client(), String.t(), integer(), keyword()) ::
           {:ok, GoogleApi.Sheets.V4.Model.SheetProperties.t()} | {:error, Tesla.Env.t()}
-  def sheets_spreadsheets_sheets_copy_to(connection, spreadsheet_id, sheet_id, opts \\ []) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
+  def sheets_spreadsheets_sheets_copy_to(
+        connection,
+        spreadsheet_id,
+        sheet_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -428,11 +454,11 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
         "spreadsheetId" => URI.encode_www_form(spreadsheet_id),
         "sheetId" => sheet_id
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Sheets.V4.Model.SheetProperties{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Sheets.V4.Model.SheetProperties{}])
   end
 
   @doc """
@@ -443,23 +469,23 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
   - connection (GoogleApi.Sheets.V4.Connection): Connection to server
   - spreadsheet_id (String.t): The ID of the spreadsheet to update.
   - range (String.t): The A1 notation of a range to search for a logical table of data. Values will be appended after the last row of the table.
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :responseValueRenderOption (String.t): Determines how values in the response should be rendered. The default render option is ValueRenderOption.FORMATTED_VALUE.
-    - :insertDataOption (String.t): How the input data should be inserted.
-    - :valueInputOption (String.t): How the input data should be interpreted.
-    - :responseDateTimeRenderOption (String.t): Determines how dates, times, and durations in the response should be rendered. This is ignored if response_value_render_option is FORMATTED_VALUE. The default dateTime render option is [DateTimeRenderOption.SERIAL_NUMBER].
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :includeValuesInResponse (boolean()): Determines if the update response should include the values of the cells that were appended. By default, responses do not include the updated values.
+    - :insertDataOption (String.t): How the input data should be inserted.
+    - :responseDateTimeRenderOption (String.t): Determines how dates, times, and durations in the response should be rendered. This is ignored if response_value_render_option is FORMATTED_VALUE. The default dateTime render option is [DateTimeRenderOption.SERIAL_NUMBER].
+    - :responseValueRenderOption (String.t): Determines how values in the response should be rendered. The default render option is ValueRenderOption.FORMATTED_VALUE.
+    - :valueInputOption (String.t): How the input data should be interpreted.
     - :body (ValueRange): 
 
   ## Returns
@@ -469,24 +495,30 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
   """
   @spec sheets_spreadsheets_values_append(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Sheets.V4.Model.AppendValuesResponse.t()} | {:error, Tesla.Env.t()}
-  def sheets_spreadsheets_values_append(connection, spreadsheet_id, range, opts \\ []) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
+  def sheets_spreadsheets_values_append(
+        connection,
+        spreadsheet_id,
+        range,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :responseValueRenderOption => :query,
-      :insertDataOption => :query,
-      :valueInputOption => :query,
-      :responseDateTimeRenderOption => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :includeValuesInResponse => :query,
+      :insertDataOption => :query,
+      :responseDateTimeRenderOption => :query,
+      :responseValueRenderOption => :query,
+      :valueInputOption => :query,
       :body => :body
     }
 
@@ -497,11 +529,11 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
         "spreadsheetId" => URI.encode_www_form(spreadsheet_id),
         "range" => URI.encode_www_form(range)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Sheets.V4.Model.AppendValuesResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Sheets.V4.Model.AppendValuesResponse{}])
   end
 
   @doc """
@@ -511,18 +543,18 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
 
   - connection (GoogleApi.Sheets.V4.Connection): Connection to server
   - spreadsheet_id (String.t): The ID of the spreadsheet to update.
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (BatchClearValuesRequest): 
 
   ## Returns
@@ -532,19 +564,24 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
   """
   @spec sheets_spreadsheets_values_batch_clear(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Sheets.V4.Model.BatchClearValuesResponse.t()} | {:error, Tesla.Env.t()}
-  def sheets_spreadsheets_values_batch_clear(connection, spreadsheet_id, opts \\ []) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
+  def sheets_spreadsheets_values_batch_clear(
+        connection,
+        spreadsheet_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -554,11 +591,11 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
       |> Request.url("/v4/spreadsheets/{spreadsheetId}/values:batchClear", %{
         "spreadsheetId" => URI.encode_www_form(spreadsheet_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Sheets.V4.Model.BatchClearValuesResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Sheets.V4.Model.BatchClearValuesResponse{}])
   end
 
   @doc """
@@ -568,18 +605,18 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
 
   - connection (GoogleApi.Sheets.V4.Connection): Connection to server
   - spreadsheet_id (String.t): The ID of the spreadsheet to update.
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (BatchClearValuesByDataFilterRequest): 
 
   ## Returns
@@ -597,20 +634,21 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
   def sheets_spreadsheets_values_batch_clear_by_data_filter(
         connection,
         spreadsheet_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -620,11 +658,13 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
       |> Request.url("/v4/spreadsheets/{spreadsheetId}/values:batchClearByDataFilter", %{
         "spreadsheetId" => URI.encode_www_form(spreadsheet_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Sheets.V4.Model.BatchClearValuesByDataFilterResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Sheets.V4.Model.BatchClearValuesByDataFilterResponse{}]
+    )
   end
 
   @doc """
@@ -634,22 +674,22 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
 
   - connection (GoogleApi.Sheets.V4.Connection): Connection to server
   - spreadsheet_id (String.t): The ID of the spreadsheet to retrieve data from.
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :valueRenderOption (String.t): How values should be represented in the output. The default render option is ValueRenderOption.FORMATTED_VALUE.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :dateTimeRenderOption (String.t): How dates, times, and durations should be represented in the output. This is ignored if value_render_option is FORMATTED_VALUE. The default dateTime render option is [DateTimeRenderOption.SERIAL_NUMBER].
-    - :ranges ([String.t]): The A1 notation of the values to retrieve.
     - :majorDimension (String.t): The major dimension that results should use.  For example, if the spreadsheet data is: &#x60;A1&#x3D;1,B1&#x3D;2,A2&#x3D;3,B2&#x3D;4&#x60;, then requesting &#x60;range&#x3D;A1:B2,majorDimension&#x3D;ROWS&#x60; will return &#x60;[[1,2],[3,4]]&#x60;, whereas requesting &#x60;range&#x3D;A1:B2,majorDimension&#x3D;COLUMNS&#x60; will return &#x60;[[1,3],[2,4]]&#x60;.
+    - :ranges ([String.t]): The A1 notation of the values to retrieve.
+    - :valueRenderOption (String.t): How values should be represented in the output. The default render option is ValueRenderOption.FORMATTED_VALUE.
 
   ## Returns
 
@@ -658,23 +698,28 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
   """
   @spec sheets_spreadsheets_values_batch_get(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Sheets.V4.Model.BatchGetValuesResponse.t()} | {:error, Tesla.Env.t()}
-  def sheets_spreadsheets_values_batch_get(connection, spreadsheet_id, opts \\ []) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
+  def sheets_spreadsheets_values_batch_get(
+        connection,
+        spreadsheet_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :valueRenderOption => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :dateTimeRenderOption => :query,
+      :majorDimension => :query,
       :ranges => :query,
-      :majorDimension => :query
+      :valueRenderOption => :query
     }
 
     request =
@@ -683,11 +728,11 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
       |> Request.url("/v4/spreadsheets/{spreadsheetId}/values:batchGet", %{
         "spreadsheetId" => URI.encode_www_form(spreadsheet_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Sheets.V4.Model.BatchGetValuesResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Sheets.V4.Model.BatchGetValuesResponse{}])
   end
 
   @doc """
@@ -697,18 +742,18 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
 
   - connection (GoogleApi.Sheets.V4.Connection): Connection to server
   - spreadsheet_id (String.t): The ID of the spreadsheet to retrieve data from.
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (BatchGetValuesByDataFilterRequest): 
 
   ## Returns
@@ -723,19 +768,24 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
         ) ::
           {:ok, GoogleApi.Sheets.V4.Model.BatchGetValuesByDataFilterResponse.t()}
           | {:error, Tesla.Env.t()}
-  def sheets_spreadsheets_values_batch_get_by_data_filter(connection, spreadsheet_id, opts \\ []) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
+  def sheets_spreadsheets_values_batch_get_by_data_filter(
+        connection,
+        spreadsheet_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -745,11 +795,13 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
       |> Request.url("/v4/spreadsheets/{spreadsheetId}/values:batchGetByDataFilter", %{
         "spreadsheetId" => URI.encode_www_form(spreadsheet_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Sheets.V4.Model.BatchGetValuesByDataFilterResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Sheets.V4.Model.BatchGetValuesByDataFilterResponse{}]
+    )
   end
 
   @doc """
@@ -759,18 +811,18 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
 
   - connection (GoogleApi.Sheets.V4.Connection): Connection to server
   - spreadsheet_id (String.t): The ID of the spreadsheet to update.
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (BatchUpdateValuesRequest): 
 
   ## Returns
@@ -780,19 +832,24 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
   """
   @spec sheets_spreadsheets_values_batch_update(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Sheets.V4.Model.BatchUpdateValuesResponse.t()} | {:error, Tesla.Env.t()}
-  def sheets_spreadsheets_values_batch_update(connection, spreadsheet_id, opts \\ []) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
+  def sheets_spreadsheets_values_batch_update(
+        connection,
+        spreadsheet_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -802,11 +859,11 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
       |> Request.url("/v4/spreadsheets/{spreadsheetId}/values:batchUpdate", %{
         "spreadsheetId" => URI.encode_www_form(spreadsheet_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Sheets.V4.Model.BatchUpdateValuesResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Sheets.V4.Model.BatchUpdateValuesResponse{}])
   end
 
   @doc """
@@ -816,18 +873,18 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
 
   - connection (GoogleApi.Sheets.V4.Connection): Connection to server
   - spreadsheet_id (String.t): The ID of the spreadsheet to update.
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (BatchUpdateValuesByDataFilterRequest): 
 
   ## Returns
@@ -845,20 +902,21 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
   def sheets_spreadsheets_values_batch_update_by_data_filter(
         connection,
         spreadsheet_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -868,11 +926,13 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
       |> Request.url("/v4/spreadsheets/{spreadsheetId}/values:batchUpdateByDataFilter", %{
         "spreadsheetId" => URI.encode_www_form(spreadsheet_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Sheets.V4.Model.BatchUpdateValuesByDataFilterResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Sheets.V4.Model.BatchUpdateValuesByDataFilterResponse{}]
+    )
   end
 
   @doc """
@@ -883,18 +943,18 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
   - connection (GoogleApi.Sheets.V4.Connection): Connection to server
   - spreadsheet_id (String.t): The ID of the spreadsheet to update.
   - range (String.t): The A1 notation of the values to clear.
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (ClearValuesRequest): 
 
   ## Returns
@@ -904,19 +964,25 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
   """
   @spec sheets_spreadsheets_values_clear(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Sheets.V4.Model.ClearValuesResponse.t()} | {:error, Tesla.Env.t()}
-  def sheets_spreadsheets_values_clear(connection, spreadsheet_id, range, opts \\ []) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
+  def sheets_spreadsheets_values_clear(
+        connection,
+        spreadsheet_id,
+        range,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -927,11 +993,11 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
         "spreadsheetId" => URI.encode_www_form(spreadsheet_id),
         "range" => URI.encode_www_form(range)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Sheets.V4.Model.ClearValuesResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Sheets.V4.Model.ClearValuesResponse{}])
   end
 
   @doc """
@@ -942,21 +1008,21 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
   - connection (GoogleApi.Sheets.V4.Connection): Connection to server
   - spreadsheet_id (String.t): The ID of the spreadsheet to retrieve data from.
   - range (String.t): The A1 notation of the values to retrieve.
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :valueRenderOption (String.t): How values should be represented in the output. The default render option is ValueRenderOption.FORMATTED_VALUE.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :dateTimeRenderOption (String.t): How dates, times, and durations should be represented in the output. This is ignored if value_render_option is FORMATTED_VALUE. The default dateTime render option is [DateTimeRenderOption.SERIAL_NUMBER].
     - :majorDimension (String.t): The major dimension that results should use.  For example, if the spreadsheet data is: &#x60;A1&#x3D;1,B1&#x3D;2,A2&#x3D;3,B2&#x3D;4&#x60;, then requesting &#x60;range&#x3D;A1:B2,majorDimension&#x3D;ROWS&#x60; will return &#x60;[[1,2],[3,4]]&#x60;, whereas requesting &#x60;range&#x3D;A1:B2,majorDimension&#x3D;COLUMNS&#x60; will return &#x60;[[1,3],[2,4]]&#x60;.
+    - :valueRenderOption (String.t): How values should be represented in the output. The default render option is ValueRenderOption.FORMATTED_VALUE.
 
   ## Returns
 
@@ -965,22 +1031,28 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
   """
   @spec sheets_spreadsheets_values_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Sheets.V4.Model.ValueRange.t()} | {:error, Tesla.Env.t()}
-  def sheets_spreadsheets_values_get(connection, spreadsheet_id, range, opts \\ []) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
+  def sheets_spreadsheets_values_get(
+        connection,
+        spreadsheet_id,
+        range,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :valueRenderOption => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :dateTimeRenderOption => :query,
-      :majorDimension => :query
+      :majorDimension => :query,
+      :valueRenderOption => :query
     }
 
     request =
@@ -990,11 +1062,11 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
         "spreadsheetId" => URI.encode_www_form(spreadsheet_id),
         "range" => URI.encode_www_form(range)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Sheets.V4.Model.ValueRange{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Sheets.V4.Model.ValueRange{}])
   end
 
   @doc """
@@ -1005,22 +1077,22 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
   - connection (GoogleApi.Sheets.V4.Connection): Connection to server
   - spreadsheet_id (String.t): The ID of the spreadsheet to update.
   - range (String.t): The A1 notation of the values to update.
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :includeValuesInResponse (boolean()): Determines if the update response should include the values of the cells that were updated. By default, responses do not include the updated values. If the range to write was larger than than the range actually written, the response will include all values in the requested range (excluding trailing empty rows and columns).
+    - :responseDateTimeRenderOption (String.t): Determines how dates, times, and durations in the response should be rendered. This is ignored if response_value_render_option is FORMATTED_VALUE. The default dateTime render option is DateTimeRenderOption.SERIAL_NUMBER.
     - :responseValueRenderOption (String.t): Determines how values in the response should be rendered. The default render option is ValueRenderOption.FORMATTED_VALUE.
     - :valueInputOption (String.t): How the input data should be interpreted.
-    - :responseDateTimeRenderOption (String.t): Determines how dates, times, and durations in the response should be rendered. This is ignored if response_value_render_option is FORMATTED_VALUE. The default dateTime render option is DateTimeRenderOption.SERIAL_NUMBER.
     - :body (ValueRange): 
 
   ## Returns
@@ -1030,23 +1102,29 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
   """
   @spec sheets_spreadsheets_values_update(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Sheets.V4.Model.UpdateValuesResponse.t()} | {:error, Tesla.Env.t()}
-  def sheets_spreadsheets_values_update(connection, spreadsheet_id, range, opts \\ []) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
+  def sheets_spreadsheets_values_update(
+        connection,
+        spreadsheet_id,
+        range,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :includeValuesInResponse => :query,
+      :responseDateTimeRenderOption => :query,
       :responseValueRenderOption => :query,
       :valueInputOption => :query,
-      :responseDateTimeRenderOption => :query,
       :body => :body
     }
 
@@ -1057,10 +1135,10 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
         "spreadsheetId" => URI.encode_www_form(spreadsheet_id),
         "range" => URI.encode_www_form(range)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Sheets.V4.Model.UpdateValuesResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Sheets.V4.Model.UpdateValuesResponse{}])
   end
 end

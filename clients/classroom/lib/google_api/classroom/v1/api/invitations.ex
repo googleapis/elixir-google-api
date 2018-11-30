@@ -31,18 +31,18 @@ defmodule GoogleApi.Classroom.V1.Api.Invitations do
 
   - connection (GoogleApi.Classroom.V1.Connection): Connection to server
   - id (String.t): Identifier of the invitation to accept.
-  - opts (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
 
   ## Returns
 
@@ -51,19 +51,19 @@ defmodule GoogleApi.Classroom.V1.Api.Invitations do
   """
   @spec classroom_invitations_accept(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Classroom.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
-  def classroom_invitations_accept(connection, id, opts \\ []) do
-    optional_params = %{
-      :upload_protocol => :query,
+  def classroom_invitations_accept(connection, id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
-      :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
-      :access_token => :query,
-      :key => :query
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -72,11 +72,11 @@ defmodule GoogleApi.Classroom.V1.Api.Invitations do
       |> Request.url("/v1/invitations/{id}:accept", %{
         "id" => URI.encode_www_form(id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Classroom.V1.Model.Empty{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Classroom.V1.Model.Empty{}])
   end
 
   @doc """
@@ -85,18 +85,18 @@ defmodule GoogleApi.Classroom.V1.Api.Invitations do
   ## Parameters
 
   - connection (GoogleApi.Classroom.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :body (Invitation): 
 
   ## Returns
@@ -106,19 +106,19 @@ defmodule GoogleApi.Classroom.V1.Api.Invitations do
   """
   @spec classroom_invitations_create(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.Classroom.V1.Model.Invitation.t()} | {:error, Tesla.Env.t()}
-  def classroom_invitations_create(connection, opts \\ []) do
-    optional_params = %{
-      :upload_protocol => :query,
+  def classroom_invitations_create(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
-      :access_token => :query,
-      :key => :query,
       :body => :body
     }
 
@@ -126,11 +126,11 @@ defmodule GoogleApi.Classroom.V1.Api.Invitations do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/invitations")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Classroom.V1.Model.Invitation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Classroom.V1.Model.Invitation{}])
   end
 
   @doc """
@@ -140,18 +140,18 @@ defmodule GoogleApi.Classroom.V1.Api.Invitations do
 
   - connection (GoogleApi.Classroom.V1.Connection): Connection to server
   - id (String.t): Identifier of the invitation to delete.
-  - opts (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
 
   ## Returns
 
@@ -160,19 +160,19 @@ defmodule GoogleApi.Classroom.V1.Api.Invitations do
   """
   @spec classroom_invitations_delete(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Classroom.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
-  def classroom_invitations_delete(connection, id, opts \\ []) do
-    optional_params = %{
-      :upload_protocol => :query,
+  def classroom_invitations_delete(connection, id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
-      :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
-      :access_token => :query,
-      :key => :query
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -181,11 +181,11 @@ defmodule GoogleApi.Classroom.V1.Api.Invitations do
       |> Request.url("/v1/invitations/{id}", %{
         "id" => URI.encode_www_form(id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Classroom.V1.Model.Empty{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Classroom.V1.Model.Empty{}])
   end
 
   @doc """
@@ -195,18 +195,18 @@ defmodule GoogleApi.Classroom.V1.Api.Invitations do
 
   - connection (GoogleApi.Classroom.V1.Connection): Connection to server
   - id (String.t): Identifier of the invitation to return.
-  - opts (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
 
   ## Returns
 
@@ -215,19 +215,19 @@ defmodule GoogleApi.Classroom.V1.Api.Invitations do
   """
   @spec classroom_invitations_get(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Classroom.V1.Model.Invitation.t()} | {:error, Tesla.Env.t()}
-  def classroom_invitations_get(connection, id, opts \\ []) do
-    optional_params = %{
-      :upload_protocol => :query,
+  def classroom_invitations_get(connection, id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
-      :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
-      :access_token => :query,
-      :key => :query
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -236,11 +236,11 @@ defmodule GoogleApi.Classroom.V1.Api.Invitations do
       |> Request.url("/v1/invitations/{id}", %{
         "id" => URI.encode_www_form(id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Classroom.V1.Model.Invitation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Classroom.V1.Model.Invitation{}])
   end
 
   @doc """
@@ -249,22 +249,22 @@ defmodule GoogleApi.Classroom.V1.Api.Invitations do
   ## Parameters
 
   - connection (GoogleApi.Classroom.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :userId (String.t): Restricts returned invitations to those for a specific user. The identifier can be one of the following:  * the numeric identifier for the user * the email address of the user * the string literal &#x60;\&quot;me\&quot;&#x60;, indicating the requesting user
-    - :pageToken (String.t): nextPageToken value returned from a previous list call, indicating that the subsequent page of results should be returned.  The list request must be otherwise identical to the one that resulted in this token.
-    - :pageSize (integer()): Maximum number of items to return. Zero means no maximum.  The server may return fewer than the specified number of results.
     - :courseId (String.t): Restricts returned invitations to those for a course with the specified identifier.
+    - :pageSize (integer()): Maximum number of items to return. Zero means no maximum.  The server may return fewer than the specified number of results.
+    - :pageToken (String.t): nextPageToken value returned from a previous list call, indicating that the subsequent page of results should be returned.  The list request must be otherwise identical to the one that resulted in this token.
+    - :userId (String.t): Restricts returned invitations to those for a specific user. The identifier can be one of the following:  * the numeric identifier for the user * the email address of the user * the string literal &#x60;\&quot;me\&quot;&#x60;, indicating the requesting user
 
   ## Returns
 
@@ -274,33 +274,33 @@ defmodule GoogleApi.Classroom.V1.Api.Invitations do
   @spec classroom_invitations_list(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.Classroom.V1.Model.ListInvitationsResponse.t()}
           | {:error, Tesla.Env.t()}
-  def classroom_invitations_list(connection, opts \\ []) do
-    optional_params = %{
-      :upload_protocol => :query,
+  def classroom_invitations_list(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
-      :access_token => :query,
-      :key => :query,
-      :userId => :query,
-      :pageToken => :query,
+      :courseId => :query,
       :pageSize => :query,
-      :courseId => :query
+      :pageToken => :query,
+      :userId => :query
     }
 
     request =
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/invitations")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Classroom.V1.Model.ListInvitationsResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Classroom.V1.Model.ListInvitationsResponse{}])
   end
 end

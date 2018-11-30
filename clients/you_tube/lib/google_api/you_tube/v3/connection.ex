@@ -25,7 +25,7 @@ defmodule GoogleApi.YouTube.V3.Connection do
     scopes: [
       # Manage your YouTube account
       "https://www.googleapis.com/auth/youtube",
-      # Manage your YouTube account
+      # See, edit, and permanently delete your YouTube videos, ratings, comments and captions
       "https://www.googleapis.com/auth/youtube.force-ssl",
       # View your YouTube account
       "https://www.googleapis.com/auth/youtube.readonly",

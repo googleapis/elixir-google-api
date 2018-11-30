@@ -25,13 +25,72 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
+  Get Auto ad code for a given ad client.
+
+  ## Parameters
+
+  - connection (GoogleApi.AdSense.V14.Connection): Connection to server
+  - account_id (String.t): Account which contains the ad client.
+  - ad_client_id (String.t): Ad client to get the code for.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :alt (String.t): Data format for the response.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+
+  ## Returns
+
+  {:ok, %GoogleApi.AdSense.V14.Model.AdCode{}} on success
+  {:error, info} on failure
+  """
+  @spec adsense_accounts_adclients_get_ad_code(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) :: {:ok, GoogleApi.AdSense.V14.Model.AdCode.t()} | {:error, Tesla.Env.t()}
+  def adsense_accounts_adclients_get_ad_code(
+        connection,
+        account_id,
+        ad_client_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :alt => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :userIp => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/accounts/{accountId}/adclients/{adClientId}/adcode", %{
+        "accountId" => URI.encode_www_form(account_id),
+        "adClientId" => URI.encode_www_form(ad_client_id)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdSense.V14.Model.AdCode{}])
+  end
+
+  @doc """
   List all ad clients in the specified account.
 
   ## Parameters
 
   - connection (GoogleApi.AdSense.V14.Connection): Connection to server
   - account_id (String.t): Account for which to list ad clients.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -49,8 +108,8 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
   """
   @spec adsense_accounts_adclients_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.AdSense.V14.Model.AdClients.t()} | {:error, Tesla.Env.t()}
-  def adsense_accounts_adclients_list(connection, account_id, opts \\ []) do
-    optional_params = %{
+  def adsense_accounts_adclients_list(connection, account_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -68,11 +127,11 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
       |> Request.url("/accounts/{accountId}/adclients", %{
         "accountId" => URI.encode_www_form(account_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdSense.V14.Model.AdClients{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdSense.V14.Model.AdClients{}])
   end
 
   @doc """
@@ -84,7 +143,7 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
   - account_id (String.t): Account to which the ad client belongs.
   - ad_client_id (String.t): Ad client which contains the ad unit.
   - ad_unit_id (String.t): Ad unit for which to list custom channels.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -112,9 +171,10 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
         account_id,
         ad_client_id,
         ad_unit_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -137,11 +197,11 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
           "adUnitId" => URI.encode_www_form(ad_unit_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdSense.V14.Model.CustomChannels{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdSense.V14.Model.CustomChannels{}])
   end
 
   @doc """
@@ -153,7 +213,7 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
   - account_id (String.t): Account to which the ad client belongs.
   - ad_client_id (String.t): Ad client for which to get the ad unit.
   - ad_unit_id (String.t): Ad unit to retrieve.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -174,8 +234,15 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.AdSense.V14.Model.AdUnit.t()} | {:error, Tesla.Env.t()}
-  def adsense_accounts_adunits_get(connection, account_id, ad_client_id, ad_unit_id, opts \\ []) do
-    optional_params = %{
+  def adsense_accounts_adunits_get(
+        connection,
+        account_id,
+        ad_client_id,
+        ad_unit_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -193,11 +260,11 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
         "adClientId" => URI.encode_www_form(ad_client_id),
         "adUnitId" => URI.encode_www_form(ad_unit_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdSense.V14.Model.AdUnit{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdSense.V14.Model.AdUnit{}])
   end
 
   @doc """
@@ -209,7 +276,7 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
   - account_id (String.t): Account which contains the ad client.
   - ad_client_id (String.t): Ad client with contains the ad unit.
   - ad_unit_id (String.t): Ad unit to get the code for.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -235,9 +302,10 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
         account_id,
         ad_client_id,
         ad_unit_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -255,11 +323,11 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
         "adClientId" => URI.encode_www_form(ad_client_id),
         "adUnitId" => URI.encode_www_form(ad_unit_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdSense.V14.Model.AdCode{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdSense.V14.Model.AdCode{}])
   end
 
   @doc """
@@ -270,7 +338,7 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
   - connection (GoogleApi.AdSense.V14.Connection): Connection to server
   - account_id (String.t): Account to which the ad client belongs.
   - ad_client_id (String.t): Ad client for which to list ad units.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -289,8 +357,14 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
   """
   @spec adsense_accounts_adunits_list(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.AdSense.V14.Model.AdUnits.t()} | {:error, Tesla.Env.t()}
-  def adsense_accounts_adunits_list(connection, account_id, ad_client_id, opts \\ []) do
-    optional_params = %{
+  def adsense_accounts_adunits_list(
+        connection,
+        account_id,
+        ad_client_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -310,11 +384,11 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
         "accountId" => URI.encode_www_form(account_id),
         "adClientId" => URI.encode_www_form(ad_client_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdSense.V14.Model.AdUnits{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdSense.V14.Model.AdUnits{}])
   end
 
   @doc """
@@ -325,7 +399,7 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
   - connection (GoogleApi.AdSense.V14.Connection): Connection to server
   - account_id (String.t): Account which contains the ad unit.
   - alert_id (String.t): Alert to delete.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -341,8 +415,14 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
   """
   @spec adsense_accounts_alerts_delete(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
-  def adsense_accounts_alerts_delete(connection, account_id, alert_id, opts \\ []) do
-    optional_params = %{
+  def adsense_accounts_alerts_delete(
+        connection,
+        account_id,
+        alert_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -359,11 +439,11 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
         "accountId" => URI.encode_www_form(account_id),
         "alertId" => URI.encode_www_form(alert_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -373,7 +453,7 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
 
   - connection (GoogleApi.AdSense.V14.Connection): Connection to server
   - account_id (String.t): Account for which to retrieve the alerts.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -390,8 +470,8 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
   """
   @spec adsense_accounts_alerts_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.AdSense.V14.Model.Alerts.t()} | {:error, Tesla.Env.t()}
-  def adsense_accounts_alerts_list(connection, account_id, opts \\ []) do
-    optional_params = %{
+  def adsense_accounts_alerts_list(connection, account_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -408,11 +488,11 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
       |> Request.url("/accounts/{accountId}/alerts", %{
         "accountId" => URI.encode_www_form(account_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdSense.V14.Model.Alerts{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdSense.V14.Model.Alerts{}])
   end
 
   @doc """
@@ -424,7 +504,7 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
   - account_id (String.t): Account to which the ad client belongs.
   - ad_client_id (String.t): Ad client which contains the custom channel.
   - custom_channel_id (String.t): Custom channel for which to list ad units.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -453,9 +533,10 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
         account_id,
         ad_client_id,
         custom_channel_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -479,11 +560,11 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
           "customChannelId" => URI.encode_www_form(custom_channel_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdSense.V14.Model.AdUnits{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdSense.V14.Model.AdUnits{}])
   end
 
   @doc """
@@ -495,7 +576,7 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
   - account_id (String.t): Account to which the ad client belongs.
   - ad_client_id (String.t): Ad client which contains the custom channel.
   - custom_channel_id (String.t): Custom channel to retrieve.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -521,9 +602,10 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
         account_id,
         ad_client_id,
         custom_channel_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -544,11 +626,11 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
           "customChannelId" => URI.encode_www_form(custom_channel_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdSense.V14.Model.CustomChannel{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdSense.V14.Model.CustomChannel{}])
   end
 
   @doc """
@@ -559,7 +641,7 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
   - connection (GoogleApi.AdSense.V14.Connection): Connection to server
   - account_id (String.t): Account to which the ad client belongs.
   - ad_client_id (String.t): Ad client for which to list custom channels.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -581,8 +663,14 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.AdSense.V14.Model.CustomChannels.t()} | {:error, Tesla.Env.t()}
-  def adsense_accounts_customchannels_list(connection, account_id, ad_client_id, opts \\ []) do
-    optional_params = %{
+  def adsense_accounts_customchannels_list(
+        connection,
+        account_id,
+        ad_client_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -601,11 +689,11 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
         "accountId" => URI.encode_www_form(account_id),
         "adClientId" => URI.encode_www_form(ad_client_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdSense.V14.Model.CustomChannels{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdSense.V14.Model.CustomChannels{}])
   end
 
   @doc """
@@ -615,7 +703,7 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
 
   - connection (GoogleApi.AdSense.V14.Connection): Connection to server
   - account_id (String.t): Account to get information about.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -632,8 +720,8 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
   """
   @spec adsense_accounts_get(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.AdSense.V14.Model.Account.t()} | {:error, Tesla.Env.t()}
-  def adsense_accounts_get(connection, account_id, opts \\ []) do
-    optional_params = %{
+  def adsense_accounts_get(connection, account_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -650,11 +738,11 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
       |> Request.url("/accounts/{accountId}", %{
         "accountId" => URI.encode_www_form(account_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdSense.V14.Model.Account{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdSense.V14.Model.Account{}])
   end
 
   @doc """
@@ -663,7 +751,7 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
   ## Parameters
 
   - connection (GoogleApi.AdSense.V14.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -681,8 +769,8 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
   """
   @spec adsense_accounts_list(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.AdSense.V14.Model.Accounts.t()} | {:error, Tesla.Env.t()}
-  def adsense_accounts_list(connection, opts \\ []) do
-    optional_params = %{
+  def adsense_accounts_list(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -698,11 +786,11 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/accounts")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdSense.V14.Model.Accounts{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdSense.V14.Model.Accounts{}])
   end
 
   @doc """
@@ -712,7 +800,7 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
 
   - connection (GoogleApi.AdSense.V14.Connection): Connection to server
   - account_id (String.t): Account for which to retrieve the payments.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -728,8 +816,8 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
   """
   @spec adsense_accounts_payments_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.AdSense.V14.Model.Payments.t()} | {:error, Tesla.Env.t()}
-  def adsense_accounts_payments_list(connection, account_id, opts \\ []) do
-    optional_params = %{
+  def adsense_accounts_payments_list(connection, account_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -745,11 +833,11 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
       |> Request.url("/accounts/{accountId}/payments", %{
         "accountId" => URI.encode_www_form(account_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdSense.V14.Model.Payments{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdSense.V14.Model.Payments{}])
   end
 
   @doc """
@@ -761,7 +849,7 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
   - account_id (String.t): Account upon which to report.
   - start_date (String.t): Start of the date range to report on in \&quot;YYYY-MM-DD\&quot; format, inclusive.
   - end_date (String.t): End of the date range to report on in \&quot;YYYY-MM-DD\&quot; format, inclusive.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -793,8 +881,15 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
         ) ::
           {:ok, GoogleApi.AdSense.V14.Model.AdsenseReportsGenerateResponse.t()}
           | {:error, Tesla.Env.t()}
-  def adsense_accounts_reports_generate(connection, account_id, start_date, end_date, opts \\ []) do
-    optional_params = %{
+  def adsense_accounts_reports_generate(
+        connection,
+        account_id,
+        start_date,
+        end_date,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -821,11 +916,13 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
       })
       |> Request.add_param(:query, :startDate, start_date)
       |> Request.add_param(:query, :endDate, end_date)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdSense.V14.Model.AdsenseReportsGenerateResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.AdSense.V14.Model.AdsenseReportsGenerateResponse{}]
+    )
   end
 
   @doc """
@@ -836,7 +933,7 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
   - connection (GoogleApi.AdSense.V14.Connection): Connection to server
   - account_id (String.t): Account to which the saved reports belong.
   - saved_report_id (String.t): The saved report to retrieve.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -861,8 +958,14 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
         ) ::
           {:ok, GoogleApi.AdSense.V14.Model.AdsenseReportsGenerateResponse.t()}
           | {:error, Tesla.Env.t()}
-  def adsense_accounts_reports_saved_generate(connection, account_id, saved_report_id, opts \\ []) do
-    optional_params = %{
+  def adsense_accounts_reports_saved_generate(
+        connection,
+        account_id,
+        saved_report_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -882,11 +985,13 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
         "accountId" => URI.encode_www_form(account_id),
         "savedReportId" => URI.encode_www_form(saved_report_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdSense.V14.Model.AdsenseReportsGenerateResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.AdSense.V14.Model.AdsenseReportsGenerateResponse{}]
+    )
   end
 
   @doc """
@@ -896,7 +1001,7 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
 
   - connection (GoogleApi.AdSense.V14.Connection): Connection to server
   - account_id (String.t): Account to which the saved reports belong.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -914,8 +1019,13 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
   """
   @spec adsense_accounts_reports_saved_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.AdSense.V14.Model.SavedReports.t()} | {:error, Tesla.Env.t()}
-  def adsense_accounts_reports_saved_list(connection, account_id, opts \\ []) do
-    optional_params = %{
+  def adsense_accounts_reports_saved_list(
+        connection,
+        account_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -933,11 +1043,11 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
       |> Request.url("/accounts/{accountId}/reports/saved", %{
         "accountId" => URI.encode_www_form(account_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdSense.V14.Model.SavedReports{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdSense.V14.Model.SavedReports{}])
   end
 
   @doc """
@@ -948,7 +1058,7 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
   - connection (GoogleApi.AdSense.V14.Connection): Connection to server
   - account_id (String.t): Account for which to get the saved ad style.
   - saved_ad_style_id (String.t): Saved ad style to retrieve.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -964,8 +1074,14 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
   """
   @spec adsense_accounts_savedadstyles_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.AdSense.V14.Model.SavedAdStyle.t()} | {:error, Tesla.Env.t()}
-  def adsense_accounts_savedadstyles_get(connection, account_id, saved_ad_style_id, opts \\ []) do
-    optional_params = %{
+  def adsense_accounts_savedadstyles_get(
+        connection,
+        account_id,
+        saved_ad_style_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -982,11 +1098,11 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
         "accountId" => URI.encode_www_form(account_id),
         "savedAdStyleId" => URI.encode_www_form(saved_ad_style_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdSense.V14.Model.SavedAdStyle{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdSense.V14.Model.SavedAdStyle{}])
   end
 
   @doc """
@@ -996,7 +1112,7 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
 
   - connection (GoogleApi.AdSense.V14.Connection): Connection to server
   - account_id (String.t): Account for which to list saved ad styles.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -1014,8 +1130,13 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
   """
   @spec adsense_accounts_savedadstyles_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.AdSense.V14.Model.SavedAdStyles.t()} | {:error, Tesla.Env.t()}
-  def adsense_accounts_savedadstyles_list(connection, account_id, opts \\ []) do
-    optional_params = %{
+  def adsense_accounts_savedadstyles_list(
+        connection,
+        account_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -1033,11 +1154,11 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
       |> Request.url("/accounts/{accountId}/savedadstyles", %{
         "accountId" => URI.encode_www_form(account_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdSense.V14.Model.SavedAdStyles{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdSense.V14.Model.SavedAdStyles{}])
   end
 
   @doc """
@@ -1048,7 +1169,7 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
   - connection (GoogleApi.AdSense.V14.Connection): Connection to server
   - account_id (String.t): Account to which the ad client belongs.
   - ad_client_id (String.t): Ad client for which to list URL channels.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -1066,8 +1187,14 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
   """
   @spec adsense_accounts_urlchannels_list(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.AdSense.V14.Model.UrlChannels.t()} | {:error, Tesla.Env.t()}
-  def adsense_accounts_urlchannels_list(connection, account_id, ad_client_id, opts \\ []) do
-    optional_params = %{
+  def adsense_accounts_urlchannels_list(
+        connection,
+        account_id,
+        ad_client_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -1086,10 +1213,10 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
         "accountId" => URI.encode_www_form(account_id),
         "adClientId" => URI.encode_www_form(ad_client_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdSense.V14.Model.UrlChannels{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdSense.V14.Model.UrlChannels{}])
   end
 end

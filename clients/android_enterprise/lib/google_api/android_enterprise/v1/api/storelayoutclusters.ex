@@ -33,7 +33,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutclusters do
   - enterprise_id (String.t): The ID of the enterprise.
   - page_id (String.t): The ID of the page.
   - cluster_id (String.t): The ID of the cluster.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -59,9 +59,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutclusters do
         enterprise_id,
         page_id,
         cluster_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -82,11 +83,11 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutclusters do
           "clusterId" => URI.encode_www_form(cluster_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -98,7 +99,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutclusters do
   - enterprise_id (String.t): The ID of the enterprise.
   - page_id (String.t): The ID of the page.
   - cluster_id (String.t): The ID of the cluster.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -125,9 +126,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutclusters do
         enterprise_id,
         page_id,
         cluster_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -148,11 +150,11 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutclusters do
           "clusterId" => URI.encode_www_form(cluster_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AndroidEnterprise.V1.Model.StoreCluster{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AndroidEnterprise.V1.Model.StoreCluster{}])
   end
 
   @doc """
@@ -163,7 +165,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutclusters do
   - connection (GoogleApi.AndroidEnterprise.V1.Connection): Connection to server
   - enterprise_id (String.t): The ID of the enterprise.
   - page_id (String.t): The ID of the page.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -185,8 +187,14 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutclusters do
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.StoreCluster.t()} | {:error, Tesla.Env.t()}
-  def androidenterprise_storelayoutclusters_insert(connection, enterprise_id, page_id, opts \\ []) do
-    optional_params = %{
+  def androidenterprise_storelayoutclusters_insert(
+        connection,
+        enterprise_id,
+        page_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -204,11 +212,11 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutclusters do
         "enterpriseId" => URI.encode_www_form(enterprise_id),
         "pageId" => URI.encode_www_form(page_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AndroidEnterprise.V1.Model.StoreCluster{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AndroidEnterprise.V1.Model.StoreCluster{}])
   end
 
   @doc """
@@ -219,7 +227,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutclusters do
   - connection (GoogleApi.AndroidEnterprise.V1.Connection): Connection to server
   - enterprise_id (String.t): The ID of the enterprise.
   - page_id (String.t): The ID of the page.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -241,8 +249,14 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutclusters do
         ) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.StoreLayoutClustersListResponse.t()}
           | {:error, Tesla.Env.t()}
-  def androidenterprise_storelayoutclusters_list(connection, enterprise_id, page_id, opts \\ []) do
-    optional_params = %{
+  def androidenterprise_storelayoutclusters_list(
+        connection,
+        enterprise_id,
+        page_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -259,12 +273,12 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutclusters do
         "enterpriseId" => URI.encode_www_form(enterprise_id),
         "pageId" => URI.encode_www_form(page_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct: %GoogleApi.AndroidEnterprise.V1.Model.StoreLayoutClustersListResponse{}
+      opts ++ [struct: %GoogleApi.AndroidEnterprise.V1.Model.StoreLayoutClustersListResponse{}]
     )
   end
 
@@ -277,7 +291,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutclusters do
   - enterprise_id (String.t): The ID of the enterprise.
   - page_id (String.t): The ID of the page.
   - cluster_id (String.t): The ID of the cluster.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -305,9 +319,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutclusters do
         enterprise_id,
         page_id,
         cluster_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -329,11 +344,11 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutclusters do
           "clusterId" => URI.encode_www_form(cluster_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AndroidEnterprise.V1.Model.StoreCluster{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AndroidEnterprise.V1.Model.StoreCluster{}])
   end
 
   @doc """
@@ -345,7 +360,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutclusters do
   - enterprise_id (String.t): The ID of the enterprise.
   - page_id (String.t): The ID of the page.
   - cluster_id (String.t): The ID of the cluster.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -373,9 +388,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutclusters do
         enterprise_id,
         page_id,
         cluster_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -397,10 +413,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutclusters do
           "clusterId" => URI.encode_www_form(cluster_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AndroidEnterprise.V1.Model.StoreCluster{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AndroidEnterprise.V1.Model.StoreCluster{}])
   end
 end

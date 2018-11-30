@@ -23,7 +23,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.CreativeStatusRow do
   ## Attributes
 
   - bidCount (MetricValue): The number of bids with the specified status. Defaults to: `null`.
-  - creativeStatusId (integer()): The ID of the creative status. See [creative-status-codes](https://developers.google.com/ad-exchange/rtb/downloads/creative-status-codes). Defaults to: `null`.
+  - creativeStatusId (integer()): The ID of the creative status. See [creative-status-codes](https://developers.google.com/authorized-buyers/rtb/downloads/creative-status-codes). Defaults to: `null`.
   - rowDimensions (RowDimensions): The values of all dimensions associated with metric values in this row. Defaults to: `null`.
   """
 

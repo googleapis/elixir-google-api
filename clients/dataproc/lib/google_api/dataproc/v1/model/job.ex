@@ -26,6 +26,7 @@ defmodule GoogleApi.Dataproc.V1.Model.Job do
   - driverOutputResourceUri (String.t): Output only. A URI pointing to the location of the stdout of the job&#39;s driver program. Defaults to: `null`.
   - hadoopJob (HadoopJob): Job is a Hadoop job. Defaults to: `null`.
   - hiveJob (HiveJob): Job is a Hive job. Defaults to: `null`.
+  - jobUuid (String.t): Output only. A UUID that uniquely identifies a job within the project over time. This is in contrast to a user-settable reference.job_id that may be reused over time. Defaults to: `null`.
   - labels (%{optional(String.t) &#x3D;&gt; String.t}): Optional. The labels to associate with this job. Label keys must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). Label values may be empty, but, if present, must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be associated with a job. Defaults to: `null`.
   - pigJob (PigJob): Job is a Pig job. Defaults to: `null`.
   - placement (JobPlacement): Required. Job information, including how, when, and where to run the job. Defaults to: `null`.
@@ -46,6 +47,7 @@ defmodule GoogleApi.Dataproc.V1.Model.Job do
           :driverOutputResourceUri => any(),
           :hadoopJob => GoogleApi.Dataproc.V1.Model.HadoopJob.t(),
           :hiveJob => GoogleApi.Dataproc.V1.Model.HiveJob.t(),
+          :jobUuid => any(),
           :labels => map(),
           :pigJob => GoogleApi.Dataproc.V1.Model.PigJob.t(),
           :placement => GoogleApi.Dataproc.V1.Model.JobPlacement.t(),
@@ -63,6 +65,7 @@ defmodule GoogleApi.Dataproc.V1.Model.Job do
   field(:driverOutputResourceUri)
   field(:hadoopJob, as: GoogleApi.Dataproc.V1.Model.HadoopJob)
   field(:hiveJob, as: GoogleApi.Dataproc.V1.Model.HiveJob)
+  field(:jobUuid)
   field(:labels, type: :map)
   field(:pigJob, as: GoogleApi.Dataproc.V1.Model.PigJob)
   field(:placement, as: GoogleApi.Dataproc.V1.Model.JobPlacement)

@@ -31,7 +31,7 @@ defmodule GoogleApi.Blogger.V3.Api.Blogs do
 
   - connection (GoogleApi.Blogger.V3.Connection): Connection to server
   - blog_id (String.t): The ID of the blog to get.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -49,8 +49,8 @@ defmodule GoogleApi.Blogger.V3.Api.Blogs do
   """
   @spec blogger_blogs_get(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Blogger.V3.Model.Blog.t()} | {:error, Tesla.Env.t()}
-  def blogger_blogs_get(connection, blog_id, opts \\ []) do
-    optional_params = %{
+  def blogger_blogs_get(connection, blog_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -68,11 +68,11 @@ defmodule GoogleApi.Blogger.V3.Api.Blogs do
       |> Request.url("/blogs/{blogId}", %{
         "blogId" => URI.encode_www_form(blog_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Blogger.V3.Model.Blog{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Blogger.V3.Model.Blog{}])
   end
 
   @doc """
@@ -82,7 +82,7 @@ defmodule GoogleApi.Blogger.V3.Api.Blogs do
 
   - connection (GoogleApi.Blogger.V3.Connection): Connection to server
   - url (String.t): The URL of the blog to retrieve.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -99,8 +99,8 @@ defmodule GoogleApi.Blogger.V3.Api.Blogs do
   """
   @spec blogger_blogs_get_by_url(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Blogger.V3.Model.Blog.t()} | {:error, Tesla.Env.t()}
-  def blogger_blogs_get_by_url(connection, url, opts \\ []) do
-    optional_params = %{
+  def blogger_blogs_get_by_url(connection, url, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -116,11 +116,11 @@ defmodule GoogleApi.Blogger.V3.Api.Blogs do
       |> Request.method(:get)
       |> Request.url("/blogs/byurl")
       |> Request.add_param(:query, :url, url)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Blogger.V3.Model.Blog{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Blogger.V3.Model.Blog{}])
   end
 
   @doc """
@@ -130,7 +130,7 @@ defmodule GoogleApi.Blogger.V3.Api.Blogs do
 
   - connection (GoogleApi.Blogger.V3.Connection): Connection to server
   - user_id (String.t): ID of the user whose blogs are to be fetched. Either the word &#39;self&#39; (sans quote marks) or the user&#39;s profile identifier.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -150,8 +150,8 @@ defmodule GoogleApi.Blogger.V3.Api.Blogs do
   """
   @spec blogger_blogs_list_by_user(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Blogger.V3.Model.BlogList.t()} | {:error, Tesla.Env.t()}
-  def blogger_blogs_list_by_user(connection, user_id, opts \\ []) do
-    optional_params = %{
+  def blogger_blogs_list_by_user(connection, user_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -171,10 +171,10 @@ defmodule GoogleApi.Blogger.V3.Api.Blogs do
       |> Request.url("/users/{userId}/blogs", %{
         "userId" => URI.encode_www_form(user_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Blogger.V3.Model.BlogList{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Blogger.V3.Model.BlogList{}])
   end
 end

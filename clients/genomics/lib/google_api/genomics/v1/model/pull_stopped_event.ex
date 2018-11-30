@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.Genomics.V1.Model.PullStoppedEvent do
   @moduledoc """
-  This event is generated when the worker stops pulling an image.
+  An event generated when the worker stops pulling an image.
 
   ## Attributes
 

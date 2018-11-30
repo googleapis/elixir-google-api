@@ -33,7 +33,7 @@ defmodule GoogleApi.Admin.Reports_v1.Api.EntityUsageReports do
   - entity_type (String.t): Type of object. Should be one of - gplus_communities.
   - entity_key (String.t): Represents the key of object for which the data should be filtered.
   - date (String.t): Represents the date in yyyy-mm-dd format for which the data is to be fetched.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -59,8 +59,15 @@ defmodule GoogleApi.Admin.Reports_v1.Api.EntityUsageReports do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Admin.Reports_v1.Model.UsageReports.t()} | {:error, Tesla.Env.t()}
-  def reports_entity_usage_reports_get(connection, entity_type, entity_key, date, opts \\ []) do
-    optional_params = %{
+  def reports_entity_usage_reports_get(
+        connection,
+        entity_type,
+        entity_key,
+        date,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -83,10 +90,10 @@ defmodule GoogleApi.Admin.Reports_v1.Api.EntityUsageReports do
         "entityKey" => URI.encode_www_form(entity_key),
         "date" => URI.encode_www_form(date)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Admin.Reports_v1.Model.UsageReports{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Admin.Reports_v1.Model.UsageReports{}])
   end
 end

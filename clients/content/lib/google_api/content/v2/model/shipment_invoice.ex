@@ -22,16 +22,17 @@ defmodule GoogleApi.Content.V2.Model.ShipmentInvoice do
 
   ## Attributes
 
-  - invoiceSummary (InvoiceSummary): Invoice summary. Defaults to: `null`.
-  - lineItemInvoices ([ShipmentInvoiceLineItemInvoice]): Invoice details per line item. Defaults to: `null`.
-  - shipmentGroupId (String.t): ID of the shipment group. Defaults to: `null`.
+  - invoiceSummary (InvoiceSummary): [required] Invoice summary. Defaults to: `null`.
+  - lineItemInvoices ([ShipmentInvoiceLineItemInvoice]): [required] Invoice details per line item. Defaults to: `null`.
+  - shipmentGroupId (String.t): [required] ID of the shipment group. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :invoiceSummary => GoogleApi.Content.V2.Model.InvoiceSummary.t(),
-          :lineItemInvoices => list(GoogleApi.Content.V2.Model.ShipmentInvoiceLineItemInvoice.t()),
+          :lineItemInvoices =>
+            list(GoogleApi.Content.V2.Model.ShipmentInvoiceLineItemInvoice.t()),
           :shipmentGroupId => any()
         }
 

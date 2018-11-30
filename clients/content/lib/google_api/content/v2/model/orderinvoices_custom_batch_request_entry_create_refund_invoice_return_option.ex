@@ -23,7 +23,7 @@ defmodule GoogleApi.Content.V2.Model.OrderinvoicesCustomBatchRequestEntryCreateR
   ## Attributes
 
   - description (String.t): Optional description of the return reason. Defaults to: `null`.
-  - reason (String.t): Reason for the return. Defaults to: `null`.
+  - reason (String.t): [required] Reason for the return. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

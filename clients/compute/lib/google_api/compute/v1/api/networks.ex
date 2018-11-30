@@ -32,7 +32,7 @@ defmodule GoogleApi.Compute.V1.Api.Networks do
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
   - network (String.t): Name of the network resource to add peering to.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -50,8 +50,14 @@ defmodule GoogleApi.Compute.V1.Api.Networks do
   """
   @spec compute_networks_add_peering(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_networks_add_peering(connection, project, network, opts \\ []) do
-    optional_params = %{
+  def compute_networks_add_peering(
+        connection,
+        project,
+        network,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -70,11 +76,11 @@ defmodule GoogleApi.Compute.V1.Api.Networks do
         "project" => URI.encode_www_form(project),
         "network" => URI.encode_www_form(network)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -85,7 +91,7 @@ defmodule GoogleApi.Compute.V1.Api.Networks do
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
   - network (String.t): Name of the network to delete.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -102,8 +108,8 @@ defmodule GoogleApi.Compute.V1.Api.Networks do
   """
   @spec compute_networks_delete(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_networks_delete(connection, project, network, opts \\ []) do
-    optional_params = %{
+  def compute_networks_delete(connection, project, network, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -121,11 +127,11 @@ defmodule GoogleApi.Compute.V1.Api.Networks do
         "project" => URI.encode_www_form(project),
         "network" => URI.encode_www_form(network)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -136,7 +142,7 @@ defmodule GoogleApi.Compute.V1.Api.Networks do
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
   - network (String.t): Name of the network to return.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -152,8 +158,8 @@ defmodule GoogleApi.Compute.V1.Api.Networks do
   """
   @spec compute_networks_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.Network.t()} | {:error, Tesla.Env.t()}
-  def compute_networks_get(connection, project, network, opts \\ []) do
-    optional_params = %{
+  def compute_networks_get(connection, project, network, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -170,11 +176,11 @@ defmodule GoogleApi.Compute.V1.Api.Networks do
         "project" => URI.encode_www_form(project),
         "network" => URI.encode_www_form(network)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Network{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Network{}])
   end
 
   @doc """
@@ -184,7 +190,7 @@ defmodule GoogleApi.Compute.V1.Api.Networks do
 
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -202,8 +208,8 @@ defmodule GoogleApi.Compute.V1.Api.Networks do
   """
   @spec compute_networks_insert(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_networks_insert(connection, project, opts \\ []) do
-    optional_params = %{
+  def compute_networks_insert(connection, project, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -221,11 +227,11 @@ defmodule GoogleApi.Compute.V1.Api.Networks do
       |> Request.url("/{project}/global/networks", %{
         "project" => URI.encode_www_form(project)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -235,7 +241,7 @@ defmodule GoogleApi.Compute.V1.Api.Networks do
 
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -255,8 +261,8 @@ defmodule GoogleApi.Compute.V1.Api.Networks do
   """
   @spec compute_networks_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.NetworkList.t()} | {:error, Tesla.Env.t()}
-  def compute_networks_list(connection, project, opts \\ []) do
-    optional_params = %{
+  def compute_networks_list(connection, project, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -276,11 +282,11 @@ defmodule GoogleApi.Compute.V1.Api.Networks do
       |> Request.url("/{project}/global/networks", %{
         "project" => URI.encode_www_form(project)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.NetworkList{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.NetworkList{}])
   end
 
   @doc """
@@ -291,7 +297,7 @@ defmodule GoogleApi.Compute.V1.Api.Networks do
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
   - network (String.t): Name of the network to update.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -309,8 +315,8 @@ defmodule GoogleApi.Compute.V1.Api.Networks do
   """
   @spec compute_networks_patch(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_networks_patch(connection, project, network, opts \\ []) do
-    optional_params = %{
+  def compute_networks_patch(connection, project, network, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -329,11 +335,11 @@ defmodule GoogleApi.Compute.V1.Api.Networks do
         "project" => URI.encode_www_form(project),
         "network" => URI.encode_www_form(network)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -344,7 +350,7 @@ defmodule GoogleApi.Compute.V1.Api.Networks do
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
   - network (String.t): Name of the network resource to remove peering from.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -362,8 +368,14 @@ defmodule GoogleApi.Compute.V1.Api.Networks do
   """
   @spec compute_networks_remove_peering(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_networks_remove_peering(connection, project, network, opts \\ []) do
-    optional_params = %{
+  def compute_networks_remove_peering(
+        connection,
+        project,
+        network,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -382,11 +394,11 @@ defmodule GoogleApi.Compute.V1.Api.Networks do
         "project" => URI.encode_www_form(project),
         "network" => URI.encode_www_form(network)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -397,7 +409,7 @@ defmodule GoogleApi.Compute.V1.Api.Networks do
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
   - network (String.t): Name of the network to be updated.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -418,8 +430,14 @@ defmodule GoogleApi.Compute.V1.Api.Networks do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_networks_switch_to_custom_mode(connection, project, network, opts \\ []) do
-    optional_params = %{
+  def compute_networks_switch_to_custom_mode(
+        connection,
+        project,
+        network,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -437,10 +455,10 @@ defmodule GoogleApi.Compute.V1.Api.Networks do
         "project" => URI.encode_www_form(project),
         "network" => URI.encode_www_form(network)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 end

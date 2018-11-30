@@ -1,4 +1,4 @@
-# Copyright 2018 Google Inc.
+# Copyright 2017 Google Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
 # you may not use this file except in compliance with the License.
@@ -32,7 +32,7 @@ defmodule GoogleApi.Discovery.V1.Api.Apis do
   - connection (GoogleApi.Discovery.V1.Connection): Connection to server
   - api (String.t): The name of the API.
   - version (String.t): The version of the API.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -48,8 +48,8 @@ defmodule GoogleApi.Discovery.V1.Api.Apis do
   """
   @spec discovery_apis_get_rest(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Discovery.V1.Model.RestDescription.t()} | {:error, Tesla.Env.t()}
-  def discovery_apis_get_rest(connection, api, version, opts \\ []) do
-    optional_params = %{
+  def discovery_apis_get_rest(connection, api, version, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -66,11 +66,11 @@ defmodule GoogleApi.Discovery.V1.Api.Apis do
         "api" => URI.encode_www_form(api),
         "version" => URI.encode_www_form(version)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Discovery.V1.Model.RestDescription{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Discovery.V1.Model.RestDescription{}])
   end
 
   @doc """
@@ -79,7 +79,7 @@ defmodule GoogleApi.Discovery.V1.Api.Apis do
   ## Parameters
 
   - connection (GoogleApi.Discovery.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -97,8 +97,8 @@ defmodule GoogleApi.Discovery.V1.Api.Apis do
   """
   @spec discovery_apis_list(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.Discovery.V1.Model.DirectoryList.t()} | {:error, Tesla.Env.t()}
-  def discovery_apis_list(connection, opts \\ []) do
-    optional_params = %{
+  def discovery_apis_list(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -114,10 +114,10 @@ defmodule GoogleApi.Discovery.V1.Api.Apis do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/apis")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Discovery.V1.Model.DirectoryList{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Discovery.V1.Model.DirectoryList{}])
   end
 end

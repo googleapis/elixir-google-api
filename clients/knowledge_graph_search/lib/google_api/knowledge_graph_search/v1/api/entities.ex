@@ -30,27 +30,25 @@ defmodule GoogleApi.KnowledgeGraphSearch.V1.Api.Entities do
   ## Parameters
 
   - connection (GoogleApi.KnowledgeGraphSearch.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :pp (boolean()): Pretty-print response.
-    - :bearer_token (String.t): OAuth bearer token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :ids ([String.t]): The list of entity id to be used for search instead of query string. To specify multiple ids in the HTTP request, repeat the parameter in the URL as in ...?ids&#x3D;A&amp;ids&#x3D;B
+    - :indent (boolean()): Enables indenting of json results.
+    - :languages ([String.t]): The list of language codes (defined in ISO 693) to run the query with, e.g. &#39;en&#39;.
+    - :limit (integer()): Limits the number of entities to be returned.
     - :prefix (boolean()): Enables prefix match against names and aliases of entities
     - :query (String.t): The literal query string for search.
     - :types ([String.t]): Restricts returned entities with these types, e.g. Person (as defined in http://schema.org/Person). If multiple types are specified, returned entities will contain one or more of these types.
-    - :indent (boolean()): Enables indenting of json results.
-    - :languages ([String.t]): The list of language codes (defined in ISO 693) to run the query with, e.g. &#39;en&#39;.
-    - :ids ([String.t]): The list of entity id to be used for search instead of query string. To specify multiple ids in the HTTP request, repeat the parameter in the URL as in ...?ids&#x3D;A&amp;ids&#x3D;B
-    - :limit (integer()): Limits the number of entities to be returned.
 
   ## Returns
 
@@ -60,38 +58,38 @@ defmodule GoogleApi.KnowledgeGraphSearch.V1.Api.Entities do
   @spec kgsearch_entities_search(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.KnowledgeGraphSearch.V1.Model.SearchResponse.t()}
           | {:error, Tesla.Env.t()}
-  def kgsearch_entities_search(connection, opts \\ []) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
+  def kgsearch_entities_search(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :quotaUser => :query,
-      :pp => :query,
-      :bearer_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
       :oauth_token => :query,
-      :upload_protocol => :query,
       :prettyPrint => :query,
-      :prefix => :query,
-      :query => :query,
-      :types => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :ids => :query,
       :indent => :query,
       :languages => :query,
-      :ids => :query,
-      :limit => :query
+      :limit => :query,
+      :prefix => :query,
+      :query => :query,
+      :types => :query
     }
 
     request =
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/entities:search")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.KnowledgeGraphSearch.V1.Model.SearchResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.KnowledgeGraphSearch.V1.Model.SearchResponse{}]
+    )
   end
 end

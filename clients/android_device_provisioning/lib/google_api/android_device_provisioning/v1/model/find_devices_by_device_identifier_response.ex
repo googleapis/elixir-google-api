@@ -24,17 +24,20 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.FindDevicesByDeviceIdenti
 
   - devices ([Device]): Found devices. Defaults to: `null`.
   - nextPageToken (String.t): A token used to access the next page of results. Omitted if no further results are available. Defaults to: `null`.
+  - totalSize (integer()): The total count of items in the list irrespective of pagination. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :devices => list(GoogleApi.AndroidDeviceProvisioning.V1.Model.Device.t()),
-          :nextPageToken => any()
+          :nextPageToken => any(),
+          :totalSize => any()
         }
 
   field(:devices, as: GoogleApi.AndroidDeviceProvisioning.V1.Model.Device, type: :list)
   field(:nextPageToken)
+  field(:totalSize)
 end
 
 defimpl Poison.Decoder,

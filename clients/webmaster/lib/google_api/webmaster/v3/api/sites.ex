@@ -31,7 +31,7 @@ defmodule GoogleApi.Webmaster.V3.Api.Sites do
 
   - connection (GoogleApi.Webmaster.V3.Connection): Connection to server
   - site_url (String.t): The URL of the site to add.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -47,8 +47,8 @@ defmodule GoogleApi.Webmaster.V3.Api.Sites do
   """
   @spec webmasters_sites_add(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
-  def webmasters_sites_add(connection, site_url, opts \\ []) do
-    optional_params = %{
+  def webmasters_sites_add(connection, site_url, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -64,11 +64,11 @@ defmodule GoogleApi.Webmaster.V3.Api.Sites do
       |> Request.url("/sites/{siteUrl}", %{
         "siteUrl" => URI.encode_www_form(site_url)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -78,7 +78,7 @@ defmodule GoogleApi.Webmaster.V3.Api.Sites do
 
   - connection (GoogleApi.Webmaster.V3.Connection): Connection to server
   - site_url (String.t): The URI of the property as defined in Search Console. Examples: http://www.example.com/ or android-app://com.example/ Note: for property-sets, use the URI that starts with sc-set: which is used in Search Console URLs.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -94,8 +94,8 @@ defmodule GoogleApi.Webmaster.V3.Api.Sites do
   """
   @spec webmasters_sites_delete(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
-  def webmasters_sites_delete(connection, site_url, opts \\ []) do
-    optional_params = %{
+  def webmasters_sites_delete(connection, site_url, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -111,11 +111,11 @@ defmodule GoogleApi.Webmaster.V3.Api.Sites do
       |> Request.url("/sites/{siteUrl}", %{
         "siteUrl" => URI.encode_www_form(site_url)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -125,7 +125,7 @@ defmodule GoogleApi.Webmaster.V3.Api.Sites do
 
   - connection (GoogleApi.Webmaster.V3.Connection): Connection to server
   - site_url (String.t): The URI of the property as defined in Search Console. Examples: http://www.example.com/ or android-app://com.example/ Note: for property-sets, use the URI that starts with sc-set: which is used in Search Console URLs.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -141,8 +141,8 @@ defmodule GoogleApi.Webmaster.V3.Api.Sites do
   """
   @spec webmasters_sites_get(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Webmaster.V3.Model.WmxSite.t()} | {:error, Tesla.Env.t()}
-  def webmasters_sites_get(connection, site_url, opts \\ []) do
-    optional_params = %{
+  def webmasters_sites_get(connection, site_url, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -158,11 +158,11 @@ defmodule GoogleApi.Webmaster.V3.Api.Sites do
       |> Request.url("/sites/{siteUrl}", %{
         "siteUrl" => URI.encode_www_form(site_url)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Webmaster.V3.Model.WmxSite{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Webmaster.V3.Model.WmxSite{}])
   end
 
   @doc """
@@ -171,7 +171,7 @@ defmodule GoogleApi.Webmaster.V3.Api.Sites do
   ## Parameters
 
   - connection (GoogleApi.Webmaster.V3.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -187,8 +187,8 @@ defmodule GoogleApi.Webmaster.V3.Api.Sites do
   """
   @spec webmasters_sites_list(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.Webmaster.V3.Model.SitesListResponse.t()} | {:error, Tesla.Env.t()}
-  def webmasters_sites_list(connection, opts \\ []) do
-    optional_params = %{
+  def webmasters_sites_list(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -202,10 +202,10 @@ defmodule GoogleApi.Webmaster.V3.Api.Sites do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/sites")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Webmaster.V3.Model.SitesListResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Webmaster.V3.Model.SitesListResponse{}])
   end
 end

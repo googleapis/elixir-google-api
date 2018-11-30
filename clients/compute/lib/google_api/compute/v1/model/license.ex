@@ -28,7 +28,7 @@ defmodule GoogleApi.Compute.V1.Model.License do
   - id (String.t): [Output Only] The unique identifier for the resource. This identifier is defined by the server. Defaults to: `null`.
   - kind (String.t): [Output Only] Type of resource. Always compute#license for licenses. Defaults to: `null`.
   - licenseCode (String.t): [Output Only] The unique code used to attach this license to images, snapshots, and disks. Defaults to: `null`.
-  - name (String.t): [Output Only] Name of the resource. The name is 1-63 characters long and complies with RFC1035. Defaults to: `null`.
+  - name (String.t): Name of the resource. The name must be 1-63 characters long and comply with RFC1035. Defaults to: `null`.
   - resourceRequirements (LicenseResourceRequirements):  Defaults to: `null`.
   - selfLink (String.t): [Output Only] Server-defined URL for the resource. Defaults to: `null`.
   - transferable (boolean()): If false, licenses will not be copied from the source resource when creating an image from a disk, disk from snapshot, or snapshot from disk. Defaults to: `null`.

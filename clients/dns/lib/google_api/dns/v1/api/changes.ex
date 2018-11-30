@@ -32,7 +32,7 @@ defmodule GoogleApi.DNS.V1.Api.Changes do
   - connection (GoogleApi.DNS.V1.Connection): Connection to server
   - project (String.t): Identifies the project addressed by this request.
   - managed_zone (String.t): Identifies the managed zone addressed by this request. Can be the managed zone name or id.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -50,8 +50,8 @@ defmodule GoogleApi.DNS.V1.Api.Changes do
   """
   @spec dns_changes_create(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.DNS.V1.Model.Change.t()} | {:error, Tesla.Env.t()}
-  def dns_changes_create(connection, project, managed_zone, opts \\ []) do
-    optional_params = %{
+  def dns_changes_create(connection, project, managed_zone, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -70,11 +70,11 @@ defmodule GoogleApi.DNS.V1.Api.Changes do
         "project" => URI.encode_www_form(project),
         "managedZone" => URI.encode_www_form(managed_zone)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.DNS.V1.Model.Change{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.DNS.V1.Model.Change{}])
   end
 
   @doc """
@@ -86,7 +86,7 @@ defmodule GoogleApi.DNS.V1.Api.Changes do
   - project (String.t): Identifies the project addressed by this request.
   - managed_zone (String.t): Identifies the managed zone addressed by this request. Can be the managed zone name or id.
   - change_id (String.t): The identifier of the requested change, from a previous ResourceRecordSetsChangeResponse.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -103,8 +103,15 @@ defmodule GoogleApi.DNS.V1.Api.Changes do
   """
   @spec dns_changes_get(Tesla.Env.client(), String.t(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.DNS.V1.Model.Change.t()} | {:error, Tesla.Env.t()}
-  def dns_changes_get(connection, project, managed_zone, change_id, opts \\ []) do
-    optional_params = %{
+  def dns_changes_get(
+        connection,
+        project,
+        managed_zone,
+        change_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -123,11 +130,11 @@ defmodule GoogleApi.DNS.V1.Api.Changes do
         "managedZone" => URI.encode_www_form(managed_zone),
         "changeId" => URI.encode_www_form(change_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.DNS.V1.Model.Change{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.DNS.V1.Model.Change{}])
   end
 
   @doc """
@@ -138,7 +145,7 @@ defmodule GoogleApi.DNS.V1.Api.Changes do
   - connection (GoogleApi.DNS.V1.Connection): Connection to server
   - project (String.t): Identifies the project addressed by this request.
   - managed_zone (String.t): Identifies the managed zone addressed by this request. Can be the managed zone name or id.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -158,8 +165,8 @@ defmodule GoogleApi.DNS.V1.Api.Changes do
   """
   @spec dns_changes_list(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.DNS.V1.Model.ChangesListResponse.t()} | {:error, Tesla.Env.t()}
-  def dns_changes_list(connection, project, managed_zone, opts \\ []) do
-    optional_params = %{
+  def dns_changes_list(connection, project, managed_zone, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -180,10 +187,10 @@ defmodule GoogleApi.DNS.V1.Api.Changes do
         "project" => URI.encode_www_form(project),
         "managedZone" => URI.encode_www_form(managed_zone)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.DNS.V1.Model.ChangesListResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.DNS.V1.Model.ChangesListResponse{}])
   end
 end

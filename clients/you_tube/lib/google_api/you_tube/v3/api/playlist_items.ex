@@ -31,7 +31,7 @@ defmodule GoogleApi.YouTube.V3.Api.PlaylistItems do
 
   - connection (GoogleApi.YouTube.V3.Connection): Connection to server
   - id (String.t): The id parameter specifies the YouTube playlist item ID for the playlist item that is being deleted. In a playlistItem resource, the id property specifies the playlist item&#39;s ID.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -48,8 +48,8 @@ defmodule GoogleApi.YouTube.V3.Api.PlaylistItems do
   """
   @spec youtube_playlist_items_delete(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
-  def youtube_playlist_items_delete(connection, id, opts \\ []) do
-    optional_params = %{
+  def youtube_playlist_items_delete(connection, id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -65,11 +65,11 @@ defmodule GoogleApi.YouTube.V3.Api.PlaylistItems do
       |> Request.method(:delete)
       |> Request.url("/youtube/v3/playlistItems")
       |> Request.add_param(:query, :id, id)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -79,7 +79,7 @@ defmodule GoogleApi.YouTube.V3.Api.PlaylistItems do
 
   - connection (GoogleApi.YouTube.V3.Connection): Connection to server
   - part (String.t): The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -97,8 +97,8 @@ defmodule GoogleApi.YouTube.V3.Api.PlaylistItems do
   """
   @spec youtube_playlist_items_insert(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.YouTube.V3.Model.PlaylistItem.t()} | {:error, Tesla.Env.t()}
-  def youtube_playlist_items_insert(connection, part, opts \\ []) do
-    optional_params = %{
+  def youtube_playlist_items_insert(connection, part, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -115,11 +115,11 @@ defmodule GoogleApi.YouTube.V3.Api.PlaylistItems do
       |> Request.method(:post)
       |> Request.url("/youtube/v3/playlistItems")
       |> Request.add_param(:query, :part, part)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.YouTube.V3.Model.PlaylistItem{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.YouTube.V3.Model.PlaylistItem{}])
   end
 
   @doc """
@@ -129,7 +129,7 @@ defmodule GoogleApi.YouTube.V3.Api.PlaylistItems do
 
   - connection (GoogleApi.YouTube.V3.Connection): Connection to server
   - part (String.t): The part parameter specifies a comma-separated list of one or more playlistItem resource properties that the API response will include.  If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a playlistItem resource, the snippet property contains numerous fields, including the title, description, position, and resourceId properties. As such, if you set part&#x3D;snippet, the API response will contain all of those properties.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -151,8 +151,8 @@ defmodule GoogleApi.YouTube.V3.Api.PlaylistItems do
   """
   @spec youtube_playlist_items_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.YouTube.V3.Model.PlaylistItemListResponse.t()} | {:error, Tesla.Env.t()}
-  def youtube_playlist_items_list(connection, part, opts \\ []) do
-    optional_params = %{
+  def youtube_playlist_items_list(connection, part, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -173,11 +173,11 @@ defmodule GoogleApi.YouTube.V3.Api.PlaylistItems do
       |> Request.method(:get)
       |> Request.url("/youtube/v3/playlistItems")
       |> Request.add_param(:query, :part, part)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.YouTube.V3.Model.PlaylistItemListResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.YouTube.V3.Model.PlaylistItemListResponse{}])
   end
 
   @doc """
@@ -187,7 +187,7 @@ defmodule GoogleApi.YouTube.V3.Api.PlaylistItems do
 
   - connection (GoogleApi.YouTube.V3.Connection): Connection to server
   - part (String.t): The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.  Note that this method will override the existing values for all of the mutable properties that are contained in any parts that the parameter value specifies. For example, a playlist item can specify a start time and end time, which identify the times portion of the video that should play when users watch the video in the playlist. If your request is updating a playlist item that sets these values, and the request&#39;s part parameter value includes the contentDetails part, the playlist item&#39;s start and end times will be updated to whatever value the request body specifies. If the request body does not specify values, the existing start and end times will be removed and replaced with the default settings.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -205,8 +205,8 @@ defmodule GoogleApi.YouTube.V3.Api.PlaylistItems do
   """
   @spec youtube_playlist_items_update(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.YouTube.V3.Model.PlaylistItem.t()} | {:error, Tesla.Env.t()}
-  def youtube_playlist_items_update(connection, part, opts \\ []) do
-    optional_params = %{
+  def youtube_playlist_items_update(connection, part, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -223,10 +223,10 @@ defmodule GoogleApi.YouTube.V3.Api.PlaylistItems do
       |> Request.method(:put)
       |> Request.url("/youtube/v3/playlistItems")
       |> Request.add_param(:query, :part, part)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.YouTube.V3.Model.PlaylistItem{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.YouTube.V3.Model.PlaylistItem{}])
   end
 end

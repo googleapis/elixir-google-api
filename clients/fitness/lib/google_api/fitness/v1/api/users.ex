@@ -31,7 +31,7 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
 
   - connection (GoogleApi.Fitness.V1.Connection): Connection to server
   - user_id (String.t): Create the data source for the person identified. Use me to indicate the authenticated user. Only me is supported at this time.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -48,8 +48,8 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
   """
   @spec fitness_users_data_sources_create(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Fitness.V1.Model.DataSource.t()} | {:error, Tesla.Env.t()}
-  def fitness_users_data_sources_create(connection, user_id, opts \\ []) do
-    optional_params = %{
+  def fitness_users_data_sources_create(connection, user_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -66,11 +66,11 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
       |> Request.url("/{userId}/dataSources", %{
         "userId" => URI.encode_www_form(user_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Fitness.V1.Model.DataSource{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Fitness.V1.Model.DataSource{}])
   end
 
   @doc """
@@ -81,7 +81,7 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
   - connection (GoogleApi.Fitness.V1.Connection): Connection to server
   - user_id (String.t): List data points for the person identified. Use me to indicate the authenticated user. Only me is supported at this time.
   - data_source_id (String.t): The data stream ID of the data source that created the dataset.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -109,9 +109,10 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
         connection,
         user_id,
         data_source_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -130,11 +131,13 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
         "userId" => URI.encode_www_form(user_id),
         "dataSourceId" => URI.encode_www_form(data_source_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Fitness.V1.Model.ListDataPointChangesResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Fitness.V1.Model.ListDataPointChangesResponse{}]
+    )
   end
 
   @doc """
@@ -146,7 +149,7 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
   - user_id (String.t): Delete a dataset for the person identified. Use me to indicate the authenticated user. Only me is supported at this time.
   - data_source_id (String.t): The data stream ID of the data source that created the dataset.
   - dataset_id (String.t): Dataset identifier that is a composite of the minimum data point start time and maximum data point end time represented as nanoseconds from the epoch. The ID is formatted like: \&quot;startTime-endTime\&quot; where startTime and endTime are 64 bit integers.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -174,9 +177,10 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
         user_id,
         data_source_id,
         dataset_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -196,11 +200,11 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
         "dataSourceId" => URI.encode_www_form(data_source_id),
         "datasetId" => URI.encode_www_form(dataset_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -212,7 +216,7 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
   - user_id (String.t): Retrieve a dataset for the person identified. Use me to indicate the authenticated user. Only me is supported at this time.
   - data_source_id (String.t): The data stream ID of the data source that created the dataset.
   - dataset_id (String.t): Dataset identifier that is a composite of the minimum data point start time and maximum data point end time represented as nanoseconds from the epoch. The ID is formatted like: \&quot;startTime-endTime\&quot; where startTime and endTime are 64 bit integers.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -240,9 +244,10 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
         user_id,
         data_source_id,
         dataset_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -262,11 +267,11 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
         "dataSourceId" => URI.encode_www_form(data_source_id),
         "datasetId" => URI.encode_www_form(dataset_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Fitness.V1.Model.Dataset{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Fitness.V1.Model.Dataset{}])
   end
 
   @doc """
@@ -278,7 +283,7 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
   - user_id (String.t): Patch a dataset for the person identified. Use me to indicate the authenticated user. Only me is supported at this time.
   - data_source_id (String.t): The data stream ID of the data source that created the dataset.
   - dataset_id (String.t): Dataset identifier that is a composite of the minimum data point start time and maximum data point end time represented as nanoseconds from the epoch. The ID is formatted like: \&quot;startTime-endTime\&quot; where startTime and endTime are 64 bit integers.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -306,9 +311,10 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
         user_id,
         data_source_id,
         dataset_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -328,11 +334,11 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
         "dataSourceId" => URI.encode_www_form(data_source_id),
         "datasetId" => URI.encode_www_form(dataset_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Fitness.V1.Model.Dataset{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Fitness.V1.Model.Dataset{}])
   end
 
   @doc """
@@ -343,7 +349,7 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
   - connection (GoogleApi.Fitness.V1.Connection): Connection to server
   - user_id (String.t): Retrieve a data source for the person identified. Use me to indicate the authenticated user. Only me is supported at this time.
   - data_source_id (String.t): The data stream ID of the data source to delete.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -359,8 +365,14 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
   """
   @spec fitness_users_data_sources_delete(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Fitness.V1.Model.DataSource.t()} | {:error, Tesla.Env.t()}
-  def fitness_users_data_sources_delete(connection, user_id, data_source_id, opts \\ []) do
-    optional_params = %{
+  def fitness_users_data_sources_delete(
+        connection,
+        user_id,
+        data_source_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -377,11 +389,11 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
         "userId" => URI.encode_www_form(user_id),
         "dataSourceId" => URI.encode_www_form(data_source_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Fitness.V1.Model.DataSource{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Fitness.V1.Model.DataSource{}])
   end
 
   @doc """
@@ -392,7 +404,7 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
   - connection (GoogleApi.Fitness.V1.Connection): Connection to server
   - user_id (String.t): Retrieve a data source for the person identified. Use me to indicate the authenticated user. Only me is supported at this time.
   - data_source_id (String.t): The data stream ID of the data source to retrieve.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -408,8 +420,14 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
   """
   @spec fitness_users_data_sources_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Fitness.V1.Model.DataSource.t()} | {:error, Tesla.Env.t()}
-  def fitness_users_data_sources_get(connection, user_id, data_source_id, opts \\ []) do
-    optional_params = %{
+  def fitness_users_data_sources_get(
+        connection,
+        user_id,
+        data_source_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -426,11 +444,11 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
         "userId" => URI.encode_www_form(user_id),
         "dataSourceId" => URI.encode_www_form(data_source_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Fitness.V1.Model.DataSource{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Fitness.V1.Model.DataSource{}])
   end
 
   @doc """
@@ -440,7 +458,7 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
 
   - connection (GoogleApi.Fitness.V1.Connection): Connection to server
   - user_id (String.t): List data sources for the person identified. Use me to indicate the authenticated user. Only me is supported at this time.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -457,8 +475,8 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
   """
   @spec fitness_users_data_sources_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Fitness.V1.Model.ListDataSourcesResponse.t()} | {:error, Tesla.Env.t()}
-  def fitness_users_data_sources_list(connection, user_id, opts \\ []) do
-    optional_params = %{
+  def fitness_users_data_sources_list(connection, user_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -475,11 +493,11 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
       |> Request.url("/{userId}/dataSources", %{
         "userId" => URI.encode_www_form(user_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Fitness.V1.Model.ListDataSourcesResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Fitness.V1.Model.ListDataSourcesResponse{}])
   end
 
   @doc """
@@ -490,7 +508,7 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
   - connection (GoogleApi.Fitness.V1.Connection): Connection to server
   - user_id (String.t): Update the data source for the person identified. Use me to indicate the authenticated user. Only me is supported at this time.
   - data_source_id (String.t): The data stream ID of the data source to update.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -507,8 +525,14 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
   """
   @spec fitness_users_data_sources_patch(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Fitness.V1.Model.DataSource.t()} | {:error, Tesla.Env.t()}
-  def fitness_users_data_sources_patch(connection, user_id, data_source_id, opts \\ []) do
-    optional_params = %{
+  def fitness_users_data_sources_patch(
+        connection,
+        user_id,
+        data_source_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -526,11 +550,11 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
         "userId" => URI.encode_www_form(user_id),
         "dataSourceId" => URI.encode_www_form(data_source_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Fitness.V1.Model.DataSource{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Fitness.V1.Model.DataSource{}])
   end
 
   @doc """
@@ -541,7 +565,7 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
   - connection (GoogleApi.Fitness.V1.Connection): Connection to server
   - user_id (String.t): Update the data source for the person identified. Use me to indicate the authenticated user. Only me is supported at this time.
   - data_source_id (String.t): The data stream ID of the data source to update.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -558,8 +582,14 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
   """
   @spec fitness_users_data_sources_update(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Fitness.V1.Model.DataSource.t()} | {:error, Tesla.Env.t()}
-  def fitness_users_data_sources_update(connection, user_id, data_source_id, opts \\ []) do
-    optional_params = %{
+  def fitness_users_data_sources_update(
+        connection,
+        user_id,
+        data_source_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -577,11 +607,11 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
         "userId" => URI.encode_www_form(user_id),
         "dataSourceId" => URI.encode_www_form(data_source_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Fitness.V1.Model.DataSource{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Fitness.V1.Model.DataSource{}])
   end
 
   @doc """
@@ -591,7 +621,7 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
 
   - connection (GoogleApi.Fitness.V1.Connection): Connection to server
   - user_id (String.t): Aggregate data for the person identified. Use me to indicate the authenticated user. Only me is supported at this time.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -608,8 +638,8 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
   """
   @spec fitness_users_dataset_aggregate(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Fitness.V1.Model.AggregateResponse.t()} | {:error, Tesla.Env.t()}
-  def fitness_users_dataset_aggregate(connection, user_id, opts \\ []) do
-    optional_params = %{
+  def fitness_users_dataset_aggregate(connection, user_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -626,11 +656,11 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
       |> Request.url("/{userId}/dataset:aggregate", %{
         "userId" => URI.encode_www_form(user_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Fitness.V1.Model.AggregateResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Fitness.V1.Model.AggregateResponse{}])
   end
 
   @doc """
@@ -641,7 +671,7 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
   - connection (GoogleApi.Fitness.V1.Connection): Connection to server
   - user_id (String.t): Delete a session for the person identified. Use me to indicate the authenticated user. Only me is supported at this time.
   - session_id (String.t): The ID of the session to be deleted.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -658,8 +688,14 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
   """
   @spec fitness_users_sessions_delete(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
-  def fitness_users_sessions_delete(connection, user_id, session_id, opts \\ []) do
-    optional_params = %{
+  def fitness_users_sessions_delete(
+        connection,
+        user_id,
+        session_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -677,11 +713,11 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
         "userId" => URI.encode_www_form(user_id),
         "sessionId" => URI.encode_www_form(session_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -691,7 +727,7 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
 
   - connection (GoogleApi.Fitness.V1.Connection): Connection to server
   - user_id (String.t): List sessions for the person identified. Use me to indicate the authenticated user. Only me is supported at this time.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -701,7 +737,7 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :endTime (String.t): An RFC3339 timestamp. Only sessions ending between the start and end times will be included in the response.
     - :includeDeleted (boolean()): If true, deleted sessions will be returned. When set to true, sessions returned in this response will only have an ID and will not have any other fields.
-    - :pageToken (String.t): The continuation token, which is used to page through large result sets. To get the next page of results, set this parameter to the value of nextPageToken from the previous response.
+    - :pageToken (String.t): The continuation token, which is used for incremental syncing. To get the next batch of changes, set this parameter to the value of nextPageToken from the previous response. This token is treated as a timestamp (in millis since epoch). If specified, the API returns sessions modified since this time. The page token is ignored if either start or end time is specified. If none of start time, end time, and the page token is specified, sessions modified in the last 7 days are returned.
     - :startTime (String.t): An RFC3339 timestamp. Only sessions ending between the start and end times will be included in the response.
 
   ## Returns
@@ -711,8 +747,8 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
   """
   @spec fitness_users_sessions_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Fitness.V1.Model.ListSessionsResponse.t()} | {:error, Tesla.Env.t()}
-  def fitness_users_sessions_list(connection, user_id, opts \\ []) do
-    optional_params = %{
+  def fitness_users_sessions_list(connection, user_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -732,11 +768,11 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
       |> Request.url("/{userId}/sessions", %{
         "userId" => URI.encode_www_form(user_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Fitness.V1.Model.ListSessionsResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Fitness.V1.Model.ListSessionsResponse{}])
   end
 
   @doc """
@@ -747,7 +783,7 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
   - connection (GoogleApi.Fitness.V1.Connection): Connection to server
   - user_id (String.t): Create sessions for the person identified. Use me to indicate the authenticated user. Only me is supported at this time.
   - session_id (String.t): The ID of the session to be created.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -765,8 +801,14 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
   """
   @spec fitness_users_sessions_update(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Fitness.V1.Model.Session.t()} | {:error, Tesla.Env.t()}
-  def fitness_users_sessions_update(connection, user_id, session_id, opts \\ []) do
-    optional_params = %{
+  def fitness_users_sessions_update(
+        connection,
+        user_id,
+        session_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -785,10 +827,10 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
         "userId" => URI.encode_www_form(user_id),
         "sessionId" => URI.encode_www_form(session_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Fitness.V1.Model.Session{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Fitness.V1.Model.Session{}])
   end
 end

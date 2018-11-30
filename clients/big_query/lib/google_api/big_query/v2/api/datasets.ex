@@ -32,7 +32,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Datasets do
   - connection (GoogleApi.BigQuery.V2.Connection): Connection to server
   - project_id (String.t): Project ID of the dataset being deleted
   - dataset_id (String.t): Dataset ID of dataset being deleted
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -49,8 +49,14 @@ defmodule GoogleApi.BigQuery.V2.Api.Datasets do
   """
   @spec bigquery_datasets_delete(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
-  def bigquery_datasets_delete(connection, project_id, dataset_id, opts \\ []) do
-    optional_params = %{
+  def bigquery_datasets_delete(
+        connection,
+        project_id,
+        dataset_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -68,11 +74,11 @@ defmodule GoogleApi.BigQuery.V2.Api.Datasets do
         "projectId" => URI.encode_www_form(project_id),
         "datasetId" => URI.encode_www_form(dataset_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -83,7 +89,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Datasets do
   - connection (GoogleApi.BigQuery.V2.Connection): Connection to server
   - project_id (String.t): Project ID of the requested dataset
   - dataset_id (String.t): Dataset ID of the requested dataset
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -99,8 +105,8 @@ defmodule GoogleApi.BigQuery.V2.Api.Datasets do
   """
   @spec bigquery_datasets_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.BigQuery.V2.Model.Dataset.t()} | {:error, Tesla.Env.t()}
-  def bigquery_datasets_get(connection, project_id, dataset_id, opts \\ []) do
-    optional_params = %{
+  def bigquery_datasets_get(connection, project_id, dataset_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -117,11 +123,11 @@ defmodule GoogleApi.BigQuery.V2.Api.Datasets do
         "projectId" => URI.encode_www_form(project_id),
         "datasetId" => URI.encode_www_form(dataset_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.BigQuery.V2.Model.Dataset{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.BigQuery.V2.Model.Dataset{}])
   end
 
   @doc """
@@ -131,7 +137,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Datasets do
 
   - connection (GoogleApi.BigQuery.V2.Connection): Connection to server
   - project_id (String.t): Project ID of the new dataset
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -148,8 +154,8 @@ defmodule GoogleApi.BigQuery.V2.Api.Datasets do
   """
   @spec bigquery_datasets_insert(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.BigQuery.V2.Model.Dataset.t()} | {:error, Tesla.Env.t()}
-  def bigquery_datasets_insert(connection, project_id, opts \\ []) do
-    optional_params = %{
+  def bigquery_datasets_insert(connection, project_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -166,11 +172,11 @@ defmodule GoogleApi.BigQuery.V2.Api.Datasets do
       |> Request.url("/bigquery/v2/projects/{projectId}/datasets", %{
         "projectId" => URI.encode_www_form(project_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.BigQuery.V2.Model.Dataset{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.BigQuery.V2.Model.Dataset{}])
   end
 
   @doc """
@@ -180,7 +186,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Datasets do
 
   - connection (GoogleApi.BigQuery.V2.Connection): Connection to server
   - project_id (String.t): Project ID of the datasets to be listed
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -200,8 +206,8 @@ defmodule GoogleApi.BigQuery.V2.Api.Datasets do
   """
   @spec bigquery_datasets_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.BigQuery.V2.Model.DatasetList.t()} | {:error, Tesla.Env.t()}
-  def bigquery_datasets_list(connection, project_id, opts \\ []) do
-    optional_params = %{
+  def bigquery_datasets_list(connection, project_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -221,11 +227,11 @@ defmodule GoogleApi.BigQuery.V2.Api.Datasets do
       |> Request.url("/bigquery/v2/projects/{projectId}/datasets", %{
         "projectId" => URI.encode_www_form(project_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.BigQuery.V2.Model.DatasetList{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.BigQuery.V2.Model.DatasetList{}])
   end
 
   @doc """
@@ -236,7 +242,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Datasets do
   - connection (GoogleApi.BigQuery.V2.Connection): Connection to server
   - project_id (String.t): Project ID of the dataset being updated
   - dataset_id (String.t): Dataset ID of the dataset being updated
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -253,8 +259,14 @@ defmodule GoogleApi.BigQuery.V2.Api.Datasets do
   """
   @spec bigquery_datasets_patch(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.BigQuery.V2.Model.Dataset.t()} | {:error, Tesla.Env.t()}
-  def bigquery_datasets_patch(connection, project_id, dataset_id, opts \\ []) do
-    optional_params = %{
+  def bigquery_datasets_patch(
+        connection,
+        project_id,
+        dataset_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -272,11 +284,11 @@ defmodule GoogleApi.BigQuery.V2.Api.Datasets do
         "projectId" => URI.encode_www_form(project_id),
         "datasetId" => URI.encode_www_form(dataset_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.BigQuery.V2.Model.Dataset{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.BigQuery.V2.Model.Dataset{}])
   end
 
   @doc """
@@ -287,7 +299,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Datasets do
   - connection (GoogleApi.BigQuery.V2.Connection): Connection to server
   - project_id (String.t): Project ID of the dataset being updated
   - dataset_id (String.t): Dataset ID of the dataset being updated
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -304,8 +316,14 @@ defmodule GoogleApi.BigQuery.V2.Api.Datasets do
   """
   @spec bigquery_datasets_update(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.BigQuery.V2.Model.Dataset.t()} | {:error, Tesla.Env.t()}
-  def bigquery_datasets_update(connection, project_id, dataset_id, opts \\ []) do
-    optional_params = %{
+  def bigquery_datasets_update(
+        connection,
+        project_id,
+        dataset_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -323,10 +341,10 @@ defmodule GoogleApi.BigQuery.V2.Api.Datasets do
         "projectId" => URI.encode_www_form(project_id),
         "datasetId" => URI.encode_www_form(dataset_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.BigQuery.V2.Model.Dataset{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.BigQuery.V2.Model.Dataset{}])
   end
 end

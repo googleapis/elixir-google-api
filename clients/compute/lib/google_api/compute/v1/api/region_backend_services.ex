@@ -33,7 +33,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionBackendServices do
   - project (String.t): Project ID for this request.
   - region (String.t): Name of the region scoping this request.
   - backend_service (String.t): Name of the BackendService resource to delete.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -60,9 +60,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionBackendServices do
         project,
         region,
         backend_service,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -81,11 +82,11 @@ defmodule GoogleApi.Compute.V1.Api.RegionBackendServices do
         "region" => URI.encode_www_form(region),
         "backendService" => URI.encode_www_form(backend_service)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -97,7 +98,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionBackendServices do
   - project (String.t): Project ID for this request.
   - region (String.t): Name of the region scoping this request.
   - backend_service (String.t): Name of the BackendService resource to return.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -123,9 +124,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionBackendServices do
         project,
         region,
         backend_service,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -143,11 +145,11 @@ defmodule GoogleApi.Compute.V1.Api.RegionBackendServices do
         "region" => URI.encode_www_form(region),
         "backendService" => URI.encode_www_form(backend_service)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.BackendService{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.BackendService{}])
   end
 
   @doc """
@@ -159,7 +161,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionBackendServices do
   - project (String.t): 
   - region (String.t): Name of the region scoping this request.
   - backend_service (String.t): Name of the BackendService resource for which to get health.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -188,9 +190,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionBackendServices do
         project,
         region,
         backend_service,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -209,11 +212,11 @@ defmodule GoogleApi.Compute.V1.Api.RegionBackendServices do
         "region" => URI.encode_www_form(region),
         "backendService" => URI.encode_www_form(backend_service)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.BackendServiceGroupHealth{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.BackendServiceGroupHealth{}])
   end
 
   @doc """
@@ -224,7 +227,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionBackendServices do
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
   - region (String.t): Name of the region scoping this request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -246,8 +249,14 @@ defmodule GoogleApi.Compute.V1.Api.RegionBackendServices do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_region_backend_services_insert(connection, project, region, opts \\ []) do
-    optional_params = %{
+  def compute_region_backend_services_insert(
+        connection,
+        project,
+        region,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -266,11 +275,11 @@ defmodule GoogleApi.Compute.V1.Api.RegionBackendServices do
         "project" => URI.encode_www_form(project),
         "region" => URI.encode_www_form(region)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -281,7 +290,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionBackendServices do
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
   - region (String.t): Name of the region scoping this request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -305,8 +314,14 @@ defmodule GoogleApi.Compute.V1.Api.RegionBackendServices do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Compute.V1.Model.BackendServiceList.t()} | {:error, Tesla.Env.t()}
-  def compute_region_backend_services_list(connection, project, region, opts \\ []) do
-    optional_params = %{
+  def compute_region_backend_services_list(
+        connection,
+        project,
+        region,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -327,11 +342,11 @@ defmodule GoogleApi.Compute.V1.Api.RegionBackendServices do
         "project" => URI.encode_www_form(project),
         "region" => URI.encode_www_form(region)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.BackendServiceList{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.BackendServiceList{}])
   end
 
   @doc """
@@ -343,7 +358,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionBackendServices do
   - project (String.t): Project ID for this request.
   - region (String.t): Name of the region scoping this request.
   - backend_service (String.t): Name of the BackendService resource to patch.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -371,9 +386,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionBackendServices do
         project,
         region,
         backend_service,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -393,11 +409,11 @@ defmodule GoogleApi.Compute.V1.Api.RegionBackendServices do
         "region" => URI.encode_www_form(region),
         "backendService" => URI.encode_www_form(backend_service)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -409,7 +425,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionBackendServices do
   - project (String.t): Project ID for this request.
   - region (String.t): Name of the region scoping this request.
   - backend_service (String.t): Name of the BackendService resource to update.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -437,9 +453,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionBackendServices do
         project,
         region,
         backend_service,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -459,10 +476,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionBackendServices do
         "region" => URI.encode_www_form(region),
         "backendService" => URI.encode_www_form(backend_service)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 end

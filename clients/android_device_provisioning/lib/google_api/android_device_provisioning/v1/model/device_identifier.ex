@@ -18,14 +18,15 @@
 
 defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier do
   @moduledoc """
-  Encapsulates hardware and product IDs to identify a manufactured device. To learn more, read [Identifiers](/zero-touch/guides/identifiers).
+  Encapsulates hardware and product IDs to identify a manufactured device. To understand requirements on identifier sets, read [Identifiers](/zero-touch/guides/identifiers).
 
   ## Attributes
 
   - imei (String.t): The device’s IMEI number. Validated on input. Defaults to: `null`.
-  - manufacturer (String.t): Required. The device manufacturer’s name. Matches the device&#39;s built-in value returned from &#x60;android.os.Build.MANUFACTURER&#x60;. Allowed values are listed in [manufacturer names](/zero-touch/resources/manufacturer-names). Defaults to: `null`.
+  - manufacturer (String.t): The device manufacturer’s name. Matches the device&#39;s built-in value returned from &#x60;android.os.Build.MANUFACTURER&#x60;. Allowed values are listed in [manufacturers](/zero-touch/resources/manufacturer-names#manufacturers-names). Defaults to: `null`.
   - meid (String.t): The device’s MEID number. Defaults to: `null`.
-  - serialNumber (String.t): The manufacturer&#39;s serial number for the device. This value might not be unique. Defaults to: `null`.
+  - model (String.t): The device model&#39;s name. Matches the device&#39;s built-in value returned from &#x60;android.os.Build.MODEL&#x60;. Allowed values are listed in [models](/zero-touch/resources/manufacturer-names#model-names). Defaults to: `null`.
+  - serialNumber (String.t): The manufacturer&#39;s serial number for the device. This value might not be unique across different device models. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -34,12 +35,14 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier do
           :imei => any(),
           :manufacturer => any(),
           :meid => any(),
+          :model => any(),
           :serialNumber => any()
         }
 
   field(:imei)
   field(:manufacturer)
   field(:meid)
+  field(:model)
   field(:serialNumber)
 end
 

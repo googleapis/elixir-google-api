@@ -22,7 +22,9 @@ defmodule GoogleApi.Firestore.V1beta1.Model.FieldTransform do
 
   ## Attributes
 
+  - appendMissingElements (ArrayValue): Append the given elements in order if they are not already present in the current field value. If the field is not an array, or if the field does not yet exist, it is first set to the empty array.  Equivalent numbers of different types (e.g. 3L and 3.0) are considered equal when checking if a value is missing. NaN is equal to NaN, and Null is equal to Null. If the input contains multiple equivalent values, only the first will be considered.  The corresponding transform_result will be the null value. Defaults to: `null`.
   - fieldPath (String.t): The path of the field. See Document.fields for the field path syntax reference. Defaults to: `null`.
+  - removeAllFromArray (ArrayValue): Remove all of the given elements from the array in the field. If the field is not an array, or if the field does not yet exist, it is set to the empty array.  Equivalent numbers of the different types (e.g. 3L and 3.0) are considered equal when deciding whether an element should be removed. NaN is equal to NaN, and Null is equal to Null. This will remove all equivalent values if there are duplicates.  The corresponding transform_result will be the null value. Defaults to: `null`.
   - setToServerValue (String.t): Sets the field to the given server value. Defaults to: `null`.
     - Enum - one of [SERVER_VALUE_UNSPECIFIED, REQUEST_TIME]
   """
@@ -30,11 +32,15 @@ defmodule GoogleApi.Firestore.V1beta1.Model.FieldTransform do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :appendMissingElements => GoogleApi.Firestore.V1beta1.Model.ArrayValue.t(),
           :fieldPath => any(),
+          :removeAllFromArray => GoogleApi.Firestore.V1beta1.Model.ArrayValue.t(),
           :setToServerValue => any()
         }
 
+  field(:appendMissingElements, as: GoogleApi.Firestore.V1beta1.Model.ArrayValue)
   field(:fieldPath)
+  field(:removeAllFromArray, as: GoogleApi.Firestore.V1beta1.Model.ArrayValue)
   field(:setToServerValue)
 end
 

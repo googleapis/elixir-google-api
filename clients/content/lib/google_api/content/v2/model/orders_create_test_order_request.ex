@@ -22,6 +22,7 @@ defmodule GoogleApi.Content.V2.Model.OrdersCreateTestOrderRequest do
 
   ## Attributes
 
+  - country (String.t): The  CLDR territory code of the country of the test order to create. Affects the currency and addresses of orders created via template_name, or the addresses of orders created via test_order.  Acceptable values are:   - \&quot;US\&quot;  - \&quot;FR\&quot;  Defaults to US. Defaults to: `null`.
   - templateName (String.t): The test order template to use. Specify as an alternative to testOrder as a shortcut for retrieving a template and then creating an order using that template. Defaults to: `null`.
   - testOrder (TestOrder): The test order to create. Defaults to: `null`.
   """
@@ -29,10 +30,12 @@ defmodule GoogleApi.Content.V2.Model.OrdersCreateTestOrderRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :country => any(),
           :templateName => any(),
           :testOrder => GoogleApi.Content.V2.Model.TestOrder.t()
         }
 
+  field(:country)
   field(:templateName)
   field(:testOrder, as: GoogleApi.Content.V2.Model.TestOrder)
 end

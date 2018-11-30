@@ -30,22 +30,22 @@ defmodule GoogleApi.YouTubeReporting.V1.Api.ReportTypes do
   ## Parameters
 
   - connection (GoogleApi.YouTubeReporting.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :onBehalfOfContentOwner (String.t): The content owner&#39;s external ID on which behalf the user is acting on. If not set, the user is acting for himself (his own channel).
-    - :pageToken (String.t): A token identifying a page of results the server should return. Typically, this is the value of ListReportTypesResponse.next_page_token returned in response to the previous call to the &#x60;ListReportTypes&#x60; method.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :includeSystemManaged (boolean()): If set to true, also system-managed report types will be returned; otherwise only the report types that can be used to create new reporting jobs will be returned.
+    - :onBehalfOfContentOwner (String.t): The content owner&#39;s external ID on which behalf the user is acting on. If not set, the user is acting for himself (his own channel).
     - :pageSize (integer()): Requested page size. Server may return fewer report types than requested. If unspecified, server will pick an appropriate default.
+    - :pageToken (String.t): A token identifying a page of results the server should return. Typically, this is the value of ListReportTypesResponse.next_page_token returned in response to the previous call to the &#x60;ListReportTypes&#x60; method.
 
   ## Returns
 
@@ -55,33 +55,35 @@ defmodule GoogleApi.YouTubeReporting.V1.Api.ReportTypes do
   @spec youtubereporting_report_types_list(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.YouTubeReporting.V1.Model.ListReportTypesResponse.t()}
           | {:error, Tesla.Env.t()}
-  def youtubereporting_report_types_list(connection, opts \\ []) do
-    optional_params = %{
-      :alt => :query,
-      :key => :query,
-      :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
-      :oauth_token => :query,
+  def youtubereporting_report_types_list(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :onBehalfOfContentOwner => :query,
-      :pageToken => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :includeSystemManaged => :query,
-      :pageSize => :query
+      :onBehalfOfContentOwner => :query,
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/reportTypes")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.YouTubeReporting.V1.Model.ListReportTypesResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.YouTubeReporting.V1.Model.ListReportTypesResponse{}]
+    )
   end
 end

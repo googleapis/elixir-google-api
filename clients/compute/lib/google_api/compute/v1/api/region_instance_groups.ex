@@ -33,7 +33,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroups do
   - project (String.t): Project ID for this request.
   - region (String.t): Name of the region scoping this request.
   - instance_group (String.t): Name of the instance group resource to return.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -54,8 +54,15 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroups do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Compute.V1.Model.InstanceGroup.t()} | {:error, Tesla.Env.t()}
-  def compute_region_instance_groups_get(connection, project, region, instance_group, opts \\ []) do
-    optional_params = %{
+  def compute_region_instance_groups_get(
+        connection,
+        project,
+        region,
+        instance_group,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -73,11 +80,11 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroups do
         "region" => URI.encode_www_form(region),
         "instanceGroup" => URI.encode_www_form(instance_group)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.InstanceGroup{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.InstanceGroup{}])
   end
 
   @doc """
@@ -88,7 +95,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroups do
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
   - region (String.t): Name of the region scoping this request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -108,8 +115,14 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroups do
   """
   @spec compute_region_instance_groups_list(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.RegionInstanceGroupList.t()} | {:error, Tesla.Env.t()}
-  def compute_region_instance_groups_list(connection, project, region, opts \\ []) do
-    optional_params = %{
+  def compute_region_instance_groups_list(
+        connection,
+        project,
+        region,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -130,11 +143,11 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroups do
         "project" => URI.encode_www_form(project),
         "region" => URI.encode_www_form(region)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.RegionInstanceGroupList{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.RegionInstanceGroupList{}])
   end
 
   @doc """
@@ -146,7 +159,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroups do
   - project (String.t): Project ID for this request.
   - region (String.t): Name of the region scoping this request.
   - instance_group (String.t): Name of the regional instance group for which we want to list the instances.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -179,9 +192,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroups do
         project,
         region,
         instance_group,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -207,11 +221,13 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroups do
           "instanceGroup" => URI.encode_www_form(instance_group)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.RegionInstanceGroupsListInstances{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Compute.V1.Model.RegionInstanceGroupsListInstances{}]
+    )
   end
 
   @doc """
@@ -223,7 +239,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroups do
   - project (String.t): Project ID for this request.
   - region (String.t): Name of the region scoping this request.
   - instance_group (String.t): The name of the regional instance group where the named ports are updated.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -251,9 +267,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroups do
         project,
         region,
         instance_group,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -276,10 +293,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroups do
           "instanceGroup" => URI.encode_www_form(instance_group)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 end

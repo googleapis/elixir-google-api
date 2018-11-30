@@ -31,7 +31,7 @@ defmodule GoogleApi.Tasks.V1.Api.Tasklists do
 
   - connection (GoogleApi.Tasks.V1.Connection): Connection to server
   - tasklist (String.t): Task list identifier.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -47,8 +47,8 @@ defmodule GoogleApi.Tasks.V1.Api.Tasklists do
   """
   @spec tasks_tasklists_delete(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
-  def tasks_tasklists_delete(connection, tasklist, opts \\ []) do
-    optional_params = %{
+  def tasks_tasklists_delete(connection, tasklist, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -64,11 +64,11 @@ defmodule GoogleApi.Tasks.V1.Api.Tasklists do
       |> Request.url("/users/@me/lists/{tasklist}", %{
         "tasklist" => URI.encode_www_form(tasklist)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -78,7 +78,7 @@ defmodule GoogleApi.Tasks.V1.Api.Tasklists do
 
   - connection (GoogleApi.Tasks.V1.Connection): Connection to server
   - tasklist (String.t): Task list identifier.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -94,8 +94,8 @@ defmodule GoogleApi.Tasks.V1.Api.Tasklists do
   """
   @spec tasks_tasklists_get(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Tasks.V1.Model.TaskList.t()} | {:error, Tesla.Env.t()}
-  def tasks_tasklists_get(connection, tasklist, opts \\ []) do
-    optional_params = %{
+  def tasks_tasklists_get(connection, tasklist, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -111,11 +111,11 @@ defmodule GoogleApi.Tasks.V1.Api.Tasklists do
       |> Request.url("/users/@me/lists/{tasklist}", %{
         "tasklist" => URI.encode_www_form(tasklist)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Tasks.V1.Model.TaskList{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Tasks.V1.Model.TaskList{}])
   end
 
   @doc """
@@ -124,7 +124,7 @@ defmodule GoogleApi.Tasks.V1.Api.Tasklists do
   ## Parameters
 
   - connection (GoogleApi.Tasks.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -141,8 +141,8 @@ defmodule GoogleApi.Tasks.V1.Api.Tasklists do
   """
   @spec tasks_tasklists_insert(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.Tasks.V1.Model.TaskList.t()} | {:error, Tesla.Env.t()}
-  def tasks_tasklists_insert(connection, opts \\ []) do
-    optional_params = %{
+  def tasks_tasklists_insert(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -157,11 +157,11 @@ defmodule GoogleApi.Tasks.V1.Api.Tasklists do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/users/@me/lists")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Tasks.V1.Model.TaskList{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Tasks.V1.Model.TaskList{}])
   end
 
   @doc """
@@ -170,7 +170,7 @@ defmodule GoogleApi.Tasks.V1.Api.Tasklists do
   ## Parameters
 
   - connection (GoogleApi.Tasks.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -188,8 +188,8 @@ defmodule GoogleApi.Tasks.V1.Api.Tasklists do
   """
   @spec tasks_tasklists_list(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.Tasks.V1.Model.TaskLists.t()} | {:error, Tesla.Env.t()}
-  def tasks_tasklists_list(connection, opts \\ []) do
-    optional_params = %{
+  def tasks_tasklists_list(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -205,11 +205,11 @@ defmodule GoogleApi.Tasks.V1.Api.Tasklists do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/users/@me/lists")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Tasks.V1.Model.TaskLists{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Tasks.V1.Model.TaskLists{}])
   end
 
   @doc """
@@ -219,7 +219,7 @@ defmodule GoogleApi.Tasks.V1.Api.Tasklists do
 
   - connection (GoogleApi.Tasks.V1.Connection): Connection to server
   - tasklist (String.t): Task list identifier.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -236,8 +236,8 @@ defmodule GoogleApi.Tasks.V1.Api.Tasklists do
   """
   @spec tasks_tasklists_patch(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Tasks.V1.Model.TaskList.t()} | {:error, Tesla.Env.t()}
-  def tasks_tasklists_patch(connection, tasklist, opts \\ []) do
-    optional_params = %{
+  def tasks_tasklists_patch(connection, tasklist, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -254,11 +254,11 @@ defmodule GoogleApi.Tasks.V1.Api.Tasklists do
       |> Request.url("/users/@me/lists/{tasklist}", %{
         "tasklist" => URI.encode_www_form(tasklist)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Tasks.V1.Model.TaskList{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Tasks.V1.Model.TaskList{}])
   end
 
   @doc """
@@ -268,7 +268,7 @@ defmodule GoogleApi.Tasks.V1.Api.Tasklists do
 
   - connection (GoogleApi.Tasks.V1.Connection): Connection to server
   - tasklist (String.t): Task list identifier.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -285,8 +285,8 @@ defmodule GoogleApi.Tasks.V1.Api.Tasklists do
   """
   @spec tasks_tasklists_update(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Tasks.V1.Model.TaskList.t()} | {:error, Tesla.Env.t()}
-  def tasks_tasklists_update(connection, tasklist, opts \\ []) do
-    optional_params = %{
+  def tasks_tasklists_update(connection, tasklist, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -303,10 +303,10 @@ defmodule GoogleApi.Tasks.V1.Api.Tasklists do
       |> Request.url("/users/@me/lists/{tasklist}", %{
         "tasklist" => URI.encode_www_form(tasklist)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Tasks.V1.Model.TaskList{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Tasks.V1.Model.TaskList{}])
   end
 end

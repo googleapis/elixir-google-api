@@ -31,19 +31,20 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Api.V1 do
 
   - connection (GoogleApi.FirebaseDynamicLinks.V1.Connection): Connection to server
   - dynamic_link (String.t): Dynamic Link URL. e.g. https://abcd.app.goo.gl/wxyz
-  - opts (KeywordList): [optional] Optional parameters
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :durationDays (String.t): The span of time requested in days.
+    - :sdkVersion (String.t): Google SDK version. Version takes the form \&quot;$major.$minor.$patch\&quot;
 
   ## Returns
 
@@ -53,20 +54,26 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Api.V1 do
   @spec firebasedynamiclinks_get_link_stats(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkStats.t()}
           | {:error, Tesla.Env.t()}
-  def firebasedynamiclinks_get_link_stats(connection, dynamic_link, opts \\ []) do
-    optional_params = %{
-      :fields => :query,
-      :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
+  def firebasedynamiclinks_get_link_stats(
+        connection,
+        dynamic_link,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
-      :durationDays => :query
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :durationDays => :query,
+      :sdkVersion => :query
     }
 
     request =
@@ -75,11 +82,13 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Api.V1 do
       |> Request.url("/v1/{dynamicLink}/linkStats", %{
         "dynamicLink" => URI.encode_www_form(dynamic_link)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkStats{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkStats{}]
+    )
   end
 
   @doc """
@@ -88,18 +97,18 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Api.V1 do
   ## Parameters
 
   - connection (GoogleApi.FirebaseDynamicLinks.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (GetIosPostInstallAttributionRequest): 
 
   ## Returns
@@ -110,19 +119,19 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Api.V1 do
   @spec firebasedynamiclinks_install_attribution(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.FirebaseDynamicLinks.V1.Model.GetIosPostInstallAttributionResponse.t()}
           | {:error, Tesla.Env.t()}
-  def firebasedynamiclinks_install_attribution(connection, opts \\ []) do
-    optional_params = %{
-      :fields => :query,
-      :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
+  def firebasedynamiclinks_install_attribution(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -130,12 +139,70 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Api.V1 do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/installAttribution")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct: %GoogleApi.FirebaseDynamicLinks.V1.Model.GetIosPostInstallAttributionResponse{}
+      opts ++
+        [struct: %GoogleApi.FirebaseDynamicLinks.V1.Model.GetIosPostInstallAttributionResponse{}]
+    )
+  end
+
+  @doc """
+  Get iOS reopen attribution for app universal link open deeplinking.
+
+  ## Parameters
+
+  - connection (GoogleApi.FirebaseDynamicLinks.V1.Connection): Connection to server
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :body (GetIosReopenAttributionRequest): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.FirebaseDynamicLinks.V1.Model.GetIosReopenAttributionResponse{}} on success
+  {:error, info} on failure
+  """
+  @spec firebasedynamiclinks_reopen_attribution(Tesla.Env.client(), keyword()) ::
+          {:ok, GoogleApi.FirebaseDynamicLinks.V1.Model.GetIosReopenAttributionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def firebasedynamiclinks_reopen_attribution(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1/reopenAttribution")
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.FirebaseDynamicLinks.V1.Model.GetIosReopenAttributionResponse{}]
     )
   end
 end

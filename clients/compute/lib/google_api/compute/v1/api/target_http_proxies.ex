@@ -32,7 +32,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpProxies do
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
   - target_http_proxy (String.t): Name of the TargetHttpProxy resource to delete.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -49,8 +49,14 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpProxies do
   """
   @spec compute_target_http_proxies_delete(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_target_http_proxies_delete(connection, project, target_http_proxy, opts \\ []) do
-    optional_params = %{
+  def compute_target_http_proxies_delete(
+        connection,
+        project,
+        target_http_proxy,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -68,11 +74,11 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpProxies do
         "project" => URI.encode_www_form(project),
         "targetHttpProxy" => URI.encode_www_form(target_http_proxy)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -83,7 +89,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpProxies do
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
   - target_http_proxy (String.t): Name of the TargetHttpProxy resource to return.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -99,8 +105,14 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpProxies do
   """
   @spec compute_target_http_proxies_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.TargetHttpProxy.t()} | {:error, Tesla.Env.t()}
-  def compute_target_http_proxies_get(connection, project, target_http_proxy, opts \\ []) do
-    optional_params = %{
+  def compute_target_http_proxies_get(
+        connection,
+        project,
+        target_http_proxy,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -117,11 +129,11 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpProxies do
         "project" => URI.encode_www_form(project),
         "targetHttpProxy" => URI.encode_www_form(target_http_proxy)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.TargetHttpProxy{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.TargetHttpProxy{}])
   end
 
   @doc """
@@ -131,7 +143,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpProxies do
 
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -149,8 +161,8 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpProxies do
   """
   @spec compute_target_http_proxies_insert(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_target_http_proxies_insert(connection, project, opts \\ []) do
-    optional_params = %{
+  def compute_target_http_proxies_insert(connection, project, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -168,11 +180,11 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpProxies do
       |> Request.url("/{project}/global/targetHttpProxies", %{
         "project" => URI.encode_www_form(project)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -182,7 +194,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpProxies do
 
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -202,8 +214,8 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpProxies do
   """
   @spec compute_target_http_proxies_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.TargetHttpProxyList.t()} | {:error, Tesla.Env.t()}
-  def compute_target_http_proxies_list(connection, project, opts \\ []) do
-    optional_params = %{
+  def compute_target_http_proxies_list(connection, project, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -223,11 +235,11 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpProxies do
       |> Request.url("/{project}/global/targetHttpProxies", %{
         "project" => URI.encode_www_form(project)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.TargetHttpProxyList{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.TargetHttpProxyList{}])
   end
 
   @doc """
@@ -238,7 +250,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpProxies do
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
   - target_http_proxy (String.t): Name of the TargetHttpProxy to set a URL map for.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -260,8 +272,14 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpProxies do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_target_http_proxies_set_url_map(connection, project, target_http_proxy, opts \\ []) do
-    optional_params = %{
+  def compute_target_http_proxies_set_url_map(
+        connection,
+        project,
+        target_http_proxy,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -280,10 +298,10 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpProxies do
         "project" => URI.encode_www_form(project),
         "targetHttpProxy" => URI.encode_www_form(target_http_proxy)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 end

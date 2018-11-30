@@ -24,7 +24,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.StorePage do
 
   - id (String.t): Unique ID of this page. Assigned by the server. Immutable once assigned. Defaults to: `null`.
   - kind (String.t): Identifies what kind of resource this is. Value: the fixed string \&quot;androidenterprise#storePage\&quot;. Defaults to: `null`.
-  - link ([String.t]): Ordered list of pages a user should be able to reach from this page. The pages must exist, must not be this page, and once a link is created the page linked to cannot be deleted until all links to it are removed. It is recommended that the basic pages are created first, before adding the links between pages.  No attempt is made to verify that all pages are reachable from the homepage. Defaults to: `null`.
+  - link ([String.t]): Ordered list of pages a user should be able to reach from this page. The list can&#39;t include this page. It is recommended that the basic pages are created first, before adding the links between pages.  The API doesn&#39;t verify that the pages exist or the pages are reachable. Defaults to: `null`.
   - name ([LocalizedText]): Ordered list of localized strings giving the name of this page. The text displayed is the one that best matches the user locale, or the first entry if there is no good match. There needs to be at least one entry. Defaults to: `null`.
   """
 

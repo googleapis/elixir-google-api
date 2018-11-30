@@ -31,8 +31,8 @@ defmodule GoogleApi.Classroom.V1.Model.CourseWork do
   - creationTime (DateTime.t): Timestamp when this course work was created.  Read-only. Defaults to: `null`.
   - creatorUserId (String.t): Identifier for the user that created the coursework.  Read-only. Defaults to: `null`.
   - description (String.t): Optional description of this course work. If set, the description must be a valid UTF-8 string containing no more than 30,000 characters. Defaults to: `null`.
-  - dueDate (DateTime): Optional date, in UTC, that submissions for this this course work are due. This must be specified if &#x60;due_time&#x60; is specified. Defaults to: `null`.
-  - dueTime (TimeOfDay): Optional time of day, in UTC, that submissions for this this course work are due. This must be specified if &#x60;due_date&#x60; is specified. Defaults to: `null`.
+  - dueDate (DateTime): Optional date, in UTC, that submissions for this course work are due. This must be specified if &#x60;due_time&#x60; is specified. Defaults to: `null`.
+  - dueTime (TimeOfDay): Optional time of day, in UTC, that submissions for this course work are due. This must be specified if &#x60;due_date&#x60; is specified. Defaults to: `null`.
   - id (String.t): Classroom-assigned identifier of this course work, unique per course.  Read-only. Defaults to: `null`.
   - individualStudentsOptions (IndividualStudentsOptions): Identifiers of students with access to the coursework. This field is set only if &#x60;assigneeMode&#x60; is &#x60;INDIVIDUAL_STUDENTS&#x60;. If the &#x60;assigneeMode&#x60; is &#x60;INDIVIDUAL_STUDENTS&#x60;, then only students specified in this field will be assigned the coursework. Defaults to: `null`.
   - materials ([Material]): Additional materials.  CourseWork must have no more than 20 material items. Defaults to: `null`.
@@ -63,7 +63,8 @@ defmodule GoogleApi.Classroom.V1.Model.CourseWork do
           :dueDate => any(),
           :dueTime => GoogleApi.Classroom.V1.Model.TimeOfDay.t(),
           :id => any(),
-          :individualStudentsOptions => GoogleApi.Classroom.V1.Model.IndividualStudentsOptions.t(),
+          :individualStudentsOptions =>
+            GoogleApi.Classroom.V1.Model.IndividualStudentsOptions.t(),
           :materials => list(GoogleApi.Classroom.V1.Model.Material.t()),
           :maxPoints => any(),
           :multipleChoiceQuestion => GoogleApi.Classroom.V1.Model.MultipleChoiceQuestion.t(),

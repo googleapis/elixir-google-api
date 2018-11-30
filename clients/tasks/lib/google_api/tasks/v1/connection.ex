@@ -23,7 +23,7 @@ defmodule GoogleApi.Tasks.V1.Connection do
 
   use GoogleApi.Gax.Connection,
     scopes: [
-      # Manage your tasks
+      # Create, edit, organize, and delete all your tasks
       "https://www.googleapis.com/auth/tasks",
       # View your tasks
       "https://www.googleapis.com/auth/tasks.readonly"

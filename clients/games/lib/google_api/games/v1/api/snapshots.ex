@@ -31,7 +31,7 @@ defmodule GoogleApi.Games.V1.Api.Snapshots do
 
   - connection (GoogleApi.Games.V1.Connection): Connection to server
   - snapshot_id (String.t): The ID of the snapshot.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -48,8 +48,8 @@ defmodule GoogleApi.Games.V1.Api.Snapshots do
   """
   @spec games_snapshots_get(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Games.V1.Model.Snapshot.t()} | {:error, Tesla.Env.t()}
-  def games_snapshots_get(connection, snapshot_id, opts \\ []) do
-    optional_params = %{
+  def games_snapshots_get(connection, snapshot_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -66,11 +66,11 @@ defmodule GoogleApi.Games.V1.Api.Snapshots do
       |> Request.url("/snapshots/{snapshotId}", %{
         "snapshotId" => URI.encode_www_form(snapshot_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Games.V1.Model.Snapshot{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Games.V1.Model.Snapshot{}])
   end
 
   @doc """
@@ -80,7 +80,7 @@ defmodule GoogleApi.Games.V1.Api.Snapshots do
 
   - connection (GoogleApi.Games.V1.Connection): Connection to server
   - player_id (String.t): A player ID. A value of me may be used in place of the authenticated player&#39;s ID.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -99,8 +99,8 @@ defmodule GoogleApi.Games.V1.Api.Snapshots do
   """
   @spec games_snapshots_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Games.V1.Model.SnapshotListResponse.t()} | {:error, Tesla.Env.t()}
-  def games_snapshots_list(connection, player_id, opts \\ []) do
-    optional_params = %{
+  def games_snapshots_list(connection, player_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -119,10 +119,10 @@ defmodule GoogleApi.Games.V1.Api.Snapshots do
       |> Request.url("/players/{playerId}/snapshots", %{
         "playerId" => URI.encode_www_form(player_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Games.V1.Model.SnapshotListResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Games.V1.Model.SnapshotListResponse{}])
   end
 end

@@ -27,7 +27,7 @@ defmodule GoogleApi.IAM.V1.Model.Role do
   - etag (binary()): Used to perform a consistent read-modify-write. Defaults to: `null`.
   - includedPermissions ([String.t]): The names of the permissions this role grants when bound in an IAM policy. Defaults to: `null`.
   - name (String.t): The name of the role.  When Role is used in CreateRole, the role name must not be set.  When Role is used in output and other input such as UpdateRole, the role name is the complete path, e.g., roles/logging.viewer for curated roles and organizations/{ORGANIZATION_ID}/roles/logging.viewer for custom roles. Defaults to: `null`.
-  - stage (String.t): The current launch stage of the role. Defaults to: `null`.
+  - stage (String.t): The current launch stage of the role. If the &#x60;ALPHA&#x60; launch stage has been selected for a role, the &#x60;stage&#x60; field will not be included in the returned definition for the role. Defaults to: `null`.
     - Enum - one of [ALPHA, BETA, GA, DEPRECATED, DISABLED, EAP]
   - title (String.t): Optional.  A human-readable title for the role.  Typically this is limited to 100 UTF-8 bytes. Defaults to: `null`.
   """

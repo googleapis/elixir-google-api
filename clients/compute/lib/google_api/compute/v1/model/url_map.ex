@@ -23,7 +23,7 @@ defmodule GoogleApi.Compute.V1.Model.UrlMap do
   ## Attributes
 
   - creationTimestamp (String.t): [Output Only] Creation timestamp in RFC3339 text format. Defaults to: `null`.
-  - defaultService (String.t): The URL of the BackendService resource if none of the hostRules match. Defaults to: `null`.
+  - defaultService (String.t): The URL of the backendService resource if none of the hostRules match. Use defaultService instead of defaultRouteAction when simple routing to a backendService is desired and other advanced capabilities like traffic splitting and rewrites are not required. Only one of defaultService, defaultRouteAction or defaultUrlRedirect should must be set. Defaults to: `null`.
   - description (String.t): An optional description of this resource. Provide this property when you create the resource. Defaults to: `null`.
   - fingerprint (binary()): Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a UrlMap. An up-to-date fingerprint must be provided in order to update the UrlMap.  To see the latest fingerprint, make a get() request to retrieve a UrlMap. Defaults to: `null`.
   - hostRules ([HostRule]): The list of HostRules to use against the URL. Defaults to: `null`.

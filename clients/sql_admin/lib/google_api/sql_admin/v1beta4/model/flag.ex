@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.Flag do
   @moduledoc """
-  A Google Cloud SQL service flag resource.
+  A flag resource.
 
   ## Attributes
 

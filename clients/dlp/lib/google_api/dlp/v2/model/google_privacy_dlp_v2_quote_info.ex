@@ -22,7 +22,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2QuoteInfo do
 
   ## Attributes
 
-  - dateTime (GooglePrivacyDlpV2DateTime):  Defaults to: `null`.
+  - dateTime (GooglePrivacyDlpV2DateTime): The date time indicated by the quote. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

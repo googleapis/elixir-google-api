@@ -23,8 +23,8 @@ defmodule GoogleApi.BigQuery.V2.Model.TimePartitioning do
   ## Attributes
 
   - expirationMs (String.t): [Optional] Number of milliseconds for which to keep the storage for partitions in the table. The storage in a partition will have an expiration time of its partition time plus this value. Defaults to: `null`.
-  - field (String.t): [Experimental] [Optional] If not set, the table is partitioned by pseudo column, referenced via either &#39;_PARTITIONTIME&#39; as TIMESTAMP type, or &#39;_PARTITIONDATE&#39; as DATE type. If field is specified, the table is instead partitioned by this field. The field must be a top-level TIMESTAMP or DATE field. Its mode must be NULLABLE or REQUIRED. Defaults to: `null`.
-  - requirePartitionFilter (boolean()): [Experimental] [Optional] If set to true, queries over this table require a partition filter that can be used for partition elimination to be specified. Defaults to: `null`.
+  - field (String.t): [Beta] [Optional] If not set, the table is partitioned by pseudo column, referenced via either &#39;_PARTITIONTIME&#39; as TIMESTAMP type, or &#39;_PARTITIONDATE&#39; as DATE type. If field is specified, the table is instead partitioned by this field. The field must be a top-level TIMESTAMP or DATE field. Its mode must be NULLABLE or REQUIRED. Defaults to: `null`.
+  - requirePartitionFilter (boolean()): [Beta] [Optional] If set to true, queries over this table require a partition filter that can be used for partition elimination to be specified. Defaults to: `null`.
   - type (String.t): [Required] The only type supported is DAY, which will generate one partition per day. Defaults to: `null`.
   """
 

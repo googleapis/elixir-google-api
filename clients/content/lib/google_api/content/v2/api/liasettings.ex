@@ -30,7 +30,7 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
   ## Parameters
 
   - connection (GoogleApi.Content.V2.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -49,8 +49,8 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
   @spec content_liasettings_custombatch(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.LiasettingsCustomBatchResponse.t()}
           | {:error, Tesla.Env.t()}
-  def content_liasettings_custombatch(connection, opts \\ []) do
-    optional_params = %{
+  def content_liasettings_custombatch(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -66,11 +66,13 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/liasettings/batch")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Content.V2.Model.LiasettingsCustomBatchResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Content.V2.Model.LiasettingsCustomBatchResponse{}]
+    )
   end
 
   @doc """
@@ -81,7 +83,7 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
   - connection (GoogleApi.Content.V2.Connection): Connection to server
   - merchant_id (String.t): The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and accountId must be the ID of a sub-account of this account.
   - account_id (String.t): The ID of the account for which to get or update LIA settings.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -97,8 +99,14 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
   """
   @spec content_liasettings_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.LiaSettings.t()} | {:error, Tesla.Env.t()}
-  def content_liasettings_get(connection, merchant_id, account_id, opts \\ []) do
-    optional_params = %{
+  def content_liasettings_get(
+        connection,
+        merchant_id,
+        account_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -115,11 +123,11 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
         "merchantId" => URI.encode_www_form(merchant_id),
         "accountId" => URI.encode_www_form(account_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Content.V2.Model.LiaSettings{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Content.V2.Model.LiaSettings{}])
   end
 
   @doc """
@@ -130,7 +138,7 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
   - connection (GoogleApi.Content.V2.Connection): Connection to server
   - merchant_id (String.t): The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and accountId must be the ID of a sub-account of this account.
   - account_id (String.t): The ID of the account for which to retrieve accessible Google My Business accounts.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -156,9 +164,10 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
         connection,
         merchant_id,
         account_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -175,12 +184,12 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
         "merchantId" => URI.encode_www_form(merchant_id),
         "accountId" => URI.encode_www_form(account_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct: %GoogleApi.Content.V2.Model.LiasettingsGetAccessibleGmbAccountsResponse{}
+      opts ++ [struct: %GoogleApi.Content.V2.Model.LiasettingsGetAccessibleGmbAccountsResponse{}]
     )
   end
 
@@ -191,7 +200,7 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
 
   - connection (GoogleApi.Content.V2.Connection): Connection to server
   - merchant_id (String.t): The ID of the managing account. This must be a multi-client account.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -209,8 +218,8 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
   """
   @spec content_liasettings_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.LiasettingsListResponse.t()} | {:error, Tesla.Env.t()}
-  def content_liasettings_list(connection, merchant_id, opts \\ []) do
-    optional_params = %{
+  def content_liasettings_list(connection, merchant_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -228,11 +237,11 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
       |> Request.url("/{merchantId}/liasettings", %{
         "merchantId" => URI.encode_www_form(merchant_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Content.V2.Model.LiasettingsListResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Content.V2.Model.LiasettingsListResponse{}])
   end
 
   @doc """
@@ -241,7 +250,7 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
   ## Parameters
 
   - connection (GoogleApi.Content.V2.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -258,8 +267,8 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
   @spec content_liasettings_listposdataproviders(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.LiasettingsListPosDataProvidersResponse.t()}
           | {:error, Tesla.Env.t()}
-  def content_liasettings_listposdataproviders(connection, opts \\ []) do
-    optional_params = %{
+  def content_liasettings_listposdataproviders(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -273,12 +282,12 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/liasettings/posdataproviders")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct: %GoogleApi.Content.V2.Model.LiasettingsListPosDataProvidersResponse{}
+      opts ++ [struct: %GoogleApi.Content.V2.Model.LiasettingsListPosDataProvidersResponse{}]
     )
   end
 
@@ -290,7 +299,7 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
   - connection (GoogleApi.Content.V2.Connection): Connection to server
   - merchant_id (String.t): The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and accountId must be the ID of a sub-account of this account.
   - account_id (String.t): The ID of the account for which to get or update LIA settings.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -308,8 +317,14 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
   """
   @spec content_liasettings_patch(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.LiaSettings.t()} | {:error, Tesla.Env.t()}
-  def content_liasettings_patch(connection, merchant_id, account_id, opts \\ []) do
-    optional_params = %{
+  def content_liasettings_patch(
+        connection,
+        merchant_id,
+        account_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -328,11 +343,11 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
         "merchantId" => URI.encode_www_form(merchant_id),
         "accountId" => URI.encode_www_form(account_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Content.V2.Model.LiaSettings{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Content.V2.Model.LiaSettings{}])
   end
 
   @doc """
@@ -343,7 +358,8 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
   - connection (GoogleApi.Content.V2.Connection): Connection to server
   - merchant_id (String.t): The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and accountId must be the ID of a sub-account of this account.
   - account_id (String.t): The ID of the account for which GMB access is requested.
-  - opts (KeywordList): [optional] Optional parameters
+  - gmb_email (String.t): The email of the Google My Business account.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -351,7 +367,6 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :gmbEmail (String.t): The email of the Google My Business account.
 
   ## Returns
 
@@ -362,20 +377,27 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          String.t(),
           keyword()
         ) ::
           {:ok, GoogleApi.Content.V2.Model.LiasettingsRequestGmbAccessResponse.t()}
           | {:error, Tesla.Env.t()}
-  def content_liasettings_requestgmbaccess(connection, merchant_id, account_id, opts \\ []) do
-    optional_params = %{
+  def content_liasettings_requestgmbaccess(
+        connection,
+        merchant_id,
+        account_id,
+        gmb_email,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
-      :gmbEmail => :query
+      :userIp => :query
     }
 
     request =
@@ -385,11 +407,14 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
         "merchantId" => URI.encode_www_form(merchant_id),
         "accountId" => URI.encode_www_form(account_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_param(:query, :gmbEmail, gmb_email)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Content.V2.Model.LiasettingsRequestGmbAccessResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Content.V2.Model.LiasettingsRequestGmbAccessResponse{}]
+    )
   end
 
   @doc """
@@ -401,7 +426,7 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
   - merchant_id (String.t): The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and accountId must be the ID of a sub-account of this account.
   - account_id (String.t): The ID of the account that manages the order. This cannot be a multi-client account.
   - country (String.t): The country for which inventory validation is requested.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -429,9 +454,10 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
         merchant_id,
         account_id,
         country,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -452,12 +478,13 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
           "country" => URI.encode_www_form(country)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct: %GoogleApi.Content.V2.Model.LiasettingsRequestInventoryVerificationResponse{}
+      opts ++
+        [struct: %GoogleApi.Content.V2.Model.LiasettingsRequestInventoryVerificationResponse{}]
     )
   end
 
@@ -469,7 +496,11 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
   - connection (GoogleApi.Content.V2.Connection): Connection to server
   - merchant_id (String.t): The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and accountId must be the ID of a sub-account of this account.
   - account_id (String.t): The ID of the account that manages the order. This cannot be a multi-client account.
-  - opts (KeywordList): [optional] Optional parameters
+  - contact_email (String.t): The email of the inventory verification contact.
+  - contact_name (String.t): The name of the inventory verification contact.
+  - country (String.t): The country for which inventory verification is requested.
+  - language (String.t): The language for which inventory verification is requested.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -477,10 +508,6 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :contactEmail (String.t): The email of the inventory verification contact.
-    - :contactName (String.t): The name of the inventory verification contact.
-    - :country (String.t): The country for which inventory verification is requested.
-    - :language (String.t): The language for which inventory verification is requested.
 
   ## Returns
 
@@ -491,6 +518,10 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
           keyword()
         ) ::
           {:ok, GoogleApi.Content.V2.Model.LiasettingsSetInventoryVerificationContactResponse.t()}
@@ -499,20 +530,21 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
         connection,
         merchant_id,
         account_id,
+        contact_email,
+        contact_name,
+        country,
+        language,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
-      :contactEmail => :query,
-      :contactName => :query,
-      :country => :query,
-      :language => :query
+      :userIp => :query
     }
 
     request =
@@ -522,12 +554,17 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
         "merchantId" => URI.encode_www_form(merchant_id),
         "accountId" => URI.encode_www_form(account_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_param(:query, :contactEmail, contact_email)
+      |> Request.add_param(:query, :contactName, contact_name)
+      |> Request.add_param(:query, :country, country)
+      |> Request.add_param(:query, :language, language)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct: %GoogleApi.Content.V2.Model.LiasettingsSetInventoryVerificationContactResponse{}
+      opts ++
+        [struct: %GoogleApi.Content.V2.Model.LiasettingsSetInventoryVerificationContactResponse{}]
     )
   end
 
@@ -539,7 +576,8 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
   - connection (GoogleApi.Content.V2.Connection): Connection to server
   - merchant_id (String.t): The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and accountId must be the ID of a sub-account of this account.
   - account_id (String.t): The ID of the account for which to retrieve accessible Google My Business accounts.
-  - opts (KeywordList): [optional] Optional parameters
+  - country (String.t): The country for which the POS data provider is selected.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -547,7 +585,6 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :country (String.t): The country for which the POS data provider is selected.
     - :posDataProviderId (String.t): The ID of POS data provider.
     - :posExternalAccountId (String.t): The account ID by which this merchant is known to the POS data provider.
 
@@ -560,12 +597,20 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          String.t(),
           keyword()
         ) ::
           {:ok, GoogleApi.Content.V2.Model.LiasettingsSetPosDataProviderResponse.t()}
           | {:error, Tesla.Env.t()}
-  def content_liasettings_setposdataprovider(connection, merchant_id, account_id, opts \\ []) do
-    optional_params = %{
+  def content_liasettings_setposdataprovider(
+        connection,
+        merchant_id,
+        account_id,
+        country,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -573,7 +618,6 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
       :prettyPrint => :query,
       :quotaUser => :query,
       :userIp => :query,
-      :country => :query,
       :posDataProviderId => :query,
       :posExternalAccountId => :query
     }
@@ -585,12 +629,13 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
         "merchantId" => URI.encode_www_form(merchant_id),
         "accountId" => URI.encode_www_form(account_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_param(:query, :country, country)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct: %GoogleApi.Content.V2.Model.LiasettingsSetPosDataProviderResponse{}
+      opts ++ [struct: %GoogleApi.Content.V2.Model.LiasettingsSetPosDataProviderResponse{}]
     )
   end
 
@@ -602,7 +647,7 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
   - connection (GoogleApi.Content.V2.Connection): Connection to server
   - merchant_id (String.t): The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and accountId must be the ID of a sub-account of this account.
   - account_id (String.t): The ID of the account for which to get or update LIA settings.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -620,8 +665,14 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
   """
   @spec content_liasettings_update(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.LiaSettings.t()} | {:error, Tesla.Env.t()}
-  def content_liasettings_update(connection, merchant_id, account_id, opts \\ []) do
-    optional_params = %{
+  def content_liasettings_update(
+        connection,
+        merchant_id,
+        account_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -640,10 +691,10 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
         "merchantId" => URI.encode_www_form(merchant_id),
         "accountId" => URI.encode_www_form(account_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Content.V2.Model.LiaSettings{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Content.V2.Model.LiaSettings{}])
   end
 end

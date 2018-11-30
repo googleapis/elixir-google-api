@@ -22,6 +22,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.MapTask do
 
   ## Attributes
 
+  - counterPrefix (String.t): Counter prefix that can be used to prefix counters. Not currently used in Dataflow. Defaults to: `null`.
   - instructions ([ParallelInstruction]): The instructions in the MapTask. Defaults to: `null`.
   - stageName (String.t): System-defined name of the stage containing this MapTask. Unique across the workflow. Defaults to: `null`.
   - systemName (String.t): System-defined name of this MapTask. Unique across the workflow. Defaults to: `null`.
@@ -30,11 +31,13 @@ defmodule GoogleApi.Dataflow.V1b3.Model.MapTask do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :counterPrefix => any(),
           :instructions => list(GoogleApi.Dataflow.V1b3.Model.ParallelInstruction.t()),
           :stageName => any(),
           :systemName => any()
         }
 
+  field(:counterPrefix)
   field(:instructions, as: GoogleApi.Dataflow.V1b3.Model.ParallelInstruction, type: :list)
   field(:stageName)
   field(:systemName)

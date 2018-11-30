@@ -32,7 +32,7 @@ defmodule GoogleApi.Calendar.V3.Api.Acl do
   - connection (GoogleApi.Calendar.V3.Connection): Connection to server
   - calendar_id (String.t): Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the \&quot;primary\&quot; keyword.
   - rule_id (String.t): ACL rule identifier.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -48,8 +48,8 @@ defmodule GoogleApi.Calendar.V3.Api.Acl do
   """
   @spec calendar_acl_delete(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
-  def calendar_acl_delete(connection, calendar_id, rule_id, opts \\ []) do
-    optional_params = %{
+  def calendar_acl_delete(connection, calendar_id, rule_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -66,11 +66,11 @@ defmodule GoogleApi.Calendar.V3.Api.Acl do
         "calendarId" => URI.encode_www_form(calendar_id),
         "ruleId" => URI.encode_www_form(rule_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -81,7 +81,7 @@ defmodule GoogleApi.Calendar.V3.Api.Acl do
   - connection (GoogleApi.Calendar.V3.Connection): Connection to server
   - calendar_id (String.t): Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the \&quot;primary\&quot; keyword.
   - rule_id (String.t): ACL rule identifier.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -97,8 +97,8 @@ defmodule GoogleApi.Calendar.V3.Api.Acl do
   """
   @spec calendar_acl_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Calendar.V3.Model.AclRule.t()} | {:error, Tesla.Env.t()}
-  def calendar_acl_get(connection, calendar_id, rule_id, opts \\ []) do
-    optional_params = %{
+  def calendar_acl_get(connection, calendar_id, rule_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -115,11 +115,11 @@ defmodule GoogleApi.Calendar.V3.Api.Acl do
         "calendarId" => URI.encode_www_form(calendar_id),
         "ruleId" => URI.encode_www_form(rule_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Calendar.V3.Model.AclRule{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Calendar.V3.Model.AclRule{}])
   end
 
   @doc """
@@ -129,7 +129,7 @@ defmodule GoogleApi.Calendar.V3.Api.Acl do
 
   - connection (GoogleApi.Calendar.V3.Connection): Connection to server
   - calendar_id (String.t): Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the \&quot;primary\&quot; keyword.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -147,8 +147,8 @@ defmodule GoogleApi.Calendar.V3.Api.Acl do
   """
   @spec calendar_acl_insert(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Calendar.V3.Model.AclRule.t()} | {:error, Tesla.Env.t()}
-  def calendar_acl_insert(connection, calendar_id, opts \\ []) do
-    optional_params = %{
+  def calendar_acl_insert(connection, calendar_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -166,11 +166,11 @@ defmodule GoogleApi.Calendar.V3.Api.Acl do
       |> Request.url("/calendars/{calendarId}/acl", %{
         "calendarId" => URI.encode_www_form(calendar_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Calendar.V3.Model.AclRule{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Calendar.V3.Model.AclRule{}])
   end
 
   @doc """
@@ -180,7 +180,7 @@ defmodule GoogleApi.Calendar.V3.Api.Acl do
 
   - connection (GoogleApi.Calendar.V3.Connection): Connection to server
   - calendar_id (String.t): Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the \&quot;primary\&quot; keyword.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -200,8 +200,8 @@ defmodule GoogleApi.Calendar.V3.Api.Acl do
   """
   @spec calendar_acl_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Calendar.V3.Model.Acl.t()} | {:error, Tesla.Env.t()}
-  def calendar_acl_list(connection, calendar_id, opts \\ []) do
-    optional_params = %{
+  def calendar_acl_list(connection, calendar_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -221,11 +221,11 @@ defmodule GoogleApi.Calendar.V3.Api.Acl do
       |> Request.url("/calendars/{calendarId}/acl", %{
         "calendarId" => URI.encode_www_form(calendar_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Calendar.V3.Model.Acl{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Calendar.V3.Model.Acl{}])
   end
 
   @doc """
@@ -236,7 +236,7 @@ defmodule GoogleApi.Calendar.V3.Api.Acl do
   - connection (GoogleApi.Calendar.V3.Connection): Connection to server
   - calendar_id (String.t): Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the \&quot;primary\&quot; keyword.
   - rule_id (String.t): ACL rule identifier.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -254,8 +254,8 @@ defmodule GoogleApi.Calendar.V3.Api.Acl do
   """
   @spec calendar_acl_patch(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Calendar.V3.Model.AclRule.t()} | {:error, Tesla.Env.t()}
-  def calendar_acl_patch(connection, calendar_id, rule_id, opts \\ []) do
-    optional_params = %{
+  def calendar_acl_patch(connection, calendar_id, rule_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -274,11 +274,11 @@ defmodule GoogleApi.Calendar.V3.Api.Acl do
         "calendarId" => URI.encode_www_form(calendar_id),
         "ruleId" => URI.encode_www_form(rule_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Calendar.V3.Model.AclRule{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Calendar.V3.Model.AclRule{}])
   end
 
   @doc """
@@ -289,7 +289,7 @@ defmodule GoogleApi.Calendar.V3.Api.Acl do
   - connection (GoogleApi.Calendar.V3.Connection): Connection to server
   - calendar_id (String.t): Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the \&quot;primary\&quot; keyword.
   - rule_id (String.t): ACL rule identifier.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -307,8 +307,8 @@ defmodule GoogleApi.Calendar.V3.Api.Acl do
   """
   @spec calendar_acl_update(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Calendar.V3.Model.AclRule.t()} | {:error, Tesla.Env.t()}
-  def calendar_acl_update(connection, calendar_id, rule_id, opts \\ []) do
-    optional_params = %{
+  def calendar_acl_update(connection, calendar_id, rule_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -327,11 +327,11 @@ defmodule GoogleApi.Calendar.V3.Api.Acl do
         "calendarId" => URI.encode_www_form(calendar_id),
         "ruleId" => URI.encode_www_form(rule_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Calendar.V3.Model.AclRule{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Calendar.V3.Model.AclRule{}])
   end
 
   @doc """
@@ -341,7 +341,7 @@ defmodule GoogleApi.Calendar.V3.Api.Acl do
 
   - connection (GoogleApi.Calendar.V3.Connection): Connection to server
   - calendar_id (String.t): Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the \&quot;primary\&quot; keyword.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -362,8 +362,8 @@ defmodule GoogleApi.Calendar.V3.Api.Acl do
   """
   @spec calendar_acl_watch(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Calendar.V3.Model.Channel.t()} | {:error, Tesla.Env.t()}
-  def calendar_acl_watch(connection, calendar_id, opts \\ []) do
-    optional_params = %{
+  def calendar_acl_watch(connection, calendar_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -384,10 +384,10 @@ defmodule GoogleApi.Calendar.V3.Api.Acl do
       |> Request.url("/calendars/{calendarId}/acl/watch", %{
         "calendarId" => URI.encode_www_form(calendar_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Calendar.V3.Model.Channel{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Calendar.V3.Model.Channel{}])
   end
 end

@@ -30,20 +30,20 @@ defmodule GoogleApi.Translate.V2.Api.Detections do
   ## Parameters
 
   - connection (GoogleApi.Translate.V2.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :bearer_token (String.t): OAuth bearer token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+    - :alt (String.t): Data format for response.
+    - :bearer_token (String.t): OAuth bearer token.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :pp (boolean()): Pretty-print response.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (DetectLanguageRequest): 
 
   ## Returns
@@ -53,21 +53,21 @@ defmodule GoogleApi.Translate.V2.Api.Detections do
   """
   @spec language_detections_detect(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.Translate.V2.Model.DetectionsListResponse.t()} | {:error, Tesla.Env.t()}
-  def language_detections_detect(connection, opts \\ []) do
-    optional_params = %{
-      :oauth_token => :query,
-      :bearer_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
+  def language_detections_detect(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :quotaUser => :query,
+      :alt => :query,
+      :bearer_token => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :pp => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -75,13 +75,12 @@ defmodule GoogleApi.Translate.V2.Api.Detections do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v2/detect")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct: %GoogleApi.Translate.V2.Model.DetectionsListResponse{},
-      data_wrapped: true
+      opts ++ [struct: %GoogleApi.Translate.V2.Model.DetectionsListResponse{}, data_wrapped: true]
     )
   end
 
@@ -92,20 +91,20 @@ defmodule GoogleApi.Translate.V2.Api.Detections do
 
   - connection (GoogleApi.Translate.V2.Connection): Connection to server
   - q ([String.t]): The input text upon which to perform language detection. Repeat this parameter to perform language detection on multiple text inputs.
-  - opts (KeywordList): [optional] Optional parameters
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :bearer_token (String.t): OAuth bearer token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+    - :alt (String.t): Data format for response.
+    - :bearer_token (String.t): OAuth bearer token.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :pp (boolean()): Pretty-print response.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -114,21 +113,21 @@ defmodule GoogleApi.Translate.V2.Api.Detections do
   """
   @spec language_detections_list(Tesla.Env.client(), list(String.t()), keyword()) ::
           {:ok, GoogleApi.Translate.V2.Model.DetectionsListResponse.t()} | {:error, Tesla.Env.t()}
-  def language_detections_list(connection, q, opts \\ []) do
-    optional_params = %{
-      :oauth_token => :query,
-      :bearer_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
+  def language_detections_list(connection, q, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
+      :alt => :query,
+      :bearer_token => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :pp => :query,
+      :prettyPrint => :query,
       :quotaUser => :query,
-      :pp => :query
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -136,13 +135,12 @@ defmodule GoogleApi.Translate.V2.Api.Detections do
       |> Request.method(:get)
       |> Request.url("/v2/detect")
       |> Request.add_param(:query, :q, q)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct: %GoogleApi.Translate.V2.Model.DetectionsListResponse{},
-      data_wrapped: true
+      opts ++ [struct: %GoogleApi.Translate.V2.Model.DetectionsListResponse{}, data_wrapped: true]
     )
   end
 end

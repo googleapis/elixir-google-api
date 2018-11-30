@@ -32,7 +32,7 @@ defmodule GoogleApi.Compute.V1.Api.LicenseCodes do
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
   - license_code (String.t): Number corresponding to the License code resource to return.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -48,8 +48,14 @@ defmodule GoogleApi.Compute.V1.Api.LicenseCodes do
   """
   @spec compute_license_codes_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.LicenseCode.t()} | {:error, Tesla.Env.t()}
-  def compute_license_codes_get(connection, project, license_code, opts \\ []) do
-    optional_params = %{
+  def compute_license_codes_get(
+        connection,
+        project,
+        license_code,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -66,11 +72,11 @@ defmodule GoogleApi.Compute.V1.Api.LicenseCodes do
         "project" => URI.encode_www_form(project),
         "licenseCode" => URI.encode_www_form(license_code)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.LicenseCode{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.LicenseCode{}])
   end
 
   @doc """
@@ -80,8 +86,8 @@ defmodule GoogleApi.Compute.V1.Api.LicenseCodes do
 
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
-  - resource (String.t): Name of the resource for this request.
-  - opts (KeywordList): [optional] Optional parameters
+  - resource (String.t): Name or id of the resource for this request.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -103,8 +109,14 @@ defmodule GoogleApi.Compute.V1.Api.LicenseCodes do
           keyword()
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.TestPermissionsResponse.t()} | {:error, Tesla.Env.t()}
-  def compute_license_codes_test_iam_permissions(connection, project, resource, opts \\ []) do
-    optional_params = %{
+  def compute_license_codes_test_iam_permissions(
+        connection,
+        project,
+        resource,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -122,10 +134,10 @@ defmodule GoogleApi.Compute.V1.Api.LicenseCodes do
         "project" => URI.encode_www_form(project),
         "resource" => URI.encode_www_form(resource)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.TestPermissionsResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.TestPermissionsResponse{}])
   end
 end

@@ -27,6 +27,7 @@ defmodule GoogleApi.Books.V1.Model.VolumeVolumeInfo do
   - averageRating (float()): The mean review rating for this volume. (min &#x3D; 1.0, max &#x3D; 5.0) Defaults to: `null`.
   - canonicalVolumeLink (String.t): Canonical URL for a volume. (In LITE projection.) Defaults to: `null`.
   - categories ([String.t]): A list of subject categories, such as \&quot;Fiction\&quot;, \&quot;Suspense\&quot;, etc. Defaults to: `null`.
+  - comicsContent (boolean()): Whether the volume has comics content. Defaults to: `null`.
   - contentVersion (String.t): An identifier for the version of the volume content (text &amp; images). (In LITE projection) Defaults to: `null`.
   - description (String.t): A synopsis of the volume. The text of the description is formatted in HTML and includes simple formatting elements, such as b, i, and br tags. (In LITE projection.) Defaults to: `null`.
   - dimensions (VolumeVolumeInfoDimensions):  Defaults to: `null`.
@@ -58,6 +59,7 @@ defmodule GoogleApi.Books.V1.Model.VolumeVolumeInfo do
           :averageRating => any(),
           :canonicalVolumeLink => any(),
           :categories => list(any()),
+          :comicsContent => any(),
           :contentVersion => any(),
           :description => any(),
           :dimensions => GoogleApi.Books.V1.Model.VolumeVolumeInfoDimensions.t(),
@@ -69,7 +71,8 @@ defmodule GoogleApi.Books.V1.Model.VolumeVolumeInfo do
           :mainCategory => any(),
           :maturityRating => any(),
           :pageCount => any(),
-          :panelizationSummary => GoogleApi.Books.V1.Model.VolumeVolumeInfoPanelizationSummary.t(),
+          :panelizationSummary =>
+            GoogleApi.Books.V1.Model.VolumeVolumeInfoPanelizationSummary.t(),
           :previewLink => any(),
           :printType => any(),
           :printedPageCount => any(),
@@ -87,6 +90,7 @@ defmodule GoogleApi.Books.V1.Model.VolumeVolumeInfo do
   field(:averageRating)
   field(:canonicalVolumeLink)
   field(:categories, type: :list)
+  field(:comicsContent)
   field(:contentVersion)
   field(:description)
   field(:dimensions, as: GoogleApi.Books.V1.Model.VolumeVolumeInfoDimensions)

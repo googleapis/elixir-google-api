@@ -25,7 +25,7 @@ defmodule GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1CommonMetadata do
   - endTime (DateTime.t): The time the operation ended, either successfully or otherwise. Defaults to: `null`.
   - labels (%{optional(String.t) &#x3D;&gt; String.t}): The client-assigned labels which were provided when the operation was created. May also include additional labels. Defaults to: `null`.
   - operationType (String.t): The type of the operation. Can be used as a filter in ListOperationsRequest. Defaults to: `null`.
-    - Enum - one of [OPERATION_TYPE_UNSPECIFIED, EXPORT_ENTITIES, IMPORT_ENTITIES]
+    - Enum - one of [OPERATION_TYPE_UNSPECIFIED, EXPORT_ENTITIES, IMPORT_ENTITIES, CREATE_INDEX, DELETE_INDEX]
   - startTime (DateTime.t): The time that work began on the operation. Defaults to: `null`.
   - state (String.t): The current state of the Operation. Defaults to: `null`.
     - Enum - one of [STATE_UNSPECIFIED, INITIALIZING, PROCESSING, CANCELLING, FINALIZING, SUCCESSFUL, FAILED, CANCELLED]

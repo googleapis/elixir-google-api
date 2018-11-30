@@ -31,7 +31,7 @@ defmodule GoogleApi.PageSpeedOnline.V4.Api.Pagespeedapi do
 
   - connection (GoogleApi.PageSpeedOnline.V4.Connection): Connection to server
   - url (String.t): The URL to fetch and analyze
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -56,8 +56,13 @@ defmodule GoogleApi.PageSpeedOnline.V4.Api.Pagespeedapi do
   @spec pagespeedonline_pagespeedapi_runpagespeed(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.PageSpeedOnline.V4.Model.PagespeedApiPagespeedResponseV4.t()}
           | {:error, Tesla.Env.t()}
-  def pagespeedonline_pagespeedapi_runpagespeed(connection, url, opts \\ []) do
-    optional_params = %{
+  def pagespeedonline_pagespeedapi_runpagespeed(
+        connection,
+        url,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -80,12 +85,12 @@ defmodule GoogleApi.PageSpeedOnline.V4.Api.Pagespeedapi do
       |> Request.method(:get)
       |> Request.url("/runPagespeed")
       |> Request.add_param(:query, :url, url)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct: %GoogleApi.PageSpeedOnline.V4.Model.PagespeedApiPagespeedResponseV4{}
+      opts ++ [struct: %GoogleApi.PageSpeedOnline.V4.Model.PagespeedApiPagespeedResponseV4{}]
     )
   end
 end

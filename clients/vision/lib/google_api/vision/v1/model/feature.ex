@@ -25,7 +25,7 @@ defmodule GoogleApi.Vision.V1.Model.Feature do
   - maxResults (integer()): Maximum number of results of this type. Does not apply to &#x60;TEXT_DETECTION&#x60;, &#x60;DOCUMENT_TEXT_DETECTION&#x60;, or &#x60;CROP_HINTS&#x60;. Defaults to: `null`.
   - model (String.t): Model to use for the feature. Supported values: \&quot;builtin/stable\&quot; (the default if unset) and \&quot;builtin/latest\&quot;. Defaults to: `null`.
   - type (String.t): The feature type. Defaults to: `null`.
-    - Enum - one of [TYPE_UNSPECIFIED, FACE_DETECTION, LANDMARK_DETECTION, LOGO_DETECTION, LABEL_DETECTION, TEXT_DETECTION, DOCUMENT_TEXT_DETECTION, SAFE_SEARCH_DETECTION, IMAGE_PROPERTIES, CROP_HINTS, WEB_DETECTION]
+    - Enum - one of [TYPE_UNSPECIFIED, FACE_DETECTION, LANDMARK_DETECTION, LOGO_DETECTION, LABEL_DETECTION, TEXT_DETECTION, DOCUMENT_TEXT_DETECTION, SAFE_SEARCH_DETECTION, IMAGE_PROPERTIES, CROP_HINTS, WEB_DETECTION, PRODUCT_SEARCH, OBJECT_LOCALIZATION]
   """
 
   use GoogleApi.Gax.ModelBase

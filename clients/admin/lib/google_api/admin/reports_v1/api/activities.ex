@@ -32,7 +32,7 @@ defmodule GoogleApi.Admin.Reports_v1.Api.Activities do
   - connection (GoogleApi.Admin.Reports_v1.Connection): Connection to server
   - user_key (String.t): Represents the profile id or the user email for which the data should be filtered. When &#39;all&#39; is specified as the userKey, it returns usageReports for all users.
   - application_name (String.t): Application name for which the events are to be retrieved.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -56,8 +56,14 @@ defmodule GoogleApi.Admin.Reports_v1.Api.Activities do
   """
   @spec reports_activities_list(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Admin.Reports_v1.Model.Activities.t()} | {:error, Tesla.Env.t()}
-  def reports_activities_list(connection, user_key, application_name, opts \\ []) do
-    optional_params = %{
+  def reports_activities_list(
+        connection,
+        user_key,
+        application_name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -82,11 +88,11 @@ defmodule GoogleApi.Admin.Reports_v1.Api.Activities do
         "userKey" => URI.encode_www_form(user_key),
         "applicationName" => URI.encode_www_form(application_name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Admin.Reports_v1.Model.Activities{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Admin.Reports_v1.Model.Activities{}])
   end
 
   @doc """
@@ -97,7 +103,7 @@ defmodule GoogleApi.Admin.Reports_v1.Api.Activities do
   - connection (GoogleApi.Admin.Reports_v1.Connection): Connection to server
   - user_key (String.t): Represents the profile id or the user email for which the data should be filtered. When &#39;all&#39; is specified as the userKey, it returns usageReports for all users.
   - application_name (String.t): Application name for which the events are to be retrieved.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -122,8 +128,14 @@ defmodule GoogleApi.Admin.Reports_v1.Api.Activities do
   """
   @spec reports_activities_watch(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Admin.Reports_v1.Model.Channel.t()} | {:error, Tesla.Env.t()}
-  def reports_activities_watch(connection, user_key, application_name, opts \\ []) do
-    optional_params = %{
+  def reports_activities_watch(
+        connection,
+        user_key,
+        application_name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -149,10 +161,10 @@ defmodule GoogleApi.Admin.Reports_v1.Api.Activities do
         "userKey" => URI.encode_www_form(user_key),
         "applicationName" => URI.encode_www_form(application_name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Admin.Reports_v1.Model.Channel{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Admin.Reports_v1.Model.Channel{}])
   end
 end

@@ -25,23 +25,23 @@ defmodule GoogleApi.Logging.V2.Api.MonitoredResourceDescriptors do
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
-  Lists the descriptors for monitored resource types used by Stackdriver Logging.
+  Lists the descriptors for monitored resource types used by Logging.
 
   ## Parameters
 
   - connection (GoogleApi.Logging.V2.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :pageSize (integer()): Optional. The maximum number of results to return from this request. Non-positive values are ignored. The presence of nextPageToken in the response indicates that more results might be available.
     - :pageToken (String.t): Optional. If present, then retrieve the next batch of results from the preceding call to this method. pageToken must be the value of nextPageToken from the previous response. The values of other method parameters should be identical to those in the previous call.
 
@@ -53,19 +53,19 @@ defmodule GoogleApi.Logging.V2.Api.MonitoredResourceDescriptors do
   @spec logging_monitored_resource_descriptors_list(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.Logging.V2.Model.ListMonitoredResourceDescriptorsResponse.t()}
           | {:error, Tesla.Env.t()}
-  def logging_monitored_resource_descriptors_list(connection, opts \\ []) do
-    optional_params = %{
+  def logging_monitored_resource_descriptors_list(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :upload_protocol => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
       :pageSize => :query,
       :pageToken => :query
     }
@@ -74,12 +74,12 @@ defmodule GoogleApi.Logging.V2.Api.MonitoredResourceDescriptors do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v2/monitoredResourceDescriptors")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct: %GoogleApi.Logging.V2.Model.ListMonitoredResourceDescriptorsResponse{}
+      opts ++ [struct: %GoogleApi.Logging.V2.Model.ListMonitoredResourceDescriptorsResponse{}]
     )
   end
 end

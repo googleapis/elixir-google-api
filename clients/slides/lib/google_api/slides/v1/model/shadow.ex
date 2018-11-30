@@ -22,16 +22,16 @@ defmodule GoogleApi.Slides.V1.Model.Shadow do
 
   ## Attributes
 
-  - alignment (String.t): The alignment point of the shadow, that sets the origin for translate, scale and skew of the shadow. Defaults to: `null`.
+  - alignment (String.t): The alignment point of the shadow, that sets the origin for translate, scale and skew of the shadow. This property is read-only. Defaults to: `null`.
     - Enum - one of [RECTANGLE_POSITION_UNSPECIFIED, TOP_LEFT, TOP_CENTER, TOP_RIGHT, LEFT_CENTER, CENTER, RIGHT_CENTER, BOTTOM_LEFT, BOTTOM_CENTER, BOTTOM_RIGHT]
   - alpha (float()): The alpha of the shadow&#39;s color, from 0.0 to 1.0. Defaults to: `null`.
   - blurRadius (Dimension): The radius of the shadow blur. The larger the radius, the more diffuse the shadow becomes. Defaults to: `null`.
   - color (OpaqueColor): The shadow color value. Defaults to: `null`.
   - propertyState (String.t): The shadow property state.  Updating the shadow on a page element will implicitly update this field to &#x60;RENDERED&#x60;, unless another value is specified in the same request. To have no shadow on a page element, set this field to &#x60;NOT_RENDERED&#x60;. In this case, any other shadow fields set in the same request will be ignored. Defaults to: `null`.
     - Enum - one of [RENDERED, NOT_RENDERED, INHERIT]
-  - rotateWithShape (boolean()): Whether the shadow should rotate with the shape. Defaults to: `null`.
+  - rotateWithShape (boolean()): Whether the shadow should rotate with the shape. This property is read-only. Defaults to: `null`.
   - transform (AffineTransform): Transform that encodes the translate, scale, and skew of the shadow, relative to the alignment position. Defaults to: `null`.
-  - type (String.t): The type of the shadow. Defaults to: `null`.
+  - type (String.t): The type of the shadow. This property is read-only. Defaults to: `null`.
     - Enum - one of [SHADOW_TYPE_UNSPECIFIED, OUTER]
   """
 

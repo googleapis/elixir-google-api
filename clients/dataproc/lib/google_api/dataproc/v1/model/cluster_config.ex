@@ -23,6 +23,7 @@ defmodule GoogleApi.Dataproc.V1.Model.ClusterConfig do
   ## Attributes
 
   - configBucket (String.t): Optional. A Cloud Storage staging bucket used for sharing generated SSH keys and config. If you do not specify a staging bucket, Cloud Dataproc will determine an appropriate Cloud Storage location (US, ASIA, or EU) for your cluster&#39;s staging bucket according to the Google Compute Engine zone where your cluster is deployed, and then it will create and manage this project-level, per-location bucket for you. Defaults to: `null`.
+  - encryptionConfig (EncryptionConfig): Optional. Encryption settings for the cluster. Defaults to: `null`.
   - gceClusterConfig (GceClusterConfig): Required. The shared Compute Engine config settings for all instances in a cluster. Defaults to: `null`.
   - initializationActions ([NodeInitializationAction]): Optional. Commands to execute on each node after config is completed. By default, executables are run on master and all worker nodes. You can test a node&#39;s role metadata to run an executable on a master or worker node, as shown below using curl (you can also use wget): ROLE&#x3D;$(curl -H Metadata-Flavor:Google http://metadata/computeMetadata/v1/instance/attributes/dataproc-role) if [[ \&quot;${ROLE}\&quot; &#x3D;&#x3D; &#39;Master&#39; ]]; then   ... master specific actions ... else   ... worker specific actions ... fi  Defaults to: `null`.
   - masterConfig (InstanceGroupConfig): Optional. The Compute Engine config settings for the master instance in a cluster. Defaults to: `null`.
@@ -35,8 +36,10 @@ defmodule GoogleApi.Dataproc.V1.Model.ClusterConfig do
 
   @type t :: %__MODULE__{
           :configBucket => any(),
+          :encryptionConfig => GoogleApi.Dataproc.V1.Model.EncryptionConfig.t(),
           :gceClusterConfig => GoogleApi.Dataproc.V1.Model.GceClusterConfig.t(),
-          :initializationActions => list(GoogleApi.Dataproc.V1.Model.NodeInitializationAction.t()),
+          :initializationActions =>
+            list(GoogleApi.Dataproc.V1.Model.NodeInitializationAction.t()),
           :masterConfig => GoogleApi.Dataproc.V1.Model.InstanceGroupConfig.t(),
           :secondaryWorkerConfig => GoogleApi.Dataproc.V1.Model.InstanceGroupConfig.t(),
           :softwareConfig => GoogleApi.Dataproc.V1.Model.SoftwareConfig.t(),
@@ -44,6 +47,7 @@ defmodule GoogleApi.Dataproc.V1.Model.ClusterConfig do
         }
 
   field(:configBucket)
+  field(:encryptionConfig, as: GoogleApi.Dataproc.V1.Model.EncryptionConfig)
   field(:gceClusterConfig, as: GoogleApi.Dataproc.V1.Model.GceClusterConfig)
 
   field(

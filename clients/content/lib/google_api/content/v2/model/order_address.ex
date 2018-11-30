@@ -28,7 +28,7 @@ defmodule GoogleApi.Content.V2.Model.OrderAddress do
   - locality (String.t): City, town or commune. May also include dependent localities or sublocalities (e.g. neighborhoods or suburbs). Defaults to: `null`.
   - postalCode (String.t): Postal Code or ZIP (e.g. \&quot;94043\&quot;). Defaults to: `null`.
   - recipientName (String.t): Name of the recipient. Defaults to: `null`.
-  - region (String.t): Top-level administrative subdivision of the country (e.g. \&quot;CA\&quot;). Defaults to: `null`.
+  - region (String.t): Top-level administrative subdivision of the country. For example, a state like California (\&quot;CA\&quot;) or a province like Quebec (\&quot;QC\&quot;). Defaults to: `null`.
   - streetAddress ([String.t]): Street-level part of the address. Defaults to: `null`.
   """
 

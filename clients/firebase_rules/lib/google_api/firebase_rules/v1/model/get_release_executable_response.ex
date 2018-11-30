@@ -28,6 +28,7 @@ defmodule GoogleApi.FirebaseRules.V1.Model.GetReleaseExecutableResponse do
   - language (String.t): &#x60;Language&#x60; used to generate the executable bytes. Defaults to: `null`.
     - Enum - one of [LANGUAGE_UNSPECIFIED, FIREBASE_RULES, EVENT_FLOW_TRIGGERS]
   - rulesetName (String.t): &#x60;Ruleset&#x60; name associated with the &#x60;Release&#x60; executable. Defaults to: `null`.
+  - syncTime (DateTime.t): Optional, indicates the freshness of the result. The response is guaranteed to be the latest within an interval up to the sync_time (inclusive). Defaults to: `null`.
   - updateTime (DateTime.t): Timestamp for the most recent &#x60;Release.update_time&#x60;. Defaults to: `null`.
   """
 
@@ -38,6 +39,7 @@ defmodule GoogleApi.FirebaseRules.V1.Model.GetReleaseExecutableResponse do
           :executableVersion => any(),
           :language => any(),
           :rulesetName => any(),
+          :syncTime => DateTime.t(),
           :updateTime => DateTime.t()
         }
 
@@ -45,6 +47,7 @@ defmodule GoogleApi.FirebaseRules.V1.Model.GetReleaseExecutableResponse do
   field(:executableVersion)
   field(:language)
   field(:rulesetName)
+  field(:syncTime, as: DateTime)
   field(:updateTime, as: DateTime)
 end
 

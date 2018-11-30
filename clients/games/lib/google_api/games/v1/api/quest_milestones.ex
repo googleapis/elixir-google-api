@@ -33,7 +33,7 @@ defmodule GoogleApi.Games.V1.Api.QuestMilestones do
   - quest_id (String.t): The ID of the quest.
   - milestone_id (String.t): The ID of the milestone.
   - request_id (String.t): A numeric ID to ensure that the request is handled correctly across retries. Your client application must generate this ID randomly.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -54,8 +54,15 @@ defmodule GoogleApi.Games.V1.Api.QuestMilestones do
           String.t(),
           keyword()
         ) :: {:ok, nil} | {:error, Tesla.Env.t()}
-  def games_quest_milestones_claim(connection, quest_id, milestone_id, request_id, opts \\ []) do
-    optional_params = %{
+  def games_quest_milestones_claim(
+        connection,
+        quest_id,
+        milestone_id,
+        request_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -73,10 +80,10 @@ defmodule GoogleApi.Games.V1.Api.QuestMilestones do
         "milestoneId" => URI.encode_www_form(milestone_id)
       })
       |> Request.add_param(:query, :requestId, request_id)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 end

@@ -23,15 +23,18 @@ defmodule GoogleApi.ServiceControl.V1.Model.ResourceLocation do
   ## Attributes
 
   - currentLocations ([String.t]): The locations of a resource after the execution of the operation. For example:      \&quot;europe-west1-a\&quot;     \&quot;us-east1\&quot;     \&quot;nam3\&quot; Defaults to: `null`.
+  - originalLocations ([String.t]): The locations of a resource prior to the execution of the operation. For example:      \&quot;europe-west1-a\&quot;     \&quot;us-east1\&quot;     \&quot;nam3\&quot; Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :currentLocations => list(any())
+          :currentLocations => list(any()),
+          :originalLocations => list(any())
         }
 
   field(:currentLocations, type: :list)
+  field(:originalLocations, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ServiceControl.V1.Model.ResourceLocation do

@@ -25,6 +25,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ComplianceRule do
   - apiLevelCondition (ApiLevelCondition): A condition which is satisfied if the Android Framework API level on the device doesn&#39;t meet a minimum requirement. Defaults to: `null`.
   - disableApps (boolean()): If set to true, the rule includes a mitigating action to disable apps so that the device is effectively disabled, but app data is preserved. If the device is running an app in locked task mode, the app will be closed and a UI showing the reason for non-compliance will be displayed. Defaults to: `null`.
   - nonComplianceDetailCondition (NonComplianceDetailCondition): A condition which is satisfied if there exists any matching NonComplianceDetail for the device. Defaults to: `null`.
+  - packageNamesToDisable ([String.t]): If set, the rule includes a mitigating action to disable apps specified in the list, but app data is preserved. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -33,7 +34,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ComplianceRule do
           :apiLevelCondition => GoogleApi.AndroidManagement.V1.Model.ApiLevelCondition.t(),
           :disableApps => any(),
           :nonComplianceDetailCondition =>
-            GoogleApi.AndroidManagement.V1.Model.NonComplianceDetailCondition.t()
+            GoogleApi.AndroidManagement.V1.Model.NonComplianceDetailCondition.t(),
+          :packageNamesToDisable => list(any())
         }
 
   field(:apiLevelCondition, as: GoogleApi.AndroidManagement.V1.Model.ApiLevelCondition)
@@ -43,6 +45,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ComplianceRule do
     :nonComplianceDetailCondition,
     as: GoogleApi.AndroidManagement.V1.Model.NonComplianceDetailCondition
   )
+
+  field(:packageNamesToDisable, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AndroidManagement.V1.Model.ComplianceRule do

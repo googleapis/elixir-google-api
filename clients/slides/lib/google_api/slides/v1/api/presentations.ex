@@ -31,18 +31,18 @@ defmodule GoogleApi.Slides.V1.Api.Presentations do
 
   - connection (GoogleApi.Slides.V1.Connection): Connection to server
   - presentation_id (String.t): The presentation to apply the updates to.
-  - opts (KeywordList): [optional] Optional parameters
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (BatchUpdatePresentationRequest): 
 
   ## Returns
@@ -53,19 +53,24 @@ defmodule GoogleApi.Slides.V1.Api.Presentations do
   @spec slides_presentations_batch_update(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Slides.V1.Model.BatchUpdatePresentationResponse.t()}
           | {:error, Tesla.Env.t()}
-  def slides_presentations_batch_update(connection, presentation_id, opts \\ []) do
-    optional_params = %{
-      :fields => :query,
-      :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
+  def slides_presentations_batch_update(
+        connection,
+        presentation_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -75,11 +80,13 @@ defmodule GoogleApi.Slides.V1.Api.Presentations do
       |> Request.url("/v1/presentations/{presentationId}:batchUpdate", %{
         "presentationId" => URI.encode_www_form(presentation_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Slides.V1.Model.BatchUpdatePresentationResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Slides.V1.Model.BatchUpdatePresentationResponse{}]
+    )
   end
 
   @doc """
@@ -88,18 +95,18 @@ defmodule GoogleApi.Slides.V1.Api.Presentations do
   ## Parameters
 
   - connection (GoogleApi.Slides.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (Presentation): 
 
   ## Returns
@@ -109,19 +116,19 @@ defmodule GoogleApi.Slides.V1.Api.Presentations do
   """
   @spec slides_presentations_create(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.Slides.V1.Model.Presentation.t()} | {:error, Tesla.Env.t()}
-  def slides_presentations_create(connection, opts \\ []) do
-    optional_params = %{
-      :fields => :query,
-      :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
+  def slides_presentations_create(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -129,11 +136,11 @@ defmodule GoogleApi.Slides.V1.Api.Presentations do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/presentations")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Slides.V1.Model.Presentation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Slides.V1.Model.Presentation{}])
   end
 
   @doc """
@@ -143,18 +150,18 @@ defmodule GoogleApi.Slides.V1.Api.Presentations do
 
   - connection (GoogleApi.Slides.V1.Connection): Connection to server
   - presentation_id (String.t): The ID of the presentation to retrieve.
-  - opts (KeywordList): [optional] Optional parameters
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -163,19 +170,19 @@ defmodule GoogleApi.Slides.V1.Api.Presentations do
   """
   @spec slides_presentations_get(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Slides.V1.Model.Presentation.t()} | {:error, Tesla.Env.t()}
-  def slides_presentations_get(connection, presentation_id, opts \\ []) do
-    optional_params = %{
-      :fields => :query,
-      :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
+  def slides_presentations_get(connection, presentation_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :upload_protocol => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
       :quotaUser => :query,
-      :prettyPrint => :query
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -184,11 +191,11 @@ defmodule GoogleApi.Slides.V1.Api.Presentations do
       |> Request.url("/v1/presentations/{+presentationId}", %{
         "presentationId" => URI.encode_www_form(presentation_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Slides.V1.Model.Presentation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Slides.V1.Model.Presentation{}])
   end
 
   @doc """
@@ -199,18 +206,18 @@ defmodule GoogleApi.Slides.V1.Api.Presentations do
   - connection (GoogleApi.Slides.V1.Connection): Connection to server
   - presentation_id (String.t): The ID of the presentation to retrieve.
   - page_object_id (String.t): The object ID of the page to retrieve.
-  - opts (KeywordList): [optional] Optional parameters
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -219,19 +226,25 @@ defmodule GoogleApi.Slides.V1.Api.Presentations do
   """
   @spec slides_presentations_pages_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Slides.V1.Model.Page.t()} | {:error, Tesla.Env.t()}
-  def slides_presentations_pages_get(connection, presentation_id, page_object_id, opts \\ []) do
-    optional_params = %{
-      :fields => :query,
-      :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
+  def slides_presentations_pages_get(
+        connection,
+        presentation_id,
+        page_object_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :upload_protocol => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
       :quotaUser => :query,
-      :prettyPrint => :query
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -241,11 +254,11 @@ defmodule GoogleApi.Slides.V1.Api.Presentations do
         "presentationId" => URI.encode_www_form(presentation_id),
         "pageObjectId" => URI.encode_www_form(page_object_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Slides.V1.Model.Page{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Slides.V1.Model.Page{}])
   end
 
   @doc """
@@ -256,18 +269,18 @@ defmodule GoogleApi.Slides.V1.Api.Presentations do
   - connection (GoogleApi.Slides.V1.Connection): Connection to server
   - presentation_id (String.t): The ID of the presentation to retrieve.
   - page_object_id (String.t): The object ID of the page whose thumbnail to retrieve.
-  - opts (KeywordList): [optional] Optional parameters
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :thumbnailProperties.mimeType (String.t): The optional mime type of the thumbnail image.  If you don&#39;t specify the mime type, the default mime type will be PNG.
     - :thumbnailProperties.thumbnailSize (String.t): The optional thumbnail image size.  If you don&#39;t specify the size, the server chooses a default size of the image.
 
@@ -286,20 +299,21 @@ defmodule GoogleApi.Slides.V1.Api.Presentations do
         connection,
         presentation_id,
         page_object_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :fields => :query,
-      :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :"thumbnailProperties.mimeType" => :query,
       :"thumbnailProperties.thumbnailSize" => :query
     }
@@ -311,10 +325,10 @@ defmodule GoogleApi.Slides.V1.Api.Presentations do
         "presentationId" => URI.encode_www_form(presentation_id),
         "pageObjectId" => URI.encode_www_form(page_object_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Slides.V1.Model.Thumbnail{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Slides.V1.Model.Thumbnail{}])
   end
 end

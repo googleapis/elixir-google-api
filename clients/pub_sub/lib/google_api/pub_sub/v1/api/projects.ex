@@ -25,25 +25,25 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
-  Creates a snapshot from the requested subscription.&lt;br&gt;&lt;br&gt; &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be changed in backward-incompatible ways and is not recommended for production use. It is not subject to any SLA or deprecation policy. If the snapshot already exists, returns &#x60;ALREADY_EXISTS&#x60;. If the requested subscription doesn&#39;t exist, returns &#x60;NOT_FOUND&#x60;. If the backlog in the subscription is too old -- and the resulting snapshot would expire in less than 1 hour -- then &#x60;FAILED_PRECONDITION&#x60; is returned. See also the &#x60;Snapshot.expire_time&#x60; field. If the name is not provided in the request, the server will assign a random name for this snapshot on the same project as the subscription, conforming to the [resource name format](https://cloud.google.com/pubsub/docs/overview#names). The generated name is populated in the returned Snapshot object. Note that for REST API requests, you must specify a name in the request.
+  Creates a snapshot from the requested subscription. Snapshots are used in &lt;a href&#x3D;\&quot;https://cloud.google.com/pubsub/docs/replay-overview\&quot;&gt;Seek&lt;/a&gt; operations, which allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment state of messages in an existing subscription to the state captured by a snapshot. &lt;br&gt;&lt;br&gt; &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be changed in backward-incompatible ways and is not recommended for production use. It is not subject to any SLA or deprecation policy.&lt;br&gt;&lt;br&gt; If the snapshot already exists, returns &#x60;ALREADY_EXISTS&#x60;. If the requested subscription doesn&#39;t exist, returns &#x60;NOT_FOUND&#x60;. If the backlog in the subscription is too old -- and the resulting snapshot would expire in less than 1 hour -- then &#x60;FAILED_PRECONDITION&#x60; is returned. See also the &#x60;Snapshot.expire_time&#x60; field. If the name is not provided in the request, the server will assign a random name for this snapshot on the same project as the subscription, conforming to the [resource name format](https://cloud.google.com/pubsub/docs/overview#names). The generated name is populated in the returned Snapshot object. Note that for REST API requests, you must specify a name in the request.
 
   ## Parameters
 
   - connection (GoogleApi.PubSub.V1.Connection): Connection to server
-  - projects_id (String.t): Part of &#x60;name&#x60;. Optional user-provided name for this snapshot. If the name is not provided in the request, the server will assign a random name for this snapshot on the same project as the subscription. Note that for REST API requests, you must specify a name. Format is &#x60;projects/{project}/snapshots/{snap}&#x60;.
+  - projects_id (String.t): Part of &#x60;name&#x60;. Optional user-provided name for this snapshot. If the name is not provided in the request, the server will assign a random name for this snapshot on the same project as the subscription. Note that for REST API requests, you must specify a name.  See the &lt;a href&#x3D;\&quot;https://cloud.google.com/pubsub/docs/admin#resource_names\&quot;&gt; resource name rules&lt;/a&gt;. Format is &#x60;projects/{project}/snapshots/{snap}&#x60;.
   - snapshots_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :body (CreateSnapshotRequest): 
 
   ## Returns
@@ -53,19 +53,25 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   """
   @spec pubsub_projects_snapshots_create(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.PubSub.V1.Model.Snapshot.t()} | {:error, Tesla.Env.t()}
-  def pubsub_projects_snapshots_create(connection, projects_id, snapshots_id, opts \\ []) do
-    optional_params = %{
+  def pubsub_projects_snapshots_create(
+        connection,
+        projects_id,
+        snapshots_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :upload_protocol => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -76,33 +82,33 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         "projectsId" => URI.encode_www_form(projects_id),
         "snapshotsId" => URI.encode_www_form(snapshots_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.PubSub.V1.Model.Snapshot{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.PubSub.V1.Model.Snapshot{}])
   end
 
   @doc """
-  Removes an existing snapshot. &lt;br&gt;&lt;br&gt; &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be changed in backward-incompatible ways and is not recommended for production use. It is not subject to any SLA or deprecation policy. When the snapshot is deleted, all messages retained in the snapshot are immediately dropped. After a snapshot is deleted, a new one may be created with the same name, but the new one has no association with the old snapshot or its subscription, unless the same subscription is specified.
+  Removes an existing snapshot. Snapshots are used in &lt;a href&#x3D;\&quot;https://cloud.google.com/pubsub/docs/replay-overview\&quot;&gt;Seek&lt;/a&gt; operations, which allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment state of messages in an existing subscription to the state captured by a snapshot.&lt;br&gt;&lt;br&gt; &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be changed in backward-incompatible ways and is not recommended for production use. It is not subject to any SLA or deprecation policy. When the snapshot is deleted, all messages retained in the snapshot are immediately dropped. After a snapshot is deleted, a new one may be created with the same name, but the new one has no association with the old snapshot or its subscription, unless the same subscription is specified.
 
   ## Parameters
 
   - connection (GoogleApi.PubSub.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;snapshot&#x60;. The name of the snapshot to delete. Format is &#x60;projects/{project}/snapshots/{snap}&#x60;.
   - snapshots_id (String.t): Part of &#x60;snapshot&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
 
   ## Returns
 
@@ -111,19 +117,25 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   """
   @spec pubsub_projects_snapshots_delete(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.PubSub.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
-  def pubsub_projects_snapshots_delete(connection, projects_id, snapshots_id, opts \\ []) do
-    optional_params = %{
+  def pubsub_projects_snapshots_delete(
+        connection,
+        projects_id,
+        snapshots_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :upload_protocol => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
-      :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -133,33 +145,33 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         "projectsId" => URI.encode_www_form(projects_id),
         "snapshotsId" => URI.encode_www_form(snapshots_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.PubSub.V1.Model.Empty{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.PubSub.V1.Model.Empty{}])
   end
 
   @doc """
-  Gets the configuration details of a snapshot.&lt;br&gt;&lt;br&gt; &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be changed in backward-incompatible ways and is not recommended for production use. It is not subject to any SLA or deprecation policy.
+  Gets the configuration details of a snapshot. Snapshots are used in &lt;a href&#x3D;\&quot;https://cloud.google.com/pubsub/docs/replay-overview\&quot;&gt;Seek&lt;/a&gt; operations, which allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment state of messages in an existing subscription to the state captured by a snapshot.&lt;br&gt;&lt;br&gt; &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be changed in backward-incompatible ways and is not recommended for production use. It is not subject to any SLA or deprecation policy.
 
   ## Parameters
 
   - connection (GoogleApi.PubSub.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;snapshot&#x60;. The name of the snapshot to get. Format is &#x60;projects/{project}/snapshots/{snap}&#x60;.
   - snapshots_id (String.t): Part of &#x60;snapshot&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
 
   ## Returns
 
@@ -168,19 +180,25 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   """
   @spec pubsub_projects_snapshots_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.PubSub.V1.Model.Snapshot.t()} | {:error, Tesla.Env.t()}
-  def pubsub_projects_snapshots_get(connection, projects_id, snapshots_id, opts \\ []) do
-    optional_params = %{
+  def pubsub_projects_snapshots_get(
+        connection,
+        projects_id,
+        snapshots_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :upload_protocol => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
-      :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -190,11 +208,11 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         "projectsId" => URI.encode_www_form(projects_id),
         "snapshotsId" => URI.encode_www_form(snapshots_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.PubSub.V1.Model.Snapshot{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.PubSub.V1.Model.Snapshot{}])
   end
 
   @doc """
@@ -205,18 +223,18 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   - connection (GoogleApi.PubSub.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;resource&#x60;. REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
   - snapshots_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
 
   ## Returns
 
@@ -229,19 +247,25 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.PubSub.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
-  def pubsub_projects_snapshots_get_iam_policy(connection, projects_id, snapshots_id, opts \\ []) do
-    optional_params = %{
+  def pubsub_projects_snapshots_get_iam_policy(
+        connection,
+        projects_id,
+        snapshots_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :upload_protocol => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
-      :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -251,34 +275,34 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         "projectsId" => URI.encode_www_form(projects_id),
         "snapshotsId" => URI.encode_www_form(snapshots_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.PubSub.V1.Model.Policy{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.PubSub.V1.Model.Policy{}])
   end
 
   @doc """
-  Lists the existing snapshots.&lt;br&gt;&lt;br&gt; &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be changed in backward-incompatible ways and is not recommended for production use. It is not subject to any SLA or deprecation policy.
+  Lists the existing snapshots. Snapshots are used in &lt;a href&#x3D;\&quot;https://cloud.google.com/pubsub/docs/replay-overview\&quot;&gt;Seek&lt;/a&gt; operations, which allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment state of messages in an existing subscription to the state captured by a snapshot.&lt;br&gt;&lt;br&gt; &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be changed in backward-incompatible ways and is not recommended for production use. It is not subject to any SLA or deprecation policy.
 
   ## Parameters
 
   - connection (GoogleApi.PubSub.V1.Connection): Connection to server
-  - projects_id (String.t): Part of &#x60;project&#x60;. The name of the cloud project that snapshots belong to. Format is &#x60;projects/{project}&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
+  - projects_id (String.t): Part of &#x60;project&#x60;. The name of the project in which to list snapshots. Format is &#x60;projects/{project-id}&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :pageToken (String.t): The value returned by the last &#x60;ListSnapshotsResponse&#x60;; indicates that this is a continuation of a prior &#x60;ListSnapshots&#x60; call, and that the system should return the next page of data.
     - :pageSize (integer()): Maximum number of snapshots to return.
+    - :pageToken (String.t): The value returned by the last &#x60;ListSnapshotsResponse&#x60;; indicates that this is a continuation of a prior &#x60;ListSnapshots&#x60; call, and that the system should return the next page of data.
 
   ## Returns
 
@@ -287,21 +311,21 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   """
   @spec pubsub_projects_snapshots_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.PubSub.V1.Model.ListSnapshotsResponse.t()} | {:error, Tesla.Env.t()}
-  def pubsub_projects_snapshots_list(connection, projects_id, opts \\ []) do
-    optional_params = %{
+  def pubsub_projects_snapshots_list(connection, projects_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :upload_protocol => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
@@ -310,33 +334,33 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       |> Request.url("/v1/projects/{projectsId}/snapshots", %{
         "projectsId" => URI.encode_www_form(projects_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.PubSub.V1.Model.ListSnapshotsResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.PubSub.V1.Model.ListSnapshotsResponse{}])
   end
 
   @doc """
-  Updates an existing snapshot.&lt;br&gt;&lt;br&gt; &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be changed in backward-incompatible ways and is not recommended for production use. It is not subject to any SLA or deprecation policy. Note that certain properties of a snapshot are not modifiable.
+  Updates an existing snapshot. Snapshots are used in &lt;a href&#x3D;\&quot;https://cloud.google.com/pubsub/docs/replay-overview\&quot;&gt;Seek&lt;/a&gt; operations, which allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment state of messages in an existing subscription to the state captured by a snapshot.&lt;br&gt;&lt;br&gt; &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be changed in backward-incompatible ways and is not recommended for production use. It is not subject to any SLA or deprecation policy. Note that certain properties of a snapshot are not modifiable.
 
   ## Parameters
 
   - connection (GoogleApi.PubSub.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;snapshot.name&#x60;. The name of the snapshot.
   - snapshots_id (String.t): Part of &#x60;snapshot.name&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :body (UpdateSnapshotRequest): 
 
   ## Returns
@@ -346,19 +370,25 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   """
   @spec pubsub_projects_snapshots_patch(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.PubSub.V1.Model.Snapshot.t()} | {:error, Tesla.Env.t()}
-  def pubsub_projects_snapshots_patch(connection, projects_id, snapshots_id, opts \\ []) do
-    optional_params = %{
+  def pubsub_projects_snapshots_patch(
+        connection,
+        projects_id,
+        snapshots_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :upload_protocol => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -369,11 +399,11 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         "projectsId" => URI.encode_www_form(projects_id),
         "snapshotsId" => URI.encode_www_form(snapshots_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.PubSub.V1.Model.Snapshot{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.PubSub.V1.Model.Snapshot{}])
   end
 
   @doc """
@@ -384,18 +414,18 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   - connection (GoogleApi.PubSub.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;resource&#x60;. REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
   - snapshots_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :body (SetIamPolicyRequest): 
 
   ## Returns
@@ -409,19 +439,25 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.PubSub.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
-  def pubsub_projects_snapshots_set_iam_policy(connection, projects_id, snapshots_id, opts \\ []) do
-    optional_params = %{
+  def pubsub_projects_snapshots_set_iam_policy(
+        connection,
+        projects_id,
+        snapshots_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :upload_protocol => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -432,11 +468,11 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         "projectsId" => URI.encode_www_form(projects_id),
         "snapshotsId" => URI.encode_www_form(snapshots_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.PubSub.V1.Model.Policy{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.PubSub.V1.Model.Policy{}])
   end
 
   @doc """
@@ -447,18 +483,18 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   - connection (GoogleApi.PubSub.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;resource&#x60;. REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
   - snapshots_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :body (TestIamPermissionsRequest): 
 
   ## Returns
@@ -478,20 +514,21 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         connection,
         projects_id,
         snapshots_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :upload_protocol => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -502,11 +539,11 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         "projectsId" => URI.encode_www_form(projects_id),
         "snapshotsId" => URI.encode_www_form(snapshots_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.PubSub.V1.Model.TestIamPermissionsResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.PubSub.V1.Model.TestIamPermissionsResponse{}])
   end
 
   @doc """
@@ -517,18 +554,18 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   - connection (GoogleApi.PubSub.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;subscription&#x60;. The subscription whose message is being acknowledged. Format is &#x60;projects/{project}/subscriptions/{sub}&#x60;.
   - subscriptions_id (String.t): Part of &#x60;subscription&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :body (AcknowledgeRequest): 
 
   ## Returns
@@ -546,20 +583,21 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         connection,
         projects_id,
         subscriptions_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :upload_protocol => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -570,33 +608,33 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         "projectsId" => URI.encode_www_form(projects_id),
         "subscriptionsId" => URI.encode_www_form(subscriptions_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.PubSub.V1.Model.Empty{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.PubSub.V1.Model.Empty{}])
   end
 
   @doc """
-  Creates a subscription to a given topic. See the &lt;a href&#x3D;\&quot;/pubsub/docs/admin#resource_names\&quot;&gt; resource name rules&lt;/a&gt;. If the subscription already exists, returns &#x60;ALREADY_EXISTS&#x60;. If the corresponding topic doesn&#39;t exist, returns &#x60;NOT_FOUND&#x60;.  If the name is not provided in the request, the server will assign a random name for this subscription on the same project as the topic, conforming to the [resource name format](https://cloud.google.com/pubsub/docs/overview#names). The generated name is populated in the returned Subscription object. Note that for REST API requests, you must specify a name in the request.
+  Creates a subscription to a given topic. See the &lt;a href&#x3D;\&quot;https://cloud.google.com/pubsub/docs/admin#resource_names\&quot;&gt; resource name rules&lt;/a&gt;. If the subscription already exists, returns &#x60;ALREADY_EXISTS&#x60;. If the corresponding topic doesn&#39;t exist, returns &#x60;NOT_FOUND&#x60;.  If the name is not provided in the request, the server will assign a random name for this subscription on the same project as the topic, conforming to the [resource name format](https://cloud.google.com/pubsub/docs/overview#names). The generated name is populated in the returned Subscription object. Note that for REST API requests, you must specify a name in the request.
 
   ## Parameters
 
   - connection (GoogleApi.PubSub.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;name&#x60;. The name of the subscription. It must have the format &#x60;\&quot;projects/{project}/subscriptions/{subscription}\&quot;&#x60;. &#x60;{subscription}&#x60; must start with a letter, and contain only letters (&#x60;[A-Za-z]&#x60;), numbers (&#x60;[0-9]&#x60;), dashes (&#x60;-&#x60;), underscores (&#x60;_&#x60;), periods (&#x60;.&#x60;), tildes (&#x60;~&#x60;), plus (&#x60;+&#x60;) or percent signs (&#x60;%&#x60;). It must be between 3 and 255 characters in length, and it must not start with &#x60;\&quot;goog\&quot;&#x60;.
   - subscriptions_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :body (Subscription): 
 
   ## Returns
@@ -610,19 +648,25 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.PubSub.V1.Model.Subscription.t()} | {:error, Tesla.Env.t()}
-  def pubsub_projects_subscriptions_create(connection, projects_id, subscriptions_id, opts \\ []) do
-    optional_params = %{
+  def pubsub_projects_subscriptions_create(
+        connection,
+        projects_id,
+        subscriptions_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :upload_protocol => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -633,11 +677,11 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         "projectsId" => URI.encode_www_form(projects_id),
         "subscriptionsId" => URI.encode_www_form(subscriptions_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.PubSub.V1.Model.Subscription{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.PubSub.V1.Model.Subscription{}])
   end
 
   @doc """
@@ -648,18 +692,18 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   - connection (GoogleApi.PubSub.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;subscription&#x60;. The subscription to delete. Format is &#x60;projects/{project}/subscriptions/{sub}&#x60;.
   - subscriptions_id (String.t): Part of &#x60;subscription&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
 
   ## Returns
 
@@ -672,19 +716,25 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.PubSub.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
-  def pubsub_projects_subscriptions_delete(connection, projects_id, subscriptions_id, opts \\ []) do
-    optional_params = %{
+  def pubsub_projects_subscriptions_delete(
+        connection,
+        projects_id,
+        subscriptions_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :upload_protocol => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
-      :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -694,11 +744,11 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         "projectsId" => URI.encode_www_form(projects_id),
         "subscriptionsId" => URI.encode_www_form(subscriptions_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.PubSub.V1.Model.Empty{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.PubSub.V1.Model.Empty{}])
   end
 
   @doc """
@@ -709,18 +759,18 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   - connection (GoogleApi.PubSub.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;subscription&#x60;. The name of the subscription to get. Format is &#x60;projects/{project}/subscriptions/{sub}&#x60;.
   - subscriptions_id (String.t): Part of &#x60;subscription&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
 
   ## Returns
 
@@ -729,19 +779,25 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   """
   @spec pubsub_projects_subscriptions_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.PubSub.V1.Model.Subscription.t()} | {:error, Tesla.Env.t()}
-  def pubsub_projects_subscriptions_get(connection, projects_id, subscriptions_id, opts \\ []) do
-    optional_params = %{
+  def pubsub_projects_subscriptions_get(
+        connection,
+        projects_id,
+        subscriptions_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :upload_protocol => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
-      :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -751,11 +807,11 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         "projectsId" => URI.encode_www_form(projects_id),
         "subscriptionsId" => URI.encode_www_form(subscriptions_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.PubSub.V1.Model.Subscription{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.PubSub.V1.Model.Subscription{}])
   end
 
   @doc """
@@ -766,18 +822,18 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   - connection (GoogleApi.PubSub.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;resource&#x60;. REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
   - subscriptions_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
 
   ## Returns
 
@@ -794,20 +850,21 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         connection,
         projects_id,
         subscriptions_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :upload_protocol => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
-      :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -817,11 +874,11 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         "projectsId" => URI.encode_www_form(projects_id),
         "subscriptionsId" => URI.encode_www_form(subscriptions_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.PubSub.V1.Model.Policy{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.PubSub.V1.Model.Policy{}])
   end
 
   @doc """
@@ -830,21 +887,21 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   - connection (GoogleApi.PubSub.V1.Connection): Connection to server
-  - projects_id (String.t): Part of &#x60;project&#x60;. The name of the cloud project that subscriptions belong to. Format is &#x60;projects/{project}&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
+  - projects_id (String.t): Part of &#x60;project&#x60;. The name of the project in which to list subscriptions. Format is &#x60;projects/{project-id}&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :pageToken (String.t): The value returned by the last &#x60;ListSubscriptionsResponse&#x60;; indicates that this is a continuation of a prior &#x60;ListSubscriptions&#x60; call, and that the system should return the next page of data.
     - :pageSize (integer()): Maximum number of subscriptions to return.
+    - :pageToken (String.t): The value returned by the last &#x60;ListSubscriptionsResponse&#x60;; indicates that this is a continuation of a prior &#x60;ListSubscriptions&#x60; call, and that the system should return the next page of data.
 
   ## Returns
 
@@ -853,21 +910,26 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   """
   @spec pubsub_projects_subscriptions_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.PubSub.V1.Model.ListSubscriptionsResponse.t()} | {:error, Tesla.Env.t()}
-  def pubsub_projects_subscriptions_list(connection, projects_id, opts \\ []) do
-    optional_params = %{
+  def pubsub_projects_subscriptions_list(
+        connection,
+        projects_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :upload_protocol => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
@@ -876,11 +938,11 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       |> Request.url("/v1/projects/{projectsId}/subscriptions", %{
         "projectsId" => URI.encode_www_form(projects_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.PubSub.V1.Model.ListSubscriptionsResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.PubSub.V1.Model.ListSubscriptionsResponse{}])
   end
 
   @doc """
@@ -891,18 +953,18 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   - connection (GoogleApi.PubSub.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;subscription&#x60;. The name of the subscription. Format is &#x60;projects/{project}/subscriptions/{sub}&#x60;.
   - subscriptions_id (String.t): Part of &#x60;subscription&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :body (ModifyAckDeadlineRequest): 
 
   ## Returns
@@ -920,20 +982,21 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         connection,
         projects_id,
         subscriptions_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :upload_protocol => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -947,11 +1010,11 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           "subscriptionsId" => URI.encode_www_form(subscriptions_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.PubSub.V1.Model.Empty{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.PubSub.V1.Model.Empty{}])
   end
 
   @doc """
@@ -962,18 +1025,18 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   - connection (GoogleApi.PubSub.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;subscription&#x60;. The name of the subscription. Format is &#x60;projects/{project}/subscriptions/{sub}&#x60;.
   - subscriptions_id (String.t): Part of &#x60;subscription&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :body (ModifyPushConfigRequest): 
 
   ## Returns
@@ -991,20 +1054,21 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         connection,
         projects_id,
         subscriptions_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :upload_protocol => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -1018,11 +1082,11 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           "subscriptionsId" => URI.encode_www_form(subscriptions_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.PubSub.V1.Model.Empty{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.PubSub.V1.Model.Empty{}])
   end
 
   @doc """
@@ -1033,18 +1097,18 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   - connection (GoogleApi.PubSub.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;subscription.name&#x60;. The name of the subscription. It must have the format &#x60;\&quot;projects/{project}/subscriptions/{subscription}\&quot;&#x60;. &#x60;{subscription}&#x60; must start with a letter, and contain only letters (&#x60;[A-Za-z]&#x60;), numbers (&#x60;[0-9]&#x60;), dashes (&#x60;-&#x60;), underscores (&#x60;_&#x60;), periods (&#x60;.&#x60;), tildes (&#x60;~&#x60;), plus (&#x60;+&#x60;) or percent signs (&#x60;%&#x60;). It must be between 3 and 255 characters in length, and it must not start with &#x60;\&quot;goog\&quot;&#x60;.
   - subscriptions_id (String.t): Part of &#x60;subscription.name&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :body (UpdateSubscriptionRequest): 
 
   ## Returns
@@ -1054,19 +1118,25 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   """
   @spec pubsub_projects_subscriptions_patch(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.PubSub.V1.Model.Subscription.t()} | {:error, Tesla.Env.t()}
-  def pubsub_projects_subscriptions_patch(connection, projects_id, subscriptions_id, opts \\ []) do
-    optional_params = %{
+  def pubsub_projects_subscriptions_patch(
+        connection,
+        projects_id,
+        subscriptions_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :upload_protocol => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -1077,33 +1147,33 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         "projectsId" => URI.encode_www_form(projects_id),
         "subscriptionsId" => URI.encode_www_form(subscriptions_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.PubSub.V1.Model.Subscription{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.PubSub.V1.Model.Subscription{}])
   end
 
   @doc """
-  Pulls messages from the server. Returns an empty list if there are no messages available in the backlog. The server may return &#x60;UNAVAILABLE&#x60; if there are too many concurrent pull requests pending for the given subscription.
+  Pulls messages from the server. The server may return &#x60;UNAVAILABLE&#x60; if there are too many concurrent pull requests pending for the given subscription.
 
   ## Parameters
 
   - connection (GoogleApi.PubSub.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;subscription&#x60;. The subscription from which messages should be pulled. Format is &#x60;projects/{project}/subscriptions/{sub}&#x60;.
   - subscriptions_id (String.t): Part of &#x60;subscription&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :body (PullRequest): 
 
   ## Returns
@@ -1113,19 +1183,25 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   """
   @spec pubsub_projects_subscriptions_pull(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.PubSub.V1.Model.PullResponse.t()} | {:error, Tesla.Env.t()}
-  def pubsub_projects_subscriptions_pull(connection, projects_id, subscriptions_id, opts \\ []) do
-    optional_params = %{
+  def pubsub_projects_subscriptions_pull(
+        connection,
+        projects_id,
+        subscriptions_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :upload_protocol => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -1136,33 +1212,33 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         "projectsId" => URI.encode_www_form(projects_id),
         "subscriptionsId" => URI.encode_www_form(subscriptions_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.PubSub.V1.Model.PullResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.PubSub.V1.Model.PullResponse{}])
   end
 
   @doc """
-  Seeks an existing subscription to a point in time or to a given snapshot, whichever is provided in the request.&lt;br&gt;&lt;br&gt; &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be changed in backward-incompatible ways and is not recommended for production use. It is not subject to any SLA or deprecation policy.
+  Seeks an existing subscription to a point in time or to a given snapshot, whichever is provided in the request. Snapshots are used in &lt;a href&#x3D;\&quot;https://cloud.google.com/pubsub/docs/replay-overview\&quot;&gt;Seek&lt;/a&gt; operations, which allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment state of messages in an existing subscription to the state captured by a snapshot. Note that both the subscription and the snapshot must be on the same topic.&lt;br&gt;&lt;br&gt; &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be changed in backward-incompatible ways and is not recommended for production use. It is not subject to any SLA or deprecation policy.
 
   ## Parameters
 
   - connection (GoogleApi.PubSub.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;subscription&#x60;. The subscription to affect.
   - subscriptions_id (String.t): Part of &#x60;subscription&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :body (SeekRequest): 
 
   ## Returns
@@ -1172,19 +1248,25 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   """
   @spec pubsub_projects_subscriptions_seek(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.PubSub.V1.Model.SeekResponse.t()} | {:error, Tesla.Env.t()}
-  def pubsub_projects_subscriptions_seek(connection, projects_id, subscriptions_id, opts \\ []) do
-    optional_params = %{
+  def pubsub_projects_subscriptions_seek(
+        connection,
+        projects_id,
+        subscriptions_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :upload_protocol => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -1195,11 +1277,11 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         "projectsId" => URI.encode_www_form(projects_id),
         "subscriptionsId" => URI.encode_www_form(subscriptions_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.PubSub.V1.Model.SeekResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.PubSub.V1.Model.SeekResponse{}])
   end
 
   @doc """
@@ -1210,18 +1292,18 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   - connection (GoogleApi.PubSub.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;resource&#x60;. REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
   - subscriptions_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :body (SetIamPolicyRequest): 
 
   ## Returns
@@ -1239,20 +1321,21 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         connection,
         projects_id,
         subscriptions_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :upload_protocol => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -1263,11 +1346,11 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         "projectsId" => URI.encode_www_form(projects_id),
         "subscriptionsId" => URI.encode_www_form(subscriptions_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.PubSub.V1.Model.Policy{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.PubSub.V1.Model.Policy{}])
   end
 
   @doc """
@@ -1278,18 +1361,18 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   - connection (GoogleApi.PubSub.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;resource&#x60;. REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
   - subscriptions_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :body (TestIamPermissionsRequest): 
 
   ## Returns
@@ -1309,20 +1392,21 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         connection,
         projects_id,
         subscriptions_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :upload_protocol => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -1336,33 +1420,33 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           "subscriptionsId" => URI.encode_www_form(subscriptions_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.PubSub.V1.Model.TestIamPermissionsResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.PubSub.V1.Model.TestIamPermissionsResponse{}])
   end
 
   @doc """
-  Creates the given topic with the given name. See the &lt;a href&#x3D;\&quot;/pubsub/docs/admin#resource_names\&quot;&gt; resource name rules&lt;/a&gt;.
+  Creates the given topic with the given name. See the &lt;a href&#x3D;\&quot;https://cloud.google.com/pubsub/docs/admin#resource_names\&quot;&gt; resource name rules&lt;/a&gt;.
 
   ## Parameters
 
   - connection (GoogleApi.PubSub.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;name&#x60;. The name of the topic. It must have the format &#x60;\&quot;projects/{project}/topics/{topic}\&quot;&#x60;. &#x60;{topic}&#x60; must start with a letter, and contain only letters (&#x60;[A-Za-z]&#x60;), numbers (&#x60;[0-9]&#x60;), dashes (&#x60;-&#x60;), underscores (&#x60;_&#x60;), periods (&#x60;.&#x60;), tildes (&#x60;~&#x60;), plus (&#x60;+&#x60;) or percent signs (&#x60;%&#x60;). It must be between 3 and 255 characters in length, and it must not start with &#x60;\&quot;goog\&quot;&#x60;.
   - topics_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :body (Topic): 
 
   ## Returns
@@ -1372,19 +1456,25 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   """
   @spec pubsub_projects_topics_create(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.PubSub.V1.Model.Topic.t()} | {:error, Tesla.Env.t()}
-  def pubsub_projects_topics_create(connection, projects_id, topics_id, opts \\ []) do
-    optional_params = %{
+  def pubsub_projects_topics_create(
+        connection,
+        projects_id,
+        topics_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :upload_protocol => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -1395,11 +1485,11 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         "projectsId" => URI.encode_www_form(projects_id),
         "topicsId" => URI.encode_www_form(topics_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.PubSub.V1.Model.Topic{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.PubSub.V1.Model.Topic{}])
   end
 
   @doc """
@@ -1410,18 +1500,18 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   - connection (GoogleApi.PubSub.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;topic&#x60;. Name of the topic to delete. Format is &#x60;projects/{project}/topics/{topic}&#x60;.
   - topics_id (String.t): Part of &#x60;topic&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
 
   ## Returns
 
@@ -1430,19 +1520,25 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   """
   @spec pubsub_projects_topics_delete(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.PubSub.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
-  def pubsub_projects_topics_delete(connection, projects_id, topics_id, opts \\ []) do
-    optional_params = %{
+  def pubsub_projects_topics_delete(
+        connection,
+        projects_id,
+        topics_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :upload_protocol => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
-      :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -1452,11 +1548,11 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         "projectsId" => URI.encode_www_form(projects_id),
         "topicsId" => URI.encode_www_form(topics_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.PubSub.V1.Model.Empty{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.PubSub.V1.Model.Empty{}])
   end
 
   @doc """
@@ -1467,18 +1563,18 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   - connection (GoogleApi.PubSub.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;topic&#x60;. The name of the topic to get. Format is &#x60;projects/{project}/topics/{topic}&#x60;.
   - topics_id (String.t): Part of &#x60;topic&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
 
   ## Returns
 
@@ -1487,19 +1583,25 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   """
   @spec pubsub_projects_topics_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.PubSub.V1.Model.Topic.t()} | {:error, Tesla.Env.t()}
-  def pubsub_projects_topics_get(connection, projects_id, topics_id, opts \\ []) do
-    optional_params = %{
+  def pubsub_projects_topics_get(
+        connection,
+        projects_id,
+        topics_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :upload_protocol => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
-      :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -1509,11 +1611,11 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         "projectsId" => URI.encode_www_form(projects_id),
         "topicsId" => URI.encode_www_form(topics_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.PubSub.V1.Model.Topic{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.PubSub.V1.Model.Topic{}])
   end
 
   @doc """
@@ -1524,18 +1626,18 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   - connection (GoogleApi.PubSub.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;resource&#x60;. REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
   - topics_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
 
   ## Returns
 
@@ -1548,19 +1650,25 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.PubSub.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
-  def pubsub_projects_topics_get_iam_policy(connection, projects_id, topics_id, opts \\ []) do
-    optional_params = %{
+  def pubsub_projects_topics_get_iam_policy(
+        connection,
+        projects_id,
+        topics_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :upload_protocol => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
-      :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -1570,11 +1678,11 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         "projectsId" => URI.encode_www_form(projects_id),
         "topicsId" => URI.encode_www_form(topics_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.PubSub.V1.Model.Policy{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.PubSub.V1.Model.Policy{}])
   end
 
   @doc """
@@ -1583,21 +1691,21 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   - connection (GoogleApi.PubSub.V1.Connection): Connection to server
-  - projects_id (String.t): Part of &#x60;project&#x60;. The name of the cloud project that topics belong to. Format is &#x60;projects/{project}&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
+  - projects_id (String.t): Part of &#x60;project&#x60;. The name of the project in which to list topics. Format is &#x60;projects/{project-id}&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :pageToken (String.t): The value returned by the last &#x60;ListTopicsResponse&#x60;; indicates that this is a continuation of a prior &#x60;ListTopics&#x60; call, and that the system should return the next page of data.
     - :pageSize (integer()): Maximum number of topics to return.
+    - :pageToken (String.t): The value returned by the last &#x60;ListTopicsResponse&#x60;; indicates that this is a continuation of a prior &#x60;ListTopics&#x60; call, and that the system should return the next page of data.
 
   ## Returns
 
@@ -1606,21 +1714,21 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   """
   @spec pubsub_projects_topics_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.PubSub.V1.Model.ListTopicsResponse.t()} | {:error, Tesla.Env.t()}
-  def pubsub_projects_topics_list(connection, projects_id, opts \\ []) do
-    optional_params = %{
+  def pubsub_projects_topics_list(connection, projects_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :upload_protocol => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
@@ -1629,33 +1737,98 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       |> Request.url("/v1/projects/{projectsId}/topics", %{
         "projectsId" => URI.encode_www_form(projects_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.PubSub.V1.Model.ListTopicsResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.PubSub.V1.Model.ListTopicsResponse{}])
   end
 
   @doc """
-  Adds one or more messages to the topic. Returns &#x60;NOT_FOUND&#x60; if the topic does not exist. The message payload must not be empty; it must contain  either a non-empty data field, or at least one attribute.
+  Updates an existing topic. Note that certain properties of a topic are not modifiable.
+
+  ## Parameters
+
+  - connection (GoogleApi.PubSub.V1.Connection): Connection to server
+  - projects_id (String.t): Part of &#x60;topic.name&#x60;. The name of the topic. It must have the format &#x60;\&quot;projects/{project}/topics/{topic}\&quot;&#x60;. &#x60;{topic}&#x60; must start with a letter, and contain only letters (&#x60;[A-Za-z]&#x60;), numbers (&#x60;[0-9]&#x60;), dashes (&#x60;-&#x60;), underscores (&#x60;_&#x60;), periods (&#x60;.&#x60;), tildes (&#x60;~&#x60;), plus (&#x60;+&#x60;) or percent signs (&#x60;%&#x60;). It must be between 3 and 255 characters in length, and it must not start with &#x60;\&quot;goog\&quot;&#x60;.
+  - topics_id (String.t): Part of &#x60;topic.name&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :body (UpdateTopicRequest): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.PubSub.V1.Model.Topic{}} on success
+  {:error, info} on failure
+  """
+  @spec pubsub_projects_topics_patch(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, GoogleApi.PubSub.V1.Model.Topic.t()} | {:error, Tesla.Env.t()}
+  def pubsub_projects_topics_patch(
+        connection,
+        projects_id,
+        topics_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:patch)
+      |> Request.url("/v1/projects/{projectsId}/topics/{topicsId}", %{
+        "projectsId" => URI.encode_www_form(projects_id),
+        "topicsId" => URI.encode_www_form(topics_id)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.PubSub.V1.Model.Topic{}])
+  end
+
+  @doc """
+  Adds one or more messages to the topic. Returns &#x60;NOT_FOUND&#x60; if the topic does not exist.
 
   ## Parameters
 
   - connection (GoogleApi.PubSub.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;topic&#x60;. The messages in the request will be published on this topic. Format is &#x60;projects/{project}/topics/{topic}&#x60;.
   - topics_id (String.t): Part of &#x60;topic&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :body (PublishRequest): 
 
   ## Returns
@@ -1665,19 +1838,25 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   """
   @spec pubsub_projects_topics_publish(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.PubSub.V1.Model.PublishResponse.t()} | {:error, Tesla.Env.t()}
-  def pubsub_projects_topics_publish(connection, projects_id, topics_id, opts \\ []) do
-    optional_params = %{
+  def pubsub_projects_topics_publish(
+        connection,
+        projects_id,
+        topics_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :upload_protocol => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -1688,11 +1867,11 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         "projectsId" => URI.encode_www_form(projects_id),
         "topicsId" => URI.encode_www_form(topics_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.PubSub.V1.Model.PublishResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.PubSub.V1.Model.PublishResponse{}])
   end
 
   @doc """
@@ -1703,18 +1882,18 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   - connection (GoogleApi.PubSub.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;resource&#x60;. REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
   - topics_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :body (SetIamPolicyRequest): 
 
   ## Returns
@@ -1728,19 +1907,25 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.PubSub.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
-  def pubsub_projects_topics_set_iam_policy(connection, projects_id, topics_id, opts \\ []) do
-    optional_params = %{
+  def pubsub_projects_topics_set_iam_policy(
+        connection,
+        projects_id,
+        topics_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :upload_protocol => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -1751,35 +1936,35 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         "projectsId" => URI.encode_www_form(projects_id),
         "topicsId" => URI.encode_www_form(topics_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.PubSub.V1.Model.Policy{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.PubSub.V1.Model.Policy{}])
   end
 
   @doc """
-  Lists the names of the snapshots on this topic.&lt;br&gt;&lt;br&gt; &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be changed in backward-incompatible ways and is not recommended for production use. It is not subject to any SLA or deprecation policy.
+  Lists the names of the snapshots on this topic. Snapshots are used in &lt;a href&#x3D;\&quot;https://cloud.google.com/pubsub/docs/replay-overview\&quot;&gt;Seek&lt;/a&gt; operations, which allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment state of messages in an existing subscription to the state captured by a snapshot.&lt;br&gt;&lt;br&gt; &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be changed in backward-incompatible ways and is not recommended for production use. It is not subject to any SLA or deprecation policy.
 
   ## Parameters
 
   - connection (GoogleApi.PubSub.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;topic&#x60;. The name of the topic that snapshots are attached to. Format is &#x60;projects/{project}/topics/{topic}&#x60;.
   - topics_id (String.t): Part of &#x60;topic&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :pageToken (String.t): The value returned by the last &#x60;ListTopicSnapshotsResponse&#x60;; indicates that this is a continuation of a prior &#x60;ListTopicSnapshots&#x60; call, and that the system should return the next page of data.
     - :pageSize (integer()): Maximum number of snapshot names to return.
+    - :pageToken (String.t): The value returned by the last &#x60;ListTopicSnapshotsResponse&#x60;; indicates that this is a continuation of a prior &#x60;ListTopicSnapshots&#x60; call, and that the system should return the next page of data.
 
   ## Returns
 
@@ -1794,21 +1979,27 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.PubSub.V1.Model.ListTopicSnapshotsResponse.t()}
           | {:error, Tesla.Env.t()}
-  def pubsub_projects_topics_snapshots_list(connection, projects_id, topics_id, opts \\ []) do
-    optional_params = %{
+  def pubsub_projects_topics_snapshots_list(
+        connection,
+        projects_id,
+        topics_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :upload_protocol => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
@@ -1818,11 +2009,11 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         "projectsId" => URI.encode_www_form(projects_id),
         "topicsId" => URI.encode_www_form(topics_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.PubSub.V1.Model.ListTopicSnapshotsResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.PubSub.V1.Model.ListTopicSnapshotsResponse{}])
   end
 
   @doc """
@@ -1833,20 +2024,20 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   - connection (GoogleApi.PubSub.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;topic&#x60;. The name of the topic that subscriptions are attached to. Format is &#x60;projects/{project}/topics/{topic}&#x60;.
   - topics_id (String.t): Part of &#x60;topic&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :pageToken (String.t): The value returned by the last &#x60;ListTopicSubscriptionsResponse&#x60;; indicates that this is a continuation of a prior &#x60;ListTopicSubscriptions&#x60; call, and that the system should return the next page of data.
     - :pageSize (integer()): Maximum number of subscription names to return.
+    - :pageToken (String.t): The value returned by the last &#x60;ListTopicSubscriptionsResponse&#x60;; indicates that this is a continuation of a prior &#x60;ListTopicSubscriptions&#x60; call, and that the system should return the next page of data.
 
   ## Returns
 
@@ -1861,21 +2052,27 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.PubSub.V1.Model.ListTopicSubscriptionsResponse.t()}
           | {:error, Tesla.Env.t()}
-  def pubsub_projects_topics_subscriptions_list(connection, projects_id, topics_id, opts \\ []) do
-    optional_params = %{
+  def pubsub_projects_topics_subscriptions_list(
+        connection,
+        projects_id,
+        topics_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :upload_protocol => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
@@ -1885,11 +2082,13 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         "projectsId" => URI.encode_www_form(projects_id),
         "topicsId" => URI.encode_www_form(topics_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.PubSub.V1.Model.ListTopicSubscriptionsResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.PubSub.V1.Model.ListTopicSubscriptionsResponse{}]
+    )
   end
 
   @doc """
@@ -1900,18 +2099,18 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   - connection (GoogleApi.PubSub.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;resource&#x60;. REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
   - topics_id (String.t): Part of &#x60;resource&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :body (TestIamPermissionsRequest): 
 
   ## Returns
@@ -1927,19 +2126,25 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.PubSub.V1.Model.TestIamPermissionsResponse.t()}
           | {:error, Tesla.Env.t()}
-  def pubsub_projects_topics_test_iam_permissions(connection, projects_id, topics_id, opts \\ []) do
-    optional_params = %{
+  def pubsub_projects_topics_test_iam_permissions(
+        connection,
+        projects_id,
+        topics_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :upload_protocol => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -1950,10 +2155,10 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         "projectsId" => URI.encode_www_form(projects_id),
         "topicsId" => URI.encode_www_form(topics_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.PubSub.V1.Model.TestIamPermissionsResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.PubSub.V1.Model.TestIamPermissionsResponse{}])
   end
 end

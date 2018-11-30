@@ -26,7 +26,7 @@ defmodule GoogleApi.Content.V2.Model.AccountsCustomBatchResponseEntry do
   - batchId (integer()): The ID of the request entry this entry responds to. Defaults to: `null`.
   - errors (Errors): A list of errors defined if and only if the request failed. Defaults to: `null`.
   - kind (String.t): Identifies what kind of resource this is. Value: the fixed string \&quot;content#accountsCustomBatchResponseEntry\&quot;. Defaults to: `null`.
-  - linkStatus (String.t): The status of the updated link. Only defined if the method is link. Defaults to: `null`.
+  - linkStatus (String.t): Deprecated. This field is never set. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

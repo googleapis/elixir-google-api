@@ -23,13 +23,13 @@ defmodule GoogleApi.Sheets.V4.Connection do
 
   use GoogleApi.Gax.Connection,
     scopes: [
-      # View and manage the files in your Google Drive
+      # See, edit, create, and delete all of your Google Drive files
       "https://www.googleapis.com/auth/drive",
       # View and manage Google Drive files and folders that you have opened or created with this app
       "https://www.googleapis.com/auth/drive.file",
-      # View the files in your Google Drive
+      # See and download all your Google Drive files
       "https://www.googleapis.com/auth/drive.readonly",
-      # View and manage your spreadsheets in Google Drive
+      # See, edit, create, and delete your spreadsheets in Google Drive
       "https://www.googleapis.com/auth/spreadsheets",
       # View your Google Spreadsheets
       "https://www.googleapis.com/auth/spreadsheets.readonly"

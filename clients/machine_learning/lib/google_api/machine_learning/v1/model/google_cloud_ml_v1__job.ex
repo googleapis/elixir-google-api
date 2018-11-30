@@ -25,7 +25,9 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1Job do
   - createTime (DateTime.t): Output only. When the job was created. Defaults to: `null`.
   - endTime (DateTime.t): Output only. When the job processing was completed. Defaults to: `null`.
   - errorMessage (String.t): Output only. The details of a failure or a cancellation. Defaults to: `null`.
+  - etag (binary()): &#x60;etag&#x60; is used for optimistic concurrency control as a way to help prevent simultaneous updates of a job from overwriting each other. It is strongly suggested that systems make use of the &#x60;etag&#x60; in the read-modify-write cycle to perform job updates in order to avoid race conditions: An &#x60;etag&#x60; is returned in the response to &#x60;GetJob&#x60;, and systems are expected to put that etag in the request to &#x60;UpdateJob&#x60; to ensure that their change will be applied to the same version of the job. Defaults to: `null`.
   - jobId (String.t): Required. The user-specified id of the job. Defaults to: `null`.
+  - labels (%{optional(String.t) &#x3D;&gt; String.t}): Optional. One or more labels that you can add, to organize your jobs. Each label is a key-value pair, where both the key and the value are arbitrary strings that you supply. For more information, see the documentation on &lt;a href&#x3D;\&quot;/ml-engine/docs/tensorflow/resource-labels\&quot;&gt;using labels&lt;/a&gt;. Defaults to: `null`.
   - predictionInput (GoogleCloudMlV1PredictionInput): Input parameters to create a prediction job. Defaults to: `null`.
   - predictionOutput (GoogleCloudMlV1PredictionOutput): The current prediction job result. Defaults to: `null`.
   - startTime (DateTime.t): Output only. When the job processing was started. Defaults to: `null`.
@@ -41,7 +43,9 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1Job do
           :createTime => DateTime.t(),
           :endTime => DateTime.t(),
           :errorMessage => any(),
+          :etag => any(),
           :jobId => any(),
+          :labels => map(),
           :predictionInput =>
             GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1PredictionInput.t(),
           :predictionOutput =>
@@ -55,7 +59,9 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1Job do
   field(:createTime, as: DateTime)
   field(:endTime, as: DateTime)
   field(:errorMessage)
+  field(:etag)
   field(:jobId)
+  field(:labels, type: :map)
   field(:predictionInput, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1PredictionInput)
   field(:predictionOutput, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1PredictionOutput)
   field(:startTime, as: DateTime)

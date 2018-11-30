@@ -27,7 +27,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
   - createTime (String.t): [Output only] The time the cluster was created, in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format. Defaults to: `null`.
   - currentMasterVersion (String.t): [Output only] The current software version of the master endpoint. Defaults to: `null`.
   - currentNodeCount (integer()): [Output only] The number of nodes currently in the cluster. Defaults to: `null`.
-  - currentNodeVersion (String.t): [Output only] The current version of the node software components. If they are currently at multiple versions because they&#39;re in the process of being upgraded, this reflects the minimum version of all nodes. Defaults to: `null`.
+  - currentNodeVersion (String.t): [Output only] Deprecated, use [NodePool.version](/kubernetes-engine/docs/reference/rest/v1/projects.zones.clusters.nodePool) instead. The current version of the node software components. If they are currently at multiple versions because they&#39;re in the process of being upgraded, this reflects the minimum version of all nodes. Defaults to: `null`.
   - description (String.t): An optional description of this cluster. Defaults to: `null`.
   - enableKubernetesAlpha (boolean()): Kubernetes alpha features are enabled on this cluster. This includes alpha API groups (e.g. v1alpha1) and features that may not be production ready in the kubernetes version of the master and nodes. The cluster has no SLA for uptime and master/node upgrades are disabled. Alpha enabled clusters are automatically deleted thirty days after creation. Defaults to: `null`.
   - endpoint (String.t): [Output only] The IP address of this cluster&#39;s master endpoint. The endpoint can be accessed from the internet at &#x60;https://username:password@endpoint/&#x60;.  See the &#x60;masterAuth&#x60; property of this resource for username and password information. Defaults to: `null`.
@@ -47,10 +47,12 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
   - monitoringService (String.t): The monitoring service the cluster should use to write metrics. Currently available options:  * &#x60;monitoring.googleapis.com&#x60; - the Google Cloud Monitoring service. * &#x60;none&#x60; - no metrics will be exported from the cluster. * if left as an empty string, &#x60;monitoring.googleapis.com&#x60; will be used. Defaults to: `null`.
   - name (String.t): The name of this cluster. The name must be unique within this project and zone, and can be up to 40 characters with the following restrictions:  * Lowercase letters, numbers, and hyphens only. * Must start with a letter. * Must end with a number or a letter. Defaults to: `null`.
   - network (String.t): The name of the Google Compute Engine [network](/compute/docs/networks-and-firewalls#networks) to which the cluster is connected. If left unspecified, the &#x60;default&#x60; network will be used. Defaults to: `null`.
+  - networkConfig (NetworkConfig): Configuration for cluster networking. Defaults to: `null`.
   - networkPolicy (NetworkPolicy): Configuration options for the NetworkPolicy feature. Defaults to: `null`.
   - nodeConfig (NodeConfig): Parameters used in creating the cluster&#39;s nodes. See &#x60;nodeConfig&#x60; for the description of its properties. For requests, this field should only be used in lieu of a \&quot;node_pool\&quot; object, since this configuration (along with the \&quot;initial_node_count\&quot;) will be used to create a \&quot;NodePool\&quot; object with an auto-generated name. Do not use this and a node_pool at the same time. For responses, this field will be populated with the node configuration of the first node pool.  If unspecified, the defaults are used. Defaults to: `null`.
   - nodeIpv4CidrSize (integer()): [Output only] The size of the address space on each node for hosting containers. This is provisioned from within the &#x60;container_ipv4_cidr&#x60; range. Defaults to: `null`.
   - nodePools ([NodePool]): The node pools associated with this cluster. This field should not be set if \&quot;node_config\&quot; or \&quot;initial_node_count\&quot; are specified. Defaults to: `null`.
+  - privateClusterConfig (PrivateClusterConfig): Configuration for private cluster. Defaults to: `null`.
   - resourceLabels (%{optional(String.t) &#x3D;&gt; String.t}): The resource labels for the cluster to use to annotate any related Google Compute Engine resources. Defaults to: `null`.
   - selfLink (String.t): [Output only] Server-defined URL for the resource. Defaults to: `null`.
   - servicesIpv4Cidr (String.t): [Output only] The IP address range of the Kubernetes services in this cluster, in [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) notation (e.g. &#x60;1.2.3.4/29&#x60;). Service addresses are typically put in the last &#x60;/16&#x60; from the container CIDR. Defaults to: `null`.
@@ -90,10 +92,12 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
           :monitoringService => any(),
           :name => any(),
           :network => any(),
+          :networkConfig => GoogleApi.Container.V1.Model.NetworkConfig.t(),
           :networkPolicy => GoogleApi.Container.V1.Model.NetworkPolicy.t(),
           :nodeConfig => GoogleApi.Container.V1.Model.NodeConfig.t(),
           :nodeIpv4CidrSize => any(),
           :nodePools => list(GoogleApi.Container.V1.Model.NodePool.t()),
+          :privateClusterConfig => GoogleApi.Container.V1.Model.PrivateClusterConfig.t(),
           :resourceLabels => map(),
           :selfLink => any(),
           :servicesIpv4Cidr => any(),
@@ -133,10 +137,12 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
   field(:monitoringService)
   field(:name)
   field(:network)
+  field(:networkConfig, as: GoogleApi.Container.V1.Model.NetworkConfig)
   field(:networkPolicy, as: GoogleApi.Container.V1.Model.NetworkPolicy)
   field(:nodeConfig, as: GoogleApi.Container.V1.Model.NodeConfig)
   field(:nodeIpv4CidrSize)
   field(:nodePools, as: GoogleApi.Container.V1.Model.NodePool, type: :list)
+  field(:privateClusterConfig, as: GoogleApi.Container.V1.Model.PrivateClusterConfig)
   field(:resourceLabels, type: :map)
   field(:selfLink)
   field(:servicesIpv4Cidr)

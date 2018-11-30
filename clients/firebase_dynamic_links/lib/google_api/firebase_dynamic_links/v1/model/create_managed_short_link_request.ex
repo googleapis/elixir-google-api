@@ -25,6 +25,7 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.CreateManagedShortLinkRequest 
   - dynamicLinkInfo (DynamicLinkInfo): Information about the Dynamic Link to be shortened. [Learn more](https://firebase.google.com/docs/reference/dynamic-links/link-shortener). Defaults to: `null`.
   - longDynamicLink (String.t): Full long Dynamic Link URL with desired query parameters specified. For example, \&quot;https://sample.app.goo.gl/?link&#x3D;http://www.google.com&amp;apn&#x3D;com.sample\&quot;, [Learn more](https://firebase.google.com/docs/reference/dynamic-links/link-shortener). Defaults to: `null`.
   - name (String.t): Link name to associate with the link. It&#39;s used for marketer to identify manually-created links in the Firebase console (https://console.firebase.google.com/). Links must be named to be tracked. Defaults to: `null`.
+  - sdkVersion (String.t): Google SDK version. Version takes the form \&quot;$major.$minor.$patch\&quot; Defaults to: `null`.
   - suffix (Suffix): Short Dynamic Link suffix. Optional. Defaults to: `null`.
   """
 
@@ -34,12 +35,14 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.CreateManagedShortLinkRequest 
           :dynamicLinkInfo => GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkInfo.t(),
           :longDynamicLink => any(),
           :name => any(),
+          :sdkVersion => any(),
           :suffix => GoogleApi.FirebaseDynamicLinks.V1.Model.Suffix.t()
         }
 
   field(:dynamicLinkInfo, as: GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkInfo)
   field(:longDynamicLink)
   field(:name)
+  field(:sdkVersion)
   field(:suffix, as: GoogleApi.FirebaseDynamicLinks.V1.Model.Suffix)
 end
 

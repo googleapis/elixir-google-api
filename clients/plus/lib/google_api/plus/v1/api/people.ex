@@ -31,7 +31,7 @@ defmodule GoogleApi.Plus.V1.Api.People do
 
   - connection (GoogleApi.Plus.V1.Connection): Connection to server
   - user_id (String.t): The ID of the person to get the profile for. The special value \&quot;me\&quot; can be used to indicate the authenticated user.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -47,8 +47,8 @@ defmodule GoogleApi.Plus.V1.Api.People do
   """
   @spec plus_people_get(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Plus.V1.Model.Person.t()} | {:error, Tesla.Env.t()}
-  def plus_people_get(connection, user_id, opts \\ []) do
-    optional_params = %{
+  def plus_people_get(connection, user_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -64,11 +64,11 @@ defmodule GoogleApi.Plus.V1.Api.People do
       |> Request.url("/people/{userId}", %{
         "userId" => URI.encode_www_form(user_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Plus.V1.Model.Person{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Plus.V1.Model.Person{}])
   end
 
   @doc """
@@ -79,7 +79,7 @@ defmodule GoogleApi.Plus.V1.Api.People do
   - connection (GoogleApi.Plus.V1.Connection): Connection to server
   - user_id (String.t): Get the collection of people for the person identified. Use \&quot;me\&quot; to indicate the authenticated user.
   - collection (String.t): The collection of people to list.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -98,8 +98,8 @@ defmodule GoogleApi.Plus.V1.Api.People do
   """
   @spec plus_people_list(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Plus.V1.Model.PeopleFeed.t()} | {:error, Tesla.Env.t()}
-  def plus_people_list(connection, user_id, collection, opts \\ []) do
-    optional_params = %{
+  def plus_people_list(connection, user_id, collection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -119,11 +119,11 @@ defmodule GoogleApi.Plus.V1.Api.People do
         "userId" => URI.encode_www_form(user_id),
         "collection" => URI.encode_www_form(collection)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Plus.V1.Model.PeopleFeed{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Plus.V1.Model.PeopleFeed{}])
   end
 
   @doc """
@@ -134,7 +134,7 @@ defmodule GoogleApi.Plus.V1.Api.People do
   - connection (GoogleApi.Plus.V1.Connection): Connection to server
   - activity_id (String.t): The ID of the activity to get the list of people for.
   - collection (String.t): The collection of people to list.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -152,8 +152,14 @@ defmodule GoogleApi.Plus.V1.Api.People do
   """
   @spec plus_people_list_by_activity(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Plus.V1.Model.PeopleFeed.t()} | {:error, Tesla.Env.t()}
-  def plus_people_list_by_activity(connection, activity_id, collection, opts \\ []) do
-    optional_params = %{
+  def plus_people_list_by_activity(
+        connection,
+        activity_id,
+        collection,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -172,11 +178,11 @@ defmodule GoogleApi.Plus.V1.Api.People do
         "activityId" => URI.encode_www_form(activity_id),
         "collection" => URI.encode_www_form(collection)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Plus.V1.Model.PeopleFeed{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Plus.V1.Model.PeopleFeed{}])
   end
 
   @doc """
@@ -186,7 +192,7 @@ defmodule GoogleApi.Plus.V1.Api.People do
 
   - connection (GoogleApi.Plus.V1.Connection): Connection to server
   - query (String.t): Specify a query string for full text search of public text in all profiles.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -205,8 +211,8 @@ defmodule GoogleApi.Plus.V1.Api.People do
   """
   @spec plus_people_search(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Plus.V1.Model.PeopleFeed.t()} | {:error, Tesla.Env.t()}
-  def plus_people_search(connection, query, opts \\ []) do
-    optional_params = %{
+  def plus_people_search(connection, query, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -224,10 +230,10 @@ defmodule GoogleApi.Plus.V1.Api.People do
       |> Request.method(:get)
       |> Request.url("/people")
       |> Request.add_param(:query, :query, query)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Plus.V1.Model.PeopleFeed{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Plus.V1.Model.PeopleFeed{}])
   end
 end

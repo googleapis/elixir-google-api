@@ -25,6 +25,7 @@ defmodule GoogleApi.ServiceUser.V1.Model.BackendRule do
   - address (String.t): The address of the API backend. Defaults to: `null`.
   - deadline (float()): The number of seconds to wait for a response from a request.  The default deadline for gRPC is infinite (no deadline) and HTTP requests is 5 seconds. Defaults to: `null`.
   - minDeadline (float()): Minimum deadline in seconds needed for this method. Calls having deadline value lower than this will be rejected. Defaults to: `null`.
+  - operationDeadline (float()): The number of seconds to wait for the completion of a long running operation. The default is no deadline. Defaults to: `null`.
   - selector (String.t): Selects the methods to which this rule applies.  Refer to selector for syntax details. Defaults to: `null`.
   """
 
@@ -34,12 +35,14 @@ defmodule GoogleApi.ServiceUser.V1.Model.BackendRule do
           :address => any(),
           :deadline => any(),
           :minDeadline => any(),
+          :operationDeadline => any(),
           :selector => any()
         }
 
   field(:address)
   field(:deadline)
   field(:minDeadline)
+  field(:operationDeadline)
   field(:selector)
 end
 

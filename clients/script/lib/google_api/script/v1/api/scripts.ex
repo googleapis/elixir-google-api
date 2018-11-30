@@ -25,24 +25,24 @@ defmodule GoogleApi.Script.V1.Api.Scripts do
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
-  Runs a function in an Apps Script project. The project must be deployed for use with the Apps Script API.  This method requires authorization with an OAuth 2.0 token that includes at least one of the scopes listed in the [Authorization](#authorization) section; script projects that do not require authorization cannot be executed through this API. To find the correct scopes to include in the authentication token, open the project in the script editor, then select **File &gt; Project properties** and click the **Scopes** tab.
+  Runs a function in an Apps Script project. The script project must be deployed for use with the Apps Script API and the calling application must share the same Cloud Platform project.  This method requires authorization with an OAuth 2.0 token that includes at least one of the scopes listed in the [Authorization](#authorization) section; script projects that do not require authorization cannot be executed through this API. To find the correct scopes to include in the authentication token, open the project in the script editor, then select **File &gt; Project properties** and click the **Scopes** tab.  The error &#x60;403, PERMISSION_DENIED: The caller does not have permission&#x60; indicates that the Cloud Platform project used to authorize the request is not the same as the one used by the script.
 
   ## Parameters
 
   - connection (GoogleApi.Script.V1.Connection): Connection to server
   - script_id (String.t): The script ID of the script to be executed. To find the script ID, open the project in the script editor and select **File &gt; Project properties**.
-  - opts (KeywordList): [optional] Optional parameters
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
     - :body (ExecutionRequest): 
 
   ## Returns
@@ -52,19 +52,19 @@ defmodule GoogleApi.Script.V1.Api.Scripts do
   """
   @spec script_scripts_run(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Script.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def script_scripts_run(connection, script_id, opts \\ []) do
-    optional_params = %{
-      :key => :query,
+  def script_scripts_run(connection, script_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
-      :alt => :query,
       :body => :body
     }
 
@@ -74,10 +74,10 @@ defmodule GoogleApi.Script.V1.Api.Scripts do
       |> Request.url("/v1/scripts/{scriptId}:run", %{
         "scriptId" => URI.encode_www_form(script_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Script.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Script.V1.Model.Operation{}])
   end
 end

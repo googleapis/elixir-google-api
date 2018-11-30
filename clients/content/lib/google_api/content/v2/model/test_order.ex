@@ -29,7 +29,7 @@ defmodule GoogleApi.Content.V2.Model.TestOrder do
   - notificationMode (String.t): Determines if test order must be pulled by merchant or pushed to merchant via push integration. Defaults to: `null`.
   - paymentMethod (TestOrderPaymentMethod): The details of the payment method. Defaults to: `null`.
   - predefinedDeliveryAddress (String.t): Identifier of one of the predefined delivery addresses for the delivery. Defaults to: `null`.
-  - promotions ([OrderPromotion]): The details of the merchant provided promotions applied to the order. More details about the program are here. Defaults to: `null`.
+  - promotions ([OrderLegacyPromotion]): Deprecated. The details of the merchant provided promotions applied to the order. More details about the program are here. Defaults to: `null`.
   - shippingCost (Price): The total cost of shipping for all items. Defaults to: `null`.
   - shippingCostTax (Price): The tax for the total shipping cost. Defaults to: `null`.
   - shippingOption (String.t): The requested shipping option. Defaults to: `null`.
@@ -45,7 +45,7 @@ defmodule GoogleApi.Content.V2.Model.TestOrder do
           :notificationMode => any(),
           :paymentMethod => GoogleApi.Content.V2.Model.TestOrderPaymentMethod.t(),
           :predefinedDeliveryAddress => any(),
-          :promotions => list(GoogleApi.Content.V2.Model.OrderPromotion.t()),
+          :promotions => list(GoogleApi.Content.V2.Model.OrderLegacyPromotion.t()),
           :shippingCost => GoogleApi.Content.V2.Model.Price.t(),
           :shippingCostTax => GoogleApi.Content.V2.Model.Price.t(),
           :shippingOption => any()
@@ -58,7 +58,7 @@ defmodule GoogleApi.Content.V2.Model.TestOrder do
   field(:notificationMode)
   field(:paymentMethod, as: GoogleApi.Content.V2.Model.TestOrderPaymentMethod)
   field(:predefinedDeliveryAddress)
-  field(:promotions, as: GoogleApi.Content.V2.Model.OrderPromotion, type: :list)
+  field(:promotions, as: GoogleApi.Content.V2.Model.OrderLegacyPromotion, type: :list)
   field(:shippingCost, as: GoogleApi.Content.V2.Model.Price)
   field(:shippingCostTax, as: GoogleApi.Content.V2.Model.Price)
   field(:shippingOption)

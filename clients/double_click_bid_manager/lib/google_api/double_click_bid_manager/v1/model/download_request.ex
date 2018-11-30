@@ -18,16 +18,16 @@
 
 defmodule GoogleApi.DoubleClickBidManager.V1.Model.DownloadRequest do
   @moduledoc """
-  Request to fetch stored insertion orders, line items, TrueView ad groups and ads.
+  Request to fetch stored campaigns, insertion orders, line items, TrueView ad groups and ads.
 
   ## Attributes
 
-  - fileTypes ([String.t]): File types that will be returned. Defaults to: `null`.
+  - fileTypes ([String.t]): File types that will be returned.  Acceptable values are:   - \&quot;AD\&quot;  - \&quot;AD_GROUP\&quot;  - \&quot;CAMPAIGN\&quot;  - \&quot;INSERTION_ORDER\&quot;  - \&quot;LINE_ITEM\&quot; Defaults to: `null`.
     - Enum - one of 
-  - filterIds ([String.t]): The IDs of the specified filter type. This is used to filter entities to fetch. At least one ID must be specified. Only one ID is allowed for the ADVERTISER_ID filter type. For INSERTION_ORDER_ID or LINE_ITEM_ID filter types, all IDs must be from the same Advertiser. Defaults to: `null`.
-  - filterType (String.t): Filter type used to filter line items to fetch. Defaults to: `null`.
+  - filterIds ([String.t]): The IDs of the specified filter type. This is used to filter entities to fetch. At least one ID must be specified. Defaults to: `null`.
+  - filterType (String.t): Filter type used to filter entities to fetch. Defaults to: `null`.
     - Enum - one of [ADVERTISER_ID, CAMPAIGN_ID, INSERTION_ORDER_ID, LINE_ITEM_ID]
-  - version (String.t): SDF Version (column names, types, order) in which the entities will be returned. Default to 3. Defaults to: `null`.
+  - version (String.t): SDF Version (column names, types, order) in which the entities will be returned. Default to 3.1. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

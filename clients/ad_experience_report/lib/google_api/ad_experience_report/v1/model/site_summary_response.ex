@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.AdExperienceReport.V1.Model.SiteSummaryResponse do
   @moduledoc """
-  Response message for GetSiteSummary. Do not confuse with same message in google.chrome.abusiveexperiencereport.v1
+  Response message for GetSiteSummary.
 
   ## Attributes
 

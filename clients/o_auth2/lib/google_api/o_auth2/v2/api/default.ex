@@ -29,7 +29,7 @@ defmodule GoogleApi.OAuth2.V2.Api.Default do
   ## Parameters
 
   - connection (GoogleApi.OAuth2.V2.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -45,8 +45,8 @@ defmodule GoogleApi.OAuth2.V2.Api.Default do
   """
   @spec oauth2_get_cert_for_open_id_connect(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.OAuth2.V2.Model.Jwk.t()} | {:error, Tesla.Env.t()}
-  def oauth2_get_cert_for_open_id_connect(connection, opts \\ []) do
-    optional_params = %{
+  def oauth2_get_cert_for_open_id_connect(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -60,11 +60,11 @@ defmodule GoogleApi.OAuth2.V2.Api.Default do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/oauth2/v2/certs")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.OAuth2.V2.Model.Jwk{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.OAuth2.V2.Model.Jwk{}])
   end
 
   @doc """
@@ -72,7 +72,7 @@ defmodule GoogleApi.OAuth2.V2.Api.Default do
   ## Parameters
 
   - connection (GoogleApi.OAuth2.V2.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -91,8 +91,8 @@ defmodule GoogleApi.OAuth2.V2.Api.Default do
   """
   @spec oauth2_tokeninfo(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.OAuth2.V2.Model.Tokeninfo.t()} | {:error, Tesla.Env.t()}
-  def oauth2_tokeninfo(connection, opts \\ []) do
-    optional_params = %{
+  def oauth2_tokeninfo(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -109,10 +109,10 @@ defmodule GoogleApi.OAuth2.V2.Api.Default do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/oauth2/v2/tokeninfo")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.OAuth2.V2.Model.Tokeninfo{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.OAuth2.V2.Model.Tokeninfo{}])
   end
 end

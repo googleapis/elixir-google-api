@@ -26,7 +26,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.PartnerClaim do
   - deviceIdentifier (DeviceIdentifier): Required. Device identifier of the device. Defaults to: `null`.
   - deviceMetadata (DeviceMetadata): Required. The metadata to attach to the device at claim. Defaults to: `null`.
   - sectionType (String.t): Required. The section type of the device&#39;s provisioning record. Defaults to: `null`.
-    - Enum - one of [SECTION_TYPE_UNSPECIFIED, SECTION_TYPE_ZERO_TOUCH]
+    - Enum - one of [SECTION_TYPE_UNSPECIFIED, SECTION_TYPE_SIM_LOCK, SECTION_TYPE_ZERO_TOUCH]
   """
 
   use GoogleApi.Gax.ModelBase

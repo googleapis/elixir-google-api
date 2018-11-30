@@ -24,7 +24,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TransformationSummary do
 
   - field (GooglePrivacyDlpV2FieldId): Set if the transformation was limited to a specific FieldId. Defaults to: `null`.
   - fieldTransformations ([GooglePrivacyDlpV2FieldTransformation]): The field transformation that was applied. If multiple field transformations are requested for a single field, this list will contain all of them; otherwise, only one is supplied. Defaults to: `null`.
-  - infoType (GooglePrivacyDlpV2InfoType): Set if the transformation was limited to a specific info_type. Defaults to: `null`.
+  - infoType (GooglePrivacyDlpV2InfoType): Set if the transformation was limited to a specific InfoType. Defaults to: `null`.
   - recordSuppress (GooglePrivacyDlpV2RecordSuppression): The specific suppression option these stats apply to. Defaults to: `null`.
   - results ([GooglePrivacyDlpV2SummaryResult]):  Defaults to: `null`.
   - transformation (GooglePrivacyDlpV2PrimitiveTransformation): The specific transformation these stats apply to. Defaults to: `null`.

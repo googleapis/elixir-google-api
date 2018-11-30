@@ -31,20 +31,18 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
 
   - connection (GoogleApi.SourceRepo.V1.Connection): Connection to server
   - name (String.t): The name of the requested project. Values are of the form &#x60;projects/&lt;project&gt;&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :pp (boolean()): Pretty-print response.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :bearer_token (String.t): OAuth bearer token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -53,21 +51,19 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
   """
   @spec sourcerepo_projects_get_config(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.SourceRepo.V1.Model.ProjectConfig.t()} | {:error, Tesla.Env.t()}
-  def sourcerepo_projects_get_config(connection, name, opts \\ []) do
-    optional_params = %{
-      :pp => :query,
-      :oauth_token => :query,
-      :bearer_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
+  def sourcerepo_projects_get_config(connection, name, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :quotaUser => :query
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -76,11 +72,11 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
       |> Request.url("/v1/{+name}/config", %{
         "name" => URI.encode_www_form(name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.SourceRepo.V1.Model.ProjectConfig{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.SourceRepo.V1.Model.ProjectConfig{}])
   end
 
   @doc """
@@ -90,20 +86,18 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
 
   - connection (GoogleApi.SourceRepo.V1.Connection): Connection to server
   - parent (String.t): The project in which to create the repo. Values are of the form &#x60;projects/&lt;project&gt;&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :pp (boolean()): Pretty-print response.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :bearer_token (String.t): OAuth bearer token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (Repo): 
 
   ## Returns
@@ -113,21 +107,19 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
   """
   @spec sourcerepo_projects_repos_create(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.SourceRepo.V1.Model.Repo.t()} | {:error, Tesla.Env.t()}
-  def sourcerepo_projects_repos_create(connection, parent, opts \\ []) do
-    optional_params = %{
-      :pp => :query,
-      :oauth_token => :query,
-      :bearer_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
+  def sourcerepo_projects_repos_create(connection, parent, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -137,11 +129,11 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
       |> Request.url("/v1/{+parent}/repos", %{
         "parent" => URI.encode_www_form(parent)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.SourceRepo.V1.Model.Repo{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.SourceRepo.V1.Model.Repo{}])
   end
 
   @doc """
@@ -151,20 +143,18 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
 
   - connection (GoogleApi.SourceRepo.V1.Connection): Connection to server
   - name (String.t): The name of the repo to delete. Values are of the form &#x60;projects/&lt;project&gt;/repos/&lt;repo&gt;&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :pp (boolean()): Pretty-print response.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :bearer_token (String.t): OAuth bearer token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -173,21 +163,19 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
   """
   @spec sourcerepo_projects_repos_delete(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.SourceRepo.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
-  def sourcerepo_projects_repos_delete(connection, name, opts \\ []) do
-    optional_params = %{
-      :pp => :query,
-      :oauth_token => :query,
-      :bearer_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
+  def sourcerepo_projects_repos_delete(connection, name, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :quotaUser => :query
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -196,11 +184,11 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
       |> Request.url("/v1/{+name}", %{
         "name" => URI.encode_www_form(name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.SourceRepo.V1.Model.Empty{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.SourceRepo.V1.Model.Empty{}])
   end
 
   @doc """
@@ -210,20 +198,18 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
 
   - connection (GoogleApi.SourceRepo.V1.Connection): Connection to server
   - name (String.t): The name of the requested repository. Values are of the form &#x60;projects/&lt;project&gt;/repos/&lt;repo&gt;&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :pp (boolean()): Pretty-print response.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :bearer_token (String.t): OAuth bearer token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -232,21 +218,19 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
   """
   @spec sourcerepo_projects_repos_get(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.SourceRepo.V1.Model.Repo.t()} | {:error, Tesla.Env.t()}
-  def sourcerepo_projects_repos_get(connection, name, opts \\ []) do
-    optional_params = %{
-      :pp => :query,
-      :oauth_token => :query,
-      :bearer_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
+  def sourcerepo_projects_repos_get(connection, name, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :quotaUser => :query
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -255,11 +239,11 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
       |> Request.url("/v1/{+name}", %{
         "name" => URI.encode_www_form(name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.SourceRepo.V1.Model.Repo{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.SourceRepo.V1.Model.Repo{}])
   end
 
   @doc """
@@ -269,20 +253,18 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
 
   - connection (GoogleApi.SourceRepo.V1.Connection): Connection to server
   - resource (String.t): REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
-  - opts (KeywordList): [optional] Optional parameters
-    - :pp (boolean()): Pretty-print response.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :bearer_token (String.t): OAuth bearer token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -291,21 +273,24 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
   """
   @spec sourcerepo_projects_repos_get_iam_policy(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.SourceRepo.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
-  def sourcerepo_projects_repos_get_iam_policy(connection, resource, opts \\ []) do
-    optional_params = %{
-      :pp => :query,
-      :oauth_token => :query,
-      :bearer_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
+  def sourcerepo_projects_repos_get_iam_policy(
+        connection,
+        resource,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :quotaUser => :query
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -314,11 +299,11 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
       |> Request.url("/v1/{+resource}:getIamPolicy", %{
         "resource" => URI.encode_www_form(resource)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.SourceRepo.V1.Model.Policy{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.SourceRepo.V1.Model.Policy{}])
   end
 
   @doc """
@@ -328,22 +313,20 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
 
   - connection (GoogleApi.SourceRepo.V1.Connection): Connection to server
   - name (String.t): The project ID whose repos should be listed. Values are of the form &#x60;projects/&lt;project&gt;&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :pp (boolean()): Pretty-print response.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :bearer_token (String.t): OAuth bearer token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :pageToken (String.t): Resume listing repositories where a prior ListReposResponse left off. This is an opaque token that must be obtained from a recent, prior ListReposResponse&#39;s next_page_token field.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :pageSize (integer()): Maximum number of repositories to return; between 1 and 500. If not set or zero, defaults to 100 at the server.
+    - :pageToken (String.t): Resume listing repositories where a prior ListReposResponse left off. This is an opaque token that must be obtained from a recent, prior ListReposResponse&#39;s next_page_token field.
 
   ## Returns
 
@@ -352,23 +335,21 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
   """
   @spec sourcerepo_projects_repos_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.SourceRepo.V1.Model.ListReposResponse.t()} | {:error, Tesla.Env.t()}
-  def sourcerepo_projects_repos_list(connection, name, opts \\ []) do
-    optional_params = %{
-      :pp => :query,
-      :oauth_token => :query,
-      :bearer_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
+  def sourcerepo_projects_repos_list(connection, name, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
       :quotaUser => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
@@ -377,11 +358,11 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
       |> Request.url("/v1/{+name}/repos", %{
         "name" => URI.encode_www_form(name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.SourceRepo.V1.Model.ListReposResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.SourceRepo.V1.Model.ListReposResponse{}])
   end
 
   @doc """
@@ -391,20 +372,18 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
 
   - connection (GoogleApi.SourceRepo.V1.Connection): Connection to server
   - name (String.t): The name of the requested repository. Values are of the form &#x60;projects/&lt;project&gt;/repos/&lt;repo&gt;&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :pp (boolean()): Pretty-print response.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :bearer_token (String.t): OAuth bearer token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (UpdateRepoRequest): 
 
   ## Returns
@@ -414,21 +393,19 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
   """
   @spec sourcerepo_projects_repos_patch(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.SourceRepo.V1.Model.Repo.t()} | {:error, Tesla.Env.t()}
-  def sourcerepo_projects_repos_patch(connection, name, opts \\ []) do
-    optional_params = %{
-      :pp => :query,
-      :oauth_token => :query,
-      :bearer_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
+  def sourcerepo_projects_repos_patch(connection, name, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -438,11 +415,11 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
       |> Request.url("/v1/{+name}", %{
         "name" => URI.encode_www_form(name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.SourceRepo.V1.Model.Repo{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.SourceRepo.V1.Model.Repo{}])
   end
 
   @doc """
@@ -452,20 +429,18 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
 
   - connection (GoogleApi.SourceRepo.V1.Connection): Connection to server
   - resource (String.t): REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
-  - opts (KeywordList): [optional] Optional parameters
-    - :pp (boolean()): Pretty-print response.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :bearer_token (String.t): OAuth bearer token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (SetIamPolicyRequest): 
 
   ## Returns
@@ -475,21 +450,24 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
   """
   @spec sourcerepo_projects_repos_set_iam_policy(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.SourceRepo.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
-  def sourcerepo_projects_repos_set_iam_policy(connection, resource, opts \\ []) do
-    optional_params = %{
-      :pp => :query,
-      :oauth_token => :query,
-      :bearer_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
+  def sourcerepo_projects_repos_set_iam_policy(
+        connection,
+        resource,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -499,11 +477,11 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
       |> Request.url("/v1/{+resource}:setIamPolicy", %{
         "resource" => URI.encode_www_form(resource)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.SourceRepo.V1.Model.Policy{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.SourceRepo.V1.Model.Policy{}])
   end
 
   @doc """
@@ -513,20 +491,18 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
 
   - connection (GoogleApi.SourceRepo.V1.Connection): Connection to server
   - resource (String.t): REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
-  - opts (KeywordList): [optional] Optional parameters
-    - :pp (boolean()): Pretty-print response.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :bearer_token (String.t): OAuth bearer token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (TestIamPermissionsRequest): 
 
   ## Returns
@@ -537,21 +513,24 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
   @spec sourcerepo_projects_repos_test_iam_permissions(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.SourceRepo.V1.Model.TestIamPermissionsResponse.t()}
           | {:error, Tesla.Env.t()}
-  def sourcerepo_projects_repos_test_iam_permissions(connection, resource, opts \\ []) do
-    optional_params = %{
-      :pp => :query,
-      :oauth_token => :query,
-      :bearer_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
+  def sourcerepo_projects_repos_test_iam_permissions(
+        connection,
+        resource,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -561,11 +540,13 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
       |> Request.url("/v1/{+resource}:testIamPermissions", %{
         "resource" => URI.encode_www_form(resource)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.SourceRepo.V1.Model.TestIamPermissionsResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.SourceRepo.V1.Model.TestIamPermissionsResponse{}]
+    )
   end
 
   @doc """
@@ -575,20 +556,18 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
 
   - connection (GoogleApi.SourceRepo.V1.Connection): Connection to server
   - name (String.t): The name of the requested project. Values are of the form &#x60;projects/&lt;project&gt;&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :pp (boolean()): Pretty-print response.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :bearer_token (String.t): OAuth bearer token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :callback (String.t): JSONP
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (UpdateProjectConfigRequest): 
 
   ## Returns
@@ -598,21 +577,19 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
   """
   @spec sourcerepo_projects_update_config(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.SourceRepo.V1.Model.ProjectConfig.t()} | {:error, Tesla.Env.t()}
-  def sourcerepo_projects_update_config(connection, name, opts \\ []) do
-    optional_params = %{
-      :pp => :query,
-      :oauth_token => :query,
-      :bearer_token => :query,
-      :upload_protocol => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
+  def sourcerepo_projects_update_config(connection, name, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :callback => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -622,10 +599,10 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
       |> Request.url("/v1/{+name}/config", %{
         "name" => URI.encode_www_form(name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.SourceRepo.V1.Model.ProjectConfig{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.SourceRepo.V1.Model.ProjectConfig{}])
   end
 end

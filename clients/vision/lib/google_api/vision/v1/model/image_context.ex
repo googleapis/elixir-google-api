@@ -25,6 +25,7 @@ defmodule GoogleApi.Vision.V1.Model.ImageContext do
   - cropHintsParams (CropHintsParams): Parameters for crop hints annotation request. Defaults to: `null`.
   - languageHints ([String.t]): List of languages to use for TEXT_DETECTION. In most cases, an empty value yields the best results since it enables automatic language detection. For languages based on the Latin alphabet, setting &#x60;language_hints&#x60; is not needed. In rare cases, when the language of the text in the image is known, setting a hint will help get better results (although it will be a significant hindrance if the hint is wrong). Text detection returns an error if one or more of the specified languages is not one of the [supported languages](/vision/docs/languages). Defaults to: `null`.
   - latLongRect (LatLongRect): Not used. Defaults to: `null`.
+  - productSearchParams (ProductSearchParams): Parameters for product search. Defaults to: `null`.
   - webDetectionParams (WebDetectionParams): Parameters for web detection. Defaults to: `null`.
   """
 
@@ -34,12 +35,14 @@ defmodule GoogleApi.Vision.V1.Model.ImageContext do
           :cropHintsParams => GoogleApi.Vision.V1.Model.CropHintsParams.t(),
           :languageHints => list(any()),
           :latLongRect => GoogleApi.Vision.V1.Model.LatLongRect.t(),
+          :productSearchParams => GoogleApi.Vision.V1.Model.ProductSearchParams.t(),
           :webDetectionParams => GoogleApi.Vision.V1.Model.WebDetectionParams.t()
         }
 
   field(:cropHintsParams, as: GoogleApi.Vision.V1.Model.CropHintsParams)
   field(:languageHints, type: :list)
   field(:latLongRect, as: GoogleApi.Vision.V1.Model.LatLongRect)
+  field(:productSearchParams, as: GoogleApi.Vision.V1.Model.ProductSearchParams)
   field(:webDetectionParams, as: GoogleApi.Vision.V1.Model.WebDetectionParams)
 end
 

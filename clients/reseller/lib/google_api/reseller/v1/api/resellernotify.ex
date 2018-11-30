@@ -30,7 +30,7 @@ defmodule GoogleApi.Reseller.V1.Api.Resellernotify do
   ## Parameters
 
   - connection (GoogleApi.Reseller.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -47,8 +47,8 @@ defmodule GoogleApi.Reseller.V1.Api.Resellernotify do
   @spec reseller_resellernotify_getwatchdetails(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.Reseller.V1.Model.ResellernotifyGetwatchdetailsResponse.t()}
           | {:error, Tesla.Env.t()}
-  def reseller_resellernotify_getwatchdetails(connection, opts \\ []) do
-    optional_params = %{
+  def reseller_resellernotify_getwatchdetails(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -62,12 +62,12 @@ defmodule GoogleApi.Reseller.V1.Api.Resellernotify do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/resellernotify/getwatchdetails")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct: %GoogleApi.Reseller.V1.Model.ResellernotifyGetwatchdetailsResponse{}
+      opts ++ [struct: %GoogleApi.Reseller.V1.Model.ResellernotifyGetwatchdetailsResponse{}]
     )
   end
 
@@ -77,7 +77,7 @@ defmodule GoogleApi.Reseller.V1.Api.Resellernotify do
   ## Parameters
 
   - connection (GoogleApi.Reseller.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -94,8 +94,8 @@ defmodule GoogleApi.Reseller.V1.Api.Resellernotify do
   """
   @spec reseller_resellernotify_register(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.Reseller.V1.Model.ResellernotifyResource.t()} | {:error, Tesla.Env.t()}
-  def reseller_resellernotify_register(connection, opts \\ []) do
-    optional_params = %{
+  def reseller_resellernotify_register(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -110,11 +110,11 @@ defmodule GoogleApi.Reseller.V1.Api.Resellernotify do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/resellernotify/register")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Reseller.V1.Model.ResellernotifyResource{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Reseller.V1.Model.ResellernotifyResource{}])
   end
 
   @doc """
@@ -123,7 +123,7 @@ defmodule GoogleApi.Reseller.V1.Api.Resellernotify do
   ## Parameters
 
   - connection (GoogleApi.Reseller.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -140,8 +140,8 @@ defmodule GoogleApi.Reseller.V1.Api.Resellernotify do
   """
   @spec reseller_resellernotify_unregister(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.Reseller.V1.Model.ResellernotifyResource.t()} | {:error, Tesla.Env.t()}
-  def reseller_resellernotify_unregister(connection, opts \\ []) do
-    optional_params = %{
+  def reseller_resellernotify_unregister(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -156,10 +156,10 @@ defmodule GoogleApi.Reseller.V1.Api.Resellernotify do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/resellernotify/unregister")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Reseller.V1.Model.ResellernotifyResource{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Reseller.V1.Model.ResellernotifyResource{}])
   end
 end

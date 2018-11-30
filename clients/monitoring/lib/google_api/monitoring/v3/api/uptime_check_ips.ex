@@ -30,20 +30,20 @@ defmodule GoogleApi.Monitoring.V3.Api.UptimeCheckIps do
   ## Parameters
 
   - connection (GoogleApi.Monitoring.V3.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :pageToken (String.t): If this field is not empty then it must contain the nextPageToken value returned by a previous call to this method. Using this field causes the method to return more results from the previous method call. NOTE: this field is not yet implemented
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :pageSize (integer()): The maximum number of results to return in a single response. The server may further constrain the maximum number of results returned in a single page. If the page_size is &lt;&#x3D;0, the server will decide the number of results to be returned. NOTE: this field is not yet implemented
+    - :pageToken (String.t): If this field is not empty then it must contain the nextPageToken value returned by a previous call to this method. Using this field causes the method to return more results from the previous method call. NOTE: this field is not yet implemented
 
   ## Returns
 
@@ -53,31 +53,33 @@ defmodule GoogleApi.Monitoring.V3.Api.UptimeCheckIps do
   @spec monitoring_uptime_check_ips_list(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.Monitoring.V3.Model.ListUptimeCheckIpsResponse.t()}
           | {:error, Tesla.Env.t()}
-  def monitoring_uptime_check_ips_list(connection, opts \\ []) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+  def monitoring_uptime_check_ips_list(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v3/uptimeCheckIps")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Monitoring.V3.Model.ListUptimeCheckIpsResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Monitoring.V3.Model.ListUptimeCheckIpsResponse{}]
+    )
   end
 end

@@ -22,10 +22,10 @@ defmodule GoogleApi.Compute.V1.Model.PathMatcher do
 
   ## Attributes
 
-  - defaultService (String.t): The full or partial URL to the BackendService resource. This will be used if none of the pathRules defined by this PathMatcher is matched by the URL&#39;s path portion. For example, the following are all valid URLs to a BackendService resource:   - https://www.googleapis.com/compute/v1/projects/project/global/backendServices/backendService  - compute/v1/projects/project/global/backendServices/backendService  - global/backendServices/backendService Defaults to: `null`.
+  - defaultService (String.t): The full or partial URL to the BackendService resource. This will be used if none of the pathRules or routeRules defined by this PathMatcher are matched. For example, the following are all valid URLs to a BackendService resource:   - https://www.googleapis.com/compute/v1/projects/project/global/backendServices/backendService  - compute/v1/projects/project/global/backendServices/backendService  - global/backendServices/backendService   Use defaultService instead of defaultRouteAction when simple routing to a backend service is desired and other advanced capabilities like traffic splitting and URL rewrites are not required. Only one of defaultService, defaultRouteAction or defaultUrlRedirect must be set. Authorization requires one or more of the following Google IAM permissions on the specified resource default_service:   - compute.backendBuckets.use  - compute.backendServices.use Defaults to: `null`.
   - description (String.t): An optional description of this resource. Provide this property when you create the resource. Defaults to: `null`.
   - name (String.t): The name to which this PathMatcher is referred by the HostRule. Defaults to: `null`.
-  - pathRules ([PathRule]): The list of path rules. Defaults to: `null`.
+  - pathRules ([PathRule]): The list of path rules. Use this list instead of routeRules when routing based on simple path matching is all that&#39;s required. The order by which path rules are specified does not matter. Matches are always done on the longest-path-first basis. For example: a pathRule with a path /a/b/c/* will match before /a/b/* irrespective of the order in which those paths appear in this list. Only one of pathRules or routeRules must be set. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

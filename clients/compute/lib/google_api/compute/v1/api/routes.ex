@@ -32,7 +32,7 @@ defmodule GoogleApi.Compute.V1.Api.Routes do
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
   - route (String.t): Name of the Route resource to delete.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -49,8 +49,8 @@ defmodule GoogleApi.Compute.V1.Api.Routes do
   """
   @spec compute_routes_delete(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_routes_delete(connection, project, route, opts \\ []) do
-    optional_params = %{
+  def compute_routes_delete(connection, project, route, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -68,11 +68,11 @@ defmodule GoogleApi.Compute.V1.Api.Routes do
         "project" => URI.encode_www_form(project),
         "route" => URI.encode_www_form(route)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -83,7 +83,7 @@ defmodule GoogleApi.Compute.V1.Api.Routes do
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
   - route (String.t): Name of the Route resource to return.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -99,8 +99,8 @@ defmodule GoogleApi.Compute.V1.Api.Routes do
   """
   @spec compute_routes_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.Route.t()} | {:error, Tesla.Env.t()}
-  def compute_routes_get(connection, project, route, opts \\ []) do
-    optional_params = %{
+  def compute_routes_get(connection, project, route, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -117,11 +117,11 @@ defmodule GoogleApi.Compute.V1.Api.Routes do
         "project" => URI.encode_www_form(project),
         "route" => URI.encode_www_form(route)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Route{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Route{}])
   end
 
   @doc """
@@ -131,7 +131,7 @@ defmodule GoogleApi.Compute.V1.Api.Routes do
 
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -149,8 +149,8 @@ defmodule GoogleApi.Compute.V1.Api.Routes do
   """
   @spec compute_routes_insert(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def compute_routes_insert(connection, project, opts \\ []) do
-    optional_params = %{
+  def compute_routes_insert(connection, project, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -168,11 +168,11 @@ defmodule GoogleApi.Compute.V1.Api.Routes do
       |> Request.url("/{project}/global/routes", %{
         "project" => URI.encode_www_form(project)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """
@@ -182,7 +182,7 @@ defmodule GoogleApi.Compute.V1.Api.Routes do
 
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -202,8 +202,8 @@ defmodule GoogleApi.Compute.V1.Api.Routes do
   """
   @spec compute_routes_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.RouteList.t()} | {:error, Tesla.Env.t()}
-  def compute_routes_list(connection, project, opts \\ []) do
-    optional_params = %{
+  def compute_routes_list(connection, project, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -223,10 +223,10 @@ defmodule GoogleApi.Compute.V1.Api.Routes do
       |> Request.url("/{project}/global/routes", %{
         "project" => URI.encode_www_form(project)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Compute.V1.Model.RouteList{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.RouteList{}])
   end
 end

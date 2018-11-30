@@ -22,9 +22,9 @@ defmodule GoogleApi.IAM.V1.Model.ServiceAccount do
 
   ## Attributes
 
-  - displayName (String.t): Optional. A user-specified description of the service account.  Must be fewer than 100 UTF-8 bytes. Defaults to: `null`.
+  - displayName (String.t): Optional. A user-specified name for the service account. Must be less than or equal to 100 UTF-8 bytes. Defaults to: `null`.
   - email (String.t): @OutputOnly The email address of the service account. Defaults to: `null`.
-  - etag (binary()): Used to perform a consistent read-modify-write. Defaults to: `null`.
+  - etag (binary()): Optional. Note: &#x60;etag&#x60; is an inoperable legacy field that is only returned for backwards compatibility. Defaults to: `null`.
   - name (String.t): The resource name of the service account in the following format: &#x60;projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}&#x60;.  Requests using &#x60;-&#x60; as a wildcard for the &#x60;PROJECT_ID&#x60; will infer the project from the &#x60;account&#x60; and the &#x60;ACCOUNT&#x60; value can be the &#x60;email&#x60; address or the &#x60;unique_id&#x60; of the service account.  In responses the resource name will always be in the format &#x60;projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}&#x60;. Defaults to: `null`.
   - oauth2ClientId (String.t): @OutputOnly The OAuth2 client id for the service account. This is used in conjunction with the OAuth2 clientconfig API to make three legged OAuth2 (3LO) flows to access the data of Google users. Defaults to: `null`.
   - projectId (String.t): @OutputOnly The id of the project that owns the service account. Defaults to: `null`.

@@ -32,7 +32,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutpages do
   - connection (GoogleApi.AndroidEnterprise.V1.Connection): Connection to server
   - enterprise_id (String.t): The ID of the enterprise.
   - page_id (String.t): The ID of the page.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -52,8 +52,14 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutpages do
           String.t(),
           keyword()
         ) :: {:ok, nil} | {:error, Tesla.Env.t()}
-  def androidenterprise_storelayoutpages_delete(connection, enterprise_id, page_id, opts \\ []) do
-    optional_params = %{
+  def androidenterprise_storelayoutpages_delete(
+        connection,
+        enterprise_id,
+        page_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -70,11 +76,11 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutpages do
         "enterpriseId" => URI.encode_www_form(enterprise_id),
         "pageId" => URI.encode_www_form(page_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -85,7 +91,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutpages do
   - connection (GoogleApi.AndroidEnterprise.V1.Connection): Connection to server
   - enterprise_id (String.t): The ID of the enterprise.
   - page_id (String.t): The ID of the page.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -105,8 +111,14 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutpages do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.AndroidEnterprise.V1.Model.StorePage.t()} | {:error, Tesla.Env.t()}
-  def androidenterprise_storelayoutpages_get(connection, enterprise_id, page_id, opts \\ []) do
-    optional_params = %{
+  def androidenterprise_storelayoutpages_get(
+        connection,
+        enterprise_id,
+        page_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -123,11 +135,11 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutpages do
         "enterpriseId" => URI.encode_www_form(enterprise_id),
         "pageId" => URI.encode_www_form(page_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AndroidEnterprise.V1.Model.StorePage{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AndroidEnterprise.V1.Model.StorePage{}])
   end
 
   @doc """
@@ -137,7 +149,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutpages do
 
   - connection (GoogleApi.AndroidEnterprise.V1.Connection): Connection to server
   - enterprise_id (String.t): The ID of the enterprise.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -154,8 +166,13 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutpages do
   """
   @spec androidenterprise_storelayoutpages_insert(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.StorePage.t()} | {:error, Tesla.Env.t()}
-  def androidenterprise_storelayoutpages_insert(connection, enterprise_id, opts \\ []) do
-    optional_params = %{
+  def androidenterprise_storelayoutpages_insert(
+        connection,
+        enterprise_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -172,11 +189,11 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutpages do
       |> Request.url("/enterprises/{enterpriseId}/storeLayout/pages", %{
         "enterpriseId" => URI.encode_www_form(enterprise_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AndroidEnterprise.V1.Model.StorePage{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AndroidEnterprise.V1.Model.StorePage{}])
   end
 
   @doc """
@@ -186,7 +203,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutpages do
 
   - connection (GoogleApi.AndroidEnterprise.V1.Connection): Connection to server
   - enterprise_id (String.t): The ID of the enterprise.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -203,8 +220,13 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutpages do
   @spec androidenterprise_storelayoutpages_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.StoreLayoutPagesListResponse.t()}
           | {:error, Tesla.Env.t()}
-  def androidenterprise_storelayoutpages_list(connection, enterprise_id, opts \\ []) do
-    optional_params = %{
+  def androidenterprise_storelayoutpages_list(
+        connection,
+        enterprise_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -220,12 +242,12 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutpages do
       |> Request.url("/enterprises/{enterpriseId}/storeLayout/pages", %{
         "enterpriseId" => URI.encode_www_form(enterprise_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct: %GoogleApi.AndroidEnterprise.V1.Model.StoreLayoutPagesListResponse{}
+      opts ++ [struct: %GoogleApi.AndroidEnterprise.V1.Model.StoreLayoutPagesListResponse{}]
     )
   end
 
@@ -237,7 +259,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutpages do
   - connection (GoogleApi.AndroidEnterprise.V1.Connection): Connection to server
   - enterprise_id (String.t): The ID of the enterprise.
   - page_id (String.t): The ID of the page.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -258,8 +280,14 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutpages do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.AndroidEnterprise.V1.Model.StorePage.t()} | {:error, Tesla.Env.t()}
-  def androidenterprise_storelayoutpages_patch(connection, enterprise_id, page_id, opts \\ []) do
-    optional_params = %{
+  def androidenterprise_storelayoutpages_patch(
+        connection,
+        enterprise_id,
+        page_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -277,11 +305,11 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutpages do
         "enterpriseId" => URI.encode_www_form(enterprise_id),
         "pageId" => URI.encode_www_form(page_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AndroidEnterprise.V1.Model.StorePage{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AndroidEnterprise.V1.Model.StorePage{}])
   end
 
   @doc """
@@ -292,7 +320,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutpages do
   - connection (GoogleApi.AndroidEnterprise.V1.Connection): Connection to server
   - enterprise_id (String.t): The ID of the enterprise.
   - page_id (String.t): The ID of the page.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -313,8 +341,14 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutpages do
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.AndroidEnterprise.V1.Model.StorePage.t()} | {:error, Tesla.Env.t()}
-  def androidenterprise_storelayoutpages_update(connection, enterprise_id, page_id, opts \\ []) do
-    optional_params = %{
+  def androidenterprise_storelayoutpages_update(
+        connection,
+        enterprise_id,
+        page_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -332,10 +366,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutpages do
         "enterpriseId" => URI.encode_www_form(enterprise_id),
         "pageId" => URI.encode_www_form(page_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AndroidEnterprise.V1.Model.StorePage{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AndroidEnterprise.V1.Model.StorePage{}])
   end
 end

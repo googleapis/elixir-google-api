@@ -31,18 +31,18 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
 
   - connection (GoogleApi.CloudResourceManager.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;resource&#x60;. Name of the resource for the &#x60;Policy&#x60; to clear.
-  - opts (KeywordList): [optional] Optional parameters
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
     - :body (ClearOrgPolicyRequest): 
 
   ## Returns
@@ -52,19 +52,24 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
   """
   @spec cloudresourcemanager_projects_clear_org_policy(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.CloudResourceManager.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
-  def cloudresourcemanager_projects_clear_org_policy(connection, projects_id, opts \\ []) do
-    optional_params = %{
-      :alt => :query,
-      :key => :query,
+  def cloudresourcemanager_projects_clear_org_policy(
+        connection,
+        projects_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
       :body => :body
     }
 
@@ -74,11 +79,11 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
       |> Request.url("/v1/projects/{projectsId}:clearOrgPolicy", %{
         "projectsId" => URI.encode_www_form(projects_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.CloudResourceManager.V1.Model.Empty{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudResourceManager.V1.Model.Empty{}])
   end
 
   @doc """
@@ -87,18 +92,18 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
   ## Parameters
 
   - connection (GoogleApi.CloudResourceManager.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
     - :body (Project): 
 
   ## Returns
@@ -108,19 +113,19 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
   """
   @spec cloudresourcemanager_projects_create(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.CloudResourceManager.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
-  def cloudresourcemanager_projects_create(connection, opts \\ []) do
-    optional_params = %{
-      :alt => :query,
-      :key => :query,
+  def cloudresourcemanager_projects_create(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
       :body => :body
     }
 
@@ -128,11 +133,11 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.CloudResourceManager.V1.Model.Operation{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudResourceManager.V1.Model.Operation{}])
   end
 
   @doc """
@@ -142,18 +147,18 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
 
   - connection (GoogleApi.CloudResourceManager.V1.Connection): Connection to server
   - project_id (String.t): The Project ID (for example, &#x60;foo-bar-123&#x60;).  Required.
-  - opts (KeywordList): [optional] Optional parameters
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
 
   ## Returns
 
@@ -162,19 +167,24 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
   """
   @spec cloudresourcemanager_projects_delete(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.CloudResourceManager.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
-  def cloudresourcemanager_projects_delete(connection, project_id, opts \\ []) do
-    optional_params = %{
-      :alt => :query,
-      :key => :query,
+  def cloudresourcemanager_projects_delete(
+        connection,
+        project_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -183,11 +193,11 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
       |> Request.url("/v1/projects/{projectId}", %{
         "projectId" => URI.encode_www_form(project_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.CloudResourceManager.V1.Model.Empty{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudResourceManager.V1.Model.Empty{}])
   end
 
   @doc """
@@ -197,18 +207,18 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
 
   - connection (GoogleApi.CloudResourceManager.V1.Connection): Connection to server
   - project_id (String.t): The Project ID (for example, &#x60;my-project-123&#x60;).  Required.
-  - opts (KeywordList): [optional] Optional parameters
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
 
   ## Returns
 
@@ -217,19 +227,19 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
   """
   @spec cloudresourcemanager_projects_get(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.CloudResourceManager.V1.Model.Project.t()} | {:error, Tesla.Env.t()}
-  def cloudresourcemanager_projects_get(connection, project_id, opts \\ []) do
-    optional_params = %{
-      :alt => :query,
-      :key => :query,
+  def cloudresourcemanager_projects_get(connection, project_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -238,11 +248,11 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
       |> Request.url("/v1/projects/{projectId}", %{
         "projectId" => URI.encode_www_form(project_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.CloudResourceManager.V1.Model.Project{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudResourceManager.V1.Model.Project{}])
   end
 
   @doc """
@@ -252,18 +262,18 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
 
   - connection (GoogleApi.CloudResourceManager.V1.Connection): Connection to server
   - project_id (String.t): The Project ID (for example, &#x60;my-project-123&#x60;).  Required.
-  - opts (KeywordList): [optional] Optional parameters
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
     - :body (GetAncestryRequest): 
 
   ## Returns
@@ -274,19 +284,24 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
   @spec cloudresourcemanager_projects_get_ancestry(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.CloudResourceManager.V1.Model.GetAncestryResponse.t()}
           | {:error, Tesla.Env.t()}
-  def cloudresourcemanager_projects_get_ancestry(connection, project_id, opts \\ []) do
-    optional_params = %{
-      :alt => :query,
-      :key => :query,
+  def cloudresourcemanager_projects_get_ancestry(
+        connection,
+        project_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
       :body => :body
     }
 
@@ -296,11 +311,13 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
       |> Request.url("/v1/projects/{projectId}:getAncestry", %{
         "projectId" => URI.encode_www_form(project_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.CloudResourceManager.V1.Model.GetAncestryResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.CloudResourceManager.V1.Model.GetAncestryResponse{}]
+    )
   end
 
   @doc """
@@ -310,18 +327,18 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
 
   - connection (GoogleApi.CloudResourceManager.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;resource&#x60;. The name of the resource to start computing the effective &#x60;Policy&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
     - :body (GetEffectiveOrgPolicyRequest): 
 
   ## Returns
@@ -335,19 +352,24 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.CloudResourceManager.V1.Model.OrgPolicy.t()} | {:error, Tesla.Env.t()}
-  def cloudresourcemanager_projects_get_effective_org_policy(connection, projects_id, opts \\ []) do
-    optional_params = %{
-      :alt => :query,
-      :key => :query,
+  def cloudresourcemanager_projects_get_effective_org_policy(
+        connection,
+        projects_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
       :body => :body
     }
 
@@ -357,11 +379,11 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
       |> Request.url("/v1/projects/{projectsId}:getEffectiveOrgPolicy", %{
         "projectsId" => URI.encode_www_form(projects_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.CloudResourceManager.V1.Model.OrgPolicy{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudResourceManager.V1.Model.OrgPolicy{}])
   end
 
   @doc """
@@ -371,18 +393,18 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
 
   - connection (GoogleApi.CloudResourceManager.V1.Connection): Connection to server
   - resource (String.t): REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
-  - opts (KeywordList): [optional] Optional parameters
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
     - :body (GetIamPolicyRequest): 
 
   ## Returns
@@ -392,19 +414,24 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
   """
   @spec cloudresourcemanager_projects_get_iam_policy(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.CloudResourceManager.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
-  def cloudresourcemanager_projects_get_iam_policy(connection, resource, opts \\ []) do
-    optional_params = %{
-      :alt => :query,
-      :key => :query,
+  def cloudresourcemanager_projects_get_iam_policy(
+        connection,
+        resource,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
       :body => :body
     }
 
@@ -414,11 +441,11 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
       |> Request.url("/v1/projects/{resource}:getIamPolicy", %{
         "resource" => URI.encode_www_form(resource)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.CloudResourceManager.V1.Model.Policy{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudResourceManager.V1.Model.Policy{}])
   end
 
   @doc """
@@ -428,18 +455,18 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
 
   - connection (GoogleApi.CloudResourceManager.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;resource&#x60;. Name of the resource the &#x60;Policy&#x60; is set on.
-  - opts (KeywordList): [optional] Optional parameters
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
     - :body (GetOrgPolicyRequest): 
 
   ## Returns
@@ -449,19 +476,24 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
   """
   @spec cloudresourcemanager_projects_get_org_policy(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.CloudResourceManager.V1.Model.OrgPolicy.t()} | {:error, Tesla.Env.t()}
-  def cloudresourcemanager_projects_get_org_policy(connection, projects_id, opts \\ []) do
-    optional_params = %{
-      :alt => :query,
-      :key => :query,
+  def cloudresourcemanager_projects_get_org_policy(
+        connection,
+        projects_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
       :body => :body
     }
 
@@ -471,11 +503,11 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
       |> Request.url("/v1/projects/{projectsId}:getOrgPolicy", %{
         "projectsId" => URI.encode_www_form(projects_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.CloudResourceManager.V1.Model.OrgPolicy{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudResourceManager.V1.Model.OrgPolicy{}])
   end
 
   @doc """
@@ -484,21 +516,21 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
   ## Parameters
 
   - connection (GoogleApi.CloudResourceManager.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
     - :filter (String.t): An expression for filtering the results of the request.  Filter rules are case insensitive. The fields eligible for filtering are:  + &#x60;name&#x60; + &#x60;id&#x60; + &lt;code&gt;labels.&lt;em&gt;key&lt;/em&gt;&lt;/code&gt; where *key* is the name of a label  Some examples of using labels as filters:  |Filter|Description| |------|-----------| |name:how*|The project&#39;s name starts with \&quot;how\&quot;.| |name:Howl|The project&#39;s name is &#x60;Howl&#x60; or &#x60;howl&#x60;.| |name:HOWL|Equivalent to above.| |NAME:howl|Equivalent to above.| |labels.color:*|The project has the label &#x60;color&#x60;.| |labels.color:red|The project&#39;s label &#x60;color&#x60; has the value &#x60;red&#x60;.| |labels.color:red&amp;nbsp;labels.size:big|The project&#39;s label &#x60;color&#x60; has the value &#x60;red&#x60; and its label &#x60;size&#x60; has the value &#x60;big&#x60;.  If you specify a filter that has both &#x60;parent.type&#x60; and &#x60;parent.id&#x60;, then the &#x60;resourcemanager.projects.list&#x60; permission is checked on the parent. If the user has this permission, all projects under the parent will be returned after remaining filters have been applied. If the user lacks this permission, then all projects for which the user has the &#x60;resourcemanager.projects.get&#x60; permission will be returned after remaining filters have been applied. If no filter is specified, the call will return projects for which the user has &#x60;resourcemanager.projects.get&#x60; permissions.  Optional.
-    - :pageToken (String.t): A pagination token returned from a previous call to ListProjects that indicates from where listing should continue.  Optional.
     - :pageSize (integer()): The maximum number of Projects to return in the response. The server can return fewer Projects than requested. If unspecified, server picks an appropriate default.  Optional.
+    - :pageToken (String.t): A pagination token returned from a previous call to ListProjects that indicates from where listing should continue.  Optional.
 
   ## Returns
 
@@ -508,33 +540,35 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
   @spec cloudresourcemanager_projects_list(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.CloudResourceManager.V1.Model.ListProjectsResponse.t()}
           | {:error, Tesla.Env.t()}
-  def cloudresourcemanager_projects_list(connection, opts \\ []) do
-    optional_params = %{
-      :alt => :query,
-      :key => :query,
+  def cloudresourcemanager_projects_list(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
       :filter => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.CloudResourceManager.V1.Model.ListProjectsResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.CloudResourceManager.V1.Model.ListProjectsResponse{}]
+    )
   end
 
   @doc """
@@ -544,18 +578,18 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
 
   - connection (GoogleApi.CloudResourceManager.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;resource&#x60;. Name of the resource to list &#x60;Constraints&#x60; for.
-  - opts (KeywordList): [optional] Optional parameters
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
     - :body (ListAvailableOrgPolicyConstraintsRequest): 
 
   ## Returns
@@ -574,20 +608,21 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
   def cloudresourcemanager_projects_list_available_org_policy_constraints(
         connection,
         projects_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :alt => :query,
-      :key => :query,
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
       :body => :body
     }
 
@@ -597,12 +632,16 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
       |> Request.url("/v1/projects/{projectsId}:listAvailableOrgPolicyConstraints", %{
         "projectsId" => URI.encode_www_form(projects_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct: %GoogleApi.CloudResourceManager.V1.Model.ListAvailableOrgPolicyConstraintsResponse{}
+      opts ++
+        [
+          struct:
+            %GoogleApi.CloudResourceManager.V1.Model.ListAvailableOrgPolicyConstraintsResponse{}
+        ]
     )
   end
 
@@ -613,18 +652,18 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
 
   - connection (GoogleApi.CloudResourceManager.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;resource&#x60;. Name of the resource to list Policies for.
-  - opts (KeywordList): [optional] Optional parameters
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
     - :body (ListOrgPoliciesRequest): 
 
   ## Returns
@@ -635,19 +674,24 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
   @spec cloudresourcemanager_projects_list_org_policies(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.CloudResourceManager.V1.Model.ListOrgPoliciesResponse.t()}
           | {:error, Tesla.Env.t()}
-  def cloudresourcemanager_projects_list_org_policies(connection, projects_id, opts \\ []) do
-    optional_params = %{
-      :alt => :query,
-      :key => :query,
+  def cloudresourcemanager_projects_list_org_policies(
+        connection,
+        projects_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
       :body => :body
     }
 
@@ -657,11 +701,13 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
       |> Request.url("/v1/projects/{projectsId}:listOrgPolicies", %{
         "projectsId" => URI.encode_www_form(projects_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.CloudResourceManager.V1.Model.ListOrgPoliciesResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.CloudResourceManager.V1.Model.ListOrgPoliciesResponse{}]
+    )
   end
 
   @doc """
@@ -671,18 +717,18 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
 
   - connection (GoogleApi.CloudResourceManager.V1.Connection): Connection to server
   - resource (String.t): REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
-  - opts (KeywordList): [optional] Optional parameters
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
     - :body (SetIamPolicyRequest): 
 
   ## Returns
@@ -692,19 +738,24 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
   """
   @spec cloudresourcemanager_projects_set_iam_policy(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.CloudResourceManager.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
-  def cloudresourcemanager_projects_set_iam_policy(connection, resource, opts \\ []) do
-    optional_params = %{
-      :alt => :query,
-      :key => :query,
+  def cloudresourcemanager_projects_set_iam_policy(
+        connection,
+        resource,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
       :body => :body
     }
 
@@ -714,11 +765,11 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
       |> Request.url("/v1/projects/{resource}:setIamPolicy", %{
         "resource" => URI.encode_www_form(resource)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.CloudResourceManager.V1.Model.Policy{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudResourceManager.V1.Model.Policy{}])
   end
 
   @doc """
@@ -728,18 +779,18 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
 
   - connection (GoogleApi.CloudResourceManager.V1.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;resource&#x60;. Resource name of the resource to attach the &#x60;Policy&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
     - :body (SetOrgPolicyRequest): 
 
   ## Returns
@@ -749,19 +800,24 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
   """
   @spec cloudresourcemanager_projects_set_org_policy(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.CloudResourceManager.V1.Model.OrgPolicy.t()} | {:error, Tesla.Env.t()}
-  def cloudresourcemanager_projects_set_org_policy(connection, projects_id, opts \\ []) do
-    optional_params = %{
-      :alt => :query,
-      :key => :query,
+  def cloudresourcemanager_projects_set_org_policy(
+        connection,
+        projects_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
       :body => :body
     }
 
@@ -771,11 +827,11 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
       |> Request.url("/v1/projects/{projectsId}:setOrgPolicy", %{
         "projectsId" => URI.encode_www_form(projects_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.CloudResourceManager.V1.Model.OrgPolicy{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudResourceManager.V1.Model.OrgPolicy{}])
   end
 
   @doc """
@@ -785,18 +841,18 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
 
   - connection (GoogleApi.CloudResourceManager.V1.Connection): Connection to server
   - resource (String.t): REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
-  - opts (KeywordList): [optional] Optional parameters
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
     - :body (TestIamPermissionsRequest): 
 
   ## Returns
@@ -811,19 +867,24 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudResourceManager.V1.Model.TestIamPermissionsResponse.t()}
           | {:error, Tesla.Env.t()}
-  def cloudresourcemanager_projects_test_iam_permissions(connection, resource, opts \\ []) do
-    optional_params = %{
-      :alt => :query,
-      :key => :query,
+  def cloudresourcemanager_projects_test_iam_permissions(
+        connection,
+        resource,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
       :body => :body
     }
 
@@ -833,12 +894,12 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
       |> Request.url("/v1/projects/{resource}:testIamPermissions", %{
         "resource" => URI.encode_www_form(resource)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct: %GoogleApi.CloudResourceManager.V1.Model.TestIamPermissionsResponse{}
+      opts ++ [struct: %GoogleApi.CloudResourceManager.V1.Model.TestIamPermissionsResponse{}]
     )
   end
 
@@ -849,18 +910,18 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
 
   - connection (GoogleApi.CloudResourceManager.V1.Connection): Connection to server
   - project_id (String.t): The project ID (for example, &#x60;foo-bar-123&#x60;).  Required.
-  - opts (KeywordList): [optional] Optional parameters
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
     - :body (UndeleteProjectRequest): 
 
   ## Returns
@@ -870,19 +931,24 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
   """
   @spec cloudresourcemanager_projects_undelete(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.CloudResourceManager.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
-  def cloudresourcemanager_projects_undelete(connection, project_id, opts \\ []) do
-    optional_params = %{
-      :alt => :query,
-      :key => :query,
+  def cloudresourcemanager_projects_undelete(
+        connection,
+        project_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
       :body => :body
     }
 
@@ -892,11 +958,11 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
       |> Request.url("/v1/projects/{projectId}:undelete", %{
         "projectId" => URI.encode_www_form(project_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.CloudResourceManager.V1.Model.Empty{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudResourceManager.V1.Model.Empty{}])
   end
 
   @doc """
@@ -906,18 +972,18 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
 
   - connection (GoogleApi.CloudResourceManager.V1.Connection): Connection to server
   - project_id (String.t): The project ID (for example, &#x60;my-project-123&#x60;).  Required.
-  - opts (KeywordList): [optional] Optional parameters
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :$.xgafv (String.t): V1 error format.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :callback (String.t): JSONP
     - :body (Project): 
 
   ## Returns
@@ -927,19 +993,24 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
   """
   @spec cloudresourcemanager_projects_update(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.CloudResourceManager.V1.Model.Project.t()} | {:error, Tesla.Env.t()}
-  def cloudresourcemanager_projects_update(connection, project_id, opts \\ []) do
-    optional_params = %{
-      :alt => :query,
-      :key => :query,
+  def cloudresourcemanager_projects_update(
+        connection,
+        project_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :fields => :query,
-      :"$.xgafv" => :query,
-      :oauth_token => :query,
-      :callback => :query,
       :body => :body
     }
 
@@ -949,10 +1020,10 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
       |> Request.url("/v1/projects/{projectId}", %{
         "projectId" => URI.encode_www_form(project_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.CloudResourceManager.V1.Model.Project{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudResourceManager.V1.Model.Project{}])
   end
 end

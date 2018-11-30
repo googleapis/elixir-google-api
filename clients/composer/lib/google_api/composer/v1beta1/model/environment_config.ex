@@ -22,7 +22,7 @@ defmodule GoogleApi.Composer.V1beta1.Model.EnvironmentConfig do
 
   ## Attributes
 
-  - airflowUri (String.t): The URI of the Apache Airflow Web UI hosted within this environment (see [Airflow web interface](/composer/docs/how-to/accessing/airflow-web-interface)). Defaults to: `null`.
+  - airflowUri (String.t): Output only. The URI of the Apache Airflow Web UI hosted within this environment (see [Airflow web interface](/composer/docs/how-to/accessing/airflow-web-interface)). Defaults to: `null`.
   - dagGcsPrefix (String.t): Output only. The Cloud Storage prefix of the DAGs for this environment. Although Cloud Storage objects reside in a flat namespace, a hierarchical file tree can be simulated using \&quot;/\&quot;-delimited object name prefixes. DAG objects for this environment reside in a simulated directory with the given prefix. Defaults to: `null`.
   - gkeCluster (String.t): Output only. The Kubernetes Engine cluster used to run this environment. Defaults to: `null`.
   - nodeConfig (NodeConfig): The configuration used for the Kubernetes Engine cluster. Defaults to: `null`.

@@ -24,7 +24,9 @@ defmodule GoogleApi.Dialogflow.V2.Connection do
   use GoogleApi.Gax.Connection,
     scopes: [
       # View and manage your data across Google Cloud Platform services
-      "https://www.googleapis.com/auth/cloud-platform"
+      "https://www.googleapis.com/auth/cloud-platform",
+      # View, manage and query your Dialogflow agents
+      "https://www.googleapis.com/auth/dialogflow"
     ],
     otp_app: :google_api_dialogflow,
     base_url: "https://dialogflow.googleapis.com"

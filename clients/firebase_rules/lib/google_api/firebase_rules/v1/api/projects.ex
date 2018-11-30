@@ -31,17 +31,17 @@ defmodule GoogleApi.FirebaseRules.V1.Api.Projects do
 
   - connection (GoogleApi.FirebaseRules.V1.Connection): Connection to server
   - name (String.t): Resource name for the project which owns this &#x60;Release&#x60;.  Format: &#x60;projects/{project_id}&#x60;
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (Release): 
 
@@ -52,18 +52,18 @@ defmodule GoogleApi.FirebaseRules.V1.Api.Projects do
   """
   @spec firebaserules_projects_releases_create(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.FirebaseRules.V1.Model.Release.t()} | {:error, Tesla.Env.t()}
-  def firebaserules_projects_releases_create(connection, name, opts \\ []) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+  def firebaserules_projects_releases_create(connection, name, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
       :access_token => :query,
-      :key => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
       :body => :body
     }
@@ -74,121 +74,11 @@ defmodule GoogleApi.FirebaseRules.V1.Api.Projects do
       |> Request.url("/v1/{+name}/releases", %{
         "name" => URI.encode_www_form(name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.FirebaseRules.V1.Model.Release{})
-  end
-
-  @doc """
-  Delete a &#x60;Release&#x60; by resource name.
-
-  ## Parameters
-
-  - connection (GoogleApi.FirebaseRules.V1.Connection): Connection to server
-  - name (String.t): Resource name for the &#x60;Release&#x60; to delete.  Format: &#x60;projects/{project_id}/releases/{release_id}&#x60;
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-
-  ## Returns
-
-  {:ok, %GoogleApi.FirebaseRules.V1.Model.Empty{}} on success
-  {:error, info} on failure
-  """
-  @spec firebaserules_projects_releases_delete(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, GoogleApi.FirebaseRules.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
-  def firebaserules_projects_releases_delete(connection, name, opts \\ []) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
-      :access_token => :query,
-      :key => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :fields => :query,
-      :uploadType => :query
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:delete)
-      |> Request.url("/v1/{+name}", %{
-        "name" => URI.encode_www_form(name)
-      })
-      |> Request.add_optional_params(optional_params, opts)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.FirebaseRules.V1.Model.Empty{})
-  end
-
-  @doc """
-  Get a &#x60;Release&#x60; by name.
-
-  ## Parameters
-
-  - connection (GoogleApi.FirebaseRules.V1.Connection): Connection to server
-  - name (String.t): Resource name of the &#x60;Release&#x60;.  Format: &#x60;projects/{project_id}/releases/{release_id}&#x60;
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-
-  ## Returns
-
-  {:ok, %GoogleApi.FirebaseRules.V1.Model.Release{}} on success
-  {:error, info} on failure
-  """
-  @spec firebaserules_projects_releases_get(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, GoogleApi.FirebaseRules.V1.Model.Release.t()} | {:error, Tesla.Env.t()}
-  def firebaserules_projects_releases_get(connection, name, opts \\ []) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
-      :access_token => :query,
-      :key => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :fields => :query,
-      :uploadType => :query
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:get)
-      |> Request.url("/v1/{+name}", %{
-        "name" => URI.encode_www_form(name)
-      })
-      |> Request.add_optional_params(optional_params, opts)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.FirebaseRules.V1.Model.Release{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.FirebaseRules.V1.Model.Release{}])
   end
 
   @doc """
@@ -198,19 +88,19 @@ defmodule GoogleApi.FirebaseRules.V1.Api.Projects do
 
   - connection (GoogleApi.FirebaseRules.V1.Connection): Connection to server
   - name (String.t): Resource name of the &#x60;Release&#x60;.  Format: &#x60;projects/{project_id}/releases/{release_id}&#x60;
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :executableVersion (String.t): The requested runtime executable version. Defaults to FIREBASE_RULES_EXECUTABLE_V1
+    - :executableVersion (String.t): The requested runtime executable version. Defaults to FIREBASE_RULES_EXECUTABLE_V1.
 
   ## Returns
 
@@ -220,18 +110,23 @@ defmodule GoogleApi.FirebaseRules.V1.Api.Projects do
   @spec firebaserules_projects_releases_get_executable(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.FirebaseRules.V1.Model.GetReleaseExecutableResponse.t()}
           | {:error, Tesla.Env.t()}
-  def firebaserules_projects_releases_get_executable(connection, name, opts \\ []) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+  def firebaserules_projects_releases_get_executable(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
       :access_token => :query,
-      :key => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
       :executableVersion => :query
     }
@@ -242,11 +137,13 @@ defmodule GoogleApi.FirebaseRules.V1.Api.Projects do
       |> Request.url("/v1/{+name}:getExecutable", %{
         "name" => URI.encode_www_form(name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.FirebaseRules.V1.Model.GetReleaseExecutableResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.FirebaseRules.V1.Model.GetReleaseExecutableResponse{}]
+    )
   end
 
   @doc """
@@ -256,21 +153,21 @@ defmodule GoogleApi.FirebaseRules.V1.Api.Projects do
 
   - connection (GoogleApi.FirebaseRules.V1.Connection): Connection to server
   - name (String.t): Resource name for the project.  Format: &#x60;projects/{project_id}&#x60;
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :filter (String.t): &#x60;Release&#x60; filter. The list method supports filters with restrictions on the &#x60;Release.name&#x60;, &#x60;Release.ruleset_name&#x60;, and &#x60;Release.test_suite_name&#x60;.  Example 1: A filter of &#39;name&#x3D;prod*&#39; might return &#x60;Release&#x60;s with names within &#39;projects/foo&#39; prefixed with &#39;prod&#39;:  Name                          | Ruleset Name ------------------------------|------------- projects/foo/releases/prod    | projects/foo/rulesets/uuid1234 projects/foo/releases/prod/v1 | projects/foo/rulesets/uuid1234 projects/foo/releases/prod/v2 | projects/foo/rulesets/uuid8888  Example 2: A filter of &#x60;name&#x3D;prod* ruleset_name&#x3D;uuid1234&#x60; would return only &#x60;Release&#x60; instances for &#39;projects/foo&#39; with names prefixed with &#39;prod&#39; referring to the same &#x60;Ruleset&#x60; name of &#39;uuid1234&#39;:  Name                          | Ruleset Name ------------------------------|------------- projects/foo/releases/prod    | projects/foo/rulesets/1234 projects/foo/releases/prod/v1 | projects/foo/rulesets/1234  In the examples, the filter parameters refer to the search filters are relative to the project. Fully qualified prefixed may also be used. e.g. &#x60;test_suite_name&#x3D;projects/foo/testsuites/uuid1&#x60;
-    - :pageToken (String.t): Next page token for the next batch of &#x60;Release&#x60; instances.
     - :pageSize (integer()): Page size to load. Maximum of 100. Defaults to 10. Note: &#x60;page_size&#x60; is just a hint and the service may choose to load fewer than &#x60;page_size&#x60; results due to the size of the output. To traverse all of the releases, the caller should iterate until the &#x60;page_token&#x60; on the response is empty.
+    - :pageToken (String.t): Next page token for the next batch of &#x60;Release&#x60; instances.
 
   ## Returns
 
@@ -280,22 +177,22 @@ defmodule GoogleApi.FirebaseRules.V1.Api.Projects do
   @spec firebaserules_projects_releases_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.FirebaseRules.V1.Model.ListReleasesResponse.t()}
           | {:error, Tesla.Env.t()}
-  def firebaserules_projects_releases_list(connection, name, opts \\ []) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+  def firebaserules_projects_releases_list(connection, name, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
       :access_token => :query,
-      :key => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
       :filter => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
@@ -304,11 +201,11 @@ defmodule GoogleApi.FirebaseRules.V1.Api.Projects do
       |> Request.url("/v1/{+name}/releases", %{
         "name" => URI.encode_www_form(name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.FirebaseRules.V1.Model.ListReleasesResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.FirebaseRules.V1.Model.ListReleasesResponse{}])
   end
 
   @doc """
@@ -318,17 +215,17 @@ defmodule GoogleApi.FirebaseRules.V1.Api.Projects do
 
   - connection (GoogleApi.FirebaseRules.V1.Connection): Connection to server
   - name (String.t): Resource name for the project which owns this &#x60;Release&#x60;.  Format: &#x60;projects/{project_id}&#x60;
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (UpdateReleaseRequest): 
 
@@ -339,18 +236,18 @@ defmodule GoogleApi.FirebaseRules.V1.Api.Projects do
   """
   @spec firebaserules_projects_releases_patch(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.FirebaseRules.V1.Model.Release.t()} | {:error, Tesla.Env.t()}
-  def firebaserules_projects_releases_patch(connection, name, opts \\ []) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+  def firebaserules_projects_releases_patch(connection, name, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
       :access_token => :query,
-      :key => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
       :body => :body
     }
@@ -361,11 +258,11 @@ defmodule GoogleApi.FirebaseRules.V1.Api.Projects do
       |> Request.url("/v1/{+name}", %{
         "name" => URI.encode_www_form(name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.FirebaseRules.V1.Model.Release{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.FirebaseRules.V1.Model.Release{}])
   end
 
   @doc """
@@ -375,17 +272,17 @@ defmodule GoogleApi.FirebaseRules.V1.Api.Projects do
 
   - connection (GoogleApi.FirebaseRules.V1.Connection): Connection to server
   - name (String.t): Resource name for Project which owns this &#x60;Ruleset&#x60;.  Format: &#x60;projects/{project_id}&#x60;
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (Ruleset): 
 
@@ -396,18 +293,18 @@ defmodule GoogleApi.FirebaseRules.V1.Api.Projects do
   """
   @spec firebaserules_projects_rulesets_create(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.FirebaseRules.V1.Model.Ruleset.t()} | {:error, Tesla.Env.t()}
-  def firebaserules_projects_rulesets_create(connection, name, opts \\ []) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+  def firebaserules_projects_rulesets_create(connection, name, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
       :access_token => :query,
-      :key => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
       :body => :body
     }
@@ -418,11 +315,121 @@ defmodule GoogleApi.FirebaseRules.V1.Api.Projects do
       |> Request.url("/v1/{+name}/rulesets", %{
         "name" => URI.encode_www_form(name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.FirebaseRules.V1.Model.Ruleset{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.FirebaseRules.V1.Model.Ruleset{}])
+  end
+
+  @doc """
+  Delete a &#x60;Ruleset&#x60; by resource name.  If the &#x60;Ruleset&#x60; is referenced by a &#x60;Release&#x60; the operation will fail.
+
+  ## Parameters
+
+  - connection (GoogleApi.FirebaseRules.V1.Connection): Connection to server
+  - name (String.t): Resource name for the ruleset to delete.  Format: &#x60;projects/{project_id}/rulesets/{ruleset_id}&#x60;
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+
+  ## Returns
+
+  {:ok, %GoogleApi.FirebaseRules.V1.Model.Empty{}} on success
+  {:error, info} on failure
+  """
+  @spec firebaserules_projects_rulesets_delete(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, GoogleApi.FirebaseRules.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+  def firebaserules_projects_rulesets_delete(connection, name, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode_www_form(name)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.FirebaseRules.V1.Model.Empty{}])
+  end
+
+  @doc """
+  Get a &#x60;Ruleset&#x60; by name including the full &#x60;Source&#x60; contents.
+
+  ## Parameters
+
+  - connection (GoogleApi.FirebaseRules.V1.Connection): Connection to server
+  - name (String.t): Resource name for the ruleset to get.  Format: &#x60;projects/{project_id}/rulesets/{ruleset_id}&#x60;
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+
+  ## Returns
+
+  {:ok, %GoogleApi.FirebaseRules.V1.Model.Ruleset{}} on success
+  {:error, info} on failure
+  """
+  @spec firebaserules_projects_rulesets_get(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, GoogleApi.FirebaseRules.V1.Model.Ruleset.t()} | {:error, Tesla.Env.t()}
+  def firebaserules_projects_rulesets_get(connection, name, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode_www_form(name)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.FirebaseRules.V1.Model.Ruleset{}])
   end
 
   @doc """
@@ -432,21 +439,21 @@ defmodule GoogleApi.FirebaseRules.V1.Api.Projects do
 
   - connection (GoogleApi.FirebaseRules.V1.Connection): Connection to server
   - name (String.t): Resource name for the project.  Format: &#x60;projects/{project_id}&#x60;
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :filter (String.t): &#x60;Ruleset&#x60; filter. The list method supports filters with restrictions on &#x60;Ruleset.name&#x60;.  Filters on &#x60;Ruleset.create_time&#x60; should use the &#x60;date&#x60; function which parses strings that conform to the RFC 3339 date/time specifications.  Example: &#x60;create_time &gt; date(\&quot;2017-01-01\&quot;) AND name&#x3D;UUID-*&#x60;
-    - :pageToken (String.t): Next page token for loading the next batch of &#x60;Ruleset&#x60; instances.
     - :pageSize (integer()): Page size to load. Maximum of 100. Defaults to 10. Note: &#x60;page_size&#x60; is just a hint and the service may choose to load less than &#x60;page_size&#x60; due to the size of the output. To traverse all of the releases, caller should iterate until the &#x60;page_token&#x60; is empty.
+    - :pageToken (String.t): Next page token for loading the next batch of &#x60;Ruleset&#x60; instances.
 
   ## Returns
 
@@ -456,22 +463,22 @@ defmodule GoogleApi.FirebaseRules.V1.Api.Projects do
   @spec firebaserules_projects_rulesets_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.FirebaseRules.V1.Model.ListRulesetsResponse.t()}
           | {:error, Tesla.Env.t()}
-  def firebaserules_projects_rulesets_list(connection, name, opts \\ []) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+  def firebaserules_projects_rulesets_list(connection, name, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
       :access_token => :query,
-      :key => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
       :filter => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
@@ -480,11 +487,11 @@ defmodule GoogleApi.FirebaseRules.V1.Api.Projects do
       |> Request.url("/v1/{+name}/rulesets", %{
         "name" => URI.encode_www_form(name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.FirebaseRules.V1.Model.ListRulesetsResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.FirebaseRules.V1.Model.ListRulesetsResponse{}])
   end
 
   @doc """
@@ -494,17 +501,17 @@ defmodule GoogleApi.FirebaseRules.V1.Api.Projects do
 
   - connection (GoogleApi.FirebaseRules.V1.Connection): Connection to server
   - name (String.t): Tests may either provide &#x60;source&#x60; or a &#x60;Ruleset&#x60; resource name.  For tests against &#x60;source&#x60;, the resource name must refer to the project: Format: &#x60;projects/{project_id}&#x60;  For tests against a &#x60;Ruleset&#x60;, this must be the &#x60;Ruleset&#x60; resource name: Format: &#x60;projects/{project_id}/rulesets/{ruleset_id}&#x60;
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (TestRulesetRequest): 
 
@@ -516,18 +523,18 @@ defmodule GoogleApi.FirebaseRules.V1.Api.Projects do
   @spec firebaserules_projects_test(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.FirebaseRules.V1.Model.TestRulesetResponse.t()}
           | {:error, Tesla.Env.t()}
-  def firebaserules_projects_test(connection, name, opts \\ []) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+  def firebaserules_projects_test(connection, name, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
       :access_token => :query,
-      :key => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
       :body => :body
     }
@@ -538,10 +545,10 @@ defmodule GoogleApi.FirebaseRules.V1.Api.Projects do
       |> Request.url("/v1/{+name}:test", %{
         "name" => URI.encode_www_form(name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.FirebaseRules.V1.Model.TestRulesetResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.FirebaseRules.V1.Model.TestRulesetResponse{}])
   end
 end

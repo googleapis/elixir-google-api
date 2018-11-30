@@ -31,7 +31,7 @@ defmodule GoogleApi.AdSense.V14.Api.Savedadstyles do
 
   - connection (GoogleApi.AdSense.V14.Connection): Connection to server
   - saved_ad_style_id (String.t): Saved ad style to retrieve.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -47,8 +47,8 @@ defmodule GoogleApi.AdSense.V14.Api.Savedadstyles do
   """
   @spec adsense_savedadstyles_get(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.AdSense.V14.Model.SavedAdStyle.t()} | {:error, Tesla.Env.t()}
-  def adsense_savedadstyles_get(connection, saved_ad_style_id, opts \\ []) do
-    optional_params = %{
+  def adsense_savedadstyles_get(connection, saved_ad_style_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -64,11 +64,11 @@ defmodule GoogleApi.AdSense.V14.Api.Savedadstyles do
       |> Request.url("/savedadstyles/{savedAdStyleId}", %{
         "savedAdStyleId" => URI.encode_www_form(saved_ad_style_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdSense.V14.Model.SavedAdStyle{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdSense.V14.Model.SavedAdStyle{}])
   end
 
   @doc """
@@ -77,7 +77,7 @@ defmodule GoogleApi.AdSense.V14.Api.Savedadstyles do
   ## Parameters
 
   - connection (GoogleApi.AdSense.V14.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -95,8 +95,8 @@ defmodule GoogleApi.AdSense.V14.Api.Savedadstyles do
   """
   @spec adsense_savedadstyles_list(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.AdSense.V14.Model.SavedAdStyles.t()} | {:error, Tesla.Env.t()}
-  def adsense_savedadstyles_list(connection, opts \\ []) do
-    optional_params = %{
+  def adsense_savedadstyles_list(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -112,10 +112,10 @@ defmodule GoogleApi.AdSense.V14.Api.Savedadstyles do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/savedadstyles")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AdSense.V14.Model.SavedAdStyles{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.AdSense.V14.Model.SavedAdStyles{}])
   end
 end

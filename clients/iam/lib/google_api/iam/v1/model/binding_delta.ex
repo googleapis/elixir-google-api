@@ -24,6 +24,7 @@ defmodule GoogleApi.IAM.V1.Model.BindingDelta do
 
   - action (String.t): The action that was performed on a Binding. Required Defaults to: `null`.
     - Enum - one of [ACTION_UNSPECIFIED, ADD, REMOVE]
+  - condition (Expr): Unimplemented. The condition that is associated with this binding. This field is logged only for Cloud Audit Logging. Defaults to: `null`.
   - member (String.t): A single identity requesting access for a Cloud Platform resource. Follows the same format of Binding.members. Required Defaults to: `null`.
   - role (String.t): Role that is assigned to &#x60;members&#x60;. For example, &#x60;roles/viewer&#x60;, &#x60;roles/editor&#x60;, or &#x60;roles/owner&#x60;. Required Defaults to: `null`.
   """
@@ -32,11 +33,13 @@ defmodule GoogleApi.IAM.V1.Model.BindingDelta do
 
   @type t :: %__MODULE__{
           :action => any(),
+          :condition => GoogleApi.IAM.V1.Model.Expr.t(),
           :member => any(),
           :role => any()
         }
 
   field(:action)
+  field(:condition, as: GoogleApi.IAM.V1.Model.Expr)
   field(:member)
   field(:role)
 end

@@ -18,11 +18,11 @@
 
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.DatabaseFlags do
   @moduledoc """
-  MySQL flags for Cloud SQL instances.
+  Database flags for Cloud SQL instances.
 
   ## Attributes
 
-  - name (String.t): The name of the flag. These flags are passed at instance startup, so include both MySQL server options and MySQL system variables. Flags should be specified with underscores, not hyphens. For more information, see Configuring MySQL Flags in the Google Cloud SQL documentation, as well as the official MySQL documentation for server options and system variables. Defaults to: `null`.
+  - name (String.t): The name of the flag. These flags are passed at instance startup, so include both server options and system variables for MySQL. Flags should be specified with underscores, not hyphens. For more information, see Configuring Database Flags in the Cloud SQL documentation. Defaults to: `null`.
   - value (String.t): The value of the flag. Booleans should be set to on for true and off for false. This field must be omitted if the flag doesn&#39;t take a value. Defaults to: `null`.
   """
 

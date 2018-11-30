@@ -1,4 +1,4 @@
-# Copyright 2018 Google Inc.
+# Copyright 2017 Google Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
 # you may not use this file except in compliance with the License.
@@ -30,20 +30,20 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
   ## Parameters
 
   - connection (GoogleApi.Chat.V1.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :pageToken (String.t): A token identifying a page of results the server should return.
     - :pageSize (integer()): Requested page size. The value is capped at 1000. Server may return fewer results than requested. If unspecified, server will default to 100.
+    - :pageToken (String.t): A token identifying a page of results the server should return.
 
   ## Returns
 
@@ -52,32 +52,32 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
   """
   @spec chat_spaces_list(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.Chat.V1.Model.ListSpacesResponse.t()} | {:error, Tesla.Env.t()}
-  def chat_spaces_list(connection, opts \\ []) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+  def chat_spaces_list(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :upload_protocol => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/spaces")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Chat.V1.Model.ListSpacesResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Chat.V1.Model.ListSpacesResponse{}])
   end
 
   @doc """
@@ -87,20 +87,20 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
 
   - connection (GoogleApi.Chat.V1.Connection): Connection to server
   - parent (String.t): Required. The resource name of the space for which membership list is to be fetched, in the form \&quot;spaces/*\&quot;.  Example: spaces/AAAAMpdlehY
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :pageToken (String.t): A token identifying a page of results the server should return.
     - :pageSize (integer()): Requested page size. The value is capped at 1000. Server may return fewer results than requested. If unspecified, server will default to 100.
+    - :pageToken (String.t): A token identifying a page of results the server should return.
 
   ## Returns
 
@@ -109,21 +109,21 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
   """
   @spec chat_spaces_members_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Chat.V1.Model.ListMembershipsResponse.t()} | {:error, Tesla.Env.t()}
-  def chat_spaces_members_list(connection, parent, opts \\ []) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+  def chat_spaces_members_list(connection, parent, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :upload_protocol => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
@@ -132,11 +132,11 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
       |> Request.url("/v1/{+parent}/members", %{
         "parent" => URI.encode_www_form(parent)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Chat.V1.Model.ListMembershipsResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Chat.V1.Model.ListMembershipsResponse{}])
   end
 
   @doc """
@@ -146,17 +146,17 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
 
   - connection (GoogleApi.Chat.V1.Connection): Connection to server
   - parent (String.t): Required. Space resource name, in the form \&quot;spaces/*\&quot;. Example: spaces/AAAAMpdlehY
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :threadKey (String.t): Opaque thread identifier string that can be specified to group messages into a single thread. If this is the first message with a given thread identifier, a new thread is created. Subsequent messages with the same thread identifier will be posted into the same thread. This relieves bots and webhooks from having to store the Hangouts Chat thread ID of a thread (created earlier by them) to post further updates to it.  Has no effect if thread field, corresponding to an existing thread, is set in message.
     - :body (Message): 
@@ -168,18 +168,18 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
   """
   @spec chat_spaces_messages_create(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Chat.V1.Model.Message.t()} | {:error, Tesla.Env.t()}
-  def chat_spaces_messages_create(connection, parent, opts \\ []) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+  def chat_spaces_messages_create(connection, parent, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :upload_protocol => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
       :threadKey => :query,
       :body => :body
@@ -191,11 +191,11 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
       |> Request.url("/v1/{+parent}/messages", %{
         "parent" => URI.encode_www_form(parent)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Chat.V1.Model.Message{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Chat.V1.Model.Message{}])
   end
 
   @doc """
@@ -205,17 +205,17 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
 
   - connection (GoogleApi.Chat.V1.Connection): Connection to server
   - name (String.t): Required. Resource name of the message to be deleted, in the form \&quot;spaces/*/messages/*\&quot;  Example: spaces/AAAAMpdlehY/messages/UMxbHmzDlr4.UMxbHmzDlr4
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
@@ -225,18 +225,18 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
   """
   @spec chat_spaces_messages_delete(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Chat.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
-  def chat_spaces_messages_delete(connection, name, opts \\ []) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+  def chat_spaces_messages_delete(connection, name, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :upload_protocol => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query
     }
 
@@ -246,11 +246,11 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
       |> Request.url("/v1/{+name}", %{
         "name" => URI.encode_www_form(name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Chat.V1.Model.Empty{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Chat.V1.Model.Empty{}])
   end
 
   @doc """
@@ -260,17 +260,17 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
 
   - connection (GoogleApi.Chat.V1.Connection): Connection to server
   - name (String.t): Required. Resource name of the message to be retrieved, in the form \&quot;spaces/*/messages/*\&quot;.  Example: spaces/AAAAMpdlehY/messages/UMxbHmzDlr4.UMxbHmzDlr4
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
@@ -280,18 +280,18 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
   """
   @spec chat_spaces_messages_get(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Chat.V1.Model.Message.t()} | {:error, Tesla.Env.t()}
-  def chat_spaces_messages_get(connection, name, opts \\ []) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+  def chat_spaces_messages_get(connection, name, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :upload_protocol => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query
     }
 
@@ -301,11 +301,11 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
       |> Request.url("/v1/{+name}", %{
         "name" => URI.encode_www_form(name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Chat.V1.Model.Message{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Chat.V1.Model.Message{}])
   end
 
   @doc """
@@ -315,17 +315,17 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
 
   - connection (GoogleApi.Chat.V1.Connection): Connection to server
   - name (String.t): Resource name, in the form \&quot;spaces/*/messages/*\&quot;.  Example: spaces/AAAAMpdlehY/messages/UMxbHmzDlr4.UMxbHmzDlr4
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :updateMask (String.t): Required. The field paths to be updated.  Currently supported field paths: \&quot;text\&quot;, \&quot;cards\&quot;.
     - :body (Message): 
@@ -337,18 +337,18 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
   """
   @spec chat_spaces_messages_update(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Chat.V1.Model.Message.t()} | {:error, Tesla.Env.t()}
-  def chat_spaces_messages_update(connection, name, opts \\ []) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+  def chat_spaces_messages_update(connection, name, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :upload_protocol => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :fields => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
       :updateMask => :query,
       :body => :body
@@ -360,10 +360,10 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
       |> Request.url("/v1/{+name}", %{
         "name" => URI.encode_www_form(name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Chat.V1.Model.Message{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Chat.V1.Model.Message{}])
   end
 end

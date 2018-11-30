@@ -22,9 +22,9 @@ defmodule GoogleApi.Content.V2.Model.UnitInvoiceAdditionalCharge do
 
   ## Attributes
 
-  - additionalChargeAmount (Amount): Amount of the additional charge. Defaults to: `null`.
+  - additionalChargeAmount (Amount): [required] Amount of the additional charge. Defaults to: `null`.
   - additionalChargePromotions ([Promotion]): Promotions applied to the additional charge. Defaults to: `null`.
-  - type (String.t): Type of the additional charge. Defaults to: `null`.
+  - type (String.t): [required] Type of the additional charge. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

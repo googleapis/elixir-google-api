@@ -31,18 +31,18 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
 
   - connection (GoogleApi.Monitoring.V3.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;name&#x60;. The project in which to create the alerting policy. The format is projects/[PROJECT_ID].Note that this field names the parent container in which the alerting policy will be written, not the name of the created policy. The alerting policy that is returned will have a name that contains a normalized representation of this name as a prefix but adds a suffix of the form /alertPolicies/[POLICY_ID], identifying the policy in the container.
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (AlertPolicy): 
 
   ## Returns
@@ -52,19 +52,24 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   """
   @spec monitoring_projects_alert_policies_create(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Monitoring.V3.Model.AlertPolicy.t()} | {:error, Tesla.Env.t()}
-  def monitoring_projects_alert_policies_create(connection, projects_id, opts \\ []) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+  def monitoring_projects_alert_policies_create(
+        connection,
+        projects_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -74,11 +79,11 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       |> Request.url("/v3/projects/{projectsId}/alertPolicies", %{
         "projectsId" => URI.encode_www_form(projects_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Monitoring.V3.Model.AlertPolicy{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Monitoring.V3.Model.AlertPolicy{}])
   end
 
   @doc """
@@ -89,18 +94,18 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   - connection (GoogleApi.Monitoring.V3.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;name&#x60;. The alerting policy to delete. The format is: projects/[PROJECT_ID]/alertPolicies/[ALERT_POLICY_ID] For more information, see AlertPolicy.
   - alert_policies_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -117,20 +122,21 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         connection,
         projects_id,
         alert_policies_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -140,11 +146,11 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         "projectsId" => URI.encode_www_form(projects_id),
         "alertPoliciesId" => URI.encode_www_form(alert_policies_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Monitoring.V3.Model.Empty{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Monitoring.V3.Model.Empty{}])
   end
 
   @doc """
@@ -155,18 +161,18 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   - connection (GoogleApi.Monitoring.V3.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;name&#x60;. The alerting policy to retrieve. The format is projects/[PROJECT_ID]/alertPolicies/[ALERT_POLICY_ID] 
   - alert_policies_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -183,20 +189,21 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         connection,
         projects_id,
         alert_policies_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -206,11 +213,11 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         "projectsId" => URI.encode_www_form(projects_id),
         "alertPoliciesId" => URI.encode_www_form(alert_policies_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Monitoring.V3.Model.AlertPolicy{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Monitoring.V3.Model.AlertPolicy{}])
   end
 
   @doc """
@@ -220,22 +227,22 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
 
   - connection (GoogleApi.Monitoring.V3.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;name&#x60;. The project whose alert policies are to be listed. The format is projects/[PROJECT_ID] Note that this field names the parent container in which the alerting policies to be listed are stored. To retrieve a single alerting policy by name, use the GetAlertPolicy operation, instead.
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :orderBy (String.t): A comma-separated list of fields by which to sort the result. Supports the same set of field references as the filter field. Entries can be prefixed with a minus sign to sort by the field in descending order.For more details, see sorting and filtering.
-    - :pageToken (String.t): If this field is not empty then it must contain the nextPageToken value returned by a previous call to this method. Using this field causes the method to return more results from the previous method call.
-    - :pageSize (integer()): The maximum number of results to return in a single response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :filter (String.t): If provided, this field specifies the criteria that must be met by alert policies to be included in the response.For more details, see sorting and filtering.
+    - :orderBy (String.t): A comma-separated list of fields by which to sort the result. Supports the same set of field references as the filter field. Entries can be prefixed with a minus sign to sort by the field in descending order.For more details, see sorting and filtering.
+    - :pageSize (integer()): The maximum number of results to return in a single response.
+    - :pageToken (String.t): If this field is not empty then it must contain the nextPageToken value returned by a previous call to this method. Using this field causes the method to return more results from the previous method call.
 
   ## Returns
 
@@ -245,23 +252,28 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   @spec monitoring_projects_alert_policies_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Monitoring.V3.Model.ListAlertPoliciesResponse.t()}
           | {:error, Tesla.Env.t()}
-  def monitoring_projects_alert_policies_list(connection, projects_id, opts \\ []) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+  def monitoring_projects_alert_policies_list(
+        connection,
+        projects_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :filter => :query,
       :orderBy => :query,
-      :pageToken => :query,
       :pageSize => :query,
-      :filter => :query
+      :pageToken => :query
     }
 
     request =
@@ -270,11 +282,13 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       |> Request.url("/v3/projects/{projectsId}/alertPolicies", %{
         "projectsId" => URI.encode_www_form(projects_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Monitoring.V3.Model.ListAlertPoliciesResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Monitoring.V3.Model.ListAlertPoliciesResponse{}]
+    )
   end
 
   @doc """
@@ -285,18 +299,18 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   - connection (GoogleApi.Monitoring.V3.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;alertPolicy.name&#x60;. Required if the policy exists. The resource name for this policy. The syntax is: projects/[PROJECT_ID]/alertPolicies/[ALERT_POLICY_ID] [ALERT_POLICY_ID] is assigned by Stackdriver Monitoring when the policy is created. When calling the alertPolicies.create method, do not include the name field in the alerting policy passed as part of the request.
   - alert_policies_id (String.t): Part of &#x60;alertPolicy.name&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :updateMask (String.t): Optional. A list of alerting policy field names. If this field is not empty, each listed field in the existing alerting policy is set to the value of the corresponding field in the supplied policy (alert_policy), or to the field&#39;s default value if the field is not in the supplied alerting policy. Fields not listed retain their previous value.Examples of valid field masks include display_name, documentation, documentation.content, documentation.mime_type, user_labels, user_label.nameofkey, enabled, conditions, combiner, etc.If this field is empty, then the supplied alerting policy replaces the existing policy. It is the same as deleting the existing policy and adding the supplied policy, except for the following: The new policy will have the same [ALERT_POLICY_ID] as the former policy. This gives you continuity with the former policy in your notifications and incidents. Conditions in the new policy will keep their former [CONDITION_ID] if the supplied condition includes the name field with that [CONDITION_ID]. If the supplied condition omits the name field, then a new [CONDITION_ID] is created.
     - :body (AlertPolicy): 
 
@@ -315,20 +329,21 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         connection,
         projects_id,
         alert_policies_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :updateMask => :query,
       :body => :body
     }
@@ -340,11 +355,11 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         "projectsId" => URI.encode_www_form(projects_id),
         "alertPoliciesId" => URI.encode_www_form(alert_policies_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Monitoring.V3.Model.AlertPolicy{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Monitoring.V3.Model.AlertPolicy{}])
   end
 
   @doc """
@@ -354,18 +369,18 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
 
   - connection (GoogleApi.Monitoring.V3.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;name&#x60;. The project in which to create the time series. The format is \&quot;projects/PROJECT_ID_OR_NUMBER\&quot;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (CreateCollectdTimeSeriesRequest): 
 
   ## Returns
@@ -376,19 +391,24 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   @spec monitoring_projects_collectd_time_series_create(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Monitoring.V3.Model.CreateCollectdTimeSeriesResponse.t()}
           | {:error, Tesla.Env.t()}
-  def monitoring_projects_collectd_time_series_create(connection, projects_id, opts \\ []) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+  def monitoring_projects_collectd_time_series_create(
+        connection,
+        projects_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -398,11 +418,13 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       |> Request.url("/v3/projects/{projectsId}/collectdTimeSeries", %{
         "projectsId" => URI.encode_www_form(projects_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Monitoring.V3.Model.CreateCollectdTimeSeriesResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Monitoring.V3.Model.CreateCollectdTimeSeriesResponse{}]
+    )
   end
 
   @doc """
@@ -412,18 +434,18 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
 
   - connection (GoogleApi.Monitoring.V3.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;name&#x60;. The project in which to create the group. The format is \&quot;projects/{project_id_or_number}\&quot;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :validateOnly (boolean()): If true, validate this request but do not create the group.
     - :body (Group): 
 
@@ -434,19 +456,24 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   """
   @spec monitoring_projects_groups_create(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Monitoring.V3.Model.Group.t()} | {:error, Tesla.Env.t()}
-  def monitoring_projects_groups_create(connection, projects_id, opts \\ []) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+  def monitoring_projects_groups_create(
+        connection,
+        projects_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :validateOnly => :query,
       :body => :body
     }
@@ -457,11 +484,11 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       |> Request.url("/v3/projects/{projectsId}/groups", %{
         "projectsId" => URI.encode_www_form(projects_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Monitoring.V3.Model.Group{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Monitoring.V3.Model.Group{}])
   end
 
   @doc """
@@ -472,18 +499,18 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   - connection (GoogleApi.Monitoring.V3.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;name&#x60;. The group to delete. The format is \&quot;projects/{project_id_or_number}/groups/{group_id}\&quot;.
   - groups_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -492,19 +519,25 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   """
   @spec monitoring_projects_groups_delete(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Monitoring.V3.Model.Empty.t()} | {:error, Tesla.Env.t()}
-  def monitoring_projects_groups_delete(connection, projects_id, groups_id, opts \\ []) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+  def monitoring_projects_groups_delete(
+        connection,
+        projects_id,
+        groups_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -514,11 +547,11 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         "projectsId" => URI.encode_www_form(projects_id),
         "groupsId" => URI.encode_www_form(groups_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Monitoring.V3.Model.Empty{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Monitoring.V3.Model.Empty{}])
   end
 
   @doc """
@@ -529,18 +562,18 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   - connection (GoogleApi.Monitoring.V3.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;name&#x60;. The group to retrieve. The format is \&quot;projects/{project_id_or_number}/groups/{group_id}\&quot;.
   - groups_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -549,19 +582,25 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   """
   @spec monitoring_projects_groups_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Monitoring.V3.Model.Group.t()} | {:error, Tesla.Env.t()}
-  def monitoring_projects_groups_get(connection, projects_id, groups_id, opts \\ []) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+  def monitoring_projects_groups_get(
+        connection,
+        projects_id,
+        groups_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -571,11 +610,11 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         "projectsId" => URI.encode_www_form(projects_id),
         "groupsId" => URI.encode_www_form(groups_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Monitoring.V3.Model.Group{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Monitoring.V3.Model.Group{}])
   end
 
   @doc """
@@ -585,23 +624,23 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
 
   - connection (GoogleApi.Monitoring.V3.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;name&#x60;. The project whose groups are to be listed. The format is \&quot;projects/{project_id_or_number}\&quot;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :ancestorsOfGroup (String.t): A group name: \&quot;projects/{project_id_or_number}/groups/{group_id}\&quot;. Returns groups that are ancestors of the specified group. The groups are returned in order, starting with the immediate parent and ending with the most distant ancestor. If the specified group has no immediate parent, the results are empty.
     - :childrenOfGroup (String.t): A group name: \&quot;projects/{project_id_or_number}/groups/{group_id}\&quot;. Returns groups whose parentName field contains the group name. If no groups have this parent, the results are empty.
     - :descendantsOfGroup (String.t): A group name: \&quot;projects/{project_id_or_number}/groups/{group_id}\&quot;. Returns the descendants of the specified group. This is a superset of the results returned by the childrenOfGroup filter, and includes children-of-children, and so forth.
-    - :pageToken (String.t): If this field is not empty then it must contain the nextPageToken value returned by a previous call to this method. Using this field causes the method to return additional results from the previous method call.
     - :pageSize (integer()): A positive number that is the maximum number of results to return.
-    - :ancestorsOfGroup (String.t): A group name: \&quot;projects/{project_id_or_number}/groups/{group_id}\&quot;. Returns groups that are ancestors of the specified group. The groups are returned in order, starting with the immediate parent and ending with the most distant ancestor. If the specified group has no immediate parent, the results are empty.
+    - :pageToken (String.t): If this field is not empty then it must contain the nextPageToken value returned by a previous call to this method. Using this field causes the method to return additional results from the previous method call.
 
   ## Returns
 
@@ -610,24 +649,24 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   """
   @spec monitoring_projects_groups_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Monitoring.V3.Model.ListGroupsResponse.t()} | {:error, Tesla.Env.t()}
-  def monitoring_projects_groups_list(connection, projects_id, opts \\ []) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+  def monitoring_projects_groups_list(connection, projects_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :ancestorsOfGroup => :query,
       :childrenOfGroup => :query,
       :descendantsOfGroup => :query,
-      :pageToken => :query,
       :pageSize => :query,
-      :ancestorsOfGroup => :query
+      :pageToken => :query
     }
 
     request =
@@ -636,11 +675,11 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       |> Request.url("/v3/projects/{projectsId}/groups", %{
         "projectsId" => URI.encode_www_form(projects_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Monitoring.V3.Model.ListGroupsResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Monitoring.V3.Model.ListGroupsResponse{}])
   end
 
   @doc """
@@ -651,23 +690,23 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   - connection (GoogleApi.Monitoring.V3.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;name&#x60;. The group whose members are listed. The format is \&quot;projects/{project_id_or_number}/groups/{group_id}\&quot;.
   - groups_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :interval.endTime (DateTime.t): Required. The end of the time interval.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :filter (String.t): An optional list filter describing the members to be returned. The filter may reference the type, labels, and metadata of monitored resources that comprise the group. For example, to return only resources representing Compute Engine VM instances, use this filter: resource.type &#x3D; \&quot;gce_instance\&quot; 
-    - :pageToken (String.t): If this field is not empty then it must contain the nextPageToken value returned by a previous call to this method. Using this field causes the method to return additional results from the previous method call.
+    - :interval.endTime (DateTime.t): Required. The end of the time interval.
     - :interval.startTime (DateTime.t): Optional. The beginning of the time interval. The default value for the start time is the end time. The start time must not be later than the end time.
     - :pageSize (integer()): A positive number that is the maximum number of results to return.
+    - :pageToken (String.t): If this field is not empty then it must contain the nextPageToken value returned by a previous call to this method. Using this field causes the method to return additional results from the previous method call.
 
   ## Returns
 
@@ -682,24 +721,30 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         ) ::
           {:ok, GoogleApi.Monitoring.V3.Model.ListGroupMembersResponse.t()}
           | {:error, Tesla.Env.t()}
-  def monitoring_projects_groups_members_list(connection, projects_id, groups_id, opts \\ []) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+  def monitoring_projects_groups_members_list(
+        connection,
+        projects_id,
+        groups_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
-      :"interval.endTime" => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :filter => :query,
-      :pageToken => :query,
+      :"interval.endTime" => :query,
       :"interval.startTime" => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
@@ -709,11 +754,13 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         "projectsId" => URI.encode_www_form(projects_id),
         "groupsId" => URI.encode_www_form(groups_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Monitoring.V3.Model.ListGroupMembersResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Monitoring.V3.Model.ListGroupMembersResponse{}]
+    )
   end
 
   @doc """
@@ -724,18 +771,18 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   - connection (GoogleApi.Monitoring.V3.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;group.name&#x60;. Output only. The name of this group. The format is \&quot;projects/{project_id_or_number}/groups/{group_id}\&quot;. When creating a group, this field is ignored and a new name is created consisting of the project specified in the call to CreateGroup and a unique {group_id} that is generated automatically.
   - groups_id (String.t): Part of &#x60;group.name&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :validateOnly (boolean()): If true, validate this request but do not update the existing group.
     - :body (Group): 
 
@@ -746,19 +793,25 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   """
   @spec monitoring_projects_groups_update(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Monitoring.V3.Model.Group.t()} | {:error, Tesla.Env.t()}
-  def monitoring_projects_groups_update(connection, projects_id, groups_id, opts \\ []) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+  def monitoring_projects_groups_update(
+        connection,
+        projects_id,
+        groups_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :validateOnly => :query,
       :body => :body
     }
@@ -770,11 +823,11 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         "projectsId" => URI.encode_www_form(projects_id),
         "groupsId" => URI.encode_www_form(groups_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Monitoring.V3.Model.Group{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Monitoring.V3.Model.Group{}])
   end
 
   @doc """
@@ -784,18 +837,18 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
 
   - connection (GoogleApi.Monitoring.V3.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;name&#x60;. The project on which to execute the request. The format is \&quot;projects/{project_id_or_number}\&quot;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (MetricDescriptor): 
 
   ## Returns
@@ -805,19 +858,24 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   """
   @spec monitoring_projects_metric_descriptors_create(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Monitoring.V3.Model.MetricDescriptor.t()} | {:error, Tesla.Env.t()}
-  def monitoring_projects_metric_descriptors_create(connection, projects_id, opts \\ []) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+  def monitoring_projects_metric_descriptors_create(
+        connection,
+        projects_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -827,11 +885,11 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       |> Request.url("/v3/projects/{projectsId}/metricDescriptors", %{
         "projectsId" => URI.encode_www_form(projects_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Monitoring.V3.Model.MetricDescriptor{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Monitoring.V3.Model.MetricDescriptor{}])
   end
 
   @doc """
@@ -842,18 +900,18 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   - connection (GoogleApi.Monitoring.V3.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;name&#x60;. The metric descriptor on which to execute the request. The format is \&quot;projects/{project_id_or_number}/metricDescriptors/{metric_id}\&quot;. An example of {metric_id} is: \&quot;custom.googleapis.com/my_test_metric\&quot;.
   - metric_descriptors_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -870,20 +928,21 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         connection,
         projects_id,
         metric_descriptors_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -893,11 +952,11 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         "projectsId" => URI.encode_www_form(projects_id),
         "metricDescriptorsId" => URI.encode_www_form(metric_descriptors_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Monitoring.V3.Model.Empty{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Monitoring.V3.Model.Empty{}])
   end
 
   @doc """
@@ -908,18 +967,18 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   - connection (GoogleApi.Monitoring.V3.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;name&#x60;. The metric descriptor on which to execute the request. The format is \&quot;projects/{project_id_or_number}/metricDescriptors/{metric_id}\&quot;. An example value of {metric_id} is \&quot;compute.googleapis.com/instance/disk/read_bytes_count\&quot;.
   - metric_descriptors_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -936,20 +995,21 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         connection,
         projects_id,
         metric_descriptors_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -959,11 +1019,11 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         "projectsId" => URI.encode_www_form(projects_id),
         "metricDescriptorsId" => URI.encode_www_form(metric_descriptors_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Monitoring.V3.Model.MetricDescriptor{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Monitoring.V3.Model.MetricDescriptor{}])
   end
 
   @doc """
@@ -973,20 +1033,20 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
 
   - connection (GoogleApi.Monitoring.V3.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;name&#x60;. The project on which to execute the request. The format is \&quot;projects/{project_id_or_number}\&quot;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :pageSize (integer()): A positive number that is the maximum number of results to return.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :filter (String.t): If this field is empty, all custom and system-defined metric descriptors are returned. Otherwise, the filter specifies which metric descriptors are to be returned. For example, the following filter matches all custom metrics: metric.type &#x3D; starts_with(\&quot;custom.googleapis.com/\&quot;) 
+    - :pageSize (integer()): A positive number that is the maximum number of results to return.
     - :pageToken (String.t): If this field is not empty then it must contain the nextPageToken value returned by a previous call to this method. Using this field causes the method to return additional results from the previous method call.
 
   ## Returns
@@ -997,21 +1057,26 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   @spec monitoring_projects_metric_descriptors_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Monitoring.V3.Model.ListMetricDescriptorsResponse.t()}
           | {:error, Tesla.Env.t()}
-  def monitoring_projects_metric_descriptors_list(connection, projects_id, opts \\ []) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+  def monitoring_projects_metric_descriptors_list(
+        connection,
+        projects_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
-      :pageSize => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :filter => :query,
+      :pageSize => :query,
       :pageToken => :query
     }
 
@@ -1021,11 +1086,13 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       |> Request.url("/v3/projects/{projectsId}/metricDescriptors", %{
         "projectsId" => URI.encode_www_form(projects_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Monitoring.V3.Model.ListMetricDescriptorsResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Monitoring.V3.Model.ListMetricDescriptorsResponse{}]
+    )
   end
 
   @doc """
@@ -1036,18 +1103,18 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   - connection (GoogleApi.Monitoring.V3.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;name&#x60;. The monitored resource descriptor to get. The format is \&quot;projects/{project_id_or_number}/monitoredResourceDescriptors/{resource_type}\&quot;. The {resource_type} is a predefined type, such as cloudsql_database.
   - monitored_resource_descriptors_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -1066,20 +1133,21 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         connection,
         projects_id,
         monitored_resource_descriptors_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -1093,11 +1161,13 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
             URI.encode_www_form(monitored_resource_descriptors_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Monitoring.V3.Model.MonitoredResourceDescriptor{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Monitoring.V3.Model.MonitoredResourceDescriptor{}]
+    )
   end
 
   @doc """
@@ -1107,21 +1177,21 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
 
   - connection (GoogleApi.Monitoring.V3.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;name&#x60;. The project on which to execute the request. The format is \&quot;projects/{project_id_or_number}\&quot;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :filter (String.t): An optional filter describing the descriptors to be returned. The filter can reference the descriptor&#39;s type and labels. For example, the following filter returns only Google Compute Engine descriptors that have an id label: resource.type &#x3D; starts_with(\&quot;gce_\&quot;) AND resource.label:id 
-    - :pageToken (String.t): If this field is not empty then it must contain the nextPageToken value returned by a previous call to this method. Using this field causes the method to return additional results from the previous method call.
     - :pageSize (integer()): A positive number that is the maximum number of results to return.
+    - :pageToken (String.t): If this field is not empty then it must contain the nextPageToken value returned by a previous call to this method. Using this field causes the method to return additional results from the previous method call.
 
   ## Returns
 
@@ -1135,22 +1205,27 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         ) ::
           {:ok, GoogleApi.Monitoring.V3.Model.ListMonitoredResourceDescriptorsResponse.t()}
           | {:error, Tesla.Env.t()}
-  def monitoring_projects_monitored_resource_descriptors_list(connection, projects_id, opts \\ []) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+  def monitoring_projects_monitored_resource_descriptors_list(
+        connection,
+        projects_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :filter => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
@@ -1159,12 +1234,12 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       |> Request.url("/v3/projects/{projectsId}/monitoredResourceDescriptors", %{
         "projectsId" => URI.encode_www_form(projects_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct: %GoogleApi.Monitoring.V3.Model.ListMonitoredResourceDescriptorsResponse{}
+      opts ++ [struct: %GoogleApi.Monitoring.V3.Model.ListMonitoredResourceDescriptorsResponse{}]
     )
   end
 
@@ -1176,18 +1251,18 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   - connection (GoogleApi.Monitoring.V3.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;name&#x60;. The channel type for which to execute the request. The format is projects/[PROJECT_ID]/notificationChannelDescriptors/{channel_type}.
   - notification_channel_descriptors_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -1206,20 +1281,21 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         connection,
         projects_id,
         notification_channel_descriptors_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -1233,11 +1309,13 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
             URI.encode_www_form(notification_channel_descriptors_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Monitoring.V3.Model.NotificationChannelDescriptor{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Monitoring.V3.Model.NotificationChannelDescriptor{}]
+    )
   end
 
   @doc """
@@ -1247,20 +1325,20 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
 
   - connection (GoogleApi.Monitoring.V3.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;name&#x60;. The REST resource name of the parent from which to retrieve the notification channel descriptors. The expected syntax is: projects/[PROJECT_ID] Note that this names the parent container in which to look for the descriptors; to retrieve a single descriptor by name, use the GetNotificationChannelDescriptor operation, instead.
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :pageToken (String.t): If non-empty, page_token must contain a value returned as the next_page_token in a previous response to request the next set of results.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :pageSize (integer()): The maximum number of results to return in a single response. If not set to a positive number, a reasonable value will be chosen by the service.
+    - :pageToken (String.t): If non-empty, page_token must contain a value returned as the next_page_token in a previous response to request the next set of results.
 
   ## Returns
 
@@ -1277,22 +1355,23 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   def monitoring_projects_notification_channel_descriptors_list(
         connection,
         projects_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
@@ -1301,34 +1380,35 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       |> Request.url("/v3/projects/{projectsId}/notificationChannelDescriptors", %{
         "projectsId" => URI.encode_www_form(projects_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct: %GoogleApi.Monitoring.V3.Model.ListNotificationChannelDescriptorsResponse{}
+      opts ++
+        [struct: %GoogleApi.Monitoring.V3.Model.ListNotificationChannelDescriptorsResponse{}]
     )
   end
 
   @doc """
-  Creates a new notification channel, representing a single notification endpoint such as an email address, SMS number, or pagerduty service.
+  Creates a new notification channel, representing a single notification endpoint such as an email address, SMS number, or PagerDuty service.
 
   ## Parameters
 
   - connection (GoogleApi.Monitoring.V3.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;name&#x60;. The project on which to execute the request. The format is: projects/[PROJECT_ID] Note that this names the container into which the channel will be written. This does not name the newly created channel. The resulting channel&#39;s name will have a normalized version of this field as a prefix, but will add /notificationChannels/[CHANNEL_ID] to identify the channel.
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (NotificationChannel): 
 
   ## Returns
@@ -1342,19 +1422,24 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Monitoring.V3.Model.NotificationChannel.t()} | {:error, Tesla.Env.t()}
-  def monitoring_projects_notification_channels_create(connection, projects_id, opts \\ []) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+  def monitoring_projects_notification_channels_create(
+        connection,
+        projects_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -1364,11 +1449,11 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       |> Request.url("/v3/projects/{projectsId}/notificationChannels", %{
         "projectsId" => URI.encode_www_form(projects_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Monitoring.V3.Model.NotificationChannel{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Monitoring.V3.Model.NotificationChannel{}])
   end
 
   @doc """
@@ -1379,18 +1464,18 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   - connection (GoogleApi.Monitoring.V3.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;name&#x60;. The channel for which to execute the request. The format is projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID].
   - notification_channels_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :force (boolean()): If true, the notification channel will be deleted regardless of its use in alert policies (the policies will be updated to remove the channel). If false, channels that are still referenced by an existing alerting policy will fail to be deleted in a delete operation.
 
   ## Returns
@@ -1408,20 +1493,21 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         connection,
         projects_id,
         notification_channels_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :force => :query
     }
 
@@ -1432,11 +1518,11 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         "projectsId" => URI.encode_www_form(projects_id),
         "notificationChannelsId" => URI.encode_www_form(notification_channels_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Monitoring.V3.Model.Empty{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Monitoring.V3.Model.Empty{}])
   end
 
   @doc """
@@ -1447,18 +1533,18 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   - connection (GoogleApi.Monitoring.V3.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;name&#x60;. The channel for which to execute the request. The format is projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID].
   - notification_channels_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -1476,20 +1562,21 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         connection,
         projects_id,
         notification_channels_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -1499,11 +1586,11 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         "projectsId" => URI.encode_www_form(projects_id),
         "notificationChannelsId" => URI.encode_www_form(notification_channels_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Monitoring.V3.Model.NotificationChannel{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Monitoring.V3.Model.NotificationChannel{}])
   end
 
   @doc """
@@ -1514,18 +1601,18 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   - connection (GoogleApi.Monitoring.V3.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;name&#x60;. The notification channel for which a verification code is to be generated and retrieved. This must name a channel that is already verified; if the specified channel is not verified, the request will fail.
   - notification_channels_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (GetNotificationChannelVerificationCodeRequest): 
 
   ## Returns
@@ -1545,20 +1632,21 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         connection,
         projects_id,
         notification_channels_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -1572,12 +1660,13 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           "notificationChannelsId" => URI.encode_www_form(notification_channels_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct: %GoogleApi.Monitoring.V3.Model.GetNotificationChannelVerificationCodeResponse{}
+      opts ++
+        [struct: %GoogleApi.Monitoring.V3.Model.GetNotificationChannelVerificationCodeResponse{}]
     )
   end
 
@@ -1588,22 +1677,22 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
 
   - connection (GoogleApi.Monitoring.V3.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;name&#x60;. The project on which to execute the request. The format is projects/[PROJECT_ID]. That is, this names the container in which to look for the notification channels; it does not name a specific channel. To query a specific channel by REST resource name, use the GetNotificationChannel operation.
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :orderBy (String.t): A comma-separated list of fields by which to sort the result. Supports the same set of fields as in filter. Entries can be prefixed with a minus sign to sort in descending rather than ascending order.For more details, see sorting and filtering.
-    - :pageToken (String.t): If non-empty, page_token must contain a value returned as the next_page_token in a previous response to request the next set of results.
-    - :pageSize (integer()): The maximum number of results to return in a single response. If not set to a positive number, a reasonable value will be chosen by the service.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :filter (String.t): If provided, this field specifies the criteria that must be met by notification channels to be included in the response.For more details, see sorting and filtering.
+    - :orderBy (String.t): A comma-separated list of fields by which to sort the result. Supports the same set of fields as in filter. Entries can be prefixed with a minus sign to sort in descending rather than ascending order.For more details, see sorting and filtering.
+    - :pageSize (integer()): The maximum number of results to return in a single response. If not set to a positive number, a reasonable value will be chosen by the service.
+    - :pageToken (String.t): If non-empty, page_token must contain a value returned as the next_page_token in a previous response to request the next set of results.
 
   ## Returns
 
@@ -1613,23 +1702,28 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   @spec monitoring_projects_notification_channels_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Monitoring.V3.Model.ListNotificationChannelsResponse.t()}
           | {:error, Tesla.Env.t()}
-  def monitoring_projects_notification_channels_list(connection, projects_id, opts \\ []) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+  def monitoring_projects_notification_channels_list(
+        connection,
+        projects_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :filter => :query,
       :orderBy => :query,
-      :pageToken => :query,
       :pageSize => :query,
-      :filter => :query
+      :pageToken => :query
     }
 
     request =
@@ -1638,11 +1732,13 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       |> Request.url("/v3/projects/{projectsId}/notificationChannels", %{
         "projectsId" => URI.encode_www_form(projects_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Monitoring.V3.Model.ListNotificationChannelsResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Monitoring.V3.Model.ListNotificationChannelsResponse{}]
+    )
   end
 
   @doc """
@@ -1653,18 +1749,18 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   - connection (GoogleApi.Monitoring.V3.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;notificationChannel.name&#x60;. The full REST resource name for this channel. The syntax is: projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID] The [CHANNEL_ID] is automatically assigned by the server on creation.
   - notification_channels_id (String.t): Part of &#x60;notificationChannel.name&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :updateMask (String.t): The fields to update.
     - :body (NotificationChannel): 
 
@@ -1684,20 +1780,21 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         connection,
         projects_id,
         notification_channels_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :updateMask => :query,
       :body => :body
     }
@@ -1709,11 +1806,11 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         "projectsId" => URI.encode_www_form(projects_id),
         "notificationChannelsId" => URI.encode_www_form(notification_channels_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Monitoring.V3.Model.NotificationChannel{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Monitoring.V3.Model.NotificationChannel{}])
   end
 
   @doc """
@@ -1724,18 +1821,18 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   - connection (GoogleApi.Monitoring.V3.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;name&#x60;. The notification channel to which to send a verification code.
   - notification_channels_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (SendNotificationChannelVerificationCodeRequest): 
 
   ## Returns
@@ -1753,20 +1850,21 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         connection,
         projects_id,
         notification_channels_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -1780,11 +1878,11 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           "notificationChannelsId" => URI.encode_www_form(notification_channels_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Monitoring.V3.Model.Empty{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Monitoring.V3.Model.Empty{}])
   end
 
   @doc """
@@ -1795,18 +1893,18 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   - connection (GoogleApi.Monitoring.V3.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;name&#x60;. The notification channel to verify.
   - notification_channels_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (VerifyNotificationChannelRequest): 
 
   ## Returns
@@ -1825,20 +1923,21 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         connection,
         projects_id,
         notification_channels_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -1852,11 +1951,11 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           "notificationChannelsId" => URI.encode_www_form(notification_channels_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Monitoring.V3.Model.NotificationChannel{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Monitoring.V3.Model.NotificationChannel{}])
   end
 
   @doc """
@@ -1866,18 +1965,18 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
 
   - connection (GoogleApi.Monitoring.V3.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;name&#x60;. The project on which to execute the request. The format is \&quot;projects/{project_id_or_number}\&quot;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (CreateTimeSeriesRequest): 
 
   ## Returns
@@ -1887,19 +1986,24 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   """
   @spec monitoring_projects_time_series_create(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Monitoring.V3.Model.Empty.t()} | {:error, Tesla.Env.t()}
-  def monitoring_projects_time_series_create(connection, projects_id, opts \\ []) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+  def monitoring_projects_time_series_create(
+        connection,
+        projects_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -1909,11 +2013,11 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       |> Request.url("/v3/projects/{projectsId}/timeSeries", %{
         "projectsId" => URI.encode_www_form(projects_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Monitoring.V3.Model.Empty{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Monitoring.V3.Model.Empty{}])
   end
 
   @doc """
@@ -1923,29 +2027,29 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
 
   - connection (GoogleApi.Monitoring.V3.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;name&#x60;. The project on which to execute the request. The format is \&quot;projects/{project_id_or_number}\&quot;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :orderBy (String.t): Unsupported: must be left blank. The points in each time series are returned in reverse time order.
-    - :aggregation.crossSeriesReducer (String.t): The approach to be used to combine time series. Not all reducer functions may be applied to all time series, depending on the metric type and the value type of the original time series. Reduction may change the metric type of value type of the time series.Time series data must be aligned in order to perform cross-time series reduction. If crossSeriesReducer is specified, then perSeriesAligner must be specified and not equal ALIGN_NONE and alignmentPeriod must be specified; otherwise, an error is returned.
-    - :filter (String.t): A monitoring filter that specifies which time series should be returned. The filter must specify a single metric type, and can additionally specify metric labels and other information. For example: metric.type &#x3D; \&quot;compute.googleapis.com/instance/cpu/usage_time\&quot; AND     metric.label.instance_name &#x3D; \&quot;my-instance-name\&quot; 
-    - :aggregation.perSeriesAligner (String.t): The approach to be used to align individual time series. Not all alignment functions may be applied to all time series, depending on the metric type and value type of the original time series. Alignment may change the metric type or the value type of the time series.Time series data must be aligned in order to perform cross-time series reduction. If crossSeriesReducer is specified, then perSeriesAligner must be specified and not equal ALIGN_NONE and alignmentPeriod must be specified; otherwise, an error is returned.
-    - :pageToken (String.t): If this field is not empty then it must contain the nextPageToken value returned by a previous call to this method. Using this field causes the method to return additional results from the previous method call.
-    - :interval.startTime (DateTime.t): Optional. The beginning of the time interval. The default value for the start time is the end time. The start time must not be later than the end time.
-    - :view (String.t): Specifies which information is returned about the time series.
-    - :aggregation.groupByFields ([String.t]): The set of fields to preserve when crossSeriesReducer is specified. The groupByFields determine how the time series are partitioned into subsets prior to applying the aggregation function. Each subset contains time series that have the same value for each of the grouping fields. Each individual time series is a member of exactly one subset. The crossSeriesReducer is applied to each subset of time series. It is not possible to reduce across different resource types, so this field implicitly contains resource.type. Fields not specified in groupByFields are aggregated away. If groupByFields is not specified and all the time series have the same resource type, then the time series are aggregated into a single output time series. If crossSeriesReducer is not defined, this field is ignored.
-    - :interval.endTime (DateTime.t): Required. The end of the time interval.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :aggregation.alignmentPeriod (String.t): The alignment period for per-time series alignment. If present, alignmentPeriod must be at least 60 seconds. After per-time series alignment, each time series will contain data points only on the period boundaries. If perSeriesAligner is not specified or equals ALIGN_NONE, then this field is ignored. If perSeriesAligner is specified and does not equal ALIGN_NONE, then this field must be defined; otherwise an error is returned.
+    - :aggregation.crossSeriesReducer (String.t): The approach to be used to combine time series. Not all reducer functions may be applied to all time series, depending on the metric type and the value type of the original time series. Reduction may change the metric type of value type of the time series.Time series data must be aligned in order to perform cross-time series reduction. If crossSeriesReducer is specified, then perSeriesAligner must be specified and not equal ALIGN_NONE and alignmentPeriod must be specified; otherwise, an error is returned.
+    - :aggregation.groupByFields ([String.t]): The set of fields to preserve when crossSeriesReducer is specified. The groupByFields determine how the time series are partitioned into subsets prior to applying the aggregation function. Each subset contains time series that have the same value for each of the grouping fields. Each individual time series is a member of exactly one subset. The crossSeriesReducer is applied to each subset of time series. It is not possible to reduce across different resource types, so this field implicitly contains resource.type. Fields not specified in groupByFields are aggregated away. If groupByFields is not specified and all the time series have the same resource type, then the time series are aggregated into a single output time series. If crossSeriesReducer is not defined, this field is ignored.
+    - :aggregation.perSeriesAligner (String.t): The approach to be used to align individual time series. Not all alignment functions may be applied to all time series, depending on the metric type and value type of the original time series. Alignment may change the metric type or the value type of the time series.Time series data must be aligned in order to perform cross-time series reduction. If crossSeriesReducer is specified, then perSeriesAligner must be specified and not equal ALIGN_NONE and alignmentPeriod must be specified; otherwise, an error is returned.
+    - :filter (String.t): A monitoring filter that specifies which time series should be returned. The filter must specify a single metric type, and can additionally specify metric labels and other information. For example: metric.type &#x3D; \&quot;compute.googleapis.com/instance/cpu/usage_time\&quot; AND     metric.label.instance_name &#x3D; \&quot;my-instance-name\&quot; 
+    - :interval.endTime (DateTime.t): Required. The end of the time interval.
+    - :interval.startTime (DateTime.t): Optional. The beginning of the time interval. The default value for the start time is the end time. The start time must not be later than the end time.
+    - :orderBy (String.t): Unsupported: must be left blank. The points in each time series are returned in reverse time order.
     - :pageSize (integer()): A positive number that is the maximum number of results to return. If page_size is empty or more than 100,000 results, the effective page_size is 100,000 results. If view is set to FULL, this is the maximum number of Points returned. If view is set to HEADERS, this is the maximum number of TimeSeries returned.
+    - :pageToken (String.t): If this field is not empty then it must contain the nextPageToken value returned by a previous call to this method. Using this field causes the method to return additional results from the previous method call.
+    - :view (String.t): Specifies which information is returned about the time series.
 
   ## Returns
 
@@ -1955,30 +2059,35 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   @spec monitoring_projects_time_series_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Monitoring.V3.Model.ListTimeSeriesResponse.t()}
           | {:error, Tesla.Env.t()}
-  def monitoring_projects_time_series_list(connection, projects_id, opts \\ []) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+  def monitoring_projects_time_series_list(
+        connection,
+        projects_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
-      :orderBy => :query,
-      :"aggregation.crossSeriesReducer" => :query,
-      :filter => :query,
-      :"aggregation.perSeriesAligner" => :query,
-      :pageToken => :query,
-      :"interval.startTime" => :query,
-      :view => :query,
-      :"aggregation.groupByFields" => :query,
-      :"interval.endTime" => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :"aggregation.alignmentPeriod" => :query,
-      :pageSize => :query
+      :"aggregation.crossSeriesReducer" => :query,
+      :"aggregation.groupByFields" => :query,
+      :"aggregation.perSeriesAligner" => :query,
+      :filter => :query,
+      :"interval.endTime" => :query,
+      :"interval.startTime" => :query,
+      :orderBy => :query,
+      :pageSize => :query,
+      :pageToken => :query,
+      :view => :query
     }
 
     request =
@@ -1987,11 +2096,11 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       |> Request.url("/v3/projects/{projectsId}/timeSeries", %{
         "projectsId" => URI.encode_www_form(projects_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Monitoring.V3.Model.ListTimeSeriesResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Monitoring.V3.Model.ListTimeSeriesResponse{}])
   end
 
   @doc """
@@ -2001,18 +2110,18 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
 
   - connection (GoogleApi.Monitoring.V3.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;parent&#x60;. The project in which to create the uptime check. The format  is projects/[PROJECT_ID].
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (UptimeCheckConfig): 
 
   ## Returns
@@ -2022,19 +2131,24 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   """
   @spec monitoring_projects_uptime_check_configs_create(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Monitoring.V3.Model.UptimeCheckConfig.t()} | {:error, Tesla.Env.t()}
-  def monitoring_projects_uptime_check_configs_create(connection, projects_id, opts \\ []) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+  def monitoring_projects_uptime_check_configs_create(
+        connection,
+        projects_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -2044,11 +2158,11 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       |> Request.url("/v3/projects/{projectsId}/uptimeCheckConfigs", %{
         "projectsId" => URI.encode_www_form(projects_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Monitoring.V3.Model.UptimeCheckConfig{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Monitoring.V3.Model.UptimeCheckConfig{}])
   end
 
   @doc """
@@ -2059,18 +2173,18 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   - connection (GoogleApi.Monitoring.V3.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;name&#x60;. The uptime check configuration to delete. The format  is projects/[PROJECT_ID]/uptimeCheckConfigs/[UPTIME_CHECK_ID].
   - uptime_check_configs_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -2087,20 +2201,21 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         connection,
         projects_id,
         uptime_check_configs_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -2110,11 +2225,11 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         "projectsId" => URI.encode_www_form(projects_id),
         "uptimeCheckConfigsId" => URI.encode_www_form(uptime_check_configs_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Monitoring.V3.Model.Empty{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Monitoring.V3.Model.Empty{}])
   end
 
   @doc """
@@ -2125,18 +2240,18 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   - connection (GoogleApi.Monitoring.V3.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;name&#x60;. The uptime check configuration to retrieve. The format  is projects/[PROJECT_ID]/uptimeCheckConfigs/[UPTIME_CHECK_ID].
   - uptime_check_configs_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -2153,20 +2268,21 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         connection,
         projects_id,
         uptime_check_configs_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -2176,11 +2292,11 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         "projectsId" => URI.encode_www_form(projects_id),
         "uptimeCheckConfigsId" => URI.encode_www_form(uptime_check_configs_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Monitoring.V3.Model.UptimeCheckConfig{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Monitoring.V3.Model.UptimeCheckConfig{}])
   end
 
   @doc """
@@ -2190,20 +2306,20 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
 
   - connection (GoogleApi.Monitoring.V3.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;parent&#x60;. The project whose uptime check configurations are listed. The format  is projects/[PROJECT_ID].
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :pageToken (String.t): If this field is not empty then it must contain the nextPageToken value returned by a previous call to this method. Using this field causes the method to return more results from the previous method call.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :pageSize (integer()): The maximum number of results to return in a single response. The server may further constrain the maximum number of results returned in a single page. If the page_size is &lt;&#x3D;0, the server will decide the number of results to be returned.
+    - :pageToken (String.t): If this field is not empty then it must contain the nextPageToken value returned by a previous call to this method. Using this field causes the method to return more results from the previous method call.
 
   ## Returns
 
@@ -2213,21 +2329,26 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   @spec monitoring_projects_uptime_check_configs_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Monitoring.V3.Model.ListUptimeCheckConfigsResponse.t()}
           | {:error, Tesla.Env.t()}
-  def monitoring_projects_uptime_check_configs_list(connection, projects_id, opts \\ []) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+  def monitoring_projects_uptime_check_configs_list(
+        connection,
+        projects_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
@@ -2236,11 +2357,13 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       |> Request.url("/v3/projects/{projectsId}/uptimeCheckConfigs", %{
         "projectsId" => URI.encode_www_form(projects_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Monitoring.V3.Model.ListUptimeCheckConfigsResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Monitoring.V3.Model.ListUptimeCheckConfigsResponse{}]
+    )
   end
 
   @doc """
@@ -2251,18 +2374,18 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   - connection (GoogleApi.Monitoring.V3.Connection): Connection to server
   - projects_id (String.t): Part of &#x60;uptimeCheckConfig.name&#x60;. A unique resource name for this UptimeCheckConfig. The format is:projects/[PROJECT_ID]/uptimeCheckConfigs/[UPTIME_CHECK_ID].This field should be omitted when creating the uptime check configuration; on create, the resource name is assigned by the server and included in the response.
   - uptime_check_configs_id (String.t): Part of &#x60;uptimeCheckConfig.name&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :updateMask (String.t): Optional. If present, only the listed fields in the current uptime check configuration are updated with values from the new configuration. If this field is empty, then the current configuration is completely replaced with the new configuration.
     - :body (UptimeCheckConfig): 
 
@@ -2281,20 +2404,21 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         connection,
         projects_id,
         uptime_check_configs_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :updateMask => :query,
       :body => :body
     }
@@ -2306,10 +2430,10 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         "projectsId" => URI.encode_www_form(projects_id),
         "uptimeCheckConfigsId" => URI.encode_www_form(uptime_check_configs_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Monitoring.V3.Model.UptimeCheckConfig{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Monitoring.V3.Model.UptimeCheckConfig{}])
   end
 end

@@ -34,7 +34,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationsfordevice do
   - user_id (String.t): The ID of the user.
   - device_id (String.t): The Android ID of the device.
   - managed_configuration_for_device_id (String.t): The ID of the managed configuration (a product ID), e.g. \&quot;app:com.google.android.gm\&quot;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -62,9 +62,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationsfordevice do
         user_id,
         device_id,
         managed_configuration_for_device_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -87,11 +88,11 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationsfordevice do
             URI.encode_www_form(managed_configuration_for_device_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -104,7 +105,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationsfordevice do
   - user_id (String.t): The ID of the user.
   - device_id (String.t): The Android ID of the device.
   - managed_configuration_for_device_id (String.t): The ID of the managed configuration (a product ID), e.g. \&quot;app:com.google.android.gm\&quot;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -134,9 +135,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationsfordevice do
         user_id,
         device_id,
         managed_configuration_for_device_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -159,11 +161,13 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationsfordevice do
             URI.encode_www_form(managed_configuration_for_device_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AndroidEnterprise.V1.Model.ManagedConfiguration{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.AndroidEnterprise.V1.Model.ManagedConfiguration{}]
+    )
   end
 
   @doc """
@@ -175,7 +179,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationsfordevice do
   - enterprise_id (String.t): The ID of the enterprise.
   - user_id (String.t): The ID of the user.
   - device_id (String.t): The Android ID of the device.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -204,9 +208,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationsfordevice do
         enterprise_id,
         user_id,
         device_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -227,12 +232,16 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationsfordevice do
           "deviceId" => URI.encode_www_form(device_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct: %GoogleApi.AndroidEnterprise.V1.Model.ManagedConfigurationsForDeviceListResponse{}
+      opts ++
+        [
+          struct:
+            %GoogleApi.AndroidEnterprise.V1.Model.ManagedConfigurationsForDeviceListResponse{}
+        ]
     )
   end
 
@@ -246,7 +255,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationsfordevice do
   - user_id (String.t): The ID of the user.
   - device_id (String.t): The Android ID of the device.
   - managed_configuration_for_device_id (String.t): The ID of the managed configuration (a product ID), e.g. \&quot;app:com.google.android.gm\&quot;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -277,9 +286,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationsfordevice do
         user_id,
         device_id,
         managed_configuration_for_device_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -303,11 +313,13 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationsfordevice do
             URI.encode_www_form(managed_configuration_for_device_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AndroidEnterprise.V1.Model.ManagedConfiguration{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.AndroidEnterprise.V1.Model.ManagedConfiguration{}]
+    )
   end
 
   @doc """
@@ -320,7 +332,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationsfordevice do
   - user_id (String.t): The ID of the user.
   - device_id (String.t): The Android ID of the device.
   - managed_configuration_for_device_id (String.t): The ID of the managed configuration (a product ID), e.g. \&quot;app:com.google.android.gm\&quot;.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -351,9 +363,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationsfordevice do
         user_id,
         device_id,
         managed_configuration_for_device_id,
+        optional_params \\ [],
         opts \\ []
       ) do
-    optional_params = %{
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -377,10 +390,12 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationsfordevice do
             URI.encode_www_form(managed_configuration_for_device_id)
         }
       )
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.AndroidEnterprise.V1.Model.ManagedConfiguration{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.AndroidEnterprise.V1.Model.ManagedConfiguration{}]
+    )
   end
 end

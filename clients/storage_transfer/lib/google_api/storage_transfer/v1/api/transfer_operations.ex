@@ -31,18 +31,18 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferOperations do
 
   - connection (GoogleApi.StorageTransfer.V1.Connection): Connection to server
   - name (String.t): The name of the operation resource to be cancelled.
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -51,19 +51,24 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferOperations do
   """
   @spec storagetransfer_transfer_operations_cancel(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.StorageTransfer.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
-  def storagetransfer_transfer_operations_cancel(connection, name, opts \\ []) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
-      :oauth_token => :query,
+  def storagetransfer_transfer_operations_cancel(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
       :quotaUser => :query,
-      :prettyPrint => :query
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -72,11 +77,11 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferOperations do
       |> Request.url("/v1/{+name}:cancel", %{
         "name" => URI.encode_www_form(name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.StorageTransfer.V1.Model.Empty{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.StorageTransfer.V1.Model.Empty{}])
   end
 
   @doc """
@@ -86,18 +91,18 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferOperations do
 
   - connection (GoogleApi.StorageTransfer.V1.Connection): Connection to server
   - name (String.t): The name of the operation resource to be deleted.
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -106,19 +111,24 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferOperations do
   """
   @spec storagetransfer_transfer_operations_delete(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.StorageTransfer.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
-  def storagetransfer_transfer_operations_delete(connection, name, opts \\ []) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
-      :oauth_token => :query,
+  def storagetransfer_transfer_operations_delete(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
       :quotaUser => :query,
-      :prettyPrint => :query
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -127,11 +137,11 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferOperations do
       |> Request.url("/v1/{+name}", %{
         "name" => URI.encode_www_form(name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.StorageTransfer.V1.Model.Empty{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.StorageTransfer.V1.Model.Empty{}])
   end
 
   @doc """
@@ -141,21 +151,21 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferOperations do
 
   - connection (GoogleApi.StorageTransfer.V1.Connection): Connection to server
   - name (String.t): The value &#x60;transferOperations&#x60;.
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :filter (String.t): A list of query parameters specified as JSON text in the form of {\\\&quot;project_id\\\&quot; : \\\&quot;my_project_id\\\&quot;, \\\&quot;job_names\\\&quot; : [\\\&quot;jobid1\\\&quot;, \\\&quot;jobid2\\\&quot;,...], \\\&quot;operation_names\\\&quot; : [\\\&quot;opid1\\\&quot;, \\\&quot;opid2\\\&quot;,...], \\\&quot;transfer_statuses\\\&quot;:[\\\&quot;status1\\\&quot;, \\\&quot;status2\\\&quot;,...]}. Since &#x60;job_names&#x60;, &#x60;operation_names&#x60;, and &#x60;transfer_statuses&#x60; support multiple values, they must be specified with array notation. &#x60;job_names&#x60;, &#x60;operation_names&#x60;, and &#x60;transfer_statuses&#x60; are optional.
-    - :pageToken (String.t): The list page token.
     - :pageSize (integer()): The list page size. The max allowed value is 256.
+    - :pageToken (String.t): The list page token.
 
   ## Returns
 
@@ -165,22 +175,27 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferOperations do
   @spec storagetransfer_transfer_operations_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.StorageTransfer.V1.Model.ListOperationsResponse.t()}
           | {:error, Tesla.Env.t()}
-  def storagetransfer_transfer_operations_list(connection, name, opts \\ []) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
-      :oauth_token => :query,
+  def storagetransfer_transfer_operations_list(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :filter => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
@@ -189,11 +204,13 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferOperations do
       |> Request.url("/v1/{+name}", %{
         "name" => URI.encode_www_form(name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.StorageTransfer.V1.Model.ListOperationsResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.StorageTransfer.V1.Model.ListOperationsResponse{}]
+    )
   end
 
   @doc """
@@ -203,18 +220,18 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferOperations do
 
   - connection (GoogleApi.StorageTransfer.V1.Connection): Connection to server
   - name (String.t): The name of the transfer operation. Required.
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (PauseTransferOperationRequest): 
 
   ## Returns
@@ -224,19 +241,24 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferOperations do
   """
   @spec storagetransfer_transfer_operations_pause(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.StorageTransfer.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
-  def storagetransfer_transfer_operations_pause(connection, name, opts \\ []) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
-      :oauth_token => :query,
+  def storagetransfer_transfer_operations_pause(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -246,11 +268,11 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferOperations do
       |> Request.url("/v1/{+name}:pause", %{
         "name" => URI.encode_www_form(name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.StorageTransfer.V1.Model.Empty{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.StorageTransfer.V1.Model.Empty{}])
   end
 
   @doc """
@@ -260,18 +282,18 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferOperations do
 
   - connection (GoogleApi.StorageTransfer.V1.Connection): Connection to server
   - name (String.t): The name of the transfer operation. Required.
-  - opts (KeywordList): [optional] Optional parameters
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (ResumeTransferOperationRequest): 
 
   ## Returns
@@ -281,19 +303,24 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferOperations do
   """
   @spec storagetransfer_transfer_operations_resume(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.StorageTransfer.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
-  def storagetransfer_transfer_operations_resume(connection, name, opts \\ []) do
-    optional_params = %{
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
-      :oauth_token => :query,
+  def storagetransfer_transfer_operations_resume(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -303,10 +330,10 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferOperations do
       |> Request.url("/v1/{+name}:resume", %{
         "name" => URI.encode_www_form(name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.StorageTransfer.V1.Model.Empty{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.StorageTransfer.V1.Model.Empty{}])
   end
 end

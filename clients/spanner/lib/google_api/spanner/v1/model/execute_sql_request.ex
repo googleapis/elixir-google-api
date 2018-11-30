@@ -28,8 +28,9 @@ defmodule GoogleApi.Spanner.V1.Model.ExecuteSqlRequest do
   - queryMode (String.t): Used to control the amount of debugging information returned in ResultSetStats. If partition_token is set, query_mode can only be set to QueryMode.NORMAL. Defaults to: `null`.
     - Enum - one of [NORMAL, PLAN, PROFILE]
   - resumeToken (binary()): If this request is resuming a previously interrupted SQL statement execution, &#x60;resume_token&#x60; should be copied from the last PartialResultSet yielded before the interruption. Doing this enables the new SQL statement execution to resume where the last one left off. The rest of the request parameters must exactly match the request that yielded this token. Defaults to: `null`.
+  - seqno (String.t): A per-transaction sequence number used to identify this request. This makes each request idempotent such that if the request is received multiple times, at most one will succeed.  The sequence number must be monotonically increasing within the transaction. If a request arrives for the first time with an out-of-order sequence number, the transaction may be aborted. Replays of previously handled requests will yield the same response as the first execution.  Required for DML statements. Ignored for queries. Defaults to: `null`.
   - sql (String.t): Required. The SQL string. Defaults to: `null`.
-  - transaction (TransactionSelector): The transaction to use. If none is provided, the default is a temporary read-only transaction with strong concurrency. Defaults to: `null`.
+  - transaction (TransactionSelector): The transaction to use. If none is provided, the default is a temporary read-only transaction with strong concurrency.  The transaction to use.  For queries, if none is provided, the default is a temporary read-only transaction with strong concurrency.  Standard DML statements require a ReadWrite transaction. Single-use transactions are not supported (to avoid replay).  The caller must either supply an existing transaction ID or begin a new transaction.  Partitioned DML requires an existing PartitionedDml transaction ID. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -40,6 +41,7 @@ defmodule GoogleApi.Spanner.V1.Model.ExecuteSqlRequest do
           :partitionToken => any(),
           :queryMode => any(),
           :resumeToken => any(),
+          :seqno => any(),
           :sql => any(),
           :transaction => GoogleApi.Spanner.V1.Model.TransactionSelector.t()
         }
@@ -49,6 +51,7 @@ defmodule GoogleApi.Spanner.V1.Model.ExecuteSqlRequest do
   field(:partitionToken)
   field(:queryMode)
   field(:resumeToken)
+  field(:seqno)
   field(:sql)
   field(:transaction, as: GoogleApi.Spanner.V1.Model.TransactionSelector)
 end

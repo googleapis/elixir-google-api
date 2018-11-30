@@ -22,7 +22,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentTraini
 
   ## Attributes
 
-  - name (String.t): Required. The unique identifier of this training phrase. Defaults to: `null`.
+  - name (String.t): Output only. The unique identifier of this training phrase. Defaults to: `null`.
   - parts ([GoogleCloudDialogflowV2beta1IntentTrainingPhrasePart]): Required. The collection of training phrase parts (can be annotated). Fields: &#x60;entity_type&#x60;, &#x60;alias&#x60; and &#x60;user_defined&#x60; should be populated only for the annotated parts of the training phrase. Defaults to: `null`.
   - timesAddedCount (integer()): Optional. Indicates how many times this example or template was added to the intent. Each time a developer adds an existing sample by editing an intent or training, this counter is increased. Defaults to: `null`.
   - type (String.t): Required. The type of the training phrase. Defaults to: `null`.

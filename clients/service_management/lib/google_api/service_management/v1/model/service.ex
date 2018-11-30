@@ -35,7 +35,7 @@ defmodule GoogleApi.ServiceManagement.V1.Model.Service do
   - enums ([Enum]): A list of all enum types included in this API service.  Enums referenced directly or indirectly by the &#x60;apis&#x60; are automatically included.  Enums which are not referenced but shall be included should be listed here by name. Example:      enums:     - name: google.someapi.v1.SomeEnum Defaults to: `null`.
   - experimental (Experimental): Experimental configuration. Defaults to: `null`.
   - http (Http): HTTP configuration. Defaults to: `null`.
-  - id (String.t): A unique ID for a specific instance of this message, typically assigned by the client for tracking purpose. If empty, the server may choose to generate one instead. Defaults to: `null`.
+  - id (String.t): A unique ID for a specific instance of this message, typically assigned by the client for tracking purpose. If empty, the server may choose to generate one instead. Must be no longer than 60 characters. Defaults to: `null`.
   - logging (Logging): Logging configuration. Defaults to: `null`.
   - logs ([LogDescriptor]): Defines the logs used by this service. Defaults to: `null`.
   - metrics ([MetricDescriptor]): Defines the metrics used by this service. Defaults to: `null`.

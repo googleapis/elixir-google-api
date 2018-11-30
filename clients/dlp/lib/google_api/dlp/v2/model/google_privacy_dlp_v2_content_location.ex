@@ -22,7 +22,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ContentLocation do
 
   ## Attributes
 
-  - containerName (String.t): Name of the container where the finding is located. The top level name is the source file name or table name. Nested names could be absent if the embedded object has no string identifier (for an example an image contained within a document). Defaults to: `null`.
+  - containerName (String.t): Name of the container where the finding is located. The top level name is the source file name or table name. Names of some common storage containers are formatted as follows:  * BigQuery tables:  &#x60;&lt;project_id&gt;:&lt;dataset_id&gt;.&lt;table_id&gt;&#x60; * Cloud Storage files: &#x60;gs://&lt;bucket&gt;/&lt;path&gt;&#x60; * Datastore namespace: &lt;namespace&gt;  Nested names could be absent if the embedded object has no string identifier (for an example an image contained within a document). Defaults to: `null`.
   - containerTimestamp (DateTime.t): Findings container modification timestamp, if applicable. For Google Cloud Storage contains last file modification timestamp. For BigQuery table contains last_modified_time property. For Datastore - not populated. Defaults to: `null`.
   - containerVersion (String.t): Findings container version, if available (\&quot;generation\&quot; for Google Cloud Storage). Defaults to: `null`.
   - documentLocation (GooglePrivacyDlpV2DocumentLocation): Location data for document files. Defaults to: `null`.

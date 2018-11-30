@@ -10,11 +10,11 @@ use Mix.Config
 
 # You can configure for your application as:
 #
-#     config :cloud_container_builder, key: :value
+#     config :cloud_build_api, key: :value
 #
 # And access this configuration in your application as:
 #
-#     Application.get_env(:cloud_container_builder, :key)
+#     Application.get_env(:cloud_build_api, :key)
 #
 # Or configure a 3rd-party app:
 #

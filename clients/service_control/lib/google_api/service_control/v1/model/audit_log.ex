@@ -31,6 +31,7 @@ defmodule GoogleApi.ServiceControl.V1.Model.AuditLog do
   - requestMetadata (RequestMetadata): Metadata about the operation. Defaults to: `null`.
   - resourceLocation (ResourceLocation): The resource location information. Defaults to: `null`.
   - resourceName (String.t): The resource or collection that is the target of the operation. The name is a scheme-less URI, not including the API service name. For example:      \&quot;shelves/SHELF_ID/books\&quot;     \&quot;shelves/SHELF_ID/books/BOOK_ID\&quot; Defaults to: `null`.
+  - resourceOriginalState (%{optional(String.t) &#x3D;&gt; String.t}): The resource&#39;s original state before mutation. Present only for operations which have successfully modified the targeted resource(s). In general, this field should contain all changed fields, except those that are already been included in &#x60;request&#x60;, &#x60;response&#x60;, &#x60;metadata&#x60; or &#x60;service_data&#x60; fields. When the JSON object represented here has a proto equivalent, the proto name will be indicated in the &#x60;@type&#x60; property. Defaults to: `null`.
   - response (%{optional(String.t) &#x3D;&gt; String.t}): The operation response. This may not include all response elements, such as those that are too large, privacy-sensitive, or duplicated elsewhere in the log record. It should never include user-generated data, such as file contents. When the JSON object represented here has a proto equivalent, the proto name will be indicated in the &#x60;@type&#x60; property. Defaults to: `null`.
   - serviceData (%{optional(String.t) &#x3D;&gt; String.t}): Deprecated, use &#x60;metadata&#x60; field instead. Other service-specific data about the request, response, and other activities. Defaults to: `null`.
   - serviceName (String.t): The name of the API service performing the operation. For example, &#x60;\&quot;datastore.googleapis.com\&quot;&#x60;. Defaults to: `null`.
@@ -49,6 +50,7 @@ defmodule GoogleApi.ServiceControl.V1.Model.AuditLog do
           :requestMetadata => GoogleApi.ServiceControl.V1.Model.RequestMetadata.t(),
           :resourceLocation => GoogleApi.ServiceControl.V1.Model.ResourceLocation.t(),
           :resourceName => any(),
+          :resourceOriginalState => map(),
           :response => map(),
           :serviceData => map(),
           :serviceName => any(),
@@ -64,6 +66,7 @@ defmodule GoogleApi.ServiceControl.V1.Model.AuditLog do
   field(:requestMetadata, as: GoogleApi.ServiceControl.V1.Model.RequestMetadata)
   field(:resourceLocation, as: GoogleApi.ServiceControl.V1.Model.ResourceLocation)
   field(:resourceName)
+  field(:resourceOriginalState, type: :map)
   field(:response, type: :map)
   field(:serviceData, type: :map)
   field(:serviceName)

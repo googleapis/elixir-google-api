@@ -22,7 +22,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Clustering do
 
   ## Attributes
 
-  - fields ([String.t]): [Repeated] One or more fields on which data should be clustered. Only top-level, non-repeated, simple-type fields are supported. The order of the fields will determine how clusters will be generated, so it is important. Defaults to: `null`.
+  - fields ([String.t]): [Repeated] One or more fields on which data should be clustered. Only top-level, non-repeated, simple-type fields are supported. When you cluster a table using multiple columns, the order of columns you specify is important. The order of the specified columns determines the sort order of the data. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

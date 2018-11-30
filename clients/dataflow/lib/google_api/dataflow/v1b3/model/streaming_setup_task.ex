@@ -24,6 +24,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.StreamingSetupTask do
 
   - drain (boolean()): The user has requested drain. Defaults to: `null`.
   - receiveWorkPort (integer()): The TCP port on which the worker should listen for messages from other streaming computation workers. Defaults to: `null`.
+  - snapshotConfig (StreamingApplianceSnapshotConfig): Configures streaming appliance snapshot. Defaults to: `null`.
   - streamingComputationTopology (TopologyConfig): The global topology of the streaming Dataflow job. Defaults to: `null`.
   - workerHarnessPort (integer()): The TCP port used by the worker to communicate with the Dataflow worker harness. Defaults to: `null`.
   """
@@ -33,12 +34,14 @@ defmodule GoogleApi.Dataflow.V1b3.Model.StreamingSetupTask do
   @type t :: %__MODULE__{
           :drain => any(),
           :receiveWorkPort => any(),
+          :snapshotConfig => GoogleApi.Dataflow.V1b3.Model.StreamingApplianceSnapshotConfig.t(),
           :streamingComputationTopology => GoogleApi.Dataflow.V1b3.Model.TopologyConfig.t(),
           :workerHarnessPort => any()
         }
 
   field(:drain)
   field(:receiveWorkPort)
+  field(:snapshotConfig, as: GoogleApi.Dataflow.V1b3.Model.StreamingApplianceSnapshotConfig)
   field(:streamingComputationTopology, as: GoogleApi.Dataflow.V1b3.Model.TopologyConfig)
   field(:workerHarnessPort)
 end

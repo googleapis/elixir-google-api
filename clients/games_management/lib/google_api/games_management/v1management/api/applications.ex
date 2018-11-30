@@ -31,7 +31,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Applications do
 
   - connection (GoogleApi.GamesManagement.V1management.Connection): Connection to server
   - application_id (String.t): The application ID from the Google Play developer console.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -50,8 +50,13 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Applications do
   @spec games_management_applications_list_hidden(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.GamesManagement.V1management.Model.HiddenPlayerList.t()}
           | {:error, Tesla.Env.t()}
-  def games_management_applications_list_hidden(connection, application_id, opts \\ []) do
-    optional_params = %{
+  def games_management_applications_list_hidden(
+        connection,
+        application_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -69,10 +74,12 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Applications do
       |> Request.url("/applications/{applicationId}/players/hidden", %{
         "applicationId" => URI.encode_www_form(application_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.GamesManagement.V1management.Model.HiddenPlayerList{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.GamesManagement.V1management.Model.HiddenPlayerList{}]
+    )
   end
 end

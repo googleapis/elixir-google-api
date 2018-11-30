@@ -25,6 +25,7 @@ defmodule GoogleApi.Storage.V1.Model.BucketLifecycleCondition do
   - age (integer()): Age of an object (in days). This condition is satisfied when an object reaches the specified age. Defaults to: `null`.
   - createdBefore (Date.t): A date in RFC 3339 format with only the date part (for instance, \&quot;2013-01-15\&quot;). This condition is satisfied when an object is created before midnight of the specified date in UTC. Defaults to: `null`.
   - isLive (boolean()): Relevant only for versioned objects. If the value is true, this condition matches live objects; if the value is false, it matches archived objects. Defaults to: `null`.
+  - matchesPattern (String.t): A regular expression that satisfies the RE2 syntax. This condition is satisfied when the name of the object matches the RE2 pattern. Note: This feature is currently in the \&quot;Early Access\&quot; launch stage and is only available to a whitelisted set of users; that means that this feature may be changed in backward-incompatible ways and that it is not guaranteed to be released. Defaults to: `null`.
   - matchesStorageClass ([String.t]): Objects having any of the storage classes specified by this condition will be matched. Values include MULTI_REGIONAL, REGIONAL, NEARLINE, COLDLINE, STANDARD, and DURABLE_REDUCED_AVAILABILITY. Defaults to: `null`.
   - numNewerVersions (integer()): Relevant only for versioned objects. If the value is N, this condition is satisfied when there are at least N versions (including the live version) newer than this version of the object. Defaults to: `null`.
   """
@@ -35,6 +36,7 @@ defmodule GoogleApi.Storage.V1.Model.BucketLifecycleCondition do
           :age => any(),
           :createdBefore => Date.t(),
           :isLive => any(),
+          :matchesPattern => any(),
           :matchesStorageClass => list(any()),
           :numNewerVersions => any()
         }
@@ -42,6 +44,7 @@ defmodule GoogleApi.Storage.V1.Model.BucketLifecycleCondition do
   field(:age)
   field(:createdBefore, as: Date)
   field(:isLive)
+  field(:matchesPattern)
   field(:matchesStorageClass, type: :list)
   field(:numNewerVersions)
 end

@@ -23,8 +23,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Context do
   ## Attributes
 
   - parameters (%{optional(String.t) &#x3D;&gt; String.t}): Optional. The collection of parameters associated with this context. Refer to [this doc](https://dialogflow.com/docs/actions-and-parameters) for syntax. Defaults to: `null`.
-  - lifespanCount (integer()): Optional. The number of conversational query requests after which the context expires. If set to &#x60;0&#x60; (the default) the context expires immediately. Contexts expire automatically after 10 minutes even if there are no matching queries. Defaults to: `null`.
-  - name (String.t): Required. The unique identifier of the context. Format: &#x60;projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;/contexts/&lt;Context ID&gt;&#x60;. Defaults to: `null`.
+  - lifespanCount (integer()): Optional. The number of conversational query requests after which the context expires. If set to &#x60;0&#x60; (the default) the context expires immediately. Contexts expire automatically after 20 minutes even if there are no matching queries. Defaults to: `null`.
+  - name (String.t): Required. The unique identifier of the context. Format: &#x60;projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;/contexts/&lt;Context ID&gt;&#x60;.  The &#x60;Context ID&#x60; is always converted to lowercase, may only contain characters in [a-zA-Z0-9_-%] and may be at most 250 bytes long. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

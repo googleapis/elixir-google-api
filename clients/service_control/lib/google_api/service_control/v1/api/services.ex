@@ -31,17 +31,17 @@ defmodule GoogleApi.ServiceControl.V1.Api.Services do
 
   - connection (GoogleApi.ServiceControl.V1.Connection): Connection to server
   - service_name (String.t): Name of the service as specified in the service configuration. For example, &#x60;\&quot;pubsub.googleapis.com\&quot;&#x60;.  See google.api.Service for the definition of a service name.
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (AllocateQuotaRequest): 
 
@@ -53,18 +53,23 @@ defmodule GoogleApi.ServiceControl.V1.Api.Services do
   @spec servicecontrol_services_allocate_quota(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.ServiceControl.V1.Model.AllocateQuotaResponse.t()}
           | {:error, Tesla.Env.t()}
-  def servicecontrol_services_allocate_quota(connection, service_name, opts \\ []) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+  def servicecontrol_services_allocate_quota(
+        connection,
+        service_name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
       :access_token => :query,
-      :key => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
       :body => :body
     }
@@ -75,11 +80,13 @@ defmodule GoogleApi.ServiceControl.V1.Api.Services do
       |> Request.url("/v1/services/{serviceName}:allocateQuota", %{
         "serviceName" => URI.encode_www_form(service_name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.ServiceControl.V1.Model.AllocateQuotaResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.ServiceControl.V1.Model.AllocateQuotaResponse{}]
+    )
   end
 
   @doc """
@@ -89,17 +96,17 @@ defmodule GoogleApi.ServiceControl.V1.Api.Services do
 
   - connection (GoogleApi.ServiceControl.V1.Connection): Connection to server
   - service_name (String.t): The service name as specified in its service configuration. For example, &#x60;\&quot;pubsub.googleapis.com\&quot;&#x60;.  See [google.api.Service](https://cloud.google.com/service-management/reference/rpc/google.api#google.api.Service) for the definition of a service name.
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (CheckRequest): 
 
@@ -110,18 +117,18 @@ defmodule GoogleApi.ServiceControl.V1.Api.Services do
   """
   @spec servicecontrol_services_check(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.ServiceControl.V1.Model.CheckResponse.t()} | {:error, Tesla.Env.t()}
-  def servicecontrol_services_check(connection, service_name, opts \\ []) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+  def servicecontrol_services_check(connection, service_name, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
       :access_token => :query,
-      :key => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
       :body => :body
     }
@@ -132,127 +139,11 @@ defmodule GoogleApi.ServiceControl.V1.Api.Services do
       |> Request.url("/v1/services/{serviceName}:check", %{
         "serviceName" => URI.encode_www_form(service_name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.ServiceControl.V1.Model.CheckResponse{})
-  end
-
-  @doc """
-  Signals the quota controller that service ends the ongoing usage reconciliation.  This method requires the &#x60;servicemanagement.services.quota&#x60; permission on the specified service. For more information, see [Google Cloud IAM](https://cloud.google.com/iam).
-
-  ## Parameters
-
-  - connection (GoogleApi.ServiceControl.V1.Connection): Connection to server
-  - service_name (String.t): Name of the service as specified in the service configuration. For example, &#x60;\&quot;pubsub.googleapis.com\&quot;&#x60;.  See google.api.Service for the definition of a service name.
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :body (EndReconciliationRequest): 
-
-  ## Returns
-
-  {:ok, %GoogleApi.ServiceControl.V1.Model.EndReconciliationResponse{}} on success
-  {:error, info} on failure
-  """
-  @spec servicecontrol_services_end_reconciliation(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, GoogleApi.ServiceControl.V1.Model.EndReconciliationResponse.t()}
-          | {:error, Tesla.Env.t()}
-  def servicecontrol_services_end_reconciliation(connection, service_name, opts \\ []) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
-      :access_token => :query,
-      :key => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :fields => :query,
-      :uploadType => :query,
-      :body => :body
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:post)
-      |> Request.url("/v1/services/{serviceName}:endReconciliation", %{
-        "serviceName" => URI.encode_www_form(service_name)
-      })
-      |> Request.add_optional_params(optional_params, opts)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.ServiceControl.V1.Model.EndReconciliationResponse{})
-  end
-
-  @doc """
-  Releases previously allocated quota done through AllocateQuota method.  This method requires the &#x60;servicemanagement.services.quota&#x60; permission on the specified service. For more information, see [Cloud IAM](https://cloud.google.com/iam).   **NOTE:** The client **must** fail-open on server errors &#x60;INTERNAL&#x60;, &#x60;UNKNOWN&#x60;, &#x60;DEADLINE_EXCEEDED&#x60;, and &#x60;UNAVAILABLE&#x60;. To ensure system reliability, the server may inject these errors to prohibit any hard dependency on the quota functionality.
-
-  ## Parameters
-
-  - connection (GoogleApi.ServiceControl.V1.Connection): Connection to server
-  - service_name (String.t): Name of the service as specified in the service configuration. For example, &#x60;\&quot;pubsub.googleapis.com\&quot;&#x60;.  See google.api.Service for the definition of a service name.
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :body (ReleaseQuotaRequest): 
-
-  ## Returns
-
-  {:ok, %GoogleApi.ServiceControl.V1.Model.ReleaseQuotaResponse{}} on success
-  {:error, info} on failure
-  """
-  @spec servicecontrol_services_release_quota(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, GoogleApi.ServiceControl.V1.Model.ReleaseQuotaResponse.t()}
-          | {:error, Tesla.Env.t()}
-  def servicecontrol_services_release_quota(connection, service_name, opts \\ []) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
-      :access_token => :query,
-      :key => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :fields => :query,
-      :uploadType => :query,
-      :body => :body
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:post)
-      |> Request.url("/v1/services/{serviceName}:releaseQuota", %{
-        "serviceName" => URI.encode_www_form(service_name)
-      })
-      |> Request.add_optional_params(optional_params, opts)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.ServiceControl.V1.Model.ReleaseQuotaResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.ServiceControl.V1.Model.CheckResponse{}])
   end
 
   @doc """
@@ -262,17 +153,17 @@ defmodule GoogleApi.ServiceControl.V1.Api.Services do
 
   - connection (GoogleApi.ServiceControl.V1.Connection): Connection to server
   - service_name (String.t): The service name as specified in its service configuration. For example, &#x60;\&quot;pubsub.googleapis.com\&quot;&#x60;.  See [google.api.Service](https://cloud.google.com/service-management/reference/rpc/google.api#google.api.Service) for the definition of a service name.
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+  - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
     - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
     - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (ReportRequest): 
 
@@ -283,18 +174,18 @@ defmodule GoogleApi.ServiceControl.V1.Api.Services do
   """
   @spec servicecontrol_services_report(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.ServiceControl.V1.Model.ReportResponse.t()} | {:error, Tesla.Env.t()}
-  def servicecontrol_services_report(connection, service_name, opts \\ []) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
+  def servicecontrol_services_report(connection, service_name, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :"$.xgafv" => :query,
-      :alt => :query,
       :access_token => :query,
-      :key => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
+      :alt => :query,
+      :callback => :query,
       :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
       :uploadType => :query,
       :body => :body
     }
@@ -305,68 +196,10 @@ defmodule GoogleApi.ServiceControl.V1.Api.Services do
       |> Request.url("/v1/services/{serviceName}:report", %{
         "serviceName" => URI.encode_www_form(service_name)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.ServiceControl.V1.Model.ReportResponse{})
-  end
-
-  @doc """
-  Unlike rate quota, allocation quota does not get refilled periodically. So, it is possible that the quota usage as seen by the service differs from what the One Platform considers the usage is. This is expected to happen only rarely, but over time this can accumulate. Services can invoke StartReconciliation and EndReconciliation to correct this usage drift, as described below: 1. Service sends StartReconciliation with a timestamp in future for each    metric that needs to be reconciled. The timestamp being in future allows    to account for in-flight AllocateQuota and ReleaseQuota requests for the    same metric. 2. One Platform records this timestamp and starts tracking subsequent    AllocateQuota and ReleaseQuota requests until EndReconciliation is    called. 3. At or after the time specified in the StartReconciliation, service    sends EndReconciliation with the usage that needs to be reconciled to. 4. One Platform adjusts its own record of usage for that metric to the    value specified in EndReconciliation by taking in to account any    allocation or release between StartReconciliation and EndReconciliation.  Signals the quota controller that the service wants to perform a usage reconciliation as specified in the request.  This method requires the &#x60;servicemanagement.services.quota&#x60; permission on the specified service. For more information, see [Google Cloud IAM](https://cloud.google.com/iam).
-
-  ## Parameters
-
-  - connection (GoogleApi.ServiceControl.V1.Connection): Connection to server
-  - service_name (String.t): Name of the service as specified in the service configuration. For example, &#x60;\&quot;pubsub.googleapis.com\&quot;&#x60;.  See google.api.Service for the definition of a service name.
-  - opts (KeywordList): [optional] Optional parameters
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :access_token (String.t): OAuth access token.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :body (StartReconciliationRequest): 
-
-  ## Returns
-
-  {:ok, %GoogleApi.ServiceControl.V1.Model.StartReconciliationResponse{}} on success
-  {:error, info} on failure
-  """
-  @spec servicecontrol_services_start_reconciliation(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, GoogleApi.ServiceControl.V1.Model.StartReconciliationResponse.t()}
-          | {:error, Tesla.Env.t()}
-  def servicecontrol_services_start_reconciliation(connection, service_name, opts \\ []) do
-    optional_params = %{
-      :callback => :query,
-      :oauth_token => :query,
-      :"$.xgafv" => :query,
-      :alt => :query,
-      :access_token => :query,
-      :key => :query,
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :fields => :query,
-      :uploadType => :query,
-      :body => :body
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:post)
-      |> Request.url("/v1/services/{serviceName}:startReconciliation", %{
-        "serviceName" => URI.encode_www_form(service_name)
-      })
-      |> Request.add_optional_params(optional_params, opts)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.ServiceControl.V1.Model.StartReconciliationResponse{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.ServiceControl.V1.Model.ReportResponse{}])
   end
 end

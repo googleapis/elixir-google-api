@@ -30,7 +30,7 @@ defmodule GoogleApi.CivicInfo.V2.Api.Representatives do
   ## Parameters
 
   - connection (GoogleApi.CivicInfo.V2.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -52,8 +52,12 @@ defmodule GoogleApi.CivicInfo.V2.Api.Representatives do
   @spec civicinfo_representatives_representative_info_by_address(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.CivicInfo.V2.Model.RepresentativeInfoResponse.t()}
           | {:error, Tesla.Env.t()}
-  def civicinfo_representatives_representative_info_by_address(connection, opts \\ []) do
-    optional_params = %{
+  def civicinfo_representatives_representative_info_by_address(
+        connection,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -72,11 +76,13 @@ defmodule GoogleApi.CivicInfo.V2.Api.Representatives do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/representatives")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.CivicInfo.V2.Model.RepresentativeInfoResponse{})
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.CivicInfo.V2.Model.RepresentativeInfoResponse{}]
+    )
   end
 
   @doc """
@@ -86,7 +92,7 @@ defmodule GoogleApi.CivicInfo.V2.Api.Representatives do
 
   - connection (GoogleApi.CivicInfo.V2.Connection): Connection to server
   - ocd_id (String.t): The Open Civic Data division identifier of the division to look up.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -110,8 +116,13 @@ defmodule GoogleApi.CivicInfo.V2.Api.Representatives do
           keyword()
         ) ::
           {:ok, GoogleApi.CivicInfo.V2.Model.RepresentativeInfoData.t()} | {:error, Tesla.Env.t()}
-  def civicinfo_representatives_representative_info_by_division(connection, ocd_id, opts \\ []) do
-    optional_params = %{
+  def civicinfo_representatives_representative_info_by_division(
+        connection,
+        ocd_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -131,10 +142,10 @@ defmodule GoogleApi.CivicInfo.V2.Api.Representatives do
       |> Request.url("/representatives/{ocdId}", %{
         "ocdId" => URI.encode_www_form(ocd_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.CivicInfo.V2.Model.RepresentativeInfoData{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.CivicInfo.V2.Model.RepresentativeInfoData{}])
   end
 end

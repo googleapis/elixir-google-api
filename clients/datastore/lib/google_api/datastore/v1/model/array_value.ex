@@ -22,7 +22,7 @@ defmodule GoogleApi.Datastore.V1.Model.ArrayValue do
 
   ## Attributes
 
-  - values ([Value]): Values in the array. The order of this array may not be preserved if it contains a mix of indexed and unindexed values. Defaults to: `null`.
+  - values ([Value]): Values in the array. The order of values in an array is preserved as long as all values have identical settings for &#39;exclude_from_indexes&#39;. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

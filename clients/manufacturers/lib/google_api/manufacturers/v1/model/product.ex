@@ -22,18 +22,14 @@ defmodule GoogleApi.Manufacturers.V1.Model.Product do
 
   ## Attributes
 
-  - attributes (Attributes): Attributes of the product uploaded to the Manufacturer Center. Defaults to: `null`.
+  - attributes (Attributes): Attributes of the product uploaded to the Manufacturer Center. Manually edited attributes are taken into account. Defaults to: `null`.
   - contentLanguage (String.t): The content language of the product as a two-letter ISO 639-1 language code (for example, en). Defaults to: `null`.
   - destinationStatuses ([DestinationStatus]): The status of the destinations. Defaults to: `null`.
-  - finalAttributes (Attributes): Final attributes of the product. The final attributes are obtained by overriding the uploaded attributes with the manually provided and deleted attributes. Google systems only process, evaluate, review, and/or use final attributes.  This field is deprecated and will be removed end of July 2018. Please use attributes. Defaults to: `null`.
   - issues ([Issue]): A server-generated list of issues associated with the product. Defaults to: `null`.
-  - manuallyDeletedAttributes ([String.t]): Names of the attributes of the product deleted manually via the Manufacturer Center UI.  This field is deprecated and will be removed end of July 2018. Please use attributes. Defaults to: `null`.
-  - manuallyProvidedAttributes (Attributes): Attributes of the product provided manually via the Manufacturer Center UI.  This field is deprecated and will be removed end of July 2018. Please use attributes. Defaults to: `null`.
   - name (String.t): Name in the format &#x60;{target_country}:{content_language}:{product_id}&#x60;.  &#x60;target_country&#x60;   - The target country of the product as a CLDR territory                      code (for example, US).  &#x60;content_language&#x60; - The content language of the product as a two-letter                      ISO 639-1 language code (for example, en).  &#x60;product_id&#x60;     -   The ID of the product. For more information, see                      https://support.google.com/manufacturers/answer/6124116#id. Defaults to: `null`.
   - parent (String.t): Parent ID in the format &#x60;accounts/{account_id}&#x60;.  &#x60;account_id&#x60; - The ID of the Manufacturer Center account. Defaults to: `null`.
   - productId (String.t): The ID of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#id. Defaults to: `null`.
   - targetCountry (String.t): The target country of the product as a CLDR territory code (for example, US). Defaults to: `null`.
-  - uploadedAttributes (Attributes): Attributes of the product uploaded via the Manufacturer Center API or via feeds.  This field is deprecated and will be removed end of July 2018. Please use attributes. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -42,29 +38,21 @@ defmodule GoogleApi.Manufacturers.V1.Model.Product do
           :attributes => GoogleApi.Manufacturers.V1.Model.Attributes.t(),
           :contentLanguage => any(),
           :destinationStatuses => list(GoogleApi.Manufacturers.V1.Model.DestinationStatus.t()),
-          :finalAttributes => GoogleApi.Manufacturers.V1.Model.Attributes.t(),
           :issues => list(GoogleApi.Manufacturers.V1.Model.Issue.t()),
-          :manuallyDeletedAttributes => list(any()),
-          :manuallyProvidedAttributes => GoogleApi.Manufacturers.V1.Model.Attributes.t(),
           :name => any(),
           :parent => any(),
           :productId => any(),
-          :targetCountry => any(),
-          :uploadedAttributes => GoogleApi.Manufacturers.V1.Model.Attributes.t()
+          :targetCountry => any()
         }
 
   field(:attributes, as: GoogleApi.Manufacturers.V1.Model.Attributes)
   field(:contentLanguage)
   field(:destinationStatuses, as: GoogleApi.Manufacturers.V1.Model.DestinationStatus, type: :list)
-  field(:finalAttributes, as: GoogleApi.Manufacturers.V1.Model.Attributes)
   field(:issues, as: GoogleApi.Manufacturers.V1.Model.Issue, type: :list)
-  field(:manuallyDeletedAttributes, type: :list)
-  field(:manuallyProvidedAttributes, as: GoogleApi.Manufacturers.V1.Model.Attributes)
   field(:name)
   field(:parent)
   field(:productId)
   field(:targetCountry)
-  field(:uploadedAttributes, as: GoogleApi.Manufacturers.V1.Model.Attributes)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Manufacturers.V1.Model.Product do

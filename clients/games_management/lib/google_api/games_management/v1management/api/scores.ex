@@ -31,7 +31,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Scores do
 
   - connection (GoogleApi.GamesManagement.V1management.Connection): Connection to server
   - leaderboard_id (String.t): The ID of the leaderboard.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -48,8 +48,8 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Scores do
   @spec games_management_scores_reset(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.GamesManagement.V1management.Model.PlayerScoreResetResponse.t()}
           | {:error, Tesla.Env.t()}
-  def games_management_scores_reset(connection, leaderboard_id, opts \\ []) do
-    optional_params = %{
+  def games_management_scores_reset(connection, leaderboard_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -65,12 +65,12 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Scores do
       |> Request.url("/leaderboards/{leaderboardId}/scores/reset", %{
         "leaderboardId" => URI.encode_www_form(leaderboard_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct: %GoogleApi.GamesManagement.V1management.Model.PlayerScoreResetResponse{}
+      opts ++ [struct: %GoogleApi.GamesManagement.V1management.Model.PlayerScoreResetResponse{}]
     )
   end
 
@@ -80,7 +80,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Scores do
   ## Parameters
 
   - connection (GoogleApi.GamesManagement.V1management.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -97,8 +97,8 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Scores do
   @spec games_management_scores_reset_all(Tesla.Env.client(), keyword()) ::
           {:ok, GoogleApi.GamesManagement.V1management.Model.PlayerScoreResetAllResponse.t()}
           | {:error, Tesla.Env.t()}
-  def games_management_scores_reset_all(connection, opts \\ []) do
-    optional_params = %{
+  def games_management_scores_reset_all(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -112,12 +112,13 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Scores do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/scores/reset")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      struct: %GoogleApi.GamesManagement.V1management.Model.PlayerScoreResetAllResponse{}
+      opts ++
+        [struct: %GoogleApi.GamesManagement.V1management.Model.PlayerScoreResetAllResponse{}]
     )
   end
 
@@ -127,7 +128,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Scores do
   ## Parameters
 
   - connection (GoogleApi.GamesManagement.V1management.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -143,8 +144,12 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Scores do
   """
   @spec games_management_scores_reset_all_for_all_players(Tesla.Env.client(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
-  def games_management_scores_reset_all_for_all_players(connection, opts \\ []) do
-    optional_params = %{
+  def games_management_scores_reset_all_for_all_players(
+        connection,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -158,11 +163,11 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Scores do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/scores/resetAllForAllPlayers")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -172,7 +177,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Scores do
 
   - connection (GoogleApi.GamesManagement.V1management.Connection): Connection to server
   - leaderboard_id (String.t): The ID of the leaderboard.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -188,8 +193,13 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Scores do
   """
   @spec games_management_scores_reset_for_all_players(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
-  def games_management_scores_reset_for_all_players(connection, leaderboard_id, opts \\ []) do
-    optional_params = %{
+  def games_management_scores_reset_for_all_players(
+        connection,
+        leaderboard_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -205,11 +215,11 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Scores do
       |> Request.url("/leaderboards/{leaderboardId}/scores/resetForAllPlayers", %{
         "leaderboardId" => URI.encode_www_form(leaderboard_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -218,7 +228,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Scores do
   ## Parameters
 
   - connection (GoogleApi.GamesManagement.V1management.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -235,8 +245,12 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Scores do
   """
   @spec games_management_scores_reset_multiple_for_all_players(Tesla.Env.client(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
-  def games_management_scores_reset_multiple_for_all_players(connection, opts \\ []) do
-    optional_params = %{
+  def games_management_scores_reset_multiple_for_all_players(
+        connection,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -251,10 +265,10 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Scores do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/scores/resetMultipleForAllPlayers")
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 end

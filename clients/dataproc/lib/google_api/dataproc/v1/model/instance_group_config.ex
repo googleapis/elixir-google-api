@@ -24,7 +24,7 @@ defmodule GoogleApi.Dataproc.V1.Model.InstanceGroupConfig do
 
   - accelerators ([AcceleratorConfig]): Optional. The Compute Engine accelerator configuration for these instances.Beta Feature: This feature is still under development. It may be changed before final release. Defaults to: `null`.
   - diskConfig (DiskConfig): Optional. Disk option config settings. Defaults to: `null`.
-  - imageUri (String.t): Optional. The Compute Engine image resource used for cluster instances. Inferred from SoftwareConfig.image_version. Defaults to: `null`.
+  - imageUri (String.t): Optional. The Compute Engine image resource used for cluster instances. It can be specified or may be inferred from SoftwareConfig.image_version. Defaults to: `null`.
   - instanceNames ([String.t]): Output only. The list of instance names. Cloud Dataproc derives the names from cluster_name, num_instances, and the instance group. Defaults to: `null`.
   - isPreemptible (boolean()): Optional. Specifies that this instance group contains preemptible instances. Defaults to: `null`.
   - machineTypeUri (String.t): Optional. The Compute Engine machine type used for cluster instances.A full URL, partial URI, or short name are valid. Examples: https://www.googleapis.com/compute/v1/projects/[project_id]/zones/us-east1-a/machineTypes/n1-standard-2 projects/[project_id]/zones/us-east1-a/machineTypes/n1-standard-2 n1-standard-2Auto Zone Exception: If you are using the Cloud Dataproc Auto Zone Placement feature, you must use the short name of the machine type resource, for example, n1-standard-2. Defaults to: `null`.

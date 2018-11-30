@@ -32,7 +32,7 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
   - connection (GoogleApi.Calendar.V3.Connection): Connection to server
   - calendar_id (String.t): Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the \&quot;primary\&quot; keyword.
   - event_id (String.t): Event identifier.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -40,7 +40,8 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :sendNotifications (boolean()): Whether to send notifications about the deletion of the event. Optional. The default is False.
+    - :sendNotifications (boolean()): Deprecated. Please use sendUpdates instead.  Whether to send notifications about the deletion of the event. Note that some emails might still be sent even if you set the value to false. The default is false.
+    - :sendUpdates (String.t): Guests who should receive notifications about the deletion of the event.
 
   ## Returns
 
@@ -49,8 +50,8 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
   """
   @spec calendar_events_delete(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
-  def calendar_events_delete(connection, calendar_id, event_id, opts \\ []) do
-    optional_params = %{
+  def calendar_events_delete(connection, calendar_id, event_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -58,7 +59,8 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
       :prettyPrint => :query,
       :quotaUser => :query,
       :userIp => :query,
-      :sendNotifications => :query
+      :sendNotifications => :query,
+      :sendUpdates => :query
     }
 
     request =
@@ -68,11 +70,11 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
         "calendarId" => URI.encode_www_form(calendar_id),
         "eventId" => URI.encode_www_form(event_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(decode: false)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -83,7 +85,7 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
   - connection (GoogleApi.Calendar.V3.Connection): Connection to server
   - calendar_id (String.t): Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the \&quot;primary\&quot; keyword.
   - event_id (String.t): Event identifier.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -102,8 +104,8 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
   """
   @spec calendar_events_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Calendar.V3.Model.Event.t()} | {:error, Tesla.Env.t()}
-  def calendar_events_get(connection, calendar_id, event_id, opts \\ []) do
-    optional_params = %{
+  def calendar_events_get(connection, calendar_id, event_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -123,11 +125,11 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
         "calendarId" => URI.encode_www_form(calendar_id),
         "eventId" => URI.encode_www_form(event_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Calendar.V3.Model.Event{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Calendar.V3.Model.Event{}])
   end
 
   @doc """
@@ -137,7 +139,7 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
 
   - connection (GoogleApi.Calendar.V3.Connection): Connection to server
   - calendar_id (String.t): Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the \&quot;primary\&quot; keyword.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -156,8 +158,8 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
   """
   @spec calendar_events_import(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Calendar.V3.Model.Event.t()} | {:error, Tesla.Env.t()}
-  def calendar_events_import(connection, calendar_id, opts \\ []) do
-    optional_params = %{
+  def calendar_events_import(connection, calendar_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -176,11 +178,11 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
       |> Request.url("/calendars/{calendarId}/events/import", %{
         "calendarId" => URI.encode_www_form(calendar_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Calendar.V3.Model.Event{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Calendar.V3.Model.Event{}])
   end
 
   @doc """
@@ -190,7 +192,7 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
 
   - connection (GoogleApi.Calendar.V3.Connection): Connection to server
   - calendar_id (String.t): Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the \&quot;primary\&quot; keyword.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -200,7 +202,8 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :conferenceDataVersion (integer()): Version number of conference data supported by the API client. Version 0 assumes no conference data support and ignores conference data in the event&#39;s body. Version 1 enables support for copying of ConferenceData as well as for creating new conferences using the createRequest field of conferenceData. The default is 0.
     - :maxAttendees (integer()): The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.
-    - :sendNotifications (boolean()): Whether to send notifications about the creation of the new event. Optional. The default is False.
+    - :sendNotifications (boolean()): Deprecated. Please use sendUpdates instead.  Whether to send notifications about the creation of the new event. Note that some emails might still be sent even if you set the value to false. The default is false.
+    - :sendUpdates (String.t): Whether to send notifications about the creation of the new event. Note that some emails might still be sent. The default is false.
     - :supportsAttachments (boolean()): Whether API client performing operation supports event attachments. Optional. The default is False.
     - :body (Event): 
 
@@ -211,8 +214,8 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
   """
   @spec calendar_events_insert(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Calendar.V3.Model.Event.t()} | {:error, Tesla.Env.t()}
-  def calendar_events_insert(connection, calendar_id, opts \\ []) do
-    optional_params = %{
+  def calendar_events_insert(connection, calendar_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -223,6 +226,7 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
       :conferenceDataVersion => :query,
       :maxAttendees => :query,
       :sendNotifications => :query,
+      :sendUpdates => :query,
       :supportsAttachments => :query,
       :body => :body
     }
@@ -233,11 +237,11 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
       |> Request.url("/calendars/{calendarId}/events", %{
         "calendarId" => URI.encode_www_form(calendar_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Calendar.V3.Model.Event{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Calendar.V3.Model.Event{}])
   end
 
   @doc """
@@ -248,7 +252,7 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
   - connection (GoogleApi.Calendar.V3.Connection): Connection to server
   - calendar_id (String.t): Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the \&quot;primary\&quot; keyword.
   - event_id (String.t): Recurring event identifier.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -273,8 +277,14 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
   """
   @spec calendar_events_instances(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Calendar.V3.Model.Events.t()} | {:error, Tesla.Env.t()}
-  def calendar_events_instances(connection, calendar_id, event_id, opts \\ []) do
-    optional_params = %{
+  def calendar_events_instances(
+        connection,
+        calendar_id,
+        event_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -300,11 +310,11 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
         "calendarId" => URI.encode_www_form(calendar_id),
         "eventId" => URI.encode_www_form(event_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Calendar.V3.Model.Events{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Calendar.V3.Model.Events{}])
   end
 
   @doc """
@@ -314,7 +324,7 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
 
   - connection (GoogleApi.Calendar.V3.Connection): Connection to server
   - calendar_id (String.t): Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the \&quot;primary\&quot; keyword.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -347,8 +357,8 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
   """
   @spec calendar_events_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Calendar.V3.Model.Events.t()} | {:error, Tesla.Env.t()}
-  def calendar_events_list(connection, calendar_id, opts \\ []) do
-    optional_params = %{
+  def calendar_events_list(connection, calendar_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -381,11 +391,11 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
       |> Request.url("/calendars/{calendarId}/events", %{
         "calendarId" => URI.encode_www_form(calendar_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Calendar.V3.Model.Events{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Calendar.V3.Model.Events{}])
   end
 
   @doc """
@@ -397,7 +407,7 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
   - calendar_id (String.t): Calendar identifier of the source calendar where the event currently is on.
   - event_id (String.t): Event identifier.
   - destination (String.t): Calendar identifier of the target calendar where the event is to be moved to.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -405,7 +415,8 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :sendNotifications (boolean()): Whether to send notifications about the change of the event&#39;s organizer. Optional. The default is False.
+    - :sendNotifications (boolean()): Deprecated. Please use sendUpdates instead.  Whether to send notifications about the change of the event&#39;s organizer. Note that some emails might still be sent even if you set the value to false. The default is false.
+    - :sendUpdates (String.t): Guests who should receive notifications about the change of the event&#39;s organizer.
 
   ## Returns
 
@@ -414,8 +425,15 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
   """
   @spec calendar_events_move(Tesla.Env.client(), String.t(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Calendar.V3.Model.Event.t()} | {:error, Tesla.Env.t()}
-  def calendar_events_move(connection, calendar_id, event_id, destination, opts \\ []) do
-    optional_params = %{
+  def calendar_events_move(
+        connection,
+        calendar_id,
+        event_id,
+        destination,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -423,7 +441,8 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
       :prettyPrint => :query,
       :quotaUser => :query,
       :userIp => :query,
-      :sendNotifications => :query
+      :sendNotifications => :query,
+      :sendUpdates => :query
     }
 
     request =
@@ -434,11 +453,11 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
         "eventId" => URI.encode_www_form(event_id)
       })
       |> Request.add_param(:query, :destination, destination)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Calendar.V3.Model.Event{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Calendar.V3.Model.Event{}])
   end
 
   @doc """
@@ -449,7 +468,7 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
   - connection (GoogleApi.Calendar.V3.Connection): Connection to server
   - calendar_id (String.t): Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the \&quot;primary\&quot; keyword.
   - event_id (String.t): Event identifier.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -460,7 +479,8 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
     - :alwaysIncludeEmail (boolean()): Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.
     - :conferenceDataVersion (integer()): Version number of conference data supported by the API client. Version 0 assumes no conference data support and ignores conference data in the event&#39;s body. Version 1 enables support for copying of ConferenceData as well as for creating new conferences using the createRequest field of conferenceData. The default is 0.
     - :maxAttendees (integer()): The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.
-    - :sendNotifications (boolean()): Whether to send notifications about the event update (e.g. attendee&#39;s responses, title changes, etc.). Optional. The default is False.
+    - :sendNotifications (boolean()): Deprecated. Please use sendUpdates instead.  Whether to send notifications about the event update (for example, description changes, etc.). Note that some emails might still be sent even if you set the value to false. The default is false.
+    - :sendUpdates (String.t): Guests who should receive notifications about the event update (for example, title changes, etc.).
     - :supportsAttachments (boolean()): Whether API client performing operation supports event attachments. Optional. The default is False.
     - :body (Event): 
 
@@ -471,8 +491,8 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
   """
   @spec calendar_events_patch(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Calendar.V3.Model.Event.t()} | {:error, Tesla.Env.t()}
-  def calendar_events_patch(connection, calendar_id, event_id, opts \\ []) do
-    optional_params = %{
+  def calendar_events_patch(connection, calendar_id, event_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -484,6 +504,7 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
       :conferenceDataVersion => :query,
       :maxAttendees => :query,
       :sendNotifications => :query,
+      :sendUpdates => :query,
       :supportsAttachments => :query,
       :body => :body
     }
@@ -495,11 +516,11 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
         "calendarId" => URI.encode_www_form(calendar_id),
         "eventId" => URI.encode_www_form(event_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Calendar.V3.Model.Event{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Calendar.V3.Model.Event{}])
   end
 
   @doc """
@@ -510,7 +531,7 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
   - connection (GoogleApi.Calendar.V3.Connection): Connection to server
   - calendar_id (String.t): Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the \&quot;primary\&quot; keyword.
   - text (String.t): The text describing the event to be created.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -518,7 +539,8 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :sendNotifications (boolean()): Whether to send notifications about the creation of the event. Optional. The default is False.
+    - :sendNotifications (boolean()): Deprecated. Please use sendUpdates instead.  Whether to send notifications about the creation of the event. Note that some emails might still be sent even if you set the value to false. The default is false.
+    - :sendUpdates (String.t): Guests who should receive notifications about the creation of the new event.
 
   ## Returns
 
@@ -527,8 +549,8 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
   """
   @spec calendar_events_quick_add(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Calendar.V3.Model.Event.t()} | {:error, Tesla.Env.t()}
-  def calendar_events_quick_add(connection, calendar_id, text, opts \\ []) do
-    optional_params = %{
+  def calendar_events_quick_add(connection, calendar_id, text, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -536,7 +558,8 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
       :prettyPrint => :query,
       :quotaUser => :query,
       :userIp => :query,
-      :sendNotifications => :query
+      :sendNotifications => :query,
+      :sendUpdates => :query
     }
 
     request =
@@ -546,11 +569,11 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
         "calendarId" => URI.encode_www_form(calendar_id)
       })
       |> Request.add_param(:query, :text, text)
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Calendar.V3.Model.Event{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Calendar.V3.Model.Event{}])
   end
 
   @doc """
@@ -561,7 +584,7 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
   - connection (GoogleApi.Calendar.V3.Connection): Connection to server
   - calendar_id (String.t): Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the \&quot;primary\&quot; keyword.
   - event_id (String.t): Event identifier.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -572,7 +595,8 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
     - :alwaysIncludeEmail (boolean()): Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.
     - :conferenceDataVersion (integer()): Version number of conference data supported by the API client. Version 0 assumes no conference data support and ignores conference data in the event&#39;s body. Version 1 enables support for copying of ConferenceData as well as for creating new conferences using the createRequest field of conferenceData. The default is 0.
     - :maxAttendees (integer()): The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.
-    - :sendNotifications (boolean()): Whether to send notifications about the event update (e.g. attendee&#39;s responses, title changes, etc.). Optional. The default is False.
+    - :sendNotifications (boolean()): Deprecated. Please use sendUpdates instead.  Whether to send notifications about the event update (for example, description changes, etc.). Note that some emails might still be sent even if you set the value to false. The default is false.
+    - :sendUpdates (String.t): Guests who should receive notifications about the event update (for example, title changes, etc.).
     - :supportsAttachments (boolean()): Whether API client performing operation supports event attachments. Optional. The default is False.
     - :body (Event): 
 
@@ -583,8 +607,8 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
   """
   @spec calendar_events_update(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, GoogleApi.Calendar.V3.Model.Event.t()} | {:error, Tesla.Env.t()}
-  def calendar_events_update(connection, calendar_id, event_id, opts \\ []) do
-    optional_params = %{
+  def calendar_events_update(connection, calendar_id, event_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -596,6 +620,7 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
       :conferenceDataVersion => :query,
       :maxAttendees => :query,
       :sendNotifications => :query,
+      :sendUpdates => :query,
       :supportsAttachments => :query,
       :body => :body
     }
@@ -607,11 +632,11 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
         "calendarId" => URI.encode_www_form(calendar_id),
         "eventId" => URI.encode_www_form(event_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Calendar.V3.Model.Event{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Calendar.V3.Model.Event{}])
   end
 
   @doc """
@@ -621,7 +646,7 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
 
   - connection (GoogleApi.Calendar.V3.Connection): Connection to server
   - calendar_id (String.t): Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the \&quot;primary\&quot; keyword.
-  - opts (KeywordList): [optional] Optional parameters
+  - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
     - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
@@ -655,8 +680,8 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
   """
   @spec calendar_events_watch(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.Calendar.V3.Model.Channel.t()} | {:error, Tesla.Env.t()}
-  def calendar_events_watch(connection, calendar_id, opts \\ []) do
-    optional_params = %{
+  def calendar_events_watch(connection, calendar_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
       :alt => :query,
       :fields => :query,
       :key => :query,
@@ -690,10 +715,10 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
       |> Request.url("/calendars/{calendarId}/events/watch", %{
         "calendarId" => URI.encode_www_form(calendar_id)
       })
-      |> Request.add_optional_params(optional_params, opts)
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %GoogleApi.Calendar.V3.Model.Channel{})
+    |> Response.decode(opts ++ [struct: %GoogleApi.Calendar.V3.Model.Channel{}])
   end
 end
