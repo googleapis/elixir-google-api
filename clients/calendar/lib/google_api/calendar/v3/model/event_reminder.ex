@@ -22,7 +22,7 @@ defmodule GoogleApi.Calendar.V3.Model.EventReminder do
 
   ## Attributes
 
-  - method (String.t): The method used by this reminder. Possible values are:   - \&quot;email\&quot; - Reminders are sent via email.  - \&quot;sms\&quot; - Reminders are sent via SMS. These are only available for G Suite customers. Requests to set SMS reminders for other account types are ignored.  - \&quot;popup\&quot; - Reminders are sent via a UI popup.   Required when adding a reminder. Defaults to: `null`.
+  - method (String.t): The method used by this reminder. Possible values are:   - \&quot;email\&quot; - Reminders are sent via email.  - \&quot;sms\&quot; - Deprecated. Once this feature is shutdown, the API will no longer return reminders using this method. Any newly added SMS reminders will be ignored. See  Google Calendar SMS notifications to be removed for more information. Reminders are sent via SMS. These are only available for G Suite customers. Requests to set SMS reminders for other account types are ignored.  - \&quot;popup\&quot; - Reminders are sent via a UI popup.   Required when adding a reminder. Defaults to: `null`.
   - minutes (integer()): Number of minutes before the start of the event when the reminder should trigger. Valid values are between 0 and 40320 (4 weeks in minutes). Required when adding a reminder. Defaults to: `null`.
   """
 
