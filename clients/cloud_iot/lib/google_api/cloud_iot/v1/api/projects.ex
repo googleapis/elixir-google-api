@@ -25,6 +25,86 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
+  Associates the device with the gateway.
+
+  ## Parameters
+
+  - connection (GoogleApi.CloudIot.V1.Connection): Connection to server
+  - projects_id (String.t): Part of &#x60;parent&#x60;. The name of the registry. For example, &#x60;projects/example-project/locations/us-central1/registries/my-registry&#x60;.
+  - locations_id (String.t): Part of &#x60;parent&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - registries_id (String.t): Part of &#x60;parent&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :body (BindDeviceToGatewayRequest): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.CloudIot.V1.Model.BindDeviceToGatewayResponse{}} on success
+  {:error, info} on failure
+  """
+  @spec cloudiot_projects_locations_registries_bind_device_to_gateway(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.CloudIot.V1.Model.BindDeviceToGatewayResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def cloudiot_projects_locations_registries_bind_device_to_gateway(
+        connection,
+        projects_id,
+        locations_id,
+        registries_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/registries/{registriesId}:bindDeviceToGateway",
+        %{
+          "projectsId" => URI.encode_www_form(projects_id),
+          "locationsId" => URI.encode_www_form(locations_id),
+          "registriesId" => URI.encode_www_form(registries_id)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.CloudIot.V1.Model.BindDeviceToGatewayResponse{}]
+    )
+  end
+
+  @doc """
   Creates a device registry that contains devices.
 
   ## Parameters
@@ -509,6 +589,9 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
     - :deviceIds ([String.t]): A list of device string IDs. For example, &#x60;[&#39;device0&#39;, &#39;device12&#39;]&#x60;. If empty, this field is ignored. Maximum IDs: 10,000
     - :deviceNumIds ([String.t]): A list of device numeric IDs. If empty, this field is ignored. Maximum IDs: 10,000.
     - :fieldMask (String.t): The fields of the &#x60;Device&#x60; resource to be returned in the response. The fields &#x60;id&#x60; and &#x60;num_id&#x60; are always returned, along with any other fields specified.
+    - :gatewayListOptions.associationsDeviceId (String.t): If set, returns only the gateways with which the specified device is associated. The device ID can be numeric (&#x60;num_id&#x60;) or the user-defined string (&#x60;id&#x60;). For example, if &#x60;456&#x60; is specified, returns only the gateways to which the device with &#x60;num_id&#x60; 456 is bound.
+    - :gatewayListOptions.associationsGatewayId (String.t): If set, only devices associated with the specified gateway are returned. The gateway ID can be numeric (&#x60;num_id&#x60;) or the user-defined string (&#x60;id&#x60;). For example, if &#x60;123&#x60; is specified, only devices bound to the gateway with &#x60;num_id&#x60; 123 are returned.
+    - :gatewayListOptions.gatewayType (String.t): If &#x60;GATEWAY&#x60; is specified, only gateways are returned. If &#x60;NON_GATEWAY&#x60; is specified, only non-gateway devices are returned. If &#x60;GATEWAY_TYPE_UNSPECIFIED&#x60; is specified, all devices are returned.
     - :pageSize (integer()): The maximum number of devices to return in the response. If this value is zero, the service will select a default size. A call may return fewer objects than requested. A non-empty &#x60;next_page_token&#x60; in the response indicates that more data is available.
     - :pageToken (String.t): The value returned by the last &#x60;ListDevicesResponse&#x60;; indicates that this is a continuation of a prior &#x60;ListDevices&#x60; call and the system should return the next page of data.
 
@@ -547,6 +630,9 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
       :deviceIds => :query,
       :deviceNumIds => :query,
       :fieldMask => :query,
+      :"gatewayListOptions.associationsDeviceId" => :query,
+      :"gatewayListOptions.associationsGatewayId" => :query,
+      :"gatewayListOptions.gatewayType" => :query,
       :pageSize => :query,
       :pageToken => :query
     }
@@ -1048,6 +1134,90 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   end
 
   @doc """
+  Associates the device with the gateway.
+
+  ## Parameters
+
+  - connection (GoogleApi.CloudIot.V1.Connection): Connection to server
+  - projects_id (String.t): Part of &#x60;parent&#x60;. The name of the registry. For example, &#x60;projects/example-project/locations/us-central1/registries/my-registry&#x60;.
+  - locations_id (String.t): Part of &#x60;parent&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - registries_id (String.t): Part of &#x60;parent&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - groups_id (String.t): Part of &#x60;parent&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :body (BindDeviceToGatewayRequest): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.CloudIot.V1.Model.BindDeviceToGatewayResponse{}} on success
+  {:error, info} on failure
+  """
+  @spec cloudiot_projects_locations_registries_groups_bind_device_to_gateway(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.CloudIot.V1.Model.BindDeviceToGatewayResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def cloudiot_projects_locations_registries_groups_bind_device_to_gateway(
+        connection,
+        projects_id,
+        locations_id,
+        registries_id,
+        groups_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/registries/{registriesId}/groups/{groupsId}:bindDeviceToGateway",
+        %{
+          "projectsId" => URI.encode_www_form(projects_id),
+          "locationsId" => URI.encode_www_form(locations_id),
+          "registriesId" => URI.encode_www_form(registries_id),
+          "groupsId" => URI.encode_www_form(groups_id)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.CloudIot.V1.Model.BindDeviceToGatewayResponse{}]
+    )
+  end
+
+  @doc """
   Lists the last few versions of the device configuration in descending order (i.e.: newest first).
 
   ## Parameters
@@ -1244,6 +1414,9 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
     - :deviceIds ([String.t]): A list of device string IDs. For example, &#x60;[&#39;device0&#39;, &#39;device12&#39;]&#x60;. If empty, this field is ignored. Maximum IDs: 10,000
     - :deviceNumIds ([String.t]): A list of device numeric IDs. If empty, this field is ignored. Maximum IDs: 10,000.
     - :fieldMask (String.t): The fields of the &#x60;Device&#x60; resource to be returned in the response. The fields &#x60;id&#x60; and &#x60;num_id&#x60; are always returned, along with any other fields specified.
+    - :gatewayListOptions.associationsDeviceId (String.t): If set, returns only the gateways with which the specified device is associated. The device ID can be numeric (&#x60;num_id&#x60;) or the user-defined string (&#x60;id&#x60;). For example, if &#x60;456&#x60; is specified, returns only the gateways to which the device with &#x60;num_id&#x60; 456 is bound.
+    - :gatewayListOptions.associationsGatewayId (String.t): If set, only devices associated with the specified gateway are returned. The gateway ID can be numeric (&#x60;num_id&#x60;) or the user-defined string (&#x60;id&#x60;). For example, if &#x60;123&#x60; is specified, only devices bound to the gateway with &#x60;num_id&#x60; 123 are returned.
+    - :gatewayListOptions.gatewayType (String.t): If &#x60;GATEWAY&#x60; is specified, only gateways are returned. If &#x60;NON_GATEWAY&#x60; is specified, only non-gateway devices are returned. If &#x60;GATEWAY_TYPE_UNSPECIFIED&#x60; is specified, all devices are returned.
     - :pageSize (integer()): The maximum number of devices to return in the response. If this value is zero, the service will select a default size. A call may return fewer objects than requested. A non-empty &#x60;next_page_token&#x60; in the response indicates that more data is available.
     - :pageToken (String.t): The value returned by the last &#x60;ListDevicesResponse&#x60;; indicates that this is a continuation of a prior &#x60;ListDevices&#x60; call and the system should return the next page of data.
 
@@ -1284,6 +1457,9 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
       :deviceIds => :query,
       :deviceNumIds => :query,
       :fieldMask => :query,
+      :"gatewayListOptions.associationsDeviceId" => :query,
+      :"gatewayListOptions.associationsGatewayId" => :query,
+      :"gatewayListOptions.gatewayType" => :query,
       :pageSize => :query,
       :pageToken => :query
     }
@@ -1896,6 +2072,90 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   end
 
   @doc """
+  Deletes the association between the device and the gateway.
+
+  ## Parameters
+
+  - connection (GoogleApi.CloudIot.V1.Connection): Connection to server
+  - projects_id (String.t): Part of &#x60;parent&#x60;. The name of the registry. For example, &#x60;projects/example-project/locations/us-central1/registries/my-registry&#x60;.
+  - locations_id (String.t): Part of &#x60;parent&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - registries_id (String.t): Part of &#x60;parent&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - groups_id (String.t): Part of &#x60;parent&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :body (UnbindDeviceFromGatewayRequest): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.CloudIot.V1.Model.UnbindDeviceFromGatewayResponse{}} on success
+  {:error, info} on failure
+  """
+  @spec cloudiot_projects_locations_registries_groups_unbind_device_from_gateway(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.CloudIot.V1.Model.UnbindDeviceFromGatewayResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def cloudiot_projects_locations_registries_groups_unbind_device_from_gateway(
+        connection,
+        projects_id,
+        locations_id,
+        registries_id,
+        groups_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/registries/{registriesId}/groups/{groupsId}:unbindDeviceFromGateway",
+        %{
+          "projectsId" => URI.encode_www_form(projects_id),
+          "locationsId" => URI.encode_www_form(locations_id),
+          "registriesId" => URI.encode_www_form(registries_id),
+          "groupsId" => URI.encode_www_form(groups_id)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.CloudIot.V1.Model.UnbindDeviceFromGatewayResponse{}]
+    )
+  end
+
+  @doc """
   Lists device registries.
 
   ## Parameters
@@ -2201,6 +2461,86 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
     |> Connection.execute(request)
     |> Response.decode(
       opts ++ [struct: %GoogleApi.CloudIot.V1.Model.TestIamPermissionsResponse{}]
+    )
+  end
+
+  @doc """
+  Deletes the association between the device and the gateway.
+
+  ## Parameters
+
+  - connection (GoogleApi.CloudIot.V1.Connection): Connection to server
+  - projects_id (String.t): Part of &#x60;parent&#x60;. The name of the registry. For example, &#x60;projects/example-project/locations/us-central1/registries/my-registry&#x60;.
+  - locations_id (String.t): Part of &#x60;parent&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - registries_id (String.t): Part of &#x60;parent&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :body (UnbindDeviceFromGatewayRequest): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.CloudIot.V1.Model.UnbindDeviceFromGatewayResponse{}} on success
+  {:error, info} on failure
+  """
+  @spec cloudiot_projects_locations_registries_unbind_device_from_gateway(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.CloudIot.V1.Model.UnbindDeviceFromGatewayResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def cloudiot_projects_locations_registries_unbind_device_from_gateway(
+        connection,
+        projects_id,
+        locations_id,
+        registries_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/registries/{registriesId}:unbindDeviceFromGateway",
+        %{
+          "projectsId" => URI.encode_www_form(projects_id),
+          "locationsId" => URI.encode_www_form(locations_id),
+          "registriesId" => URI.encode_www_form(registries_id)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.CloudIot.V1.Model.UnbindDeviceFromGatewayResponse{}]
     )
   end
 end
