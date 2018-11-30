@@ -18,36 +18,8 @@ defmodule GoogleApis do
   API specifications and generating clients from the specifications.
   """
 
-  @discovery_url "https://www.googleapis.com/discovery/v1/apis"
-
   require Logger
   alias GoogleApis.ApiConfig
-
-  @doc """
-  Download the list of preferred APIs from the A
-  """
-  def discover() do
-    discover("apis-candidate.json")
-  end
-  def discover(file) do
-    with %Tesla.Env{status: 200, body: body} <- Tesla.get(@discovery_url),
-         {:ok, %{"items" => apis}}           <- Poison.decode(body)
-    do
-      json =
-        apis
-        |> Enum.filter(&GoogleApis.DirectoryItem.preferred?/1)
-        |> Enum.map(&Map.take(&1, ["name", "discoveryRestUrl", "version"]))
-        |> Poison.encode!(pretty: true)
-
-      file = Path.expand("./config/#{file}")
-      File.write(file, json)
-    else
-      %Tesla.Env{status: status} ->
-        {:error, "Error received status: #{status} from discovery endpoint"}
-      err ->
-        err
-    end
-  end
 
   def fetch(api_config) do
     file = ApiConfig.google_spec_file(api_config)

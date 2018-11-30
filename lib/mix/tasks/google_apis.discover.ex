@@ -18,9 +18,17 @@ defmodule Mix.Tasks.GoogleApis.Discover do
   @shortdoc "Download GoogleApi list"
 
   def run([output]) do
-    GoogleApis.discover(output)
+    GoogleApis.Discovery.discover()
+    |> write_file(output)
   end
   def run(_) do
-    GoogleApis.discover()
+    run(["apis-candidate.json"])
+  end
+
+  defp write_file(apis, output) do
+    file = Path.expand("./config/#{output}")
+    json = Poison.encode!(apis, pretty: true)
+
+    File.write(file, json)
   end
 end

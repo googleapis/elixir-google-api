@@ -13,6 +13,10 @@
 # limitations under the License.
 
 defmodule GoogleApis.Discovery do
+  alias GoogleApis.ApiConfig
+  alias GoogleApi.Discovery.V1.Connection
+  alias GoogleApi.Discovery.V1.Api.Apis
+
   require Logger
 
   def fetch(""), do: {:error, "No URL"}
@@ -28,6 +32,22 @@ defmodule GoogleApis.Discovery do
     end
   end
 
+  @doc """
+  Download the list of preferred APIs from the Discovery service
+  """
+  def discover() do
+    conn = Connection.new
+    {:ok, %{items: items}} = Apis.discovery_apis_list(conn, preferred: true)
+
+    Enum.map(items, fn item ->
+      %ApiConfig{
+        name: item.name,
+        version: item.version,
+        url: item.discoveryRestUrl
+      }
+    end)
+  end
+
   defp try_formats(_base, _query, []), do: {:error, "All formats failed"}
   defp try_formats(base, query, [format | rest]) do
     case fetch_direct(base <> format <> query) do
@@ -40,12 +60,12 @@ defmodule GoogleApis.Discovery do
 
   defp fetch_direct(url) do
     Logger.info "FETCHING: #{url}"
-    with %Tesla.Env{status: 200, body: body} <- Tesla.get(url)
+    with {:ok, %Tesla.Env{status: 200, body: body}} <- Tesla.get(url)
     do
       Logger.info "FOUND: #{url}"
       {:ok, body}
     else
-      %Tesla.Env{status: status} ->
+      {:ok, %Tesla.Env{status: status}} ->
         {:error, "Error received status: #{status} from discovery endpoint"}
       err ->
         err
