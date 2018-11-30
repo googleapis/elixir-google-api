@@ -17,7 +17,7 @@ set -eo pipefail
 
 pushd $(dirname "$0")/../
 
-export HEX_API_KEY=$(cat ${KOKORO_KEYSTORE_DIR}/70247_elixir_hex_pw)
+export HEX_API_KEY=$(cat ${KOKORO_KEYSTORE_DIR}/73713_elixir_hex_apikey)
 
 mix deps.get
 mix google_apis.publish

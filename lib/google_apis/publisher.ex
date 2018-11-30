@@ -47,8 +47,8 @@ defmodule GoogleApis.Publisher do
 
   def version_exists?(app, version) do
     case Tesla.get("https://hex.pm/packages/#{app}/#{version}") do
-      %{status: 200}  -> true
-      _               -> false
+      {:ok, %{status: 200}} -> true
+      _                     -> false
     end
   end
 

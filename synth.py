@@ -28,6 +28,7 @@ repository_url = "https://github.com/googleapis/elixir-google-api.git"
 
 log.debug(f"Cloning {repository_url}.")
 repository = git.clone(repository_url, depth=1)
+shell.run(["git", "clean", "-fdx"], cwd=repository)
 
 image = "gcr.io/cloud-devrel-public-resources/elixir16"
 generate_command = "scripts/generate_client.sh"
