@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudFunctions.V1.Model.OperationMetadataV1Beta2 do
   - type (String.t): Type of operation. Defaults to: `null`.
     - Enum - one of [OPERATION_UNSPECIFIED, CREATE_FUNCTION, UPDATE_FUNCTION, DELETE_FUNCTION]
   - updateTime (DateTime.t): The last update timestamp of the operation. Defaults to: `null`.
-  - versionId (String.t): Version id of the function created or updated by an API call. This field is only pupulated for Create and Update operations. Defaults to: `null`.
+  - versionId (String.t): Version id of the function created or updated by an API call. This field is only populated for Create and Update operations. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
