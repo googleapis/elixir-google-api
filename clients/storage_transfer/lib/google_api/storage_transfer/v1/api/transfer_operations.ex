@@ -145,12 +145,12 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferOperations do
   end
 
   @doc """
-  Lists operations that match the specified filter in the request. If the server doesn&#39;t support this method, it returns &#x60;UNIMPLEMENTED&#x60;.  NOTE: the &#x60;name&#x60; binding allows API services to override the binding to use different resource name schemes, such as &#x60;users/*/operations&#x60;. To override the binding, API services can add a binding such as &#x60;\&quot;/v1/{name&#x3D;users/*}/operations\&quot;&#x60; to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.
+  Gets the latest state of a long-running operation.  Clients can use this method to poll the operation result at intervals as recommended by the API service.
 
   ## Parameters
 
   - connection (GoogleApi.StorageTransfer.V1.Connection): Connection to server
-  - name (String.t): The value &#x60;transferOperations&#x60;.
+  - name (String.t): The name of the operation resource.
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
@@ -169,18 +169,12 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferOperations do
 
   ## Returns
 
-  {:ok, %GoogleApi.StorageTransfer.V1.Model.ListOperationsResponse{}} on success
+  {:ok, %GoogleApi.StorageTransfer.V1.Model.Operation{}} on success
   {:error, info} on failure
   """
-  @spec storagetransfer_transfer_operations_list(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, GoogleApi.StorageTransfer.V1.Model.ListOperationsResponse.t()}
-          | {:error, Tesla.Env.t()}
-  def storagetransfer_transfer_operations_list(
-        connection,
-        name,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  @spec storagetransfer_transfer_operations_get(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, GoogleApi.StorageTransfer.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+  def storagetransfer_transfer_operations_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -208,9 +202,7 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferOperations do
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(
-      opts ++ [struct: %GoogleApi.StorageTransfer.V1.Model.ListOperationsResponse{}]
-    )
+    |> Response.decode(opts ++ [struct: %GoogleApi.StorageTransfer.V1.Model.Operation{}])
   end
 
   @doc """
