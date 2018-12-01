@@ -35,6 +35,7 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
   - oauthScopes ([String.t]): The set of Google API scopes to be made available on all of the node VMs under the \&quot;default\&quot; service account.  The following scopes are recommended, but not required, and by default are not included:  * &#x60;https://www.googleapis.com/auth/compute&#x60; is required for mounting persistent storage on your nodes. * &#x60;https://www.googleapis.com/auth/devstorage.read_only&#x60; is required for communicating with **gcr.io** (the [Google Container Registry](/container-registry/)).  If unspecified, no scopes are added, unless Cloud Logging or Cloud Monitoring are enabled, in which case their required scopes will be added. Defaults to: `null`.
   - preemptible (boolean()): Whether the nodes are created as preemptible VM instances. See: https://cloud.google.com/compute/docs/instances/preemptible for more information about preemptible VM instances. Defaults to: `null`.
   - serviceAccount (String.t): The Google Cloud Platform Service Account to be used by the node VMs. If no Service Account is specified, the \&quot;default\&quot; service account is used. Defaults to: `null`.
+  - taints ([NodeTaint]): List of kubernetes taints to be applied to each node.  For more information, including usage and the valid values, see: https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/ Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -52,7 +53,8 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
           :minCpuPlatform => any(),
           :oauthScopes => list(any()),
           :preemptible => any(),
-          :serviceAccount => any()
+          :serviceAccount => any(),
+          :taints => list(GoogleApi.Container.V1.Model.NodeTaint.t())
         }
 
   field(:tags, type: :list)
@@ -68,6 +70,7 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
   field(:oauthScopes, type: :list)
   field(:preemptible)
   field(:serviceAccount)
+  field(:taints, as: GoogleApi.Container.V1.Model.NodeTaint, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.NodeConfig do
