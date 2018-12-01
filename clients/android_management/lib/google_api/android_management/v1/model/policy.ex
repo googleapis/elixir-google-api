@@ -99,7 +99,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
   - uninstallAppsDisabled (boolean()): Whether user uninstallation of applications is disabled. Defaults to: `null`.
   - unmuteMicrophoneDisabled (boolean()): Whether the microphone is muted and adjusting microphone volume is disabled. Defaults to: `null`.
   - usbFileTransferDisabled (boolean()): Whether transferring files over USB is disabled. Defaults to: `null`.
-  - usbMassStorageEnabled (boolean()): Whether USB storage is enabled. Defaults to: `null`.
+  - usbMassStorageEnabled (boolean()): Whether USB storage is enabled. Deprecated. Defaults to: `null`.
   - version (String.t): The version of the policy. This is a read-only field. The version is incremented each time the policy is updated. Defaults to: `null`.
   - vpnConfigDisabled (boolean()): Whether configuring VPN is disabled. Defaults to: `null`.
   - wifiConfigDisabled (boolean()): Whether configuring Wi-Fi access points is disabled. Defaults to: `null`.
