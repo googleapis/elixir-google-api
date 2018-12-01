@@ -25,7 +25,7 @@ defmodule GoogleApi.CloudFunctions.V1.Model.CloudFunction do
   - availableMemoryMb (integer()): The amount of memory in MB available for a function. Defaults to 256MB. Defaults to: `null`.
   - description (String.t): User-provided description of a function. Defaults to: `null`.
   - entryPoint (String.t): The name of the function (as defined in source code) that will be executed. Defaults to the resource name suffix, if not specified. For backward compatibility, if function with given name is not found, then the system will try to use function named \&quot;function\&quot;. For Node.js this is name of a function exported by the module specified in &#x60;source_location&#x60;. Defaults to: `null`.
-  - environmentVariables (%{optional(String.t) &#x3D;&gt; String.t}): Environment variables that shall be available during function execution. Defaults to: `null`.
+  - environmentVariables (%{optional(String.t) &#x3D;&gt; String.t}): **Beta Feature**  Environment variables that shall be available during function execution. Defaults to: `null`.
   - eventTrigger (EventTrigger): A source that fires events in response to a condition in another service. Defaults to: `null`.
   - httpsTrigger (HttpsTrigger): An HTTPS endpoint type of source that can be triggered via URL. Defaults to: `null`.
   - labels (%{optional(String.t) &#x3D;&gt; String.t}): Labels associated with this Cloud Function. Defaults to: `null`.
