@@ -50,7 +50,7 @@ defmodule GoogleApi.Slides.V1.Model.Request do
   - ungroupObjects (UngroupObjectsRequest): Ungroups objects, such as groups. Defaults to: `null`.
   - unmergeTableCells (UnmergeTableCellsRequest): Unmerges cells in a Table. Defaults to: `null`.
   - updateImageProperties (UpdateImagePropertiesRequest): Updates the properties of an Image. Defaults to: `null`.
-  - updateLineCategory (UpdateLineCategoryRequest): Updates the category of a line Defaults to: `null`.
+  - updateLineCategory (UpdateLineCategoryRequest): Updates the category of a line. Defaults to: `null`.
   - updateLineProperties (UpdateLinePropertiesRequest): Updates the properties of a Line. Defaults to: `null`.
   - updatePageElementAltText (UpdatePageElementAltTextRequest): Updates the alt text title and/or description of a page element. Defaults to: `null`.
   - updatePageElementTransform (UpdatePageElementTransformRequest): Updates the transform of a page element. Defaults to: `null`.
