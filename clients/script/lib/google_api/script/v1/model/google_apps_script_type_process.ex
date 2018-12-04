@@ -28,7 +28,7 @@ defmodule GoogleApi.Script.V1.Model.GoogleAppsScriptTypeProcess do
   - processStatus (String.t): The executions status. Defaults to: `null`.
     - Enum - one of [PROCESS_STATUS_UNSPECIFIED, RUNNING, PAUSED, COMPLETED, CANCELED, FAILED, TIMED_OUT, UNKNOWN, DELAYED]
   - processType (String.t): The executions type. Defaults to: `null`.
-    - Enum - one of [PROCESS_TYPE_UNSPECIFIED, ADD_ON, EXECUTION_API, TIME_DRIVEN, TRIGGER, WEBAPP, EDITOR, SIMPLE_TRIGGER, MENU]
+    - Enum - one of [PROCESS_TYPE_UNSPECIFIED, ADD_ON, EXECUTION_API, TIME_DRIVEN, TRIGGER, WEBAPP, EDITOR, SIMPLE_TRIGGER, MENU, BATCH_TASK]
   - projectName (String.t): Name of the script being executed. Defaults to: `null`.
   - startTime (DateTime.t): Time the execution started. Defaults to: `null`.
   - userAccessLevel (String.t): The executing users access level to the script. Defaults to: `null`.
