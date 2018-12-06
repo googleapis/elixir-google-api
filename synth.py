@@ -14,6 +14,7 @@
 
 """This script is used to synthesize generated parts of this library."""
 
+from synthtool.__main__ import extra_args
 from synthtool import _tracked_paths
 import synthtool as s
 import synthtool.log as log
@@ -32,14 +33,22 @@ shell.run(["git", "clean", "-fdx"], cwd=repository / "clients")
 
 image = "gcr.io/cloud-devrel-public-resources/elixir16"
 generate_command = "scripts/generate_client.sh"
-command = f"docker run --rm -v{repository}:/workspace -v/var/run/docker.sock:/var/run/docker.sock -w /workspace {image} {generate_command}"
+command = [
+    "docker",
+    "run",
+    "--rm",
+    f"-v{repository}:/workspace",
+    "-v/var/run/docker.sock:/var/run/docker.sock",
+    "-w", "/workspace",
+    image,
+    generate_command]
 
-if len(sys.argv) == 2:
-    command = command + " " + sys.argv[1]
+if extra_args():
+    command.extend(extra_args())
 
-log.debug(f"Running in docker: {command}")
+log.debug(f"Running: {' '.join(command)}")
 
-shell.run(command.split(), cwd=repository)
+shell.run(command, cwd=repository)
 
 # copy all clients
 s.copy(repository / "clients")
