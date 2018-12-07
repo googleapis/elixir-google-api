@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.Content.V2.Model.Product do
   @moduledoc """
-  Product data.
+  Product data. After inserting, updating, or deleting a product, it may take several minutes before changes take effect.
 
   ## Attributes
 

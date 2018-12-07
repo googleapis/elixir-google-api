@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.Content.V2.Model.Order do
   @moduledoc """
-
+  Order. All methods require the order manager role.
 
   ## Attributes
 
