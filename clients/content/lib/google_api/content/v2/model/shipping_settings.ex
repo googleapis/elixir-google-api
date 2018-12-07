@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.Content.V2.Model.ShippingSettings do
   @moduledoc """
-  The merchant account&#39;s shipping settings.
+  The merchant account&#39;s shipping settings. All methods except getsupportedcarriers and getsupportedholidays require the admin role.
 
   ## Attributes
 

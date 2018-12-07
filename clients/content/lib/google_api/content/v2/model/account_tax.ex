@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.Content.V2.Model.AccountTax do
   @moduledoc """
-  The tax settings of a merchant account.
+  The tax settings of a merchant account. All methods require the admin role.
 
   ## Attributes
 

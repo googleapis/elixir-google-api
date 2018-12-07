@@ -22,7 +22,7 @@ defmodule GoogleApi.Content.V2.Model.ProductShippingDimension do
 
   ## Attributes
 
-  - unit (String.t): The unit of value.  Acceptable values are:   - \&quot;cm\&quot;  - \&quot;in\&quot; Defaults to: `null`.
+  - unit (String.t): The unit of value. Defaults to: `null`.
   - value (float()): The dimension of the product used to calculate the shipping cost of the item. Defaults to: `null`.
   """
 

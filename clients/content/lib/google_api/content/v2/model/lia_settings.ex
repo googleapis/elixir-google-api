@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.Content.V2.Model.LiaSettings do
   @moduledoc """
-
+  Local Inventory ads (LIA) settings. All methods except listposdataproviders require the admin role.
 
   ## Attributes
 
