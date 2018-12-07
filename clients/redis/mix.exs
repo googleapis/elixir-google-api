@@ -30,7 +30,7 @@ defmodule GoogleApi.Redis.V1beta1.Mixfile do
 
   defp description() do
     """
-    The Google Cloud Memorystore for Redis API is used for creating and managing Redis instances on the Google Cloud Platform.
+    Creates and manages Redis instances on the Google Cloud Platform.
     """
   end
 
