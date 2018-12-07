@@ -24,6 +24,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.ClaimDeviceRequest do
 
   - customerId (String.t): Required. The ID of the customer for whom the device is being claimed. Defaults to: `null`.
   - deviceIdentifier (DeviceIdentifier): Required. The device identifier of the device to claim. Defaults to: `null`.
+  - deviceMetadata (DeviceMetadata): Optional. The metadata to attach to the device. Defaults to: `null`.
   - sectionType (String.t): Required. The section type of the device&#39;s provisioning record. Defaults to: `null`.
     - Enum - one of [SECTION_TYPE_UNSPECIFIED, SECTION_TYPE_SIM_LOCK, SECTION_TYPE_ZERO_TOUCH]
   """
@@ -33,11 +34,13 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.ClaimDeviceRequest do
   @type t :: %__MODULE__{
           :customerId => any(),
           :deviceIdentifier => GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier.t(),
+          :deviceMetadata => GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceMetadata.t(),
           :sectionType => any()
         }
 
   field(:customerId)
   field(:deviceIdentifier, as: GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier)
+  field(:deviceMetadata, as: GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceMetadata)
   field(:sectionType)
 end
 
