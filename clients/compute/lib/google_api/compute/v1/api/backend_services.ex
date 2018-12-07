@@ -273,7 +273,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
   end
 
   @doc """
-  Returns the specified BackendService resource. Gets a list of available backend services by making a list() request.
+  Returns the specified BackendService resource. Gets a list of available backend services.
 
   ## Parameters
 

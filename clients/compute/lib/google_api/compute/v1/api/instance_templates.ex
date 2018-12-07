@@ -137,6 +137,65 @@ defmodule GoogleApi.Compute.V1.Api.InstanceTemplates do
   end
 
   @doc """
+  Gets the access control policy for a resource. May be empty if no such policy or resource exists.
+
+  ## Parameters
+
+  - connection (GoogleApi.Compute.V1.Connection): Connection to server
+  - project (String.t): Project ID for this request.
+  - resource (String.t): Name or id of the resource for this request.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :alt (String.t): Data format for the response.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+
+  ## Returns
+
+  {:ok, %GoogleApi.Compute.V1.Model.Policy{}} on success
+  {:error, info} on failure
+  """
+  @spec compute_instance_templates_get_iam_policy(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) :: {:ok, GoogleApi.Compute.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+  def compute_instance_templates_get_iam_policy(
+        connection,
+        project,
+        resource,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :alt => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :userIp => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/{project}/global/instanceTemplates/{resource}/getIamPolicy", %{
+        "project" => URI.encode_www_form(project),
+        "resource" => URI.encode_www_form(resource)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Policy{}])
+  end
+
+  @doc """
   Creates an instance template in the specified project using the data that is included in the request. If you are creating a new template to update an existing instance group, your new instance template must use the same network or, if applicable, the same subnetwork as the original template.
 
   ## Parameters
@@ -240,5 +299,128 @@ defmodule GoogleApi.Compute.V1.Api.InstanceTemplates do
     connection
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.InstanceTemplateList{}])
+  end
+
+  @doc """
+  Sets the access control policy on the specified resource. Replaces any existing policy.
+
+  ## Parameters
+
+  - connection (GoogleApi.Compute.V1.Connection): Connection to server
+  - project (String.t): Project ID for this request.
+  - resource (String.t): Name or id of the resource for this request.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :alt (String.t): Data format for the response.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+    - :body (GlobalSetPolicyRequest): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.Compute.V1.Model.Policy{}} on success
+  {:error, info} on failure
+  """
+  @spec compute_instance_templates_set_iam_policy(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) :: {:ok, GoogleApi.Compute.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+  def compute_instance_templates_set_iam_policy(
+        connection,
+        project,
+        resource,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :alt => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :userIp => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/{project}/global/instanceTemplates/{resource}/setIamPolicy", %{
+        "project" => URI.encode_www_form(project),
+        "resource" => URI.encode_www_form(resource)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Policy{}])
+  end
+
+  @doc """
+  Returns permissions that a caller has on the specified resource.
+
+  ## Parameters
+
+  - connection (GoogleApi.Compute.V1.Connection): Connection to server
+  - project (String.t): Project ID for this request.
+  - resource (String.t): Name or id of the resource for this request.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :alt (String.t): Data format for the response.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+    - :body (TestPermissionsRequest): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.Compute.V1.Model.TestPermissionsResponse{}} on success
+  {:error, info} on failure
+  """
+  @spec compute_instance_templates_test_iam_permissions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.TestPermissionsResponse.t()} | {:error, Tesla.Env.t()}
+  def compute_instance_templates_test_iam_permissions(
+        connection,
+        project,
+        resource,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :alt => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :userIp => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/{project}/global/instanceTemplates/{resource}/testIamPermissions", %{
+        "project" => URI.encode_www_form(project),
+        "resource" => URI.encode_www_form(resource)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.TestPermissionsResponse{}])
   end
 end

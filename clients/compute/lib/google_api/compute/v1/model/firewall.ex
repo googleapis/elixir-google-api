@@ -32,6 +32,7 @@ defmodule GoogleApi.Compute.V1.Model.Firewall do
   - disabled (boolean()): Denotes whether the firewall rule is disabled, i.e not applied to the network it is associated with. When set to true, the firewall rule is not enforced and the network behaves as if it did not exist. If this is unspecified, the firewall rule will be enabled. Defaults to: `null`.
   - id (String.t): [Output Only] The unique identifier for the resource. This identifier is defined by the server. Defaults to: `null`.
   - kind (String.t): [Output Only] Type of the resource. Always compute#firewall for firewall rules. Defaults to: `null`.
+  - logConfig (FirewallLogConfig): This field denotes the logging options for a particular firewall rule. If logging is enabled, logs will be exported to Stackdriver. Defaults to: `null`.
   - name (String.t): Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression &#x60;[a-z]([-a-z0-9]*[a-z0-9])?&#x60; which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. Defaults to: `null`.
   - network (String.t): URL of the network resource for this firewall rule. If not specified when creating a firewall rule, the default network is used: global/networks/default If you choose to specify this property, you can specify the network as a full or partial URL. For example, the following are all valid URLs:   - https://www.googleapis.com/compute/v1/projects/myproject/global/networks/my-network  - projects/myproject/global/networks/my-network  - global/networks/default Defaults to: `null`.
   - priority (integer()): Priority for this rule. This is an integer between 0 and 65535, both inclusive. When not specified, the value assumed is 1000. Relative priorities determine precedence of conflicting rules. Lower value of priority implies higher precedence (eg, a rule with priority 0 has higher precedence than a rule with priority 1). DENY rules take precedence over ALLOW rules having equal priority. Defaults to: `null`.
@@ -55,6 +56,7 @@ defmodule GoogleApi.Compute.V1.Model.Firewall do
           :disabled => any(),
           :id => any(),
           :kind => any(),
+          :logConfig => GoogleApi.Compute.V1.Model.FirewallLogConfig.t(),
           :name => any(),
           :network => any(),
           :priority => any(),
@@ -75,6 +77,7 @@ defmodule GoogleApi.Compute.V1.Model.Firewall do
   field(:disabled)
   field(:id)
   field(:kind)
+  field(:logConfig, as: GoogleApi.Compute.V1.Model.FirewallLogConfig)
   field(:name)
   field(:network)
   field(:priority)
