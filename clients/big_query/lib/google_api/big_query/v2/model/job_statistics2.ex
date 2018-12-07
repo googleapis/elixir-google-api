@@ -39,6 +39,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics2 do
   - timeline ([QueryTimelineSample]): [Output-only] [Beta] Describes a timeline of job execution. Defaults to: `null`.
   - totalBytesBilled (String.t): [Output-only] Total bytes billed for the job. Defaults to: `null`.
   - totalBytesProcessed (String.t): [Output-only] Total bytes processed for the job. Defaults to: `null`.
+  - totalBytesProcessedAccuracy (String.t): [Output-only] For dry-run jobs, totalBytesProcessed is an estimate and this field specifies the accuracy of the estimate. Possible values can be: UNKNOWN: accuracy of the estimate is unknown. PRECISE: estimate is precise. LOWER_BOUND: estimate is lower bound of what the query would cost. UPPER_BOUND: estiamte is upper bound of what the query would cost. Defaults to: `null`.
   - totalPartitionsProcessed (String.t): [Output-only] Total number of partitions processed from all partitioned tables referenced in the job. Defaults to: `null`.
   - totalSlotMs (String.t): [Output-only] Slot-milliseconds for the job. Defaults to: `null`.
   - undeclaredQueryParameters ([QueryParameter]): Standard SQL only: list of undeclared query parameters detected during a dry run validation. Defaults to: `null`.
@@ -65,6 +66,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics2 do
           :timeline => list(GoogleApi.BigQuery.V2.Model.QueryTimelineSample.t()),
           :totalBytesBilled => any(),
           :totalBytesProcessed => any(),
+          :totalBytesProcessedAccuracy => any(),
           :totalPartitionsProcessed => any(),
           :totalSlotMs => any(),
           :undeclaredQueryParameters => list(GoogleApi.BigQuery.V2.Model.QueryParameter.t())
@@ -93,6 +95,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics2 do
   field(:timeline, as: GoogleApi.BigQuery.V2.Model.QueryTimelineSample, type: :list)
   field(:totalBytesBilled)
   field(:totalBytesProcessed)
+  field(:totalBytesProcessedAccuracy)
   field(:totalPartitionsProcessed)
   field(:totalSlotMs)
   field(:undeclaredQueryParameters, as: GoogleApi.BigQuery.V2.Model.QueryParameter, type: :list)
