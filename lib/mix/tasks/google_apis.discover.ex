@@ -21,6 +21,7 @@ defmodule Mix.Tasks.GoogleApis.Discover do
     GoogleApis.Discovery.discover()
     |> write_file(output)
   end
+
   def run(_) do
     run(["apis-candidate.json"])
   end

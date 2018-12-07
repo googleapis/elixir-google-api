@@ -22,6 +22,7 @@ defmodule Mix.Tasks.GoogleApis.BumpVersion do
     |> GoogleApis.ApiConfig.load()
     |> bump()
   end
+
   def run(_) do
     bump(GoogleApis.ApiConfig.load_all())
   end

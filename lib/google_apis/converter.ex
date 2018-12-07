@@ -13,5 +13,5 @@
 # limitations under the License.
 
 defmodule GoogleApis.Converter do
-  @callback convert(GoogleApis.ApiConfig.t) :: any()
+  @callback convert(GoogleApis.ApiConfig.t()) :: any()
 end

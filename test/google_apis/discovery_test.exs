@@ -20,7 +20,9 @@ defmodule GoogleApis.DiscoveryTest do
   @moduletag :external
 
   test "fetch GOOGLE_REST_SIMPLE_URI urls" do
-    assert {:ok, {body, format}} = Discovery.fetch("https://pubsub.googleapis.com/$discovery/rest?version=v1")
+    assert {:ok, {body, format}} =
+             Discovery.fetch("https://pubsub.googleapis.com/$discovery/rest?version=v1")
+
     assert "GOOGLE_REST_SIMPLE_URI" == format
 
     assert {:ok, content} = Poison.decode(body)
@@ -28,7 +30,11 @@ defmodule GoogleApis.DiscoveryTest do
   end
 
   test "fetch fallback rest urls" do
-    assert {:ok, {body, format}} = Discovery.fetch("https://analyticsreporting.googleapis.com/$discovery/rest?version=v4")
+    assert {:ok, {body, format}} =
+             Discovery.fetch(
+               "https://analyticsreporting.googleapis.com/$discovery/rest?version=v4"
+             )
+
     assert "rest" == format
 
     assert {:ok, content} = Poison.decode(body)
@@ -36,11 +42,14 @@ defmodule GoogleApis.DiscoveryTest do
   end
 
   test "fetch default urls" do
-    assert {:ok, {body, format}} = Discovery.fetch("https://www.googleapis.com/discovery/v1/apis/adexchangebuyer/v1.4/rest")
+    assert {:ok, {body, format}} =
+             Discovery.fetch(
+               "https://www.googleapis.com/discovery/v1/apis/adexchangebuyer/v1.4/rest"
+             )
+
     assert "default" == format
 
     assert {:ok, content} = Poison.decode(body)
     assert "Ad Exchange Buyer" == content["canonicalName"]
   end
-
 end

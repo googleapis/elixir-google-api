@@ -22,6 +22,7 @@ defmodule Mix.Tasks.GoogleApis.Convert do
     |> GoogleApis.ApiConfig.load()
     |> Enum.each(&GoogleApis.convert_spec/1)
   end
+
   def run(_) do
     Enum.each(GoogleApis.ApiConfig.load_all(), &GoogleApis.convert_spec/1)
   end

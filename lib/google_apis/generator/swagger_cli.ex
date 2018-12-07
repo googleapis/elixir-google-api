@@ -53,7 +53,8 @@ defmodule GoogleApis.Generator.SwaggerCli do
              client_library_name
            }",
          {:ok, _} <- run_docker_command(generate_command),
-         {:ok, _} <- run_docker_command("cp #{container}:/data/#{client_library_name} #{tmp_dir}"),
+         {:ok, _} <-
+           run_docker_command("cp #{container}:/data/#{client_library_name} #{tmp_dir}"),
          {:ok, _} <- run_docker_command("rm #{container}") do
       {:ok, tmp_dir}
     else
@@ -64,6 +65,7 @@ defmodule GoogleApis.Generator.SwaggerCli do
   defp temp_path(client_library_name, nil) do
     Temp.path!("codegen-out-#{client_library_name}")
   end
+
   defp temp_path(client_library_name, basedir) do
     Temp.path!(prefix: "codegen-out-#{client_library_name}", basedir: basedir)
   end

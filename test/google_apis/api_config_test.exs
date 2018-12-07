@@ -19,9 +19,9 @@ defmodule GoogleApis.ApiConfigTest do
   alias GoogleApis.ApiConfig
 
   test "load all configs" do
-    configs = ApiConfig.load_all
+    configs = ApiConfig.load_all()
 
-    Enum.each(configs, fn (config) -> assert %ApiConfig{} = config end)
+    Enum.each(configs, fn config -> assert %ApiConfig{} = config end)
     assert 2 < Enum.count(configs)
   end
 
@@ -43,11 +43,13 @@ defmodule GoogleApis.ApiConfigTest do
   end
 
   test "library_namespace" do
-    assert "GoogleApi.CloudTrace.V2" == ApiConfig.library_namespace(%ApiConfig{name: "CloudTrace", version: "v2"})
+    assert "GoogleApi.CloudTrace.V2" ==
+             ApiConfig.library_namespace(%ApiConfig{name: "CloudTrace", version: "v2"})
   end
 
   test "library_namespace dot version" do
-    assert "GoogleApi.AdSense.V14" == ApiConfig.library_namespace(%ApiConfig{name: "AdSense", version: "v1.4"})
+    assert "GoogleApi.AdSense.V14" ==
+             ApiConfig.library_namespace(%ApiConfig{name: "AdSense", version: "v1.4"})
   end
 
   test "module_version should handle normal versions" do

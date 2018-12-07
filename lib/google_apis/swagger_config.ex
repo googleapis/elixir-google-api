@@ -13,7 +13,6 @@
 # limitations under the License.
 
 defmodule GoogleApis.SwaggerConfig do
-
   defstruct [:licenseHeader, :invokerPackage, :packageName]
 
   @license_header """

@@ -22,6 +22,7 @@ defmodule Mix.Tasks.GoogleApis.Fetch do
     |> GoogleApis.ApiConfig.load()
     |> Enum.each(&GoogleApis.fetch/1)
   end
+
   def run(_) do
     Enum.each(GoogleApis.ApiConfig.load_all(), &GoogleApis.fetch/1)
   end

@@ -17,7 +17,7 @@ defmodule GoogleApis.OauthStrategy do
 
   # Public API
   def client(client_id, client_secret) do
-    OAuth2.Client.new([
+    OAuth2.Client.new(
       strategy: __MODULE__,
       client_id: client_id,
       client_secret: client_secret,
@@ -25,7 +25,7 @@ defmodule GoogleApis.OauthStrategy do
       authorize_url: "/o/oauth2/auth",
       token_url: "/o/oauth2/token",
       redirect_uri: "http://localhost/auth/callback"
-    ])
+    )
   end
 
   def authorize_url!(client, params \\ []) do

@@ -20,14 +20,16 @@ defmodule GoogleApis.Discovery do
   require Logger
 
   def fetch(""), do: {:error, "No URL"}
+
   def fetch(url) do
     case Regex.run(~r/(https:\/\/.*\.googleapis.com\/\$discovery\/)([^?]*)(\?.*)?/, url) do
       [_, base, format, query] ->
         try_formats(base, query, ["GOOGLE_REST_SIMPLE_URI", format])
+
       nil ->
         case fetch_direct(url) do
           {:ok, body} -> {:ok, {body, "default"}}
-          error       -> error
+          error -> error
         end
     end
   end
@@ -36,7 +38,7 @@ defmodule GoogleApis.Discovery do
   Download the list of preferred APIs from the Discovery service
   """
   def discover() do
-    conn = Connection.new
+    conn = Connection.new()
     {:ok, %{items: items}} = Apis.discovery_apis_list(conn, preferred: true)
 
     Enum.map(items, fn item ->
@@ -49,24 +51,27 @@ defmodule GoogleApis.Discovery do
   end
 
   defp try_formats(_base, _query, []), do: {:error, "All formats failed"}
+
   defp try_formats(base, query, [format | rest]) do
     case fetch_direct(base <> format <> query) do
       {:ok, body} ->
         {:ok, {body, format}}
+
       _ ->
         try_formats(base, query, rest)
     end
   end
 
   defp fetch_direct(url) do
-    Logger.info "FETCHING: #{url}"
-    with {:ok, %Tesla.Env{status: 200, body: body}} <- Tesla.get(url)
-    do
-      Logger.info "FOUND: #{url}"
+    Logger.info("FETCHING: #{url}")
+
+    with {:ok, %Tesla.Env{status: 200, body: body}} <- Tesla.get(url) do
+      Logger.info("FOUND: #{url}")
       {:ok, body}
     else
       {:ok, %Tesla.Env{status: status}} ->
         {:error, "Error received status: #{status} from discovery endpoint"}
+
       err ->
         err
     end
