@@ -32,8 +32,12 @@ defmodule GoogleApi.Compute.V1.Model.Address do
     - Enum - one of [IPV4, IPV6, UNSPECIFIED_VERSION]
   - kind (String.t): [Output Only] Type of the resource. Always compute#address for addresses. Defaults to: `null`.
   - name (String.t): Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression &#x60;[a-z]([-a-z0-9]*[a-z0-9])?&#x60; which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. Defaults to: `null`.
-  - networkTier (String.t): This signifies the networking tier used for configuring this Address and can only take the following values: PREMIUM , STANDARD.  If this field is not specified, it is assumed to be PREMIUM. Defaults to: `null`.
+  - network (String.t): The URL of the network in which to reserve the address. This field can only be used with INTERNAL type with VPC_PEERING purpose. Defaults to: `null`.
+  - networkTier (String.t): This signifies the networking tier used for configuring this Address and can only take the following values: PREMIUM, STANDARD. Global forwarding rules can only be Premium Tier. Regional forwarding rules can be either Premium or Standard Tier. Standard Tier addresses applied to regional forwarding rules can be used with any external load balancer. Regional forwarding rules in Premium Tier can only be used with a Network load balancer.  If this field is not specified, it is assumed to be PREMIUM. Defaults to: `null`.
     - Enum - one of [PREMIUM, STANDARD]
+  - prefixLength (integer()): The prefix length if the resource reprensents an IP range. Defaults to: `null`.
+  - purpose (String.t): The purpose of resource, only used with INTERNAL type. Defaults to: `null`.
+    - Enum - one of [DNS_RESOLVER, GCE_ENDPOINT, VPC_PEERING]
   - region (String.t): [Output Only] URL of the region where the regional address resides. This field is not applicable to global addresses. You must specify this field as part of the HTTP request URL. You cannot set this field in the request body. Defaults to: `null`.
   - selfLink (String.t): [Output Only] Server-defined URL for the resource. Defaults to: `null`.
   - status (String.t): [Output Only] The status of the address, which can be one of RESERVING, RESERVED, or IN_USE. An address that is RESERVING is currently in the process of being reserved. A RESERVED address is currently reserved and available to use. An IN_USE address is currently being used by another resource and is not available. Defaults to: `null`.
@@ -53,7 +57,10 @@ defmodule GoogleApi.Compute.V1.Model.Address do
           :ipVersion => any(),
           :kind => any(),
           :name => any(),
+          :network => any(),
           :networkTier => any(),
+          :prefixLength => any(),
+          :purpose => any(),
           :region => any(),
           :selfLink => any(),
           :status => any(),
@@ -69,7 +76,10 @@ defmodule GoogleApi.Compute.V1.Model.Address do
   field(:ipVersion)
   field(:kind)
   field(:name)
+  field(:network)
   field(:networkTier)
+  field(:prefixLength)
+  field(:purpose)
   field(:region)
   field(:selfLink)
   field(:status)

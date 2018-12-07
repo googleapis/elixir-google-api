@@ -16,35 +16,32 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Compute.V1.Model.InterconnectDiagnosticsLinkOpticalPower do
+defmodule GoogleApi.Compute.V1.Model.LogConfigDataAccessOptions do
   @moduledoc """
-
+  Write a Data Access (Gin) log
 
   ## Attributes
 
-  - state (String.t):  Defaults to: `null`.
-    - Enum - one of [HIGH_ALARM, HIGH_WARNING, LOW_ALARM, LOW_WARNING, OK]
-  - value (float()): Value of the current optical power, read in dBm. Take a known good optical value, give it a 10% margin and trigger warnings relative to that value. In general, a -7dBm warning and a -11dBm alarm are good optical value estimates for most links. Defaults to: `null`.
+  - logMode (String.t): Whether Gin logging should happen in a fail-closed manner at the caller. This is relevant only in the LocalIAM implementation, for now.  NOTE: Logging to Gin in a fail-closed manner is currently unsupported while work is being done to satisfy the requirements of go/345. Currently, setting LOG_FAIL_CLOSED mode will have no effect, but still exists because there is active work being done to support it (b/115874152). Defaults to: `null`.
+    - Enum - one of [LOG_FAIL_CLOSED, LOG_MODE_UNSPECIFIED]
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :state => any(),
-          :value => any()
+          :logMode => any()
         }
 
-  field(:state)
-  field(:value)
+  field(:logMode)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.InterconnectDiagnosticsLinkOpticalPower do
+defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.LogConfigDataAccessOptions do
   def decode(value, options) do
-    GoogleApi.Compute.V1.Model.InterconnectDiagnosticsLinkOpticalPower.decode(value, options)
+    GoogleApi.Compute.V1.Model.LogConfigDataAccessOptions.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.Compute.V1.Model.InterconnectDiagnosticsLinkOpticalPower do
+defimpl Poison.Encoder, for: GoogleApi.Compute.V1.Model.LogConfigDataAccessOptions do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

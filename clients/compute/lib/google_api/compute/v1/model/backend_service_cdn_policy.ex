@@ -23,7 +23,7 @@ defmodule GoogleApi.Compute.V1.Model.BackendServiceCdnPolicy do
   ## Attributes
 
   - cacheKeyPolicy (CacheKeyPolicy): The CacheKeyPolicy for this CdnPolicy. Defaults to: `null`.
-  - signedUrlCacheMaxAgeSec (String.t): Maximum number of seconds the response to a signed URL request will be considered fresh. After this time period, the response will be revalidated before being served. Defaults to 1hr (3600s). When serving responses to signed URL requests, Cloud CDN will internally behave as though all responses from this backend had a ?Cache-Control: public, max-age&#x3D;[TTL]? header, regardless of any existing Cache-Control header. The actual headers served in responses will not be altered. Defaults to: `null`.
+  - signedUrlCacheMaxAgeSec (String.t): Maximum number of seconds the response to a signed URL request will be considered fresh. After this time period, the response will be revalidated before being served. Defaults to 1hr (3600s). When serving responses to signed URL requests, Cloud CDN will internally behave as though all responses from this backend had a \&quot;Cache-Control: public, max-age&#x3D;[TTL]\&quot; header, regardless of any existing Cache-Control header. The actual headers served in responses will not be altered. Defaults to: `null`.
   - signedUrlKeyNames ([String.t]): [Output Only] Names of the keys for signing request URLs. Defaults to: `null`.
   """
 

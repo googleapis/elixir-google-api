@@ -16,35 +16,36 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Compute.V1.Model.InterconnectDiagnosticsLinkOpticalPower do
+defmodule GoogleApi.Compute.V1.Model.LogConfigCloudAuditOptions do
   @moduledoc """
-
+  Write a Cloud Audit log
 
   ## Attributes
 
-  - state (String.t):  Defaults to: `null`.
-    - Enum - one of [HIGH_ALARM, HIGH_WARNING, LOW_ALARM, LOW_WARNING, OK]
-  - value (float()): Value of the current optical power, read in dBm. Take a known good optical value, give it a 10% margin and trigger warnings relative to that value. In general, a -7dBm warning and a -11dBm alarm are good optical value estimates for most links. Defaults to: `null`.
+  - authorizationLoggingOptions (AuthorizationLoggingOptions): Information used by the Cloud Audit Logging pipeline. Defaults to: `null`.
+  - logName (String.t): The log_name to populate in the Cloud Audit Record. Defaults to: `null`.
+    - Enum - one of [ADMIN_ACTIVITY, DATA_ACCESS, UNSPECIFIED_LOG_NAME]
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :state => any(),
-          :value => any()
+          :authorizationLoggingOptions =>
+            GoogleApi.Compute.V1.Model.AuthorizationLoggingOptions.t(),
+          :logName => any()
         }
 
-  field(:state)
-  field(:value)
+  field(:authorizationLoggingOptions, as: GoogleApi.Compute.V1.Model.AuthorizationLoggingOptions)
+  field(:logName)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.InterconnectDiagnosticsLinkOpticalPower do
+defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.LogConfigCloudAuditOptions do
   def decode(value, options) do
-    GoogleApi.Compute.V1.Model.InterconnectDiagnosticsLinkOpticalPower.decode(value, options)
+    GoogleApi.Compute.V1.Model.LogConfigCloudAuditOptions.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.Compute.V1.Model.InterconnectDiagnosticsLinkOpticalPower do
+defimpl Poison.Encoder, for: GoogleApi.Compute.V1.Model.LogConfigCloudAuditOptions do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

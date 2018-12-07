@@ -406,7 +406,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionDisks do
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
   - region (String.t): The region for this request.
-  - resource (String.t): Name of the resource for this request.
+  - resource (String.t): Name or id of the resource for this request.
   - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.

@@ -16,35 +16,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Compute.V1.Model.InterconnectDiagnosticsLinkOpticalPower do
+defmodule GoogleApi.Compute.V1.Model.FirewallLogConfig do
   @moduledoc """
-
+  The available logging options for a firewall rule.
 
   ## Attributes
 
-  - state (String.t):  Defaults to: `null`.
-    - Enum - one of [HIGH_ALARM, HIGH_WARNING, LOW_ALARM, LOW_WARNING, OK]
-  - value (float()): Value of the current optical power, read in dBm. Take a known good optical value, give it a 10% margin and trigger warnings relative to that value. In general, a -7dBm warning and a -11dBm alarm are good optical value estimates for most links. Defaults to: `null`.
+  - enable (boolean()): This field denotes whether to enable logging for a particular firewall rule. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :state => any(),
-          :value => any()
+          :enable => any()
         }
 
-  field(:state)
-  field(:value)
+  field(:enable)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.InterconnectDiagnosticsLinkOpticalPower do
+defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.FirewallLogConfig do
   def decode(value, options) do
-    GoogleApi.Compute.V1.Model.InterconnectDiagnosticsLinkOpticalPower.decode(value, options)
+    GoogleApi.Compute.V1.Model.FirewallLogConfig.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.Compute.V1.Model.InterconnectDiagnosticsLinkOpticalPower do
+defimpl Poison.Encoder, for: GoogleApi.Compute.V1.Model.FirewallLogConfig do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

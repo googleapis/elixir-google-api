@@ -16,35 +16,32 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Compute.V1.Model.InterconnectDiagnosticsLinkOpticalPower do
+defmodule GoogleApi.Compute.V1.Model.AuthorizationLoggingOptions do
   @moduledoc """
-
+  Authorization-related information used by Cloud Audit Logging.
 
   ## Attributes
 
-  - state (String.t):  Defaults to: `null`.
-    - Enum - one of [HIGH_ALARM, HIGH_WARNING, LOW_ALARM, LOW_WARNING, OK]
-  - value (float()): Value of the current optical power, read in dBm. Take a known good optical value, give it a 10% margin and trigger warnings relative to that value. In general, a -7dBm warning and a -11dBm alarm are good optical value estimates for most links. Defaults to: `null`.
+  - permissionType (String.t): The type of the permission that was checked. Defaults to: `null`.
+    - Enum - one of [ADMIN_READ, ADMIN_WRITE, DATA_READ, DATA_WRITE, PERMISSION_TYPE_UNSPECIFIED]
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :state => any(),
-          :value => any()
+          :permissionType => any()
         }
 
-  field(:state)
-  field(:value)
+  field(:permissionType)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.InterconnectDiagnosticsLinkOpticalPower do
+defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.AuthorizationLoggingOptions do
   def decode(value, options) do
-    GoogleApi.Compute.V1.Model.InterconnectDiagnosticsLinkOpticalPower.decode(value, options)
+    GoogleApi.Compute.V1.Model.AuthorizationLoggingOptions.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.Compute.V1.Model.InterconnectDiagnosticsLinkOpticalPower do
+defimpl Poison.Encoder, for: GoogleApi.Compute.V1.Model.AuthorizationLoggingOptions do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

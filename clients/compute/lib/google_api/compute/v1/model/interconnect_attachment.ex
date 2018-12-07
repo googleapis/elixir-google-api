@@ -23,7 +23,7 @@ defmodule GoogleApi.Compute.V1.Model.InterconnectAttachment do
   ## Attributes
 
   - adminEnabled (boolean()): Determines whether this Attachment will carry packets. Not present for PARTNER_PROVIDER. Defaults to: `null`.
-  - bandwidth (String.t): Provisioned bandwidth capacity for the interconnectAttachment. Can be set by the partner to update the customer&#39;s provisioned bandwidth. Output only for for PARTNER type, mutable for PARTNER_PROVIDER, not available for DEDICATED. Defaults to: `null`.
+  - bandwidth (String.t): Provisioned bandwidth capacity for the interconnectAttachment. Can be set by the partner to update the customer&#39;s provisioned bandwidth. Output only for PARTNER type, mutable for PARTNER_PROVIDER and DEDICATED. Defaults to: `null`.
     - Enum - one of [BPS_100M, BPS_10G, BPS_1G, BPS_200M, BPS_2G, BPS_300M, BPS_400M, BPS_500M, BPS_50M, BPS_5G]
   - candidateSubnets ([String.t]): Up to 16 candidate prefixes that can be used to restrict the allocation of cloudRouterIpAddress and customerRouterIpAddress for this attachment. All prefixes must be within link-local address space (169.254.0.0/16) and must be /29 or shorter (/28, /27, etc). Google will attempt to select an unused /29 from the supplied candidate prefix(es). The request will fail if all possible /29s are in use on Google?s edge. If not supplied, Google will randomly select an unused /29 from all of link-local space. Defaults to: `null`.
   - cloudRouterIpAddress (String.t): [Output Only] IPv4 address + prefix length to be configured on Cloud Router Interface for this interconnect attachment. Defaults to: `null`.
@@ -44,13 +44,13 @@ defmodule GoogleApi.Compute.V1.Model.InterconnectAttachment do
   - partnerMetadata (InterconnectAttachmentPartnerMetadata): Informational metadata about Partner attachments from Partners to display to customers. Output only for for PARTNER type, mutable for PARTNER_PROVIDER, not available for DEDICATED. Defaults to: `null`.
   - privateInterconnectInfo (InterconnectAttachmentPrivateInfo): [Output Only] Information specific to an InterconnectAttachment. This property is populated if the interconnect that this is attached to is of type DEDICATED. Defaults to: `null`.
   - region (String.t): [Output Only] URL of the region where the regional interconnect attachment resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body. Defaults to: `null`.
-  - router (String.t): URL of the cloud router to be used for dynamic routing. This router must be in the same region as this InterconnectAttachment. The InterconnectAttachment will automatically connect the Interconnect to the network &amp; region within which the Cloud Router is configured. Defaults to: `null`.
+  - router (String.t): URL of the Cloud Router to be used for dynamic routing. This router must be in the same region as this InterconnectAttachment. The InterconnectAttachment will automatically connect the Interconnect to the network &amp; region within which the Cloud Router is configured. Defaults to: `null`.
   - selfLink (String.t): [Output Only] Server-defined URL for the resource. Defaults to: `null`.
   - state (String.t): [Output Only] The current state of this attachment&#39;s functionality. Defaults to: `null`.
     - Enum - one of [ACTIVE, DEFUNCT, PARTNER_REQUEST_RECEIVED, PENDING_CUSTOMER, PENDING_PARTNER, STATE_UNSPECIFIED, UNPROVISIONED]
   - type (String.t):  Defaults to: `null`.
     - Enum - one of [DEDICATED, PARTNER, PARTNER_PROVIDER]
-  - vlanTag8021q (integer()): Available only for DEDICATED and PARTNER_PROVIDER. Desired VLAN tag for this attachment, in the range 2-4094. This field refers to 802.1q VLAN tag, also known as IEEE 802.1Q Only specified at creation time. Defaults to: `null`.
+  - vlanTag8021q (integer()): The IEEE 802.1Q VLAN tag for this attachment, in the range 2-4094. Only specified at creation time. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
