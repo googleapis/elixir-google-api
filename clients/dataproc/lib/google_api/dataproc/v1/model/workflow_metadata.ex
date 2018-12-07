@@ -23,7 +23,8 @@ defmodule GoogleApi.Dataproc.V1.Model.WorkflowMetadata do
   ## Attributes
 
   - parameters (%{optional(String.t) &#x3D;&gt; String.t}): Map from parameter names to values that were used for those parameters. Defaults to: `null`.
-  - clusterName (String.t): Output only. The name of the managed cluster. Defaults to: `null`.
+  - clusterName (String.t): Output only. The name of the target cluster. Defaults to: `null`.
+  - clusterUuid (String.t): Output only. The UUID of target cluster. Defaults to: `null`.
   - createCluster (ClusterOperation): Output only. The create cluster operation metadata. Defaults to: `null`.
   - deleteCluster (ClusterOperation): Output only. The delete cluster operation metadata. Defaults to: `null`.
   - endTime (DateTime.t): Output only. Workflow end time. Defaults to: `null`.
@@ -40,6 +41,7 @@ defmodule GoogleApi.Dataproc.V1.Model.WorkflowMetadata do
   @type t :: %__MODULE__{
           :parameters => map(),
           :clusterName => any(),
+          :clusterUuid => any(),
           :createCluster => GoogleApi.Dataproc.V1.Model.ClusterOperation.t(),
           :deleteCluster => GoogleApi.Dataproc.V1.Model.ClusterOperation.t(),
           :endTime => DateTime.t(),
@@ -52,6 +54,7 @@ defmodule GoogleApi.Dataproc.V1.Model.WorkflowMetadata do
 
   field(:parameters, type: :map)
   field(:clusterName)
+  field(:clusterUuid)
   field(:createCluster, as: GoogleApi.Dataproc.V1.Model.ClusterOperation)
   field(:deleteCluster, as: GoogleApi.Dataproc.V1.Model.ClusterOperation)
   field(:endTime, as: DateTime)
