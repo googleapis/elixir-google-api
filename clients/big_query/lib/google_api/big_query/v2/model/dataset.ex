@@ -34,7 +34,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Dataset do
   - kind (String.t): [Output-only] The resource type. Defaults to: `null`.
   - labels (%{optional(String.t) &#x3D;&gt; String.t}): The labels associated with this dataset. You can use these to organize and group your datasets. You can set this property when inserting or updating a dataset. See Creating and Updating Dataset Labels for more information. Defaults to: `null`.
   - lastModifiedTime (String.t): [Output-only] The date when this dataset or any of its tables was last modified, in milliseconds since the epoch. Defaults to: `null`.
-  - location (String.t): The geographic location where the dataset should reside. The default value is US. See details at https://cloud.google.com/bigquery/docs/dataset-locations. Defaults to: `null`.
+  - location (String.t): The geographic location where the dataset should reside. The default value is US. See details at https://cloud.google.com/bigquery/docs/locations. Defaults to: `null`.
   - selfLink (String.t): [Output-only] A URL that can be used to access the resource again. You can use this URL in Get or Update requests to the resource. Defaults to: `null`.
   """
 
