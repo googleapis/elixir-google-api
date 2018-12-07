@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.SecurityPolicyRule do
   - kind (String.t): [Output only] Type of the resource. Always compute#securityPolicyRule for security policy rules Defaults to: `null`.
   - match (SecurityPolicyRuleMatcher): A match condition that incoming traffic is evaluated against. If it evaluates to true, the corresponding ?action? is enforced. Defaults to: `null`.
   - preview (boolean()): If set to true, the specified action is not enforced. Defaults to: `null`.
-  - priority (integer()): An integer indicating the priority of a rule in the list. The priority must be a positive value between 0 and 2147483647. Rules are evaluated in the increasing order of priority. Defaults to: `null`.
+  - priority (integer()): An integer indicating the priority of a rule in the list. The priority must be a positive value between 0 and 2147483647. Rules are evaluated from highest to lowest priority where 0 is the highest priority and 2147483647 is the lowest prority. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
