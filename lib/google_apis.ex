@@ -62,4 +62,8 @@ defmodule GoogleApis do
   def publish(api_config) do
     GoogleApis.Publisher.publish(api_config)
   end
+
+  def bump_version(api_config) do
+    GoogleApis.Generator.bump_version(api_config)
+  end
 end
