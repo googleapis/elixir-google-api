@@ -34,3 +34,9 @@ mix deps.get
 
 # run generators
 mix google_apis.generate $1
+
+# if there are changes, bump the version(s)
+OUTPUT=$(git status --porcelain)
+if [ ! -z $OUTPUT ]; then
+    mix google_apis.bump_version $1
+fi

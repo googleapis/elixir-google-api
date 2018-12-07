@@ -31,3 +31,4 @@ clients/*/mix.lock
 
 synth.metadata
 __pycache__/
+package-lock.json
