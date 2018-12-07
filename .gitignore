@@ -30,3 +30,4 @@ clients/*/mix.lock
 .elixir_ls
 
 synth.metadata
+__pycache__/
