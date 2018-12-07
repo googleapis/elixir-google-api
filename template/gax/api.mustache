@@ -42,7 +42,7 @@ defmodule {{moduleName}}.Api.{{classname}} do
       Request.new
       |> Request.method(:{{#underscored}}{{httpMethod}}{{/underscored}})
       |> Request.url("{{path}}"{{#hasPathParams}}, %{
-{{#pathParams}}         "{{baseName}}" => {{^vendorExtensions.x-allowedReserved}}{{#isString}}URI.encode_www_form({{/isString}}{{/vendorExtensions.x-allowedReserved}}{{#underscored}}{{paramName}}{{/underscored}}{{^vendorExtensions.x-allowedReserved}}{{#isString}}){{/isString}}{{/vendorExtensions.x-allowedReserved}}{{#hasMore}},{{/hasMore}}
+{{#pathParams}}         "{{baseName}}" => {{^vendorExtensions.x-allowedReserved}}{{#isString}}URI.encode({{/isString}}{{/vendorExtensions.x-allowedReserved}}{{#underscored}}{{paramName}}{{/underscored}}{{^vendorExtensions.x-allowedReserved}}{{#isString}}, &URI.char_unreserved?/1){{/isString}}{{/vendorExtensions.x-allowedReserved}}{{#hasMore}},{{/hasMore}}
 {{/pathParams}}       }{{/hasPathParams}})
 {{#allParams}}
 {{#required}}

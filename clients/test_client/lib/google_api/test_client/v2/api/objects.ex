@@ -52,7 +52,7 @@ defmodule GoogleApi.TestClient.V2.Api.Objects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/test/v2/{+name}/o:batchWrite", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -88,8 +88,8 @@ defmodule GoogleApi.TestClient.V2.Api.Objects do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/test/v2/b/{bucket}/o/{object}", %{
-        "bucket" => URI.encode_www_form(bucket),
-        "object" => URI.encode_www_form(object)
+        "bucket" => URI.encode(bucket, &URI.char_unreserved?/1),
+        "object" => URI.encode(object, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -127,7 +127,7 @@ defmodule GoogleApi.TestClient.V2.Api.Objects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/test/v2/b/{bucket}/o/{id}", %{
-        "bucket" => URI.encode_www_form(bucket),
+        "bucket" => URI.encode(bucket, &URI.char_unreserved?/1),
         "id" => id
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -169,7 +169,7 @@ defmodule GoogleApi.TestClient.V2.Api.Objects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/test/v2/b/{bucket}/o", %{
-        "bucket" => URI.encode_www_form(bucket)
+        "bucket" => URI.encode(bucket, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -211,7 +211,7 @@ defmodule GoogleApi.TestClient.V2.Api.Objects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/resumable/upload/v2/b/{bucket}/o", %{
-        "bucket" => URI.encode_www_form(bucket)
+        "bucket" => URI.encode(bucket, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :uploadType, upload_type)
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -266,7 +266,7 @@ defmodule GoogleApi.TestClient.V2.Api.Objects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/upload/v2/b/{bucket}/o", %{
-        "bucket" => URI.encode_www_form(bucket)
+        "bucket" => URI.encode(bucket, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :uploadType, upload_type)
       |> Request.add_param(:body, :metadata, metadata)
@@ -306,7 +306,7 @@ defmodule GoogleApi.TestClient.V2.Api.Objects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/test/v2/b/{bucket}/wrapped", %{
-        "bucket" => URI.encode_www_form(bucket)
+        "bucket" => URI.encode(bucket, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
