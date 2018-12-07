@@ -144,4 +144,15 @@ defmodule Gax.ApiTest do
 
     assert %Tesla.Env{} = env
   end
+
+  test "url path encoding" do
+    mock(fn %{method: :get, url: "http://localhost:8080/test/v1/b/bucket-1/o/some%2Fpath%2FFile%20with%20sp%C3%A4ces.zip"} ->
+      %Tesla.Env{status: 200, body: @container_json}
+    end)
+
+    conn = Connection.new()
+    {:ok, env} = Api.objects_get(conn, "bucket-1", "some/path/File with späces.zip", [], decode: false)
+
+    assert %Tesla.Env{} = env
+  end
 end
