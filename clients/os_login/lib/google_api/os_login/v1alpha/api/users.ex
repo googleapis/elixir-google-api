@@ -148,12 +148,12 @@ defmodule GoogleApi.OSLogin.V1alpha.Api.Users do
   end
 
   @doc """
-  Deletes a POSIX account.
+  Deletes an SSH public key.
 
   ## Parameters
 
   - connection (GoogleApi.OSLogin.V1alpha.Connection): Connection to server
-  - name (String.t): A reference to the POSIX account to update. POSIX accounts are identified by the project ID they are associated with. A reference to the POSIX account is in format &#x60;users/{user}/projects/{project}&#x60;.
+  - name (String.t): The fingerprint of the public key to update. Public keys are identified by their SHA-256 fingerprint. The fingerprint of the public key is in format &#x60;users/{user}/sshPublicKeys/{fingerprint}&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
@@ -173,9 +173,9 @@ defmodule GoogleApi.OSLogin.V1alpha.Api.Users do
   {:ok, %GoogleApi.OSLogin.V1alpha.Model.Empty{}} on success
   {:error, info} on failure
   """
-  @spec oslogin_users_projects_delete(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec oslogin_users_ssh_public_keys_delete(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.OSLogin.V1alpha.Model.Empty.t()} | {:error, Tesla.Env.t()}
-  def oslogin_users_projects_delete(connection, name, optional_params \\ [], opts \\ []) do
+  def oslogin_users_ssh_public_keys_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
