@@ -16,37 +16,34 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.BigQuery.V2.Model.RangePartitioningRange do
+defmodule GoogleApi.BigQuery.V2.Model.MaterializedViewDefinition do
   @moduledoc """
-  [TrustedTester] [Required] Defines the ranges for range partitioning.
+
 
   ## Attributes
 
-  - end (String.t): [TrustedTester] [Required] The end of range partitioning, exclusive. Defaults to: `null`.
-  - interval (String.t): [TrustedTester] [Required] The width of each interval. Defaults to: `null`.
-  - start (String.t): [TrustedTester] [Required] The start of range partitioning, inclusive. Defaults to: `null`.
+  - lastRefreshTime (String.t): [Output-only] [TrustedTester] The time when this materialized view was last modified, in milliseconds since the epoch. Defaults to: `null`.
+  - query (String.t): [Required] A query whose result is persisted. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :end => any(),
-          :interval => any(),
-          :start => any()
+          :lastRefreshTime => any(),
+          :query => any()
         }
 
-  field(:end)
-  field(:interval)
-  field(:start)
+  field(:lastRefreshTime)
+  field(:query)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.RangePartitioningRange do
+defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.MaterializedViewDefinition do
   def decode(value, options) do
-    GoogleApi.BigQuery.V2.Model.RangePartitioningRange.decode(value, options)
+    GoogleApi.BigQuery.V2.Model.MaterializedViewDefinition.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.BigQuery.V2.Model.RangePartitioningRange do
+defimpl Poison.Encoder, for: GoogleApi.BigQuery.V2.Model.MaterializedViewDefinition do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

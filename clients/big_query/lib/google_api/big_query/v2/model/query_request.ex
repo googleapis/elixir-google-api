@@ -25,7 +25,7 @@ defmodule GoogleApi.BigQuery.V2.Model.QueryRequest do
   - defaultDataset (DatasetReference): [Optional] Specifies the default datasetId and projectId to assume for any unqualified table names in the query. If not set, all table names in the query string must be qualified in the format &#39;datasetId.tableId&#39;. Defaults to: `null`.
   - dryRun (boolean()): [Optional] If set to true, BigQuery doesn&#39;t run the job. Instead, if the query is valid, BigQuery returns statistics about the job such as how many bytes would be processed. If the query is invalid, an error returns. The default value is false. Defaults to: `null`.
   - kind (String.t): The resource type of the request. Defaults to: `null`.
-  - location (String.t): The geographic location where the job should run. Required except for US and EU. Defaults to: `null`.
+  - location (String.t): The geographic location where the job should run. See details at https://cloud.google.com/bigquery/docs/locations#specifying_your_location. Defaults to: `null`.
   - maxResults (integer()): [Optional] The maximum number of rows of data to return per page of results. Setting this flag to a small value such as 1000 and then paging through results might improve reliability when the query result set is large. In addition to this limit, responses are also limited to 10 MB. By default, there is no maximum row count, and only the byte limit applies. Defaults to: `null`.
   - parameterMode (String.t): Standard SQL only. Set to POSITIONAL to use positional (?) query parameters or to NAMED to use named (@myparam) query parameters in this query. Defaults to: `null`.
   - preserveNulls (boolean()): [Deprecated] This property is deprecated. Defaults to: `null`.

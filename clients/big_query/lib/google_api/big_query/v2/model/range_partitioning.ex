@@ -22,7 +22,7 @@ defmodule GoogleApi.BigQuery.V2.Model.RangePartitioning do
 
   ## Attributes
 
-  - field (String.t): [Experimental] [Required] The table is partitioned by this field. The field must be a top-level NULLABLE/REQUIRED field. The only supported type is INTEGER/INT64. Defaults to: `null`.
+  - field (String.t): [TrustedTester] [Required] The table is partitioned by this field. The field must be a top-level NULLABLE/REQUIRED field. The only supported type is INTEGER/INT64. Defaults to: `null`.
   - range (RangePartitioningRange):  Defaults to: `null`.
   """
 

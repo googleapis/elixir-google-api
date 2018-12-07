@@ -27,7 +27,7 @@ defmodule GoogleApi.BigQuery.V2.Model.DatasetListDatasets do
   - id (String.t): The fully-qualified, unique, opaque ID of the dataset. Defaults to: `null`.
   - kind (String.t): The resource type. This property always returns the value \&quot;bigquery#dataset\&quot;. Defaults to: `null`.
   - labels (%{optional(String.t) &#x3D;&gt; String.t}): The labels associated with this dataset. You can use these to organize and group your datasets. Defaults to: `null`.
-  - location (String.t): [Experimental] The geographic location where the data resides. Defaults to: `null`.
+  - location (String.t): The geographic location where the data resides. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
