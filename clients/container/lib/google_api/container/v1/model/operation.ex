@@ -22,10 +22,12 @@ defmodule GoogleApi.Container.V1.Model.Operation do
 
   ## Attributes
 
+  - clusterConditions ([StatusCondition]): Which conditions caused the current cluster state. Defaults to: `null`.
   - detail (String.t): Detailed operation progress, if available. Defaults to: `null`.
   - endTime (String.t): [Output only] The time the operation completed, in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format. Defaults to: `null`.
   - location (String.t): [Output only] The name of the Google Compute Engine [zone](/compute/docs/regions-zones/regions-zones#available) or [region](/compute/docs/regions-zones/regions-zones#available) in which the cluster resides. Defaults to: `null`.
   - name (String.t): The server-assigned ID for the operation. Defaults to: `null`.
+  - nodepoolConditions ([StatusCondition]): Which conditions caused the current node pool state. Defaults to: `null`.
   - operationType (String.t): The operation type. Defaults to: `null`.
     - Enum - one of [TYPE_UNSPECIFIED, CREATE_CLUSTER, DELETE_CLUSTER, UPGRADE_MASTER, UPGRADE_NODES, REPAIR_CLUSTER, UPDATE_CLUSTER, CREATE_NODE_POOL, DELETE_NODE_POOL, SET_NODE_POOL_MANAGEMENT, AUTO_REPAIR_NODES, AUTO_UPGRADE_NODES, SET_LABELS, SET_MASTER_AUTH, SET_NODE_POOL_SIZE, SET_NETWORK_POLICY, SET_MAINTENANCE_POLICY]
   - selfLink (String.t): Server-defined URL for the resource. Defaults to: `null`.
@@ -40,10 +42,12 @@ defmodule GoogleApi.Container.V1.Model.Operation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :clusterConditions => list(GoogleApi.Container.V1.Model.StatusCondition.t()),
           :detail => any(),
           :endTime => any(),
           :location => any(),
           :name => any(),
+          :nodepoolConditions => list(GoogleApi.Container.V1.Model.StatusCondition.t()),
           :operationType => any(),
           :selfLink => any(),
           :startTime => any(),
@@ -53,10 +57,12 @@ defmodule GoogleApi.Container.V1.Model.Operation do
           :zone => any()
         }
 
+  field(:clusterConditions, as: GoogleApi.Container.V1.Model.StatusCondition, type: :list)
   field(:detail)
   field(:endTime)
   field(:location)
   field(:name)
+  field(:nodepoolConditions, as: GoogleApi.Container.V1.Model.StatusCondition, type: :list)
   field(:operationType)
   field(:selfLink)
   field(:startTime)

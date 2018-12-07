@@ -23,6 +23,7 @@ defmodule GoogleApi.Container.V1.Model.NodePool do
   ## Attributes
 
   - autoscaling (NodePoolAutoscaling): Autoscaler configuration for this NodePool. Autoscaler is enabled only if a valid configuration is present. Defaults to: `null`.
+  - conditions ([StatusCondition]): Which conditions caused the current node pool state. Defaults to: `null`.
   - config (NodeConfig): The node configuration of the pool. Defaults to: `null`.
   - initialNodeCount (integer()): The initial node count for the pool. You must ensure that your Compute Engine &lt;a href&#x3D;\&quot;/compute/docs/resource-quotas\&quot;&gt;resource quota&lt;/a&gt; is sufficient for this number of instances. You must also have available firewall and routes quota. Defaults to: `null`.
   - instanceGroupUrls ([String.t]): [Output only] The resource URLs of the [managed instance groups](/compute/docs/instance-groups/creating-groups-of-managed-instances) associated with this node pool. Defaults to: `null`.
@@ -39,6 +40,7 @@ defmodule GoogleApi.Container.V1.Model.NodePool do
 
   @type t :: %__MODULE__{
           :autoscaling => GoogleApi.Container.V1.Model.NodePoolAutoscaling.t(),
+          :conditions => list(GoogleApi.Container.V1.Model.StatusCondition.t()),
           :config => GoogleApi.Container.V1.Model.NodeConfig.t(),
           :initialNodeCount => any(),
           :instanceGroupUrls => list(any()),
@@ -51,6 +53,7 @@ defmodule GoogleApi.Container.V1.Model.NodePool do
         }
 
   field(:autoscaling, as: GoogleApi.Container.V1.Model.NodePoolAutoscaling)
+  field(:conditions, as: GoogleApi.Container.V1.Model.StatusCondition, type: :list)
   field(:config, as: GoogleApi.Container.V1.Model.NodeConfig)
   field(:initialNodeCount)
   field(:instanceGroupUrls, type: :list)
