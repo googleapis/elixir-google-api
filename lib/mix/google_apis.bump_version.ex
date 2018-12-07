@@ -1,4 +1,3 @@
-#!/usr/bin/env bash
 # Copyright 2018 Google Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,30 +12,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-set -eo pipefail
+defmodule Mix.Tasks.GoogleApis.BumpVersion do
+  use Mix.Task
 
-pushd $(dirname "$0")/../
+  @shortdoc "Bump versions on GoogleApi clients"
 
-export TEMPLATE=gax
+  def run([only]) do
+    only
+    |> GoogleApis.ApiConfig.load()
+    |> bump()
+  end
+  def run(_) do
+    bump(GoogleApis.ApiConfig.load_all())
+  end
 
-# clean the codegen directory
-# if [ -d .codegen ]; then
-#     rm -rf .codegen
-# fi
-# mkdir -p .codegen
-# export TEMPDIR=$(pwd)/.codegen
-
-# install npm dependencies
-npm install
-
-# install dependencies
-mix deps.get
-
-# run generators
-mix google_apis.generate $1
-
-# if there are changes, bump the version(s)
-OUTPUT=$(git status --porcelain)
-if [[ ! -z $OUTPUT ]]; then
-    mix google_apis.bump_version $1
-fi
+  defp bump(apis) do
+    Enum.each(apis, &GoogleApis.bump_version/1)
+  end
+end
