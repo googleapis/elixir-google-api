@@ -23,7 +23,6 @@ defmodule GoogleApi.Speech.V1.Model.WordInfo do
   ## Attributes
 
   - endTime (String.t): Output only. Time offset relative to the beginning of the audio, and corresponding to the end of the spoken word. This field is only set if &#x60;enable_word_time_offsets&#x3D;true&#x60; and only in the top hypothesis. This is an experimental feature and the accuracy of the time offset can vary. Defaults to: `null`.
-  - speakerTag (integer()): Output only. A distinct integer value is assigned for every speaker within the audio. This field specifies which one of those speakers was detected to have spoken this word. Value ranges from &#39;1&#39; to diarization_speaker_count. speaker_tag is set if enable_speaker_diarization &#x3D; &#39;true&#39; and only in the top alternative. Defaults to: `null`.
   - startTime (String.t): Output only. Time offset relative to the beginning of the audio, and corresponding to the start of the spoken word. This field is only set if &#x60;enable_word_time_offsets&#x3D;true&#x60; and only in the top hypothesis. This is an experimental feature and the accuracy of the time offset can vary. Defaults to: `null`.
   - word (String.t): Output only. The word corresponding to this set of information. Defaults to: `null`.
   """
@@ -32,13 +31,11 @@ defmodule GoogleApi.Speech.V1.Model.WordInfo do
 
   @type t :: %__MODULE__{
           :endTime => any(),
-          :speakerTag => any(),
           :startTime => any(),
           :word => any()
         }
 
   field(:endTime)
-  field(:speakerTag)
   field(:startTime)
   field(:word)
 end
