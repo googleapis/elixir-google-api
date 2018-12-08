@@ -24,18 +24,15 @@ defmodule GoogleApi.Vault.V1.Model.MailExportOptions do
 
   - exportFormat (String.t): The export file format. Defaults to: `null`.
     - Enum - one of [EXPORT_FORMAT_UNSPECIFIED, MBOX, PST]
-  - showConfidentialModeContent (boolean()): Set to true to export confidential mode content Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :exportFormat => any(),
-          :showConfidentialModeContent => any()
+          :exportFormat => any()
         }
 
   field(:exportFormat)
-  field(:showConfidentialModeContent)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Vault.V1.Model.MailExportOptions do
