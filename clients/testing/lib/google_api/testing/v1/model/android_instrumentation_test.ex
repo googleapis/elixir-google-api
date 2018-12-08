@@ -23,6 +23,7 @@ defmodule GoogleApi.Testing.V1.Model.AndroidInstrumentationTest do
   ## Attributes
 
   - appApk (FileReference): The APK for the application under test. Defaults to: `null`.
+  - appBundle (AppBundle): A multi-apk app bundle for the application under test. Defaults to: `null`.
   - appPackageId (String.t): The java package for the application under test. Optional, default is determined by examining the application&#39;s manifest. Defaults to: `null`.
   - orchestratorOption (String.t): The option of whether running each test within its own invocation of instrumentation with Android Test Orchestrator or not. ** Orchestrator is only compatible with AndroidJUnitRunner version 1.0 or higher! ** Orchestrator offers the following benefits:  - No shared state  - Crashes are isolated  - Logs are scoped per test  See &lt;https://developer.android.com/training/testing/junit-runner.html#using-android-test-orchestrator&gt; for more information about Android Test Orchestrator.  Optional. If not set, the test will be run without the orchestrator. Defaults to: `null`.
     - Enum - one of [ORCHESTRATOR_OPTION_UNSPECIFIED, USE_ORCHESTRATOR, DO_NOT_USE_ORCHESTRATOR]
@@ -36,6 +37,7 @@ defmodule GoogleApi.Testing.V1.Model.AndroidInstrumentationTest do
 
   @type t :: %__MODULE__{
           :appApk => GoogleApi.Testing.V1.Model.FileReference.t(),
+          :appBundle => GoogleApi.Testing.V1.Model.AppBundle.t(),
           :appPackageId => any(),
           :orchestratorOption => any(),
           :testApk => GoogleApi.Testing.V1.Model.FileReference.t(),
@@ -45,6 +47,7 @@ defmodule GoogleApi.Testing.V1.Model.AndroidInstrumentationTest do
         }
 
   field(:appApk, as: GoogleApi.Testing.V1.Model.FileReference)
+  field(:appBundle, as: GoogleApi.Testing.V1.Model.AppBundle)
   field(:appPackageId)
   field(:orchestratorOption)
   field(:testApk, as: GoogleApi.Testing.V1.Model.FileReference)
