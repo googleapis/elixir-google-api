@@ -1,7 +1,7 @@
 defmodule GoogleApi.Redis.V1beta1.Mixfile do
   use Mix.Project
 
-  @version "0.0.1"
+  @version "0.1.0"
 
   def project do
     [app: :google_api_redis,
@@ -30,7 +30,7 @@ defmodule GoogleApi.Redis.V1beta1.Mixfile do
 
   defp description() do
     """
-    The Google Cloud Memorystore for Redis API is used for creating and managing Redis instances on the Google Cloud Platform.
+    Creates and manages Redis instances on the Google Cloud Platform.
     """
   end
 
