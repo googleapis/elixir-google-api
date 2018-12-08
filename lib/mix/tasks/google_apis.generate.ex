@@ -22,6 +22,7 @@ defmodule Mix.Tasks.GoogleApis.Generate do
     |> GoogleApis.ApiConfig.load()
     |> builder()
   end
+
   def run(_) do
     builder(GoogleApis.ApiConfig.load_all())
   end

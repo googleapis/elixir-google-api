@@ -13,7 +13,6 @@
 # limitations under the License.
 
 defmodule GoogleApis.Converter.ApiSpecConverter do
-
   @behaviour GoogleApis.Converter
   alias GoogleApis.ApiConfig
   require Logger
@@ -23,9 +22,19 @@ defmodule GoogleApis.Converter.ApiSpecConverter do
     output = ApiConfig.openapi_spec_file(api_config)
     Logger.info("Converting #{file} to #{output}")
 
-    with {swagger, 0} <- System.cmd("npm", ["run", "-s", "api-spec-converter", "--", file, "-f", "google", "-t", "swagger_2"]),
-         :ok <- File.write(output, swagger)
-    do
+    with {swagger, 0} <-
+           System.cmd("npm", [
+             "run",
+             "-s",
+             "api-spec-converter",
+             "--",
+             file,
+             "-f",
+             "google",
+             "-t",
+             "swagger_2"
+           ]),
+         :ok <- File.write(output, swagger) do
       {:ok, output}
     else
       {"", exit_code} -> {:error, "convert failed. exit code #{exit_code}"}

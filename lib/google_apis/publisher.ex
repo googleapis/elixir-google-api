@@ -18,17 +18,19 @@ defmodule GoogleApis.Publisher do
 
   def publish(api_config) do
     api_name = ApiConfig.library_name(api_config)
-    directory = Path.join([
-      System.cwd(),
-      "clients",
-      api_name
-    ])
+
+    directory =
+      Path.join([
+        System.cwd(),
+        "clients",
+        api_name
+      ])
 
     if api_config.publish && should_publish?(directory) do
-      Logger.info "publishing #{api_name}"
+      Logger.info("publishing #{api_name}")
       do_publish(directory)
     else
-      Logger.info "skipping #{api_name}"
+      Logger.info("skipping #{api_name}")
       {:ok, "skipped"}
     end
   end
@@ -41,14 +43,14 @@ defmodule GoogleApis.Publisher do
     app = Keyword.fetch!(project_info, :app)
     version = Keyword.fetch!(project_info, :version)
 
-    Logger.info "Checking app: #{app} version: #{version}"
+    Logger.info("Checking app: #{app} version: #{version}")
     !version_exists?(app, version)
   end
 
   def version_exists?(app, version) do
     case Tesla.get("https://hex.pm/packages/#{app}/#{version}") do
       {:ok, %{status: 200}} -> true
-      _                     -> false
+      _ -> false
     end
   end
 
@@ -59,14 +61,17 @@ defmodule GoogleApis.Publisher do
       "hex.publish",
       "--yes"
     ]
+
     env = [{"HEX_API_KEY", Application.get_env(:google_apis, :hex_api_key)}]
+
     case System.cmd("mix", args, cd: directory, env: env, stderr_to_stdout: true) do
       {output, 0} ->
-        Logger.info output
+        Logger.info(output)
         {:ok, output}
+
       {output, exit_code} ->
-        Logger.error "Failed with exit code #{exit_code}"
-        Logger.error output
+        Logger.error("Failed with exit code #{exit_code}")
+        Logger.error(output)
         {:error, output}
     end
   end

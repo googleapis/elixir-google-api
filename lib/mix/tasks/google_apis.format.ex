@@ -22,6 +22,7 @@ defmodule Mix.Tasks.GoogleApis.Format do
     |> GoogleApis.ApiConfig.load()
     |> Enum.each(&GoogleApis.format_client/1)
   end
+
   def run(_) do
     Enum.each(GoogleApis.ApiConfig.load_all(), &GoogleApis.format_client/1)
   end

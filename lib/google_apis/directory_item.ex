@@ -13,8 +13,18 @@
 # limitations under the License.
 
 defmodule GoogleApis.DirectoryItem do
-
-  defstruct [:id, :struct, :name, :version, :title, :description, :discoveryRestUrl, :icons, :documentationLink, :preferred]
+  defstruct [
+    :id,
+    :struct,
+    :name,
+    :version,
+    :title,
+    :description,
+    :discoveryRestUrl,
+    :icons,
+    :documentationLink,
+    :preferred
+  ]
 
   def preferred?(%{"preferred" => true}), do: true
   def preferred?(_), do: false

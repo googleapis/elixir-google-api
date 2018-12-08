@@ -13,7 +13,7 @@
 # limitations under the License.
 
 defmodule GoogleApis.Generator do
-  @callback generate_client(GoogleApis.ApiConfig.t) :: any()
+  @callback generate_client(GoogleApis.ApiConfig.t()) :: any()
   alias GoogleApis.ApiConfig
 
   def bump_version(api_config) do
@@ -21,7 +21,7 @@ defmodule GoogleApis.Generator do
 
     new_contents =
       mixfile
-      |> File.stream!
+      |> File.stream!()
       |> Stream.map(&replace_version/1)
       |> Stream.into([])
       |> Enum.join("")
@@ -30,8 +30,11 @@ defmodule GoogleApis.Generator do
   end
 
   defp replace_version(line) do
-    Regex.replace(~r/@version "(\d+\.\d+\.\d+)"/, line, fn _, version_str -> bump_version_string(version_str) end)
+    Regex.replace(~r/@version "(\d+\.\d+\.\d+)"/, line, fn _, version_str ->
+      bump_version_string(version_str)
+    end)
   end
+
   defp bump_version_string(str) do
     v =
       str

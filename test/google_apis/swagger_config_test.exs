@@ -15,16 +15,15 @@
 defmodule GoogleApis.SwaggerConfigTest do
   use ExUnit.Case
   doctest GoogleApis.SwaggerConfig
-  alias GoogleApis.{ApiConfig,SwaggerConfig}
+  alias GoogleApis.{ApiConfig, SwaggerConfig}
 
   test "from_api_config" do
     assert %SwaggerConfig{
-              licenseHeader: license_header,
-              invokerPackage: "GoogleApi.CloudTrace.V2",
-              packageName: "google_api_cloud_trace"
-            } = SwaggerConfig.from_api_config(%ApiConfig{name: "CloudTrace", version: "v2"})
+             licenseHeader: license_header,
+             invokerPackage: "GoogleApi.CloudTrace.V2",
+             packageName: "google_api_cloud_trace"
+           } = SwaggerConfig.from_api_config(%ApiConfig{name: "CloudTrace", version: "v2"})
 
     assert license_header =~ "Copyright 2017 Google Inc."
   end
-
 end

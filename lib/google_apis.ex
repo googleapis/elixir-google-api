@@ -26,8 +26,7 @@ defmodule GoogleApis do
 
     with {:ok, {body, _format}} <- GoogleApis.Discovery.fetch(api_config.url),
          :ok <- File.mkdir_p(Path.dirname(file)),
-         :ok <- File.write(file, body)
-    do
+         :ok <- File.write(file, body) do
       {:ok, file}
     else
       error -> IO.inspect(error)
@@ -56,7 +55,7 @@ defmodule GoogleApis do
     name = GoogleApis.ApiConfig.library_name(api_config)
 
     ["clients/#{name}/lib/**/*.{ex,exs}"]
-    |> Mix.Tasks.Format.run
+    |> Mix.Tasks.Format.run()
   end
 
   def publish(api_config) do
