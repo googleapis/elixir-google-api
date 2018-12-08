@@ -90,7 +90,7 @@ defmodule GoogleApi.Slides.V1.Api.Presentations do
   end
 
   @doc """
-  Creates a new presentation using the title given in the request. If a presentationId is provided, uses it as the ID of the new presentation. Otherwise, a new presentationId is generated. Returns the created presentation.
+  Creates a blank presentation using the title given in the request. If a &#x60;presentationId&#x60; is provided, it is used as the ID of the new presentation. Otherwise, a new ID is generated. Other fields in the request, including any provided content, are ignored. Returns the created presentation.
 
   ## Parameters
 
