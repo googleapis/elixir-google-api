@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.Monitoring.V3.Model.TimeInterval do
   @moduledoc """
-  A time interval extending just after a start time through an end time. If the start time is the same as the end time, then the interval represents a single point in time.
+  A time interval extending just after a start time through an end time. The start time must not be later than the end time. The default start time is the end time, making the startTime value technically optional. Whether this is useful depends on the MetricKind. If the start and end times are the same, the interval represents a point in time. This is appropriate for GAUGE metrics, but not for DELTA and CUMULATIVE metrics, which cover a span of time.
 
   ## Attributes
 

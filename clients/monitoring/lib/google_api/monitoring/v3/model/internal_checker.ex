@@ -27,6 +27,8 @@ defmodule GoogleApi.Monitoring.V3.Model.InternalChecker do
   - name (String.t): A unique resource name for this InternalChecker. The format is:projects/[PROJECT_ID]/internalCheckers/[INTERNAL_CHECKER_ID].PROJECT_ID is the stackdriver workspace project for the uptime check config associated with the internal checker. Defaults to: `null`.
   - network (String.t): The GCP VPC network (https://cloud.google.com/vpc/docs/vpc) where the internal resource lives (ex: \&quot;default\&quot;). Defaults to: `null`.
   - peerProjectId (String.t): The GCP project_id where the internal checker lives. Not necessary the same as the workspace project. Defaults to: `null`.
+  - state (String.t): The current operational state of the internal checker. Defaults to: `null`.
+    - Enum - one of [UNSPECIFIED, CREATING, RUNNING]
   """
 
   use GoogleApi.Gax.ModelBase
@@ -36,7 +38,8 @@ defmodule GoogleApi.Monitoring.V3.Model.InternalChecker do
           :gcpZone => any(),
           :name => any(),
           :network => any(),
-          :peerProjectId => any()
+          :peerProjectId => any(),
+          :state => any()
         }
 
   field(:displayName)
@@ -44,6 +47,7 @@ defmodule GoogleApi.Monitoring.V3.Model.InternalChecker do
   field(:name)
   field(:network)
   field(:peerProjectId)
+  field(:state)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Monitoring.V3.Model.InternalChecker do
