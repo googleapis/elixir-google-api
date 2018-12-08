@@ -23,6 +23,7 @@ defmodule GoogleApi.Testing.V1.Model.AndroidRoboTest do
   ## Attributes
 
   - appApk (FileReference): The APK for the application under test. Defaults to: `null`.
+  - appBundle (AppBundle): A multi-apk app bundle for the application under test. Defaults to: `null`.
   - appInitialActivity (String.t): The initial activity that should be used to start the app. Optional Defaults to: `null`.
   - appPackageId (String.t): The java package for the application under test. Optional, default is determined by examining the application&#39;s manifest. Defaults to: `null`.
   - maxDepth (integer()): The max depth of the traversal stack Robo can explore. Needs to be at least 2 to make Robo explore the app beyond the first activity. Default is 50. Optional Defaults to: `null`.
@@ -36,6 +37,7 @@ defmodule GoogleApi.Testing.V1.Model.AndroidRoboTest do
 
   @type t :: %__MODULE__{
           :appApk => GoogleApi.Testing.V1.Model.FileReference.t(),
+          :appBundle => GoogleApi.Testing.V1.Model.AppBundle.t(),
           :appInitialActivity => any(),
           :appPackageId => any(),
           :maxDepth => any(),
@@ -46,6 +48,7 @@ defmodule GoogleApi.Testing.V1.Model.AndroidRoboTest do
         }
 
   field(:appApk, as: GoogleApi.Testing.V1.Model.FileReference)
+  field(:appBundle, as: GoogleApi.Testing.V1.Model.AppBundle)
   field(:appInitialActivity)
   field(:appPackageId)
   field(:maxDepth)
