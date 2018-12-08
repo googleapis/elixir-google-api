@@ -26,6 +26,8 @@ defmodule GoogleApi.Vault.V1.Model.ExportOptions do
   - groupsOptions (GroupsExportOptions): Option available for groups export. Defaults to: `null`.
   - hangoutsChatOptions (HangoutsChatExportOptions): Option available for hangouts chat export. Defaults to: `null`.
   - mailOptions (MailExportOptions): Option available for mail export. Defaults to: `null`.
+  - region (String.t): The requested export location. Defaults to: `null`.
+    - Enum - one of [EXPORT_REGION_UNSPECIFIED, ANY, US, EUROPE]
   """
 
   use GoogleApi.Gax.ModelBase
@@ -34,13 +36,15 @@ defmodule GoogleApi.Vault.V1.Model.ExportOptions do
           :driveOptions => GoogleApi.Vault.V1.Model.DriveExportOptions.t(),
           :groupsOptions => GoogleApi.Vault.V1.Model.GroupsExportOptions.t(),
           :hangoutsChatOptions => GoogleApi.Vault.V1.Model.HangoutsChatExportOptions.t(),
-          :mailOptions => GoogleApi.Vault.V1.Model.MailExportOptions.t()
+          :mailOptions => GoogleApi.Vault.V1.Model.MailExportOptions.t(),
+          :region => any()
         }
 
   field(:driveOptions, as: GoogleApi.Vault.V1.Model.DriveExportOptions)
   field(:groupsOptions, as: GoogleApi.Vault.V1.Model.GroupsExportOptions)
   field(:hangoutsChatOptions, as: GoogleApi.Vault.V1.Model.HangoutsChatExportOptions)
   field(:mailOptions, as: GoogleApi.Vault.V1.Model.MailExportOptions)
+  field(:region)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Vault.V1.Model.ExportOptions do
