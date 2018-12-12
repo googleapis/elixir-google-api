@@ -24,9 +24,9 @@ defmodule GoogleApi.DeploymentManager.V2.Model.Manifest do
 
   - config (ConfigFile): Output only. The YAML configuration for this manifest. Defaults to: `null`.
   - expandedConfig (String.t): Output only. The fully-expanded configuration file, including any templates and references. Defaults to: `null`.
-  - id (String.t): Output only. Unique identifier for the resource; defined by the server. Defaults to: `null`.
+  - id (String.t):  Defaults to: `null`.
   - imports ([ImportFile]): Output only. The imported files for this manifest. Defaults to: `null`.
-  - insertTime (String.t): Output only. Timestamp when the manifest was created, in RFC3339 text format. Defaults to: `null`.
+  - insertTime (String.t): Output only. Creation timestamp in RFC3339 text format. Defaults to: `null`.
   - layout (String.t): Output only. The YAML layout for this manifest. Defaults to: `null`.
   - name (String.t): Output only.  The name of the manifest. Defaults to: `null`.
   - selfLink (String.t): Output only. Self link for the manifest. Defaults to: `null`.

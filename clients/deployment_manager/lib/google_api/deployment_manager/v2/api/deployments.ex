@@ -208,7 +208,7 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Deployments do
 
   - connection (GoogleApi.DeploymentManager.V2.Connection): Connection to server
   - project (String.t): Project ID for this request.
-  - resource (String.t): Name of the resource for this request.
+  - resource (String.t): Name or id of the resource for this request.
   - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
@@ -441,7 +441,7 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Deployments do
 
   - connection (GoogleApi.DeploymentManager.V2.Connection): Connection to server
   - project (String.t): Project ID for this request.
-  - resource (String.t): Name of the resource for this request.
+  - resource (String.t): Name or id of the resource for this request.
   - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
@@ -559,7 +559,7 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Deployments do
 
   - connection (GoogleApi.DeploymentManager.V2.Connection): Connection to server
   - project (String.t): Project ID for this request.
-  - resource (String.t): Name of the resource for this request.
+  - resource (String.t): Name or id of the resource for this request.
   - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.

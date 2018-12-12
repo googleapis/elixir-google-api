@@ -22,7 +22,7 @@ defmodule GoogleApi.DeploymentManager.V2.Model.GlobalSetPolicyRequest do
 
   ## Attributes
 
-  - bindings ([Binding]): Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use &#39;policy&#39; to specify bindings. Defaults to: `null`.
+  - bindings ([Binding]): Flatten Policy to create a backward compatible wire-format. Deprecated. Use &#39;policy&#39; to specify bindings. Defaults to: `null`.
   - etag (binary()): Flatten Policy to create a backward compatible wire-format. Deprecated. Use &#39;policy&#39; to specify the etag. Defaults to: `null`.
   - policy (Policy): REQUIRED: The complete policy to be applied to the &#39;resource&#39;. The size of the policy is limited to a few 10s of KB. An empty policy is in general a valid policy but certain services (like Projects) might reject them. Defaults to: `null`.
   """

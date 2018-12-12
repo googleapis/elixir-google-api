@@ -22,11 +22,11 @@ defmodule GoogleApi.DeploymentManager.V2.Model.Type do
 
   ## Attributes
 
-  - id (String.t): Output only. Unique identifier for the resource; defined by the server. Defaults to: `null`.
-  - insertTime (String.t): Output only. Timestamp when the type was created, in RFC3339 text format. Defaults to: `null`.
+  - id (String.t):  Defaults to: `null`.
+  - insertTime (String.t): Output only. Creation timestamp in RFC3339 text format. Defaults to: `null`.
   - name (String.t): Name of the type. Defaults to: `null`.
   - operation (Operation): Output only. The Operation that most recently ran, or is currently running, on this type. Defaults to: `null`.
-  - selfLink (String.t): Output only. Self link for the type. Defaults to: `null`.
+  - selfLink (String.t): Output only. Server defined URL for the resource. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

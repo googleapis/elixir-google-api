@@ -24,14 +24,14 @@ defmodule GoogleApi.DeploymentManager.V2.Model.Resource do
 
   - accessControl (ResourceAccessControl): The Access Control Policy set on this resource. Defaults to: `null`.
   - finalProperties (String.t): Output only. The evaluated properties of the resource with references expanded. Returned as serialized YAML. Defaults to: `null`.
-  - id (String.t): Output only. Unique identifier for the resource; defined by the server. Defaults to: `null`.
-  - insertTime (String.t): Output only. Timestamp when the resource was created or acquired, in RFC3339 text format . Defaults to: `null`.
+  - id (String.t):  Defaults to: `null`.
+  - insertTime (String.t): Output only. Creation timestamp in RFC3339 text format. Defaults to: `null`.
   - manifest (String.t): Output only. URL of the manifest representing the current configuration of this resource. Defaults to: `null`.
   - name (String.t): Output only. The name of the resource as it appears in the YAML config. Defaults to: `null`.
   - properties (String.t): Output only. The current properties of the resource before any references have been filled in. Returned as serialized YAML. Defaults to: `null`.
   - type (String.t): Output only. The type of the resource, for example compute.v1.instance, or cloudfunctions.v1beta1.function. Defaults to: `null`.
   - update (ResourceUpdate): Output only. If Deployment Manager is currently updating or previewing an update to this resource, the updated configuration appears here. Defaults to: `null`.
-  - updateTime (String.t): Output only. Timestamp when the resource was updated, in RFC3339 text format . Defaults to: `null`.
+  - updateTime (String.t): Output only. Update timestamp in RFC3339 text format. Defaults to: `null`.
   - url (String.t): Output only. The URL of the actual resource. Defaults to: `null`.
   - warnings ([OperationWarnings]): Output only. If warning messages are generated during processing of this resource, this field will be populated. Defaults to: `null`.
   """
