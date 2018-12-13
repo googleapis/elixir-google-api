@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.Testing.V1.Model.RoboStartingIntent do
   @moduledoc """
-  Message for specifying the start activities to crawl
+  Message for specifying the start activities to crawl.
 
   ## Attributes
 

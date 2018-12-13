@@ -22,7 +22,7 @@ defmodule GoogleApi.Testing.V1.Model.ProvidedSoftwareCatalog do
 
   ## Attributes
 
-  - orchestratorVersion (String.t): A string representing the current version of Android Test Orchestrator that is provided by TestExecutionService. Example: \&quot;1.0.2 beta\&quot; Defaults to: `null`.
+  - orchestratorVersion (String.t): A string representing the current version of Android Test Orchestrator that is provided by TestExecutionService. Example: \&quot;1.0.2 beta\&quot;. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

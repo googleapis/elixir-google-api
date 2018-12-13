@@ -18,15 +18,15 @@
 
 defmodule GoogleApi.Testing.V1.Model.IosVersion do
   @moduledoc """
-  An iOS version
+  An iOS version.
 
   ## Attributes
 
-  - tags ([String.t]): Output only. Tags for this dimension. Examples: \&quot;default\&quot;, \&quot;preview\&quot;, \&quot;deprecated\&quot; Defaults to: `null`.
-  - id (String.t): Output only. An opaque id for this iOS version. Use this id to invoke the TestExecutionService. Defaults to: `null`.
-  - majorVersion (integer()): Output only. An integer representing the major iOS version. Examples: \&quot;8\&quot;, \&quot;9\&quot; Defaults to: `null`.
-  - minorVersion (integer()): Output only. An integer representing the minor iOS version. Examples: \&quot;1\&quot;, \&quot;2\&quot; Defaults to: `null`.
-  - supportedXcodeVersionIds ([String.t]): Output only. The available Xcode versions for this version. Defaults to: `null`.
+  - tags ([String.t]): Tags for this dimension. Examples: \&quot;default\&quot;, \&quot;preview\&quot;, \&quot;deprecated\&quot;. Defaults to: `null`.
+  - id (String.t): An opaque id for this iOS version. Use this id to invoke the TestExecutionService. Defaults to: `null`.
+  - majorVersion (integer()): An integer representing the major iOS version. Examples: \&quot;8\&quot;, \&quot;9\&quot;. Defaults to: `null`.
+  - minorVersion (integer()): An integer representing the minor iOS version. Examples: \&quot;1\&quot;, \&quot;2\&quot;. Defaults to: `null`.
+  - supportedXcodeVersionIds ([String.t]): The available Xcode versions for this version. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

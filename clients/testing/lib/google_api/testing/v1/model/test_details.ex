@@ -22,8 +22,8 @@ defmodule GoogleApi.Testing.V1.Model.TestDetails do
 
   ## Attributes
 
-  - errorMessage (String.t): If the TestState is ERROR, then this string will contain human-readable details about the error. @OutputOnly Defaults to: `null`.
-  - progressMessages ([String.t]): Human-readable, detailed descriptions of the test&#39;s progress. For example: \&quot;Provisioning a device\&quot;, \&quot;Starting Test\&quot;.  During the course of execution new data may be appended to the end of progress_messages. @OutputOnly Defaults to: `null`.
+  - errorMessage (String.t): Output only. If the TestState is ERROR, then this string will contain human-readable details about the error. Defaults to: `null`.
+  - progressMessages ([String.t]): Output only. Human-readable, detailed descriptions of the test&#39;s progress. For example: \&quot;Provisioning a device\&quot;, \&quot;Starting Test\&quot;.  During the course of execution new data may be appended to the end of progress_messages. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -22,9 +22,9 @@ defmodule GoogleApi.Testing.V1.Model.IntentFilter do
 
   ## Attributes
 
-  - actionNames ([String.t]): The android:name value of the &lt;action&gt; tag Defaults to: `null`.
-  - categoryNames ([String.t]): The android:name value of the &lt;category&gt; tag Defaults to: `null`.
-  - mimeType (String.t): The android:mimeType value of the &lt;data&gt; tag Defaults to: `null`.
+  - actionNames ([String.t]): The android:name value of the &lt;action&gt; tag. Defaults to: `null`.
+  - categoryNames ([String.t]): The android:name value of the &lt;category&gt; tag. Defaults to: `null`.
+  - mimeType (String.t): The android:mimeType value of the &lt;data&gt; tag. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

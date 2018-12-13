@@ -22,12 +22,12 @@ defmodule GoogleApi.Testing.V1.Model.TestSetup do
 
   ## Attributes
 
-  - account (Account): The device will be logged in on this account for the duration of the test. Optional Defaults to: `null`.
-  - additionalApks ([Apk]): APKs to install in addition to those being directly tested. Currently capped at 100. Optional Defaults to: `null`.
-  - directoriesToPull ([String.t]): List of directories on the device to upload to GCS at the end of the test; they must be absolute paths under /sdcard or /data/local/tmp. Path names are restricted to characters a-z A-Z 0-9 _ - . + and /  Note: The paths /sdcard and /data will be made available and treated as implicit path substitutions. E.g. if /sdcard on a particular device does not map to external storage, the system will replace it with the external storage path prefix for that device.  Optional Defaults to: `null`.
+  - account (Account): The device will be logged in on this account for the duration of the test. Defaults to: `null`.
+  - additionalApks ([Apk]): APKs to install in addition to those being directly tested. Currently capped at 100. Defaults to: `null`.
+  - directoriesToPull ([String.t]): List of directories on the device to upload to GCS at the end of the test; they must be absolute paths under /sdcard or /data/local/tmp. Path names are restricted to characters a-z A-Z 0-9 _ - . + and /  Note: The paths /sdcard and /data will be made available and treated as implicit path substitutions. E.g. if /sdcard on a particular device does not map to external storage, the system will replace it with the external storage path prefix for that device. Defaults to: `null`.
   - environmentVariables ([EnvironmentVariable]): Environment variables to set for the test (only applicable for instrumentation tests). Defaults to: `null`.
-  - filesToPush ([DeviceFile]): List of files to push to the device before starting the test.  Optional Defaults to: `null`.
-  - networkProfile (String.t): Optional. The network traffic profile used for running the test. Available network profiles can be queried by using the NETWORK_CONFIGURATION environment type when calling TestEnvironmentDiscoveryService.GetTestEnvironmentCatalog. Defaults to: `null`.
+  - filesToPush ([DeviceFile]): List of files to push to the device before starting the test. Defaults to: `null`.
+  - networkProfile (String.t): The network traffic profile used for running the test. Available network profiles can be queried by using the NETWORK_CONFIGURATION environment type when calling TestEnvironmentDiscoveryService.GetTestEnvironmentCatalog. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

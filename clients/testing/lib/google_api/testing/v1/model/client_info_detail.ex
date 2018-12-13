@@ -18,12 +18,12 @@
 
 defmodule GoogleApi.Testing.V1.Model.ClientInfoDetail do
   @moduledoc """
-  Key-value pair of detailed information about the client which invoked the test. For example {&#39;Version&#39;, &#39;1.0&#39;}, {&#39;Release Track&#39;, &#39;BETA&#39;}
+  Key-value pair of detailed information about the client which invoked the test. Examples: {&#39;Version&#39;, &#39;1.0&#39;}, {&#39;Release Track&#39;, &#39;BETA&#39;}.
 
   ## Attributes
 
-  - key (String.t): The key of detailed client information. Required Defaults to: `null`.
-  - value (String.t): The value of detailed client information. Required Defaults to: `null`.
+  - key (String.t): Required. The key of detailed client information. Defaults to: `null`.
+  - value (String.t): Required. The value of detailed client information. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -22,9 +22,9 @@ defmodule GoogleApi.Testing.V1.Model.TestEnvironmentCatalog do
 
   ## Attributes
 
-  - androidDeviceCatalog (AndroidDeviceCatalog): Android devices suitable for running Android Instrumentation Tests. Defaults to: `null`.
-  - iosDeviceCatalog (IosDeviceCatalog): Supported iOS devices Defaults to: `null`.
-  - networkConfigurationCatalog (NetworkConfigurationCatalog): Supported network configurations Defaults to: `null`.
+  - androidDeviceCatalog (AndroidDeviceCatalog): Supported Android devices. Defaults to: `null`.
+  - iosDeviceCatalog (IosDeviceCatalog): Supported iOS devices. Defaults to: `null`.
+  - networkConfigurationCatalog (NetworkConfigurationCatalog): Supported network configurations. Defaults to: `null`.
   - softwareCatalog (ProvidedSoftwareCatalog): The software test environment provided by TestExecutionService. Defaults to: `null`.
   """
 

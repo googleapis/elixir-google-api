@@ -22,8 +22,8 @@ defmodule GoogleApi.Testing.V1.Model.AndroidRuntimeConfiguration do
 
   ## Attributes
 
-  - locales ([Locale]): The set of available locales. @OutputOnly Defaults to: `null`.
-  - orientations ([Orientation]): The set of available orientations. @OutputOnly Defaults to: `null`.
+  - locales ([Locale]): The set of available locales. Defaults to: `null`.
+  - orientations ([Orientation]): The set of available orientations. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

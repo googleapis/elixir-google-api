@@ -22,8 +22,8 @@ defmodule GoogleApi.Testing.V1.Model.Apk do
 
   ## Attributes
 
-  - location (FileReference): The path to an APK to be installed on the device before the test begins. Optional Defaults to: `null`.
-  - packageName (String.t): The java package for the APK to be installed. Optional, value is determined by examining the application&#39;s manifest. Defaults to: `null`.
+  - location (FileReference): The path to an APK to be installed on the device before the test begins. Defaults to: `null`.
+  - packageName (String.t): The java package for the APK to be installed. Value is determined by examining the application&#39;s manifest. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

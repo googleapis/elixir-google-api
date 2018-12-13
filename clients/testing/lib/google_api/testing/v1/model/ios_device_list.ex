@@ -22,7 +22,7 @@ defmodule GoogleApi.Testing.V1.Model.IosDeviceList do
 
   ## Attributes
 
-  - iosDevices ([IosDevice]): Required. A list of iOS devices Defaults to: `null`.
+  - iosDevices ([IosDevice]): Required. A list of iOS devices. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

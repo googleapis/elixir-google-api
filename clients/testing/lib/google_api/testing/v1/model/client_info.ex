@@ -23,7 +23,7 @@ defmodule GoogleApi.Testing.V1.Model.ClientInfo do
   ## Attributes
 
   - clientInfoDetails ([ClientInfoDetail]): The list of detailed information about client. Defaults to: `null`.
-  - name (String.t): Client name, such as gcloud. Required Defaults to: `null`.
+  - name (String.t): Required. Client name, such as gcloud. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

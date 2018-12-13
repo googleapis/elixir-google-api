@@ -22,18 +22,18 @@ defmodule GoogleApi.Testing.V1.Model.TestMatrix do
 
   ## Attributes
 
-  - clientInfo (ClientInfo): Information about the client which invoked the test. Optional Defaults to: `null`.
-  - environmentMatrix (EnvironmentMatrix): How the host machine(s) are configured. Required Defaults to: `null`.
-  - invalidMatrixDetails (String.t): Describes why the matrix is considered invalid. Only useful for matrices in the INVALID state. @OutputOnly Defaults to: `null`.
+  - clientInfo (ClientInfo): Information about the client which invoked the test. Defaults to: `null`.
+  - environmentMatrix (EnvironmentMatrix): Required. How the host machine(s) are configured. Defaults to: `null`.
+  - invalidMatrixDetails (String.t): Output only. Describes why the matrix is considered invalid. Only useful for matrices in the INVALID state. Defaults to: `null`.
     - Enum - one of [INVALID_MATRIX_DETAILS_UNSPECIFIED, DETAILS_UNAVAILABLE, MALFORMED_APK, MALFORMED_TEST_APK, NO_MANIFEST, NO_PACKAGE_NAME, TEST_SAME_AS_APP, NO_INSTRUMENTATION, NO_SIGNATURE, INSTRUMENTATION_ORCHESTRATOR_INCOMPATIBLE, NO_TEST_RUNNER_CLASS, NO_LAUNCHER_ACTIVITY, FORBIDDEN_PERMISSIONS, INVALID_ROBO_DIRECTIVES, TEST_LOOP_INTENT_FILTER_NOT_FOUND, SCENARIO_LABEL_NOT_DECLARED, SCENARIO_LABEL_MALFORMED, SCENARIO_NOT_DECLARED, DEVICE_ADMIN_RECEIVER, MALFORMED_XC_TEST_ZIP, BUILT_FOR_IOS_SIMULATOR, NO_TESTS_IN_XC_TEST_ZIP, USE_DESTINATION_ARTIFACTS, TEST_NOT_APP_HOSTED, PLIST_CANNOT_BE_PARSED, TEST_ONLY_APK, MALFORMED_IPA, NO_CODE_APK, INVALID_INPUT_APK, INVALID_APK_PREVIEW_SDK]
-  - projectId (String.t): The cloud project that owns the test matrix. @OutputOnly Defaults to: `null`.
-  - resultStorage (ResultStorage): Where the results for the matrix are written. Required Defaults to: `null`.
-  - state (String.t): Indicates the current progress of the test matrix (e.g., FINISHED) @OutputOnly Defaults to: `null`.
+  - projectId (String.t): The cloud project that owns the test matrix. Defaults to: `null`.
+  - resultStorage (ResultStorage): Required. Where the results for the matrix are written. Defaults to: `null`.
+  - state (String.t): Output only. Indicates the current progress of the test matrix (e.g., FINISHED). Defaults to: `null`.
     - Enum - one of [TEST_STATE_UNSPECIFIED, VALIDATING, PENDING, RUNNING, FINISHED, ERROR, UNSUPPORTED_ENVIRONMENT, INCOMPATIBLE_ENVIRONMENT, INCOMPATIBLE_ARCHITECTURE, CANCELLED, INVALID]
-  - testExecutions ([TestExecution]): The list of test executions that the service creates for this matrix. @OutputOnly Defaults to: `null`.
-  - testMatrixId (String.t): Unique id set by the service. @OutputOnly Defaults to: `null`.
-  - testSpecification (TestSpecification): How to run the test. Required Defaults to: `null`.
-  - timestamp (DateTime.t): The time this test matrix was initially created. @OutputOnly Defaults to: `null`.
+  - testExecutions ([TestExecution]): Output only. The list of test executions that the service creates for this matrix. Defaults to: `null`.
+  - testMatrixId (String.t): Output only. Unique id set by the service. Defaults to: `null`.
+  - testSpecification (TestSpecification): Required. How to run the test. Defaults to: `null`.
+  - timestamp (DateTime.t): Output only. The time this test matrix was initially created. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

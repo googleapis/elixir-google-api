@@ -18,11 +18,11 @@
 
 defmodule GoogleApi.Testing.V1.Model.Account do
   @moduledoc """
-  Identifies an account and how to log into it
+  Identifies an account and how to log into it.
 
   ## Attributes
 
-  - googleAuto (GoogleAuto): An automatic google login account Defaults to: `null`.
+  - googleAuto (GoogleAuto): An automatic google login account. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -22,16 +22,16 @@ defmodule GoogleApi.Testing.V1.Model.TestExecution do
 
   ## Attributes
 
-  - environment (Environment): How the host machine(s) are configured. @OutputOnly Defaults to: `null`.
-  - id (String.t): Unique id set by the backend. @OutputOnly Defaults to: `null`.
-  - matrixId (String.t): Id of the containing TestMatrix. @OutputOnly Defaults to: `null`.
-  - projectId (String.t): The cloud project that owns the test execution. @OutputOnly Defaults to: `null`.
-  - state (String.t): Indicates the current progress of the test execution (e.g., FINISHED). @OutputOnly Defaults to: `null`.
+  - environment (Environment): Output only. How the host machine(s) are configured. Defaults to: `null`.
+  - id (String.t): Output only. Unique id set by the backend. Defaults to: `null`.
+  - matrixId (String.t): Output only. Id of the containing TestMatrix. Defaults to: `null`.
+  - projectId (String.t): Output only. The cloud project that owns the test execution. Defaults to: `null`.
+  - state (String.t): Output only. Indicates the current progress of the test execution (e.g., FINISHED). Defaults to: `null`.
     - Enum - one of [TEST_STATE_UNSPECIFIED, VALIDATING, PENDING, RUNNING, FINISHED, ERROR, UNSUPPORTED_ENVIRONMENT, INCOMPATIBLE_ENVIRONMENT, INCOMPATIBLE_ARCHITECTURE, CANCELLED, INVALID]
-  - testDetails (TestDetails): Additional details about the running test. @OutputOnly Defaults to: `null`.
-  - testSpecification (TestSpecification): How to run the test. @OutputOnly Defaults to: `null`.
-  - timestamp (DateTime.t): The time this test execution was initially created. @OutputOnly Defaults to: `null`.
-  - toolResultsStep (ToolResultsStep): Where the results for this execution are written. @OutputOnly Defaults to: `null`.
+  - testDetails (TestDetails): Output only. Additional details about the running test. Defaults to: `null`.
+  - testSpecification (TestSpecification): Output only. How to run the test. Defaults to: `null`.
+  - timestamp (DateTime.t): Output only. The time this test execution was initially created. Defaults to: `null`.
+  - toolResultsStep (ToolResultsStep): Output only. Where the results for this execution are written. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

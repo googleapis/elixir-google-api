@@ -22,10 +22,10 @@ defmodule GoogleApi.Testing.V1.Model.ToolResultsStep do
 
   ## Attributes
 
-  - executionId (String.t): A tool results execution ID. @OutputOnly Defaults to: `null`.
-  - historyId (String.t): A tool results history ID. @OutputOnly Defaults to: `null`.
-  - projectId (String.t): The cloud project that owns the tool results step. @OutputOnly Defaults to: `null`.
-  - stepId (String.t): A tool results step ID. @OutputOnly Defaults to: `null`.
+  - executionId (String.t): Output only. A tool results execution ID. Defaults to: `null`.
+  - historyId (String.t): Output only. A tool results history ID. Defaults to: `null`.
+  - projectId (String.t): Output only. The cloud project that owns the tool results step. Defaults to: `null`.
+  - stepId (String.t): Output only. A tool results step ID. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

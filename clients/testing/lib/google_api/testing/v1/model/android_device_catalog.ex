@@ -22,9 +22,9 @@ defmodule GoogleApi.Testing.V1.Model.AndroidDeviceCatalog do
 
   ## Attributes
 
-  - models ([AndroidModel]): The set of supported Android device models. @OutputOnly Defaults to: `null`.
-  - runtimeConfiguration (AndroidRuntimeConfiguration): The set of supported runtime configurations. @OutputOnly Defaults to: `null`.
-  - versions ([AndroidVersion]): The set of supported Android OS versions. @OutputOnly Defaults to: `null`.
+  - models ([AndroidModel]): The set of supported Android device models. Defaults to: `null`.
+  - runtimeConfiguration (AndroidRuntimeConfiguration): The set of supported runtime configurations. Defaults to: `null`.
+  - versions ([AndroidVersion]): The set of supported Android OS versions. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

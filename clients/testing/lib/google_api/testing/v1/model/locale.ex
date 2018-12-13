@@ -22,10 +22,10 @@ defmodule GoogleApi.Testing.V1.Model.Locale do
 
   ## Attributes
 
-  - tags ([String.t]): Tags for this dimension. Examples: \&quot;default\&quot; Defaults to: `null`.
-  - id (String.t): The id for this locale. Example: \&quot;en_US\&quot; @OutputOnly Defaults to: `null`.
-  - name (String.t): A human-friendly name for this language/locale. Example: \&quot;English\&quot; @OutputOnly Defaults to: `null`.
-  - region (String.t): A human-friendly string representing the region for this locale. Example: \&quot;United States\&quot; Not present for every locale. @OutputOnly Defaults to: `null`.
+  - tags ([String.t]): Tags for this dimension. Example: \&quot;default\&quot;. Defaults to: `null`.
+  - id (String.t): The id for this locale. Example: \&quot;en_US\&quot;. Defaults to: `null`.
+  - name (String.t): A human-friendly name for this language/locale. Example: \&quot;English\&quot;. Defaults to: `null`.
+  - region (String.t): A human-friendly string representing the region for this locale. Example: \&quot;United States\&quot;. Not present for every locale. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
