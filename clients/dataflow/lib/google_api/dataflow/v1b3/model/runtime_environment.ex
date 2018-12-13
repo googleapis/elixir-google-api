@@ -23,10 +23,12 @@ defmodule GoogleApi.Dataflow.V1b3.Model.RuntimeEnvironment do
   ## Attributes
 
   - additionalExperiments ([String.t]): Additional experiment flags for the job. Defaults to: `null`.
+  - additionalUserLabels (%{optional(String.t) &#x3D;&gt; String.t}): Additional user labels attached to the job. Defaults to: `null`.
   - bypassTempDirValidation (boolean()): Whether to bypass the safety checks for the job&#39;s temporary directory. Use with caution. Defaults to: `null`.
   - machineType (String.t): The machine type to use for the job. Defaults to the value from the template if not specified. Defaults to: `null`.
   - maxWorkers (integer()): The maximum number of Google Compute Engine instances to be made available to your pipeline during execution, from 1 to 1000. Defaults to: `null`.
   - network (String.t): Network to which VMs will be assigned.  If empty or unspecified, the service will use the network \&quot;default\&quot;. Defaults to: `null`.
+  - numWorkers (integer()): The initial number of Google Compute Engine instnaces for the job. Defaults to: `null`.
   - serviceAccountEmail (String.t): The email address of the service account to run the job as. Defaults to: `null`.
   - subnetwork (String.t): Subnetwork to which VMs will be assigned, if desired.  Expected to be of the form \&quot;regions/REGION/subnetworks/SUBNETWORK\&quot;. Defaults to: `null`.
   - tempLocation (String.t): The Cloud Storage path to use for temporary files. Must be a valid Cloud Storage URL, beginning with &#x60;gs://&#x60;. Defaults to: `null`.
@@ -37,10 +39,12 @@ defmodule GoogleApi.Dataflow.V1b3.Model.RuntimeEnvironment do
 
   @type t :: %__MODULE__{
           :additionalExperiments => list(any()),
+          :additionalUserLabels => map(),
           :bypassTempDirValidation => any(),
           :machineType => any(),
           :maxWorkers => any(),
           :network => any(),
+          :numWorkers => any(),
           :serviceAccountEmail => any(),
           :subnetwork => any(),
           :tempLocation => any(),
@@ -48,10 +52,12 @@ defmodule GoogleApi.Dataflow.V1b3.Model.RuntimeEnvironment do
         }
 
   field(:additionalExperiments, type: :list)
+  field(:additionalUserLabels, type: :map)
   field(:bypassTempDirValidation)
   field(:machineType)
   field(:maxWorkers)
   field(:network)
+  field(:numWorkers)
   field(:serviceAccountEmail)
   field(:subnetwork)
   field(:tempLocation)
