@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1Index do
   @moduledoc """
-  A minimal index definition. Next tag: 8
+  A minimal index definition.
 
   ## Attributes
 
