@@ -43,6 +43,7 @@ defmodule GoogleApi.Admin.Reports_v1.Api.UserUsageReport do
     - :customerId (String.t): Represents the customer for which the data is to be fetched.
     - :filters (String.t): Represents the set of filters including parameter operator value.
     - :maxResults (integer()): Maximum number of results to return. Maximum allowed is 1000
+    - :orgUnitID (String.t): the organizational unit&#39;s ID to filter usage parameters from users belonging to a specific OU or one of its sub-OU(s).
     - :pageToken (String.t): Token to specify next page.
     - :parameters (String.t): Represents the application name, parameter name pairs to fetch in csv as app_name1:param_name1, app_name2:param_name2.
 
@@ -65,6 +66,7 @@ defmodule GoogleApi.Admin.Reports_v1.Api.UserUsageReport do
       :customerId => :query,
       :filters => :query,
       :maxResults => :query,
+      :orgUnitID => :query,
       :pageToken => :query,
       :parameters => :query
     }
