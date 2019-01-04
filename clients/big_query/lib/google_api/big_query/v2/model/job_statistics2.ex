@@ -33,9 +33,9 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics2 do
   - numDmlAffectedRows (String.t): [Output-only] The number of rows affected by a DML statement. Present only for DML statements INSERT, UPDATE or DELETE. Defaults to: `null`.
   - queryPlan ([ExplainQueryStage]): [Output-only] Describes execution plan for the query. Defaults to: `null`.
   - referencedTables ([TableReference]): [Output-only] Referenced tables for the job. Queries that reference more than 50 tables will not have a complete list. Defaults to: `null`.
-  - reservationUsage ([JobStatistics2ReservationUsage]): [Output-only] Job resource usage breakdown by reservation. Defaults to: `null`.
+  - reservationUsage ([JobStatisticsReservationUsage]): [Output-only] Job resource usage breakdown by reservation. Defaults to: `null`.
   - schema (TableSchema): [Output-only] The schema of the results. Present only for successful dry run of non-legacy SQL queries. Defaults to: `null`.
-  - statementType (String.t): The type of query statement, if valid. Possible values (new values might be added in the future): \&quot;SELECT\&quot;: SELECT query. \&quot;INSERT\&quot;: INSERT query; see https://cloud.google.com/bigquery/docs/reference/standard-sql/data-manipulation-language \&quot;UPDATE\&quot;: UPDATE query; see https://cloud.google.com/bigquery/docs/reference/standard-sql/data-manipulation-language \&quot;DELETE\&quot;: DELETE query; see https://cloud.google.com/bigquery/docs/reference/standard-sql/data-manipulation-language \&quot;MERGE\&quot;: MERGE query; see https://cloud.google.com/bigquery/docs/reference/standard-sql/data-manipulation-language \&quot;CREATE_TABLE\&quot;: CREATE [OR REPLACE] TABLE without AS SELECT. \&quot;CREATE_TABLE_AS_SELECT\&quot;: CREATE [OR REPLACE] TABLE ... AS SELECT ... \&quot;DROP_TABLE\&quot;: DROP TABLE query. \&quot;CREATE_VIEW\&quot;: CREATE [OR REPLACE] VIEW ... AS SELECT ... \&quot;DROP_VIEW\&quot;: DROP VIEW query. Defaults to: `null`.
+  - statementType (String.t): The type of query statement, if valid. Possible values (new values might be added in the future): \&quot;SELECT\&quot;: SELECT query. \&quot;INSERT\&quot;: INSERT query; see https://cloud.google.com/bigquery/docs/reference/standard-sql/data-manipulation-language. \&quot;UPDATE\&quot;: UPDATE query; see https://cloud.google.com/bigquery/docs/reference/standard-sql/data-manipulation-language. \&quot;DELETE\&quot;: DELETE query; see https://cloud.google.com/bigquery/docs/reference/standard-sql/data-manipulation-language. \&quot;MERGE\&quot;: MERGE query; see https://cloud.google.com/bigquery/docs/reference/standard-sql/data-manipulation-language. \&quot;CREATE_TABLE\&quot;: CREATE [OR REPLACE] TABLE without AS SELECT. \&quot;CREATE_TABLE_AS_SELECT\&quot;: CREATE [OR REPLACE] TABLE ... AS SELECT ... . \&quot;DROP_TABLE\&quot;: DROP TABLE query. \&quot;CREATE_VIEW\&quot;: CREATE [OR REPLACE] VIEW ... AS SELECT ... . \&quot;DROP_VIEW\&quot;: DROP VIEW query. \&quot;ALTER_TABLE\&quot;: ALTER TABLE query. \&quot;ALTER_VIEW\&quot;: ALTER VIEW query. Defaults to: `null`.
   - timeline ([QueryTimelineSample]): [Output-only] [Beta] Describes a timeline of job execution. Defaults to: `null`.
   - totalBytesBilled (String.t): [Output-only] Total bytes billed for the job. Defaults to: `null`.
   - totalBytesProcessed (String.t): [Output-only] Total bytes processed for the job. Defaults to: `null`.
@@ -60,7 +60,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics2 do
           :queryPlan => list(GoogleApi.BigQuery.V2.Model.ExplainQueryStage.t()),
           :referencedTables => list(GoogleApi.BigQuery.V2.Model.TableReference.t()),
           :reservationUsage =>
-            list(GoogleApi.BigQuery.V2.Model.JobStatistics2ReservationUsage.t()),
+            list(GoogleApi.BigQuery.V2.Model.JobStatisticsReservationUsage.t()),
           :schema => GoogleApi.BigQuery.V2.Model.TableSchema.t(),
           :statementType => any(),
           :timeline => list(GoogleApi.BigQuery.V2.Model.QueryTimelineSample.t()),
@@ -86,7 +86,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics2 do
 
   field(
     :reservationUsage,
-    as: GoogleApi.BigQuery.V2.Model.JobStatistics2ReservationUsage,
+    as: GoogleApi.BigQuery.V2.Model.JobStatisticsReservationUsage,
     type: :list
   )
 
