@@ -42,6 +42,7 @@ defmodule GoogleApi.Content.V2.Model.Order do
   - shippingCostTax (Price): The tax for the total shipping cost. Defaults to: `null`.
   - shippingOption (String.t): The requested shipping option. Defaults to: `null`.
   - status (String.t): The status of the order. Defaults to: `null`.
+  - taxCollector (String.t): The party responsible for collecting and remitting taxes. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -66,7 +67,8 @@ defmodule GoogleApi.Content.V2.Model.Order do
           :shippingCost => GoogleApi.Content.V2.Model.Price.t(),
           :shippingCostTax => GoogleApi.Content.V2.Model.Price.t(),
           :shippingOption => any(),
-          :status => any()
+          :status => any(),
+          :taxCollector => any()
         }
 
   field(:acknowledged)
@@ -89,6 +91,7 @@ defmodule GoogleApi.Content.V2.Model.Order do
   field(:shippingCostTax, as: GoogleApi.Content.V2.Model.Price)
   field(:shippingOption)
   field(:status)
+  field(:taxCollector)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.Order do

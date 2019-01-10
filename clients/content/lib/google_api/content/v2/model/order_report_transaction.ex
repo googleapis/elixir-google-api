@@ -30,6 +30,7 @@ defmodule GoogleApi.Content.V2.Model.OrderReportTransaction do
   - merchantOrderId (String.t): Merchant-provided id of the order. Defaults to: `null`.
   - orderId (String.t): The id of the order. Defaults to: `null`.
   - productAmount (Amount): Total amount for the items. Defaults to: `null`.
+  - productAmountWithRemittedTax (ProductAmount): Total amount with remitted tax for the items. Defaults to: `null`.
   - transactionDate (String.t): The date of the transaction, in ISO 8601 format. Defaults to: `null`.
   """
 
@@ -44,6 +45,7 @@ defmodule GoogleApi.Content.V2.Model.OrderReportTransaction do
           :merchantOrderId => any(),
           :orderId => any(),
           :productAmount => GoogleApi.Content.V2.Model.Amount.t(),
+          :productAmountWithRemittedTax => GoogleApi.Content.V2.Model.ProductAmount.t(),
           :transactionDate => any()
         }
 
@@ -55,6 +57,7 @@ defmodule GoogleApi.Content.V2.Model.OrderReportTransaction do
   field(:merchantOrderId)
   field(:orderId)
   field(:productAmount, as: GoogleApi.Content.V2.Model.Amount)
+  field(:productAmountWithRemittedTax, as: GoogleApi.Content.V2.Model.ProductAmount)
   field(:transactionDate)
 end
 
