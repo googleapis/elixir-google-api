@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1IndexedProperty do
   @moduledoc """
-  Next tag: 3
+  A property of an index.
 
   ## Attributes
 
