@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.DNS.V1.Model.Change do
   @moduledoc """
-  An atomic update to a collection of ResourceRecordSets.
+  A Change represents a set of ResourceRecordSet additions and deletions applied atomically to a ManagedZone. ResourceRecordSets within a ManagedZone are modified by creating a new Change element in the Changes collection. In turn the Changes collection also records the past modifications to the ResourceRecordSets in a ManagedZone. The current state of the ManagedZone is the sum effect of applying all Change elements in the Changes collection in sequence.
 
   ## Attributes
 
@@ -28,7 +28,7 @@ defmodule GoogleApi.DNS.V1.Model.Change do
   - isServing (boolean()): If the DNS queries for the zone will be served. Defaults to: `null`.
   - kind (String.t): Identifies what kind of resource this is. Value: the fixed string \&quot;dns#change\&quot;. Defaults to: `null`.
   - startTime (String.t): The time that this operation was started by the server (output only). This is in RFC3339 text format. Defaults to: `null`.
-  - status (String.t): Status of the operation (output only). Defaults to: `null`.
+  - status (String.t): Status of the operation (output only). A status of \&quot;done\&quot; means that the request to update the authoritative servers has been sent, but the servers might not be updated yet. Defaults to: `null`.
     - Enum - one of [done, pending]
   """
 

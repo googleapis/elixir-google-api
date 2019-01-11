@@ -27,7 +27,7 @@ defmodule GoogleApi.DNS.V1.Model.ResourceRecordSet do
   - rrdatas ([String.t]): As defined in RFC 1035 (section 5) and RFC 1034 (section 3.6.1). Defaults to: `null`.
   - signatureRrdatas ([String.t]): As defined in RFC 4034 (section 3.2). Defaults to: `null`.
   - ttl (integer()): Number of seconds that this ResourceRecordSet can be cached by resolvers. Defaults to: `null`.
-  - type (String.t): The identifier of a supported record type, for example, A, AAAA, MX, TXT, and so on. Defaults to: `null`.
+  - type (String.t): The identifier of a supported record type. See the list of Supported DNS record types. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
