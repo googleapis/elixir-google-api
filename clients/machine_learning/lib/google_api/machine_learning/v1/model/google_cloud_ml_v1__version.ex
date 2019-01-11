@@ -37,7 +37,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1Version do
   - manualScaling (GoogleCloudMlV1ManualScaling): Manually select the number of nodes to use for serving the model. You should generally use &#x60;auto_scaling&#x60; with an appropriate &#x60;min_nodes&#x60; instead, but this option is available if you want more predictable billing. Beware that latency and error rates will increase if the traffic exceeds that capability of the system to serve it based on the selected number of nodes. Defaults to: `null`.
   - name (String.t): Required.The name specified for the version when it was created.  The version name must be unique within the model it is created in. Defaults to: `null`.
   - pythonVersion (String.t): Optional. The version of Python used in prediction. If not set, the default version is &#39;2.7&#39;. Python &#39;3.5&#39; is available when &#x60;runtime_version&#x60; is set to &#39;1.4&#39; and above. Python &#39;2.7&#39; works with all supported runtime versions. Defaults to: `null`.
-  - runtimeVersion (String.t): Optional. The Google Cloud ML runtime version to use for this deployment. If not set, Google Cloud ML will choose a version. Defaults to: `null`.
+  - runtimeVersion (String.t): Optional. The Cloud ML Engine runtime version to use for this deployment. If not set, Cloud ML Engine uses the default stable version, 1.0. For more information, see the [runtime version list](/ml-engine/docs/runtime-version-list) and [how to manage runtime versions](/ml-engine/docs/versioning). Defaults to: `null`.
   - state (String.t): Output only. The state of a version. Defaults to: `null`.
     - Enum - one of [UNKNOWN, READY, CREATING, FAILED, DELETING, UPDATING]
   """
