@@ -24,7 +24,7 @@ defmodule GoogleApi.Content.V2.Model.OrdersCancelLineItemRequest do
 
   - amount (Price): Deprecated. Please use amountPretax and amountTax instead. Defaults to: `null`.
   - amountPretax (Price): Amount to refund for the cancelation. Optional. If not set, Google will calculate the default based on the price and tax of the items involved. The amount must not be larger than the net amount left on the order. Defaults to: `null`.
-  - amountTax (Price): Tax amount that correspond to cancellation amount in amountPretax. Defaults to: `null`.
+  - amountTax (Price): Tax amount that corresponds to cancellation amount in amountPretax. Optional, but if filled, then amountPretax must be set. Calculated automatically if not provided. Defaults to: `null`.
   - lineItemId (String.t): The ID of the line item to cancel. Either lineItemId or productId is required. Defaults to: `null`.
   - operationId (String.t): The ID of the operation. Unique across all operations for a given order. Defaults to: `null`.
   - productId (String.t): The ID of the product to cancel. This is the REST ID used in the products service. Either lineItemId or productId is required. Defaults to: `null`.

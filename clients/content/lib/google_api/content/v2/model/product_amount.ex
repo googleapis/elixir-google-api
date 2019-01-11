@@ -16,43 +16,37 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Content.V2.Model.AccountUser do
+defmodule GoogleApi.Content.V2.Model.ProductAmount do
   @moduledoc """
 
 
   ## Attributes
 
-  - admin (boolean()): Whether user is an admin. Defaults to: `null`.
-  - emailAddress (String.t): User&#39;s email address. Defaults to: `null`.
-  - orderManager (boolean()): Whether user is an order manager. Defaults to: `null`.
-  - paymentsAnalyst (boolean()): Whether user can access payment statements. Defaults to: `null`.
-  - paymentsManager (boolean()): Whether user can manage payment settings. Defaults to: `null`.
+  - priceAmount (Price): The pre-tax or post-tax price depending on the location of the order. Defaults to: `null`.
+  - remittedTaxAmount (Price): Remitted tax value. Defaults to: `null`.
+  - taxAmount (Price): Tax value. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :admin => any(),
-          :emailAddress => any(),
-          :orderManager => any(),
-          :paymentsAnalyst => any(),
-          :paymentsManager => any()
+          :priceAmount => GoogleApi.Content.V2.Model.Price.t(),
+          :remittedTaxAmount => GoogleApi.Content.V2.Model.Price.t(),
+          :taxAmount => GoogleApi.Content.V2.Model.Price.t()
         }
 
-  field(:admin)
-  field(:emailAddress)
-  field(:orderManager)
-  field(:paymentsAnalyst)
-  field(:paymentsManager)
+  field(:priceAmount, as: GoogleApi.Content.V2.Model.Price)
+  field(:remittedTaxAmount, as: GoogleApi.Content.V2.Model.Price)
+  field(:taxAmount, as: GoogleApi.Content.V2.Model.Price)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.AccountUser do
+defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.ProductAmount do
   def decode(value, options) do
-    GoogleApi.Content.V2.Model.AccountUser.decode(value, options)
+    GoogleApi.Content.V2.Model.ProductAmount.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.AccountUser do
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.ProductAmount do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
