@@ -22,7 +22,7 @@ defmodule GoogleApi.Compute.V1.Model.XpnResourceId do
 
   ## Attributes
 
-  - id (String.t): The ID of the service resource. In the case of projects, this field matches the project ID (e.g., my-project), not the project number (e.g., 12345678). Defaults to: `null`.
+  - id (String.t): The ID of the service resource. In the case of projects, this field supports project id (e.g., my-project-123) and project number (e.g. 12345678). Defaults to: `null`.
   - type (String.t): The type of the service resource. Defaults to: `null`.
     - Enum - one of [PROJECT, XPN_RESOURCE_TYPE_UNSPECIFIED]
   """
