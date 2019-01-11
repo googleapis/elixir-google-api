@@ -24,6 +24,7 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.GetIosReopenAttributionRespons
 
   - deepLink (String.t): The deep-link attributed the app universal link open. For both regular FDL links and invite FDL links. Defaults to: `null`.
   - invitationId (String.t): Optional invitation ID, for only invite typed requested FDL links. Defaults to: `null`.
+  - iosMinAppVersion (String.t): FDL input value of the \&quot;&amp;imv&#x3D;\&quot; parameter, minimum app version to be returned to Google Firebase SDK running on iOS-9. Defaults to: `null`.
   - resolvedLink (String.t): The entire FDL, expanded from a short link. It is the same as the requested_link, if it is long. Defaults to: `null`.
   - utmCampaign (String.t): Scion campaign value to be propagated by iSDK to Scion at app-reopen. Defaults to: `null`.
   - utmMedium (String.t): Scion medium value to be propagated by iSDK to Scion at app-reopen. Defaults to: `null`.
@@ -35,6 +36,7 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.GetIosReopenAttributionRespons
   @type t :: %__MODULE__{
           :deepLink => any(),
           :invitationId => any(),
+          :iosMinAppVersion => any(),
           :resolvedLink => any(),
           :utmCampaign => any(),
           :utmMedium => any(),
@@ -43,6 +45,7 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.GetIosReopenAttributionRespons
 
   field(:deepLink)
   field(:invitationId)
+  field(:iosMinAppVersion)
   field(:resolvedLink)
   field(:utmCampaign)
   field(:utmMedium)
