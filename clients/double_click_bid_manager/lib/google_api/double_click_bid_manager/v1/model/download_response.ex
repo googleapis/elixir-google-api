@@ -26,6 +26,7 @@ defmodule GoogleApi.DoubleClickBidManager.V1.Model.DownloadResponse do
   - ads (String.t): Retrieved ads in SDF format. Defaults to: `null`.
   - campaigns (String.t): Retrieved campaigns in SDF format. Defaults to: `null`.
   - insertionOrders (String.t): Retrieved insertion orders in SDF format. Defaults to: `null`.
+  - inventorySources (String.t):  Defaults to: `null`.
   - lineItems (String.t): Retrieved line items in SDF format. Defaults to: `null`.
   """
 
@@ -36,6 +37,7 @@ defmodule GoogleApi.DoubleClickBidManager.V1.Model.DownloadResponse do
           :ads => any(),
           :campaigns => any(),
           :insertionOrders => any(),
+          :inventorySources => any(),
           :lineItems => any()
         }
 
@@ -43,6 +45,7 @@ defmodule GoogleApi.DoubleClickBidManager.V1.Model.DownloadResponse do
   field(:ads)
   field(:campaigns)
   field(:insertionOrders)
+  field(:inventorySources)
   field(:lineItems)
 end
 
