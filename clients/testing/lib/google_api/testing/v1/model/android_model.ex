@@ -22,22 +22,22 @@ defmodule GoogleApi.Testing.V1.Model.AndroidModel do
 
   ## Attributes
 
-  - tags ([String.t]): Tags for this dimension. Examples: \&quot;default\&quot;, \&quot;preview\&quot;, \&quot;deprecated\&quot; Defaults to: `null`.
-  - brand (String.t): The company that this device is branded with. Example: \&quot;Google\&quot;, \&quot;Samsung\&quot; @OutputOnly Defaults to: `null`.
-  - codename (String.t): The name of the industrial design. This corresponds to android.os.Build.DEVICE @OutputOnly Defaults to: `null`.
-  - form (String.t): Whether this device is virtual or physical. @OutputOnly Defaults to: `null`.
+  - tags ([String.t]): Tags for this dimension. Examples: \&quot;default\&quot;, \&quot;preview\&quot;, \&quot;deprecated\&quot;. Defaults to: `null`.
+  - brand (String.t): The company that this device is branded with. Example: \&quot;Google\&quot;, \&quot;Samsung\&quot;. Defaults to: `null`.
+  - codename (String.t): The name of the industrial design. This corresponds to android.os.Build.DEVICE. Defaults to: `null`.
+  - form (String.t): Whether this device is virtual or physical. Defaults to: `null`.
     - Enum - one of [DEVICE_FORM_UNSPECIFIED, VIRTUAL, PHYSICAL]
-  - formFactor (String.t): Whether this device is a phone, tablet, wearable, etc. @OutputOnly Defaults to: `null`.
+  - formFactor (String.t): Whether this device is a phone, tablet, wearable, etc. Defaults to: `null`.
     - Enum - one of [DEVICE_FORM_FACTOR_UNSPECIFIED, PHONE, TABLET, WEARABLE]
-  - id (String.t): The unique opaque id for this model. Use this for invoking the TestExecutionService. @OutputOnly Defaults to: `null`.
-  - lowFpsVideoRecording (boolean()): True if and only if tests with this model are recorded by stitching together screenshots. See use_low_spec_video_recording in device config. @OutputOnly Defaults to: `null`.
-  - manufacturer (String.t): The manufacturer of this device. @OutputOnly Defaults to: `null`.
-  - name (String.t): The human-readable marketing name for this device model. Examples: \&quot;Nexus 5\&quot;, \&quot;Galaxy S5\&quot; @OutputOnly Defaults to: `null`.
-  - screenDensity (integer()): Screen density in DPI. This corresponds to ro.sf.lcd_density @OutputOnly Defaults to: `null`.
-  - screenX (integer()): Screen size in the horizontal (X) dimension measured in pixels. @OutputOnly Defaults to: `null`.
-  - screenY (integer()): Screen size in the vertical (Y) dimension measured in pixels. @OutputOnly Defaults to: `null`.
-  - supportedAbis ([String.t]): The list of supported ABIs for this device. This corresponds to either android.os.Build.SUPPORTED_ABIS (for API level 21 and above) or android.os.Build.CPU_ABI/CPU_ABI2. The most preferred ABI is the first element in the list.  Elements are optionally prefixed by \&quot;version_id:\&quot; (where version_id is the id of an AndroidVersion), denoting an ABI that is supported only on a particular version. @OutputOnly Defaults to: `null`.
-  - supportedVersionIds ([String.t]): The set of Android versions this device supports. @OutputOnly Defaults to: `null`.
+  - id (String.t): The unique opaque id for this model. Use this for invoking the TestExecutionService. Defaults to: `null`.
+  - lowFpsVideoRecording (boolean()): True if and only if tests with this model are recorded by stitching together screenshots. See use_low_spec_video_recording in device config. Defaults to: `null`.
+  - manufacturer (String.t): The manufacturer of this device. Defaults to: `null`.
+  - name (String.t): The human-readable marketing name for this device model. Examples: \&quot;Nexus 5\&quot;, \&quot;Galaxy S5\&quot;. Defaults to: `null`.
+  - screenDensity (integer()): Screen density in DPI. This corresponds to ro.sf.lcd_density Defaults to: `null`.
+  - screenX (integer()): Screen size in the horizontal (X) dimension measured in pixels. Defaults to: `null`.
+  - screenY (integer()): Screen size in the vertical (Y) dimension measured in pixels. Defaults to: `null`.
+  - supportedAbis ([String.t]): The list of supported ABIs for this device. This corresponds to either android.os.Build.SUPPORTED_ABIS (for API level 21 and above) or android.os.Build.CPU_ABI/CPU_ABI2. The most preferred ABI is the first element in the list.  Elements are optionally prefixed by \&quot;version_id:\&quot; (where version_id is the id of an AndroidVersion), denoting an ABI that is supported only on a particular version. Defaults to: `null`.
+  - supportedVersionIds ([String.t]): The set of Android versions this device supports. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

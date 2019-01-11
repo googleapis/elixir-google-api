@@ -23,8 +23,8 @@ defmodule GoogleApi.Testing.V1.Model.StartActivityIntent do
   ## Attributes
 
   - action (String.t): Action name. Required for START_ACTIVITY. Defaults to: `null`.
-  - categories ([String.t]): Intent categories to set on the intent. Optional. Defaults to: `null`.
-  - uri (String.t): URI for the action. Optional. Defaults to: `null`.
+  - categories ([String.t]): Intent categories to set on the intent. Defaults to: `null`.
+  - uri (String.t): URI for the action. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

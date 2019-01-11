@@ -22,9 +22,9 @@ defmodule GoogleApi.Testing.V1.Model.NetworkConfiguration do
 
   ## Attributes
 
-  - downRule (TrafficRule): The emulation rule applying to the download traffic Defaults to: `null`.
-  - id (String.t): The unique opaque id for this network traffic configuration @OutputOnly Defaults to: `null`.
-  - upRule (TrafficRule): The emulation rule applying to the upload traffic Defaults to: `null`.
+  - downRule (TrafficRule): The emulation rule applying to the download traffic. Defaults to: `null`.
+  - id (String.t): The unique opaque id for this network traffic configuration. Defaults to: `null`.
+  - upRule (TrafficRule): The emulation rule applying to the upload traffic. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

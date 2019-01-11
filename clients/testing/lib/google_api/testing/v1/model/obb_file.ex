@@ -18,12 +18,12 @@
 
 defmodule GoogleApi.Testing.V1.Model.ObbFile do
   @moduledoc """
-  An opaque binary blob file to install on the device before the test starts
+  An opaque binary blob file to install on the device before the test starts.
 
   ## Attributes
 
-  - obb (FileReference): Opaque Binary Blob (OBB) file(s) to install on the device Required Defaults to: `null`.
-  - obbFileName (String.t): OBB file name which must conform to the format as specified by Android e.g. [main|patch].0300110.com.example.android.obb which will be installed into   &lt;shared-storage&gt;/Android/obb/&lt;package-name&gt;/ on the device Required Defaults to: `null`.
+  - obb (FileReference): Required. Opaque Binary Blob (OBB) file(s) to install on the device. Defaults to: `null`.
+  - obbFileName (String.t): Required. OBB file name which must conform to the format as specified by Android e.g. [main|patch].0300110.com.example.android.obb which will be installed into   \\&lt;shared-storage\\&gt;/Android/obb/\\&lt;package-name\\&gt;/ on the device. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

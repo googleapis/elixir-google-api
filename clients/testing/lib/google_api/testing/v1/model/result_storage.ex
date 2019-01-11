@@ -23,8 +23,8 @@ defmodule GoogleApi.Testing.V1.Model.ResultStorage do
   ## Attributes
 
   - googleCloudStorage (GoogleCloudStorage): Required. Defaults to: `null`.
-  - toolResultsExecution (ToolResultsExecution): The tool results execution that results are written to. @OutputOnly Defaults to: `null`.
-  - toolResultsHistory (ToolResultsHistory): The tool results history that contains the tool results execution that results are written to.  Optional, if not provided the service will choose an appropriate value. Defaults to: `null`.
+  - toolResultsExecution (ToolResultsExecution): Output only. The tool results execution that results are written to. Defaults to: `null`.
+  - toolResultsHistory (ToolResultsHistory): The tool results history that contains the tool results execution that results are written to.  If not provided, the service will choose an appropriate value. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

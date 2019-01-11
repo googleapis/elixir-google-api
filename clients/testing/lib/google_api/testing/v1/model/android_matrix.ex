@@ -18,14 +18,14 @@
 
 defmodule GoogleApi.Testing.V1.Model.AndroidMatrix do
   @moduledoc """
-  A set of Android device configuration permutations is defined by the the cross-product of the given axes.  Internally, the given AndroidMatrix will be expanded into a set of AndroidDevices.  Only supported permutations will be instantiated.  Invalid permutations (e.g., incompatible models/versions) are ignored.
+  A set of Android device configuration permutations is defined by the the cross-product of the given axes. Internally, the given AndroidMatrix will be expanded into a set of AndroidDevices.  Only supported permutations will be instantiated.  Invalid permutations (e.g., incompatible models/versions) are ignored.
 
   ## Attributes
 
-  - androidModelIds ([String.t]): The ids of the set of Android device to be used. Use the EnvironmentDiscoveryService to get supported options. Required Defaults to: `null`.
-  - androidVersionIds ([String.t]): The ids of the set of Android OS version to be used. Use the EnvironmentDiscoveryService to get supported options. Required Defaults to: `null`.
-  - locales ([String.t]): The set of locales the test device will enable for testing. Use the EnvironmentDiscoveryService to get supported options. Required Defaults to: `null`.
-  - orientations ([String.t]): The set of orientations to test with. Use the EnvironmentDiscoveryService to get supported options. Required Defaults to: `null`.
+  - androidModelIds ([String.t]): Required. The ids of the set of Android device to be used. Use the EnvironmentDiscoveryService to get supported options. Defaults to: `null`.
+  - androidVersionIds ([String.t]): Required. The ids of the set of Android OS version to be used. Use the EnvironmentDiscoveryService to get supported options. Defaults to: `null`.
+  - locales ([String.t]): Required. The set of locales the test device will enable for testing. Use the EnvironmentDiscoveryService to get supported options. Defaults to: `null`.
+  - orientations ([String.t]): Required. The set of orientations to test with. Use the EnvironmentDiscoveryService to get supported options. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

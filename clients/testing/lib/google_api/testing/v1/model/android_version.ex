@@ -18,17 +18,17 @@
 
 defmodule GoogleApi.Testing.V1.Model.AndroidVersion do
   @moduledoc """
-  A version of the Android OS
+  A version of the Android OS.
 
   ## Attributes
 
-  - tags ([String.t]): Tags for this dimension. Examples: \&quot;default\&quot;, \&quot;preview\&quot;, \&quot;deprecated\&quot; Defaults to: `null`.
-  - apiLevel (integer()): The API level for this Android version. Examples: 18, 19 @OutputOnly Defaults to: `null`.
-  - codeName (String.t): The code name for this Android version. Examples: \&quot;JellyBean\&quot;, \&quot;KitKat\&quot; @OutputOnly Defaults to: `null`.
-  - distribution (Distribution): Market share for this version. @OutputOnly Defaults to: `null`.
-  - id (String.t): An opaque id for this Android version. Use this id to invoke the TestExecutionService. @OutputOnly Defaults to: `null`.
-  - releaseDate (DateTime): The date this Android version became available in the market. @OutputOnly Defaults to: `null`.
-  - versionString (String.t): A string representing this version of the Android OS. Examples: \&quot;4.3\&quot;, \&quot;4.4\&quot; @OutputOnly Defaults to: `null`.
+  - tags ([String.t]): Tags for this dimension. Examples: \&quot;default\&quot;, \&quot;preview\&quot;, \&quot;deprecated\&quot;. Defaults to: `null`.
+  - apiLevel (integer()): The API level for this Android version. Examples: 18, 19. Defaults to: `null`.
+  - codeName (String.t): The code name for this Android version. Examples: \&quot;JellyBean\&quot;, \&quot;KitKat\&quot;. Defaults to: `null`.
+  - distribution (Distribution): Market share for this version. Defaults to: `null`.
+  - id (String.t): An opaque id for this Android version. Use this id to invoke the TestExecutionService. Defaults to: `null`.
+  - releaseDate (DateTime): The date this Android version became available in the market. Defaults to: `null`.
+  - versionString (String.t): A string representing this version of the Android OS. Examples: \&quot;4.3\&quot;, \&quot;4.4\&quot;. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

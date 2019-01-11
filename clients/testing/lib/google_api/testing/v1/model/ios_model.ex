@@ -22,13 +22,13 @@ defmodule GoogleApi.Testing.V1.Model.IosModel do
 
   ## Attributes
 
-  - tags ([String.t]): Output only. Tags for this dimension. Examples: \&quot;default\&quot;, \&quot;preview\&quot;, \&quot;deprecated\&quot; Defaults to: `null`.
-  - deviceCapabilities ([String.t]): Output only. Device capabilities. Copied from https://developer.apple.com/library/archive/documentation/DeviceInformation/Reference/iOSDeviceCompatibility/DeviceCompatibilityMatrix/DeviceCompatibilityMatrix.html Defaults to: `null`.
-  - formFactor (String.t): Whether this device is a phone, tablet, wearable, etc. @OutputOnly Defaults to: `null`.
+  - tags ([String.t]): Tags for this dimension. Examples: \&quot;default\&quot;, \&quot;preview\&quot;, \&quot;deprecated\&quot;. Defaults to: `null`.
+  - deviceCapabilities ([String.t]): Device capabilities. Copied from https://developer.apple.com/library/archive/documentation/DeviceInformation/Reference/iOSDeviceCompatibility/DeviceCompatibilityMatrix/DeviceCompatibilityMatrix.html Defaults to: `null`.
+  - formFactor (String.t): Whether this device is a phone, tablet, wearable, etc. Defaults to: `null`.
     - Enum - one of [DEVICE_FORM_FACTOR_UNSPECIFIED, PHONE, TABLET, WEARABLE]
-  - id (String.t): Output only. The unique opaque id for this model. Use this for invoking the TestExecutionService. Defaults to: `null`.
-  - name (String.t): Output only. The human-readable name for this device model. Examples: \&quot;iPhone 4s\&quot;, \&quot;iPad Mini 2\&quot; Defaults to: `null`.
-  - supportedVersionIds ([String.t]): Output only. The set of iOS major software versions this device supports. Defaults to: `null`.
+  - id (String.t): The unique opaque id for this model. Use this for invoking the TestExecutionService. Defaults to: `null`.
+  - name (String.t): The human-readable name for this device model. Examples: \&quot;iPhone 4s\&quot;, \&quot;iPad Mini 2\&quot;. Defaults to: `null`.
+  - supportedVersionIds ([String.t]): The set of iOS major software versions this device supports. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

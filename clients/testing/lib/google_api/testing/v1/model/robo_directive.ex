@@ -22,10 +22,10 @@ defmodule GoogleApi.Testing.V1.Model.RoboDirective do
 
   ## Attributes
 
-  - actionType (String.t): The type of action that Robo should perform on the specified element. Required. Defaults to: `null`.
+  - actionType (String.t): Required. The type of action that Robo should perform on the specified element. Defaults to: `null`.
     - Enum - one of [ACTION_TYPE_UNSPECIFIED, SINGLE_CLICK, ENTER_TEXT]
-  - inputText (String.t): The text that Robo is directed to set. If left empty, the directive will be treated as a CLICK on the element matching the resource_name. Optional Defaults to: `null`.
-  - resourceName (String.t): The android resource name of the target UI element For example,    in Java: R.string.foo    in xml: @string/foo Only the “foo” part is needed. Reference doc: https://developer.android.com/guide/topics/resources/accessing-resources.html Required Defaults to: `null`.
+  - inputText (String.t): The text that Robo is directed to set. If left empty, the directive will be treated as a CLICK on the element matching the resource_name. Defaults to: `null`.
+  - resourceName (String.t): Required. The android resource name of the target UI element. For example,    in Java: R.string.foo    in xml: @string/foo Only the \&quot;foo\&quot; part is needed. Reference doc: https://developer.android.com/guide/topics/resources/accessing-resources.html Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

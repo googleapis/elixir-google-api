@@ -22,8 +22,8 @@ defmodule GoogleApi.Testing.V1.Model.ToolResultsHistory do
 
   ## Attributes
 
-  - historyId (String.t): A tool results history ID. Required Defaults to: `null`.
-  - projectId (String.t): The cloud project that owns the tool results history. Required Defaults to: `null`.
+  - historyId (String.t): Required. A tool results history ID. Defaults to: `null`.
+  - projectId (String.t): Required. The cloud project that owns the tool results history. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

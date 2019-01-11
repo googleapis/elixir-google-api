@@ -24,14 +24,14 @@ defmodule GoogleApi.Testing.V1.Model.TestSpecification do
 
   - androidInstrumentationTest (AndroidInstrumentationTest): An Android instrumentation test. Defaults to: `null`.
   - androidRoboTest (AndroidRoboTest): An Android robo test. Defaults to: `null`.
-  - androidTestLoop (AndroidTestLoop): An Android Application with a Test Loop Defaults to: `null`.
-  - autoGoogleLogin (boolean()): Enables automatic Google account login. If set, the service will automatically generate a Google test account and add it to the device, before executing the test. Note that test accounts might be reused. Many applications show their full set of functionalities when an account is present on the device. Logging into the device with these generated accounts allows testing more functionalities. Default is false. Optional Defaults to: `null`.
+  - androidTestLoop (AndroidTestLoop): An Android Application with a Test Loop. Defaults to: `null`.
+  - autoGoogleLogin (boolean()): Enables automatic Google account login. If set, the service will automatically generate a Google test account and add it to the device, before executing the test. Note that test accounts might be reused. Many applications show their full set of functionalities when an account is present on the device. Logging into the device with these generated accounts allows testing more functionalities. Default is false. Defaults to: `null`.
   - disablePerformanceMetrics (boolean()): Disables performance metrics recording; may reduce test latency. Defaults to: `null`.
   - disableVideoRecording (boolean()): Disables video recording; may reduce test latency. Defaults to: `null`.
-  - iosTestSetup (IosTestSetup): Optional. Test setup requirements for iOS. Defaults to: `null`.
-  - iosXcTest (IosXcTest): An iOS XCTest, via an .xctestrun file Defaults to: `null`.
-  - testSetup (TestSetup): Test setup requirements for Android e.g. files to install, bootstrap scripts. Optional Defaults to: `null`.
-  - testTimeout (String.t): Max time a test execution is allowed to run before it is automatically cancelled. Optional, default is 5 min. Defaults to: `null`.
+  - iosTestSetup (IosTestSetup): Test setup requirements for iOS. Defaults to: `null`.
+  - iosXcTest (IosXcTest): An iOS XCTest, via an .xctestrun file. Defaults to: `null`.
+  - testSetup (TestSetup): Test setup requirements for Android e.g. files to install, bootstrap scripts. Defaults to: `null`.
+  - testTimeout (String.t): Max time a test execution is allowed to run before it is automatically cancelled. The default value is 5 min. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

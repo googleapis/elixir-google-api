@@ -22,8 +22,8 @@ defmodule GoogleApi.Testing.V1.Model.Distribution do
 
   ## Attributes
 
-  - marketShare (float()): The estimated fraction (0-1) of the total market with this configuration. @OutputOnly Defaults to: `null`.
-  - measurementTime (DateTime.t): The time this distribution was measured. @OutputOnly Defaults to: `null`.
+  - marketShare (float()): Output only. The estimated fraction (0-1) of the total market with this configuration. Defaults to: `null`.
+  - measurementTime (DateTime.t): Output only. The time this distribution was measured. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

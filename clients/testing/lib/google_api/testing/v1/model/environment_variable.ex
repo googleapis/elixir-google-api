@@ -18,12 +18,12 @@
 
 defmodule GoogleApi.Testing.V1.Model.EnvironmentVariable do
   @moduledoc """
-  A key-value pair passed as an environment variable to the test
+  A key-value pair passed as an environment variable to the test.
 
   ## Attributes
 
-  - key (String.t): Key for the environment variable Defaults to: `null`.
-  - value (String.t): Value for the environment variable Defaults to: `null`.
+  - key (String.t): Key for the environment variable. Defaults to: `null`.
+  - value (String.t): Value for the environment variable. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

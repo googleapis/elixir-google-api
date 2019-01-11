@@ -23,8 +23,8 @@ defmodule GoogleApi.Testing.V1.Model.IosXcTest do
   ## Attributes
 
   - testsZip (FileReference): Required. The .zip containing the .xctestrun file and the contents of the DerivedData/Build/Products directory. The .xctestrun file in this zip is ignored if the xctestrun field is specified. Defaults to: `null`.
-  - xcodeVersion (String.t): Optional. The Xcode version that should be used for the test. Use the EnvironmentDiscoveryService to get supported options. Defaults to the latest Xcode version Firebase Test Lab supports. Defaults to: `null`.
-  - xctestrun (FileReference): Optional. An .xctestrun file that will override the .xctestrun file in the tests zip. Because the .xctestrun file contains environment variables along with test methods to run and/or ignore, this can be useful for sharding tests. Default is taken from the tests zip. Defaults to: `null`.
+  - xcodeVersion (String.t): The Xcode version that should be used for the test. Use the EnvironmentDiscoveryService to get supported options. Defaults to the latest Xcode version Firebase Test Lab supports. Defaults to: `null`.
+  - xctestrun (FileReference): An .xctestrun file that will override the .xctestrun file in the tests zip. Because the .xctestrun file contains environment variables along with test methods to run and/or ignore, this can be useful for sharding tests. Default is taken from the tests zip. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

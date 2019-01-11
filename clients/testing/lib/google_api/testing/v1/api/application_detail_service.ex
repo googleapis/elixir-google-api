@@ -25,7 +25,7 @@ defmodule GoogleApi.Testing.V1.Api.ApplicationDetailService do
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
-  Request the details of an Android application APK.
+  Gets the details of an Android application APK.
 
   ## Parameters
 

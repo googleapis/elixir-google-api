@@ -24,12 +24,12 @@ defmodule GoogleApi.Testing.V1.Model.AndroidRoboTest do
 
   - appApk (FileReference): The APK for the application under test. Defaults to: `null`.
   - appBundle (AppBundle): A multi-apk app bundle for the application under test. Defaults to: `null`.
-  - appInitialActivity (String.t): The initial activity that should be used to start the app. Optional Defaults to: `null`.
-  - appPackageId (String.t): The java package for the application under test. Optional, default is determined by examining the application&#39;s manifest. Defaults to: `null`.
-  - maxDepth (integer()): The max depth of the traversal stack Robo can explore. Needs to be at least 2 to make Robo explore the app beyond the first activity. Default is 50. Optional Defaults to: `null`.
-  - maxSteps (integer()): The max number of steps Robo can execute. Default is no limit. Optional Defaults to: `null`.
-  - roboDirectives ([RoboDirective]): A set of directives Robo should apply during the crawl. This allows users to customize the crawl. For example, the username and password for a test account can be provided. Optional Defaults to: `null`.
-  - roboScript (FileReference): A JSON file with a sequence of actions Robo should perform as a prologue for the crawl. Optional Defaults to: `null`.
+  - appInitialActivity (String.t): The initial activity that should be used to start the app. Defaults to: `null`.
+  - appPackageId (String.t): The java package for the application under test. The default value is determined by examining the application&#39;s manifest. Defaults to: `null`.
+  - maxDepth (integer()): The max depth of the traversal stack Robo can explore. Needs to be at least 2 to make Robo explore the app beyond the first activity. Default is 50. Defaults to: `null`.
+  - maxSteps (integer()): The max number of steps Robo can execute. Default is no limit. Defaults to: `null`.
+  - roboDirectives ([RoboDirective]): A set of directives Robo should apply during the crawl. This allows users to customize the crawl. For example, the username and password for a test account can be provided. Defaults to: `null`.
+  - roboScript (FileReference): A JSON file with a sequence of actions Robo should perform as a prologue for the crawl. Defaults to: `null`.
   - startingIntents ([RoboStartingIntent]): The intents used to launch the app for the crawl. If none are provided, then the main launcher activity is launched. If some are provided, then only those provided are launched (the main launcher activity must be provided explicitly). Defaults to: `null`.
   """
 

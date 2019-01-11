@@ -22,10 +22,10 @@ defmodule GoogleApi.Testing.V1.Model.AndroidDevice do
 
   ## Attributes
 
-  - androidModelId (String.t): The id of the Android device to be used. Use the EnvironmentDiscoveryService to get supported options. Required Defaults to: `null`.
-  - androidVersionId (String.t): The id of the Android OS version to be used. Use the EnvironmentDiscoveryService to get supported options. Required Defaults to: `null`.
-  - locale (String.t): The locale the test device used for testing. Use the EnvironmentDiscoveryService to get supported options. Required Defaults to: `null`.
-  - orientation (String.t): How the device is oriented during the test. Use the EnvironmentDiscoveryService to get supported options. Required Defaults to: `null`.
+  - androidModelId (String.t): Required. The id of the Android device to be used. Use the EnvironmentDiscoveryService to get supported options. Defaults to: `null`.
+  - androidVersionId (String.t): Required. The id of the Android OS version to be used. Use the EnvironmentDiscoveryService to get supported options. Defaults to: `null`.
+  - locale (String.t): Required. The locale the test device used for testing. Use the EnvironmentDiscoveryService to get supported options. Defaults to: `null`.
+  - orientation (String.t): Required. How the device is oriented during the test. Use the EnvironmentDiscoveryService to get supported options. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

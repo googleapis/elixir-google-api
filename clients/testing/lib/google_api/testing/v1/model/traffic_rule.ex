@@ -18,15 +18,15 @@
 
 defmodule GoogleApi.Testing.V1.Model.TrafficRule do
   @moduledoc """
-  Network emulation parameters
+  Network emulation parameters.
 
   ## Attributes
 
-  - bandwidth (float()): Bandwidth in kbits/second Defaults to: `null`.
-  - burst (float()): Burst size in kbits Defaults to: `null`.
-  - delay (String.t): Packet delay, must be &gt;&#x3D; 0 Defaults to: `null`.
-  - packetDuplicationRatio (float()): Packet duplication ratio (0.0 - 1.0) Defaults to: `null`.
-  - packetLossRatio (float()): Packet loss ratio (0.0 - 1.0) Defaults to: `null`.
+  - bandwidth (float()): Bandwidth in kbits/second. Defaults to: `null`.
+  - burst (float()): Burst size in kbits. Defaults to: `null`.
+  - delay (String.t): Packet delay, must be &gt;&#x3D; 0. Defaults to: `null`.
+  - packetDuplicationRatio (float()): Packet duplication ratio (0.0 - 1.0). Defaults to: `null`.
+  - packetLossRatio (float()): Packet loss ratio (0.0 - 1.0). Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

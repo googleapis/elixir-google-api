@@ -22,9 +22,9 @@ defmodule GoogleApi.Testing.V1.Model.Orientation do
 
   ## Attributes
 
-  - tags ([String.t]): Tags for this dimension. Examples: \&quot;default\&quot; Defaults to: `null`.
-  - id (String.t): The id for this orientation. Example: \&quot;portrait\&quot; @OutputOnly Defaults to: `null`.
-  - name (String.t): A human-friendly name for this orientation. Example: \&quot;portrait\&quot; @OutputOnly Defaults to: `null`.
+  - tags ([String.t]): Tags for this dimension. Example: \&quot;default\&quot;. Defaults to: `null`.
+  - id (String.t): The id for this orientation. Example: \&quot;portrait\&quot;. Defaults to: `null`.
+  - name (String.t): A human-friendly name for this orientation. Example: \&quot;portrait\&quot;. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -22,7 +22,7 @@ defmodule GoogleApi.Testing.V1.Model.AndroidDeviceList do
 
   ## Attributes
 
-  - androidDevices ([AndroidDevice]): A list of Android devices Required Defaults to: `null`.
+  - androidDevices ([AndroidDevice]): Required. A list of Android devices. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -18,12 +18,12 @@
 
 defmodule GoogleApi.Testing.V1.Model.RegularFile do
   @moduledoc """
-  A file or directory to install on the device before the test starts
+  A file or directory to install on the device before the test starts.
 
   ## Attributes
 
-  - content (FileReference): Required Defaults to: `null`.
-  - devicePath (String.t): Where to put the content on the device. Must be an absolute, whitelisted path. If the file exists, it will be replaced. The following device-side directories and any of their subdirectories are whitelisted: &lt;p&gt;${EXTERNAL_STORAGE}, or /sdcard&lt;/p&gt; &lt;p&gt;${ANDROID_DATA}/local/tmp, or /data/local/tmp&lt;/p&gt; &lt;p&gt;Specifying a path outside of these directory trees is invalid.  &lt;p&gt; The paths /sdcard and /data will be made available and treated as implicit path substitutions. E.g. if /sdcard on a particular device does not map to external storage, the system will replace it with the external storage path prefix for that device and copy the file there.  &lt;p&gt; It is strongly advised to use the &lt;a href&#x3D; \&quot;http://developer.android.com/reference/android/os/Environment.html\&quot;&gt; Environment API&lt;/a&gt; in app and test code to access files on the device in a portable way. Required Defaults to: `null`.
+  - content (FileReference): Required. The source file. Defaults to: `null`.
+  - devicePath (String.t): Required. Where to put the content on the device. Must be an absolute, whitelisted path. If the file exists, it will be replaced. The following device-side directories and any of their subdirectories are whitelisted: &lt;p&gt;${EXTERNAL_STORAGE}, or /sdcard&lt;/p&gt; &lt;p&gt;${ANDROID_DATA}/local/tmp, or /data/local/tmp&lt;/p&gt; &lt;p&gt;Specifying a path outside of these directory trees is invalid.  &lt;p&gt; The paths /sdcard and /data will be made available and treated as implicit path substitutions. E.g. if /sdcard on a particular device does not map to external storage, the system will replace it with the external storage path prefix for that device and copy the file there.  &lt;p&gt; It is strongly advised to use the &lt;a href&#x3D; \&quot;http://developer.android.com/reference/android/os/Environment.html\&quot;&gt; Environment API&lt;/a&gt; in app and test code to access files on the device in a portable way. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

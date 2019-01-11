@@ -22,10 +22,10 @@ defmodule GoogleApi.Testing.V1.Model.IosDeviceCatalog do
 
   ## Attributes
 
-  - models ([IosModel]): Output only. The set of supported iOS device models. Defaults to: `null`.
-  - runtimeConfiguration (IosRuntimeConfiguration): Output only. The set of supported runtime configurations. Defaults to: `null`.
-  - versions ([IosVersion]): Output only. The set of supported iOS software versions. Defaults to: `null`.
-  - xcodeVersions ([XcodeVersion]): Output only. The set of supported Xcode versions. Defaults to: `null`.
+  - models ([IosModel]): The set of supported iOS device models. Defaults to: `null`.
+  - runtimeConfiguration (IosRuntimeConfiguration): The set of supported runtime configurations. Defaults to: `null`.
+  - versions ([IosVersion]): The set of supported iOS software versions. Defaults to: `null`.
+  - xcodeVersions ([XcodeVersion]): The set of supported Xcode versions. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

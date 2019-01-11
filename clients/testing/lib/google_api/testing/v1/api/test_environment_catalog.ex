@@ -25,12 +25,12 @@ defmodule GoogleApi.Testing.V1.Api.TestEnvironmentCatalog do
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
-  Get the catalog of supported test environments.  May return any of the following canonical error codes:  - INVALID_ARGUMENT - if the request is malformed - NOT_FOUND - if the environment type does not exist - INTERNAL - if an internal error occurred
+  Gets the catalog of supported test environments.  May return any of the following canonical error codes:  - INVALID_ARGUMENT - if the request is malformed - NOT_FOUND - if the environment type does not exist - INTERNAL - if an internal error occurred
 
   ## Parameters
 
   - connection (GoogleApi.Testing.V1.Connection): Connection to server
-  - environment_type (String.t): The type of environment that should be listed. Required
+  - environment_type (String.t): Required. The type of environment that should be listed.
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
@@ -43,7 +43,7 @@ defmodule GoogleApi.Testing.V1.Api.TestEnvironmentCatalog do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :projectId (String.t): For authorization, the cloud project requesting the TestEnvironmentCatalog. Optional
+    - :projectId (String.t): For authorization, the cloud project requesting the TestEnvironmentCatalog.
 
   ## Returns
 
