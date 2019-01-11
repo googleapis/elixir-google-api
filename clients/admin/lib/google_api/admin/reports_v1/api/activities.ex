@@ -46,6 +46,7 @@ defmodule GoogleApi.Admin.Reports_v1.Api.Activities do
     - :eventName (String.t): Name of the event being queried.
     - :filters (String.t): Event parameters in the form [parameter1 name][operator][parameter1 value],[parameter2 name][operator][parameter2 value],...
     - :maxResults (integer()): Number of activity records to be shown in each page.
+    - :orgUnitID (String.t): the organizational unit&#39;s(OU) ID to filter activities from users belonging to a specific OU or one of its sub-OU(s)
     - :pageToken (String.t): Token to specify next page.
     - :startTime (String.t): Return events which occurred at or after this time.
 
@@ -77,6 +78,7 @@ defmodule GoogleApi.Admin.Reports_v1.Api.Activities do
       :eventName => :query,
       :filters => :query,
       :maxResults => :query,
+      :orgUnitID => :query,
       :pageToken => :query,
       :startTime => :query
     }
@@ -117,6 +119,7 @@ defmodule GoogleApi.Admin.Reports_v1.Api.Activities do
     - :eventName (String.t): Name of the event being queried.
     - :filters (String.t): Event parameters in the form [parameter1 name][operator][parameter1 value],[parameter2 name][operator][parameter2 value],...
     - :maxResults (integer()): Number of activity records to be shown in each page.
+    - :orgUnitID (String.t): the organizational unit&#39;s(OU) ID to filter activities from users belonging to a specific OU or one of its sub-OU(s)
     - :pageToken (String.t): Token to specify next page.
     - :startTime (String.t): Return events which occurred at or after this time.
     - :resource (Channel): 
@@ -149,6 +152,7 @@ defmodule GoogleApi.Admin.Reports_v1.Api.Activities do
       :eventName => :query,
       :filters => :query,
       :maxResults => :query,
+      :orgUnitID => :query,
       :pageToken => :query,
       :startTime => :query,
       :resource => :body
