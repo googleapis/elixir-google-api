@@ -25,7 +25,7 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
-  Invokes synchronously deployed function. To be used for testing, very limited traffic allowed.
+  Synchronously invokes a deployed Cloud Function. To be used for testing purposes as very limited traffic is allowed. For more information on the actual limits refer to [API Calls]( https://cloud.google.com/functions/quotas#rate_limits).
 
   ## Parameters
 
