@@ -53,6 +53,7 @@ defmodule GoogleApi.AppEngine.V1.Model.Version do
   - runtime (String.t): Desired runtime. Example: python27. Defaults to: `null`.
   - runtimeApiVersion (String.t): The version of the API in the given runtime environment. Please see the app.yaml reference for valid values at https://cloud.google.com/appengine/docs/standard/&lt;language&gt;/config/appref Defaults to: `null`.
   - runtimeChannel (String.t): The channel of the runtime to use. Only available for some runtimes. Defaults to the default channel. Defaults to: `null`.
+  - runtimeMainExecutablePath (String.t): The path or name of the app&#39;s main executable. Defaults to: `null`.
   - servingStatus (String.t): Current serving status of this version. Only the versions with a SERVING status create instances and can be billed.SERVING_STATUS_UNSPECIFIED is an invalid value. Defaults to SERVING. Defaults to: `null`.
     - Enum - one of [SERVING_STATUS_UNSPECIFIED, SERVING, STOPPED]
   - threadsafe (boolean()): Whether multiple requests can be dispatched to this version at once. Defaults to: `null`.
@@ -94,6 +95,7 @@ defmodule GoogleApi.AppEngine.V1.Model.Version do
           :runtime => any(),
           :runtimeApiVersion => any(),
           :runtimeChannel => any(),
+          :runtimeMainExecutablePath => any(),
           :servingStatus => any(),
           :threadsafe => any(),
           :versionUrl => any(),
@@ -131,6 +133,7 @@ defmodule GoogleApi.AppEngine.V1.Model.Version do
   field(:runtime)
   field(:runtimeApiVersion)
   field(:runtimeChannel)
+  field(:runtimeMainExecutablePath)
   field(:servingStatus)
   field(:threadsafe)
   field(:versionUrl)
