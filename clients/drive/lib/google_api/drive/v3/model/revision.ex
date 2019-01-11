@@ -22,6 +22,7 @@ defmodule GoogleApi.Drive.V3.Model.Revision do
 
   ## Attributes
 
+  - exportLinks (%{optional(String.t) &#x3D;&gt; String.t}): Links for exporting Google Docs to specific formats. Defaults to: `null`.
   - id (String.t): The ID of the revision. Defaults to: `null`.
   - keepForever (boolean()): Whether to keep this revision forever, even if it is no longer the head revision. If not set, the revision will be automatically purged 30 days after newer content is uploaded. This can be set on a maximum of 200 revisions for a file. This field is only applicable to files with binary content in Drive. Defaults to: `null`.
   - kind (String.t): Identifies what kind of resource this is. Value: the fixed string \&quot;drive#revision\&quot;. Defaults to: `null`.
@@ -39,6 +40,7 @@ defmodule GoogleApi.Drive.V3.Model.Revision do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :exportLinks => map(),
           :id => any(),
           :keepForever => any(),
           :kind => any(),
@@ -53,6 +55,7 @@ defmodule GoogleApi.Drive.V3.Model.Revision do
           :size => any()
         }
 
+  field(:exportLinks, type: :map)
   field(:id)
   field(:keepForever)
   field(:kind)
