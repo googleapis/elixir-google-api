@@ -24,6 +24,7 @@ defmodule GoogleApi.ServiceControl.V1.Model.AuthenticationInfo do
 
   - authoritySelector (String.t): The authority selector specified by the requestor, if any. It is not guaranteed that the principal was allowed to use this authority. Defaults to: `null`.
   - principalEmail (String.t): The email address of the authenticated user (or service account on behalf of third party principal) making the request. For privacy reasons, the principal email address is redacted for all read-only operations that fail with a \&quot;permission denied\&quot; error. Defaults to: `null`.
+  - serviceAccountKeyName (String.t): The name of the service account key used to create or exchange credentials for authenticating the service account making the request. This is a scheme-less URI full resource name. For example:  \&quot;//iam.googleapis.com/projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{key}\&quot; Defaults to: `null`.
   - thirdPartyPrincipal (%{optional(String.t) &#x3D;&gt; String.t}): The third party identification (if any) of the authenticated user making the request. When the JSON object represented here has a proto equivalent, the proto name will be indicated in the &#x60;@type&#x60; property. Defaults to: `null`.
   """
 
@@ -32,11 +33,13 @@ defmodule GoogleApi.ServiceControl.V1.Model.AuthenticationInfo do
   @type t :: %__MODULE__{
           :authoritySelector => any(),
           :principalEmail => any(),
+          :serviceAccountKeyName => any(),
           :thirdPartyPrincipal => map()
         }
 
   field(:authoritySelector)
   field(:principalEmail)
+  field(:serviceAccountKeyName)
   field(:thirdPartyPrincipal, type: :map)
 end
 
