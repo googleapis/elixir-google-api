@@ -29,8 +29,10 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics do
   - load (JobStatistics3): [Output-only] Statistics for a load job. Defaults to: `null`.
   - query (JobStatistics2): [Output-only] Statistics for a query job. Defaults to: `null`.
   - quotaDeferments ([String.t]): [Output-only] Quotas which delayed this job&#39;s start time. Defaults to: `null`.
+  - reservationUsage ([JobStatisticsReservationUsage]): [Output-only] Job resource usage breakdown by reservation. Defaults to: `null`.
   - startTime (String.t): [Output-only] Start time of this job, in milliseconds since the epoch. This field will be present when the job transitions from the PENDING state to either RUNNING or DONE. Defaults to: `null`.
   - totalBytesProcessed (String.t): [Output-only] [Deprecated] Use the bytes processed in the query statistics instead. Defaults to: `null`.
+  - totalSlotMs (String.t): [Output-only] Slot-milliseconds for the job. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -43,8 +45,11 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics do
           :load => GoogleApi.BigQuery.V2.Model.JobStatistics3.t(),
           :query => GoogleApi.BigQuery.V2.Model.JobStatistics2.t(),
           :quotaDeferments => list(any()),
+          :reservationUsage =>
+            list(GoogleApi.BigQuery.V2.Model.JobStatisticsReservationUsage.t()),
           :startTime => any(),
-          :totalBytesProcessed => any()
+          :totalBytesProcessed => any(),
+          :totalSlotMs => any()
         }
 
   field(:completionRatio)
@@ -54,8 +59,16 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics do
   field(:load, as: GoogleApi.BigQuery.V2.Model.JobStatistics3)
   field(:query, as: GoogleApi.BigQuery.V2.Model.JobStatistics2)
   field(:quotaDeferments, type: :list)
+
+  field(
+    :reservationUsage,
+    as: GoogleApi.BigQuery.V2.Model.JobStatisticsReservationUsage,
+    type: :list
+  )
+
   field(:startTime)
   field(:totalBytesProcessed)
+  field(:totalSlotMs)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.JobStatistics do
