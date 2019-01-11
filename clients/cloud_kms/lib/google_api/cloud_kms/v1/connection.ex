@@ -24,7 +24,9 @@ defmodule GoogleApi.CloudKMS.V1.Connection do
   use GoogleApi.Gax.Connection,
     scopes: [
       # View and manage your data across Google Cloud Platform services
-      "https://www.googleapis.com/auth/cloud-platform"
+      "https://www.googleapis.com/auth/cloud-platform",
+      # View and manage your keys and secrets stored in Cloud Key Management Service
+      "https://www.googleapis.com/auth/cloudkms"
     ],
     otp_app: :google_api_cloud_kms,
     base_url: "https://cloudkms.googleapis.com"
