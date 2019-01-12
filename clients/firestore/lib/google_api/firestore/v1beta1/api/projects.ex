@@ -298,6 +298,136 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   end
 
   @doc """
+  Deletes a document.
+
+  ## Parameters
+
+  - connection (GoogleApi.Firestore.V1beta1.Connection): Connection to server
+  - name (String.t): The resource name of the Document to delete. In the format: &#x60;projects/{project_id}/databases/{database_id}/documents/{document_path}&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :currentDocument.exists (boolean()): When set to &#x60;true&#x60;, the target document must exist. When set to &#x60;false&#x60;, the target document must not exist.
+    - :currentDocument.updateTime (DateTime.t): When set, the target document must exist and have been last updated at that time.
+
+  ## Returns
+
+  {:ok, %GoogleApi.Firestore.V1beta1.Model.Empty{}} on success
+  {:error, info} on failure
+  """
+  @spec firestore_projects_databases_documents_delete(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, GoogleApi.Firestore.V1beta1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+  def firestore_projects_databases_documents_delete(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :"currentDocument.exists" => :query,
+      :"currentDocument.updateTime" => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode_www_form(name)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Firestore.V1beta1.Model.Empty{}])
+  end
+
+  @doc """
+  Gets a single document.
+
+  ## Parameters
+
+  - connection (GoogleApi.Firestore.V1beta1.Connection): Connection to server
+  - name (String.t): The resource name of the Document to get. In the format: &#x60;projects/{project_id}/databases/{database_id}/documents/{document_path}&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :mask.fieldPaths ([String.t]): The list of field paths in the mask. See Document.fields for a field path syntax reference.
+    - :readTime (DateTime.t): Reads the version of the document at the given time. This may not be older than 60 seconds.
+    - :transaction (binary()): Reads the document in a transaction.
+
+  ## Returns
+
+  {:ok, %GoogleApi.Firestore.V1beta1.Model.Document{}} on success
+  {:error, info} on failure
+  """
+  @spec firestore_projects_databases_documents_get(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, GoogleApi.Firestore.V1beta1.Model.Document.t()} | {:error, Tesla.Env.t()}
+  def firestore_projects_databases_documents_get(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :"mask.fieldPaths" => :query,
+      :readTime => :query,
+      :transaction => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode_www_form(name)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Firestore.V1beta1.Model.Document{}])
+  end
+
+  @doc """
   Lists documents.
 
   ## Parameters
@@ -965,139 +1095,6 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
     |> Connection.execute(request)
     |> Response.decode(
       opts ++ [struct: %GoogleApi.Firestore.V1beta1.Model.GoogleLongrunningOperation{}]
-    )
-  end
-
-  @doc """
-  Deletes an index.
-
-  ## Parameters
-
-  - connection (GoogleApi.Firestore.V1beta1.Connection): Connection to server
-  - name (String.t): The index name. For example: &#x60;projects/{project_id}/databases/{database_id}/indexes/{index_id}&#x60;
-  - optional_params (KeywordList): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :currentDocument.exists (boolean()): When set to &#x60;true&#x60;, the target document must exist. When set to &#x60;false&#x60;, the target document must not exist.
-    - :currentDocument.updateTime (DateTime.t): When set, the target document must exist and have been last updated at that time.
-
-  ## Returns
-
-  {:ok, %GoogleApi.Firestore.V1beta1.Model.Empty{}} on success
-  {:error, info} on failure
-  """
-  @spec firestore_projects_databases_indexes_delete(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, GoogleApi.Firestore.V1beta1.Model.Empty.t()} | {:error, Tesla.Env.t()}
-  def firestore_projects_databases_indexes_delete(
-        connection,
-        name,
-        optional_params \\ [],
-        opts \\ []
-      ) do
-    optional_params_config = %{
-      :"$.xgafv" => :query,
-      :access_token => :query,
-      :alt => :query,
-      :callback => :query,
-      :fields => :query,
-      :key => :query,
-      :oauth_token => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :upload_protocol => :query,
-      :uploadType => :query,
-      :"currentDocument.exists" => :query,
-      :"currentDocument.updateTime" => :query
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:delete)
-      |> Request.url("/v1beta1/{+name}", %{
-        "name" => URI.encode_www_form(name)
-      })
-      |> Request.add_optional_params(optional_params_config, optional_params)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(opts ++ [struct: %GoogleApi.Firestore.V1beta1.Model.Empty{}])
-  end
-
-  @doc """
-  Gets an index.
-
-  ## Parameters
-
-  - connection (GoogleApi.Firestore.V1beta1.Connection): Connection to server
-  - name (String.t): The name of the index. For example: &#x60;projects/{project_id}/databases/{database_id}/indexes/{index_id}&#x60;
-  - optional_params (KeywordList): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :mask.fieldPaths ([String.t]): The list of field paths in the mask. See Document.fields for a field path syntax reference.
-    - :readTime (DateTime.t): Reads the version of the document at the given time. This may not be older than 60 seconds.
-    - :transaction (binary()): Reads the document in a transaction.
-
-  ## Returns
-
-  {:ok, %GoogleApi.Firestore.V1beta1.Model.GoogleFirestoreAdminV1beta1Index{}} on success
-  {:error, info} on failure
-  """
-  @spec firestore_projects_databases_indexes_get(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, GoogleApi.Firestore.V1beta1.Model.GoogleFirestoreAdminV1beta1Index.t()}
-          | {:error, Tesla.Env.t()}
-  def firestore_projects_databases_indexes_get(
-        connection,
-        name,
-        optional_params \\ [],
-        opts \\ []
-      ) do
-    optional_params_config = %{
-      :"$.xgafv" => :query,
-      :access_token => :query,
-      :alt => :query,
-      :callback => :query,
-      :fields => :query,
-      :key => :query,
-      :oauth_token => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :upload_protocol => :query,
-      :uploadType => :query,
-      :"mask.fieldPaths" => :query,
-      :readTime => :query,
-      :transaction => :query
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:get)
-      |> Request.url("/v1beta1/{+name}", %{
-        "name" => URI.encode_www_form(name)
-      })
-      |> Request.add_optional_params(optional_params_config, optional_params)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(
-      opts ++ [struct: %GoogleApi.Firestore.V1beta1.Model.GoogleFirestoreAdminV1beta1Index{}]
     )
   end
 
