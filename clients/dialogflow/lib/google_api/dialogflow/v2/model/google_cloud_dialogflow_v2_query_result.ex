@@ -25,7 +25,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2QueryResult do
   - parameters (%{optional(String.t) &#x3D;&gt; String.t}): The collection of extracted parameters. Defaults to: `null`.
   - action (String.t): The action name from the matched intent. Defaults to: `null`.
   - allRequiredParamsPresent (boolean()): This field is set to: - &#x60;false&#x60; if the matched intent has required parameters and not all of    the required parameter values have been collected. - &#x60;true&#x60; if all required parameter values have been collected, or if the    matched intent doesn&#39;t contain any required parameters. Defaults to: `null`.
-  - diagnosticInfo (%{optional(String.t) &#x3D;&gt; String.t}): The free-form diagnostic info. For example, this field could contain webhook call latency. Defaults to: `null`.
+  - diagnosticInfo (%{optional(String.t) &#x3D;&gt; String.t}): The free-form diagnostic info. For example, this field could contain webhook call latency. The string keys of the Struct&#39;s fields map can change without notice. Defaults to: `null`.
   - fulfillmentMessages ([GoogleCloudDialogflowV2IntentMessage]): The collection of rich messages to present to the user. Defaults to: `null`.
   - fulfillmentText (String.t): The text to be pronounced to the user or shown on the screen. Defaults to: `null`.
   - intent (GoogleCloudDialogflowV2Intent): The intent that matched the conversational query. Some, not all fields are filled in this message, including but not limited to: &#x60;name&#x60;, &#x60;display_name&#x60; and &#x60;webhook_state&#x60;. Defaults to: `null`.

@@ -23,7 +23,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2TextInput do
   ## Attributes
 
   - languageCode (String.t): Required. The language of this conversational query. See [Language Support](https://dialogflow.com/docs/languages) for a list of the currently supported language codes. Note that queries in the same session do not necessarily need to specify the same language. Defaults to: `null`.
-  - text (String.t): Required. The UTF-8 encoded natural language text to be processed. Text length must not exceed 256 bytes. Defaults to: `null`.
+  - text (String.t): Required. The UTF-8 encoded natural language text to be processed. Text length must not exceed 256 characters. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
