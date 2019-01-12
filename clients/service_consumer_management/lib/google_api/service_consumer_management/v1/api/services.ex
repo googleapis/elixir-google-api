@@ -443,7 +443,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
   end
 
   @doc """
-  Removes specified project resource identified by tenant resource tag. It will remove project lien with &#39;TenantManager&#39; origin if that was added. It will then attempt to delete the project. If that operation fails, this method fails. Operation&lt;response: Empty&gt;.
+  Removes specified project resource identified by tenant resource tag. It will remove project lien with &#39;TenantManager&#39; origin if that was added. It will then attempt to delete the project. If that operation fails, this method fails. After the project has been deleted, or if was already in DELETED state, resource metadata is permanently removed from the tenancy unit. Operation&lt;response: Empty&gt;.
 
   ## Parameters
 

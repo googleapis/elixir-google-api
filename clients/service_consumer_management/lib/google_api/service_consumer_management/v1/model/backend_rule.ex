@@ -24,8 +24,11 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.BackendRule do
 
   - address (String.t): The address of the API backend. Defaults to: `null`.
   - deadline (float()): The number of seconds to wait for a response from a request.  The default deadline for gRPC is infinite (no deadline) and HTTP requests is 5 seconds. Defaults to: `null`.
+  - jwtAudience (String.t): The JWT audience is used when generating a JWT id token for the backend. Defaults to: `null`.
   - minDeadline (float()): Minimum deadline in seconds needed for this method. Calls having deadline value lower than this will be rejected. Defaults to: `null`.
   - operationDeadline (float()): The number of seconds to wait for the completion of a long running operation. The default is no deadline. Defaults to: `null`.
+  - pathTranslation (String.t):  Defaults to: `null`.
+    - Enum - one of [PATH_TRANSLATION_UNSPECIFIED, CONSTANT_ADDRESS, APPEND_PATH_TO_ADDRESS]
   - selector (String.t): Selects the methods to which this rule applies.  Refer to selector for syntax details. Defaults to: `null`.
   """
 
@@ -34,15 +37,19 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.BackendRule do
   @type t :: %__MODULE__{
           :address => any(),
           :deadline => any(),
+          :jwtAudience => any(),
           :minDeadline => any(),
           :operationDeadline => any(),
+          :pathTranslation => any(),
           :selector => any()
         }
 
   field(:address)
   field(:deadline)
+  field(:jwtAudience)
   field(:minDeadline)
   field(:operationDeadline)
+  field(:pathTranslation)
   field(:selector)
 end
 
