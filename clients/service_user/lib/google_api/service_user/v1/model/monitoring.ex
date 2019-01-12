@@ -22,8 +22,8 @@ defmodule GoogleApi.ServiceUser.V1.Model.Monitoring do
 
   ## Attributes
 
-  - consumerDestinations ([MonitoringDestination]): Monitoring configurations for sending metrics to the consumer project. There can be multiple consumer destinations, each one must have a different monitored resource type. A metric can be used in at most one consumer destination. Defaults to: `null`.
-  - producerDestinations ([MonitoringDestination]): Monitoring configurations for sending metrics to the producer project. There can be multiple producer destinations, each one must have a different monitored resource type. A metric can be used in at most one producer destination. Defaults to: `null`.
+  - consumerDestinations ([MonitoringDestination]): Monitoring configurations for sending metrics to the consumer project. There can be multiple consumer destinations. A monitored resouce type may appear in multiple monitoring destinations if different aggregations are needed for different sets of metrics associated with that monitored resource type. A monitored resource and metric pair may only be used once in the Monitoring configuration. Defaults to: `null`.
+  - producerDestinations ([MonitoringDestination]): Monitoring configurations for sending metrics to the producer project. There can be multiple producer destinations. A monitored resouce type may appear in multiple monitoring destinations if different aggregations are needed for different sets of metrics associated with that monitored resource type. A monitored resource and metric pair may only be used once in the Monitoring configuration. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
