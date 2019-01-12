@@ -22,6 +22,7 @@ defmodule GoogleApi.Testing.V1.Model.IosXcTest do
 
   ## Attributes
 
+  - appBundleId (String.t): Output only. The bundle id for the application under test. Defaults to: `null`.
   - testsZip (FileReference): Required. The .zip containing the .xctestrun file and the contents of the DerivedData/Build/Products directory. The .xctestrun file in this zip is ignored if the xctestrun field is specified. Defaults to: `null`.
   - xcodeVersion (String.t): The Xcode version that should be used for the test. Use the EnvironmentDiscoveryService to get supported options. Defaults to the latest Xcode version Firebase Test Lab supports. Defaults to: `null`.
   - xctestrun (FileReference): An .xctestrun file that will override the .xctestrun file in the tests zip. Because the .xctestrun file contains environment variables along with test methods to run and/or ignore, this can be useful for sharding tests. Default is taken from the tests zip. Defaults to: `null`.
@@ -30,11 +31,13 @@ defmodule GoogleApi.Testing.V1.Model.IosXcTest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :appBundleId => any(),
           :testsZip => GoogleApi.Testing.V1.Model.FileReference.t(),
           :xcodeVersion => any(),
           :xctestrun => GoogleApi.Testing.V1.Model.FileReference.t()
         }
 
+  field(:appBundleId)
   field(:testsZip, as: GoogleApi.Testing.V1.Model.FileReference)
   field(:xcodeVersion)
   field(:xctestrun, as: GoogleApi.Testing.V1.Model.FileReference)
