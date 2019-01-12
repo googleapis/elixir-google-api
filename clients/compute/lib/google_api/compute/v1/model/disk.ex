@@ -48,7 +48,7 @@ defmodule GoogleApi.Compute.V1.Model.Disk do
   - sourceSnapshotEncryptionKey (CustomerEncryptionKey): The customer-supplied encryption key of the source snapshot. Required if the source snapshot is protected by a customer-supplied encryption key. Defaults to: `null`.
   - sourceSnapshotId (String.t): [Output Only] The unique ID of the snapshot used to create this disk. This value identifies the exact snapshot that was used to create this persistent disk. For example, if you created the persistent disk from a snapshot that was later deleted and recreated under the same name, the source snapshot ID would identify the exact version of the snapshot that was used. Defaults to: `null`.
   - status (String.t): [Output Only] The status of disk creation. Defaults to: `null`.
-    - Enum - one of [CREATING, FAILED, READY, RESTORING]
+    - Enum - one of [CREATING, DELETING, FAILED, READY, RESTORING]
   - type (String.t): URL of the disk type resource describing which disk type to use to create the disk. Provide this when creating the disk. For example: project/zones/zone/diskTypes/pd-standard or pd-ssd Defaults to: `null`.
   - users ([String.t]): [Output Only] Links to the users of the disk (attached instances) in form: project/zones/zone/instances/instance Defaults to: `null`.
   - zone (String.t): [Output Only] URL of the zone where the disk resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body. Defaults to: `null`.

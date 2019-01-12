@@ -25,7 +25,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceTemplates do
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
-  Deletes the specified instance template. Deleting an instance template is permanent and cannot be undone. It&#39;s not possible to delete templates which are in use by an instance group.
+  Deletes the specified instance template. Deleting an instance template is permanent and cannot be undone. It is not possible to delete templates that are already in use by a managed instance group.
 
   ## Parameters
 
@@ -247,7 +247,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceTemplates do
   end
 
   @doc """
-  Retrieves a list of instance templates that are contained within the specified project and zone.
+  Retrieves a list of instance templates that are contained within the specified project.
 
   ## Parameters
 

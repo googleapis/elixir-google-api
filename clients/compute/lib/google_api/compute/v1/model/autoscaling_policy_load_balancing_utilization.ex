@@ -22,7 +22,7 @@ defmodule GoogleApi.Compute.V1.Model.AutoscalingPolicyLoadBalancingUtilization d
 
   ## Attributes
 
-  - utilizationTarget (float()): Fraction of backend capacity utilization (set in HTTP(s) load balancing configuration) that autoscaler should maintain. Must be a positive float value. If not defined, the default is 0.8. Defaults to: `null`.
+  - utilizationTarget (float()): Fraction of backend capacity utilization (set in HTTP(S) load balancing configuration) that autoscaler should maintain. Must be a positive float value. If not defined, the default is 0.8. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
