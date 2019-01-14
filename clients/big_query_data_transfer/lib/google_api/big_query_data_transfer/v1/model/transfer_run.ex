@@ -35,7 +35,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.TransferRun do
   - state (String.t): Data transfer run state. Ignored for input requests. Defaults to: `null`.
     - Enum - one of [TRANSFER_STATE_UNSPECIFIED, PENDING, RUNNING, SUCCEEDED, FAILED, CANCELLED]
   - updateTime (DateTime.t): Output only. Last time the data transfer run state was updated. Defaults to: `null`.
-  - userId (String.t): Output only. Unique ID of the user on whose behalf transfer is done. Applicable only to data sources that do not support service accounts. When set to 0, the data source service account credentials are used. May be negative. Note, that this identifier is not stable. It may change over time even for the same user. Defaults to: `null`.
+  - userId (String.t): Deprecated. Unique ID of the user on whose behalf transfer is done. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

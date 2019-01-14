@@ -28,14 +28,14 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig do
   - destinationDatasetId (String.t): The BigQuery target dataset id. Defaults to: `null`.
   - disabled (boolean()): Is this config disabled. When set to true, no runs are scheduled for a given transfer. Defaults to: `null`.
   - displayName (String.t): User specified display name for the data transfer. Defaults to: `null`.
-  - name (String.t): The resource name of the transfer config. Transfer config names have the form of &#x60;projects/{project_id}/location/{region}/transferConfigs/{config_id}&#x60;. The name is automatically generated based on the config_id specified in CreateTransferConfigRequest along with project_id and region. If config_id is not provided, usually a uuid, even though it is not guaranteed or required, will be generated for config_id. Defaults to: `null`.
+  - name (String.t): The resource name of the transfer config. Transfer config names have the form of &#x60;projects/{project_id}/locations/{region}/transferConfigs/{config_id}&#x60;. The name is automatically generated based on the config_id specified in CreateTransferConfigRequest along with project_id and region. If config_id is not provided, usually a uuid, even though it is not guaranteed or required, will be generated for config_id. Defaults to: `null`.
   - nextRunTime (DateTime.t): Output only. Next time when data transfer will run. Defaults to: `null`.
   - params (%{optional(String.t) &#x3D;&gt; String.t}): Data transfer specific parameters. Defaults to: `null`.
   - schedule (String.t): Data transfer schedule. If the data source does not support a custom schedule, this should be empty. If it is empty, the default value for the data source will be used. The specified times are in UTC. Examples of valid format: &#x60;1st,3rd monday of month 15:30&#x60;, &#x60;every wed,fri of jan,jun 13:15&#x60;, and &#x60;first sunday of quarter 00:00&#x60;. See more explanation about the format here: https://cloud.google.com/appengine/docs/flexible/python/scheduling-jobs-with-cron-yaml#the_schedule_format NOTE: the granularity should be at least 8 hours, or less frequent. Defaults to: `null`.
   - state (String.t): Output only. State of the most recently updated transfer run. Defaults to: `null`.
     - Enum - one of [TRANSFER_STATE_UNSPECIFIED, PENDING, RUNNING, SUCCEEDED, FAILED, CANCELLED]
   - updateTime (DateTime.t): Output only. Data transfer modification time. Ignored by server on input. Defaults to: `null`.
-  - userId (String.t): Output only. Unique ID of the user on whose behalf transfer is done. Applicable only to data sources that do not support service accounts. When set to 0, the data source service account credentials are used. May be negative. Note, that this identifier is not stable. It may change over time even for the same user. Defaults to: `null`.
+  - userId (String.t): Deprecated. Unique ID of the user on whose behalf transfer is done. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -379,7 +379,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   ## Parameters
 
   - connection (GoogleApi.BigQueryDataTransfer.V1.Connection): Connection to server
-  - name (String.t): The resource name of the transfer config. Transfer config names have the form of &#x60;projects/{project_id}/location/{region}/transferConfigs/{config_id}&#x60;. The name is automatically generated based on the config_id specified in CreateTransferConfigRequest along with project_id and region. If config_id is not provided, usually a uuid, even though it is not guaranteed or required, will be generated for config_id.
+  - name (String.t): The resource name of the transfer config. Transfer config names have the form of &#x60;projects/{project_id}/locations/{region}/transferConfigs/{config_id}&#x60;. The name is automatically generated based on the config_id specified in CreateTransferConfigRequest along with project_id and region. If config_id is not provided, usually a uuid, even though it is not guaranteed or required, will be generated for config_id.
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
