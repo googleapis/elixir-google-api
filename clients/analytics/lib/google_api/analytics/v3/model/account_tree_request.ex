@@ -23,7 +23,6 @@ defmodule GoogleApi.Analytics.V3.Model.AccountTreeRequest do
   ## Attributes
 
   - accountName (String.t):  Defaults to: `null`.
-  - accountSettings (AccountTreeRequestAccountSettings):  Defaults to: `null`.
   - kind (String.t): Resource type for account ticket. Defaults to: `null`.
   - profileName (String.t):  Defaults to: `null`.
   - timezone (String.t):  Defaults to: `null`.
@@ -35,7 +34,6 @@ defmodule GoogleApi.Analytics.V3.Model.AccountTreeRequest do
 
   @type t :: %__MODULE__{
           :accountName => any(),
-          :accountSettings => GoogleApi.Analytics.V3.Model.AccountTreeRequestAccountSettings.t(),
           :kind => any(),
           :profileName => any(),
           :timezone => any(),
@@ -44,7 +42,6 @@ defmodule GoogleApi.Analytics.V3.Model.AccountTreeRequest do
         }
 
   field(:accountName)
-  field(:accountSettings, as: GoogleApi.Analytics.V3.Model.AccountTreeRequestAccountSettings)
   field(:kind)
   field(:profileName)
   field(:timezone)

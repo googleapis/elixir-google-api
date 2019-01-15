@@ -18,13 +18,13 @@
 
 defmodule GoogleApi.Analytics.V3.Model.AdWordsAccount do
   @moduledoc """
-  JSON template for an AdWords account.
+  JSON template for an Google Ads account.
 
   ## Attributes
 
-  - autoTaggingEnabled (boolean()): True if auto-tagging is enabled on the AdWords account. Read-only after the insert operation. Defaults to: `null`.
-  - customerId (String.t): Customer ID. This field is required when creating an AdWords link. Defaults to: `null`.
-  - kind (String.t): Resource type for AdWords account. Defaults to: `null`.
+  - autoTaggingEnabled (boolean()): True if auto-tagging is enabled on the Google Ads account. Read-only after the insert operation. Defaults to: `null`.
+  - customerId (String.t): Customer ID. This field is required when creating a Google Ads link. Defaults to: `null`.
+  - kind (String.t): Resource type for Google Ads account. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

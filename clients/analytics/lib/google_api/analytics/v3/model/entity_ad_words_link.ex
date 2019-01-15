@@ -18,17 +18,17 @@
 
 defmodule GoogleApi.Analytics.V3.Model.EntityAdWordsLink do
   @moduledoc """
-  JSON template for Analytics Entity AdWords Link.
+  JSON template for Analytics Entity Google Ads Link.
 
   ## Attributes
 
-  - adWordsAccounts ([AdWordsAccount]): A list of AdWords client accounts. These cannot be MCC accounts. This field is required when creating an AdWords link. It cannot be empty. Defaults to: `null`.
+  - adWordsAccounts ([AdWordsAccount]): A list of Google Ads client accounts. These cannot be MCC accounts. This field is required when creating a Google Ads link. It cannot be empty. Defaults to: `null`.
   - entity (EntityAdWordsLinkEntity):  Defaults to: `null`.
-  - id (String.t): Entity AdWords link ID Defaults to: `null`.
-  - kind (String.t): Resource type for entity AdWords link. Defaults to: `null`.
-  - name (String.t): Name of the link. This field is required when creating an AdWords link. Defaults to: `null`.
+  - id (String.t): Entity Google Ads link ID Defaults to: `null`.
+  - kind (String.t): Resource type for entity Google Ads link. Defaults to: `null`.
+  - name (String.t): Name of the link. This field is required when creating a Google Ads link. Defaults to: `null`.
   - profileIds ([String.t]): IDs of linked Views (Profiles) represented as strings. Defaults to: `null`.
-  - selfLink (String.t): URL link for this Google Analytics - Google AdWords link. Defaults to: `null`.
+  - selfLink (String.t): URL link for this Google Analytics - Google Ads link. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

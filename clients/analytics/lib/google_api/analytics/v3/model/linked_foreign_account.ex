@@ -27,7 +27,7 @@ defmodule GoogleApi.Analytics.V3.Model.LinkedForeignAccount do
   - id (String.t): Entity ad account link ID. Defaults to: `null`.
   - internalWebPropertyId (String.t): Internal ID for the web property to which this linked foreign account belongs. Defaults to: `null`.
   - kind (String.t): Resource type for linked foreign account. Defaults to: `null`.
-  - linkedAccountId (String.t): The foreign account ID. For example the an AdWords &#x60;linkedAccountId&#x60; has the following format XXX-XXX-XXXX. Defaults to: `null`.
+  - linkedAccountId (String.t): The foreign account ID. For example the an Google Ads &#x60;linkedAccountId&#x60; has the following format XXX-XXX-XXXX. Defaults to: `null`.
   - remarketingAudienceId (String.t): Remarketing audience ID to which this linked foreign account belongs. Defaults to: `null`.
   - status (String.t): The status of this foreign account link. Defaults to: `null`.
   - type (String.t): The type of the foreign account. For example, &#x60;ADWORDS_LINKS&#x60;, &#x60;DBM_LINKS&#x60;, &#x60;MCC_LINKS&#x60; or &#x60;OPTIMIZE&#x60;. Defaults to: `null`.
