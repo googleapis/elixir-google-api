@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1PredictionInput do
   @moduledoc """
-  Represents input parameters for a prediction job. Next field: 20
+  Represents input parameters for a prediction job.
 
   ## Attributes
 
