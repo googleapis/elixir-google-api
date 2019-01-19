@@ -32,6 +32,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfigurationLoad do
   - destinationTableProperties (DestinationTableProperties): [Beta] [Optional] Properties with which to create the destination table if it is new. Defaults to: `null`.
   - encoding (String.t): [Optional] The character encoding of the data. The supported values are UTF-8 or ISO-8859-1. The default value is UTF-8. BigQuery decodes the data after the raw, binary data has been split using the values of the quote and fieldDelimiter properties. Defaults to: `null`.
   - fieldDelimiter (String.t): [Optional] The separator for fields in a CSV file. The separator can be any ISO-8859-1 single-byte character. To use a character in the range 128-255, you must encode the character as UTF8. BigQuery converts the string to ISO-8859-1 encoding, and then uses the first byte of the encoded string to split the data in its raw, binary state. BigQuery also supports the escape sequence \&quot;\\t\&quot; to specify a tab separator. The default value is a comma (&#39;,&#39;). Defaults to: `null`.
+  - hivePartitioningMode (String.t): [Optional, Experimental] If hive partitioning is enabled, which mode to use. Two modes are supported: - AUTO: automatically infer partition key name(s) and type(s). - STRINGS: automatic infer partition key name(s). All types are strings. Not all storage formats support hive partitioning -- requesting hive partitioning on an unsupported format will lead to an error. Defaults to: `null`.
   - ignoreUnknownValues (boolean()): [Optional] Indicates if BigQuery should allow extra values that are not represented in the table schema. If true, the extra values are ignored. If false, records with extra columns are treated as bad records, and if there are too many bad records, an invalid error is returned in the job result. The default value is false. The sourceFormat property determines what BigQuery treats as an extra value: CSV: Trailing columns JSON: Named values that don&#39;t match any column names Defaults to: `null`.
   - maxBadRecords (integer()): [Optional] The maximum number of bad records that BigQuery can ignore when running the job. If the number of bad records exceeds this value, an invalid error is returned in the job result. This is only valid for CSV and JSON. The default value is 0, which requires that all records are valid. Defaults to: `null`.
   - nullMarker (String.t): [Optional] Specifies a string that represents a null value in a CSV file. For example, if you specify \&quot;\\N\&quot;, BigQuery interprets \&quot;\\N\&quot; as a null value when loading a CSV file. The default value is the empty string. If you set this property to a custom value, BigQuery throws an error if an empty string is present for all data types except for STRING and BYTE. For STRING and BYTE columns, BigQuery interprets the empty string as an empty value. Defaults to: `null`.
@@ -65,6 +66,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfigurationLoad do
             GoogleApi.BigQuery.V2.Model.DestinationTableProperties.t(),
           :encoding => any(),
           :fieldDelimiter => any(),
+          :hivePartitioningMode => any(),
           :ignoreUnknownValues => any(),
           :maxBadRecords => any(),
           :nullMarker => any(),
@@ -98,6 +100,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfigurationLoad do
   field(:destinationTableProperties, as: GoogleApi.BigQuery.V2.Model.DestinationTableProperties)
   field(:encoding)
   field(:fieldDelimiter)
+  field(:hivePartitioningMode)
   field(:ignoreUnknownValues)
   field(:maxBadRecords)
   field(:nullMarker)
