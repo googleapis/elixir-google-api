@@ -22,25 +22,31 @@ defmodule GoogleApi.Logging.V2.Model.LogExclusion do
 
   ## Attributes
 
+  - createTime (DateTime.t): Output only. The creation timestamp of the exclusion.This field may not be present for older exclusions. Defaults to: `null`.
   - description (String.t): Optional. A description of this exclusion. Defaults to: `null`.
-  - disabled (boolean()): Optional. If set to True, then this exclusion is disabled and it does not exclude any log entries. You can use exclusions.patch to change the value of this field. Defaults to: `null`.
+  - disabled (boolean()): Optional. If set to True, then this exclusion is disabled and it does not exclude any log entries. You can update an exclusion to change the value of this field. Defaults to: `null`.
   - filter (String.t): Required. An advanced logs filter that matches the log entries to be excluded. By using the sample function, you can exclude less than 100% of the matching log entries. For example, the following filter matches 99% of low-severity log entries from load balancers:\&quot;resource.type&#x3D;http_load_balancer severity&lt;ERROR sample(insertId, 0.99)\&quot; Defaults to: `null`.
   - name (String.t): Required. A client-assigned identifier, such as \&quot;load-balancer-exclusion\&quot;. Identifiers are limited to 100 characters and can include only letters, digits, underscores, hyphens, and periods. Defaults to: `null`.
+  - updateTime (DateTime.t): Output only. The last update timestamp of the exclusion.This field may not be present for older exclusions. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :createTime => DateTime.t(),
           :description => any(),
           :disabled => any(),
           :filter => any(),
-          :name => any()
+          :name => any(),
+          :updateTime => DateTime.t()
         }
 
+  field(:createTime, as: DateTime)
   field(:description)
   field(:disabled)
   field(:filter)
   field(:name)
+  field(:updateTime, as: DateTime)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Logging.V2.Model.LogExclusion do
