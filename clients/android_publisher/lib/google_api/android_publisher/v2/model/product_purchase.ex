@@ -28,7 +28,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Model.ProductPurchase do
   - orderId (String.t): The order id associated with the purchase of the inapp product. Defaults to: `null`.
   - purchaseState (integer()): The purchase state of the order. Possible values are:   - Purchased  - Canceled Defaults to: `null`.
   - purchaseTimeMillis (String.t): The time the product was purchased, in milliseconds since the epoch (Jan 1, 1970). Defaults to: `null`.
-  - purchaseType (integer()): The type of purchase of the inapp product. This field is only set if this purchase was not made using the standard in-app billing flow. Possible values are:   - Test (i.e. purchased from a license testing account)  - Promo (i.e. purchased using a promo code) Defaults to: `null`.
+  - purchaseType (integer()): The type of purchase of the inapp product. This field is only set if this purchase was not made using the standard in-app billing flow. Possible values are:   - Test (i.e. purchased from a license testing account)  - Promo (i.e. purchased using a promo code)  - Rewarded (i.e. from watching a video ad instead of paying) Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
