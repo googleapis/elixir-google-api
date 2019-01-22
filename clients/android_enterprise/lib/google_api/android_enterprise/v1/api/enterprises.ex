@@ -330,65 +330,6 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
   end
 
   @doc """
-  Deprecated and unused.
-
-  ## Parameters
-
-  - connection (GoogleApi.AndroidEnterprise.V1.Connection): Connection to server
-  - enterprise_id (String.t): The ID of the enterprise.
-  - optional_params (KeywordList): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-
-  ## Returns
-
-  {:ok, %GoogleApi.AndroidEnterprise.V1.Model.AndroidDevicePolicyConfig{}} on success
-  {:error, info} on failure
-  """
-  @spec androidenterprise_enterprises_get_android_device_policy_config(
-          Tesla.Env.client(),
-          String.t(),
-          keyword()
-        ) ::
-          {:ok, GoogleApi.AndroidEnterprise.V1.Model.AndroidDevicePolicyConfig.t()}
-          | {:error, Tesla.Env.t()}
-  def androidenterprise_enterprises_get_android_device_policy_config(
-        connection,
-        enterprise_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
-    optional_params_config = %{
-      :alt => :query,
-      :fields => :query,
-      :key => :query,
-      :oauth_token => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :userIp => :query
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:get)
-      |> Request.url("/enterprises/{enterpriseId}/androidDevicePolicyConfig", %{
-        "enterpriseId" => URI.encode_www_form(enterprise_id)
-      })
-      |> Request.add_optional_params(optional_params_config, optional_params)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(
-      opts ++ [struct: %GoogleApi.AndroidEnterprise.V1.Model.AndroidDevicePolicyConfig{}]
-    )
-  end
-
-  @doc """
   Returns a service account and credentials. The service account can be bound to the enterprise by calling setAccount. The service account is unique to this enterprise and EMM, and will be deleted if the enterprise is unbound. The credentials contain private key data and are not stored server-side.  This method can only be called after calling Enterprises.Enroll or Enterprises.CompleteSignup, and before Enterprises.SetAccount; at other times it will return an error.  Subsequent calls after the first will generate a new, unique set of credentials, and invalidate the previously generated credentials.  Once the service account is bound to the enterprise, it can be managed using the serviceAccountKeys resource.
 
   ## Parameters

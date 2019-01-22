@@ -23,7 +23,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.WebApp do
   ## Attributes
 
   - displayMode (String.t): The display mode of the web app. Defaults to: `null`.
-  - icons ([WebAppIcon]): A list of icons representing this website. Must have at least one element. Defaults to: `null`.
+  - icons ([WebAppIcon]): A list of icons representing this website. If absent, a default icon (for create) or the current icon (for update) will be used. Defaults to: `null`.
   - isPublished (boolean()): A flag whether the app has been published to the Play store yet. Defaults to: `null`.
   - startUrl (String.t): The start URL, i.e. the URL that should load when the user opens the application. Defaults to: `null`.
   - title (String.t): The title of the web application as displayed to the user (e.g., amongst a list of other applications, or as a label for an icon). Defaults to: `null`.

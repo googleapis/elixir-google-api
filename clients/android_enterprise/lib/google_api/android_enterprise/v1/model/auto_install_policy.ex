@@ -23,7 +23,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.AutoInstallPolicy do
   ## Attributes
 
   - autoInstallConstraint ([AutoInstallConstraint]): The constraints for the install. Currently there can be at most one constraint. Defaults to: `null`.
-  - autoInstallMode (String.t): The auto install mode. If unset defaults to AVAILABLE. Defaults to: `null`.
+  - autoInstallMode (String.t): The auto install mode. If unset defaults to \&quot;doNotAutoInstall\&quot;. Defaults to: `null`.
   - autoInstallPriority (integer()): The priority of the install, as an unsigned integer. Lower number means higher priority. Defaults to: `null`.
   - minimumVersionCode (integer()): The minimum version of the app. If a lower version of the app is installed then the app will be auto-updated according to the auto-install constraints, instead of waiting for the regular auto-update. Defaults to: `null`.
   """
