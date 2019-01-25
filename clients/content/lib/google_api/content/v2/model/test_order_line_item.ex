@@ -26,7 +26,7 @@ defmodule GoogleApi.Content.V2.Model.TestOrderLineItem do
   - quantityOrdered (integer()): Number of items ordered. Defaults to: `null`.
   - returnInfo (OrderLineItemReturnInfo): Details of the return policy for the line item. Defaults to: `null`.
   - shippingDetails (OrderLineItemShippingDetails): Details of the requested shipping for the line item. Defaults to: `null`.
-  - unitTax (Price): Unit tax for the line item. Defaults to: `null`.
+  - unitTax (Price): Deprecated. Ignored if provided. Tax is automatically calculated for MFL orders. For non-MFL orders, tax settings from Merchant Center are applied. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
