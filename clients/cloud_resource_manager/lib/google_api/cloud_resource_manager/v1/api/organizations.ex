@@ -95,7 +95,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
   ## Parameters
 
   - connection (GoogleApi.CloudResourceManager.V1.Connection): Connection to server
-  - organizations_id (String.t): Part of &#x60;name&#x60;. The resource name of the Organization to fetch, e.g. \&quot;organizations/1234\&quot;.
+  - organizations_id (String.t): Part of &#x60;name&#x60;. The resource name of the Organization to fetch. This is the organization&#39;s relative path in the API, formatted as \&quot;organizations/[organizationId]\&quot;. For example, \&quot;organizations/1234\&quot;.
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
