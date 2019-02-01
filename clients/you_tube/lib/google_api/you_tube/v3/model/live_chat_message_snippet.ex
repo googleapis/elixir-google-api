@@ -35,9 +35,10 @@ defmodule GoogleApi.YouTube.V3.Model.LiveChatMessageSnippet do
   - pollVotedDetails (LiveChatPollVotedDetails):  Defaults to: `null`.
   - publishedAt (DateTime.t): The date and time when the message was orignally published. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format. Defaults to: `null`.
   - superChatDetails (LiveChatSuperChatDetails): Details about the Super Chat event, this is only set if the type is &#39;superChatEvent&#39;. Defaults to: `null`.
+  - superStickerDetails (LiveChatSuperStickerDetails): Details about the Super Sticker event, this is only set if the type is &#39;superStickerEvent&#39;. Defaults to: `null`.
   - textMessageDetails (LiveChatTextMessageDetails): Details about the text message, this is only set if the type is &#39;textMessageEvent&#39;. Defaults to: `null`.
   - type (String.t): The type of message, this will always be present, it determines the contents of the message as well as which fields will be present. Defaults to: `null`.
-    - Enum - one of [chatEndedEvent, fanFundingEvent, messageDeletedEvent, messageRetractedEvent, newSponsorEvent, pollClosedEvent, pollEditedEvent, pollOpenedEvent, pollVotedEvent, sponsorOnlyModeEndedEvent, sponsorOnlyModeStartedEvent, superChatEvent, textMessageEvent, tombstone, userBannedEvent]
+    - Enum - one of [chatEndedEvent, fanFundingEvent, messageDeletedEvent, messageRetractedEvent, newSponsorEvent, pollClosedEvent, pollEditedEvent, pollOpenedEvent, pollVotedEvent, sponsorOnlyModeEndedEvent, sponsorOnlyModeStartedEvent, superChatEvent, superStickerEvent, textMessageEvent, tombstone, userBannedEvent]
   - userBannedDetails (LiveChatUserBannedMessageDetails):  Defaults to: `null`.
   """
 
@@ -59,6 +60,7 @@ defmodule GoogleApi.YouTube.V3.Model.LiveChatMessageSnippet do
           :pollVotedDetails => GoogleApi.YouTube.V3.Model.LiveChatPollVotedDetails.t(),
           :publishedAt => DateTime.t(),
           :superChatDetails => GoogleApi.YouTube.V3.Model.LiveChatSuperChatDetails.t(),
+          :superStickerDetails => GoogleApi.YouTube.V3.Model.LiveChatSuperStickerDetails.t(),
           :textMessageDetails => GoogleApi.YouTube.V3.Model.LiveChatTextMessageDetails.t(),
           :type => any(),
           :userBannedDetails => GoogleApi.YouTube.V3.Model.LiveChatUserBannedMessageDetails.t()
@@ -77,6 +79,7 @@ defmodule GoogleApi.YouTube.V3.Model.LiveChatMessageSnippet do
   field(:pollVotedDetails, as: GoogleApi.YouTube.V3.Model.LiveChatPollVotedDetails)
   field(:publishedAt, as: DateTime)
   field(:superChatDetails, as: GoogleApi.YouTube.V3.Model.LiveChatSuperChatDetails)
+  field(:superStickerDetails, as: GoogleApi.YouTube.V3.Model.LiveChatSuperStickerDetails)
   field(:textMessageDetails, as: GoogleApi.YouTube.V3.Model.LiveChatTextMessageDetails)
   field(:type)
   field(:userBannedDetails, as: GoogleApi.YouTube.V3.Model.LiveChatUserBannedMessageDetails)

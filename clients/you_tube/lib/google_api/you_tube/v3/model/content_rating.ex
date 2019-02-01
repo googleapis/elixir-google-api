@@ -53,7 +53,7 @@ defmodule GoogleApi.YouTube.V3.Model.ContentRating do
   - cnaRating (String.t): The video&#39;s rating from Romania&#39;s CONSILIUL NATIONAL AL AUDIOVIZUALULUI (CNA). Defaults to: `null`.
     - Enum - one of [cna12, cna15, cna18, cna18plus, cnaAp, cnaUnrated]
   - cncRating (String.t): Rating system in France - Commission de classification cinematographique Defaults to: `null`.
-    - Enum - one of [cnc10, cnc12, cnc16, cnc18, cncE, cncT, cncUnrated]
+    - Enum - one of [cnc10, cnc12, cnc16, cnc18, cncE, cncInterdiction, cncT, cncUnrated]
   - csaRating (String.t): The video&#39;s rating from France&#39;s Conseil supérieur de l?audiovisuel, which rates broadcast content. Defaults to: `null`.
     - Enum - one of [csa10, csa12, csa16, csa18, csaInterdiction, csaT, csaUnrated]
   - cscfRating (String.t): The video&#39;s rating from Luxembourg&#39;s Commission de surveillance de la classification des films (CSCF). Defaults to: `null`.
@@ -61,7 +61,7 @@ defmodule GoogleApi.YouTube.V3.Model.ContentRating do
   - czfilmRating (String.t): The video&#39;s rating in the Czech Republic. Defaults to: `null`.
     - Enum - one of [czfilm12, czfilm14, czfilm18, czfilmU, czfilmUnrated]
   - djctqRating (String.t): The video&#39;s Departamento de Justiça, Classificação, Qualificação e Títulos (DJCQT - Brazil) rating. Defaults to: `null`.
-    - Enum - one of [djctq10, djctq12, djctq14, djctq16, djctq18, djctqL, djctqUnrated]
+    - Enum - one of [djctq10, djctq1012, djctq1014, djctq1016, djctq1018, djctq12, djctq1214, djctq1216, djctq1218, djctq14, djctq1416, djctq1418, djctq16, djctq1618, djctq18, djctqEr, djctqL, djctqL10, djctqL12, djctqL14, djctqL16, djctqL18, djctqUnrated]
   - djctqRatingReasons ([String.t]): Reasons that explain why the video received its DJCQT (Brazil) rating. Defaults to: `null`.
     - Enum - one of 
   - ecbmctRating (String.t): Rating system in Turkey - Evaluation and Classification Board of the Ministry of Culture and Tourism Defaults to: `null`.
@@ -123,7 +123,7 @@ defmodule GoogleApi.YouTube.V3.Model.ContentRating do
   - moctwRating (String.t): The video&#39;s rating from Taiwan&#39;s Ministry of Culture (文化部). Defaults to: `null`.
     - Enum - one of [moctwG, moctwP, moctwPg, moctwR, moctwR12, moctwR15, moctwUnrated]
   - mpaaRating (String.t): The video&#39;s Motion Picture Association of America (MPAA) rating. Defaults to: `null`.
-    - Enum - one of [mpaaG, mpaaNc17, mpaaPg, mpaaPg13, mpaaR, mpaaUnrated]
+    - Enum - one of [mpaaG, mpaaNc17, mpaaPg, mpaaPg13, mpaaR, mpaaUnrated, mpaaX]
   - mpaatRating (String.t): The rating system for trailer, DVD, and Ad in the US. See http://movielabs.com/md/ratings/v2.3/html/US_MPAAT_Ratings.html. Defaults to: `null`.
     - Enum - one of [mpaatGb, mpaatRb]
   - mtrcbRating (String.t): The video&#39;s rating from the Movie and Television Review and Classification Board (Philippines). Defaults to: `null`.
