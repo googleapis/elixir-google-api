@@ -25,6 +25,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.LeaseWorkItemRequest do
   - currentWorkerTime (DateTime.t): The current timestamp at the worker. Defaults to: `null`.
   - location (String.t): The location which contains the WorkItem&#39;s job. Defaults to: `null`.
   - requestedLeaseDuration (String.t): The initial lease period. Defaults to: `null`.
+  - unifiedWorkerRequest (%{optional(String.t) &#x3D;&gt; String.t}): Untranslated bag-of-bytes WorkRequest from UnifiedWorker. Defaults to: `null`.
   - workItemTypes ([String.t]): Filter for WorkItem type. Defaults to: `null`.
   - workerCapabilities ([String.t]): Worker capabilities. WorkItems might be limited to workers with specific capabilities. Defaults to: `null`.
   - workerId (String.t): Identifies the worker leasing work -- typically the ID of the virtual machine running the worker. Defaults to: `null`.
@@ -36,6 +37,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.LeaseWorkItemRequest do
           :currentWorkerTime => DateTime.t(),
           :location => any(),
           :requestedLeaseDuration => any(),
+          :unifiedWorkerRequest => map(),
           :workItemTypes => list(any()),
           :workerCapabilities => list(any()),
           :workerId => any()
@@ -44,6 +46,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.LeaseWorkItemRequest do
   field(:currentWorkerTime, as: DateTime)
   field(:location)
   field(:requestedLeaseDuration)
+  field(:unifiedWorkerRequest, type: :map)
   field(:workItemTypes, type: :list)
   field(:workerCapabilities, type: :list)
   field(:workerId)
