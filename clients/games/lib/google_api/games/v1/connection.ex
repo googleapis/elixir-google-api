@@ -26,7 +26,9 @@ defmodule GoogleApi.Games.V1.Connection do
       # View and manage its own configuration data in your Google Drive
       "https://www.googleapis.com/auth/drive.appdata",
       # Share your Google+ profile information and view and manage your game activity
-      "https://www.googleapis.com/auth/games"
+      "https://www.googleapis.com/auth/games",
+      # Know who you are on Google
+      "https://www.googleapis.com/auth/plus.me"
     ],
     otp_app: :google_api_games,
     base_url: "https://www.googleapis.com/games/v1"
