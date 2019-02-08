@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.Storage.V1.Model.BucketIamConfigurationBucketPolicyOnly do
   @moduledoc """
-
+  The bucket&#39;s Bucket Policy Only configuration.
 
   ## Attributes
 
