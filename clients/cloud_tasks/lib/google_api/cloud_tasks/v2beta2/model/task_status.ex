@@ -22,7 +22,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Model.TaskStatus do
 
   ## Attributes
 
-  - attemptDispatchCount (integer()): Output only. The number of attempts dispatched.  This count includes tasks which have been dispatched but haven&#39;t received a response. Defaults to: `null`.
+  - attemptDispatchCount (integer()): Output only. The number of attempts dispatched.  This count includes attempts which have been dispatched but haven&#39;t received a response. Defaults to: `null`.
   - attemptResponseCount (integer()): Output only. The number of attempts which have received a response.  This field is not calculated for pull tasks. Defaults to: `null`.
   - firstAttemptStatus (AttemptStatus): Output only. The status of the task&#39;s first attempt.  Only dispatch_time will be set. The other AttemptStatus information is not retained by Cloud Tasks.  This field is not calculated for pull tasks. Defaults to: `null`.
   - lastAttemptStatus (AttemptStatus): Output only. The status of the task&#39;s last attempt.  This field is not calculated for pull tasks. Defaults to: `null`.
