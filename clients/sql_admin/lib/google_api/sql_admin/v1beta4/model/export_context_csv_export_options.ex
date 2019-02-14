@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.ExportContextCsvExportOptions do
   @moduledoc """
-  Options for exporting data as CSV. Exporting in CSV format using the Cloud SQL Admin API is not supported for PostgreSQL instances.
+  Options for exporting data as CSV.
 
   ## Attributes
 

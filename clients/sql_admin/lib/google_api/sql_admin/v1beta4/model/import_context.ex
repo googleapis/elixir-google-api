@@ -24,8 +24,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.ImportContext do
 
   - csvImportOptions (ImportContextCsvImportOptions):  Defaults to: `null`.
   - database (String.t): The target database for the import. If fileType is SQL, this field is required only if the import file does not specify a database, and is overridden by any database specification in the import file. If fileType is CSV, one database must be specified. Defaults to: `null`.
-  - fileType (String.t): The file type for the specified uri. SQL: The file contains SQL statements. CSV: The file contains CSV data. Importing CSV data using the Cloud SQL Admin API is not supported for PostgreSQL instances. Defaults to: `null`.
-  - importUser (String.t): The PostgreSQL user for this import operation. Defaults to cloudsqlsuperuser. PostgreSQL instances only. Defaults to: `null`.
+  - fileType (String.t): The file type for the specified uri. SQL: The file contains SQL statements. CSV: The file contains CSV data. Defaults to: `null`.
+  - importUser (String.t): The PostgreSQL user for this import operation. PostgreSQL instances only. Defaults to: `null`.
   - kind (String.t): This is always sql#importContext. Defaults to: `null`.
   - uri (String.t): Path to the import file in Cloud Storage, in the form gs://bucketName/fileName. Compressed gzip files (.gz) are supported when fileType is SQL. The instance must have write permissions to the bucket and read access to the file. Defaults to: `null`.
   """
