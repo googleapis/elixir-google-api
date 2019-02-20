@@ -25,14 +25,14 @@ defmodule GoogleApi.DNS.V1.Api.DnsKeys do
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
-  Fetch the representation of an existing DnsKey.
+
 
   ## Parameters
 
   - connection (GoogleApi.DNS.V1.Connection): Connection to server
-  - project (String.t): Identifies the project addressed by this request.
-  - managed_zone (String.t): Identifies the managed zone addressed by this request. Can be the managed zone name or id.
-  - dns_key_id (String.t): The identifier of the requested DnsKey.
+  - project (String.t): 
+  - managed_zone (String.t): 
+  - dns_key_id (String.t): 
   - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
@@ -41,8 +41,8 @@ defmodule GoogleApi.DNS.V1.Api.DnsKeys do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :clientOperationId (String.t): For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.
-    - :digestType (String.t): An optional comma-separated list of digest types to compute and display for key signing keys. If omitted, the recommended digest type will be computed and displayed.
+    - :clientOperationId (String.t): 
+    - :digestType (String.t): 
 
   ## Returns
 
@@ -87,13 +87,13 @@ defmodule GoogleApi.DNS.V1.Api.DnsKeys do
   end
 
   @doc """
-  Enumerate DnsKeys to a ResourceRecordSet collection.
+
 
   ## Parameters
 
   - connection (GoogleApi.DNS.V1.Connection): Connection to server
-  - project (String.t): Identifies the project addressed by this request.
-  - managed_zone (String.t): Identifies the managed zone addressed by this request. Can be the managed zone name or id.
+  - project (String.t): 
+  - managed_zone (String.t): 
   - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
@@ -102,9 +102,9 @@ defmodule GoogleApi.DNS.V1.Api.DnsKeys do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :digestType (String.t): An optional comma-separated list of digest types to compute and display for key signing keys. If omitted, the recommended digest type will be computed and displayed.
-    - :maxResults (integer()): Optional. Maximum number of results to be returned. If unspecified, the server will decide how many results to return.
-    - :pageToken (String.t): Optional. A tag returned by a previous list request that was truncated. Use this parameter to continue a previous list request.
+    - :digestType (String.t): 
+    - :maxResults (integer()): 
+    - :pageToken (String.t): 
 
   ## Returns
 

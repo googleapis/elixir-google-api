@@ -25,13 +25,13 @@ defmodule GoogleApi.DNS.V1.Api.ResourceRecordSets do
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
-  Enumerate ResourceRecordSets that have been created but not yet deleted.
+
 
   ## Parameters
 
   - connection (GoogleApi.DNS.V1.Connection): Connection to server
-  - project (String.t): Identifies the project addressed by this request.
-  - managed_zone (String.t): Identifies the managed zone addressed by this request. Can be the managed zone name or id.
+  - project (String.t): 
+  - managed_zone (String.t): 
   - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
@@ -40,10 +40,10 @@ defmodule GoogleApi.DNS.V1.Api.ResourceRecordSets do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :maxResults (integer()): Optional. Maximum number of results to be returned. If unspecified, the server will decide how many results to return.
-    - :name (String.t): Restricts the list to return only records with this fully qualified domain name.
-    - :pageToken (String.t): Optional. A tag returned by a previous list request that was truncated. Use this parameter to continue a previous list request.
-    - :type (String.t): Restricts the list to return only records of this type. If present, the \&quot;name\&quot; parameter must also be present.
+    - :maxResults (integer()): 
+    - :name (String.t): 
+    - :pageToken (String.t): 
+    - :type (String.t): 
 
   ## Returns
 
