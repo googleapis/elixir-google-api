@@ -27,6 +27,7 @@ defmodule GoogleApi.TagManager.V2.Model.Variable do
   - disablingTriggerId ([String.t]): For mobile containers only: A list of trigger IDs for disabling conditional variables; the variable is enabled if one of the enabling trigger is true while all the disabling trigger are false. Treated as an unordered set. Defaults to: `null`.
   - enablingTriggerId ([String.t]): For mobile containers only: A list of trigger IDs for enabling conditional variables; the variable is enabled if one of the enabling triggers is true while all the disabling triggers are false. Treated as an unordered set. Defaults to: `null`.
   - fingerprint (String.t): The fingerprint of the GTM Variable as computed at storage time. This value is recomputed whenever the variable is modified. Defaults to: `null`.
+  - formatValue (VariableFormatValue): Option to convert a variable value to other value. Defaults to: `null`.
   - name (String.t): Variable display name. Defaults to: `null`.
   - notes (String.t): User notes on how to apply this variable in the container. Defaults to: `null`.
   - parameter ([Parameter]): The variable&#39;s parameters. Defaults to: `null`.
@@ -48,6 +49,7 @@ defmodule GoogleApi.TagManager.V2.Model.Variable do
           :disablingTriggerId => list(any()),
           :enablingTriggerId => list(any()),
           :fingerprint => any(),
+          :formatValue => GoogleApi.TagManager.V2.Model.VariableFormatValue.t(),
           :name => any(),
           :notes => any(),
           :parameter => list(GoogleApi.TagManager.V2.Model.Parameter.t()),
@@ -66,6 +68,7 @@ defmodule GoogleApi.TagManager.V2.Model.Variable do
   field(:disablingTriggerId, type: :list)
   field(:enablingTriggerId, type: :list)
   field(:fingerprint)
+  field(:formatValue, as: GoogleApi.TagManager.V2.Model.VariableFormatValue)
   field(:name)
   field(:notes)
   field(:parameter, as: GoogleApi.TagManager.V2.Model.Parameter, type: :list)

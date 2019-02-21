@@ -27,6 +27,7 @@ defmodule GoogleApi.TagManager.V2.Model.ContainerVersion do
   - container (Container): The container that this version was taken from. Defaults to: `null`.
   - containerId (String.t): GTM Container ID. Defaults to: `null`.
   - containerVersionId (String.t): The Container Version ID uniquely identifies the GTM Container Version. Defaults to: `null`.
+  - customTemplate ([CustomTemplate]): The custom templates in the container that this version was taken from. Defaults to: `null`.
   - deleted (boolean()): A value of true indicates this container version has been deleted. Defaults to: `null`.
   - description (String.t): Container version description. Defaults to: `null`.
   - fingerprint (String.t): The fingerprint of the GTM Container Version as computed at storage time. This value is recomputed whenever the container version is modified. Defaults to: `null`.
@@ -48,6 +49,7 @@ defmodule GoogleApi.TagManager.V2.Model.ContainerVersion do
           :container => GoogleApi.TagManager.V2.Model.Container.t(),
           :containerId => any(),
           :containerVersionId => any(),
+          :customTemplate => list(GoogleApi.TagManager.V2.Model.CustomTemplate.t()),
           :deleted => any(),
           :description => any(),
           :fingerprint => any(),
@@ -66,6 +68,7 @@ defmodule GoogleApi.TagManager.V2.Model.ContainerVersion do
   field(:container, as: GoogleApi.TagManager.V2.Model.Container)
   field(:containerId)
   field(:containerVersionId)
+  field(:customTemplate, as: GoogleApi.TagManager.V2.Model.CustomTemplate, type: :list)
   field(:deleted)
   field(:description)
   field(:fingerprint)
