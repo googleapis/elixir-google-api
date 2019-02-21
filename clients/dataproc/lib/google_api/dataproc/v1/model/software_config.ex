@@ -23,6 +23,8 @@ defmodule GoogleApi.Dataproc.V1.Model.SoftwareConfig do
   ## Attributes
 
   - imageVersion (String.t): Optional. The version of software inside the cluster. It must be one of the supported Cloud Dataproc Versions, such as \&quot;1.2\&quot; (including a subminor version, such as \&quot;1.2.29\&quot;), or the \&quot;preview\&quot; version. If unspecified, it defaults to the latest version. Defaults to: `null`.
+  - optionalComponents ([String.t]): The set of optional components to activate on the cluster. Defaults to: `null`.
+    - Enum - one of 
   - properties (%{optional(String.t) &#x3D;&gt; String.t}): Optional. The properties to set on daemon config files.Property keys are specified in prefix:property format, such as core:fs.defaultFS. The following are supported prefixes and their mappings: capacity-scheduler: capacity-scheduler.xml core: core-site.xml distcp: distcp-default.xml hdfs: hdfs-site.xml hive: hive-site.xml mapred: mapred-site.xml pig: pig.properties spark: spark-defaults.conf yarn: yarn-site.xmlFor more information, see Cluster properties. Defaults to: `null`.
   """
 
@@ -30,10 +32,12 @@ defmodule GoogleApi.Dataproc.V1.Model.SoftwareConfig do
 
   @type t :: %__MODULE__{
           :imageVersion => any(),
+          :optionalComponents => list(any()),
           :properties => map()
         }
 
   field(:imageVersion)
+  field(:optionalComponents, type: :list)
   field(:properties, type: :map)
 end
 
