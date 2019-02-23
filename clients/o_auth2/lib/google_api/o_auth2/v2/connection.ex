@@ -23,7 +23,7 @@ defmodule GoogleApi.OAuth2.V2.Connection do
 
   use GoogleApi.Gax.Connection,
     scopes: [
-      # Know the list of people in your circles, your age range, and language
+      # View your basic profile info, including your age range and language
       "https://www.googleapis.com/auth/plus.login",
       # Know who you are on Google
       "https://www.googleapis.com/auth/plus.me",
