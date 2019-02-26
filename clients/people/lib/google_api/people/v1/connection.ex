@@ -27,7 +27,7 @@ defmodule GoogleApi.People.V1.Connection do
       "https://www.googleapis.com/auth/contacts",
       # See and download your contacts
       "https://www.googleapis.com/auth/contacts.readonly",
-      # Know the list of people in your circles, your age range, and language
+      # View your basic profile info, including your age range and language
       "https://www.googleapis.com/auth/plus.login",
       # View your street addresses
       "https://www.googleapis.com/auth/user.addresses.read",
