@@ -178,7 +178,7 @@ defmodule GoogleApi.Tasks.V1.Api.Tasklists do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :maxResults (String.t): Maximum number of task lists returned on one page. Optional. The default is 100.
+    - :maxResults (String.t): Maximum number of task lists returned on one page. Optional. The default is 20 (max allowed: 100).
     - :pageToken (String.t): Token specifying the result page to return. Optional.
 
   ## Returns
