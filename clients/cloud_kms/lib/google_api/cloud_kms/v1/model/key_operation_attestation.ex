@@ -18,13 +18,13 @@
 
 defmodule GoogleApi.CloudKMS.V1.Model.KeyOperationAttestation do
   @moduledoc """
-  Contains an HSM-generated attestation about a key operation.
+  Contains an HSM-generated attestation about a key operation. For more information, see [Verifying attestations] (https://cloud.google.com/kms/docs/attest-key).
 
   ## Attributes
 
   - content (binary()): Output only. The attestation data provided by the HSM when the key operation was performed. Defaults to: `null`.
   - format (String.t): Output only. The format of the attestation data. Defaults to: `null`.
-    - Enum - one of [ATTESTATION_FORMAT_UNSPECIFIED, CAVIUM_V1_COMPRESSED]
+    - Enum - one of [ATTESTATION_FORMAT_UNSPECIFIED, CAVIUM_V1_COMPRESSED, CAVIUM_V2_COMPRESSED]
   """
 
   use GoogleApi.Gax.ModelBase
