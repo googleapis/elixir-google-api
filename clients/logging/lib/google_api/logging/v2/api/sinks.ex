@@ -265,7 +265,7 @@ defmodule GoogleApi.Logging.V2.Api.Sinks do
   end
 
   @doc """
-  Updates a sink. This method replaces the following fields in the existing sink with values from the new sink: destination, and filter. The updated sink might also have a new writer_identity; see the unique_writer_identity field.
+  Updates a sink. This method replaces the following fields in the existing sink with values from the new sink: destination, and filter.The updated sink might also have a new writer_identity; see the unique_writer_identity field.
 
   ## Parameters
 

@@ -22,31 +22,37 @@ defmodule GoogleApi.Logging.V2.Model.LogSink do
 
   ## Attributes
 
-  - destination (String.t): Required. The export destination: \&quot;storage.googleapis.com/[GCS_BUCKET]\&quot; \&quot;bigquery.googleapis.com/projects/[PROJECT_ID]/datasets/[DATASET]\&quot; \&quot;pubsub.googleapis.com/projects/[PROJECT_ID]/topics/[TOPIC_ID]\&quot; The sink&#39;s writer_identity, set when the sink is created, must have permission to write to the destination or else the log entries are not exported. For more information, see Exporting Logs With Sinks. Defaults to: `null`.
+  - createTime (DateTime.t): Output only. The creation timestamp of the sink.This field may not be present for older sinks. Defaults to: `null`.
+  - destination (String.t): Required. The export destination: \&quot;storage.googleapis.com/[GCS_BUCKET]\&quot; \&quot;bigquery.googleapis.com/projects/[PROJECT_ID]/datasets/[DATASET]\&quot; \&quot;pubsub.googleapis.com/projects/[PROJECT_ID]/topics/[TOPIC_ID]\&quot; The sink&#39;s writer_identity, set when the sink is created, must have permission to write to the destination or else the log entries are not exported. For more information, see Exporting Logs with Sinks. Defaults to: `null`.
   - filter (String.t): Optional. An advanced logs filter. The only exported log entries are those that are in the resource owning the sink and that match the filter. For example: logName&#x3D;\&quot;projects/[PROJECT_ID]/logs/[LOG_ID]\&quot; AND severity&gt;&#x3D;ERROR  Defaults to: `null`.
   - includeChildren (boolean()): Optional. This field applies only to sinks owned by organizations and folders. If the field is false, the default, only the logs owned by the sink&#39;s parent resource are available for export. If the field is true, then logs from all the projects, folders, and billing accounts contained in the sink&#39;s parent resource are also available for export. Whether a particular log entry from the children is exported depends on the sink&#39;s filter expression. For example, if this field is true, then the filter resource.type&#x3D;gce_instance would export all Compute Engine VM instance log entries from all projects in the sink&#39;s parent. To only export entries from certain child projects, filter on the project part of the log name: logName:(\&quot;projects/test-project1/\&quot; OR \&quot;projects/test-project2/\&quot;) AND resource.type&#x3D;gce_instance  Defaults to: `null`.
   - name (String.t): Required. The client-assigned sink identifier, unique within the project. Example: \&quot;my-syslog-errors-to-pubsub\&quot;. Sink identifiers are limited to 100 characters and can include only the following characters: upper and lower-case alphanumeric characters, underscores, hyphens, and periods. Defaults to: `null`.
   - outputVersionFormat (String.t): Deprecated. The log entry format to use for this sink&#39;s exported log entries. The v2 format is used by default and cannot be changed. Defaults to: `null`.
     - Enum - one of [VERSION_FORMAT_UNSPECIFIED, V2, V1]
-  - writerIdentity (String.t): Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under which Logging writes the exported log entries to the sink&#39;s destination. This field is set by sinks.create and sinks.update, based on the setting of unique_writer_identity in those methods.Until you grant this identity write-access to the destination, log entry exports from this sink will fail. For more information, see Granting access for a resource. Consult the destination service&#39;s documentation to determine the appropriate IAM roles to assign to the identity. Defaults to: `null`.
+  - updateTime (DateTime.t): Output only. The last update timestamp of the sink.This field may not be present for older sinks. Defaults to: `null`.
+  - writerIdentity (String.t): Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under which Logging writes the exported log entries to the sink&#39;s destination. This field is set by sinks.create and sinks.update based on the value of unique_writer_identity in those methods.Until you grant this identity write-access to the destination, log entry exports from this sink will fail. For more information, see Granting Access for a Resource. Consult the destination service&#39;s documentation to determine the appropriate IAM roles to assign to the identity. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :createTime => DateTime.t(),
           :destination => any(),
           :filter => any(),
           :includeChildren => any(),
           :name => any(),
           :outputVersionFormat => any(),
+          :updateTime => DateTime.t(),
           :writerIdentity => any()
         }
 
+  field(:createTime, as: DateTime)
   field(:destination)
   field(:filter)
   field(:includeChildren)
   field(:name)
   field(:outputVersionFormat)
+  field(:updateTime, as: DateTime)
   field(:writerIdentity)
 end
 
