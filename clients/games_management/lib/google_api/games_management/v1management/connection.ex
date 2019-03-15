@@ -23,7 +23,7 @@ defmodule GoogleApi.GamesManagement.V1management.Connection do
 
   use GoogleApi.Gax.Connection,
     scopes: [
-      # Share your Google+ profile information and view and manage your game activity
+      # Create, edit, and delete your Google Play Games activity
       "https://www.googleapis.com/auth/games"
     ],
     otp_app: :google_api_games_management,
