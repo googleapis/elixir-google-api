@@ -97,8 +97,8 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Operations do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :filter (String.t): The standard list filter.
-    - :name (String.t): The name of the operation&#39;s parent resource.
+    - :filter (String.t): Required. A filter for matching the requested operations.&lt;br&gt;&lt;br&gt; The supported formats of &lt;b&gt;filter&lt;/b&gt; are:&lt;br&gt; To query for specific function: &lt;code&gt;project:*,location:*,function:*&lt;/code&gt;&lt;br&gt; To query for all of the latest operations for a project: &lt;code&gt;project:*,latest:true&lt;/code&gt;
+    - :name (String.t): Must not be set.
     - :pageSize (integer()): The standard list page size.
     - :pageToken (String.t): The standard list page token.
 
