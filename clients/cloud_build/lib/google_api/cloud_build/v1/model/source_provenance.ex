@@ -22,7 +22,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.SourceProvenance do
 
   ## Attributes
 
-  - fileHashes (%{optional(String.t) &#x3D;&gt; FileHashes}): Output only. Hash(es) of the build source, which can be used to verify that the originalsource integrity was maintained in the build. Note that &#x60;FileHashes&#x60; willonly be populated if &#x60;BuildOptions&#x60; has requested a &#x60;SourceProvenanceHash&#x60;.  The keys to this map are file paths used as build source and the values contain the hash values for those files.  If the build source came in a single package such as a gzipped tarfile (&#x60;.tar.gz&#x60;), the &#x60;FileHash&#x60; will be for the single path to that file. Defaults to: `null`.
+  - fileHashes (%{optional(String.t) &#x3D;&gt; FileHashes}): Output only. Hash(es) of the build source, which can be used to verify that the original source integrity was maintained in the build. Note that &#x60;FileHashes&#x60; will only be populated if &#x60;BuildOptions&#x60; has requested a &#x60;SourceProvenanceHash&#x60;.  The keys to this map are file paths used as build source and the values contain the hash values for those files.  If the build source came in a single package such as a gzipped tarfile (&#x60;.tar.gz&#x60;), the &#x60;FileHash&#x60; will be for the single path to that file. Defaults to: `null`.
   - resolvedRepoSource (RepoSource): A copy of the build&#39;s &#x60;source.repo_source&#x60;, if exists, with any revisions resolved. Defaults to: `null`.
   - resolvedStorageSource (StorageSource): A copy of the build&#39;s &#x60;source.storage_source&#x60;, if exists, with any generations resolved. Defaults to: `null`.
   """
