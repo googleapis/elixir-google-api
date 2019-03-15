@@ -22,8 +22,8 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleApiHttpBody do
 
   ## Attributes
 
-  - contentType (String.t): The HTTP Content-Type string representing the content type of the body. Defaults to: `null`.
-  - data (binary()): HTTP body binary data. Defaults to: `null`.
+  - contentType (String.t): The HTTP Content-Type header value specifying the content type of the body. Defaults to: `null`.
+  - data (binary()): The HTTP request/response body as raw binary. Defaults to: `null`.
   - extensions ([Object]): Application specific response metadata. Must be set in the first response for streaming APIs. Defaults to: `null`.
   """
 
