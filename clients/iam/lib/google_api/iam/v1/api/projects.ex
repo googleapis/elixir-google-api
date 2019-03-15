@@ -1015,6 +1015,71 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   end
 
   @doc """
+  Patches a ServiceAccount.  Currently, only the following fields are updatable: &#x60;display_name&#x60; and &#x60;description&#x60;.  Only fields specified in the request are garaunteed to be returned in the response. Other fields in the response may be empty.  Note: The field mask is required.
+
+  ## Parameters
+
+  - connection (GoogleApi.IAM.V1.Connection): Connection to server
+  - projects_id (String.t): Part of &#x60;serviceAccount.name&#x60;. The resource name of the service account in the following format: &#x60;projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}&#x60;.  Requests using &#x60;-&#x60; as a wildcard for the &#x60;PROJECT_ID&#x60; will infer the project from the &#x60;account&#x60; and the &#x60;ACCOUNT&#x60; value can be the &#x60;email&#x60; address or the &#x60;unique_id&#x60; of the service account.  In responses the resource name will always be in the format &#x60;projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}&#x60;.
+  - service_accounts_id (String.t): Part of &#x60;serviceAccount.name&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :body (PatchServiceAccountRequest): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.IAM.V1.Model.ServiceAccount{}} on success
+  {:error, info} on failure
+  """
+  @spec iam_projects_service_accounts_patch(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, GoogleApi.IAM.V1.Model.ServiceAccount.t()} | {:error, Tesla.Env.t()}
+  def iam_projects_service_accounts_patch(
+        connection,
+        projects_id,
+        service_accounts_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:patch)
+      |> Request.url("/v1/projects/{projectsId}/serviceAccounts/{serviceAccountsId}", %{
+        "projectsId" => URI.encode_www_form(projects_id),
+        "serviceAccountsId" => URI.encode_www_form(service_accounts_id)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.IAM.V1.Model.ServiceAccount{}])
+  end
+
+  @doc """
   Sets the IAM access control policy for a ServiceAccount.
 
   ## Parameters
