@@ -22,7 +22,7 @@ defmodule GoogleApi.StreetViewPublish.V1.Model.BatchDeletePhotosRequest do
 
   ## Attributes
 
-  - photoIds ([String.t]): Required. IDs of the Photos. For HTTP GET requests, the URL query parameter should be &#x60;photoIds&#x3D;&lt;id1&gt;&amp;photoIds&#x3D;&lt;id2&gt;&amp;...&#x60;. Defaults to: `null`.
+  - photoIds ([String.t]): Required. IDs of the Photos. HTTP GET requests require the following syntax for the URL query parameter: &#x60;photoIds&#x3D;&lt;id1&gt;&amp;photoIds&#x3D;&lt;id2&gt;&amp;...&#x60;. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
