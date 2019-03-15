@@ -22,8 +22,8 @@ defmodule GoogleApi.Content.V2.Model.OrderpaymentsNotifyAuthApprovedRequest do
 
   ## Attributes
 
-  - authAmountPretax (Price):  Defaults to: `null`.
-  - authAmountTax (Price):  Defaults to: `null`.
+  - authAmountPretax (Price): Authorized amount for pre-tax charge on user&#39;s credit card. Defaults to: `null`.
+  - authAmountTax (Price): Authorized amount for tax charge on user&#39;s credit card. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

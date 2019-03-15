@@ -25,6 +25,7 @@ defmodule GoogleApi.Content.V2.Api.Accountstatuses do
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
+  Retrieves multiple Merchant Center account statuses in a single request.
 
   ## Parameters
 

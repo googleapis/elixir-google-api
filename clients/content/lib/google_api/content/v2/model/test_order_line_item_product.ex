@@ -31,7 +31,7 @@ defmodule GoogleApi.Content.V2.Model.TestOrderLineItemProduct do
   - itemGroupId (String.t): Shared identifier for all variants of the same product. Optional. Defaults to: `null`.
   - mpn (String.t): Manufacturer Part Number (MPN) of the item. Optional. Defaults to: `null`.
   - offerId (String.t): An identifier of the item. Defaults to: `null`.
-  - price (Price): The price for the product. Defaults to: `null`.
+  - price (Price): The price for the product. Tax is automatically calculated for MFL orders. For non-MFL orders, tax settings from Merchant Center are applied. Defaults to: `null`.
   - targetCountry (String.t): The CLDR territory code of the target country of the product. Defaults to: `null`.
   - title (String.t): The title of the product. Defaults to: `null`.
   - variantAttributes ([OrderLineItemProductVariantAttribute]): Variant attributes for the item. Optional. Defaults to: `null`.

@@ -35,7 +35,7 @@ defmodule GoogleApi.Content.V2.Model.Order do
   - paymentMethod (OrderPaymentMethod): The details of the payment method. Defaults to: `null`.
   - paymentStatus (String.t): The status of the payment. Defaults to: `null`.
   - placedDate (String.t): The date when the order was placed, in ISO 8601 format. Defaults to: `null`.
-  - promotions ([OrderLegacyPromotion]): Deprecated. The details of the merchant provided promotions applied to the order. More details about the program are here. Defaults to: `null`.
+  - promotions ([OrderLegacyPromotion]): Deprecated. Ignored if provided for createTestOrder. The details of the merchant provided promotions applied to the order. More details about the program are here. Defaults to: `null`.
   - refunds ([OrderRefund]): Refunds for the order. Defaults to: `null`.
   - shipments ([OrderShipment]): Shipments of the order. Defaults to: `null`.
   - shippingCost (Price): The total cost of shipping for all items. Defaults to: `null`.
