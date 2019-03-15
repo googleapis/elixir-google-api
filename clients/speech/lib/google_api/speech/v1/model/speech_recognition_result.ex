@@ -23,15 +23,18 @@ defmodule GoogleApi.Speech.V1.Model.SpeechRecognitionResult do
   ## Attributes
 
   - alternatives ([SpeechRecognitionAlternative]): Output only. May contain one or more recognition hypotheses (up to the maximum specified in &#x60;max_alternatives&#x60;). These alternatives are ordered in terms of accuracy, with the top (first) alternative being the most probable, as ranked by the recognizer. Defaults to: `null`.
+  - channelTag (integer()): For multi-channel audio, this is the channel number corresponding to the recognized result for the audio from that channel. For audio_channel_count &#x3D; N, its output values can range from &#39;1&#39; to &#39;N&#39;. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :alternatives => list(GoogleApi.Speech.V1.Model.SpeechRecognitionAlternative.t())
+          :alternatives => list(GoogleApi.Speech.V1.Model.SpeechRecognitionAlternative.t()),
+          :channelTag => any()
         }
 
   field(:alternatives, as: GoogleApi.Speech.V1.Model.SpeechRecognitionAlternative, type: :list)
+  field(:channelTag)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V1.Model.SpeechRecognitionResult do

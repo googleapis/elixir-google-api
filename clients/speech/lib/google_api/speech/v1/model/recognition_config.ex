@@ -23,6 +23,7 @@ defmodule GoogleApi.Speech.V1.Model.RecognitionConfig do
   ## Attributes
 
   - enableAutomaticPunctuation (boolean()): *Optional* If &#39;true&#39;, adds punctuation to recognition result hypotheses. This feature is only available in select languages. Setting this for requests in other languages has no effect at all. The default &#39;false&#39; value does not add punctuation to result hypotheses. Note: This is currently offered as an experimental service, complimentary to all users. In the future this may be exclusively available as a premium feature. Defaults to: `null`.
+  - enableSeparateRecognitionPerChannel (boolean()): This needs to be set to &#x60;true&#x60; explicitly and &#x60;audio_channel_count&#x60; &gt; 1 to get each channel recognized separately. The recognition result will contain a &#x60;channel_tag&#x60; field to state which channel that result belongs to. If this is not true, we will only recognize the first channel. The request is billed cumulatively for all channels recognized: &#x60;audio_channel_count&#x60; multiplied by the length of the audio. Defaults to: `null`.
   - enableWordTimeOffsets (boolean()): *Optional* If &#x60;true&#x60;, the top result includes a list of words and the start and end time offsets (timestamps) for those words. If &#x60;false&#x60;, no word-level time offset information is returned. The default is &#x60;false&#x60;. Defaults to: `null`.
   - encoding (String.t): Encoding of audio data sent in all &#x60;RecognitionAudio&#x60; messages. This field is optional for &#x60;FLAC&#x60; and &#x60;WAV&#x60; audio files and required for all other audio formats. For details, see AudioEncoding. Defaults to: `null`.
     - Enum - one of [ENCODING_UNSPECIFIED, LINEAR16, FLAC, MULAW, AMR, AMR_WB, OGG_OPUS, SPEEX_WITH_HEADER_BYTE]
@@ -39,6 +40,7 @@ defmodule GoogleApi.Speech.V1.Model.RecognitionConfig do
 
   @type t :: %__MODULE__{
           :enableAutomaticPunctuation => any(),
+          :enableSeparateRecognitionPerChannel => any(),
           :enableWordTimeOffsets => any(),
           :encoding => any(),
           :languageCode => any(),
@@ -51,6 +53,7 @@ defmodule GoogleApi.Speech.V1.Model.RecognitionConfig do
         }
 
   field(:enableAutomaticPunctuation)
+  field(:enableSeparateRecognitionPerChannel)
   field(:enableWordTimeOffsets)
   field(:encoding)
   field(:languageCode)
