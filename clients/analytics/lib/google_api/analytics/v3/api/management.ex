@@ -4479,14 +4479,14 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
   end
 
   @doc """
-  Deletes a web property-AdWords link.
+  Deletes a web property-Google Ads link.
 
   ## Parameters
 
   - connection (GoogleApi.Analytics.V3.Connection): Connection to server
   - account_id (String.t): ID of the account which the given web property belongs to.
-  - web_property_id (String.t): Web property ID to delete the AdWords link for.
-  - web_property_ad_words_link_id (String.t): Web property AdWords link ID.
+  - web_property_id (String.t): Web property ID to delete the Google Ads link for.
+  - web_property_ad_words_link_id (String.t): Web property Google Ads link ID.
   - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
@@ -4545,14 +4545,14 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
   end
 
   @doc """
-  Returns a web property-AdWords link to which the user has access.
+  Returns a web property-Google Ads link to which the user has access.
 
   ## Parameters
 
   - connection (GoogleApi.Analytics.V3.Connection): Connection to server
   - account_id (String.t): ID of the account which the given web property belongs to.
-  - web_property_id (String.t): Web property ID to retrieve the AdWords link for.
-  - web_property_ad_words_link_id (String.t): Web property-AdWords link ID.
+  - web_property_id (String.t): Web property ID to retrieve the Google Ads link for.
+  - web_property_ad_words_link_id (String.t): Web property-Google Ads link ID.
   - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
@@ -4611,7 +4611,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
   end
 
   @doc """
-  Creates a webProperty-AdWords link.
+  Creates a webProperty-Google Ads link.
 
   ## Parameters
 
@@ -4675,13 +4675,13 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
   end
 
   @doc """
-  Lists webProperty-AdWords links for a given web property.
+  Lists webProperty-Google Ads links for a given web property.
 
   ## Parameters
 
   - connection (GoogleApi.Analytics.V3.Connection): Connection to server
   - account_id (String.t): ID of the account which the given web property belongs to.
-  - web_property_id (String.t): Web property ID to retrieve the AdWords links for.
+  - web_property_id (String.t): Web property ID to retrieve the Google Ads links for.
   - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
@@ -4690,8 +4690,8 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :max-results (integer()): The maximum number of webProperty-AdWords links to include in this response.
-    - :start-index (integer()): An index of the first webProperty-AdWords link to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+    - :max-results (integer()): The maximum number of webProperty-Google Ads links to include in this response.
+    - :start-index (integer()): An index of the first webProperty-Google Ads link to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
 
   ## Returns
 
@@ -4741,14 +4741,14 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
   end
 
   @doc """
-  Updates an existing webProperty-AdWords link. This method supports patch semantics.
+  Updates an existing webProperty-Google Ads link. This method supports patch semantics.
 
   ## Parameters
 
   - connection (GoogleApi.Analytics.V3.Connection): Connection to server
   - account_id (String.t): ID of the account which the given web property belongs to.
-  - web_property_id (String.t): Web property ID to retrieve the AdWords link for.
-  - web_property_ad_words_link_id (String.t): Web property-AdWords link ID.
+  - web_property_id (String.t): Web property ID to retrieve the Google Ads link for.
+  - web_property_ad_words_link_id (String.t): Web property-Google Ads link ID.
   - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
@@ -4809,14 +4809,14 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
   end
 
   @doc """
-  Updates an existing webProperty-AdWords link.
+  Updates an existing webProperty-Google Ads link.
 
   ## Parameters
 
   - connection (GoogleApi.Analytics.V3.Connection): Connection to server
   - account_id (String.t): ID of the account which the given web property belongs to.
-  - web_property_id (String.t): Web property ID to retrieve the AdWords link for.
-  - web_property_ad_words_link_id (String.t): Web property-AdWords link ID.
+  - web_property_id (String.t): Web property ID to retrieve the Google Ads link for.
+  - web_property_ad_words_link_id (String.t): Web property-Google Ads link ID.
   - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.

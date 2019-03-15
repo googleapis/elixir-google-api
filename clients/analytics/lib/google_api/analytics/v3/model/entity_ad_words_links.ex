@@ -18,15 +18,15 @@
 
 defmodule GoogleApi.Analytics.V3.Model.EntityAdWordsLinks do
   @moduledoc """
-  An entity AdWords link collection provides a list of GA-AdWords links Each resource in this collection corresponds to a single link.
+  An entity Google Ads link collection provides a list of GA-Google Ads links Each resource in this collection corresponds to a single link.
 
   ## Attributes
 
-  - items ([EntityAdWordsLink]): A list of entity AdWords links. Defaults to: `null`.
+  - items ([EntityAdWordsLink]): A list of entity Google Ads links. Defaults to: `null`.
   - itemsPerPage (integer()): The maximum number of entries the response can contain, regardless of the actual number of entries returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. Defaults to: `null`.
   - kind (String.t): Collection type. Defaults to: `null`.
-  - nextLink (String.t): Next link for this AdWords link collection. Defaults to: `null`.
-  - previousLink (String.t): Previous link for this AdWords link collection. Defaults to: `null`.
+  - nextLink (String.t): Next link for this Google Ads link collection. Defaults to: `null`.
+  - previousLink (String.t): Previous link for this Google Ads link collection. Defaults to: `null`.
   - startIndex (integer()): The starting index of the entries, which is 1 by default or otherwise specified by the start-index query parameter. Defaults to: `null`.
   - totalResults (integer()): The total number of results for the query, regardless of the number of results in the response. Defaults to: `null`.
   """

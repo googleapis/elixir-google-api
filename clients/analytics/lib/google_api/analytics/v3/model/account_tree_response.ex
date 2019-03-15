@@ -23,7 +23,6 @@ defmodule GoogleApi.Analytics.V3.Model.AccountTreeResponse do
   ## Attributes
 
   - account (Account): The account created. Defaults to: `null`.
-  - accountSettings (AccountTreeRequestAccountSettings):  Defaults to: `null`.
   - kind (String.t): Resource type for account ticket. Defaults to: `null`.
   - profile (Profile): View (Profile) for the account. Defaults to: `null`.
   - webproperty (Webproperty): Web property for the account. Defaults to: `null`.
@@ -33,14 +32,12 @@ defmodule GoogleApi.Analytics.V3.Model.AccountTreeResponse do
 
   @type t :: %__MODULE__{
           :account => GoogleApi.Analytics.V3.Model.Account.t(),
-          :accountSettings => GoogleApi.Analytics.V3.Model.AccountTreeRequestAccountSettings.t(),
           :kind => any(),
           :profile => GoogleApi.Analytics.V3.Model.Profile.t(),
           :webproperty => GoogleApi.Analytics.V3.Model.Webproperty.t()
         }
 
   field(:account, as: GoogleApi.Analytics.V3.Model.Account)
-  field(:accountSettings, as: GoogleApi.Analytics.V3.Model.AccountTreeRequestAccountSettings)
   field(:kind)
   field(:profile, as: GoogleApi.Analytics.V3.Model.Profile)
   field(:webproperty, as: GoogleApi.Analytics.V3.Model.Webproperty)
