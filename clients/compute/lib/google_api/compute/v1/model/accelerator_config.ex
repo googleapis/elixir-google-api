@@ -23,7 +23,7 @@ defmodule GoogleApi.Compute.V1.Model.AcceleratorConfig do
   ## Attributes
 
   - acceleratorCount (integer()): The number of the guest accelerator cards exposed to this instance. Defaults to: `null`.
-  - acceleratorType (String.t): Full or partial URL of the accelerator type resource to attach to this instance. If you are creating an instance template, specify only the accelerator name. Defaults to: `null`.
+  - acceleratorType (String.t): Full or partial URL of the accelerator type resource to attach to this instance. For example: projects/my-project/zones/us-central1-c/acceleratorTypes/nvidia-tesla-p100 If you are creating an instance template, specify only the accelerator name. See GPUs on Compute Engine for a full list of accelerator types. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -667,7 +667,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
   - connection (GoogleApi.Compute.V1.Connection): Connection to server
   - project (String.t): Project ID for this request.
   - zone (String.t): The name of the zone for this request.
-  - node_group (String.t): Name of the NodeGroup resource to delete.
+  - node_group (String.t): Name of the NodeGroup resource to update.
   - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.

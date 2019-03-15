@@ -22,6 +22,7 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManager do
 
   ## Attributes
 
+  - autoHealingPolicies ([InstanceGroupManagerAutoHealingPolicy]): The autohealing policy for this managed instance group. You can specify only one value. Defaults to: `null`.
   - baseInstanceName (String.t): The base instance name to use for instances in this group. The value must be 1-58 characters long. Instances are named by appending a hyphen and a random four-character string to the base instance name. The base instance name must comply with RFC1035. Defaults to: `null`.
   - creationTimestamp (String.t): [Output Only] The creation timestamp for this managed instance group in RFC3339 text format. Defaults to: `null`.
   - currentActions (InstanceGroupManagerActionsSummary): [Output Only] The list of instance actions and the number of instances in this managed instance group that are scheduled for each of those actions. Defaults to: `null`.
@@ -44,6 +45,8 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManager do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :autoHealingPolicies =>
+            list(GoogleApi.Compute.V1.Model.InstanceGroupManagerAutoHealingPolicy.t()),
           :baseInstanceName => any(),
           :creationTimestamp => any(),
           :currentActions => GoogleApi.Compute.V1.Model.InstanceGroupManagerActionsSummary.t(),
@@ -62,6 +65,12 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManager do
           :targetSize => any(),
           :zone => any()
         }
+
+  field(
+    :autoHealingPolicies,
+    as: GoogleApi.Compute.V1.Model.InstanceGroupManagerAutoHealingPolicy,
+    type: :list
+  )
 
   field(:baseInstanceName)
   field(:creationTimestamp)

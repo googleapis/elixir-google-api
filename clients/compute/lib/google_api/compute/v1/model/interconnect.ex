@@ -35,7 +35,7 @@ defmodule GoogleApi.Compute.V1.Model.Interconnect do
   - interconnectType (String.t): Type of interconnect. Note that \&quot;IT_PRIVATE\&quot; has been deprecated in favor of \&quot;DEDICATED\&quot; Defaults to: `null`.
     - Enum - one of [DEDICATED, IT_PRIVATE, PARTNER]
   - kind (String.t): [Output Only] Type of the resource. Always compute#interconnect for interconnects. Defaults to: `null`.
-  - linkType (String.t): Type of link requested. This field indicates speed of each of the links in the bundle, not the entire bundle. Only 10G per link is allowed for a dedicated interconnect. Options: Ethernet_10G_LR Defaults to: `null`.
+  - linkType (String.t): Type of link requested. This field indicates speed of each of the links in the bundle, not the entire bundle. Defaults to: `null`.
     - Enum - one of [LINK_TYPE_ETHERNET_10G_LR]
   - location (String.t): URL of the InterconnectLocation object that represents where this connection is to be provisioned. Defaults to: `null`.
   - name (String.t): Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression &#x60;[a-z]([-a-z0-9]*[a-z0-9])?&#x60; which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. Defaults to: `null`.

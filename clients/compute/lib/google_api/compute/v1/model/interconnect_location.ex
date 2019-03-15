@@ -37,6 +37,8 @@ defmodule GoogleApi.Compute.V1.Model.InterconnectLocation do
   - peeringdbFacilityId (String.t): [Output Only] The peeringdb identifier for this facility (corresponding with a netfac type in peeringdb). Defaults to: `null`.
   - regionInfos ([InterconnectLocationRegionInfo]): [Output Only] A list of InterconnectLocation.RegionInfo objects, that describe parameters pertaining to the relation between this InterconnectLocation and various Google Cloud regions. Defaults to: `null`.
   - selfLink (String.t): [Output Only] Server-defined URL for the resource. Defaults to: `null`.
+  - status (String.t): [Output Only] The status of this InterconnectLocation. If the status is AVAILABLE, new Interconnects may be provisioned in this InterconnectLocation. Otherwise, no new Interconnects may be provisioned. Defaults to: `null`.
+    - Enum - one of [AVAILABLE, CLOSED]
   """
 
   use GoogleApi.Gax.ModelBase
@@ -55,7 +57,8 @@ defmodule GoogleApi.Compute.V1.Model.InterconnectLocation do
           :name => any(),
           :peeringdbFacilityId => any(),
           :regionInfos => list(GoogleApi.Compute.V1.Model.InterconnectLocationRegionInfo.t()),
-          :selfLink => any()
+          :selfLink => any(),
+          :status => any()
         }
 
   field(:address)
@@ -72,6 +75,7 @@ defmodule GoogleApi.Compute.V1.Model.InterconnectLocation do
   field(:peeringdbFacilityId)
   field(:regionInfos, as: GoogleApi.Compute.V1.Model.InterconnectLocationRegionInfo, type: :list)
   field(:selfLink)
+  field(:status)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.InterconnectLocation do
