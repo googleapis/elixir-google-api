@@ -24,6 +24,7 @@ defmodule GoogleApi.Testing.V1.Model.TestMatrix do
 
   - clientInfo (ClientInfo): Information about the client which invoked the test. Defaults to: `null`.
   - environmentMatrix (EnvironmentMatrix): Required. How the host machine(s) are configured. Defaults to: `null`.
+  - flakyTestAttempts (integer()): The number of times a TestExecution should be re-attempted if one or more of its test cases fail for any reason. The maximum number of reruns allowed is 10.  Default is 0, which implies no reruns. Defaults to: `null`.
   - invalidMatrixDetails (String.t): Output only. Describes why the matrix is considered invalid. Only useful for matrices in the INVALID state. Defaults to: `null`.
     - Enum - one of [INVALID_MATRIX_DETAILS_UNSPECIFIED, DETAILS_UNAVAILABLE, MALFORMED_APK, MALFORMED_TEST_APK, NO_MANIFEST, NO_PACKAGE_NAME, TEST_SAME_AS_APP, NO_INSTRUMENTATION, NO_SIGNATURE, INSTRUMENTATION_ORCHESTRATOR_INCOMPATIBLE, NO_TEST_RUNNER_CLASS, NO_LAUNCHER_ACTIVITY, FORBIDDEN_PERMISSIONS, INVALID_ROBO_DIRECTIVES, TEST_LOOP_INTENT_FILTER_NOT_FOUND, SCENARIO_LABEL_NOT_DECLARED, SCENARIO_LABEL_MALFORMED, SCENARIO_NOT_DECLARED, DEVICE_ADMIN_RECEIVER, MALFORMED_XC_TEST_ZIP, BUILT_FOR_IOS_SIMULATOR, NO_TESTS_IN_XC_TEST_ZIP, USE_DESTINATION_ARTIFACTS, TEST_NOT_APP_HOSTED, PLIST_CANNOT_BE_PARSED, TEST_ONLY_APK, MALFORMED_IPA, NO_CODE_APK, INVALID_INPUT_APK, INVALID_APK_PREVIEW_SDK]
   - projectId (String.t): The cloud project that owns the test matrix. Defaults to: `null`.
@@ -41,6 +42,7 @@ defmodule GoogleApi.Testing.V1.Model.TestMatrix do
   @type t :: %__MODULE__{
           :clientInfo => GoogleApi.Testing.V1.Model.ClientInfo.t(),
           :environmentMatrix => GoogleApi.Testing.V1.Model.EnvironmentMatrix.t(),
+          :flakyTestAttempts => any(),
           :invalidMatrixDetails => any(),
           :projectId => any(),
           :resultStorage => GoogleApi.Testing.V1.Model.ResultStorage.t(),
@@ -53,6 +55,7 @@ defmodule GoogleApi.Testing.V1.Model.TestMatrix do
 
   field(:clientInfo, as: GoogleApi.Testing.V1.Model.ClientInfo)
   field(:environmentMatrix, as: GoogleApi.Testing.V1.Model.EnvironmentMatrix)
+  field(:flakyTestAttempts)
   field(:invalidMatrixDetails)
   field(:projectId)
   field(:resultStorage, as: GoogleApi.Testing.V1.Model.ResultStorage)
