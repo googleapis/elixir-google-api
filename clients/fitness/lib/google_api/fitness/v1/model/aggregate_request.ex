@@ -28,7 +28,7 @@ defmodule GoogleApi.Fitness.V1.Model.AggregateRequest do
   - bucketBySession (BucketBySession): Specifies that data be aggregated by user sessions. Data that does not fall within the time range of a session will not be included in the response. Mutually exclusive of other bucketing specifications. Defaults to: `null`.
   - bucketByTime (BucketByTime): Specifies that data be aggregated by a single time interval. Mutually exclusive of other bucketing specifications. Defaults to: `null`.
   - endTimeMillis (String.t): The end of a window of time. Data that intersects with this time window will be aggregated. The time is in milliseconds since epoch, inclusive. Defaults to: `null`.
-  - filteredDataQualityStandard ([String.t]): A list of acceptable data quality standards. Only data points which conform to at least one of the specified data quality standards will be returned. If the list is empty, all data points are returned. Defaults to: `null`.
+  - filteredDataQualityStandard ([String.t]): DO NOT POPULATE THIS FIELD. As data quality standards are deprecated, filling it in will result in no data sources being returned. It will be removed in a future version entirely. Defaults to: `null`.
     - Enum - one of 
   - startTimeMillis (String.t): The start of a window of time. Data that intersects with this time window will be aggregated. The time is in milliseconds since epoch, inclusive. Defaults to: `null`.
   """
