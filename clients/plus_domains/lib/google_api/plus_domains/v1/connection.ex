@@ -27,7 +27,7 @@ defmodule GoogleApi.PlusDomains.V1.Connection do
       "https://www.googleapis.com/auth/plus.circles.read",
       # Manage your circles and add people and pages. People and pages you add to your circles will be notified. Others may see this information publicly. People you add to circles can use Hangouts with you.
       "https://www.googleapis.com/auth/plus.circles.write",
-      # Know the list of people in your circles, your age range, and language
+      # View your basic profile info, including your age range and language
       "https://www.googleapis.com/auth/plus.login",
       # Know who you are on Google
       "https://www.googleapis.com/auth/plus.me",
