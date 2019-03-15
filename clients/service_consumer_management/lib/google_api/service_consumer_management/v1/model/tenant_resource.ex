@@ -24,7 +24,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.TenantResource do
 
   - resource (String.t): @OutputOnly Identifier of the tenant resource. For cloud projects, it is in the form &#39;projects/{number}&#39;. For example &#39;projects/123456&#39;. Defaults to: `null`.
   - status (String.t): Status of tenant resource. Defaults to: `null`.
-    - Enum - one of [STATUS_UNSPECIFIED, PENDING_CREATE, ACTIVE, PENDING_DELETE, FAILED]
+    - Enum - one of [STATUS_UNSPECIFIED, PENDING_CREATE, ACTIVE, PENDING_DELETE, FAILED, DELETED]
   - tag (String.t): Unique per single tenancy unit. Defaults to: `null`.
   """
 
