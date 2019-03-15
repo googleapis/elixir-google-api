@@ -24,8 +24,9 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2b
 
   - confidence (float()): Object category&#39;s labeling confidence of this track. Defaults to: `null`.
   - entity (GoogleCloudVideointelligenceV1p2beta1Entity): Entity to specify the object category that this track is labeled as. Defaults to: `null`.
-  - frames ([GoogleCloudVideointelligenceV1p2beta1ObjectTrackingFrame]): Information corresponding to all frames where this object track appears. Defaults to: `null`.
-  - segment (GoogleCloudVideointelligenceV1p2beta1VideoSegment): Each object track corresponds to one video segment where it appears. Defaults to: `null`.
+  - frames ([GoogleCloudVideointelligenceV1p2beta1ObjectTrackingFrame]): Information corresponding to all frames where this object track appears. Non-streaming batch mode: it may be one or multiple ObjectTrackingFrame messages in frames. Streaming mode: it can only be one ObjectTrackingFrame message in frames. Defaults to: `null`.
+  - segment (GoogleCloudVideointelligenceV1p2beta1VideoSegment): Non-streaming batch mode ONLY. Each object track corresponds to one video segment where it appears. Defaults to: `null`.
+  - trackId (String.t): Streaming mode ONLY. In streaming mode, we do not know the end time of a tracked object before it is completed. Hence, there is no VideoSegment info returned. Instead, we provide a unique identifiable integer track_id so that the customers can correlate the results of the ongoing ObjectTrackAnnotation of the same track_id over time. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -39,7 +40,8 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2b
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2beta1ObjectTrackingFrame.t()
             ),
           :segment =>
-            GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2beta1VideoSegment.t()
+            GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2beta1VideoSegment.t(),
+          :trackId => any()
         }
 
   field(:confidence)
@@ -60,6 +62,8 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2b
     :segment,
     as: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2beta1VideoSegment
   )
+
+  field(:trackId)
 end
 
 defimpl Poison.Decoder,
