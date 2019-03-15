@@ -258,7 +258,7 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
   end
 
   @doc """
-  Cancel, suspend or transfer a subscription to direct.
+  Cancel or transfer a subscription to direct.
 
   ## Parameters
 
