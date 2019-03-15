@@ -27,6 +27,7 @@ defmodule GoogleApi.BigQuery.V2.Model.ExternalDataConfiguration do
   - compression (String.t): [Optional] The compression type of the data source. Possible values include GZIP and NONE. The default value is NONE. This setting is ignored for Google Cloud Bigtable, Google Cloud Datastore backups and Avro formats. Defaults to: `null`.
   - csvOptions (CsvOptions): Additional properties to set if sourceFormat is set to CSV. Defaults to: `null`.
   - googleSheetsOptions (GoogleSheetsOptions): [Optional] Additional options if sourceFormat is set to GOOGLE_SHEETS. Defaults to: `null`.
+  - hivePartitioningMode (String.t): [Optional, Experimental] If hive partitioning is enabled, which mode to use. Two modes are supported: - AUTO: automatically infer partition key name(s) and type(s). - STRINGS: automatic infer partition key name(s). All types are strings. Not all storage formats support hive partitioning -- requesting hive partitioning on an unsupported format will lead to an error. Defaults to: `null`.
   - ignoreUnknownValues (boolean()): [Optional] Indicates if BigQuery should allow extra values that are not represented in the table schema. If true, the extra values are ignored. If false, records with extra columns are treated as bad records, and if there are too many bad records, an invalid error is returned in the job result. The default value is false. The sourceFormat property determines what BigQuery treats as an extra value: CSV: Trailing columns JSON: Named values that don&#39;t match any column names Google Cloud Bigtable: This setting is ignored. Google Cloud Datastore backups: This setting is ignored. Avro: This setting is ignored. Defaults to: `null`.
   - maxBadRecords (integer()): [Optional] The maximum number of bad records that BigQuery can ignore when reading data. If the number of bad records exceeds this value, an invalid error is returned in the job result. This is only valid for CSV, JSON, and Google Sheets. The default value is 0, which requires that all records are valid. This setting is ignored for Google Cloud Bigtable, Google Cloud Datastore backups and Avro formats. Defaults to: `null`.
   - schema (TableSchema): [Optional] The schema for the data. Schema is required for CSV and JSON formats. Schema is disallowed for Google Cloud Bigtable, Cloud Datastore backups, and Avro formats. Defaults to: `null`.
@@ -42,6 +43,7 @@ defmodule GoogleApi.BigQuery.V2.Model.ExternalDataConfiguration do
           :compression => any(),
           :csvOptions => GoogleApi.BigQuery.V2.Model.CsvOptions.t(),
           :googleSheetsOptions => GoogleApi.BigQuery.V2.Model.GoogleSheetsOptions.t(),
+          :hivePartitioningMode => any(),
           :ignoreUnknownValues => any(),
           :maxBadRecords => any(),
           :schema => GoogleApi.BigQuery.V2.Model.TableSchema.t(),
@@ -54,6 +56,7 @@ defmodule GoogleApi.BigQuery.V2.Model.ExternalDataConfiguration do
   field(:compression)
   field(:csvOptions, as: GoogleApi.BigQuery.V2.Model.CsvOptions)
   field(:googleSheetsOptions, as: GoogleApi.BigQuery.V2.Model.GoogleSheetsOptions)
+  field(:hivePartitioningMode)
   field(:ignoreUnknownValues)
   field(:maxBadRecords)
   field(:schema, as: GoogleApi.BigQuery.V2.Model.TableSchema)
