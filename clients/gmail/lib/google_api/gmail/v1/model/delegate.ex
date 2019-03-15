@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.Gmail.V1.Model.Delegate do
   @moduledoc """
-  Settings for a delegate. Delegates can read, send, and delete messages, as well as manage contacts, for the delegator&#39;s account. See \&quot;Set up mail delegation\&quot; for more information about delegates.
+  Settings for a delegate. Delegates can read, send, and delete messages, as well as view and add contacts, for the delegator&#39;s account. See \&quot;Set up mail delegation\&quot; for more information about delegates.
 
   ## Attributes
 
