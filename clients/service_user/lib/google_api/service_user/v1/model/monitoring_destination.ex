@@ -22,7 +22,7 @@ defmodule GoogleApi.ServiceUser.V1.Model.MonitoringDestination do
 
   ## Attributes
 
-  - metrics ([String.t]): Names of the metrics to report to this monitoring destination. Each name must be defined in Service.metrics section. Defaults to: `null`.
+  - metrics ([String.t]): Types of the metrics to report to this monitoring destination. Each type must be defined in Service.metrics section. Defaults to: `null`.
   - monitoredResource (String.t): The monitored resource type. The type must be defined in Service.monitored_resources section. Defaults to: `null`.
   """
 

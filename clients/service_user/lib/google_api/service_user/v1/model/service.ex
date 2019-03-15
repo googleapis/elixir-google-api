@@ -41,7 +41,7 @@ defmodule GoogleApi.ServiceUser.V1.Model.Service do
   - metrics ([MetricDescriptor]): Defines the metrics used by this service. Defaults to: `null`.
   - monitoredResources ([MonitoredResourceDescriptor]): Defines the monitored resources used by this service. This is required by the Service.monitoring and Service.logging configurations. Defaults to: `null`.
   - monitoring (Monitoring): Monitoring configuration. Defaults to: `null`.
-  - name (String.t): The DNS address at which this service is available, e.g. &#x60;calendar.googleapis.com&#x60;. Defaults to: `null`.
+  - name (String.t): The service name, which is a DNS-like logical identifier for the service, such as &#x60;calendar.googleapis.com&#x60;. The service name typically goes through DNS verification to make sure the owner of the service also owns the DNS name. Defaults to: `null`.
   - producerProjectId (String.t): The Google project that owns this service. Defaults to: `null`.
   - quota (Quota): Quota configuration. Defaults to: `null`.
   - sourceInfo (SourceInfo): Output only. The source information for this configuration if available. Defaults to: `null`.
