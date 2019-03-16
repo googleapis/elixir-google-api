@@ -62,7 +62,7 @@ defmodule GoogleApi.GroupsSettings.V1.Api.Groups do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{groupUniqueId}", %{
-        "groupUniqueId" => URI.encode_www_form(group_unique_id)
+        "groupUniqueId" => URI.encode(group_unique_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -111,7 +111,7 @@ defmodule GoogleApi.GroupsSettings.V1.Api.Groups do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/{groupUniqueId}", %{
-        "groupUniqueId" => URI.encode_www_form(group_unique_id)
+        "groupUniqueId" => URI.encode(group_unique_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -165,7 +165,7 @@ defmodule GoogleApi.GroupsSettings.V1.Api.Groups do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/{groupUniqueId}", %{
-        "groupUniqueId" => URI.encode_www_form(group_unique_id)
+        "groupUniqueId" => URI.encode(group_unique_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
