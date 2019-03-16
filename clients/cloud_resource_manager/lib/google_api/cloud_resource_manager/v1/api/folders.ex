@@ -77,7 +77,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Folders do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/folders/{foldersId}:clearOrgPolicy", %{
-        "foldersId" => URI.encode_www_form(folders_id)
+        "foldersId" => URI.encode(folders_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -143,7 +143,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Folders do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/folders/{foldersId}:getEffectiveOrgPolicy", %{
-        "foldersId" => URI.encode_www_form(folders_id)
+        "foldersId" => URI.encode(folders_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -205,7 +205,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Folders do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/folders/{foldersId}:getOrgPolicy", %{
-        "foldersId" => URI.encode_www_form(folders_id)
+        "foldersId" => URI.encode(folders_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -273,7 +273,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Folders do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/folders/{foldersId}:listAvailableOrgPolicyConstraints", %{
-        "foldersId" => URI.encode_www_form(folders_id)
+        "foldersId" => URI.encode(folders_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -342,7 +342,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Folders do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/folders/{foldersId}:listOrgPolicies", %{
-        "foldersId" => URI.encode_www_form(folders_id)
+        "foldersId" => URI.encode(folders_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -406,7 +406,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Folders do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/folders/{foldersId}:setOrgPolicy", %{
-        "foldersId" => URI.encode_www_form(folders_id)
+        "foldersId" => URI.encode(folders_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

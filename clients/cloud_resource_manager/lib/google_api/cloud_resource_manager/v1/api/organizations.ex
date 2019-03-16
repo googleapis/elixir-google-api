@@ -80,7 +80,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/organizations/{organizationsId}:clearOrgPolicy", %{
-        "organizationsId" => URI.encode_www_form(organizations_id)
+        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -141,7 +141,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/organizations/{organizationsId}", %{
-        "organizationsId" => URI.encode_www_form(organizations_id)
+        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -207,7 +207,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/organizations/{organizationsId}:getEffectiveOrgPolicy", %{
-        "organizationsId" => URI.encode_www_form(organizations_id)
+        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -272,7 +272,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/organizations/{organizationsId}:getIamPolicy", %{
-        "organizationsId" => URI.encode_www_form(organizations_id)
+        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -338,7 +338,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/organizations/{organizationsId}:getOrgPolicy", %{
-        "organizationsId" => URI.encode_www_form(organizations_id)
+        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -406,7 +406,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/organizations/{organizationsId}:listAvailableOrgPolicyConstraints", %{
-        "organizationsId" => URI.encode_www_form(organizations_id)
+        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -479,7 +479,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/organizations/{organizationsId}:listOrgPolicies", %{
-        "organizationsId" => URI.encode_www_form(organizations_id)
+        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -603,7 +603,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/organizations/{organizationsId}:setIamPolicy", %{
-        "organizationsId" => URI.encode_www_form(organizations_id)
+        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -669,7 +669,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/organizations/{organizationsId}:setOrgPolicy", %{
-        "organizationsId" => URI.encode_www_form(organizations_id)
+        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -736,7 +736,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/organizations/{organizationsId}:testIamPermissions", %{
-        "organizationsId" => URI.encode_www_form(organizations_id)
+        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
