@@ -70,7 +70,7 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/userProfiles/{userId}", %{
-        "userId" => URI.encode_www_form(user_id)
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -135,7 +135,7 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/userProfiles/{studentId}/guardianInvitations", %{
-        "studentId" => URI.encode_www_form(student_id)
+        "studentId" => URI.encode(student_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -201,8 +201,8 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/userProfiles/{studentId}/guardianInvitations/{invitationId}", %{
-        "studentId" => URI.encode_www_form(student_id),
-        "invitationId" => URI.encode_www_form(invitation_id)
+        "studentId" => URI.encode(student_id, &URI.char_unreserved?/1),
+        "invitationId" => URI.encode(invitation_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -275,7 +275,7 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/userProfiles/{studentId}/guardianInvitations", %{
-        "studentId" => URI.encode_www_form(student_id)
+        "studentId" => URI.encode(student_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -347,8 +347,8 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/v1/userProfiles/{studentId}/guardianInvitations/{invitationId}", %{
-        "studentId" => URI.encode_www_form(student_id),
-        "invitationId" => URI.encode_www_form(invitation_id)
+        "studentId" => URI.encode(student_id, &URI.char_unreserved?/1),
+        "invitationId" => URI.encode(invitation_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -414,8 +414,8 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v1/userProfiles/{studentId}/guardians/{guardianId}", %{
-        "studentId" => URI.encode_www_form(student_id),
-        "guardianId" => URI.encode_www_form(guardian_id)
+        "studentId" => URI.encode(student_id, &URI.char_unreserved?/1),
+        "guardianId" => URI.encode(guardian_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -481,8 +481,8 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/userProfiles/{studentId}/guardians/{guardianId}", %{
-        "studentId" => URI.encode_www_form(student_id),
-        "guardianId" => URI.encode_www_form(guardian_id)
+        "studentId" => URI.encode(student_id, &URI.char_unreserved?/1),
+        "guardianId" => URI.encode(guardian_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -548,7 +548,7 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/userProfiles/{studentId}/guardians", %{
-        "studentId" => URI.encode_www_form(student_id)
+        "studentId" => URI.encode(student_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

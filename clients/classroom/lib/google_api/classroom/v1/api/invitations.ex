@@ -70,7 +70,7 @@ defmodule GoogleApi.Classroom.V1.Api.Invitations do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/invitations/{id}:accept", %{
-        "id" => URI.encode_www_form(id)
+        "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -179,7 +179,7 @@ defmodule GoogleApi.Classroom.V1.Api.Invitations do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v1/invitations/{id}", %{
-        "id" => URI.encode_www_form(id)
+        "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -234,7 +234,7 @@ defmodule GoogleApi.Classroom.V1.Api.Invitations do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/invitations/{id}", %{
-        "id" => URI.encode_www_form(id)
+        "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
