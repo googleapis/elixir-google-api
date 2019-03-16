@@ -82,7 +82,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1beta1/{+database}/documents:batchGet", %{
-        "database" => URI.encode_www_form(database)
+        "database" => URI.encode(database, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -151,7 +151,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1beta1/{+database}/documents:beginTransaction", %{
-        "database" => URI.encode_www_form(database)
+        "database" => URI.encode(database, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -215,7 +215,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1beta1/{+database}/documents:commit", %{
-        "database" => URI.encode_www_form(database)
+        "database" => URI.encode(database, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -287,8 +287,8 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1beta1/{+parent}/{collectionId}", %{
-        "parent" => URI.encode_www_form(parent),
-        "collectionId" => URI.encode_www_form(collection_id)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1),
+        "collectionId" => URI.encode(collection_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -370,8 +370,8 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1beta1/{+parent}/{collectionId}", %{
-        "parent" => URI.encode_www_form(parent),
-        "collectionId" => URI.encode_www_form(collection_id)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1),
+        "collectionId" => URI.encode(collection_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -440,7 +440,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1beta1/{+parent}:listCollectionIds", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -504,7 +504,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1beta1/{+database}/documents:listen", %{
-        "database" => URI.encode_www_form(database)
+        "database" => URI.encode(database, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -574,7 +574,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/v1beta1/{+name}", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -636,7 +636,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1beta1/{+database}/documents:rollback", %{
-        "database" => URI.encode_www_form(database)
+        "database" => URI.encode(database, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -702,7 +702,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1beta1/{+parent}:runQuery", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -764,7 +764,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1beta1/{+database}/documents:write", %{
-        "database" => URI.encode_www_form(database)
+        "database" => URI.encode(database, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -827,7 +827,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1beta1/{+name}:exportDocuments", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -892,7 +892,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1beta1/{+name}:importDocuments", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -957,7 +957,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1beta1/{+parent}/indexes", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1023,7 +1023,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v1beta1/{+name}", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1090,7 +1090,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1beta1/{+name}", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1160,7 +1160,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1beta1/{+parent}/indexes", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
