@@ -69,8 +69,8 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Players do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/applications/{applicationId}/players/hidden/{playerId}", %{
-        "applicationId" => URI.encode_www_form(application_id),
-        "playerId" => URI.encode_www_form(player_id)
+        "applicationId" => URI.encode(application_id, &URI.char_unreserved?/1),
+        "playerId" => URI.encode(player_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -124,8 +124,8 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Players do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/applications/{applicationId}/players/hidden/{playerId}", %{
-        "applicationId" => URI.encode_www_form(application_id),
-        "playerId" => URI.encode_www_form(player_id)
+        "applicationId" => URI.encode(application_id, &URI.char_unreserved?/1),
+        "playerId" => URI.encode(player_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

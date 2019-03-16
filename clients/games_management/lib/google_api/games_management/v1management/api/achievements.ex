@@ -68,7 +68,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Achievements do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/achievements/{achievementId}/reset", %{
-        "achievementId" => URI.encode_www_form(achievement_id)
+        "achievementId" => URI.encode(achievement_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -221,7 +221,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Achievements do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/achievements/{achievementId}/resetForAllPlayers", %{
-        "achievementId" => URI.encode_www_form(achievement_id)
+        "achievementId" => URI.encode(achievement_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

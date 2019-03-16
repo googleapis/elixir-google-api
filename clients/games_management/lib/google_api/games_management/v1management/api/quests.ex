@@ -62,7 +62,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Quests do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/quests/{questId}/reset", %{
-        "questId" => URI.encode_www_form(quest_id)
+        "questId" => URI.encode(quest_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -206,7 +206,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Quests do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/quests/{questId}/resetForAllPlayers", %{
-        "questId" => URI.encode_www_form(quest_id)
+        "questId" => URI.encode(quest_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
