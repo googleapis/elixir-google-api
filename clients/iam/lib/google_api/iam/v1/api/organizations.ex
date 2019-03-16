@@ -77,7 +77,7 @@ defmodule GoogleApi.IAM.V1.Api.Organizations do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/organizations/{organizationsId}/roles", %{
-        "organizationsId" => URI.encode_www_form(organizations_id)
+        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -141,8 +141,8 @@ defmodule GoogleApi.IAM.V1.Api.Organizations do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v1/organizations/{organizationsId}/roles/{rolesId}", %{
-        "organizationsId" => URI.encode_www_form(organizations_id),
-        "rolesId" => URI.encode_www_form(roles_id)
+        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1),
+        "rolesId" => URI.encode(roles_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -204,8 +204,8 @@ defmodule GoogleApi.IAM.V1.Api.Organizations do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/organizations/{organizationsId}/roles/{rolesId}", %{
-        "organizationsId" => URI.encode_www_form(organizations_id),
-        "rolesId" => URI.encode_www_form(roles_id)
+        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1),
+        "rolesId" => URI.encode(roles_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -236,7 +236,7 @@ defmodule GoogleApi.IAM.V1.Api.Organizations do
     - :pageSize (integer()): Optional limit on the number of roles to include in the response.
     - :pageToken (String.t): Optional pagination token returned in an earlier ListRolesResponse.
     - :showDeleted (boolean()): Include Roles that have been deleted.
-    - :view (String.t): Optional view for the returned Role objects.
+    - :view (String.t): Optional view for the returned Role objects. When &#x60;FULL&#x60; is specified, the &#x60;includedPermissions&#x60; field is returned, which includes a list of all permissions in the role. The default value is &#x60;BASIC&#x60;, which does not return the &#x60;includedPermissions&#x60; field.
 
   ## Returns
 
@@ -273,7 +273,7 @@ defmodule GoogleApi.IAM.V1.Api.Organizations do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/organizations/{organizationsId}/roles", %{
-        "organizationsId" => URI.encode_www_form(organizations_id)
+        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -339,8 +339,8 @@ defmodule GoogleApi.IAM.V1.Api.Organizations do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/v1/organizations/{organizationsId}/roles/{rolesId}", %{
-        "organizationsId" => URI.encode_www_form(organizations_id),
-        "rolesId" => URI.encode_www_form(roles_id)
+        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1),
+        "rolesId" => URI.encode(roles_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -404,8 +404,8 @@ defmodule GoogleApi.IAM.V1.Api.Organizations do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/organizations/{organizationsId}/roles/{rolesId}:undelete", %{
-        "organizationsId" => URI.encode_www_form(organizations_id),
-        "rolesId" => URI.encode_www_form(roles_id)
+        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1),
+        "rolesId" => URI.encode(roles_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
