@@ -77,7 +77,7 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v2/billingAccounts/{billingAccountsId}/exclusions", %{
-        "billingAccountsId" => URI.encode_www_form(billing_accounts_id)
+        "billingAccountsId" => URI.encode(billing_accounts_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -143,8 +143,8 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v2/billingAccounts/{billingAccountsId}/exclusions/{exclusionsId}", %{
-        "billingAccountsId" => URI.encode_www_form(billing_accounts_id),
-        "exclusionsId" => URI.encode_www_form(exclusions_id)
+        "billingAccountsId" => URI.encode(billing_accounts_id, &URI.char_unreserved?/1),
+        "exclusionsId" => URI.encode(exclusions_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -210,8 +210,8 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v2/billingAccounts/{billingAccountsId}/exclusions/{exclusionsId}", %{
-        "billingAccountsId" => URI.encode_www_form(billing_accounts_id),
-        "exclusionsId" => URI.encode_www_form(exclusions_id)
+        "billingAccountsId" => URI.encode(billing_accounts_id, &URI.char_unreserved?/1),
+        "exclusionsId" => URI.encode(exclusions_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -275,7 +275,7 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v2/billingAccounts/{billingAccountsId}/exclusions", %{
-        "billingAccountsId" => URI.encode_www_form(billing_accounts_id)
+        "billingAccountsId" => URI.encode(billing_accounts_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -345,8 +345,8 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/v2/billingAccounts/{billingAccountsId}/exclusions/{exclusionsId}", %{
-        "billingAccountsId" => URI.encode_www_form(billing_accounts_id),
-        "exclusionsId" => URI.encode_www_form(exclusions_id)
+        "billingAccountsId" => URI.encode(billing_accounts_id, &URI.char_unreserved?/1),
+        "exclusionsId" => URI.encode(exclusions_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -412,8 +412,8 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v2/billingAccounts/{billingAccountsId}/logs/{logsId}", %{
-        "billingAccountsId" => URI.encode_www_form(billing_accounts_id),
-        "logsId" => URI.encode_www_form(logs_id)
+        "billingAccountsId" => URI.encode(billing_accounts_id, &URI.char_unreserved?/1),
+        "logsId" => URI.encode(logs_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -477,7 +477,7 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v2/billingAccounts/{billingAccountsId}/logs", %{
-        "billingAccountsId" => URI.encode_www_form(billing_accounts_id)
+        "billingAccountsId" => URI.encode(billing_accounts_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -541,7 +541,7 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v2/billingAccounts/{billingAccountsId}/sinks", %{
-        "billingAccountsId" => URI.encode_www_form(billing_accounts_id)
+        "billingAccountsId" => URI.encode(billing_accounts_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -607,8 +607,8 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v2/billingAccounts/{billingAccountsId}/sinks/{sinksId}", %{
-        "billingAccountsId" => URI.encode_www_form(billing_accounts_id),
-        "sinksId" => URI.encode_www_form(sinks_id)
+        "billingAccountsId" => URI.encode(billing_accounts_id, &URI.char_unreserved?/1),
+        "sinksId" => URI.encode(sinks_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -670,8 +670,8 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v2/billingAccounts/{billingAccountsId}/sinks/{sinksId}", %{
-        "billingAccountsId" => URI.encode_www_form(billing_accounts_id),
-        "sinksId" => URI.encode_www_form(sinks_id)
+        "billingAccountsId" => URI.encode(billing_accounts_id, &URI.char_unreserved?/1),
+        "sinksId" => URI.encode(sinks_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -735,7 +735,7 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v2/billingAccounts/{billingAccountsId}/sinks", %{
-        "billingAccountsId" => URI.encode_www_form(billing_accounts_id)
+        "billingAccountsId" => URI.encode(billing_accounts_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -807,8 +807,8 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/v2/billingAccounts/{billingAccountsId}/sinks/{sinksId}", %{
-        "billingAccountsId" => URI.encode_www_form(billing_accounts_id),
-        "sinksId" => URI.encode_www_form(sinks_id)
+        "billingAccountsId" => URI.encode(billing_accounts_id, &URI.char_unreserved?/1),
+        "sinksId" => URI.encode(sinks_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -880,8 +880,8 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/v2/billingAccounts/{billingAccountsId}/sinks/{sinksId}", %{
-        "billingAccountsId" => URI.encode_www_form(billing_accounts_id),
-        "sinksId" => URI.encode_www_form(sinks_id)
+        "billingAccountsId" => URI.encode(billing_accounts_id, &URI.char_unreserved?/1),
+        "sinksId" => URI.encode(sinks_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
