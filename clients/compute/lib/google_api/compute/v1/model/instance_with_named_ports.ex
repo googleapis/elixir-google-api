@@ -25,7 +25,7 @@ defmodule GoogleApi.Compute.V1.Model.InstanceWithNamedPorts do
   - instance (String.t): [Output Only] The URL of the instance. Defaults to: `null`.
   - namedPorts ([NamedPort]): [Output Only] The named ports that belong to this instance group. Defaults to: `null`.
   - status (String.t): [Output Only] The status of the instance. Defaults to: `null`.
-    - Enum - one of [PROVISIONING, RUNNING, STAGING, STOPPED, STOPPING, SUSPENDED, SUSPENDING, TERMINATED]
+    - Enum - one of [PROVISIONING, REPAIRING, RUNNING, STAGING, STOPPED, STOPPING, SUSPENDED, SUSPENDING, TERMINATED]
   """
 
   use GoogleApi.Gax.ModelBase

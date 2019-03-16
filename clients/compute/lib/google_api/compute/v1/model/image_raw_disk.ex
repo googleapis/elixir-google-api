@@ -24,7 +24,7 @@ defmodule GoogleApi.Compute.V1.Model.ImageRawDisk do
 
   - containerType (String.t): The format used to encode and transmit the block device, which should be TAR. This is just a container and transmission format and not a runtime format. Provided by the client when the disk image is created. Defaults to: `null`.
     - Enum - one of [TAR]
-  - sha1Checksum (String.t): An optional SHA1 checksum of the disk image before unpackaging; provided by the client when the disk image is created. Defaults to: `null`.
+  - sha1Checksum (String.t): An optional SHA1 checksum of the disk image before unpackaging provided by the client when the disk image is created. Defaults to: `null`.
   - source (String.t): The full Google Cloud Storage URL where the disk image is stored. You must provide either this property or the sourceDisk property but not both. Defaults to: `null`.
   """
 

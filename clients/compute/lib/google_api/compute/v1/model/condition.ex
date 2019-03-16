@@ -29,8 +29,7 @@ defmodule GoogleApi.Compute.V1.Model.Condition do
   - svc (String.t): Trusted attributes discharged by the service. Defaults to: `null`.
   - sys (String.t): Trusted attributes supplied by any service that owns resources and uses the IAM system for access control. Defaults to: `null`.
     - Enum - one of [IP, NAME, NO_ATTR, REGION, SERVICE]
-  - value (String.t): DEPRECATED. Use &#39;values&#39; instead. Defaults to: `null`.
-  - values ([String.t]): The objects of the condition. This is mutually exclusive with &#39;value&#39;. Defaults to: `null`.
+  - values ([String.t]): The objects of the condition. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -40,7 +39,6 @@ defmodule GoogleApi.Compute.V1.Model.Condition do
           :op => any(),
           :svc => any(),
           :sys => any(),
-          :value => any(),
           :values => list(any())
         }
 
@@ -48,7 +46,6 @@ defmodule GoogleApi.Compute.V1.Model.Condition do
   field(:op)
   field(:svc)
   field(:sys)
-  field(:value)
   field(:values, type: :list)
 end
 

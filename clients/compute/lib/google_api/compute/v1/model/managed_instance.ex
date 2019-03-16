@@ -27,8 +27,9 @@ defmodule GoogleApi.Compute.V1.Model.ManagedInstance do
   - id (String.t): [Output only] The unique identifier for this resource. This field is empty when instance does not exist. Defaults to: `null`.
   - instance (String.t): [Output Only] The URL of the instance. The URL can exist even if the instance has not yet been created. Defaults to: `null`.
   - instanceStatus (String.t): [Output Only] The status of the instance. This field is empty when the instance does not exist. Defaults to: `null`.
-    - Enum - one of [PROVISIONING, RUNNING, STAGING, STOPPED, STOPPING, SUSPENDED, SUSPENDING, TERMINATED]
+    - Enum - one of [PROVISIONING, REPAIRING, RUNNING, STAGING, STOPPED, STOPPING, SUSPENDED, SUSPENDING, TERMINATED]
   - lastAttempt (ManagedInstanceLastAttempt): [Output Only] Information about the last attempt to create or delete the instance. Defaults to: `null`.
+  - version (ManagedInstanceVersion): [Output Only] Intended version of this instance. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -38,7 +39,8 @@ defmodule GoogleApi.Compute.V1.Model.ManagedInstance do
           :id => any(),
           :instance => any(),
           :instanceStatus => any(),
-          :lastAttempt => GoogleApi.Compute.V1.Model.ManagedInstanceLastAttempt.t()
+          :lastAttempt => GoogleApi.Compute.V1.Model.ManagedInstanceLastAttempt.t(),
+          :version => GoogleApi.Compute.V1.Model.ManagedInstanceVersion.t()
         }
 
   field(:currentAction)
@@ -46,6 +48,7 @@ defmodule GoogleApi.Compute.V1.Model.ManagedInstance do
   field(:instance)
   field(:instanceStatus)
   field(:lastAttempt, as: GoogleApi.Compute.V1.Model.ManagedInstanceLastAttempt)
+  field(:version, as: GoogleApi.Compute.V1.Model.ManagedInstanceVersion)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.ManagedInstance do

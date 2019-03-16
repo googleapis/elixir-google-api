@@ -23,7 +23,7 @@ defmodule GoogleApi.Compute.V1.Model.PathRule do
   ## Attributes
 
   - paths ([String.t]): The list of path patterns to match. Each must start with / and the only place a * is allowed is at the end following a /. The string fed to the path matcher does not include any text after the first ? or #, and those chars are not allowed here. Defaults to: `null`.
-  - service (String.t): The URL of the backend service resource if this rule is matched. Use service instead of routeAction when simple routing to a backend service is desired and other advanced capabilities like traffic splitting and rewrites are not required. Only one of service, routeAction or urlRedirect should must be set. Defaults to: `null`.
+  - service (String.t): The full or partial URL of the backend service resource to which traffic is directed if this rule is matched. If routeAction is additionally specified, advanced routing actions like URL Rewrites, etc. take effect prior to sending the request to the backend. However, if service is specified, routeAction cannot contain any weightedBackendService s. Conversely, if routeAction specifies any  weightedBackendServices, service must not be specified. Only one of urlRedirect, service or routeAction.weightedBackendService must be set. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

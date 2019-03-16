@@ -71,8 +71,8 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpsProxies do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/{project}/global/targetHttpsProxies/{targetHttpsProxy}", %{
-        "project" => URI.encode_www_form(project),
-        "targetHttpsProxy" => URI.encode_www_form(target_https_proxy)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "targetHttpsProxy" => URI.encode(target_https_proxy, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -126,8 +126,8 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpsProxies do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/global/targetHttpsProxies/{targetHttpsProxy}", %{
-        "project" => URI.encode_www_form(project),
-        "targetHttpsProxy" => URI.encode_www_form(target_https_proxy)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "targetHttpsProxy" => URI.encode(target_https_proxy, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -178,7 +178,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpsProxies do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/global/targetHttpsProxies", %{
-        "project" => URI.encode_www_form(project)
+        "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -233,7 +233,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpsProxies do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/global/targetHttpsProxies", %{
-        "project" => URI.encode_www_form(project)
+        "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -295,8 +295,8 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpsProxies do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/global/targetHttpsProxies/{targetHttpsProxy}/setQuicOverride", %{
-        "project" => URI.encode_www_form(project),
-        "targetHttpsProxy" => URI.encode_www_form(target_https_proxy)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "targetHttpsProxy" => URI.encode(target_https_proxy, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -358,8 +358,8 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpsProxies do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/targetHttpsProxies/{targetHttpsProxy}/setSslCertificates", %{
-        "project" => URI.encode_www_form(project),
-        "targetHttpsProxy" => URI.encode_www_form(target_https_proxy)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "targetHttpsProxy" => URI.encode(target_https_proxy, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -421,8 +421,8 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpsProxies do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/global/targetHttpsProxies/{targetHttpsProxy}/setSslPolicy", %{
-        "project" => URI.encode_www_form(project),
-        "targetHttpsProxy" => URI.encode_www_form(target_https_proxy)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "targetHttpsProxy" => URI.encode(target_https_proxy, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -484,8 +484,8 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpsProxies do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/targetHttpsProxies/{targetHttpsProxy}/setUrlMap", %{
-        "project" => URI.encode_www_form(project),
-        "targetHttpsProxy" => URI.encode_www_form(target_https_proxy)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "targetHttpsProxy" => URI.encode(target_https_proxy, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

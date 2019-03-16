@@ -82,9 +82,9 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroupManagers do
       |> Request.url(
         "/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/abandonInstances",
         %{
-          "project" => URI.encode_www_form(project),
-          "region" => URI.encode_www_form(region),
-          "instanceGroupManager" => URI.encode_www_form(instance_group_manager)
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "region" => URI.encode(region, &URI.char_unreserved?/1),
+          "instanceGroupManager" => URI.encode(instance_group_manager, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -150,9 +150,9 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroupManagers do
       |> Request.url(
         "/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}",
         %{
-          "project" => URI.encode_www_form(project),
-          "region" => URI.encode_www_form(region),
-          "instanceGroupManager" => URI.encode_www_form(instance_group_manager)
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "region" => URI.encode(region, &URI.char_unreserved?/1),
+          "instanceGroupManager" => URI.encode(instance_group_manager, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -220,9 +220,9 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroupManagers do
       |> Request.url(
         "/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/deleteInstances",
         %{
-          "project" => URI.encode_www_form(project),
-          "region" => URI.encode_www_form(region),
-          "instanceGroupManager" => URI.encode_www_form(instance_group_manager)
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "region" => URI.encode(region, &URI.char_unreserved?/1),
+          "instanceGroupManager" => URI.encode(instance_group_manager, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -286,9 +286,9 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroupManagers do
       |> Request.url(
         "/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}",
         %{
-          "project" => URI.encode_www_form(project),
-          "region" => URI.encode_www_form(region),
-          "instanceGroupManager" => URI.encode_www_form(instance_group_manager)
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "region" => URI.encode(region, &URI.char_unreserved?/1),
+          "instanceGroupManager" => URI.encode(instance_group_manager, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -351,8 +351,8 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroupManagers do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/regions/{region}/instanceGroupManagers", %{
-        "project" => URI.encode_www_form(project),
-        "region" => URI.encode_www_form(region)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "region" => URI.encode(region, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -420,8 +420,8 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroupManagers do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/regions/{region}/instanceGroupManagers", %{
-        "project" => URI.encode_www_form(project),
-        "region" => URI.encode_www_form(region)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "region" => URI.encode(region, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -496,9 +496,9 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroupManagers do
       |> Request.url(
         "/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/listManagedInstances",
         %{
-          "project" => URI.encode_www_form(project),
-          "region" => URI.encode_www_form(region),
-          "instanceGroupManager" => URI.encode_www_form(instance_group_manager)
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "region" => URI.encode(region, &URI.char_unreserved?/1),
+          "instanceGroupManager" => URI.encode(instance_group_manager, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -569,9 +569,9 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroupManagers do
       |> Request.url(
         "/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}",
         %{
-          "project" => URI.encode_www_form(project),
-          "region" => URI.encode_www_form(region),
-          "instanceGroupManager" => URI.encode_www_form(instance_group_manager)
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "region" => URI.encode(region, &URI.char_unreserved?/1),
+          "instanceGroupManager" => URI.encode(instance_group_manager, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -639,9 +639,9 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroupManagers do
       |> Request.url(
         "/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/recreateInstances",
         %{
-          "project" => URI.encode_www_form(project),
-          "region" => URI.encode_www_form(region),
-          "instanceGroupManager" => URI.encode_www_form(instance_group_manager)
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "region" => URI.encode(region, &URI.char_unreserved?/1),
+          "instanceGroupManager" => URI.encode(instance_group_manager, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -710,9 +710,9 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroupManagers do
       |> Request.url(
         "/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/resize",
         %{
-          "project" => URI.encode_www_form(project),
-          "region" => URI.encode_www_form(region),
-          "instanceGroupManager" => URI.encode_www_form(instance_group_manager)
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "region" => URI.encode(region, &URI.char_unreserved?/1),
+          "instanceGroupManager" => URI.encode(instance_group_manager, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_param(:query, :size, size)
@@ -781,9 +781,9 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroupManagers do
       |> Request.url(
         "/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/setInstanceTemplate",
         %{
-          "project" => URI.encode_www_form(project),
-          "region" => URI.encode_www_form(region),
-          "instanceGroupManager" => URI.encode_www_form(instance_group_manager)
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "region" => URI.encode(region, &URI.char_unreserved?/1),
+          "instanceGroupManager" => URI.encode(instance_group_manager, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -851,9 +851,9 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroupManagers do
       |> Request.url(
         "/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/setTargetPools",
         %{
-          "project" => URI.encode_www_form(project),
-          "region" => URI.encode_www_form(region),
-          "instanceGroupManager" => URI.encode_www_form(instance_group_manager)
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "region" => URI.encode(region, &URI.char_unreserved?/1),
+          "instanceGroupManager" => URI.encode(instance_group_manager, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)

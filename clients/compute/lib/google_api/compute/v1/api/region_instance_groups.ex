@@ -76,9 +76,9 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroups do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/regions/{region}/instanceGroups/{instanceGroup}", %{
-        "project" => URI.encode_www_form(project),
-        "region" => URI.encode_www_form(region),
-        "instanceGroup" => URI.encode_www_form(instance_group)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "region" => URI.encode(region, &URI.char_unreserved?/1),
+        "instanceGroup" => URI.encode(instance_group, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -140,8 +140,8 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroups do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/regions/{region}/instanceGroups", %{
-        "project" => URI.encode_www_form(project),
-        "region" => URI.encode_www_form(region)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "region" => URI.encode(region, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -216,9 +216,9 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroups do
       |> Request.url(
         "/{project}/regions/{region}/instanceGroups/{instanceGroup}/listInstances",
         %{
-          "project" => URI.encode_www_form(project),
-          "region" => URI.encode_www_form(region),
-          "instanceGroup" => URI.encode_www_form(instance_group)
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "region" => URI.encode(region, &URI.char_unreserved?/1),
+          "instanceGroup" => URI.encode(instance_group, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -288,9 +288,9 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroups do
       |> Request.url(
         "/{project}/regions/{region}/instanceGroups/{instanceGroup}/setNamedPorts",
         %{
-          "project" => URI.encode_www_form(project),
-          "region" => URI.encode_www_form(region),
-          "instanceGroup" => URI.encode_www_form(instance_group)
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "region" => URI.encode(region, &URI.char_unreserved?/1),
+          "instanceGroup" => URI.encode(instance_group, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)

@@ -37,8 +37,11 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManager do
   - namedPorts ([NamedPort]): Named ports configured for the Instance Groups complementary to this Instance Group Manager. Defaults to: `null`.
   - region (String.t): [Output Only] The URL of the region where the managed instance group resides (for regional resources). Defaults to: `null`.
   - selfLink (String.t): [Output Only] The URL for this managed instance group. The server defines this URL. Defaults to: `null`.
+  - status (InstanceGroupManagerStatus): [Output Only] The status of this managed instance group. Defaults to: `null`.
   - targetPools ([String.t]): The URLs for all TargetPool resources to which instances in the instanceGroup field are added. The target pools automatically apply to all of the instances in the managed instance group. Defaults to: `null`.
   - targetSize (integer()): The target number of running instances for this managed instance group. Deleting or abandoning instances reduces this number. Resizing the group changes this number. Defaults to: `null`.
+  - updatePolicy (InstanceGroupManagerUpdatePolicy): The update policy for this managed instance group. Defaults to: `null`.
+  - versions ([InstanceGroupManagerVersion]): Specifies the instance templates used by this managed instance group to create instances.  Each version is defined by an instanceTemplate. Every template can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates. Defaults to: `null`.
   - zone (String.t): [Output Only] The URL of the zone where the managed instance group is located (for zonal resources). Defaults to: `null`.
   """
 
@@ -61,8 +64,11 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManager do
           :namedPorts => list(GoogleApi.Compute.V1.Model.NamedPort.t()),
           :region => any(),
           :selfLink => any(),
+          :status => GoogleApi.Compute.V1.Model.InstanceGroupManagerStatus.t(),
           :targetPools => list(any()),
           :targetSize => any(),
+          :updatePolicy => GoogleApi.Compute.V1.Model.InstanceGroupManagerUpdatePolicy.t(),
+          :versions => list(GoogleApi.Compute.V1.Model.InstanceGroupManagerVersion.t()),
           :zone => any()
         }
 
@@ -86,8 +92,11 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManager do
   field(:namedPorts, as: GoogleApi.Compute.V1.Model.NamedPort, type: :list)
   field(:region)
   field(:selfLink)
+  field(:status, as: GoogleApi.Compute.V1.Model.InstanceGroupManagerStatus)
   field(:targetPools, type: :list)
   field(:targetSize)
+  field(:updatePolicy, as: GoogleApi.Compute.V1.Model.InstanceGroupManagerUpdatePolicy)
+  field(:versions, as: GoogleApi.Compute.V1.Model.InstanceGroupManagerVersion, type: :list)
   field(:zone)
 end
 

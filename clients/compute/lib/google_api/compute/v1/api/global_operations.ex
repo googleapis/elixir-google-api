@@ -75,7 +75,7 @@ defmodule GoogleApi.Compute.V1.Api.GlobalOperations do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/aggregated/operations", %{
-        "project" => URI.encode_www_form(project)
+        "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -129,8 +129,8 @@ defmodule GoogleApi.Compute.V1.Api.GlobalOperations do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/{project}/global/operations/{operation}", %{
-        "project" => URI.encode_www_form(project),
-        "operation" => URI.encode_www_form(operation)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "operation" => URI.encode(operation, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -184,8 +184,8 @@ defmodule GoogleApi.Compute.V1.Api.GlobalOperations do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/global/operations/{operation}", %{
-        "project" => URI.encode_www_form(project),
-        "operation" => URI.encode_www_form(operation)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "operation" => URI.encode(operation, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -240,7 +240,7 @@ defmodule GoogleApi.Compute.V1.Api.GlobalOperations do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/global/operations", %{
-        "project" => URI.encode_www_form(project)
+        "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

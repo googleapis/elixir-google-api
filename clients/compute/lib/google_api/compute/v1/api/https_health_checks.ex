@@ -71,8 +71,8 @@ defmodule GoogleApi.Compute.V1.Api.HttpsHealthChecks do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/{project}/global/httpsHealthChecks/{httpsHealthCheck}", %{
-        "project" => URI.encode_www_form(project),
-        "httpsHealthCheck" => URI.encode_www_form(https_health_check)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "httpsHealthCheck" => URI.encode(https_health_check, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -126,8 +126,8 @@ defmodule GoogleApi.Compute.V1.Api.HttpsHealthChecks do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/global/httpsHealthChecks/{httpsHealthCheck}", %{
-        "project" => URI.encode_www_form(project),
-        "httpsHealthCheck" => URI.encode_www_form(https_health_check)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "httpsHealthCheck" => URI.encode(https_health_check, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -178,7 +178,7 @@ defmodule GoogleApi.Compute.V1.Api.HttpsHealthChecks do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/global/httpsHealthChecks", %{
-        "project" => URI.encode_www_form(project)
+        "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -233,7 +233,7 @@ defmodule GoogleApi.Compute.V1.Api.HttpsHealthChecks do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/global/httpsHealthChecks", %{
-        "project" => URI.encode_www_form(project)
+        "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -291,8 +291,8 @@ defmodule GoogleApi.Compute.V1.Api.HttpsHealthChecks do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/{project}/global/httpsHealthChecks/{httpsHealthCheck}", %{
-        "project" => URI.encode_www_form(project),
-        "httpsHealthCheck" => URI.encode_www_form(https_health_check)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "httpsHealthCheck" => URI.encode(https_health_check, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -350,8 +350,8 @@ defmodule GoogleApi.Compute.V1.Api.HttpsHealthChecks do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/{project}/global/httpsHealthChecks/{httpsHealthCheck}", %{
-        "project" => URI.encode_www_form(project),
-        "httpsHealthCheck" => URI.encode_www_form(https_health_check)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "httpsHealthCheck" => URI.encode(https_health_check, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

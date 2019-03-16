@@ -70,7 +70,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeTypes do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/aggregated/nodeTypes", %{
-        "project" => URI.encode_www_form(project)
+        "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -126,9 +126,9 @@ defmodule GoogleApi.Compute.V1.Api.NodeTypes do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/zones/{zone}/nodeTypes/{nodeType}", %{
-        "project" => URI.encode_www_form(project),
-        "zone" => URI.encode_www_form(zone),
-        "nodeType" => URI.encode_www_form(node_type)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "nodeType" => URI.encode(node_type, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -184,8 +184,8 @@ defmodule GoogleApi.Compute.V1.Api.NodeTypes do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/zones/{zone}/nodeTypes", %{
-        "project" => URI.encode_www_form(project),
-        "zone" => URI.encode_www_form(zone)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

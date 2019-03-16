@@ -25,6 +25,7 @@ defmodule GoogleApi.Compute.V1.Model.ForwardingRule do
   - IPAddress (String.t): The IP address that this forwarding rule is serving on behalf of.  Addresses are restricted based on the forwarding rule&#39;s load balancing scheme (EXTERNAL or INTERNAL) and scope (global or regional).  When the load balancing scheme is EXTERNAL, for global forwarding rules, the address must be a global IP, and for regional forwarding rules, the address must live in the same region as the forwarding rule. If this field is empty, an ephemeral IPv4 address from the same scope (global or regional) will be assigned. A regional forwarding rule supports IPv4 only. A global forwarding rule supports either IPv4 or IPv6.  When the load balancing scheme is INTERNAL_SELF_MANAGED, this must be a URL reference to an existing Address resource ( internal regional static IP address), with a purpose of GCE_END_POINT and address_type of INTERNAL.  When the load balancing scheme is INTERNAL, this can only be an RFC 1918 IP address belonging to the network/subnet configured for the forwarding rule. By default, if this field is empty, an ephemeral internal IP address will be automatically allocated from the IP range of the subnet or network configured for this forwarding rule.  An address can be specified either by a literal IP address or a URL reference to an existing Address resource. The following examples are all valid:   - 100.1.2.3  - https://www.googleapis.com/compute/v1/projects/project/regions/region/addresses/address  - projects/project/regions/region/addresses/address  - regions/region/addresses/address  - global/addresses/address  - address Defaults to: `null`.
   - IPProtocol (String.t): The IP protocol to which this rule applies. Valid options are TCP, UDP, ESP, AH, SCTP or ICMP.  When the load balancing scheme is INTERNAL, only TCP and UDP are valid. When the load balancing scheme is INTERNAL_SELF_MANAGED, only TCPis valid. Defaults to: `null`.
     - Enum - one of [AH, ESP, ICMP, SCTP, TCP, UDP]
+  - allPorts (boolean()): This field is used along with the backend_service field for internal load balancing or with the target field for internal TargetInstance. This field cannot be used with port or portRange fields.  When the load balancing scheme is INTERNAL and protocol is TCP/UDP, specify this field to allow packets addressed to any ports will be forwarded to the backends configured with this forwarding rule. Defaults to: `null`.
   - backendService (String.t): This field is only used for INTERNAL load balancing.  For internal load balancing, this field identifies the BackendService resource to receive the matched traffic. Defaults to: `null`.
   - creationTimestamp (String.t): [Output Only] Creation timestamp in RFC3339 text format. Defaults to: `null`.
   - description (String.t): An optional description of this resource. Provide this property when you create the resource. Defaults to: `null`.
@@ -42,8 +43,10 @@ defmodule GoogleApi.Compute.V1.Model.ForwardingRule do
   - ports ([String.t]): This field is used along with the backend_service field for internal load balancing.  When the load balancing scheme is INTERNAL, a list of ports can be configured, for example, [&#39;80&#39;], [&#39;8000&#39;,&#39;9000&#39;] etc. Only packets addressed to these ports will be forwarded to the backends configured with this forwarding rule.  You may specify a maximum of up to 5 ports. Defaults to: `null`.
   - region (String.t): [Output Only] URL of the region where the regional forwarding rule resides. This field is not applicable to global forwarding rules. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body. Defaults to: `null`.
   - selfLink (String.t): [Output Only] Server-defined URL for the resource. Defaults to: `null`.
+  - serviceLabel (String.t): An optional prefix to the service name for this Forwarding Rule. If specified, will be the first label of the fully qualified service name.  The label must be 1-63 characters long, and comply with RFC1035. Specifically, the label must be 1-63 characters long and match the regular expression &#x60;[a-z]([-a-z0-9]*[a-z0-9])?&#x60; which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.  This field is only used for internal load balancing. Defaults to: `null`.
+  - serviceName (String.t): [Output Only] The internal fully qualified service name for this Forwarding Rule.  This field is only used for internal load balancing. Defaults to: `null`.
   - subnetwork (String.t): This field is only used for INTERNAL load balancing.  For internal load balancing, this field identifies the subnetwork that the load balanced IP should belong to for this Forwarding Rule.  If the network specified is in auto subnet mode, this field is optional. However, if the network is in custom subnet mode, a subnetwork must be specified. Defaults to: `null`.
-  - target (String.t): The URL of the target resource to receive the matched traffic. For regional forwarding rules, this target must live in the same region as the forwarding rule. For global forwarding rules, this target must be a global load balancing resource. The forwarded traffic must be of a type appropriate to the target object. For INTERNAL_SELF_MANAGED\&quot; load balancing, only HTTP and HTTPS targets are valid. Defaults to: `null`.
+  - target (String.t): The URL of the target resource to receive the matched traffic. For regional forwarding rules, this target must live in the same region as the forwarding rule. For global forwarding rules, this target must be a global load balancing resource. The forwarded traffic must be of a type appropriate to the target object. For INTERNAL_SELF_MANAGED load balancing, only HTTP and HTTPS targets are valid. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -51,6 +54,7 @@ defmodule GoogleApi.Compute.V1.Model.ForwardingRule do
   @type t :: %__MODULE__{
           :IPAddress => any(),
           :IPProtocol => any(),
+          :allPorts => any(),
           :backendService => any(),
           :creationTimestamp => any(),
           :description => any(),
@@ -65,12 +69,15 @@ defmodule GoogleApi.Compute.V1.Model.ForwardingRule do
           :ports => list(any()),
           :region => any(),
           :selfLink => any(),
+          :serviceLabel => any(),
+          :serviceName => any(),
           :subnetwork => any(),
           :target => any()
         }
 
   field(:IPAddress)
   field(:IPProtocol)
+  field(:allPorts)
   field(:backendService)
   field(:creationTimestamp)
   field(:description)
@@ -85,6 +92,8 @@ defmodule GoogleApi.Compute.V1.Model.ForwardingRule do
   field(:ports, type: :list)
   field(:region)
   field(:selfLink)
+  field(:serviceLabel)
+  field(:serviceName)
   field(:subnetwork)
   field(:target)
 end

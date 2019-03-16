@@ -70,7 +70,7 @@ defmodule GoogleApi.Compute.V1.Api.Autoscalers do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/aggregated/autoscalers", %{
-        "project" => URI.encode_www_form(project)
+        "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -133,9 +133,9 @@ defmodule GoogleApi.Compute.V1.Api.Autoscalers do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/{project}/zones/{zone}/autoscalers/{autoscaler}", %{
-        "project" => URI.encode_www_form(project),
-        "zone" => URI.encode_www_form(zone),
-        "autoscaler" => URI.encode_www_form(autoscaler)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "autoscaler" => URI.encode(autoscaler, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -191,9 +191,9 @@ defmodule GoogleApi.Compute.V1.Api.Autoscalers do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/zones/{zone}/autoscalers/{autoscaler}", %{
-        "project" => URI.encode_www_form(project),
-        "zone" => URI.encode_www_form(zone),
-        "autoscaler" => URI.encode_www_form(autoscaler)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "autoscaler" => URI.encode(autoscaler, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -245,8 +245,8 @@ defmodule GoogleApi.Compute.V1.Api.Autoscalers do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/zones/{zone}/autoscalers", %{
-        "project" => URI.encode_www_form(project),
-        "zone" => URI.encode_www_form(zone)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -302,8 +302,8 @@ defmodule GoogleApi.Compute.V1.Api.Autoscalers do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/zones/{zone}/autoscalers", %{
-        "project" => URI.encode_www_form(project),
-        "zone" => URI.encode_www_form(zone)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -357,8 +357,8 @@ defmodule GoogleApi.Compute.V1.Api.Autoscalers do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/{project}/zones/{zone}/autoscalers", %{
-        "project" => URI.encode_www_form(project),
-        "zone" => URI.encode_www_form(zone)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -412,8 +412,8 @@ defmodule GoogleApi.Compute.V1.Api.Autoscalers do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/{project}/zones/{zone}/autoscalers", %{
-        "project" => URI.encode_www_form(project),
-        "zone" => URI.encode_www_form(zone)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

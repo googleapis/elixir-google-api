@@ -76,7 +76,7 @@ defmodule GoogleApi.Compute.V1.Api.AcceleratorTypes do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/aggregated/acceleratorTypes", %{
-        "project" => URI.encode_www_form(project)
+        "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -139,9 +139,9 @@ defmodule GoogleApi.Compute.V1.Api.AcceleratorTypes do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/zones/{zone}/acceleratorTypes/{acceleratorType}", %{
-        "project" => URI.encode_www_form(project),
-        "zone" => URI.encode_www_form(zone),
-        "acceleratorType" => URI.encode_www_form(accelerator_type)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "acceleratorType" => URI.encode(accelerator_type, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -197,8 +197,8 @@ defmodule GoogleApi.Compute.V1.Api.AcceleratorTypes do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/zones/{zone}/acceleratorTypes", %{
-        "project" => URI.encode_www_form(project),
-        "zone" => URI.encode_www_form(zone)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

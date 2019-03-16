@@ -80,7 +80,7 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectAttachments do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/aggregated/interconnectAttachments", %{
-        "project" => URI.encode_www_form(project)
+        "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -147,9 +147,9 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectAttachments do
       |> Request.url(
         "/{project}/regions/{region}/interconnectAttachments/{interconnectAttachment}",
         %{
-          "project" => URI.encode_www_form(project),
-          "region" => URI.encode_www_form(region),
-          "interconnectAttachment" => URI.encode_www_form(interconnect_attachment)
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "region" => URI.encode(region, &URI.char_unreserved?/1),
+          "interconnectAttachment" => URI.encode(interconnect_attachment, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -214,9 +214,9 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectAttachments do
       |> Request.url(
         "/{project}/regions/{region}/interconnectAttachments/{interconnectAttachment}",
         %{
-          "project" => URI.encode_www_form(project),
-          "region" => URI.encode_www_form(region),
-          "interconnectAttachment" => URI.encode_www_form(interconnect_attachment)
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "region" => URI.encode(region, &URI.char_unreserved?/1),
+          "interconnectAttachment" => URI.encode(interconnect_attachment, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -279,8 +279,8 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectAttachments do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/regions/{region}/interconnectAttachments", %{
-        "project" => URI.encode_www_form(project),
-        "region" => URI.encode_www_form(region)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "region" => URI.encode(region, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -348,8 +348,8 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectAttachments do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/regions/{region}/interconnectAttachments", %{
-        "project" => URI.encode_www_form(project),
-        "region" => URI.encode_www_form(region)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "region" => URI.encode(region, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -416,9 +416,9 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectAttachments do
       |> Request.url(
         "/{project}/regions/{region}/interconnectAttachments/{interconnectAttachment}",
         %{
-          "project" => URI.encode_www_form(project),
-          "region" => URI.encode_www_form(region),
-          "interconnectAttachment" => URI.encode_www_form(interconnect_attachment)
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "region" => URI.encode(region, &URI.char_unreserved?/1),
+          "interconnectAttachment" => URI.encode(interconnect_attachment, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)

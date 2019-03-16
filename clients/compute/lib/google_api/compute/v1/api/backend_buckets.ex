@@ -77,8 +77,8 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/global/backendBuckets/{backendBucket}/addSignedUrlKey", %{
-        "project" => URI.encode_www_form(project),
-        "backendBucket" => URI.encode_www_form(backend_bucket)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "backendBucket" => URI.encode(backend_bucket, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -134,8 +134,8 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/{project}/global/backendBuckets/{backendBucket}", %{
-        "project" => URI.encode_www_form(project),
-        "backendBucket" => URI.encode_www_form(backend_bucket)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "backendBucket" => URI.encode(backend_bucket, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -198,8 +198,8 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/global/backendBuckets/{backendBucket}/deleteSignedUrlKey", %{
-        "project" => URI.encode_www_form(project),
-        "backendBucket" => URI.encode_www_form(backend_bucket)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "backendBucket" => URI.encode(backend_bucket, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :keyName, key_name)
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -254,8 +254,8 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/global/backendBuckets/{backendBucket}", %{
-        "project" => URI.encode_www_form(project),
-        "backendBucket" => URI.encode_www_form(backend_bucket)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "backendBucket" => URI.encode(backend_bucket, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -306,7 +306,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/global/backendBuckets", %{
-        "project" => URI.encode_www_form(project)
+        "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -361,7 +361,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/global/backendBuckets", %{
-        "project" => URI.encode_www_form(project)
+        "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -419,8 +419,8 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/{project}/global/backendBuckets/{backendBucket}", %{
-        "project" => URI.encode_www_form(project),
-        "backendBucket" => URI.encode_www_form(backend_bucket)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "backendBucket" => URI.encode(backend_bucket, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -478,8 +478,8 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/{project}/global/backendBuckets/{backendBucket}", %{
-        "project" => URI.encode_www_form(project),
-        "backendBucket" => URI.encode_www_form(backend_bucket)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "backendBucket" => URI.encode(backend_bucket, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

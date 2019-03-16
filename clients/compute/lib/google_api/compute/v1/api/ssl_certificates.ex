@@ -71,8 +71,8 @@ defmodule GoogleApi.Compute.V1.Api.SslCertificates do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/{project}/global/sslCertificates/{sslCertificate}", %{
-        "project" => URI.encode_www_form(project),
-        "sslCertificate" => URI.encode_www_form(ssl_certificate)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "sslCertificate" => URI.encode(ssl_certificate, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -126,8 +126,8 @@ defmodule GoogleApi.Compute.V1.Api.SslCertificates do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/global/sslCertificates/{sslCertificate}", %{
-        "project" => URI.encode_www_form(project),
-        "sslCertificate" => URI.encode_www_form(ssl_certificate)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "sslCertificate" => URI.encode(ssl_certificate, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -178,7 +178,7 @@ defmodule GoogleApi.Compute.V1.Api.SslCertificates do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/global/sslCertificates", %{
-        "project" => URI.encode_www_form(project)
+        "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -233,7 +233,7 @@ defmodule GoogleApi.Compute.V1.Api.SslCertificates do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/global/sslCertificates", %{
-        "project" => URI.encode_www_form(project)
+        "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

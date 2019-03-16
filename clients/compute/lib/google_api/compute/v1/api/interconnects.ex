@@ -71,8 +71,8 @@ defmodule GoogleApi.Compute.V1.Api.Interconnects do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/{project}/global/interconnects/{interconnect}", %{
-        "project" => URI.encode_www_form(project),
-        "interconnect" => URI.encode_www_form(interconnect)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "interconnect" => URI.encode(interconnect, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -126,8 +126,8 @@ defmodule GoogleApi.Compute.V1.Api.Interconnects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/global/interconnects/{interconnect}", %{
-        "project" => URI.encode_www_form(project),
-        "interconnect" => URI.encode_www_form(interconnect)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "interconnect" => URI.encode(interconnect, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -187,8 +187,8 @@ defmodule GoogleApi.Compute.V1.Api.Interconnects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/global/interconnects/{interconnect}/getDiagnostics", %{
-        "project" => URI.encode_www_form(project),
-        "interconnect" => URI.encode_www_form(interconnect)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "interconnect" => URI.encode(interconnect, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -241,7 +241,7 @@ defmodule GoogleApi.Compute.V1.Api.Interconnects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/global/interconnects", %{
-        "project" => URI.encode_www_form(project)
+        "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -296,7 +296,7 @@ defmodule GoogleApi.Compute.V1.Api.Interconnects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/global/interconnects", %{
-        "project" => URI.encode_www_form(project)
+        "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -354,8 +354,8 @@ defmodule GoogleApi.Compute.V1.Api.Interconnects do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/{project}/global/interconnects/{interconnect}", %{
-        "project" => URI.encode_www_form(project),
-        "interconnect" => URI.encode_www_form(interconnect)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "interconnect" => URI.encode(interconnect, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

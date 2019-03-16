@@ -24,16 +24,16 @@ defmodule GoogleApi.Compute.V1.Model.TargetVpnGateway do
 
   - creationTimestamp (String.t): [Output Only] Creation timestamp in RFC3339 text format. Defaults to: `null`.
   - description (String.t): An optional description of this resource. Provide this property when you create the resource. Defaults to: `null`.
-  - forwardingRules ([String.t]): [Output Only] A list of URLs to the ForwardingRule resources. ForwardingRules are created using compute.forwardingRules.insert and associated to a VPN gateway. Defaults to: `null`.
+  - forwardingRules ([String.t]): [Output Only] A list of URLs to the ForwardingRule resources. ForwardingRules are created using compute.forwardingRules.insert and associated with a VPN gateway. Defaults to: `null`.
   - id (String.t): [Output Only] The unique identifier for the resource. This identifier is defined by the server. Defaults to: `null`.
   - kind (String.t): [Output Only] Type of resource. Always compute#targetVpnGateway for target VPN gateways. Defaults to: `null`.
   - name (String.t): Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression &#x60;[a-z]([-a-z0-9]*[a-z0-9])?&#x60; which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. Defaults to: `null`.
   - network (String.t): URL of the network to which this VPN gateway is attached. Provided by the client when the VPN gateway is created. Defaults to: `null`.
   - region (String.t): [Output Only] URL of the region where the target VPN gateway resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body. Defaults to: `null`.
   - selfLink (String.t): [Output Only] Server-defined URL for the resource. Defaults to: `null`.
-  - status (String.t): [Output Only] The status of the VPN gateway. Defaults to: `null`.
+  - status (String.t): [Output Only] The status of the VPN gateway, which can be one of the following: CREATING, READY, FAILED, or DELETING. Defaults to: `null`.
     - Enum - one of [CREATING, DELETING, FAILED, READY]
-  - tunnels ([String.t]): [Output Only] A list of URLs to VpnTunnel resources. VpnTunnels are created using compute.vpntunnels.insert method and associated to a VPN gateway. Defaults to: `null`.
+  - tunnels ([String.t]): [Output Only] A list of URLs to VpnTunnel resources. VpnTunnels are created using the compute.vpntunnels.insert method and associated with a VPN gateway. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

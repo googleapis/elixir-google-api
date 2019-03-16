@@ -71,8 +71,8 @@ defmodule GoogleApi.Compute.V1.Api.TargetTcpProxies do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/{project}/global/targetTcpProxies/{targetTcpProxy}", %{
-        "project" => URI.encode_www_form(project),
-        "targetTcpProxy" => URI.encode_www_form(target_tcp_proxy)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "targetTcpProxy" => URI.encode(target_tcp_proxy, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -126,8 +126,8 @@ defmodule GoogleApi.Compute.V1.Api.TargetTcpProxies do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/global/targetTcpProxies/{targetTcpProxy}", %{
-        "project" => URI.encode_www_form(project),
-        "targetTcpProxy" => URI.encode_www_form(target_tcp_proxy)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "targetTcpProxy" => URI.encode(target_tcp_proxy, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -178,7 +178,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetTcpProxies do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/global/targetTcpProxies", %{
-        "project" => URI.encode_www_form(project)
+        "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -233,7 +233,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetTcpProxies do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/global/targetTcpProxies", %{
-        "project" => URI.encode_www_form(project)
+        "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -295,8 +295,8 @@ defmodule GoogleApi.Compute.V1.Api.TargetTcpProxies do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/global/targetTcpProxies/{targetTcpProxy}/setBackendService", %{
-        "project" => URI.encode_www_form(project),
-        "targetTcpProxy" => URI.encode_www_form(target_tcp_proxy)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "targetTcpProxy" => URI.encode(target_tcp_proxy, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -358,8 +358,8 @@ defmodule GoogleApi.Compute.V1.Api.TargetTcpProxies do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/global/targetTcpProxies/{targetTcpProxy}/setProxyHeader", %{
-        "project" => URI.encode_www_form(project),
-        "targetTcpProxy" => URI.encode_www_form(target_tcp_proxy)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "targetTcpProxy" => URI.encode(target_tcp_proxy, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

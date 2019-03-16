@@ -26,6 +26,7 @@ defmodule GoogleApi.Compute.V1.Model.HealthCheck do
   - creationTimestamp (String.t): [Output Only] Creation timestamp in 3339 text format. Defaults to: `null`.
   - description (String.t): An optional description of this resource. Provide this property when you create the resource. Defaults to: `null`.
   - healthyThreshold (integer()): A so-far unhealthy instance will be marked healthy after this many consecutive successes. The default value is 2. Defaults to: `null`.
+  - http2HealthCheck (Http2HealthCheck):  Defaults to: `null`.
   - httpHealthCheck (HttpHealthCheck):  Defaults to: `null`.
   - httpsHealthCheck (HttpsHealthCheck):  Defaults to: `null`.
   - id (String.t): [Output Only] The unique identifier for the resource. This identifier is defined by the server. Defaults to: `null`.
@@ -36,7 +37,7 @@ defmodule GoogleApi.Compute.V1.Model.HealthCheck do
   - tcpHealthCheck (TcpHealthCheck):  Defaults to: `null`.
   - timeoutSec (integer()): How long (in seconds) to wait before claiming failure. The default value is 5 seconds. It is invalid for timeoutSec to have greater value than checkIntervalSec. Defaults to: `null`.
   - type (String.t): Specifies the type of the healthCheck, either TCP, SSL, HTTP or HTTPS. If not specified, the default is TCP. Exactly one of the protocol-specific health check field must be specified, which must match type field. Defaults to: `null`.
-    - Enum - one of [HTTP, HTTPS, INVALID, SSL, TCP]
+    - Enum - one of [HTTP, HTTP2, HTTPS, INVALID, SSL, TCP]
   - unhealthyThreshold (integer()): A so-far healthy instance will be marked unhealthy after this many consecutive failures. The default value is 2. Defaults to: `null`.
   """
 
@@ -47,6 +48,7 @@ defmodule GoogleApi.Compute.V1.Model.HealthCheck do
           :creationTimestamp => any(),
           :description => any(),
           :healthyThreshold => any(),
+          :http2HealthCheck => GoogleApi.Compute.V1.Model.Http2HealthCheck.t(),
           :httpHealthCheck => GoogleApi.Compute.V1.Model.HttpHealthCheck.t(),
           :httpsHealthCheck => GoogleApi.Compute.V1.Model.HttpsHealthCheck.t(),
           :id => any(),
@@ -64,6 +66,7 @@ defmodule GoogleApi.Compute.V1.Model.HealthCheck do
   field(:creationTimestamp)
   field(:description)
   field(:healthyThreshold)
+  field(:http2HealthCheck, as: GoogleApi.Compute.V1.Model.Http2HealthCheck)
   field(:httpHealthCheck, as: GoogleApi.Compute.V1.Model.HttpHealthCheck)
   field(:httpsHealthCheck, as: GoogleApi.Compute.V1.Model.HttpsHealthCheck)
   field(:id)

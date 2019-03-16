@@ -64,7 +64,7 @@ defmodule GoogleApi.Compute.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/disableXpnHost", %{
-        "project" => URI.encode_www_form(project)
+        "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -120,7 +120,7 @@ defmodule GoogleApi.Compute.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/disableXpnResource", %{
-        "project" => URI.encode_www_form(project)
+        "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -169,7 +169,7 @@ defmodule GoogleApi.Compute.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/enableXpnHost", %{
-        "project" => URI.encode_www_form(project)
+        "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -220,7 +220,7 @@ defmodule GoogleApi.Compute.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/enableXpnResource", %{
-        "project" => URI.encode_www_form(project)
+        "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -267,7 +267,7 @@ defmodule GoogleApi.Compute.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}", %{
-        "project" => URI.encode_www_form(project)
+        "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -314,7 +314,7 @@ defmodule GoogleApi.Compute.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/getXpnHost", %{
-        "project" => URI.encode_www_form(project)
+        "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -369,7 +369,7 @@ defmodule GoogleApi.Compute.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/getXpnResources", %{
-        "project" => URI.encode_www_form(project)
+        "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -426,7 +426,7 @@ defmodule GoogleApi.Compute.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/listXpnHosts", %{
-        "project" => URI.encode_www_form(project)
+        "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -477,7 +477,7 @@ defmodule GoogleApi.Compute.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/moveDisk", %{
-        "project" => URI.encode_www_form(project)
+        "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -528,7 +528,7 @@ defmodule GoogleApi.Compute.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/moveInstance", %{
-        "project" => URI.encode_www_form(project)
+        "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -584,7 +584,7 @@ defmodule GoogleApi.Compute.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/setCommonInstanceMetadata", %{
-        "project" => URI.encode_www_form(project)
+        "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -640,7 +640,7 @@ defmodule GoogleApi.Compute.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/setDefaultNetworkTier", %{
-        "project" => URI.encode_www_form(project)
+        "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -696,7 +696,7 @@ defmodule GoogleApi.Compute.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/setUsageExportBucket", %{
-        "project" => URI.encode_www_form(project)
+        "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

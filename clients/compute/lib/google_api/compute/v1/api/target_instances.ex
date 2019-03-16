@@ -76,7 +76,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetInstances do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/aggregated/targetInstances", %{
-        "project" => URI.encode_www_form(project)
+        "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -141,9 +141,9 @@ defmodule GoogleApi.Compute.V1.Api.TargetInstances do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/{project}/zones/{zone}/targetInstances/{targetInstance}", %{
-        "project" => URI.encode_www_form(project),
-        "zone" => URI.encode_www_form(zone),
-        "targetInstance" => URI.encode_www_form(target_instance)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "targetInstance" => URI.encode(target_instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -204,9 +204,9 @@ defmodule GoogleApi.Compute.V1.Api.TargetInstances do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/zones/{zone}/targetInstances/{targetInstance}", %{
-        "project" => URI.encode_www_form(project),
-        "zone" => URI.encode_www_form(zone),
-        "targetInstance" => URI.encode_www_form(target_instance)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "targetInstance" => URI.encode(target_instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -264,8 +264,8 @@ defmodule GoogleApi.Compute.V1.Api.TargetInstances do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/zones/{zone}/targetInstances", %{
-        "project" => URI.encode_www_form(project),
-        "zone" => URI.encode_www_form(zone)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -321,8 +321,8 @@ defmodule GoogleApi.Compute.V1.Api.TargetInstances do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/zones/{zone}/targetInstances", %{
-        "project" => URI.encode_www_form(project),
-        "zone" => URI.encode_www_form(zone)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

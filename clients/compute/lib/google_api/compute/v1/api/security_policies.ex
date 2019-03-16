@@ -71,8 +71,8 @@ defmodule GoogleApi.Compute.V1.Api.SecurityPolicies do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/global/securityPolicies/{securityPolicy}/addRule", %{
-        "project" => URI.encode_www_form(project),
-        "securityPolicy" => URI.encode_www_form(security_policy)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "securityPolicy" => URI.encode(security_policy, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -128,8 +128,8 @@ defmodule GoogleApi.Compute.V1.Api.SecurityPolicies do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/{project}/global/securityPolicies/{securityPolicy}", %{
-        "project" => URI.encode_www_form(project),
-        "securityPolicy" => URI.encode_www_form(security_policy)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "securityPolicy" => URI.encode(security_policy, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -183,8 +183,8 @@ defmodule GoogleApi.Compute.V1.Api.SecurityPolicies do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/global/securityPolicies/{securityPolicy}", %{
-        "project" => URI.encode_www_form(project),
-        "securityPolicy" => URI.encode_www_form(security_policy)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "securityPolicy" => URI.encode(security_policy, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -240,8 +240,8 @@ defmodule GoogleApi.Compute.V1.Api.SecurityPolicies do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/global/securityPolicies/{securityPolicy}/getRule", %{
-        "project" => URI.encode_www_form(project),
-        "securityPolicy" => URI.encode_www_form(security_policy)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "securityPolicy" => URI.encode(security_policy, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -292,7 +292,7 @@ defmodule GoogleApi.Compute.V1.Api.SecurityPolicies do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/global/securityPolicies", %{
-        "project" => URI.encode_www_form(project)
+        "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -347,7 +347,7 @@ defmodule GoogleApi.Compute.V1.Api.SecurityPolicies do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/global/securityPolicies", %{
-        "project" => URI.encode_www_form(project)
+        "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -405,8 +405,8 @@ defmodule GoogleApi.Compute.V1.Api.SecurityPolicies do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/{project}/global/securityPolicies/{securityPolicy}", %{
-        "project" => URI.encode_www_form(project),
-        "securityPolicy" => URI.encode_www_form(security_policy)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "securityPolicy" => URI.encode(security_policy, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -468,8 +468,8 @@ defmodule GoogleApi.Compute.V1.Api.SecurityPolicies do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/global/securityPolicies/{securityPolicy}/patchRule", %{
-        "project" => URI.encode_www_form(project),
-        "securityPolicy" => URI.encode_www_form(security_policy)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "securityPolicy" => URI.encode(security_policy, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -529,8 +529,8 @@ defmodule GoogleApi.Compute.V1.Api.SecurityPolicies do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/global/securityPolicies/{securityPolicy}/removeRule", %{
-        "project" => URI.encode_www_form(project),
-        "securityPolicy" => URI.encode_www_form(security_policy)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "securityPolicy" => URI.encode(security_policy, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

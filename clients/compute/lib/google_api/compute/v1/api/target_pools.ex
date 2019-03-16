@@ -80,9 +80,9 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/regions/{region}/targetPools/{targetPool}/addHealthCheck", %{
-        "project" => URI.encode_www_form(project),
-        "region" => URI.encode_www_form(region),
-        "targetPool" => URI.encode_www_form(target_pool)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "region" => URI.encode(region, &URI.char_unreserved?/1),
+        "targetPool" => URI.encode(target_pool, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -147,9 +147,9 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/regions/{region}/targetPools/{targetPool}/addInstance", %{
-        "project" => URI.encode_www_form(project),
-        "region" => URI.encode_www_form(region),
-        "targetPool" => URI.encode_www_form(target_pool)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "region" => URI.encode(region, &URI.char_unreserved?/1),
+        "targetPool" => URI.encode(target_pool, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -204,7 +204,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/aggregated/targetPools", %{
-        "project" => URI.encode_www_form(project)
+        "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -267,9 +267,9 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/{project}/regions/{region}/targetPools/{targetPool}", %{
-        "project" => URI.encode_www_form(project),
-        "region" => URI.encode_www_form(region),
-        "targetPool" => URI.encode_www_form(target_pool)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "region" => URI.encode(region, &URI.char_unreserved?/1),
+        "targetPool" => URI.encode(target_pool, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -330,9 +330,9 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/regions/{region}/targetPools/{targetPool}", %{
-        "project" => URI.encode_www_form(project),
-        "region" => URI.encode_www_form(region),
-        "targetPool" => URI.encode_www_form(target_pool)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "region" => URI.encode(region, &URI.char_unreserved?/1),
+        "targetPool" => URI.encode(target_pool, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -396,9 +396,9 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/regions/{region}/targetPools/{targetPool}/getHealth", %{
-        "project" => URI.encode_www_form(project),
-        "region" => URI.encode_www_form(region),
-        "targetPool" => URI.encode_www_form(target_pool)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "region" => URI.encode(region, &URI.char_unreserved?/1),
+        "targetPool" => URI.encode(target_pool, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -450,8 +450,8 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/regions/{region}/targetPools", %{
-        "project" => URI.encode_www_form(project),
-        "region" => URI.encode_www_form(region)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "region" => URI.encode(region, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -507,8 +507,8 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/regions/{region}/targetPools", %{
-        "project" => URI.encode_www_form(project),
-        "region" => URI.encode_www_form(region)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "region" => URI.encode(region, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -573,9 +573,9 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/regions/{region}/targetPools/{targetPool}/removeHealthCheck", %{
-        "project" => URI.encode_www_form(project),
-        "region" => URI.encode_www_form(region),
-        "targetPool" => URI.encode_www_form(target_pool)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "region" => URI.encode(region, &URI.char_unreserved?/1),
+        "targetPool" => URI.encode(target_pool, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -640,9 +640,9 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/regions/{region}/targetPools/{targetPool}/removeInstance", %{
-        "project" => URI.encode_www_form(project),
-        "region" => URI.encode_www_form(region),
-        "targetPool" => URI.encode_www_form(target_pool)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "region" => URI.encode(region, &URI.char_unreserved?/1),
+        "targetPool" => URI.encode(target_pool, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -709,9 +709,9 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/regions/{region}/targetPools/{targetPool}/setBackup", %{
-        "project" => URI.encode_www_form(project),
-        "region" => URI.encode_www_form(region),
-        "targetPool" => URI.encode_www_form(target_pool)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "region" => URI.encode(region, &URI.char_unreserved?/1),
+        "targetPool" => URI.encode(target_pool, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

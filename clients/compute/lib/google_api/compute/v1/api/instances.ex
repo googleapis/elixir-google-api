@@ -83,9 +83,9 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/zones/{zone}/instances/{instance}/addAccessConfig", %{
-        "project" => URI.encode_www_form(project),
-        "zone" => URI.encode_www_form(zone),
-        "instance" => URI.encode_www_form(instance)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :networkInterface, network_interface)
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -141,7 +141,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/aggregated/instances", %{
-        "project" => URI.encode_www_form(project)
+        "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -167,7 +167,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :forceAttach (boolean()): Whether to force attach the disk even if it&#39;s currently attached to another instance. This is only available for regional disks.
+    - :forceAttach (boolean()): Whether to force attach the disk even if it&#39;s currently attached to another instance.
     - :requestId (String.t): An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.  For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.  The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
     - :body (AttachedDisk): 
 
@@ -208,9 +208,9 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/zones/{zone}/instances/{instance}/attachDisk", %{
-        "project" => URI.encode_www_form(project),
-        "zone" => URI.encode_www_form(zone),
-        "instance" => URI.encode_www_form(instance)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -273,9 +273,9 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/{project}/zones/{zone}/instances/{instance}", %{
-        "project" => URI.encode_www_form(project),
-        "zone" => URI.encode_www_form(zone),
-        "instance" => URI.encode_www_form(instance)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -344,9 +344,9 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/zones/{zone}/instances/{instance}/deleteAccessConfig", %{
-        "project" => URI.encode_www_form(project),
-        "zone" => URI.encode_www_form(zone),
-        "instance" => URI.encode_www_form(instance)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :accessConfig, access_config)
       |> Request.add_param(:query, :networkInterface, network_interface)
@@ -414,9 +414,9 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/zones/{zone}/instances/{instance}/detachDisk", %{
-        "project" => URI.encode_www_form(project),
-        "zone" => URI.encode_www_form(zone),
-        "instance" => URI.encode_www_form(instance)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :deviceName, device_name)
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -473,9 +473,9 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/zones/{zone}/instances/{instance}", %{
-        "project" => URI.encode_www_form(project),
-        "zone" => URI.encode_www_form(zone),
-        "instance" => URI.encode_www_form(instance)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -536,9 +536,9 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/zones/{zone}/instances/{resource}/getIamPolicy", %{
-        "project" => URI.encode_www_form(project),
-        "zone" => URI.encode_www_form(zone),
-        "resource" => URI.encode_www_form(resource)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -603,9 +603,9 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/zones/{zone}/instances/{instance}/serialPort", %{
-        "project" => URI.encode_www_form(project),
-        "zone" => URI.encode_www_form(zone),
-        "instance" => URI.encode_www_form(instance)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -659,8 +659,8 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/zones/{zone}/instances", %{
-        "project" => URI.encode_www_form(project),
-        "zone" => URI.encode_www_form(zone)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -716,8 +716,8 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/zones/{zone}/instances", %{
-        "project" => URI.encode_www_form(project),
-        "zone" => URI.encode_www_form(zone)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -786,9 +786,9 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/zones/{zone}/instances/{instance}/referrers", %{
-        "project" => URI.encode_www_form(project),
-        "zone" => URI.encode_www_form(zone),
-        "instance" => URI.encode_www_form(instance)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -798,7 +798,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   end
 
   @doc """
-  Performs a reset on the instance. For more information, see Resetting an instance.
+  Performs a reset on the instance. This is a hard reset the VM does not do a graceful shutdown. For more information, see Resetting an instance.
 
   ## Parameters
 
@@ -846,9 +846,9 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/zones/{zone}/instances/{instance}/reset", %{
-        "project" => URI.encode_www_form(project),
-        "zone" => URI.encode_www_form(zone),
-        "instance" => URI.encode_www_form(instance)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -913,9 +913,9 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/zones/{zone}/instances/{resource}/setDeletionProtection", %{
-        "project" => URI.encode_www_form(project),
-        "zone" => URI.encode_www_form(zone),
-        "resource" => URI.encode_www_form(resource)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -984,9 +984,9 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/zones/{zone}/instances/{instance}/setDiskAutoDelete", %{
-        "project" => URI.encode_www_form(project),
-        "zone" => URI.encode_www_form(zone),
-        "instance" => URI.encode_www_form(instance)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :autoDelete, auto_delete)
       |> Request.add_param(:query, :deviceName, device_name)
@@ -1051,9 +1051,9 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/zones/{zone}/instances/{resource}/setIamPolicy", %{
-        "project" => URI.encode_www_form(project),
-        "zone" => URI.encode_www_form(zone),
-        "resource" => URI.encode_www_form(resource)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1118,9 +1118,9 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/zones/{zone}/instances/{instance}/setLabels", %{
-        "project" => URI.encode_www_form(project),
-        "zone" => URI.encode_www_form(zone),
-        "instance" => URI.encode_www_form(instance)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1185,9 +1185,9 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/zones/{zone}/instances/{instance}/setMachineResources", %{
-        "project" => URI.encode_www_form(project),
-        "zone" => URI.encode_www_form(zone),
-        "instance" => URI.encode_www_form(instance)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1252,9 +1252,9 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/zones/{zone}/instances/{instance}/setMachineType", %{
-        "project" => URI.encode_www_form(project),
-        "zone" => URI.encode_www_form(zone),
-        "instance" => URI.encode_www_form(instance)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1319,9 +1319,9 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/zones/{zone}/instances/{instance}/setMetadata", %{
-        "project" => URI.encode_www_form(project),
-        "zone" => URI.encode_www_form(zone),
-        "instance" => URI.encode_www_form(instance)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1386,9 +1386,9 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/zones/{zone}/instances/{instance}/setMinCpuPlatform", %{
-        "project" => URI.encode_www_form(project),
-        "zone" => URI.encode_www_form(zone),
-        "instance" => URI.encode_www_form(instance)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1453,9 +1453,9 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/zones/{zone}/instances/{instance}/setScheduling", %{
-        "project" => URI.encode_www_form(project),
-        "zone" => URI.encode_www_form(zone),
-        "instance" => URI.encode_www_form(instance)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1520,9 +1520,9 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/zones/{zone}/instances/{instance}/setServiceAccount", %{
-        "project" => URI.encode_www_form(project),
-        "zone" => URI.encode_www_form(zone),
-        "instance" => URI.encode_www_form(instance)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1587,9 +1587,9 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/zones/{zone}/instances/{instance}/setTags", %{
-        "project" => URI.encode_www_form(project),
-        "zone" => URI.encode_www_form(zone),
-        "instance" => URI.encode_www_form(instance)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1650,9 +1650,9 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/zones/{zone}/instances/{instance}/simulateMaintenanceEvent", %{
-        "project" => URI.encode_www_form(project),
-        "zone" => URI.encode_www_form(zone),
-        "instance" => URI.encode_www_form(instance)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1710,9 +1710,9 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/zones/{zone}/instances/{instance}/start", %{
-        "project" => URI.encode_www_form(project),
-        "zone" => URI.encode_www_form(zone),
-        "instance" => URI.encode_www_form(instance)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1777,9 +1777,9 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/zones/{zone}/instances/{instance}/startWithEncryptionKey", %{
-        "project" => URI.encode_www_form(project),
-        "zone" => URI.encode_www_form(zone),
-        "instance" => URI.encode_www_form(instance)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1837,9 +1837,9 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/zones/{zone}/instances/{instance}/stop", %{
-        "project" => URI.encode_www_form(project),
-        "zone" => URI.encode_www_form(zone),
-        "instance" => URI.encode_www_form(instance)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1903,9 +1903,9 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/zones/{zone}/instances/{resource}/testIamPermissions", %{
-        "project" => URI.encode_www_form(project),
-        "zone" => URI.encode_www_form(zone),
-        "resource" => URI.encode_www_form(resource)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1973,9 +1973,9 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/zones/{zone}/instances/{instance}/updateAccessConfig", %{
-        "project" => URI.encode_www_form(project),
-        "zone" => URI.encode_www_form(zone),
-        "instance" => URI.encode_www_form(instance)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :networkInterface, network_interface)
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2044,9 +2044,9 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/{project}/zones/{zone}/instances/{instance}/updateNetworkInterface", %{
-        "project" => URI.encode_www_form(project),
-        "zone" => URI.encode_www_form(zone),
-        "instance" => URI.encode_www_form(instance)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :networkInterface, network_interface)
       |> Request.add_optional_params(optional_params_config, optional_params)

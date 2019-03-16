@@ -77,8 +77,8 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/global/backendServices/{backendService}/addSignedUrlKey", %{
-        "project" => URI.encode_www_form(project),
-        "backendService" => URI.encode_www_form(backend_service)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "backendService" => URI.encode(backend_service, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -139,7 +139,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/aggregated/backendServices", %{
-        "project" => URI.encode_www_form(project)
+        "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -197,8 +197,8 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/{project}/global/backendServices/{backendService}", %{
-        "project" => URI.encode_www_form(project),
-        "backendService" => URI.encode_www_form(backend_service)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "backendService" => URI.encode(backend_service, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -261,8 +261,8 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/global/backendServices/{backendService}/deleteSignedUrlKey", %{
-        "project" => URI.encode_www_form(project),
-        "backendService" => URI.encode_www_form(backend_service)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "backendService" => URI.encode(backend_service, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :keyName, key_name)
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -317,8 +317,8 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/global/backendServices/{backendService}", %{
-        "project" => URI.encode_www_form(project),
-        "backendService" => URI.encode_www_form(backend_service)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "backendService" => URI.encode(backend_service, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -375,8 +375,8 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/global/backendServices/{backendService}/getHealth", %{
-        "project" => URI.encode_www_form(project),
-        "backendService" => URI.encode_www_form(backend_service)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "backendService" => URI.encode(backend_service, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -427,7 +427,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/global/backendServices", %{
-        "project" => URI.encode_www_form(project)
+        "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -482,7 +482,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/global/backendServices", %{
-        "project" => URI.encode_www_form(project)
+        "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -540,8 +540,8 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/{project}/global/backendServices/{backendService}", %{
-        "project" => URI.encode_www_form(project),
-        "backendService" => URI.encode_www_form(backend_service)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "backendService" => URI.encode(backend_service, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -603,8 +603,8 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/global/backendServices/{backendService}/setSecurityPolicy", %{
-        "project" => URI.encode_www_form(project),
-        "backendService" => URI.encode_www_form(backend_service)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "backendService" => URI.encode(backend_service, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -662,8 +662,8 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/{project}/global/backendServices/{backendService}", %{
-        "project" => URI.encode_www_form(project),
-        "backendService" => URI.encode_www_form(backend_service)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "backendService" => URI.encode(backend_service, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
