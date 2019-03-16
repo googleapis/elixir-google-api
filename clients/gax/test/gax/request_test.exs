@@ -41,11 +41,11 @@ defmodule Gax.RequestTest do
   test "sets url with replacement" do
     request =
       Request.new()
-      |> Request.url("/storage/v1/b/{bucket}/o", %{
+      |> Request.url("/upload/storage/v1/b/{bucket}/o", %{
         "bucket" => URI.encode_www_form("foo/bar")
       })
 
-    assert "/storage/v1/b/foo%2Fbar/o" == request.url
+    assert "/upload/storage/v1/b/foo%2Fbar/o" == request.url
   end
 
   test "sets url with allowed expansion" do
