@@ -22,7 +22,7 @@ defmodule GoogleApi.Gmail.V1.Model.ListMessagesResponse do
 
   ## Attributes
 
-  - messages ([Message]): List of messages. Defaults to: `null`.
+  - messages ([Message]): List of messages. Note that each message resource contains only an id and a threadId. Additional message details can be fetched using the messages.get method. Defaults to: `null`.
   - nextPageToken (String.t): Token to retrieve the next page of results in the list. Defaults to: `null`.
   - resultSizeEstimate (integer()): Estimated total number of results. Defaults to: `null`.
   """

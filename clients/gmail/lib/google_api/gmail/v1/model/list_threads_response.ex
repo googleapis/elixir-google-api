@@ -24,7 +24,7 @@ defmodule GoogleApi.Gmail.V1.Model.ListThreadsResponse do
 
   - nextPageToken (String.t): Page token to retrieve the next page of results in the list. Defaults to: `null`.
   - resultSizeEstimate (integer()): Estimated total number of results. Defaults to: `null`.
-  - threads ([Thread]): List of threads. Defaults to: `null`.
+  - threads ([Thread]): List of threads. Note that each thread resource does not contain a list of messages. The list of messages for a given thread can be fetched using the threads.get method. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
