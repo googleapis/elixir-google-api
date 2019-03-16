@@ -81,8 +81,8 @@ defmodule GoogleApi.Manufacturers.V1.Api.Accounts do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v1/{+parent}/products/{+name}", %{
-        "parent" => URI.encode_www_form(parent),
-        "name" => URI.encode_www_form(name)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1),
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -146,8 +146,8 @@ defmodule GoogleApi.Manufacturers.V1.Api.Accounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/{+parent}/products/{+name}", %{
-        "parent" => URI.encode_www_form(parent),
-        "name" => URI.encode_www_form(name)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1),
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -209,7 +209,7 @@ defmodule GoogleApi.Manufacturers.V1.Api.Accounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/{+parent}/products", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -277,8 +277,8 @@ defmodule GoogleApi.Manufacturers.V1.Api.Accounts do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/v1/{+parent}/products/{+name}", %{
-        "parent" => URI.encode_www_form(parent),
-        "name" => URI.encode_www_form(name)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1),
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
