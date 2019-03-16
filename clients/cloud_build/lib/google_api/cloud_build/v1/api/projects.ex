@@ -79,8 +79,8 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectId}/builds/{id}:cancel", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "id" => URI.encode_www_form(id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -137,7 +137,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectId}/builds", %{
-        "projectId" => URI.encode_www_form(project_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -199,8 +199,8 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectId}/builds/{id}", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "id" => URI.encode_www_form(id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -261,7 +261,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectId}/builds", %{
-        "projectId" => URI.encode_www_form(project_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -325,8 +325,8 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectId}/builds/{id}:retry", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "id" => URI.encode_www_form(id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -388,7 +388,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectId}/triggers", %{
-        "projectId" => URI.encode_www_form(project_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -450,8 +450,8 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v1/projects/{projectId}/triggers/{triggerId}", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "triggerId" => URI.encode_www_form(trigger_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "triggerId" => URI.encode(trigger_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -513,8 +513,8 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectId}/triggers/{triggerId}", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "triggerId" => URI.encode_www_form(trigger_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "triggerId" => URI.encode(trigger_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -570,7 +570,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectId}/triggers", %{
-        "projectId" => URI.encode_www_form(project_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -636,8 +636,8 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/v1/projects/{projectId}/triggers/{triggerId}", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "triggerId" => URI.encode_www_form(trigger_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "triggerId" => URI.encode(trigger_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -701,8 +701,8 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectId}/triggers/{triggerId}:run", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "triggerId" => URI.encode_www_form(trigger_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "triggerId" => URI.encode(trigger_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
