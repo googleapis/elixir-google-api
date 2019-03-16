@@ -126,7 +126,7 @@ defmodule GoogleApi.Script.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{scriptId}/deployments", %{
-        "scriptId" => URI.encode_www_form(script_id)
+        "scriptId" => URI.encode(script_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -188,8 +188,8 @@ defmodule GoogleApi.Script.V1.Api.Projects do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v1/projects/{scriptId}/deployments/{deploymentId}", %{
-        "scriptId" => URI.encode_www_form(script_id),
-        "deploymentId" => URI.encode_www_form(deployment_id)
+        "scriptId" => URI.encode(script_id, &URI.char_unreserved?/1),
+        "deploymentId" => URI.encode(deployment_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -251,8 +251,8 @@ defmodule GoogleApi.Script.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{scriptId}/deployments/{deploymentId}", %{
-        "scriptId" => URI.encode_www_form(script_id),
-        "deploymentId" => URI.encode_www_form(deployment_id)
+        "scriptId" => URI.encode(script_id, &URI.char_unreserved?/1),
+        "deploymentId" => URI.encode(deployment_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -311,7 +311,7 @@ defmodule GoogleApi.Script.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{scriptId}/deployments", %{
-        "scriptId" => URI.encode_www_form(script_id)
+        "scriptId" => URI.encode(script_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -375,8 +375,8 @@ defmodule GoogleApi.Script.V1.Api.Projects do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/v1/projects/{scriptId}/deployments/{deploymentId}", %{
-        "scriptId" => URI.encode_www_form(script_id),
-        "deploymentId" => URI.encode_www_form(deployment_id)
+        "scriptId" => URI.encode(script_id, &URI.char_unreserved?/1),
+        "deploymentId" => URI.encode(deployment_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -431,7 +431,7 @@ defmodule GoogleApi.Script.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{scriptId}", %{
-        "scriptId" => URI.encode_www_form(script_id)
+        "scriptId" => URI.encode(script_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -488,7 +488,7 @@ defmodule GoogleApi.Script.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{scriptId}/content", %{
-        "scriptId" => URI.encode_www_form(script_id)
+        "scriptId" => URI.encode(script_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -547,7 +547,7 @@ defmodule GoogleApi.Script.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{scriptId}/metrics", %{
-        "scriptId" => URI.encode_www_form(script_id)
+        "scriptId" => URI.encode(script_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -604,7 +604,7 @@ defmodule GoogleApi.Script.V1.Api.Projects do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/v1/projects/{scriptId}/content", %{
-        "scriptId" => URI.encode_www_form(script_id)
+        "scriptId" => URI.encode(script_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -661,7 +661,7 @@ defmodule GoogleApi.Script.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{scriptId}/versions", %{
-        "scriptId" => URI.encode_www_form(script_id)
+        "scriptId" => URI.encode(script_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -723,7 +723,7 @@ defmodule GoogleApi.Script.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{scriptId}/versions/{versionNumber}", %{
-        "scriptId" => URI.encode_www_form(script_id),
+        "scriptId" => URI.encode(script_id, &URI.char_unreserved?/1),
         "versionNumber" => version_number
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -783,7 +783,7 @@ defmodule GoogleApi.Script.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{scriptId}/versions", %{
-        "scriptId" => URI.encode_www_form(script_id)
+        "scriptId" => URI.encode(script_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

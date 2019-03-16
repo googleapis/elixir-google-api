@@ -23,7 +23,6 @@ defmodule GoogleApi.Script.V1.Model.GoogleAppsScriptTypeProcess do
   ## Attributes
 
   - duration (String.t): Duration the execution spent executing. Defaults to: `null`.
-  - executingUser (String.t): User-facing name for the user executing the script. Defaults to: `null`.
   - functionName (String.t): Name of the function the started the execution. Defaults to: `null`.
   - processStatus (String.t): The executions status. Defaults to: `null`.
     - Enum - one of [PROCESS_STATUS_UNSPECIFIED, RUNNING, PAUSED, COMPLETED, CANCELED, FAILED, TIMED_OUT, UNKNOWN, DELAYED]
@@ -39,7 +38,6 @@ defmodule GoogleApi.Script.V1.Model.GoogleAppsScriptTypeProcess do
 
   @type t :: %__MODULE__{
           :duration => any(),
-          :executingUser => any(),
           :functionName => any(),
           :processStatus => any(),
           :processType => any(),
@@ -49,7 +47,6 @@ defmodule GoogleApi.Script.V1.Model.GoogleAppsScriptTypeProcess do
         }
 
   field(:duration)
-  field(:executingUser)
   field(:functionName)
   field(:processStatus)
   field(:processType)
