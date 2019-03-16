@@ -76,9 +76,9 @@ defmodule GoogleApi.Blogger.V3.Api.Comments do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/blogs/{blogId}/posts/{postId}/comments/{commentId}/approve", %{
-        "blogId" => URI.encode_www_form(blog_id),
-        "postId" => URI.encode_www_form(post_id),
-        "commentId" => URI.encode_www_form(comment_id)
+        "blogId" => URI.encode(blog_id, &URI.char_unreserved?/1),
+        "postId" => URI.encode(post_id, &URI.char_unreserved?/1),
+        "commentId" => URI.encode(comment_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -134,9 +134,9 @@ defmodule GoogleApi.Blogger.V3.Api.Comments do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/blogs/{blogId}/posts/{postId}/comments/{commentId}", %{
-        "blogId" => URI.encode_www_form(blog_id),
-        "postId" => URI.encode_www_form(post_id),
-        "commentId" => URI.encode_www_form(comment_id)
+        "blogId" => URI.encode(blog_id, &URI.char_unreserved?/1),
+        "postId" => URI.encode(post_id, &URI.char_unreserved?/1),
+        "commentId" => URI.encode(comment_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -194,9 +194,9 @@ defmodule GoogleApi.Blogger.V3.Api.Comments do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/blogs/{blogId}/posts/{postId}/comments/{commentId}", %{
-        "blogId" => URI.encode_www_form(blog_id),
-        "postId" => URI.encode_www_form(post_id),
-        "commentId" => URI.encode_www_form(comment_id)
+        "blogId" => URI.encode(blog_id, &URI.char_unreserved?/1),
+        "postId" => URI.encode(post_id, &URI.char_unreserved?/1),
+        "commentId" => URI.encode(comment_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -258,8 +258,8 @@ defmodule GoogleApi.Blogger.V3.Api.Comments do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/blogs/{blogId}/posts/{postId}/comments", %{
-        "blogId" => URI.encode_www_form(blog_id),
-        "postId" => URI.encode_www_form(post_id)
+        "blogId" => URI.encode(blog_id, &URI.char_unreserved?/1),
+        "postId" => URI.encode(post_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -318,7 +318,7 @@ defmodule GoogleApi.Blogger.V3.Api.Comments do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/blogs/{blogId}/comments", %{
-        "blogId" => URI.encode_www_form(blog_id)
+        "blogId" => URI.encode(blog_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -379,9 +379,9 @@ defmodule GoogleApi.Blogger.V3.Api.Comments do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/blogs/{blogId}/posts/{postId}/comments/{commentId}/spam", %{
-        "blogId" => URI.encode_www_form(blog_id),
-        "postId" => URI.encode_www_form(post_id),
-        "commentId" => URI.encode_www_form(comment_id)
+        "blogId" => URI.encode(blog_id, &URI.char_unreserved?/1),
+        "postId" => URI.encode(post_id, &URI.char_unreserved?/1),
+        "commentId" => URI.encode(comment_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -442,9 +442,9 @@ defmodule GoogleApi.Blogger.V3.Api.Comments do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/blogs/{blogId}/posts/{postId}/comments/{commentId}/removecontent", %{
-        "blogId" => URI.encode_www_form(blog_id),
-        "postId" => URI.encode_www_form(post_id),
-        "commentId" => URI.encode_www_form(comment_id)
+        "blogId" => URI.encode(blog_id, &URI.char_unreserved?/1),
+        "postId" => URI.encode(post_id, &URI.char_unreserved?/1),
+        "commentId" => URI.encode(comment_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
