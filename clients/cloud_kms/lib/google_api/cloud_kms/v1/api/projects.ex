@@ -77,8 +77,8 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "locationsId" => URI.encode_www_form(locations_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -148,8 +148,8 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/keyRings", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "locationsId" => URI.encode_www_form(locations_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -224,9 +224,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}/cryptoKeys",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "keyRingsId" => URI.encode_www_form(key_rings_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -308,11 +308,11 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}/cryptoKeys/{cryptoKeysId}/cryptoKeyVersions/{cryptoKeyVersionsId}:asymmetricDecrypt",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "keyRingsId" => URI.encode_www_form(key_rings_id),
-          "cryptoKeysId" => URI.encode_www_form(crypto_keys_id),
-          "cryptoKeyVersionsId" => URI.encode_www_form(crypto_key_versions_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1),
+          "cryptoKeysId" => URI.encode(crypto_keys_id, &URI.char_unreserved?/1),
+          "cryptoKeyVersionsId" => URI.encode(crypto_key_versions_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -393,11 +393,11 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}/cryptoKeys/{cryptoKeysId}/cryptoKeyVersions/{cryptoKeyVersionsId}:asymmetricSign",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "keyRingsId" => URI.encode_www_form(key_rings_id),
-          "cryptoKeysId" => URI.encode_www_form(crypto_keys_id),
-          "cryptoKeyVersionsId" => URI.encode_www_form(crypto_key_versions_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1),
+          "cryptoKeysId" => URI.encode(crypto_keys_id, &URI.char_unreserved?/1),
+          "cryptoKeyVersionsId" => URI.encode(crypto_key_versions_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -474,10 +474,10 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}/cryptoKeys/{cryptoKeysId}/cryptoKeyVersions",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "keyRingsId" => URI.encode_www_form(key_rings_id),
-          "cryptoKeysId" => URI.encode_www_form(crypto_keys_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1),
+          "cryptoKeysId" => URI.encode(crypto_keys_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -557,11 +557,11 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}/cryptoKeys/{cryptoKeysId}/cryptoKeyVersions/{cryptoKeyVersionsId}:destroy",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "keyRingsId" => URI.encode_www_form(key_rings_id),
-          "cryptoKeysId" => URI.encode_www_form(crypto_keys_id),
-          "cryptoKeyVersionsId" => URI.encode_www_form(crypto_key_versions_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1),
+          "cryptoKeysId" => URI.encode(crypto_keys_id, &URI.char_unreserved?/1),
+          "cryptoKeyVersionsId" => URI.encode(crypto_key_versions_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -639,11 +639,11 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}/cryptoKeys/{cryptoKeysId}/cryptoKeyVersions/{cryptoKeyVersionsId}",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "keyRingsId" => URI.encode_www_form(key_rings_id),
-          "cryptoKeysId" => URI.encode_www_form(crypto_keys_id),
-          "cryptoKeyVersionsId" => URI.encode_www_form(crypto_key_versions_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1),
+          "cryptoKeysId" => URI.encode(crypto_keys_id, &URI.char_unreserved?/1),
+          "cryptoKeyVersionsId" => URI.encode(crypto_key_versions_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -721,11 +721,11 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}/cryptoKeys/{cryptoKeysId}/cryptoKeyVersions/{cryptoKeyVersionsId}/publicKey",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "keyRingsId" => URI.encode_www_form(key_rings_id),
-          "cryptoKeysId" => URI.encode_www_form(crypto_keys_id),
-          "cryptoKeyVersionsId" => URI.encode_www_form(crypto_key_versions_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1),
+          "cryptoKeysId" => URI.encode(crypto_keys_id, &URI.char_unreserved?/1),
+          "cryptoKeyVersionsId" => URI.encode(crypto_key_versions_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -808,10 +808,10 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}/cryptoKeys/{cryptoKeysId}/cryptoKeyVersions",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "keyRingsId" => URI.encode_www_form(key_rings_id),
-          "cryptoKeysId" => URI.encode_www_form(crypto_keys_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1),
+          "cryptoKeysId" => URI.encode(crypto_keys_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -895,11 +895,11 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}/cryptoKeys/{cryptoKeysId}/cryptoKeyVersions/{cryptoKeyVersionsId}",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "keyRingsId" => URI.encode_www_form(key_rings_id),
-          "cryptoKeysId" => URI.encode_www_form(crypto_keys_id),
-          "cryptoKeyVersionsId" => URI.encode_www_form(crypto_key_versions_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1),
+          "cryptoKeysId" => URI.encode(crypto_keys_id, &URI.char_unreserved?/1),
+          "cryptoKeyVersionsId" => URI.encode(crypto_key_versions_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -979,11 +979,11 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}/cryptoKeys/{cryptoKeysId}/cryptoKeyVersions/{cryptoKeyVersionsId}:restore",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "keyRingsId" => URI.encode_www_form(key_rings_id),
-          "cryptoKeysId" => URI.encode_www_form(crypto_keys_id),
-          "cryptoKeyVersionsId" => URI.encode_www_form(crypto_key_versions_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1),
+          "cryptoKeysId" => URI.encode(crypto_keys_id, &URI.char_unreserved?/1),
+          "cryptoKeyVersionsId" => URI.encode(crypto_key_versions_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1060,10 +1060,10 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}/cryptoKeys/{cryptoKeysId}:decrypt",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "keyRingsId" => URI.encode_www_form(key_rings_id),
-          "cryptoKeysId" => URI.encode_www_form(crypto_keys_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1),
+          "cryptoKeysId" => URI.encode(crypto_keys_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1140,10 +1140,10 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}/cryptoKeys/{cryptoKeysId}:encrypt",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "keyRingsId" => URI.encode_www_form(key_rings_id),
-          "cryptoKeysId" => URI.encode_www_form(crypto_keys_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1),
+          "cryptoKeysId" => URI.encode(crypto_keys_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1218,10 +1218,10 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}/cryptoKeys/{cryptoKeysId}",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "keyRingsId" => URI.encode_www_form(key_rings_id),
-          "cryptoKeysId" => URI.encode_www_form(crypto_keys_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1),
+          "cryptoKeysId" => URI.encode(crypto_keys_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1296,10 +1296,10 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}/cryptoKeys/{cryptoKeysId}:getIamPolicy",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "keyRingsId" => URI.encode_www_form(key_rings_id),
-          "cryptoKeysId" => URI.encode_www_form(crypto_keys_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1),
+          "cryptoKeysId" => URI.encode(crypto_keys_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1378,9 +1378,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}/cryptoKeys",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "keyRingsId" => URI.encode_www_form(key_rings_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1459,10 +1459,10 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}/cryptoKeys/{cryptoKeysId}",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "keyRingsId" => URI.encode_www_form(key_rings_id),
-          "cryptoKeysId" => URI.encode_www_form(crypto_keys_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1),
+          "cryptoKeysId" => URI.encode(crypto_keys_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1539,10 +1539,10 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}/cryptoKeys/{cryptoKeysId}:setIamPolicy",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "keyRingsId" => URI.encode_www_form(key_rings_id),
-          "cryptoKeysId" => URI.encode_www_form(crypto_keys_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1),
+          "cryptoKeysId" => URI.encode(crypto_keys_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1621,10 +1621,10 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}/cryptoKeys/{cryptoKeysId}:testIamPermissions",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "keyRingsId" => URI.encode_www_form(key_rings_id),
-          "cryptoKeysId" => URI.encode_www_form(crypto_keys_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1),
+          "cryptoKeysId" => URI.encode(crypto_keys_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1703,10 +1703,10 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}/cryptoKeys/{cryptoKeysId}:updatePrimaryVersion",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "keyRingsId" => URI.encode_www_form(key_rings_id),
-          "cryptoKeysId" => URI.encode_www_form(crypto_keys_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1),
+          "cryptoKeysId" => URI.encode(crypto_keys_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1776,9 +1776,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "locationsId" => URI.encode_www_form(locations_id),
-        "keyRingsId" => URI.encode_www_form(key_rings_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+        "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1849,9 +1849,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}:getIamPolicy",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "keyRingsId" => URI.encode_www_form(key_rings_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1926,10 +1926,10 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}/importJobs/{importJobsId}:getIamPolicy",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "keyRingsId" => URI.encode_www_form(key_rings_id),
-          "importJobsId" => URI.encode_www_form(import_jobs_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1),
+          "importJobsId" => URI.encode(import_jobs_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2006,10 +2006,10 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}/importJobs/{importJobsId}:setIamPolicy",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "keyRingsId" => URI.encode_www_form(key_rings_id),
-          "importJobsId" => URI.encode_www_form(import_jobs_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1),
+          "importJobsId" => URI.encode(import_jobs_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2088,10 +2088,10 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}/importJobs/{importJobsId}:testIamPermissions",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "keyRingsId" => URI.encode_www_form(key_rings_id),
-          "importJobsId" => URI.encode_www_form(import_jobs_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1),
+          "importJobsId" => URI.encode(import_jobs_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2164,8 +2164,8 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/keyRings", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "locationsId" => URI.encode_www_form(locations_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2238,9 +2238,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}:setIamPolicy",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "keyRingsId" => URI.encode_www_form(key_rings_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2316,9 +2316,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}:testIamPermissions",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "keyRingsId" => URI.encode_www_form(key_rings_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2382,7 +2382,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectsId}/locations", %{
-        "projectsId" => URI.encode_www_form(projects_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
