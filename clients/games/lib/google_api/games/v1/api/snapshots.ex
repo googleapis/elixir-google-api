@@ -64,7 +64,7 @@ defmodule GoogleApi.Games.V1.Api.Snapshots do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/snapshots/{snapshotId}", %{
-        "snapshotId" => URI.encode_www_form(snapshot_id)
+        "snapshotId" => URI.encode(snapshot_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -117,7 +117,7 @@ defmodule GoogleApi.Games.V1.Api.Snapshots do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/players/{playerId}/snapshots", %{
-        "playerId" => URI.encode_www_form(player_id)
+        "playerId" => URI.encode(player_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

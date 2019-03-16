@@ -66,7 +66,7 @@ defmodule GoogleApi.Games.V1.Api.Applications do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/applications/{applicationId}", %{
-        "applicationId" => URI.encode_www_form(application_id)
+        "applicationId" => URI.encode(application_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -159,7 +159,7 @@ defmodule GoogleApi.Games.V1.Api.Applications do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/applications/{applicationId}/verify", %{
-        "applicationId" => URI.encode_www_form(application_id)
+        "applicationId" => URI.encode(application_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
