@@ -81,7 +81,7 @@ defmodule GoogleApi.Content.V2.Api.Orderreports do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{merchantId}/orderreports/disbursements", %{
-        "merchantId" => URI.encode_www_form(merchant_id)
+        "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :disbursementStartDate, disbursement_start_date)
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -153,8 +153,8 @@ defmodule GoogleApi.Content.V2.Api.Orderreports do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{merchantId}/orderreports/disbursements/{disbursementId}/transactions", %{
-        "merchantId" => URI.encode_www_form(merchant_id),
-        "disbursementId" => URI.encode_www_form(disbursement_id)
+        "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
+        "disbursementId" => URI.encode(disbursement_id, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :transactionStartDate, transaction_start_date)
       |> Request.add_optional_params(optional_params_config, optional_params)

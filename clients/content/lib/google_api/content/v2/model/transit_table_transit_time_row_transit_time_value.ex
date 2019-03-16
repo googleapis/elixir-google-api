@@ -16,37 +16,34 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Content.V2.Model.OrderShipmentLineItemShipment do
+defmodule GoogleApi.Content.V2.Model.TransitTableTransitTimeRowTransitTimeValue do
   @moduledoc """
 
 
   ## Attributes
 
-  - lineItemId (String.t): The ID of the line item that is shipped. Either lineItemId or productId is required. Defaults to: `null`.
-  - productId (String.t): The ID of the product to ship. This is the REST ID used in the products service. Either lineItemId or productId is required. Defaults to: `null`.
-  - quantity (integer()): The quantity that is shipped. Defaults to: `null`.
+  - maxTransitTimeInDays (integer()): Must be greater than or equal to minTransitTimeInDays. Defaults to: `null`.
+  - minTransitTimeInDays (integer()): Transit time range (min-max) in business days. 0 means same day delivery, 1 means next day delivery. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :lineItemId => any(),
-          :productId => any(),
-          :quantity => any()
+          :maxTransitTimeInDays => any(),
+          :minTransitTimeInDays => any()
         }
 
-  field(:lineItemId)
-  field(:productId)
-  field(:quantity)
+  field(:maxTransitTimeInDays)
+  field(:minTransitTimeInDays)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.OrderShipmentLineItemShipment do
+defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.TransitTableTransitTimeRowTransitTimeValue do
   def decode(value, options) do
-    GoogleApi.Content.V2.Model.OrderShipmentLineItemShipment.decode(value, options)
+    GoogleApi.Content.V2.Model.TransitTableTransitTimeRowTransitTimeValue.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.OrderShipmentLineItemShipment do
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.TransitTableTransitTimeRowTransitTimeValue do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

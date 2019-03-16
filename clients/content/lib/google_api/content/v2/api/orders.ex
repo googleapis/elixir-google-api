@@ -72,8 +72,8 @@ defmodule GoogleApi.Content.V2.Api.Orders do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{merchantId}/orders/{orderId}/acknowledge", %{
-        "merchantId" => URI.encode_www_form(merchant_id),
-        "orderId" => URI.encode_www_form(order_id)
+        "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
+        "orderId" => URI.encode(order_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -128,8 +128,8 @@ defmodule GoogleApi.Content.V2.Api.Orders do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{merchantId}/testorders/{orderId}/advance", %{
-        "merchantId" => URI.encode_www_form(merchant_id),
-        "orderId" => URI.encode_www_form(order_id)
+        "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
+        "orderId" => URI.encode(order_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -181,8 +181,8 @@ defmodule GoogleApi.Content.V2.Api.Orders do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{merchantId}/orders/{orderId}/cancel", %{
-        "merchantId" => URI.encode_www_form(merchant_id),
-        "orderId" => URI.encode_www_form(order_id)
+        "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
+        "orderId" => URI.encode(order_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -239,8 +239,8 @@ defmodule GoogleApi.Content.V2.Api.Orders do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{merchantId}/orders/{orderId}/cancelLineItem", %{
-        "merchantId" => URI.encode_www_form(merchant_id),
-        "orderId" => URI.encode_www_form(order_id)
+        "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
+        "orderId" => URI.encode(order_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -304,8 +304,8 @@ defmodule GoogleApi.Content.V2.Api.Orders do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{merchantId}/testorders/{orderId}/cancelByCustomer", %{
-        "merchantId" => URI.encode_www_form(merchant_id),
-        "orderId" => URI.encode_www_form(order_id)
+        "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
+        "orderId" => URI.encode(order_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -357,7 +357,7 @@ defmodule GoogleApi.Content.V2.Api.Orders do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{merchantId}/testorders", %{
-        "merchantId" => URI.encode_www_form(merchant_id)
+        "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -416,8 +416,8 @@ defmodule GoogleApi.Content.V2.Api.Orders do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{merchantId}/orders/{orderId}/testreturn", %{
-        "merchantId" => URI.encode_www_form(merchant_id),
-        "orderId" => URI.encode_www_form(order_id)
+        "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
+        "orderId" => URI.encode(order_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -514,8 +514,8 @@ defmodule GoogleApi.Content.V2.Api.Orders do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{merchantId}/orders/{orderId}", %{
-        "merchantId" => URI.encode_www_form(merchant_id),
-        "orderId" => URI.encode_www_form(order_id)
+        "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
+        "orderId" => URI.encode(order_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -525,13 +525,13 @@ defmodule GoogleApi.Content.V2.Api.Orders do
   end
 
   @doc """
-  Retrieves an order using merchant order id.
+  Retrieves an order using merchant order ID.
 
   ## Parameters
 
   - connection (GoogleApi.Content.V2.Connection): Connection to server
   - merchant_id (String.t): The ID of the account that manages the order. This cannot be a multi-client account.
-  - merchant_order_id (String.t): The merchant order id to be looked for.
+  - merchant_order_id (String.t): The merchant order ID to be looked for.
   - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
@@ -570,8 +570,8 @@ defmodule GoogleApi.Content.V2.Api.Orders do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{merchantId}/ordersbymerchantid/{merchantOrderId}", %{
-        "merchantId" => URI.encode_www_form(merchant_id),
-        "merchantOrderId" => URI.encode_www_form(merchant_order_id)
+        "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
+        "merchantOrderId" => URI.encode(merchant_order_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -630,8 +630,8 @@ defmodule GoogleApi.Content.V2.Api.Orders do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{merchantId}/testordertemplates/{templateName}", %{
-        "merchantId" => URI.encode_www_form(merchant_id),
-        "templateName" => URI.encode_www_form(template_name)
+        "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
+        "templateName" => URI.encode(template_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -695,8 +695,8 @@ defmodule GoogleApi.Content.V2.Api.Orders do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{merchantId}/orders/{orderId}/inStoreRefundLineItem", %{
-        "merchantId" => URI.encode_www_form(merchant_id),
-        "orderId" => URI.encode_www_form(order_id)
+        "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
+        "orderId" => URI.encode(order_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -759,7 +759,7 @@ defmodule GoogleApi.Content.V2.Api.Orders do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{merchantId}/orders", %{
-        "merchantId" => URI.encode_www_form(merchant_id)
+        "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -809,8 +809,8 @@ defmodule GoogleApi.Content.V2.Api.Orders do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{merchantId}/orders/{orderId}/refund", %{
-        "merchantId" => URI.encode_www_form(merchant_id),
-        "orderId" => URI.encode_www_form(order_id)
+        "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
+        "orderId" => URI.encode(order_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -867,8 +867,8 @@ defmodule GoogleApi.Content.V2.Api.Orders do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{merchantId}/orders/{orderId}/rejectReturnLineItem", %{
-        "merchantId" => URI.encode_www_form(merchant_id),
-        "orderId" => URI.encode_www_form(order_id)
+        "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
+        "orderId" => URI.encode(order_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -927,8 +927,8 @@ defmodule GoogleApi.Content.V2.Api.Orders do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{merchantId}/orders/{orderId}/returnLineItem", %{
-        "merchantId" => URI.encode_www_form(merchant_id),
-        "orderId" => URI.encode_www_form(order_id)
+        "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
+        "orderId" => URI.encode(order_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -987,8 +987,8 @@ defmodule GoogleApi.Content.V2.Api.Orders do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{merchantId}/orders/{orderId}/returnRefundLineItem", %{
-        "merchantId" => URI.encode_www_form(merchant_id),
-        "orderId" => URI.encode_www_form(order_id)
+        "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
+        "orderId" => URI.encode(order_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1000,7 +1000,7 @@ defmodule GoogleApi.Content.V2.Api.Orders do
   end
 
   @doc """
-  Sets (overrides) merchant provided annotations on the line item.
+  Sets (or overrides if it already exists) merchant provided annotations in the form of key-value pairs. A common use case would be to supply us with additional structured information about a line item that cannot be provided via other methods. Submitted key-value pairs can be retrieved as part of the orders resource.
 
   ## Parameters
 
@@ -1047,8 +1047,8 @@ defmodule GoogleApi.Content.V2.Api.Orders do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{merchantId}/orders/{orderId}/setLineItemMetadata", %{
-        "merchantId" => URI.encode_www_form(merchant_id),
-        "orderId" => URI.encode_www_form(order_id)
+        "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
+        "orderId" => URI.encode(order_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1107,8 +1107,8 @@ defmodule GoogleApi.Content.V2.Api.Orders do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{merchantId}/orders/{orderId}/shipLineItems", %{
-        "merchantId" => URI.encode_www_form(merchant_id),
-        "orderId" => URI.encode_www_form(order_id)
+        "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
+        "orderId" => URI.encode(order_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1172,8 +1172,8 @@ defmodule GoogleApi.Content.V2.Api.Orders do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{merchantId}/orders/{orderId}/updateLineItemShippingDetails", %{
-        "merchantId" => URI.encode_www_form(merchant_id),
-        "orderId" => URI.encode_www_form(order_id)
+        "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
+        "orderId" => URI.encode(order_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1237,8 +1237,8 @@ defmodule GoogleApi.Content.V2.Api.Orders do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{merchantId}/orders/{orderId}/updateMerchantOrderId", %{
-        "merchantId" => URI.encode_www_form(merchant_id),
-        "orderId" => URI.encode_www_form(order_id)
+        "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
+        "orderId" => URI.encode(order_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1297,8 +1297,8 @@ defmodule GoogleApi.Content.V2.Api.Orders do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{merchantId}/orders/{orderId}/updateShipment", %{
-        "merchantId" => URI.encode_www_form(merchant_id),
-        "orderId" => URI.encode_www_form(order_id)
+        "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
+        "orderId" => URI.encode(order_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

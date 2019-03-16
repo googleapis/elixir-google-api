@@ -26,7 +26,7 @@ defmodule GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryUpdateShipment
   - deliveryDate (String.t): Date on which the shipment has been delivered, in ISO 8601 format. Optional and can be provided only if status is delivered. Defaults to: `null`.
   - shipmentId (String.t): The ID of the shipment. Defaults to: `null`.
   - status (String.t): New status for the shipment. Not updated if missing. Defaults to: `null`.
-  - trackingId (String.t): The tracking id for the shipment. Not updated if missing. Defaults to: `null`.
+  - trackingId (String.t): The tracking ID for the shipment. Not updated if missing. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

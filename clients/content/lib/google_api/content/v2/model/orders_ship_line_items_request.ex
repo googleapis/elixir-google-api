@@ -28,7 +28,7 @@ defmodule GoogleApi.Content.V2.Model.OrdersShipLineItemsRequest do
   - shipmentGroupId (String.t): ID of the shipment group. Required for orders that use the orderinvoices service. Defaults to: `null`.
   - shipmentId (String.t): Deprecated. Please use shipmentInfo instead. The ID of the shipment. Defaults to: `null`.
   - shipmentInfos ([OrdersCustomBatchRequestEntryShipLineItemsShipmentInfo]): Shipment information. This field is repeated because a single line item can be shipped in several packages (and have several tracking IDs). Defaults to: `null`.
-  - trackingId (String.t): Deprecated. Please use shipmentInfo instead. The tracking id for the shipment. Defaults to: `null`.
+  - trackingId (String.t): Deprecated. Please use shipmentInfo instead. The tracking ID for the shipment. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

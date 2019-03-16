@@ -38,7 +38,7 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :dryRun (boolean()): Flag to run the request in dry-run mode.
+    - :dryRun (boolean()): Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
     - :body (LiasettingsCustomBatchRequest): 
 
   ## Returns
@@ -120,8 +120,8 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{merchantId}/liasettings/{accountId}", %{
-        "merchantId" => URI.encode_www_form(merchant_id),
-        "accountId" => URI.encode_www_form(account_id)
+        "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -181,8 +181,8 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{merchantId}/liasettings/{accountId}/accessiblegmbaccounts", %{
-        "merchantId" => URI.encode_www_form(merchant_id),
-        "accountId" => URI.encode_www_form(account_id)
+        "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -235,7 +235,7 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{merchantId}/liasettings", %{
-        "merchantId" => URI.encode_www_form(merchant_id)
+        "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -307,7 +307,7 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :dryRun (boolean()): Flag to run the request in dry-run mode.
+    - :dryRun (boolean()): Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
     - :body (LiaSettings): 
 
   ## Returns
@@ -340,8 +340,8 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/{merchantId}/liasettings/{accountId}", %{
-        "merchantId" => URI.encode_www_form(merchant_id),
-        "accountId" => URI.encode_www_form(account_id)
+        "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -404,8 +404,8 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{merchantId}/liasettings/{accountId}/requestgmbaccess", %{
-        "merchantId" => URI.encode_www_form(merchant_id),
-        "accountId" => URI.encode_www_form(account_id)
+        "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :gmbEmail, gmb_email)
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -473,9 +473,9 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
       |> Request.url(
         "/{merchantId}/liasettings/{accountId}/requestinventoryverification/{country}",
         %{
-          "merchantId" => URI.encode_www_form(merchant_id),
-          "accountId" => URI.encode_www_form(account_id),
-          "country" => URI.encode_www_form(country)
+          "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
+          "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
+          "country" => URI.encode(country, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -551,8 +551,8 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{merchantId}/liasettings/{accountId}/setinventoryverificationcontact", %{
-        "merchantId" => URI.encode_www_form(merchant_id),
-        "accountId" => URI.encode_www_form(account_id)
+        "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :contactEmail, contact_email)
       |> Request.add_param(:query, :contactName, contact_name)
@@ -626,8 +626,8 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{merchantId}/liasettings/{accountId}/setposdataprovider", %{
-        "merchantId" => URI.encode_www_form(merchant_id),
-        "accountId" => URI.encode_www_form(account_id)
+        "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :country, country)
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -655,7 +655,7 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :dryRun (boolean()): Flag to run the request in dry-run mode.
+    - :dryRun (boolean()): Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
     - :body (LiaSettings): 
 
   ## Returns
@@ -688,8 +688,8 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/{merchantId}/liasettings/{accountId}", %{
-        "merchantId" => URI.encode_www_form(merchant_id),
-        "accountId" => URI.encode_www_form(account_id)
+        "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

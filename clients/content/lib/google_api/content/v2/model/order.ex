@@ -23,24 +23,24 @@ defmodule GoogleApi.Content.V2.Model.Order do
   ## Attributes
 
   - acknowledged (boolean()): Whether the order was acknowledged. Defaults to: `null`.
-  - channelType (String.t): The channel type of the order: \&quot;purchaseOnGoogle\&quot; or \&quot;googleExpress\&quot;. Defaults to: `null`.
+  - channelType (String.t): Deprecated. Defaults to: `null`.
   - customer (OrderCustomer): The details of the customer who placed the order. Defaults to: `null`.
   - deliveryDetails (OrderDeliveryDetails): The details for the delivery. Defaults to: `null`.
-  - id (String.t): The REST id of the order. Globally unique. Defaults to: `null`.
+  - id (String.t): The REST ID of the order. Globally unique. Defaults to: `null`.
   - kind (String.t): Identifies what kind of resource this is. Value: the fixed string \&quot;content#order\&quot;. Defaults to: `null`.
   - lineItems ([OrderLineItem]): Line items that are ordered. Defaults to: `null`.
   - merchantId (String.t):  Defaults to: `null`.
-  - merchantOrderId (String.t): Merchant-provided id of the order. Defaults to: `null`.
+  - merchantOrderId (String.t): Merchant-provided ID of the order. Defaults to: `null`.
   - netAmount (Price): The net amount for the order. For example, if an order was originally for a grand total of $100 and a refund was issued for $20, the net amount will be $80. Defaults to: `null`.
   - paymentMethod (OrderPaymentMethod): The details of the payment method. Defaults to: `null`.
   - paymentStatus (String.t): The status of the payment. Defaults to: `null`.
   - placedDate (String.t): The date when the order was placed, in ISO 8601 format. Defaults to: `null`.
-  - promotions ([OrderLegacyPromotion]): Deprecated. Ignored if provided for createTestOrder. The details of the merchant provided promotions applied to the order. More details about the program are here. Defaults to: `null`.
+  - promotions ([OrderLegacyPromotion]): The details of the merchant provided promotions applied to the order. More details about the program are here. Defaults to: `null`.
   - refunds ([OrderRefund]): Refunds for the order. Defaults to: `null`.
   - shipments ([OrderShipment]): Shipments of the order. Defaults to: `null`.
   - shippingCost (Price): The total cost of shipping for all items. Defaults to: `null`.
   - shippingCostTax (Price): The tax for the total shipping cost. Defaults to: `null`.
-  - shippingOption (String.t): The requested shipping option. Defaults to: `null`.
+  - shippingOption (String.t): Deprecated. Shipping details are provided with line items instead. Defaults to: `null`.
   - status (String.t): The status of the order. Defaults to: `null`.
   - taxCollector (String.t): The party responsible for collecting and remitting taxes. Defaults to: `null`.
   """

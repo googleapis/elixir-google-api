@@ -23,7 +23,7 @@ defmodule GoogleApi.Content.V2.Model.UnitInvoice do
   ## Attributes
 
   - additionalCharges ([UnitInvoiceAdditionalCharge]): Additional charges for a unit, e.g. shipping costs. Defaults to: `null`.
-  - promotions ([Promotion]): Promotions applied to a unit. Defaults to: `null`.
+  - promotions ([Promotion]): Deprecated. Defaults to: `null`.
   - unitPricePretax (Price): [required] Price of the unit, before applying taxes. Defaults to: `null`.
   - unitPriceTaxes ([UnitInvoiceTaxLine]): Tax amounts to apply to the unit price. Defaults to: `null`.
   """

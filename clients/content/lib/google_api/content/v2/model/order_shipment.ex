@@ -25,10 +25,10 @@ defmodule GoogleApi.Content.V2.Model.OrderShipment do
   - carrier (String.t): The carrier handling the shipment.  Acceptable values for US are:   - \&quot;gsx\&quot;  - \&quot;ups\&quot;  - \&quot;usps\&quot;  - \&quot;fedex\&quot;  - \&quot;dhl\&quot;  - \&quot;ecourier\&quot;  - \&quot;cxt\&quot;  - \&quot;google\&quot;  - \&quot;ontrac\&quot;  - \&quot;emsy\&quot;  - \&quot;ont\&quot;  - \&quot;deliv\&quot;  - \&quot;dynamex\&quot;  - \&quot;lasership\&quot;  - \&quot;mpx\&quot;  - \&quot;uds\&quot;    Acceptable values for FR are:   - \&quot;colissimo\&quot;  - \&quot;chronopost\&quot; Defaults to: `null`.
   - creationDate (String.t): Date on which the shipment has been created, in ISO 8601 format. Defaults to: `null`.
   - deliveryDate (String.t): Date on which the shipment has been delivered, in ISO 8601 format. Present only if status is delivered Defaults to: `null`.
-  - id (String.t): The id of the shipment. Defaults to: `null`.
+  - id (String.t): The ID of the shipment. Defaults to: `null`.
   - lineItems ([OrderShipmentLineItemShipment]): The line items that are shipped. Defaults to: `null`.
   - status (String.t): The status of the shipment. Defaults to: `null`.
-  - trackingId (String.t): The tracking id for the shipment. Defaults to: `null`.
+  - trackingId (String.t): The tracking ID for the shipment. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

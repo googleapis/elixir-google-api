@@ -23,7 +23,7 @@ defmodule GoogleApi.Content.V2.Model.ProductTax do
   ## Attributes
 
   - country (String.t): The country within which the item is taxed, specified as a CLDR territory code. Defaults to: `null`.
-  - locationId (String.t): The numeric id of a location that the tax rate applies to as defined in the AdWords API. Defaults to: `null`.
+  - locationId (String.t): The numeric ID of a location that the tax rate applies to as defined in the AdWords API. Defaults to: `null`.
   - postalCode (String.t): The postal code range that the tax rate applies to, represented by a ZIP code, a ZIP code prefix using * wildcard, a range between two ZIP codes or two ZIP code prefixes of equal length. Examples: 94114, 94*, 94002-95460, 94*-95*. Defaults to: `null`.
   - rate (float()): The percentage of tax rate that applies to the item price. Defaults to: `null`.
   - region (String.t): The geographic region to which the tax rate applies. Defaults to: `null`.

@@ -24,7 +24,7 @@ defmodule GoogleApi.Content.V2.Model.AccountStatus do
 
   - accountId (String.t): The ID of the account for which the status is reported. Defaults to: `null`.
   - accountLevelIssues ([AccountStatusAccountLevelIssue]): A list of account level issues. Defaults to: `null`.
-  - dataQualityIssues ([AccountStatusDataQualityIssue]): A list of data quality issues. Defaults to: `null`.
+  - dataQualityIssues ([AccountStatusDataQualityIssue]): DEPRECATED - never populated. Defaults to: `null`.
   - kind (String.t): Identifies what kind of resource this is. Value: the fixed string \&quot;content#accountStatus\&quot;. Defaults to: `null`.
   - products ([AccountStatusProducts]): List of product-related data by channel, destination, and country. Data in this field may be delayed by up to 30 minutes. Defaults to: `null`.
   - websiteClaimed (boolean()): Whether the account&#39;s website is claimed or not. Defaults to: `null`.

@@ -77,8 +77,8 @@ defmodule GoogleApi.Content.V2.Api.Orderinvoices do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{merchantId}/orderinvoices/{orderId}/createChargeInvoice", %{
-        "merchantId" => URI.encode_www_form(merchant_id),
-        "orderId" => URI.encode_www_form(order_id)
+        "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
+        "orderId" => URI.encode(order_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -142,8 +142,8 @@ defmodule GoogleApi.Content.V2.Api.Orderinvoices do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{merchantId}/orderinvoices/{orderId}/createRefundInvoice", %{
-        "merchantId" => URI.encode_www_form(merchant_id),
-        "orderId" => URI.encode_www_form(order_id)
+        "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
+        "orderId" => URI.encode(order_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

@@ -18,12 +18,12 @@
 
 defmodule GoogleApi.Content.V2.Model.ProductStatus do
   @moduledoc """
-  The status of a product, i.e., information about a product computed asynchronously by the data quality analysis.
+  The status of a product, i.e., information about a product computed asynchronously.
 
   ## Attributes
 
   - creationDate (String.t): Date on which the item has been created, in ISO 8601 format. Defaults to: `null`.
-  - dataQualityIssues ([ProductStatusDataQualityIssue]): A list of data quality issues associated with the product. Defaults to: `null`.
+  - dataQualityIssues ([ProductStatusDataQualityIssue]): DEPRECATED - never populated Defaults to: `null`.
   - destinationStatuses ([ProductStatusDestinationStatus]): The intended destinations for the product. Defaults to: `null`.
   - googleExpirationDate (String.t): Date on which the item expires in Google Shopping, in ISO 8601 format. Defaults to: `null`.
   - itemLevelIssues ([ProductStatusItemLevelIssue]): A list of all issues associated with the product. Defaults to: `null`.
@@ -31,7 +31,7 @@ defmodule GoogleApi.Content.V2.Model.ProductStatus do
   - lastUpdateDate (String.t): Date on which the item has been last updated, in ISO 8601 format. Defaults to: `null`.
   - link (String.t): The link to the product. Defaults to: `null`.
   - product (Product): Product data after applying all the join inputs. Defaults to: `null`.
-  - productId (String.t): The id of the product for which status is reported. Defaults to: `null`.
+  - productId (String.t): The ID of the product for which status is reported. Defaults to: `null`.
   - title (String.t): The title of the product. Defaults to: `null`.
   """
 

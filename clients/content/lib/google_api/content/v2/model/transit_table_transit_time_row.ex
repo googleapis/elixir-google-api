@@ -16,37 +16,36 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Content.V2.Model.OrderShipmentLineItemShipment do
+defmodule GoogleApi.Content.V2.Model.TransitTableTransitTimeRow do
   @moduledoc """
 
 
   ## Attributes
 
-  - lineItemId (String.t): The ID of the line item that is shipped. Either lineItemId or productId is required. Defaults to: `null`.
-  - productId (String.t): The ID of the product to ship. This is the REST ID used in the products service. Either lineItemId or productId is required. Defaults to: `null`.
-  - quantity (integer()): The quantity that is shipped. Defaults to: `null`.
+  - values ([TransitTableTransitTimeRowTransitTimeValue]):  Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :lineItemId => any(),
-          :productId => any(),
-          :quantity => any()
+          :values =>
+            list(GoogleApi.Content.V2.Model.TransitTableTransitTimeRowTransitTimeValue.t())
         }
 
-  field(:lineItemId)
-  field(:productId)
-  field(:quantity)
+  field(
+    :values,
+    as: GoogleApi.Content.V2.Model.TransitTableTransitTimeRowTransitTimeValue,
+    type: :list
+  )
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.OrderShipmentLineItemShipment do
+defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.TransitTableTransitTimeRow do
   def decode(value, options) do
-    GoogleApi.Content.V2.Model.OrderShipmentLineItemShipment.decode(value, options)
+    GoogleApi.Content.V2.Model.TransitTableTransitTimeRow.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.OrderShipmentLineItemShipment do
+defimpl Poison.Encoder, for: GoogleApi.Content.V2.Model.TransitTableTransitTimeRow do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

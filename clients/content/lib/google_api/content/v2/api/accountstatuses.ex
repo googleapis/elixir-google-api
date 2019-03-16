@@ -74,7 +74,7 @@ defmodule GoogleApi.Content.V2.Api.Accountstatuses do
   end
 
   @doc """
-  Retrieves the status of a Merchant Center account. Multi-client accounts can only call this method for sub-accounts.
+  Retrieves the status of a Merchant Center account. No itemLevelIssues are returned for multi-client accounts.
 
   ## Parameters
 
@@ -120,8 +120,8 @@ defmodule GoogleApi.Content.V2.Api.Accountstatuses do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{merchantId}/accountstatuses/{accountId}", %{
-        "merchantId" => URI.encode_www_form(merchant_id),
-        "accountId" => URI.encode_www_form(account_id)
+        "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -175,7 +175,7 @@ defmodule GoogleApi.Content.V2.Api.Accountstatuses do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{merchantId}/accountstatuses", %{
-        "merchantId" => URI.encode_www_form(merchant_id)
+        "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

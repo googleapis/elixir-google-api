@@ -24,7 +24,7 @@ defmodule GoogleApi.Content.V2.Model.ProductShipping do
 
   - country (String.t): The CLDR territory code of the country to which an item will ship. Defaults to: `null`.
   - locationGroupName (String.t): The location where the shipping is applicable, represented by a location group name. Defaults to: `null`.
-  - locationId (String.t): The numeric id of a location that the shipping rate applies to as defined in the AdWords API. Defaults to: `null`.
+  - locationId (String.t): The numeric ID of a location that the shipping rate applies to as defined in the AdWords API. Defaults to: `null`.
   - postalCode (String.t): The postal code range that the shipping rate applies to, represented by a postal code, a postal code prefix followed by a * wildcard, a range between two postal codes or two postal code prefixes of equal length. Defaults to: `null`.
   - price (Price): Fixed shipping price, represented as a number. Defaults to: `null`.
   - region (String.t): The geographic region to which a shipping rate applies. Defaults to: `null`.

@@ -23,8 +23,8 @@ defmodule GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryShipLineItemsS
   ## Attributes
 
   - carrier (String.t): The carrier handling the shipment. See shipments[].carrier in the  Orders resource representation for a list of acceptable values. Defaults to: `null`.
-  - shipmentId (String.t): The ID of the shipment. Defaults to: `null`.
-  - trackingId (String.t): The tracking id for the shipment. Defaults to: `null`.
+  - shipmentId (String.t): The ID of the shipment. This is assigned by the merchant and is unique to each shipment. Defaults to: `null`.
+  - trackingId (String.t): The tracking ID for the shipment. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

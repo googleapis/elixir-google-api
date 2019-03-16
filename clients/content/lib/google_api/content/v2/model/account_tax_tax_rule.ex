@@ -23,7 +23,7 @@ defmodule GoogleApi.Content.V2.Model.AccountTaxTaxRule do
   ## Attributes
 
   - country (String.t): Country code in which tax is applicable. Defaults to: `null`.
-  - locationId (String.t): State (or province) is which the tax is applicable, described by its location id (also called criteria id). Defaults to: `null`.
+  - locationId (String.t): State (or province) is which the tax is applicable, described by its location ID (also called criteria ID). Defaults to: `null`.
   - ratePercent (String.t): Explicit tax rate in percent, represented as a floating point number without the percentage character. Must not be negative. Defaults to: `null`.
   - shippingTaxed (boolean()): If true, shipping charges are also taxed. Defaults to: `null`.
   - useGlobalRate (boolean()): Whether the tax rate is taken from a global tax table or specified explicitly. Defaults to: `null`.

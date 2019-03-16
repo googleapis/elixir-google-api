@@ -38,7 +38,7 @@ defmodule GoogleApi.Content.V2.Api.Products do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :dryRun (boolean()): Flag to run the request in dry-run mode.
+    - :dryRun (boolean()): Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
     - :body (ProductsCustomBatchRequest): 
 
   ## Returns
@@ -82,7 +82,7 @@ defmodule GoogleApi.Content.V2.Api.Products do
 
   - connection (GoogleApi.Content.V2.Connection): Connection to server
   - merchant_id (String.t): The ID of the account that contains the product. This account cannot be a multi-client account.
-  - product_id (String.t): The REST id of the product.
+  - product_id (String.t): The REST ID of the product.
   - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
@@ -91,7 +91,7 @@ defmodule GoogleApi.Content.V2.Api.Products do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :dryRun (boolean()): Flag to run the request in dry-run mode.
+    - :dryRun (boolean()): Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
 
   ## Returns
 
@@ -122,8 +122,8 @@ defmodule GoogleApi.Content.V2.Api.Products do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/{merchantId}/products/{productId}", %{
-        "merchantId" => URI.encode_www_form(merchant_id),
-        "productId" => URI.encode_www_form(product_id)
+        "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
+        "productId" => URI.encode(product_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -139,7 +139,7 @@ defmodule GoogleApi.Content.V2.Api.Products do
 
   - connection (GoogleApi.Content.V2.Connection): Connection to server
   - merchant_id (String.t): The ID of the account that contains the product. This account cannot be a multi-client account.
-  - product_id (String.t): The REST id of the product.
+  - product_id (String.t): The REST ID of the product.
   - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
@@ -171,8 +171,8 @@ defmodule GoogleApi.Content.V2.Api.Products do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{merchantId}/products/{productId}", %{
-        "merchantId" => URI.encode_www_form(merchant_id),
-        "productId" => URI.encode_www_form(product_id)
+        "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
+        "productId" => URI.encode(product_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -196,7 +196,7 @@ defmodule GoogleApi.Content.V2.Api.Products do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :dryRun (boolean()): Flag to run the request in dry-run mode.
+    - :dryRun (boolean()): Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
     - :body (Product): 
 
   ## Returns
@@ -223,7 +223,7 @@ defmodule GoogleApi.Content.V2.Api.Products do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{merchantId}/products", %{
-        "merchantId" => URI.encode_www_form(merchant_id)
+        "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -276,7 +276,7 @@ defmodule GoogleApi.Content.V2.Api.Products do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{merchantId}/products", %{
-        "merchantId" => URI.encode_www_form(merchant_id)
+        "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
