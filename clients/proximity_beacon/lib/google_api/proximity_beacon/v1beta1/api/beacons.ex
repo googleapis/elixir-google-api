@@ -72,7 +72,7 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1beta1/{+beaconName}:activate", %{
-        "beaconName" => URI.encode_www_form(beacon_name)
+        "beaconName" => URI.encode(beacon_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -141,7 +141,7 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1beta1/{+beaconName}/attachments:batchDelete", %{
-        "beaconName" => URI.encode_www_form(beacon_name)
+        "beaconName" => URI.encode(beacon_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -208,7 +208,7 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1beta1/{+beaconName}/attachments", %{
-        "beaconName" => URI.encode_www_form(beacon_name)
+        "beaconName" => URI.encode(beacon_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -272,7 +272,7 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v1beta1/{+attachmentName}", %{
-        "attachmentName" => URI.encode_www_form(attachment_name)
+        "attachmentName" => URI.encode(attachment_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -337,7 +337,7 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1beta1/{+beaconName}/attachments", %{
-        "beaconName" => URI.encode_www_form(beacon_name)
+        "beaconName" => URI.encode(beacon_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -401,7 +401,7 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1beta1/{+beaconName}:deactivate", %{
-        "beaconName" => URI.encode_www_form(beacon_name)
+        "beaconName" => URI.encode(beacon_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -463,7 +463,7 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1beta1/{+beaconName}:decommission", %{
-        "beaconName" => URI.encode_www_form(beacon_name)
+        "beaconName" => URI.encode(beacon_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -520,7 +520,7 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v1beta1/{+beaconName}", %{
-        "beaconName" => URI.encode_www_form(beacon_name)
+        "beaconName" => URI.encode(beacon_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -589,7 +589,7 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1beta1/{+beaconName}/diagnostics", %{
-        "beaconName" => URI.encode_www_form(beacon_name)
+        "beaconName" => URI.encode(beacon_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -648,7 +648,7 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1beta1/{+beaconName}", %{
-        "beaconName" => URI.encode_www_form(beacon_name)
+        "beaconName" => URI.encode(beacon_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -826,7 +826,7 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/v1beta1/{+beaconName}", %{
-        "beaconName" => URI.encode_www_form(beacon_name)
+        "beaconName" => URI.encode(beacon_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
