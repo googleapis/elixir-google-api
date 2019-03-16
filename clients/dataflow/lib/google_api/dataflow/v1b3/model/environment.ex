@@ -25,6 +25,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.Environment do
   - clusterManagerApiService (String.t): The type of cluster manager API to use.  If unknown or unspecified, the service will attempt to choose a reasonable default.  This should be in the form of the API service name, e.g. \&quot;compute.googleapis.com\&quot;. Defaults to: `null`.
   - dataset (String.t): The dataset for the current project where various workflow related tables are stored.  The supported resource type is:  Google BigQuery:   bigquery.googleapis.com/{dataset} Defaults to: `null`.
   - experiments ([String.t]): The list of experiments to enable. Defaults to: `null`.
+  - flexResourceSchedulingGoal (String.t): Which Flexible Resource Scheduling mode to run in. Defaults to: `null`.
+    - Enum - one of [FLEXRS_UNSPECIFIED, FLEXRS_SPEED_OPTIMIZED, FLEXRS_COST_OPTIMIZED]
   - internalExperiments (%{optional(String.t) &#x3D;&gt; String.t}): Experimental settings. Defaults to: `null`.
   - sdkPipelineOptions (%{optional(String.t) &#x3D;&gt; String.t}): The Cloud Dataflow SDK pipeline options specified by the user. These options are passed through the service and are used to recreate the SDK pipeline options on the worker in a language agnostic and platform independent way. Defaults to: `null`.
   - serviceAccountEmail (String.t): Identity to run virtual machines as. Defaults to the default account. Defaults to: `null`.
@@ -40,6 +42,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.Environment do
           :clusterManagerApiService => any(),
           :dataset => any(),
           :experiments => list(any()),
+          :flexResourceSchedulingGoal => any(),
           :internalExperiments => map(),
           :sdkPipelineOptions => map(),
           :serviceAccountEmail => any(),
@@ -52,6 +55,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.Environment do
   field(:clusterManagerApiService)
   field(:dataset)
   field(:experiments, type: :list)
+  field(:flexResourceSchedulingGoal)
   field(:internalExperiments, type: :map)
   field(:sdkPipelineOptions, type: :map)
   field(:serviceAccountEmail)

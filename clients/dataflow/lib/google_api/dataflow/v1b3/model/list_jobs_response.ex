@@ -22,7 +22,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.ListJobsResponse do
 
   ## Attributes
 
-  - failedLocation ([FailedLocation]): Zero or more messages describing locations that failed to respond. Defaults to: `null`.
+  - failedLocation ([FailedLocation]): Zero or more messages describing the [regional endpoints] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that failed to respond. Defaults to: `null`.
   - jobs ([Job]): A subset of the requested job information. Defaults to: `null`.
   - nextPageToken (String.t): Set if there may be more results than fit in this response. Defaults to: `null`.
   """

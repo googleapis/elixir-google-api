@@ -23,7 +23,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.StructuredMessage do
   ## Attributes
 
   - parameters ([Parameter]): The structured data associated with this message. Defaults to: `null`.
-  - messageKey (String.t): Idenfier for this message type.  Used by external systems to internationalize or personalize message. Defaults to: `null`.
+  - messageKey (String.t): Identifier for this message type.  Used by external systems to internationalize or personalize message. Defaults to: `null`.
   - messageText (String.t): Human-readable version of message. Defaults to: `null`.
   """
 

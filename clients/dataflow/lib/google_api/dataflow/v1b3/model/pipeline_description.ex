@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.PipelineDescription do
   @moduledoc """
-  A descriptive representation of submitted pipeline as well as the executed form.  This data is provided by the Dataflow service for ease of visualizing the pipeline and interpretting Dataflow provided metrics.
+  A descriptive representation of submitted pipeline as well as the executed form.  This data is provided by the Dataflow service for ease of visualizing the pipeline and interpreting Dataflow provided metrics.
 
   ## Attributes
 

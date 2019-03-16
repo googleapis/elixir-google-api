@@ -22,7 +22,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.SendWorkerMessagesRequest do
 
   ## Attributes
 
-  - location (String.t): The location which contains the job Defaults to: `null`.
+  - location (String.t): The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the job. Defaults to: `null`.
   - workerMessages ([WorkerMessage]): The WorkerMessages to send. Defaults to: `null`.
   """
 
