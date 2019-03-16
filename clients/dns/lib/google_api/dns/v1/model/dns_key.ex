@@ -18,22 +18,22 @@
 
 defmodule GoogleApi.DNS.V1.Model.DnsKey do
   @moduledoc """
-  A DNSSEC key pair.
+
 
   ## Attributes
 
-  - algorithm (String.t): String mnemonic specifying the DNSSEC algorithm of this key. Immutable after creation time. Defaults to: `null`.
+  - algorithm (String.t):  Defaults to: `null`.
     - Enum - one of [ecdsap256sha256, ecdsap384sha384, rsasha1, rsasha256, rsasha512]
-  - creationTime (String.t): The time that this resource was created in the control plane. This is in RFC3339 text format. Output only. Defaults to: `null`.
-  - description (String.t): A mutable string of at most 1024 characters associated with this resource for the user&#39;s convenience. Has no effect on the resource&#39;s function. Defaults to: `null`.
-  - digests ([DnsKeyDigest]): Cryptographic hashes of the DNSKEY resource record associated with this DnsKey. These digests are needed to construct a DS record that points at this DNS key. Output only. Defaults to: `null`.
-  - id (String.t): Unique identifier for the resource; defined by the server (output only). Defaults to: `null`.
-  - isActive (boolean()): Active keys will be used to sign subsequent changes to the ManagedZone. Inactive keys will still be present as DNSKEY Resource Records for the use of resolvers validating existing signatures. Defaults to: `null`.
-  - keyLength (integer()): Length of the key in bits. Specified at creation time then immutable. Defaults to: `null`.
-  - keyTag (integer()): The key tag is a non-cryptographic hash of the a DNSKEY resource record associated with this DnsKey. The key tag can be used to identify a DNSKEY more quickly (but it is not a unique identifier). In particular, the key tag is used in a parent zone&#39;s DS record to point at the DNSKEY in this child ManagedZone. The key tag is a number in the range [0, 65535] and the algorithm to calculate it is specified in RFC4034 Appendix B. Output only. Defaults to: `null`.
+  - creationTime (String.t):  Defaults to: `null`.
+  - description (String.t):  Defaults to: `null`.
+  - digests ([DnsKeyDigest]):  Defaults to: `null`.
+  - id (String.t):  Defaults to: `null`.
+  - isActive (boolean()):  Defaults to: `null`.
+  - keyLength (integer()):  Defaults to: `null`.
+  - keyTag (integer()):  Defaults to: `null`.
   - kind (String.t): Identifies what kind of resource this is. Value: the fixed string \&quot;dns#dnsKey\&quot;. Defaults to: `null`.
-  - publicKey (String.t): Base64 encoded public half of this key. Output only. Defaults to: `null`.
-  - type (String.t): One of \&quot;KEY_SIGNING\&quot; or \&quot;ZONE_SIGNING\&quot;. Keys of type KEY_SIGNING have the Secure Entry Point flag set and, when active, will be used to sign only resource record sets of type DNSKEY. Otherwise, the Secure Entry Point flag will be cleared and this key will be used to sign only resource record sets of other types. Immutable after creation time. Defaults to: `null`.
+  - publicKey (String.t):  Defaults to: `null`.
+  - type (String.t):  Defaults to: `null`.
     - Enum - one of [keySigning, zoneSigning]
   """
 

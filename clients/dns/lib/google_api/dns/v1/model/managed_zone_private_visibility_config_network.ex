@@ -16,40 +16,34 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.DNS.V1.Model.ManagedZoneOperationsListResponse do
+defmodule GoogleApi.DNS.V1.Model.ManagedZonePrivateVisibilityConfigNetwork do
   @moduledoc """
 
 
   ## Attributes
 
-  - header (ResponseHeader):  Defaults to: `null`.
-  - kind (String.t): Type of resource. Defaults to: `null`.
-  - nextPageToken (String.t):  Defaults to: `null`.
-  - operations ([Operation]):  Defaults to: `null`.
+  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string \&quot;dns#managedZonePrivateVisibilityConfigNetwork\&quot;. Defaults to: `null`.
+  - networkUrl (String.t):  Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :header => GoogleApi.DNS.V1.Model.ResponseHeader.t(),
           :kind => any(),
-          :nextPageToken => any(),
-          :operations => list(GoogleApi.DNS.V1.Model.Operation.t())
+          :networkUrl => any()
         }
 
-  field(:header, as: GoogleApi.DNS.V1.Model.ResponseHeader)
   field(:kind)
-  field(:nextPageToken)
-  field(:operations, as: GoogleApi.DNS.V1.Model.Operation, type: :list)
+  field(:networkUrl)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.DNS.V1.Model.ManagedZoneOperationsListResponse do
+defimpl Poison.Decoder, for: GoogleApi.DNS.V1.Model.ManagedZonePrivateVisibilityConfigNetwork do
   def decode(value, options) do
-    GoogleApi.DNS.V1.Model.ManagedZoneOperationsListResponse.decode(value, options)
+    GoogleApi.DNS.V1.Model.ManagedZonePrivateVisibilityConfigNetwork.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.DNS.V1.Model.ManagedZoneOperationsListResponse do
+defimpl Poison.Encoder, for: GoogleApi.DNS.V1.Model.ManagedZonePrivateVisibilityConfigNetwork do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
