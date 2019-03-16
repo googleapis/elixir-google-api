@@ -22,15 +22,18 @@ defmodule GoogleApi.Dataflow.V1b3.Model.LeaseWorkItemResponse do
 
   ## Attributes
 
+  - unifiedWorkerResponse (%{optional(String.t) &#x3D;&gt; String.t}): Untranslated bag-of-bytes WorkResponse for UnifiedWorker. Defaults to: `null`.
   - workItems ([WorkItem]): A list of the leased WorkItems. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :unifiedWorkerResponse => map(),
           :workItems => list(GoogleApi.Dataflow.V1b3.Model.WorkItem.t())
         }
 
+  field(:unifiedWorkerResponse, type: :map)
   field(:workItems, as: GoogleApi.Dataflow.V1b3.Model.WorkItem, type: :list)
 end
 

@@ -24,6 +24,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.ReportWorkItemStatusRequest do
 
   - currentWorkerTime (DateTime.t): The current timestamp at the worker. Defaults to: `null`.
   - location (String.t): The location which contains the WorkItem&#39;s job. Defaults to: `null`.
+  - unifiedWorkerRequest (%{optional(String.t) &#x3D;&gt; String.t}): Untranslated bag-of-bytes WorkProgressUpdateRequest from UnifiedWorker. Defaults to: `null`.
   - workItemStatuses ([WorkItemStatus]): The order is unimportant, except that the order of the WorkItemServiceState messages in the ReportWorkItemStatusResponse corresponds to the order of WorkItemStatus messages here. Defaults to: `null`.
   - workerId (String.t): The ID of the worker reporting the WorkItem status.  If this does not match the ID of the worker which the Dataflow service believes currently has the lease on the WorkItem, the report will be dropped (with an error response). Defaults to: `null`.
   """
@@ -33,12 +34,14 @@ defmodule GoogleApi.Dataflow.V1b3.Model.ReportWorkItemStatusRequest do
   @type t :: %__MODULE__{
           :currentWorkerTime => DateTime.t(),
           :location => any(),
+          :unifiedWorkerRequest => map(),
           :workItemStatuses => list(GoogleApi.Dataflow.V1b3.Model.WorkItemStatus.t()),
           :workerId => any()
         }
 
   field(:currentWorkerTime, as: DateTime)
   field(:location)
+  field(:unifiedWorkerRequest, type: :map)
   field(:workItemStatuses, as: GoogleApi.Dataflow.V1b3.Model.WorkItemStatus, type: :list)
   field(:workerId)
 end

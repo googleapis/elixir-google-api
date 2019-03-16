@@ -26,6 +26,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.StreamingComputationConfig do
   - instructions ([ParallelInstruction]): Instructions that comprise the computation. Defaults to: `null`.
   - stageName (String.t): Stage name of this computation. Defaults to: `null`.
   - systemName (String.t): System defined name for this computation. Defaults to: `null`.
+  - transformUserNameToStateFamily (%{optional(String.t) &#x3D;&gt; String.t}): Map from user name of stateful transforms in this stage to their state family. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -34,13 +35,15 @@ defmodule GoogleApi.Dataflow.V1b3.Model.StreamingComputationConfig do
           :computationId => any(),
           :instructions => list(GoogleApi.Dataflow.V1b3.Model.ParallelInstruction.t()),
           :stageName => any(),
-          :systemName => any()
+          :systemName => any(),
+          :transformUserNameToStateFamily => map()
         }
 
   field(:computationId)
   field(:instructions, as: GoogleApi.Dataflow.V1b3.Model.ParallelInstruction, type: :list)
   field(:stageName)
   field(:systemName)
+  field(:transformUserNameToStateFamily, type: :map)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.StreamingComputationConfig do

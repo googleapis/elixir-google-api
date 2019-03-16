@@ -22,14 +22,18 @@ defmodule GoogleApi.Dataflow.V1b3.Model.ReportWorkItemStatusResponse do
 
   ## Attributes
 
+  - unifiedWorkerResponse (%{optional(String.t) &#x3D;&gt; String.t}): Untranslated bag-of-bytes WorkProgressUpdateResponse for UnifiedWorker. Defaults to: `null`.
   - workItemServiceStates ([WorkItemServiceState]): A set of messages indicating the service-side state for each WorkItem whose status was reported, in the same order as the WorkItemStatus messages in the ReportWorkItemStatusRequest which resulting in this response. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :unifiedWorkerResponse => map(),
           :workItemServiceStates => list(GoogleApi.Dataflow.V1b3.Model.WorkItemServiceState.t())
         }
+
+  field(:unifiedWorkerResponse, type: :map)
 
   field(
     :workItemServiceStates,
