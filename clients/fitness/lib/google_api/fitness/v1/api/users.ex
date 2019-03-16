@@ -64,7 +64,7 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{userId}/dataSources", %{
-        "userId" => URI.encode_www_form(user_id)
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -128,8 +128,8 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{userId}/dataSources/{dataSourceId}/dataPointChanges", %{
-        "userId" => URI.encode_www_form(user_id),
-        "dataSourceId" => URI.encode_www_form(data_source_id)
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
+        "dataSourceId" => URI.encode(data_source_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -196,9 +196,9 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/{userId}/dataSources/{dataSourceId}/datasets/{datasetId}", %{
-        "userId" => URI.encode_www_form(user_id),
-        "dataSourceId" => URI.encode_www_form(data_source_id),
-        "datasetId" => URI.encode_www_form(dataset_id)
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
+        "dataSourceId" => URI.encode(data_source_id, &URI.char_unreserved?/1),
+        "datasetId" => URI.encode(dataset_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -263,9 +263,9 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{userId}/dataSources/{dataSourceId}/datasets/{datasetId}", %{
-        "userId" => URI.encode_www_form(user_id),
-        "dataSourceId" => URI.encode_www_form(data_source_id),
-        "datasetId" => URI.encode_www_form(dataset_id)
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
+        "dataSourceId" => URI.encode(data_source_id, &URI.char_unreserved?/1),
+        "datasetId" => URI.encode(dataset_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -330,9 +330,9 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/{userId}/dataSources/{dataSourceId}/datasets/{datasetId}", %{
-        "userId" => URI.encode_www_form(user_id),
-        "dataSourceId" => URI.encode_www_form(data_source_id),
-        "datasetId" => URI.encode_www_form(dataset_id)
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
+        "dataSourceId" => URI.encode(data_source_id, &URI.char_unreserved?/1),
+        "datasetId" => URI.encode(dataset_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -386,8 +386,8 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/{userId}/dataSources/{dataSourceId}", %{
-        "userId" => URI.encode_www_form(user_id),
-        "dataSourceId" => URI.encode_www_form(data_source_id)
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
+        "dataSourceId" => URI.encode(data_source_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -441,8 +441,8 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{userId}/dataSources/{dataSourceId}", %{
-        "userId" => URI.encode_www_form(user_id),
-        "dataSourceId" => URI.encode_www_form(data_source_id)
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
+        "dataSourceId" => URI.encode(data_source_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -491,70 +491,13 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{userId}/dataSources", %{
-        "userId" => URI.encode_www_form(user_id)
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.Fitness.V1.Model.ListDataSourcesResponse{}])
-  end
-
-  @doc """
-  Updates the specified data source. The dataStreamId, dataType, type, dataStreamName, and device properties with the exception of version, cannot be modified.  Data sources are identified by their dataStreamId. This method supports patch semantics.
-
-  ## Parameters
-
-  - connection (GoogleApi.Fitness.V1.Connection): Connection to server
-  - user_id (String.t): Update the data source for the person identified. Use me to indicate the authenticated user. Only me is supported at this time.
-  - data_source_id (String.t): The data stream ID of the data source to update.
-  - optional_params (KeywordList): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (DataSource): 
-
-  ## Returns
-
-  {:ok, %GoogleApi.Fitness.V1.Model.DataSource{}} on success
-  {:error, info} on failure
-  """
-  @spec fitness_users_data_sources_patch(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.Fitness.V1.Model.DataSource.t()} | {:error, Tesla.Env.t()}
-  def fitness_users_data_sources_patch(
-        connection,
-        user_id,
-        data_source_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
-    optional_params_config = %{
-      :alt => :query,
-      :fields => :query,
-      :key => :query,
-      :oauth_token => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :userIp => :query,
-      :body => :body
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:patch)
-      |> Request.url("/{userId}/dataSources/{dataSourceId}", %{
-        "userId" => URI.encode_www_form(user_id),
-        "dataSourceId" => URI.encode_www_form(data_source_id)
-      })
-      |> Request.add_optional_params(optional_params_config, optional_params)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(opts ++ [struct: %GoogleApi.Fitness.V1.Model.DataSource{}])
   end
 
   @doc """
@@ -604,8 +547,8 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/{userId}/dataSources/{dataSourceId}", %{
-        "userId" => URI.encode_www_form(user_id),
-        "dataSourceId" => URI.encode_www_form(data_source_id)
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
+        "dataSourceId" => URI.encode(data_source_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -654,7 +597,7 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{userId}/dataset:aggregate", %{
-        "userId" => URI.encode_www_form(user_id)
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -710,8 +653,8 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/{userId}/sessions/{sessionId}", %{
-        "userId" => URI.encode_www_form(user_id),
-        "sessionId" => URI.encode_www_form(session_id)
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
+        "sessionId" => URI.encode(session_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -737,7 +680,7 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :endTime (String.t): An RFC3339 timestamp. Only sessions ending between the start and end times will be included in the response.
     - :includeDeleted (boolean()): If true, deleted sessions will be returned. When set to true, sessions returned in this response will only have an ID and will not have any other fields.
-    - :pageToken (String.t): The continuation token, which is used for incremental syncing. To get the next batch of changes, set this parameter to the value of nextPageToken from the previous response. This token is treated as a timestamp (in millis since epoch). If specified, the API returns sessions modified since this time. The page token is ignored if either start or end time is specified. If none of start time, end time, and the page token is specified, sessions modified in the last 7 days are returned.
+    - :pageToken (String.t): The continuation token, which is used for incremental syncing. To get the next batch of changes, set this parameter to the value of nextPageToken from the previous response. This token is treated as a timestamp (in millis since epoch). If specified, the API returns sessions modified since this time. The page token is ignored if either start or end time is specified. If none of start time, end time, and the page token is specified, sessions modified in the last 30 days are returned.
     - :startTime (String.t): An RFC3339 timestamp. Only sessions ending between the start and end times will be included in the response.
 
   ## Returns
@@ -766,7 +709,7 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{userId}/sessions", %{
-        "userId" => URI.encode_www_form(user_id)
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -824,8 +767,8 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/{userId}/sessions/{sessionId}", %{
-        "userId" => URI.encode_www_form(user_id),
-        "sessionId" => URI.encode_www_form(session_id)
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
+        "sessionId" => URI.encode(session_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
