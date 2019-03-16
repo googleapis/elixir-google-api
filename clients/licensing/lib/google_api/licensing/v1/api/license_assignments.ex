@@ -76,9 +76,9 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/{productId}/sku/{skuId}/user/{userId}", %{
-        "productId" => URI.encode_www_form(product_id),
-        "skuId" => URI.encode_www_form(sku_id),
-        "userId" => URI.encode_www_form(user_id)
+        "productId" => URI.encode(product_id, &URI.char_unreserved?/1),
+        "skuId" => URI.encode(sku_id, &URI.char_unreserved?/1),
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -139,9 +139,9 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{productId}/sku/{skuId}/user/{userId}", %{
-        "productId" => URI.encode_www_form(product_id),
-        "skuId" => URI.encode_www_form(sku_id),
-        "userId" => URI.encode_www_form(user_id)
+        "productId" => URI.encode(product_id, &URI.char_unreserved?/1),
+        "skuId" => URI.encode(sku_id, &URI.char_unreserved?/1),
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -201,8 +201,8 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{productId}/sku/{skuId}/user", %{
-        "productId" => URI.encode_www_form(product_id),
-        "skuId" => URI.encode_www_form(sku_id)
+        "productId" => URI.encode(product_id, &URI.char_unreserved?/1),
+        "skuId" => URI.encode(sku_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -265,7 +265,7 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{productId}/users", %{
-        "productId" => URI.encode_www_form(product_id)
+        "productId" => URI.encode(product_id, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :customerId, customer_id)
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -332,8 +332,8 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{productId}/sku/{skuId}/users", %{
-        "productId" => URI.encode_www_form(product_id),
-        "skuId" => URI.encode_www_form(sku_id)
+        "productId" => URI.encode(product_id, &URI.char_unreserved?/1),
+        "skuId" => URI.encode(sku_id, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :customerId, customer_id)
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -397,9 +397,9 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/{productId}/sku/{skuId}/user/{userId}", %{
-        "productId" => URI.encode_www_form(product_id),
-        "skuId" => URI.encode_www_form(sku_id),
-        "userId" => URI.encode_www_form(user_id)
+        "productId" => URI.encode(product_id, &URI.char_unreserved?/1),
+        "skuId" => URI.encode(sku_id, &URI.char_unreserved?/1),
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -462,9 +462,9 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/{productId}/sku/{skuId}/user/{userId}", %{
-        "productId" => URI.encode_www_form(product_id),
-        "skuId" => URI.encode_www_form(sku_id),
-        "userId" => URI.encode_www_form(user_id)
+        "productId" => URI.encode(product_id, &URI.char_unreserved?/1),
+        "skuId" => URI.encode(sku_id, &URI.char_unreserved?/1),
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
