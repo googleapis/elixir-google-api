@@ -64,7 +64,7 @@ defmodule GoogleApi.Surveys.V2.Api.Results do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/surveys/{surveyUrlId}/results", %{
-        "surveyUrlId" => URI.encode_www_form(survey_url_id)
+        "surveyUrlId" => URI.encode(survey_url_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

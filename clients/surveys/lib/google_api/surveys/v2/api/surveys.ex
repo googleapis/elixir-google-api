@@ -62,7 +62,7 @@ defmodule GoogleApi.Surveys.V2.Api.Surveys do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/surveys/{surveyUrlId}", %{
-        "surveyUrlId" => URI.encode_www_form(survey_url_id)
+        "surveyUrlId" => URI.encode(survey_url_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -109,7 +109,7 @@ defmodule GoogleApi.Surveys.V2.Api.Surveys do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/surveys/{surveyUrlId}", %{
-        "surveyUrlId" => URI.encode_www_form(survey_url_id)
+        "surveyUrlId" => URI.encode(survey_url_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -254,7 +254,7 @@ defmodule GoogleApi.Surveys.V2.Api.Surveys do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/surveys/{resourceId}/start", %{
-        "resourceId" => URI.encode_www_form(resource_id)
+        "resourceId" => URI.encode(resource_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -301,7 +301,7 @@ defmodule GoogleApi.Surveys.V2.Api.Surveys do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/surveys/{resourceId}/stop", %{
-        "resourceId" => URI.encode_www_form(resource_id)
+        "resourceId" => URI.encode(resource_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -350,7 +350,7 @@ defmodule GoogleApi.Surveys.V2.Api.Surveys do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/surveys/{surveyUrlId}", %{
-        "surveyUrlId" => URI.encode_www_form(survey_url_id)
+        "surveyUrlId" => URI.encode(survey_url_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
