@@ -71,8 +71,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/projects/{project}/instances/{instance}/createEphemeral", %{
-        "project" => URI.encode_www_form(project),
-        "instance" => URI.encode_www_form(instance)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -128,9 +128,9 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/projects/{project}/instances/{instance}/sslCerts/{sha1Fingerprint}", %{
-        "project" => URI.encode_www_form(project),
-        "instance" => URI.encode_www_form(instance),
-        "sha1Fingerprint" => URI.encode_www_form(sha1_fingerprint)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "instance" => URI.encode(instance, &URI.char_unreserved?/1),
+        "sha1Fingerprint" => URI.encode(sha1_fingerprint, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -186,9 +186,9 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/projects/{project}/instances/{instance}/sslCerts/{sha1Fingerprint}", %{
-        "project" => URI.encode_www_form(project),
-        "instance" => URI.encode_www_form(instance),
-        "sha1Fingerprint" => URI.encode_www_form(sha1_fingerprint)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "instance" => URI.encode(instance, &URI.char_unreserved?/1),
+        "sha1Fingerprint" => URI.encode(sha1_fingerprint, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -239,8 +239,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/projects/{project}/instances/{instance}/sslCerts", %{
-        "project" => URI.encode_www_form(project),
-        "instance" => URI.encode_www_form(instance)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -291,8 +291,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/projects/{project}/instances/{instance}/sslCerts", %{
-        "project" => URI.encode_www_form(project),
-        "instance" => URI.encode_www_form(instance)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
