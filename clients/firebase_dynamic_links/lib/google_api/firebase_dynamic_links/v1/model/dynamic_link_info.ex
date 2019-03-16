@@ -24,7 +24,6 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkInfo do
 
   - analyticsInfo (AnalyticsInfo): Parameters used for tracking. See all tracking parameters in the [documentation](https://firebase.google.com/docs/dynamic-links/create-manually). Defaults to: `null`.
   - androidInfo (AndroidInfo): Android related information. See Android related parameters in the [documentation](https://firebase.google.com/docs/dynamic-links/create-manually). Defaults to: `null`.
-  - appPreview (AppPreview): Optional customizable parameters on the app preview page Defaults to: `null`.
   - desktopInfo (DesktopInfo): Desktop related information. See desktop related parameters in the [documentation](https://firebase.google.com/docs/dynamic-links/create-manually). Defaults to: `null`.
   - domainUriPrefix (String.t): E.g. https://maps.app.goo.gl, https://maps.page.link, https://g.co/maps More examples can be found in description of getNormalizedUriPrefix in j/c/g/firebase/dynamiclinks/uri/DdlDomain.java  Will fallback to dynamic_link_domain is this field is missing Defaults to: `null`.
   - dynamicLinkDomain (String.t): Dynamic Links domain that the project owns, e.g. abcd.app.goo.gl [Learn more](https://firebase.google.com/docs/dynamic-links/android/receive) on how to set up Dynamic Link domain associated with your Firebase project.  Required if missing domain_uri_prefix. Defaults to: `null`.
@@ -39,7 +38,6 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkInfo do
   @type t :: %__MODULE__{
           :analyticsInfo => GoogleApi.FirebaseDynamicLinks.V1.Model.AnalyticsInfo.t(),
           :androidInfo => GoogleApi.FirebaseDynamicLinks.V1.Model.AndroidInfo.t(),
-          :appPreview => GoogleApi.FirebaseDynamicLinks.V1.Model.AppPreview.t(),
           :desktopInfo => GoogleApi.FirebaseDynamicLinks.V1.Model.DesktopInfo.t(),
           :domainUriPrefix => any(),
           :dynamicLinkDomain => any(),
@@ -51,7 +49,6 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkInfo do
 
   field(:analyticsInfo, as: GoogleApi.FirebaseDynamicLinks.V1.Model.AnalyticsInfo)
   field(:androidInfo, as: GoogleApi.FirebaseDynamicLinks.V1.Model.AndroidInfo)
-  field(:appPreview, as: GoogleApi.FirebaseDynamicLinks.V1.Model.AppPreview)
   field(:desktopInfo, as: GoogleApi.FirebaseDynamicLinks.V1.Model.DesktopInfo)
   field(:domainUriPrefix)
   field(:dynamicLinkDomain)
