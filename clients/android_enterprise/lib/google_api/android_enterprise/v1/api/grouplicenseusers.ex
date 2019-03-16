@@ -75,8 +75,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Grouplicenseusers do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/enterprises/{enterpriseId}/groupLicenses/{groupLicenseId}/users", %{
-        "enterpriseId" => URI.encode_www_form(enterprise_id),
-        "groupLicenseId" => URI.encode_www_form(group_license_id)
+        "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
+        "groupLicenseId" => URI.encode(group_license_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

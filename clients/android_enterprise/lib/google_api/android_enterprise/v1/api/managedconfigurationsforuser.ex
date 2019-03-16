@@ -78,10 +78,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationsforuser do
       |> Request.url(
         "/enterprises/{enterpriseId}/users/{userId}/managedConfigurationsForUser/{managedConfigurationForUserId}",
         %{
-          "enterpriseId" => URI.encode_www_form(enterprise_id),
-          "userId" => URI.encode_www_form(user_id),
+          "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
+          "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
           "managedConfigurationForUserId" =>
-            URI.encode_www_form(managed_configuration_for_user_id)
+            URI.encode(managed_configuration_for_user_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -147,10 +147,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationsforuser do
       |> Request.url(
         "/enterprises/{enterpriseId}/users/{userId}/managedConfigurationsForUser/{managedConfigurationForUserId}",
         %{
-          "enterpriseId" => URI.encode_www_form(enterprise_id),
-          "userId" => URI.encode_www_form(user_id),
+          "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
+          "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
           "managedConfigurationForUserId" =>
-            URI.encode_www_form(managed_configuration_for_user_id)
+            URI.encode(managed_configuration_for_user_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -213,8 +213,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationsforuser do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/enterprises/{enterpriseId}/users/{userId}/managedConfigurationsForUser", %{
-        "enterpriseId" => URI.encode_www_form(enterprise_id),
-        "userId" => URI.encode_www_form(user_id)
+        "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -284,10 +284,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationsforuser do
       |> Request.url(
         "/enterprises/{enterpriseId}/users/{userId}/managedConfigurationsForUser/{managedConfigurationForUserId}",
         %{
-          "enterpriseId" => URI.encode_www_form(enterprise_id),
-          "userId" => URI.encode_www_form(user_id),
+          "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
+          "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
           "managedConfigurationForUserId" =>
-            URI.encode_www_form(managed_configuration_for_user_id)
+            URI.encode(managed_configuration_for_user_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -357,10 +357,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationsforuser do
       |> Request.url(
         "/enterprises/{enterpriseId}/users/{userId}/managedConfigurationsForUser/{managedConfigurationForUserId}",
         %{
-          "enterpriseId" => URI.encode_www_form(enterprise_id),
-          "userId" => URI.encode_www_form(user_id),
+          "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
+          "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
           "managedConfigurationForUserId" =>
-            URI.encode_www_form(managed_configuration_for_user_id)
+            URI.encode(managed_configuration_for_user_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)

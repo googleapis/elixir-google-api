@@ -168,7 +168,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/enterprises/{enterpriseId}/createWebToken", %{
-        "enterpriseId" => URI.encode_www_form(enterprise_id)
+        "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -320,72 +320,13 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/enterprises/{enterpriseId}", %{
-        "enterpriseId" => URI.encode_www_form(enterprise_id)
+        "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.AndroidEnterprise.V1.Model.Enterprise{}])
-  end
-
-  @doc """
-  Deprecated and unused.
-
-  ## Parameters
-
-  - connection (GoogleApi.AndroidEnterprise.V1.Connection): Connection to server
-  - enterprise_id (String.t): The ID of the enterprise.
-  - optional_params (KeywordList): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-
-  ## Returns
-
-  {:ok, %GoogleApi.AndroidEnterprise.V1.Model.AndroidDevicePolicyConfig{}} on success
-  {:error, info} on failure
-  """
-  @spec androidenterprise_enterprises_get_android_device_policy_config(
-          Tesla.Env.client(),
-          String.t(),
-          keyword()
-        ) ::
-          {:ok, GoogleApi.AndroidEnterprise.V1.Model.AndroidDevicePolicyConfig.t()}
-          | {:error, Tesla.Env.t()}
-  def androidenterprise_enterprises_get_android_device_policy_config(
-        connection,
-        enterprise_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
-    optional_params_config = %{
-      :alt => :query,
-      :fields => :query,
-      :key => :query,
-      :oauth_token => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :userIp => :query
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:get)
-      |> Request.url("/enterprises/{enterpriseId}/androidDevicePolicyConfig", %{
-        "enterpriseId" => URI.encode_www_form(enterprise_id)
-      })
-      |> Request.add_optional_params(optional_params_config, optional_params)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(
-      opts ++ [struct: %GoogleApi.AndroidEnterprise.V1.Model.AndroidDevicePolicyConfig{}]
-    )
   end
 
   @doc """
@@ -437,7 +378,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/enterprises/{enterpriseId}/serviceAccount", %{
-        "enterpriseId" => URI.encode_www_form(enterprise_id)
+        "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -489,7 +430,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/enterprises/{enterpriseId}/storeLayout", %{
-        "enterpriseId" => URI.encode_www_form(enterprise_id)
+        "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -647,7 +588,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/enterprises/{enterpriseId}/sendTestPushNotification", %{
-        "enterpriseId" => URI.encode_www_form(enterprise_id)
+        "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -708,7 +649,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/enterprises/{enterpriseId}/account", %{
-        "enterpriseId" => URI.encode_www_form(enterprise_id)
+        "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -769,7 +710,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/enterprises/{enterpriseId}/androidDevicePolicyConfig", %{
-        "enterpriseId" => URI.encode_www_form(enterprise_id)
+        "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -825,7 +766,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/enterprises/{enterpriseId}/storeLayout", %{
-        "enterpriseId" => URI.encode_www_form(enterprise_id)
+        "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -877,7 +818,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/enterprises/{enterpriseId}/unenroll", %{
-        "enterpriseId" => URI.encode_www_form(enterprise_id)
+        "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

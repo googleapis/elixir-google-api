@@ -71,8 +71,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Products do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/enterprises/{enterpriseId}/products/{productId}/approve", %{
-        "enterpriseId" => URI.encode_www_form(enterprise_id),
-        "productId" => URI.encode_www_form(product_id)
+        "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
+        "productId" => URI.encode(product_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -134,8 +134,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Products do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/enterprises/{enterpriseId}/products/{productId}/generateApprovalUrl", %{
-        "enterpriseId" => URI.encode_www_form(enterprise_id),
-        "productId" => URI.encode_www_form(product_id)
+        "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
+        "productId" => URI.encode(product_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -194,8 +194,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Products do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/enterprises/{enterpriseId}/products/{productId}", %{
-        "enterpriseId" => URI.encode_www_form(enterprise_id),
-        "productId" => URI.encode_www_form(product_id)
+        "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
+        "productId" => URI.encode(product_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -257,8 +257,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Products do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/enterprises/{enterpriseId}/products/{productId}/appRestrictionsSchema", %{
-        "enterpriseId" => URI.encode_www_form(enterprise_id),
-        "productId" => URI.encode_www_form(product_id)
+        "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
+        "productId" => URI.encode(product_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -320,8 +320,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Products do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/enterprises/{enterpriseId}/products/{productId}/permissions", %{
-        "enterpriseId" => URI.encode_www_form(enterprise_id),
-        "productId" => URI.encode_www_form(product_id)
+        "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
+        "productId" => URI.encode(product_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -351,7 +351,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Products do
     - :language (String.t): The BCP47 tag for the user&#39;s preferred language (e.g. \&quot;en-US\&quot;, \&quot;de\&quot;). Results are returned in the language best matching the preferred language.
     - :maxResults (integer()): Specifies the maximum number of products that can be returned per request. If not specified, uses a default value of 100, which is also the maximum retrievable within a single response.
     - :query (String.t): The search query as typed in the Google Play store search box. If omitted, all approved apps will be returned (using the pagination parameters), including apps that are not available in the store (e.g. unpublished apps).
-    - :token (String.t): A pagination token is contained in a request&#39;&#39;s response when there are more products. The token can be used in a subsequent request to obtain more products, and so forth. This parameter cannot be used in the initial request.
+    - :token (String.t): A pagination token is contained in a request&#39;s response when there are more products. The token can be used in a subsequent request to obtain more products, and so forth. This parameter cannot be used in the initial request.
 
   ## Returns
 
@@ -386,7 +386,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Products do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/enterprises/{enterpriseId}/products", %{
-        "enterpriseId" => URI.encode_www_form(enterprise_id)
+        "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -446,8 +446,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Products do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/enterprises/{enterpriseId}/products/{productId}/unapprove", %{
-        "enterpriseId" => URI.encode_www_form(enterprise_id),
-        "productId" => URI.encode_www_form(product_id)
+        "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
+        "productId" => URI.encode(product_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

@@ -73,8 +73,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Serviceaccountkeys do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/enterprises/{enterpriseId}/serviceAccountKeys/{keyId}", %{
-        "enterpriseId" => URI.encode_www_form(enterprise_id),
-        "keyId" => URI.encode_www_form(key_id)
+        "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
+        "keyId" => URI.encode(key_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -129,7 +129,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Serviceaccountkeys do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/enterprises/{enterpriseId}/serviceAccountKeys", %{
-        "enterpriseId" => URI.encode_www_form(enterprise_id)
+        "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -184,7 +184,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Serviceaccountkeys do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/enterprises/{enterpriseId}/serviceAccountKeys", %{
-        "enterpriseId" => URI.encode_www_form(enterprise_id)
+        "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

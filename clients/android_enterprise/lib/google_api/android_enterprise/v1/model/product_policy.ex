@@ -22,7 +22,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ProductPolicy do
 
   ## Attributes
 
-  - autoInstallPolicy (AutoInstallPolicy): The auto install policy for the product. Defaults to: `null`.
+  - autoInstallPolicy (AutoInstallPolicy): The auto-install policy for the product. Defaults to: `null`.
   - productId (String.t): The ID of the product. For example, \&quot;app:com.google.android.gm\&quot;. Defaults to: `null`.
   - trackIds ([String.t]): Grants the device visibility to the specified product release track(s), identified by trackIds. The list of release tracks of a product can be obtained by calling Products.Get. Defaults to: `null`.
   - tracks ([String.t]): Deprecated. Use trackIds instead. Defaults to: `null`.

@@ -69,7 +69,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Permissions do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/permissions/{permissionId}", %{
-        "permissionId" => URI.encode_www_form(permission_id)
+        "permissionId" => URI.encode(permission_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
