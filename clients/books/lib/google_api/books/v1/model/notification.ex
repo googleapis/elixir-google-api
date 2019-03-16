@@ -36,6 +36,7 @@ defmodule GoogleApi.Books.V1.Model.Notification do
   - reason (String.t):  Defaults to: `null`.
   - show_notification_settings_action (boolean()):  Defaults to: `null`.
   - targetUrl (String.t):  Defaults to: `null`.
+  - timeToExpireMs (String.t):  Defaults to: `null`.
   - title (String.t):  Defaults to: `null`.
   """
 
@@ -56,6 +57,7 @@ defmodule GoogleApi.Books.V1.Model.Notification do
           :reason => any(),
           :show_notification_settings_action => any(),
           :targetUrl => any(),
+          :timeToExpireMs => any(),
           :title => any()
         }
 
@@ -73,6 +75,7 @@ defmodule GoogleApi.Books.V1.Model.Notification do
   field(:reason)
   field(:show_notification_settings_action)
   field(:targetUrl)
+  field(:timeToExpireMs)
   field(:title)
 end
 
