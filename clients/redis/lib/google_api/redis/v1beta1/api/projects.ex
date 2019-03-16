@@ -77,8 +77,8 @@ defmodule GoogleApi.Redis.V1beta1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1beta1/projects/{projectsId}/locations/{locationsId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "locationsId" => URI.encode_www_form(locations_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -148,8 +148,8 @@ defmodule GoogleApi.Redis.V1beta1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1beta1/projects/{projectsId}/locations/{locationsId}/instances", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "locationsId" => URI.encode_www_form(locations_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -220,9 +220,9 @@ defmodule GoogleApi.Redis.V1beta1.Api.Projects do
       |> Request.url(
         "/v1beta1/projects/{projectsId}/locations/{locationsId}/instances/{instancesId}",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "instancesId" => URI.encode_www_form(instances_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -294,9 +294,9 @@ defmodule GoogleApi.Redis.V1beta1.Api.Projects do
       |> Request.url(
         "/v1beta1/projects/{projectsId}/locations/{locationsId}/instances/{instancesId}",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "instancesId" => URI.encode_www_form(instances_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -368,8 +368,8 @@ defmodule GoogleApi.Redis.V1beta1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1beta1/projects/{projectsId}/locations/{locationsId}/instances", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "locationsId" => URI.encode_www_form(locations_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -444,9 +444,9 @@ defmodule GoogleApi.Redis.V1beta1.Api.Projects do
       |> Request.url(
         "/v1beta1/projects/{projectsId}/locations/{locationsId}/instances/{instancesId}",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "instancesId" => URI.encode_www_form(instances_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -508,7 +508,7 @@ defmodule GoogleApi.Redis.V1beta1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1beta1/projects/{projectsId}/locations", %{
-        "projectsId" => URI.encode_www_form(projects_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -579,9 +579,9 @@ defmodule GoogleApi.Redis.V1beta1.Api.Projects do
       |> Request.url(
         "/v1beta1/projects/{projectsId}/locations/{locationsId}/operations/{operationsId}:cancel",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "operationsId" => URI.encode_www_form(operations_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "operationsId" => URI.encode(operations_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -653,9 +653,9 @@ defmodule GoogleApi.Redis.V1beta1.Api.Projects do
       |> Request.url(
         "/v1beta1/projects/{projectsId}/locations/{locationsId}/operations/{operationsId}",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "operationsId" => URI.encode_www_form(operations_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "operationsId" => URI.encode(operations_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -727,9 +727,9 @@ defmodule GoogleApi.Redis.V1beta1.Api.Projects do
       |> Request.url(
         "/v1beta1/projects/{projectsId}/locations/{locationsId}/operations/{operationsId}",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "operationsId" => URI.encode_www_form(operations_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "operationsId" => URI.encode(operations_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -804,8 +804,8 @@ defmodule GoogleApi.Redis.V1beta1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1beta1/projects/{projectsId}/locations/{locationsId}/operations", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "locationsId" => URI.encode_www_form(locations_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
