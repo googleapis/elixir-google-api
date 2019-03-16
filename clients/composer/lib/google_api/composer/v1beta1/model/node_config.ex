@@ -24,6 +24,7 @@ defmodule GoogleApi.Composer.V1beta1.Model.NodeConfig do
 
   - tags ([String.t]): Optional. The list of instance tags applied to all node VMs. Tags are used to identify valid sources or targets for network firewalls. Each tag within the list must comply with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt). Cannot be updated. Defaults to: `null`.
   - diskSizeGb (integer()): Optional. The disk size in GB used for node VMs. Minimum size is 20GB. If unspecified, defaults to 100GB. Cannot be updated. Defaults to: `null`.
+  - ipAllocationPolicy (IpAllocationPolicy): Optional. The IPAllocationPolicy fields for the GKE cluster. Defaults to: `null`.
   - location (String.t): Optional. The Compute Engine [zone](/compute/docs/regions-zones) in which to deploy the VMs used to run the Apache Airflow software, specified as a [relative resource name](/apis/design/resource_names#relative_resource_name). For example: \&quot;projects/{projectId}/zones/{zoneId}\&quot;.  This &#x60;location&#x60; must belong to the enclosing environment&#39;s project and location. If both this field and &#x60;nodeConfig.machineType&#x60; are specified, &#x60;nodeConfig.machineType&#x60; must belong to this &#x60;location&#x60;; if both are unspecified, the service will pick a zone in the Compute Engine region corresponding to the Cloud Composer location, and propagate that choice to both fields. If only one field (&#x60;location&#x60; or &#x60;nodeConfig.machineType&#x60;) is specified, the location information from the specified field will be propagated to the unspecified field. Defaults to: `null`.
   - machineType (String.t): Optional. The Compute Engine [machine type](/compute/docs/machine-types) used for cluster instances, specified as a [relative resource name](/apis/design/resource_names#relative_resource_name). For example: \&quot;projects/{projectId}/zones/{zoneId}/machineTypes/{machineTypeId}\&quot;.  The &#x60;machineType&#x60; must belong to the enclosing environment&#39;s project and location. If both this field and &#x60;nodeConfig.location&#x60; are specified, this &#x60;machineType&#x60; must belong to the &#x60;nodeConfig.location&#x60;; if both are unspecified, the service will pick a zone in the Compute Engine region corresponding to the Cloud Composer location, and propagate that choice to both fields. If exactly one of this field and &#x60;nodeConfig.location&#x60; is specified, the location information from the specified field will be propagated to the unspecified field.  If this field is unspecified, the &#x60;machineTypeId&#x60; defaults to \&quot;n1-standard-1\&quot;. Defaults to: `null`.
   - network (String.t): Optional. The Compute Engine network to be used for machine communications, specified as a [relative resource name](/apis/design/resource_names#relative_resource_name). For example: \&quot;projects/{projectId}/global/networks/{networkId}\&quot;.  If unspecified, the default network in the environment&#39;s project is used. If a [Custom Subnet Network](/vpc/docs/vpc#vpc_networks_and_subnets) is provided, &#x60;nodeConfig.subnetwork&#x60; must also be provided. For [Shared VPC](/vpc/docs/shared-vpc) subnetwork requirements, see &#x60;nodeConfig.subnetwork&#x60;. Defaults to: `null`.
@@ -37,6 +38,7 @@ defmodule GoogleApi.Composer.V1beta1.Model.NodeConfig do
   @type t :: %__MODULE__{
           :tags => list(any()),
           :diskSizeGb => any(),
+          :ipAllocationPolicy => GoogleApi.Composer.V1beta1.Model.IpAllocationPolicy.t(),
           :location => any(),
           :machineType => any(),
           :network => any(),
@@ -47,6 +49,7 @@ defmodule GoogleApi.Composer.V1beta1.Model.NodeConfig do
 
   field(:tags, type: :list)
   field(:diskSizeGb)
+  field(:ipAllocationPolicy, as: GoogleApi.Composer.V1beta1.Model.IpAllocationPolicy)
   field(:location)
   field(:machineType)
   field(:network)
