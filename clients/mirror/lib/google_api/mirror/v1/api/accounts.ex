@@ -73,9 +73,9 @@ defmodule GoogleApi.Mirror.V1.Api.Accounts do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/mirror/v1/accounts/{userToken}/{accountType}/{accountName}", %{
-        "userToken" => URI.encode_www_form(user_token),
-        "accountType" => URI.encode_www_form(account_type),
-        "accountName" => URI.encode_www_form(account_name)
+        "userToken" => URI.encode(user_token, &URI.char_unreserved?/1),
+        "accountType" => URI.encode(account_type, &URI.char_unreserved?/1),
+        "accountName" => URI.encode(account_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

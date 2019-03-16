@@ -69,8 +69,8 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/mirror/v1/timeline/{itemId}/attachments/{attachmentId}", %{
-        "itemId" => URI.encode_www_form(item_id),
-        "attachmentId" => URI.encode_www_form(attachment_id)
+        "itemId" => URI.encode(item_id, &URI.char_unreserved?/1),
+        "attachmentId" => URI.encode(attachment_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -124,8 +124,8 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/mirror/v1/timeline/{itemId}/attachments/{attachmentId}", %{
-        "itemId" => URI.encode_www_form(item_id),
-        "attachmentId" => URI.encode_www_form(attachment_id)
+        "itemId" => URI.encode(item_id, &URI.char_unreserved?/1),
+        "attachmentId" => URI.encode(attachment_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -172,7 +172,7 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/mirror/v1/timeline/{itemId}/attachments", %{
-        "itemId" => URI.encode_www_form(item_id)
+        "itemId" => URI.encode(item_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -230,7 +230,7 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/resumable/upload/mirror/v1/timeline/{itemId}/attachments", %{
-        "itemId" => URI.encode_www_form(item_id)
+        "itemId" => URI.encode(item_id, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :uploadType, upload_type)
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -292,7 +292,7 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/upload/mirror/v1/timeline/{itemId}/attachments", %{
-        "itemId" => URI.encode_www_form(item_id)
+        "itemId" => URI.encode(item_id, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :uploadType, upload_type)
       |> Request.add_param(:file, :data, data)
@@ -341,7 +341,7 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/mirror/v1/timeline/{itemId}/attachments", %{
-        "itemId" => URI.encode_www_form(item_id)
+        "itemId" => URI.encode(item_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -388,7 +388,7 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/mirror/v1/timeline/{id}", %{
-        "id" => URI.encode_www_form(id)
+        "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -435,7 +435,7 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/mirror/v1/timeline/{id}", %{
-        "id" => URI.encode_www_form(id)
+        "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -698,7 +698,7 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/mirror/v1/timeline/{id}", %{
-        "id" => URI.encode_www_form(id)
+        "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -747,7 +747,7 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/mirror/v1/timeline/{id}", %{
-        "id" => URI.encode_www_form(id)
+        "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -803,7 +803,7 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/resumable/upload/mirror/v1/timeline/{id}", %{
-        "id" => URI.encode_www_form(id)
+        "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :uploadType, upload_type)
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -868,7 +868,7 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/upload/mirror/v1/timeline/{id}", %{
-        "id" => URI.encode_www_form(id)
+        "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :uploadType, upload_type)
       |> Request.add_param(:body, :metadata, metadata)
