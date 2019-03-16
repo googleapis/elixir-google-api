@@ -99,9 +99,9 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Conversion do
       |> Request.url(
         "/agency/{agencyId}/advertiser/{advertiserId}/engine/{engineAccountId}/conversion",
         %{
-          "agencyId" => URI.encode_www_form(agency_id),
-          "advertiserId" => URI.encode_www_form(advertiser_id),
-          "engineAccountId" => URI.encode_www_form(engine_account_id)
+          "agencyId" => URI.encode(agency_id, &URI.char_unreserved?/1),
+          "advertiserId" => URI.encode(advertiser_id, &URI.char_unreserved?/1),
+          "engineAccountId" => URI.encode(engine_account_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_param(:query, :endDate, end_date)

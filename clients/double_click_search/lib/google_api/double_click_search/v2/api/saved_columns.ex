@@ -75,8 +75,8 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.SavedColumns do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/agency/{agencyId}/advertiser/{advertiserId}/savedcolumns", %{
-        "agencyId" => URI.encode_www_form(agency_id),
-        "advertiserId" => URI.encode_www_form(advertiser_id)
+        "agencyId" => URI.encode(agency_id, &URI.char_unreserved?/1),
+        "advertiserId" => URI.encode(advertiser_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
