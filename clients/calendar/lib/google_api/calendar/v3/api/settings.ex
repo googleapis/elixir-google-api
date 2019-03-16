@@ -62,7 +62,7 @@ defmodule GoogleApi.Calendar.V3.Api.Settings do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/users/me/settings/{setting}", %{
-        "setting" => URI.encode_www_form(setting)
+        "setting" => URI.encode(setting, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
