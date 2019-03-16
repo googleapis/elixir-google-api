@@ -73,8 +73,8 @@ defmodule GoogleApi.AdSense.V14.Api.Adunits do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/adclients/{adClientId}/adunits/{adUnitId}/customchannels", %{
-        "adClientId" => URI.encode_www_form(ad_client_id),
-        "adUnitId" => URI.encode_www_form(ad_unit_id)
+        "adClientId" => URI.encode(ad_client_id, &URI.char_unreserved?/1),
+        "adUnitId" => URI.encode(ad_unit_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -122,8 +122,8 @@ defmodule GoogleApi.AdSense.V14.Api.Adunits do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/adclients/{adClientId}/adunits/{adUnitId}", %{
-        "adClientId" => URI.encode_www_form(ad_client_id),
-        "adUnitId" => URI.encode_www_form(ad_unit_id)
+        "adClientId" => URI.encode(ad_client_id, &URI.char_unreserved?/1),
+        "adUnitId" => URI.encode(ad_unit_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -177,8 +177,8 @@ defmodule GoogleApi.AdSense.V14.Api.Adunits do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/adclients/{adClientId}/adunits/{adUnitId}/adcode", %{
-        "adClientId" => URI.encode_www_form(ad_client_id),
-        "adUnitId" => URI.encode_www_form(ad_unit_id)
+        "adClientId" => URI.encode(ad_client_id, &URI.char_unreserved?/1),
+        "adUnitId" => URI.encode(ad_unit_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -231,7 +231,7 @@ defmodule GoogleApi.AdSense.V14.Api.Adunits do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/adclients/{adClientId}/adunits", %{
-        "adClientId" => URI.encode_www_form(ad_client_id)
+        "adClientId" => URI.encode(ad_client_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

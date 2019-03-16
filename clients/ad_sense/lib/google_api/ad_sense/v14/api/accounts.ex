@@ -73,8 +73,8 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/accounts/{accountId}/adclients/{adClientId}/adcode", %{
-        "accountId" => URI.encode_www_form(account_id),
-        "adClientId" => URI.encode_www_form(ad_client_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
+        "adClientId" => URI.encode(ad_client_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -125,7 +125,7 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/accounts/{accountId}/adclients", %{
-        "accountId" => URI.encode_www_form(account_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -192,9 +192,9 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
       |> Request.url(
         "/accounts/{accountId}/adclients/{adClientId}/adunits/{adUnitId}/customchannels",
         %{
-          "accountId" => URI.encode_www_form(account_id),
-          "adClientId" => URI.encode_www_form(ad_client_id),
-          "adUnitId" => URI.encode_www_form(ad_unit_id)
+          "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
+          "adClientId" => URI.encode(ad_client_id, &URI.char_unreserved?/1),
+          "adUnitId" => URI.encode(ad_unit_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -256,9 +256,9 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/accounts/{accountId}/adclients/{adClientId}/adunits/{adUnitId}", %{
-        "accountId" => URI.encode_www_form(account_id),
-        "adClientId" => URI.encode_www_form(ad_client_id),
-        "adUnitId" => URI.encode_www_form(ad_unit_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
+        "adClientId" => URI.encode(ad_client_id, &URI.char_unreserved?/1),
+        "adUnitId" => URI.encode(ad_unit_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -319,9 +319,9 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/accounts/{accountId}/adclients/{adClientId}/adunits/{adUnitId}/adcode", %{
-        "accountId" => URI.encode_www_form(account_id),
-        "adClientId" => URI.encode_www_form(ad_client_id),
-        "adUnitId" => URI.encode_www_form(ad_unit_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
+        "adClientId" => URI.encode(ad_client_id, &URI.char_unreserved?/1),
+        "adUnitId" => URI.encode(ad_unit_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -381,8 +381,8 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/accounts/{accountId}/adclients/{adClientId}/adunits", %{
-        "accountId" => URI.encode_www_form(account_id),
-        "adClientId" => URI.encode_www_form(ad_client_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
+        "adClientId" => URI.encode(ad_client_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -436,8 +436,8 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/accounts/{accountId}/alerts/{alertId}", %{
-        "accountId" => URI.encode_www_form(account_id),
-        "alertId" => URI.encode_www_form(alert_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
+        "alertId" => URI.encode(alert_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -486,7 +486,7 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/accounts/{accountId}/alerts", %{
-        "accountId" => URI.encode_www_form(account_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -555,9 +555,9 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
       |> Request.url(
         "/accounts/{accountId}/adclients/{adClientId}/customchannels/{customChannelId}/adunits",
         %{
-          "accountId" => URI.encode_www_form(account_id),
-          "adClientId" => URI.encode_www_form(ad_client_id),
-          "customChannelId" => URI.encode_www_form(custom_channel_id)
+          "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
+          "adClientId" => URI.encode(ad_client_id, &URI.char_unreserved?/1),
+          "customChannelId" => URI.encode(custom_channel_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -621,9 +621,9 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
       |> Request.url(
         "/accounts/{accountId}/adclients/{adClientId}/customchannels/{customChannelId}",
         %{
-          "accountId" => URI.encode_www_form(account_id),
-          "adClientId" => URI.encode_www_form(ad_client_id),
-          "customChannelId" => URI.encode_www_form(custom_channel_id)
+          "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
+          "adClientId" => URI.encode(ad_client_id, &URI.char_unreserved?/1),
+          "customChannelId" => URI.encode(custom_channel_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -686,8 +686,8 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/accounts/{accountId}/adclients/{adClientId}/customchannels", %{
-        "accountId" => URI.encode_www_form(account_id),
-        "adClientId" => URI.encode_www_form(ad_client_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
+        "adClientId" => URI.encode(ad_client_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -736,7 +736,7 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/accounts/{accountId}", %{
-        "accountId" => URI.encode_www_form(account_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -831,7 +831,7 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/accounts/{accountId}/payments", %{
-        "accountId" => URI.encode_www_form(account_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -912,7 +912,7 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/accounts/{accountId}/reports", %{
-        "accountId" => URI.encode_www_form(account_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :startDate, start_date)
       |> Request.add_param(:query, :endDate, end_date)
@@ -982,8 +982,8 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/accounts/{accountId}/reports/{savedReportId}", %{
-        "accountId" => URI.encode_www_form(account_id),
-        "savedReportId" => URI.encode_www_form(saved_report_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
+        "savedReportId" => URI.encode(saved_report_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1041,7 +1041,7 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/accounts/{accountId}/reports/saved", %{
-        "accountId" => URI.encode_www_form(account_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1095,8 +1095,8 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/accounts/{accountId}/savedadstyles/{savedAdStyleId}", %{
-        "accountId" => URI.encode_www_form(account_id),
-        "savedAdStyleId" => URI.encode_www_form(saved_ad_style_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
+        "savedAdStyleId" => URI.encode(saved_ad_style_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1152,7 +1152,7 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/accounts/{accountId}/savedadstyles", %{
-        "accountId" => URI.encode_www_form(account_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1210,8 +1210,8 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/accounts/{accountId}/adclients/{adClientId}/urlchannels", %{
-        "accountId" => URI.encode_www_form(account_id),
-        "adClientId" => URI.encode_www_form(ad_client_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
+        "adClientId" => URI.encode(ad_client_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
