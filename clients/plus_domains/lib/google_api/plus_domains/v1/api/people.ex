@@ -62,7 +62,7 @@ defmodule GoogleApi.PlusDomains.V1.Api.People do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/plusDomains/v1/people/{userId}", %{
-        "userId" => URI.encode_www_form(user_id)
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -116,8 +116,8 @@ defmodule GoogleApi.PlusDomains.V1.Api.People do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/plusDomains/v1/people/{userId}/people/{collection}", %{
-        "userId" => URI.encode_www_form(user_id),
-        "collection" => URI.encode_www_form(collection)
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
+        "collection" => URI.encode(collection, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -179,8 +179,8 @@ defmodule GoogleApi.PlusDomains.V1.Api.People do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/plusDomains/v1/activities/{activityId}/people/{collection}", %{
-        "activityId" => URI.encode_www_form(activity_id),
-        "collection" => URI.encode_www_form(collection)
+        "activityId" => URI.encode(activity_id, &URI.char_unreserved?/1),
+        "collection" => URI.encode(collection, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -231,7 +231,7 @@ defmodule GoogleApi.PlusDomains.V1.Api.People do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/plusDomains/v1/circles/{circleId}/people", %{
-        "circleId" => URI.encode_www_form(circle_id)
+        "circleId" => URI.encode(circle_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

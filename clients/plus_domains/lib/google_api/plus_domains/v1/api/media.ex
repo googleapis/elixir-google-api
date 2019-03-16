@@ -71,8 +71,8 @@ defmodule GoogleApi.PlusDomains.V1.Api.Media do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/plusDomains/v1/people/{userId}/media/{collection}", %{
-        "userId" => URI.encode_www_form(user_id),
-        "collection" => URI.encode_www_form(collection)
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
+        "collection" => URI.encode(collection, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -135,8 +135,8 @@ defmodule GoogleApi.PlusDomains.V1.Api.Media do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/resumable/upload/plusDomains/v1/people/{userId}/media/{collection}", %{
-        "userId" => URI.encode_www_form(user_id),
-        "collection" => URI.encode_www_form(collection)
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
+        "collection" => URI.encode(collection, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :uploadType, upload_type)
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -204,8 +204,8 @@ defmodule GoogleApi.PlusDomains.V1.Api.Media do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/upload/plusDomains/v1/people/{userId}/media/{collection}", %{
-        "userId" => URI.encode_www_form(user_id),
-        "collection" => URI.encode_www_form(collection)
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
+        "collection" => URI.encode(collection, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :uploadType, upload_type)
       |> Request.add_param(:body, :metadata, metadata)
