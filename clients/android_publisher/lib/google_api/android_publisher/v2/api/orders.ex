@@ -71,8 +71,8 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Orders do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/androidpublisher/v2/applications/{packageName}/orders/{orderId}:refund", %{
-        "packageName" => URI.encode_www_form(package_name),
-        "orderId" => URI.encode_www_form(order_id)
+        "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+        "orderId" => URI.encode(order_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

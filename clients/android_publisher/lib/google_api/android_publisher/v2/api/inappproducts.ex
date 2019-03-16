@@ -73,8 +73,8 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Inappproducts do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/androidpublisher/v2/applications/{packageName}/inappproducts/{sku}", %{
-        "packageName" => URI.encode_www_form(package_name),
-        "sku" => URI.encode_www_form(sku)
+        "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+        "sku" => URI.encode(sku, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -128,8 +128,8 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Inappproducts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/androidpublisher/v2/applications/{packageName}/inappproducts/{sku}", %{
-        "packageName" => URI.encode_www_form(package_name),
-        "sku" => URI.encode_www_form(sku)
+        "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+        "sku" => URI.encode(sku, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -185,7 +185,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Inappproducts do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/androidpublisher/v2/applications/{packageName}/inappproducts", %{
-        "packageName" => URI.encode_www_form(package_name)
+        "packageName" => URI.encode(package_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -244,7 +244,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Inappproducts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/androidpublisher/v2/applications/{packageName}/inappproducts", %{
-        "packageName" => URI.encode_www_form(package_name)
+        "packageName" => URI.encode(package_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -308,8 +308,8 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Inappproducts do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/androidpublisher/v2/applications/{packageName}/inappproducts/{sku}", %{
-        "packageName" => URI.encode_www_form(package_name),
-        "sku" => URI.encode_www_form(sku)
+        "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+        "sku" => URI.encode(sku, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -371,8 +371,8 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Inappproducts do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/androidpublisher/v2/applications/{packageName}/inappproducts/{sku}", %{
-        "packageName" => URI.encode_www_form(package_name),
-        "sku" => URI.encode_www_form(sku)
+        "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+        "sku" => URI.encode(sku, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
