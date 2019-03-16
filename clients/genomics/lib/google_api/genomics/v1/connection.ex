@@ -23,16 +23,10 @@ defmodule GoogleApi.Genomics.V1.Connection do
 
   use GoogleApi.Gax.Connection,
     scopes: [
-      # View and manage your data in Google BigQuery
-      "https://www.googleapis.com/auth/bigquery",
       # View and manage your data across Google Cloud Platform services
       "https://www.googleapis.com/auth/cloud-platform",
-      # Manage your data in Google Cloud Storage
-      "https://www.googleapis.com/auth/devstorage.read_write",
       # View and manage Genomics data
-      "https://www.googleapis.com/auth/genomics",
-      # View Genomics data
-      "https://www.googleapis.com/auth/genomics.readonly"
+      "https://www.googleapis.com/auth/genomics"
     ],
     otp_app: :google_api_genomics,
     base_url: "https://genomics.googleapis.com"
