@@ -190,7 +190,7 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v1/contactGroups/{contactGroupsId}", %{
-        "contactGroupsId" => URI.encode_www_form(contact_groups_id)
+        "contactGroupsId" => URI.encode(contact_groups_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -247,7 +247,7 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/contactGroups/{contactGroupsId}", %{
-        "contactGroupsId" => URI.encode_www_form(contact_groups_id)
+        "contactGroupsId" => URI.encode(contact_groups_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -315,7 +315,7 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
   end
 
   @doc """
-  Modify the members of a contact group owned by the authenticated user.
+  Modify the members of a contact group owned by the authenticated user. &lt;br&gt; The only system contact groups that can have members added are &#x60;contactGroups/myContacts&#x60; and &#x60;contactGroups/starred&#x60;. Other system contact groups are deprecated and can only have contacts removed.
 
   ## Parameters
 
@@ -368,7 +368,7 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/contactGroups/{contactGroupsId}/members:modify", %{
-        "contactGroupsId" => URI.encode_www_form(contact_groups_id)
+        "contactGroupsId" => URI.encode(contact_groups_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -432,7 +432,7 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/v1/contactGroups/{contactGroupsId}", %{
-        "contactGroupsId" => URI.encode_www_form(contact_groups_id)
+        "contactGroupsId" => URI.encode(contact_groups_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
