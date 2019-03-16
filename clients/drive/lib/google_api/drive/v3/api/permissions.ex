@@ -74,7 +74,7 @@ defmodule GoogleApi.Drive.V3.Api.Permissions do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/drive/v3/files/{fileId}/permissions", %{
-        "fileId" => URI.encode_www_form(file_id)
+        "fileId" => URI.encode(file_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -132,8 +132,8 @@ defmodule GoogleApi.Drive.V3.Api.Permissions do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/drive/v3/files/{fileId}/permissions/{permissionId}", %{
-        "fileId" => URI.encode_www_form(file_id),
-        "permissionId" => URI.encode_www_form(permission_id)
+        "fileId" => URI.encode(file_id, &URI.char_unreserved?/1),
+        "permissionId" => URI.encode(permission_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -185,8 +185,8 @@ defmodule GoogleApi.Drive.V3.Api.Permissions do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/drive/v3/files/{fileId}/permissions/{permissionId}", %{
-        "fileId" => URI.encode_www_form(file_id),
-        "permissionId" => URI.encode_www_form(permission_id)
+        "fileId" => URI.encode(file_id, &URI.char_unreserved?/1),
+        "permissionId" => URI.encode(permission_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -241,7 +241,7 @@ defmodule GoogleApi.Drive.V3.Api.Permissions do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/drive/v3/files/{fileId}/permissions", %{
-        "fileId" => URI.encode_www_form(file_id)
+        "fileId" => URI.encode(file_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -305,8 +305,8 @@ defmodule GoogleApi.Drive.V3.Api.Permissions do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/drive/v3/files/{fileId}/permissions/{permissionId}", %{
-        "fileId" => URI.encode_www_form(file_id),
-        "permissionId" => URI.encode_www_form(permission_id)
+        "fileId" => URI.encode(file_id, &URI.char_unreserved?/1),
+        "permissionId" => URI.encode(permission_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
