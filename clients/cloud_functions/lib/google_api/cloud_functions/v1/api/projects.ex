@@ -25,7 +25,7 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
-  Synchronously invokes a deployed Cloud Function. To be used for testing purposes as very limited traffic is allowed. For more information on the actual limits refer to [API Calls]( https://cloud.google.com/functions/quotas#rate_limits).
+  Synchronously invokes a deployed Cloud Function. To be used for testing purposes as very limited traffic is allowed. For more information on the actual limits, refer to [Rate Limits](https://cloud.google.com/functions/quotas#rate_limits).
 
   ## Parameters
 
@@ -90,9 +90,9 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/functions/{functionsId}:call",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "functionsId" => URI.encode_www_form(functions_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "functionsId" => URI.encode(functions_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -163,8 +163,8 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/functions", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "locationsId" => URI.encode_www_form(locations_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -235,9 +235,9 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/functions/{functionsId}",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "functionsId" => URI.encode_www_form(functions_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "functionsId" => URI.encode(functions_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -313,9 +313,9 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/functions/{functionsId}:generateDownloadUrl",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "functionsId" => URI.encode_www_form(functions_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "functionsId" => URI.encode(functions_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -328,7 +328,7 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
   end
 
   @doc """
-  Returns a signed URL for uploading a function source code. For more information about the signed URL usage see: https://cloud.google.com/storage/docs/access-control/signed-urls. Once the function source code upload is complete, the used signed URL should be provided in CreateFunction or UpdateFunction request as a reference to the function source code.  When uploading source code to the generated signed URL, please follow these restrictions:  * Source file type should be a zip file. * Source file size should not exceed 100MB limit.  When making a HTTP PUT request, these two headers need to be specified:  * &#x60;content-type: application/zip&#x60; * &#x60;x-goog-content-length-range: 0,104857600&#x60;
+  Returns a signed URL for uploading a function source code. For more information about the signed URL usage see: https://cloud.google.com/storage/docs/access-control/signed-urls. Once the function source code upload is complete, the used signed URL should be provided in CreateFunction or UpdateFunction request as a reference to the function source code.  When uploading source code to the generated signed URL, please follow these restrictions:  * Source file type should be a zip file. * Source file size should not exceed 100MB limit. * No credentials should be attached - the signed URLs provide access to the   target bucket using internal service identity; if credentials were   attached, the identity from the credentials would be used, but that   identity does not have permissions to upload files to the URL.  When making a HTTP PUT request, these two headers need to be specified:  * &#x60;content-type: application/zip&#x60; * &#x60;x-goog-content-length-range: 0,104857600&#x60;  And this header SHOULD NOT be specified:  * &#x60;Authorization: Bearer YOUR_TOKEN&#x60;
 
   ## Parameters
 
@@ -390,8 +390,8 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/functions:generateUploadUrl",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -465,9 +465,9 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/functions/{functionsId}",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "functionsId" => URI.encode_www_form(functions_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "functionsId" => URI.encode(functions_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -478,7 +478,7 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
   end
 
   @doc """
-  Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.
+  Gets the IAM access control policy for a function. Returns an empty policy if the function exists and does not have a policy set.
 
   ## Parameters
 
@@ -539,9 +539,9 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/functions/{functionsId}:getIamPolicy",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "functionsId" => URI.encode_www_form(functions_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "functionsId" => URI.encode(functions_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -614,8 +614,8 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/functions", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "locationsId" => URI.encode_www_form(locations_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -692,9 +692,9 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/functions/{functionsId}",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "functionsId" => URI.encode_www_form(functions_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "functionsId" => URI.encode(functions_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -705,7 +705,7 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
   end
 
   @doc """
-  Sets the access control policy on the specified resource. Replaces any existing policy.
+  Sets the IAM access control policy on the specified function. Replaces any existing policy.
 
   ## Parameters
 
@@ -768,9 +768,9 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/functions/{functionsId}:setIamPolicy",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "functionsId" => URI.encode_www_form(functions_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "functionsId" => URI.encode(functions_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -781,7 +781,7 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
   end
 
   @doc """
-  Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a NOT_FOUND error.  Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \&quot;fail open\&quot; without warning.
+  Tests the specified permissions against the IAM access control policy for a function. If the function does not exist, this will return an empty set of permissions, not a NOT_FOUND error.
 
   ## Parameters
 
@@ -846,9 +846,9 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/functions/{functionsId}:testIamPermissions",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "functionsId" => URI.encode_www_form(functions_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "functionsId" => URI.encode(functions_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -918,7 +918,7 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectsId}/locations", %{
-        "projectsId" => URI.encode_www_form(projects_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
