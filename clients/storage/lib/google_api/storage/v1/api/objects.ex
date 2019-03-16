@@ -81,8 +81,8 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/storage/v1/b/{destinationBucket}/o/{destinationObject}/compose", %{
-        "destinationBucket" => URI.encode_www_form(destination_bucket),
-        "destinationObject" => URI.encode_www_form(destination_object)
+        "destinationBucket" => URI.encode(destination_bucket, &URI.char_unreserved?/1),
+        "destinationObject" => URI.encode(destination_object, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -174,10 +174,10 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       |> Request.url(
         "/storage/v1/b/{sourceBucket}/o/{sourceObject}/copyTo/b/{destinationBucket}/o/{destinationObject}",
         %{
-          "sourceBucket" => URI.encode_www_form(source_bucket),
-          "sourceObject" => URI.encode_www_form(source_object),
-          "destinationBucket" => URI.encode_www_form(destination_bucket),
-          "destinationObject" => URI.encode_www_form(destination_object)
+          "sourceBucket" => URI.encode(source_bucket, &URI.char_unreserved?/1),
+          "sourceObject" => URI.encode(source_object, &URI.char_unreserved?/1),
+          "destinationBucket" => URI.encode(destination_bucket, &URI.char_unreserved?/1),
+          "destinationObject" => URI.encode(destination_object, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -238,8 +238,8 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/storage/v1/b/{bucket}/o/{object}", %{
-        "bucket" => URI.encode_www_form(bucket),
-        "object" => URI.encode_www_form(object)
+        "bucket" => URI.encode(bucket, &URI.char_unreserved?/1),
+        "object" => URI.encode(object, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -301,8 +301,8 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/storage/v1/b/{bucket}/o/{object}", %{
-        "bucket" => URI.encode_www_form(bucket),
-        "object" => URI.encode_www_form(object)
+        "bucket" => URI.encode(bucket, &URI.char_unreserved?/1),
+        "object" => URI.encode(object, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -360,8 +360,8 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/storage/v1/b/{bucket}/o/{object}/iam", %{
-        "bucket" => URI.encode_www_form(bucket),
-        "object" => URI.encode_www_form(object)
+        "bucket" => URI.encode(bucket, &URI.char_unreserved?/1),
+        "object" => URI.encode(object, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -430,7 +430,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/storage/v1/b/{bucket}/o", %{
-        "bucket" => URI.encode_www_form(bucket)
+        "bucket" => URI.encode(bucket, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -506,7 +506,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/resumable/upload/storage/v1/b/{bucket}/o", %{
-        "bucket" => URI.encode_www_form(bucket)
+        "bucket" => URI.encode(bucket, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :uploadType, upload_type)
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -591,7 +591,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/upload/storage/v1/b/{bucket}/o", %{
-        "bucket" => URI.encode_www_form(bucket)
+        "bucket" => URI.encode(bucket, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :uploadType, upload_type)
       |> Request.add_param(:body, :metadata, metadata)
@@ -657,7 +657,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/storage/v1/b/{bucket}/o", %{
-        "bucket" => URI.encode_www_form(bucket)
+        "bucket" => URI.encode(bucket, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -723,8 +723,8 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/storage/v1/b/{bucket}/o/{object}", %{
-        "bucket" => URI.encode_www_form(bucket),
-        "object" => URI.encode_www_form(object)
+        "bucket" => URI.encode(bucket, &URI.char_unreserved?/1),
+        "object" => URI.encode(object, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -822,10 +822,10 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       |> Request.url(
         "/storage/v1/b/{sourceBucket}/o/{sourceObject}/rewriteTo/b/{destinationBucket}/o/{destinationObject}",
         %{
-          "sourceBucket" => URI.encode_www_form(source_bucket),
-          "sourceObject" => URI.encode_www_form(source_object),
-          "destinationBucket" => URI.encode_www_form(destination_bucket),
-          "destinationObject" => URI.encode_www_form(destination_object)
+          "sourceBucket" => URI.encode(source_bucket, &URI.char_unreserved?/1),
+          "sourceObject" => URI.encode(source_object, &URI.char_unreserved?/1),
+          "destinationBucket" => URI.encode(destination_bucket, &URI.char_unreserved?/1),
+          "destinationObject" => URI.encode(destination_object, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -886,8 +886,8 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/storage/v1/b/{bucket}/o/{object}/iam", %{
-        "bucket" => URI.encode_www_form(bucket),
-        "object" => URI.encode_www_form(object)
+        "bucket" => URI.encode(bucket, &URI.char_unreserved?/1),
+        "object" => URI.encode(object, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -954,8 +954,8 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/storage/v1/b/{bucket}/o/{object}/iam/testPermissions", %{
-        "bucket" => URI.encode_www_form(bucket),
-        "object" => URI.encode_www_form(object)
+        "bucket" => URI.encode(bucket, &URI.char_unreserved?/1),
+        "object" => URI.encode(object, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :permissions, permissions)
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1022,8 +1022,8 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/storage/v1/b/{bucket}/o/{object}", %{
-        "bucket" => URI.encode_www_form(bucket),
-        "object" => URI.encode_www_form(object)
+        "bucket" => URI.encode(bucket, &URI.char_unreserved?/1),
+        "object" => URI.encode(object, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1088,7 +1088,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/storage/v1/b/{bucket}/o/watch", %{
-        "bucket" => URI.encode_www_form(bucket)
+        "bucket" => URI.encode(bucket, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

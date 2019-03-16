@@ -71,8 +71,8 @@ defmodule GoogleApi.Storage.V1.Api.Notifications do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/storage/v1/b/{bucket}/notificationConfigs/{notification}", %{
-        "bucket" => URI.encode_www_form(bucket),
-        "notification" => URI.encode_www_form(notification)
+        "bucket" => URI.encode(bucket, &URI.char_unreserved?/1),
+        "notification" => URI.encode(notification, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -128,8 +128,8 @@ defmodule GoogleApi.Storage.V1.Api.Notifications do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/storage/v1/b/{bucket}/notificationConfigs/{notification}", %{
-        "bucket" => URI.encode_www_form(bucket),
-        "notification" => URI.encode_www_form(notification)
+        "bucket" => URI.encode(bucket, &URI.char_unreserved?/1),
+        "notification" => URI.encode(notification, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -180,7 +180,7 @@ defmodule GoogleApi.Storage.V1.Api.Notifications do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/storage/v1/b/{bucket}/notificationConfigs", %{
-        "bucket" => URI.encode_www_form(bucket)
+        "bucket" => URI.encode(bucket, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -229,7 +229,7 @@ defmodule GoogleApi.Storage.V1.Api.Notifications do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/storage/v1/b/{bucket}/notificationConfigs", %{
-        "bucket" => URI.encode_www_form(bucket)
+        "bucket" => URI.encode(bucket, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
