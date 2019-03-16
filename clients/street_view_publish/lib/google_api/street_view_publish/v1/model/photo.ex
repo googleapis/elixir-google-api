@@ -25,7 +25,7 @@ defmodule GoogleApi.StreetViewPublish.V1.Model.Photo do
   - captureTime (DateTime.t): Absolute time when the photo was captured. When the photo has no exif timestamp, this is used to set a timestamp in the photo metadata. Defaults to: `null`.
   - connections ([Connection]): Connections to other photos. A connection represents the link from this photo to another photo. Defaults to: `null`.
   - downloadUrl (String.t): Output only. The download URL for the photo bytes. This field is set only when GetPhotoRequest.view is set to PhotoView.INCLUDE_DOWNLOAD_URL. Defaults to: `null`.
-  - mapsPublishStatus (String.t): Output only. Status in Google Maps, whether this photo was published, or rejected. Defaults to: `null`.
+  - mapsPublishStatus (String.t): Output only. Status in Google Maps, whether this photo was published or rejected. Defaults to: `null`.
     - Enum - one of [UNSPECIFIED_MAPS_PUBLISH_STATUS, PUBLISHED, REJECTED_UNKNOWN]
   - photoId (PhotoId): Required when updating a photo. Output only when creating a photo. Identifier for the photo, which is unique among all photos in Google. Defaults to: `null`.
   - places ([Place]): Places where this photo belongs. Defaults to: `null`.
