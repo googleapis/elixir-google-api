@@ -32,6 +32,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig do
   - nextRunTime (DateTime.t): Output only. Next time when data transfer will run. Defaults to: `null`.
   - params (%{optional(String.t) &#x3D;&gt; String.t}): Data transfer specific parameters. Defaults to: `null`.
   - schedule (String.t): Data transfer schedule. If the data source does not support a custom schedule, this should be empty. If it is empty, the default value for the data source will be used. The specified times are in UTC. Examples of valid format: &#x60;1st,3rd monday of month 15:30&#x60;, &#x60;every wed,fri of jan,jun 13:15&#x60;, and &#x60;first sunday of quarter 00:00&#x60;. See more explanation about the format here: https://cloud.google.com/appengine/docs/flexible/python/scheduling-jobs-with-cron-yaml#the_schedule_format NOTE: the granularity should be at least 8 hours, or less frequent. Defaults to: `null`.
+  - scheduleOptions (ScheduleOptions): Options customizing the data transfer schedule. Defaults to: `null`.
   - state (String.t): Output only. State of the most recently updated transfer run. Defaults to: `null`.
     - Enum - one of [TRANSFER_STATE_UNSPECIFIED, PENDING, RUNNING, SUCCEEDED, FAILED, CANCELLED]
   - updateTime (DateTime.t): Output only. Data transfer modification time. Ignored by server on input. Defaults to: `null`.
@@ -51,6 +52,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig do
           :nextRunTime => DateTime.t(),
           :params => map(),
           :schedule => any(),
+          :scheduleOptions => GoogleApi.BigQueryDataTransfer.V1.Model.ScheduleOptions.t(),
           :state => any(),
           :updateTime => DateTime.t(),
           :userId => any()
@@ -66,6 +68,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig do
   field(:nextRunTime, as: DateTime)
   field(:params, type: :map)
   field(:schedule)
+  field(:scheduleOptions, as: GoogleApi.BigQueryDataTransfer.V1.Model.ScheduleOptions)
   field(:state)
   field(:updateTime, as: DateTime)
   field(:userId)
