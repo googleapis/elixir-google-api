@@ -70,7 +70,7 @@ defmodule GoogleApi.ServiceBroker.V1.Api.V1 do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/{v1Id}:getIamPolicy", %{
-        "v1Id" => URI.encode_www_form(v1_id)
+        "v1Id" => URI.encode(v1_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -127,7 +127,7 @@ defmodule GoogleApi.ServiceBroker.V1.Api.V1 do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/{v1Id}:setIamPolicy", %{
-        "v1Id" => URI.encode_www_form(v1_id)
+        "v1Id" => URI.encode(v1_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -185,7 +185,7 @@ defmodule GoogleApi.ServiceBroker.V1.Api.V1 do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/{v1Id}:testIamPermissions", %{
-        "v1Id" => URI.encode_www_form(v1_id)
+        "v1Id" => URI.encode(v1_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
