@@ -27,7 +27,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.Outcome do
   - skippedDetail (SkippedDetail): More information about a SKIPPED outcome.  Returns INVALID_ARGUMENT if this field is set but the summary is not SKIPPED.  Optional Defaults to: `null`.
   - successDetail (SuccessDetail): More information about a SUCCESS outcome.  Returns INVALID_ARGUMENT if this field is set but the summary is not SUCCESS.  Optional Defaults to: `null`.
   - summary (String.t): The simplest way to interpret a result.  Required Defaults to: `null`.
-    - Enum - one of [failure, inconclusive, skipped, success, unset]
+    - Enum - one of [failure, flaky, inconclusive, skipped, success, unset]
   """
 
   use GoogleApi.Gax.ModelBase
