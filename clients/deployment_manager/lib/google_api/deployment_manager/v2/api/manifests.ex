@@ -76,9 +76,9 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Manifests do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/global/deployments/{deployment}/manifests/{manifest}", %{
-        "project" => URI.encode_www_form(project),
-        "deployment" => URI.encode_www_form(deployment),
-        "manifest" => URI.encode_www_form(manifest)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "deployment" => URI.encode(deployment, &URI.char_unreserved?/1),
+        "manifest" => URI.encode(manifest, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -141,8 +141,8 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Manifests do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/global/deployments/{deployment}/manifests", %{
-        "project" => URI.encode_www_form(project),
-        "deployment" => URI.encode_www_form(deployment)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "deployment" => URI.encode(deployment, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
