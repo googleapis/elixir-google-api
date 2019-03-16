@@ -69,8 +69,8 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/customers/{customerId}/subscriptions/{subscriptionId}/activate", %{
-        "customerId" => URI.encode_www_form(customer_id),
-        "subscriptionId" => URI.encode_www_form(subscription_id)
+        "customerId" => URI.encode(customer_id, &URI.char_unreserved?/1),
+        "subscriptionId" => URI.encode(subscription_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -126,8 +126,8 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/customers/{customerId}/subscriptions/{subscriptionId}/changePlan", %{
-        "customerId" => URI.encode_www_form(customer_id),
-        "subscriptionId" => URI.encode_www_form(subscription_id)
+        "customerId" => URI.encode(customer_id, &URI.char_unreserved?/1),
+        "subscriptionId" => URI.encode(subscription_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -189,8 +189,8 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
       |> Request.url(
         "/customers/{customerId}/subscriptions/{subscriptionId}/changeRenewalSettings",
         %{
-          "customerId" => URI.encode_www_form(customer_id),
-          "subscriptionId" => URI.encode_www_form(subscription_id)
+          "customerId" => URI.encode(customer_id, &URI.char_unreserved?/1),
+          "subscriptionId" => URI.encode(subscription_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -247,8 +247,8 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/customers/{customerId}/subscriptions/{subscriptionId}/changeSeats", %{
-        "customerId" => URI.encode_www_form(customer_id),
-        "subscriptionId" => URI.encode_www_form(subscription_id)
+        "customerId" => URI.encode(customer_id, &URI.char_unreserved?/1),
+        "subscriptionId" => URI.encode(subscription_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -309,8 +309,8 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/customers/{customerId}/subscriptions/{subscriptionId}", %{
-        "customerId" => URI.encode_www_form(customer_id),
-        "subscriptionId" => URI.encode_www_form(subscription_id)
+        "customerId" => URI.encode(customer_id, &URI.char_unreserved?/1),
+        "subscriptionId" => URI.encode(subscription_id, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :deletionType, deletion_type)
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -365,8 +365,8 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/customers/{customerId}/subscriptions/{subscriptionId}", %{
-        "customerId" => URI.encode_www_form(customer_id),
-        "subscriptionId" => URI.encode_www_form(subscription_id)
+        "customerId" => URI.encode(customer_id, &URI.char_unreserved?/1),
+        "subscriptionId" => URI.encode(subscription_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -417,7 +417,7 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/customers/{customerId}/subscriptions", %{
-        "customerId" => URI.encode_www_form(customer_id)
+        "customerId" => URI.encode(customer_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -529,8 +529,8 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/customers/{customerId}/subscriptions/{subscriptionId}/startPaidService", %{
-        "customerId" => URI.encode_www_form(customer_id),
-        "subscriptionId" => URI.encode_www_form(subscription_id)
+        "customerId" => URI.encode(customer_id, &URI.char_unreserved?/1),
+        "subscriptionId" => URI.encode(subscription_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -584,8 +584,8 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/customers/{customerId}/subscriptions/{subscriptionId}/suspend", %{
-        "customerId" => URI.encode_www_form(customer_id),
-        "subscriptionId" => URI.encode_www_form(subscription_id)
+        "customerId" => URI.encode(customer_id, &URI.char_unreserved?/1),
+        "subscriptionId" => URI.encode(subscription_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
