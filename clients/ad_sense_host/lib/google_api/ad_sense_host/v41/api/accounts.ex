@@ -69,8 +69,8 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Accounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/accounts/{accountId}/adclients/{adClientId}", %{
-        "accountId" => URI.encode_www_form(account_id),
-        "adClientId" => URI.encode_www_form(ad_client_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
+        "adClientId" => URI.encode(ad_client_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -126,7 +126,7 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Accounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/accounts/{accountId}/adclients", %{
-        "accountId" => URI.encode_www_form(account_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -187,9 +187,9 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Accounts do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/accounts/{accountId}/adclients/{adClientId}/adunits/{adUnitId}", %{
-        "accountId" => URI.encode_www_form(account_id),
-        "adClientId" => URI.encode_www_form(ad_client_id),
-        "adUnitId" => URI.encode_www_form(ad_unit_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
+        "adClientId" => URI.encode(ad_client_id, &URI.char_unreserved?/1),
+        "adUnitId" => URI.encode(ad_unit_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -250,9 +250,9 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Accounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/accounts/{accountId}/adclients/{adClientId}/adunits/{adUnitId}", %{
-        "accountId" => URI.encode_www_form(account_id),
-        "adClientId" => URI.encode_www_form(ad_client_id),
-        "adUnitId" => URI.encode_www_form(ad_unit_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
+        "adClientId" => URI.encode(ad_client_id, &URI.char_unreserved?/1),
+        "adUnitId" => URI.encode(ad_unit_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -315,9 +315,9 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Accounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/accounts/{accountId}/adclients/{adClientId}/adunits/{adUnitId}/adcode", %{
-        "accountId" => URI.encode_www_form(account_id),
-        "adClientId" => URI.encode_www_form(ad_client_id),
-        "adUnitId" => URI.encode_www_form(ad_unit_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
+        "adClientId" => URI.encode(ad_client_id, &URI.char_unreserved?/1),
+        "adUnitId" => URI.encode(ad_unit_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -373,8 +373,8 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Accounts do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/accounts/{accountId}/adclients/{adClientId}/adunits", %{
-        "accountId" => URI.encode_www_form(account_id),
-        "adClientId" => URI.encode_www_form(ad_client_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
+        "adClientId" => URI.encode(ad_client_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -434,8 +434,8 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Accounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/accounts/{accountId}/adclients/{adClientId}/adunits", %{
-        "accountId" => URI.encode_www_form(account_id),
-        "adClientId" => URI.encode_www_form(ad_client_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
+        "adClientId" => URI.encode(ad_client_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -498,8 +498,8 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Accounts do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/accounts/{accountId}/adclients/{adClientId}/adunits", %{
-        "accountId" => URI.encode_www_form(account_id),
-        "adClientId" => URI.encode_www_form(ad_client_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
+        "adClientId" => URI.encode(ad_client_id, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :adUnitId, ad_unit_id)
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -556,8 +556,8 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Accounts do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/accounts/{accountId}/adclients/{adClientId}/adunits", %{
-        "accountId" => URI.encode_www_form(account_id),
-        "adClientId" => URI.encode_www_form(ad_client_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
+        "adClientId" => URI.encode(ad_client_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -604,7 +604,7 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Accounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/accounts/{accountId}", %{
-        "accountId" => URI.encode_www_form(account_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -730,7 +730,7 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Accounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/accounts/{accountId}/reports", %{
-        "accountId" => URI.encode_www_form(account_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :startDate, start_date)
       |> Request.add_param(:query, :endDate, end_date)
