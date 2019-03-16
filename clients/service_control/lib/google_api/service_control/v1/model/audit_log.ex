@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.ServiceControl.V1.Model.AuditLog do
   @moduledoc """
-  Common audit log format for Google Cloud Platform API operations.  
+  Common audit log format for Google Cloud Platform API operations.   
 
   ## Attributes
 

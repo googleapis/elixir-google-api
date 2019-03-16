@@ -25,6 +25,7 @@ defmodule GoogleApi.ServiceControl.V1.Model.CheckError do
   - code (String.t): The error code. Defaults to: `null`.
     - Enum - one of [ERROR_CODE_UNSPECIFIED, NOT_FOUND, PERMISSION_DENIED, RESOURCE_EXHAUSTED, BUDGET_EXCEEDED, DENIAL_OF_SERVICE_DETECTED, LOAD_SHEDDING, ABUSER_DETECTED, SERVICE_NOT_ACTIVATED, VISIBILITY_DENIED, BILLING_DISABLED, PROJECT_DELETED, PROJECT_INVALID, CONSUMER_INVALID, IP_ADDRESS_BLOCKED, REFERER_BLOCKED, CLIENT_APP_BLOCKED, API_TARGET_BLOCKED, API_KEY_INVALID, API_KEY_EXPIRED, API_KEY_NOT_FOUND, SPATULA_HEADER_INVALID, LOAS_ROLE_INVALID, NO_LOAS_PROJECT, LOAS_PROJECT_DISABLED, SECURITY_POLICY_VIOLATED, INVALID_CREDENTIAL, LOCATION_POLICY_VIOLATED, NAMESPACE_LOOKUP_UNAVAILABLE, SERVICE_STATUS_UNAVAILABLE, BILLING_STATUS_UNAVAILABLE, QUOTA_CHECK_UNAVAILABLE, LOAS_PROJECT_LOOKUP_UNAVAILABLE, CLOUD_RESOURCE_MANAGER_BACKEND_UNAVAILABLE, SECURITY_POLICY_BACKEND_UNAVAILABLE, LOCATION_POLICY_BACKEND_UNAVAILABLE]
   - detail (String.t): Free-form text providing details on the error cause of the error. Defaults to: `null`.
+  - status (Status): Contains public information about the check error. If available, &#x60;status.code&#x60; will be non zero and client can propagate it out as public error. Defaults to: `null`.
   - subject (String.t): Subject to whom this error applies. See the specific code enum for more details on this field. For example:     - “project:&lt;project-id or project-number&gt;”     - “folder:&lt;folder-id&gt;”     - “organization:&lt;organization-id&gt;” Defaults to: `null`.
   """
 
@@ -33,11 +34,13 @@ defmodule GoogleApi.ServiceControl.V1.Model.CheckError do
   @type t :: %__MODULE__{
           :code => any(),
           :detail => any(),
+          :status => GoogleApi.ServiceControl.V1.Model.Status.t(),
           :subject => any()
         }
 
   field(:code)
   field(:detail)
+  field(:status, as: GoogleApi.ServiceControl.V1.Model.Status)
   field(:subject)
 end
 

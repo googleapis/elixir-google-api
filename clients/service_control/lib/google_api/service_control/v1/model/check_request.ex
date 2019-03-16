@@ -25,7 +25,7 @@ defmodule GoogleApi.ServiceControl.V1.Model.CheckRequest do
   - operation (Operation): The operation to be checked. Defaults to: `null`.
   - requestProjectSettings (boolean()): Requests the project settings to be returned as part of the check response. Defaults to: `null`.
   - serviceConfigId (String.t): Specifies which version of service configuration should be used to process the request.  If unspecified or no matching version can be found, the latest one will be used. Defaults to: `null`.
-  - skipActivationCheck (boolean()): Indicates if service activation check should be skipped for this request. Default behavior is to perform the check and apply relevant quota. Defaults to: `null`.
+  - skipActivationCheck (boolean()): Indicates if service activation check should be skipped for this request. Default behavior is to perform the check and apply relevant quota. WARNING: Setting this flag to \&quot;true\&quot; will disable quota enforcement. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
