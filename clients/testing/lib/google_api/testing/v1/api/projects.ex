@@ -82,8 +82,8 @@ defmodule GoogleApi.Testing.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectId}/testMatrices/{testMatrixId}:cancel", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "testMatrixId" => URI.encode_www_form(test_matrix_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "testMatrixId" => URI.encode(test_matrix_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -147,7 +147,7 @@ defmodule GoogleApi.Testing.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectId}/testMatrices", %{
-        "projectId" => URI.encode_www_form(project_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -209,8 +209,8 @@ defmodule GoogleApi.Testing.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectId}/testMatrices/{testMatrixId}", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "testMatrixId" => URI.encode_www_form(test_matrix_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "testMatrixId" => URI.encode(test_matrix_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

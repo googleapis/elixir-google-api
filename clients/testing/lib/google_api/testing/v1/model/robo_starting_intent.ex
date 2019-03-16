@@ -24,17 +24,20 @@ defmodule GoogleApi.Testing.V1.Model.RoboStartingIntent do
 
   - launcherActivity (LauncherActivityIntent):  Defaults to: `null`.
   - startActivity (StartActivityIntent):  Defaults to: `null`.
+  - timeout (String.t): Timeout in seconds for each intent. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :launcherActivity => GoogleApi.Testing.V1.Model.LauncherActivityIntent.t(),
-          :startActivity => GoogleApi.Testing.V1.Model.StartActivityIntent.t()
+          :startActivity => GoogleApi.Testing.V1.Model.StartActivityIntent.t(),
+          :timeout => any()
         }
 
   field(:launcherActivity, as: GoogleApi.Testing.V1.Model.LauncherActivityIntent)
   field(:startActivity, as: GoogleApi.Testing.V1.Model.StartActivityIntent)
+  field(:timeout)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Testing.V1.Model.RoboStartingIntent do
