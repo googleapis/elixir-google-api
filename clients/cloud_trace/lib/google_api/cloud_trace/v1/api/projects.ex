@@ -72,7 +72,7 @@ defmodule GoogleApi.CloudTrace.V1.Api.Projects do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/v1/projects/{projectId}/traces", %{
-        "projectId" => URI.encode_www_form(project_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -134,8 +134,8 @@ defmodule GoogleApi.CloudTrace.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectId}/traces/{traceId}", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "traceId" => URI.encode_www_form(trace_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "traceId" => URI.encode(trace_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -204,7 +204,7 @@ defmodule GoogleApi.CloudTrace.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectId}/traces", %{
-        "projectId" => URI.encode_www_form(project_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
