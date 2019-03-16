@@ -69,7 +69,7 @@ defmodule GoogleApi.PlayCustomApp.V1.Api.Accounts do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/playcustomapp/v1/accounts/{account}/customApps", %{
-        "account" => URI.encode_www_form(account)
+        "account" => URI.encode(account, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -129,7 +129,7 @@ defmodule GoogleApi.PlayCustomApp.V1.Api.Accounts do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/resumable/upload/playcustomapp/v1/accounts/{account}/customApps", %{
-        "account" => URI.encode_www_form(account)
+        "account" => URI.encode(account, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :uploadType, upload_type)
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -194,7 +194,7 @@ defmodule GoogleApi.PlayCustomApp.V1.Api.Accounts do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/upload/playcustomapp/v1/accounts/{account}/customApps", %{
-        "account" => URI.encode_www_form(account)
+        "account" => URI.encode(account, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :uploadType, upload_type)
       |> Request.add_param(:body, :metadata, metadata)
