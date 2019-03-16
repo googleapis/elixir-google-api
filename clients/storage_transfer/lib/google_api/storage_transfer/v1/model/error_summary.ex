@@ -25,7 +25,7 @@ defmodule GoogleApi.StorageTransfer.V1.Model.ErrorSummary do
   - errorCode (String.t): Required. Defaults to: `null`.
     - Enum - one of [OK, CANCELLED, UNKNOWN, INVALID_ARGUMENT, DEADLINE_EXCEEDED, NOT_FOUND, ALREADY_EXISTS, PERMISSION_DENIED, UNAUTHENTICATED, RESOURCE_EXHAUSTED, FAILED_PRECONDITION, ABORTED, OUT_OF_RANGE, UNIMPLEMENTED, INTERNAL, UNAVAILABLE, DATA_LOSS]
   - errorCount (String.t): Count of this type of error. Required. Defaults to: `null`.
-  - errorLogEntries ([ErrorLogEntry]): Error samples. Defaults to: `null`.
+  - errorLogEntries ([ErrorLogEntry]): Error samples.  No more than 100 error log entries may be recorded for a given error code for a single task. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -126,7 +126,7 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/{+jobName}", %{
-        "jobName" => URI.encode_www_form(job_name)
+        "jobName" => URI.encode(job_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -244,7 +244,7 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/v1/{+jobName}", %{
-        "jobName" => URI.encode_www_form(job_name)
+        "jobName" => URI.encode(job_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
