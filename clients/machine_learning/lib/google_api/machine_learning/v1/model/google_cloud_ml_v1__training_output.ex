@@ -22,8 +22,10 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1TrainingOutput do
 
   ## Attributes
 
+  - builtInAlgorithmOutput (GoogleCloudMlV1BuiltInAlgorithmOutput): Details related to built-in algorithms job. Only set for built-in algorithms jobs. Defaults to: `null`.
   - completedTrialCount (String.t): The number of hyperparameter tuning trials that completed successfully. Only set for hyperparameter tuning jobs. Defaults to: `null`.
   - consumedMLUnits (float()): The amount of ML units consumed by the job. Defaults to: `null`.
+  - isBuiltInAlgorithmJob (boolean()): Whether this job is a built-in Algorithm job. Defaults to: `null`.
   - isHyperparameterTuningJob (boolean()): Whether this job is a hyperparameter tuning job. Defaults to: `null`.
   - trials ([GoogleCloudMlV1HyperparameterOutput]): Results for individual Hyperparameter trials. Only set for hyperparameter tuning jobs. Defaults to: `null`.
   """
@@ -31,15 +33,24 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1TrainingOutput do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :builtInAlgorithmOutput =>
+            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1BuiltInAlgorithmOutput.t(),
           :completedTrialCount => any(),
           :consumedMLUnits => any(),
+          :isBuiltInAlgorithmJob => any(),
           :isHyperparameterTuningJob => any(),
           :trials =>
             list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1HyperparameterOutput.t())
         }
 
+  field(
+    :builtInAlgorithmOutput,
+    as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1BuiltInAlgorithmOutput
+  )
+
   field(:completedTrialCount)
   field(:consumedMLUnits)
+  field(:isBuiltInAlgorithmJob)
   field(:isHyperparameterTuningJob)
 
   field(

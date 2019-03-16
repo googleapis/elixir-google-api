@@ -22,7 +22,6 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1PredictionInput do
 
   ## Attributes
 
-  - accelerator (GoogleCloudMlV1AcceleratorConfig): Optional. The type and number of accelerators to be attached to each machine running the job. Defaults to: `null`.
   - batchSize (String.t): Optional. Number of records per batch, defaults to 64. The service will buffer batch_size number of records in memory before invoking one Tensorflow prediction call internally. So take the record size and memory available into consideration when setting this parameter. Defaults to: `null`.
   - dataFormat (String.t): Required. The format of the input data files. Defaults to: `null`.
     - Enum - one of [DATA_FORMAT_UNSPECIFIED, JSON, TEXT, TF_RECORD, TF_RECORD_GZIP, CSV]
@@ -42,7 +41,6 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1PredictionInput do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accelerator => GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1AcceleratorConfig.t(),
           :batchSize => any(),
           :dataFormat => any(),
           :inputPaths => list(any()),
@@ -57,7 +55,6 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1PredictionInput do
           :versionName => any()
         }
 
-  field(:accelerator, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1AcceleratorConfig)
   field(:batchSize)
   field(:dataFormat)
   field(:inputPaths, type: :list)

@@ -23,6 +23,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1HyperparameterOutput
   ## Attributes
 
   - allMetrics ([GoogleCloudMlV1HyperparameterOutputHyperparameterMetric]): All recorded object metrics for this trial. This field is not currently populated. Defaults to: `null`.
+  - builtInAlgorithmOutput (GoogleCloudMlV1BuiltInAlgorithmOutput): Details related to built-in algorithms job. Only set this for built-in algorithms jobs and for trials that succeeded. Defaults to: `null`.
   - finalMetric (GoogleCloudMlV1HyperparameterOutputHyperparameterMetric): The final objective metric seen for this trial. Defaults to: `null`.
   - hyperparameters (%{optional(String.t) &#x3D;&gt; String.t}): The hyperparameters given to this trial. Defaults to: `null`.
   - isTrialStoppedEarly (boolean()): True if the trial is stopped early. Defaults to: `null`.
@@ -36,6 +37,8 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1HyperparameterOutput
             list(
               GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1HyperparameterOutputHyperparameterMetric.t()
             ),
+          :builtInAlgorithmOutput =>
+            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1BuiltInAlgorithmOutput.t(),
           :finalMetric =>
             GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1HyperparameterOutputHyperparameterMetric.t(),
           :hyperparameters => map(),
@@ -48,6 +51,11 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1HyperparameterOutput
     as:
       GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1HyperparameterOutputHyperparameterMetric,
     type: :list
+  )
+
+  field(
+    :builtInAlgorithmOutput,
+    as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1BuiltInAlgorithmOutput
   )
 
   field(
