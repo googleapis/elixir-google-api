@@ -75,8 +75,8 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Api.ImageConfigurations d
       Request.new()
       |> Request.method(:post)
       |> Request.url("/games/v1configuration/images/{resourceId}/imageType/{imageType}", %{
-        "resourceId" => URI.encode_www_form(resource_id),
-        "imageType" => URI.encode_www_form(image_type)
+        "resourceId" => URI.encode(resource_id, &URI.char_unreserved?/1),
+        "imageType" => URI.encode(image_type, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -141,8 +141,8 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Api.ImageConfigurations d
       |> Request.url(
         "/resumable/upload/games/v1configuration/images/{resourceId}/imageType/{imageType}",
         %{
-          "resourceId" => URI.encode_www_form(resource_id),
-          "imageType" => URI.encode_www_form(image_type)
+          "resourceId" => URI.encode(resource_id, &URI.char_unreserved?/1),
+          "imageType" => URI.encode(image_type, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_param(:query, :uploadType, upload_type)
@@ -210,8 +210,8 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Api.ImageConfigurations d
       Request.new()
       |> Request.method(:post)
       |> Request.url("/upload/games/v1configuration/images/{resourceId}/imageType/{imageType}", %{
-        "resourceId" => URI.encode_www_form(resource_id),
-        "imageType" => URI.encode_www_form(image_type)
+        "resourceId" => URI.encode(resource_id, &URI.char_unreserved?/1),
+        "imageType" => URI.encode(image_type, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :uploadType, upload_type)
       |> Request.add_param(:file, :data, data)
