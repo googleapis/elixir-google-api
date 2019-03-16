@@ -90,9 +90,9 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/registries/{registriesId}:bindDeviceToGateway",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "registriesId" => URI.encode_www_form(registries_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "registriesId" => URI.encode(registries_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -163,8 +163,8 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/registries", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "locationsId" => URI.encode_www_form(locations_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -235,9 +235,9 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/registries/{registriesId}",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "registriesId" => URI.encode_www_form(registries_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "registriesId" => URI.encode(registries_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -316,10 +316,10 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/registries/{registriesId}/devices/{devicesId}/configVersions",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "registriesId" => URI.encode_www_form(registries_id),
-          "devicesId" => URI.encode_www_form(devices_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "registriesId" => URI.encode(registries_id, &URI.char_unreserved?/1),
+          "devicesId" => URI.encode(devices_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -395,9 +395,9 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/registries/{registriesId}/devices",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "registriesId" => URI.encode_www_form(registries_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "registriesId" => URI.encode(registries_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -472,10 +472,10 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/registries/{registriesId}/devices/{devicesId}",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "registriesId" => URI.encode_www_form(registries_id),
-          "devicesId" => URI.encode_www_form(devices_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "registriesId" => URI.encode(registries_id, &URI.char_unreserved?/1),
+          "devicesId" => URI.encode(devices_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -552,10 +552,10 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/registries/{registriesId}/devices/{devicesId}",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "registriesId" => URI.encode_www_form(registries_id),
-          "devicesId" => URI.encode_www_form(devices_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "registriesId" => URI.encode(registries_id, &URI.char_unreserved?/1),
+          "devicesId" => URI.encode(devices_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -643,9 +643,9 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/registries/{registriesId}/devices",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "registriesId" => URI.encode_www_form(registries_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "registriesId" => URI.encode(registries_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -722,10 +722,10 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/registries/{registriesId}/devices/{devicesId}:modifyCloudToDeviceConfig",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "registriesId" => URI.encode_www_form(registries_id),
-          "devicesId" => URI.encode_www_form(devices_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "registriesId" => URI.encode(registries_id, &URI.char_unreserved?/1),
+          "devicesId" => URI.encode(devices_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -804,10 +804,10 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/registries/{registriesId}/devices/{devicesId}",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "registriesId" => URI.encode_www_form(registries_id),
-          "devicesId" => URI.encode_www_form(devices_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "registriesId" => URI.encode(registries_id, &URI.char_unreserved?/1),
+          "devicesId" => URI.encode(devices_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -886,10 +886,10 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/registries/{registriesId}/devices/{devicesId}:sendCommandToDevice",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "registriesId" => URI.encode_www_form(registries_id),
-          "devicesId" => URI.encode_www_form(devices_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "registriesId" => URI.encode(registries_id, &URI.char_unreserved?/1),
+          "devicesId" => URI.encode(devices_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -970,10 +970,10 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/registries/{registriesId}/devices/{devicesId}/states",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "registriesId" => URI.encode_www_form(registries_id),
-          "devicesId" => URI.encode_www_form(devices_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "registriesId" => URI.encode(registries_id, &URI.char_unreserved?/1),
+          "devicesId" => URI.encode(devices_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1045,9 +1045,9 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/registries/{registriesId}",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "registriesId" => URI.encode_www_form(registries_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "registriesId" => URI.encode(registries_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1121,9 +1121,9 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/registries/{registriesId}:getIamPolicy",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "registriesId" => URI.encode_www_form(registries_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "registriesId" => URI.encode(registries_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1202,10 +1202,10 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/registries/{registriesId}/groups/{groupsId}:bindDeviceToGateway",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "registriesId" => URI.encode_www_form(registries_id),
-          "groupsId" => URI.encode_www_form(groups_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "registriesId" => URI.encode(registries_id, &URI.char_unreserved?/1),
+          "groupsId" => URI.encode(groups_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1289,11 +1289,11 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/registries/{registriesId}/groups/{groupsId}/devices/{devicesId}/configVersions",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "registriesId" => URI.encode_www_form(registries_id),
-          "groupsId" => URI.encode_www_form(groups_id),
-          "devicesId" => URI.encode_www_form(devices_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "registriesId" => URI.encode(registries_id, &URI.char_unreserved?/1),
+          "groupsId" => URI.encode(groups_id, &URI.char_unreserved?/1),
+          "devicesId" => URI.encode(devices_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1375,11 +1375,11 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/registries/{registriesId}/groups/{groupsId}/devices/{devicesId}",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "registriesId" => URI.encode_www_form(registries_id),
-          "groupsId" => URI.encode_www_form(groups_id),
-          "devicesId" => URI.encode_www_form(devices_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "registriesId" => URI.encode(registries_id, &URI.char_unreserved?/1),
+          "groupsId" => URI.encode(groups_id, &URI.char_unreserved?/1),
+          "devicesId" => URI.encode(devices_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1470,10 +1470,10 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/registries/{registriesId}/groups/{groupsId}/devices",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "registriesId" => URI.encode_www_form(registries_id),
-          "groupsId" => URI.encode_www_form(groups_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "registriesId" => URI.encode(registries_id, &URI.char_unreserved?/1),
+          "groupsId" => URI.encode(groups_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1553,11 +1553,11 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/registries/{registriesId}/groups/{groupsId}/devices/{devicesId}:modifyCloudToDeviceConfig",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "registriesId" => URI.encode_www_form(registries_id),
-          "groupsId" => URI.encode_www_form(groups_id),
-          "devicesId" => URI.encode_www_form(devices_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "registriesId" => URI.encode(registries_id, &URI.char_unreserved?/1),
+          "groupsId" => URI.encode(groups_id, &URI.char_unreserved?/1),
+          "devicesId" => URI.encode(devices_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1639,11 +1639,11 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/registries/{registriesId}/groups/{groupsId}/devices/{devicesId}",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "registriesId" => URI.encode_www_form(registries_id),
-          "groupsId" => URI.encode_www_form(groups_id),
-          "devicesId" => URI.encode_www_form(devices_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "registriesId" => URI.encode(registries_id, &URI.char_unreserved?/1),
+          "groupsId" => URI.encode(groups_id, &URI.char_unreserved?/1),
+          "devicesId" => URI.encode(devices_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1725,11 +1725,11 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/registries/{registriesId}/groups/{groupsId}/devices/{devicesId}:sendCommandToDevice",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "registriesId" => URI.encode_www_form(registries_id),
-          "groupsId" => URI.encode_www_form(groups_id),
-          "devicesId" => URI.encode_www_form(devices_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "registriesId" => URI.encode(registries_id, &URI.char_unreserved?/1),
+          "groupsId" => URI.encode(groups_id, &URI.char_unreserved?/1),
+          "devicesId" => URI.encode(devices_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1813,11 +1813,11 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/registries/{registriesId}/groups/{groupsId}/devices/{devicesId}/states",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "registriesId" => URI.encode_www_form(registries_id),
-          "groupsId" => URI.encode_www_form(groups_id),
-          "devicesId" => URI.encode_www_form(devices_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "registriesId" => URI.encode(registries_id, &URI.char_unreserved?/1),
+          "groupsId" => URI.encode(groups_id, &URI.char_unreserved?/1),
+          "devicesId" => URI.encode(devices_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1894,10 +1894,10 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/registries/{registriesId}/groups/{groupsId}:getIamPolicy",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "registriesId" => URI.encode_www_form(registries_id),
-          "groupsId" => URI.encode_www_form(groups_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "registriesId" => URI.encode(registries_id, &URI.char_unreserved?/1),
+          "groupsId" => URI.encode(groups_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1974,10 +1974,10 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/registries/{registriesId}/groups/{groupsId}:setIamPolicy",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "registriesId" => URI.encode_www_form(registries_id),
-          "groupsId" => URI.encode_www_form(groups_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "registriesId" => URI.encode(registries_id, &URI.char_unreserved?/1),
+          "groupsId" => URI.encode(groups_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2056,10 +2056,10 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/registries/{registriesId}/groups/{groupsId}:testIamPermissions",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "registriesId" => URI.encode_www_form(registries_id),
-          "groupsId" => URI.encode_www_form(groups_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "registriesId" => URI.encode(registries_id, &URI.char_unreserved?/1),
+          "groupsId" => URI.encode(groups_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2140,10 +2140,10 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/registries/{registriesId}/groups/{groupsId}:unbindDeviceFromGateway",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "registriesId" => URI.encode_www_form(registries_id),
-          "groupsId" => URI.encode_www_form(groups_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "registriesId" => URI.encode(registries_id, &URI.char_unreserved?/1),
+          "groupsId" => URI.encode(groups_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2218,8 +2218,8 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/registries", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "locationsId" => URI.encode_www_form(locations_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2296,9 +2296,9 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/registries/{registriesId}",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "registriesId" => URI.encode_www_form(registries_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "registriesId" => URI.encode(registries_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2372,9 +2372,9 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/registries/{registriesId}:setIamPolicy",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "registriesId" => URI.encode_www_form(registries_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "registriesId" => URI.encode(registries_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2450,9 +2450,9 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/registries/{registriesId}:testIamPermissions",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "registriesId" => URI.encode_www_form(registries_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "registriesId" => URI.encode(registries_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2530,9 +2530,9 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/registries/{registriesId}:unbindDeviceFromGateway",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "registriesId" => URI.encode_www_form(registries_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "registriesId" => URI.encode(registries_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
