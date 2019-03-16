@@ -23,6 +23,7 @@ defmodule GoogleApi.DFAReporting.V28.Model.FloodlightActivitiesGenerateTagRespon
   ## Attributes
 
   - floodlightActivityTag (String.t): Generated tag for this Floodlight activity. For global site tags, this is the event snippet. Defaults to: `null`.
+  - globalSiteTagGlobalSnippet (String.t): The global snippet section of a global site tag. The global site tag sets new cookies on your domain, which will store a unique identifier for a user or the ad click that brought the user to your site. Learn more. Defaults to: `null`.
   - kind (String.t): Identifies what kind of resource this is. Value: the fixed string \&quot;dfareporting#floodlightActivitiesGenerateTagResponse\&quot;. Defaults to: `null`.
   """
 
@@ -30,10 +31,12 @@ defmodule GoogleApi.DFAReporting.V28.Model.FloodlightActivitiesGenerateTagRespon
 
   @type t :: %__MODULE__{
           :floodlightActivityTag => any(),
+          :globalSiteTagGlobalSnippet => any(),
           :kind => any()
         }
 
   field(:floodlightActivityTag)
+  field(:globalSiteTagGlobalSnippet)
   field(:kind)
 end
 
