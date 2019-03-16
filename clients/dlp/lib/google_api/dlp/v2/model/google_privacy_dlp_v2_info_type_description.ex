@@ -22,6 +22,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeDescription do
 
   ## Attributes
 
+  - description (String.t): Description of the infotype. Translated when language is provided in the request. Defaults to: `null`.
   - displayName (String.t): Human readable form of the infoType name. Defaults to: `null`.
   - name (String.t): Internal name of the infoType. Defaults to: `null`.
   - supportedBy ([String.t]): Which parts of the API supports this InfoType. Defaults to: `null`.
@@ -31,11 +32,13 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeDescription do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :description => any(),
           :displayName => any(),
           :name => any(),
           :supportedBy => list(any())
         }
 
+  field(:description)
   field(:displayName)
   field(:name)
   field(:supportedBy, type: :list)

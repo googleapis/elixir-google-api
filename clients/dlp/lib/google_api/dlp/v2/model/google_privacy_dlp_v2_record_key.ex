@@ -24,17 +24,20 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RecordKey do
 
   - bigQueryKey (GooglePrivacyDlpV2BigQueryKey):  Defaults to: `null`.
   - datastoreKey (GooglePrivacyDlpV2DatastoreKey):  Defaults to: `null`.
+  - idValues ([String.t]): Values of identifying columns in the given row. Order of values matches the order of field identifiers specified in the scanning request. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :bigQueryKey => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryKey.t(),
-          :datastoreKey => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DatastoreKey.t()
+          :datastoreKey => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DatastoreKey.t(),
+          :idValues => list(any())
         }
 
   field(:bigQueryKey, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryKey)
   field(:datastoreKey, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DatastoreKey)
+  field(:idValues, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RecordKey do

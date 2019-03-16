@@ -22,6 +22,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Action do
 
   ## Attributes
 
+  - jobNotificationEmails (GooglePrivacyDlpV2JobNotificationEmails): Enable email notification to project owners and editors on job&#39;s completion/failure. Defaults to: `null`.
   - pubSub (GooglePrivacyDlpV2PublishToPubSub): Publish a notification to a pubsub topic. Defaults to: `null`.
   - publishSummaryToCscc (GooglePrivacyDlpV2PublishSummaryToCscc): Publish summary to Cloud Security Command Center (Alpha). Defaults to: `null`.
   - saveFindings (GooglePrivacyDlpV2SaveFindings): Save resulting findings in a provided location. Defaults to: `null`.
@@ -30,11 +31,18 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Action do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :jobNotificationEmails =>
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2JobNotificationEmails.t(),
           :pubSub => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PublishToPubSub.t(),
           :publishSummaryToCscc =>
             GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PublishSummaryToCscc.t(),
           :saveFindings => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SaveFindings.t()
         }
+
+  field(
+    :jobNotificationEmails,
+    as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2JobNotificationEmails
+  )
 
   field(:pubSub, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PublishToPubSub)
   field(:publishSummaryToCscc, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PublishSummaryToCscc)

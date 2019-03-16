@@ -23,7 +23,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CreateInspectTemplateRequest 
   ## Attributes
 
   - inspectTemplate (GooglePrivacyDlpV2InspectTemplate): The InspectTemplate to create. Defaults to: `null`.
-  - templateId (String.t): The template id can contain uppercase and lowercase letters, numbers, and hyphens; that is, it must match the regular expression: &#x60;[a-zA-Z\\\\d-]+&#x60;. The maximum length is 100 characters. Can be empty to allow the system to generate one. Defaults to: `null`.
+  - templateId (String.t): The template id can contain uppercase and lowercase letters, numbers, and hyphens; that is, it must match the regular expression: &#x60;[a-zA-Z\\\\d-_]+&#x60;. The maximum length is 100 characters. Can be empty to allow the system to generate one. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

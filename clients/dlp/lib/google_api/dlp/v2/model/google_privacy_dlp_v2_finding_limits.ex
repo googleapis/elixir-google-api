@@ -23,8 +23,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FindingLimits do
   ## Attributes
 
   - maxFindingsPerInfoType ([GooglePrivacyDlpV2InfoTypeLimit]): Configuration of findings limit given for specified infoTypes. Defaults to: `null`.
-  - maxFindingsPerItem (integer()): Max number of findings that will be returned for each item scanned. When set within &#x60;InspectDataSourceRequest&#x60;, the maximum returned is 1000 regardless if this is set higher. When set within &#x60;InspectContentRequest&#x60;, this field is ignored. Defaults to: `null`.
-  - maxFindingsPerRequest (integer()): Max number of findings that will be returned per request/job. When set within &#x60;InspectContentRequest&#x60;, the maximum returned is 1000 regardless if this is set higher. Defaults to: `null`.
+  - maxFindingsPerItem (integer()): Max number of findings that will be returned for each item scanned. When set within &#x60;InspectDataSourceRequest&#x60;, the maximum returned is 2000 regardless if this is set higher. When set within &#x60;InspectContentRequest&#x60;, this field is ignored. Defaults to: `null`.
+  - maxFindingsPerRequest (integer()): Max number of findings that will be returned per request/job. When set within &#x60;InspectContentRequest&#x60;, the maximum returned is 2000 regardless if this is set higher. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

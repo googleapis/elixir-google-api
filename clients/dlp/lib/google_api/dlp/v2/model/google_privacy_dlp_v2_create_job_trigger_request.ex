@@ -23,7 +23,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CreateJobTriggerRequest do
   ## Attributes
 
   - jobTrigger (GooglePrivacyDlpV2JobTrigger): The JobTrigger to create. Defaults to: `null`.
-  - triggerId (String.t): The trigger id can contain uppercase and lowercase letters, numbers, and hyphens; that is, it must match the regular expression: &#x60;[a-zA-Z\\\\d-]+&#x60;. The maximum length is 100 characters. Can be empty to allow the system to generate one. Defaults to: `null`.
+  - triggerId (String.t): The trigger id can contain uppercase and lowercase letters, numbers, and hyphens; that is, it must match the regular expression: &#x60;[a-zA-Z\\\\d-_]+&#x60;. The maximum length is 100 characters. Can be empty to allow the system to generate one. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

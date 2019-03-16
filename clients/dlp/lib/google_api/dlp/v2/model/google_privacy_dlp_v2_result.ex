@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Result do
   @moduledoc """
-
+  All result fields mentioned below are updated while the job is processing.
 
   ## Attributes
 

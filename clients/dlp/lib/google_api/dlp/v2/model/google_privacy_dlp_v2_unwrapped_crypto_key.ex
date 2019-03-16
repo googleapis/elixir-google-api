@@ -22,7 +22,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2UnwrappedCryptoKey do
 
   ## Attributes
 
-  - key (binary()): The AES 128/192/256 bit key. [required] Defaults to: `null`.
+  - key (binary()): A 128/192/256 bit key. [required] Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

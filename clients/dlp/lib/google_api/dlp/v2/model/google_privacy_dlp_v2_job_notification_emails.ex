@@ -16,34 +16,26 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Regex do
+defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2JobNotificationEmails do
   @moduledoc """
-  Message defining a custom regular expression.
+  Enable email notification to project owners and editors on jobs&#39;s completion/failure.
 
   ## Attributes
 
-  - groupIndexes ([integer()]): The index of the submatch to extract as findings. When not specified, the entire match is returned. No more than 3 may be included. Defaults to: `null`.
-  - pattern (String.t): Pattern defining the regular expression. Its syntax (https://github.com/google/re2/wiki/Syntax) can be found under the google/re2 repository on GitHub. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
-  @type t :: %__MODULE__{
-          :groupIndexes => list(any()),
-          :pattern => any()
-        }
-
-  field(:groupIndexes, type: :list)
-  field(:pattern)
+  @type t :: %__MODULE__{}
 end
 
-defimpl Poison.Decoder, for: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Regex do
+defimpl Poison.Decoder, for: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2JobNotificationEmails do
   def decode(value, options) do
-    GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Regex.decode(value, options)
+    GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2JobNotificationEmails.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Regex do
+defimpl Poison.Encoder, for: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2JobNotificationEmails do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

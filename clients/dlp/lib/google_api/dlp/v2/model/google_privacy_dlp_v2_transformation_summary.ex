@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TransformationSummary do
   @moduledoc """
-  Summary of a single tranformation. Only one of &#39;transformation&#39;, &#39;field_transformation&#39;, or &#39;record_suppress&#39; will be set.
+  Summary of a single transformation. Only one of &#39;transformation&#39;, &#39;field_transformation&#39;, or &#39;record_suppress&#39; will be set.
 
   ## Attributes
 
