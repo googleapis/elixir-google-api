@@ -27,6 +27,8 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics do
   - endTime (String.t): [Output-only] End time of this job, in milliseconds since the epoch. This field will be present whenever a job is in the DONE state. Defaults to: `null`.
   - extract (JobStatistics4): [Output-only] Statistics for an extract job. Defaults to: `null`.
   - load (JobStatistics3): [Output-only] Statistics for a load job. Defaults to: `null`.
+  - numChildJobs (String.t): [Output-only] Number of child jobs executed. Defaults to: `null`.
+  - parentJobId (String.t): [Output-only] If this is a child job, the id of the parent. Defaults to: `null`.
   - query (JobStatistics2): [Output-only] Statistics for a query job. Defaults to: `null`.
   - quotaDeferments ([String.t]): [Output-only] Quotas which delayed this job&#39;s start time. Defaults to: `null`.
   - reservationUsage ([JobStatisticsReservationUsage]): [Output-only] Job resource usage breakdown by reservation. Defaults to: `null`.
@@ -43,6 +45,8 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics do
           :endTime => any(),
           :extract => GoogleApi.BigQuery.V2.Model.JobStatistics4.t(),
           :load => GoogleApi.BigQuery.V2.Model.JobStatistics3.t(),
+          :numChildJobs => any(),
+          :parentJobId => any(),
           :query => GoogleApi.BigQuery.V2.Model.JobStatistics2.t(),
           :quotaDeferments => list(any()),
           :reservationUsage =>
@@ -57,6 +61,8 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics do
   field(:endTime)
   field(:extract, as: GoogleApi.BigQuery.V2.Model.JobStatistics4)
   field(:load, as: GoogleApi.BigQuery.V2.Model.JobStatistics3)
+  field(:numChildJobs)
+  field(:parentJobId)
   field(:query, as: GoogleApi.BigQuery.V2.Model.JobStatistics2)
   field(:quotaDeferments, type: :list)
 

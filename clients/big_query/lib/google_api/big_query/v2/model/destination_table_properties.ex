@@ -24,17 +24,20 @@ defmodule GoogleApi.BigQuery.V2.Model.DestinationTableProperties do
 
   - description (String.t): [Optional] The description for the destination table. This will only be used if the destination table is newly created. If the table already exists and a value different than the current description is provided, the job will fail. Defaults to: `null`.
   - friendlyName (String.t): [Optional] The friendly name for the destination table. This will only be used if the destination table is newly created. If the table already exists and a value different than the current friendly name is provided, the job will fail. Defaults to: `null`.
+  - labels (%{optional(String.t) &#x3D;&gt; String.t}): [Optional] The labels associated with this table. You can use these to organize and group your tables. This will only be used if the destination table is newly created. If the table already exists and labels are different than the current labels are provided, the job will fail. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :description => any(),
-          :friendlyName => any()
+          :friendlyName => any(),
+          :labels => map()
         }
 
   field(:description)
   field(:friendlyName)
+  field(:labels, type: :map)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.DestinationTableProperties do

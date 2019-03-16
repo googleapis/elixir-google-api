@@ -16,34 +16,37 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.BigQuery.V2.Model.JobStatistics4 do
+defmodule GoogleApi.BigQuery.V2.Model.RoutineReference do
   @moduledoc """
 
 
   ## Attributes
 
-  - destinationUriFileCounts ([String.t]): [Output-only] Number of files per destination URI or URI pattern specified in the extract configuration. These values will be in the same order as the URIs specified in the &#39;destinationUris&#39; field. Defaults to: `null`.
-  - inputBytes (String.t): [Output-only] Number of user bytes extracted into the result. This is the byte count as computed by BigQuery for billing purposes. Defaults to: `null`.
+  - datasetId (String.t): [Required] The ID of the dataset containing this routine. Defaults to: `null`.
+  - projectId (String.t): [Required] The ID of the project containing this routine. Defaults to: `null`.
+  - routineId (String.t): [Required] The ID of the routine. The ID must contain only letters (a-z, A-Z), numbers (0-9), or underscores (_). The maximum length is 256 characters. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :destinationUriFileCounts => list(any()),
-          :inputBytes => any()
+          :datasetId => any(),
+          :projectId => any(),
+          :routineId => any()
         }
 
-  field(:destinationUriFileCounts, type: :list)
-  field(:inputBytes)
+  field(:datasetId)
+  field(:projectId)
+  field(:routineId)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.JobStatistics4 do
+defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.RoutineReference do
   def decode(value, options) do
-    GoogleApi.BigQuery.V2.Model.JobStatistics4.decode(value, options)
+    GoogleApi.BigQuery.V2.Model.RoutineReference.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.BigQuery.V2.Model.JobStatistics4 do
+defimpl Poison.Encoder, for: GoogleApi.BigQuery.V2.Model.RoutineReference do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

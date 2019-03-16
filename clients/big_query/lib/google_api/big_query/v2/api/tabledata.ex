@@ -82,9 +82,9 @@ defmodule GoogleApi.BigQuery.V2.Api.Tabledata do
       |> Request.url(
         "/bigquery/v2/projects/{projectId}/datasets/{datasetId}/tables/{tableId}/insertAll",
         %{
-          "projectId" => URI.encode_www_form(project_id),
-          "datasetId" => URI.encode_www_form(dataset_id),
-          "tableId" => URI.encode_www_form(table_id)
+          "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+          "datasetId" => URI.encode(dataset_id, &URI.char_unreserved?/1),
+          "tableId" => URI.encode(table_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -153,9 +153,9 @@ defmodule GoogleApi.BigQuery.V2.Api.Tabledata do
       |> Request.url(
         "/bigquery/v2/projects/{projectId}/datasets/{datasetId}/tables/{tableId}/data",
         %{
-          "projectId" => URI.encode_www_form(project_id),
-          "datasetId" => URI.encode_www_form(dataset_id),
-          "tableId" => URI.encode_www_form(table_id)
+          "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+          "datasetId" => URI.encode(dataset_id, &URI.char_unreserved?/1),
+          "tableId" => URI.encode(table_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)

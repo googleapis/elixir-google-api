@@ -68,7 +68,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/bigquery/v2/projects/{projectId}/serviceAccount", %{
-        "projectId" => URI.encode_www_form(project_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
