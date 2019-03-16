@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1EventInput do
   @moduledoc """
-  Events allow for matching intents by event name instead of the natural language input. For instance, input &#x60;&lt;event: { name: “welcome_event”, parameters: { name: “Sam” } }&gt;&#x60; can trigger a personalized welcome response. The parameter &#x60;name&#x60; may be used by the agent in the response: &#x60;“Hello #welcome_event.name! What can I do for you today?”&#x60;.
+  Events allow for matching intents by event name instead of the natural language input. For instance, input &#x60;&lt;event: { name: \&quot;welcome_event\&quot;, parameters: { name: \&quot;Sam\&quot; } }&gt;&#x60; can trigger a personalized welcome response. The parameter &#x60;name&#x60; may be used by the agent in the response: &#x60;\&quot;Hello #welcome_event.name! What can I do for you today?\&quot;&#x60;.
 
   ## Attributes
 
