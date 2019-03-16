@@ -76,7 +76,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/{+name}", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -141,7 +141,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/{+parent}/instanceConfigs", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -200,7 +200,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/{+parent}/instances", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -262,7 +262,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/{+parent}/databases", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -325,7 +325,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v1/{+database}", %{
-        "database" => URI.encode_www_form(database)
+        "database" => URI.encode(database, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -385,7 +385,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/{+database}/ddl", %{
-        "database" => URI.encode_www_form(database)
+        "database" => URI.encode(database, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -450,7 +450,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/{+resource}:getIamPolicy", %{
-        "resource" => URI.encode_www_form(resource)
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -514,7 +514,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/{+parent}/databases", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -579,7 +579,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/{+session}:beginTransaction", %{
-        "session" => URI.encode_www_form(session)
+        "session" => URI.encode(session, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -644,7 +644,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/{+session}:commit", %{
-        "session" => URI.encode_www_form(session)
+        "session" => URI.encode(session, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -709,13 +709,79 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/{+database}/sessions", %{
-        "database" => URI.encode_www_form(database)
+        "database" => URI.encode(database, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.Spanner.V1.Model.Session{}])
+  end
+
+  @doc """
+  Executes a batch of SQL DML statements. This method allows many statements to be run with lower latency than submitting them sequentially with ExecuteSql.  Statements are executed in order, sequentially. ExecuteBatchDmlResponse will contain a ResultSet for each DML statement that has successfully executed. If a statement fails, its error status will be returned as part of the ExecuteBatchDmlResponse. Execution will stop at the first failed statement; the remaining statements will not run.  ExecuteBatchDml is expected to return an OK status with a response even if there was an error while processing one of the DML statements. Clients must inspect response.status to determine if there were any errors while processing the request.  See more details in ExecuteBatchDmlRequest and ExecuteBatchDmlResponse.
+
+  ## Parameters
+
+  - connection (GoogleApi.Spanner.V1.Connection): Connection to server
+  - session (String.t): Required. The session in which the DML statements should be performed.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :body (ExecuteBatchDmlRequest): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.Spanner.V1.Model.ExecuteBatchDmlResponse{}} on success
+  {:error, info} on failure
+  """
+  @spec spanner_projects_instances_databases_sessions_execute_batch_dml(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Spanner.V1.Model.ExecuteBatchDmlResponse.t()} | {:error, Tesla.Env.t()}
+  def spanner_projects_instances_databases_sessions_execute_batch_dml(
+        connection,
+        session,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1/{+session}:executeBatchDml", %{
+        "session" => URI.encode(session, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Spanner.V1.Model.ExecuteBatchDmlResponse{}])
   end
 
   @doc """
@@ -774,7 +840,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/{+session}:executeSql", %{
-        "session" => URI.encode_www_form(session)
+        "session" => URI.encode(session, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -839,7 +905,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/{+session}:executeStreamingSql", %{
-        "session" => URI.encode_www_form(session)
+        "session" => URI.encode(session, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -908,7 +974,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/{+database}/sessions", %{
-        "database" => URI.encode_www_form(database)
+        "database" => URI.encode(database, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -973,7 +1039,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/{+session}:partitionQuery", %{
-        "session" => URI.encode_www_form(session)
+        "session" => URI.encode(session, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1038,7 +1104,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/{+session}:partitionRead", %{
-        "session" => URI.encode_www_form(session)
+        "session" => URI.encode(session, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1103,7 +1169,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/{+session}:read", %{
-        "session" => URI.encode_www_form(session)
+        "session" => URI.encode(session, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1168,7 +1234,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/{+session}:rollback", %{
-        "session" => URI.encode_www_form(session)
+        "session" => URI.encode(session, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1233,7 +1299,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/{+session}:streamingRead", %{
-        "session" => URI.encode_www_form(session)
+        "session" => URI.encode(session, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1298,7 +1364,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/{+resource}:setIamPolicy", %{
-        "resource" => URI.encode_www_form(resource)
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1365,7 +1431,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/{+resource}:testIamPermissions", %{
-        "resource" => URI.encode_www_form(resource)
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1427,7 +1493,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/v1/{+database}/ddl", %{
-        "database" => URI.encode_www_form(database)
+        "database" => URI.encode(database, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1488,7 +1554,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/{+parent}/instances", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1548,7 +1614,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/{+name}:cancel", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1608,7 +1674,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v1/{+name}", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1665,7 +1731,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/v1/{+name}", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
