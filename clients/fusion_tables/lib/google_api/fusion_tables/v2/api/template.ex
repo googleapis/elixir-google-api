@@ -69,7 +69,7 @@ defmodule GoogleApi.FusionTables.V2.Api.Template do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/fusiontables/v2/tables/{tableId}/templates/{templateId}", %{
-        "tableId" => URI.encode_www_form(table_id),
+        "tableId" => URI.encode(table_id, &URI.char_unreserved?/1),
         "templateId" => template_id
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -124,7 +124,7 @@ defmodule GoogleApi.FusionTables.V2.Api.Template do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/fusiontables/v2/tables/{tableId}/templates/{templateId}", %{
-        "tableId" => URI.encode_www_form(table_id),
+        "tableId" => URI.encode(table_id, &URI.char_unreserved?/1),
         "templateId" => template_id
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -174,7 +174,7 @@ defmodule GoogleApi.FusionTables.V2.Api.Template do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/fusiontables/v2/tables/{tableId}/templates", %{
-        "tableId" => URI.encode_www_form(table_id)
+        "tableId" => URI.encode(table_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -225,7 +225,7 @@ defmodule GoogleApi.FusionTables.V2.Api.Template do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/fusiontables/v2/tables/{tableId}/templates", %{
-        "tableId" => URI.encode_www_form(table_id)
+        "tableId" => URI.encode(table_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -281,7 +281,7 @@ defmodule GoogleApi.FusionTables.V2.Api.Template do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/fusiontables/v2/tables/{tableId}/templates/{templateId}", %{
-        "tableId" => URI.encode_www_form(table_id),
+        "tableId" => URI.encode(table_id, &URI.char_unreserved?/1),
         "templateId" => template_id
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -338,7 +338,7 @@ defmodule GoogleApi.FusionTables.V2.Api.Template do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/fusiontables/v2/tables/{tableId}/templates/{templateId}", %{
-        "tableId" => URI.encode_www_form(table_id),
+        "tableId" => URI.encode(table_id, &URI.char_unreserved?/1),
         "templateId" => template_id
       })
       |> Request.add_optional_params(optional_params_config, optional_params)

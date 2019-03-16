@@ -64,7 +64,7 @@ defmodule GoogleApi.FusionTables.V2.Api.Table do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/fusiontables/v2/tables/{tableId}/copy", %{
-        "tableId" => URI.encode_www_form(table_id)
+        "tableId" => URI.encode(table_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -111,7 +111,7 @@ defmodule GoogleApi.FusionTables.V2.Api.Table do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/fusiontables/v2/tables/{tableId}", %{
-        "tableId" => URI.encode_www_form(table_id)
+        "tableId" => URI.encode(table_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -158,7 +158,7 @@ defmodule GoogleApi.FusionTables.V2.Api.Table do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/fusiontables/v2/tables/{tableId}", %{
-        "tableId" => URI.encode_www_form(table_id)
+        "tableId" => URI.encode(table_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -215,7 +215,7 @@ defmodule GoogleApi.FusionTables.V2.Api.Table do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/fusiontables/v2/tables/{tableId}/import", %{
-        "tableId" => URI.encode_www_form(table_id)
+        "tableId" => URI.encode(table_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -283,7 +283,7 @@ defmodule GoogleApi.FusionTables.V2.Api.Table do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/resumable/upload/fusiontables/v2/tables/{tableId}/import", %{
-        "tableId" => URI.encode_www_form(table_id)
+        "tableId" => URI.encode(table_id, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :uploadType, upload_type)
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -355,7 +355,7 @@ defmodule GoogleApi.FusionTables.V2.Api.Table do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/upload/fusiontables/v2/tables/{tableId}/import", %{
-        "tableId" => URI.encode_www_form(table_id)
+        "tableId" => URI.encode(table_id, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :uploadType, upload_type)
       |> Request.add_param(:file, :data, data)
@@ -680,7 +680,7 @@ defmodule GoogleApi.FusionTables.V2.Api.Table do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/fusiontables/v2/tables/{tableId}", %{
-        "tableId" => URI.encode_www_form(table_id)
+        "tableId" => URI.encode(table_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -727,7 +727,7 @@ defmodule GoogleApi.FusionTables.V2.Api.Table do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/fusiontables/v2/tables/{tableId}/refetch", %{
-        "tableId" => URI.encode_www_form(table_id)
+        "tableId" => URI.encode(table_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -784,7 +784,7 @@ defmodule GoogleApi.FusionTables.V2.Api.Table do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/fusiontables/v2/tables/{tableId}/replace", %{
-        "tableId" => URI.encode_www_form(table_id)
+        "tableId" => URI.encode(table_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -852,7 +852,7 @@ defmodule GoogleApi.FusionTables.V2.Api.Table do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/resumable/upload/fusiontables/v2/tables/{tableId}/replace", %{
-        "tableId" => URI.encode_www_form(table_id)
+        "tableId" => URI.encode(table_id, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :uploadType, upload_type)
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -924,7 +924,7 @@ defmodule GoogleApi.FusionTables.V2.Api.Table do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/upload/fusiontables/v2/tables/{tableId}/replace", %{
-        "tableId" => URI.encode_www_form(table_id)
+        "tableId" => URI.encode(table_id, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :uploadType, upload_type)
       |> Request.add_param(:file, :data, data)
@@ -977,7 +977,7 @@ defmodule GoogleApi.FusionTables.V2.Api.Table do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/fusiontables/v2/tables/{tableId}", %{
-        "tableId" => URI.encode_www_form(table_id)
+        "tableId" => URI.encode(table_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

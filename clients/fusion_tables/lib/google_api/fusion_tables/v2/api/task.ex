@@ -63,8 +63,8 @@ defmodule GoogleApi.FusionTables.V2.Api.Task do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/fusiontables/v2/tables/{tableId}/tasks/{taskId}", %{
-        "tableId" => URI.encode_www_form(table_id),
-        "taskId" => URI.encode_www_form(task_id)
+        "tableId" => URI.encode(table_id, &URI.char_unreserved?/1),
+        "taskId" => URI.encode(task_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -112,8 +112,8 @@ defmodule GoogleApi.FusionTables.V2.Api.Task do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/fusiontables/v2/tables/{tableId}/tasks/{taskId}", %{
-        "tableId" => URI.encode_www_form(table_id),
-        "taskId" => URI.encode_www_form(task_id)
+        "tableId" => URI.encode(table_id, &URI.char_unreserved?/1),
+        "taskId" => URI.encode(task_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -166,7 +166,7 @@ defmodule GoogleApi.FusionTables.V2.Api.Task do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/fusiontables/v2/tables/{tableId}/tasks", %{
-        "tableId" => URI.encode_www_form(table_id)
+        "tableId" => URI.encode(table_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
