@@ -72,7 +72,7 @@ defmodule GoogleApi.ServiceUser.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/{+name}:disable", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -129,7 +129,7 @@ defmodule GoogleApi.ServiceUser.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/{+name}:enable", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -189,7 +189,7 @@ defmodule GoogleApi.ServiceUser.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/{+parent}/services", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
