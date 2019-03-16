@@ -62,7 +62,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Products do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/products/{productId}", %{
-        "productId" => URI.encode_www_form(product_id)
+        "productId" => URI.encode(product_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

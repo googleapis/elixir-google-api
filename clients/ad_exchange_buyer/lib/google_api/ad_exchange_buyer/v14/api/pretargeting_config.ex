@@ -73,8 +73,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.PretargetingConfig do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/pretargetingconfigs/{accountId}/{configId}", %{
-        "accountId" => URI.encode_www_form(account_id),
-        "configId" => URI.encode_www_form(config_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
+        "configId" => URI.encode(config_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -134,8 +134,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.PretargetingConfig do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/pretargetingconfigs/{accountId}/{configId}", %{
-        "accountId" => URI.encode_www_form(account_id),
-        "configId" => URI.encode_www_form(config_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
+        "configId" => URI.encode(config_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -192,7 +192,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.PretargetingConfig do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/pretargetingconfigs/{accountId}", %{
-        "accountId" => URI.encode_www_form(account_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -247,7 +247,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.PretargetingConfig do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/pretargetingconfigs/{accountId}", %{
-        "accountId" => URI.encode_www_form(account_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -311,8 +311,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.PretargetingConfig do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/pretargetingconfigs/{accountId}/{configId}", %{
-        "accountId" => URI.encode_www_form(account_id),
-        "configId" => URI.encode_www_form(config_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
+        "configId" => URI.encode(config_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -376,8 +376,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.PretargetingConfig do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/pretargetingconfigs/{accountId}/{configId}", %{
-        "accountId" => URI.encode_www_form(account_id),
-        "configId" => URI.encode_www_form(config_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
+        "configId" => URI.encode(config_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

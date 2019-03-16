@@ -70,7 +70,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Marketplacedeals do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/proposals/{proposalId}/deals/delete", %{
-        "proposalId" => URI.encode_www_form(proposal_id)
+        "proposalId" => URI.encode(proposal_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -127,7 +127,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Marketplacedeals do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/proposals/{proposalId}/deals/insert", %{
-        "proposalId" => URI.encode_www_form(proposal_id)
+        "proposalId" => URI.encode(proposal_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -184,7 +184,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Marketplacedeals do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/proposals/{proposalId}/deals", %{
-        "proposalId" => URI.encode_www_form(proposal_id)
+        "proposalId" => URI.encode(proposal_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -241,7 +241,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Marketplacedeals do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/proposals/{proposalId}/deals/update", %{
-        "proposalId" => URI.encode_www_form(proposal_id)
+        "proposalId" => URI.encode(proposal_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
