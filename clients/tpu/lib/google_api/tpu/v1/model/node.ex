@@ -27,7 +27,7 @@ defmodule GoogleApi.TPU.V1.Model.Node do
   - createTime (DateTime.t): Output only. The time when the node was created. Defaults to: `null`.
   - description (String.t): The user-supplied description of the TPU. Maximum of 512 characters. Defaults to: `null`.
   - health (String.t): The health status of the TPU node. Defaults to: `null`.
-    - Enum - one of [HEALTH_UNSPECIFIED, HEALTHY, UNHEALTHY, TIMEOUT]
+    - Enum - one of [HEALTH_UNSPECIFIED, HEALTHY, DEPRECATED_UNHEALTHY, TIMEOUT, UNHEALTHY_TENSORFLOW, UNHEALTHY_MAINTENANCE]
   - healthDescription (String.t): Output only. If this field is populated, it contains a description of why the TPU Node is unhealthy. Defaults to: `null`.
   - ipAddress (String.t): Output only. DEPRECATED! Use network_endpoints instead. The network address for the TPU Node as visible to Compute Engine instances. Defaults to: `null`.
   - labels (%{optional(String.t) &#x3D;&gt; String.t}): Resource labels to represent user-provided metadata. Defaults to: `null`.
@@ -38,7 +38,7 @@ defmodule GoogleApi.TPU.V1.Model.Node do
   - schedulingConfig (SchedulingConfig):  Defaults to: `null`.
   - serviceAccount (String.t): Output only. The service account used to run the tensor flow services within the node. To share resources, including Google Cloud Storage data, with the Tensorflow job running in the Node, this account must have permissions to that data. Defaults to: `null`.
   - state (String.t): Output only. The current state for the TPU Node. Defaults to: `null`.
-    - Enum - one of [STATE_UNSPECIFIED, CREATING, READY, RESTARTING, REIMAGING, DELETING, REPAIRING, STOPPED, STOPPING, STARTING, PREEMPTED, TERMINATED]
+    - Enum - one of [STATE_UNSPECIFIED, CREATING, READY, RESTARTING, REIMAGING, DELETING, REPAIRING, STOPPED, STOPPING, STARTING, PREEMPTED, TERMINATED, HIDING, HIDDEN, UNHIDING]
   - tensorflowVersion (String.t): The version of Tensorflow running in the Node. Required. Defaults to: `null`.
   """
 
