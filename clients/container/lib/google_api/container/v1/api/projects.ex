@@ -80,7 +80,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/{+name}:completeIpRotation", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -142,13 +142,73 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/{+parent}/clusters", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.Operation{}])
+  end
+
+  @doc """
+  GetJSONWebKeys gets the public component of the cluster signing keys in JSON Web Key format. This API is not yet intended for general use, and is not available for all clusters.
+
+  ## Parameters
+
+  - connection (GoogleApi.Container.V1.Connection): Connection to server
+  - parent (String.t): The cluster (project, location, cluster id) to get keys for. Specified in the format &#39;projects/*/locations/*/clusters/*&#39;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+
+  ## Returns
+
+  {:ok, %GoogleApi.Container.V1.Model.GetJsonWebKeysResponse{}} on success
+  {:error, info} on failure
+  """
+  @spec container_projects_locations_clusters_get_jwks(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, GoogleApi.Container.V1.Model.GetJsonWebKeysResponse.t()} | {:error, Tesla.Env.t()}
+  def container_projects_locations_clusters_get_jwks(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1/{+parent}/jwks", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.GetJsonWebKeysResponse{}])
   end
 
   @doc """
@@ -206,7 +266,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/{+parent}/clusters", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -271,7 +331,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/{+parent}/nodePools", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -342,7 +402,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v1/{+name}", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -412,7 +472,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/{+parent}/nodePools", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -477,7 +537,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/{+name}:rollback", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -542,7 +602,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/{+name}:setAutoscaling", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -607,7 +667,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/{+name}:setManagement", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -672,7 +732,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/{+name}:setSize", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -737,7 +797,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/v1/{+name}", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -802,7 +862,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/{+name}:setAddons", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -867,7 +927,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/{+name}:setLegacyAbac", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -932,7 +992,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/{+name}:setLocations", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -997,7 +1057,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/{+name}:setLogging", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1062,7 +1122,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/{+name}:setMaintenancePolicy", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1127,7 +1187,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/{+name}:setMasterAuth", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1192,7 +1252,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/{+name}:setMonitoring", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1257,7 +1317,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/{+name}:setNetworkPolicy", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1322,7 +1382,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/{+name}:setResourceLabels", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1387,7 +1447,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/{+name}:startIpRotation", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1452,7 +1512,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/{+name}:updateMaster", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1462,12 +1522,77 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   end
 
   @doc """
+  GetOpenIDConfig gets the OIDC discovery document for the cluster. See the OpenID Connect Discovery 1.0 specification for details. https://openid.net/specs/openid-connect-discovery-1_0.html This API is not yet intended for general use, and is not available for all clusters.
+
+  ## Parameters
+
+  - connection (GoogleApi.Container.V1.Connection): Connection to server
+  - parent (String.t): The cluster (project, location, cluster id) to get the discovery document for. Specified in the format &#39;projects/*/locations/*/clusters/*&#39;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+
+  ## Returns
+
+  {:ok, %GoogleApi.Container.V1.Model.GetOpenIdConfigResponse{}} on success
+  {:error, info} on failure
+  """
+  @spec container_projects_locations_clusters_well_known_get_openid_configuration(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Container.V1.Model.GetOpenIdConfigResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def container_projects_locations_clusters_well_known_get_openid_configuration(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1/{+parent}/.well-known/openid-configuration", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Container.V1.Model.GetOpenIdConfigResponse{}])
+  end
+
+  @doc """
   Returns configuration info about the Kubernetes Engine service.
 
   ## Parameters
 
   - connection (GoogleApi.Container.V1.Connection): Connection to server
-  - name (String.t): The name (project and location) of the server config to get Specified in the format &#39;projects/*/locations/*&#39;.
+  - name (String.t): The name (project and location) of the server config to get, specified in the format &#39;projects/*/locations/*&#39;.
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
@@ -1516,7 +1641,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/{+name}/serverConfig", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1578,7 +1703,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/{+name}:cancel", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1646,7 +1771,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/{+name}", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1710,7 +1835,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/{+parent}/operations", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1781,9 +1906,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}/addons", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "zone" => URI.encode_www_form(zone),
-        "clusterId" => URI.encode_www_form(cluster_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "clusterId" => URI.encode(cluster_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1856,9 +1981,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}:completeIpRotation",
         %{
-          "projectId" => URI.encode_www_form(project_id),
-          "zone" => URI.encode_www_form(zone),
-          "clusterId" => URI.encode_www_form(cluster_id)
+          "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+          "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+          "clusterId" => URI.encode(cluster_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1927,8 +2052,8 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectId}/zones/{zone}/clusters", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "zone" => URI.encode_www_form(zone)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1999,9 +2124,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "zone" => URI.encode_www_form(zone),
-        "clusterId" => URI.encode_www_form(cluster_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "clusterId" => URI.encode(cluster_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2072,9 +2197,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "zone" => URI.encode_www_form(zone),
-        "clusterId" => URI.encode_www_form(cluster_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "clusterId" => URI.encode(cluster_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2145,9 +2270,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}/legacyAbac", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "zone" => URI.encode_www_form(zone),
-        "clusterId" => URI.encode_www_form(cluster_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "clusterId" => URI.encode(cluster_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2216,8 +2341,8 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectId}/zones/{zone}/clusters", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "zone" => URI.encode_www_form(zone)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2288,9 +2413,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}/locations", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "zone" => URI.encode_www_form(zone),
-        "clusterId" => URI.encode_www_form(cluster_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "clusterId" => URI.encode(cluster_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2361,9 +2486,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}/logging", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "zone" => URI.encode_www_form(zone),
-        "clusterId" => URI.encode_www_form(cluster_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "clusterId" => URI.encode(cluster_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2434,9 +2559,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}/master", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "zone" => URI.encode_www_form(zone),
-        "clusterId" => URI.encode_www_form(cluster_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "clusterId" => URI.encode(cluster_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2507,9 +2632,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}/monitoring", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "zone" => URI.encode_www_form(zone),
-        "clusterId" => URI.encode_www_form(cluster_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "clusterId" => URI.encode(cluster_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2585,10 +2710,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}/nodePools/{nodePoolId}/autoscaling",
         %{
-          "projectId" => URI.encode_www_form(project_id),
-          "zone" => URI.encode_www_form(zone),
-          "clusterId" => URI.encode_www_form(cluster_id),
-          "nodePoolId" => URI.encode_www_form(node_pool_id)
+          "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+          "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+          "clusterId" => URI.encode(cluster_id, &URI.char_unreserved?/1),
+          "nodePoolId" => URI.encode(node_pool_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2660,9 +2785,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}/nodePools", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "zone" => URI.encode_www_form(zone),
-        "clusterId" => URI.encode_www_form(cluster_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "clusterId" => URI.encode(cluster_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2738,10 +2863,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}/nodePools/{nodePoolId}",
         %{
-          "projectId" => URI.encode_www_form(project_id),
-          "zone" => URI.encode_www_form(zone),
-          "clusterId" => URI.encode_www_form(cluster_id),
-          "nodePoolId" => URI.encode_www_form(node_pool_id)
+          "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+          "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+          "clusterId" => URI.encode(cluster_id, &URI.char_unreserved?/1),
+          "nodePoolId" => URI.encode(node_pool_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2818,10 +2943,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}/nodePools/{nodePoolId}",
         %{
-          "projectId" => URI.encode_www_form(project_id),
-          "zone" => URI.encode_www_form(zone),
-          "clusterId" => URI.encode_www_form(cluster_id),
-          "nodePoolId" => URI.encode_www_form(node_pool_id)
+          "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+          "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+          "clusterId" => URI.encode(cluster_id, &URI.char_unreserved?/1),
+          "nodePoolId" => URI.encode(node_pool_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2894,9 +3019,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}/nodePools", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "zone" => URI.encode_www_form(zone),
-        "clusterId" => URI.encode_www_form(cluster_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "clusterId" => URI.encode(cluster_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2972,10 +3097,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}/nodePools/{nodePoolId}:rollback",
         %{
-          "projectId" => URI.encode_www_form(project_id),
-          "zone" => URI.encode_www_form(zone),
-          "clusterId" => URI.encode_www_form(cluster_id),
-          "nodePoolId" => URI.encode_www_form(node_pool_id)
+          "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+          "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+          "clusterId" => URI.encode(cluster_id, &URI.char_unreserved?/1),
+          "nodePoolId" => URI.encode(node_pool_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -3052,10 +3177,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}/nodePools/{nodePoolId}/setManagement",
         %{
-          "projectId" => URI.encode_www_form(project_id),
-          "zone" => URI.encode_www_form(zone),
-          "clusterId" => URI.encode_www_form(cluster_id),
-          "nodePoolId" => URI.encode_www_form(node_pool_id)
+          "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+          "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+          "clusterId" => URI.encode(cluster_id, &URI.char_unreserved?/1),
+          "nodePoolId" => URI.encode(node_pool_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -3132,10 +3257,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}/nodePools/{nodePoolId}/setSize",
         %{
-          "projectId" => URI.encode_www_form(project_id),
-          "zone" => URI.encode_www_form(zone),
-          "clusterId" => URI.encode_www_form(cluster_id),
-          "nodePoolId" => URI.encode_www_form(node_pool_id)
+          "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+          "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+          "clusterId" => URI.encode(cluster_id, &URI.char_unreserved?/1),
+          "nodePoolId" => URI.encode(node_pool_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -3212,10 +3337,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}/nodePools/{nodePoolId}/update",
         %{
-          "projectId" => URI.encode_www_form(project_id),
-          "zone" => URI.encode_www_form(zone),
-          "clusterId" => URI.encode_www_form(cluster_id),
-          "nodePoolId" => URI.encode_www_form(node_pool_id)
+          "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+          "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+          "clusterId" => URI.encode(cluster_id, &URI.char_unreserved?/1),
+          "nodePoolId" => URI.encode(node_pool_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -3289,9 +3414,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}/resourceLabels",
         %{
-          "projectId" => URI.encode_www_form(project_id),
-          "zone" => URI.encode_www_form(zone),
-          "clusterId" => URI.encode_www_form(cluster_id)
+          "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+          "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+          "clusterId" => URI.encode(cluster_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -3365,9 +3490,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}:setMaintenancePolicy",
         %{
-          "projectId" => URI.encode_www_form(project_id),
-          "zone" => URI.encode_www_form(zone),
-          "clusterId" => URI.encode_www_form(cluster_id)
+          "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+          "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+          "clusterId" => URI.encode(cluster_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -3441,9 +3566,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}:setMasterAuth",
         %{
-          "projectId" => URI.encode_www_form(project_id),
-          "zone" => URI.encode_www_form(zone),
-          "clusterId" => URI.encode_www_form(cluster_id)
+          "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+          "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+          "clusterId" => URI.encode(cluster_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -3517,9 +3642,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}:setNetworkPolicy",
         %{
-          "projectId" => URI.encode_www_form(project_id),
-          "zone" => URI.encode_www_form(zone),
-          "clusterId" => URI.encode_www_form(cluster_id)
+          "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+          "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+          "clusterId" => URI.encode(cluster_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -3593,9 +3718,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}:startIpRotation",
         %{
-          "projectId" => URI.encode_www_form(project_id),
-          "zone" => URI.encode_www_form(zone),
-          "clusterId" => URI.encode_www_form(cluster_id)
+          "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+          "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+          "clusterId" => URI.encode(cluster_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -3667,9 +3792,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "zone" => URI.encode_www_form(zone),
-        "clusterId" => URI.encode_www_form(cluster_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "clusterId" => URI.encode(cluster_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -3698,7 +3823,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :name (String.t): The name (project and location) of the server config to get Specified in the format &#39;projects/*/locations/*&#39;.
+    - :name (String.t): The name (project and location) of the server config to get, specified in the format &#39;projects/*/locations/*&#39;.
 
   ## Returns
 
@@ -3737,8 +3862,8 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectId}/zones/{zone}/serverconfig", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "zone" => URI.encode_www_form(zone)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -3809,9 +3934,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectId}/zones/{zone}/operations/{operationId}:cancel", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "zone" => URI.encode_www_form(zone),
-        "operationId" => URI.encode_www_form(operation_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "operationId" => URI.encode(operation_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -3882,9 +4007,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectId}/zones/{zone}/operations/{operationId}", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "zone" => URI.encode_www_form(zone),
-        "operationId" => URI.encode_www_form(operation_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "operationId" => URI.encode(operation_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -3953,8 +4078,8 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectId}/zones/{zone}/operations", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "zone" => URI.encode_www_form(zone)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
