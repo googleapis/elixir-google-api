@@ -126,7 +126,7 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/{+name}", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -185,7 +185,7 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/{+parent}/members", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -244,7 +244,7 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/{+parent}/messages", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -299,7 +299,7 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v1/{+name}", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -358,7 +358,7 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/v1/{+name}", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
