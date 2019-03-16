@@ -124,7 +124,7 @@ defmodule GoogleApi.CloudBilling.V1.Api.BillingAccounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/{+name}", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -184,7 +184,7 @@ defmodule GoogleApi.CloudBilling.V1.Api.BillingAccounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/{+resource}:getIamPolicy", %{
-        "resource" => URI.encode_www_form(resource)
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -304,7 +304,7 @@ defmodule GoogleApi.CloudBilling.V1.Api.BillingAccounts do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/v1/{+name}", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -369,7 +369,7 @@ defmodule GoogleApi.CloudBilling.V1.Api.BillingAccounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/{+name}/projects", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -433,7 +433,7 @@ defmodule GoogleApi.CloudBilling.V1.Api.BillingAccounts do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/{+resource}:setIamPolicy", %{
-        "resource" => URI.encode_www_form(resource)
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -500,7 +500,7 @@ defmodule GoogleApi.CloudBilling.V1.Api.BillingAccounts do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/{+resource}:testIamPermissions", %{
-        "resource" => URI.encode_www_form(resource)
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

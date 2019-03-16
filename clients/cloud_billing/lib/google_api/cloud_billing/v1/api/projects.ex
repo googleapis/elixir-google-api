@@ -70,7 +70,7 @@ defmodule GoogleApi.CloudBilling.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/{+name}/billingInfo", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -132,7 +132,7 @@ defmodule GoogleApi.CloudBilling.V1.Api.Projects do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/v1/{+name}/billingInfo", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
