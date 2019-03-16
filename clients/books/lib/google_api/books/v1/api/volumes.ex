@@ -70,7 +70,7 @@ defmodule GoogleApi.Books.V1.Api.Volumes do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/volumes/{volumeId}/associated", %{
-        "volumeId" => URI.encode_www_form(volume_id)
+        "volumeId" => URI.encode(volume_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -129,7 +129,7 @@ defmodule GoogleApi.Books.V1.Api.Volumes do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/volumes/{volumeId}", %{
-        "volumeId" => URI.encode_www_form(volume_id)
+        "volumeId" => URI.encode(volume_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
