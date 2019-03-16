@@ -76,7 +76,7 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v1beta1/projects/{projectsId}/events", %{
-        "projectsId" => URI.encode_www_form(projects_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -153,7 +153,7 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1beta1/projects/{projectsId}/events", %{
-        "projectsId" => URI.encode_www_form(projects_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -218,7 +218,7 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1beta1/projects/{projectsId}/events:report", %{
-        "projectsId" => URI.encode_www_form(projects_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -303,7 +303,7 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1beta1/projects/{projectsId}/groupStats", %{
-        "projectsId" => URI.encode_www_form(projects_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -373,8 +373,8 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1beta1/projects/{projectsId}/groups/{groupsId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "groupsId" => URI.encode_www_form(groups_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "groupsId" => URI.encode(groups_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -446,8 +446,8 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/v1beta1/projects/{projectsId}/groups/{groupsId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "groupsId" => URI.encode_www_form(groups_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "groupsId" => URI.encode(groups_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
