@@ -24,6 +24,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.Flag do
 
   - allowedStringValues ([String.t]): For STRING flags, a list of strings that the value can be set to. Defaults to: `null`.
   - appliesTo ([String.t]): The database version this flag applies to. Can be MYSQL_5_5, MYSQL_5_6, or MYSQL_5_7. MYSQL_5_7 is applicable only to Second Generation instances. Defaults to: `null`.
+  - inBeta (boolean()): True if the flag is only released in Beta. Defaults to: `null`.
   - kind (String.t): This is always sql#flag. Defaults to: `null`.
   - maxValue (String.t): For INTEGER flags, the maximum allowed value. Defaults to: `null`.
   - minValue (String.t): For INTEGER flags, the minimum allowed value. Defaults to: `null`.
@@ -37,6 +38,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.Flag do
   @type t :: %__MODULE__{
           :allowedStringValues => list(any()),
           :appliesTo => list(any()),
+          :inBeta => any(),
           :kind => any(),
           :maxValue => any(),
           :minValue => any(),
@@ -47,6 +49,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.Flag do
 
   field(:allowedStringValues, type: :list)
   field(:appliesTo, type: :list)
+  field(:inBeta)
   field(:kind)
   field(:maxValue)
   field(:minValue)
