@@ -75,7 +75,7 @@ defmodule GoogleApi.YouTubeReporting.V1.Api.Media do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/media/{+resourceName}", %{
-        "resourceName" => URI.encode_www_form(resource_name)
+        "resourceName" => URI.encode(resource_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
