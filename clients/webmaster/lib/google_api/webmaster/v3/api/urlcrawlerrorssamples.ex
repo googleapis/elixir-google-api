@@ -80,8 +80,8 @@ defmodule GoogleApi.Webmaster.V3.Api.Urlcrawlerrorssamples do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/sites/{siteUrl}/urlCrawlErrorsSamples/{url}", %{
-        "siteUrl" => URI.encode_www_form(site_url),
-        "url" => URI.encode_www_form(url)
+        "siteUrl" => URI.encode(site_url, &URI.char_unreserved?/1),
+        "url" => URI.encode(url, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :category, category)
       |> Request.add_param(:query, :platform, platform)
@@ -146,7 +146,7 @@ defmodule GoogleApi.Webmaster.V3.Api.Urlcrawlerrorssamples do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/sites/{siteUrl}/urlCrawlErrorsSamples", %{
-        "siteUrl" => URI.encode_www_form(site_url)
+        "siteUrl" => URI.encode(site_url, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :category, category)
       |> Request.add_param(:query, :platform, platform)
@@ -214,8 +214,8 @@ defmodule GoogleApi.Webmaster.V3.Api.Urlcrawlerrorssamples do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/sites/{siteUrl}/urlCrawlErrorsSamples/{url}", %{
-        "siteUrl" => URI.encode_www_form(site_url),
-        "url" => URI.encode_www_form(url)
+        "siteUrl" => URI.encode(site_url, &URI.char_unreserved?/1),
+        "url" => URI.encode(url, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :category, category)
       |> Request.add_param(:query, :platform, platform)

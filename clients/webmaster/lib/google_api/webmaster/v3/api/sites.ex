@@ -62,7 +62,7 @@ defmodule GoogleApi.Webmaster.V3.Api.Sites do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/sites/{siteUrl}", %{
-        "siteUrl" => URI.encode_www_form(site_url)
+        "siteUrl" => URI.encode(site_url, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -109,7 +109,7 @@ defmodule GoogleApi.Webmaster.V3.Api.Sites do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/sites/{siteUrl}", %{
-        "siteUrl" => URI.encode_www_form(site_url)
+        "siteUrl" => URI.encode(site_url, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -156,7 +156,7 @@ defmodule GoogleApi.Webmaster.V3.Api.Sites do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/sites/{siteUrl}", %{
-        "siteUrl" => URI.encode_www_form(site_url)
+        "siteUrl" => URI.encode(site_url, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
