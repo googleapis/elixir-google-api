@@ -16,37 +16,38 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Vision.V1.Model.CropHint do
+defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1OperationMetadata do
   @moduledoc """
-  Single crop hint that is used to generate a new crop when serving an image.
+  Contains metadata for the BatchAnnotateImages operation.
 
   ## Attributes
 
-  - boundingPoly (BoundingPoly): The bounding polygon for the crop region. The coordinates of the bounding box are in the original image&#39;s scale. Defaults to: `null`.
-  - confidence (float()): Confidence of this being a salient region.  Range [0, 1]. Defaults to: `null`.
-  - importanceFraction (float()): Fraction of importance of this salient region with respect to the original image. Defaults to: `null`.
+  - createTime (DateTime.t): The time when the batch request was received. Defaults to: `null`.
+  - state (String.t): Current state of the batch operation. Defaults to: `null`.
+    - Enum - one of [STATE_UNSPECIFIED, CREATED, RUNNING, DONE, CANCELLED]
+  - updateTime (DateTime.t): The time when the operation result was last updated. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :boundingPoly => GoogleApi.Vision.V1.Model.BoundingPoly.t(),
-          :confidence => any(),
-          :importanceFraction => any()
+          :createTime => DateTime.t(),
+          :state => any(),
+          :updateTime => DateTime.t()
         }
 
-  field(:boundingPoly, as: GoogleApi.Vision.V1.Model.BoundingPoly)
-  field(:confidence)
-  field(:importanceFraction)
+  field(:createTime, as: DateTime)
+  field(:state)
+  field(:updateTime, as: DateTime)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Vision.V1.Model.CropHint do
+defimpl Poison.Decoder, for: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1OperationMetadata do
   def decode(value, options) do
-    GoogleApi.Vision.V1.Model.CropHint.decode(value, options)
+    GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1OperationMetadata.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.Vision.V1.Model.CropHint do
+defimpl Poison.Encoder, for: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1OperationMetadata do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

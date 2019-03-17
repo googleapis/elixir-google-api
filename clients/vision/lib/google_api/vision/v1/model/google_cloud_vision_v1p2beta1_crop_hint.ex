@@ -22,7 +22,7 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1CropHint do
 
   ## Attributes
 
-  - boundingPoly (GoogleCloudVisionV1p2beta1BoundingPoly): The bounding polygon for the crop region. The coordinates of the bounding box are in the original image&#39;s scale, as returned in &#x60;ImageParams&#x60;. Defaults to: `null`.
+  - boundingPoly (GoogleCloudVisionV1p2beta1BoundingPoly): The bounding polygon for the crop region. The coordinates of the bounding box are in the original image&#39;s scale. Defaults to: `null`.
   - confidence (float()): Confidence of this being a salient region.  Range [0, 1]. Defaults to: `null`.
   - importanceFraction (float()): Fraction of importance of this salient region with respect to the original image. Defaults to: `null`.
   """
