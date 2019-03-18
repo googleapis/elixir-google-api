@@ -133,6 +133,8 @@ defmodule GoogleApi.Gax.ModelBase do
 
   defp parse_date_time(nil), do: nil
 
+  defp parse_date_time(%DateTime{} = date_time), do: date_time
+
   defp parse_date_time(iso8601) do
     case DateTime.from_iso8601(iso8601) do
       {:ok, datetime, _offset} -> datetime
