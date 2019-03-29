@@ -77,7 +77,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v2beta1/accounts/{accountId}/clients", %{
-        "accountId" => URI.encode_www_form(account_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -143,8 +143,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v2beta1/accounts/{accountId}/clients/{clientAccountId}", %{
-        "accountId" => URI.encode_www_form(account_id),
-        "clientAccountId" => URI.encode_www_form(client_account_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
+        "clientAccountId" => URI.encode(client_account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -214,8 +214,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v2beta1/accounts/{accountId}/clients/{clientAccountId}/invitations", %{
-        "accountId" => URI.encode_www_form(account_id),
-        "clientAccountId" => URI.encode_www_form(client_account_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
+        "clientAccountId" => URI.encode(client_account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -290,9 +290,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       |> Request.url(
         "/v2beta1/accounts/{accountId}/clients/{clientAccountId}/invitations/{invitationId}",
         %{
-          "accountId" => URI.encode_www_form(account_id),
-          "clientAccountId" => URI.encode_www_form(client_account_id),
-          "invitationId" => URI.encode_www_form(invitation_id)
+          "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
+          "clientAccountId" => URI.encode(client_account_id, &URI.char_unreserved?/1),
+          "invitationId" => URI.encode(invitation_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -367,8 +367,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v2beta1/accounts/{accountId}/clients/{clientAccountId}/invitations", %{
-        "accountId" => URI.encode_www_form(account_id),
-        "clientAccountId" => URI.encode_www_form(client_account_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
+        "clientAccountId" => URI.encode(client_account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -438,7 +438,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v2beta1/accounts/{accountId}/clients", %{
-        "accountId" => URI.encode_www_form(account_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -508,8 +508,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/v2beta1/accounts/{accountId}/clients/{clientAccountId}", %{
-        "accountId" => URI.encode_www_form(account_id),
-        "clientAccountId" => URI.encode_www_form(client_account_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
+        "clientAccountId" => URI.encode(client_account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -579,9 +579,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v2beta1/accounts/{accountId}/clients/{clientAccountId}/users/{userId}", %{
-        "accountId" => URI.encode_www_form(account_id),
-        "clientAccountId" => URI.encode_www_form(client_account_id),
-        "userId" => URI.encode_www_form(user_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
+        "clientAccountId" => URI.encode(client_account_id, &URI.char_unreserved?/1),
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -653,8 +653,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v2beta1/accounts/{accountId}/clients/{clientAccountId}/users", %{
-        "accountId" => URI.encode_www_form(account_id),
-        "clientAccountId" => URI.encode_www_form(client_account_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
+        "clientAccountId" => URI.encode(client_account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -728,9 +728,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/v2beta1/accounts/{accountId}/clients/{clientAccountId}/users/{userId}", %{
-        "accountId" => URI.encode_www_form(account_id),
-        "clientAccountId" => URI.encode_www_form(client_account_id),
-        "userId" => URI.encode_www_form(user_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
+        "clientAccountId" => URI.encode(client_account_id, &URI.char_unreserved?/1),
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -794,7 +794,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v2beta1/accounts/{accountId}/creatives", %{
-        "accountId" => URI.encode_www_form(account_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -864,8 +864,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       |> Request.url(
         "/v2beta1/accounts/{accountId}/creatives/{creativeId}/dealAssociations:add",
         %{
-          "accountId" => URI.encode_www_form(account_id),
-          "creativeId" => URI.encode_www_form(creative_id)
+          "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
+          "creativeId" => URI.encode(creative_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -940,8 +940,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v2beta1/accounts/{accountId}/creatives/{creativeId}/dealAssociations", %{
-        "accountId" => URI.encode_www_form(account_id),
-        "creativeId" => URI.encode_www_form(creative_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
+        "creativeId" => URI.encode(creative_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1013,8 +1013,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       |> Request.url(
         "/v2beta1/accounts/{accountId}/creatives/{creativeId}/dealAssociations:remove",
         %{
-          "accountId" => URI.encode_www_form(account_id),
-          "creativeId" => URI.encode_www_form(creative_id)
+          "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
+          "creativeId" => URI.encode(creative_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1081,8 +1081,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v2beta1/accounts/{accountId}/creatives/{creativeId}", %{
-        "accountId" => URI.encode_www_form(account_id),
-        "creativeId" => URI.encode_www_form(creative_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
+        "creativeId" => URI.encode(creative_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1149,7 +1149,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v2beta1/accounts/{accountId}/creatives", %{
-        "accountId" => URI.encode_www_form(account_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1219,8 +1219,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v2beta1/accounts/{accountId}/creatives/{creativeId}:stopWatching", %{
-        "accountId" => URI.encode_www_form(account_id),
-        "creativeId" => URI.encode_www_form(creative_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
+        "creativeId" => URI.encode(creative_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1288,8 +1288,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/v2beta1/accounts/{accountId}/creatives/{creativeId}", %{
-        "accountId" => URI.encode_www_form(account_id),
-        "creativeId" => URI.encode_www_form(creative_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
+        "creativeId" => URI.encode(creative_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1357,8 +1357,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v2beta1/accounts/{accountId}/creatives/{creativeId}:watch", %{
-        "accountId" => URI.encode_www_form(account_id),
-        "creativeId" => URI.encode_www_form(creative_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
+        "creativeId" => URI.encode(creative_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1431,7 +1431,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v2beta1/accounts/{accountId}/finalizedProposals", %{
-        "accountId" => URI.encode_www_form(account_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1499,8 +1499,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v2beta1/accounts/{accountId}/products/{productId}", %{
-        "accountId" => URI.encode_www_form(account_id),
-        "productId" => URI.encode_www_form(product_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
+        "productId" => URI.encode(product_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1567,7 +1567,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v2beta1/accounts/{accountId}/products", %{
-        "accountId" => URI.encode_www_form(account_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1637,8 +1637,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v2beta1/accounts/{accountId}/proposals/{proposalId}:accept", %{
-        "accountId" => URI.encode_www_form(account_id),
-        "proposalId" => URI.encode_www_form(proposal_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
+        "proposalId" => URI.encode(proposal_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1706,8 +1706,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v2beta1/accounts/{accountId}/proposals/{proposalId}:addNote", %{
-        "accountId" => URI.encode_www_form(account_id),
-        "proposalId" => URI.encode_www_form(proposal_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
+        "proposalId" => URI.encode(proposal_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1775,8 +1775,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v2beta1/accounts/{accountId}/proposals/{proposalId}:cancelNegotiation", %{
-        "accountId" => URI.encode_www_form(account_id),
-        "proposalId" => URI.encode_www_form(proposal_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
+        "proposalId" => URI.encode(proposal_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1844,8 +1844,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v2beta1/accounts/{accountId}/proposals/{proposalId}:completeSetup", %{
-        "accountId" => URI.encode_www_form(account_id),
-        "proposalId" => URI.encode_www_form(proposal_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
+        "proposalId" => URI.encode(proposal_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1907,7 +1907,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v2beta1/accounts/{accountId}/proposals", %{
-        "accountId" => URI.encode_www_form(account_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1973,8 +1973,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v2beta1/accounts/{accountId}/proposals/{proposalId}", %{
-        "accountId" => URI.encode_www_form(account_id),
-        "proposalId" => URI.encode_www_form(proposal_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
+        "proposalId" => URI.encode(proposal_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2043,7 +2043,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v2beta1/accounts/{accountId}/proposals", %{
-        "accountId" => URI.encode_www_form(account_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2113,8 +2113,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v2beta1/accounts/{accountId}/proposals/{proposalId}:pause", %{
-        "accountId" => URI.encode_www_form(account_id),
-        "proposalId" => URI.encode_www_form(proposal_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
+        "proposalId" => URI.encode(proposal_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2182,8 +2182,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v2beta1/accounts/{accountId}/proposals/{proposalId}:resume", %{
-        "accountId" => URI.encode_www_form(account_id),
-        "proposalId" => URI.encode_www_form(proposal_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
+        "proposalId" => URI.encode(proposal_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2251,8 +2251,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/v2beta1/accounts/{accountId}/proposals/{proposalId}", %{
-        "accountId" => URI.encode_www_form(account_id),
-        "proposalId" => URI.encode_www_form(proposal_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
+        "proposalId" => URI.encode(proposal_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2320,8 +2320,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v2beta1/accounts/{accountId}/publisherProfiles/{publisherProfileId}", %{
-        "accountId" => URI.encode_www_form(account_id),
-        "publisherProfileId" => URI.encode_www_form(publisher_profile_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
+        "publisherProfileId" => URI.encode(publisher_profile_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2392,7 +2392,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v2beta1/accounts/{accountId}/publisherProfiles", %{
-        "accountId" => URI.encode_www_form(account_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

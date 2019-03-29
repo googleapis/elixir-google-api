@@ -86,9 +86,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       |> Request.url(
         "/v2beta1/bidders/{biddersId}/accounts/{accountsId}/creatives/{creativeId}",
         %{
-          "biddersId" => URI.encode_www_form(bidders_id),
-          "accountsId" => URI.encode_www_form(accounts_id),
-          "creativeId" => URI.encode_www_form(creative_id)
+          "biddersId" => URI.encode(bidders_id, &URI.char_unreserved?/1),
+          "accountsId" => URI.encode(accounts_id, &URI.char_unreserved?/1),
+          "creativeId" => URI.encode(creative_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -166,9 +166,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       |> Request.url(
         "/v2beta1/bidders/{biddersId}/accounts/{accountsId}/filterSets/{filterSetsId}/bidMetrics",
         %{
-          "biddersId" => URI.encode_www_form(bidders_id),
-          "accountsId" => URI.encode_www_form(accounts_id),
-          "filterSetsId" => URI.encode_www_form(filter_sets_id)
+          "biddersId" => URI.encode(bidders_id, &URI.char_unreserved?/1),
+          "accountsId" => URI.encode(accounts_id, &URI.char_unreserved?/1),
+          "filterSetsId" => URI.encode(filter_sets_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -248,9 +248,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       |> Request.url(
         "/v2beta1/bidders/{biddersId}/accounts/{accountsId}/filterSets/{filterSetsId}/bidResponseErrors",
         %{
-          "biddersId" => URI.encode_www_form(bidders_id),
-          "accountsId" => URI.encode_www_form(accounts_id),
-          "filterSetsId" => URI.encode_www_form(filter_sets_id)
+          "biddersId" => URI.encode(bidders_id, &URI.char_unreserved?/1),
+          "accountsId" => URI.encode(accounts_id, &URI.char_unreserved?/1),
+          "filterSetsId" => URI.encode(filter_sets_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -330,9 +330,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       |> Request.url(
         "/v2beta1/bidders/{biddersId}/accounts/{accountsId}/filterSets/{filterSetsId}/bidResponsesWithoutBids",
         %{
-          "biddersId" => URI.encode_www_form(bidders_id),
-          "accountsId" => URI.encode_www_form(accounts_id),
-          "filterSetsId" => URI.encode_www_form(filter_sets_id)
+          "biddersId" => URI.encode(bidders_id, &URI.char_unreserved?/1),
+          "accountsId" => URI.encode(accounts_id, &URI.char_unreserved?/1),
+          "filterSetsId" => URI.encode(filter_sets_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -407,8 +407,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v2beta1/bidders/{biddersId}/accounts/{accountsId}/filterSets", %{
-        "biddersId" => URI.encode_www_form(bidders_id),
-        "accountsId" => URI.encode_www_form(accounts_id)
+        "biddersId" => URI.encode(bidders_id, &URI.char_unreserved?/1),
+        "accountsId" => URI.encode(accounts_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -479,9 +479,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       |> Request.url(
         "/v2beta1/bidders/{biddersId}/accounts/{accountsId}/filterSets/{filterSetsId}",
         %{
-          "biddersId" => URI.encode_www_form(bidders_id),
-          "accountsId" => URI.encode_www_form(accounts_id),
-          "filterSetsId" => URI.encode_www_form(filter_sets_id)
+          "biddersId" => URI.encode(bidders_id, &URI.char_unreserved?/1),
+          "accountsId" => URI.encode(accounts_id, &URI.char_unreserved?/1),
+          "filterSetsId" => URI.encode(filter_sets_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -559,9 +559,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       |> Request.url(
         "/v2beta1/bidders/{biddersId}/accounts/{accountsId}/filterSets/{filterSetsId}/filteredBidRequests",
         %{
-          "biddersId" => URI.encode_www_form(bidders_id),
-          "accountsId" => URI.encode_www_form(accounts_id),
-          "filterSetsId" => URI.encode_www_form(filter_sets_id)
+          "biddersId" => URI.encode(bidders_id, &URI.char_unreserved?/1),
+          "accountsId" => URI.encode(accounts_id, &URI.char_unreserved?/1),
+          "filterSetsId" => URI.encode(filter_sets_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -645,9 +645,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       |> Request.url(
         "/v2beta1/bidders/{biddersId}/accounts/{accountsId}/filterSets/{filterSetsId}/filteredBids/{creativeStatusId}/creatives",
         %{
-          "biddersId" => URI.encode_www_form(bidders_id),
-          "accountsId" => URI.encode_www_form(accounts_id),
-          "filterSetsId" => URI.encode_www_form(filter_sets_id),
+          "biddersId" => URI.encode(bidders_id, &URI.char_unreserved?/1),
+          "accountsId" => URI.encode(accounts_id, &URI.char_unreserved?/1),
+          "filterSetsId" => URI.encode(filter_sets_id, &URI.char_unreserved?/1),
           "creativeStatusId" => creative_status_id
         }
       )
@@ -736,9 +736,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       |> Request.url(
         "/v2beta1/bidders/{biddersId}/accounts/{accountsId}/filterSets/{filterSetsId}/filteredBids/{creativeStatusId}/details",
         %{
-          "biddersId" => URI.encode_www_form(bidders_id),
-          "accountsId" => URI.encode_www_form(accounts_id),
-          "filterSetsId" => URI.encode_www_form(filter_sets_id),
+          "biddersId" => URI.encode(bidders_id, &URI.char_unreserved?/1),
+          "accountsId" => URI.encode(accounts_id, &URI.char_unreserved?/1),
+          "filterSetsId" => URI.encode(filter_sets_id, &URI.char_unreserved?/1),
           "creativeStatusId" => creative_status_id
         }
       )
@@ -823,9 +823,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       |> Request.url(
         "/v2beta1/bidders/{biddersId}/accounts/{accountsId}/filterSets/{filterSetsId}/filteredBids",
         %{
-          "biddersId" => URI.encode_www_form(bidders_id),
-          "accountsId" => URI.encode_www_form(accounts_id),
-          "filterSetsId" => URI.encode_www_form(filter_sets_id)
+          "biddersId" => URI.encode(bidders_id, &URI.char_unreserved?/1),
+          "accountsId" => URI.encode(accounts_id, &URI.char_unreserved?/1),
+          "filterSetsId" => URI.encode(filter_sets_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -900,9 +900,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       |> Request.url(
         "/v2beta1/bidders/{biddersId}/accounts/{accountsId}/filterSets/{filterSetsId}",
         %{
-          "biddersId" => URI.encode_www_form(bidders_id),
-          "accountsId" => URI.encode_www_form(accounts_id),
-          "filterSetsId" => URI.encode_www_form(filter_sets_id)
+          "biddersId" => URI.encode(bidders_id, &URI.char_unreserved?/1),
+          "accountsId" => URI.encode(accounts_id, &URI.char_unreserved?/1),
+          "filterSetsId" => URI.encode(filter_sets_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -980,9 +980,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       |> Request.url(
         "/v2beta1/bidders/{biddersId}/accounts/{accountsId}/filterSets/{filterSetsId}/impressionMetrics",
         %{
-          "biddersId" => URI.encode_www_form(bidders_id),
-          "accountsId" => URI.encode_www_form(accounts_id),
-          "filterSetsId" => URI.encode_www_form(filter_sets_id)
+          "biddersId" => URI.encode(bidders_id, &URI.char_unreserved?/1),
+          "accountsId" => URI.encode(accounts_id, &URI.char_unreserved?/1),
+          "filterSetsId" => URI.encode(filter_sets_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1057,8 +1057,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v2beta1/bidders/{biddersId}/accounts/{accountsId}/filterSets", %{
-        "biddersId" => URI.encode_www_form(bidders_id),
-        "accountsId" => URI.encode_www_form(accounts_id)
+        "biddersId" => URI.encode(bidders_id, &URI.char_unreserved?/1),
+        "accountsId" => URI.encode(accounts_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1137,9 +1137,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       |> Request.url(
         "/v2beta1/bidders/{biddersId}/accounts/{accountsId}/filterSets/{filterSetsId}/losingBids",
         %{
-          "biddersId" => URI.encode_www_form(bidders_id),
-          "accountsId" => URI.encode_www_form(accounts_id),
-          "filterSetsId" => URI.encode_www_form(filter_sets_id)
+          "biddersId" => URI.encode(bidders_id, &URI.char_unreserved?/1),
+          "accountsId" => URI.encode(accounts_id, &URI.char_unreserved?/1),
+          "filterSetsId" => URI.encode(filter_sets_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1219,9 +1219,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       |> Request.url(
         "/v2beta1/bidders/{biddersId}/accounts/{accountsId}/filterSets/{filterSetsId}/nonBillableWinningBids",
         %{
-          "biddersId" => URI.encode_www_form(bidders_id),
-          "accountsId" => URI.encode_www_form(accounts_id),
-          "filterSetsId" => URI.encode_www_form(filter_sets_id)
+          "biddersId" => URI.encode(bidders_id, &URI.char_unreserved?/1),
+          "accountsId" => URI.encode(accounts_id, &URI.char_unreserved?/1),
+          "filterSetsId" => URI.encode(filter_sets_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1297,8 +1297,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v2beta1/bidders/{biddersId}/filterSets/{filterSetsId}/bidMetrics", %{
-        "biddersId" => URI.encode_www_form(bidders_id),
-        "filterSetsId" => URI.encode_www_form(filter_sets_id)
+        "biddersId" => URI.encode(bidders_id, &URI.char_unreserved?/1),
+        "filterSetsId" => URI.encode(filter_sets_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1374,8 +1374,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       |> Request.url(
         "/v2beta1/bidders/{biddersId}/filterSets/{filterSetsId}/bidResponseErrors",
         %{
-          "biddersId" => URI.encode_www_form(bidders_id),
-          "filterSetsId" => URI.encode_www_form(filter_sets_id)
+          "biddersId" => URI.encode(bidders_id, &URI.char_unreserved?/1),
+          "filterSetsId" => URI.encode(filter_sets_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1452,8 +1452,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       |> Request.url(
         "/v2beta1/bidders/{biddersId}/filterSets/{filterSetsId}/bidResponsesWithoutBids",
         %{
-          "biddersId" => URI.encode_www_form(bidders_id),
-          "filterSetsId" => URI.encode_www_form(filter_sets_id)
+          "biddersId" => URI.encode(bidders_id, &URI.char_unreserved?/1),
+          "filterSetsId" => URI.encode(filter_sets_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1521,7 +1521,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v2beta1/bidders/{biddersId}/filterSets", %{
-        "biddersId" => URI.encode_www_form(bidders_id)
+        "biddersId" => URI.encode(bidders_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1587,8 +1587,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v2beta1/bidders/{biddersId}/filterSets/{filterSetsId}", %{
-        "biddersId" => URI.encode_www_form(bidders_id),
-        "filterSetsId" => URI.encode_www_form(filter_sets_id)
+        "biddersId" => URI.encode(bidders_id, &URI.char_unreserved?/1),
+        "filterSetsId" => URI.encode(filter_sets_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1662,8 +1662,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       |> Request.url(
         "/v2beta1/bidders/{biddersId}/filterSets/{filterSetsId}/filteredBidRequests",
         %{
-          "biddersId" => URI.encode_www_form(bidders_id),
-          "filterSetsId" => URI.encode_www_form(filter_sets_id)
+          "biddersId" => URI.encode(bidders_id, &URI.char_unreserved?/1),
+          "filterSetsId" => URI.encode(filter_sets_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1744,8 +1744,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       |> Request.url(
         "/v2beta1/bidders/{biddersId}/filterSets/{filterSetsId}/filteredBids/{creativeStatusId}/creatives",
         %{
-          "biddersId" => URI.encode_www_form(bidders_id),
-          "filterSetsId" => URI.encode_www_form(filter_sets_id),
+          "biddersId" => URI.encode(bidders_id, &URI.char_unreserved?/1),
+          "filterSetsId" => URI.encode(filter_sets_id, &URI.char_unreserved?/1),
           "creativeStatusId" => creative_status_id
         }
       )
@@ -1831,8 +1831,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       |> Request.url(
         "/v2beta1/bidders/{biddersId}/filterSets/{filterSetsId}/filteredBids/{creativeStatusId}/details",
         %{
-          "biddersId" => URI.encode_www_form(bidders_id),
-          "filterSetsId" => URI.encode_www_form(filter_sets_id),
+          "biddersId" => URI.encode(bidders_id, &URI.char_unreserved?/1),
+          "filterSetsId" => URI.encode(filter_sets_id, &URI.char_unreserved?/1),
           "creativeStatusId" => creative_status_id
         }
       )
@@ -1912,8 +1912,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v2beta1/bidders/{biddersId}/filterSets/{filterSetsId}/filteredBids", %{
-        "biddersId" => URI.encode_www_form(bidders_id),
-        "filterSetsId" => URI.encode_www_form(filter_sets_id)
+        "biddersId" => URI.encode(bidders_id, &URI.char_unreserved?/1),
+        "filterSetsId" => URI.encode(filter_sets_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1982,8 +1982,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v2beta1/bidders/{biddersId}/filterSets/{filterSetsId}", %{
-        "biddersId" => URI.encode_www_form(bidders_id),
-        "filterSetsId" => URI.encode_www_form(filter_sets_id)
+        "biddersId" => URI.encode(bidders_id, &URI.char_unreserved?/1),
+        "filterSetsId" => URI.encode(filter_sets_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2057,8 +2057,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       |> Request.url(
         "/v2beta1/bidders/{biddersId}/filterSets/{filterSetsId}/impressionMetrics",
         %{
-          "biddersId" => URI.encode_www_form(bidders_id),
-          "filterSetsId" => URI.encode_www_form(filter_sets_id)
+          "biddersId" => URI.encode(bidders_id, &URI.char_unreserved?/1),
+          "filterSetsId" => URI.encode(filter_sets_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2126,7 +2126,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v2beta1/bidders/{biddersId}/filterSets", %{
-        "biddersId" => URI.encode_www_form(bidders_id)
+        "biddersId" => URI.encode(bidders_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2200,8 +2200,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v2beta1/bidders/{biddersId}/filterSets/{filterSetsId}/losingBids", %{
-        "biddersId" => URI.encode_www_form(bidders_id),
-        "filterSetsId" => URI.encode_www_form(filter_sets_id)
+        "biddersId" => URI.encode(bidders_id, &URI.char_unreserved?/1),
+        "filterSetsId" => URI.encode(filter_sets_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2277,8 +2277,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       |> Request.url(
         "/v2beta1/bidders/{biddersId}/filterSets/{filterSetsId}/nonBillableWinningBids",
         %{
-          "biddersId" => URI.encode_www_form(bidders_id),
-          "filterSetsId" => URI.encode_www_form(filter_sets_id)
+          "biddersId" => URI.encode(bidders_id, &URI.char_unreserved?/1),
+          "filterSetsId" => URI.encode(filter_sets_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)

@@ -69,8 +69,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Budget do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/billinginfo/{accountId}/{billingId}", %{
-        "accountId" => URI.encode_www_form(account_id),
-        "billingId" => URI.encode_www_form(billing_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
+        "billingId" => URI.encode(billing_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -126,8 +126,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Budget do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/billinginfo/{accountId}/{billingId}", %{
-        "accountId" => URI.encode_www_form(account_id),
-        "billingId" => URI.encode_www_form(billing_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
+        "billingId" => URI.encode(billing_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -183,8 +183,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Budget do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/billinginfo/{accountId}/{billingId}", %{
-        "accountId" => URI.encode_www_form(account_id),
-        "billingId" => URI.encode_www_form(billing_id)
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
+        "billingId" => URI.encode(billing_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

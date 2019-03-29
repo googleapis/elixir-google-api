@@ -77,8 +77,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Creatives do
       |> Request.method(:post)
       |> Request.url("/creatives/{accountId}/{buyerCreativeId}/addDeal/{dealId}", %{
         "accountId" => account_id,
-        "buyerCreativeId" => URI.encode_www_form(buyer_creative_id),
-        "dealId" => URI.encode_www_form(deal_id)
+        "buyerCreativeId" => URI.encode(buyer_creative_id, &URI.char_unreserved?/1),
+        "dealId" => URI.encode(deal_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -133,7 +133,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Creatives do
       |> Request.method(:get)
       |> Request.url("/creatives/{accountId}/{buyerCreativeId}", %{
         "accountId" => account_id,
-        "buyerCreativeId" => URI.encode_www_form(buyer_creative_id)
+        "buyerCreativeId" => URI.encode(buyer_creative_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -290,7 +290,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Creatives do
       |> Request.method(:get)
       |> Request.url("/creatives/{accountId}/{buyerCreativeId}/listDeals", %{
         "accountId" => account_id,
-        "buyerCreativeId" => URI.encode_www_form(buyer_creative_id)
+        "buyerCreativeId" => URI.encode(buyer_creative_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -352,8 +352,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Creatives do
       |> Request.method(:post)
       |> Request.url("/creatives/{accountId}/{buyerCreativeId}/removeDeal/{dealId}", %{
         "accountId" => account_id,
-        "buyerCreativeId" => URI.encode_www_form(buyer_creative_id),
-        "dealId" => URI.encode_www_form(deal_id)
+        "buyerCreativeId" => URI.encode(buyer_creative_id, &URI.char_unreserved?/1),
+        "dealId" => URI.encode(deal_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
