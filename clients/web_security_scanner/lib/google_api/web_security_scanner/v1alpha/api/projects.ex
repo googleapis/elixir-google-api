@@ -78,7 +78,7 @@ defmodule GoogleApi.WebSecurityScanner.V1alpha.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1alpha/{+parent}/scanConfigs", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -138,7 +138,7 @@ defmodule GoogleApi.WebSecurityScanner.V1alpha.Api.Projects do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v1alpha/{+name}", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -203,7 +203,7 @@ defmodule GoogleApi.WebSecurityScanner.V1alpha.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1alpha/{+parent}/scanConfigs", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -270,7 +270,7 @@ defmodule GoogleApi.WebSecurityScanner.V1alpha.Api.Projects do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/v1alpha/{+name}", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -339,7 +339,7 @@ defmodule GoogleApi.WebSecurityScanner.V1alpha.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1alpha/{+parent}/crawledUrls", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -406,7 +406,7 @@ defmodule GoogleApi.WebSecurityScanner.V1alpha.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1alpha/{+parent}/findingTypeStats", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -472,7 +472,7 @@ defmodule GoogleApi.WebSecurityScanner.V1alpha.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1alpha/{+name}", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -543,7 +543,7 @@ defmodule GoogleApi.WebSecurityScanner.V1alpha.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1alpha/{+parent}/findings", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -614,7 +614,7 @@ defmodule GoogleApi.WebSecurityScanner.V1alpha.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1alpha/{+parent}/scanRuns", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -682,7 +682,7 @@ defmodule GoogleApi.WebSecurityScanner.V1alpha.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1alpha/{+name}:stop", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -744,7 +744,7 @@ defmodule GoogleApi.WebSecurityScanner.V1alpha.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1alpha/{+name}:start", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
