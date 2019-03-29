@@ -128,7 +128,7 @@ defmodule GoogleApi.YouTubeReporting.V1.Api.Jobs do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v1/jobs/{jobId}", %{
-        "jobId" => URI.encode_www_form(job_id)
+        "jobId" => URI.encode(job_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -185,7 +185,7 @@ defmodule GoogleApi.YouTubeReporting.V1.Api.Jobs do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/jobs/{jobId}", %{
-        "jobId" => URI.encode_www_form(job_id)
+        "jobId" => URI.encode(job_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -310,8 +310,8 @@ defmodule GoogleApi.YouTubeReporting.V1.Api.Jobs do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/jobs/{jobId}/reports/{reportId}", %{
-        "jobId" => URI.encode_www_form(job_id),
-        "reportId" => URI.encode_www_form(report_id)
+        "jobId" => URI.encode(job_id, &URI.char_unreserved?/1),
+        "reportId" => URI.encode(report_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -379,7 +379,7 @@ defmodule GoogleApi.YouTubeReporting.V1.Api.Jobs do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/jobs/{jobId}/reports", %{
-        "jobId" => URI.encode_www_form(job_id)
+        "jobId" => URI.encode(job_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
