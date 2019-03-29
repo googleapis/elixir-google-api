@@ -62,7 +62,7 @@ defmodule GoogleApi.Tasks.V1.Api.Tasks do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/lists/{tasklist}/clear", %{
-        "tasklist" => URI.encode_www_form(tasklist)
+        "tasklist" => URI.encode(tasklist, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -110,8 +110,8 @@ defmodule GoogleApi.Tasks.V1.Api.Tasks do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/lists/{tasklist}/tasks/{task}", %{
-        "tasklist" => URI.encode_www_form(tasklist),
-        "task" => URI.encode_www_form(task)
+        "tasklist" => URI.encode(tasklist, &URI.char_unreserved?/1),
+        "task" => URI.encode(task, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -159,8 +159,8 @@ defmodule GoogleApi.Tasks.V1.Api.Tasks do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/lists/{tasklist}/tasks/{task}", %{
-        "tasklist" => URI.encode_www_form(tasklist),
-        "task" => URI.encode_www_form(task)
+        "tasklist" => URI.encode(tasklist, &URI.char_unreserved?/1),
+        "task" => URI.encode(task, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -213,7 +213,7 @@ defmodule GoogleApi.Tasks.V1.Api.Tasks do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/lists/{tasklist}/tasks", %{
-        "tasklist" => URI.encode_www_form(tasklist)
+        "tasklist" => URI.encode(tasklist, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -280,7 +280,7 @@ defmodule GoogleApi.Tasks.V1.Api.Tasks do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/lists/{tasklist}/tasks", %{
-        "tasklist" => URI.encode_www_form(tasklist)
+        "tasklist" => URI.encode(tasklist, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -332,8 +332,8 @@ defmodule GoogleApi.Tasks.V1.Api.Tasks do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/lists/{tasklist}/tasks/{task}/move", %{
-        "tasklist" => URI.encode_www_form(tasklist),
-        "task" => URI.encode_www_form(task)
+        "tasklist" => URI.encode(tasklist, &URI.char_unreserved?/1),
+        "task" => URI.encode(task, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -383,8 +383,8 @@ defmodule GoogleApi.Tasks.V1.Api.Tasks do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/lists/{tasklist}/tasks/{task}", %{
-        "tasklist" => URI.encode_www_form(tasklist),
-        "task" => URI.encode_www_form(task)
+        "tasklist" => URI.encode(tasklist, &URI.char_unreserved?/1),
+        "task" => URI.encode(task, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -434,8 +434,8 @@ defmodule GoogleApi.Tasks.V1.Api.Tasks do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/lists/{tasklist}/tasks/{task}", %{
-        "tasklist" => URI.encode_www_form(tasklist),
-        "task" => URI.encode_www_form(task)
+        "tasklist" => URI.encode(tasklist, &URI.char_unreserved?/1),
+        "task" => URI.encode(task, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
