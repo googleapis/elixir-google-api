@@ -26,10 +26,12 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1bet
   - explicitAnnotation (GoogleCloudVideointelligenceV1beta2ExplicitContentAnnotation): Explicit content annotation. Defaults to: `null`.
   - frameLabelAnnotations ([GoogleCloudVideointelligenceV1beta2LabelAnnotation]): Label annotations on frame level. There is exactly one element for each unique label. Defaults to: `null`.
   - inputUri (String.t): Video file location in [Google Cloud Storage](https://cloud.google.com/storage/). Defaults to: `null`.
+  - objectAnnotations ([GoogleCloudVideointelligenceV1beta2ObjectTrackingAnnotation]): Annotations for list of objects detected and tracked in video. Defaults to: `null`.
   - segmentLabelAnnotations ([GoogleCloudVideointelligenceV1beta2LabelAnnotation]): Label annotations on video level or user specified segment level. There is exactly one element for each unique label. Defaults to: `null`.
   - shotAnnotations ([GoogleCloudVideointelligenceV1beta2VideoSegment]): Shot annotations. Each shot is represented as a video segment. Defaults to: `null`.
   - shotLabelAnnotations ([GoogleCloudVideointelligenceV1beta2LabelAnnotation]): Label annotations on shot level. There is exactly one element for each unique label. Defaults to: `null`.
   - speechTranscriptions ([GoogleCloudVideointelligenceV1beta2SpeechTranscription]): Speech transcription. Defaults to: `null`.
+  - textAnnotations ([GoogleCloudVideointelligenceV1beta2TextAnnotation]): OCR text detection and tracking. Annotations for list of detected text snippets. Each will have list of frame information associated with it. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -43,6 +45,10 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1bet
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2LabelAnnotation.t()
             ),
           :inputUri => any(),
+          :objectAnnotations =>
+            list(
+              GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2ObjectTrackingAnnotation.t()
+            ),
           :segmentLabelAnnotations =>
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2LabelAnnotation.t()
@@ -58,6 +64,10 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1bet
           :speechTranscriptions =>
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2SpeechTranscription.t()
+            ),
+          :textAnnotations =>
+            list(
+              GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2TextAnnotation.t()
             )
         }
 
@@ -76,6 +86,13 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1bet
   )
 
   field(:inputUri)
+
+  field(
+    :objectAnnotations,
+    as:
+      GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2ObjectTrackingAnnotation,
+    type: :list
+  )
 
   field(
     :segmentLabelAnnotations,
@@ -99,6 +116,12 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1bet
     :speechTranscriptions,
     as:
       GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2SpeechTranscription,
+    type: :list
+  )
+
+  field(
+    :textAnnotations,
+    as: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2TextAnnotation,
     type: :list
   )
 end

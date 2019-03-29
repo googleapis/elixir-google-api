@@ -27,6 +27,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1Vid
   - segments ([GoogleCloudVideointelligenceV1VideoSegment]): Video segments to annotate. The segments may overlap and are not required to be contiguous or span the whole video. If unspecified, each video is treated as a single segment. Defaults to: `null`.
   - shotChangeDetectionConfig (GoogleCloudVideointelligenceV1ShotChangeDetectionConfig): Config for SHOT_CHANGE_DETECTION. Defaults to: `null`.
   - speechTranscriptionConfig (GoogleCloudVideointelligenceV1SpeechTranscriptionConfig): Config for SPEECH_TRANSCRIPTION. Defaults to: `null`.
+  - textDetectionConfig (GoogleCloudVideointelligenceV1TextDetectionConfig): Config for TEXT_DETECTION. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -43,7 +44,9 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1Vid
           :shotChangeDetectionConfig =>
             GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1ShotChangeDetectionConfig.t(),
           :speechTranscriptionConfig =>
-            GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1SpeechTranscriptionConfig.t()
+            GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1SpeechTranscriptionConfig.t(),
+          :textDetectionConfig =>
+            GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1TextDetectionConfig.t()
         }
 
   field(
@@ -73,6 +76,11 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1Vid
     :speechTranscriptionConfig,
     as:
       GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1SpeechTranscriptionConfig
+  )
+
+  field(
+    :textDetectionConfig,
+    as: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1TextDetectionConfig
   )
 end
 

@@ -22,23 +22,29 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1Lab
 
   ## Attributes
 
+  - frameConfidenceThreshold (float()): The confidence threshold we perform filtering on the labels from frame-level detection. If not set, it is set to 0.4 by default. The valid range for this threshold is [0.1, 0.9]. Any value set outside of this range will be clipped. Note: for best results please follow the default threshold. We will update the default threshold everytime when we release a new model. Defaults to: `null`.
   - labelDetectionMode (String.t): What labels should be detected with LABEL_DETECTION, in addition to video-level labels or segment-level labels. If unspecified, defaults to &#x60;SHOT_MODE&#x60;. Defaults to: `null`.
     - Enum - one of [LABEL_DETECTION_MODE_UNSPECIFIED, SHOT_MODE, FRAME_MODE, SHOT_AND_FRAME_MODE]
   - model (String.t): Model to use for label detection. Supported values: \&quot;builtin/stable\&quot; (the default if unset) and \&quot;builtin/latest\&quot;. Defaults to: `null`.
   - stationaryCamera (boolean()): Whether the video has been shot from a stationary (i.e. non-moving) camera. When set to true, might improve detection accuracy for moving objects. Should be used with &#x60;SHOT_AND_FRAME_MODE&#x60; enabled. Defaults to: `null`.
+  - videoConfidenceThreshold (float()): The confidence threshold we perform filtering on the labels from video-level and shot-level detections. If not set, it is set to 0.3 by default. The valid range for this threshold is [0.1, 0.9]. Any value set outside of this range will be clipped. Note: for best results please follow the default threshold. We will update the default threshold everytime when we release a new model. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :frameConfidenceThreshold => any(),
           :labelDetectionMode => any(),
           :model => any(),
-          :stationaryCamera => any()
+          :stationaryCamera => any(),
+          :videoConfidenceThreshold => any()
         }
 
+  field(:frameConfidenceThreshold)
   field(:labelDetectionMode)
   field(:model)
   field(:stationaryCamera)
+  field(:videoConfidenceThreshold)
 end
 
 defimpl Poison.Decoder,
