@@ -27,7 +27,7 @@ defmodule GoogleApi.StorageTransfer.V1.Model.TransferJob do
   - description (String.t): A description provided by the user for the job. Its max length is 1024 bytes when Unicode-encoded. Defaults to: `null`.
   - lastModificationTime (DateTime.t): This field cannot be changed by user requests. Defaults to: `null`.
   - name (String.t): A globally unique name assigned by Storage Transfer Service when the job is created. This field should be left empty in requests to create a new transfer job; otherwise, the requests result in an &#x60;INVALID_ARGUMENT&#x60; error. Defaults to: `null`.
-  - projectId (String.t): The ID of the Google Cloud Platform Console project that owns the job. Defaults to: `null`.
+  - projectId (String.t): The ID of the Google Cloud Platform Project that owns the job. Defaults to: `null`.
   - schedule (Schedule): Schedule specification. Defaults to: `null`.
   - status (String.t): Status of the job. This value MUST be specified for &#x60;CreateTransferJobRequests&#x60;.  NOTE: The effect of the new job status takes place during a subsequent job run. For example, if you change the job status from &#x60;ENABLED&#x60; to &#x60;DISABLED&#x60;, and an operation spawned by the transfer is running, the status change would not affect the current operation. Defaults to: `null`.
     - Enum - one of [STATUS_UNSPECIFIED, ENABLED, DISABLED, DELETED]

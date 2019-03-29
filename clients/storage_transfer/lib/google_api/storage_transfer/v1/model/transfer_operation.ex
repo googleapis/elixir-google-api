@@ -26,7 +26,7 @@ defmodule GoogleApi.StorageTransfer.V1.Model.TransferOperation do
   - endTime (DateTime.t): End time of this transfer execution. Defaults to: `null`.
   - errorBreakdowns ([ErrorSummary]): Summarizes errors encountered with sample error log entries. Defaults to: `null`.
   - name (String.t): A globally unique ID assigned by the system. Defaults to: `null`.
-  - projectId (String.t): The ID of the Google Cloud Platform Console project that owns the operation. Required. Defaults to: `null`.
+  - projectId (String.t): The ID of the Google Cloud Platform Project that owns the operation. Required. Defaults to: `null`.
   - startTime (DateTime.t): Start time of this transfer execution. Defaults to: `null`.
   - status (String.t): Status of the transfer operation. Defaults to: `null`.
     - Enum - one of [STATUS_UNSPECIFIED, IN_PROGRESS, PAUSED, SUCCESS, FAILED, ABORTED]
