@@ -22,10 +22,10 @@ defmodule GoogleApi.Testing.V1.Model.IosDevice do
 
   ## Attributes
 
-  - iosModelId (String.t): Required. The id of the iOS device to be used. Use the EnvironmentDiscoveryService to get supported options. Defaults to: `null`.
-  - iosVersionId (String.t): Required. The id of the iOS major software version to be used. Use the EnvironmentDiscoveryService to get supported options. Defaults to: `null`.
-  - locale (String.t): Required. The locale the test device used for testing. Use the EnvironmentDiscoveryService to get supported options. Defaults to: `null`.
-  - orientation (String.t): Required. How the device is oriented during the test. Use the EnvironmentDiscoveryService to get supported options. Defaults to: `null`.
+  - iosModelId (String.t): Required. The id of the iOS device to be used. Use the TestEnvironmentDiscoveryService to get supported options. Defaults to: `null`.
+  - iosVersionId (String.t): Required. The id of the iOS major software version to be used. Use the TestEnvironmentDiscoveryService to get supported options. Defaults to: `null`.
+  - locale (String.t): Required. The locale the test device used for testing. Use the TestEnvironmentDiscoveryService to get supported options. Defaults to: `null`.
+  - orientation (String.t): Required. How the device is oriented during the test. Use the TestEnvironmentDiscoveryService to get supported options. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -22,10 +22,10 @@ defmodule GoogleApi.Testing.V1.Model.AndroidMatrix do
 
   ## Attributes
 
-  - androidModelIds ([String.t]): Required. The ids of the set of Android device to be used. Use the EnvironmentDiscoveryService to get supported options. Defaults to: `null`.
-  - androidVersionIds ([String.t]): Required. The ids of the set of Android OS version to be used. Use the EnvironmentDiscoveryService to get supported options. Defaults to: `null`.
-  - locales ([String.t]): Required. The set of locales the test device will enable for testing. Use the EnvironmentDiscoveryService to get supported options. Defaults to: `null`.
-  - orientations ([String.t]): Required. The set of orientations to test with. Use the EnvironmentDiscoveryService to get supported options. Defaults to: `null`.
+  - androidModelIds ([String.t]): Required. The ids of the set of Android device to be used. Use the TestEnvironmentDiscoveryService to get supported options. Defaults to: `null`.
+  - androidVersionIds ([String.t]): Required. The ids of the set of Android OS version to be used. Use the TestEnvironmentDiscoveryService to get supported options. Defaults to: `null`.
+  - locales ([String.t]): Required. The set of locales the test device will enable for testing. Use the TestEnvironmentDiscoveryService to get supported options. Defaults to: `null`.
+  - orientations ([String.t]): Required. The set of orientations to test with. Use the TestEnvironmentDiscoveryService to get supported options. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
