@@ -72,7 +72,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/matters/{matterId}:addPermissions", %{
-        "matterId" => URI.encode_www_form(matter_id)
+        "matterId" => URI.encode(matter_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -129,7 +129,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/matters/{matterId}:close", %{
-        "matterId" => URI.encode_www_form(matter_id)
+        "matterId" => URI.encode(matter_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -238,7 +238,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v1/matters/{matterId}", %{
-        "matterId" => URI.encode_www_form(matter_id)
+        "matterId" => URI.encode(matter_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -295,7 +295,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/matters/{matterId}/exports", %{
-        "matterId" => URI.encode_www_form(matter_id)
+        "matterId" => URI.encode(matter_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -357,8 +357,8 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v1/matters/{matterId}/exports/{exportId}", %{
-        "matterId" => URI.encode_www_form(matter_id),
-        "exportId" => URI.encode_www_form(export_id)
+        "matterId" => URI.encode(matter_id, &URI.char_unreserved?/1),
+        "exportId" => URI.encode(export_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -420,8 +420,8 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/matters/{matterId}/exports/{exportId}", %{
-        "matterId" => URI.encode_www_form(matter_id),
-        "exportId" => URI.encode_www_form(export_id)
+        "matterId" => URI.encode(matter_id, &URI.char_unreserved?/1),
+        "exportId" => URI.encode(export_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -480,7 +480,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/matters/{matterId}/exports", %{
-        "matterId" => URI.encode_www_form(matter_id)
+        "matterId" => URI.encode(matter_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -537,7 +537,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/matters/{matterId}", %{
-        "matterId" => URI.encode_www_form(matter_id)
+        "matterId" => URI.encode(matter_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -601,8 +601,8 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/matters/{matterId}/holds/{holdId}/accounts", %{
-        "matterId" => URI.encode_www_form(matter_id),
-        "holdId" => URI.encode_www_form(hold_id)
+        "matterId" => URI.encode(matter_id, &URI.char_unreserved?/1),
+        "holdId" => URI.encode(hold_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -671,9 +671,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v1/matters/{matterId}/holds/{holdId}/accounts/{accountId}", %{
-        "matterId" => URI.encode_www_form(matter_id),
-        "holdId" => URI.encode_www_form(hold_id),
-        "accountId" => URI.encode_www_form(account_id)
+        "matterId" => URI.encode(matter_id, &URI.char_unreserved?/1),
+        "holdId" => URI.encode(hold_id, &URI.char_unreserved?/1),
+        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -735,8 +735,8 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/matters/{matterId}/holds/{holdId}/accounts", %{
-        "matterId" => URI.encode_www_form(matter_id),
-        "holdId" => URI.encode_www_form(hold_id)
+        "matterId" => URI.encode(matter_id, &URI.char_unreserved?/1),
+        "holdId" => URI.encode(hold_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -804,8 +804,8 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/matters/{matterId}/holds/{holdId}:addHeldAccounts", %{
-        "matterId" => URI.encode_www_form(matter_id),
-        "holdId" => URI.encode_www_form(hold_id)
+        "matterId" => URI.encode(matter_id, &URI.char_unreserved?/1),
+        "holdId" => URI.encode(hold_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -862,7 +862,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/matters/{matterId}/holds", %{
-        "matterId" => URI.encode_www_form(matter_id)
+        "matterId" => URI.encode(matter_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -924,8 +924,8 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v1/matters/{matterId}/holds/{holdId}", %{
-        "matterId" => URI.encode_www_form(matter_id),
-        "holdId" => URI.encode_www_form(hold_id)
+        "matterId" => URI.encode(matter_id, &URI.char_unreserved?/1),
+        "holdId" => URI.encode(hold_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -983,8 +983,8 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/matters/{matterId}/holds/{holdId}", %{
-        "matterId" => URI.encode_www_form(matter_id),
-        "holdId" => URI.encode_www_form(hold_id)
+        "matterId" => URI.encode(matter_id, &URI.char_unreserved?/1),
+        "holdId" => URI.encode(hold_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1045,7 +1045,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/matters/{matterId}/holds", %{
-        "matterId" => URI.encode_www_form(matter_id)
+        "matterId" => URI.encode(matter_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1114,8 +1114,8 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/matters/{matterId}/holds/{holdId}:removeHeldAccounts", %{
-        "matterId" => URI.encode_www_form(matter_id),
-        "holdId" => URI.encode_www_form(hold_id)
+        "matterId" => URI.encode(matter_id, &URI.char_unreserved?/1),
+        "holdId" => URI.encode(hold_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1179,8 +1179,8 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/v1/matters/{matterId}/holds/{holdId}", %{
-        "matterId" => URI.encode_www_form(matter_id),
-        "holdId" => URI.encode_www_form(hold_id)
+        "matterId" => URI.encode(matter_id, &URI.char_unreserved?/1),
+        "holdId" => URI.encode(hold_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1297,7 +1297,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/matters/{matterId}:removePermissions", %{
-        "matterId" => URI.encode_www_form(matter_id)
+        "matterId" => URI.encode(matter_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1354,7 +1354,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/matters/{matterId}:reopen", %{
-        "matterId" => URI.encode_www_form(matter_id)
+        "matterId" => URI.encode(matter_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1411,7 +1411,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/matters/{matterId}/savedQueries", %{
-        "matterId" => URI.encode_www_form(matter_id)
+        "matterId" => URI.encode(matter_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1473,8 +1473,8 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v1/matters/{matterId}/savedQueries/{savedQueryId}", %{
-        "matterId" => URI.encode_www_form(matter_id),
-        "savedQueryId" => URI.encode_www_form(saved_query_id)
+        "matterId" => URI.encode(matter_id, &URI.char_unreserved?/1),
+        "savedQueryId" => URI.encode(saved_query_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1536,8 +1536,8 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/matters/{matterId}/savedQueries/{savedQueryId}", %{
-        "matterId" => URI.encode_www_form(matter_id),
-        "savedQueryId" => URI.encode_www_form(saved_query_id)
+        "matterId" => URI.encode(matter_id, &URI.char_unreserved?/1),
+        "savedQueryId" => URI.encode(saved_query_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1596,7 +1596,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/matters/{matterId}/savedQueries", %{
-        "matterId" => URI.encode_www_form(matter_id)
+        "matterId" => URI.encode(matter_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1653,7 +1653,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/matters/{matterId}:undelete", %{
-        "matterId" => URI.encode_www_form(matter_id)
+        "matterId" => URI.encode(matter_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1710,7 +1710,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/v1/matters/{matterId}", %{
-        "matterId" => URI.encode_www_form(matter_id)
+        "matterId" => URI.encode(matter_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
