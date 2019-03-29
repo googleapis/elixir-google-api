@@ -25,7 +25,6 @@ defmodule GoogleApi.YouTube.V3.Model.ChannelAuditDetails do
   - communityGuidelinesGoodStanding (boolean()): Whether or not the channel respects the community guidelines. Defaults to: `null`.
   - contentIdClaimsGoodStanding (boolean()): Whether or not the channel has any unresolved claims. Defaults to: `null`.
   - copyrightStrikesGoodStanding (boolean()): Whether or not the channel has any copyright strikes. Defaults to: `null`.
-  - overallGoodStanding (boolean()): Describes the general state of the channel. This field will always show if there are any issues whatsoever with the channel. Currently this field represents the result of the logical and operation over the community guidelines good standing, the copyright strikes good standing and the content ID claims good standing, but this may change in the future. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -33,14 +32,12 @@ defmodule GoogleApi.YouTube.V3.Model.ChannelAuditDetails do
   @type t :: %__MODULE__{
           :communityGuidelinesGoodStanding => any(),
           :contentIdClaimsGoodStanding => any(),
-          :copyrightStrikesGoodStanding => any(),
-          :overallGoodStanding => any()
+          :copyrightStrikesGoodStanding => any()
         }
 
   field(:communityGuidelinesGoodStanding)
   field(:contentIdClaimsGoodStanding)
   field(:copyrightStrikesGoodStanding)
-  field(:overallGoodStanding)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.ChannelAuditDetails do

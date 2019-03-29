@@ -29,8 +29,10 @@ defmodule GoogleApi.YouTube.V3.Model.SuperChatEventSnippet do
   - currency (String.t): The currency in which the purchase was made. ISO 4217. Defaults to: `null`.
   - displayString (String.t): A rendered string that displays the purchase amount and currency (e.g., \&quot;$1.00\&quot;). The string is rendered for the given language. Defaults to: `null`.
   - isSuperChatForGood (boolean()): True if this event is a Super Chat for Good purchase. Defaults to: `null`.
+  - isSuperStickerEvent (boolean()): True if this event is a Super Sticker event. Defaults to: `null`.
   - messageType (integer()): The tier for the paid message, which is based on the amount of money spent to purchase the message. Defaults to: `null`.
   - nonprofit (Nonprofit): If this event is a Super Chat for Good purchase, this field will contain information about the charity the purchase is donated to. Defaults to: `null`.
+  - superStickerMetadata (SuperStickerMetadata): If this event is a Super Sticker event, this field will contain metadata about the Super Sticker. Defaults to: `null`.
   - supporterDetails (ChannelProfileDetails): Details about the supporter. Defaults to: `null`.
   """
 
@@ -44,8 +46,10 @@ defmodule GoogleApi.YouTube.V3.Model.SuperChatEventSnippet do
           :currency => any(),
           :displayString => any(),
           :isSuperChatForGood => any(),
+          :isSuperStickerEvent => any(),
           :messageType => any(),
           :nonprofit => GoogleApi.YouTube.V3.Model.Nonprofit.t(),
+          :superStickerMetadata => GoogleApi.YouTube.V3.Model.SuperStickerMetadata.t(),
           :supporterDetails => GoogleApi.YouTube.V3.Model.ChannelProfileDetails.t()
         }
 
@@ -56,8 +60,10 @@ defmodule GoogleApi.YouTube.V3.Model.SuperChatEventSnippet do
   field(:currency)
   field(:displayString)
   field(:isSuperChatForGood)
+  field(:isSuperStickerEvent)
   field(:messageType)
   field(:nonprofit, as: GoogleApi.YouTube.V3.Model.Nonprofit)
+  field(:superStickerMetadata, as: GoogleApi.YouTube.V3.Model.SuperStickerMetadata)
   field(:supporterDetails, as: GoogleApi.YouTube.V3.Model.ChannelProfileDetails)
 end
 

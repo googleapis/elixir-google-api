@@ -23,7 +23,7 @@ defmodule GoogleApi.YouTube.V3.Model.LiveBroadcastStatus do
   ## Attributes
 
   - lifeCycleStatus (String.t): The broadcast&#39;s status. The status can be updated using the API&#39;s liveBroadcasts.transition method. Defaults to: `null`.
-    - Enum - one of [abandoned, complete, completeStarting, created, live, liveStarting, ready, reclaimed, revoked, testStarting, testing]
+    - Enum - one of [complete, created, live, liveStarting, ready, revoked, testStarting, testing]
   - liveBroadcastPriority (String.t): Priority of the live broadcast event (internal state). Defaults to: `null`.
     - Enum - one of [high, low, normal]
   - privacyStatus (String.t): The broadcast&#39;s privacy status. Note that the broadcast represents exactly one YouTube video, so the privacy settings are identical to those supported for videos. In addition, you can set this field by modifying the broadcast resource or by setting the privacyStatus field of the corresponding video resource. Defaults to: `null`.

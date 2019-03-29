@@ -16,7 +16,7 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.YouTube.V3.Model.LiveChatSuperChatDetails do
+defmodule GoogleApi.YouTube.V3.Model.LiveChatSuperStickerDetails do
   @moduledoc """
 
 
@@ -25,8 +25,8 @@ defmodule GoogleApi.YouTube.V3.Model.LiveChatSuperChatDetails do
   - amountDisplayString (String.t): A rendered string that displays the fund amount and currency to the user. Defaults to: `null`.
   - amountMicros (String.t): The amount purchased by the user, in micros (1,750,000 micros &#x3D; 1.75). Defaults to: `null`.
   - currency (String.t): The currency in which the purchase was made. Defaults to: `null`.
+  - superStickerMetadata (SuperStickerMetadata): Information about the Super Sticker. Defaults to: `null`.
   - tier (integer()): The tier in which the amount belongs. Lower amounts belong to lower tiers. The lowest tier is 1. Defaults to: `null`.
-  - userComment (String.t): The comment added by the user to this Super Chat event. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -35,24 +35,24 @@ defmodule GoogleApi.YouTube.V3.Model.LiveChatSuperChatDetails do
           :amountDisplayString => any(),
           :amountMicros => any(),
           :currency => any(),
-          :tier => any(),
-          :userComment => any()
+          :superStickerMetadata => GoogleApi.YouTube.V3.Model.SuperStickerMetadata.t(),
+          :tier => any()
         }
 
   field(:amountDisplayString)
   field(:amountMicros)
   field(:currency)
+  field(:superStickerMetadata, as: GoogleApi.YouTube.V3.Model.SuperStickerMetadata)
   field(:tier)
-  field(:userComment)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.LiveChatSuperChatDetails do
+defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.LiveChatSuperStickerDetails do
   def decode(value, options) do
-    GoogleApi.YouTube.V3.Model.LiveChatSuperChatDetails.decode(value, options)
+    GoogleApi.YouTube.V3.Model.LiveChatSuperStickerDetails.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.LiveChatSuperChatDetails do
+defimpl Poison.Encoder, for: GoogleApi.YouTube.V3.Model.LiveChatSuperStickerDetails do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
