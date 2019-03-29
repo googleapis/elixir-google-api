@@ -16,37 +16,39 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Vision.V1.Model.CropHint do
+defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1ImageAnnotationContext do
   @moduledoc """
-  Single crop hint that is used to generate a new crop when serving an image.
+  If an image was produced from a file (e.g. a PDF), this message gives information about the source of that image.
 
   ## Attributes
 
-  - boundingPoly (BoundingPoly): The bounding polygon for the crop region. The coordinates of the bounding box are in the original image&#39;s scale. Defaults to: `null`.
-  - confidence (float()): Confidence of this being a salient region.  Range [0, 1]. Defaults to: `null`.
-  - importanceFraction (float()): Fraction of importance of this salient region with respect to the original image. Defaults to: `null`.
+  - pageNumber (integer()): If the file was a PDF or TIFF, this field gives the page number within the file used to produce the image. Defaults to: `null`.
+  - uri (String.t): The URI of the file used to produce the image. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :boundingPoly => GoogleApi.Vision.V1.Model.BoundingPoly.t(),
-          :confidence => any(),
-          :importanceFraction => any()
+          :pageNumber => any(),
+          :uri => any()
         }
 
-  field(:boundingPoly, as: GoogleApi.Vision.V1.Model.BoundingPoly)
-  field(:confidence)
-  field(:importanceFraction)
+  field(:pageNumber)
+  field(:uri)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Vision.V1.Model.CropHint do
+defimpl Poison.Decoder,
+  for: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1ImageAnnotationContext do
   def decode(value, options) do
-    GoogleApi.Vision.V1.Model.CropHint.decode(value, options)
+    GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1ImageAnnotationContext.decode(
+      value,
+      options
+    )
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.Vision.V1.Model.CropHint do
+defimpl Poison.Encoder,
+  for: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1ImageAnnotationContext do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
