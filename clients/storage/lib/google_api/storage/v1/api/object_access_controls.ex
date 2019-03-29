@@ -80,9 +80,9 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/storage/v1/b/{bucket}/o/{object}/acl/{entity}", %{
-        "bucket" => URI.encode_www_form(bucket),
-        "object" => URI.encode_www_form(object),
-        "entity" => URI.encode_www_form(entity)
+        "bucket" => URI.encode(bucket, &URI.char_unreserved?/1),
+        "object" => URI.encode(object, &URI.char_unreserved?/1),
+        "entity" => URI.encode(entity, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -147,9 +147,9 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/storage/v1/b/{bucket}/o/{object}/acl/{entity}", %{
-        "bucket" => URI.encode_www_form(bucket),
-        "object" => URI.encode_www_form(object),
-        "entity" => URI.encode_www_form(entity)
+        "bucket" => URI.encode(bucket, &URI.char_unreserved?/1),
+        "object" => URI.encode(object, &URI.char_unreserved?/1),
+        "entity" => URI.encode(entity, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -213,8 +213,8 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/storage/v1/b/{bucket}/o/{object}/acl", %{
-        "bucket" => URI.encode_www_form(bucket),
-        "object" => URI.encode_www_form(object)
+        "bucket" => URI.encode(bucket, &URI.char_unreserved?/1),
+        "object" => URI.encode(object, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -272,8 +272,8 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/storage/v1/b/{bucket}/o/{object}/acl", %{
-        "bucket" => URI.encode_www_form(bucket),
-        "object" => URI.encode_www_form(object)
+        "bucket" => URI.encode(bucket, &URI.char_unreserved?/1),
+        "object" => URI.encode(object, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -340,9 +340,9 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/storage/v1/b/{bucket}/o/{object}/acl/{entity}", %{
-        "bucket" => URI.encode_www_form(bucket),
-        "object" => URI.encode_www_form(object),
-        "entity" => URI.encode_www_form(entity)
+        "bucket" => URI.encode(bucket, &URI.char_unreserved?/1),
+        "object" => URI.encode(object, &URI.char_unreserved?/1),
+        "entity" => URI.encode(entity, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -409,9 +409,9 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/storage/v1/b/{bucket}/o/{object}/acl/{entity}", %{
-        "bucket" => URI.encode_www_form(bucket),
-        "object" => URI.encode_www_form(object),
-        "entity" => URI.encode_www_form(entity)
+        "bucket" => URI.encode(bucket, &URI.char_unreserved?/1),
+        "object" => URI.encode(object, &URI.char_unreserved?/1),
+        "entity" => URI.encode(entity, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
