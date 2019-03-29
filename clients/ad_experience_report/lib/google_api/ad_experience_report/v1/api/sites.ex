@@ -71,7 +71,7 @@ defmodule GoogleApi.AdExperienceReport.V1.Api.Sites do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/sites/{sitesId}", %{
-        "sitesId" => URI.encode_www_form(sites_id)
+        "sitesId" => URI.encode(sites_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
