@@ -62,7 +62,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{projectId}/settings", %{
-        "projectId" => URI.encode_www_form(project_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -118,7 +118,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{projectId}/histories", %{
-        "projectId" => URI.encode_www_form(project_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -186,10 +186,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
       |> Request.url(
         "/{projectId}/histories/{historyId}/executions/{executionId}/clusters/{clusterId}",
         %{
-          "projectId" => URI.encode_www_form(project_id),
-          "historyId" => URI.encode_www_form(history_id),
-          "executionId" => URI.encode_www_form(execution_id),
-          "clusterId" => URI.encode_www_form(cluster_id)
+          "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+          "historyId" => URI.encode(history_id, &URI.char_unreserved?/1),
+          "executionId" => URI.encode(execution_id, &URI.char_unreserved?/1),
+          "clusterId" => URI.encode(cluster_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -253,9 +253,9 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{projectId}/histories/{historyId}/executions/{executionId}/clusters", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "historyId" => URI.encode_www_form(history_id),
-        "executionId" => URI.encode_www_form(execution_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "historyId" => URI.encode(history_id, &URI.char_unreserved?/1),
+        "executionId" => URI.encode(execution_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -319,8 +319,8 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{projectId}/histories/{historyId}/executions", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "historyId" => URI.encode_www_form(history_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "historyId" => URI.encode(history_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -381,9 +381,9 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{projectId}/histories/{historyId}/executions/{executionId}", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "historyId" => URI.encode_www_form(history_id),
-        "executionId" => URI.encode_www_form(execution_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "historyId" => URI.encode(history_id, &URI.char_unreserved?/1),
+        "executionId" => URI.encode(execution_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -447,8 +447,8 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{projectId}/histories/{historyId}/executions", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "historyId" => URI.encode_www_form(history_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "historyId" => URI.encode(history_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -515,9 +515,9 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/{projectId}/histories/{historyId}/executions/{executionId}", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "historyId" => URI.encode_www_form(history_id),
-        "executionId" => URI.encode_www_form(execution_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "historyId" => URI.encode(history_id, &URI.char_unreserved?/1),
+        "executionId" => URI.encode(execution_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -582,9 +582,9 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{projectId}/histories/{historyId}/executions/{executionId}/steps", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "historyId" => URI.encode_www_form(history_id),
-        "executionId" => URI.encode_www_form(execution_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "historyId" => URI.encode(history_id, &URI.char_unreserved?/1),
+        "executionId" => URI.encode(execution_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -650,10 +650,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
       |> Request.url(
         "/{projectId}/histories/{historyId}/executions/{executionId}/steps/{stepId}",
         %{
-          "projectId" => URI.encode_www_form(project_id),
-          "historyId" => URI.encode_www_form(history_id),
-          "executionId" => URI.encode_www_form(execution_id),
-          "stepId" => URI.encode_www_form(step_id)
+          "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+          "historyId" => URI.encode(history_id, &URI.char_unreserved?/1),
+          "executionId" => URI.encode(execution_id, &URI.char_unreserved?/1),
+          "stepId" => URI.encode(step_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -722,10 +722,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
       |> Request.url(
         "/{projectId}/histories/{historyId}/executions/{executionId}/steps/{stepId}/perfMetricsSummary",
         %{
-          "projectId" => URI.encode_www_form(project_id),
-          "historyId" => URI.encode_www_form(history_id),
-          "executionId" => URI.encode_www_form(execution_id),
-          "stepId" => URI.encode_www_form(step_id)
+          "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+          "historyId" => URI.encode(history_id, &URI.char_unreserved?/1),
+          "executionId" => URI.encode(execution_id, &URI.char_unreserved?/1),
+          "stepId" => URI.encode(step_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -795,9 +795,9 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{projectId}/histories/{historyId}/executions/{executionId}/steps", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "historyId" => URI.encode_www_form(history_id),
-        "executionId" => URI.encode_www_form(execution_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "historyId" => URI.encode(history_id, &URI.char_unreserved?/1),
+        "executionId" => URI.encode(execution_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -867,10 +867,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
       |> Request.url(
         "/{projectId}/histories/{historyId}/executions/{executionId}/steps/{stepId}",
         %{
-          "projectId" => URI.encode_www_form(project_id),
-          "historyId" => URI.encode_www_form(history_id),
-          "executionId" => URI.encode_www_form(execution_id),
-          "stepId" => URI.encode_www_form(step_id)
+          "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+          "historyId" => URI.encode(history_id, &URI.char_unreserved?/1),
+          "executionId" => URI.encode(execution_id, &URI.char_unreserved?/1),
+          "stepId" => URI.encode(step_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -941,10 +941,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
       |> Request.url(
         "/{projectId}/histories/{historyId}/executions/{executionId}/steps/{stepId}/perfMetricsSummary",
         %{
-          "projectId" => URI.encode_www_form(project_id),
-          "historyId" => URI.encode_www_form(history_id),
-          "executionId" => URI.encode_www_form(execution_id),
-          "stepId" => URI.encode_www_form(step_id)
+          "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+          "historyId" => URI.encode(history_id, &URI.char_unreserved?/1),
+          "executionId" => URI.encode(execution_id, &URI.char_unreserved?/1),
+          "stepId" => URI.encode(step_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1017,10 +1017,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
       |> Request.url(
         "/{projectId}/histories/{historyId}/executions/{executionId}/steps/{stepId}/perfSampleSeries",
         %{
-          "projectId" => URI.encode_www_form(project_id),
-          "historyId" => URI.encode_www_form(history_id),
-          "executionId" => URI.encode_www_form(execution_id),
-          "stepId" => URI.encode_www_form(step_id)
+          "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+          "historyId" => URI.encode(history_id, &URI.char_unreserved?/1),
+          "executionId" => URI.encode(execution_id, &URI.char_unreserved?/1),
+          "stepId" => URI.encode(step_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1092,11 +1092,11 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
       |> Request.url(
         "/{projectId}/histories/{historyId}/executions/{executionId}/steps/{stepId}/perfSampleSeries/{sampleSeriesId}",
         %{
-          "projectId" => URI.encode_www_form(project_id),
-          "historyId" => URI.encode_www_form(history_id),
-          "executionId" => URI.encode_www_form(execution_id),
-          "stepId" => URI.encode_www_form(step_id),
-          "sampleSeriesId" => URI.encode_www_form(sample_series_id)
+          "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+          "historyId" => URI.encode(history_id, &URI.char_unreserved?/1),
+          "executionId" => URI.encode(execution_id, &URI.char_unreserved?/1),
+          "stepId" => URI.encode(step_id, &URI.char_unreserved?/1),
+          "sampleSeriesId" => URI.encode(sample_series_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1167,10 +1167,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
       |> Request.url(
         "/{projectId}/histories/{historyId}/executions/{executionId}/steps/{stepId}/perfSampleSeries",
         %{
-          "projectId" => URI.encode_www_form(project_id),
-          "historyId" => URI.encode_www_form(history_id),
-          "executionId" => URI.encode_www_form(execution_id),
-          "stepId" => URI.encode_www_form(step_id)
+          "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+          "historyId" => URI.encode(history_id, &URI.char_unreserved?/1),
+          "executionId" => URI.encode(execution_id, &URI.char_unreserved?/1),
+          "stepId" => URI.encode(step_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1246,11 +1246,11 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
       |> Request.url(
         "/{projectId}/histories/{historyId}/executions/{executionId}/steps/{stepId}/perfSampleSeries/{sampleSeriesId}/samples:batchCreate",
         %{
-          "projectId" => URI.encode_www_form(project_id),
-          "historyId" => URI.encode_www_form(history_id),
-          "executionId" => URI.encode_www_form(execution_id),
-          "stepId" => URI.encode_www_form(step_id),
-          "sampleSeriesId" => URI.encode_www_form(sample_series_id)
+          "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+          "historyId" => URI.encode(history_id, &URI.char_unreserved?/1),
+          "executionId" => URI.encode(execution_id, &URI.char_unreserved?/1),
+          "stepId" => URI.encode(step_id, &URI.char_unreserved?/1),
+          "sampleSeriesId" => URI.encode(sample_series_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1328,11 +1328,11 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
       |> Request.url(
         "/{projectId}/histories/{historyId}/executions/{executionId}/steps/{stepId}/perfSampleSeries/{sampleSeriesId}/samples",
         %{
-          "projectId" => URI.encode_www_form(project_id),
-          "historyId" => URI.encode_www_form(history_id),
-          "executionId" => URI.encode_www_form(execution_id),
-          "stepId" => URI.encode_www_form(step_id),
-          "sampleSeriesId" => URI.encode_www_form(sample_series_id)
+          "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+          "historyId" => URI.encode(history_id, &URI.char_unreserved?/1),
+          "executionId" => URI.encode(execution_id, &URI.char_unreserved?/1),
+          "stepId" => URI.encode(step_id, &URI.char_unreserved?/1),
+          "sampleSeriesId" => URI.encode(sample_series_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1403,10 +1403,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
       |> Request.url(
         "/{projectId}/histories/{historyId}/executions/{executionId}/steps/{stepId}:publishXunitXmlFiles",
         %{
-          "projectId" => URI.encode_www_form(project_id),
-          "historyId" => URI.encode_www_form(history_id),
-          "executionId" => URI.encode_www_form(execution_id),
-          "stepId" => URI.encode_www_form(step_id)
+          "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+          "historyId" => URI.encode(history_id, &URI.char_unreserved?/1),
+          "executionId" => URI.encode(execution_id, &URI.char_unreserved?/1),
+          "stepId" => URI.encode(step_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1479,10 +1479,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
       |> Request.url(
         "/{projectId}/histories/{historyId}/executions/{executionId}/steps/{stepId}/thumbnails",
         %{
-          "projectId" => URI.encode_www_form(project_id),
-          "historyId" => URI.encode_www_form(history_id),
-          "executionId" => URI.encode_www_form(execution_id),
-          "stepId" => URI.encode_www_form(step_id)
+          "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+          "historyId" => URI.encode(history_id, &URI.char_unreserved?/1),
+          "executionId" => URI.encode(execution_id, &URI.char_unreserved?/1),
+          "stepId" => URI.encode(step_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1539,8 +1539,8 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{projectId}/histories/{historyId}", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "historyId" => URI.encode_www_form(history_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "historyId" => URI.encode(history_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1599,7 +1599,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{projectId}/histories", %{
-        "projectId" => URI.encode_www_form(project_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1653,7 +1653,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{projectId}:initializeSettings", %{
-        "projectId" => URI.encode_www_form(project_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
