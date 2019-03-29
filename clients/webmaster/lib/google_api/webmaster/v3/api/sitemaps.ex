@@ -69,8 +69,8 @@ defmodule GoogleApi.Webmaster.V3.Api.Sitemaps do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/sites/{siteUrl}/sitemaps/{feedpath}", %{
-        "siteUrl" => URI.encode_www_form(site_url),
-        "feedpath" => URI.encode_www_form(feedpath)
+        "siteUrl" => URI.encode(site_url, &URI.char_unreserved?/1),
+        "feedpath" => URI.encode(feedpath, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -118,8 +118,8 @@ defmodule GoogleApi.Webmaster.V3.Api.Sitemaps do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/sites/{siteUrl}/sitemaps/{feedpath}", %{
-        "siteUrl" => URI.encode_www_form(site_url),
-        "feedpath" => URI.encode_www_form(feedpath)
+        "siteUrl" => URI.encode(site_url, &URI.char_unreserved?/1),
+        "feedpath" => URI.encode(feedpath, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -168,7 +168,7 @@ defmodule GoogleApi.Webmaster.V3.Api.Sitemaps do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/sites/{siteUrl}/sitemaps", %{
-        "siteUrl" => URI.encode_www_form(site_url)
+        "siteUrl" => URI.encode(site_url, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -222,8 +222,8 @@ defmodule GoogleApi.Webmaster.V3.Api.Sitemaps do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/sites/{siteUrl}/sitemaps/{feedpath}", %{
-        "siteUrl" => URI.encode_www_form(site_url),
-        "feedpath" => URI.encode_www_form(feedpath)
+        "siteUrl" => URI.encode(site_url, &URI.char_unreserved?/1),
+        "feedpath" => URI.encode(feedpath, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
