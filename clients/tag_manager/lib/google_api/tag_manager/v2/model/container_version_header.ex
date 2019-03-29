@@ -27,6 +27,7 @@ defmodule GoogleApi.TagManager.V2.Model.ContainerVersionHeader do
   - containerVersionId (String.t): The Container Version ID uniquely identifies the GTM Container Version. Defaults to: `null`.
   - deleted (boolean()): A value of true indicates this container version has been deleted. Defaults to: `null`.
   - name (String.t): Container version display name. Defaults to: `null`.
+  - numCustomTemplates (String.t): Number of custom templates in the container version. Defaults to: `null`.
   - numMacros (String.t): Number of macros in the container version. Defaults to: `null`.
   - numRules (String.t): Number of rules in the container version. Defaults to: `null`.
   - numTags (String.t): Number of tags in the container version. Defaults to: `null`.
@@ -44,6 +45,7 @@ defmodule GoogleApi.TagManager.V2.Model.ContainerVersionHeader do
           :containerVersionId => any(),
           :deleted => any(),
           :name => any(),
+          :numCustomTemplates => any(),
           :numMacros => any(),
           :numRules => any(),
           :numTags => any(),
@@ -58,6 +60,7 @@ defmodule GoogleApi.TagManager.V2.Model.ContainerVersionHeader do
   field(:containerVersionId)
   field(:deleted)
   field(:name)
+  field(:numCustomTemplates)
   field(:numMacros)
   field(:numRules)
   field(:numTags)

@@ -192,65 +192,6 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   end
 
   @doc """
-  Updates a GTM Environment. This method supports patch semantics.
-
-  ## Parameters
-
-  - connection (GoogleApi.TagManager.V2.Connection): Connection to server
-  - path (String.t): GTM Environment&#39;s API relative path. Example: accounts/{account_id}/containers/{container_id}/environments/{environment_id}
-  - optional_params (KeywordList): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :fingerprint (String.t): When provided, this fingerprint must match the fingerprint of the environment in storage.
-    - :body (Environment): 
-
-  ## Returns
-
-  {:ok, %GoogleApi.TagManager.V2.Model.Environment{}} on success
-  {:error, info} on failure
-  """
-  @spec tagmanager_accounts_containers_environments_patch(
-          Tesla.Env.client(),
-          String.t(),
-          keyword()
-        ) :: {:ok, GoogleApi.TagManager.V2.Model.Environment.t()} | {:error, Tesla.Env.t()}
-  def tagmanager_accounts_containers_environments_patch(
-        connection,
-        path,
-        optional_params \\ [],
-        opts \\ []
-      ) do
-    optional_params_config = %{
-      :alt => :query,
-      :fields => :query,
-      :key => :query,
-      :oauth_token => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :userIp => :query,
-      :fingerprint => :query,
-      :body => :body
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:patch)
-      |> Request.url("/{+path}", %{
-        "path" => URI.encode_www_form(path)
-      })
-      |> Request.add_optional_params(optional_params_config, optional_params)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(opts ++ [struct: %GoogleApi.TagManager.V2.Model.Environment{}])
-  end
-
-  @doc """
   Re-generates the authorization code for a GTM Environment.
 
   ## Parameters
@@ -1347,63 +1288,6 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   end
 
   @doc """
-  Creates a GTM Workspace Proposal.
-
-  ## Parameters
-
-  - connection (GoogleApi.TagManager.V2.Connection): Connection to server
-  - parent (String.t): GTM Workspace&#39;s API relative path. Example: accounts/{aid}/containers/{cid}/workspace/{wid}
-  - optional_params (KeywordList): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (CreateWorkspaceProposalRequest): 
-
-  ## Returns
-
-  {:ok, %GoogleApi.TagManager.V2.Model.WorkspaceProposal{}} on success
-  {:error, info} on failure
-  """
-  @spec tagmanager_accounts_containers_workspaces_proposal_create(
-          Tesla.Env.client(),
-          String.t(),
-          keyword()
-        ) :: {:ok, GoogleApi.TagManager.V2.Model.WorkspaceProposal.t()} | {:error, Tesla.Env.t()}
-  def tagmanager_accounts_containers_workspaces_proposal_create(
-        connection,
-        parent,
-        optional_params \\ [],
-        opts \\ []
-      ) do
-    optional_params_config = %{
-      :alt => :query,
-      :fields => :query,
-      :key => :query,
-      :oauth_token => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :userIp => :query,
-      :body => :body
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:post)
-      |> Request.url("/{+parent}/proposal", %{
-        "parent" => URI.encode_www_form(parent)
-      })
-      |> Request.add_optional_params(optional_params_config, optional_params)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(opts ++ [struct: %GoogleApi.TagManager.V2.Model.WorkspaceProposal{}])
-  end
-
-  @doc """
   Quick previews a workspace by creating a fake container version from all entities in the provided workspace.
 
   ## Parameters
@@ -1915,12 +1799,12 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   end
 
   @doc """
-  Reverts changes to a GTM Variable in a GTM Workspace.
+  Creates a GTM Zone.
 
   ## Parameters
 
   - connection (GoogleApi.TagManager.V2.Connection): Connection to server
-  - path (String.t): GTM Variable&#39;s API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/variables/{variable_id}
+  - parent (String.t): GTM Workspace&#39;s API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
   - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
@@ -1929,21 +1813,133 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :fingerprint (String.t): When provided, this fingerprint must match the fingerprint of the variable in storage.
+    - :body (Zone): 
 
   ## Returns
 
-  {:ok, %GoogleApi.TagManager.V2.Model.RevertVariableResponse{}} on success
+  {:ok, %GoogleApi.TagManager.V2.Model.Zone{}} on success
   {:error, info} on failure
   """
-  @spec tagmanager_accounts_containers_workspaces_variables_revert(
+  @spec tagmanager_accounts_containers_workspaces_zones_create(
           Tesla.Env.client(),
           String.t(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.TagManager.V2.Model.RevertVariableResponse.t()}
-          | {:error, Tesla.Env.t()}
-  def tagmanager_accounts_containers_workspaces_variables_revert(
+        ) :: {:ok, GoogleApi.TagManager.V2.Model.Zone.t()} | {:error, Tesla.Env.t()}
+  def tagmanager_accounts_containers_workspaces_zones_create(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :alt => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :userIp => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/{+parent}/zones", %{
+        "parent" => URI.encode_www_form(parent)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.TagManager.V2.Model.Zone{}])
+  end
+
+  @doc """
+  Lists all GTM Zones of a GTM container workspace.
+
+  ## Parameters
+
+  - connection (GoogleApi.TagManager.V2.Connection): Connection to server
+  - parent (String.t): GTM Workspace&#39;s API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :alt (String.t): Data format for the response.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+    - :pageToken (String.t): Continuation token for fetching the next page of results.
+
+  ## Returns
+
+  {:ok, %GoogleApi.TagManager.V2.Model.ListZonesResponse{}} on success
+  {:error, info} on failure
+  """
+  @spec tagmanager_accounts_containers_workspaces_zones_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) :: {:ok, GoogleApi.TagManager.V2.Model.ListZonesResponse.t()} | {:error, Tesla.Env.t()}
+  def tagmanager_accounts_containers_workspaces_zones_list(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :alt => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :userIp => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/{+parent}/zones", %{
+        "parent" => URI.encode_www_form(parent)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.TagManager.V2.Model.ListZonesResponse{}])
+  end
+
+  @doc """
+  Reverts changes to a GTM Zone in a GTM Workspace.
+
+  ## Parameters
+
+  - connection (GoogleApi.TagManager.V2.Connection): Connection to server
+  - path (String.t): GTM Zone&#39;s API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/zones/{zone_id}
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :alt (String.t): Data format for the response.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+    - :fingerprint (String.t): When provided, this fingerprint must match the fingerprint of the zone in storage.
+
+  ## Returns
+
+  {:ok, %GoogleApi.TagManager.V2.Model.RevertZoneResponse{}} on success
+  {:error, info} on failure
+  """
+  @spec tagmanager_accounts_containers_workspaces_zones_revert(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) :: {:ok, GoogleApi.TagManager.V2.Model.RevertZoneResponse.t()} | {:error, Tesla.Env.t()}
+  def tagmanager_accounts_containers_workspaces_zones_revert(
         connection,
         path,
         optional_params \\ [],
@@ -1970,7 +1966,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(opts ++ [struct: %GoogleApi.TagManager.V2.Model.RevertVariableResponse{}])
+    |> Response.decode(opts ++ [struct: %GoogleApi.TagManager.V2.Model.RevertZoneResponse{}])
   end
 
   @doc """
@@ -2253,8 +2249,8 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (UserPermission): When provided, this fingerprint must match the fingerprint of the variable in storage.
-    - :body (Variable): 
+    - :body (UserPermission): When provided, this fingerprint must match the fingerprint of the zone in storage.
+    - :body (Zone): 
 
   ## Returns
 
