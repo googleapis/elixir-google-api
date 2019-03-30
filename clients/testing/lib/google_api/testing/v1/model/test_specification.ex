@@ -25,7 +25,6 @@ defmodule GoogleApi.Testing.V1.Model.TestSpecification do
   - androidInstrumentationTest (AndroidInstrumentationTest): An Android instrumentation test. Defaults to: `null`.
   - androidRoboTest (AndroidRoboTest): An Android robo test. Defaults to: `null`.
   - androidTestLoop (AndroidTestLoop): An Android Application with a Test Loop. Defaults to: `null`.
-  - autoGoogleLogin (boolean()): Enables automatic Google account login. If set, the service will automatically generate a Google test account and add it to the device, before executing the test. Note that test accounts might be reused. Many applications show their full set of functionalities when an account is present on the device. Logging into the device with these generated accounts allows testing more functionalities. Default is false. Defaults to: `null`.
   - disablePerformanceMetrics (boolean()): Disables performance metrics recording; may reduce test latency. Defaults to: `null`.
   - disableVideoRecording (boolean()): Disables video recording; may reduce test latency. Defaults to: `null`.
   - iosTestSetup (IosTestSetup): Test setup requirements for iOS. Defaults to: `null`.
@@ -41,7 +40,6 @@ defmodule GoogleApi.Testing.V1.Model.TestSpecification do
             GoogleApi.Testing.V1.Model.AndroidInstrumentationTest.t(),
           :androidRoboTest => GoogleApi.Testing.V1.Model.AndroidRoboTest.t(),
           :androidTestLoop => GoogleApi.Testing.V1.Model.AndroidTestLoop.t(),
-          :autoGoogleLogin => any(),
           :disablePerformanceMetrics => any(),
           :disableVideoRecording => any(),
           :iosTestSetup => GoogleApi.Testing.V1.Model.IosTestSetup.t(),
@@ -53,7 +51,6 @@ defmodule GoogleApi.Testing.V1.Model.TestSpecification do
   field(:androidInstrumentationTest, as: GoogleApi.Testing.V1.Model.AndroidInstrumentationTest)
   field(:androidRoboTest, as: GoogleApi.Testing.V1.Model.AndroidRoboTest)
   field(:androidTestLoop, as: GoogleApi.Testing.V1.Model.AndroidTestLoop)
-  field(:autoGoogleLogin)
   field(:disablePerformanceMetrics)
   field(:disableVideoRecording)
   field(:iosTestSetup, as: GoogleApi.Testing.V1.Model.IosTestSetup)
