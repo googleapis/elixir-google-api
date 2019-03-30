@@ -1,7 +1,7 @@
 defmodule GoogleApi.TagManager.V2.Mixfile do
   use Mix.Project
 
-  @version "0.2.0"
+  @version "0.3.0"
 
   def project do
     [app: :google_api_tag_manager,
