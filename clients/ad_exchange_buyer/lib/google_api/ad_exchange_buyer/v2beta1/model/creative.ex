@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.Creative do
   @moduledoc """
-  A creative and its classification data.  Next ID: 42
+  A creative and its classification data.
 
   ## Attributes
 
@@ -40,7 +40,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.Creative do
   - detectedLanguages ([String.t]): @OutputOnly The detected languages for this creative. The order is arbitrary. The codes are 2 or 5 characters and are documented at https://developers.google.com/adwords/api/docs/appendix/languagecodes. Defaults to: `null`.
   - detectedProductCategories ([integer()]): @OutputOnly Detected product categories, if any. See the ad-product-categories.txt file in the technical documentation for a list of IDs. Defaults to: `null`.
   - detectedSensitiveCategories ([integer()]): @OutputOnly Detected sensitive categories, if any. See the ad-sensitive-categories.txt file in the technical documentation for a list of IDs. You should use these IDs along with the excluded-sensitive-category field in the bid request to filter your bids. Defaults to: `null`.
-  - filteringStats (FilteringStats): @OutputOnly The filtering stats for this creative. Defaults to: `null`.
+  - filteringStats (FilteringStats): @OutputOnly The filtering stats for this creative. Deprecated; please use bidders.accounts.filterSets.filteredBids.creatives.list method instead. Defaults to: `null`.
   - html (HtmlContent): An HTML creative. Defaults to: `null`.
   - impressionTrackingUrls ([String.t]): The set of URLs to be called to record an impression. Defaults to: `null`.
   - native (NativeContent): A native creative. Defaults to: `null`.
