@@ -63,7 +63,7 @@ defmodule GoogleApi.FusionTables.V2.Api.Style do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/fusiontables/v2/tables/{tableId}/styles/{styleId}", %{
-        "tableId" => URI.encode_www_form(table_id),
+        "tableId" => URI.encode(table_id, &URI.char_unreserved?/1),
         "styleId" => style_id
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -112,7 +112,7 @@ defmodule GoogleApi.FusionTables.V2.Api.Style do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/fusiontables/v2/tables/{tableId}/styles/{styleId}", %{
-        "tableId" => URI.encode_www_form(table_id),
+        "tableId" => URI.encode(table_id, &URI.char_unreserved?/1),
         "styleId" => style_id
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -162,7 +162,7 @@ defmodule GoogleApi.FusionTables.V2.Api.Style do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/fusiontables/v2/tables/{tableId}/styles", %{
-        "tableId" => URI.encode_www_form(table_id)
+        "tableId" => URI.encode(table_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -213,7 +213,7 @@ defmodule GoogleApi.FusionTables.V2.Api.Style do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/fusiontables/v2/tables/{tableId}/styles", %{
-        "tableId" => URI.encode_www_form(table_id)
+        "tableId" => URI.encode(table_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -263,7 +263,7 @@ defmodule GoogleApi.FusionTables.V2.Api.Style do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/fusiontables/v2/tables/{tableId}/styles/{styleId}", %{
-        "tableId" => URI.encode_www_form(table_id),
+        "tableId" => URI.encode(table_id, &URI.char_unreserved?/1),
         "styleId" => style_id
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -314,7 +314,7 @@ defmodule GoogleApi.FusionTables.V2.Api.Style do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/fusiontables/v2/tables/{tableId}/styles/{styleId}", %{
-        "tableId" => URI.encode_www_form(table_id),
+        "tableId" => URI.encode(table_id, &URI.char_unreserved?/1),
         "styleId" => style_id
       })
       |> Request.add_optional_params(optional_params_config, optional_params)

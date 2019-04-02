@@ -69,8 +69,8 @@ defmodule GoogleApi.FusionTables.V2.Api.Column do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/fusiontables/v2/tables/{tableId}/columns/{columnId}", %{
-        "tableId" => URI.encode_www_form(table_id),
-        "columnId" => URI.encode_www_form(column_id)
+        "tableId" => URI.encode(table_id, &URI.char_unreserved?/1),
+        "columnId" => URI.encode(column_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -118,8 +118,8 @@ defmodule GoogleApi.FusionTables.V2.Api.Column do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/fusiontables/v2/tables/{tableId}/columns/{columnId}", %{
-        "tableId" => URI.encode_www_form(table_id),
-        "columnId" => URI.encode_www_form(column_id)
+        "tableId" => URI.encode(table_id, &URI.char_unreserved?/1),
+        "columnId" => URI.encode(column_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -168,7 +168,7 @@ defmodule GoogleApi.FusionTables.V2.Api.Column do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/fusiontables/v2/tables/{tableId}/columns", %{
-        "tableId" => URI.encode_www_form(table_id)
+        "tableId" => URI.encode(table_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -219,7 +219,7 @@ defmodule GoogleApi.FusionTables.V2.Api.Column do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/fusiontables/v2/tables/{tableId}/columns", %{
-        "tableId" => URI.encode_www_form(table_id)
+        "tableId" => URI.encode(table_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -275,8 +275,8 @@ defmodule GoogleApi.FusionTables.V2.Api.Column do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/fusiontables/v2/tables/{tableId}/columns/{columnId}", %{
-        "tableId" => URI.encode_www_form(table_id),
-        "columnId" => URI.encode_www_form(column_id)
+        "tableId" => URI.encode(table_id, &URI.char_unreserved?/1),
+        "columnId" => URI.encode(column_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -332,8 +332,8 @@ defmodule GoogleApi.FusionTables.V2.Api.Column do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/fusiontables/v2/tables/{tableId}/columns/{columnId}", %{
-        "tableId" => URI.encode_www_form(table_id),
-        "columnId" => URI.encode_www_form(column_id)
+        "tableId" => URI.encode(table_id, &URI.char_unreserved?/1),
+        "columnId" => URI.encode(column_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
