@@ -67,8 +67,8 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/calendars/{calendarId}/events/{eventId}", %{
-        "calendarId" => URI.encode_www_form(calendar_id),
-        "eventId" => URI.encode_www_form(event_id)
+        "calendarId" => URI.encode(calendar_id, &URI.char_unreserved?/1),
+        "eventId" => URI.encode(event_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -122,8 +122,8 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/calendars/{calendarId}/events/{eventId}", %{
-        "calendarId" => URI.encode_www_form(calendar_id),
-        "eventId" => URI.encode_www_form(event_id)
+        "calendarId" => URI.encode(calendar_id, &URI.char_unreserved?/1),
+        "eventId" => URI.encode(event_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -176,7 +176,7 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/calendars/{calendarId}/events/import", %{
-        "calendarId" => URI.encode_www_form(calendar_id)
+        "calendarId" => URI.encode(calendar_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -235,7 +235,7 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/calendars/{calendarId}/events", %{
-        "calendarId" => URI.encode_www_form(calendar_id)
+        "calendarId" => URI.encode(calendar_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -307,8 +307,8 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/calendars/{calendarId}/events/{eventId}/instances", %{
-        "calendarId" => URI.encode_www_form(calendar_id),
-        "eventId" => URI.encode_www_form(event_id)
+        "calendarId" => URI.encode(calendar_id, &URI.char_unreserved?/1),
+        "eventId" => URI.encode(event_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -389,7 +389,7 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/calendars/{calendarId}/events", %{
-        "calendarId" => URI.encode_www_form(calendar_id)
+        "calendarId" => URI.encode(calendar_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -449,8 +449,8 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/calendars/{calendarId}/events/{eventId}/move", %{
-        "calendarId" => URI.encode_www_form(calendar_id),
-        "eventId" => URI.encode_www_form(event_id)
+        "calendarId" => URI.encode(calendar_id, &URI.char_unreserved?/1),
+        "eventId" => URI.encode(event_id, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :destination, destination)
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -513,8 +513,8 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/calendars/{calendarId}/events/{eventId}", %{
-        "calendarId" => URI.encode_www_form(calendar_id),
-        "eventId" => URI.encode_www_form(event_id)
+        "calendarId" => URI.encode(calendar_id, &URI.char_unreserved?/1),
+        "eventId" => URI.encode(event_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -566,7 +566,7 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/calendars/{calendarId}/events/quickAdd", %{
-        "calendarId" => URI.encode_www_form(calendar_id)
+        "calendarId" => URI.encode(calendar_id, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :text, text)
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -629,8 +629,8 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/calendars/{calendarId}/events/{eventId}", %{
-        "calendarId" => URI.encode_www_form(calendar_id),
-        "eventId" => URI.encode_www_form(event_id)
+        "calendarId" => URI.encode(calendar_id, &URI.char_unreserved?/1),
+        "eventId" => URI.encode(event_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -713,7 +713,7 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/calendars/{calendarId}/events/watch", %{
-        "calendarId" => URI.encode_www_form(calendar_id)
+        "calendarId" => URI.encode(calendar_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
