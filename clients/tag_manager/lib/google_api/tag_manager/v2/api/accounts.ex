@@ -64,7 +64,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{+parent}/containers", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -121,7 +121,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{+parent}/environments", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -180,7 +180,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{+parent}/environments", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -239,7 +239,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{+path}:reauthorize", %{
-        "path" => URI.encode_www_form(path)
+        "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -289,7 +289,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{+parent}/containers", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -346,7 +346,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{+parent}/version_headers:latest", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -407,7 +407,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{+parent}/version_headers", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -461,7 +461,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{+parent}/versions:live", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -516,7 +516,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{+path}:publish", %{
-        "path" => URI.encode_www_form(path)
+        "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -573,7 +573,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{+path}:set_latest", %{
-        "path" => URI.encode_www_form(path)
+        "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -628,7 +628,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{+path}:undelete", %{
-        "path" => URI.encode_www_form(path)
+        "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -687,7 +687,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{+parent}/built_in_variables", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -748,7 +748,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{+parent}/built_in_variables", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -809,7 +809,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{+path}/built_in_variables:revert", %{
-        "path" => URI.encode_www_form(path)
+        "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -868,7 +868,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{+parent}/workspaces", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -927,7 +927,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{+path}:create_version", %{
-        "path" => URI.encode_www_form(path)
+        "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -986,7 +986,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{+parent}/folders", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1043,7 +1043,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{+path}:entities", %{
-        "path" => URI.encode_www_form(path)
+        "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1101,7 +1101,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{+parent}/folders", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1164,7 +1164,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{+path}:move_entities_to_folder", %{
-        "path" => URI.encode_www_form(path)
+        "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1221,7 +1221,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{+path}/status", %{
-        "path" => URI.encode_www_form(path)
+        "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1278,7 +1278,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{+parent}/workspaces", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1334,7 +1334,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{+path}:quick_preview", %{
-        "path" => URI.encode_www_form(path)
+        "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1393,7 +1393,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{+path}:resolve_conflict", %{
-        "path" => URI.encode_www_form(path)
+        "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1445,7 +1445,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{+path}:sync", %{
-        "path" => URI.encode_www_form(path)
+        "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1502,7 +1502,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{+parent}/tags", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1559,7 +1559,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{+parent}/tags", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1616,7 +1616,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{+parent}/triggers", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1674,7 +1674,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{+parent}/triggers", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1731,7 +1731,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{+parent}/variables", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1789,7 +1789,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{+parent}/variables", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1846,7 +1846,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{+parent}/zones", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1903,7 +1903,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{+parent}/zones", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1960,7 +1960,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{+path}:revert", %{
-        "path" => URI.encode_www_form(path)
+        "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2060,7 +2060,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{+parent}/user_permissions", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2114,7 +2114,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/{+path}", %{
-        "path" => URI.encode_www_form(path)
+        "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2168,7 +2168,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{+path}", %{
-        "path" => URI.encode_www_form(path)
+        "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2223,7 +2223,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{+parent}/user_permissions", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2281,7 +2281,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/{+path}", %{
-        "path" => URI.encode_www_form(path)
+        "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
