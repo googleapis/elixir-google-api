@@ -78,7 +78,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v4/spreadsheets/{spreadsheetId}:batchUpdate", %{
-        "spreadsheetId" => URI.encode_www_form(spreadsheet_id)
+        "spreadsheetId" => URI.encode(spreadsheet_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -200,7 +200,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v4/spreadsheets/{spreadsheetId}/developerMetadata/{metadataId}", %{
-        "spreadsheetId" => URI.encode_www_form(spreadsheet_id),
+        "spreadsheetId" => URI.encode(spreadsheet_id, &URI.char_unreserved?/1),
         "metadataId" => metadata_id
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -264,7 +264,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v4/spreadsheets/{spreadsheetId}/developerMetadata:search", %{
-        "spreadsheetId" => URI.encode_www_form(spreadsheet_id)
+        "spreadsheetId" => URI.encode(spreadsheet_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -325,7 +325,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v4/spreadsheets/{spreadsheetId}", %{
-        "spreadsheetId" => URI.encode_www_form(spreadsheet_id)
+        "spreadsheetId" => URI.encode(spreadsheet_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -387,7 +387,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v4/spreadsheets/{spreadsheetId}:getByDataFilter", %{
-        "spreadsheetId" => URI.encode_www_form(spreadsheet_id)
+        "spreadsheetId" => URI.encode(spreadsheet_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -451,7 +451,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v4/spreadsheets/{spreadsheetId}/sheets/{sheetId}:copyTo", %{
-        "spreadsheetId" => URI.encode_www_form(spreadsheet_id),
+        "spreadsheetId" => URI.encode(spreadsheet_id, &URI.char_unreserved?/1),
         "sheetId" => sheet_id
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -526,8 +526,8 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v4/spreadsheets/{spreadsheetId}/values/{range}:append", %{
-        "spreadsheetId" => URI.encode_www_form(spreadsheet_id),
-        "range" => URI.encode_www_form(range)
+        "spreadsheetId" => URI.encode(spreadsheet_id, &URI.char_unreserved?/1),
+        "range" => URI.encode(range, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -589,7 +589,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v4/spreadsheets/{spreadsheetId}/values:batchClear", %{
-        "spreadsheetId" => URI.encode_www_form(spreadsheet_id)
+        "spreadsheetId" => URI.encode(spreadsheet_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -656,7 +656,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v4/spreadsheets/{spreadsheetId}/values:batchClearByDataFilter", %{
-        "spreadsheetId" => URI.encode_www_form(spreadsheet_id)
+        "spreadsheetId" => URI.encode(spreadsheet_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -726,7 +726,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v4/spreadsheets/{spreadsheetId}/values:batchGet", %{
-        "spreadsheetId" => URI.encode_www_form(spreadsheet_id)
+        "spreadsheetId" => URI.encode(spreadsheet_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -793,7 +793,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v4/spreadsheets/{spreadsheetId}/values:batchGetByDataFilter", %{
-        "spreadsheetId" => URI.encode_www_form(spreadsheet_id)
+        "spreadsheetId" => URI.encode(spreadsheet_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -857,7 +857,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v4/spreadsheets/{spreadsheetId}/values:batchUpdate", %{
-        "spreadsheetId" => URI.encode_www_form(spreadsheet_id)
+        "spreadsheetId" => URI.encode(spreadsheet_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -924,7 +924,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v4/spreadsheets/{spreadsheetId}/values:batchUpdateByDataFilter", %{
-        "spreadsheetId" => URI.encode_www_form(spreadsheet_id)
+        "spreadsheetId" => URI.encode(spreadsheet_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -990,8 +990,8 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v4/spreadsheets/{spreadsheetId}/values/{range}:clear", %{
-        "spreadsheetId" => URI.encode_www_form(spreadsheet_id),
-        "range" => URI.encode_www_form(range)
+        "spreadsheetId" => URI.encode(spreadsheet_id, &URI.char_unreserved?/1),
+        "range" => URI.encode(range, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1059,8 +1059,8 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v4/spreadsheets/{spreadsheetId}/values/{range}", %{
-        "spreadsheetId" => URI.encode_www_form(spreadsheet_id),
-        "range" => URI.encode_www_form(range)
+        "spreadsheetId" => URI.encode(spreadsheet_id, &URI.char_unreserved?/1),
+        "range" => URI.encode(range, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1132,8 +1132,8 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/v4/spreadsheets/{spreadsheetId}/values/{range}", %{
-        "spreadsheetId" => URI.encode_www_form(spreadsheet_id),
-        "range" => URI.encode_www_form(range)
+        "spreadsheetId" => URI.encode(spreadsheet_id, &URI.char_unreserved?/1),
+        "range" => URI.encode(range, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
