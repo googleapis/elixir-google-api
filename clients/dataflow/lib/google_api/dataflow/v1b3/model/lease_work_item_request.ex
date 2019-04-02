@@ -23,7 +23,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.LeaseWorkItemRequest do
   ## Attributes
 
   - currentWorkerTime (DateTime.t): The current timestamp at the worker. Defaults to: `null`.
-  - location (String.t): The location which contains the WorkItem&#39;s job. Defaults to: `null`.
+  - location (String.t): The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the WorkItem&#39;s job. Defaults to: `null`.
   - requestedLeaseDuration (String.t): The initial lease period. Defaults to: `null`.
   - unifiedWorkerRequest (%{optional(String.t) &#x3D;&gt; String.t}): Untranslated bag-of-bytes WorkRequest from UnifiedWorker. Defaults to: `null`.
   - workItemTypes ([String.t]): Filter for WorkItem type. Defaults to: `null`.

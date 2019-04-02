@@ -44,7 +44,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :filter (String.t): The kind of filter to use.
-    - :location (String.t): The location that contains this job.
+    - :location (String.t): The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains this job.
     - :pageSize (integer()): If there are many jobs, limit response to at most this many. The actual number of jobs returned will be the lesser of max_responses and an unspecified server-defined limit.
     - :pageToken (String.t): Set this to the &#39;next_page_token&#39; field of a previous response to request additional results in a long list.
     - :view (String.t): Level of information requested in response. Default is &#x60;JOB_VIEW_SUMMARY&#x60;.
@@ -80,7 +80,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1b3/projects/{projectId}/jobs:aggregated", %{
-        "projectId" => URI.encode_www_form(project_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -90,7 +90,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   end
 
   @doc """
-  Creates a Cloud Dataflow job.
+  Creates a Cloud Dataflow job.  To create a job, we recommend using &#x60;projects.locations.jobs.create&#x60; with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using &#x60;projects.jobs.create&#x60; is not recommended, as your job will always start in &#x60;us-central1&#x60;.
 
   ## Parameters
 
@@ -108,7 +108,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :location (String.t): The location that contains this job.
+    - :location (String.t): The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains this job.
     - :replaceJobId (String.t): Deprecated. This field is now in the Job message.
     - :view (String.t): The level of information requested in response.
     - :body (Job): 
@@ -143,7 +143,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1b3/projects/{projectId}/jobs", %{
-        "projectId" => URI.encode_www_form(project_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -213,8 +213,8 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1b3/projects/{projectId}/jobs/{jobId}/debug/getConfig", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "jobId" => URI.encode_www_form(job_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "jobId" => URI.encode(job_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -284,8 +284,8 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1b3/projects/{projectId}/jobs/{jobId}/debug/sendCapture", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "jobId" => URI.encode_www_form(job_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "jobId" => URI.encode(job_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -297,7 +297,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   end
 
   @doc """
-  Gets the state of the specified Cloud Dataflow job.
+  Gets the state of the specified Cloud Dataflow job.  To get the state of a job, we recommend using &#x60;projects.locations.jobs.get&#x60; with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using &#x60;projects.jobs.get&#x60; is not recommended, as you can only get the state of jobs that are running in &#x60;us-central1&#x60;.
 
   ## Parameters
 
@@ -316,7 +316,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :location (String.t): The location that contains this job.
+    - :location (String.t): The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains this job.
     - :view (String.t): The level of information requested in response.
 
   ## Returns
@@ -353,8 +353,8 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1b3/projects/{projectId}/jobs/{jobId}", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "jobId" => URI.encode_www_form(job_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "jobId" => URI.encode(job_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -364,7 +364,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   end
 
   @doc """
-  Request the job status.
+  Request the job status.  To request the status of a job, we recommend using &#x60;projects.locations.jobs.getMetrics&#x60; with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using &#x60;projects.jobs.getMetrics&#x60; is not recommended, as you can only request the status of jobs that are running in &#x60;us-central1&#x60;.
 
   ## Parameters
 
@@ -383,7 +383,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :location (String.t): The location which contains the job specified by job_id.
+    - :location (String.t): The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the job specified by job_id.
     - :startTime (DateTime.t): Return only metric data that has changed since this time. Default is to return all information about all metrics for the job.
 
   ## Returns
@@ -420,8 +420,8 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1b3/projects/{projectId}/jobs/{jobId}/metrics", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "jobId" => URI.encode_www_form(job_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "jobId" => URI.encode(job_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -431,7 +431,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   end
 
   @doc """
-  List the jobs of a project in a given region.
+  List the jobs of a project.  To list the jobs of a project in a region, we recommend using &#x60;projects.locations.jobs.get&#x60; with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). To list the all jobs across all regions, use &#x60;projects.jobs.aggregated&#x60;. Using &#x60;projects.jobs.list&#x60; is not recommended, as you can only get the list of jobs that are running in &#x60;us-central1&#x60;.
 
   ## Parameters
 
@@ -450,7 +450,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :filter (String.t): The kind of filter to use.
-    - :location (String.t): The location that contains this job.
+    - :location (String.t): The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains this job.
     - :pageSize (integer()): If there are many jobs, limit response to at most this many. The actual number of jobs returned will be the lesser of max_responses and an unspecified server-defined limit.
     - :pageToken (String.t): Set this to the &#39;next_page_token&#39; field of a previous response to request additional results in a long list.
     - :view (String.t): Level of information requested in response. Default is &#x60;JOB_VIEW_SUMMARY&#x60;.
@@ -486,7 +486,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1b3/projects/{projectId}/jobs", %{
-        "projectId" => URI.encode_www_form(project_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -496,7 +496,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   end
 
   @doc """
-  Request the job status.
+  Request the job status.  To request the status of a job, we recommend using &#x60;projects.locations.jobs.messages.list&#x60; with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using &#x60;projects.jobs.messages.list&#x60; is not recommended, as you can only request the status of jobs that are running in &#x60;us-central1&#x60;.
 
   ## Parameters
 
@@ -516,7 +516,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :endTime (DateTime.t): Return only messages with timestamps &lt; end_time. The default is now (i.e. return up to the latest messages available).
-    - :location (String.t): The location which contains the job specified by job_id.
+    - :location (String.t): The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the job specified by job_id.
     - :minimumImportance (String.t): Filter to only get messages with importance &gt;&#x3D; level
     - :pageSize (integer()): If specified, determines the maximum number of messages to return.  If unspecified, the service may choose an appropriate default, or may return an arbitrarily large number of results.
     - :pageToken (String.t): If supplied, this should be the value of next_page_token returned by an earlier call. This will cause the next page of results to be returned.
@@ -566,8 +566,8 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1b3/projects/{projectId}/jobs/{jobId}/messages", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "jobId" => URI.encode_www_form(job_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "jobId" => URI.encode(job_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -631,8 +631,8 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1b3/projects/{projectId}/jobs/{jobId}:snapshot", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "jobId" => URI.encode_www_form(job_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "jobId" => URI.encode(job_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -642,7 +642,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   end
 
   @doc """
-  Updates the state of an existing Cloud Dataflow job.
+  Updates the state of an existing Cloud Dataflow job.  To update the state of an existing job, we recommend using &#x60;projects.locations.jobs.update&#x60; with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using &#x60;projects.jobs.update&#x60; is not recommended, as you can only update the state of jobs that are running in &#x60;us-central1&#x60;.
 
   ## Parameters
 
@@ -661,7 +661,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :location (String.t): The location that contains this job.
+    - :location (String.t): The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains this job.
     - :body (Job): 
 
   ## Returns
@@ -698,8 +698,8 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/v1b3/projects/{projectId}/jobs/{jobId}", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "jobId" => URI.encode_www_form(job_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "jobId" => URI.encode(job_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -768,8 +768,8 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1b3/projects/{projectId}/jobs/{jobId}/workItems:lease", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "jobId" => URI.encode_www_form(job_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "jobId" => URI.encode(job_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -839,8 +839,8 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1b3/projects/{projectId}/jobs/{jobId}/workItems:reportStatus", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "jobId" => URI.encode_www_form(job_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "jobId" => URI.encode(job_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -852,13 +852,13 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   end
 
   @doc """
-  Creates a Cloud Dataflow job.
+  Creates a Cloud Dataflow job.  To create a job, we recommend using &#x60;projects.locations.jobs.create&#x60; with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using &#x60;projects.jobs.create&#x60; is not recommended, as your job will always start in &#x60;us-central1&#x60;.
 
   ## Parameters
 
   - connection (GoogleApi.Dataflow.V1b3.Connection): Connection to server
   - project_id (String.t): The ID of the Cloud Platform project that the job belongs to.
-  - location (String.t): The location that contains this job.
+  - location (String.t): The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains this job.
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
@@ -914,8 +914,8 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1b3/projects/{projectId}/locations/{location}/jobs", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "location" => URI.encode_www_form(location)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "location" => URI.encode(location, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -931,7 +931,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
 
   - connection (GoogleApi.Dataflow.V1b3.Connection): Connection to server
   - project_id (String.t): The project id.
-  - location (String.t): The location which contains the job specified by job_id.
+  - location (String.t): The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the job specified by job_id.
   - job_id (String.t): The job id.
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
@@ -990,9 +990,9 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       |> Request.url(
         "/v1b3/projects/{projectId}/locations/{location}/jobs/{jobId}/debug/getConfig",
         %{
-          "projectId" => URI.encode_www_form(project_id),
-          "location" => URI.encode_www_form(location),
-          "jobId" => URI.encode_www_form(job_id)
+          "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+          "location" => URI.encode(location, &URI.char_unreserved?/1),
+          "jobId" => URI.encode(job_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1009,7 +1009,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
 
   - connection (GoogleApi.Dataflow.V1b3.Connection): Connection to server
   - project_id (String.t): The project id.
-  - location (String.t): The location which contains the job specified by job_id.
+  - location (String.t): The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the job specified by job_id.
   - job_id (String.t): The job id.
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
@@ -1068,9 +1068,9 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       |> Request.url(
         "/v1b3/projects/{projectId}/locations/{location}/jobs/{jobId}/debug/sendCapture",
         %{
-          "projectId" => URI.encode_www_form(project_id),
-          "location" => URI.encode_www_form(location),
-          "jobId" => URI.encode_www_form(job_id)
+          "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+          "location" => URI.encode(location, &URI.char_unreserved?/1),
+          "jobId" => URI.encode(job_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1083,13 +1083,13 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   end
 
   @doc """
-  Gets the state of the specified Cloud Dataflow job.
+  Gets the state of the specified Cloud Dataflow job.  To get the state of a job, we recommend using &#x60;projects.locations.jobs.get&#x60; with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using &#x60;projects.jobs.get&#x60; is not recommended, as you can only get the state of jobs that are running in &#x60;us-central1&#x60;.
 
   ## Parameters
 
   - connection (GoogleApi.Dataflow.V1b3.Connection): Connection to server
   - project_id (String.t): The ID of the Cloud Platform project that the job belongs to.
-  - location (String.t): The location that contains this job.
+  - location (String.t): The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains this job.
   - job_id (String.t): The job ID.
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
@@ -1144,9 +1144,9 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1b3/projects/{projectId}/locations/{location}/jobs/{jobId}", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "location" => URI.encode_www_form(location),
-        "jobId" => URI.encode_www_form(job_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "location" => URI.encode(location, &URI.char_unreserved?/1),
+        "jobId" => URI.encode(job_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1156,13 +1156,13 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   end
 
   @doc """
-  Request the job status.
+  Request the job status.  To request the status of a job, we recommend using &#x60;projects.locations.jobs.getMetrics&#x60; with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using &#x60;projects.jobs.getMetrics&#x60; is not recommended, as you can only request the status of jobs that are running in &#x60;us-central1&#x60;.
 
   ## Parameters
 
   - connection (GoogleApi.Dataflow.V1b3.Connection): Connection to server
   - project_id (String.t): A project id.
-  - location (String.t): The location which contains the job specified by job_id.
+  - location (String.t): The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the job specified by job_id.
   - job_id (String.t): The job to get messages for.
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
@@ -1217,9 +1217,9 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1b3/projects/{projectId}/locations/{location}/jobs/{jobId}/metrics", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "location" => URI.encode_www_form(location),
-        "jobId" => URI.encode_www_form(job_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "location" => URI.encode(location, &URI.char_unreserved?/1),
+        "jobId" => URI.encode(job_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1229,13 +1229,13 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   end
 
   @doc """
-  List the jobs of a project in a given region.
+  List the jobs of a project.  To list the jobs of a project in a region, we recommend using &#x60;projects.locations.jobs.get&#x60; with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). To list the all jobs across all regions, use &#x60;projects.jobs.aggregated&#x60;. Using &#x60;projects.jobs.list&#x60; is not recommended, as you can only get the list of jobs that are running in &#x60;us-central1&#x60;.
 
   ## Parameters
 
   - connection (GoogleApi.Dataflow.V1b3.Connection): Connection to server
   - project_id (String.t): The project which owns the jobs.
-  - location (String.t): The location that contains this job.
+  - location (String.t): The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains this job.
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
@@ -1293,8 +1293,8 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1b3/projects/{projectId}/locations/{location}/jobs", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "location" => URI.encode_www_form(location)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "location" => URI.encode(location, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1304,13 +1304,13 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   end
 
   @doc """
-  Request the job status.
+  Request the job status.  To request the status of a job, we recommend using &#x60;projects.locations.jobs.messages.list&#x60; with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using &#x60;projects.jobs.messages.list&#x60; is not recommended, as you can only request the status of jobs that are running in &#x60;us-central1&#x60;.
 
   ## Parameters
 
   - connection (GoogleApi.Dataflow.V1b3.Connection): Connection to server
   - project_id (String.t): A project id.
-  - location (String.t): The location which contains the job specified by job_id.
+  - location (String.t): The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the job specified by job_id.
   - job_id (String.t): The job to get messages about.
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
@@ -1375,9 +1375,9 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1b3/projects/{projectId}/locations/{location}/jobs/{jobId}/messages", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "location" => URI.encode_www_form(location),
-        "jobId" => URI.encode_www_form(job_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "location" => URI.encode(location, &URI.char_unreserved?/1),
+        "jobId" => URI.encode(job_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1448,9 +1448,9 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1b3/projects/{projectId}/locations/{location}/jobs/{jobId}:snapshot", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "location" => URI.encode_www_form(location),
-        "jobId" => URI.encode_www_form(job_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "location" => URI.encode(location, &URI.char_unreserved?/1),
+        "jobId" => URI.encode(job_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1460,13 +1460,13 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   end
 
   @doc """
-  Updates the state of an existing Cloud Dataflow job.
+  Updates the state of an existing Cloud Dataflow job.  To update the state of an existing job, we recommend using &#x60;projects.locations.jobs.update&#x60; with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using &#x60;projects.jobs.update&#x60; is not recommended, as you can only update the state of jobs that are running in &#x60;us-central1&#x60;.
 
   ## Parameters
 
   - connection (GoogleApi.Dataflow.V1b3.Connection): Connection to server
   - project_id (String.t): The ID of the Cloud Platform project that the job belongs to.
-  - location (String.t): The location that contains this job.
+  - location (String.t): The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains this job.
   - job_id (String.t): The job ID.
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
@@ -1521,9 +1521,9 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/v1b3/projects/{projectId}/locations/{location}/jobs/{jobId}", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "location" => URI.encode_www_form(location),
-        "jobId" => URI.encode_www_form(job_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "location" => URI.encode(location, &URI.char_unreserved?/1),
+        "jobId" => URI.encode(job_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1539,7 +1539,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
 
   - connection (GoogleApi.Dataflow.V1b3.Connection): Connection to server
   - project_id (String.t): Identifies the project this worker belongs to.
-  - location (String.t): The location which contains the WorkItem&#39;s job.
+  - location (String.t): The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the WorkItem&#39;s job.
   - job_id (String.t): Identifies the workflow job this worker belongs to.
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
@@ -1597,9 +1597,9 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       |> Request.url(
         "/v1b3/projects/{projectId}/locations/{location}/jobs/{jobId}/workItems:lease",
         %{
-          "projectId" => URI.encode_www_form(project_id),
-          "location" => URI.encode_www_form(location),
-          "jobId" => URI.encode_www_form(job_id)
+          "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+          "location" => URI.encode(location, &URI.char_unreserved?/1),
+          "jobId" => URI.encode(job_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1616,7 +1616,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
 
   - connection (GoogleApi.Dataflow.V1b3.Connection): Connection to server
   - project_id (String.t): The project which owns the WorkItem&#39;s job.
-  - location (String.t): The location which contains the WorkItem&#39;s job.
+  - location (String.t): The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the WorkItem&#39;s job.
   - job_id (String.t): The job which the WorkItem is part of.
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
@@ -1675,9 +1675,9 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       |> Request.url(
         "/v1b3/projects/{projectId}/locations/{location}/jobs/{jobId}/workItems:reportStatus",
         %{
-          "projectId" => URI.encode_www_form(project_id),
-          "location" => URI.encode_www_form(location),
-          "jobId" => URI.encode_www_form(job_id)
+          "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+          "location" => URI.encode(location, &URI.char_unreserved?/1),
+          "jobId" => URI.encode(job_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1696,7 +1696,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
 
   - connection (GoogleApi.Dataflow.V1b3.Connection): Connection to server
   - project_id (String.t): Required. The ID of the Cloud Platform project that the job belongs to.
-  - location (String.t): The location to which to direct the request.
+  - location (String.t): The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to which to direct the request.
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
@@ -1748,8 +1748,8 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1b3/projects/{projectId}/locations/{location}/templates", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "location" => URI.encode_www_form(location)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "location" => URI.encode(location, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1765,7 +1765,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
 
   - connection (GoogleApi.Dataflow.V1b3.Connection): Connection to server
   - project_id (String.t): Required. The ID of the Cloud Platform project that the job belongs to.
-  - location (String.t): The location to which to direct the request.
+  - location (String.t): The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to which to direct the request.
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
@@ -1820,8 +1820,8 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1b3/projects/{projectId}/locations/{location}/templates:get", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "location" => URI.encode_www_form(location)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "location" => URI.encode(location, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1837,7 +1837,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
 
   - connection (GoogleApi.Dataflow.V1b3.Connection): Connection to server
   - project_id (String.t): Required. The ID of the Cloud Platform project that the job belongs to.
-  - location (String.t): The location to which to direct the request.
+  - location (String.t): The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to which to direct the request.
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
@@ -1899,8 +1899,8 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1b3/projects/{projectId}/locations/{location}/templates:launch", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "location" => URI.encode_www_form(location)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "location" => URI.encode(location, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1916,7 +1916,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
 
   - connection (GoogleApi.Dataflow.V1b3.Connection): Connection to server
   - project_id (String.t): The project to send the WorkerMessages to.
-  - location (String.t): The location which contains the job
+  - location (String.t): The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the job.
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
@@ -1970,8 +1970,8 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1b3/projects/{projectId}/locations/{location}/WorkerMessages", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "location" => URI.encode_www_form(location)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "location" => URI.encode(location, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2035,7 +2035,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1b3/projects/{projectId}/templates", %{
-        "projectId" => URI.encode_www_form(project_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2064,7 +2064,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :gcsPath (String.t): Required. A Cloud Storage path to the template from which to create the job. Must be valid Cloud Storage URL, beginning with &#39;gs://&#39;.
-    - :location (String.t): The location to which to direct the request.
+    - :location (String.t): The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to which to direct the request.
     - :view (String.t): The view to retrieve. Defaults to METADATA_ONLY.
 
   ## Returns
@@ -2096,7 +2096,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1b3/projects/{projectId}/templates:get", %{
-        "projectId" => URI.encode_www_form(project_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2127,7 +2127,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
     - :dynamicTemplate.gcsPath (String.t): Path to dynamic template spec file on GCS. The file must be a Json serialized DynamicTemplateFieSpec object.
     - :dynamicTemplate.stagingLocation (String.t): Cloud Storage path for staging dependencies. Must be a valid Cloud Storage URL, beginning with &#x60;gs://&#x60;.
     - :gcsPath (String.t): A Cloud Storage path to the template from which to create the job. Must be valid Cloud Storage URL, beginning with &#39;gs://&#39;.
-    - :location (String.t): The location to which to direct the request.
+    - :location (String.t): The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to which to direct the request.
     - :validateOnly (boolean()): If true, the request is validated but not actually executed. Defaults to false.
     - :body (LaunchTemplateParameters): 
 
@@ -2169,7 +2169,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1b3/projects/{projectId}/templates:launch", %{
-        "projectId" => URI.encode_www_form(project_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2227,7 +2227,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1b3/projects/{projectId}/WorkerMessages", %{
-        "projectId" => URI.encode_www_form(project_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

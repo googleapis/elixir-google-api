@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.JobMetadata do
   @moduledoc """
-  Metadata available primarily for filtering jobs. Will be included in the ListJob response and Job SUMMARY view+.
+  Metadata available primarily for filtering jobs. Will be included in the ListJob response and Job SUMMARY view.
 
   ## Attributes
 

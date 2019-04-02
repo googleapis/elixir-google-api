@@ -18,14 +18,14 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.SdkVersion do
   @moduledoc """
-  The version of the SDK used to run the jobl
+  The version of the SDK used to run the job.
 
   ## Attributes
 
   - sdkSupportStatus (String.t): The support status for this SDK version. Defaults to: `null`.
     - Enum - one of [UNKNOWN, SUPPORTED, STALE, DEPRECATED, UNSUPPORTED]
   - version (String.t): The version of the SDK used to run the job. Defaults to: `null`.
-  - versionDisplayName (String.t): A readable string describing the version of the sdk. Defaults to: `null`.
+  - versionDisplayName (String.t): A readable string describing the version of the SDK. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

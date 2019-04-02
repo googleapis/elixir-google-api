@@ -18,11 +18,11 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.FailedLocation do
   @moduledoc """
-  Indicates which location failed to respond to a request for data.
+  Indicates which [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) failed to respond to a request for data.
 
   ## Attributes
 
-  - name (String.t): The name of the failed location. Defaults to: `null`.
+  - name (String.t): The name of the [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that failed to respond. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

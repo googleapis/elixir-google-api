@@ -26,7 +26,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.CreateJobFromTemplateRequest do
   - environment (RuntimeEnvironment): The runtime environment for the job. Defaults to: `null`.
   - gcsPath (String.t): Required. A Cloud Storage path to the template from which to create the job. Must be a valid Cloud Storage URL, beginning with &#x60;gs://&#x60;. Defaults to: `null`.
   - jobName (String.t): Required. The job name to use for the created job. Defaults to: `null`.
-  - location (String.t): The location to which to direct the request. Defaults to: `null`.
+  - location (String.t): The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to which to direct the request. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
