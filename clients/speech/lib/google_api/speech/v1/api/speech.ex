@@ -25,7 +25,7 @@ defmodule GoogleApi.Speech.V1.Api.Speech do
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
-  Performs asynchronous speech recognition: receive results via the google.longrunning.Operations interface. Returns either an &#x60;Operation.error&#x60; or an &#x60;Operation.response&#x60; which contains a &#x60;LongRunningRecognizeResponse&#x60; message.
+  Performs asynchronous speech recognition: receive results via the google.longrunning.Operations interface. Returns either an &#x60;Operation.error&#x60; or an &#x60;Operation.response&#x60; which contains a &#x60;LongRunningRecognizeResponse&#x60; message. For more information on asynchronous speech recognition, see the [how-to](https://cloud.google.com/speech-to-text/docs/async-recognize).
 
   ## Parameters
 
