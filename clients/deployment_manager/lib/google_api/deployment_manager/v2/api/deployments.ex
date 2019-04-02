@@ -75,8 +75,8 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Deployments do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/global/deployments/{deployment}/cancelPreview", %{
-        "project" => URI.encode_www_form(project),
-        "deployment" => URI.encode_www_form(deployment)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "deployment" => URI.encode(deployment, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -136,8 +136,8 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Deployments do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/{project}/global/deployments/{deployment}", %{
-        "project" => URI.encode_www_form(project),
-        "deployment" => URI.encode_www_form(deployment)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "deployment" => URI.encode(deployment, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -191,8 +191,8 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Deployments do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/global/deployments/{deployment}", %{
-        "project" => URI.encode_www_form(project),
-        "deployment" => URI.encode_www_form(deployment)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "deployment" => URI.encode(deployment, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -250,8 +250,8 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Deployments do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/global/deployments/{resource}/getIamPolicy", %{
-        "project" => URI.encode_www_form(project),
-        "resource" => URI.encode_www_form(resource)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -304,7 +304,7 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Deployments do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/global/deployments", %{
-        "project" => URI.encode_www_form(project)
+        "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -360,7 +360,7 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Deployments do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/global/deployments", %{
-        "project" => URI.encode_www_form(project)
+        "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -424,8 +424,8 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Deployments do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/{project}/global/deployments/{deployment}", %{
-        "project" => URI.encode_www_form(project),
-        "deployment" => URI.encode_www_form(deployment)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "deployment" => URI.encode(deployment, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -485,8 +485,8 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Deployments do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/global/deployments/{resource}/setIamPolicy", %{
-        "project" => URI.encode_www_form(project),
-        "resource" => URI.encode_www_form(resource)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -542,8 +542,8 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Deployments do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/global/deployments/{deployment}/stop", %{
-        "project" => URI.encode_www_form(project),
-        "deployment" => URI.encode_www_form(deployment)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "deployment" => URI.encode(deployment, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -605,8 +605,8 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Deployments do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/global/deployments/{resource}/testIamPermissions", %{
-        "project" => URI.encode_www_form(project),
-        "resource" => URI.encode_www_form(resource)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -674,8 +674,8 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Deployments do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/{project}/global/deployments/{deployment}", %{
-        "project" => URI.encode_www_form(project),
-        "deployment" => URI.encode_www_form(deployment)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "deployment" => URI.encode(deployment, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
