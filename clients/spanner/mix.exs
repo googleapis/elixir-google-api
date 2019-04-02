@@ -1,7 +1,7 @@
 defmodule GoogleApi.Spanner.V1.Mixfile do
   use Mix.Project
 
-  @version "0.3.0"
+  @version "0.4.0"
 
   def project do
     [app: :google_api_spanner,
