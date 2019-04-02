@@ -24,7 +24,7 @@ defmodule GoogleApi.Content.V2.Model.ShipmentInvoice do
 
   - invoiceSummary (InvoiceSummary): [required] Invoice summary. Defaults to: `null`.
   - lineItemInvoices ([ShipmentInvoiceLineItemInvoice]): [required] Invoice details per line item. Defaults to: `null`.
-  - shipmentGroupId (String.t): [required] ID of the shipment group. Defaults to: `null`.
+  - shipmentGroupId (String.t): [required] ID of the shipment group. It is assigned by the merchant in the shipLineItems method and is used to group multiple line items that have the same kind of shipping charges. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
