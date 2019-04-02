@@ -62,7 +62,7 @@ defmodule GoogleApi.Mirror.V1.Api.Contacts do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/mirror/v1/contacts/{id}", %{
-        "id" => URI.encode_www_form(id)
+        "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -109,7 +109,7 @@ defmodule GoogleApi.Mirror.V1.Api.Contacts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/mirror/v1/contacts/{id}", %{
-        "id" => URI.encode_www_form(id)
+        "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -248,7 +248,7 @@ defmodule GoogleApi.Mirror.V1.Api.Contacts do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/mirror/v1/contacts/{id}", %{
-        "id" => URI.encode_www_form(id)
+        "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -297,7 +297,7 @@ defmodule GoogleApi.Mirror.V1.Api.Contacts do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/mirror/v1/contacts/{id}", %{
-        "id" => URI.encode_www_form(id)
+        "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
