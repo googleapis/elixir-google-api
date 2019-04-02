@@ -72,7 +72,7 @@ defmodule GoogleApi.Script.V1.Api.Scripts do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/scripts/{scriptId}:run", %{
-        "scriptId" => URI.encode_www_form(script_id)
+        "scriptId" => URI.encode(script_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
