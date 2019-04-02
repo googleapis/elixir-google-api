@@ -26,7 +26,7 @@ defmodule GoogleApi.Genomics.V1.Model.Operation do
   - error (Status): The error result of the operation in case of failure or cancellation. Defaults to: `null`.
   - metadata (%{optional(String.t) &#x3D;&gt; String.t}): An OperationMetadata or Metadata object. This will always be returned with the Operation. Defaults to: `null`.
   - name (String.t): The server-assigned name, which is only unique within the same service that originally returns it. For example&amp;#58; &#x60;operations/CJHU7Oi_ChDrveSpBRjfuL-qzoWAgEw&#x60; Defaults to: `null`.
-  - response (%{optional(String.t) &#x3D;&gt; String.t}): If importing ReadGroupSets, an ImportReadGroupSetsResponse is returned. If importing Variants, an ImportVariantsResponse is returned. For pipelines and exports, an Empty response is returned. Defaults to: `null`.
+  - response (%{optional(String.t) &#x3D;&gt; String.t}): An Empty object. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
