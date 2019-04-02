@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1Job do
   @moduledoc """
-  Represents a training or prediction job.
+  Represents a training, prediction or explanation job.
 
   ## Attributes
 
