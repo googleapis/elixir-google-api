@@ -77,7 +77,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/services/{serviceName}/configs", %{
-        "serviceName" => URI.encode_www_form(service_name)
+        "serviceName" => URI.encode(service_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -145,8 +145,8 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/services/{serviceName}/configs/{configId}", %{
-        "serviceName" => URI.encode_www_form(service_name),
-        "configId" => URI.encode_www_form(config_id)
+        "serviceName" => URI.encode(service_name, &URI.char_unreserved?/1),
+        "configId" => URI.encode(config_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -174,7 +174,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :pageSize (integer()): The max number of items to include in the response list.
+    - :pageSize (integer()): The max number of items to include in the response list. Page size is 50 if not specified. Maximum value is 100.
     - :pageToken (String.t): The token of the page to retrieve.
 
   ## Returns
@@ -211,7 +211,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/services/{serviceName}/configs", %{
-        "serviceName" => URI.encode_www_form(service_name)
+        "serviceName" => URI.encode(service_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -275,7 +275,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/services/{serviceName}/configs:submit", %{
-        "serviceName" => URI.encode_www_form(service_name)
+        "serviceName" => URI.encode(service_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -340,7 +340,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/{+resource}:getIamPolicy", %{
-        "resource" => URI.encode_www_form(resource)
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -405,7 +405,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/{+resource}:setIamPolicy", %{
-        "resource" => URI.encode_www_form(resource)
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -472,7 +472,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/{+resource}:testIamPermissions", %{
-        "resource" => URI.encode_www_form(resource)
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -588,7 +588,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v1/services/{serviceName}", %{
-        "serviceName" => URI.encode_www_form(service_name)
+        "serviceName" => URI.encode(service_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -650,7 +650,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/services/{serviceName}:disable", %{
-        "serviceName" => URI.encode_www_form(service_name)
+        "serviceName" => URI.encode(service_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -712,7 +712,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/services/{serviceName}:enable", %{
-        "serviceName" => URI.encode_www_form(service_name)
+        "serviceName" => URI.encode(service_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -828,7 +828,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/services/{serviceName}", %{
-        "serviceName" => URI.encode_www_form(service_name)
+        "serviceName" => URI.encode(service_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -892,7 +892,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/services/{serviceName}/config", %{
-        "serviceName" => URI.encode_www_form(service_name)
+        "serviceName" => URI.encode(service_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -920,7 +920,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :consumerId (String.t): Include services consumed by the specified consumer.  The Google Service Management implementation accepts the following forms: - project:&lt;project_id&gt;
-    - :pageSize (integer()): Requested size of the next page of data.
+    - :pageSize (integer()): The max number of items to include in the response list. Page size is 50 if not specified. Maximum value is 100.
     - :pageToken (String.t): Token identifying which result to start with; returned by a previous list call.
     - :producerProjectId (String.t): Include services produced by the specified project.
 
@@ -1017,7 +1017,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/services/{serviceName}/rollouts", %{
-        "serviceName" => URI.encode_www_form(service_name)
+        "serviceName" => URI.encode(service_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1083,8 +1083,8 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/services/{serviceName}/rollouts/{rolloutId}", %{
-        "serviceName" => URI.encode_www_form(service_name),
-        "rolloutId" => URI.encode_www_form(rollout_id)
+        "serviceName" => URI.encode(service_name, &URI.char_unreserved?/1),
+        "rolloutId" => URI.encode(rollout_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1113,7 +1113,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :filter (String.t): Use &#x60;filter&#x60; to return subset of rollouts. The following filters are supported:   -- To limit the results to only those in      [status](google.api.servicemanagement.v1.RolloutStatus) &#39;SUCCESS&#39;,      use filter&#x3D;&#39;status&#x3D;SUCCESS&#39;   -- To limit the results to those in      [status](google.api.servicemanagement.v1.RolloutStatus) &#39;CANCELLED&#39;      or &#39;FAILED&#39;, use filter&#x3D;&#39;status&#x3D;CANCELLED OR status&#x3D;FAILED&#39;
-    - :pageSize (integer()): The max number of items to include in the response list.
+    - :pageSize (integer()): The max number of items to include in the response list. Page size is 50 if not specified. Maximum value is 100.
     - :pageToken (String.t): The token of the page to retrieve.
 
   ## Returns
@@ -1151,7 +1151,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/services/{serviceName}/rollouts", %{
-        "serviceName" => URI.encode_www_form(service_name)
+        "serviceName" => URI.encode(service_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1213,7 +1213,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/services/{serviceName}:undelete", %{
-        "serviceName" => URI.encode_www_form(service_name)
+        "serviceName" => URI.encode(service_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

@@ -22,7 +22,7 @@ defmodule GoogleApi.ServiceManagement.V1.Model.Http do
 
   ## Attributes
 
-  - fullyDecodeReservedExpansion (boolean()): When set to true, URL path parmeters will be fully URI-decoded except in cases of single segment matches in reserved expansion, where \&quot;%2F\&quot; will be left encoded.  The default behavior is to not decode RFC 6570 reserved characters in multi segment matches. Defaults to: `null`.
+  - fullyDecodeReservedExpansion (boolean()): When set to true, URL path parameters will be fully URI-decoded except in cases of single segment matches in reserved expansion, where \&quot;%2F\&quot; will be left encoded.  The default behavior is to not decode RFC 6570 reserved characters in multi segment matches. Defaults to: `null`.
   - rules ([HttpRule]): A list of HTTP configuration rules that apply to individual API methods.  **NOTE:** All service configuration rules follow \&quot;last one wins\&quot; order. Defaults to: `null`.
   """
 
