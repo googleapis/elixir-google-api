@@ -86,9 +86,9 @@ defmodule GoogleApi.Admin.Reports_v1.Api.EntityUsageReports do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/usage/{entityType}/{entityKey}/dates/{date}", %{
-        "entityType" => URI.encode_www_form(entity_type),
-        "entityKey" => URI.encode_www_form(entity_key),
-        "date" => URI.encode_www_form(date)
+        "entityType" => URI.encode(entity_type, &URI.char_unreserved?/1),
+        "entityKey" => URI.encode(entity_key, &URI.char_unreserved?/1),
+        "date" => URI.encode(date, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

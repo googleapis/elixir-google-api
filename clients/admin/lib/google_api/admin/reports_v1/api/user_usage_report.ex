@@ -75,8 +75,8 @@ defmodule GoogleApi.Admin.Reports_v1.Api.UserUsageReport do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/usage/users/{userKey}/dates/{date}", %{
-        "userKey" => URI.encode_www_form(user_key),
-        "date" => URI.encode_www_form(date)
+        "userKey" => URI.encode(user_key, &URI.char_unreserved?/1),
+        "date" => URI.encode(date, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

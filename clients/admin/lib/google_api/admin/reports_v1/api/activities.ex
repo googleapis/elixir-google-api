@@ -87,8 +87,8 @@ defmodule GoogleApi.Admin.Reports_v1.Api.Activities do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/activity/users/{userKey}/applications/{applicationName}", %{
-        "userKey" => URI.encode_www_form(user_key),
-        "applicationName" => URI.encode_www_form(application_name)
+        "userKey" => URI.encode(user_key, &URI.char_unreserved?/1),
+        "applicationName" => URI.encode(application_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -162,8 +162,8 @@ defmodule GoogleApi.Admin.Reports_v1.Api.Activities do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/activity/users/{userKey}/applications/{applicationName}/watch", %{
-        "userKey" => URI.encode_www_form(user_key),
-        "applicationName" => URI.encode_www_form(application_name)
+        "userKey" => URI.encode(user_key, &URI.char_unreserved?/1),
+        "applicationName" => URI.encode(application_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
