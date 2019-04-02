@@ -73,8 +73,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutpages do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/enterprises/{enterpriseId}/storeLayout/pages/{pageId}", %{
-        "enterpriseId" => URI.encode_www_form(enterprise_id),
-        "pageId" => URI.encode_www_form(page_id)
+        "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
+        "pageId" => URI.encode(page_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -132,8 +132,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutpages do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/enterprises/{enterpriseId}/storeLayout/pages/{pageId}", %{
-        "enterpriseId" => URI.encode_www_form(enterprise_id),
-        "pageId" => URI.encode_www_form(page_id)
+        "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
+        "pageId" => URI.encode(page_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -187,7 +187,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutpages do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/enterprises/{enterpriseId}/storeLayout/pages", %{
-        "enterpriseId" => URI.encode_www_form(enterprise_id)
+        "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -240,7 +240,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutpages do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/enterprises/{enterpriseId}/storeLayout/pages", %{
-        "enterpriseId" => URI.encode_www_form(enterprise_id)
+        "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -302,8 +302,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutpages do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/enterprises/{enterpriseId}/storeLayout/pages/{pageId}", %{
-        "enterpriseId" => URI.encode_www_form(enterprise_id),
-        "pageId" => URI.encode_www_form(page_id)
+        "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
+        "pageId" => URI.encode(page_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -363,8 +363,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutpages do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/enterprises/{enterpriseId}/storeLayout/pages/{pageId}", %{
-        "enterpriseId" => URI.encode_www_form(enterprise_id),
-        "pageId" => URI.encode_www_form(page_id)
+        "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
+        "pageId" => URI.encode(page_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

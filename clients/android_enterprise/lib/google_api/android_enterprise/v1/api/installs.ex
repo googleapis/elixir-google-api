@@ -81,10 +81,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Installs do
       |> Request.url(
         "/enterprises/{enterpriseId}/users/{userId}/devices/{deviceId}/installs/{installId}",
         %{
-          "enterpriseId" => URI.encode_www_form(enterprise_id),
-          "userId" => URI.encode_www_form(user_id),
-          "deviceId" => URI.encode_www_form(device_id),
-          "installId" => URI.encode_www_form(install_id)
+          "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
+          "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
+          "deviceId" => URI.encode(device_id, &URI.char_unreserved?/1),
+          "installId" => URI.encode(install_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -151,10 +151,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Installs do
       |> Request.url(
         "/enterprises/{enterpriseId}/users/{userId}/devices/{deviceId}/installs/{installId}",
         %{
-          "enterpriseId" => URI.encode_www_form(enterprise_id),
-          "userId" => URI.encode_www_form(user_id),
-          "deviceId" => URI.encode_www_form(device_id),
-          "installId" => URI.encode_www_form(install_id)
+          "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
+          "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
+          "deviceId" => URI.encode(device_id, &URI.char_unreserved?/1),
+          "installId" => URI.encode(install_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -218,9 +218,9 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Installs do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/enterprises/{enterpriseId}/users/{userId}/devices/{deviceId}/installs", %{
-        "enterpriseId" => URI.encode_www_form(enterprise_id),
-        "userId" => URI.encode_www_form(user_id),
-        "deviceId" => URI.encode_www_form(device_id)
+        "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
+        "deviceId" => URI.encode(device_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -290,10 +290,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Installs do
       |> Request.url(
         "/enterprises/{enterpriseId}/users/{userId}/devices/{deviceId}/installs/{installId}",
         %{
-          "enterpriseId" => URI.encode_www_form(enterprise_id),
-          "userId" => URI.encode_www_form(user_id),
-          "deviceId" => URI.encode_www_form(device_id),
-          "installId" => URI.encode_www_form(install_id)
+          "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
+          "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
+          "deviceId" => URI.encode(device_id, &URI.char_unreserved?/1),
+          "installId" => URI.encode(install_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -362,10 +362,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Installs do
       |> Request.url(
         "/enterprises/{enterpriseId}/users/{userId}/devices/{deviceId}/installs/{installId}",
         %{
-          "enterpriseId" => URI.encode_www_form(enterprise_id),
-          "userId" => URI.encode_www_form(user_id),
-          "deviceId" => URI.encode_www_form(device_id),
-          "installId" => URI.encode_www_form(install_id)
+          "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
+          "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
+          "deviceId" => URI.encode(device_id, &URI.char_unreserved?/1),
+          "installId" => URI.encode(install_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)

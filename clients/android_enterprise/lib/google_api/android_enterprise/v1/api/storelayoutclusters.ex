@@ -78,9 +78,9 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutclusters do
       |> Request.url(
         "/enterprises/{enterpriseId}/storeLayout/pages/{pageId}/clusters/{clusterId}",
         %{
-          "enterpriseId" => URI.encode_www_form(enterprise_id),
-          "pageId" => URI.encode_www_form(page_id),
-          "clusterId" => URI.encode_www_form(cluster_id)
+          "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
+          "pageId" => URI.encode(page_id, &URI.char_unreserved?/1),
+          "clusterId" => URI.encode(cluster_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -145,9 +145,9 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutclusters do
       |> Request.url(
         "/enterprises/{enterpriseId}/storeLayout/pages/{pageId}/clusters/{clusterId}",
         %{
-          "enterpriseId" => URI.encode_www_form(enterprise_id),
-          "pageId" => URI.encode_www_form(page_id),
-          "clusterId" => URI.encode_www_form(cluster_id)
+          "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
+          "pageId" => URI.encode(page_id, &URI.char_unreserved?/1),
+          "clusterId" => URI.encode(cluster_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -209,8 +209,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutclusters do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/enterprises/{enterpriseId}/storeLayout/pages/{pageId}/clusters", %{
-        "enterpriseId" => URI.encode_www_form(enterprise_id),
-        "pageId" => URI.encode_www_form(page_id)
+        "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
+        "pageId" => URI.encode(page_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -270,8 +270,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutclusters do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/enterprises/{enterpriseId}/storeLayout/pages/{pageId}/clusters", %{
-        "enterpriseId" => URI.encode_www_form(enterprise_id),
-        "pageId" => URI.encode_www_form(page_id)
+        "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
+        "pageId" => URI.encode(page_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -339,9 +339,9 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutclusters do
       |> Request.url(
         "/enterprises/{enterpriseId}/storeLayout/pages/{pageId}/clusters/{clusterId}",
         %{
-          "enterpriseId" => URI.encode_www_form(enterprise_id),
-          "pageId" => URI.encode_www_form(page_id),
-          "clusterId" => URI.encode_www_form(cluster_id)
+          "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
+          "pageId" => URI.encode(page_id, &URI.char_unreserved?/1),
+          "clusterId" => URI.encode(cluster_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -408,9 +408,9 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutclusters do
       |> Request.url(
         "/enterprises/{enterpriseId}/storeLayout/pages/{pageId}/clusters/{clusterId}",
         %{
-          "enterpriseId" => URI.encode_www_form(enterprise_id),
-          "pageId" => URI.encode_www_form(page_id),
-          "clusterId" => URI.encode_www_form(cluster_id)
+          "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
+          "pageId" => URI.encode(page_id, &URI.char_unreserved?/1),
+          "clusterId" => URI.encode(cluster_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)

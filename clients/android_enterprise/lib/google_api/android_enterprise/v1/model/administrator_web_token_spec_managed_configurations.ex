@@ -16,37 +16,36 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.AndroidEnterprise.V1.Model.AutoInstallConstraint do
+defmodule GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecManagedConfigurations do
   @moduledoc """
-  The auto-install constraint. Defines a set of restrictions for installation. At least one of the fields must be set.
+
 
   ## Attributes
 
-  - chargingStateConstraint (String.t): Charging state constraint. Defaults to: `null`.
-  - deviceIdleStateConstraint (String.t): Device idle state constraint. Defaults to: `null`.
-  - networkTypeConstraint (String.t): Network type constraint. Defaults to: `null`.
+  - enabled (boolean()): Whether the Managed Configuration page is displayed. Default is true. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :chargingStateConstraint => any(),
-          :deviceIdleStateConstraint => any(),
-          :networkTypeConstraint => any()
+          :enabled => any()
         }
 
-  field(:chargingStateConstraint)
-  field(:deviceIdleStateConstraint)
-  field(:networkTypeConstraint)
+  field(:enabled)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.AutoInstallConstraint do
+defimpl Poison.Decoder,
+  for: GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecManagedConfigurations do
   def decode(value, options) do
-    GoogleApi.AndroidEnterprise.V1.Model.AutoInstallConstraint.decode(value, options)
+    GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecManagedConfigurations.decode(
+      value,
+      options
+    )
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.AndroidEnterprise.V1.Model.AutoInstallConstraint do
+defimpl Poison.Encoder,
+  for: GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecManagedConfigurations do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

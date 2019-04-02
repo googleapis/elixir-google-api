@@ -78,8 +78,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationssettings do
       |> Request.url(
         "/enterprises/{enterpriseId}/products/{productId}/managedConfigurationsSettings",
         %{
-          "enterpriseId" => URI.encode_www_form(enterprise_id),
-          "productId" => URI.encode_www_form(product_id)
+          "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
+          "productId" => URI.encode(product_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)

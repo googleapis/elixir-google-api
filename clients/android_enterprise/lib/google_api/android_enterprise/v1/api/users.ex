@@ -69,8 +69,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/enterprises/{enterpriseId}/users/{userId}", %{
-        "enterpriseId" => URI.encode_www_form(enterprise_id),
-        "userId" => URI.encode_www_form(user_id)
+        "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -130,8 +130,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/enterprises/{enterpriseId}/users/{userId}/authenticationToken", %{
-        "enterpriseId" => URI.encode_www_form(enterprise_id),
-        "userId" => URI.encode_www_form(user_id)
+        "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -191,8 +191,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/enterprises/{enterpriseId}/users/{userId}/token", %{
-        "enterpriseId" => URI.encode_www_form(enterprise_id),
-        "userId" => URI.encode_www_form(user_id)
+        "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -246,8 +246,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/enterprises/{enterpriseId}/users/{userId}", %{
-        "enterpriseId" => URI.encode_www_form(enterprise_id),
-        "userId" => URI.encode_www_form(user_id)
+        "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -305,8 +305,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/enterprises/{enterpriseId}/users/{userId}/availableProductSet", %{
-        "enterpriseId" => URI.encode_www_form(enterprise_id),
-        "userId" => URI.encode_www_form(user_id)
+        "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -355,7 +355,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/enterprises/{enterpriseId}/users", %{
-        "enterpriseId" => URI.encode_www_form(enterprise_id)
+        "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -410,7 +410,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/enterprises/{enterpriseId}/users", %{
-        "enterpriseId" => URI.encode_www_form(enterprise_id)
+        "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :email, email)
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -469,8 +469,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/enterprises/{enterpriseId}/users/{userId}", %{
-        "enterpriseId" => URI.encode_www_form(enterprise_id),
-        "userId" => URI.encode_www_form(user_id)
+        "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -528,8 +528,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/enterprises/{enterpriseId}/users/{userId}/deviceAccess", %{
-        "enterpriseId" => URI.encode_www_form(enterprise_id),
-        "userId" => URI.encode_www_form(user_id)
+        "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -587,8 +587,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/enterprises/{enterpriseId}/users/{userId}/token", %{
-        "enterpriseId" => URI.encode_www_form(enterprise_id),
-        "userId" => URI.encode_www_form(user_id)
+        "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -648,8 +648,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/enterprises/{enterpriseId}/users/{userId}/availableProductSet", %{
-        "enterpriseId" => URI.encode_www_form(enterprise_id),
-        "userId" => URI.encode_www_form(user_id)
+        "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -705,8 +705,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/enterprises/{enterpriseId}/users/{userId}", %{
-        "enterpriseId" => URI.encode_www_form(enterprise_id),
-        "userId" => URI.encode_www_form(user_id)
+        "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
