@@ -25,7 +25,7 @@ defmodule GoogleApi.AppsActivity.V1.Api.Activities do
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
-  Returns a list of activities visible to the current logged in user. Visible activities are determined by the visiblity settings of the object that was acted on, e.g. Drive files a user can see. An activity is a record of past events. Multiple events may be merged if they are similar. A request is scoped to activities from a given Google service using the source parameter.
+  Returns a list of activities visible to the current logged in user. Visible activities are determined by the visibility settings of the object that was acted on, e.g. Drive files a user can see. An activity is a record of past events. Multiple events may be merged if they are similar. A request is scoped to activities from a given Google service using the source parameter.
 
   ## Parameters
 
@@ -44,7 +44,7 @@ defmodule GoogleApi.AppsActivity.V1.Api.Activities do
     - :pageSize (integer()): The maximum number of events to return on a page. The response includes a continuation token if there are more events.
     - :pageToken (String.t): A token to retrieve a specific page of results.
     - :source (String.t): The Google service from which to return activities. Possible values of source are:  - drive.google.com
-    - :userId (String.t): Indicates the user to return activity for. Use the special value me to indicate the currently authenticated user.
+    - :userId (String.t): The ID used for ACL checks (does not filter the resulting event list by the assigned value). Use the special value me to indicate the currently authenticated user.
 
   ## Returns
 
