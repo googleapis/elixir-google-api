@@ -62,7 +62,7 @@ defmodule GoogleApi.Reseller.V1.Api.Customers do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/customers/{customerId}", %{
-        "customerId" => URI.encode_www_form(customer_id)
+        "customerId" => URI.encode(customer_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -159,7 +159,7 @@ defmodule GoogleApi.Reseller.V1.Api.Customers do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/customers/{customerId}", %{
-        "customerId" => URI.encode_www_form(customer_id)
+        "customerId" => URI.encode(customer_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -208,7 +208,7 @@ defmodule GoogleApi.Reseller.V1.Api.Customers do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/customers/{customerId}", %{
-        "customerId" => URI.encode_www_form(customer_id)
+        "customerId" => URI.encode(customer_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
