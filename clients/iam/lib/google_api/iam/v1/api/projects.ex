@@ -72,7 +72,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectsId}/roles", %{
-        "projectsId" => URI.encode_www_form(projects_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -136,8 +136,8 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v1/projects/{projectsId}/roles/{rolesId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "rolesId" => URI.encode_www_form(roles_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "rolesId" => URI.encode(roles_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -193,8 +193,8 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectsId}/roles/{rolesId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "rolesId" => URI.encode_www_form(roles_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "rolesId" => URI.encode(roles_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -225,7 +225,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
     - :pageSize (integer()): Optional limit on the number of roles to include in the response.
     - :pageToken (String.t): Optional pagination token returned in an earlier ListRolesResponse.
     - :showDeleted (boolean()): Include Roles that have been deleted.
-    - :view (String.t): Optional view for the returned Role objects.
+    - :view (String.t): Optional view for the returned Role objects. When &#x60;FULL&#x60; is specified, the &#x60;includedPermissions&#x60; field is returned, which includes a list of all permissions in the role. The default value is &#x60;BASIC&#x60;, which does not return the &#x60;includedPermissions&#x60; field.
 
   ## Returns
 
@@ -257,7 +257,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectsId}/roles", %{
-        "projectsId" => URI.encode_www_form(projects_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -323,8 +323,8 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/v1/projects/{projectsId}/roles/{rolesId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "rolesId" => URI.encode_www_form(roles_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "rolesId" => URI.encode(roles_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -388,8 +388,8 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectsId}/roles/{rolesId}:undelete", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "rolesId" => URI.encode_www_form(roles_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "rolesId" => URI.encode(roles_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -451,7 +451,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectsId}/serviceAccounts", %{
-        "projectsId" => URI.encode_www_form(projects_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -517,8 +517,146 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v1/projects/{projectsId}/serviceAccounts/{serviceAccountsId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "serviceAccountsId" => URI.encode_www_form(service_accounts_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "serviceAccountsId" => URI.encode(service_accounts_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.IAM.V1.Model.Empty{}])
+  end
+
+  @doc """
+  Disables a ServiceAccount. The API is currently in alpha phase.
+
+  ## Parameters
+
+  - connection (GoogleApi.IAM.V1.Connection): Connection to server
+  - projects_id (String.t): Part of &#x60;name&#x60;. The resource name of the service account in the following format: &#x60;projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}&#x60;. Using &#x60;-&#x60; as a wildcard for the &#x60;PROJECT_ID&#x60; will infer the project from the account. The &#x60;ACCOUNT&#x60; value can be the &#x60;email&#x60; address or the &#x60;unique_id&#x60; of the service account.
+  - service_accounts_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :body (DisableServiceAccountRequest): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.IAM.V1.Model.Empty{}} on success
+  {:error, info} on failure
+  """
+  @spec iam_projects_service_accounts_disable(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) :: {:ok, GoogleApi.IAM.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+  def iam_projects_service_accounts_disable(
+        connection,
+        projects_id,
+        service_accounts_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1/projects/{projectsId}/serviceAccounts/{serviceAccountsId}:disable", %{
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "serviceAccountsId" => URI.encode(service_accounts_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.IAM.V1.Model.Empty{}])
+  end
+
+  @doc """
+  Enables a ServiceAccount.  The API is currently in alpha phase.
+
+  ## Parameters
+
+  - connection (GoogleApi.IAM.V1.Connection): Connection to server
+  - projects_id (String.t): Part of &#x60;name&#x60;. The resource name of the service account in the following format: &#x60;projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT_UNIQUE_ID}&#39;. Using &#x60;-&#x60; as a wildcard for the &#x60;PROJECT_ID&#x60; will infer the project from the account.
+  - service_accounts_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :body (EnableServiceAccountRequest): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.IAM.V1.Model.Empty{}} on success
+  {:error, info} on failure
+  """
+  @spec iam_projects_service_accounts_enable(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) :: {:ok, GoogleApi.IAM.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+  def iam_projects_service_accounts_enable(
+        connection,
+        projects_id,
+        service_accounts_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1/projects/{projectsId}/serviceAccounts/{serviceAccountsId}:enable", %{
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "serviceAccountsId" => URI.encode(service_accounts_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -580,8 +718,8 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectsId}/serviceAccounts/{serviceAccountsId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "serviceAccountsId" => URI.encode_www_form(service_accounts_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "serviceAccountsId" => URI.encode(service_accounts_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -591,7 +729,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   end
 
   @doc """
-  Returns the IAM access control policy for a ServiceAccount.
+  Returns the Cloud IAM access control policy for a ServiceAccount.  Note: Service accounts are both [resources and identities](/iam/docs/service-accounts#service_account_permissions). This method treats the service account as a resource. It returns the Cloud IAM policy that reflects what members have access to the service account.  This method does not return what resources the service account has access to. To see if a service account has access to a resource, call the &#x60;getIamPolicy&#x60; method on the target resource. For example, to view grants for a project, call the [projects.getIamPolicy](/resource-manager/reference/rest/v1/projects/getIamPolicy) method.
 
   ## Parameters
 
@@ -649,8 +787,8 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/serviceAccounts/{serviceAccountsId}:getIamPolicy",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "serviceAccountsId" => URI.encode_www_form(service_accounts_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "serviceAccountsId" => URI.encode(service_accounts_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -719,8 +857,8 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectsId}/serviceAccounts/{serviceAccountsId}/keys", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "serviceAccountsId" => URI.encode_www_form(service_accounts_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "serviceAccountsId" => URI.encode(service_accounts_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -791,9 +929,9 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/serviceAccounts/{serviceAccountsId}/keys/{keysId}",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "serviceAccountsId" => URI.encode_www_form(service_accounts_id),
-          "keysId" => URI.encode_www_form(keys_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "serviceAccountsId" => URI.encode(service_accounts_id, &URI.char_unreserved?/1),
+          "keysId" => URI.encode(keys_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -867,9 +1005,9 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/serviceAccounts/{serviceAccountsId}/keys/{keysId}",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "serviceAccountsId" => URI.encode_www_form(service_accounts_id),
-          "keysId" => URI.encode_www_form(keys_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "serviceAccountsId" => URI.encode(service_accounts_id, &URI.char_unreserved?/1),
+          "keysId" => URI.encode(keys_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -940,8 +1078,8 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectsId}/serviceAccounts/{serviceAccountsId}/keys", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "serviceAccountsId" => URI.encode_www_form(service_accounts_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "serviceAccountsId" => URI.encode(service_accounts_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1005,7 +1143,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectsId}/serviceAccounts", %{
-        "projectsId" => URI.encode_www_form(projects_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1015,7 +1153,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   end
 
   @doc """
-  Patches a ServiceAccount.  Currently, only the following fields are updatable: &#x60;display_name&#x60; and &#x60;description&#x60;.  Only fields specified in the request are garaunteed to be returned in the response. Other fields in the response may be empty.  Note: The field mask is required.
+  Patches a ServiceAccount.  Currently, only the following fields are updatable: &#x60;display_name&#x60; and &#x60;description&#x60;.  Only fields specified in the request are guaranteed to be returned in the response. Other fields in the response may be empty.  Note: The field mask is required.
 
   ## Parameters
 
@@ -1069,8 +1207,8 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/v1/projects/{projectsId}/serviceAccounts/{serviceAccountsId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "serviceAccountsId" => URI.encode_www_form(service_accounts_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "serviceAccountsId" => URI.encode(service_accounts_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1080,7 +1218,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   end
 
   @doc """
-  Sets the IAM access control policy for a ServiceAccount.
+  Sets the Cloud IAM access control policy for a ServiceAccount.  Note: Service accounts are both [resources and identities](/iam/docs/service-accounts#service_account_permissions). This method treats the service account as a resource. Use it to grant members access to the service account, such as when they need to impersonate it.  This method does not grant the service account access to other resources, such as projects. To grant a service account access to resources, include the service account in the Cloud IAM policy for the desired resource, then call the appropriate &#x60;setIamPolicy&#x60; method on the target resource. For example, to grant a service account access to a project, call the [projects.setIamPolicy](/resource-manager/reference/rest/v1/projects/setIamPolicy) method.
 
   ## Parameters
 
@@ -1140,8 +1278,8 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/serviceAccounts/{serviceAccountsId}:setIamPolicy",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "serviceAccountsId" => URI.encode_www_form(service_accounts_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "serviceAccountsId" => URI.encode(service_accounts_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1152,7 +1290,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   end
 
   @doc """
-  Signs a blob using a service account&#39;s system-managed private key.
+  **Note**: This method is in the process of being deprecated. Call the [&#x60;signBlob()&#x60;](/iam/credentials/reference/rest/v1/projects.serviceAccounts/signBlob) method of the Cloud IAM Service Account Credentials API instead.  Signs a blob using a service account&#39;s system-managed private key.
 
   ## Parameters
 
@@ -1210,8 +1348,8 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectsId}/serviceAccounts/{serviceAccountsId}:signBlob", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "serviceAccountsId" => URI.encode_www_form(service_accounts_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "serviceAccountsId" => URI.encode(service_accounts_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1221,7 +1359,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   end
 
   @doc """
-  Signs a JWT using a service account&#39;s system-managed private key.  If no expiry time (&#x60;exp&#x60;) is provided in the &#x60;SignJwtRequest&#x60;, IAM sets an an expiry time of one hour by default. If you request an expiry time of more than one hour, the request will fail.
+  **Note**: This method is in the process of being deprecated. Call the [&#x60;signJwt()&#x60;](/iam/credentials/reference/rest/v1/projects.serviceAccounts/signJwt) method of the Cloud IAM Service Account Credentials API instead.  Signs a JWT using a service account&#39;s system-managed private key.  If no expiry time (&#x60;exp&#x60;) is provided in the &#x60;SignJwtRequest&#x60;, IAM sets an an expiry time of one hour by default. If you request an expiry time of more than one hour, the request will fail.
 
   ## Parameters
 
@@ -1279,8 +1417,8 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectsId}/serviceAccounts/{serviceAccountsId}:signJwt", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "serviceAccountsId" => URI.encode_www_form(service_accounts_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "serviceAccountsId" => URI.encode(service_accounts_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1351,8 +1489,8 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/serviceAccounts/{serviceAccountsId}:testIamPermissions",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "serviceAccountsId" => URI.encode_www_form(service_accounts_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "serviceAccountsId" => URI.encode(service_accounts_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1363,7 +1501,78 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   end
 
   @doc """
-  Updates a ServiceAccount.  Currently, only the following fields are updatable: &#x60;display_name&#x60; . The &#x60;etag&#x60; is mandatory.
+  Restores a deleted ServiceAccount. This is to be used as an action of last resort.  A service account may not always be restorable.
+
+  ## Parameters
+
+  - connection (GoogleApi.IAM.V1.Connection): Connection to server
+  - projects_id (String.t): Part of &#x60;name&#x60;. The resource name of the service account in the following format: &#x60;projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT_UNIQUE_ID}&#39;. Using &#x60;-&#x60; as a wildcard for the &#x60;PROJECT_ID&#x60; will infer the project from the account.
+  - service_accounts_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :body (UndeleteServiceAccountRequest): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.IAM.V1.Model.UndeleteServiceAccountResponse{}} on success
+  {:error, info} on failure
+  """
+  @spec iam_projects_service_accounts_undelete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.IAM.V1.Model.UndeleteServiceAccountResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def iam_projects_service_accounts_undelete(
+        connection,
+        projects_id,
+        service_accounts_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1/projects/{projectsId}/serviceAccounts/{serviceAccountsId}:undelete", %{
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "serviceAccountsId" => URI.encode(service_accounts_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.IAM.V1.Model.UndeleteServiceAccountResponse{}])
+  end
+
+  @doc """
+  Note: This method is in the process of being deprecated. Use PatchServiceAccount instead.  Updates a ServiceAccount.  Currently, only the following fields are updatable: &#x60;display_name&#x60; . The &#x60;etag&#x60; is mandatory.
 
   ## Parameters
 
@@ -1421,8 +1630,8 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/v1/projects/{projectsId}/serviceAccounts/{serviceAccountsId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "serviceAccountsId" => URI.encode_www_form(service_accounts_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "serviceAccountsId" => URI.encode(service_accounts_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

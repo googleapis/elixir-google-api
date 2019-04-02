@@ -22,6 +22,8 @@ defmodule GoogleApi.IAM.V1.Model.ServiceAccount do
 
   ## Attributes
 
+  - description (String.t): Optional. A user-specified opaque description of the service account. Must be less than or equal to 256 UTF-8 bytes. Defaults to: `null`.
+  - disabled (boolean()): @OutputOnly A bool indicate if the service account is disabled. The field is currently in alpha phase. Defaults to: `null`.
   - displayName (String.t): Optional. A user-specified name for the service account. Must be less than or equal to 100 UTF-8 bytes. Defaults to: `null`.
   - email (String.t): @OutputOnly The email address of the service account. Defaults to: `null`.
   - etag (binary()): Optional. Note: &#x60;etag&#x60; is an inoperable legacy field that is only returned for backwards compatibility. Defaults to: `null`.
@@ -34,6 +36,8 @@ defmodule GoogleApi.IAM.V1.Model.ServiceAccount do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :description => any(),
+          :disabled => any(),
           :displayName => any(),
           :email => any(),
           :etag => any(),
@@ -43,6 +47,8 @@ defmodule GoogleApi.IAM.V1.Model.ServiceAccount do
           :uniqueId => any()
         }
 
+  field(:description)
+  field(:disabled)
   field(:displayName)
   field(:email)
   field(:etag)

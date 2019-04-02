@@ -70,7 +70,7 @@ defmodule GoogleApi.IAM.V1.Api.Roles do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/roles/{rolesId}", %{
-        "rolesId" => URI.encode_www_form(roles_id)
+        "rolesId" => URI.encode(roles_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -101,7 +101,7 @@ defmodule GoogleApi.IAM.V1.Api.Roles do
     - :pageToken (String.t): Optional pagination token returned in an earlier ListRolesResponse.
     - :parent (String.t): The resource name of the parent resource in one of the following formats: &#x60;&#x60; (empty string) -- this refers to curated roles. &#x60;organizations/{ORGANIZATION_ID}&#x60; &#x60;projects/{PROJECT_ID}&#x60;
     - :showDeleted (boolean()): Include Roles that have been deleted.
-    - :view (String.t): Optional view for the returned Role objects.
+    - :view (String.t): Optional view for the returned Role objects. When &#x60;FULL&#x60; is specified, the &#x60;includedPermissions&#x60; field is returned, which includes a list of all permissions in the role. The default value is &#x60;BASIC&#x60;, which does not return the &#x60;includedPermissions&#x60; field.
 
   ## Returns
 
