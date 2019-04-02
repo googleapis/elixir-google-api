@@ -23,13 +23,11 @@ defmodule GoogleApi.OAuth2.V2.Connection do
 
   use GoogleApi.Gax.Connection,
     scopes: [
-      # View your basic profile info, including your age range and language
-      "https://www.googleapis.com/auth/plus.login",
       # Know who you are on Google
       "https://www.googleapis.com/auth/plus.me",
       # View your email address
       "https://www.googleapis.com/auth/userinfo.email",
-      # See your personal info, including any personal info you&#39;ve made publically available
+      # See your personal info, including any personal info you&#39;ve made publicly available
       "https://www.googleapis.com/auth/userinfo.profile"
     ],
     otp_app: :google_api_o_auth2,
