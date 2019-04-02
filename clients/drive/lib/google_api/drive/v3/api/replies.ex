@@ -65,8 +65,8 @@ defmodule GoogleApi.Drive.V3.Api.Replies do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/drive/v3/files/{fileId}/comments/{commentId}/replies", %{
-        "fileId" => URI.encode_www_form(file_id),
-        "commentId" => URI.encode_www_form(comment_id)
+        "fileId" => URI.encode(file_id, &URI.char_unreserved?/1),
+        "commentId" => URI.encode(comment_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -122,9 +122,9 @@ defmodule GoogleApi.Drive.V3.Api.Replies do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/drive/v3/files/{fileId}/comments/{commentId}/replies/{replyId}", %{
-        "fileId" => URI.encode_www_form(file_id),
-        "commentId" => URI.encode_www_form(comment_id),
-        "replyId" => URI.encode_www_form(reply_id)
+        "fileId" => URI.encode(file_id, &URI.char_unreserved?/1),
+        "commentId" => URI.encode(comment_id, &URI.char_unreserved?/1),
+        "replyId" => URI.encode(reply_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -182,9 +182,9 @@ defmodule GoogleApi.Drive.V3.Api.Replies do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/drive/v3/files/{fileId}/comments/{commentId}/replies/{replyId}", %{
-        "fileId" => URI.encode_www_form(file_id),
-        "commentId" => URI.encode_www_form(comment_id),
-        "replyId" => URI.encode_www_form(reply_id)
+        "fileId" => URI.encode(file_id, &URI.char_unreserved?/1),
+        "commentId" => URI.encode(comment_id, &URI.char_unreserved?/1),
+        "replyId" => URI.encode(reply_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -238,8 +238,8 @@ defmodule GoogleApi.Drive.V3.Api.Replies do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/drive/v3/files/{fileId}/comments/{commentId}/replies", %{
-        "fileId" => URI.encode_www_form(file_id),
-        "commentId" => URI.encode_www_form(comment_id)
+        "fileId" => URI.encode(file_id, &URI.char_unreserved?/1),
+        "commentId" => URI.encode(comment_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -297,9 +297,9 @@ defmodule GoogleApi.Drive.V3.Api.Replies do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/drive/v3/files/{fileId}/comments/{commentId}/replies/{replyId}", %{
-        "fileId" => URI.encode_www_form(file_id),
-        "commentId" => URI.encode_www_form(comment_id),
-        "replyId" => URI.encode_www_form(reply_id)
+        "fileId" => URI.encode(file_id, &URI.char_unreserved?/1),
+        "commentId" => URI.encode(comment_id, &URI.char_unreserved?/1),
+        "replyId" => URI.encode(reply_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

@@ -110,7 +110,7 @@ defmodule GoogleApi.Drive.V3.Api.Teamdrives do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/drive/v3/teamdrives/{teamDriveId}", %{
-        "teamDriveId" => URI.encode_www_form(team_drive_id)
+        "teamDriveId" => URI.encode(team_drive_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -159,7 +159,7 @@ defmodule GoogleApi.Drive.V3.Api.Teamdrives do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/drive/v3/teamdrives/{teamDriveId}", %{
-        "teamDriveId" => URI.encode_www_form(team_drive_id)
+        "teamDriveId" => URI.encode(team_drive_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -262,7 +262,7 @@ defmodule GoogleApi.Drive.V3.Api.Teamdrives do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/drive/v3/teamdrives/{teamDriveId}", %{
-        "teamDriveId" => URI.encode_www_form(team_drive_id)
+        "teamDriveId" => URI.encode(team_drive_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

@@ -72,7 +72,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/drive/v3/files/{fileId}/copy", %{
-        "fileId" => URI.encode_www_form(file_id)
+        "fileId" => URI.encode(file_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -307,7 +307,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/drive/v3/files/{fileId}", %{
-        "fileId" => URI.encode_www_form(file_id)
+        "fileId" => URI.encode(file_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -399,7 +399,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/drive/v3/files/{fileId}/export", %{
-        "fileId" => URI.encode_www_form(file_id)
+        "fileId" => URI.encode(file_id, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :mimeType, mime_type)
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -499,7 +499,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/drive/v3/files/{fileId}", %{
-        "fileId" => URI.encode_www_form(file_id)
+        "fileId" => URI.encode(file_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -624,7 +624,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/drive/v3/files/{fileId}", %{
-        "fileId" => URI.encode_www_form(file_id)
+        "fileId" => URI.encode(file_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -692,7 +692,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/resumable/upload/drive/v3/files/{fileId}", %{
-        "fileId" => URI.encode_www_form(file_id)
+        "fileId" => URI.encode(file_id, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :uploadType, upload_type)
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -769,7 +769,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/upload/drive/v3/files/{fileId}", %{
-        "fileId" => URI.encode_www_form(file_id)
+        "fileId" => URI.encode(file_id, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :uploadType, upload_type)
       |> Request.add_param(:body, :metadata, metadata)
@@ -825,7 +825,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/drive/v3/files/{fileId}/watch", %{
-        "fileId" => URI.encode_www_form(file_id)
+        "fileId" => URI.encode(file_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

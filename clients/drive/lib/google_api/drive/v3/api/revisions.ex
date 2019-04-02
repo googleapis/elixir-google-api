@@ -63,8 +63,8 @@ defmodule GoogleApi.Drive.V3.Api.Revisions do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/drive/v3/files/{fileId}/revisions/{revisionId}", %{
-        "fileId" => URI.encode_www_form(file_id),
-        "revisionId" => URI.encode_www_form(revision_id)
+        "fileId" => URI.encode(file_id, &URI.char_unreserved?/1),
+        "revisionId" => URI.encode(revision_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -114,8 +114,8 @@ defmodule GoogleApi.Drive.V3.Api.Revisions do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/drive/v3/files/{fileId}/revisions/{revisionId}", %{
-        "fileId" => URI.encode_www_form(file_id),
-        "revisionId" => URI.encode_www_form(revision_id)
+        "fileId" => URI.encode(file_id, &URI.char_unreserved?/1),
+        "revisionId" => URI.encode(revision_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -166,7 +166,7 @@ defmodule GoogleApi.Drive.V3.Api.Revisions do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/drive/v3/files/{fileId}/revisions", %{
-        "fileId" => URI.encode_www_form(file_id)
+        "fileId" => URI.encode(file_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -216,8 +216,8 @@ defmodule GoogleApi.Drive.V3.Api.Revisions do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/drive/v3/files/{fileId}/revisions/{revisionId}", %{
-        "fileId" => URI.encode_www_form(file_id),
-        "revisionId" => URI.encode_www_form(revision_id)
+        "fileId" => URI.encode(file_id, &URI.char_unreserved?/1),
+        "revisionId" => URI.encode(revision_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
