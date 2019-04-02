@@ -62,7 +62,7 @@ defmodule GoogleApi.SiteVerification.V1.Api.WebResource do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/webResource/{id}", %{
-        "id" => URI.encode_www_form(id)
+        "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -110,7 +110,7 @@ defmodule GoogleApi.SiteVerification.V1.Api.WebResource do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/webResource/{id}", %{
-        "id" => URI.encode_www_form(id)
+        "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -320,7 +320,7 @@ defmodule GoogleApi.SiteVerification.V1.Api.WebResource do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/webResource/{id}", %{
-        "id" => URI.encode_www_form(id)
+        "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -372,7 +372,7 @@ defmodule GoogleApi.SiteVerification.V1.Api.WebResource do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/webResource/{id}", %{
-        "id" => URI.encode_www_form(id)
+        "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
