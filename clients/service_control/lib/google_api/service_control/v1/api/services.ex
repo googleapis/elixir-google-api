@@ -78,7 +78,7 @@ defmodule GoogleApi.ServiceControl.V1.Api.Services do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/services/{serviceName}:allocateQuota", %{
-        "serviceName" => URI.encode_www_form(service_name)
+        "serviceName" => URI.encode(service_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -137,7 +137,7 @@ defmodule GoogleApi.ServiceControl.V1.Api.Services do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/services/{serviceName}:check", %{
-        "serviceName" => URI.encode_www_form(service_name)
+        "serviceName" => URI.encode(service_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -194,7 +194,7 @@ defmodule GoogleApi.ServiceControl.V1.Api.Services do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/services/{serviceName}:report", %{
-        "serviceName" => URI.encode_www_form(service_name)
+        "serviceName" => URI.encode(service_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
