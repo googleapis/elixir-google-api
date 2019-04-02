@@ -79,9 +79,9 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Purchases do
       |> Request.url(
         "/androidpublisher/v2/applications/{packageName}/purchases/products/{productId}/tokens/{token}",
         %{
-          "packageName" => URI.encode_www_form(package_name),
-          "productId" => URI.encode_www_form(product_id),
-          "token" => URI.encode_www_form(token)
+          "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+          "productId" => URI.encode(product_id, &URI.char_unreserved?/1),
+          "token" => URI.encode(token, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -145,9 +145,9 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Purchases do
       |> Request.url(
         "/androidpublisher/v2/applications/{packageName}/purchases/subscriptions/{subscriptionId}/tokens/{token}:cancel",
         %{
-          "packageName" => URI.encode_www_form(package_name),
-          "subscriptionId" => URI.encode_www_form(subscription_id),
-          "token" => URI.encode_www_form(token)
+          "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+          "subscriptionId" => URI.encode(subscription_id, &URI.char_unreserved?/1),
+          "token" => URI.encode(token, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -215,9 +215,9 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Purchases do
       |> Request.url(
         "/androidpublisher/v2/applications/{packageName}/purchases/subscriptions/{subscriptionId}/tokens/{token}:defer",
         %{
-          "packageName" => URI.encode_www_form(package_name),
-          "subscriptionId" => URI.encode_www_form(subscription_id),
-          "token" => URI.encode_www_form(token)
+          "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+          "subscriptionId" => URI.encode(subscription_id, &URI.char_unreserved?/1),
+          "token" => URI.encode(token, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -285,9 +285,9 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Purchases do
       |> Request.url(
         "/androidpublisher/v2/applications/{packageName}/purchases/subscriptions/{subscriptionId}/tokens/{token}",
         %{
-          "packageName" => URI.encode_www_form(package_name),
-          "subscriptionId" => URI.encode_www_form(subscription_id),
-          "token" => URI.encode_www_form(token)
+          "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+          "subscriptionId" => URI.encode(subscription_id, &URI.char_unreserved?/1),
+          "token" => URI.encode(token, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -353,9 +353,9 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Purchases do
       |> Request.url(
         "/androidpublisher/v2/applications/{packageName}/purchases/subscriptions/{subscriptionId}/tokens/{token}:refund",
         %{
-          "packageName" => URI.encode_www_form(package_name),
-          "subscriptionId" => URI.encode_www_form(subscription_id),
-          "token" => URI.encode_www_form(token)
+          "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+          "subscriptionId" => URI.encode(subscription_id, &URI.char_unreserved?/1),
+          "token" => URI.encode(token, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -419,9 +419,9 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Purchases do
       |> Request.url(
         "/androidpublisher/v2/applications/{packageName}/purchases/subscriptions/{subscriptionId}/tokens/{token}:revoke",
         %{
-          "packageName" => URI.encode_www_form(package_name),
-          "subscriptionId" => URI.encode_www_form(subscription_id),
-          "token" => URI.encode_www_form(token)
+          "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+          "subscriptionId" => URI.encode(subscription_id, &URI.char_unreserved?/1),
+          "token" => URI.encode(token, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -487,7 +487,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Purchases do
       |> Request.url(
         "/androidpublisher/v2/applications/{packageName}/purchases/voidedpurchases",
         %{
-          "packageName" => URI.encode_www_form(package_name)
+          "packageName" => URI.encode(package_name, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)

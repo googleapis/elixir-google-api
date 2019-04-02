@@ -81,10 +81,10 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
       |> Request.url(
         "/androidpublisher/v2/applications/{packageName}/edits/{editId}/apks/{apkVersionCode}/listings/{language}",
         %{
-          "packageName" => URI.encode_www_form(package_name),
-          "editId" => URI.encode_www_form(edit_id),
+          "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+          "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
           "apkVersionCode" => apk_version_code,
-          "language" => URI.encode_www_form(language)
+          "language" => URI.encode(language, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -148,8 +148,8 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
       |> Request.url(
         "/androidpublisher/v2/applications/{packageName}/edits/{editId}/apks/{apkVersionCode}/listings",
         %{
-          "packageName" => URI.encode_www_form(package_name),
-          "editId" => URI.encode_www_form(edit_id),
+          "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+          "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
           "apkVersionCode" => apk_version_code
         }
       )
@@ -217,10 +217,10 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
       |> Request.url(
         "/androidpublisher/v2/applications/{packageName}/edits/{editId}/apks/{apkVersionCode}/listings/{language}",
         %{
-          "packageName" => URI.encode_www_form(package_name),
-          "editId" => URI.encode_www_form(edit_id),
+          "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+          "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
           "apkVersionCode" => apk_version_code,
-          "language" => URI.encode_www_form(language)
+          "language" => URI.encode(language, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -286,8 +286,8 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
       |> Request.url(
         "/androidpublisher/v2/applications/{packageName}/edits/{editId}/apks/{apkVersionCode}/listings",
         %{
-          "packageName" => URI.encode_www_form(package_name),
-          "editId" => URI.encode_www_form(edit_id),
+          "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+          "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
           "apkVersionCode" => apk_version_code
         }
       )
@@ -359,10 +359,10 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
       |> Request.url(
         "/androidpublisher/v2/applications/{packageName}/edits/{editId}/apks/{apkVersionCode}/listings/{language}",
         %{
-          "packageName" => URI.encode_www_form(package_name),
-          "editId" => URI.encode_www_form(edit_id),
+          "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+          "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
           "apkVersionCode" => apk_version_code,
-          "language" => URI.encode_www_form(language)
+          "language" => URI.encode(language, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -431,10 +431,10 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
       |> Request.url(
         "/androidpublisher/v2/applications/{packageName}/edits/{editId}/apks/{apkVersionCode}/listings/{language}",
         %{
-          "packageName" => URI.encode_www_form(package_name),
-          "editId" => URI.encode_www_form(edit_id),
+          "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+          "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
           "apkVersionCode" => apk_version_code,
-          "language" => URI.encode_www_form(language)
+          "language" => URI.encode(language, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -499,8 +499,8 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
       |> Request.url(
         "/androidpublisher/v2/applications/{packageName}/edits/{editId}/apks/externallyHosted",
         %{
-          "packageName" => URI.encode_www_form(package_name),
-          "editId" => URI.encode_www_form(edit_id)
+          "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+          "editId" => URI.encode(edit_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -557,8 +557,8 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/androidpublisher/v2/applications/{packageName}/edits/{editId}/apks", %{
-        "packageName" => URI.encode_www_form(package_name),
-        "editId" => URI.encode_www_form(edit_id)
+        "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+        "editId" => URI.encode(edit_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -611,8 +611,8 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/androidpublisher/v2/applications/{packageName}/edits/{editId}/apks", %{
-        "packageName" => URI.encode_www_form(package_name),
-        "editId" => URI.encode_www_form(edit_id)
+        "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+        "editId" => URI.encode(edit_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -674,8 +674,8 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
       |> Request.url(
         "/resumable/upload/androidpublisher/v2/applications/{packageName}/edits/{editId}/apks",
         %{
-          "packageName" => URI.encode_www_form(package_name),
-          "editId" => URI.encode_www_form(edit_id)
+          "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+          "editId" => URI.encode(edit_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_param(:query, :uploadType, upload_type)
@@ -742,8 +742,8 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
       |> Request.url(
         "/upload/androidpublisher/v2/applications/{packageName}/edits/{editId}/apks",
         %{
-          "packageName" => URI.encode_www_form(package_name),
-          "editId" => URI.encode_www_form(edit_id)
+          "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+          "editId" => URI.encode(edit_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_param(:query, :uploadType, upload_type)
@@ -800,8 +800,8 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/androidpublisher/v2/applications/{packageName}/edits/{editId}/bundles", %{
-        "packageName" => URI.encode_www_form(package_name),
-        "editId" => URI.encode_www_form(edit_id)
+        "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+        "editId" => URI.encode(edit_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -863,8 +863,8 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/androidpublisher/v2/applications/{packageName}/edits/{editId}/bundles", %{
-        "packageName" => URI.encode_www_form(package_name),
-        "editId" => URI.encode_www_form(edit_id)
+        "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+        "editId" => URI.encode(edit_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -929,8 +929,8 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
       |> Request.url(
         "/resumable/upload/androidpublisher/v2/applications/{packageName}/edits/{editId}/bundles",
         %{
-          "packageName" => URI.encode_www_form(package_name),
-          "editId" => URI.encode_www_form(edit_id)
+          "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+          "editId" => URI.encode(edit_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_param(:query, :uploadType, upload_type)
@@ -1000,8 +1000,8 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
       |> Request.url(
         "/upload/androidpublisher/v2/applications/{packageName}/edits/{editId}/bundles",
         %{
-          "packageName" => URI.encode_www_form(package_name),
-          "editId" => URI.encode_www_form(edit_id)
+          "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+          "editId" => URI.encode(edit_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_param(:query, :uploadType, upload_type)
@@ -1058,8 +1058,8 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/androidpublisher/v2/applications/{packageName}/edits/{editId}:commit", %{
-        "packageName" => URI.encode_www_form(package_name),
-        "editId" => URI.encode_www_form(edit_id)
+        "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+        "editId" => URI.encode(edit_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1113,8 +1113,8 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/androidpublisher/v2/applications/{packageName}/edits/{editId}", %{
-        "packageName" => URI.encode_www_form(package_name),
-        "editId" => URI.encode_www_form(edit_id)
+        "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+        "editId" => URI.encode(edit_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1182,10 +1182,10 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
       |> Request.url(
         "/androidpublisher/v2/applications/{packageName}/edits/{editId}/apks/{apkVersionCode}/deobfuscationFiles/{deobfuscationFileType}",
         %{
-          "packageName" => URI.encode_www_form(package_name),
-          "editId" => URI.encode_www_form(edit_id),
+          "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+          "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
           "apkVersionCode" => apk_version_code,
-          "deobfuscationFileType" => URI.encode_www_form(deobfuscation_file_type)
+          "deobfuscationFileType" => URI.encode(deobfuscation_file_type, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1257,10 +1257,10 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
       |> Request.url(
         "/resumable/upload/androidpublisher/v2/applications/{packageName}/edits/{editId}/apks/{apkVersionCode}/deobfuscationFiles/{deobfuscationFileType}",
         %{
-          "packageName" => URI.encode_www_form(package_name),
-          "editId" => URI.encode_www_form(edit_id),
+          "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+          "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
           "apkVersionCode" => apk_version_code,
-          "deobfuscationFileType" => URI.encode_www_form(deobfuscation_file_type)
+          "deobfuscationFileType" => URI.encode(deobfuscation_file_type, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_param(:query, :uploadType, upload_type)
@@ -1336,10 +1336,10 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
       |> Request.url(
         "/upload/androidpublisher/v2/applications/{packageName}/edits/{editId}/apks/{apkVersionCode}/deobfuscationFiles/{deobfuscationFileType}",
         %{
-          "packageName" => URI.encode_www_form(package_name),
-          "editId" => URI.encode_www_form(edit_id),
+          "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+          "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
           "apkVersionCode" => apk_version_code,
-          "deobfuscationFileType" => URI.encode_www_form(deobfuscation_file_type)
+          "deobfuscationFileType" => URI.encode(deobfuscation_file_type, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_param(:query, :uploadType, upload_type)
@@ -1398,8 +1398,8 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/androidpublisher/v2/applications/{packageName}/edits/{editId}/details", %{
-        "packageName" => URI.encode_www_form(package_name),
-        "editId" => URI.encode_www_form(edit_id)
+        "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+        "editId" => URI.encode(edit_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1459,8 +1459,8 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/androidpublisher/v2/applications/{packageName}/edits/{editId}/details", %{
-        "packageName" => URI.encode_www_form(package_name),
-        "editId" => URI.encode_www_form(edit_id)
+        "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+        "editId" => URI.encode(edit_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1520,8 +1520,8 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/androidpublisher/v2/applications/{packageName}/edits/{editId}/details", %{
-        "packageName" => URI.encode_www_form(package_name),
-        "editId" => URI.encode_www_form(edit_id)
+        "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+        "editId" => URI.encode(edit_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1588,10 +1588,10 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
       |> Request.url(
         "/androidpublisher/v2/applications/{packageName}/edits/{editId}/apks/{apkVersionCode}/expansionFiles/{expansionFileType}",
         %{
-          "packageName" => URI.encode_www_form(package_name),
-          "editId" => URI.encode_www_form(edit_id),
+          "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+          "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
           "apkVersionCode" => apk_version_code,
-          "expansionFileType" => URI.encode_www_form(expansion_file_type)
+          "expansionFileType" => URI.encode(expansion_file_type, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1661,10 +1661,10 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
       |> Request.url(
         "/androidpublisher/v2/applications/{packageName}/edits/{editId}/apks/{apkVersionCode}/expansionFiles/{expansionFileType}",
         %{
-          "packageName" => URI.encode_www_form(package_name),
-          "editId" => URI.encode_www_form(edit_id),
+          "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+          "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
           "apkVersionCode" => apk_version_code,
-          "expansionFileType" => URI.encode_www_form(expansion_file_type)
+          "expansionFileType" => URI.encode(expansion_file_type, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1734,10 +1734,10 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
       |> Request.url(
         "/androidpublisher/v2/applications/{packageName}/edits/{editId}/apks/{apkVersionCode}/expansionFiles/{expansionFileType}",
         %{
-          "packageName" => URI.encode_www_form(package_name),
-          "editId" => URI.encode_www_form(edit_id),
+          "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+          "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
           "apkVersionCode" => apk_version_code,
-          "expansionFileType" => URI.encode_www_form(expansion_file_type)
+          "expansionFileType" => URI.encode(expansion_file_type, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1806,10 +1806,10 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
       |> Request.url(
         "/androidpublisher/v2/applications/{packageName}/edits/{editId}/apks/{apkVersionCode}/expansionFiles/{expansionFileType}",
         %{
-          "packageName" => URI.encode_www_form(package_name),
-          "editId" => URI.encode_www_form(edit_id),
+          "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+          "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
           "apkVersionCode" => apk_version_code,
-          "expansionFileType" => URI.encode_www_form(expansion_file_type)
+          "expansionFileType" => URI.encode(expansion_file_type, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1881,10 +1881,10 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
       |> Request.url(
         "/resumable/upload/androidpublisher/v2/applications/{packageName}/edits/{editId}/apks/{apkVersionCode}/expansionFiles/{expansionFileType}",
         %{
-          "packageName" => URI.encode_www_form(package_name),
-          "editId" => URI.encode_www_form(edit_id),
+          "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+          "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
           "apkVersionCode" => apk_version_code,
-          "expansionFileType" => URI.encode_www_form(expansion_file_type)
+          "expansionFileType" => URI.encode(expansion_file_type, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_param(:query, :uploadType, upload_type)
@@ -1960,10 +1960,10 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
       |> Request.url(
         "/upload/androidpublisher/v2/applications/{packageName}/edits/{editId}/apks/{apkVersionCode}/expansionFiles/{expansionFileType}",
         %{
-          "packageName" => URI.encode_www_form(package_name),
-          "editId" => URI.encode_www_form(edit_id),
+          "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+          "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
           "apkVersionCode" => apk_version_code,
-          "expansionFileType" => URI.encode_www_form(expansion_file_type)
+          "expansionFileType" => URI.encode(expansion_file_type, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_param(:query, :uploadType, upload_type)
@@ -2022,8 +2022,8 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/androidpublisher/v2/applications/{packageName}/edits/{editId}", %{
-        "packageName" => URI.encode_www_form(package_name),
-        "editId" => URI.encode_www_form(edit_id)
+        "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+        "editId" => URI.encode(edit_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2092,11 +2092,11 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
       |> Request.url(
         "/androidpublisher/v2/applications/{packageName}/edits/{editId}/listings/{language}/{imageType}/{imageId}",
         %{
-          "packageName" => URI.encode_www_form(package_name),
-          "editId" => URI.encode_www_form(edit_id),
-          "language" => URI.encode_www_form(language),
-          "imageType" => URI.encode_www_form(image_type),
-          "imageId" => URI.encode_www_form(image_id)
+          "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+          "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
+          "language" => URI.encode(language, &URI.char_unreserved?/1),
+          "imageType" => URI.encode(image_type, &URI.char_unreserved?/1),
+          "imageId" => URI.encode(image_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2165,10 +2165,10 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
       |> Request.url(
         "/androidpublisher/v2/applications/{packageName}/edits/{editId}/listings/{language}/{imageType}",
         %{
-          "packageName" => URI.encode_www_form(package_name),
-          "editId" => URI.encode_www_form(edit_id),
-          "language" => URI.encode_www_form(language),
-          "imageType" => URI.encode_www_form(image_type)
+          "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+          "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
+          "language" => URI.encode(language, &URI.char_unreserved?/1),
+          "imageType" => URI.encode(image_type, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2239,10 +2239,10 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
       |> Request.url(
         "/androidpublisher/v2/applications/{packageName}/edits/{editId}/listings/{language}/{imageType}",
         %{
-          "packageName" => URI.encode_www_form(package_name),
-          "editId" => URI.encode_www_form(edit_id),
-          "language" => URI.encode_www_form(language),
-          "imageType" => URI.encode_www_form(image_type)
+          "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+          "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
+          "language" => URI.encode(language, &URI.char_unreserved?/1),
+          "imageType" => URI.encode(image_type, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2313,10 +2313,10 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
       |> Request.url(
         "/androidpublisher/v2/applications/{packageName}/edits/{editId}/listings/{language}/{imageType}",
         %{
-          "packageName" => URI.encode_www_form(package_name),
-          "editId" => URI.encode_www_form(edit_id),
-          "language" => URI.encode_www_form(language),
-          "imageType" => URI.encode_www_form(image_type)
+          "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+          "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
+          "language" => URI.encode(language, &URI.char_unreserved?/1),
+          "imageType" => URI.encode(image_type, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2388,10 +2388,10 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
       |> Request.url(
         "/resumable/upload/androidpublisher/v2/applications/{packageName}/edits/{editId}/listings/{language}/{imageType}",
         %{
-          "packageName" => URI.encode_www_form(package_name),
-          "editId" => URI.encode_www_form(edit_id),
-          "language" => URI.encode_www_form(language),
-          "imageType" => URI.encode_www_form(image_type)
+          "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+          "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
+          "language" => URI.encode(language, &URI.char_unreserved?/1),
+          "imageType" => URI.encode(image_type, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_param(:query, :uploadType, upload_type)
@@ -2467,10 +2467,10 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
       |> Request.url(
         "/upload/androidpublisher/v2/applications/{packageName}/edits/{editId}/listings/{language}/{imageType}",
         %{
-          "packageName" => URI.encode_www_form(package_name),
-          "editId" => URI.encode_www_form(edit_id),
-          "language" => URI.encode_www_form(language),
-          "imageType" => URI.encode_www_form(image_type)
+          "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+          "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
+          "language" => URI.encode(language, &URI.char_unreserved?/1),
+          "imageType" => URI.encode(image_type, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_param(:query, :uploadType, upload_type)
@@ -2524,7 +2524,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/androidpublisher/v2/applications/{packageName}/edits", %{
-        "packageName" => URI.encode_www_form(package_name)
+        "packageName" => URI.encode(package_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2587,9 +2587,9 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
       |> Request.url(
         "/androidpublisher/v2/applications/{packageName}/edits/{editId}/listings/{language}",
         %{
-          "packageName" => URI.encode_www_form(package_name),
-          "editId" => URI.encode_www_form(edit_id),
-          "language" => URI.encode_www_form(language)
+          "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+          "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
+          "language" => URI.encode(language, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2648,8 +2648,8 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/androidpublisher/v2/applications/{packageName}/edits/{editId}/listings", %{
-        "packageName" => URI.encode_www_form(package_name),
-        "editId" => URI.encode_www_form(edit_id)
+        "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+        "editId" => URI.encode(edit_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2712,9 +2712,9 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
       |> Request.url(
         "/androidpublisher/v2/applications/{packageName}/edits/{editId}/listings/{language}",
         %{
-          "packageName" => URI.encode_www_form(package_name),
-          "editId" => URI.encode_www_form(edit_id),
-          "language" => URI.encode_www_form(language)
+          "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+          "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
+          "language" => URI.encode(language, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2775,8 +2775,8 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/androidpublisher/v2/applications/{packageName}/edits/{editId}/listings", %{
-        "packageName" => URI.encode_www_form(package_name),
-        "editId" => URI.encode_www_form(edit_id)
+        "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+        "editId" => URI.encode(edit_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2843,9 +2843,9 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
       |> Request.url(
         "/androidpublisher/v2/applications/{packageName}/edits/{editId}/listings/{language}",
         %{
-          "packageName" => URI.encode_www_form(package_name),
-          "editId" => URI.encode_www_form(edit_id),
-          "language" => URI.encode_www_form(language)
+          "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+          "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
+          "language" => URI.encode(language, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2911,9 +2911,9 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
       |> Request.url(
         "/androidpublisher/v2/applications/{packageName}/edits/{editId}/listings/{language}",
         %{
-          "packageName" => URI.encode_www_form(package_name),
-          "editId" => URI.encode_www_form(edit_id),
-          "language" => URI.encode_www_form(language)
+          "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+          "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
+          "language" => URI.encode(language, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2976,9 +2976,9 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
       |> Request.url(
         "/androidpublisher/v2/applications/{packageName}/edits/{editId}/testers/{track}",
         %{
-          "packageName" => URI.encode_www_form(package_name),
-          "editId" => URI.encode_www_form(edit_id),
-          "track" => URI.encode_www_form(track)
+          "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+          "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
+          "track" => URI.encode(track, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -3043,9 +3043,9 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
       |> Request.url(
         "/androidpublisher/v2/applications/{packageName}/edits/{editId}/testers/{track}",
         %{
-          "packageName" => URI.encode_www_form(package_name),
-          "editId" => URI.encode_www_form(edit_id),
-          "track" => URI.encode_www_form(track)
+          "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+          "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
+          "track" => URI.encode(track, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -3110,9 +3110,9 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
       |> Request.url(
         "/androidpublisher/v2/applications/{packageName}/edits/{editId}/testers/{track}",
         %{
-          "packageName" => URI.encode_www_form(package_name),
-          "editId" => URI.encode_www_form(edit_id),
-          "track" => URI.encode_www_form(track)
+          "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+          "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
+          "track" => URI.encode(track, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -3176,9 +3176,9 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
       |> Request.url(
         "/androidpublisher/v2/applications/{packageName}/edits/{editId}/tracks/{track}",
         %{
-          "packageName" => URI.encode_www_form(package_name),
-          "editId" => URI.encode_www_form(edit_id),
-          "track" => URI.encode_www_form(track)
+          "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+          "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
+          "track" => URI.encode(track, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -3234,8 +3234,8 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/androidpublisher/v2/applications/{packageName}/edits/{editId}/tracks", %{
-        "packageName" => URI.encode_www_form(package_name),
-        "editId" => URI.encode_www_form(edit_id)
+        "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+        "editId" => URI.encode(edit_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -3302,9 +3302,9 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
       |> Request.url(
         "/androidpublisher/v2/applications/{packageName}/edits/{editId}/tracks/{track}",
         %{
-          "packageName" => URI.encode_www_form(package_name),
-          "editId" => URI.encode_www_form(edit_id),
-          "track" => URI.encode_www_form(track)
+          "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+          "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
+          "track" => URI.encode(track, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -3370,9 +3370,9 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
       |> Request.url(
         "/androidpublisher/v2/applications/{packageName}/edits/{editId}/tracks/{track}",
         %{
-          "packageName" => URI.encode_www_form(package_name),
-          "editId" => URI.encode_www_form(edit_id),
-          "track" => URI.encode_www_form(track)
+          "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+          "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
+          "track" => URI.encode(track, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -3427,8 +3427,8 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/androidpublisher/v2/applications/{packageName}/edits/{editId}:validate", %{
-        "packageName" => URI.encode_www_form(package_name),
-        "editId" => URI.encode_www_form(edit_id)
+        "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+        "editId" => URI.encode(edit_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

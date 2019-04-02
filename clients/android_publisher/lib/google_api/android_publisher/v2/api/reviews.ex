@@ -71,8 +71,8 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Reviews do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/androidpublisher/v2/applications/{packageName}/reviews/{reviewId}", %{
-        "packageName" => URI.encode_www_form(package_name),
-        "reviewId" => URI.encode_www_form(review_id)
+        "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+        "reviewId" => URI.encode(review_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -128,7 +128,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Reviews do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/androidpublisher/v2/applications/{packageName}/reviews", %{
-        "packageName" => URI.encode_www_form(package_name)
+        "packageName" => URI.encode(package_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -189,8 +189,8 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Reviews do
       |> Request.url(
         "/androidpublisher/v2/applications/{packageName}/reviews/{reviewId}:reply",
         %{
-          "packageName" => URI.encode_www_form(package_name),
-          "reviewId" => URI.encode_www_form(review_id)
+          "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+          "reviewId" => URI.encode(review_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
