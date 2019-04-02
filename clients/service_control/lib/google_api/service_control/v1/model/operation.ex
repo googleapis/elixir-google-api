@@ -22,7 +22,7 @@ defmodule GoogleApi.ServiceControl.V1.Model.Operation do
 
   ## Attributes
 
-  - consumerId (String.t): Identity of the consumer who is using the service. This field should be filled in for the operations initiated by a consumer, but not for service-initiated operations that are not related to a specific consumer.  - This can be in one of the following formats:     - project:PROJECT_ID,     - project&#x60;_&#x60;number:PROJECT_NUMBER,     - projects/RPOJECT_ID or PROJECT_NUMBER,     - folders/FOLDER_NUMBER,     - organizations/ORGANIZATION_NUMBER,     - api&#x60;_&#x60;key:API_KEY. Defaults to: `null`.
+  - consumerId (String.t): Identity of the consumer who is using the service. This field should be filled in for the operations initiated by a consumer, but not for service-initiated operations that are not related to a specific consumer.  - This can be in one of the following formats:     - project:PROJECT_ID,     - project&#x60;_&#x60;number:PROJECT_NUMBER,     - projects/PROJECT_ID or PROJECT_NUMBER,     - folders/FOLDER_NUMBER,     - organizations/ORGANIZATION_NUMBER,     - api&#x60;_&#x60;key:API_KEY. Defaults to: `null`.
   - endTime (DateTime.t): End time of the operation. Required when the operation is used in ServiceController.Report, but optional when the operation is used in ServiceController.Check. Defaults to: `null`.
   - importance (String.t): DO NOT USE. This is an experimental field. Defaults to: `null`.
     - Enum - one of [LOW, HIGH, DEBUG]
