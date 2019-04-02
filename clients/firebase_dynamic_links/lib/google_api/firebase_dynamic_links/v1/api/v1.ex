@@ -80,7 +80,7 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Api.V1 do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/{dynamicLink}/linkStats", %{
-        "dynamicLink" => URI.encode_www_form(dynamic_link)
+        "dynamicLink" => URI.encode(dynamic_link, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
