@@ -39,7 +39,7 @@ defmodule GoogleApi.People.V1.Connection do
       "https://www.googleapis.com/auth/user.phonenumbers.read",
       # View your email address
       "https://www.googleapis.com/auth/userinfo.email",
-      # View your basic profile info
+      # See your personal info, including any personal info you&#39;ve made publicly available
       "https://www.googleapis.com/auth/userinfo.profile"
     ],
     otp_app: :google_api_people,
