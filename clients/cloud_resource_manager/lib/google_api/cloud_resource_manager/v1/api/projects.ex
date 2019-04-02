@@ -77,7 +77,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectsId}:clearOrgPolicy", %{
-        "projectsId" => URI.encode_www_form(projects_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -191,7 +191,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v1/projects/{projectId}", %{
-        "projectId" => URI.encode_www_form(project_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -246,7 +246,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectId}", %{
-        "projectId" => URI.encode_www_form(project_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -309,7 +309,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectId}:getAncestry", %{
-        "projectId" => URI.encode_www_form(project_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -377,7 +377,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectsId}:getEffectiveOrgPolicy", %{
-        "projectsId" => URI.encode_www_form(projects_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -439,7 +439,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{resource}:getIamPolicy", %{
-        "resource" => URI.encode_www_form(resource)
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -501,7 +501,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectsId}:getOrgPolicy", %{
-        "projectsId" => URI.encode_www_form(projects_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -630,7 +630,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectsId}:listAvailableOrgPolicyConstraints", %{
-        "projectsId" => URI.encode_www_form(projects_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -699,7 +699,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectsId}:listOrgPolicies", %{
-        "projectsId" => URI.encode_www_form(projects_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -763,7 +763,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{resource}:setIamPolicy", %{
-        "resource" => URI.encode_www_form(resource)
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -825,7 +825,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectsId}:setOrgPolicy", %{
-        "projectsId" => URI.encode_www_form(projects_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -892,7 +892,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{resource}:testIamPermissions", %{
-        "resource" => URI.encode_www_form(resource)
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -956,7 +956,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectId}:undelete", %{
-        "projectId" => URI.encode_www_form(project_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1018,7 +1018,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/v1/projects/{projectId}", %{
-        "projectId" => URI.encode_www_form(project_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
