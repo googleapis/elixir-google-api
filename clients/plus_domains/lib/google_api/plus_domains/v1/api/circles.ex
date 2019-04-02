@@ -66,7 +66,7 @@ defmodule GoogleApi.PlusDomains.V1.Api.Circles do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/plusDomains/v1/circles/{circleId}/people", %{
-        "circleId" => URI.encode_www_form(circle_id)
+        "circleId" => URI.encode(circle_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -113,7 +113,7 @@ defmodule GoogleApi.PlusDomains.V1.Api.Circles do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/plusDomains/v1/circles/{circleId}", %{
-        "circleId" => URI.encode_www_form(circle_id)
+        "circleId" => URI.encode(circle_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -162,7 +162,7 @@ defmodule GoogleApi.PlusDomains.V1.Api.Circles do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/plusDomains/v1/people/{userId}/circles", %{
-        "userId" => URI.encode_www_form(user_id)
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -213,7 +213,7 @@ defmodule GoogleApi.PlusDomains.V1.Api.Circles do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/plusDomains/v1/people/{userId}/circles", %{
-        "userId" => URI.encode_www_form(user_id)
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -262,7 +262,7 @@ defmodule GoogleApi.PlusDomains.V1.Api.Circles do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/plusDomains/v1/circles/{circleId}", %{
-        "circleId" => URI.encode_www_form(circle_id)
+        "circleId" => URI.encode(circle_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -309,7 +309,7 @@ defmodule GoogleApi.PlusDomains.V1.Api.Circles do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/plusDomains/v1/circles/{circleId}", %{
-        "circleId" => URI.encode_www_form(circle_id)
+        "circleId" => URI.encode(circle_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -360,7 +360,7 @@ defmodule GoogleApi.PlusDomains.V1.Api.Circles do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/plusDomains/v1/circles/{circleId}/people", %{
-        "circleId" => URI.encode_www_form(circle_id)
+        "circleId" => URI.encode(circle_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -409,7 +409,7 @@ defmodule GoogleApi.PlusDomains.V1.Api.Circles do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/plusDomains/v1/circles/{circleId}", %{
-        "circleId" => URI.encode_www_form(circle_id)
+        "circleId" => URI.encode(circle_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

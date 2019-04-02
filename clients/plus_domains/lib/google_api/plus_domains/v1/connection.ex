@@ -41,7 +41,7 @@ defmodule GoogleApi.PlusDomains.V1.Connection do
       "https://www.googleapis.com/auth/plus.stream.write",
       # View your email address
       "https://www.googleapis.com/auth/userinfo.email",
-      # View your basic profile info
+      # See your personal info, including any personal info you&#39;ve made publically available
       "https://www.googleapis.com/auth/userinfo.profile"
     ],
     otp_app: :google_api_plus_domains,
