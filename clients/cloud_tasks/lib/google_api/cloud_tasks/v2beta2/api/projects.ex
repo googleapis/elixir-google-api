@@ -77,7 +77,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v2beta2/{+name}/locations", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -141,7 +141,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v2beta2/{+parent}/queues", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -206,7 +206,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v2beta2/{+resource}:getIamPolicy", %{
-        "resource" => URI.encode_www_form(resource)
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -273,7 +273,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v2beta2/{+parent}/queues", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -337,7 +337,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/v2beta2/{+name}", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -399,7 +399,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v2beta2/{+name}:pause", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -461,7 +461,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v2beta2/{+name}:purge", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -523,7 +523,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v2beta2/{+name}:resume", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -588,7 +588,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v2beta2/{+resource}:setIamPolicy", %{
-        "resource" => URI.encode_www_form(resource)
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -653,7 +653,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v2beta2/{+name}:acknowledge", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -718,7 +718,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v2beta2/{+name}:cancelLease", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -783,7 +783,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v2beta2/{+parent}/tasks", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -846,7 +846,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v2beta2/{+name}", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -908,7 +908,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v2beta2/{+name}", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -975,7 +975,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v2beta2/{+parent}/tasks:lease", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1042,7 +1042,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v2beta2/{+parent}/tasks", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1107,7 +1107,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v2beta2/{+name}:renewLease", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1169,7 +1169,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v2beta2/{+name}:run", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1236,7 +1236,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v2beta2/{+resource}:testIamPermissions", %{
-        "resource" => URI.encode_www_form(resource)
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
