@@ -75,8 +75,8 @@ defmodule GoogleApi.AdSense.V14.Api.Customchannels do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/adclients/{adClientId}/customchannels/{customChannelId}/adunits", %{
-        "adClientId" => URI.encode_www_form(ad_client_id),
-        "customChannelId" => URI.encode_www_form(custom_channel_id)
+        "adClientId" => URI.encode(ad_client_id, &URI.char_unreserved?/1),
+        "customChannelId" => URI.encode(custom_channel_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -130,8 +130,8 @@ defmodule GoogleApi.AdSense.V14.Api.Customchannels do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/adclients/{adClientId}/customchannels/{customChannelId}", %{
-        "adClientId" => URI.encode_www_form(ad_client_id),
-        "customChannelId" => URI.encode_www_form(custom_channel_id)
+        "adClientId" => URI.encode(ad_client_id, &URI.char_unreserved?/1),
+        "customChannelId" => URI.encode(custom_channel_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -182,7 +182,7 @@ defmodule GoogleApi.AdSense.V14.Api.Customchannels do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/adclients/{adClientId}/customchannels", %{
-        "adClientId" => URI.encode_www_form(ad_client_id)
+        "adClientId" => URI.encode(ad_client_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

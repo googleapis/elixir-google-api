@@ -151,7 +151,7 @@ defmodule GoogleApi.AdSense.V14.Api.Reports do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/reports/{savedReportId}", %{
-        "savedReportId" => URI.encode_www_form(saved_report_id)
+        "savedReportId" => URI.encode(saved_report_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
