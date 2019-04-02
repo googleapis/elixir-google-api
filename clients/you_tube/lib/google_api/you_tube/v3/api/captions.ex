@@ -120,7 +120,7 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/youtube/v3/captions/{id}", %{
-        "id" => URI.encode_www_form(id)
+        "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
