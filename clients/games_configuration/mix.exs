@@ -1,7 +1,7 @@
 defmodule GoogleApi.GamesConfiguration.V1configuration.Mixfile do
   use Mix.Project
 
-  @version "0.0.1"
+  @version "0.1.0"
 
   def project do
     [app: :google_api_games_configuration,

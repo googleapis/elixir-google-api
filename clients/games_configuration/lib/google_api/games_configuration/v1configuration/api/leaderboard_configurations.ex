@@ -70,7 +70,7 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Api.LeaderboardConfigurat
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/games/v1configuration/leaderboards/{leaderboardId}", %{
-        "leaderboardId" => URI.encode_www_form(leaderboard_id)
+        "leaderboardId" => URI.encode(leaderboard_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -127,7 +127,7 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Api.LeaderboardConfigurat
       Request.new()
       |> Request.method(:get)
       |> Request.url("/games/v1configuration/leaderboards/{leaderboardId}", %{
-        "leaderboardId" => URI.encode_www_form(leaderboard_id)
+        "leaderboardId" => URI.encode(leaderboard_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -189,7 +189,7 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Api.LeaderboardConfigurat
       Request.new()
       |> Request.method(:post)
       |> Request.url("/games/v1configuration/applications/{applicationId}/leaderboards", %{
-        "applicationId" => URI.encode_www_form(application_id)
+        "applicationId" => URI.encode(application_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -254,7 +254,7 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Api.LeaderboardConfigurat
       Request.new()
       |> Request.method(:get)
       |> Request.url("/games/v1configuration/applications/{applicationId}/leaderboards", %{
-        "applicationId" => URI.encode_www_form(application_id)
+        "applicationId" => URI.encode(application_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -319,7 +319,7 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Api.LeaderboardConfigurat
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/games/v1configuration/leaderboards/{leaderboardId}", %{
-        "leaderboardId" => URI.encode_www_form(leaderboard_id)
+        "leaderboardId" => URI.encode(leaderboard_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -381,7 +381,7 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Api.LeaderboardConfigurat
       Request.new()
       |> Request.method(:put)
       |> Request.url("/games/v1configuration/leaderboards/{leaderboardId}", %{
-        "leaderboardId" => URI.encode_www_form(leaderboard_id)
+        "leaderboardId" => URI.encode(leaderboard_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
