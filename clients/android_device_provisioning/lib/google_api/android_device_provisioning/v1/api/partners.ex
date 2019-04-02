@@ -82,7 +82,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/{+parent}/customers", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -151,7 +151,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/partners/{+partnerId}/customers", %{
-        "partnerId" => URI.encode_www_form(partner_id)
+        "partnerId" => URI.encode(partner_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -220,7 +220,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/partners/{+partnerId}/devices:claim", %{
-        "partnerId" => URI.encode_www_form(partner_id)
+        "partnerId" => URI.encode(partner_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -289,7 +289,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/partners/{+partnerId}/devices:claimAsync", %{
-        "partnerId" => URI.encode_www_form(partner_id)
+        "partnerId" => URI.encode(partner_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -359,7 +359,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/partners/{+partnerId}/devices:findByIdentifier", %{
-        "partnerId" => URI.encode_www_form(partner_id)
+        "partnerId" => URI.encode(partner_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -432,7 +432,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/partners/{+partnerId}/devices:findByOwner", %{
-        "partnerId" => URI.encode_www_form(partner_id)
+        "partnerId" => URI.encode(partner_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -441,66 +441,6 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
     |> Response.decode(
       opts ++ [struct: %GoogleApi.AndroidDeviceProvisioning.V1.Model.FindDevicesByOwnerResponse{}]
     )
-  end
-
-  @doc """
-  Gets a device.
-
-  ## Parameters
-
-  - connection (GoogleApi.AndroidDeviceProvisioning.V1.Connection): Connection to server
-  - name (String.t): Required. The device API resource name in the format &#x60;partners/[PARTNER_ID]/devices/[DEVICE_ID]&#x60;.
-  - optional_params (KeywordList): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-
-  ## Returns
-
-  {:ok, %GoogleApi.AndroidDeviceProvisioning.V1.Model.Device{}} on success
-  {:error, info} on failure
-  """
-  @spec androiddeviceprovisioning_partners_devices_get(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.Device.t()} | {:error, Tesla.Env.t()}
-  def androiddeviceprovisioning_partners_devices_get(
-        connection,
-        name,
-        optional_params \\ [],
-        opts \\ []
-      ) do
-    optional_params_config = %{
-      :"$.xgafv" => :query,
-      :access_token => :query,
-      :alt => :query,
-      :callback => :query,
-      :fields => :query,
-      :key => :query,
-      :oauth_token => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :upload_protocol => :query,
-      :uploadType => :query
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:get)
-      |> Request.url("/v1/{+name}", %{
-        "name" => URI.encode_www_form(name)
-      })
-      |> Request.add_optional_params(optional_params_config, optional_params)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(opts ++ [struct: %GoogleApi.AndroidDeviceProvisioning.V1.Model.Device{}])
   end
 
   @doc """
@@ -564,8 +504,8 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/partners/{+metadataOwnerId}/devices/{+deviceId}/metadata", %{
-        "metadataOwnerId" => URI.encode_www_form(metadata_owner_id),
-        "deviceId" => URI.encode_www_form(device_id)
+        "metadataOwnerId" => URI.encode(metadata_owner_id, &URI.char_unreserved?/1),
+        "deviceId" => URI.encode(device_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -633,7 +573,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/partners/{+partnerId}/devices:unclaim", %{
-        "partnerId" => URI.encode_www_form(partner_id)
+        "partnerId" => URI.encode(partner_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -700,7 +640,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/partners/{+partnerId}/devices:unclaimAsync", %{
-        "partnerId" => URI.encode_www_form(partner_id)
+        "partnerId" => URI.encode(partner_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -769,7 +709,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/partners/{+partnerId}/devices:updateMetadataAsync", %{
-        "partnerId" => URI.encode_www_form(partner_id)
+        "partnerId" => URI.encode(partner_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -840,7 +780,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/{+parent}/customers", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -908,7 +848,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/{+parent}/vendors", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
