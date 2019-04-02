@@ -77,7 +77,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/apps/{appsId}/authorizedCertificates", %{
-        "appsId" => URI.encode_www_form(apps_id)
+        "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -143,8 +143,9 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v1/apps/{appsId}/authorizedCertificates/{authorizedCertificatesId}", %{
-        "appsId" => URI.encode_www_form(apps_id),
-        "authorizedCertificatesId" => URI.encode_www_form(authorized_certificates_id)
+        "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1),
+        "authorizedCertificatesId" =>
+          URI.encode(authorized_certificates_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -213,8 +214,9 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/apps/{appsId}/authorizedCertificates/{authorizedCertificatesId}", %{
-        "appsId" => URI.encode_www_form(apps_id),
-        "authorizedCertificatesId" => URI.encode_www_form(authorized_certificates_id)
+        "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1),
+        "authorizedCertificatesId" =>
+          URI.encode(authorized_certificates_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -281,7 +283,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/apps/{appsId}/authorizedCertificates", %{
-        "appsId" => URI.encode_www_form(apps_id)
+        "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -354,8 +356,9 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/v1/apps/{appsId}/authorizedCertificates/{authorizedCertificatesId}", %{
-        "appsId" => URI.encode_www_form(apps_id),
-        "authorizedCertificatesId" => URI.encode_www_form(authorized_certificates_id)
+        "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1),
+        "authorizedCertificatesId" =>
+          URI.encode(authorized_certificates_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -420,7 +423,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/apps/{appsId}/authorizedDomains", %{
-        "appsId" => URI.encode_www_form(apps_id)
+        "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -540,7 +543,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/apps/{appsId}/domainMappings", %{
-        "appsId" => URI.encode_www_form(apps_id)
+        "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -606,8 +609,8 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v1/apps/{appsId}/domainMappings/{domainMappingsId}", %{
-        "appsId" => URI.encode_www_form(apps_id),
-        "domainMappingsId" => URI.encode_www_form(domain_mappings_id)
+        "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1),
+        "domainMappingsId" => URI.encode(domain_mappings_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -669,8 +672,8 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/apps/{appsId}/domainMappings/{domainMappingsId}", %{
-        "appsId" => URI.encode_www_form(apps_id),
-        "domainMappingsId" => URI.encode_www_form(domain_mappings_id)
+        "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1),
+        "domainMappingsId" => URI.encode(domain_mappings_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -730,7 +733,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/apps/{appsId}/domainMappings", %{
-        "appsId" => URI.encode_www_form(apps_id)
+        "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -802,8 +805,8 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/v1/apps/{appsId}/domainMappings/{domainMappingsId}", %{
-        "appsId" => URI.encode_www_form(apps_id),
-        "domainMappingsId" => URI.encode_www_form(domain_mappings_id)
+        "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1),
+        "domainMappingsId" => URI.encode(domain_mappings_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -870,7 +873,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/apps/{appsId}/firewall/ingressRules:batchUpdate", %{
-        "appsId" => URI.encode_www_form(apps_id)
+        "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -934,7 +937,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/apps/{appsId}/firewall/ingressRules", %{
-        "appsId" => URI.encode_www_form(apps_id)
+        "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1000,8 +1003,8 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v1/apps/{appsId}/firewall/ingressRules/{ingressRulesId}", %{
-        "appsId" => URI.encode_www_form(apps_id),
-        "ingressRulesId" => URI.encode_www_form(ingress_rules_id)
+        "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1),
+        "ingressRulesId" => URI.encode(ingress_rules_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1067,8 +1070,8 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/apps/{appsId}/firewall/ingressRules/{ingressRulesId}", %{
-        "appsId" => URI.encode_www_form(apps_id),
-        "ingressRulesId" => URI.encode_www_form(ingress_rules_id)
+        "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1),
+        "ingressRulesId" => URI.encode(ingress_rules_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1135,7 +1138,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/apps/{appsId}/firewall/ingressRules", %{
-        "appsId" => URI.encode_www_form(apps_id)
+        "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1205,8 +1208,8 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/v1/apps/{appsId}/firewall/ingressRules/{ingressRulesId}", %{
-        "appsId" => URI.encode_www_form(apps_id),
-        "ingressRulesId" => URI.encode_www_form(ingress_rules_id)
+        "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1),
+        "ingressRulesId" => URI.encode(ingress_rules_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1261,7 +1264,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/apps/{appsId}", %{
-        "appsId" => URI.encode_www_form(apps_id)
+        "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1323,8 +1326,8 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/apps/{appsId}/locations/{locationsId}", %{
-        "appsId" => URI.encode_www_form(apps_id),
-        "locationsId" => URI.encode_www_form(locations_id)
+        "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1),
+        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1385,7 +1388,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/apps/{appsId}/locations", %{
-        "appsId" => URI.encode_www_form(apps_id)
+        "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1447,8 +1450,8 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/apps/{appsId}/operations/{operationsId}", %{
-        "appsId" => URI.encode_www_form(apps_id),
-        "operationsId" => URI.encode_www_form(operations_id)
+        "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1),
+        "operationsId" => URI.encode(operations_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1509,7 +1512,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/apps/{appsId}/operations", %{
-        "appsId" => URI.encode_www_form(apps_id)
+        "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1568,7 +1571,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/v1/apps/{appsId}", %{
-        "appsId" => URI.encode_www_form(apps_id)
+        "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1625,7 +1628,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/apps/{appsId}:repair", %{
-        "appsId" => URI.encode_www_form(apps_id)
+        "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1687,8 +1690,8 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v1/apps/{appsId}/services/{servicesId}", %{
-        "appsId" => URI.encode_www_form(apps_id),
-        "servicesId" => URI.encode_www_form(services_id)
+        "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1),
+        "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1750,8 +1753,8 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/apps/{appsId}/services/{servicesId}", %{
-        "appsId" => URI.encode_www_form(apps_id),
-        "servicesId" => URI.encode_www_form(services_id)
+        "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1),
+        "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1810,7 +1813,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/apps/{appsId}/services", %{
-        "appsId" => URI.encode_www_form(apps_id)
+        "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1878,8 +1881,8 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/v1/apps/{appsId}/services/{servicesId}", %{
-        "appsId" => URI.encode_www_form(apps_id),
-        "servicesId" => URI.encode_www_form(services_id)
+        "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1),
+        "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1947,8 +1950,8 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/apps/{appsId}/services/{servicesId}/versions", %{
-        "appsId" => URI.encode_www_form(apps_id),
-        "servicesId" => URI.encode_www_form(services_id)
+        "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1),
+        "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2017,9 +2020,9 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v1/apps/{appsId}/services/{servicesId}/versions/{versionsId}", %{
-        "appsId" => URI.encode_www_form(apps_id),
-        "servicesId" => URI.encode_www_form(services_id),
-        "versionsId" => URI.encode_www_form(versions_id)
+        "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1),
+        "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1),
+        "versionsId" => URI.encode(versions_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2090,9 +2093,9 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/apps/{appsId}/services/{servicesId}/versions/{versionsId}", %{
-        "appsId" => URI.encode_www_form(apps_id),
-        "servicesId" => URI.encode_www_form(services_id),
-        "versionsId" => URI.encode_www_form(versions_id)
+        "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1),
+        "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1),
+        "versionsId" => URI.encode(versions_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2168,10 +2171,10 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       |> Request.url(
         "/v1/apps/{appsId}/services/{servicesId}/versions/{versionsId}/instances/{instancesId}:debug",
         %{
-          "appsId" => URI.encode_www_form(apps_id),
-          "servicesId" => URI.encode_www_form(services_id),
-          "versionsId" => URI.encode_www_form(versions_id),
-          "instancesId" => URI.encode_www_form(instances_id)
+          "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1),
+          "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1),
+          "versionsId" => URI.encode(versions_id, &URI.char_unreserved?/1),
+          "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2246,10 +2249,10 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       |> Request.url(
         "/v1/apps/{appsId}/services/{servicesId}/versions/{versionsId}/instances/{instancesId}",
         %{
-          "appsId" => URI.encode_www_form(apps_id),
-          "servicesId" => URI.encode_www_form(services_id),
-          "versionsId" => URI.encode_www_form(versions_id),
-          "instancesId" => URI.encode_www_form(instances_id)
+          "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1),
+          "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1),
+          "versionsId" => URI.encode(versions_id, &URI.char_unreserved?/1),
+          "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2324,10 +2327,10 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       |> Request.url(
         "/v1/apps/{appsId}/services/{servicesId}/versions/{versionsId}/instances/{instancesId}",
         %{
-          "appsId" => URI.encode_www_form(apps_id),
-          "servicesId" => URI.encode_www_form(services_id),
-          "versionsId" => URI.encode_www_form(versions_id),
-          "instancesId" => URI.encode_www_form(instances_id)
+          "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1),
+          "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1),
+          "versionsId" => URI.encode(versions_id, &URI.char_unreserved?/1),
+          "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2402,9 +2405,9 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/apps/{appsId}/services/{servicesId}/versions/{versionsId}/instances", %{
-        "appsId" => URI.encode_www_form(apps_id),
-        "servicesId" => URI.encode_www_form(services_id),
-        "versionsId" => URI.encode_www_form(versions_id)
+        "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1),
+        "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1),
+        "versionsId" => URI.encode(versions_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2477,8 +2480,8 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/apps/{appsId}/services/{servicesId}/versions", %{
-        "appsId" => URI.encode_www_form(apps_id),
-        "servicesId" => URI.encode_www_form(services_id)
+        "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1),
+        "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2551,9 +2554,9 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/v1/apps/{appsId}/services/{servicesId}/versions/{versionsId}", %{
-        "appsId" => URI.encode_www_form(apps_id),
-        "servicesId" => URI.encode_www_form(services_id),
-        "versionsId" => URI.encode_www_form(versions_id)
+        "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1),
+        "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1),
+        "versionsId" => URI.encode(versions_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

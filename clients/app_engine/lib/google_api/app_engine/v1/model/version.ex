@@ -59,7 +59,7 @@ defmodule GoogleApi.AppEngine.V1.Model.Version do
   - threadsafe (boolean()): Whether multiple requests can be dispatched to this version at once. Defaults to: `null`.
   - versionUrl (String.t): Serving URL for this version. Example: \&quot;https://myversion-dot-myservice-dot-myapp.appspot.com\&quot;@OutputOnly Defaults to: `null`.
   - vm (boolean()): Whether to deploy this version in a container on a virtual machine. Defaults to: `null`.
-  - zones ([String.t]): The Google Compute Engine zones that are supported by this version in the App Engine flexible environment. Defaults to: `null`.
+  - zones ([String.t]): The Google Compute Engine zones that are supported by this version in the App Engine flexible environment. Deprecated. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
