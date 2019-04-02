@@ -72,7 +72,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Applications do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/applications/{applicationId}/players/hidden", %{
-        "applicationId" => URI.encode_www_form(application_id)
+        "applicationId" => URI.encode(application_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

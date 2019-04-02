@@ -63,7 +63,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Scores do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/leaderboards/{leaderboardId}/scores/reset", %{
-        "leaderboardId" => URI.encode_www_form(leaderboard_id)
+        "leaderboardId" => URI.encode(leaderboard_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -213,7 +213,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Scores do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/leaderboards/{leaderboardId}/scores/resetForAllPlayers", %{
-        "leaderboardId" => URI.encode_www_form(leaderboard_id)
+        "leaderboardId" => URI.encode(leaderboard_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
