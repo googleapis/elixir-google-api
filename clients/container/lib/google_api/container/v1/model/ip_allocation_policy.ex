@@ -32,6 +32,7 @@ defmodule GoogleApi.Container.V1.Model.IpAllocationPolicy do
   - servicesIpv4CidrBlock (String.t): The IP address range of the services IPs in this cluster. If blank, a range will be automatically chosen with the default size.  This field is only applicable when &#x60;use_ip_aliases&#x60; is true.  Set to blank to have a range chosen with the default size.  Set to /netmask (e.g. &#x60;/14&#x60;) to have a range chosen with a specific netmask.  Set to a [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) notation (e.g. &#x60;10.96.0.0/14&#x60;) from the RFC-1918 private networks (e.g. &#x60;10.0.0.0/8&#x60;, &#x60;172.16.0.0/12&#x60;, &#x60;192.168.0.0/16&#x60;) to pick a specific range to use. Defaults to: `null`.
   - servicesSecondaryRangeName (String.t): The name of the secondary range to be used as for the services CIDR block.  The secondary range will be used for service ClusterIPs. This must be an existing secondary range associated with the cluster subnetwork.  This field is only applicable with use_ip_aliases is true and create_subnetwork is false. Defaults to: `null`.
   - subnetworkName (String.t): A custom subnetwork name to be used if &#x60;create_subnetwork&#x60; is true.  If this field is empty, then an automatic name will be chosen for the new subnetwork. Defaults to: `null`.
+  - tpuIpv4CidrBlock (String.t): The IP address range of the Cloud TPUs in this cluster. If unspecified, a range will be automatically chosen with the default size.  This field is only applicable when &#x60;use_ip_aliases&#x60; is true.  If unspecified, the range will use the default size.  Set to /netmask (e.g. &#x60;/14&#x60;) to have a range chosen with a specific netmask.  Set to a [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) notation (e.g. &#x60;10.96.0.0/14&#x60;) from the RFC-1918 private networks (e.g. &#x60;10.0.0.0/8&#x60;, &#x60;172.16.0.0/12&#x60;, &#x60;192.168.0.0/16&#x60;) to pick a specific range to use. Defaults to: `null`.
   - useIpAliases (boolean()): Whether alias IPs will be used for pod IPs in the cluster. Defaults to: `null`.
   """
 
@@ -48,6 +49,7 @@ defmodule GoogleApi.Container.V1.Model.IpAllocationPolicy do
           :servicesIpv4CidrBlock => any(),
           :servicesSecondaryRangeName => any(),
           :subnetworkName => any(),
+          :tpuIpv4CidrBlock => any(),
           :useIpAliases => any()
         }
 
@@ -61,6 +63,7 @@ defmodule GoogleApi.Container.V1.Model.IpAllocationPolicy do
   field(:servicesIpv4CidrBlock)
   field(:servicesSecondaryRangeName)
   field(:subnetworkName)
+  field(:tpuIpv4CidrBlock)
   field(:useIpAliases)
 end
 

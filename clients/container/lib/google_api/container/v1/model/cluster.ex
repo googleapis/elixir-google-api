@@ -31,6 +31,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
   - currentNodeVersion (String.t): [Output only] Deprecated, use [NodePool.version](/kubernetes-engine/docs/reference/rest/v1/projects.zones.clusters.nodePool) instead. The current version of the node software components. If they are currently at multiple versions because they&#39;re in the process of being upgraded, this reflects the minimum version of all nodes. Defaults to: `null`.
   - description (String.t): An optional description of this cluster. Defaults to: `null`.
   - enableKubernetesAlpha (boolean()): Kubernetes alpha features are enabled on this cluster. This includes alpha API groups (e.g. v1alpha1) and features that may not be production ready in the kubernetes version of the master and nodes. The cluster has no SLA for uptime and master/node upgrades are disabled. Alpha enabled clusters are automatically deleted thirty days after creation. Defaults to: `null`.
+  - enableTpu (boolean()): Enable the ability to use Cloud TPUs in this cluster. Defaults to: `null`.
   - endpoint (String.t): [Output only] The IP address of this cluster&#39;s master endpoint. The endpoint can be accessed from the internet at &#x60;https://username:password@endpoint/&#x60;.  See the &#x60;masterAuth&#x60; property of this resource for username and password information. Defaults to: `null`.
   - expireTime (String.t): [Output only] The time the cluster will be automatically deleted in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format. Defaults to: `null`.
   - initialClusterVersion (String.t): The initial Kubernetes version for this cluster.  Valid versions are those found in validMasterVersions returned by getServerConfig.  The version can be upgraded over time; such upgrades are reflected in currentMasterVersion and currentNodeVersion.  Users may specify either explicit versions offered by Kubernetes Engine or version aliases, which have the following behavior:  - \&quot;latest\&quot;: picks the highest valid Kubernetes version - \&quot;1.X\&quot;: picks the highest valid patch+gke.N patch in the 1.X version - \&quot;1.X.Y\&quot;: picks the highest valid gke.N patch in the 1.X.Y version - \&quot;1.X.Y-gke.N\&quot;: picks an explicit Kubernetes version - \&quot;\&quot;,\&quot;-\&quot;: picks the default Kubernetes version Defaults to: `null`.
@@ -61,6 +62,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
     - Enum - one of [STATUS_UNSPECIFIED, PROVISIONING, RUNNING, RECONCILING, STOPPING, ERROR, DEGRADED]
   - statusMessage (String.t): [Output only] Additional information about the current status of this cluster, if available. Defaults to: `null`.
   - subnetwork (String.t): The name of the Google Compute Engine [subnetwork](/compute/docs/subnetworks) to which the cluster is connected. Defaults to: `null`.
+  - tpuIpv4CidrBlock (String.t): [Output only] The IP address range of the Cloud TPUs in this cluster, in [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) notation (e.g. &#x60;1.2.3.4/29&#x60;). Defaults to: `null`.
   - zone (String.t): [Output only] The name of the Google Compute Engine [zone](/compute/docs/zones#available) in which the cluster resides. This field is deprecated, use location instead. Defaults to: `null`.
   """
 
@@ -76,6 +78,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
           :currentNodeVersion => any(),
           :description => any(),
           :enableKubernetesAlpha => any(),
+          :enableTpu => any(),
           :endpoint => any(),
           :expireTime => any(),
           :initialClusterVersion => any(),
@@ -106,6 +109,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
           :status => any(),
           :statusMessage => any(),
           :subnetwork => any(),
+          :tpuIpv4CidrBlock => any(),
           :zone => any()
         }
 
@@ -118,6 +122,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
   field(:currentNodeVersion)
   field(:description)
   field(:enableKubernetesAlpha)
+  field(:enableTpu)
   field(:endpoint)
   field(:expireTime)
   field(:initialClusterVersion)
@@ -152,6 +157,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
   field(:status)
   field(:statusMessage)
   field(:subnetwork)
+  field(:tpuIpv4CidrBlock)
   field(:zone)
 end
 
