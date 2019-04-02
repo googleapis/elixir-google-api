@@ -65,8 +65,8 @@ defmodule GoogleApi.Compute.V1.Api.UrlMaps do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/{project}/global/urlMaps/{urlMap}", %{
-        "project" => URI.encode_www_form(project),
-        "urlMap" => URI.encode_www_form(url_map)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "urlMap" => URI.encode(url_map, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -114,8 +114,8 @@ defmodule GoogleApi.Compute.V1.Api.UrlMaps do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/global/urlMaps/{urlMap}", %{
-        "project" => URI.encode_www_form(project),
-        "urlMap" => URI.encode_www_form(url_map)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "urlMap" => URI.encode(url_map, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -166,7 +166,7 @@ defmodule GoogleApi.Compute.V1.Api.UrlMaps do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/global/urlMaps", %{
-        "project" => URI.encode_www_form(project)
+        "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -224,8 +224,8 @@ defmodule GoogleApi.Compute.V1.Api.UrlMaps do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/global/urlMaps/{urlMap}/invalidateCache", %{
-        "project" => URI.encode_www_form(project),
-        "urlMap" => URI.encode_www_form(url_map)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "urlMap" => URI.encode(url_map, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -280,7 +280,7 @@ defmodule GoogleApi.Compute.V1.Api.UrlMaps do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/global/urlMaps", %{
-        "project" => URI.encode_www_form(project)
+        "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -332,8 +332,8 @@ defmodule GoogleApi.Compute.V1.Api.UrlMaps do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/{project}/global/urlMaps/{urlMap}", %{
-        "project" => URI.encode_www_form(project),
-        "urlMap" => URI.encode_www_form(url_map)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "urlMap" => URI.encode(url_map, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -385,8 +385,8 @@ defmodule GoogleApi.Compute.V1.Api.UrlMaps do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/{project}/global/urlMaps/{urlMap}", %{
-        "project" => URI.encode_www_form(project),
-        "urlMap" => URI.encode_www_form(url_map)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "urlMap" => URI.encode(url_map, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -436,8 +436,8 @@ defmodule GoogleApi.Compute.V1.Api.UrlMaps do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/global/urlMaps/{urlMap}/validate", %{
-        "project" => URI.encode_www_form(project),
-        "urlMap" => URI.encode_www_form(url_map)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "urlMap" => URI.encode(url_map, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

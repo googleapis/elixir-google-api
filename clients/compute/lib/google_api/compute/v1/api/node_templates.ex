@@ -76,7 +76,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeTemplates do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/aggregated/nodeTemplates", %{
-        "project" => URI.encode_www_form(project)
+        "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -139,9 +139,9 @@ defmodule GoogleApi.Compute.V1.Api.NodeTemplates do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/{project}/regions/{region}/nodeTemplates/{nodeTemplate}", %{
-        "project" => URI.encode_www_form(project),
-        "region" => URI.encode_www_form(region),
-        "nodeTemplate" => URI.encode_www_form(node_template)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "region" => URI.encode(region, &URI.char_unreserved?/1),
+        "nodeTemplate" => URI.encode(node_template, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -202,9 +202,9 @@ defmodule GoogleApi.Compute.V1.Api.NodeTemplates do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/regions/{region}/nodeTemplates/{nodeTemplate}", %{
-        "project" => URI.encode_www_form(project),
-        "region" => URI.encode_www_form(region),
-        "nodeTemplate" => URI.encode_www_form(node_template)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "region" => URI.encode(region, &URI.char_unreserved?/1),
+        "nodeTemplate" => URI.encode(node_template, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -265,9 +265,9 @@ defmodule GoogleApi.Compute.V1.Api.NodeTemplates do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/regions/{region}/nodeTemplates/{resource}/getIamPolicy", %{
-        "project" => URI.encode_www_form(project),
-        "region" => URI.encode_www_form(region),
-        "resource" => URI.encode_www_form(resource)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "region" => URI.encode(region, &URI.char_unreserved?/1),
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -325,8 +325,8 @@ defmodule GoogleApi.Compute.V1.Api.NodeTemplates do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/regions/{region}/nodeTemplates", %{
-        "project" => URI.encode_www_form(project),
-        "region" => URI.encode_www_form(region)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "region" => URI.encode(region, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -382,8 +382,8 @@ defmodule GoogleApi.Compute.V1.Api.NodeTemplates do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/regions/{region}/nodeTemplates", %{
-        "project" => URI.encode_www_form(project),
-        "region" => URI.encode_www_form(region)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "region" => URI.encode(region, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -446,9 +446,9 @@ defmodule GoogleApi.Compute.V1.Api.NodeTemplates do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/regions/{region}/nodeTemplates/{resource}/setIamPolicy", %{
-        "project" => URI.encode_www_form(project),
-        "region" => URI.encode_www_form(region),
-        "resource" => URI.encode_www_form(resource)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "region" => URI.encode(region, &URI.char_unreserved?/1),
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -512,9 +512,9 @@ defmodule GoogleApi.Compute.V1.Api.NodeTemplates do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/regions/{region}/nodeTemplates/{resource}/testIamPermissions", %{
-        "project" => URI.encode_www_form(project),
-        "region" => URI.encode_www_form(region),
-        "resource" => URI.encode_www_form(resource)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "region" => URI.encode(region, &URI.char_unreserved?/1),
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

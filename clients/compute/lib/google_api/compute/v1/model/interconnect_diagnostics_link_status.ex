@@ -26,8 +26,8 @@ defmodule GoogleApi.Compute.V1.Model.InterconnectDiagnosticsLinkStatus do
   - circuitId (String.t): The unique ID for this link assigned during turn up by Google. Defaults to: `null`.
   - googleDemarc (String.t): The Demarc address assigned by Google and provided in the LoA. Defaults to: `null`.
   - lacpStatus (InterconnectDiagnosticsLinkLacpStatus):  Defaults to: `null`.
-  - receivingOpticalPower (InterconnectDiagnosticsLinkOpticalPower):  Defaults to: `null`.
-  - transmittingOpticalPower (InterconnectDiagnosticsLinkOpticalPower):  Defaults to: `null`.
+  - receivingOpticalPower (InterconnectDiagnosticsLinkOpticalPower): An InterconnectDiagnostics.LinkOpticalPower object, describing the current value and status of the received light level. Defaults to: `null`.
+  - transmittingOpticalPower (InterconnectDiagnosticsLinkOpticalPower): An InterconnectDiagnostics.LinkOpticalPower object, describing the current value and status of the transmitted light level. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

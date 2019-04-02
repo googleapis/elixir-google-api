@@ -80,9 +80,9 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/zones/{zone}/nodeGroups/{nodeGroup}/addNodes", %{
-        "project" => URI.encode_www_form(project),
-        "zone" => URI.encode_www_form(zone),
-        "nodeGroup" => URI.encode_www_form(node_group)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "nodeGroup" => URI.encode(node_group, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -137,7 +137,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/aggregated/nodeGroups", %{
-        "project" => URI.encode_www_form(project)
+        "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -200,9 +200,9 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/{project}/zones/{zone}/nodeGroups/{nodeGroup}", %{
-        "project" => URI.encode_www_form(project),
-        "zone" => URI.encode_www_form(zone),
-        "nodeGroup" => URI.encode_www_form(node_group)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "nodeGroup" => URI.encode(node_group, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -267,9 +267,9 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/zones/{zone}/nodeGroups/{nodeGroup}/deleteNodes", %{
-        "project" => URI.encode_www_form(project),
-        "zone" => URI.encode_www_form(zone),
-        "nodeGroup" => URI.encode_www_form(node_group)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "nodeGroup" => URI.encode(node_group, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -325,9 +325,9 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/zones/{zone}/nodeGroups/{nodeGroup}", %{
-        "project" => URI.encode_www_form(project),
-        "zone" => URI.encode_www_form(zone),
-        "nodeGroup" => URI.encode_www_form(node_group)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "nodeGroup" => URI.encode(node_group, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -388,9 +388,9 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/zones/{zone}/nodeGroups/{resource}/getIamPolicy", %{
-        "project" => URI.encode_www_form(project),
-        "zone" => URI.encode_www_form(zone),
-        "resource" => URI.encode_www_form(resource)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -455,8 +455,8 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/zones/{zone}/nodeGroups", %{
-        "project" => URI.encode_www_form(project),
-        "zone" => URI.encode_www_form(zone)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :initialNodeCount, initial_node_count)
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -513,8 +513,8 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/zones/{zone}/nodeGroups", %{
-        "project" => URI.encode_www_form(project),
-        "zone" => URI.encode_www_form(zone)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -583,9 +583,9 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/zones/{zone}/nodeGroups/{nodeGroup}/listNodes", %{
-        "project" => URI.encode_www_form(project),
-        "zone" => URI.encode_www_form(zone),
-        "nodeGroup" => URI.encode_www_form(node_group)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "nodeGroup" => URI.encode(node_group, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -648,9 +648,9 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/zones/{zone}/nodeGroups/{resource}/setIamPolicy", %{
-        "project" => URI.encode_www_form(project),
-        "zone" => URI.encode_www_form(zone),
-        "resource" => URI.encode_www_form(resource)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -715,9 +715,9 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/zones/{zone}/nodeGroups/{nodeGroup}/setNodeTemplate", %{
-        "project" => URI.encode_www_form(project),
-        "zone" => URI.encode_www_form(zone),
-        "nodeGroup" => URI.encode_www_form(node_group)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "nodeGroup" => URI.encode(node_group, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -781,9 +781,9 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/zones/{zone}/nodeGroups/{resource}/testIamPermissions", %{
-        "project" => URI.encode_www_form(project),
-        "zone" => URI.encode_www_form(zone),
-        "resource" => URI.encode_www_form(resource)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

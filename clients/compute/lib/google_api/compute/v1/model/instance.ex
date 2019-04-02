@@ -45,7 +45,7 @@ defmodule GoogleApi.Compute.V1.Model.Instance do
   - serviceAccounts ([ServiceAccount]): A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported.  Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information. Defaults to: `null`.
   - startRestricted (boolean()): [Output Only] Whether a VM has been restricted for start because Compute Engine has detected suspicious activity. Defaults to: `null`.
   - status (String.t): [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, STOPPED, SUSPENDING, SUSPENDED, and TERMINATED. Defaults to: `null`.
-    - Enum - one of [PROVISIONING, RUNNING, STAGING, STOPPED, STOPPING, SUSPENDED, SUSPENDING, TERMINATED]
+    - Enum - one of [PROVISIONING, REPAIRING, RUNNING, STAGING, STOPPED, STOPPING, SUSPENDED, SUSPENDING, TERMINATED]
   - statusMessage (String.t): [Output Only] An optional, human-readable explanation of the status. Defaults to: `null`.
   - zone (String.t): [Output Only] URL of the zone where the instance resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body. Defaults to: `null`.
   """

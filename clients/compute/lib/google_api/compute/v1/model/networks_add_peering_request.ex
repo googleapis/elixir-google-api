@@ -22,8 +22,9 @@ defmodule GoogleApi.Compute.V1.Model.NetworksAddPeeringRequest do
 
   ## Attributes
 
-  - autoCreateRoutes (boolean()): Whether Google Compute Engine manages the routes automatically. Defaults to: `null`.
+  - autoCreateRoutes (boolean()): This field will be deprecated soon. Prefer using exchange_subnet_routes in network_peering instead. Whether Google Compute Engine manages the routes automatically. Defaults to: `null`.
   - name (String.t): Name of the peering, which should conform to RFC1035. Defaults to: `null`.
+  - networkPeering (NetworkPeering): Network peering parameters. In order to specify route policies for peering using import/export custom routes, you will have to fill all peering related parameters (name, peer network, exchange_subnet_routes) in network_peeringfield. Corresponding fields in NetworksAddPeeringRequest will be deprecated soon. Defaults to: `null`.
   - peerNetwork (String.t): URL of the peer network. It can be either full URL or partial URL. The peer network may belong to a different project. If the partial URL does not contain project, it is assumed that the peer network is in the same project as the current network. Defaults to: `null`.
   """
 
@@ -32,11 +33,13 @@ defmodule GoogleApi.Compute.V1.Model.NetworksAddPeeringRequest do
   @type t :: %__MODULE__{
           :autoCreateRoutes => any(),
           :name => any(),
+          :networkPeering => GoogleApi.Compute.V1.Model.NetworkPeering.t(),
           :peerNetwork => any()
         }
 
   field(:autoCreateRoutes)
   field(:name)
+  field(:networkPeering, as: GoogleApi.Compute.V1.Model.NetworkPeering)
   field(:peerNetwork)
 end
 

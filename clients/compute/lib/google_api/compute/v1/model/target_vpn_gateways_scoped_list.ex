@@ -22,7 +22,7 @@ defmodule GoogleApi.Compute.V1.Model.TargetVpnGatewaysScopedList do
 
   ## Attributes
 
-  - targetVpnGateways ([TargetVpnGateway]): [Output Only] A list of target vpn gateways contained in this scope. Defaults to: `null`.
+  - targetVpnGateways ([TargetVpnGateway]): [Output Only] A list of target VPN gateways contained in this scope. Defaults to: `null`.
   - warning (AddressesScopedListWarning):  Defaults to: `null`.
   """
 

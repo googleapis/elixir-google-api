@@ -29,7 +29,7 @@ defmodule GoogleApi.Compute.V1.Model.Interconnect do
   - description (String.t): An optional description of this resource. Provide this property when you create the resource. Defaults to: `null`.
   - expectedOutages ([InterconnectOutageNotification]): [Output Only] A list of outages expected for this Interconnect. Defaults to: `null`.
   - googleIpAddress (String.t): [Output Only] IP address configured on the Google side of the Interconnect link. This can be used only for ping tests. Defaults to: `null`.
-  - googleReferenceId (String.t): [Output Only] Google reference ID; to be used when raising support tickets with Google or otherwise to debug backend connectivity issues. Defaults to: `null`.
+  - googleReferenceId (String.t): [Output Only] Google reference ID to be used when raising support tickets with Google or otherwise to debug backend connectivity issues. Defaults to: `null`.
   - id (String.t): [Output Only] The unique identifier for the resource. This identifier is defined by the server. Defaults to: `null`.
   - interconnectAttachments ([String.t]): [Output Only] A list of the URLs of all InterconnectAttachments configured to use this Interconnect. Defaults to: `null`.
   - interconnectType (String.t): Type of interconnect. Note that \&quot;IT_PRIVATE\&quot; has been deprecated in favor of \&quot;DEDICATED\&quot; Defaults to: `null`.

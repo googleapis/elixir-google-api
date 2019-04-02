@@ -78,9 +78,9 @@ defmodule GoogleApi.Compute.V1.Api.RegionBackendServices do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/{project}/regions/{region}/backendServices/{backendService}", %{
-        "project" => URI.encode_www_form(project),
-        "region" => URI.encode_www_form(region),
-        "backendService" => URI.encode_www_form(backend_service)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "region" => URI.encode(region, &URI.char_unreserved?/1),
+        "backendService" => URI.encode(backend_service, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -141,9 +141,9 @@ defmodule GoogleApi.Compute.V1.Api.RegionBackendServices do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/regions/{region}/backendServices/{backendService}", %{
-        "project" => URI.encode_www_form(project),
-        "region" => URI.encode_www_form(region),
-        "backendService" => URI.encode_www_form(backend_service)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "region" => URI.encode(region, &URI.char_unreserved?/1),
+        "backendService" => URI.encode(backend_service, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -208,9 +208,9 @@ defmodule GoogleApi.Compute.V1.Api.RegionBackendServices do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/regions/{region}/backendServices/{backendService}/getHealth", %{
-        "project" => URI.encode_www_form(project),
-        "region" => URI.encode_www_form(region),
-        "backendService" => URI.encode_www_form(backend_service)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "region" => URI.encode(region, &URI.char_unreserved?/1),
+        "backendService" => URI.encode(backend_service, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -272,8 +272,8 @@ defmodule GoogleApi.Compute.V1.Api.RegionBackendServices do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/regions/{region}/backendServices", %{
-        "project" => URI.encode_www_form(project),
-        "region" => URI.encode_www_form(region)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "region" => URI.encode(region, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -339,8 +339,8 @@ defmodule GoogleApi.Compute.V1.Api.RegionBackendServices do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/regions/{region}/backendServices", %{
-        "project" => URI.encode_www_form(project),
-        "region" => URI.encode_www_form(region)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "region" => URI.encode(region, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -405,9 +405,9 @@ defmodule GoogleApi.Compute.V1.Api.RegionBackendServices do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/{project}/regions/{region}/backendServices/{backendService}", %{
-        "project" => URI.encode_www_form(project),
-        "region" => URI.encode_www_form(region),
-        "backendService" => URI.encode_www_form(backend_service)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "region" => URI.encode(region, &URI.char_unreserved?/1),
+        "backendService" => URI.encode(backend_service, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -472,9 +472,9 @@ defmodule GoogleApi.Compute.V1.Api.RegionBackendServices do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/{project}/regions/{region}/backendServices/{backendService}", %{
-        "project" => URI.encode_www_form(project),
-        "region" => URI.encode_www_form(region),
-        "backendService" => URI.encode_www_form(backend_service)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "region" => URI.encode(region, &URI.char_unreserved?/1),
+        "backendService" => URI.encode(backend_service, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

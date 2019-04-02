@@ -26,18 +26,18 @@ defmodule GoogleApi.Compute.V1.Model.VpnTunnel do
   - description (String.t): An optional description of this resource. Provide this property when you create the resource. Defaults to: `null`.
   - detailedStatus (String.t): [Output Only] Detailed status message for the VPN tunnel. Defaults to: `null`.
   - id (String.t): [Output Only] The unique identifier for the resource. This identifier is defined by the server. Defaults to: `null`.
-  - ikeVersion (integer()): IKE protocol version to use when establishing the VPN tunnel with peer VPN gateway. Acceptable IKE versions are 1 or 2. Default version is 2. Defaults to: `null`.
+  - ikeVersion (integer()): IKE protocol version to use when establishing the VPN tunnel with the peer VPN gateway. Acceptable IKE versions are 1 or 2. The default version is 2. Defaults to: `null`.
   - kind (String.t): [Output Only] Type of resource. Always compute#vpnTunnel for VPN tunnels. Defaults to: `null`.
-  - localTrafficSelector ([String.t]): Local traffic selector to use when establishing the VPN tunnel with peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should be disjoint. Only IPv4 is supported. Defaults to: `null`.
+  - localTrafficSelector ([String.t]): Local traffic selector to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges must be disjoint. Only IPv4 is supported. Defaults to: `null`.
   - name (String.t): Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression &#x60;[a-z]([-a-z0-9]*[a-z0-9])?&#x60; which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. Defaults to: `null`.
   - peerIp (String.t): IP address of the peer VPN gateway. Only IPv4 is supported. Defaults to: `null`.
   - region (String.t): [Output Only] URL of the region where the VPN tunnel resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body. Defaults to: `null`.
-  - remoteTrafficSelector ([String.t]): Remote traffic selectors to use when establishing the VPN tunnel with peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should be disjoint. Only IPv4 is supported. Defaults to: `null`.
-  - router (String.t): URL of router resource to be used for dynamic routing. Defaults to: `null`.
+  - remoteTrafficSelector ([String.t]): Remote traffic selectors to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should be disjoint. Only IPv4 is supported. Defaults to: `null`.
+  - router (String.t): URL of the router resource to be used for dynamic routing. Defaults to: `null`.
   - selfLink (String.t): [Output Only] Server-defined URL for the resource. Defaults to: `null`.
   - sharedSecret (String.t): Shared secret used to set the secure session between the Cloud VPN gateway and the peer VPN gateway. Defaults to: `null`.
   - sharedSecretHash (String.t): Hash of the shared secret. Defaults to: `null`.
-  - status (String.t): [Output Only] The status of the VPN tunnel. Defaults to: `null`.
+  - status (String.t): [Output Only] The status of the VPN tunnel, which can be one of the following:  - PROVISIONING: Resource is being allocated for the VPN tunnel.  - WAITING_FOR_FULL_CONFIG: Waiting to receive all VPN-related configs from the user. Network, TargetVpnGateway, VpnTunnel, ForwardingRule, and Route resources are needed to setup the VPN tunnel.  - FIRST_HANDSHAKE: Successful first handshake with the peer VPN.  - ESTABLISHED: Secure session is successfully established with the peer VPN.  - NETWORK_ERROR: Deprecated, replaced by NO_INCOMING_PACKETS  - AUTHORIZATION_ERROR: Auth error (for example, bad shared secret).  - NEGOTIATION_FAILURE: Handshake failed.  - DEPROVISIONING: Resources are being deallocated for the VPN tunnel.  - FAILED: Tunnel creation has failed and the tunnel is not ready to be used. Defaults to: `null`.
     - Enum - one of [ALLOCATING_RESOURCES, AUTHORIZATION_ERROR, DEPROVISIONING, ESTABLISHED, FAILED, FIRST_HANDSHAKE, NEGOTIATION_FAILURE, NETWORK_ERROR, NO_INCOMING_PACKETS, PROVISIONING, REJECTED, WAITING_FOR_FULL_CONFIG]
   - targetVpnGateway (String.t): URL of the Target VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created. Defaults to: `null`.
   """

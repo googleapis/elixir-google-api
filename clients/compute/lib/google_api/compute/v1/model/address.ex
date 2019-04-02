@@ -37,7 +37,7 @@ defmodule GoogleApi.Compute.V1.Model.Address do
     - Enum - one of [PREMIUM, STANDARD]
   - prefixLength (integer()): The prefix length if the resource reprensents an IP range. Defaults to: `null`.
   - purpose (String.t): The purpose of resource, only used with INTERNAL type. Defaults to: `null`.
-    - Enum - one of [DNS_RESOLVER, GCE_ENDPOINT, VPC_PEERING]
+    - Enum - one of [DNS_RESOLVER, GCE_ENDPOINT, NAT_AUTO, VPC_PEERING]
   - region (String.t): [Output Only] URL of the region where the regional address resides. This field is not applicable to global addresses. You must specify this field as part of the HTTP request URL. You cannot set this field in the request body. Defaults to: `null`.
   - selfLink (String.t): [Output Only] Server-defined URL for the resource. Defaults to: `null`.
   - status (String.t): [Output Only] The status of the address, which can be one of RESERVING, RESERVED, or IN_USE. An address that is RESERVING is currently in the process of being reserved. A RESERVED address is currently reserved and available to use. An IN_USE address is currently being used by another resource and is not available. Defaults to: `null`.

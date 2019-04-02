@@ -16,34 +16,34 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Compute.V1.Model.VpnTunnelsScopedList do
+defmodule GoogleApi.Compute.V1.Model.ManagedInstanceVersion do
   @moduledoc """
 
 
   ## Attributes
 
-  - vpnTunnels ([VpnTunnel]): A list of VPN tunnels contained in this scope. Defaults to: `null`.
-  - warning (InterconnectAttachmentsScopedListWarning):  Defaults to: `null`.
+  - instanceTemplate (String.t): [Output Only] The intended template of the instance. This field is empty when current_action is one of { DELETING, ABANDONING }. Defaults to: `null`.
+  - name (String.t): [Output Only] Name of the version. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :vpnTunnels => list(GoogleApi.Compute.V1.Model.VpnTunnel.t()),
-          :warning => GoogleApi.Compute.V1.Model.InterconnectAttachmentsScopedListWarning.t()
+          :instanceTemplate => any(),
+          :name => any()
         }
 
-  field(:vpnTunnels, as: GoogleApi.Compute.V1.Model.VpnTunnel, type: :list)
-  field(:warning, as: GoogleApi.Compute.V1.Model.InterconnectAttachmentsScopedListWarning)
+  field(:instanceTemplate)
+  field(:name)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.VpnTunnelsScopedList do
+defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.ManagedInstanceVersion do
   def decode(value, options) do
-    GoogleApi.Compute.V1.Model.VpnTunnelsScopedList.decode(value, options)
+    GoogleApi.Compute.V1.Model.ManagedInstanceVersion.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.Compute.V1.Model.VpnTunnelsScopedList do
+defimpl Poison.Encoder, for: GoogleApi.Compute.V1.Model.ManagedInstanceVersion do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

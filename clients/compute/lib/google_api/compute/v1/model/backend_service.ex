@@ -27,6 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
   - cdnPolicy (BackendServiceCdnPolicy): Cloud CDN configuration for this BackendService. Defaults to: `null`.
   - connectionDraining (ConnectionDraining):  Defaults to: `null`.
   - creationTimestamp (String.t): [Output Only] Creation timestamp in RFC3339 text format. Defaults to: `null`.
+  - customRequestHeaders ([String.t]): Headers that the HTTP/S load balancer should add to proxied requests. Defaults to: `null`.
   - description (String.t): An optional description of this resource. Provide this property when you create the resource. Defaults to: `null`.
   - enableCDN (boolean()): If true, enable Cloud CDN for this BackendService.  When the load balancing scheme is INTERNAL, this field is not used. Defaults to: `null`.
   - fingerprint (binary()): Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a BackendService. An up-to-date fingerprint must be provided in order to update the BackendService, otherwise the request will fail with error 412 conditionNotMet.  To see the latest fingerprint, make a get() request to retrieve a BackendService. Defaults to: `null`.
@@ -40,7 +41,7 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
   - port (integer()): Deprecated in favor of portName. The TCP port to connect on the backend. The default value is 80.  This cannot be used for internal load balancing. Defaults to: `null`.
   - portName (String.t): Name of backend port. The same name should appear in the instance groups referenced by this service. Required when the load balancing scheme is EXTERNAL.  When the load balancing scheme is INTERNAL, this field is not used. Defaults to: `null`.
   - protocol (String.t): The protocol this BackendService uses to communicate with backends.  Possible values are HTTP, HTTPS, TCP, and SSL. The default is HTTP.  For internal load balancing, the possible values are TCP and UDP, and the default is TCP. Defaults to: `null`.
-    - Enum - one of [HTTP, HTTPS, SSL, TCP, UDP]
+    - Enum - one of [HTTP, HTTP2, HTTPS, SSL, TCP, UDP]
   - region (String.t): [Output Only] URL of the region where the regional backend service resides. This field is not applicable to global backend services. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body. Defaults to: `null`.
   - securityPolicy (String.t): [Output Only] The resource URL for the security policy associated with this backend service. Defaults to: `null`.
   - selfLink (String.t): [Output Only] Server-defined URL for the resource. Defaults to: `null`.
@@ -57,6 +58,7 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
           :cdnPolicy => GoogleApi.Compute.V1.Model.BackendServiceCdnPolicy.t(),
           :connectionDraining => GoogleApi.Compute.V1.Model.ConnectionDraining.t(),
           :creationTimestamp => any(),
+          :customRequestHeaders => list(any()),
           :description => any(),
           :enableCDN => any(),
           :fingerprint => any(),
@@ -81,6 +83,7 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
   field(:cdnPolicy, as: GoogleApi.Compute.V1.Model.BackendServiceCdnPolicy)
   field(:connectionDraining, as: GoogleApi.Compute.V1.Model.ConnectionDraining)
   field(:creationTimestamp)
+  field(:customRequestHeaders, type: :list)
   field(:description)
   field(:enableCDN)
   field(:fingerprint)

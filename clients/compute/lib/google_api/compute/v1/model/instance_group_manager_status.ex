@@ -16,34 +16,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Compute.V1.Model.VpnTunnelsScopedList do
+defmodule GoogleApi.Compute.V1.Model.InstanceGroupManagerStatus do
   @moduledoc """
 
 
   ## Attributes
 
-  - vpnTunnels ([VpnTunnel]): A list of VPN tunnels contained in this scope. Defaults to: `null`.
-  - warning (InterconnectAttachmentsScopedListWarning):  Defaults to: `null`.
+  - isStable (boolean()): [Output Only] A bit indicating whether the managed instance group is in a stable state. A stable state means that: none of the instances in the managed instance group is currently undergoing any type of change (for example, creation, restart, or deletion); no future changes are scheduled for instances in the managed instance group; and the managed instance group itself is not being modified. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :vpnTunnels => list(GoogleApi.Compute.V1.Model.VpnTunnel.t()),
-          :warning => GoogleApi.Compute.V1.Model.InterconnectAttachmentsScopedListWarning.t()
+          :isStable => any()
         }
 
-  field(:vpnTunnels, as: GoogleApi.Compute.V1.Model.VpnTunnel, type: :list)
-  field(:warning, as: GoogleApi.Compute.V1.Model.InterconnectAttachmentsScopedListWarning)
+  field(:isStable)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.VpnTunnelsScopedList do
+defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.InstanceGroupManagerStatus do
   def decode(value, options) do
-    GoogleApi.Compute.V1.Model.VpnTunnelsScopedList.decode(value, options)
+    GoogleApi.Compute.V1.Model.InstanceGroupManagerStatus.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.Compute.V1.Model.VpnTunnelsScopedList do
+defimpl Poison.Encoder, for: GoogleApi.Compute.V1.Model.InstanceGroupManagerStatus do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
