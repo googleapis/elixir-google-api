@@ -28,9 +28,11 @@ defmodule GoogleApi.GroupsSettings.V1.Model.Groups do
   - archiveOnly (String.t): If the group is archive only Defaults to: `null`.
   - customFooterText (String.t): Custom footer text. Defaults to: `null`.
   - customReplyTo (String.t): Default email to which reply to any message should go. Defaults to: `null`.
+  - customRolesEnabledForSettingsToBeMerged (String.t): If any of the settings that will be merged have custom roles which is anything other than owners, managers, or group scopes. Defaults to: `null`.
   - defaultMessageDenyNotificationText (String.t): Default message deny notification message Defaults to: `null`.
   - description (String.t): Description of the group Defaults to: `null`.
   - email (String.t): Email id of the group Defaults to: `null`.
+  - enableCollaborativeInbox (String.t): If a primary Collab Inbox feature is enabled. Defaults to: `null`.
   - favoriteRepliesOnTop (String.t): If favorite replies should be displayed above other replies. Defaults to: `null`.
   - includeCustomFooter (String.t): Whether to include custom footer. Defaults to: `null`.
   - includeInGlobalAddressList (String.t): If this groups should be included in global address list or not. Defaults to: `null`.
@@ -48,23 +50,39 @@ defmodule GoogleApi.GroupsSettings.V1.Model.Groups do
   - spamModerationLevel (String.t): Moderation level for messages detected as spam. Possible values are: ALLOW MODERATE SILENTLY_MODERATE REJECT Defaults to: `null`.
   - whoCanAdd (String.t): Permissions to add members. Possible values are: ALL_MANAGERS_CAN_ADD ALL_OWNERS_CAN_ADD ALL_MEMBERS_CAN_ADD NONE_CAN_ADD Defaults to: `null`.
   - whoCanAddReferences (String.t): Permission to add references to a topic. Possible values are: NONE OWNERS_ONLY MANAGERS_ONLY OWNERS_AND_MANAGERS ALL_MEMBERS Defaults to: `null`.
+  - whoCanApproveMembers (String.t): Permission to approve members. Possible values are: ALL_OWNERS_CAN_APPROVE ALL_MANAGERS_CAN_APPROVE ALL_MEMBERS_CAN_APPROVE NONE_CAN_APPROVE Defaults to: `null`.
+  - whoCanApproveMessages (String.t): Permission to approve pending messages in the moderation queue. Possible values are: NONE OWNERS_ONLY OWNERS_AND_MANAGERS ALL_MEMBERS Defaults to: `null`.
   - whoCanAssignTopics (String.t): Permission to assign topics in a forum to another user. Possible values are: NONE OWNERS_ONLY MANAGERS_ONLY OWNERS_AND_MANAGERS ALL_MEMBERS Defaults to: `null`.
+  - whoCanAssistContent (String.t): Permission for content assistants. Possible values are: Possible values are: NONE OWNERS_ONLY MANAGERS_ONLY OWNERS_AND_MANAGERS ALL_MEMBERS Defaults to: `null`.
+  - whoCanBanUsers (String.t): Permission to ban users. Possible values are: NONE OWNERS_ONLY OWNERS_AND_MANAGERS ALL_MEMBERS Defaults to: `null`.
   - whoCanContactOwner (String.t): Permission to contact owner of the group via web UI. Possible values are: ANYONE_CAN_CONTACT ALL_IN_DOMAIN_CAN_CONTACT ALL_MEMBERS_CAN_CONTACT ALL_MANAGERS_CAN_CONTACT Defaults to: `null`.
+  - whoCanDeleteAnyPost (String.t): Permission to delete replies to topics. Possible values are: NONE OWNERS_ONLY OWNERS_AND_MANAGERS ALL_MEMBERS Defaults to: `null`.
+  - whoCanDeleteTopics (String.t): Permission to delete topics. Possible values are: NONE OWNERS_ONLY OWNERS_AND_MANAGERS ALL_MEMBERS Defaults to: `null`.
+  - whoCanDiscoverGroup (String.t): Permission for who can discover the group. Possible values are: ALL_MEMBERS_CAN_DISCOVER ALL_IN_DOMAIN_CAN_DISCOVER ANYONE_CAN_DISCOVER Defaults to: `null`.
   - whoCanEnterFreeFormTags (String.t): Permission to enter free form tags for topics in a forum. Possible values are: NONE OWNERS_ONLY MANAGERS_ONLY OWNERS_AND_MANAGERS ALL_MEMBERS Defaults to: `null`.
+  - whoCanHideAbuse (String.t): Permission to hide posts by reporting them as abuse. Possible values are: NONE OWNERS_ONLY MANAGERS_ONLY OWNERS_AND_MANAGERS ALL_MEMBERS Defaults to: `null`.
   - whoCanInvite (String.t): Permissions to invite members. Possible values are: ALL_MEMBERS_CAN_INVITE ALL_MANAGERS_CAN_INVITE ALL_OWNERS_CAN_INVITE NONE_CAN_INVITE Defaults to: `null`.
   - whoCanJoin (String.t): Permissions to join the group. Possible values are: ANYONE_CAN_JOIN ALL_IN_DOMAIN_CAN_JOIN INVITED_CAN_JOIN CAN_REQUEST_TO_JOIN Defaults to: `null`.
   - whoCanLeaveGroup (String.t): Permission to leave the group. Possible values are: ALL_MANAGERS_CAN_LEAVE ALL_OWNERS_CAN_LEAVE ALL_MEMBERS_CAN_LEAVE NONE_CAN_LEAVE Defaults to: `null`.
+  - whoCanLockTopics (String.t): Permission to lock topics. Possible values are: NONE OWNERS_ONLY OWNERS_AND_MANAGERS ALL_MEMBERS Defaults to: `null`.
+  - whoCanMakeTopicsSticky (String.t): Permission to make topics appear at the top of the topic list. Possible values are: NONE OWNERS_ONLY MANAGERS_ONLY OWNERS_AND_MANAGERS ALL_MEMBERS Defaults to: `null`.
   - whoCanMarkDuplicate (String.t): Permission to mark a topic as a duplicate of another topic. Possible values are: NONE OWNERS_ONLY MANAGERS_ONLY OWNERS_AND_MANAGERS ALL_MEMBERS Defaults to: `null`.
   - whoCanMarkFavoriteReplyOnAnyTopic (String.t): Permission to mark any other user&#39;s post as a favorite reply. Possible values are: NONE OWNERS_ONLY MANAGERS_ONLY OWNERS_AND_MANAGERS ALL_MEMBERS Defaults to: `null`.
   - whoCanMarkFavoriteReplyOnOwnTopic (String.t): Permission to mark a post for a topic they started as a favorite reply. Possible values are: NONE OWNERS_ONLY MANAGERS_ONLY OWNERS_AND_MANAGERS ALL_MEMBERS Defaults to: `null`.
   - whoCanMarkNoResponseNeeded (String.t): Permission to mark a topic as not needing a response. Possible values are: NONE OWNERS_ONLY MANAGERS_ONLY OWNERS_AND_MANAGERS ALL_MEMBERS Defaults to: `null`.
+  - whoCanModerateContent (String.t): Permission for content moderation. Possible values are: NONE OWNERS_ONLY OWNERS_AND_MANAGERS ALL_MEMBERS Defaults to: `null`.
+  - whoCanModerateMembers (String.t): Permission for membership moderation. Possible values are: NONE OWNERS_ONLY OWNERS_AND_MANAGERS ALL_MEMBERS Defaults to: `null`.
+  - whoCanModifyMembers (String.t): Permission to modify members (change member roles). Possible values are: NONE OWNERS_ONLY OWNERS_AND_MANAGERS ALL_MEMBERS Defaults to: `null`.
   - whoCanModifyTagsAndCategories (String.t): Permission to change tags and categories. Possible values are: NONE OWNERS_ONLY MANAGERS_ONLY OWNERS_AND_MANAGERS ALL_MEMBERS Defaults to: `null`.
+  - whoCanMoveTopicsIn (String.t): Permission to move topics into the group or forum. Possible values are: NONE OWNERS_ONLY OWNERS_AND_MANAGERS ALL_MEMBERS Defaults to: `null`.
+  - whoCanMoveTopicsOut (String.t): Permission to move topics out of the group or forum. Possible values are: NONE OWNERS_ONLY OWNERS_AND_MANAGERS ALL_MEMBERS Defaults to: `null`.
+  - whoCanPostAnnouncements (String.t): Permission to post announcements, a special topic type. Possible values are: NONE OWNERS_ONLY OWNERS_AND_MANAGERS ALL_MEMBERS Defaults to: `null`.
   - whoCanPostMessage (String.t): Permissions to post messages to the group. Possible values are: NONE_CAN_POST ALL_MANAGERS_CAN_POST ALL_MEMBERS_CAN_POST ALL_OWNERS_CAN_POST ALL_IN_DOMAIN_CAN_POST ANYONE_CAN_POST Defaults to: `null`.
   - whoCanTakeTopics (String.t): Permission to take topics in a forum. Possible values are: NONE OWNERS_ONLY MANAGERS_ONLY OWNERS_AND_MANAGERS ALL_MEMBERS Defaults to: `null`.
   - whoCanUnassignTopic (String.t): Permission to unassign any topic in a forum. Possible values are: NONE OWNERS_ONLY MANAGERS_ONLY OWNERS_AND_MANAGERS ALL_MEMBERS Defaults to: `null`.
   - whoCanUnmarkFavoriteReplyOnAnyTopic (String.t): Permission to unmark any post from a favorite reply. Possible values are: NONE OWNERS_ONLY MANAGERS_ONLY OWNERS_AND_MANAGERS ALL_MEMBERS Defaults to: `null`.
   - whoCanViewGroup (String.t): Permissions to view group. Possible values are: ANYONE_CAN_VIEW ALL_IN_DOMAIN_CAN_VIEW ALL_MEMBERS_CAN_VIEW ALL_MANAGERS_CAN_VIEW ALL_OWNERS_CAN_VIEW Defaults to: `null`.
-  - whoCanViewMembership (String.t): Permissions to view membership. Possible values are: ALL_IN_DOMAIN_CAN_VIEW ALL_MEMBERS_CAN_VIEW ALL_MANAGERS_CAN_VIEW Defaults to: `null`.
+  - whoCanViewMembership (String.t): Permissions to view membership. Possible values are: ALL_IN_DOMAIN_CAN_VIEW ALL_MEMBERS_CAN_VIEW ALL_MANAGERS_CAN_VIEW ALL_OWNERS_CAN_VIEW Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -76,9 +94,11 @@ defmodule GoogleApi.GroupsSettings.V1.Model.Groups do
           :archiveOnly => any(),
           :customFooterText => any(),
           :customReplyTo => any(),
+          :customRolesEnabledForSettingsToBeMerged => any(),
           :defaultMessageDenyNotificationText => any(),
           :description => any(),
           :email => any(),
+          :enableCollaborativeInbox => any(),
           :favoriteRepliesOnTop => any(),
           :includeCustomFooter => any(),
           :includeInGlobalAddressList => any(),
@@ -96,17 +116,33 @@ defmodule GoogleApi.GroupsSettings.V1.Model.Groups do
           :spamModerationLevel => any(),
           :whoCanAdd => any(),
           :whoCanAddReferences => any(),
+          :whoCanApproveMembers => any(),
+          :whoCanApproveMessages => any(),
           :whoCanAssignTopics => any(),
+          :whoCanAssistContent => any(),
+          :whoCanBanUsers => any(),
           :whoCanContactOwner => any(),
+          :whoCanDeleteAnyPost => any(),
+          :whoCanDeleteTopics => any(),
+          :whoCanDiscoverGroup => any(),
           :whoCanEnterFreeFormTags => any(),
+          :whoCanHideAbuse => any(),
           :whoCanInvite => any(),
           :whoCanJoin => any(),
           :whoCanLeaveGroup => any(),
+          :whoCanLockTopics => any(),
+          :whoCanMakeTopicsSticky => any(),
           :whoCanMarkDuplicate => any(),
           :whoCanMarkFavoriteReplyOnAnyTopic => any(),
           :whoCanMarkFavoriteReplyOnOwnTopic => any(),
           :whoCanMarkNoResponseNeeded => any(),
+          :whoCanModerateContent => any(),
+          :whoCanModerateMembers => any(),
+          :whoCanModifyMembers => any(),
           :whoCanModifyTagsAndCategories => any(),
+          :whoCanMoveTopicsIn => any(),
+          :whoCanMoveTopicsOut => any(),
+          :whoCanPostAnnouncements => any(),
           :whoCanPostMessage => any(),
           :whoCanTakeTopics => any(),
           :whoCanUnassignTopic => any(),
@@ -121,9 +157,11 @@ defmodule GoogleApi.GroupsSettings.V1.Model.Groups do
   field(:archiveOnly)
   field(:customFooterText)
   field(:customReplyTo)
+  field(:customRolesEnabledForSettingsToBeMerged)
   field(:defaultMessageDenyNotificationText)
   field(:description)
   field(:email)
+  field(:enableCollaborativeInbox)
   field(:favoriteRepliesOnTop)
   field(:includeCustomFooter)
   field(:includeInGlobalAddressList)
@@ -141,17 +179,33 @@ defmodule GoogleApi.GroupsSettings.V1.Model.Groups do
   field(:spamModerationLevel)
   field(:whoCanAdd)
   field(:whoCanAddReferences)
+  field(:whoCanApproveMembers)
+  field(:whoCanApproveMessages)
   field(:whoCanAssignTopics)
+  field(:whoCanAssistContent)
+  field(:whoCanBanUsers)
   field(:whoCanContactOwner)
+  field(:whoCanDeleteAnyPost)
+  field(:whoCanDeleteTopics)
+  field(:whoCanDiscoverGroup)
   field(:whoCanEnterFreeFormTags)
+  field(:whoCanHideAbuse)
   field(:whoCanInvite)
   field(:whoCanJoin)
   field(:whoCanLeaveGroup)
+  field(:whoCanLockTopics)
+  field(:whoCanMakeTopicsSticky)
   field(:whoCanMarkDuplicate)
   field(:whoCanMarkFavoriteReplyOnAnyTopic)
   field(:whoCanMarkFavoriteReplyOnOwnTopic)
   field(:whoCanMarkNoResponseNeeded)
+  field(:whoCanModerateContent)
+  field(:whoCanModerateMembers)
+  field(:whoCanModifyMembers)
   field(:whoCanModifyTagsAndCategories)
+  field(:whoCanMoveTopicsIn)
+  field(:whoCanMoveTopicsOut)
+  field(:whoCanPostAnnouncements)
   field(:whoCanPostMessage)
   field(:whoCanTakeTopics)
   field(:whoCanUnassignTopic)
