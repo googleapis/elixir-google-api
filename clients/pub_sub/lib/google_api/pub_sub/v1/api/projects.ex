@@ -79,8 +79,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/v1/projects/{projectsId}/snapshots/{snapshotsId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "snapshotsId" => URI.encode_www_form(snapshots_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "snapshotsId" => URI.encode(snapshots_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -142,8 +142,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v1/projects/{projectsId}/snapshots/{snapshotsId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "snapshotsId" => URI.encode_www_form(snapshots_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "snapshotsId" => URI.encode(snapshots_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -205,8 +205,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectsId}/snapshots/{snapshotsId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "snapshotsId" => URI.encode_www_form(snapshots_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "snapshotsId" => URI.encode(snapshots_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -272,8 +272,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectsId}/snapshots/{snapshotsId}:getIamPolicy", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "snapshotsId" => URI.encode_www_form(snapshots_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "snapshotsId" => URI.encode(snapshots_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -332,7 +332,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectsId}/snapshots", %{
-        "projectsId" => URI.encode_www_form(projects_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -396,8 +396,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/v1/projects/{projectsId}/snapshots/{snapshotsId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "snapshotsId" => URI.encode_www_form(snapshots_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "snapshotsId" => URI.encode(snapshots_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -465,8 +465,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectsId}/snapshots/{snapshotsId}:setIamPolicy", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "snapshotsId" => URI.encode_www_form(snapshots_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "snapshotsId" => URI.encode(snapshots_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -536,8 +536,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectsId}/snapshots/{snapshotsId}:testIamPermissions", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "snapshotsId" => URI.encode_www_form(snapshots_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "snapshotsId" => URI.encode(snapshots_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -605,8 +605,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectsId}/subscriptions/{subscriptionsId}:acknowledge", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "subscriptionsId" => URI.encode_www_form(subscriptions_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "subscriptionsId" => URI.encode(subscriptions_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -674,8 +674,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/v1/projects/{projectsId}/subscriptions/{subscriptionsId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "subscriptionsId" => URI.encode_www_form(subscriptions_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "subscriptionsId" => URI.encode(subscriptions_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -741,8 +741,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v1/projects/{projectsId}/subscriptions/{subscriptionsId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "subscriptionsId" => URI.encode_www_form(subscriptions_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "subscriptionsId" => URI.encode(subscriptions_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -804,8 +804,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectsId}/subscriptions/{subscriptionsId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "subscriptionsId" => URI.encode_www_form(subscriptions_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "subscriptionsId" => URI.encode(subscriptions_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -871,8 +871,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectsId}/subscriptions/{subscriptionsId}:getIamPolicy", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "subscriptionsId" => URI.encode_www_form(subscriptions_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "subscriptionsId" => URI.encode(subscriptions_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -936,7 +936,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectsId}/subscriptions", %{
-        "projectsId" => URI.encode_www_form(projects_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1006,8 +1006,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/subscriptions/{subscriptionsId}:modifyAckDeadline",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "subscriptionsId" => URI.encode_www_form(subscriptions_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "subscriptionsId" => URI.encode(subscriptions_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1078,8 +1078,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/subscriptions/{subscriptionsId}:modifyPushConfig",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "subscriptionsId" => URI.encode_www_form(subscriptions_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "subscriptionsId" => URI.encode(subscriptions_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1144,8 +1144,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/v1/projects/{projectsId}/subscriptions/{subscriptionsId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "subscriptionsId" => URI.encode_www_form(subscriptions_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "subscriptionsId" => URI.encode(subscriptions_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1209,8 +1209,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectsId}/subscriptions/{subscriptionsId}:pull", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "subscriptionsId" => URI.encode_www_form(subscriptions_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "subscriptionsId" => URI.encode(subscriptions_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1274,8 +1274,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectsId}/subscriptions/{subscriptionsId}:seek", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "subscriptionsId" => URI.encode_www_form(subscriptions_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "subscriptionsId" => URI.encode(subscriptions_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1343,8 +1343,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectsId}/subscriptions/{subscriptionsId}:setIamPolicy", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "subscriptionsId" => URI.encode_www_form(subscriptions_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "subscriptionsId" => URI.encode(subscriptions_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1416,8 +1416,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/subscriptions/{subscriptionsId}:testIamPermissions",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "subscriptionsId" => URI.encode_www_form(subscriptions_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "subscriptionsId" => URI.encode(subscriptions_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1482,8 +1482,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/v1/projects/{projectsId}/topics/{topicsId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "topicsId" => URI.encode_www_form(topics_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "topicsId" => URI.encode(topics_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1545,8 +1545,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v1/projects/{projectsId}/topics/{topicsId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "topicsId" => URI.encode_www_form(topics_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "topicsId" => URI.encode(topics_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1608,8 +1608,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectsId}/topics/{topicsId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "topicsId" => URI.encode_www_form(topics_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "topicsId" => URI.encode(topics_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1675,8 +1675,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectsId}/topics/{topicsId}:getIamPolicy", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "topicsId" => URI.encode_www_form(topics_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "topicsId" => URI.encode(topics_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1735,7 +1735,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectsId}/topics", %{
-        "projectsId" => URI.encode_www_form(projects_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1799,8 +1799,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/v1/projects/{projectsId}/topics/{topicsId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "topicsId" => URI.encode_www_form(topics_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "topicsId" => URI.encode(topics_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1864,8 +1864,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectsId}/topics/{topicsId}:publish", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "topicsId" => URI.encode_www_form(topics_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "topicsId" => URI.encode(topics_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1933,8 +1933,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectsId}/topics/{topicsId}:setIamPolicy", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "topicsId" => URI.encode_www_form(topics_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "topicsId" => URI.encode(topics_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2006,8 +2006,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectsId}/topics/{topicsId}/snapshots", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "topicsId" => URI.encode_www_form(topics_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "topicsId" => URI.encode(topics_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2079,8 +2079,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectsId}/topics/{topicsId}/subscriptions", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "topicsId" => URI.encode_www_form(topics_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "topicsId" => URI.encode(topics_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2152,8 +2152,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectsId}/topics/{topicsId}:testIamPermissions", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "topicsId" => URI.encode_www_form(topics_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "topicsId" => URI.encode(topics_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
