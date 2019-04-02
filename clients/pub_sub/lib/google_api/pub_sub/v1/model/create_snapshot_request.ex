@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.PubSub.V1.Model.CreateSnapshotRequest do
   @moduledoc """
-  Request for the &#x60;CreateSnapshot&#x60; method.&lt;br&gt;&lt;br&gt; &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be changed in backward-incompatible ways and is not recommended for production use. It is not subject to any SLA or deprecation policy.
+  Request for the &#x60;CreateSnapshot&#x60; method.
 
   ## Attributes
 

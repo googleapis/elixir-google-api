@@ -25,7 +25,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
-  Creates a snapshot from the requested subscription. Snapshots are used in &lt;a href&#x3D;\&quot;https://cloud.google.com/pubsub/docs/replay-overview\&quot;&gt;Seek&lt;/a&gt; operations, which allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment state of messages in an existing subscription to the state captured by a snapshot. &lt;br&gt;&lt;br&gt; &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be changed in backward-incompatible ways and is not recommended for production use. It is not subject to any SLA or deprecation policy.&lt;br&gt;&lt;br&gt; If the snapshot already exists, returns &#x60;ALREADY_EXISTS&#x60;. If the requested subscription doesn&#39;t exist, returns &#x60;NOT_FOUND&#x60;. If the backlog in the subscription is too old -- and the resulting snapshot would expire in less than 1 hour -- then &#x60;FAILED_PRECONDITION&#x60; is returned. See also the &#x60;Snapshot.expire_time&#x60; field. If the name is not provided in the request, the server will assign a random name for this snapshot on the same project as the subscription, conforming to the [resource name format](https://cloud.google.com/pubsub/docs/admin#resource_names). The generated name is populated in the returned Snapshot object. Note that for REST API requests, you must specify a name in the request.
+  Creates a snapshot from the requested subscription. Snapshots are used in &lt;a href&#x3D;\&quot;https://cloud.google.com/pubsub/docs/replay-overview\&quot;&gt;Seek&lt;/a&gt; operations, which allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment state of messages in an existing subscription to the state captured by a snapshot. &lt;br&gt;&lt;br&gt;If the snapshot already exists, returns &#x60;ALREADY_EXISTS&#x60;. If the requested subscription doesn&#39;t exist, returns &#x60;NOT_FOUND&#x60;. If the backlog in the subscription is too old -- and the resulting snapshot would expire in less than 1 hour -- then &#x60;FAILED_PRECONDITION&#x60; is returned. See also the &#x60;Snapshot.expire_time&#x60; field. If the name is not provided in the request, the server will assign a random name for this snapshot on the same project as the subscription, conforming to the [resource name format](https://cloud.google.com/pubsub/docs/admin#resource_names). The generated name is populated in the returned Snapshot object. Note that for REST API requests, you must specify a name in the request.
 
   ## Parameters
 
@@ -90,7 +90,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   end
 
   @doc """
-  Removes an existing snapshot. Snapshots are used in &lt;a href&#x3D;\&quot;https://cloud.google.com/pubsub/docs/replay-overview\&quot;&gt;Seek&lt;/a&gt; operations, which allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment state of messages in an existing subscription to the state captured by a snapshot.&lt;br&gt;&lt;br&gt; &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be changed in backward-incompatible ways and is not recommended for production use. It is not subject to any SLA or deprecation policy. When the snapshot is deleted, all messages retained in the snapshot are immediately dropped. After a snapshot is deleted, a new one may be created with the same name, but the new one has no association with the old snapshot or its subscription, unless the same subscription is specified.
+  Removes an existing snapshot. Snapshots are used in &lt;a href&#x3D;\&quot;https://cloud.google.com/pubsub/docs/replay-overview\&quot;&gt;Seek&lt;/a&gt; operations, which allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment state of messages in an existing subscription to the state captured by a snapshot.&lt;br&gt;&lt;br&gt; When the snapshot is deleted, all messages retained in the snapshot are immediately dropped. After a snapshot is deleted, a new one may be created with the same name, but the new one has no association with the old snapshot or its subscription, unless the same subscription is specified.
 
   ## Parameters
 
@@ -153,7 +153,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   end
 
   @doc """
-  Gets the configuration details of a snapshot. Snapshots are used in &lt;a href&#x3D;\&quot;https://cloud.google.com/pubsub/docs/replay-overview\&quot;&gt;Seek&lt;/a&gt; operations, which allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment state of messages in an existing subscription to the state captured by a snapshot.&lt;br&gt;&lt;br&gt; &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be changed in backward-incompatible ways and is not recommended for production use. It is not subject to any SLA or deprecation policy.
+  Gets the configuration details of a snapshot. Snapshots are used in &lt;a href&#x3D;\&quot;https://cloud.google.com/pubsub/docs/replay-overview\&quot;&gt;Seek&lt;/a&gt; operations, which allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment state of messages in an existing subscription to the state captured by a snapshot.
 
   ## Parameters
 
@@ -283,7 +283,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   end
 
   @doc """
-  Lists the existing snapshots. Snapshots are used in &lt;a href&#x3D;\&quot;https://cloud.google.com/pubsub/docs/replay-overview\&quot;&gt;Seek&lt;/a&gt; operations, which allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment state of messages in an existing subscription to the state captured by a snapshot.&lt;br&gt;&lt;br&gt; &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be changed in backward-incompatible ways and is not recommended for production use. It is not subject to any SLA or deprecation policy.
+  Lists the existing snapshots. Snapshots are used in &lt;a href&#x3D;\&quot;https://cloud.google.com/pubsub/docs/replay-overview\&quot;&gt;Seek&lt;/a&gt; operations, which allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment state of messages in an existing subscription to the state captured by a snapshot.
 
   ## Parameters
 
@@ -342,7 +342,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   end
 
   @doc """
-  Updates an existing snapshot. Snapshots are used in &lt;a href&#x3D;\&quot;https://cloud.google.com/pubsub/docs/replay-overview\&quot;&gt;Seek&lt;/a&gt; operations, which allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment state of messages in an existing subscription to the state captured by a snapshot.&lt;br&gt;&lt;br&gt; &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be changed in backward-incompatible ways and is not recommended for production use. It is not subject to any SLA or deprecation policy. Note that certain properties of a snapshot are not modifiable.
+  Updates an existing snapshot. Snapshots are used in &lt;a href&#x3D;\&quot;https://cloud.google.com/pubsub/docs/replay-overview\&quot;&gt;Seek&lt;/a&gt; operations, which allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment state of messages in an existing subscription to the state captured by a snapshot.
 
   ## Parameters
 
@@ -1220,7 +1220,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   end
 
   @doc """
-  Seeks an existing subscription to a point in time or to a given snapshot, whichever is provided in the request. Snapshots are used in &lt;a href&#x3D;\&quot;https://cloud.google.com/pubsub/docs/replay-overview\&quot;&gt;Seek&lt;/a&gt; operations, which allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment state of messages in an existing subscription to the state captured by a snapshot. Note that both the subscription and the snapshot must be on the same topic.&lt;br&gt;&lt;br&gt; &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be changed in backward-incompatible ways and is not recommended for production use. It is not subject to any SLA or deprecation policy.
+  Seeks an existing subscription to a point in time or to a given snapshot, whichever is provided in the request. Snapshots are used in &lt;a href&#x3D;\&quot;https://cloud.google.com/pubsub/docs/replay-overview\&quot;&gt;Seek&lt;/a&gt; operations, which allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment state of messages in an existing subscription to the state captured by a snapshot. Note that both the subscription and the snapshot must be on the same topic.
 
   ## Parameters
 
@@ -1944,7 +1944,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   end
 
   @doc """
-  Lists the names of the snapshots on this topic. Snapshots are used in &lt;a href&#x3D;\&quot;https://cloud.google.com/pubsub/docs/replay-overview\&quot;&gt;Seek&lt;/a&gt; operations, which allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment state of messages in an existing subscription to the state captured by a snapshot.&lt;br&gt;&lt;br&gt; &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be changed in backward-incompatible ways and is not recommended for production use. It is not subject to any SLA or deprecation policy.
+  Lists the names of the snapshots on this topic. Snapshots are used in &lt;a href&#x3D;\&quot;https://cloud.google.com/pubsub/docs/replay-overview\&quot;&gt;Seek&lt;/a&gt; operations, which allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment state of messages in an existing subscription to the state captured by a snapshot.
 
   ## Parameters
 
