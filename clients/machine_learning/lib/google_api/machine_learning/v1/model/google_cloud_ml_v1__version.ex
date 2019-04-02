@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1Version do
   @moduledoc """
-  Represents a version of the model.  Each version is a trained model deployed in the cloud, ready to handle prediction requests. A model can have multiple versions. You can get information about all of the versions of a given model by calling [projects.models.versions.list](/ml-engine/reference/rest/v1/projects.models.versions/list). Next ID: 29
+  Represents a version of the model.  Each version is a trained model deployed in the cloud, ready to handle prediction requests. A model can have multiple versions. You can get information about all of the versions of a given model by calling [projects.models.versions.list](/ml-engine/reference/rest/v1/projects.models.versions/list). Next ID: 30
 
   ## Attributes
 
