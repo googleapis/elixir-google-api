@@ -25,7 +25,7 @@ defmodule GoogleApi.PlusDomains.V1.Api.Audiences do
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
-  List all of the audiences to which a user can share.
+  Shut down. See https://developers.google.com/+/api-shutdown for more details.
 
   ## Parameters
 

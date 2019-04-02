@@ -25,7 +25,7 @@ defmodule GoogleApi.PlusDomains.V1.Api.Activities do
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
-  Get an activity.
+  Shut down. See https://developers.google.com/+/api-shutdown for more details.
 
   ## Parameters
 
@@ -72,58 +72,7 @@ defmodule GoogleApi.PlusDomains.V1.Api.Activities do
   end
 
   @doc """
-  Create a new activity for the authenticated user.
-
-  ## Parameters
-
-  - connection (GoogleApi.PlusDomains.V1.Connection): Connection to server
-  - user_id (String.t): The ID of the user to create the activity on behalf of. Its value should be \&quot;me\&quot;, to indicate the authenticated user.
-  - optional_params (KeywordList): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :preview (boolean()): If \&quot;true\&quot;, extract the potential media attachments for a URL. The response will include all possible attachments for a URL, including video, photos, and articles based on the content of the page.
-    - :body (Activity): 
-
-  ## Returns
-
-  {:ok, %GoogleApi.PlusDomains.V1.Model.Activity{}} on success
-  {:error, info} on failure
-  """
-  @spec plus_domains_activities_insert(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, GoogleApi.PlusDomains.V1.Model.Activity.t()} | {:error, Tesla.Env.t()}
-  def plus_domains_activities_insert(connection, user_id, optional_params \\ [], opts \\ []) do
-    optional_params_config = %{
-      :alt => :query,
-      :fields => :query,
-      :key => :query,
-      :oauth_token => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :userIp => :query,
-      :preview => :query,
-      :body => :body
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:post)
-      |> Request.url("/plusDomains/v1/people/{userId}/activities", %{
-        "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
-      })
-      |> Request.add_optional_params(optional_params_config, optional_params)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(opts ++ [struct: %GoogleApi.PlusDomains.V1.Model.Activity{}])
-  end
-
-  @doc """
-  List all of the activities in the specified collection for a particular user.
+  Shut down. See https://developers.google.com/+/api-shutdown for more details.
 
   ## Parameters
 

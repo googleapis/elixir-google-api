@@ -25,8 +25,6 @@ defmodule GoogleApi.PlusDomains.V1.Connection do
     scopes: [
       # View your circles and the people and pages in them
       "https://www.googleapis.com/auth/plus.circles.read",
-      # Manage your circles and add people and pages. People and pages you add to your circles will be notified. Others may see this information publicly. People you add to circles can use Hangouts with you.
-      "https://www.googleapis.com/auth/plus.circles.write",
       # View your basic profile info, including your age range and language
       "https://www.googleapis.com/auth/plus.login",
       # Know who you are on Google
@@ -37,11 +35,9 @@ defmodule GoogleApi.PlusDomains.V1.Connection do
       "https://www.googleapis.com/auth/plus.profiles.read",
       # View your Google+ posts, comments, and stream
       "https://www.googleapis.com/auth/plus.stream.read",
-      # Manage your Google+ posts, comments, and stream
-      "https://www.googleapis.com/auth/plus.stream.write",
       # View your email address
       "https://www.googleapis.com/auth/userinfo.email",
-      # See your personal info, including any personal info you&#39;ve made publically available
+      # See your personal info, including any personal info you&#39;ve made publicly available
       "https://www.googleapis.com/auth/userinfo.profile"
     ],
     otp_app: :google_api_plus_domains,

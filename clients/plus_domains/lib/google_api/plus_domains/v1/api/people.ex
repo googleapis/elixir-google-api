@@ -127,7 +127,7 @@ defmodule GoogleApi.PlusDomains.V1.Api.People do
   end
 
   @doc """
-  List all of the people in the specified collection for a particular activity.
+  Shut down. See https://developers.google.com/+/api-shutdown for more details.
 
   ## Parameters
 
@@ -190,7 +190,7 @@ defmodule GoogleApi.PlusDomains.V1.Api.People do
   end
 
   @doc """
-  List all of the people who are members of a circle.
+  Shut down. See https://developers.google.com/+/api-shutdown for more details.
 
   ## Parameters
 
