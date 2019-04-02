@@ -18,12 +18,12 @@
 
 defmodule GoogleApi.Composer.V1beta1.Model.PrivateEnvironmentConfig do
   @moduledoc """
-  The configuration information for configuring a private Composer environment.
+  The configuration information for configuring a Private IP Cloud Composer environment.
 
   ## Attributes
 
-  - enablePrivateEnvironment (boolean()): Optional. If &#x60;true&#x60;, a private Composer environment is created. Defaults to: `null`.
-  - privateClusterConfig (PrivateClusterConfig): Optional. Configuration for private cluster for a private Composer environment. Defaults to: `null`.
+  - enablePrivateEnvironment (boolean()): Optional. If &#x60;true&#x60;, a Private IP Cloud Composer environment is created. If this field is true, &#x60;use_ip_aliases&#x60; must be true. Defaults to: `null`.
+  - privateClusterConfig (PrivateClusterConfig): Optional. Configuration for the private GKE cluster for a Private IP Cloud Composer environment. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

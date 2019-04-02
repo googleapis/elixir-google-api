@@ -27,7 +27,7 @@ defmodule GoogleApi.Composer.V1beta1.Model.EnvironmentConfig do
   - gkeCluster (String.t): Output only. The Kubernetes Engine cluster used to run this environment. Defaults to: `null`.
   - nodeConfig (NodeConfig): The configuration used for the Kubernetes Engine cluster. Defaults to: `null`.
   - nodeCount (integer()): The number of nodes in the Kubernetes Engine cluster that will be used to run this environment. Defaults to: `null`.
-  - privateEnvironmentConfig (PrivateEnvironmentConfig): The configuration used for the private Composer environment. Defaults to: `null`.
+  - privateEnvironmentConfig (PrivateEnvironmentConfig): The configuration used for the Private IP Cloud Composer environment. Defaults to: `null`.
   - softwareConfig (SoftwareConfig): The configuration settings for software inside the environment. Defaults to: `null`.
   """
 

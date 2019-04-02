@@ -18,12 +18,12 @@
 
 defmodule GoogleApi.Composer.V1beta1.Model.PrivateClusterConfig do
   @moduledoc """
-  Configuration options for private cluster of Composer environment.
+  Configuration options for the private GKE cluster in a Cloud Composer environment.
 
   ## Attributes
 
-  - enablePrivateEndpoint (boolean()): Optional. If true, access to public endpoint of gke cluster will be denied. &#x60;IPAllocationPolicy.use_ip_aliases&#x60; must be true if this field is set to true. Default value is false. Defaults to: `null`.
-  - masterIpv4CidrBlock (String.t): The IP range in CIDR notation to use for the hosted master network. This range will be used for assigning internal IP addresses to the cluster master or set of masters, as well as the ILB VIP (Internal Load Balance Virtual IP).This range must not overlap with any other ranges in use within the cluster&#39;s network. If left blank, default value of &#39;172.16.0.0/28&#39; will be used. Defaults to: `null`.
+  - enablePrivateEndpoint (boolean()): Optional. If &#x60;true&#x60;, access to the public endpoint of the GKE cluster is denied. Defaults to: `null`.
+  - masterIpv4CidrBlock (String.t): The IP range in CIDR notation to use for the hosted master network. This range is used for assigning internal IP addresses to the cluster master or set of masters and to the internal load balancer virtual IP. This range must not overlap with any other ranges in use within the cluster&#39;s network. If left blank, the default value of &#39;172.16.0.0/28&#39; is used. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
