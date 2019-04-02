@@ -23,7 +23,7 @@ defmodule GoogleApi.IAMCredentials.V1.Model.GenerateIdTokenRequest do
   ## Attributes
 
   - audience (String.t): The audience for the token, such as the API or account that this token grants access to. Defaults to: `null`.
-  - delegates ([String.t]): The sequence of service accounts in a delegation chain. Each service account must be granted the &#x60;roles/iam.serviceAccountTokenCreator&#x60; role on its next service account in the chain. The last service account in the chain must be granted the &#x60;roles/iam.serviceAccountTokenCreator&#x60; role on the service account that is specified in the &#x60;name&#x60; field of the request.  The delegates must have the following format: &#x60;projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}&#x60; Defaults to: `null`.
+  - delegates ([String.t]): The sequence of service accounts in a delegation chain. Each service account must be granted the &#x60;roles/iam.serviceAccountTokenCreator&#x60; role on its next service account in the chain. The last service account in the chain must be granted the &#x60;roles/iam.serviceAccountTokenCreator&#x60; role on the service account that is specified in the &#x60;name&#x60; field of the request.  The delegates must have the following format: &#x60;projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}&#x60;. The &#x60;-&#x60; wildcard character is required; replacing it with a project ID is invalid. Defaults to: `null`.
   - includeEmail (boolean()): Include the service account email in the token. If set to &#x60;true&#x60;, the token will contain &#x60;email&#x60; and &#x60;email_verified&#x60; claims. Defaults to: `null`.
   """
 

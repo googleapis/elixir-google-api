@@ -30,7 +30,7 @@ defmodule GoogleApi.IAMCredentials.V1.Api.Projects do
   ## Parameters
 
   - connection (GoogleApi.IAMCredentials.V1.Connection): Connection to server
-  - projects_id (String.t): Part of &#x60;name&#x60;. The resource name of the service account for which the credentials are requested, in the following format: &#x60;projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}&#x60;.
+  - projects_id (String.t): Part of &#x60;name&#x60;. The resource name of the service account for which the credentials are requested, in the following format: &#x60;projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}&#x60;. The &#x60;-&#x60; wildcard character is required; replacing it with a project ID is invalid.
   - service_accounts_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
@@ -87,8 +87,8 @@ defmodule GoogleApi.IAMCredentials.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/serviceAccounts/{serviceAccountsId}:generateAccessToken",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "serviceAccountsId" => URI.encode_www_form(service_accounts_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "serviceAccountsId" => URI.encode(service_accounts_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -106,7 +106,7 @@ defmodule GoogleApi.IAMCredentials.V1.Api.Projects do
   ## Parameters
 
   - connection (GoogleApi.IAMCredentials.V1.Connection): Connection to server
-  - projects_id (String.t): Part of &#x60;name&#x60;. The resource name of the service account for which the credentials are requested, in the following format: &#x60;projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}&#x60;.
+  - projects_id (String.t): Part of &#x60;name&#x60;. The resource name of the service account for which the credentials are requested, in the following format: &#x60;projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}&#x60;. The &#x60;-&#x60; wildcard character is required; replacing it with a project ID is invalid.
   - service_accounts_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
@@ -163,8 +163,8 @@ defmodule GoogleApi.IAMCredentials.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/serviceAccounts/{serviceAccountsId}:generateIdToken",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "serviceAccountsId" => URI.encode_www_form(service_accounts_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "serviceAccountsId" => URI.encode(service_accounts_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -182,7 +182,7 @@ defmodule GoogleApi.IAMCredentials.V1.Api.Projects do
   ## Parameters
 
   - connection (GoogleApi.IAMCredentials.V1.Connection): Connection to server
-  - projects_id (String.t): Part of &#x60;name&#x60;. The resource name of the service account for which the credentials are requested, in the following format: &#x60;projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}&#x60;.
+  - projects_id (String.t): Part of &#x60;name&#x60;. The resource name of the service account for which the credentials are requested, in the following format: &#x60;projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}&#x60;. The &#x60;-&#x60; wildcard character is required; replacing it with a project ID is invalid.
   - service_accounts_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
@@ -239,8 +239,8 @@ defmodule GoogleApi.IAMCredentials.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/serviceAccounts/{serviceAccountsId}:generateIdentityBindingAccessToken",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "serviceAccountsId" => URI.encode_www_form(service_accounts_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "serviceAccountsId" => URI.encode(service_accounts_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -259,7 +259,7 @@ defmodule GoogleApi.IAMCredentials.V1.Api.Projects do
   ## Parameters
 
   - connection (GoogleApi.IAMCredentials.V1.Connection): Connection to server
-  - projects_id (String.t): Part of &#x60;name&#x60;. The resource name of the service account for which the credentials are requested, in the following format: &#x60;projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}&#x60;.
+  - projects_id (String.t): Part of &#x60;name&#x60;. The resource name of the service account for which the credentials are requested, in the following format: &#x60;projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}&#x60;. The &#x60;-&#x60; wildcard character is required; replacing it with a project ID is invalid.
   - service_accounts_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
@@ -313,8 +313,8 @@ defmodule GoogleApi.IAMCredentials.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectsId}/serviceAccounts/{serviceAccountsId}:signBlob", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "serviceAccountsId" => URI.encode_www_form(service_accounts_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "serviceAccountsId" => URI.encode(service_accounts_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -329,7 +329,7 @@ defmodule GoogleApi.IAMCredentials.V1.Api.Projects do
   ## Parameters
 
   - connection (GoogleApi.IAMCredentials.V1.Connection): Connection to server
-  - projects_id (String.t): Part of &#x60;name&#x60;. The resource name of the service account for which the credentials are requested, in the following format: &#x60;projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}&#x60;.
+  - projects_id (String.t): Part of &#x60;name&#x60;. The resource name of the service account for which the credentials are requested, in the following format: &#x60;projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}&#x60;. The &#x60;-&#x60; wildcard character is required; replacing it with a project ID is invalid.
   - service_accounts_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
@@ -383,8 +383,8 @@ defmodule GoogleApi.IAMCredentials.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectsId}/serviceAccounts/{serviceAccountsId}:signJwt", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "serviceAccountsId" => URI.encode_www_form(service_accounts_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "serviceAccountsId" => URI.encode(service_accounts_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
