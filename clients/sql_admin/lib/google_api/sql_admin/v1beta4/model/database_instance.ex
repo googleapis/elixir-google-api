@@ -25,7 +25,9 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance do
   - backendType (String.t): FIRST_GEN: First Generation instance. MySQL only. SECOND_GEN: Second Generation instance or PostgreSQL instance. EXTERNAL: A database server that is not managed by Google. This property is read-only; use the tier property in the settings object to determine the database type and Second or First Generation. Defaults to: `null`.
   - connectionName (String.t): Connection name of the Cloud SQL instance used in connection strings. Defaults to: `null`.
   - currentDiskSize (String.t): The current disk usage of the instance in bytes. This property has been deprecated. Users should use the \&quot;cloudsql.googleapis.com/database/disk/bytes_used\&quot; metric in Cloud Monitoring API instead. Please see this announcement for details. Defaults to: `null`.
-  - databaseVersion (String.t): The database engine type and version. The databaseVersion field can not be changed after instance creation. MySQL Second Generation instances: MYSQL_5_7 (default) or MYSQL_5_6. PostgreSQL instances: POSTGRES_9_6 MySQL First Generation instances: MYSQL_5_6 (default) or MYSQL_5_5 Defaults to: `null`.
+  - databaseVersion (String.t): The database engine type and version. The databaseVersion field can not be changed after instance creation. MySQL Second Generation instances: MYSQL_5_7 (default) or MYSQL_5_6. PostgreSQL instances: POSTGRES_9_6 (default) or POSTGRES_11 Beta. MySQL First Generation instances: MYSQL_5_6 (default) or MYSQL_5_5 Defaults to: `null`.
+  - diskEncryptionConfiguration (DiskEncryptionConfiguration): Disk encryption configuration specific to an instance. Applies only to Second Generation instances. Defaults to: `null`.
+  - diskEncryptionStatus (DiskEncryptionStatus): Disk encryption status specific to an instance. Applies only to Second Generation instances. Defaults to: `null`.
   - etag (String.t): This field is deprecated and will be removed from a future version of the API. Use the settings.settingsVersion field instead. Defaults to: `null`.
   - failoverReplica (DatabaseInstanceFailoverReplica):  Defaults to: `null`.
   - gceZone (String.t): The Compute Engine zone that the instance is currently serving from. This value could be different from the zone that was specified when the instance was created if the instance has failed over to its secondary zone. Defaults to: `null`.
@@ -56,6 +58,9 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance do
           :connectionName => any(),
           :currentDiskSize => any(),
           :databaseVersion => any(),
+          :diskEncryptionConfiguration =>
+            GoogleApi.SQLAdmin.V1beta4.Model.DiskEncryptionConfiguration.t(),
+          :diskEncryptionStatus => GoogleApi.SQLAdmin.V1beta4.Model.DiskEncryptionStatus.t(),
           :etag => any(),
           :failoverReplica =>
             GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstanceFailoverReplica.t(),
@@ -85,6 +90,13 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance do
   field(:connectionName)
   field(:currentDiskSize)
   field(:databaseVersion)
+
+  field(
+    :diskEncryptionConfiguration,
+    as: GoogleApi.SQLAdmin.V1beta4.Model.DiskEncryptionConfiguration
+  )
+
+  field(:diskEncryptionStatus, as: GoogleApi.SQLAdmin.V1beta4.Model.DiskEncryptionStatus)
   field(:etag)
   field(:failoverReplica, as: GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstanceFailoverReplica)
   field(:gceZone)
