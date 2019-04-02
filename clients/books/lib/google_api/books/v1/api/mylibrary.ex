@@ -69,7 +69,7 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/mylibrary/annotations/{annotationId}", %{
-        "annotationId" => URI.encode_www_form(annotation_id)
+        "annotationId" => URI.encode(annotation_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -301,7 +301,7 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/mylibrary/annotations/{annotationId}", %{
-        "annotationId" => URI.encode_www_form(annotation_id)
+        "annotationId" => URI.encode(annotation_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -363,7 +363,7 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/mylibrary/bookshelves/{shelf}/addVolume", %{
-        "shelf" => URI.encode_www_form(shelf)
+        "shelf" => URI.encode(shelf, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :volumeId, volume_id)
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -418,7 +418,7 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/mylibrary/bookshelves/{shelf}/clearVolumes", %{
-        "shelf" => URI.encode_www_form(shelf)
+        "shelf" => URI.encode(shelf, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -467,7 +467,7 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/mylibrary/bookshelves/{shelf}", %{
-        "shelf" => URI.encode_www_form(shelf)
+        "shelf" => URI.encode(shelf, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -576,7 +576,7 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/mylibrary/bookshelves/{shelf}/moveVolume", %{
-        "shelf" => URI.encode_www_form(shelf)
+        "shelf" => URI.encode(shelf, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :volumeId, volume_id)
       |> Request.add_param(:query, :volumePosition, volume_position)
@@ -640,7 +640,7 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/mylibrary/bookshelves/{shelf}/removeVolume", %{
-        "shelf" => URI.encode_www_form(shelf)
+        "shelf" => URI.encode(shelf, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :volumeId, volume_id)
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -707,7 +707,7 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/mylibrary/bookshelves/{shelf}/volumes", %{
-        "shelf" => URI.encode_www_form(shelf)
+        "shelf" => URI.encode(shelf, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -763,7 +763,7 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/mylibrary/readingpositions/{volumeId}", %{
-        "volumeId" => URI.encode_www_form(volume_id)
+        "volumeId" => URI.encode(volume_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -832,7 +832,7 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/mylibrary/readingpositions/{volumeId}/setPosition", %{
-        "volumeId" => URI.encode_www_form(volume_id)
+        "volumeId" => URI.encode(volume_id, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :timestamp, timestamp)
       |> Request.add_param(:query, :position, position)

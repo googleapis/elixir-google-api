@@ -91,9 +91,9 @@ defmodule GoogleApi.Books.V1.Api.Layers do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/volumes/{volumeId}/layers/{layerId}/data/{annotationDataId}", %{
-        "volumeId" => URI.encode_www_form(volume_id),
-        "layerId" => URI.encode_www_form(layer_id),
-        "annotationDataId" => URI.encode_www_form(annotation_data_id)
+        "volumeId" => URI.encode(volume_id, &URI.char_unreserved?/1),
+        "layerId" => URI.encode(layer_id, &URI.char_unreserved?/1),
+        "annotationDataId" => URI.encode(annotation_data_id, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :contentVersion, content_version)
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -175,8 +175,8 @@ defmodule GoogleApi.Books.V1.Api.Layers do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/volumes/{volumeId}/layers/{layerId}/data", %{
-        "volumeId" => URI.encode_www_form(volume_id),
-        "layerId" => URI.encode_www_form(layer_id)
+        "volumeId" => URI.encode(volume_id, &URI.char_unreserved?/1),
+        "layerId" => URI.encode(layer_id, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :contentVersion, content_version)
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -229,8 +229,8 @@ defmodule GoogleApi.Books.V1.Api.Layers do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/volumes/{volumeId}/layersummary/{summaryId}", %{
-        "volumeId" => URI.encode_www_form(volume_id),
-        "summaryId" => URI.encode_www_form(summary_id)
+        "volumeId" => URI.encode(volume_id, &URI.char_unreserved?/1),
+        "summaryId" => URI.encode(summary_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -285,7 +285,7 @@ defmodule GoogleApi.Books.V1.Api.Layers do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/volumes/{volumeId}/layersummary", %{
-        "volumeId" => URI.encode_www_form(volume_id)
+        "volumeId" => URI.encode(volume_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -350,9 +350,9 @@ defmodule GoogleApi.Books.V1.Api.Layers do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/volumes/{volumeId}/layers/{layerId}/annotations/{annotationId}", %{
-        "volumeId" => URI.encode_www_form(volume_id),
-        "layerId" => URI.encode_www_form(layer_id),
-        "annotationId" => URI.encode_www_form(annotation_id)
+        "volumeId" => URI.encode(volume_id, &URI.char_unreserved?/1),
+        "layerId" => URI.encode(layer_id, &URI.char_unreserved?/1),
+        "annotationId" => URI.encode(annotation_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -437,8 +437,8 @@ defmodule GoogleApi.Books.V1.Api.Layers do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/volumes/{volumeId}/layers/{layerId}", %{
-        "volumeId" => URI.encode_www_form(volume_id),
-        "layerId" => URI.encode_www_form(layer_id)
+        "volumeId" => URI.encode(volume_id, &URI.char_unreserved?/1),
+        "layerId" => URI.encode(layer_id, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :contentVersion, content_version)
       |> Request.add_optional_params(optional_params_config, optional_params)

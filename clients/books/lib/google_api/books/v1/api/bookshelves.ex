@@ -65,8 +65,8 @@ defmodule GoogleApi.Books.V1.Api.Bookshelves do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/users/{userId}/bookshelves/{shelf}", %{
-        "userId" => URI.encode_www_form(user_id),
-        "shelf" => URI.encode_www_form(shelf)
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
+        "shelf" => URI.encode(shelf, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -115,7 +115,7 @@ defmodule GoogleApi.Books.V1.Api.Bookshelves do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/users/{userId}/bookshelves", %{
-        "userId" => URI.encode_www_form(user_id)
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -177,8 +177,8 @@ defmodule GoogleApi.Books.V1.Api.Bookshelves do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/users/{userId}/bookshelves/{shelf}/volumes", %{
-        "userId" => URI.encode_www_form(user_id),
-        "shelf" => URI.encode_www_form(shelf)
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
+        "shelf" => URI.encode(shelf, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
