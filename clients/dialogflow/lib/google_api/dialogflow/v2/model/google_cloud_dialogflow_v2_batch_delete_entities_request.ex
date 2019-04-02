@@ -23,7 +23,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2BatchDeleteEntiti
   ## Attributes
 
   - entityValues ([String.t]): Required. The canonical &#x60;values&#x60; of the entities to delete. Note that these are not fully-qualified names, i.e. they don&#39;t start with &#x60;projects/&lt;Project ID&gt;&#x60;. Defaults to: `null`.
-  - languageCode (String.t): Optional. The language of entity synonyms defined in &#x60;entities&#x60;. If not specified, the agent&#39;s default language is used. [More than a dozen languages](https://dialogflow.com/docs/reference/language) are supported. Note: languages must be enabled in the agent, before they can be used. Defaults to: `null`.
+  - languageCode (String.t): Optional. The language of entity synonyms defined in &#x60;entities&#x60;. If not specified, the agent&#39;s default language is used. [Many languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language) are supported. Note: languages must be enabled in the agent before they can be used. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

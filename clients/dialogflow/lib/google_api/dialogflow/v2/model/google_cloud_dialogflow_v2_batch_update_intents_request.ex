@@ -26,7 +26,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2BatchUpdateIntent
   - intentBatchUri (String.t): The URI to a Google Cloud Storage file containing intents to update or create. The file format can either be a serialized proto (of IntentBatch type) or JSON object. Note: The URI must start with \&quot;gs://\&quot;. Defaults to: `null`.
   - intentView (String.t): Optional. The resource view to apply to the returned intent. Defaults to: `null`.
     - Enum - one of [INTENT_VIEW_UNSPECIFIED, INTENT_VIEW_FULL]
-  - languageCode (String.t): Optional. The language of training phrases, parameters and rich messages defined in &#x60;intents&#x60;. If not specified, the agent&#39;s default language is used. [More than a dozen languages](https://dialogflow.com/docs/reference/language) are supported. Note: languages must be enabled in the agent, before they can be used. Defaults to: `null`.
+  - languageCode (String.t): Optional. The language of training phrases, parameters and rich messages defined in &#x60;intents&#x60;. If not specified, the agent&#39;s default language is used. [Many languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language) are supported. Note: languages must be enabled in the agent before they can be used. Defaults to: `null`.
   - updateMask (String.t): Optional. The mask to control which fields get updated. Defaults to: `null`.
   """
 
