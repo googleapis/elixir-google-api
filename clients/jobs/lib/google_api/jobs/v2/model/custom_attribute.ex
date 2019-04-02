@@ -23,7 +23,7 @@ defmodule GoogleApi.Jobs.V2.Model.CustomAttribute do
   ## Attributes
 
   - filterable (boolean()): Optional.  If the &#x60;filterable&#x60; flag is true, custom field values are searchable. If false, values are not searchable.  Default is false. Defaults to: `null`.
-  - longValue (String.t): Optional but at least one of string_values or long_value must be specified.  This field is used to perform number range search. (&#x60;EQ&#x60;, &#x60;GT&#x60;, &#x60;GE&#x60;, &#x60;LE&#x60;, &#x60;LT&#x60;) over filterable &#x60;long_value&#x60;. For &#x60;long_value&#x60;, a value between Long.MIN and Long.MIN is allowed. Defaults to: `null`.
+  - longValue (String.t): Optional but at least one of string_values or long_value must be specified.  This field is used to perform number range search. (&#x60;EQ&#x60;, &#x60;GT&#x60;, &#x60;GE&#x60;, &#x60;LE&#x60;, &#x60;LT&#x60;) over filterable &#x60;long_value&#x60;. For &#x60;long_value&#x60;, a value between Long.MIN and Long.MAX is allowed. Defaults to: `null`.
   - stringValues (StringValues): Optional but at least one of string_values or long_value must be specified.  This field is used to perform a string match (&#x60;CASE_SENSITIVE_MATCH&#x60; or &#x60;CASE_INSENSITIVE_MATCH&#x60;) search. For filterable &#x60;string_values&#x60;, a maximum total number of 200 values is allowed, with each &#x60;string_value&#x60; has a byte size of no more than 255B. For unfilterable &#x60;string_values&#x60;, the maximum total byte size of unfilterable &#x60;string_values&#x60; is 50KB.  Empty strings are not allowed. Defaults to: `null`.
   """
 
