@@ -24,6 +24,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PrimitiveTransformation do
 
   - bucketingConfig (GooglePrivacyDlpV2BucketingConfig):  Defaults to: `null`.
   - characterMaskConfig (GooglePrivacyDlpV2CharacterMaskConfig):  Defaults to: `null`.
+  - cryptoDeterministicConfig (GooglePrivacyDlpV2CryptoDeterministicConfig):  Defaults to: `null`.
   - cryptoHashConfig (GooglePrivacyDlpV2CryptoHashConfig):  Defaults to: `null`.
   - cryptoReplaceFfxFpeConfig (GooglePrivacyDlpV2CryptoReplaceFfxFpeConfig):  Defaults to: `null`.
   - dateShiftConfig (GooglePrivacyDlpV2DateShiftConfig):  Defaults to: `null`.
@@ -40,6 +41,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PrimitiveTransformation do
           :bucketingConfig => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BucketingConfig.t(),
           :characterMaskConfig =>
             GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CharacterMaskConfig.t(),
+          :cryptoDeterministicConfig =>
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CryptoDeterministicConfig.t(),
           :cryptoHashConfig => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CryptoHashConfig.t(),
           :cryptoReplaceFfxFpeConfig =>
             GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CryptoReplaceFfxFpeConfig.t(),
@@ -55,6 +58,12 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PrimitiveTransformation do
 
   field(:bucketingConfig, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BucketingConfig)
   field(:characterMaskConfig, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CharacterMaskConfig)
+
+  field(
+    :cryptoDeterministicConfig,
+    as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CryptoDeterministicConfig
+  )
+
   field(:cryptoHashConfig, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CryptoHashConfig)
 
   field(
