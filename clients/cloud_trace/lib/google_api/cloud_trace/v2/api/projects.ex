@@ -77,7 +77,7 @@ defmodule GoogleApi.CloudTrace.V2.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v2/projects/{projectsId}/traces:batchWrite", %{
-        "projectsId" => URI.encode_www_form(projects_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -148,9 +148,9 @@ defmodule GoogleApi.CloudTrace.V2.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v2/projects/{projectsId}/traces/{tracesId}/spans/{spansId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "tracesId" => URI.encode_www_form(traces_id),
-        "spansId" => URI.encode_www_form(spans_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "tracesId" => URI.encode(traces_id, &URI.char_unreserved?/1),
+        "spansId" => URI.encode(spans_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
