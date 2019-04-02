@@ -16,34 +16,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.BigQuery.V2.Model.JobStatistics4 do
+defmodule GoogleApi.BigQuery.V2.Model.TableFieldSchemaCategories do
   @moduledoc """
-
+  [Optional] The categories attached to this field, used for field-level access control.
 
   ## Attributes
 
-  - destinationUriFileCounts ([String.t]): [Output-only] Number of files per destination URI or URI pattern specified in the extract configuration. These values will be in the same order as the URIs specified in the &#39;destinationUris&#39; field. Defaults to: `null`.
-  - inputBytes (String.t): [Output-only] Number of user bytes extracted into the result. This is the byte count as computed by BigQuery for billing purposes. Defaults to: `null`.
+  - names ([String.t]): A list of category resource names. For example, \&quot;projects/1/taxonomies/2/categories/3\&quot;. At most 5 categories are allowed. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :destinationUriFileCounts => list(any()),
-          :inputBytes => any()
+          :names => list(any())
         }
 
-  field(:destinationUriFileCounts, type: :list)
-  field(:inputBytes)
+  field(:names, type: :list)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.JobStatistics4 do
+defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.TableFieldSchemaCategories do
   def decode(value, options) do
-    GoogleApi.BigQuery.V2.Model.JobStatistics4.decode(value, options)
+    GoogleApi.BigQuery.V2.Model.TableFieldSchemaCategories.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.BigQuery.V2.Model.JobStatistics4 do
+defimpl Poison.Encoder, for: GoogleApi.BigQuery.V2.Model.TableFieldSchemaCategories do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

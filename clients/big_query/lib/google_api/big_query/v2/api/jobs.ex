@@ -65,8 +65,8 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/bigquery/v2/projects/{projectId}/jobs/{jobId}/cancel", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "jobId" => URI.encode_www_form(job_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "jobId" => URI.encode(job_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -116,8 +116,8 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/bigquery/v2/projects/{projectId}/jobs/{jobId}", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "jobId" => URI.encode_www_form(job_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "jobId" => URI.encode(job_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -181,8 +181,8 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/bigquery/v2/projects/{projectId}/queries/{jobId}", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "jobId" => URI.encode_www_form(job_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "jobId" => URI.encode(job_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -231,7 +231,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/bigquery/v2/projects/{projectId}/jobs", %{
-        "projectId" => URI.encode_www_form(project_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -287,7 +287,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/resumable/upload/bigquery/v2/projects/{projectId}/jobs", %{
-        "projectId" => URI.encode_www_form(project_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :uploadType, upload_type)
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -352,7 +352,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/upload/bigquery/v2/projects/{projectId}/jobs", %{
-        "projectId" => URI.encode_www_form(project_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :uploadType, upload_type)
       |> Request.add_param(:body, :metadata, metadata)
@@ -416,7 +416,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/bigquery/v2/projects/{projectId}/jobs", %{
-        "projectId" => URI.encode_www_form(project_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -465,7 +465,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/bigquery/v2/projects/{projectId}/queries", %{
-        "projectId" => URI.encode_www_form(project_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

@@ -22,6 +22,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TableFieldSchema do
 
   ## Attributes
 
+  - categories (TableFieldSchemaCategories):  Defaults to: `null`.
   - description (String.t): [Optional] The field description. The maximum length is 1,024 characters. Defaults to: `null`.
   - fields ([TableFieldSchema]): [Optional] Describes the nested schema fields if the type property is set to RECORD. Defaults to: `null`.
   - mode (String.t): [Optional] The field mode. Possible values include NULLABLE, REQUIRED and REPEATED. The default value is NULLABLE. Defaults to: `null`.
@@ -32,6 +33,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TableFieldSchema do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :categories => GoogleApi.BigQuery.V2.Model.TableFieldSchemaCategories.t(),
           :description => any(),
           :fields => list(GoogleApi.BigQuery.V2.Model.TableFieldSchema.t()),
           :mode => any(),
@@ -39,6 +41,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TableFieldSchema do
           :type => any()
         }
 
+  field(:categories, as: GoogleApi.BigQuery.V2.Model.TableFieldSchemaCategories)
   field(:description)
   field(:fields, as: GoogleApi.BigQuery.V2.Model.TableFieldSchema, type: :list)
   field(:mode)

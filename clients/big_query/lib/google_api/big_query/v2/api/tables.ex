@@ -71,9 +71,9 @@ defmodule GoogleApi.BigQuery.V2.Api.Tables do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/bigquery/v2/projects/{projectId}/datasets/{datasetId}/tables/{tableId}", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "datasetId" => URI.encode_www_form(dataset_id),
-        "tableId" => URI.encode_www_form(table_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "datasetId" => URI.encode(dataset_id, &URI.char_unreserved?/1),
+        "tableId" => URI.encode(table_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -131,9 +131,9 @@ defmodule GoogleApi.BigQuery.V2.Api.Tables do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/bigquery/v2/projects/{projectId}/datasets/{datasetId}/tables/{tableId}", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "datasetId" => URI.encode_www_form(dataset_id),
-        "tableId" => URI.encode_www_form(table_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "datasetId" => URI.encode(dataset_id, &URI.char_unreserved?/1),
+        "tableId" => URI.encode(table_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -189,8 +189,8 @@ defmodule GoogleApi.BigQuery.V2.Api.Tables do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/bigquery/v2/projects/{projectId}/datasets/{datasetId}/tables", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "datasetId" => URI.encode_www_form(dataset_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "datasetId" => URI.encode(dataset_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -242,8 +242,8 @@ defmodule GoogleApi.BigQuery.V2.Api.Tables do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/bigquery/v2/projects/{projectId}/datasets/{datasetId}/tables", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "datasetId" => URI.encode_www_form(dataset_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "datasetId" => URI.encode(dataset_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -301,9 +301,9 @@ defmodule GoogleApi.BigQuery.V2.Api.Tables do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/bigquery/v2/projects/{projectId}/datasets/{datasetId}/tables/{tableId}", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "datasetId" => URI.encode_www_form(dataset_id),
-        "tableId" => URI.encode_www_form(table_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "datasetId" => URI.encode(dataset_id, &URI.char_unreserved?/1),
+        "tableId" => URI.encode(table_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -361,9 +361,9 @@ defmodule GoogleApi.BigQuery.V2.Api.Tables do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/bigquery/v2/projects/{projectId}/datasets/{datasetId}/tables/{tableId}", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "datasetId" => URI.encode_www_form(dataset_id),
-        "tableId" => URI.encode_www_form(table_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "datasetId" => URI.encode(dataset_id, &URI.char_unreserved?/1),
+        "tableId" => URI.encode(table_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

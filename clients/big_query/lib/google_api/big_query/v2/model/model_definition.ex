@@ -23,18 +23,18 @@ defmodule GoogleApi.BigQuery.V2.Model.ModelDefinition do
   ## Attributes
 
   - modelOptions (ModelDefinitionModelOptions):  Defaults to: `null`.
-  - trainingRuns ([TrainingRun]): [Output-only, Beta] Information about ml training runs, each training run comprises of multiple iterations and there may be multiple training runs for the model if warm start is used or if a user decides to continue a previously cancelled query. Defaults to: `null`.
+  - trainingRuns ([BqmlTrainingRun]): [Output-only, Beta] Information about ml training runs, each training run comprises of multiple iterations and there may be multiple training runs for the model if warm start is used or if a user decides to continue a previously cancelled query. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :modelOptions => GoogleApi.BigQuery.V2.Model.ModelDefinitionModelOptions.t(),
-          :trainingRuns => list(GoogleApi.BigQuery.V2.Model.TrainingRun.t())
+          :trainingRuns => list(GoogleApi.BigQuery.V2.Model.BqmlTrainingRun.t())
         }
 
   field(:modelOptions, as: GoogleApi.BigQuery.V2.Model.ModelDefinitionModelOptions)
-  field(:trainingRuns, as: GoogleApi.BigQuery.V2.Model.TrainingRun, type: :list)
+  field(:trainingRuns, as: GoogleApi.BigQuery.V2.Model.BqmlTrainingRun, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.ModelDefinition do
