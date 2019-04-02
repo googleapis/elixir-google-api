@@ -63,8 +63,8 @@ defmodule GoogleApi.Discovery.V1.Api.Apis do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/apis/{api}/{version}/rest", %{
-        "api" => URI.encode_www_form(api),
-        "version" => URI.encode_www_form(version)
+        "api" => URI.encode(api, &URI.char_unreserved?/1),
+        "version" => URI.encode(version, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
