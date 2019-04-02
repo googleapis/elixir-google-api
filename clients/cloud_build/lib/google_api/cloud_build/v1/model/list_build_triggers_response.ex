@@ -22,15 +22,18 @@ defmodule GoogleApi.CloudBuild.V1.Model.ListBuildTriggersResponse do
 
   ## Attributes
 
+  - nextPageToken (String.t): Token to receive the next page of results. Defaults to: `null`.
   - triggers ([BuildTrigger]): &#x60;BuildTriggers&#x60; for the project, sorted by &#x60;create_time&#x60; descending. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :nextPageToken => any(),
           :triggers => list(GoogleApi.CloudBuild.V1.Model.BuildTrigger.t())
         }
 
+  field(:nextPageToken)
   field(:triggers, as: GoogleApi.CloudBuild.V1.Model.BuildTrigger, type: :list)
 end
 
