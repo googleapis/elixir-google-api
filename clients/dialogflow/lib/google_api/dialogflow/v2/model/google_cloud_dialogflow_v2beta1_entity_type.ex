@@ -25,10 +25,10 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1EntityType d
   - autoExpansionMode (String.t): Optional. Indicates whether the entity type can be automatically expanded. Defaults to: `null`.
     - Enum - one of [AUTO_EXPANSION_MODE_UNSPECIFIED, AUTO_EXPANSION_MODE_DEFAULT]
   - displayName (String.t): Required. The name of the entity type. Defaults to: `null`.
-  - entities ([GoogleCloudDialogflowV2beta1EntityTypeEntity]): Optional. The collection of entities associated with the entity type. Defaults to: `null`.
+  - entities ([GoogleCloudDialogflowV2beta1EntityTypeEntity]): Optional. The collection of entity entries associated with the entity type. Defaults to: `null`.
   - kind (String.t): Required. Indicates the kind of entity type. Defaults to: `null`.
     - Enum - one of [KIND_UNSPECIFIED, KIND_MAP, KIND_LIST]
-  - name (String.t): Required for all methods except &#x60;create&#x60; (&#x60;create&#x60; populates the name automatically. The unique identifier of the entity type. Format: &#x60;projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;&#x60;. Defaults to: `null`.
+  - name (String.t): The unique identifier of the entity type. Required for EntityTypes.UpdateEntityType and EntityTypes.BatchUpdateEntityTypes methods. Format: &#x60;projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;&#x60;. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

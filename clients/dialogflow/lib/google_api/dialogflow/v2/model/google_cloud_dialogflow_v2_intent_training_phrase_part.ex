@@ -22,10 +22,10 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentTrainingPhr
 
   ## Attributes
 
-  - alias (String.t): Optional. The parameter name for the value extracted from the annotated part of the example. Defaults to: `null`.
-  - entityType (String.t): Optional. The entity type name prefixed with &#x60;@&#x60;. This field is required for the annotated part of the text and applies only to examples. Defaults to: `null`.
-  - text (String.t): Required. The text corresponding to the example or template, if there are no annotations. For annotated examples, it is the text for one of the example&#39;s parts. Defaults to: `null`.
-  - userDefined (boolean()): Optional. Indicates whether the text was manually annotated by the developer. Defaults to: `null`.
+  - alias (String.t): Optional. The parameter name for the value extracted from the annotated part of the example. This field is required for annotated parts of the training phrase. Defaults to: `null`.
+  - entityType (String.t): Optional. The entity type name prefixed with &#x60;@&#x60;. This field is required for annotated parts of the training phrase. Defaults to: `null`.
+  - text (String.t): Required. The text for this part. Defaults to: `null`.
+  - userDefined (boolean()): Optional. Indicates whether the text was manually annotated. This field is set to true when the Dialogflow Console is used to manually annotate the part. When creating an annotated part with the API, you must set this to true. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

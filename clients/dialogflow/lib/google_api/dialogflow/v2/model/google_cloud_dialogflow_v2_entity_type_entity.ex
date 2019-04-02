@@ -18,12 +18,12 @@
 
 defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EntityTypeEntity do
   @moduledoc """
-  Optional. Represents an entity.
+  An **entity entry** for an associated entity type.
 
   ## Attributes
 
-  - synonyms ([String.t]): Required. A collection of synonyms. For &#x60;KIND_LIST&#x60; entity types this must contain exactly one synonym equal to &#x60;value&#x60;. Defaults to: `null`.
-  - value (String.t): Required. For &#x60;KIND_MAP&#x60; entity types:   A canonical name to be used in place of synonyms. For &#x60;KIND_LIST&#x60; entity types:   A string that can contain references to other entity types (with or   without aliases). Defaults to: `null`.
+  - synonyms ([String.t]): Required. A collection of value synonyms. For example, if the entity type is *vegetable*, and &#x60;value&#x60; is *scallions*, a synonym could be *green onions*.  For &#x60;KIND_LIST&#x60; entity types:  *   This collection must contain exactly one synonym equal to &#x60;value&#x60;. Defaults to: `null`.
+  - value (String.t): Required. The primary value associated with this entity entry. For example, if the entity type is *vegetable*, the value could be *scallions*.  For &#x60;KIND_MAP&#x60; entity types:  *   A canonical value to be used in place of synonyms.  For &#x60;KIND_LIST&#x60; entity types:  *   A string that can contain references to other entity types (with or     without aliases). Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
