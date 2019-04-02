@@ -83,8 +83,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/workflowTemplates", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "locationsId" => URI.encode_www_form(locations_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -157,9 +157,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/workflowTemplates/{workflowTemplatesId}",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "workflowTemplatesId" => URI.encode_www_form(workflow_templates_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "workflowTemplatesId" => URI.encode(workflow_templates_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -233,9 +233,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/workflowTemplates/{workflowTemplatesId}",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "workflowTemplatesId" => URI.encode_www_form(workflow_templates_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "workflowTemplatesId" => URI.encode(workflow_templates_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -309,9 +309,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/workflowTemplates/{workflowTemplatesId}:getIamPolicy",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "workflowTemplatesId" => URI.encode_www_form(workflow_templates_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "workflowTemplatesId" => URI.encode(workflow_templates_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -385,9 +385,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/workflowTemplates/{workflowTemplatesId}:instantiate",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "workflowTemplatesId" => URI.encode_www_form(workflow_templates_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "workflowTemplatesId" => URI.encode(workflow_templates_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -460,8 +460,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/workflowTemplates:instantiateInline",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -534,8 +534,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/workflowTemplates", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "locationsId" => URI.encode_www_form(locations_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -610,9 +610,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/workflowTemplates/{workflowTemplatesId}:setIamPolicy",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "workflowTemplatesId" => URI.encode_www_form(workflow_templates_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "workflowTemplatesId" => URI.encode(workflow_templates_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -688,9 +688,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/workflowTemplates/{workflowTemplatesId}:testIamPermissions",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "workflowTemplatesId" => URI.encode_www_form(workflow_templates_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "workflowTemplatesId" => URI.encode(workflow_templates_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -766,9 +766,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/locations/{locationsId}/workflowTemplates/{workflowTemplatesId}",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "workflowTemplatesId" => URI.encode_www_form(workflow_templates_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "workflowTemplatesId" => URI.encode(workflow_templates_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -839,8 +839,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectId}/regions/{region}/clusters", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "region" => URI.encode_www_form(region)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "region" => URI.encode(region, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -913,9 +913,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v1/projects/{projectId}/regions/{region}/clusters/{clusterName}", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "region" => URI.encode_www_form(region),
-        "clusterName" => URI.encode_www_form(cluster_name)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "region" => URI.encode(region, &URI.char_unreserved?/1),
+        "clusterName" => URI.encode(cluster_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -988,9 +988,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectId}/regions/{region}/clusters/{clusterName}:diagnose",
         %{
-          "projectId" => URI.encode_www_form(project_id),
-          "region" => URI.encode_www_form(region),
-          "clusterName" => URI.encode_www_form(cluster_name)
+          "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+          "region" => URI.encode(region, &URI.char_unreserved?/1),
+          "clusterName" => URI.encode(cluster_name, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1060,9 +1060,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectId}/regions/{region}/clusters/{clusterName}", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "region" => URI.encode_www_form(region),
-        "clusterName" => URI.encode_www_form(cluster_name)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "region" => URI.encode(region, &URI.char_unreserved?/1),
+        "clusterName" => URI.encode(cluster_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1135,9 +1135,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/regions/{regionsId}/clusters/{clustersId}:getIamPolicy",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "regionsId" => URI.encode_www_form(regions_id),
-          "clustersId" => URI.encode_www_form(clusters_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1),
+          "clustersId" => URI.encode(clusters_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1210,8 +1210,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectId}/regions/{region}/clusters", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "region" => URI.encode_www_form(region)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "region" => URI.encode(region, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1288,9 +1288,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/v1/projects/{projectId}/regions/{region}/clusters/{clusterName}", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "region" => URI.encode_www_form(region),
-        "clusterName" => URI.encode_www_form(cluster_name)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "region" => URI.encode(region, &URI.char_unreserved?/1),
+        "clusterName" => URI.encode(cluster_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1363,9 +1363,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/regions/{regionsId}/clusters/{clustersId}:setIamPolicy",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "regionsId" => URI.encode_www_form(regions_id),
-          "clustersId" => URI.encode_www_form(clusters_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1),
+          "clustersId" => URI.encode(clusters_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1441,9 +1441,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/regions/{regionsId}/clusters/{clustersId}:testIamPermissions",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "regionsId" => URI.encode_www_form(regions_id),
-          "clustersId" => URI.encode_www_form(clusters_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1),
+          "clustersId" => URI.encode(clusters_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1517,9 +1517,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectId}/regions/{region}/jobs/{jobId}:cancel", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "region" => URI.encode_www_form(region),
-        "jobId" => URI.encode_www_form(job_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "region" => URI.encode(region, &URI.char_unreserved?/1),
+        "jobId" => URI.encode(job_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1588,9 +1588,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v1/projects/{projectId}/regions/{region}/jobs/{jobId}", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "region" => URI.encode_www_form(region),
-        "jobId" => URI.encode_www_form(job_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "region" => URI.encode(region, &URI.char_unreserved?/1),
+        "jobId" => URI.encode(job_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1659,9 +1659,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectId}/regions/{region}/jobs/{jobId}", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "region" => URI.encode_www_form(region),
-        "jobId" => URI.encode_www_form(job_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "region" => URI.encode(region, &URI.char_unreserved?/1),
+        "jobId" => URI.encode(job_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1734,9 +1734,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/regions/{regionsId}/jobs/{jobsId}:getIamPolicy",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "regionsId" => URI.encode_www_form(regions_id),
-          "jobsId" => URI.encode_www_form(jobs_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1),
+          "jobsId" => URI.encode(jobs_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1809,8 +1809,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectId}/regions/{region}/jobs", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "region" => URI.encode_www_form(region)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "region" => URI.encode(region, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1883,9 +1883,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/v1/projects/{projectId}/regions/{region}/jobs/{jobId}", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "region" => URI.encode_www_form(region),
-        "jobId" => URI.encode_www_form(job_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "region" => URI.encode(region, &URI.char_unreserved?/1),
+        "jobId" => URI.encode(job_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1958,9 +1958,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/regions/{regionsId}/jobs/{jobsId}:setIamPolicy",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "regionsId" => URI.encode_www_form(regions_id),
-          "jobsId" => URI.encode_www_form(jobs_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1),
+          "jobsId" => URI.encode(jobs_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2029,8 +2029,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectId}/regions/{region}/jobs:submit", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "region" => URI.encode_www_form(region)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "region" => URI.encode(region, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2105,9 +2105,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/regions/{regionsId}/jobs/{jobsId}:testIamPermissions",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "regionsId" => URI.encode_www_form(regions_id),
-          "jobsId" => URI.encode_www_form(jobs_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1),
+          "jobsId" => URI.encode(jobs_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2181,9 +2181,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/regions/{regionsId}/operations/{operationsId}:cancel",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "regionsId" => URI.encode_www_form(regions_id),
-          "operationsId" => URI.encode_www_form(operations_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1),
+          "operationsId" => URI.encode(operations_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2253,9 +2253,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v1/projects/{projectsId}/regions/{regionsId}/operations/{operationsId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "regionsId" => URI.encode_www_form(regions_id),
-        "operationsId" => URI.encode_www_form(operations_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1),
+        "operationsId" => URI.encode(operations_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2324,9 +2324,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectsId}/regions/{regionsId}/operations/{operationsId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "regionsId" => URI.encode_www_form(regions_id),
-        "operationsId" => URI.encode_www_form(operations_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1),
+        "operationsId" => URI.encode(operations_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2399,9 +2399,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/regions/{regionsId}/operations/{operationsId}:getIamPolicy",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "regionsId" => URI.encode_www_form(regions_id),
-          "operationsId" => URI.encode_www_form(operations_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1),
+          "operationsId" => URI.encode(operations_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2475,8 +2475,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectsId}/regions/{regionsId}/operations", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "regionsId" => URI.encode_www_form(regions_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2549,9 +2549,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/regions/{regionsId}/operations/{operationsId}:setIamPolicy",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "regionsId" => URI.encode_www_form(regions_id),
-          "operationsId" => URI.encode_www_form(operations_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1),
+          "operationsId" => URI.encode(operations_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2627,9 +2627,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/regions/{regionsId}/operations/{operationsId}:testIamPermissions",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "regionsId" => URI.encode_www_form(regions_id),
-          "operationsId" => URI.encode_www_form(operations_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1),
+          "operationsId" => URI.encode(operations_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2700,8 +2700,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectsId}/regions/{regionsId}/workflowTemplates", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "regionsId" => URI.encode_www_form(regions_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2774,9 +2774,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/regions/{regionsId}/workflowTemplates/{workflowTemplatesId}",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "regionsId" => URI.encode_www_form(regions_id),
-          "workflowTemplatesId" => URI.encode_www_form(workflow_templates_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1),
+          "workflowTemplatesId" => URI.encode(workflow_templates_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2850,9 +2850,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/regions/{regionsId}/workflowTemplates/{workflowTemplatesId}",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "regionsId" => URI.encode_www_form(regions_id),
-          "workflowTemplatesId" => URI.encode_www_form(workflow_templates_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1),
+          "workflowTemplatesId" => URI.encode(workflow_templates_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2926,9 +2926,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/regions/{regionsId}/workflowTemplates/{workflowTemplatesId}:getIamPolicy",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "regionsId" => URI.encode_www_form(regions_id),
-          "workflowTemplatesId" => URI.encode_www_form(workflow_templates_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1),
+          "workflowTemplatesId" => URI.encode(workflow_templates_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -3002,9 +3002,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/regions/{regionsId}/workflowTemplates/{workflowTemplatesId}:instantiate",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "regionsId" => URI.encode_www_form(regions_id),
-          "workflowTemplatesId" => URI.encode_www_form(workflow_templates_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1),
+          "workflowTemplatesId" => URI.encode(workflow_templates_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -3077,8 +3077,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/regions/{regionsId}/workflowTemplates:instantiateInline",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "regionsId" => URI.encode_www_form(regions_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -3151,8 +3151,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectsId}/regions/{regionsId}/workflowTemplates", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "regionsId" => URI.encode_www_form(regions_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -3227,9 +3227,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/regions/{regionsId}/workflowTemplates/{workflowTemplatesId}:setIamPolicy",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "regionsId" => URI.encode_www_form(regions_id),
-          "workflowTemplatesId" => URI.encode_www_form(workflow_templates_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1),
+          "workflowTemplatesId" => URI.encode(workflow_templates_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -3305,9 +3305,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/regions/{regionsId}/workflowTemplates/{workflowTemplatesId}:testIamPermissions",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "regionsId" => URI.encode_www_form(regions_id),
-          "workflowTemplatesId" => URI.encode_www_form(workflow_templates_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1),
+          "workflowTemplatesId" => URI.encode(workflow_templates_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -3383,9 +3383,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/regions/{regionsId}/workflowTemplates/{workflowTemplatesId}",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "regionsId" => URI.encode_www_form(regions_id),
-          "workflowTemplatesId" => URI.encode_www_form(workflow_templates_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1),
+          "workflowTemplatesId" => URI.encode(workflow_templates_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
