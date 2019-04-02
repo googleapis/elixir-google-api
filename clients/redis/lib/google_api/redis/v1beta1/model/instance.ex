@@ -38,7 +38,7 @@ defmodule GoogleApi.Redis.V1beta1.Model.Instance do
   - redisVersion (String.t): Optional. The version of Redis software. If not provided, latest supported version will be used. Updating the version will perform an upgrade/downgrade to the new version. Currently, the supported values are &#x60;REDIS_3_2&#x60; for Redis 3.2. Defaults to: `null`.
   - reservedIpRange (String.t): Optional. The CIDR range of internal addresses that are reserved for this instance. If not provided, the service will choose an unused /29 block, for example, 10.0.0.0/29 or 192.168.0.0/29. Ranges must be unique and non-overlapping with existing subnets in an authorized network. Defaults to: `null`.
   - state (String.t): Output only. The current state of this instance. Defaults to: `null`.
-    - Enum - one of [STATE_UNSPECIFIED, CREATING, READY, UPDATING, DELETING, REPAIRING, MAINTENANCE, IMPORTING]
+    - Enum - one of [STATE_UNSPECIFIED, CREATING, READY, UPDATING, DELETING, REPAIRING, MAINTENANCE, IMPORTING, FAILING_OVER]
   - statusMessage (String.t): Output only. Additional information about the current status of this instance, if available. Defaults to: `null`.
   - tier (String.t): Required. The service tier of the instance. Defaults to: `null`.
     - Enum - one of [TIER_UNSPECIFIED, BASIC, STANDARD_HA]
