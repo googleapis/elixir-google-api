@@ -69,8 +69,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/projects/{project}/instances/{instance}/addServerCa", %{
-        "project" => URI.encode_www_form(project),
-        "instance" => URI.encode_www_form(instance)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -120,8 +120,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/projects/{project}/instances/{instance}/clone", %{
-        "project" => URI.encode_www_form(project),
-        "instance" => URI.encode_www_form(instance)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -169,8 +169,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/projects/{project}/instances/{instance}", %{
-        "project" => URI.encode_www_form(project),
-        "instance" => URI.encode_www_form(instance)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -226,8 +226,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/projects/{project}/instances/{instance}/demoteMaster", %{
-        "project" => URI.encode_www_form(project),
-        "instance" => URI.encode_www_form(instance)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -277,8 +277,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/projects/{project}/instances/{instance}/export", %{
-        "project" => URI.encode_www_form(project),
-        "instance" => URI.encode_www_form(instance)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -328,8 +328,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/projects/{project}/instances/{instance}/failover", %{
-        "project" => URI.encode_www_form(project),
-        "instance" => URI.encode_www_form(instance)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -377,8 +377,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/projects/{project}/instances/{instance}", %{
-        "project" => URI.encode_www_form(project),
-        "instance" => URI.encode_www_form(instance)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -428,8 +428,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/projects/{project}/instances/{instance}/import", %{
-        "project" => URI.encode_www_form(project),
-        "instance" => URI.encode_www_form(instance)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -478,7 +478,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/projects/{project}/instances", %{
-        "project" => URI.encode_www_form(project)
+        "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -532,7 +532,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/projects/{project}/instances", %{
-        "project" => URI.encode_www_form(project)
+        "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -589,8 +589,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/projects/{project}/instances/{instance}/listServerCas", %{
-        "project" => URI.encode_www_form(project),
-        "instance" => URI.encode_www_form(instance)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -642,8 +642,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/projects/{project}/instances/{instance}", %{
-        "project" => URI.encode_www_form(project),
-        "instance" => URI.encode_www_form(instance)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -697,8 +697,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/projects/{project}/instances/{instance}/promoteReplica", %{
-        "project" => URI.encode_www_form(project),
-        "instance" => URI.encode_www_form(instance)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -752,8 +752,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/projects/{project}/instances/{instance}/resetSslConfig", %{
-        "project" => URI.encode_www_form(project),
-        "instance" => URI.encode_www_form(instance)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -801,8 +801,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/projects/{project}/instances/{instance}/restart", %{
-        "project" => URI.encode_www_form(project),
-        "instance" => URI.encode_www_form(instance)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -858,8 +858,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/projects/{project}/instances/{instance}/restoreBackup", %{
-        "project" => URI.encode_www_form(project),
-        "instance" => URI.encode_www_form(instance)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -915,8 +915,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/projects/{project}/instances/{instance}/rotateServerCa", %{
-        "project" => URI.encode_www_form(project),
-        "instance" => URI.encode_www_form(instance)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -970,8 +970,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/projects/{project}/instances/{instance}/startReplica", %{
-        "project" => URI.encode_www_form(project),
-        "instance" => URI.encode_www_form(instance)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1019,8 +1019,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/projects/{project}/instances/{instance}/stopReplica", %{
-        "project" => URI.encode_www_form(project),
-        "instance" => URI.encode_www_form(instance)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1070,8 +1070,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/projects/{project}/instances/{instance}/truncateLog", %{
-        "project" => URI.encode_www_form(project),
-        "instance" => URI.encode_www_form(instance)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1121,8 +1121,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/projects/{project}/instances/{instance}", %{
-        "project" => URI.encode_www_form(project),
-        "instance" => URI.encode_www_form(instance)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

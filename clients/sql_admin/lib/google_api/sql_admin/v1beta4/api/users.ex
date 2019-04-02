@@ -79,8 +79,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Users do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/projects/{project}/instances/{instance}/users", %{
-        "project" => URI.encode_www_form(project),
-        "instance" => URI.encode_www_form(instance)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :host, host)
       |> Request.add_param(:query, :name, name)
@@ -132,8 +132,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Users do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/projects/{project}/instances/{instance}/users", %{
-        "project" => URI.encode_www_form(project),
-        "instance" => URI.encode_www_form(instance)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -181,8 +181,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Users do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/projects/{project}/instances/{instance}/users", %{
-        "project" => URI.encode_www_form(project),
-        "instance" => URI.encode_www_form(instance)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -235,8 +235,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Users do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/projects/{project}/instances/{instance}/users", %{
-        "project" => URI.encode_www_form(project),
-        "instance" => URI.encode_www_form(instance)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :name, name)
       |> Request.add_optional_params(optional_params_config, optional_params)
