@@ -28,8 +28,10 @@ defmodule GoogleApi.Compute.V1.Model.Backend do
   - description (String.t): An optional description of this resource. Provide this property when you create the resource. Defaults to: `null`.
   - group (String.t): The fully-qualified URL of an Instance Group or Network Endpoint Group resource. In case of instance group this defines the list of instances that serve traffic. Member virtual machine instances from each instance group must live in the same zone as the instance group itself. No two backends in a backend service are allowed to use same Instance Group resource.  For Network Endpoint Groups this defines list of endpoints. All endpoints of Network Endpoint Group must be hosted on instances located in the same zone as the Network Endpoint Group.  Backend service can not contain mix of Instance Group and Network Endpoint Group backends.  Note that you must specify an Instance Group or Network Endpoint Group resource using the fully-qualified URL, rather than a partial URL.  When the BackendService has load balancing scheme INTERNAL, the instance group must be within the same region as the BackendService. Network Endpoint Groups are not supported for INTERNAL load balancing scheme. Defaults to: `null`.
   - maxConnections (integer()): The max number of simultaneous connections for the group. Can be used with either CONNECTION or UTILIZATION balancing modes. For CONNECTION mode, either maxConnections or maxConnectionsPerInstance must be set.  This cannot be used for internal load balancing. Defaults to: `null`.
+  - maxConnectionsPerEndpoint (integer()): The max number of simultaneous connections that a single backend network endpoint can handle. This is used to calculate the capacity of the group. Can be used in either CONNECTION or UTILIZATION balancing modes. For CONNECTION mode, either maxConnections or maxConnectionsPerEndpoint must be set.  This cannot be used for internal load balancing. Defaults to: `null`.
   - maxConnectionsPerInstance (integer()): The max number of simultaneous connections that a single backend instance can handle. This is used to calculate the capacity of the group. Can be used in either CONNECTION or UTILIZATION balancing modes. For CONNECTION mode, either maxConnections or maxConnectionsPerInstance must be set.  This cannot be used for internal load balancing. Defaults to: `null`.
   - maxRate (integer()): The max requests per second (RPS) of the group. Can be used with either RATE or UTILIZATION balancing modes, but required if RATE mode. For RATE mode, either maxRate or maxRatePerInstance must be set.  This cannot be used for internal load balancing. Defaults to: `null`.
+  - maxRatePerEndpoint (float()): The max requests per second (RPS) that a single backend network endpoint can handle. This is used to calculate the capacity of the group. Can be used in either balancing mode. For RATE mode, either maxRate or maxRatePerEndpoint must be set.  This cannot be used for internal load balancing. Defaults to: `null`.
   - maxRatePerInstance (float()): The max requests per second (RPS) that a single backend instance can handle. This is used to calculate the capacity of the group. Can be used in either balancing mode. For RATE mode, either maxRate or maxRatePerInstance must be set.  This cannot be used for internal load balancing. Defaults to: `null`.
   - maxUtilization (float()): Used when balancingMode is UTILIZATION. This ratio defines the CPU utilization target for the group. The default is 0.8. Valid range is [0.0, 1.0].  This cannot be used for internal load balancing. Defaults to: `null`.
   """
@@ -42,8 +44,10 @@ defmodule GoogleApi.Compute.V1.Model.Backend do
           :description => any(),
           :group => any(),
           :maxConnections => any(),
+          :maxConnectionsPerEndpoint => any(),
           :maxConnectionsPerInstance => any(),
           :maxRate => any(),
+          :maxRatePerEndpoint => any(),
           :maxRatePerInstance => any(),
           :maxUtilization => any()
         }
@@ -53,8 +57,10 @@ defmodule GoogleApi.Compute.V1.Model.Backend do
   field(:description)
   field(:group)
   field(:maxConnections)
+  field(:maxConnectionsPerEndpoint)
   field(:maxConnectionsPerInstance)
   field(:maxRate)
+  field(:maxRatePerEndpoint)
   field(:maxRatePerInstance)
   field(:maxUtilization)
 end

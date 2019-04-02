@@ -25,6 +25,8 @@ defmodule GoogleApi.Compute.V1.Model.Http2HealthCheck do
   - host (String.t): The value of the host header in the HTTP/2 health check request. If left empty (default value), the IP on behalf of which this health check is performed will be used. Defaults to: `null`.
   - port (integer()): The TCP port number for the health check request. The default value is 443. Valid values are 1 through 65535. Defaults to: `null`.
   - portName (String.t): Port name as defined in InstanceGroup#NamedPort#name. If both port and port_name are defined, port takes precedence. Defaults to: `null`.
+  - portSpecification (String.t): Specifies how port is selected for health checking, can be one of following values: USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking.   If not specified, HTTP2 health check follows behavior specified in port and portName fields. Defaults to: `null`.
+    - Enum - one of [USE_FIXED_PORT, USE_NAMED_PORT, USE_SERVING_PORT]
   - proxyHeader (String.t): Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE. Defaults to: `null`.
     - Enum - one of [NONE, PROXY_V1]
   - requestPath (String.t): The request path of the HTTP/2 health check request. The default value is /. Defaults to: `null`.
@@ -37,6 +39,7 @@ defmodule GoogleApi.Compute.V1.Model.Http2HealthCheck do
           :host => any(),
           :port => any(),
           :portName => any(),
+          :portSpecification => any(),
           :proxyHeader => any(),
           :requestPath => any(),
           :response => any()
@@ -45,6 +48,7 @@ defmodule GoogleApi.Compute.V1.Model.Http2HealthCheck do
   field(:host)
   field(:port)
   field(:portName)
+  field(:portSpecification)
   field(:proxyHeader)
   field(:requestPath)
   field(:response)

@@ -34,6 +34,7 @@ defmodule GoogleApi.Compute.V1.Model.InstanceProperties do
   - networkInterfaces ([NetworkInterface]): An array of network access configurations for this interface. Defaults to: `null`.
   - scheduling (Scheduling): Specifies the scheduling options for the instances that are created from this template. Defaults to: `null`.
   - serviceAccounts ([ServiceAccount]): A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from this template. Use metadata queries to obtain the access tokens for these instances. Defaults to: `null`.
+  - shieldedInstanceConfig (ShieldedInstanceConfig):  Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -50,7 +51,8 @@ defmodule GoogleApi.Compute.V1.Model.InstanceProperties do
           :minCpuPlatform => any(),
           :networkInterfaces => list(GoogleApi.Compute.V1.Model.NetworkInterface.t()),
           :scheduling => GoogleApi.Compute.V1.Model.Scheduling.t(),
-          :serviceAccounts => list(GoogleApi.Compute.V1.Model.ServiceAccount.t())
+          :serviceAccounts => list(GoogleApi.Compute.V1.Model.ServiceAccount.t()),
+          :shieldedInstanceConfig => GoogleApi.Compute.V1.Model.ShieldedInstanceConfig.t()
         }
 
   field(:tags, as: GoogleApi.Compute.V1.Model.Tags)
@@ -65,6 +67,7 @@ defmodule GoogleApi.Compute.V1.Model.InstanceProperties do
   field(:networkInterfaces, as: GoogleApi.Compute.V1.Model.NetworkInterface, type: :list)
   field(:scheduling, as: GoogleApi.Compute.V1.Model.Scheduling)
   field(:serviceAccounts, as: GoogleApi.Compute.V1.Model.ServiceAccount, type: :list)
+  field(:shieldedInstanceConfig, as: GoogleApi.Compute.V1.Model.ShieldedInstanceConfig)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.InstanceProperties do

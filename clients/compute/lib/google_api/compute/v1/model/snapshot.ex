@@ -42,6 +42,7 @@ defmodule GoogleApi.Compute.V1.Model.Snapshot do
   - storageBytes (String.t): [Output Only] A size of the storage used by the snapshot. As snapshots share storage, this number is expected to change with snapshot creation/deletion. Defaults to: `null`.
   - storageBytesStatus (String.t): [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date. Defaults to: `null`.
     - Enum - one of [UPDATING, UP_TO_DATE]
+  - storageLocations ([String.t]): GCS bucket storage location of the snapshot (regional or multi-regional). Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -64,7 +65,8 @@ defmodule GoogleApi.Compute.V1.Model.Snapshot do
           :sourceDiskId => any(),
           :status => any(),
           :storageBytes => any(),
-          :storageBytesStatus => any()
+          :storageBytesStatus => any(),
+          :storageLocations => list(any())
         }
 
   field(:creationTimestamp)
@@ -85,6 +87,7 @@ defmodule GoogleApi.Compute.V1.Model.Snapshot do
   field(:status)
   field(:storageBytes)
   field(:storageBytesStatus)
+  field(:storageLocations, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.Snapshot do

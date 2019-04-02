@@ -43,6 +43,8 @@ defmodule GoogleApi.Compute.V1.Model.Instance do
   - scheduling (Scheduling): Sets the scheduling options for this instance. Defaults to: `null`.
   - selfLink (String.t): [Output Only] Server-defined URL for this resource. Defaults to: `null`.
   - serviceAccounts ([ServiceAccount]): A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported.  Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information. Defaults to: `null`.
+  - shieldedInstanceConfig (ShieldedInstanceConfig):  Defaults to: `null`.
+  - shieldedInstanceIntegrityPolicy (ShieldedInstanceIntegrityPolicy):  Defaults to: `null`.
   - startRestricted (boolean()): [Output Only] Whether a VM has been restricted for start because Compute Engine has detected suspicious activity. Defaults to: `null`.
   - status (String.t): [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, STOPPED, SUSPENDING, SUSPENDED, and TERMINATED. Defaults to: `null`.
     - Enum - one of [PROVISIONING, REPAIRING, RUNNING, STAGING, STOPPED, STOPPING, SUSPENDED, SUSPENDING, TERMINATED]
@@ -74,6 +76,9 @@ defmodule GoogleApi.Compute.V1.Model.Instance do
           :scheduling => GoogleApi.Compute.V1.Model.Scheduling.t(),
           :selfLink => any(),
           :serviceAccounts => list(GoogleApi.Compute.V1.Model.ServiceAccount.t()),
+          :shieldedInstanceConfig => GoogleApi.Compute.V1.Model.ShieldedInstanceConfig.t(),
+          :shieldedInstanceIntegrityPolicy =>
+            GoogleApi.Compute.V1.Model.ShieldedInstanceIntegrityPolicy.t(),
           :startRestricted => any(),
           :status => any(),
           :statusMessage => any(),
@@ -101,6 +106,13 @@ defmodule GoogleApi.Compute.V1.Model.Instance do
   field(:scheduling, as: GoogleApi.Compute.V1.Model.Scheduling)
   field(:selfLink)
   field(:serviceAccounts, as: GoogleApi.Compute.V1.Model.ServiceAccount, type: :list)
+  field(:shieldedInstanceConfig, as: GoogleApi.Compute.V1.Model.ShieldedInstanceConfig)
+
+  field(
+    :shieldedInstanceIntegrityPolicy,
+    as: GoogleApi.Compute.V1.Model.ShieldedInstanceIntegrityPolicy
+  )
+
   field(:startRestricted)
   field(:status)
   field(:statusMessage)
