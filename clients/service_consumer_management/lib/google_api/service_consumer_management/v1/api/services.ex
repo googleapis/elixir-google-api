@@ -25,7 +25,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
-  Search tenancy units for a service.
+  Search tenancy units for a managed service.
 
   ## Parameters
 
@@ -43,9 +43,9 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :pageSize (integer()): The maximum number of results returned by this request. Currently, the default maximum is set to 1000. If page_size is not provided or the size provided is a number larger than 1000, it will be automatically set to 1000.  Optional.
+    - :pageSize (integer()): The maximum number of results returned by this request. Currently, the default maximum is set to 1000. If &#x60;page_size&#x60; isn&#39;t provided or the size provided is a number larger than 1000, it&#39;s automatically set to 1000.  Optional.
     - :pageToken (String.t): The continuation token, which is used to page through large result sets. To get the next page of results, set this parameter to the value of &#x60;nextPageToken&#x60; from the previous response.  Optional.
-    - :query (String.t): Set a query &#x60;{expression}&#x60; for querying tenancy units. Your &#x60;{expression}&#x60; must be in the format: &#x60;field_name&#x3D;literal_string&#x60;. The &#x60;field_name&#x60; is the name of the field you want to compare. Supported fields are &#x60;tenant_resources.tag&#x60; and &#x60;tenant_resources.resource&#x60;.  For example, to search tenancy units that contain at least one tenant resource with given tag &#39;xyz&#39;, use query &#x60;tenant_resources.tag&#x3D;xyz&#x60;. To search tenancy units that contain at least one tenant resource with given resource name &#39;projects/123456&#39;, use query &#x60;tenant_resources.resource&#x3D;projects/123456&#x60;.  Multiple expressions can be joined with &#x60;AND&#x60;s. Tenancy units must match all expressions to be included in the result set. For example, &#x60;tenant_resources.tag&#x3D;xyz AND tenant_resources.resource&#x3D;projects/123456&#x60;  Optional.
+    - :query (String.t): Set a query &#x60;{expression}&#x60; for querying tenancy units. Your &#x60;{expression}&#x60; must be in the format: &#x60;field_name&#x3D;literal_string&#x60;. The &#x60;field_name&#x60; is the name of the field you want to compare. Supported fields are &#x60;tenant_resources.tag&#x60; and &#x60;tenant_resources.resource&#x60;.  For example, to search tenancy units that contain at least one tenant resource with a given tag &#39;xyz&#39;, use the query &#x60;tenant_resources.tag&#x3D;xyz&#x60;. To search tenancy units that contain at least one tenant resource with a given resource name &#39;projects/123456&#39;, use the query &#x60;tenant_resources.resource&#x3D;projects/123456&#x60;.  Multiple expressions can be joined with &#x60;AND&#x60;s. Tenancy units must match all expressions to be included in the result set. For example, &#x60;tenant_resources.tag&#x3D;xyz AND tenant_resources.resource&#x3D;projects/123456&#x60;  Optional.
 
   ## Returns
 
@@ -94,7 +94,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
   end
 
   @doc """
-  Add a new tenant project to the tenancy unit. There can be at most 512 tenant projects in a tenancy unit. If there are previously failed &#x60;AddTenantProject&#x60; calls, you might need to call &#x60;RemoveTenantProject&#x60; first to clean them before you can make another &#x60;AddTenantProject&#x60; with the same tag. Operation&lt;response: Empty&gt;.
+  Add a new tenant project to the tenancy unit. There can be a maximum of 512 tenant projects in a tenancy unit. If there are previously failed &#x60;AddTenantProject&#x60; calls, you might need to call &#x60;RemoveTenantProject&#x60; first to resolve them before you can make another call to &#x60;AddTenantProject&#x60; with the same tag. Operation&lt;response: Empty&gt;.
 
   ## Parameters
 
@@ -163,7 +163,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
   end
 
   @doc """
-  Apply configuration to an existing tenant project. This project must exist in active state and have the original owner account. Caller must have the permission to add a project to the given tenancy unit. Configuration will be applied, but any existing settings on the project will not be modified. Specified policy bindings will be applied. Existing binding will not be modified. Specified services will be activated.   No service will be deactivated. New billing configuration will be applied if specified. Omit billing configuration to keep the existing one. Service account in the project will be created if previously non existing. Specified folder will be ignored, moving tenant project to a different folder is not supported. Operation fails if any of the steps fail, but no rollback of already applied configuration changes is attempted. Operation&lt;response: Empty&gt;.
+  Apply a configuration to an existing tenant project. This project must exist in an active state and have the original owner account. The caller must have permission to add a project to the given tenancy unit. The configuration is applied, but any existing settings on the project aren&#39;t modified. Specified policy bindings are applied. Existing bindings aren&#39;t modified. Specified services are activated. No service is deactivated. If specified, new billing configuration is applied. Omit a billing configuration to keep the existing one. A service account in the project is created if previously non existed. The specified folder is ignored, as moving a tenant project to a different folder isn&#39;t supported. The operation fails if any of the steps fail, but no rollback of already applied configuration changes is attempted. Operation&lt;response: Empty&gt;.
 
   ## Parameters
 
@@ -232,12 +232,12 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
   end
 
   @doc """
-  Attach an existing project to the tenancy unit as a new tenant resource. The project could be either the tenant project reserved by calling AddTenantProject under tenancy unit for the producer project of service, or from outside. Caller will be checked against the permission as if calling AddTenantProject on the same consumer. To trigger the attachement, the targeted tenant project must be in a folder. Please also make sure ServiceConsumerManagement service account is the owner of that project. Note that these two requirements are already met if the project is reserved through AddTenantProject. Operation&lt;response: Empty&gt;.
+  Attach an existing project to the tenancy unit as a new tenant resource. The project could either be the tenant project reserved by calling &#x60;AddTenantProject&#x60; under a tenancy unit of a service producer&#39;s project of a managed service, or from a separate project. The caller is checked against a set of permissions as if calling &#x60;AddTenantProject&#x60; on the same service consumer. To trigger the attachment, the targeted tenant project must be in a folder. Make sure the ServiceConsumerManagement service account is the owner of that project. These two requirements are already met if the project is reserved by calling &#x60;AddTenantProject&#x60;. Operation&lt;response: Empty&gt;.
 
   ## Parameters
 
   - connection (GoogleApi.ServiceConsumerManagement.V1.Connection): Connection to server
-  - name (String.t): Name of the tenancy unit that project will be attached to.
+  - name (String.t): Name of the tenancy unit that the project will be attached to.
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
@@ -306,7 +306,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
   ## Parameters
 
   - connection (GoogleApi.ServiceConsumerManagement.V1.Connection): Connection to server
-  - parent (String.t): services/{service}/{collection id}/{resource id} {collection id} is the cloud resource collection type representing the service consumer, for example &#39;projects&#39;, or &#39;organizations&#39;. {resource id} is the consumer numeric id, such as project number: &#39;123456&#39;. {service} the name of a service, for example &#39;service.googleapis.com&#39;. Enabled service binding using the new tenancy unit.
+  - parent (String.t): services/{service}/{collection id}/{resource id} {collection id} is the cloud resource collection type representing the service consumer, for example &#39;projects&#39;, or &#39;organizations&#39;. {resource id} is the consumer numeric id, such as project number: &#39;123456&#39;. {service} the name of a managed service, such as &#39;service.googleapis.com&#39;. Enables service binding using the new tenancy unit.
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
@@ -370,12 +370,81 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
   end
 
   @doc """
-  Find the tenancy unit for a service and consumer. This method should not be used in producers&#39; runtime path, for example finding the tenant project number when creating VMs. Producers should persist the tenant project information after the project is created.
+  Deletes the specified project resource identified by a tenant resource tag. The mothod removes a project lien with a &#39;TenantManager&#39; origin if that was added. It will then attempt to delete the project. If that operation fails, this method also fails. After the project has been deleted, the tenant resource state is set to DELETED.  To permanently remove resource metadata, call the &#x60;RemoveTenantProject&#x60; method. New resources with the same tag can&#39;t be added if there are existing resources in a DELETED state. Operation&lt;response: Empty&gt;.
 
   ## Parameters
 
   - connection (GoogleApi.ServiceConsumerManagement.V1.Connection): Connection to server
-  - parent (String.t): Service and consumer. Required. services/{service}/{collection id}/{resource id} {collection id} is the cloud resource collection type representing the service consumer, for example &#39;projects&#39;, or &#39;organizations&#39;. {resource id} is the consumer numeric id, such as project number: &#39;123456&#39;. {service} the name of a service, for example &#39;service.googleapis.com&#39;.
+  - name (String.t): Name of the tenancy unit. Such as &#39;services/service.googleapis.com/projects/12345/tenancyUnits/abcd&#39;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :body (DeleteTenantProjectRequest): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.ServiceConsumerManagement.V1.Model.Operation{}} on success
+  {:error, info} on failure
+  """
+  @spec serviceconsumermanagement_services_tenancy_units_delete_project(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.ServiceConsumerManagement.V1.Model.Operation.t()}
+          | {:error, Tesla.Env.t()}
+  def serviceconsumermanagement_services_tenancy_units_delete_project(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1/{+name}:deleteProject", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.ServiceConsumerManagement.V1.Model.Operation{}]
+    )
+  end
+
+  @doc """
+  Find the tenancy unit for a managed service and service consumer. This method shouldn&#39;t be used in a service producer&#39;s runtime path, for example to find the tenant project number when creating VMs. Service producers must persist the tenant project&#39;s information after the project is created.
+
+  ## Parameters
+
+  - connection (GoogleApi.ServiceConsumerManagement.V1.Connection): Connection to server
+  - parent (String.t): Managed service and service consumer. Required. services/{service}/{collection id}/{resource id} {collection id} is the cloud resource collection type representing the service consumer, for example &#39;projects&#39;, or &#39;organizations&#39;. {resource id} is the consumer numeric id, such as project number: &#39;123456&#39;. {service} the name of a service, such as &#39;service.googleapis.com&#39;.
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
@@ -443,7 +512,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
   end
 
   @doc """
-  Removes specified project resource identified by tenant resource tag. It will remove project lien with &#39;TenantManager&#39; origin if that was added. It will then attempt to delete the project. If that operation fails, this method fails. Calls to remove already removed or non-existent tenant project will succeed. After the project has been deleted, or if was already in DELETED state, resource metadata is permanently removed from the tenancy unit. Operation&lt;response: Empty&gt;.
+  Removes the specified project resource identified by a tenant resource tag. The method removes the project lien with &#39;TenantManager&#39; origin if that was added. It then attempts to delete the project. If that operation fails, this method also fails. Calls to remove already removed or non-existent tenant project succeed. After the project has been deleted, or if was already in a DELETED state, resource metadata is permanently removed from the tenancy unit. Operation&lt;response: Empty&gt;.
 
   ## Parameters
 
@@ -500,6 +569,75 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/{+name}:removeProject", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.ServiceConsumerManagement.V1.Model.Operation{}]
+    )
+  end
+
+  @doc """
+  Attempts to undelete a previously deleted tenant project. The project must be in a DELETED state. There are no guarantees that an undeleted project will be in a fully restored and functional state. Call the &#x60;ApplyTenantProjectConfig&#x60; method to update its configuration and then validate all managed service resources. Operation&lt;response: Empty&gt;.
+
+  ## Parameters
+
+  - connection (GoogleApi.ServiceConsumerManagement.V1.Connection): Connection to server
+  - name (String.t): Name of the tenancy unit. Such as &#39;services/service.googleapis.com/projects/12345/tenancyUnits/abcd&#39;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :body (UndeleteTenantProjectRequest): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.ServiceConsumerManagement.V1.Model.Operation{}} on success
+  {:error, info} on failure
+  """
+  @spec serviceconsumermanagement_services_tenancy_units_undelete_project(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.ServiceConsumerManagement.V1.Model.Operation.t()}
+          | {:error, Tesla.Env.t()}
+  def serviceconsumermanagement_services_tenancy_units_undelete_project(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1/{+name}:undeleteProject", %{
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)

@@ -18,11 +18,11 @@
 
 defmodule GoogleApi.ServiceConsumerManagement.V1.Model.ServiceAccountConfig do
   @moduledoc """
-  Describes service account configuration for the tenant project.
+  Describes the service account configuration for the tenant project.
 
   ## Attributes
 
-  - accountId (String.t): ID of the IAM service account to be created in tenant project. The email format of the service account will be \&quot;&lt;account-id&gt;@&lt;tenant-project-id&gt;.iam.gserviceaccount.com\&quot;. This account id has to be unique within tenant project and producers have to guarantee it. And it must be 6-30 characters long, and matches the regular expression &#x60;[a-z]([-a-z0-9]*[a-z0-9])&#x60;. Defaults to: `null`.
+  - accountId (String.t): ID of the IAM service account to be created in tenant project. The email format of the service account is \&quot;&lt;account-id&gt;@&lt;tenant-project-id&gt;.iam.gserviceaccount.com\&quot;. This account ID must be unique within tenant project and service producers have to guarantee it. The ID must be 6-30 characters long, and match the following regular expression: &#x60;[a-z]([-a-z0-9]*[a-z0-9])&#x60;. Defaults to: `null`.
   - tenantProjectRoles ([String.t]): Roles for the associated service account for the tenant project. Defaults to: `null`.
   """
 

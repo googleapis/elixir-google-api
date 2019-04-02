@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.ServiceConsumerManagement.V1.Model.RemoveTenantProjectRequest do
   @moduledoc """
-  Request message to remove tenant project resource from the tenancy unit.
+  Request message to remove a tenant project resource from the tenancy unit.
 
   ## Attributes
 

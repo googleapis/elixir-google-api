@@ -16,34 +16,36 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.ServiceConsumerManagement.V1.Model.PolicyBinding do
+defmodule GoogleApi.ServiceConsumerManagement.V1.Model.UndeleteTenantProjectRequest do
   @moduledoc """
-  Translates to IAM Policy bindings (without auditing at this level)
+  Request message to undelete tenant project resource previously deleted from the tenancy unit.
 
   ## Attributes
 
-  - members ([String.t]): Uses the same format as in IAM policy. &#x60;member&#x60; must include both a prefix and ID. For example, &#x60;user:{emailId}&#x60;, &#x60;serviceAccount:{emailId}&#x60;, &#x60;group:{emailId}&#x60;. Defaults to: `null`.
-  - role (String.t): Role. (https://cloud.google.com/iam/docs/understanding-roles) For example, &#x60;roles/viewer&#x60;, &#x60;roles/editor&#x60;, or &#x60;roles/owner&#x60;. Defaults to: `null`.
+  - tag (String.t): Tag of the resource within the tenancy unit. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :members => list(any()),
-          :role => any()
+          :tag => any()
         }
 
-  field(:members, type: :list)
-  field(:role)
+  field(:tag)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.ServiceConsumerManagement.V1.Model.PolicyBinding do
+defimpl Poison.Decoder,
+  for: GoogleApi.ServiceConsumerManagement.V1.Model.UndeleteTenantProjectRequest do
   def decode(value, options) do
-    GoogleApi.ServiceConsumerManagement.V1.Model.PolicyBinding.decode(value, options)
+    GoogleApi.ServiceConsumerManagement.V1.Model.UndeleteTenantProjectRequest.decode(
+      value,
+      options
+    )
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.ServiceConsumerManagement.V1.Model.PolicyBinding do
+defimpl Poison.Encoder,
+  for: GoogleApi.ServiceConsumerManagement.V1.Model.UndeleteTenantProjectRequest do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

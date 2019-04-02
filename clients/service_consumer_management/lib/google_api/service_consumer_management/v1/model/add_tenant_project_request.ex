@@ -22,7 +22,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.AddTenantProjectRequest d
 
   ## Attributes
 
-  - projectConfig (TenantProjectConfig): Configuration of the new tenant project that will be added to tenancy unit resources. Defaults to: `null`.
+  - projectConfig (TenantProjectConfig): Configuration of the new tenant project to be added to tenancy unit resources. Defaults to: `null`.
   - tag (String.t): Tag of the added project. Must be less than 128 characters. Required. Defaults to: `null`.
   """
 
