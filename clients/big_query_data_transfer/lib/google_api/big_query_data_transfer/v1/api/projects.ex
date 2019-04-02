@@ -50,14 +50,14 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.CheckValidCredsResponse{}} on success
   {:error, info} on failure
   """
-  @spec bigquerydatatransfer_projects_locations_data_sources_check_valid_creds(
+  @spec bigquerydatatransfer_projects_data_sources_check_valid_creds(
           Tesla.Env.client(),
           String.t(),
           keyword()
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.CheckValidCredsResponse.t()}
           | {:error, Tesla.Env.t()}
-  def bigquerydatatransfer_projects_locations_data_sources_check_valid_creds(
+  def bigquerydatatransfer_projects_data_sources_check_valid_creds(
         connection,
         name,
         optional_params \\ [],
@@ -120,14 +120,10 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.ListDataSourcesResponse{}} on success
   {:error, info} on failure
   """
-  @spec bigquerydatatransfer_projects_locations_data_sources_list(
-          Tesla.Env.client(),
-          String.t(),
-          keyword()
-        ) ::
+  @spec bigquerydatatransfer_projects_data_sources_list(Tesla.Env.client(), String.t(), keyword()) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.ListDataSourcesResponse.t()}
           | {:error, Tesla.Env.t()}
-  def bigquerydatatransfer_projects_locations_data_sources_list(
+  def bigquerydatatransfer_projects_data_sources_list(
         connection,
         parent,
         optional_params \\ [],
@@ -261,14 +257,14 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig{}} on success
   {:error, info} on failure
   """
-  @spec bigquerydatatransfer_projects_locations_transfer_configs_create(
+  @spec bigquerydatatransfer_projects_transfer_configs_create(
           Tesla.Env.client(),
           String.t(),
           keyword()
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig.t()}
           | {:error, Tesla.Env.t()}
-  def bigquerydatatransfer_projects_locations_transfer_configs_create(
+  def bigquerydatatransfer_projects_transfer_configs_create(
         connection,
         parent,
         optional_params \\ [],
@@ -334,14 +330,14 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.ListTransferConfigsResponse{}} on success
   {:error, info} on failure
   """
-  @spec bigquerydatatransfer_projects_locations_transfer_configs_list(
+  @spec bigquerydatatransfer_projects_transfer_configs_list(
           Tesla.Env.client(),
           String.t(),
           keyword()
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.ListTransferConfigsResponse.t()}
           | {:error, Tesla.Env.t()}
-  def bigquerydatatransfer_projects_locations_transfer_configs_list(
+  def bigquerydatatransfer_projects_transfer_configs_list(
         connection,
         parent,
         optional_params \\ [],
@@ -408,14 +404,14 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig{}} on success
   {:error, info} on failure
   """
-  @spec bigquerydatatransfer_projects_locations_transfer_configs_patch(
+  @spec bigquerydatatransfer_projects_transfer_configs_patch(
           Tesla.Env.client(),
           String.t(),
           keyword()
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig.t()}
           | {:error, Tesla.Env.t()}
-  def bigquerydatatransfer_projects_locations_transfer_configs_patch(
+  def bigquerydatatransfer_projects_transfer_configs_patch(
         connection,
         name,
         optional_params \\ [],
@@ -479,12 +475,12 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.Empty{}} on success
   {:error, info} on failure
   """
-  @spec bigquerydatatransfer_projects_locations_transfer_configs_runs_delete(
+  @spec bigquerydatatransfer_projects_transfer_configs_runs_delete(
           Tesla.Env.client(),
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
-  def bigquerydatatransfer_projects_locations_transfer_configs_runs_delete(
+  def bigquerydatatransfer_projects_transfer_configs_runs_delete(
         connection,
         name,
         optional_params \\ [],
@@ -542,13 +538,13 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.TransferRun{}} on success
   {:error, info} on failure
   """
-  @spec bigquerydatatransfer_projects_locations_transfer_configs_runs_get(
+  @spec bigquerydatatransfer_projects_transfer_configs_runs_get(
           Tesla.Env.client(),
           String.t(),
           keyword()
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.TransferRun.t()} | {:error, Tesla.Env.t()}
-  def bigquerydatatransfer_projects_locations_transfer_configs_runs_get(
+  def bigquerydatatransfer_projects_transfer_configs_runs_get(
         connection,
         name,
         optional_params \\ [],
@@ -610,14 +606,14 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.ListTransferRunsResponse{}} on success
   {:error, info} on failure
   """
-  @spec bigquerydatatransfer_projects_locations_transfer_configs_runs_list(
+  @spec bigquerydatatransfer_projects_transfer_configs_runs_list(
           Tesla.Env.client(),
           String.t(),
           keyword()
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.ListTransferRunsResponse.t()}
           | {:error, Tesla.Env.t()}
-  def bigquerydatatransfer_projects_locations_transfer_configs_runs_list(
+  def bigquerydatatransfer_projects_transfer_configs_runs_list(
         connection,
         parent,
         optional_params \\ [],
@@ -684,14 +680,14 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.ListTransferLogsResponse{}} on success
   {:error, info} on failure
   """
-  @spec bigquerydatatransfer_projects_locations_transfer_configs_runs_transfer_logs_list(
+  @spec bigquerydatatransfer_projects_transfer_configs_runs_transfer_logs_list(
           Tesla.Env.client(),
           String.t(),
           keyword()
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.ListTransferLogsResponse.t()}
           | {:error, Tesla.Env.t()}
-  def bigquerydatatransfer_projects_locations_transfer_configs_runs_transfer_logs_list(
+  def bigquerydatatransfer_projects_transfer_configs_runs_transfer_logs_list(
         connection,
         parent,
         optional_params \\ [],
@@ -730,7 +726,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   end
 
   @doc """
-  Creates transfer runs for a time range [start_time, end_time]. For each date - or whatever granularity the data source supports - in the range, one transfer run is created. Note that runs are created per UTC time in the time range.
+  Creates transfer runs for a time range [start_time, end_time]. For each date - or whatever granularity the data source supports - in the range, one transfer run is created. Note that runs are created per UTC time in the time range. DEPRECATED: use StartManualTransferRuns instead.
 
   ## Parameters
 
@@ -755,14 +751,14 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.ScheduleTransferRunsResponse{}} on success
   {:error, info} on failure
   """
-  @spec bigquerydatatransfer_projects_locations_transfer_configs_schedule_runs(
+  @spec bigquerydatatransfer_projects_transfer_configs_schedule_runs(
           Tesla.Env.client(),
           String.t(),
           keyword()
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.ScheduleTransferRunsResponse.t()}
           | {:error, Tesla.Env.t()}
-  def bigquerydatatransfer_projects_locations_transfer_configs_schedule_runs(
+  def bigquerydatatransfer_projects_transfer_configs_schedule_runs(
         connection,
         parent,
         optional_params \\ [],
@@ -795,6 +791,75 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
     |> Connection.execute(request)
     |> Response.decode(
       opts ++ [struct: %GoogleApi.BigQueryDataTransfer.V1.Model.ScheduleTransferRunsResponse{}]
+    )
+  end
+
+  @doc """
+  Start manual transfer runs to be executed now with schedule_time equal to current time. The transfer runs can be created for a time range where the run_time is between start_time (inclusive) and end_time (exclusive), or for a specific run_time.
+
+  ## Parameters
+
+  - connection (GoogleApi.BigQueryDataTransfer.V1.Connection): Connection to server
+  - parent (String.t): Transfer configuration name in the form: &#x60;projects/{project_id}/transferConfigs/{config_id}&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :body (StartManualTransferRunsRequest): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.StartManualTransferRunsResponse{}} on success
+  {:error, info} on failure
+  """
+  @spec bigquerydatatransfer_projects_transfer_configs_start_manual_runs(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.StartManualTransferRunsResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def bigquerydatatransfer_projects_transfer_configs_start_manual_runs(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1/{+parent}:startManualRuns", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.BigQueryDataTransfer.V1.Model.StartManualTransferRunsResponse{}]
     )
   end
 end
