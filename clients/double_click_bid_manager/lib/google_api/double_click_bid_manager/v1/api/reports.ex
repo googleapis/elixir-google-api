@@ -68,7 +68,7 @@ defmodule GoogleApi.DoubleClickBidManager.V1.Api.Reports do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/queries/{queryId}/reports", %{
-        "queryId" => URI.encode_www_form(query_id)
+        "queryId" => URI.encode(query_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
