@@ -71,7 +71,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectsId}:getConfig", %{
-        "projectsId" => URI.encode_www_form(projects_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -132,8 +132,8 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectsId}/jobs/{jobsId}:cancel", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "jobsId" => URI.encode_www_form(jobs_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "jobsId" => URI.encode(jobs_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -193,7 +193,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectsId}/jobs", %{
-        "projectsId" => URI.encode_www_form(projects_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -250,8 +250,8 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectsId}/jobs/{jobsId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "jobsId" => URI.encode_www_form(jobs_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "jobsId" => URI.encode(jobs_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -314,8 +314,8 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectsId}/jobs/{jobsId}:getIamPolicy", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "jobsId" => URI.encode_www_form(jobs_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "jobsId" => URI.encode(jobs_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -377,7 +377,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectsId}/jobs", %{
-        "projectsId" => URI.encode_www_form(projects_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -440,8 +440,8 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/v1/projects/{projectsId}/jobs/{jobsId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "jobsId" => URI.encode_www_form(jobs_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "jobsId" => URI.encode(jobs_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -506,8 +506,8 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectsId}/jobs/{jobsId}:setIamPolicy", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "jobsId" => URI.encode_www_form(jobs_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "jobsId" => URI.encode(jobs_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -577,8 +577,8 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectsId}/jobs/{jobsId}:testIamPermissions", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "jobsId" => URI.encode_www_form(jobs_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "jobsId" => URI.encode(jobs_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -644,8 +644,8 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "locationsId" => URI.encode_www_form(locations_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -707,7 +707,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectsId}/locations", %{
-        "projectsId" => URI.encode_www_form(projects_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -767,7 +767,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectsId}/models", %{
-        "projectsId" => URI.encode_www_form(projects_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -832,8 +832,8 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v1/projects/{projectsId}/models/{modelsId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "modelsId" => URI.encode_www_form(models_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "modelsId" => URI.encode(models_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -898,8 +898,8 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectsId}/models/{modelsId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "modelsId" => URI.encode_www_form(models_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "modelsId" => URI.encode(models_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -964,8 +964,8 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectsId}/models/{modelsId}:getIamPolicy", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "modelsId" => URI.encode_www_form(models_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "modelsId" => URI.encode(models_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1027,7 +1027,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectsId}/models", %{
-        "projectsId" => URI.encode_www_form(projects_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1096,8 +1096,8 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/v1/projects/{projectsId}/models/{modelsId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "modelsId" => URI.encode_www_form(models_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "modelsId" => URI.encode(models_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1164,8 +1164,8 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectsId}/models/{modelsId}:setIamPolicy", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "modelsId" => URI.encode_www_form(models_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "modelsId" => URI.encode(models_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1235,8 +1235,8 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectsId}/models/{modelsId}:testIamPermissions", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "modelsId" => URI.encode_www_form(models_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "modelsId" => URI.encode(models_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1304,8 +1304,8 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectsId}/models/{modelsId}/versions", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "modelsId" => URI.encode_www_form(models_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "modelsId" => URI.encode(models_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1378,9 +1378,9 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v1/projects/{projectsId}/models/{modelsId}/versions/{versionsId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "modelsId" => URI.encode_www_form(models_id),
-        "versionsId" => URI.encode_www_form(versions_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "modelsId" => URI.encode(models_id, &URI.char_unreserved?/1),
+        "versionsId" => URI.encode(versions_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1453,9 +1453,9 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectsId}/models/{modelsId}/versions/{versionsId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "modelsId" => URI.encode_www_form(models_id),
-        "versionsId" => URI.encode_www_form(versions_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "modelsId" => URI.encode(models_id, &URI.char_unreserved?/1),
+        "versionsId" => URI.encode(versions_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1526,8 +1526,8 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectsId}/models/{modelsId}/versions", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "modelsId" => URI.encode_www_form(models_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "modelsId" => URI.encode(models_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1604,9 +1604,9 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/v1/projects/{projectsId}/models/{modelsId}/versions/{versionsId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "modelsId" => URI.encode_www_form(models_id),
-        "versionsId" => URI.encode_www_form(versions_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "modelsId" => URI.encode(models_id, &URI.char_unreserved?/1),
+        "versionsId" => URI.encode(versions_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1683,9 +1683,9 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       |> Request.url(
         "/v1/projects/{projectsId}/models/{modelsId}/versions/{versionsId}:setDefault",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "modelsId" => URI.encode_www_form(models_id),
-          "versionsId" => URI.encode_www_form(versions_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "modelsId" => URI.encode(models_id, &URI.char_unreserved?/1),
+          "versionsId" => URI.encode(versions_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1751,74 +1751,8 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectsId}/operations/{operationsId}:cancel", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "operationsId" => URI.encode_www_form(operations_id)
-      })
-      |> Request.add_optional_params(optional_params_config, optional_params)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(
-      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleProtobufEmpty{}]
-    )
-  end
-
-  @doc """
-  Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn&#39;t support this method, it returns &#x60;google.rpc.Code.UNIMPLEMENTED&#x60;.
-
-  ## Parameters
-
-  - connection (GoogleApi.MachineLearning.V1.Connection): Connection to server
-  - projects_id (String.t): Part of &#x60;name&#x60;. The name of the operation resource to be deleted.
-  - operations_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
-  - optional_params (KeywordList): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-
-  ## Returns
-
-  {:ok, %GoogleApi.MachineLearning.V1.Model.GoogleProtobufEmpty{}} on success
-  {:error, info} on failure
-  """
-  @spec ml_projects_operations_delete(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleProtobufEmpty.t()}
-          | {:error, Tesla.Env.t()}
-  def ml_projects_operations_delete(
-        connection,
-        projects_id,
-        operations_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
-    optional_params_config = %{
-      :"$.xgafv" => :query,
-      :access_token => :query,
-      :alt => :query,
-      :callback => :query,
-      :fields => :query,
-      :key => :query,
-      :oauth_token => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :upload_protocol => :query,
-      :uploadType => :query
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:delete)
-      |> Request.url("/v1/projects/{projectsId}/operations/{operationsId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "operationsId" => URI.encode_www_form(operations_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "operationsId" => URI.encode(operations_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1883,8 +1817,8 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectsId}/operations/{operationsId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "operationsId" => URI.encode_www_form(operations_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "operationsId" => URI.encode(operations_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1948,7 +1882,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectsId}/operations", %{
-        "projectsId" => URI.encode_www_form(projects_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2009,7 +1943,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectsId}:predict", %{
-        "projectsId" => URI.encode_www_form(projects_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
