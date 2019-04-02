@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.NodeGroup do
   @moduledoc """
-  A NodeGroup resource.
+  A NodeGroup resource. (&#x3D;&#x3D; resource_for beta.nodeGroups &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.nodeGroups &#x3D;&#x3D;)
 
   ## Attributes
 
