@@ -77,7 +77,7 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v2/projects/{projectsId}/exclusions", %{
-        "projectsId" => URI.encode_www_form(projects_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -139,8 +139,8 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v2/projects/{projectsId}/exclusions/{exclusionsId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "exclusionsId" => URI.encode_www_form(exclusions_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "exclusionsId" => URI.encode(exclusions_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -202,8 +202,8 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v2/projects/{projectsId}/exclusions/{exclusionsId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "exclusionsId" => URI.encode_www_form(exclusions_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "exclusionsId" => URI.encode(exclusions_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -262,7 +262,7 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v2/projects/{projectsId}/exclusions", %{
-        "projectsId" => URI.encode_www_form(projects_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -328,8 +328,8 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/v2/projects/{projectsId}/exclusions/{exclusionsId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "exclusionsId" => URI.encode_www_form(exclusions_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "exclusionsId" => URI.encode(exclusions_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -391,8 +391,8 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v2/projects/{projectsId}/logs/{logsId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "logsId" => URI.encode_www_form(logs_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "logsId" => URI.encode(logs_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -451,7 +451,7 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v2/projects/{projectsId}/logs", %{
-        "projectsId" => URI.encode_www_form(projects_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -508,7 +508,7 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v2/projects/{projectsId}/metrics", %{
-        "projectsId" => URI.encode_www_form(projects_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -570,8 +570,8 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v2/projects/{projectsId}/metrics/{metricsId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "metricsId" => URI.encode_www_form(metrics_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "metricsId" => URI.encode(metrics_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -633,8 +633,8 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v2/projects/{projectsId}/metrics/{metricsId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "metricsId" => URI.encode_www_form(metrics_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "metricsId" => URI.encode(metrics_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -693,7 +693,7 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v2/projects/{projectsId}/metrics", %{
-        "projectsId" => URI.encode_www_form(projects_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -757,8 +757,8 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/v2/projects/{projectsId}/metrics/{metricsId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "metricsId" => URI.encode_www_form(metrics_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "metricsId" => URI.encode(metrics_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -817,7 +817,7 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v2/projects/{projectsId}/sinks", %{
-        "projectsId" => URI.encode_www_form(projects_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -879,8 +879,8 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v2/projects/{projectsId}/sinks/{sinksId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "sinksId" => URI.encode_www_form(sinks_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "sinksId" => URI.encode(sinks_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -942,8 +942,8 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v2/projects/{projectsId}/sinks/{sinksId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "sinksId" => URI.encode_www_form(sinks_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "sinksId" => URI.encode(sinks_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1002,7 +1002,7 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v2/projects/{projectsId}/sinks", %{
-        "projectsId" => URI.encode_www_form(projects_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1070,8 +1070,8 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/v2/projects/{projectsId}/sinks/{sinksId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "sinksId" => URI.encode_www_form(sinks_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "sinksId" => URI.encode(sinks_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1139,8 +1139,8 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/v2/projects/{projectsId}/sinks/{sinksId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "sinksId" => URI.encode_www_form(sinks_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "sinksId" => URI.encode(sinks_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

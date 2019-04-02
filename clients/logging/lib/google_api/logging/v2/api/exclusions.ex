@@ -73,8 +73,8 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v2/{v2Id}/{v2Id1}/exclusions", %{
-        "v2Id" => URI.encode_www_form(v2_id),
-        "v2Id1" => URI.encode_www_form(v2_id1)
+        "v2Id" => URI.encode(v2_id, &URI.char_unreserved?/1),
+        "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -143,9 +143,9 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v2/{v2Id}/{v2Id1}/exclusions/{exclusionsId}", %{
-        "v2Id" => URI.encode_www_form(v2_id),
-        "v2Id1" => URI.encode_www_form(v2_id1),
-        "exclusionsId" => URI.encode_www_form(exclusions_id)
+        "v2Id" => URI.encode(v2_id, &URI.char_unreserved?/1),
+        "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1),
+        "exclusionsId" => URI.encode(exclusions_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -209,9 +209,9 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v2/{v2Id}/{v2Id1}/exclusions/{exclusionsId}", %{
-        "v2Id" => URI.encode_www_form(v2_id),
-        "v2Id1" => URI.encode_www_form(v2_id1),
-        "exclusionsId" => URI.encode_www_form(exclusions_id)
+        "v2Id" => URI.encode(v2_id, &URI.char_unreserved?/1),
+        "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1),
+        "exclusionsId" => URI.encode(exclusions_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -271,8 +271,8 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v2/{v2Id}/{v2Id1}/exclusions", %{
-        "v2Id" => URI.encode_www_form(v2_id),
-        "v2Id1" => URI.encode_www_form(v2_id1)
+        "v2Id" => URI.encode(v2_id, &URI.char_unreserved?/1),
+        "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -345,9 +345,9 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/v2/{v2Id}/{v2Id1}/exclusions/{exclusionsId}", %{
-        "v2Id" => URI.encode_www_form(v2_id),
-        "v2Id1" => URI.encode_www_form(v2_id1),
-        "exclusionsId" => URI.encode_www_form(exclusions_id)
+        "v2Id" => URI.encode(v2_id, &URI.char_unreserved?/1),
+        "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1),
+        "exclusionsId" => URI.encode(exclusions_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
