@@ -86,6 +86,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
   - screenCaptureDisabled (boolean()): Whether screen capture is disabled. Defaults to: `null`.
   - setUserIconDisabled (boolean()): Whether changing the user icon is disabled. Defaults to: `null`.
   - setWallpaperDisabled (boolean()): Whether changing the wallpaper is disabled. Defaults to: `null`.
+  - setupActions ([SetupAction]): Actions to take during the setup process. Defaults to: `null`.
   - shareLocationDisabled (boolean()): Whether location sharing is disabled. Defaults to: `null`.
   - shortSupportMessage (UserFacingMessage): A message displayed to the user in the settings screen wherever functionality has been disabled by the admin. Defaults to: `null`.
   - skipFirstUseHintsEnabled (boolean()): Flag to skip hints on the first use. Enterprise admin can enable the system recommendation for apps to skip their user tutorial and other introductory hints on first start-up. Defaults to: `null`.
@@ -103,7 +104,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
   - version (String.t): The version of the policy. This is a read-only field. The version is incremented each time the policy is updated. Defaults to: `null`.
   - vpnConfigDisabled (boolean()): Whether configuring VPN is disabled. Defaults to: `null`.
   - wifiConfigDisabled (boolean()): Whether configuring Wi-Fi access points is disabled. Defaults to: `null`.
-  - wifiConfigsLockdownEnabled (boolean()): Whether Wi-Fi networks defined in Open Network Configuration are locked so they can&#39;t be edited by the user. Defaults to: `null`.
+  - wifiConfigsLockdownEnabled (boolean()): DEPRECATED - Use wifi_config_disabled. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -170,6 +171,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
           :screenCaptureDisabled => any(),
           :setUserIconDisabled => any(),
           :setWallpaperDisabled => any(),
+          :setupActions => list(GoogleApi.AndroidManagement.V1.Model.SetupAction.t()),
           :shareLocationDisabled => any(),
           :shortSupportMessage => GoogleApi.AndroidManagement.V1.Model.UserFacingMessage.t(),
           :skipFirstUseHintsEnabled => any(),
@@ -265,6 +267,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
   field(:screenCaptureDisabled)
   field(:setUserIconDisabled)
   field(:setWallpaperDisabled)
+  field(:setupActions, as: GoogleApi.AndroidManagement.V1.Model.SetupAction, type: :list)
   field(:shareLocationDisabled)
   field(:shortSupportMessage, as: GoogleApi.AndroidManagement.V1.Model.UserFacingMessage)
   field(:skipFirstUseHintsEnabled)
