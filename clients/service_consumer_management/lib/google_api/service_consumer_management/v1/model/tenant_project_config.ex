@@ -18,15 +18,15 @@
 
 defmodule GoogleApi.ServiceConsumerManagement.V1.Model.TenantProjectConfig do
   @moduledoc """
-  This structure defines a tenant project to be added to the specified tenancy unit and its initial configuration and properties. A project lien will be created for the tenant project to prevent the tenant project from being deleted accidentally. The lien will be deleted as part of tenant project removal.
+  This structure defines a tenant project to be added to the specified tenancy unit and its initial configuration and properties. A project lien is created for the tenant project to prevent the tenant project from being deleted accidentally. The lien is deleted as part of tenant project removal.
 
   ## Attributes
 
-  - billingConfig (BillingConfig): Billing account properties.  Billing account must be specified. Defaults to: `null`.
-  - folder (String.t): Folder where project in this tenancy unit must be located This folder must have been previously created with proper permissions for the caller to create and configure a project in it. Valid folder resource names have the format &#x60;folders/{folder_number}&#x60; (for example, &#x60;folders/123456&#x60;). Defaults to: `null`.
-  - labels (%{optional(String.t) &#x3D;&gt; String.t}): Labels that will be applied to this project. Defaults to: `null`.
-  - serviceAccountConfig (ServiceAccountConfig): Configuration for IAM service account on tenant project. Defaults to: `null`.
-  - services ([String.t]): Google Cloud API names of services that will be activated on this project during provisioning.  If any of these services can not be activated, request will fail. For example: &#39;compute.googleapis.com&#39;,&#39;cloudfunctions.googleapis.com&#39; Defaults to: `null`.
+  - billingConfig (BillingConfig): Billing account properties. The billing account must be specified. Defaults to: `null`.
+  - folder (String.t): Folder where project in this tenancy unit must be located This folder must have been previously created with the required permissions for the caller to create and configure a project in it. Valid folder resource names have the format &#x60;folders/{folder_number}&#x60; (for example, &#x60;folders/123456&#x60;). Defaults to: `null`.
+  - labels (%{optional(String.t) &#x3D;&gt; String.t}): Labels that are applied to this project. Defaults to: `null`.
+  - serviceAccountConfig (ServiceAccountConfig): Configuration for the IAM service account on the tenant project. Defaults to: `null`.
+  - services ([String.t]): Google Cloud API names of services that are activated on this project during provisioning.  If any of these services can&#39;t be activated, the request fails. For example: &#39;compute.googleapis.com&#39;,&#39;cloudfunctions.googleapis.com&#39; Defaults to: `null`.
   - tenantProjectPolicy (TenantProjectPolicy): Describes ownership and policies for the new tenant project. Required. Defaults to: `null`.
   """
 

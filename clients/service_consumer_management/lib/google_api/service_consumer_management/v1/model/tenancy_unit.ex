@@ -25,7 +25,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.TenancyUnit do
   - consumer (String.t): @OutputOnly Cloud resource name of the consumer of this service. For example &#39;projects/123456&#39;. Defaults to: `null`.
   - createTime (DateTime.t): @OutputOnly The time this tenancy unit was created. Defaults to: `null`.
   - name (String.t): Globally unique identifier of this tenancy unit \&quot;services/{service}/{collection id}/{resource id}/tenancyUnits/{unit}\&quot; Defaults to: `null`.
-  - service (String.t): @OutputOnly Google Cloud API name of the service owning this tenancy unit. For example &#39;serviceconsumermanagement.googleapis.com&#39;. Defaults to: `null`.
+  - service (String.t): Output only. Google Cloud API name of the managed service owning this tenancy unit. For example &#39;serviceconsumermanagement.googleapis.com&#39;. Defaults to: `null`.
   - tenantResources ([TenantResource]): Resources constituting the tenancy unit. There can be at most 512 tenant resources in a tenancy unit. Defaults to: `null`.
   """
 

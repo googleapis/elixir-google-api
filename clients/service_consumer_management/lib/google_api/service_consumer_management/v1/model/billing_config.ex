@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.ServiceConsumerManagement.V1.Model.BillingConfig do
   @moduledoc """
-  Describes billing configuration for a new tenant project.
+  Describes the billing configuration for a new tenant project.
 
   ## Attributes
 

@@ -18,11 +18,11 @@
 
 defmodule GoogleApi.ServiceConsumerManagement.V1.Model.CreateTenancyUnitRequest do
   @moduledoc """
-  Request to create a tenancy unit for a consumer of a service.
+  Request to create a tenancy unit for a service consumer of a managed service.
 
   ## Attributes
 
-  - tenancyUnitId (String.t): Optional producer provided identifier of the tenancy unit. Must be no longer than 40 characters and preferably URI friendly. If it is not provided, a UID for the tenancy unit will be auto generated. It must be unique across a service. If the tenancy unit already exists for the service and consumer pair, &#x60;CreateTenancyUnit&#x60; will return the existing tenancy unit if the provided identifier is identical or empty, otherwise the call will fail. Defaults to: `null`.
+  - tenancyUnitId (String.t): Optional service producer-provided identifier of the tenancy unit. Must be no longer than 40 characters and preferably URI friendly. If it isn&#39;t provided, a UID for the tenancy unit is automatically generated. The identifier must be unique across a managed service. If the tenancy unit already exists for the managed service and service consumer pair, calling &#x60;CreateTenancyUnit&#x60; returns the existing tenancy unit if the provided identifier is identical or empty, otherwise the call fails. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
