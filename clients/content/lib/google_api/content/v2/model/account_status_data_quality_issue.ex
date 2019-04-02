@@ -22,17 +22,17 @@ defmodule GoogleApi.Content.V2.Model.AccountStatusDataQualityIssue do
 
   ## Attributes
 
-  - country (String.t): Country for which this issue is reported. Defaults to: `null`.
-  - destination (String.t): The destination the issue applies to. Defaults to: `null`.
-  - detail (String.t): A more detailed description of the issue. Defaults to: `null`.
-  - displayedValue (String.t): Actual value displayed on the landing page. Defaults to: `null`.
-  - exampleItems ([AccountStatusExampleItem]): Example items featuring the issue. Defaults to: `null`.
-  - id (String.t): Issue identifier. Defaults to: `null`.
-  - lastChecked (String.t): Last time the account was checked for this issue. Defaults to: `null`.
-  - location (String.t): The attribute name that is relevant for the issue. Defaults to: `null`.
-  - numItems (integer()): Number of items in the account found to have the said issue. Defaults to: `null`.
-  - severity (String.t): Severity of the problem. Defaults to: `null`.
-  - submittedValue (String.t): Submitted value that causes the issue. Defaults to: `null`.
+  - country (String.t):  Defaults to: `null`.
+  - destination (String.t):  Defaults to: `null`.
+  - detail (String.t):  Defaults to: `null`.
+  - displayedValue (String.t):  Defaults to: `null`.
+  - exampleItems ([AccountStatusExampleItem]):  Defaults to: `null`.
+  - id (String.t):  Defaults to: `null`.
+  - lastChecked (String.t):  Defaults to: `null`.
+  - location (String.t):  Defaults to: `null`.
+  - numItems (integer()):  Defaults to: `null`.
+  - severity (String.t):  Defaults to: `null`.
+  - submittedValue (String.t):  Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

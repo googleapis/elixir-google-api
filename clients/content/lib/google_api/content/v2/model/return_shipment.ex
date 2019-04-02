@@ -23,24 +23,33 @@ defmodule GoogleApi.Content.V2.Model.ReturnShipment do
   ## Attributes
 
   - creationDate (String.t):  Defaults to: `null`.
+  - deliveryDate (String.t):  Defaults to: `null`.
   - returnMethodType (String.t):  Defaults to: `null`.
   - shipmentId (String.t):  Defaults to: `null`.
   - shipmentTrackingInfos ([ShipmentTrackingInfo]):  Defaults to: `null`.
+  - shippingDate (String.t):  Defaults to: `null`.
+  - state (String.t):  Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :creationDate => any(),
+          :deliveryDate => any(),
           :returnMethodType => any(),
           :shipmentId => any(),
-          :shipmentTrackingInfos => list(GoogleApi.Content.V2.Model.ShipmentTrackingInfo.t())
+          :shipmentTrackingInfos => list(GoogleApi.Content.V2.Model.ShipmentTrackingInfo.t()),
+          :shippingDate => any(),
+          :state => any()
         }
 
   field(:creationDate)
+  field(:deliveryDate)
   field(:returnMethodType)
   field(:shipmentId)
   field(:shipmentTrackingInfos, as: GoogleApi.Content.V2.Model.ShipmentTrackingInfo, type: :list)
+  field(:shippingDate)
+  field(:state)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.ReturnShipment do

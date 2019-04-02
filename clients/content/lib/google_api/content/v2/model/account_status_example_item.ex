@@ -18,15 +18,15 @@
 
 defmodule GoogleApi.Content.V2.Model.AccountStatusExampleItem do
   @moduledoc """
-  An example of an item that has poor data quality. An item value on the landing page differs from what is submitted, or conflicts with a policy.
+
 
   ## Attributes
 
-  - itemId (String.t): Unique item ID as specified in the uploaded product data. Defaults to: `null`.
-  - link (String.t): Landing page of the item. Defaults to: `null`.
-  - submittedValue (String.t): The item value that was submitted. Defaults to: `null`.
-  - title (String.t): Title of the item. Defaults to: `null`.
-  - valueOnLandingPage (String.t): The actual value on the landing page. Defaults to: `null`.
+  - itemId (String.t):  Defaults to: `null`.
+  - link (String.t):  Defaults to: `null`.
+  - submittedValue (String.t):  Defaults to: `null`.
+  - title (String.t):  Defaults to: `null`.
+  - valueOnLandingPage (String.t):  Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

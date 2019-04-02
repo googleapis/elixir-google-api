@@ -27,8 +27,8 @@ defmodule GoogleApi.Content.V2.Model.OrderReportTransaction do
   - disbursementDate (String.t): The date the disbursement was initiated, in ISO 8601 format. Defaults to: `null`.
   - disbursementId (String.t): The ID of the disbursement. Defaults to: `null`.
   - merchantId (String.t): The ID of the managing account. Defaults to: `null`.
-  - merchantOrderId (String.t): Merchant-provided id of the order. Defaults to: `null`.
-  - orderId (String.t): The id of the order. Defaults to: `null`.
+  - merchantOrderId (String.t): Merchant-provided ID of the order. Defaults to: `null`.
+  - orderId (String.t): The ID of the order. Defaults to: `null`.
   - productAmount (Amount): Total amount for the items. Defaults to: `null`.
   - productAmountWithRemittedTax (ProductAmount): Total amount with remitted tax for the items. Defaults to: `null`.
   - transactionDate (String.t): The date of the transaction, in ISO 8601 format. Defaults to: `null`.

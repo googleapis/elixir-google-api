@@ -38,7 +38,7 @@ defmodule GoogleApi.Content.V2.Api.Pos do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :dryRun (boolean()): Flag to run the request in dry-run mode.
+    - :dryRun (boolean()): Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
     - :body (PosCustomBatchRequest): 
 
   ## Returns
@@ -89,7 +89,7 @@ defmodule GoogleApi.Content.V2.Api.Pos do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :dryRun (boolean()): Flag to run the request in dry-run mode.
+    - :dryRun (boolean()): Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
 
   ## Returns
 
@@ -121,9 +121,9 @@ defmodule GoogleApi.Content.V2.Api.Pos do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/{merchantId}/pos/{targetMerchantId}/store/{storeCode}", %{
-        "merchantId" => URI.encode_www_form(merchant_id),
-        "targetMerchantId" => URI.encode_www_form(target_merchant_id),
-        "storeCode" => URI.encode_www_form(store_code)
+        "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
+        "targetMerchantId" => URI.encode(target_merchant_id, &URI.char_unreserved?/1),
+        "storeCode" => URI.encode(store_code, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -179,9 +179,9 @@ defmodule GoogleApi.Content.V2.Api.Pos do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{merchantId}/pos/{targetMerchantId}/store/{storeCode}", %{
-        "merchantId" => URI.encode_www_form(merchant_id),
-        "targetMerchantId" => URI.encode_www_form(target_merchant_id),
-        "storeCode" => URI.encode_www_form(store_code)
+        "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
+        "targetMerchantId" => URI.encode(target_merchant_id, &URI.char_unreserved?/1),
+        "storeCode" => URI.encode(store_code, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -206,7 +206,7 @@ defmodule GoogleApi.Content.V2.Api.Pos do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :dryRun (boolean()): Flag to run the request in dry-run mode.
+    - :dryRun (boolean()): Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
     - :body (PosStore): 
 
   ## Returns
@@ -239,8 +239,8 @@ defmodule GoogleApi.Content.V2.Api.Pos do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{merchantId}/pos/{targetMerchantId}/store", %{
-        "merchantId" => URI.encode_www_form(merchant_id),
-        "targetMerchantId" => URI.encode_www_form(target_merchant_id)
+        "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
+        "targetMerchantId" => URI.encode(target_merchant_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -265,7 +265,7 @@ defmodule GoogleApi.Content.V2.Api.Pos do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :dryRun (boolean()): Flag to run the request in dry-run mode.
+    - :dryRun (boolean()): Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
     - :body (PosInventoryRequest): 
 
   ## Returns
@@ -298,8 +298,8 @@ defmodule GoogleApi.Content.V2.Api.Pos do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{merchantId}/pos/{targetMerchantId}/inventory", %{
-        "merchantId" => URI.encode_www_form(merchant_id),
-        "targetMerchantId" => URI.encode_www_form(target_merchant_id)
+        "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
+        "targetMerchantId" => URI.encode(target_merchant_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -353,8 +353,8 @@ defmodule GoogleApi.Content.V2.Api.Pos do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{merchantId}/pos/{targetMerchantId}/store", %{
-        "merchantId" => URI.encode_www_form(merchant_id),
-        "targetMerchantId" => URI.encode_www_form(target_merchant_id)
+        "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
+        "targetMerchantId" => URI.encode(target_merchant_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -379,7 +379,7 @@ defmodule GoogleApi.Content.V2.Api.Pos do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :dryRun (boolean()): Flag to run the request in dry-run mode.
+    - :dryRun (boolean()): Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
     - :body (PosSaleRequest): 
 
   ## Returns
@@ -412,8 +412,8 @@ defmodule GoogleApi.Content.V2.Api.Pos do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{merchantId}/pos/{targetMerchantId}/sale", %{
-        "merchantId" => URI.encode_www_form(merchant_id),
-        "targetMerchantId" => URI.encode_www_form(target_merchant_id)
+        "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
+        "targetMerchantId" => URI.encode(target_merchant_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

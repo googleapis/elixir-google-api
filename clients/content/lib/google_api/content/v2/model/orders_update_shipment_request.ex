@@ -27,7 +27,7 @@ defmodule GoogleApi.Content.V2.Model.OrdersUpdateShipmentRequest do
   - operationId (String.t): The ID of the operation. Unique across all operations for a given order. Defaults to: `null`.
   - shipmentId (String.t): The ID of the shipment. Defaults to: `null`.
   - status (String.t): New status for the shipment. Not updated if missing. Defaults to: `null`.
-  - trackingId (String.t): The tracking id for the shipment. Not updated if missing. Defaults to: `null`.
+  - trackingId (String.t): The tracking ID for the shipment. Not updated if missing. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

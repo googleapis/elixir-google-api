@@ -57,7 +57,7 @@ defmodule GoogleApi.Content.V2.Model.Product do
   - gender (String.t): Target gender of the item. Defaults to: `null`.
   - googleProductCategory (String.t): Google&#39;s category of the item (see Google product taxonomy). Defaults to: `null`.
   - gtin (String.t): Global Trade Item Number (GTIN) of the item. Defaults to: `null`.
-  - id (String.t): The REST id of the product. Content API methods that operate on products take this as their productId parameter. The REST id for a product is of the form channel:contentLanguage:targetCountry:offerId. Defaults to: `null`.
+  - id (String.t): The REST ID of the product. Content API methods that operate on products take this as their productId parameter. The REST ID for a product is of the form channel:contentLanguage:targetCountry:offerId. Defaults to: `null`.
   - identifierExists (boolean()): False when the item does not have unique product identifiers appropriate to its category, such as GTIN, MPN, and brand. Required according to the Unique Product Identifier Rules for all target countries except for Canada. Defaults to: `null`.
   - imageLink (String.t): URL of an image of the item. Defaults to: `null`.
   - installment (Installment): Number and amount of installments to pay for an item. Brazil only. Defaults to: `null`.
@@ -74,7 +74,7 @@ defmodule GoogleApi.Content.V2.Model.Product do
   - mobileLink (String.t): Link to a mobile-optimized version of the landing page. Defaults to: `null`.
   - mpn (String.t): Manufacturer Part Number (MPN) of the item. Defaults to: `null`.
   - multipack (String.t): The number of identical products in a merchant-defined multipack. Defaults to: `null`.
-  - offerId (String.t): A unique identifier for the item. Leading and trailing whitespaces are stripped and multiple whitespaces are replaced by a single whitespace upon submission. Only valid unicode characters are accepted. See the products feed specification for details. Note: Content API methods that operate on products take the REST id of the product, not this identifier. Defaults to: `null`.
+  - offerId (String.t): A unique identifier for the item. Leading and trailing whitespaces are stripped and multiple whitespaces are replaced by a single whitespace upon submission. Only valid unicode characters are accepted. See the products feed specification for details. Note: Content API methods that operate on products take the REST ID of the product, not this identifier. Defaults to: `null`.
   - onlineOnly (boolean()): Deprecated. Whether an item is available for purchase only online. Defaults to: `null`.
   - pattern (String.t): The item&#39;s pattern (e.g. polka dots). Defaults to: `null`.
   - price (Price): Price of the item. Defaults to: `null`.

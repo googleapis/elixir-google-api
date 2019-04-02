@@ -27,7 +27,7 @@ defmodule GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntry do
   - cancelLineItem (OrdersCustomBatchRequestEntryCancelLineItem): Required for cancelLineItem method. Defaults to: `null`.
   - inStoreRefundLineItem (OrdersCustomBatchRequestEntryInStoreRefundLineItem): Required for inStoreReturnLineItem method. Defaults to: `null`.
   - merchantId (String.t): The ID of the managing account. Defaults to: `null`.
-  - merchantOrderId (String.t): The merchant order id. Required for updateMerchantOrderId and getByMerchantOrderId methods. Defaults to: `null`.
+  - merchantOrderId (String.t): The merchant order ID. Required for updateMerchantOrderId and getByMerchantOrderId methods. Defaults to: `null`.
   - method (String.t): The method to apply. Defaults to: `null`.
   - operationId (String.t): The ID of the operation. Unique across all operations for a given order. Required for all methods beside get and getByMerchantOrderId. Defaults to: `null`.
   - orderId (String.t): The ID of the order. Required for all methods beside getByMerchantOrderId. Defaults to: `null`.

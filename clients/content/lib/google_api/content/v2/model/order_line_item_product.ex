@@ -28,7 +28,7 @@ defmodule GoogleApi.Content.V2.Model.OrderLineItemProduct do
   - contentLanguage (String.t): The two-letter ISO 639-1 language code for the item. Defaults to: `null`.
   - fees ([OrderLineItemProductFee]): Associated fees at order creation time. Defaults to: `null`.
   - gtin (String.t): Global Trade Item Number (GTIN) of the item. Defaults to: `null`.
-  - id (String.t): The REST id of the product. Defaults to: `null`.
+  - id (String.t): The REST ID of the product. Defaults to: `null`.
   - imageLink (String.t): URL of an image of the item. Defaults to: `null`.
   - itemGroupId (String.t): Shared identifier for all variants of the same product. Defaults to: `null`.
   - mpn (String.t): Manufacturer Part Number (MPN) of the item. Defaults to: `null`.

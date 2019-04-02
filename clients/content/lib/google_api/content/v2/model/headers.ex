@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.Content.V2.Model.Headers do
   @moduledoc """
-  A non-empty list of row or column headers for a table. Exactly one of prices, weights, numItems, postalCodeGroupNames, or locations must be set.
+  A non-empty list of row or column headers for a table. Exactly one of prices, weights, numItems, postalCodeGroupNames, or location must be set.
 
   ## Attributes
 

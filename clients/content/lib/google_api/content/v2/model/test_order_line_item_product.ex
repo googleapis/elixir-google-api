@@ -23,7 +23,7 @@ defmodule GoogleApi.Content.V2.Model.TestOrderLineItemProduct do
   ## Attributes
 
   - brand (String.t): Brand of the item. Defaults to: `null`.
-  - channel (String.t): The item&#39;s channel. Defaults to: `null`.
+  - channel (String.t): Deprecated. Defaults to: `null`.
   - condition (String.t): Condition or state of the item. Defaults to: `null`.
   - contentLanguage (String.t): The two-letter ISO 639-1 language code for the item. Defaults to: `null`.
   - gtin (String.t): Global Trade Item Number (GTIN) of the item. Optional. Defaults to: `null`.

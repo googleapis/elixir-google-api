@@ -22,15 +22,15 @@ defmodule GoogleApi.Content.V2.Model.ProductStatusDataQualityIssue do
 
   ## Attributes
 
-  - destination (String.t): The destination the issue applies to. Defaults to: `null`.
-  - detail (String.t): A more detailed error string. Defaults to: `null`.
-  - fetchStatus (String.t): The fetch status for landing_page_errors. Defaults to: `null`.
-  - id (String.t): The id of the data quality issue. Defaults to: `null`.
-  - location (String.t): The attribute name that is relevant for the issue. Defaults to: `null`.
-  - severity (String.t): The severity of the data quality issue. Defaults to: `null`.
-  - timestamp (String.t): The time stamp of the data quality issue. Defaults to: `null`.
-  - valueOnLandingPage (String.t): The value of that attribute that was found on the landing page Defaults to: `null`.
-  - valueProvided (String.t): The value the attribute had at time of evaluation. Defaults to: `null`.
+  - destination (String.t):  Defaults to: `null`.
+  - detail (String.t):  Defaults to: `null`.
+  - fetchStatus (String.t):  Defaults to: `null`.
+  - id (String.t):  Defaults to: `null`.
+  - location (String.t):  Defaults to: `null`.
+  - severity (String.t):  Defaults to: `null`.
+  - timestamp (String.t):  Defaults to: `null`.
+  - valueOnLandingPage (String.t):  Defaults to: `null`.
+  - valueProvided (String.t):  Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

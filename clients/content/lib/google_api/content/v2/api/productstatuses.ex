@@ -82,7 +82,7 @@ defmodule GoogleApi.Content.V2.Api.Productstatuses do
 
   - connection (GoogleApi.Content.V2.Connection): Connection to server
   - merchant_id (String.t): The ID of the account that contains the product. This account cannot be a multi-client account.
-  - product_id (String.t): The REST id of the product.
+  - product_id (String.t): The REST ID of the product.
   - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
@@ -124,8 +124,8 @@ defmodule GoogleApi.Content.V2.Api.Productstatuses do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{merchantId}/productstatuses/{productId}", %{
-        "merchantId" => URI.encode_www_form(merchant_id),
-        "productId" => URI.encode_www_form(product_id)
+        "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
+        "productId" => URI.encode(product_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -183,7 +183,7 @@ defmodule GoogleApi.Content.V2.Api.Productstatuses do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{merchantId}/productstatuses", %{
-        "merchantId" => URI.encode_www_form(merchant_id)
+        "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

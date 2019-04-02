@@ -121,8 +121,8 @@ defmodule GoogleApi.Content.V2.Api.Datafeedstatuses do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{merchantId}/datafeedstatuses/{datafeedId}", %{
-        "merchantId" => URI.encode_www_form(merchant_id),
-        "datafeedId" => URI.encode_www_form(datafeed_id)
+        "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
+        "datafeedId" => URI.encode(datafeed_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -174,7 +174,7 @@ defmodule GoogleApi.Content.V2.Api.Datafeedstatuses do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{merchantId}/datafeedstatuses", %{
-        "merchantId" => URI.encode_www_form(merchant_id)
+        "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

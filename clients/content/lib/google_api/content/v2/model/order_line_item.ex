@@ -24,7 +24,7 @@ defmodule GoogleApi.Content.V2.Model.OrderLineItem do
 
   - annotations ([OrderMerchantProvidedAnnotation]): Annotations that are attached to the line item. Defaults to: `null`.
   - cancellations ([OrderCancellation]): Cancellations of the line item. Defaults to: `null`.
-  - id (String.t): The id of the line item. Defaults to: `null`.
+  - id (String.t): The ID of the line item. Defaults to: `null`.
   - price (Price): Total price for the line item. For example, if two items for $10 are purchased, the total price will be $20. Defaults to: `null`.
   - product (OrderLineItemProduct): Product data as seen by customer from the time of the order placement. Note that certain attributes values (e.g. title or gtin) might be reformatted and no longer match values submitted via product feed. Defaults to: `null`.
   - quantityCanceled (integer()): Number of items canceled. Defaults to: `null`.

@@ -25,9 +25,10 @@ defmodule GoogleApi.Content.V2.Model.DeliveryTime do
   - cutoffTime (CutoffTime): Business days cutoff time definition. If not configured the cutoff time will be defaulted to 8AM PST. Defaults to: `null`.
   - holidayCutoffs ([HolidayCutoff]): Holiday cutoff definitions. If configured, they specify order cutoff times for holiday-specific shipping. Defaults to: `null`.
   - maxHandlingTimeInDays (integer()): Maximum number of business days spent before an order is shipped. 0 means same day shipped, 1 means next day shipped. Must be greater than or equal to minHandlingTimeInDays. Defaults to: `null`.
-  - maxTransitTimeInDays (integer()): Maximum number of business days that is spent in transit. 0 means same day delivery, 1 means next day delivery. Must be greater than or equal to minTransitTimeInDays. Required. Defaults to: `null`.
+  - maxTransitTimeInDays (integer()): Maximum number of business days that is spent in transit. 0 means same day delivery, 1 means next day delivery. Must be greater than or equal to minTransitTimeInDays. Defaults to: `null`.
   - minHandlingTimeInDays (integer()): Minimum number of business days spent before an order is shipped. 0 means same day shipped, 1 means next day shipped. Defaults to: `null`.
-  - minTransitTimeInDays (integer()): Minimum number of business days that is spent in transit. 0 means same day delivery, 1 means next day delivery. Required. Defaults to: `null`.
+  - minTransitTimeInDays (integer()): Minimum number of business days that is spent in transit. 0 means same day delivery, 1 means next day delivery. Either {min,max}transitTimeInDays or transitTimeTable must be set, but not both. Defaults to: `null`.
+  - transitTimeTable (TransitTable): Transit time table, number of business days spent in transit based on row and column dimensions. Either {min,max}transitTimeInDays or transitTimeTable can be set, but not both. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -38,7 +39,8 @@ defmodule GoogleApi.Content.V2.Model.DeliveryTime do
           :maxHandlingTimeInDays => any(),
           :maxTransitTimeInDays => any(),
           :minHandlingTimeInDays => any(),
-          :minTransitTimeInDays => any()
+          :minTransitTimeInDays => any(),
+          :transitTimeTable => GoogleApi.Content.V2.Model.TransitTable.t()
         }
 
   field(:cutoffTime, as: GoogleApi.Content.V2.Model.CutoffTime)
@@ -47,6 +49,7 @@ defmodule GoogleApi.Content.V2.Model.DeliveryTime do
   field(:maxTransitTimeInDays)
   field(:minHandlingTimeInDays)
   field(:minTransitTimeInDays)
+  field(:transitTimeTable, as: GoogleApi.Content.V2.Model.TransitTable)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.DeliveryTime do
