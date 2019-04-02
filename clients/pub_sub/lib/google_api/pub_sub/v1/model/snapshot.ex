@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.PubSub.V1.Model.Snapshot do
   @moduledoc """
-  A snapshot resource. Snapshots are used in &lt;a href&#x3D;\&quot;https://cloud.google.com/pubsub/docs/replay-overview\&quot;&gt;Seek&lt;/a&gt; operations, which allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment state of messages in an existing subscription to the state captured by a snapshot.&lt;br&gt;&lt;br&gt; &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be changed in backward-incompatible ways and is not recommended for production use. It is not subject to any SLA or deprecation policy.
+  A snapshot resource. Snapshots are used in &lt;a href&#x3D;\&quot;https://cloud.google.com/pubsub/docs/replay-overview\&quot;&gt;Seek&lt;/a&gt; operations, which allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment state of messages in an existing subscription to the state captured by a snapshot.
 
   ## Attributes
 
