@@ -84,7 +84,7 @@ defmodule GoogleApi.People.V1.Api.People do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/people/{peopleId}/connections", %{
-        "peopleId" => URI.encode_www_form(people_id)
+        "peopleId" => URI.encode(people_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -195,7 +195,7 @@ defmodule GoogleApi.People.V1.Api.People do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v1/people/{peopleId}:deleteContact", %{
-        "peopleId" => URI.encode_www_form(people_id)
+        "peopleId" => URI.encode(people_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -254,7 +254,7 @@ defmodule GoogleApi.People.V1.Api.People do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/people/{peopleId}", %{
-        "peopleId" => URI.encode_www_form(people_id)
+        "peopleId" => URI.encode(people_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -371,7 +371,7 @@ defmodule GoogleApi.People.V1.Api.People do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/v1/people/{peopleId}:updateContact", %{
-        "peopleId" => URI.encode_www_form(people_id)
+        "peopleId" => URI.encode(people_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
