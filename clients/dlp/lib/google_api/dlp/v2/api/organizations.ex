@@ -78,7 +78,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v2/{+parent}/deidentifyTemplates", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -147,7 +147,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v2/{+parent}/deidentifyTemplates", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -213,7 +213,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v2/{+parent}/inspectTemplates", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -282,7 +282,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v2/{+parent}/inspectTemplates", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -347,7 +347,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v2/{+parent}/storedInfoTypes", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -409,7 +409,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v2/{+name}", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -465,7 +465,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v2/{+name}", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -534,7 +534,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v2/{+parent}/storedInfoTypes", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -599,7 +599,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/v2/{+name}", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

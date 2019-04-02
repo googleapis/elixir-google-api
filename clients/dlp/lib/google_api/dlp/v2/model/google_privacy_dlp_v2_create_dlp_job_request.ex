@@ -23,7 +23,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CreateDlpJobRequest do
   ## Attributes
 
   - inspectJob (GooglePrivacyDlpV2InspectJobConfig):  Defaults to: `null`.
-  - jobId (String.t): The job id can contain uppercase and lowercase letters, numbers, and hyphens; that is, it must match the regular expression: &#x60;[a-zA-Z\\\\d-]+&#x60;. The maximum length is 100 characters. Can be empty to allow the system to generate one. Defaults to: `null`.
+  - jobId (String.t): The job id can contain uppercase and lowercase letters, numbers, and hyphens; that is, it must match the regular expression: &#x60;[a-zA-Z\\\\d-_]+&#x60;. The maximum length is 100 characters. Can be empty to allow the system to generate one. Defaults to: `null`.
   - riskJob (GooglePrivacyDlpV2RiskAnalysisJobConfig):  Defaults to: `null`.
   """
 

@@ -23,7 +23,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FileSet do
   ## Attributes
 
   - regexFileSet (GooglePrivacyDlpV2CloudStorageRegexFileSet): The regex-filtered set of files to scan. Exactly one of &#x60;url&#x60; or &#x60;regex_file_set&#x60; must be set. Defaults to: `null`.
-  - url (String.t): The Cloud Storage url of the file(s) to scan, in the format &#x60;gs://&lt;bucket&gt;/&lt;path&gt;&#x60;. Trailing wildcard in the path is allowed. Exactly one of &#x60;url&#x60; or &#x60;regex_file_set&#x60; must be set. Defaults to: `null`.
+  - url (String.t): The Cloud Storage url of the file(s) to scan, in the format &#x60;gs://&lt;bucket&gt;/&lt;path&gt;&#x60;. Trailing wildcard in the path is allowed.  If the url ends in a trailing slash, the bucket or directory represented by the url will be scanned non-recursively (content in sub-directories will not be scanned). This means that &#x60;gs://mybucket/&#x60; is equivalent to &#x60;gs://mybucket/*&#x60;, and &#x60;gs://mybucket/directory/&#x60; is equivalent to &#x60;gs://mybucket/directory/*&#x60;.  Exactly one of &#x60;url&#x60; or &#x60;regex_file_set&#x60; must be set. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
