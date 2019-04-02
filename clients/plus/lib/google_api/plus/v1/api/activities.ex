@@ -25,7 +25,7 @@ defmodule GoogleApi.Plus.V1.Api.Activities do
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
-  Get an activity.
+  Shut down. See https://developers.google.com/+/api-shutdown for more details.
 
   ## Parameters
 
@@ -72,7 +72,7 @@ defmodule GoogleApi.Plus.V1.Api.Activities do
   end
 
   @doc """
-  List all of the activities in the specified collection for a particular user.
+  Shut down. See https://developers.google.com/+/api-shutdown for more details.
 
   ## Parameters
 
@@ -125,7 +125,7 @@ defmodule GoogleApi.Plus.V1.Api.Activities do
   end
 
   @doc """
-  Search public activities.
+  Shut down. See https://developers.google.com/+/api-shutdown for more details.
 
   ## Parameters
 

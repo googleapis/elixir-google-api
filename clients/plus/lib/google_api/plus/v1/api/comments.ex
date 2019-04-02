@@ -25,7 +25,7 @@ defmodule GoogleApi.Plus.V1.Api.Comments do
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
-  Get a comment.
+  Shut down. See https://developers.google.com/+/api-shutdown for more details.
 
   ## Parameters
 
@@ -72,7 +72,7 @@ defmodule GoogleApi.Plus.V1.Api.Comments do
   end
 
   @doc """
-  List all of the comments for an activity.
+  Shut down. See https://developers.google.com/+/api-shutdown for more details.
 
   ## Parameters
 
