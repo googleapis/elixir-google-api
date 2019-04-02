@@ -62,7 +62,7 @@ defmodule GoogleApi.GroupsMigration.V1.Api.Archive do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/groups/v1/groups/{groupId}/archive", %{
-        "groupId" => URI.encode_www_form(group_id)
+        "groupId" => URI.encode(group_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -120,7 +120,7 @@ defmodule GoogleApi.GroupsMigration.V1.Api.Archive do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/resumable/upload/groups/v1/groups/{groupId}/archive", %{
-        "groupId" => URI.encode_www_form(group_id)
+        "groupId" => URI.encode(group_id, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :uploadType, upload_type)
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -182,7 +182,7 @@ defmodule GoogleApi.GroupsMigration.V1.Api.Archive do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/upload/groups/v1/groups/{groupId}/archive", %{
-        "groupId" => URI.encode_www_form(group_id)
+        "groupId" => URI.encode(group_id, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :uploadType, upload_type)
       |> Request.add_param(:file, :data, data)
