@@ -25,6 +25,7 @@ defmodule GoogleApi.Content.V2.Api.Datafeedstatuses do
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
+  Gets multiple Merchant Center datafeed statuses in a single request.
 
   ## Parameters
 

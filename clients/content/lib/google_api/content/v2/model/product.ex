@@ -38,7 +38,7 @@ defmodule GoogleApi.Content.V2.Model.Product do
   - condition (String.t): Condition or state of the item. Defaults to: `null`.
   - contentLanguage (String.t): The two-letter ISO 639-1 language code for the item. Defaults to: `null`.
   - costOfGoodsSold (Price): Cost of goods sold. Used for gross profit reporting. Defaults to: `null`.
-  - customAttributes ([CustomAttribute]): A list of custom (merchant-provided) attributes. It can also be used for submitting any attribute of the feed specification in its generic form (e.g., { \&quot;name\&quot;: \&quot;size type\&quot;, \&quot;type\&quot;: \&quot;text\&quot;, \&quot;value\&quot;: \&quot;regular\&quot; }). This is useful for submitting attributes not explicitly exposed by the API. Defaults to: `null`.
+  - customAttributes ([CustomAttribute]): A list of custom (merchant-provided) attributes. It can also be used for submitting any attribute of the feed specification in its generic form (e.g., { \&quot;name\&quot;: \&quot;size type\&quot;, \&quot;value\&quot;: \&quot;regular\&quot; }). This is useful for submitting attributes not explicitly exposed by the API. Defaults to: `null`.
   - customGroups ([CustomGroup]): A list of custom (merchant-provided) custom attribute groups. Defaults to: `null`.
   - customLabel0 (String.t): Custom label 0 for custom grouping of items in a Shopping campaign. Defaults to: `null`.
   - customLabel1 (String.t): Custom label 1 for custom grouping of items in a Shopping campaign. Defaults to: `null`.

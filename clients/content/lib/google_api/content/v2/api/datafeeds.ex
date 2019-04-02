@@ -25,6 +25,7 @@ defmodule GoogleApi.Content.V2.Api.Datafeeds do
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
+  Deletes, fetches, gets, inserts and updates multiple datafeeds in a single request.
 
   ## Parameters
 
