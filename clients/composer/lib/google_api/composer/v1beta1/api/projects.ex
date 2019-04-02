@@ -83,8 +83,8 @@ defmodule GoogleApi.Composer.V1beta1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1beta1/projects/{projectsId}/locations/{locationsId}/environments", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "locationsId" => URI.encode_www_form(locations_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -155,9 +155,9 @@ defmodule GoogleApi.Composer.V1beta1.Api.Projects do
       |> Request.url(
         "/v1beta1/projects/{projectsId}/locations/{locationsId}/environments/{environmentsId}",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "environmentsId" => URI.encode_www_form(environments_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "environmentsId" => URI.encode(environments_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -229,9 +229,9 @@ defmodule GoogleApi.Composer.V1beta1.Api.Projects do
       |> Request.url(
         "/v1beta1/projects/{projectsId}/locations/{locationsId}/environments/{environmentsId}",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "environmentsId" => URI.encode_www_form(environments_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "environmentsId" => URI.encode(environments_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -304,8 +304,8 @@ defmodule GoogleApi.Composer.V1beta1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1beta1/projects/{projectsId}/locations/{locationsId}/environments", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "locationsId" => URI.encode_www_form(locations_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -382,9 +382,9 @@ defmodule GoogleApi.Composer.V1beta1.Api.Projects do
       |> Request.url(
         "/v1beta1/projects/{projectsId}/locations/{locationsId}/environments/{environmentsId}",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "environmentsId" => URI.encode_www_form(environments_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "environmentsId" => URI.encode(environments_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -457,8 +457,8 @@ defmodule GoogleApi.Composer.V1beta1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1beta1/projects/{projectsId}/locations/{locationsId}/imageVersions", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "locationsId" => URI.encode_www_form(locations_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -531,9 +531,9 @@ defmodule GoogleApi.Composer.V1beta1.Api.Projects do
       |> Request.url(
         "/v1beta1/projects/{projectsId}/locations/{locationsId}/operations/{operationsId}",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "operationsId" => URI.encode_www_form(operations_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "operationsId" => URI.encode(operations_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -605,9 +605,9 @@ defmodule GoogleApi.Composer.V1beta1.Api.Projects do
       |> Request.url(
         "/v1beta1/projects/{projectsId}/locations/{locationsId}/operations/{operationsId}",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "locationsId" => URI.encode_www_form(locations_id),
-          "operationsId" => URI.encode_www_form(operations_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "operationsId" => URI.encode(operations_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -682,8 +682,8 @@ defmodule GoogleApi.Composer.V1beta1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1beta1/projects/{projectsId}/locations/{locationsId}/operations", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "locationsId" => URI.encode_www_form(locations_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
