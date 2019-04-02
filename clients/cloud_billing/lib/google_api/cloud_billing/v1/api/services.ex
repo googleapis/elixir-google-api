@@ -137,7 +137,7 @@ defmodule GoogleApi.CloudBilling.V1.Api.Services do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/{+parent}/skus", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
