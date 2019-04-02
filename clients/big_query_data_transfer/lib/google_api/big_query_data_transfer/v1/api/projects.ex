@@ -50,14 +50,14 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.CheckValidCredsResponse{}} on success
   {:error, info} on failure
   """
-  @spec bigquerydatatransfer_projects_data_sources_check_valid_creds(
+  @spec bigquerydatatransfer_projects_locations_data_sources_check_valid_creds(
           Tesla.Env.client(),
           String.t(),
           keyword()
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.CheckValidCredsResponse.t()}
           | {:error, Tesla.Env.t()}
-  def bigquerydatatransfer_projects_data_sources_check_valid_creds(
+  def bigquerydatatransfer_projects_locations_data_sources_check_valid_creds(
         connection,
         name,
         optional_params \\ [],
@@ -82,7 +82,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/{+name}:checkValidCreds", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -120,10 +120,14 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.ListDataSourcesResponse{}} on success
   {:error, info} on failure
   """
-  @spec bigquerydatatransfer_projects_data_sources_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec bigquerydatatransfer_projects_locations_data_sources_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.ListDataSourcesResponse.t()}
           | {:error, Tesla.Env.t()}
-  def bigquerydatatransfer_projects_data_sources_list(
+  def bigquerydatatransfer_projects_locations_data_sources_list(
         connection,
         parent,
         optional_params \\ [],
@@ -149,7 +153,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/{+parent}/dataSources", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -218,7 +222,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/{+name}/locations", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -249,6 +253,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :authorizationCode (String.t): Optional OAuth2 authorization code to use with this transfer configuration. This is required if new credentials are needed, as indicated by &#x60;CheckValidCreds&#x60;. In order to obtain authorization_code, please make a request to https://www.gstatic.com/bigquerydatatransfer/oauthz/auth?client_id&#x3D;&lt;datatransferapiclientid&gt;&amp;scope&#x3D;&lt;data_source_scopes&gt;&amp;redirect_uri&#x3D;&lt;redirect_uri&gt;  * client_id should be OAuth client_id of BigQuery DTS API for the given   data source returned by ListDataSources method. * data_source_scopes are the scopes returned by ListDataSources method. * redirect_uri is an optional parameter. If not specified, then   authorization code is posted to the opener of authorization flow window.   Otherwise it will be sent to the redirect uri. A special value of   urn:ietf:wg:oauth:2.0:oob means that authorization code should be   returned in the title bar of the browser, with the page text prompting   the user to copy the code and paste it in the application.
+    - :versionInfo (String.t): Optional version info. If users want to find a very recent access token, that is, immediately after approving access, users have to set the version_info claim in the token request. To obtain the version_info, users must use the “none+gsession” response type. which be return a version_info back in the authorization response which be be put in a JWT claim in the token request.
     - :body (TransferConfig): 
 
   ## Returns
@@ -256,14 +261,14 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig{}} on success
   {:error, info} on failure
   """
-  @spec bigquerydatatransfer_projects_transfer_configs_create(
+  @spec bigquerydatatransfer_projects_locations_transfer_configs_create(
           Tesla.Env.client(),
           String.t(),
           keyword()
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig.t()}
           | {:error, Tesla.Env.t()}
-  def bigquerydatatransfer_projects_transfer_configs_create(
+  def bigquerydatatransfer_projects_locations_transfer_configs_create(
         connection,
         parent,
         optional_params \\ [],
@@ -282,6 +287,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
       :upload_protocol => :query,
       :uploadType => :query,
       :authorizationCode => :query,
+      :versionInfo => :query,
       :body => :body
     }
 
@@ -289,7 +295,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/{+parent}/transferConfigs", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -328,14 +334,14 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.ListTransferConfigsResponse{}} on success
   {:error, info} on failure
   """
-  @spec bigquerydatatransfer_projects_transfer_configs_list(
+  @spec bigquerydatatransfer_projects_locations_transfer_configs_list(
           Tesla.Env.client(),
           String.t(),
           keyword()
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.ListTransferConfigsResponse.t()}
           | {:error, Tesla.Env.t()}
-  def bigquerydatatransfer_projects_transfer_configs_list(
+  def bigquerydatatransfer_projects_locations_transfer_configs_list(
         connection,
         parent,
         optional_params \\ [],
@@ -362,7 +368,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/{+parent}/transferConfigs", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -394,6 +400,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :authorizationCode (String.t): Optional OAuth2 authorization code to use with this transfer configuration. If it is provided, the transfer configuration will be associated with the authorizing user. In order to obtain authorization_code, please make a request to https://www.gstatic.com/bigquerydatatransfer/oauthz/auth?client_id&#x3D;&lt;datatransferapiclientid&gt;&amp;scope&#x3D;&lt;data_source_scopes&gt;&amp;redirect_uri&#x3D;&lt;redirect_uri&gt;  * client_id should be OAuth client_id of BigQuery DTS API for the given   data source returned by ListDataSources method. * data_source_scopes are the scopes returned by ListDataSources method. * redirect_uri is an optional parameter. If not specified, then   authorization code is posted to the opener of authorization flow window.   Otherwise it will be sent to the redirect uri. A special value of   urn:ietf:wg:oauth:2.0:oob means that authorization code should be   returned in the title bar of the browser, with the page text prompting   the user to copy the code and paste it in the application.
     - :updateMask (String.t): Required list of fields to be updated in this request.
+    - :versionInfo (String.t): Optional version info. If users want to find a very recent access token, that is, immediately after approving access, users have to set the version_info claim in the token request. To obtain the version_info, users must use the “none+gsession” response type. which be return a version_info back in the authorization response which be be put in a JWT claim in the token request.
     - :body (TransferConfig): 
 
   ## Returns
@@ -401,14 +408,14 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig{}} on success
   {:error, info} on failure
   """
-  @spec bigquerydatatransfer_projects_transfer_configs_patch(
+  @spec bigquerydatatransfer_projects_locations_transfer_configs_patch(
           Tesla.Env.client(),
           String.t(),
           keyword()
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig.t()}
           | {:error, Tesla.Env.t()}
-  def bigquerydatatransfer_projects_transfer_configs_patch(
+  def bigquerydatatransfer_projects_locations_transfer_configs_patch(
         connection,
         name,
         optional_params \\ [],
@@ -428,6 +435,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
       :uploadType => :query,
       :authorizationCode => :query,
       :updateMask => :query,
+      :versionInfo => :query,
       :body => :body
     }
 
@@ -435,7 +443,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/v1/{+name}", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -471,12 +479,12 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.Empty{}} on success
   {:error, info} on failure
   """
-  @spec bigquerydatatransfer_projects_transfer_configs_runs_delete(
+  @spec bigquerydatatransfer_projects_locations_transfer_configs_runs_delete(
           Tesla.Env.client(),
           String.t(),
           keyword()
         ) :: {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
-  def bigquerydatatransfer_projects_transfer_configs_runs_delete(
+  def bigquerydatatransfer_projects_locations_transfer_configs_runs_delete(
         connection,
         name,
         optional_params \\ [],
@@ -500,7 +508,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v1/{+name}", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -534,13 +542,13 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.TransferRun{}} on success
   {:error, info} on failure
   """
-  @spec bigquerydatatransfer_projects_transfer_configs_runs_get(
+  @spec bigquerydatatransfer_projects_locations_transfer_configs_runs_get(
           Tesla.Env.client(),
           String.t(),
           keyword()
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.TransferRun.t()} | {:error, Tesla.Env.t()}
-  def bigquerydatatransfer_projects_transfer_configs_runs_get(
+  def bigquerydatatransfer_projects_locations_transfer_configs_runs_get(
         connection,
         name,
         optional_params \\ [],
@@ -564,7 +572,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/{+name}", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -602,14 +610,14 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.ListTransferRunsResponse{}} on success
   {:error, info} on failure
   """
-  @spec bigquerydatatransfer_projects_transfer_configs_runs_list(
+  @spec bigquerydatatransfer_projects_locations_transfer_configs_runs_list(
           Tesla.Env.client(),
           String.t(),
           keyword()
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.ListTransferRunsResponse.t()}
           | {:error, Tesla.Env.t()}
-  def bigquerydatatransfer_projects_transfer_configs_runs_list(
+  def bigquerydatatransfer_projects_locations_transfer_configs_runs_list(
         connection,
         parent,
         optional_params \\ [],
@@ -637,7 +645,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/{+parent}/runs", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -676,14 +684,14 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.ListTransferLogsResponse{}} on success
   {:error, info} on failure
   """
-  @spec bigquerydatatransfer_projects_transfer_configs_runs_transfer_logs_list(
+  @spec bigquerydatatransfer_projects_locations_transfer_configs_runs_transfer_logs_list(
           Tesla.Env.client(),
           String.t(),
           keyword()
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.ListTransferLogsResponse.t()}
           | {:error, Tesla.Env.t()}
-  def bigquerydatatransfer_projects_transfer_configs_runs_transfer_logs_list(
+  def bigquerydatatransfer_projects_locations_transfer_configs_runs_transfer_logs_list(
         connection,
         parent,
         optional_params \\ [],
@@ -710,7 +718,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/{+parent}/transferLogs", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -747,14 +755,14 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.ScheduleTransferRunsResponse{}} on success
   {:error, info} on failure
   """
-  @spec bigquerydatatransfer_projects_transfer_configs_schedule_runs(
+  @spec bigquerydatatransfer_projects_locations_transfer_configs_schedule_runs(
           Tesla.Env.client(),
           String.t(),
           keyword()
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.ScheduleTransferRunsResponse.t()}
           | {:error, Tesla.Env.t()}
-  def bigquerydatatransfer_projects_transfer_configs_schedule_runs(
+  def bigquerydatatransfer_projects_locations_transfer_configs_schedule_runs(
         connection,
         parent,
         optional_params \\ [],
@@ -779,7 +787,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/{+parent}:scheduleRuns", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
