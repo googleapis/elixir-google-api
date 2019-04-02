@@ -72,7 +72,7 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectId}:allocateIds", %{
-        "projectId" => URI.encode_www_form(project_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -135,7 +135,7 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectId}:beginTransaction", %{
-        "projectId" => URI.encode_www_form(project_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -192,7 +192,7 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectId}:commit", %{
-        "projectId" => URI.encode_www_form(project_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -250,7 +250,7 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectId}:export", %{
-        "projectId" => URI.encode_www_form(project_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -310,7 +310,7 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectId}:import", %{
-        "projectId" => URI.encode_www_form(project_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -375,8 +375,8 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectId}/indexes/{indexId}", %{
-        "projectId" => URI.encode_www_form(project_id),
-        "indexId" => URI.encode_www_form(index_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "indexId" => URI.encode(index_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -440,7 +440,7 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectId}/indexes", %{
-        "projectId" => URI.encode_www_form(project_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -499,7 +499,7 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectId}:lookup", %{
-        "projectId" => URI.encode_www_form(project_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -554,7 +554,7 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/{+name}:cancel", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -609,7 +609,7 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v1/{+name}", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -665,7 +665,7 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/{+name}", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -729,7 +729,7 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/{+name}/operations", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -788,7 +788,7 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectId}:reserveIds", %{
-        "projectId" => URI.encode_www_form(project_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -845,7 +845,7 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectId}:rollback", %{
-        "projectId" => URI.encode_www_form(project_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -902,7 +902,7 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/projects/{projectId}:runQuery", %{
-        "projectId" => URI.encode_www_form(project_id)
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
