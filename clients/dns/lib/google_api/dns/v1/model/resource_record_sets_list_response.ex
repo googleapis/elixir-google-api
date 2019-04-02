@@ -24,8 +24,8 @@ defmodule GoogleApi.DNS.V1.Model.ResourceRecordSetsListResponse do
 
   - header (ResponseHeader):  Defaults to: `null`.
   - kind (String.t): Type of resource. Defaults to: `null`.
-  - nextPageToken (String.t): The presence of this field indicates that there exist more results following your last page of results in pagination order. To fetch them, make another list request using this value as your pagination token.  In this way you can retrieve the complete contents of even very large collections one page at a time. However, if the contents of the collection change between the first and last paginated list request, the set of all elements returned will be an inconsistent view of the collection. There is no way to retrieve a consistent snapshot of a collection larger than the maximum page size. Defaults to: `null`.
-  - rrsets ([ResourceRecordSet]): The resource record set resources. Defaults to: `null`.
+  - nextPageToken (String.t):  Defaults to: `null`.
+  - rrsets ([ResourceRecordSet]):  Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
