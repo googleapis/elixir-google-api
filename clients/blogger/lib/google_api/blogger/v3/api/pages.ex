@@ -63,8 +63,8 @@ defmodule GoogleApi.Blogger.V3.Api.Pages do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/blogs/{blogId}/pages/{pageId}", %{
-        "blogId" => URI.encode_www_form(blog_id),
-        "pageId" => URI.encode_www_form(page_id)
+        "blogId" => URI.encode(blog_id, &URI.char_unreserved?/1),
+        "pageId" => URI.encode(page_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -114,8 +114,8 @@ defmodule GoogleApi.Blogger.V3.Api.Pages do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/blogs/{blogId}/pages/{pageId}", %{
-        "blogId" => URI.encode_www_form(blog_id),
-        "pageId" => URI.encode_www_form(page_id)
+        "blogId" => URI.encode(blog_id, &URI.char_unreserved?/1),
+        "pageId" => URI.encode(page_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -166,7 +166,7 @@ defmodule GoogleApi.Blogger.V3.Api.Pages do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/blogs/{blogId}/pages", %{
-        "blogId" => URI.encode_www_form(blog_id)
+        "blogId" => URI.encode(blog_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -223,7 +223,7 @@ defmodule GoogleApi.Blogger.V3.Api.Pages do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/blogs/{blogId}/pages", %{
-        "blogId" => URI.encode_www_form(blog_id)
+        "blogId" => URI.encode(blog_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -277,8 +277,8 @@ defmodule GoogleApi.Blogger.V3.Api.Pages do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/blogs/{blogId}/pages/{pageId}", %{
-        "blogId" => URI.encode_www_form(blog_id),
-        "pageId" => URI.encode_www_form(page_id)
+        "blogId" => URI.encode(blog_id, &URI.char_unreserved?/1),
+        "pageId" => URI.encode(page_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -326,8 +326,8 @@ defmodule GoogleApi.Blogger.V3.Api.Pages do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/blogs/{blogId}/pages/{pageId}/publish", %{
-        "blogId" => URI.encode_www_form(blog_id),
-        "pageId" => URI.encode_www_form(page_id)
+        "blogId" => URI.encode(blog_id, &URI.char_unreserved?/1),
+        "pageId" => URI.encode(page_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -375,8 +375,8 @@ defmodule GoogleApi.Blogger.V3.Api.Pages do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/blogs/{blogId}/pages/{pageId}/revert", %{
-        "blogId" => URI.encode_www_form(blog_id),
-        "pageId" => URI.encode_www_form(page_id)
+        "blogId" => URI.encode(blog_id, &URI.char_unreserved?/1),
+        "pageId" => URI.encode(page_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -430,8 +430,8 @@ defmodule GoogleApi.Blogger.V3.Api.Pages do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/blogs/{blogId}/pages/{pageId}", %{
-        "blogId" => URI.encode_www_form(blog_id),
-        "pageId" => URI.encode_www_form(page_id)
+        "blogId" => URI.encode(blog_id, &URI.char_unreserved?/1),
+        "pageId" => URI.encode(page_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

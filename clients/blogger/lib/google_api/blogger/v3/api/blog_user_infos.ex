@@ -65,8 +65,8 @@ defmodule GoogleApi.Blogger.V3.Api.BlogUserInfos do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/users/{userId}/blogs/{blogId}", %{
-        "userId" => URI.encode_www_form(user_id),
-        "blogId" => URI.encode_www_form(blog_id)
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
+        "blogId" => URI.encode(blog_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
