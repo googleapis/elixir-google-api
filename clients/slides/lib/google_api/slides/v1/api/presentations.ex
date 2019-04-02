@@ -78,7 +78,7 @@ defmodule GoogleApi.Slides.V1.Api.Presentations do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/presentations/{presentationId}:batchUpdate", %{
-        "presentationId" => URI.encode_www_form(presentation_id)
+        "presentationId" => URI.encode(presentation_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -189,7 +189,7 @@ defmodule GoogleApi.Slides.V1.Api.Presentations do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/presentations/{+presentationId}", %{
-        "presentationId" => URI.encode_www_form(presentation_id)
+        "presentationId" => URI.encode(presentation_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -251,8 +251,8 @@ defmodule GoogleApi.Slides.V1.Api.Presentations do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/presentations/{presentationId}/pages/{pageObjectId}", %{
-        "presentationId" => URI.encode_www_form(presentation_id),
-        "pageObjectId" => URI.encode_www_form(page_object_id)
+        "presentationId" => URI.encode(presentation_id, &URI.char_unreserved?/1),
+        "pageObjectId" => URI.encode(page_object_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -322,8 +322,8 @@ defmodule GoogleApi.Slides.V1.Api.Presentations do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/presentations/{presentationId}/pages/{pageObjectId}/thumbnail", %{
-        "presentationId" => URI.encode_www_form(presentation_id),
-        "pageObjectId" => URI.encode_www_form(page_object_id)
+        "presentationId" => URI.encode(presentation_id, &URI.char_unreserved?/1),
+        "pageObjectId" => URI.encode(page_object_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
