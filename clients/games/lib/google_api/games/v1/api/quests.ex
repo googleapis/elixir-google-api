@@ -64,7 +64,7 @@ defmodule GoogleApi.Games.V1.Api.Quests do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/quests/{questId}/accept", %{
-        "questId" => URI.encode_www_form(quest_id)
+        "questId" => URI.encode(quest_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -117,7 +117,7 @@ defmodule GoogleApi.Games.V1.Api.Quests do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/players/{playerId}/quests", %{
-        "playerId" => URI.encode_www_form(player_id)
+        "playerId" => URI.encode(player_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

@@ -80,9 +80,9 @@ defmodule GoogleApi.Games.V1.Api.Scores do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/players/{playerId}/leaderboards/{leaderboardId}/scores/{timeSpan}", %{
-        "playerId" => URI.encode_www_form(player_id),
-        "leaderboardId" => URI.encode_www_form(leaderboard_id),
-        "timeSpan" => URI.encode_www_form(time_span)
+        "playerId" => URI.encode(player_id, &URI.char_unreserved?/1),
+        "leaderboardId" => URI.encode(leaderboard_id, &URI.char_unreserved?/1),
+        "timeSpan" => URI.encode(time_span, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -146,8 +146,8 @@ defmodule GoogleApi.Games.V1.Api.Scores do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/leaderboards/{leaderboardId}/scores/{collection}", %{
-        "leaderboardId" => URI.encode_www_form(leaderboard_id),
-        "collection" => URI.encode_www_form(collection)
+        "leaderboardId" => URI.encode(leaderboard_id, &URI.char_unreserved?/1),
+        "collection" => URI.encode(collection, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :timeSpan, time_span)
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -219,8 +219,8 @@ defmodule GoogleApi.Games.V1.Api.Scores do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/leaderboards/{leaderboardId}/window/{collection}", %{
-        "leaderboardId" => URI.encode_www_form(leaderboard_id),
-        "collection" => URI.encode_www_form(collection)
+        "leaderboardId" => URI.encode(leaderboard_id, &URI.char_unreserved?/1),
+        "collection" => URI.encode(collection, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :timeSpan, time_span)
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -273,7 +273,7 @@ defmodule GoogleApi.Games.V1.Api.Scores do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/leaderboards/{leaderboardId}/scores", %{
-        "leaderboardId" => URI.encode_www_form(leaderboard_id)
+        "leaderboardId" => URI.encode(leaderboard_id, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :score, score)
       |> Request.add_optional_params(optional_params_config, optional_params)

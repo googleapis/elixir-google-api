@@ -112,7 +112,7 @@ defmodule GoogleApi.Games.V1.Api.Rooms do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/rooms/{roomId}/decline", %{
-        "roomId" => URI.encode_www_form(room_id)
+        "roomId" => URI.encode(room_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -159,7 +159,7 @@ defmodule GoogleApi.Games.V1.Api.Rooms do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/rooms/{roomId}/dismiss", %{
-        "roomId" => URI.encode_www_form(room_id)
+        "roomId" => URI.encode(room_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -208,7 +208,7 @@ defmodule GoogleApi.Games.V1.Api.Rooms do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/rooms/{roomId}", %{
-        "roomId" => URI.encode_www_form(room_id)
+        "roomId" => URI.encode(room_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -259,7 +259,7 @@ defmodule GoogleApi.Games.V1.Api.Rooms do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/rooms/{roomId}/join", %{
-        "roomId" => URI.encode_www_form(room_id)
+        "roomId" => URI.encode(room_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -310,7 +310,7 @@ defmodule GoogleApi.Games.V1.Api.Rooms do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/rooms/{roomId}/leave", %{
-        "roomId" => URI.encode_www_form(room_id)
+        "roomId" => URI.encode(room_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -411,7 +411,7 @@ defmodule GoogleApi.Games.V1.Api.Rooms do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/rooms/{roomId}/reportstatus", %{
-        "roomId" => URI.encode_www_form(room_id)
+        "roomId" => URI.encode(room_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

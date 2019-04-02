@@ -72,7 +72,7 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/achievements/{achievementId}/increment", %{
-        "achievementId" => URI.encode_www_form(achievement_id)
+        "achievementId" => URI.encode(achievement_id, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :stepsToIncrement, steps_to_increment)
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -129,7 +129,7 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/players/{playerId}/achievements", %{
-        "playerId" => URI.encode_www_form(player_id)
+        "playerId" => URI.encode(player_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -178,7 +178,7 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/achievements/{achievementId}/reveal", %{
-        "achievementId" => URI.encode_www_form(achievement_id)
+        "achievementId" => URI.encode(achievement_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -238,7 +238,7 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/achievements/{achievementId}/setStepsAtLeast", %{
-        "achievementId" => URI.encode_www_form(achievement_id)
+        "achievementId" => URI.encode(achievement_id, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :steps, steps)
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -290,7 +290,7 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/achievements/{achievementId}/unlock", %{
-        "achievementId" => URI.encode_www_form(achievement_id)
+        "achievementId" => URI.encode(achievement_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

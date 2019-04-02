@@ -64,7 +64,7 @@ defmodule GoogleApi.Games.V1.Api.Players do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/players/{playerId}", %{
-        "playerId" => URI.encode_www_form(player_id)
+        "playerId" => URI.encode(player_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -117,7 +117,7 @@ defmodule GoogleApi.Games.V1.Api.Players do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/players/me/players/{collection}", %{
-        "collection" => URI.encode_www_form(collection)
+        "collection" => URI.encode(collection, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

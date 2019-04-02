@@ -25,7 +25,7 @@ defmodule GoogleApi.Games.V1.Connection do
     scopes: [
       # View and manage its own configuration data in your Google Drive
       "https://www.googleapis.com/auth/drive.appdata",
-      # Share your Google+ profile information and view and manage your game activity
+      # Create, edit, and delete your Google Play Games activity
       "https://www.googleapis.com/auth/games",
       # Know who you are on Google
       "https://www.googleapis.com/auth/plus.me"

@@ -123,8 +123,8 @@ defmodule GoogleApi.Games.V1.Api.Metagame do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/players/{playerId}/categories/{collection}", %{
-        "playerId" => URI.encode_www_form(player_id),
-        "collection" => URI.encode_www_form(collection)
+        "playerId" => URI.encode(player_id, &URI.char_unreserved?/1),
+        "collection" => URI.encode(collection, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

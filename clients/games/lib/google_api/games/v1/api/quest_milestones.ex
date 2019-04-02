@@ -76,8 +76,8 @@ defmodule GoogleApi.Games.V1.Api.QuestMilestones do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/quests/{questId}/milestones/{milestoneId}/claim", %{
-        "questId" => URI.encode_www_form(quest_id),
-        "milestoneId" => URI.encode_www_form(milestone_id)
+        "questId" => URI.encode(quest_id, &URI.char_unreserved?/1),
+        "milestoneId" => URI.encode(milestone_id, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :requestId, request_id)
       |> Request.add_optional_params(optional_params_config, optional_params)
