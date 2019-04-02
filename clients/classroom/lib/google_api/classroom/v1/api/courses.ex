@@ -72,7 +72,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/courses/{courseId}/aliases", %{
-        "courseId" => URI.encode_www_form(course_id)
+        "courseId" => URI.encode(course_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -134,8 +134,8 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v1/courses/{courseId}/aliases/{alias}", %{
-        "courseId" => URI.encode_www_form(course_id),
-        "alias" => URI.encode_www_form(alias)
+        "courseId" => URI.encode(course_id, &URI.char_unreserved?/1),
+        "alias" => URI.encode(alias, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -195,7 +195,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/courses/{courseId}/aliases", %{
-        "courseId" => URI.encode_www_form(course_id)
+        "courseId" => URI.encode(course_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -259,7 +259,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/courses/{courseId}/announcements", %{
-        "courseId" => URI.encode_www_form(course_id)
+        "courseId" => URI.encode(course_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -325,8 +325,8 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v1/courses/{courseId}/announcements/{id}", %{
-        "courseId" => URI.encode_www_form(course_id),
-        "id" => URI.encode_www_form(id)
+        "courseId" => URI.encode(course_id, &URI.char_unreserved?/1),
+        "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -388,8 +388,8 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/courses/{courseId}/announcements/{id}", %{
-        "courseId" => URI.encode_www_form(course_id),
-        "id" => URI.encode_www_form(id)
+        "courseId" => URI.encode(course_id, &URI.char_unreserved?/1),
+        "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -458,7 +458,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/courses/{courseId}/announcements", %{
-        "courseId" => URI.encode_www_form(course_id)
+        "courseId" => URI.encode(course_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -528,8 +528,8 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/courses/{courseId}/announcements/{id}:modifyAssignees", %{
-        "courseId" => URI.encode_www_form(course_id),
-        "id" => URI.encode_www_form(id)
+        "courseId" => URI.encode(course_id, &URI.char_unreserved?/1),
+        "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -599,8 +599,8 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/v1/courses/{courseId}/announcements/{id}", %{
-        "courseId" => URI.encode_www_form(course_id),
-        "id" => URI.encode_www_form(id)
+        "courseId" => URI.encode(course_id, &URI.char_unreserved?/1),
+        "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -662,7 +662,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/courses/{courseId}/courseWork", %{
-        "courseId" => URI.encode_www_form(course_id)
+        "courseId" => URI.encode(course_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -728,8 +728,8 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v1/courses/{courseId}/courseWork/{id}", %{
-        "courseId" => URI.encode_www_form(course_id),
-        "id" => URI.encode_www_form(id)
+        "courseId" => URI.encode(course_id, &URI.char_unreserved?/1),
+        "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -791,8 +791,8 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/courses/{courseId}/courseWork/{id}", %{
-        "courseId" => URI.encode_www_form(course_id),
-        "id" => URI.encode_www_form(id)
+        "courseId" => URI.encode(course_id, &URI.char_unreserved?/1),
+        "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -855,7 +855,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/courses/{courseId}/courseWork", %{
-        "courseId" => URI.encode_www_form(course_id)
+        "courseId" => URI.encode(course_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -923,8 +923,8 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/courses/{courseId}/courseWork/{id}:modifyAssignees", %{
-        "courseId" => URI.encode_www_form(course_id),
-        "id" => URI.encode_www_form(id)
+        "courseId" => URI.encode(course_id, &URI.char_unreserved?/1),
+        "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -990,8 +990,8 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/v1/courses/{courseId}/courseWork/{id}", %{
-        "courseId" => URI.encode_www_form(course_id),
-        "id" => URI.encode_www_form(id)
+        "courseId" => URI.encode(course_id, &URI.char_unreserved?/1),
+        "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1062,9 +1062,9 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       |> Request.url(
         "/v1/courses/{courseId}/courseWork/{courseWorkId}/studentSubmissions/{id}",
         %{
-          "courseId" => URI.encode_www_form(course_id),
-          "courseWorkId" => URI.encode_www_form(course_work_id),
-          "id" => URI.encode_www_form(id)
+          "courseId" => URI.encode(course_id, &URI.char_unreserved?/1),
+          "courseWorkId" => URI.encode(course_work_id, &URI.char_unreserved?/1),
+          "id" => URI.encode(id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1143,8 +1143,8 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/courses/{courseId}/courseWork/{courseWorkId}/studentSubmissions", %{
-        "courseId" => URI.encode_www_form(course_id),
-        "courseWorkId" => URI.encode_www_form(course_work_id)
+        "courseId" => URI.encode(course_id, &URI.char_unreserved?/1),
+        "courseWorkId" => URI.encode(course_work_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1219,9 +1219,9 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       |> Request.url(
         "/v1/courses/{courseId}/courseWork/{courseWorkId}/studentSubmissions/{id}:modifyAttachments",
         %{
-          "courseId" => URI.encode_www_form(course_id),
-          "courseWorkId" => URI.encode_www_form(course_work_id),
-          "id" => URI.encode_www_form(id)
+          "courseId" => URI.encode(course_id, &URI.char_unreserved?/1),
+          "courseWorkId" => URI.encode(course_work_id, &URI.char_unreserved?/1),
+          "id" => URI.encode(id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1297,9 +1297,9 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       |> Request.url(
         "/v1/courses/{courseId}/courseWork/{courseWorkId}/studentSubmissions/{id}",
         %{
-          "courseId" => URI.encode_www_form(course_id),
-          "courseWorkId" => URI.encode_www_form(course_work_id),
-          "id" => URI.encode_www_form(id)
+          "courseId" => URI.encode(course_id, &URI.char_unreserved?/1),
+          "courseWorkId" => URI.encode(course_work_id, &URI.char_unreserved?/1),
+          "id" => URI.encode(id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1373,9 +1373,9 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       |> Request.url(
         "/v1/courses/{courseId}/courseWork/{courseWorkId}/studentSubmissions/{id}:reclaim",
         %{
-          "courseId" => URI.encode_www_form(course_id),
-          "courseWorkId" => URI.encode_www_form(course_work_id),
-          "id" => URI.encode_www_form(id)
+          "courseId" => URI.encode(course_id, &URI.char_unreserved?/1),
+          "courseWorkId" => URI.encode(course_work_id, &URI.char_unreserved?/1),
+          "id" => URI.encode(id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1449,9 +1449,9 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       |> Request.url(
         "/v1/courses/{courseId}/courseWork/{courseWorkId}/studentSubmissions/{id}:return",
         %{
-          "courseId" => URI.encode_www_form(course_id),
-          "courseWorkId" => URI.encode_www_form(course_work_id),
-          "id" => URI.encode_www_form(id)
+          "courseId" => URI.encode(course_id, &URI.char_unreserved?/1),
+          "courseWorkId" => URI.encode(course_work_id, &URI.char_unreserved?/1),
+          "id" => URI.encode(id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1525,9 +1525,9 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       |> Request.url(
         "/v1/courses/{courseId}/courseWork/{courseWorkId}/studentSubmissions/{id}:turnIn",
         %{
-          "courseId" => URI.encode_www_form(course_id),
-          "courseWorkId" => URI.encode_www_form(course_work_id),
-          "id" => URI.encode_www_form(id)
+          "courseId" => URI.encode(course_id, &URI.char_unreserved?/1),
+          "courseWorkId" => URI.encode(course_work_id, &URI.char_unreserved?/1),
+          "id" => URI.encode(id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1637,7 +1637,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v1/courses/{id}", %{
-        "id" => URI.encode_www_form(id)
+        "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1692,7 +1692,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/courses/{id}", %{
-        "id" => URI.encode_www_form(id)
+        "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1813,7 +1813,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/v1/courses/{id}", %{
-        "id" => URI.encode_www_form(id)
+        "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1872,7 +1872,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/courses/{courseId}/students", %{
-        "courseId" => URI.encode_www_form(course_id)
+        "courseId" => URI.encode(course_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1934,8 +1934,8 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v1/courses/{courseId}/students/{userId}", %{
-        "courseId" => URI.encode_www_form(course_id),
-        "userId" => URI.encode_www_form(user_id)
+        "courseId" => URI.encode(course_id, &URI.char_unreserved?/1),
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1997,8 +1997,8 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/courses/{courseId}/students/{userId}", %{
-        "courseId" => URI.encode_www_form(course_id),
-        "userId" => URI.encode_www_form(user_id)
+        "courseId" => URI.encode(course_id, &URI.char_unreserved?/1),
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2057,7 +2057,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/courses/{courseId}/students", %{
-        "courseId" => URI.encode_www_form(course_id)
+        "courseId" => URI.encode(course_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2114,7 +2114,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/courses/{courseId}/teachers", %{
-        "courseId" => URI.encode_www_form(course_id)
+        "courseId" => URI.encode(course_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2176,8 +2176,8 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v1/courses/{courseId}/teachers/{userId}", %{
-        "courseId" => URI.encode_www_form(course_id),
-        "userId" => URI.encode_www_form(user_id)
+        "courseId" => URI.encode(course_id, &URI.char_unreserved?/1),
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2239,8 +2239,8 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/courses/{courseId}/teachers/{userId}", %{
-        "courseId" => URI.encode_www_form(course_id),
-        "userId" => URI.encode_www_form(user_id)
+        "courseId" => URI.encode(course_id, &URI.char_unreserved?/1),
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2299,7 +2299,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/courses/{courseId}/teachers", %{
-        "courseId" => URI.encode_www_form(course_id)
+        "courseId" => URI.encode(course_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2356,7 +2356,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/v1/courses/{id}", %{
-        "id" => URI.encode_www_form(id)
+        "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
