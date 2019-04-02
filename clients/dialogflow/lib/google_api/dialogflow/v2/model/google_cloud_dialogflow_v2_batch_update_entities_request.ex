@@ -23,7 +23,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2BatchUpdateEntiti
   ## Attributes
 
   - entities ([GoogleCloudDialogflowV2EntityTypeEntity]): Required. The entities to update or create. Defaults to: `null`.
-  - languageCode (String.t): Optional. The language of entity synonyms defined in &#x60;entities&#x60;. If not specified, the agent&#39;s default language is used. [More than a dozen languages](https://dialogflow.com/docs/reference/language) are supported. Note: languages must be enabled in the agent, before they can be used. Defaults to: `null`.
+  - languageCode (String.t): Optional. The language of entity synonyms defined in &#x60;entities&#x60;. If not specified, the agent&#39;s default language is used. [Many languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language) are supported. Note: languages must be enabled in the agent before they can be used. Defaults to: `null`.
   - updateMask (String.t): Optional. The mask to control which fields get updated. Defaults to: `null`.
   """
 

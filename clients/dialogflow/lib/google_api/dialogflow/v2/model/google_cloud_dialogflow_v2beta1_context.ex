@@ -22,7 +22,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1Context do
 
   ## Attributes
 
-  - parameters (%{optional(String.t) &#x3D;&gt; String.t}): Optional. The collection of parameters associated with this context. Refer to [this doc](https://dialogflow.com/docs/actions-and-parameters) for syntax. Defaults to: `null`.
+  - parameters (%{optional(String.t) &#x3D;&gt; String.t}): Optional. The collection of parameters associated with this context. Refer to [this doc](https://cloud.google.com/dialogflow-enterprise/docs/intents-actions-parameters) for syntax. Defaults to: `null`.
   - lifespanCount (integer()): Optional. The number of conversational query requests after which the context expires. If set to &#x60;0&#x60; (the default) the context expires immediately. Contexts expire automatically after 20 minutes if there are no matching queries. Defaults to: `null`.
   - name (String.t): Required. The unique identifier of the context. Format: &#x60;projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;/contexts/&lt;Context ID&gt;&#x60;, or &#x60;projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session ID&gt;/contexts/&lt;Context ID&gt;&#x60;.  The &#x60;Context ID&#x60; is always converted to lowercase, may only contain characters in a-zA-Z0-9_-% and may be at most 250 bytes long.  If &#x60;Environment ID&#x60; is not specified, we assume default &#39;draft&#39; environment. If &#x60;User ID&#x60; is not specified, we assume default &#39;-&#39; user. Defaults to: `null`.
   """

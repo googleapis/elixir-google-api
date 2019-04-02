@@ -23,7 +23,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1EventInput d
   ## Attributes
 
   - parameters (%{optional(String.t) &#x3D;&gt; String.t}): Optional. The collection of parameters associated with the event. Defaults to: `null`.
-  - languageCode (String.t): Required. The language of this query. See [Language Support](https://dialogflow.com/docs/languages) for a list of the currently supported language codes. Note that queries in the same session do not necessarily need to specify the same language. Defaults to: `null`.
+  - languageCode (String.t): Required. The language of this query. See [Language Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language) for a list of the currently supported language codes. Note that queries in the same session do not necessarily need to specify the same language. Defaults to: `null`.
   - name (String.t): Required. The unique identifier of the event. Defaults to: `null`.
   """
 

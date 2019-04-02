@@ -639,7 +639,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :intentView (String.t): Optional. The resource view to apply to the returned intent.
-    - :languageCode (String.t): Optional. The language of training phrases, parameters and rich messages defined in &#x60;intent&#x60;. If not specified, the agent&#39;s default language is used. [More than a dozen languages](https://dialogflow.com/docs/reference/language) are supported. Note: languages must be enabled in the agent, before they can be used.
+    - :languageCode (String.t): Optional. The language of training phrases, parameters and rich messages defined in &#x60;intent&#x60;. If not specified, the agent&#39;s default language is used. [Many languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language) are supported. Note: languages must be enabled in the agent before they can be used.
     - :body (GoogleCloudDialogflowV2Intent): 
 
   ## Returns
@@ -708,7 +708,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :intentView (String.t): Optional. The resource view to apply to the returned intent.
-    - :languageCode (String.t): Optional. The language to list training phrases, parameters and rich messages for. If not specified, the agent&#39;s default language is used. [More than a dozen languages](https://dialogflow.com/docs/reference/language) are supported. Note: languages must be enabled in the agent before they can be used.
+    - :languageCode (String.t): Optional. The language to list training phrases, parameters and rich messages for. If not specified, the agent&#39;s default language is used. [Many languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language) are supported. Note: languages must be enabled in the agent before they can be used.
     - :pageSize (integer()): Optional. The maximum number of items to return in a single page. By default 100 and at most 1000.
     - :pageToken (String.t): Optional. The next_page_token value returned from a previous list request.
 
@@ -1177,7 +1177,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :body (GoogleCloudDialogflowV2SessionEntityType): Optional. The language of entity synonyms defined in &#x60;entity_type&#x60;. If not specified, the agent&#39;s default language is used. [More than a dozen languages](https://dialogflow.com/docs/reference/language) are supported. Note: languages must be enabled in the agent, before they can be used.
+    - :body (GoogleCloudDialogflowV2SessionEntityType): Optional. The language of entity synonyms defined in &#x60;entity_type&#x60;. If not specified, the agent&#39;s default language is used. [Many languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language) are supported. Note: languages must be enabled in the agent before they can be used.
     - :body (GoogleCloudDialogflowV2EntityType): 
 
   ## Returns
@@ -1391,7 +1391,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :updateMask (String.t): Optional. The mask to control which fields get updated.
-    - :body (GoogleCloudDialogflowV2SessionEntityType): Optional. The language of training phrases, parameters and rich messages defined in &#x60;intent&#x60;. If not specified, the agent&#39;s default language is used. [More than a dozen languages](https://dialogflow.com/docs/reference/language) are supported. Note: languages must be enabled in the agent, before they can be used.
+    - :body (GoogleCloudDialogflowV2SessionEntityType): Optional. The language of training phrases, parameters and rich messages defined in &#x60;intent&#x60;. If not specified, the agent&#39;s default language is used. [Many languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language) are supported. Note: languages must be enabled in the agent before they can be used.
     - :updateMask (String.t): Optional. The mask to control which fields get updated.
     - :body (GoogleCloudDialogflowV2Intent): 
 
@@ -1584,7 +1584,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :intentView (String.t): Optional. The resource view to apply to the returned intent.
-    - :languageCode (String.t): Optional. The language to retrieve training phrases, parameters and rich messages for. If not specified, the agent&#39;s default language is used. [More than a dozen languages](https://dialogflow.com/docs/reference/language) are supported. Note: languages must be enabled in the agent, before they can be used.
+    - :languageCode (String.t): Optional. The language to retrieve training phrases, parameters and rich messages for. If not specified, the agent&#39;s default language is used. [Many languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language) are supported. Note: languages must be enabled in the agent before they can be used.
 
   ## Returns
 
