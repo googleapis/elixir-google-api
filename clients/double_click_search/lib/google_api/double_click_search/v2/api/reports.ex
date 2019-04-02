@@ -108,7 +108,7 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Reports do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/reports/{reportId}", %{
-        "reportId" => URI.encode_www_form(report_id)
+        "reportId" => URI.encode(report_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -162,7 +162,7 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Reports do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/reports/{reportId}/files/{reportFragment}", %{
-        "reportId" => URI.encode_www_form(report_id),
+        "reportId" => URI.encode(report_id, &URI.char_unreserved?/1),
         "reportFragment" => report_fragment
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
