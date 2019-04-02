@@ -77,7 +77,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v3/projects/{projectsId}/alertPolicies", %{
-        "projectsId" => URI.encode_www_form(projects_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -143,8 +143,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v3/projects/{projectsId}/alertPolicies/{alertPoliciesId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "alertPoliciesId" => URI.encode_www_form(alert_policies_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "alertPoliciesId" => URI.encode(alert_policies_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -210,8 +210,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v3/projects/{projectsId}/alertPolicies/{alertPoliciesId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "alertPoliciesId" => URI.encode_www_form(alert_policies_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "alertPoliciesId" => URI.encode(alert_policies_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -280,7 +280,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v3/projects/{projectsId}/alertPolicies", %{
-        "projectsId" => URI.encode_www_form(projects_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -352,8 +352,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/v3/projects/{projectsId}/alertPolicies/{alertPoliciesId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "alertPoliciesId" => URI.encode_www_form(alert_policies_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "alertPoliciesId" => URI.encode(alert_policies_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -416,7 +416,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v3/projects/{projectsId}/collectdTimeSeries", %{
-        "projectsId" => URI.encode_www_form(projects_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -482,7 +482,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v3/projects/{projectsId}/groups", %{
-        "projectsId" => URI.encode_www_form(projects_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -511,6 +511,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :recursive (boolean()): If this field is true, then the request means to delete a group with all its descendants. Otherwise, the request means to delete a group only when it has no descendants. The default value is false.
 
   ## Returns
 
@@ -537,15 +538,16 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       :prettyPrint => :query,
       :quotaUser => :query,
       :upload_protocol => :query,
-      :uploadType => :query
+      :uploadType => :query,
+      :recursive => :query
     }
 
     request =
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v3/projects/{projectsId}/groups/{groupsId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "groupsId" => URI.encode_www_form(groups_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "groupsId" => URI.encode(groups_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -607,8 +609,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v3/projects/{projectsId}/groups/{groupsId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "groupsId" => URI.encode_www_form(groups_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "groupsId" => URI.encode(groups_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -673,7 +675,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v3/projects/{projectsId}/groups", %{
-        "projectsId" => URI.encode_www_form(projects_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -751,8 +753,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v3/projects/{projectsId}/groups/{groupsId}/members", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "groupsId" => URI.encode_www_form(groups_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "groupsId" => URI.encode(groups_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -820,8 +822,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/v3/projects/{projectsId}/groups/{groupsId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "groupsId" => URI.encode_www_form(groups_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "groupsId" => URI.encode(groups_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -883,7 +885,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v3/projects/{projectsId}/metricDescriptors", %{
-        "projectsId" => URI.encode_www_form(projects_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -949,8 +951,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v3/projects/{projectsId}/metricDescriptors/{metricDescriptorsId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "metricDescriptorsId" => URI.encode_www_form(metric_descriptors_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "metricDescriptorsId" => URI.encode(metric_descriptors_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1016,8 +1018,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v3/projects/{projectsId}/metricDescriptors/{metricDescriptorsId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "metricDescriptorsId" => URI.encode_www_form(metric_descriptors_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "metricDescriptorsId" => URI.encode(metric_descriptors_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1084,7 +1086,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v3/projects/{projectsId}/metricDescriptors", %{
-        "projectsId" => URI.encode_www_form(projects_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1156,9 +1158,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       |> Request.url(
         "/v3/projects/{projectsId}/monitoredResourceDescriptors/{monitoredResourceDescriptorsId}",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "monitoredResourceDescriptorsId" =>
-            URI.encode_www_form(monitored_resource_descriptors_id)
+            URI.encode(monitored_resource_descriptors_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1232,7 +1234,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v3/projects/{projectsId}/monitoredResourceDescriptors", %{
-        "projectsId" => URI.encode_www_form(projects_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1304,9 +1306,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       |> Request.url(
         "/v3/projects/{projectsId}/notificationChannelDescriptors/{notificationChannelDescriptorsId}",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "notificationChannelDescriptorsId" =>
-            URI.encode_www_form(notification_channel_descriptors_id)
+            URI.encode(notification_channel_descriptors_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1378,7 +1380,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v3/projects/{projectsId}/notificationChannelDescriptors", %{
-        "projectsId" => URI.encode_www_form(projects_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1447,7 +1449,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v3/projects/{projectsId}/notificationChannels", %{
-        "projectsId" => URI.encode_www_form(projects_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1515,8 +1517,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v3/projects/{projectsId}/notificationChannels/{notificationChannelsId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "notificationChannelsId" => URI.encode_www_form(notification_channels_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "notificationChannelsId" => URI.encode(notification_channels_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1583,8 +1585,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v3/projects/{projectsId}/notificationChannels/{notificationChannelsId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "notificationChannelsId" => URI.encode_www_form(notification_channels_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "notificationChannelsId" => URI.encode(notification_channels_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1656,8 +1658,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       |> Request.url(
         "/v3/projects/{projectsId}/notificationChannels/{notificationChannelsId}:getVerificationCode",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "notificationChannelsId" => URI.encode_www_form(notification_channels_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "notificationChannelsId" =>
+            URI.encode(notification_channels_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1730,7 +1733,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v3/projects/{projectsId}/notificationChannels", %{
-        "projectsId" => URI.encode_www_form(projects_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1803,8 +1806,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/v3/projects/{projectsId}/notificationChannels/{notificationChannelsId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "notificationChannelsId" => URI.encode_www_form(notification_channels_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "notificationChannelsId" => URI.encode(notification_channels_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -1874,8 +1877,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       |> Request.url(
         "/v3/projects/{projectsId}/notificationChannels/{notificationChannelsId}:sendVerificationCode",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "notificationChannelsId" => URI.encode_www_form(notification_channels_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "notificationChannelsId" =>
+            URI.encode(notification_channels_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1947,8 +1951,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       |> Request.url(
         "/v3/projects/{projectsId}/notificationChannels/{notificationChannelsId}:verify",
         %{
-          "projectsId" => URI.encode_www_form(projects_id),
-          "notificationChannelsId" => URI.encode_www_form(notification_channels_id)
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "notificationChannelsId" =>
+            URI.encode(notification_channels_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2011,7 +2016,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v3/projects/{projectsId}/timeSeries", %{
-        "projectsId" => URI.encode_www_form(projects_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2094,7 +2099,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v3/projects/{projectsId}/timeSeries", %{
-        "projectsId" => URI.encode_www_form(projects_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2156,7 +2161,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v3/projects/{projectsId}/uptimeCheckConfigs", %{
-        "projectsId" => URI.encode_www_form(projects_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2222,8 +2227,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v3/projects/{projectsId}/uptimeCheckConfigs/{uptimeCheckConfigsId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "uptimeCheckConfigsId" => URI.encode_www_form(uptime_check_configs_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "uptimeCheckConfigsId" => URI.encode(uptime_check_configs_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2289,8 +2294,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v3/projects/{projectsId}/uptimeCheckConfigs/{uptimeCheckConfigsId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "uptimeCheckConfigsId" => URI.encode_www_form(uptime_check_configs_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "uptimeCheckConfigsId" => URI.encode(uptime_check_configs_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2355,7 +2360,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v3/projects/{projectsId}/uptimeCheckConfigs", %{
-        "projectsId" => URI.encode_www_form(projects_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -2427,8 +2432,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/v3/projects/{projectsId}/uptimeCheckConfigs/{uptimeCheckConfigsId}", %{
-        "projectsId" => URI.encode_www_form(projects_id),
-        "uptimeCheckConfigsId" => URI.encode_www_form(uptime_check_configs_id)
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "uptimeCheckConfigsId" => URI.encode(uptime_check_configs_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
