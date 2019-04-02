@@ -82,7 +82,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/{+parent}:search", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -151,7 +151,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/{+parent}:addProject", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -163,7 +163,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
   end
 
   @doc """
-  Apply configuration to an existing tenant project. This project must exist in active state and have the original owner account. Caller must have the permission to add a project to the given tenancy unit. Configuration will be applied, but any existing settings on the project will not be modified. Specified policy bindings will be applied. Existing binding will not be modified. Specified services will be activated.   No service will be deactivated. New billing configuration will be applied if specified. Omit billing configuration to keep the existing one. Service account in the project will be created if previously non existing. Operation fails if any of the steps fail, but no rollback of already applied configuration changes is attempted. Operation&lt;response: Empty&gt;.
+  Apply configuration to an existing tenant project. This project must exist in active state and have the original owner account. Caller must have the permission to add a project to the given tenancy unit. Configuration will be applied, but any existing settings on the project will not be modified. Specified policy bindings will be applied. Existing binding will not be modified. Specified services will be activated.   No service will be deactivated. New billing configuration will be applied if specified. Omit billing configuration to keep the existing one. Service account in the project will be created if previously non existing. Specified folder will be ignored, moving tenant project to a different folder is not supported. Operation fails if any of the steps fail, but no rollback of already applied configuration changes is attempted. Operation&lt;response: Empty&gt;.
 
   ## Parameters
 
@@ -220,7 +220,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/{+name}:applyProjectConfig", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -289,7 +289,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/{+name}:attachProject", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -358,7 +358,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/{+parent}/tenancyUnits", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -431,7 +431,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/{+parent}/tenancyUnits", %{
-        "parent" => URI.encode_www_form(parent)
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -443,7 +443,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
   end
 
   @doc """
-  Removes specified project resource identified by tenant resource tag. It will remove project lien with &#39;TenantManager&#39; origin if that was added. It will then attempt to delete the project. If that operation fails, this method fails. After the project has been deleted, or if was already in DELETED state, resource metadata is permanently removed from the tenancy unit. Operation&lt;response: Empty&gt;.
+  Removes specified project resource identified by tenant resource tag. It will remove project lien with &#39;TenantManager&#39; origin if that was added. It will then attempt to delete the project. If that operation fails, this method fails. Calls to remove already removed or non-existent tenant project will succeed. After the project has been deleted, or if was already in DELETED state, resource metadata is permanently removed from the tenancy unit. Operation&lt;response: Empty&gt;.
 
   ## Parameters
 
@@ -500,7 +500,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/{+name}:removeProject", %{
-        "name" => URI.encode_www_form(name)
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
