@@ -347,12 +347,12 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
   end
 
   @doc """
-  Deletes a policy. This operation is only permitted if no devices are currently referencing the policy.
+  Deletes an enrollment token. This operation invalidates the token, preventing its future use.
 
   ## Parameters
 
   - connection (GoogleApi.AndroidManagement.V1.Connection): Connection to server
-  - name (String.t): The name of the policy in the form enterprises/{enterpriseId}/policies/{policyId}.
+  - name (String.t): The name of the enrollment token in the form enterprises/{enterpriseId}/enrollmentTokens/{enrollmentTokenId}.
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
@@ -372,9 +372,12 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
   {:ok, %GoogleApi.AndroidManagement.V1.Model.Empty{}} on success
   {:error, info} on failure
   """
-  @spec androidmanagement_enterprises_policies_delete(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, GoogleApi.AndroidManagement.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
-  def androidmanagement_enterprises_policies_delete(
+  @spec androidmanagement_enterprises_enrollment_tokens_delete(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) :: {:ok, GoogleApi.AndroidManagement.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+  def androidmanagement_enterprises_enrollment_tokens_delete(
         connection,
         name,
         optional_params \\ [],
@@ -406,72 +409,6 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
     connection
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.AndroidManagement.V1.Model.Empty{}])
-  end
-
-  @doc """
-  Gets a policy.
-
-  ## Parameters
-
-  - connection (GoogleApi.AndroidManagement.V1.Connection): Connection to server
-  - name (String.t): The name of the policy in the form enterprises/{enterpriseId}/policies/{policyId}.
-  - optional_params (KeywordList): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :filter (String.t): The standard list filter.
-    - :pageSize (integer()): The standard list page size.
-    - :pageToken (String.t): The standard list page token.
-
-  ## Returns
-
-  {:ok, %GoogleApi.AndroidManagement.V1.Model.Policy{}} on success
-  {:error, info} on failure
-  """
-  @spec androidmanagement_enterprises_policies_get(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, GoogleApi.AndroidManagement.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
-  def androidmanagement_enterprises_policies_get(
-        connection,
-        name,
-        optional_params \\ [],
-        opts \\ []
-      ) do
-    optional_params_config = %{
-      :"$.xgafv" => :query,
-      :access_token => :query,
-      :alt => :query,
-      :callback => :query,
-      :fields => :query,
-      :key => :query,
-      :oauth_token => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :upload_protocol => :query,
-      :uploadType => :query,
-      :filter => :query,
-      :pageSize => :query,
-      :pageToken => :query
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:get)
-      |> Request.url("/v1/{+name}", %{
-        "name" => URI.encode(name, &URI.char_unreserved?/1)
-      })
-      |> Request.add_optional_params(optional_params_config, optional_params)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(opts ++ [struct: %GoogleApi.AndroidManagement.V1.Model.Policy{}])
   end
 
   @doc """
@@ -542,12 +479,207 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
   end
 
   @doc """
-  Updates or creates a policy.
+  Creates a web app.
 
   ## Parameters
 
   - connection (GoogleApi.AndroidManagement.V1.Connection): Connection to server
-  - name (String.t): The name of the policy in the form enterprises/{enterpriseId}/policies/{policyId}.
+  - parent (String.t): The name of the enterprise in the form enterprises/{enterpriseId}.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :body (WebApp): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.AndroidManagement.V1.Model.WebApp{}} on success
+  {:error, info} on failure
+  """
+  @spec androidmanagement_enterprises_web_apps_create(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, GoogleApi.AndroidManagement.V1.Model.WebApp.t()} | {:error, Tesla.Env.t()}
+  def androidmanagement_enterprises_web_apps_create(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1/{+parent}/webApps", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.AndroidManagement.V1.Model.WebApp{}])
+  end
+
+  @doc """
+  Gets a web app.
+
+  ## Parameters
+
+  - connection (GoogleApi.AndroidManagement.V1.Connection): Connection to server
+  - name (String.t): The name of the web app in the form enterprises/{enterpriseId}/webApp/{packageName}.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :filter (String.t): The standard list filter.
+    - :pageSize (integer()): The standard list page size.
+    - :pageToken (String.t): The standard list page token.
+
+  ## Returns
+
+  {:ok, %GoogleApi.AndroidManagement.V1.Model.WebApp{}} on success
+  {:error, info} on failure
+  """
+  @spec androidmanagement_enterprises_web_apps_get(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, GoogleApi.AndroidManagement.V1.Model.WebApp.t()} | {:error, Tesla.Env.t()}
+  def androidmanagement_enterprises_web_apps_get(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :filter => :query,
+      :pageSize => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.AndroidManagement.V1.Model.WebApp{}])
+  end
+
+  @doc """
+  Lists web apps for a given enterprise.
+
+  ## Parameters
+
+  - connection (GoogleApi.AndroidManagement.V1.Connection): Connection to server
+  - parent (String.t): The name of the enterprise in the form enterprises/{enterpriseId}.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :pageSize (integer()): The requested page size. The actual page size may be fixed to a min or max value.
+    - :pageToken (String.t): A token identifying a page of results returned by the server.
+
+  ## Returns
+
+  {:ok, %GoogleApi.AndroidManagement.V1.Model.ListWebAppsResponse{}} on success
+  {:error, info} on failure
+  """
+  @spec androidmanagement_enterprises_web_apps_list(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, GoogleApi.AndroidManagement.V1.Model.ListWebAppsResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def androidmanagement_enterprises_web_apps_list(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :pageSize => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1/{+parent}/webApps", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.AndroidManagement.V1.Model.ListWebAppsResponse{}]
+    )
+  end
+
+  @doc """
+  Updates a web app.
+
+  ## Parameters
+
+  - connection (GoogleApi.AndroidManagement.V1.Connection): Connection to server
+  - name (String.t): The name of the web app in the form enterprises/{enterpriseId}/webApps/{packageName}.
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
     - :access_token (String.t): OAuth access token.
@@ -561,16 +693,16 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :updateMask (String.t): The field mask indicating the fields to update. If not set, all modifiable fields will be modified.
-    - :body (Policy): 
+    - :body (WebApp): 
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidManagement.V1.Model.Policy{}} on success
+  {:ok, %GoogleApi.AndroidManagement.V1.Model.WebApp{}} on success
   {:error, info} on failure
   """
-  @spec androidmanagement_enterprises_policies_patch(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, GoogleApi.AndroidManagement.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
-  def androidmanagement_enterprises_policies_patch(
+  @spec androidmanagement_enterprises_web_apps_patch(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, GoogleApi.AndroidManagement.V1.Model.WebApp.t()} | {:error, Tesla.Env.t()}
+  def androidmanagement_enterprises_web_apps_patch(
         connection,
         name,
         optional_params \\ [],
@@ -602,7 +734,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(opts ++ [struct: %GoogleApi.AndroidManagement.V1.Model.Policy{}])
+    |> Response.decode(opts ++ [struct: %GoogleApi.AndroidManagement.V1.Model.WebApp{}])
   end
 
   @doc """
