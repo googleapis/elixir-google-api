@@ -1,7 +1,7 @@
 defmodule GoogleApi.DLP.V2beta1.Mixfile do
   use Mix.Project
 
-  @version "0.7.0"
+  @version "0.9.0"
 
   def project do
     [app: :google_api_dlp,
