@@ -18,29 +18,29 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.TrainingRun do
   @moduledoc """
-
+  Information about a single training query run for the model.
 
   ## Attributes
 
-  - iterationResults ([IterationResult]): [Output-only, Beta] List of each iteration results. Defaults to: `null`.
-  - startTime (DateTime.t): [Output-only, Beta] Training run start time in milliseconds since the epoch. Defaults to: `null`.
-  - state (String.t): [Output-only, Beta] Different state applicable for a training run. IN PROGRESS: Training run is in progress. FAILED: Training run ended due to a non-retryable failure. SUCCEEDED: Training run successfully completed. CANCELLED: Training run cancelled by the user. Defaults to: `null`.
-  - trainingOptions (TrainingRunTrainingOptions):  Defaults to: `null`.
+  - evaluationMetrics (EvaluationMetrics): The evaluation metrics over training/eval data that were computed at the end of training. Defaults to: `null`.
+  - results ([IterationResult]): Output of each iteration run, results.size() &lt;&#x3D; max_iterations. Defaults to: `null`.
+  - startTime (DateTime.t): The start time of this training run. Defaults to: `null`.
+  - trainingOptions (TrainingOptions): Options that were used for this training run, includes user specified and default options that were used. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :iterationResults => list(GoogleApi.BigQuery.V2.Model.IterationResult.t()),
+          :evaluationMetrics => GoogleApi.BigQuery.V2.Model.EvaluationMetrics.t(),
+          :results => list(GoogleApi.BigQuery.V2.Model.IterationResult.t()),
           :startTime => DateTime.t(),
-          :state => any(),
-          :trainingOptions => GoogleApi.BigQuery.V2.Model.TrainingRunTrainingOptions.t()
+          :trainingOptions => GoogleApi.BigQuery.V2.Model.TrainingOptions.t()
         }
 
-  field(:iterationResults, as: GoogleApi.BigQuery.V2.Model.IterationResult, type: :list)
+  field(:evaluationMetrics, as: GoogleApi.BigQuery.V2.Model.EvaluationMetrics)
+  field(:results, as: GoogleApi.BigQuery.V2.Model.IterationResult, type: :list)
   field(:startTime, as: DateTime)
-  field(:state)
-  field(:trainingOptions, as: GoogleApi.BigQuery.V2.Model.TrainingRunTrainingOptions)
+  field(:trainingOptions, as: GoogleApi.BigQuery.V2.Model.TrainingOptions)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.TrainingRun do

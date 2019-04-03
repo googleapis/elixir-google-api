@@ -18,20 +18,22 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.IterationResult do
   @moduledoc """
-
+  Information about a single iteration of the training run.
 
   ## Attributes
 
-  - durationMs (String.t): [Output-only, Beta] Time taken to run the training iteration in milliseconds. Defaults to: `null`.
-  - evalLoss (float()): [Output-only, Beta] Eval loss computed on the eval data at the end of the iteration. The eval loss is used for early stopping to avoid overfitting. No eval loss if eval_split_method option is specified as no_split or auto_split with input data size less than 500 rows. Defaults to: `null`.
-  - index (integer()): [Output-only, Beta] Index of the ML training iteration, starting from zero for each training run. Defaults to: `null`.
-  - learnRate (float()): [Output-only, Beta] Learning rate used for this iteration, it varies for different training iterations if learn_rate_strategy option is not constant. Defaults to: `null`.
-  - trainingLoss (float()): [Output-only, Beta] Training loss computed on the training data at the end of the iteration. The training loss function is defined by model type. Defaults to: `null`.
+  - clusterInfos ([ClusterInfo]): [Beta] Information about top clusters for clustering models. Defaults to: `null`.
+  - durationMs (String.t): Time taken to run the iteration in milliseconds. Defaults to: `null`.
+  - evalLoss (float()): Loss computed on the eval data at the end of iteration. Defaults to: `null`.
+  - index (integer()): Index of the iteration, 0 based. Defaults to: `null`.
+  - learnRate (float()): Learn rate used for this iteration. Defaults to: `null`.
+  - trainingLoss (float()): Loss computed on the training data at the end of iteration. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :clusterInfos => list(GoogleApi.BigQuery.V2.Model.ClusterInfo.t()),
           :durationMs => any(),
           :evalLoss => any(),
           :index => any(),
@@ -39,6 +41,7 @@ defmodule GoogleApi.BigQuery.V2.Model.IterationResult do
           :trainingLoss => any()
         }
 
+  field(:clusterInfos, as: GoogleApi.BigQuery.V2.Model.ClusterInfo, type: :list)
   field(:durationMs)
   field(:evalLoss)
   field(:index)
