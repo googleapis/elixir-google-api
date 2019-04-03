@@ -2309,6 +2309,303 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   end
 
   @doc """
+  Creates a topic.  This method returns the following error codes:  * &#x60;PERMISSION_DENIED&#x60; if the requesting user is not permitted to access the requested course, create a topic in the requested course, or for access errors. * &#x60;INVALID_ARGUMENT&#x60; if the request is malformed. * &#x60;NOT_FOUND&#x60; if the requested course does not exist.
+
+  ## Parameters
+
+  - connection (GoogleApi.Classroom.V1.Connection): Connection to server
+  - course_id (String.t): Identifier of the course. This identifier can be either the Classroom-assigned identifier or an alias.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :body (Topic): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.Classroom.V1.Model.Topic{}} on success
+  {:error, info} on failure
+  """
+  @spec classroom_courses_topics_create(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, GoogleApi.Classroom.V1.Model.Topic.t()} | {:error, Tesla.Env.t()}
+  def classroom_courses_topics_create(connection, course_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1/courses/{courseId}/topics", %{
+        "courseId" => URI.encode(course_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Classroom.V1.Model.Topic{}])
+  end
+
+  @doc """
+  Deletes a topic.  This method returns the following error codes:  * &#x60;PERMISSION_DENIED&#x60; if the requesting user is not allowed to delete the requested topic or for access errors. * &#x60;FAILED_PRECONDITION&#x60; if the requested topic has already been deleted. * &#x60;NOT_FOUND&#x60; if no course or topic exists with the requested ID.
+
+  ## Parameters
+
+  - connection (GoogleApi.Classroom.V1.Connection): Connection to server
+  - course_id (String.t): Identifier of the course. This identifier can be either the Classroom-assigned identifier or an alias.
+  - id (String.t): Identifier of the topic to delete.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+
+  ## Returns
+
+  {:ok, %GoogleApi.Classroom.V1.Model.Empty{}} on success
+  {:error, info} on failure
+  """
+  @spec classroom_courses_topics_delete(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, GoogleApi.Classroom.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+  def classroom_courses_topics_delete(
+        connection,
+        course_id,
+        id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url("/v1/courses/{courseId}/topics/{id}", %{
+        "courseId" => URI.encode(course_id, &URI.char_unreserved?/1),
+        "id" => URI.encode(id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Classroom.V1.Model.Empty{}])
+  end
+
+  @doc """
+  Returns a topic.  This method returns the following error codes:  * &#x60;PERMISSION_DENIED&#x60; if the requesting user is not permitted to access the requested course or topic, or for access errors. * &#x60;INVALID_ARGUMENT&#x60; if the request is malformed. * &#x60;NOT_FOUND&#x60; if the requested course or topic does not exist.
+
+  ## Parameters
+
+  - connection (GoogleApi.Classroom.V1.Connection): Connection to server
+  - course_id (String.t): Identifier of the course.
+  - id (String.t): Identifier of the topic.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+
+  ## Returns
+
+  {:ok, %GoogleApi.Classroom.V1.Model.Topic{}} on success
+  {:error, info} on failure
+  """
+  @spec classroom_courses_topics_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, GoogleApi.Classroom.V1.Model.Topic.t()} | {:error, Tesla.Env.t()}
+  def classroom_courses_topics_get(connection, course_id, id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1/courses/{courseId}/topics/{id}", %{
+        "courseId" => URI.encode(course_id, &URI.char_unreserved?/1),
+        "id" => URI.encode(id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Classroom.V1.Model.Topic{}])
+  end
+
+  @doc """
+  Returns the list of topics that the requester is permitted to view.  This method returns the following error codes:  * &#x60;PERMISSION_DENIED&#x60; if the requesting user is not permitted to access the requested course or for access errors. * &#x60;INVALID_ARGUMENT&#x60; if the request is malformed. * &#x60;NOT_FOUND&#x60; if the requested course does not exist.
+
+  ## Parameters
+
+  - connection (GoogleApi.Classroom.V1.Connection): Connection to server
+  - course_id (String.t): Identifier of the course. This identifier can be either the Classroom-assigned identifier or an alias.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :pageSize (integer()): Maximum number of items to return. Zero or unspecified indicates that the server may assign a maximum.  The server may return fewer than the specified number of results.
+    - :pageToken (String.t): nextPageToken value returned from a previous list call, indicating that the subsequent page of results should be returned.  The list request must be otherwise identical to the one that resulted in this token.
+
+  ## Returns
+
+  {:ok, %GoogleApi.Classroom.V1.Model.ListTopicResponse{}} on success
+  {:error, info} on failure
+  """
+  @spec classroom_courses_topics_list(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, GoogleApi.Classroom.V1.Model.ListTopicResponse.t()} | {:error, Tesla.Env.t()}
+  def classroom_courses_topics_list(connection, course_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :pageSize => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1/courses/{courseId}/topics", %{
+        "courseId" => URI.encode(course_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Classroom.V1.Model.ListTopicResponse{}])
+  end
+
+  @doc """
+  Updates one or more fields of a topic.  This method returns the following error codes:  * &#x60;PERMISSION_DENIED&#x60; if the requesting developer project did not create the corresponding topic or for access errors. * &#x60;INVALID_ARGUMENT&#x60; if the request is malformed. * &#x60;NOT_FOUND&#x60; if the requested course or topic does not exist
+
+  ## Parameters
+
+  - connection (GoogleApi.Classroom.V1.Connection): Connection to server
+  - course_id (String.t): Identifier of the course. This identifier can be either the Classroom-assigned identifier or an alias.
+  - id (String.t): Identifier of the topic.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :updateMask (String.t): Mask that identifies which fields on the topic to update. This field is required to do an update. The update fails if invalid fields are specified. If a field supports empty values, it can be cleared by specifying it in the update mask and not in the Topic object. If a field that does not support empty values is included in the update mask and not set in the Topic object, an &#x60;INVALID_ARGUMENT&#x60; error will be returned.  The following fields may be specified:  * &#x60;name&#x60;
+    - :body (Topic): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.Classroom.V1.Model.Topic{}} on success
+  {:error, info} on failure
+  """
+  @spec classroom_courses_topics_patch(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, GoogleApi.Classroom.V1.Model.Topic.t()} | {:error, Tesla.Env.t()}
+  def classroom_courses_topics_patch(connection, course_id, id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :updateMask => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:patch)
+      |> Request.url("/v1/courses/{courseId}/topics/{id}", %{
+        "courseId" => URI.encode(course_id, &URI.char_unreserved?/1),
+        "id" => URI.encode(id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Classroom.V1.Model.Topic{}])
+  end
+
+  @doc """
   Updates a course.  This method returns the following error codes:  * &#x60;PERMISSION_DENIED&#x60; if the requesting user is not permitted to modify the requested course or for access errors. * &#x60;NOT_FOUND&#x60; if no course exists with the requested ID. * &#x60;FAILED_PRECONDITION&#x60; for the following request errors:     * CourseNotModifiable
 
   ## Parameters

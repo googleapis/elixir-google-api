@@ -44,6 +44,7 @@ defmodule GoogleApi.Classroom.V1.Model.CourseWork do
   - submissionModificationMode (String.t): Setting to determine when students are allowed to modify submissions. If unspecified, the default value is &#x60;MODIFIABLE_UNTIL_TURNED_IN&#x60;. Defaults to: `null`.
     - Enum - one of [SUBMISSION_MODIFICATION_MODE_UNSPECIFIED, MODIFIABLE_UNTIL_TURNED_IN, MODIFIABLE]
   - title (String.t): Title of this course work. The title must be a valid UTF-8 string containing between 1 and 3000 characters. Defaults to: `null`.
+  - topicId (String.t): Identifier for the topic that this coursework is associated with. Must match an existing topic in the course. Defaults to: `null`.
   - updateTime (DateTime.t): Timestamp of the most recent change to this course work.  Read-only. Defaults to: `null`.
   - workType (String.t): Type of this course work.  The type is set when the course work is created and cannot be changed. Defaults to: `null`.
     - Enum - one of [COURSE_WORK_TYPE_UNSPECIFIED, ASSIGNMENT, SHORT_ANSWER_QUESTION, MULTIPLE_CHOICE_QUESTION]
@@ -72,6 +73,7 @@ defmodule GoogleApi.Classroom.V1.Model.CourseWork do
           :state => any(),
           :submissionModificationMode => any(),
           :title => any(),
+          :topicId => any(),
           :updateTime => DateTime.t(),
           :workType => any()
         }
@@ -95,6 +97,7 @@ defmodule GoogleApi.Classroom.V1.Model.CourseWork do
   field(:state)
   field(:submissionModificationMode)
   field(:title)
+  field(:topicId)
   field(:updateTime, as: DateTime)
   field(:workType)
 end
