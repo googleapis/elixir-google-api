@@ -18,20 +18,23 @@
 
 defmodule GoogleApi.DNS.V1.Model.ManagedZone do
   @moduledoc """
-  A zone is a subtree of the DNS namespace under one administrative responsibility. A ManagedZone is a resource that represents a DNS zone hosted by the Cloud DNS service.
+
 
   ## Attributes
 
-  - creationTime (String.t): The time that this resource was created on the server. This is in RFC3339 text format. Output only. Defaults to: `null`.
-  - description (String.t): A mutable string of at most 1024 characters associated with this resource for the user&#39;s convenience. Has no effect on the managed zone&#39;s function. Defaults to: `null`.
-  - dnsName (String.t): The DNS name of this managed zone, for instance \&quot;example.com.\&quot;. Defaults to: `null`.
-  - dnssecConfig (ManagedZoneDnsSecConfig): DNSSEC configuration. Defaults to: `null`.
-  - id (String.t): Unique identifier for the resource; defined by the server (output only) Defaults to: `null`.
+  - creationTime (String.t):  Defaults to: `null`.
+  - description (String.t):  Defaults to: `null`.
+  - dnsName (String.t):  Defaults to: `null`.
+  - dnssecConfig (ManagedZoneDnsSecConfig):  Defaults to: `null`.
+  - id (String.t):  Defaults to: `null`.
   - kind (String.t): Identifies what kind of resource this is. Value: the fixed string \&quot;dns#managedZone\&quot;. Defaults to: `null`.
-  - labels (%{optional(String.t) &#x3D;&gt; String.t}): User labels. Defaults to: `null`.
-  - name (String.t): User assigned name for this resource. Must be unique within the project. The name must be 1-63 characters long, must begin with a letter, end with a letter or digit, and only contain lowercase letters, digits or dashes. Defaults to: `null`.
-  - nameServerSet (String.t): Optionally specifies the NameServerSet for this ManagedZone. A NameServerSet is a set of DNS name servers that all host the same ManagedZones. Most users will leave this field unset. Defaults to: `null`.
-  - nameServers ([String.t]): Delegate your managed_zone to these virtual name servers; defined by the server (output only) Defaults to: `null`.
+  - labels (%{optional(String.t) &#x3D;&gt; String.t}):  Defaults to: `null`.
+  - name (String.t):  Defaults to: `null`.
+  - nameServerSet (String.t):  Defaults to: `null`.
+  - nameServers ([String.t]):  Defaults to: `null`.
+  - privateVisibilityConfig (ManagedZonePrivateVisibilityConfig):  Defaults to: `null`.
+  - visibility (String.t):  Defaults to: `null`.
+    - Enum - one of [private, public]
   """
 
   use GoogleApi.Gax.ModelBase
@@ -46,7 +49,10 @@ defmodule GoogleApi.DNS.V1.Model.ManagedZone do
           :labels => map(),
           :name => any(),
           :nameServerSet => any(),
-          :nameServers => list(any())
+          :nameServers => list(any()),
+          :privateVisibilityConfig =>
+            GoogleApi.DNS.V1.Model.ManagedZonePrivateVisibilityConfig.t(),
+          :visibility => any()
         }
 
   field(:creationTime)
@@ -59,6 +65,8 @@ defmodule GoogleApi.DNS.V1.Model.ManagedZone do
   field(:name)
   field(:nameServerSet)
   field(:nameServers, type: :list)
+  field(:privateVisibilityConfig, as: GoogleApi.DNS.V1.Model.ManagedZonePrivateVisibilityConfig)
+  field(:visibility)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.DNS.V1.Model.ManagedZone do

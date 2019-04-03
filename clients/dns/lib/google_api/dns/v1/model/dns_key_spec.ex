@@ -18,14 +18,14 @@
 
 defmodule GoogleApi.DNS.V1.Model.DnsKeySpec do
   @moduledoc """
-  Parameters for DnsKey key generation. Used for generating initial keys for a new ManagedZone and as default when adding a new DnsKey.
+
 
   ## Attributes
 
-  - algorithm (String.t): String mnemonic specifying the DNSSEC algorithm of this key. Defaults to: `null`.
+  - algorithm (String.t):  Defaults to: `null`.
     - Enum - one of [ecdsap256sha256, ecdsap384sha384, rsasha1, rsasha256, rsasha512]
-  - keyLength (integer()): Length of the keys in bits. Defaults to: `null`.
-  - keyType (String.t): Specifies whether this is a key signing key (KSK) or a zone signing key (ZSK). Key signing keys have the Secure Entry Point flag set and, when active, will only be used to sign resource record sets of type DNSKEY. Zone signing keys do not have the Secure Entry Point flag set and will be used to sign all other types of resource record sets. Defaults to: `null`.
+  - keyLength (integer()):  Defaults to: `null`.
+  - keyType (String.t):  Defaults to: `null`.
     - Enum - one of [keySigning, zoneSigning]
   - kind (String.t): Identifies what kind of resource this is. Value: the fixed string \&quot;dns#dnsKeySpec\&quot;. Defaults to: `null`.
   """

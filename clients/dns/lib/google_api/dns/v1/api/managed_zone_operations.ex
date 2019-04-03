@@ -25,14 +25,14 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZoneOperations do
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
-  Fetch the representation of an existing Operation.
+
 
   ## Parameters
 
   - connection (GoogleApi.DNS.V1.Connection): Connection to server
-  - project (String.t): Identifies the project addressed by this request.
-  - managed_zone (String.t): Identifies the managed zone addressed by this request.
-  - operation (String.t): Identifies the operation addressed by this request.
+  - project (String.t): 
+  - managed_zone (String.t): 
+  - operation (String.t): 
   - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
@@ -41,7 +41,7 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZoneOperations do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :clientOperationId (String.t): For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.
+    - :clientOperationId (String.t): 
 
   ## Returns
 
@@ -78,9 +78,9 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZoneOperations do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/managedZones/{managedZone}/operations/{operation}", %{
-        "project" => URI.encode_www_form(project),
-        "managedZone" => URI.encode_www_form(managed_zone),
-        "operation" => URI.encode_www_form(operation)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "managedZone" => URI.encode(managed_zone, &URI.char_unreserved?/1),
+        "operation" => URI.encode(operation, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -90,13 +90,13 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZoneOperations do
   end
 
   @doc """
-  Enumerate Operations for the given ManagedZone.
+
 
   ## Parameters
 
   - connection (GoogleApi.DNS.V1.Connection): Connection to server
-  - project (String.t): Identifies the project addressed by this request.
-  - managed_zone (String.t): Identifies the managed zone addressed by this request.
+  - project (String.t): 
+  - managed_zone (String.t): 
   - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
@@ -105,9 +105,9 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZoneOperations do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :maxResults (integer()): Optional. Maximum number of results to be returned. If unspecified, the server will decide how many results to return.
-    - :pageToken (String.t): Optional. A tag returned by a previous list request that was truncated. Use this parameter to continue a previous list request.
-    - :sortBy (String.t): Sorting criterion. The only supported values are START_TIME and ID.
+    - :maxResults (integer()): 
+    - :pageToken (String.t): 
+    - :sortBy (String.t): 
 
   ## Returns
 
@@ -141,8 +141,8 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZoneOperations do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/managedZones/{managedZone}/operations", %{
-        "project" => URI.encode_www_form(project),
-        "managedZone" => URI.encode_www_form(managed_zone)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "managedZone" => URI.encode(managed_zone, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 

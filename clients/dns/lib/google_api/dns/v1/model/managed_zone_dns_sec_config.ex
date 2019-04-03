@@ -22,11 +22,11 @@ defmodule GoogleApi.DNS.V1.Model.ManagedZoneDnsSecConfig do
 
   ## Attributes
 
-  - defaultKeySpecs ([DnsKeySpec]): Specifies parameters that will be used for generating initial DnsKeys for this ManagedZone. Output only while state is not OFF. Defaults to: `null`.
+  - defaultKeySpecs ([DnsKeySpec]):  Defaults to: `null`.
   - kind (String.t): Identifies what kind of resource this is. Value: the fixed string \&quot;dns#managedZoneDnsSecConfig\&quot;. Defaults to: `null`.
-  - nonExistence (String.t): Specifies the mechanism used to provide authenticated denial-of-existence responses. Output only while state is not OFF. Defaults to: `null`.
+  - nonExistence (String.t):  Defaults to: `null`.
     - Enum - one of [nsec, nsec3]
-  - state (String.t): Specifies whether DNSSEC is enabled, and what mode it is in. Defaults to: `null`.
+  - state (String.t):  Defaults to: `null`.
     - Enum - one of [off, on, transfer]
   """
 

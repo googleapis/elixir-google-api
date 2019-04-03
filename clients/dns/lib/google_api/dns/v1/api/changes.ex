@@ -25,13 +25,13 @@ defmodule GoogleApi.DNS.V1.Api.Changes do
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
-  Atomically update the ResourceRecordSet collection.
+
 
   ## Parameters
 
   - connection (GoogleApi.DNS.V1.Connection): Connection to server
-  - project (String.t): Identifies the project addressed by this request.
-  - managed_zone (String.t): Identifies the managed zone addressed by this request. Can be the managed zone name or id.
+  - project (String.t): 
+  - managed_zone (String.t): 
   - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
@@ -40,7 +40,7 @@ defmodule GoogleApi.DNS.V1.Api.Changes do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :clientOperationId (String.t): For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.
+    - :clientOperationId (String.t): 
     - :body (Change): 
 
   ## Returns
@@ -67,8 +67,8 @@ defmodule GoogleApi.DNS.V1.Api.Changes do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/{project}/managedZones/{managedZone}/changes", %{
-        "project" => URI.encode_www_form(project),
-        "managedZone" => URI.encode_www_form(managed_zone)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "managedZone" => URI.encode(managed_zone, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -78,14 +78,14 @@ defmodule GoogleApi.DNS.V1.Api.Changes do
   end
 
   @doc """
-  Fetch the representation of an existing Change.
+
 
   ## Parameters
 
   - connection (GoogleApi.DNS.V1.Connection): Connection to server
-  - project (String.t): Identifies the project addressed by this request.
-  - managed_zone (String.t): Identifies the managed zone addressed by this request. Can be the managed zone name or id.
-  - change_id (String.t): The identifier of the requested change, from a previous ResourceRecordSetsChangeResponse.
+  - project (String.t): 
+  - managed_zone (String.t): 
+  - change_id (String.t): 
   - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
@@ -94,7 +94,7 @@ defmodule GoogleApi.DNS.V1.Api.Changes do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :clientOperationId (String.t): For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.
+    - :clientOperationId (String.t): 
 
   ## Returns
 
@@ -126,9 +126,9 @@ defmodule GoogleApi.DNS.V1.Api.Changes do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/managedZones/{managedZone}/changes/{changeId}", %{
-        "project" => URI.encode_www_form(project),
-        "managedZone" => URI.encode_www_form(managed_zone),
-        "changeId" => URI.encode_www_form(change_id)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "managedZone" => URI.encode(managed_zone, &URI.char_unreserved?/1),
+        "changeId" => URI.encode(change_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
@@ -138,13 +138,13 @@ defmodule GoogleApi.DNS.V1.Api.Changes do
   end
 
   @doc """
-  Enumerate Changes to a ResourceRecordSet collection.
+
 
   ## Parameters
 
   - connection (GoogleApi.DNS.V1.Connection): Connection to server
-  - project (String.t): Identifies the project addressed by this request.
-  - managed_zone (String.t): Identifies the managed zone addressed by this request. Can be the managed zone name or id.
+  - project (String.t): 
+  - managed_zone (String.t): 
   - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
@@ -153,10 +153,10 @@ defmodule GoogleApi.DNS.V1.Api.Changes do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :maxResults (integer()): Optional. Maximum number of results to be returned. If unspecified, the server will decide how many results to return.
-    - :pageToken (String.t): Optional. A tag returned by a previous list request that was truncated. Use this parameter to continue a previous list request.
-    - :sortBy (String.t): Sorting criterion. The only supported value is change sequence.
-    - :sortOrder (String.t): Sorting order direction: &#39;ascending&#39; or &#39;descending&#39;.
+    - :maxResults (integer()): 
+    - :pageToken (String.t): 
+    - :sortBy (String.t): 
+    - :sortOrder (String.t): 
 
   ## Returns
 
@@ -184,8 +184,8 @@ defmodule GoogleApi.DNS.V1.Api.Changes do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{project}/managedZones/{managedZone}/changes", %{
-        "project" => URI.encode_www_form(project),
-        "managedZone" => URI.encode_www_form(managed_zone)
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "managedZone" => URI.encode(managed_zone, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
 
