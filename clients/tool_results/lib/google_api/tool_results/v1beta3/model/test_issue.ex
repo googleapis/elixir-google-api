@@ -29,7 +29,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.TestIssue do
     - Enum - one of [info, severe, suggestion, unspecifiedSeverity, warning]
   - stackTrace (StackTrace): Deprecated in favor of stack trace fields inside specific warnings. Defaults to: `null`.
   - type (String.t): Type of issue. Required. Defaults to: `null`.
-    - Enum - one of [anr, availableDeepLinks, compatibleWithOrchestrator, completeRoboScriptExecution, encounteredLoginScreen, encounteredNonAndroidUiWidgetScreen, failedToInstall, fatalException, inAppPurchases, incompleteRoboScriptExecution, insufficientCoverage, iosCrash, iosException, launcherActivityNotFound, nativeCrash, nonSdkApiUsageViolation, performedGoogleLogin, performedMonkeyActions, startActivityNotFound, unspecifiedType, unusedRoboDirective, usedRoboDirective, usedRoboIgnoreDirective]
+    - Enum - one of [anr, availableDeepLinks, compatibleWithOrchestrator, completeRoboScriptExecution, encounteredLoginScreen, encounteredNonAndroidUiWidgetScreen, failedToInstall, fatalException, inAppPurchases, incompleteRoboScriptExecution, insufficientCoverage, iosCrash, iosException, launcherActivityNotFound, nativeCrash, nonSdkApiUsageReport, nonSdkApiUsageViolation, performedGoogleLogin, performedMonkeyActions, startActivityNotFound, unspecifiedType, unusedRoboDirective, usedRoboDirective, usedRoboIgnoreDirective]
   - warning (Any): Warning message with additional details of the issue. Should always be a message from com.google.devtools.toolresults.v1.warnings Defaults to: `null`.
   """
 
