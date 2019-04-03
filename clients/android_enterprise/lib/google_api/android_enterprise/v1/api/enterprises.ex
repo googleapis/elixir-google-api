@@ -661,67 +661,6 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
   end
 
   @doc """
-  Deprecated and unused.
-
-  ## Parameters
-
-  - connection (GoogleApi.AndroidEnterprise.V1.Connection): Connection to server
-  - enterprise_id (String.t): The ID of the enterprise.
-  - optional_params (KeywordList): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (AndroidDevicePolicyConfig): 
-
-  ## Returns
-
-  {:ok, %GoogleApi.AndroidEnterprise.V1.Model.AndroidDevicePolicyConfig{}} on success
-  {:error, info} on failure
-  """
-  @spec androidenterprise_enterprises_set_android_device_policy_config(
-          Tesla.Env.client(),
-          String.t(),
-          keyword()
-        ) ::
-          {:ok, GoogleApi.AndroidEnterprise.V1.Model.AndroidDevicePolicyConfig.t()}
-          | {:error, Tesla.Env.t()}
-  def androidenterprise_enterprises_set_android_device_policy_config(
-        connection,
-        enterprise_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
-    optional_params_config = %{
-      :alt => :query,
-      :fields => :query,
-      :key => :query,
-      :oauth_token => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :userIp => :query,
-      :body => :body
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:put)
-      |> Request.url("/enterprises/{enterpriseId}/androidDevicePolicyConfig", %{
-        "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1)
-      })
-      |> Request.add_optional_params(optional_params_config, optional_params)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(
-      opts ++ [struct: %GoogleApi.AndroidEnterprise.V1.Model.AndroidDevicePolicyConfig{}]
-    )
-  end
-
-  @doc """
   Sets the store layout for the enterprise. By default, storeLayoutType is set to \&quot;basic\&quot; and the basic store layout is enabled. The basic layout only contains apps approved by the admin, and that have been added to the available product set for a user (using the  setAvailableProductSet call). Apps on the page are sorted in order of their product ID value. If you create a custom store layout (by setting storeLayoutType &#x3D; \&quot;custom\&quot; and setting a homepage), the basic store layout is disabled.
 
   ## Parameters
