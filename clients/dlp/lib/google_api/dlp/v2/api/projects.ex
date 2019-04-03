@@ -205,6 +205,319 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   end
 
   @doc """
+  Creates a DeidentifyTemplate for re-using frequently used configuration for de-identifying content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates-deid to learn more.
+
+  ## Parameters
+
+  - connection (GoogleApi.DLP.V2.Connection): Connection to server
+  - parent (String.t): The parent resource name, for example projects/my-project-id or organizations/my-org-id.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :body (GooglePrivacyDlpV2CreateDeidentifyTemplateRequest): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyTemplate{}} on success
+  {:error, info} on failure
+  """
+  @spec dlp_projects_deidentify_templates_create(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyTemplate.t()}
+          | {:error, Tesla.Env.t()}
+  def dlp_projects_deidentify_templates_create(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v2/{+parent}/deidentifyTemplates", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyTemplate{}]
+    )
+  end
+
+  @doc """
+  Deletes a DeidentifyTemplate. See https://cloud.google.com/dlp/docs/creating-templates-deid to learn more.
+
+  ## Parameters
+
+  - connection (GoogleApi.DLP.V2.Connection): Connection to server
+  - name (String.t): Resource name of the organization and deidentify template to be deleted, for example &#x60;organizations/433245324/deidentifyTemplates/432452342&#x60; or projects/project-id/deidentifyTemplates/432452342.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+
+  ## Returns
+
+  {:ok, %GoogleApi.DLP.V2.Model.GoogleProtobufEmpty{}} on success
+  {:error, info} on failure
+  """
+  @spec dlp_projects_deidentify_templates_delete(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, GoogleApi.DLP.V2.Model.GoogleProtobufEmpty.t()} | {:error, Tesla.Env.t()}
+  def dlp_projects_deidentify_templates_delete(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.DLP.V2.Model.GoogleProtobufEmpty{}])
+  end
+
+  @doc """
+  Gets a DeidentifyTemplate. See https://cloud.google.com/dlp/docs/creating-templates-deid to learn more.
+
+  ## Parameters
+
+  - connection (GoogleApi.DLP.V2.Connection): Connection to server
+  - name (String.t): Resource name of the organization and deidentify template to be read, for example &#x60;organizations/433245324/deidentifyTemplates/432452342&#x60; or projects/project-id/deidentifyTemplates/432452342.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+
+  ## Returns
+
+  {:ok, %GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyTemplate{}} on success
+  {:error, info} on failure
+  """
+  @spec dlp_projects_deidentify_templates_get(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyTemplate.t()}
+          | {:error, Tesla.Env.t()}
+  def dlp_projects_deidentify_templates_get(connection, name, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyTemplate{}]
+    )
+  end
+
+  @doc """
+  Lists DeidentifyTemplates. See https://cloud.google.com/dlp/docs/creating-templates-deid to learn more.
+
+  ## Parameters
+
+  - connection (GoogleApi.DLP.V2.Connection): Connection to server
+  - parent (String.t): The parent resource name, for example projects/my-project-id or organizations/my-org-id.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :orderBy (String.t): Optional comma separated list of fields to order by, followed by &#x60;asc&#x60; or &#x60;desc&#x60; postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant.  Example: &#x60;name asc,update_time, create_time desc&#x60;  Supported fields are:  - &#x60;create_time&#x60;: corresponds to time the template was created. - &#x60;update_time&#x60;: corresponds to time the template was last updated. - &#x60;name&#x60;: corresponds to template&#39;s name. - &#x60;display_name&#x60;: corresponds to template&#39;s display name.
+    - :pageSize (integer()): Optional size of the page, can be limited by server. If zero server returns a page of max size 100.
+    - :pageToken (String.t): Optional page token to continue retrieval. Comes from previous call to &#x60;ListDeidentifyTemplates&#x60;.
+
+  ## Returns
+
+  {:ok, %GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ListDeidentifyTemplatesResponse{}} on success
+  {:error, info} on failure
+  """
+  @spec dlp_projects_deidentify_templates_list(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ListDeidentifyTemplatesResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def dlp_projects_deidentify_templates_list(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :orderBy => :query,
+      :pageSize => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v2/{+parent}/deidentifyTemplates", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [struct: %GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ListDeidentifyTemplatesResponse{}]
+    )
+  end
+
+  @doc """
+  Updates the DeidentifyTemplate. See https://cloud.google.com/dlp/docs/creating-templates-deid to learn more.
+
+  ## Parameters
+
+  - connection (GoogleApi.DLP.V2.Connection): Connection to server
+  - name (String.t): Resource name of organization and deidentify template to be updated, for example &#x60;organizations/433245324/deidentifyTemplates/432452342&#x60; or projects/project-id/deidentifyTemplates/432452342.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :body (GooglePrivacyDlpV2UpdateDeidentifyTemplateRequest): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyTemplate{}} on success
+  {:error, info} on failure
+  """
+  @spec dlp_projects_deidentify_templates_patch(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyTemplate.t()}
+          | {:error, Tesla.Env.t()}
+  def dlp_projects_deidentify_templates_patch(connection, name, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:patch)
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyTemplate{}]
+    )
+  end
+
+  @doc """
   Starts asynchronous cancellation on a long-running DlpJob. The server makes a best effort to cancel the DlpJob, but success is not guaranteed. See https://cloud.google.com/dlp/docs/inspecting-storage and https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
 
   ## Parameters
@@ -447,6 +760,130 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   end
 
   @doc """
+  Creates an InspectTemplate for re-using frequently used configuration for inspecting content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates to learn more.
+
+  ## Parameters
+
+  - connection (GoogleApi.DLP.V2.Connection): Connection to server
+  - parent (String.t): The parent resource name, for example projects/my-project-id or organizations/my-org-id.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :body (GooglePrivacyDlpV2CreateInspectTemplateRequest): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectTemplate{}} on success
+  {:error, info} on failure
+  """
+  @spec dlp_projects_inspect_templates_create(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectTemplate.t()}
+          | {:error, Tesla.Env.t()}
+  def dlp_projects_inspect_templates_create(connection, parent, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v2/{+parent}/inspectTemplates", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectTemplate{}]
+    )
+  end
+
+  @doc """
+  Lists InspectTemplates. See https://cloud.google.com/dlp/docs/creating-templates to learn more.
+
+  ## Parameters
+
+  - connection (GoogleApi.DLP.V2.Connection): Connection to server
+  - parent (String.t): The parent resource name, for example projects/my-project-id or organizations/my-org-id.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :orderBy (String.t): Optional comma separated list of fields to order by, followed by &#x60;asc&#x60; or &#x60;desc&#x60; postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant.  Example: &#x60;name asc,update_time, create_time desc&#x60;  Supported fields are:  - &#x60;create_time&#x60;: corresponds to time the template was created. - &#x60;update_time&#x60;: corresponds to time the template was last updated. - &#x60;name&#x60;: corresponds to template&#39;s name. - &#x60;display_name&#x60;: corresponds to template&#39;s display name.
+    - :pageSize (integer()): Optional size of the page, can be limited by server. If zero server returns a page of max size 100.
+    - :pageToken (String.t): Optional page token to continue retrieval. Comes from previous call to &#x60;ListInspectTemplates&#x60;.
+
+  ## Returns
+
+  {:ok, %GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ListInspectTemplatesResponse{}} on success
+  {:error, info} on failure
+  """
+  @spec dlp_projects_inspect_templates_list(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ListInspectTemplatesResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def dlp_projects_inspect_templates_list(connection, parent, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :orderBy => :query,
+      :pageSize => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v2/{+parent}/inspectTemplates", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ListInspectTemplatesResponse{}]
+    )
+  end
+
+  @doc """
   Activate a job trigger. Causes the immediate execute of a trigger instead of waiting on the trigger event to occur.
 
   ## Parameters
@@ -623,6 +1060,130 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
     |> Connection.execute(request)
     |> Response.decode(
       opts ++ [struct: %GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ListJobTriggersResponse{}]
+    )
+  end
+
+  @doc """
+  Creates a pre-built stored infoType to be used for inspection. See https://cloud.google.com/dlp/docs/creating-stored-infotypes to learn more.
+
+  ## Parameters
+
+  - connection (GoogleApi.DLP.V2.Connection): Connection to server
+  - parent (String.t): The parent resource name, for example projects/my-project-id or organizations/my-org-id.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :body (GooglePrivacyDlpV2CreateStoredInfoTypeRequest): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredInfoType{}} on success
+  {:error, info} on failure
+  """
+  @spec dlp_projects_stored_info_types_create(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredInfoType.t()}
+          | {:error, Tesla.Env.t()}
+  def dlp_projects_stored_info_types_create(connection, parent, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v2/{+parent}/storedInfoTypes", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredInfoType{}]
+    )
+  end
+
+  @doc """
+  Lists stored infoTypes. See https://cloud.google.com/dlp/docs/creating-stored-infotypes to learn more.
+
+  ## Parameters
+
+  - connection (GoogleApi.DLP.V2.Connection): Connection to server
+  - parent (String.t): The parent resource name, for example projects/my-project-id or organizations/my-org-id.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :orderBy (String.t): Optional comma separated list of fields to order by, followed by &#x60;asc&#x60; or &#x60;desc&#x60; postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant.  Example: &#x60;name asc, display_name, create_time desc&#x60;  Supported fields are:  - &#x60;create_time&#x60;: corresponds to time the most recent version of the resource was created. - &#x60;state&#x60;: corresponds to the state of the resource. - &#x60;name&#x60;: corresponds to resource name. - &#x60;display_name&#x60;: corresponds to info type&#39;s display name.
+    - :pageSize (integer()): Optional size of the page, can be limited by server. If zero server returns a page of max size 100.
+    - :pageToken (String.t): Optional page token to continue retrieval. Comes from previous call to &#x60;ListStoredInfoTypes&#x60;.
+
+  ## Returns
+
+  {:ok, %GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ListStoredInfoTypesResponse{}} on success
+  {:error, info} on failure
+  """
+  @spec dlp_projects_stored_info_types_list(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ListStoredInfoTypesResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def dlp_projects_stored_info_types_list(connection, parent, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :orderBy => :query,
+      :pageSize => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v2/{+parent}/storedInfoTypes", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ListStoredInfoTypesResponse{}]
     )
   end
 end
