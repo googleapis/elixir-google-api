@@ -58,7 +58,11 @@ defmodule GoogleApi.Classroom.V1.Connection do
       # View your course work and grades in Google Classroom
       "https://www.googleapis.com/auth/classroom.student-submissions.me.readonly",
       # View course work and grades for students in the Google Classroom classes you teach or administer
-      "https://www.googleapis.com/auth/classroom.student-submissions.students.readonly"
+      "https://www.googleapis.com/auth/classroom.student-submissions.students.readonly",
+      # See, create, and edit topics in Google Classroom
+      "https://www.googleapis.com/auth/classroom.topics",
+      # View topics in Google Classroom
+      "https://www.googleapis.com/auth/classroom.topics.readonly"
     ],
     otp_app: :google_api_classroom,
     base_url: "https://classroom.googleapis.com"
