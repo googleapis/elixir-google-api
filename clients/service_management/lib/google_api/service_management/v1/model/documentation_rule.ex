@@ -24,7 +24,7 @@ defmodule GoogleApi.ServiceManagement.V1.Model.DocumentationRule do
 
   - deprecationDescription (String.t): Deprecation description of the selected element(s). It can be provided if an element is marked as &#x60;deprecated&#x60;. Defaults to: `null`.
   - description (String.t): Description of the selected API(s). Defaults to: `null`.
-  - selector (String.t): The selector is a comma-separated list of patterns. Each pattern is a qualified name of the element which may end in \&quot;*\&quot;, indicating a wildcard. Wildcards are only allowed at the end and for a whole component of the qualified name, i.e. \&quot;foo.*\&quot; is ok, but not \&quot;foo.b*\&quot; or \&quot;foo.*.bar\&quot;. To specify a default for all applicable elements, the whole pattern \&quot;*\&quot; is used. Defaults to: `null`.
+  - selector (String.t): The selector is a comma-separated list of patterns. Each pattern is a qualified name of the element which may end in \&quot;*\&quot;, indicating a wildcard. Wildcards are only allowed at the end and for a whole component of the qualified name, i.e. \&quot;foo.*\&quot; is ok, but not \&quot;foo.b*\&quot; or \&quot;foo.*.bar\&quot;. A wildcard will match one or more components. To specify a default for all applicable elements, the whole pattern \&quot;*\&quot; is used. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
