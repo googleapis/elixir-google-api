@@ -26,7 +26,6 @@ defmodule GoogleApi.Monitoring.V3.Model.UptimeCheckConfig do
   - displayName (String.t): A human-friendly name for the uptime check configuration. The display name should be unique within a Stackdriver Workspace in order to make it easier to identify; however, uniqueness is not enforced. Required. Defaults to: `null`.
   - httpCheck (HttpCheck): Contains information needed to make an HTTP or HTTPS check. Defaults to: `null`.
   - internalCheckers ([InternalChecker]): The internal checkers that this check will egress from. If is_internal is true and this list is empty, the check will egress from all the InternalCheckers configured for the project that owns this CheckConfig. Defaults to: `null`.
-  - isInternal (boolean()): If this is true, then checks are made only from the &#39;internal_checkers&#39;. If it is false, then checks are made only from the &#39;selected_regions&#39;. It is an error to provide &#39;selected_regions&#39; when is_internal is true, or to provide &#39;internal_checkers&#39; when is_internal is false. Defaults to: `null`.
   - monitoredResource (MonitoredResource): The monitored resource (https://cloud.google.com/monitoring/api/resources) associated with the configuration. The following monitored resource types are supported for uptime checks:  uptime_url  gce_instance  gae_app  aws_ec2_instance  aws_elb_load_balancer Defaults to: `null`.
   - name (String.t): A unique resource name for this UptimeCheckConfig. The format is:projects/[PROJECT_ID]/uptimeCheckConfigs/[UPTIME_CHECK_ID].This field should be omitted when creating the uptime check configuration; on create, the resource name is assigned by the server and included in the response. Defaults to: `null`.
   - period (String.t): How often, in seconds, the uptime check is performed. Currently, the only supported values are 60s (1 minute), 300s (5 minutes), 600s (10 minutes), and 900s (15 minutes). Optional, defaults to 60s. Defaults to: `null`.
@@ -44,7 +43,6 @@ defmodule GoogleApi.Monitoring.V3.Model.UptimeCheckConfig do
           :displayName => any(),
           :httpCheck => GoogleApi.Monitoring.V3.Model.HttpCheck.t(),
           :internalCheckers => list(GoogleApi.Monitoring.V3.Model.InternalChecker.t()),
-          :isInternal => any(),
           :monitoredResource => GoogleApi.Monitoring.V3.Model.MonitoredResource.t(),
           :name => any(),
           :period => any(),
@@ -58,7 +56,6 @@ defmodule GoogleApi.Monitoring.V3.Model.UptimeCheckConfig do
   field(:displayName)
   field(:httpCheck, as: GoogleApi.Monitoring.V3.Model.HttpCheck)
   field(:internalCheckers, as: GoogleApi.Monitoring.V3.Model.InternalChecker, type: :list)
-  field(:isInternal)
   field(:monitoredResource, as: GoogleApi.Monitoring.V3.Model.MonitoredResource)
   field(:name)
   field(:period)
