@@ -18,11 +18,11 @@
 
 defmodule GoogleApi.People.V1.Model.DomainMembership do
   @moduledoc """
-  A Google Apps Domain membership.
+  A G Suite Domain membership.
 
   ## Attributes
 
-  - inViewerDomain (boolean()): True if the person is in the viewer&#39;s Google Apps domain. Defaults to: `null`.
+  - inViewerDomain (boolean()): True if the person is in the viewer&#39;s G Suite domain. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
