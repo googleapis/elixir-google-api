@@ -25,7 +25,7 @@ defmodule GoogleApi.Plus.V1.Connection do
     scopes: [
       # View your basic profile info, including your age range and language
       "https://www.googleapis.com/auth/plus.login",
-      # Know who you are on Google
+      # Associate you with your personal info on Google
       "https://www.googleapis.com/auth/plus.me",
       # View your email address
       "https://www.googleapis.com/auth/userinfo.email",
