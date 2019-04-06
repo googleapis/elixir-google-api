@@ -27,7 +27,7 @@ defmodule GoogleApi.PlusDomains.V1.Connection do
       "https://www.googleapis.com/auth/plus.circles.read",
       # View your basic profile info, including your age range and language
       "https://www.googleapis.com/auth/plus.login",
-      # Know who you are on Google
+      # Associate you with your personal info on Google
       "https://www.googleapis.com/auth/plus.me",
       # Send your photos and videos to Google+
       "https://www.googleapis.com/auth/plus.media.upload",
