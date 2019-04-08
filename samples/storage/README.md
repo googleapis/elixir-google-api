@@ -1,21 +1,27 @@
 # Storage
 
-**TODO: Add description**
+Sample application demonstrating functionality for the Google Cloud Platform, Storage API
 
-## Installation
+Look in the [test](./test) dir for integration tests.
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `storage` to your list of dependencies in `mix.exs`:
+### Running the Tests
 
-```elixir
-def deps do
-  [
-    {:storage, "~> 0.1.0"}
-  ]
-end
+Google Cloud Platform Credentials will be required, as will some other configurations.
+
+If you do not have a credentials json file, you [will need to create one](../README.md#obtaining-an-access-token).
+
+Here are the environment variables currently in use
+*(you would need to change to project, bucket, etc which you control)*.
+
+```shell
+export GOOGLE_APPLICATION_CREDENTIALS=/Users/yourname/yourpath/cred/service-user-account-gcp-123abc456def.json
+export PROJECT_ID="elixir-g-api-samples"
+export BUCKET="elixir-g-api-samples-persist"
+mix deps.get
+mix test
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/storage](https://hexdocs.pm/storage).
+If you do not want to set these, you may override these configurations in each `samples/*/config/config.exs` files.
 
+
+Read [Samples README](../README.md) for more information.

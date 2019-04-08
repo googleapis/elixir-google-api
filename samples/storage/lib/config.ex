@@ -27,20 +27,20 @@ defmodule Config do
   @spec get(atom, atom, term | nil) :: term
   def get(app, key, default \\ nil) when is_atom(app) and is_atom(key) do
     case Application.get_env(app, key) do
-      {:system, env_var} ->
-        case System.get_env(env_var) do
-          nil -> default
-          val -> val
-        end
       {:system, env_var, preconfigured_default} ->
-        case System.get_env(env_var) do
-          nil -> preconfigured_default
-          val -> val
-        end
+        get({:system, env_var, preconfigured_default})
+      {:system, env_var} ->
+        get({:system, env_var, default})
       nil ->
-        default
+        get({:system, key |> Atom.to_string() |> String.upcase(), default})
       val ->
         val
+    end
+  end
+  def get({:system, key, default}) do
+    case System.get_env(key) do
+      nil -> default
+      val -> val
     end
   end
 
