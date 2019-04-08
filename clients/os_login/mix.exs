@@ -1,7 +1,7 @@
 defmodule GoogleApi.OSLogin.V1alpha.Mixfile do
   use Mix.Project
 
-  @version "0.7.0"
+  @version "0.9.0"
 
   def project do
     [app: :google_api_os_login,
