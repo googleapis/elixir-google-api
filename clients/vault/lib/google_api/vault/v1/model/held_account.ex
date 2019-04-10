@@ -23,18 +23,27 @@ defmodule GoogleApi.Vault.V1.Model.HeldAccount do
   ## Attributes
 
   - accountId (String.t): The account&#39;s ID as provided by the &lt;a href&#x3D;\&quot;https://developers.google.com/admin-sdk/\&quot;&gt;Admin SDK&lt;/a&gt;. Defaults to: `null`.
-  - holdTime (DateTime.t): When the account was put on hold. Defaults to: `null`.
+  - email (String.t): The primary email address of the account. If used as an input, this takes precedence over account ID. Defaults to: `null`.
+  - firstName (String.t): Output only. The first name of the account holder. Defaults to: `null`.
+  - holdTime (DateTime.t): Output only. When the account was put on hold. Defaults to: `null`.
+  - lastName (String.t): Output only. The last name of the account holder. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :accountId => any(),
-          :holdTime => DateTime.t()
+          :email => any(),
+          :firstName => any(),
+          :holdTime => DateTime.t(),
+          :lastName => any()
         }
 
   field(:accountId)
+  field(:email)
+  field(:firstName)
   field(:holdTime, as: DateTime)
+  field(:lastName)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Vault.V1.Model.HeldAccount do
