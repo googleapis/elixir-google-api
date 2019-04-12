@@ -25,7 +25,7 @@ defmodule GoogleApi.Poly.V1.Api.Assets do
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
-  Returns detailed information about an asset given its name. PRIVATE assets are returned only if  the currently authenticated user (via OAuth token) is the author of the asset.
+  Returns detailed information about an asset given its name. PRIVATE assets are returned only if  the currently authenticated user (via OAuth token) is the author of the  asset.
 
   ## Parameters
 
