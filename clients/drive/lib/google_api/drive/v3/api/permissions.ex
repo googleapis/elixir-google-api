@@ -43,7 +43,7 @@ defmodule GoogleApi.Drive.V3.Api.Permissions do
     - :sendNotificationEmail (boolean()): Whether to send a notification email when sharing to users or groups. This defaults to true for users and groups, and is not allowed for other requests. It must not be disabled for ownership transfers.
     - :supportsTeamDrives (boolean()): Whether the requesting application supports Team Drives.
     - :transferOwnership (boolean()): Whether to transfer ownership to the specified user and downgrade the current owner to a writer. This parameter is required as an acknowledgement of the side effect.
-    - :useDomainAdminAccess (boolean()): Issue the request as a domain administrator; if set to true, then the requester will be granted access if they are an administrator of the domain to which the item belongs.
+    - :useDomainAdminAccess (boolean()): Issue the request as a domain administrator; if set to true, then the requester will be granted access if the file ID parameter refers to a Team Drive and the requester is an administrator of the domain to which the Team Drive belongs.
     - :body (Permission): 
 
   ## Returns
@@ -100,7 +100,7 @@ defmodule GoogleApi.Drive.V3.Api.Permissions do
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :supportsTeamDrives (boolean()): Whether the requesting application supports Team Drives.
-    - :useDomainAdminAccess (boolean()): Issue the request as a domain administrator; if set to true, then the requester will be granted access if they are an administrator of the domain to which the item belongs.
+    - :useDomainAdminAccess (boolean()): Issue the request as a domain administrator; if set to true, then the requester will be granted access if the file ID parameter refers to a Team Drive and the requester is an administrator of the domain to which the Team Drive belongs.
 
   ## Returns
 
@@ -159,7 +159,7 @@ defmodule GoogleApi.Drive.V3.Api.Permissions do
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :supportsTeamDrives (boolean()): Whether the requesting application supports Team Drives.
-    - :useDomainAdminAccess (boolean()): Issue the request as a domain administrator; if set to true, then the requester will be granted access if they are an administrator of the domain to which the item belongs.
+    - :useDomainAdminAccess (boolean()): Issue the request as a domain administrator; if set to true, then the requester will be granted access if the file ID parameter refers to a Team Drive and the requester is an administrator of the domain to which the Team Drive belongs.
 
   ## Returns
 
@@ -213,7 +213,7 @@ defmodule GoogleApi.Drive.V3.Api.Permissions do
     - :pageSize (integer()): The maximum number of permissions to return per page. When not set for files in a Team Drive, at most 100 results will be returned. When not set for files that are not in a Team Drive, the entire list will be returned.
     - :pageToken (String.t): The token for continuing a previous list request on the next page. This should be set to the value of &#39;nextPageToken&#39; from the previous response.
     - :supportsTeamDrives (boolean()): Whether the requesting application supports Team Drives.
-    - :useDomainAdminAccess (boolean()): Issue the request as a domain administrator; if set to true, then the requester will be granted access if they are an administrator of the domain to which the item belongs.
+    - :useDomainAdminAccess (boolean()): Issue the request as a domain administrator; if set to true, then the requester will be granted access if the file ID parameter refers to a Team Drive and the requester is an administrator of the domain to which the Team Drive belongs.
 
   ## Returns
 
@@ -269,7 +269,7 @@ defmodule GoogleApi.Drive.V3.Api.Permissions do
     - :removeExpiration (boolean()): Whether to remove the expiration date.
     - :supportsTeamDrives (boolean()): Whether the requesting application supports Team Drives.
     - :transferOwnership (boolean()): Whether to transfer ownership to the specified user and downgrade the current owner to a writer. This parameter is required as an acknowledgement of the side effect.
-    - :useDomainAdminAccess (boolean()): Issue the request as a domain administrator; if set to true, then the requester will be granted access if they are an administrator of the domain to which the item belongs.
+    - :useDomainAdminAccess (boolean()): Issue the request as a domain administrator; if set to true, then the requester will be granted access if the file ID parameter refers to a Team Drive and the requester is an administrator of the domain to which the Team Drive belongs.
     - :body (Permission): 
 
   ## Returns
