@@ -2930,7 +2930,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
   - connection (GoogleApi.AndroidPublisher.V2.Connection): Connection to server
   - package_name (String.t): Unique identifier for the Android app that is being updated; for example, \&quot;com.spiffygame\&quot;.
   - edit_id (String.t): Unique identifier for this edit.
-  - track (String.t): The track to read or modify. Acceptable values are: \&quot;alpha\&quot;, \&quot;beta\&quot;, \&quot;production\&quot;, \&quot;rollout\&quot; or \&quot;internal\&quot;.
+  - track (String.t): The track to read or modify.
   - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
@@ -2995,7 +2995,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
   - connection (GoogleApi.AndroidPublisher.V2.Connection): Connection to server
   - package_name (String.t): Unique identifier for the Android app that is being updated; for example, \&quot;com.spiffygame\&quot;.
   - edit_id (String.t): Unique identifier for this edit.
-  - track (String.t): The track to read or modify. Acceptable values are: \&quot;alpha\&quot;, \&quot;beta\&quot;, \&quot;production\&quot;, \&quot;rollout\&quot; or \&quot;internal\&quot;.
+  - track (String.t): The track to read or modify.
   - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
@@ -3062,7 +3062,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
   - connection (GoogleApi.AndroidPublisher.V2.Connection): Connection to server
   - package_name (String.t): Unique identifier for the Android app that is being updated; for example, \&quot;com.spiffygame\&quot;.
   - edit_id (String.t): Unique identifier for this edit.
-  - track (String.t): The track to read or modify. Acceptable values are: \&quot;alpha\&quot;, \&quot;beta\&quot;, \&quot;production\&quot;, \&quot;rollout\&quot; or \&quot;internal\&quot;.
+  - track (String.t): The track to read or modify.
   - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
@@ -3247,7 +3247,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
   end
 
   @doc """
-  Updates the track configuration for the specified track type. When halted, the rollout track cannot be updated without adding new APKs, and adding new APKs will cause it to resume. This method supports patch semantics.
+  Updates the track configuration for the specified track type. This method supports patch semantics.
 
   ## Parameters
 
@@ -3315,7 +3315,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Edits do
   end
 
   @doc """
-  Updates the track configuration for the specified track type. When halted, the rollout track cannot be updated without adding new APKs, and adding new APKs will cause it to resume.
+  Updates the track configuration for the specified track type.
 
   ## Parameters
 
