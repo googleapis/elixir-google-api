@@ -1581,7 +1581,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
   end
 
   @doc """
-  Recreates the required App Engine features for the specified App Engine application, for example a Cloud Storage bucket or App Engine service account. Use this method if you receive an error message about a missing feature, for example, Error retrieving the App Engine service account.
+  Recreates the required App Engine features for the specified App Engine application, for example a Cloud Storage bucket or App Engine service account. Use this method if you receive an error message about a missing feature, for example, Error retrieving the App Engine service account. If you have deleted your App Engine service account, this will not be able to recreate it. Instead, you should attempt to use the IAM undelete API if possible at https://cloud.google.com/iam/reference/rest/v1/projects.serviceAccounts/undelete?apix_params&#x3D;%7B\&quot;name\&quot;%3A\&quot;projects%2F-%2FserviceAccounts%2Funique_id\&quot;%2C\&quot;resource\&quot;%3A%7B%7D%7D . If the deletion was recent, the numeric ID can be found in the Cloud Console Activity Log.
 
   ## Parameters
 
