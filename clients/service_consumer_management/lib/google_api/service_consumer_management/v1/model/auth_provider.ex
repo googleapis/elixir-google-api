@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.ServiceConsumerManagement.V1.Model.AuthProvider do
   @moduledoc """
-  Configuration for an anthentication provider, including support for [JSON Web Token (JWT)](https://tools.ietf.org/html/draft-ietf-oauth-json-web-token-32).
+  Configuration for an authentication provider, including support for [JSON Web Token (JWT)](https://tools.ietf.org/html/draft-ietf-oauth-json-web-token-32).
 
   ## Attributes
 
