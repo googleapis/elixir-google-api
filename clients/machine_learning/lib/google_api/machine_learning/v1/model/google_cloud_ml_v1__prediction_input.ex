@@ -25,7 +25,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1PredictionInput do
   - batchSize (String.t): Optional. Number of records per batch, defaults to 64. The service will buffer batch_size number of records in memory before invoking one Tensorflow prediction call internally. So take the record size and memory available into consideration when setting this parameter. Defaults to: `null`.
   - dataFormat (String.t): Required. The format of the input data files. Defaults to: `null`.
     - Enum - one of [DATA_FORMAT_UNSPECIFIED, JSON, TEXT, TF_RECORD, TF_RECORD_GZIP, CSV]
-  - inputPaths ([String.t]): Required. The Google Cloud Storage location of the input data files. May contain wildcards. See &lt;a href&#x3D;\&quot;https://cloud.google.com/storage/docs/gsutil/addlhelp/WildcardNames&lt;/a&gt; Defaults to: `null`.
+  - inputPaths ([String.t]): Required. The Cloud Storage location of the input data files. May contain &lt;a href&#x3D;\&quot;/storage/docs/gsutil/addlhelp/WildcardNames\&quot;&gt;wildcards&lt;/a&gt;. Defaults to: `null`.
   - maxWorkerCount (String.t): Optional. The maximum number of workers to be used for parallel processing. Defaults to 10 if not specified. Defaults to: `null`.
   - modelName (String.t): Use this field if you want to use the default version for the specified model. The string must use the following format:  &#x60;\&quot;projects/YOUR_PROJECT/models/YOUR_MODEL\&quot;&#x60; Defaults to: `null`.
   - outputDataFormat (String.t): Optional. Format of the output data files, defaults to JSON. Defaults to: `null`.

@@ -36,6 +36,8 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1Version do
   - machineType (String.t): Optional. The type of machine on which to serve the model. Currently only applies to online prediction service. &lt;dl&gt;   &lt;dt&gt;mls1-c1-m2&lt;/dt&gt;   &lt;dd&gt;   The &lt;b&gt;default&lt;/b&gt; machine type, with 1 core and 2 GB RAM. The deprecated   name for this machine type is \&quot;mls1-highmem-1\&quot;.   &lt;/dd&gt;   &lt;dt&gt;mls1-c4-m2&lt;/dt&gt;   &lt;dd&gt;   In &lt;b&gt;Beta&lt;/b&gt;. This machine type has 4 cores and 2 GB RAM. The   deprecated name for this machine type is \&quot;mls1-highcpu-4\&quot;.   &lt;/dd&gt; &lt;/dl&gt; Defaults to: `null`.
   - manualScaling (GoogleCloudMlV1ManualScaling): Manually select the number of nodes to use for serving the model. You should generally use &#x60;auto_scaling&#x60; with an appropriate &#x60;min_nodes&#x60; instead, but this option is available if you want more predictable billing. Beware that latency and error rates will increase if the traffic exceeds that capability of the system to serve it based on the selected number of nodes. Defaults to: `null`.
   - name (String.t): Required.The name specified for the version when it was created.  The version name must be unique within the model it is created in. Defaults to: `null`.
+  - packageUris ([String.t]): Optional. The Google Cloud Storage location of the packages for custom prediction and any additional dependencies. Defaults to: `null`.
+  - predictionClass (String.t): class PredictionClass(object):   \&quot;\&quot;\&quot;A Model performs predictions on a given list of instances.    The input instances are the raw values sent by the user. It is the   responsibility of a Model to translate these instances into   actual predictions.    The input instances and the output use python data types. The input   instances have been decoded prior to being passed to the predict   method. The output, which should use python data types is   encoded after being returned from the predict method.   \&quot;\&quot;\&quot;    def predict(self, instances, **kwargs):     \&quot;\&quot;\&quot;Returns predictions for the provided instances.      Instances are the decoded values from the request. Clients need not     worry about decoding json nor base64 decoding.      Args:       instances: A list of instances, as described in the API.       **kwargs: Additional keyword arguments, will be passed into the           client&#39;s predict method.      Returns:       A list of outputs containing the prediction results.     \&quot;\&quot;\&quot;    @classmethod   def from_path(cls, model_path):     \&quot;\&quot;\&quot;Creates a model using the given model path.      Path is useful, e.g., to load files from the exported directory     containing the model.      Args:       model_path: The local directory that contains the exported model           file along with any additional files uploaded when creating the           version resource.      Returns:       An instance implementing this Model class.     \&quot;\&quot;\&quot; Defaults to: `null`.
   - pythonVersion (String.t): Optional. The version of Python used in prediction. If not set, the default version is &#39;2.7&#39;. Python &#39;3.5&#39; is available when &#x60;runtime_version&#x60; is set to &#39;1.4&#39; and above. Python &#39;2.7&#39; works with all supported runtime versions. Defaults to: `null`.
   - runtimeVersion (String.t): Optional. The Cloud ML Engine runtime version to use for this deployment. If not set, Cloud ML Engine uses the default stable version, 1.0. For more information, see the [runtime version list](/ml-engine/docs/runtime-version-list) and [how to manage runtime versions](/ml-engine/docs/versioning). Defaults to: `null`.
   - state (String.t): Output only. The state of a version. Defaults to: `null`.
@@ -58,6 +60,8 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1Version do
           :machineType => any(),
           :manualScaling => GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1ManualScaling.t(),
           :name => any(),
+          :packageUris => list(any()),
+          :predictionClass => any(),
           :pythonVersion => any(),
           :runtimeVersion => any(),
           :state => any()
@@ -76,6 +80,8 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1Version do
   field(:machineType)
   field(:manualScaling, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1ManualScaling)
   field(:name)
+  field(:packageUris, type: :list)
+  field(:predictionClass)
   field(:pythonVersion)
   field(:runtimeVersion)
   field(:state)
