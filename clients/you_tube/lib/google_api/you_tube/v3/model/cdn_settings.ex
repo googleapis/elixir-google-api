@@ -27,7 +27,7 @@ defmodule GoogleApi.YouTube.V3.Model.CdnSettings do
     - Enum - one of [30fps, 60fps, variable]
   - ingestionInfo (IngestionInfo): The ingestionInfo object contains information that YouTube provides that you need to transmit your RTMP or HTTP stream to YouTube. Defaults to: `null`.
   - ingestionType (String.t): The method or protocol used to transmit the video stream. Defaults to: `null`.
-    - Enum - one of [dash, http, rtmp, webrtc]
+    - Enum - one of [dash, hls, rtmp, webrtc]
   - resolution (String.t): The resolution of the inbound video data. Defaults to: `null`.
     - Enum - one of [1080p, 1440p, 2160p, 240p, 360p, 480p, 720p, variable]
   """
