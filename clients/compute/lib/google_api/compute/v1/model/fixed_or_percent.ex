@@ -22,7 +22,7 @@ defmodule GoogleApi.Compute.V1.Model.FixedOrPercent do
 
   ## Attributes
 
-  - calculated (integer()): [Output Only] Absolute value of VM instances calculated based on the specific mode.    - If the value is fixed, then the caculated value is equal to the fixed value.  - If the value is a percent, then the calculated value is percent/100 * targetSize. For example, the calculated value of a 80% of a managed instance group with 150 instances would be (80/100 * 150) &#x3D; 120 VM instances. If there is a remainder, the number is rounded up. Defaults to: `null`.
+  - calculated (integer()): [Output Only] Absolute value of VM instances calculated based on the specific mode.    - If the value is fixed, then the calculated value is equal to the fixed value.  - If the value is a percent, then the calculated value is percent/100 * targetSize. For example, the calculated value of a 80% of a managed instance group with 150 instances would be (80/100 * 150) &#x3D; 120 VM instances. If there is a remainder, the number is rounded up. Defaults to: `null`.
   - fixed (integer()): Specifies a fixed number of VM instances. This must be a positive integer. Defaults to: `null`.
   - percent (integer()): Specifies a percentage of instances between 0 to 100%, inclusive. For example, specify 80 for 80%. Defaults to: `null`.
   """

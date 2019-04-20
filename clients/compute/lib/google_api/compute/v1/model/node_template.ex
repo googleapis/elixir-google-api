@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.NodeTemplate do
   @moduledoc """
-  A Node Template resource.
+  A Node Template resource. To learn more about node templates and sole-tenant nodes, read the Sole-tenant nodes documentation. (&#x3D;&#x3D; resource_for beta.nodeTemplates &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.nodeTemplates &#x3D;&#x3D;)
 
   ## Attributes
 
