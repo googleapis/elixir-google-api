@@ -25,12 +25,12 @@ defmodule GoogleApi.DNS.V1.Api.Projects do
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
-
+  Fetch the representation of an existing Project.
 
   ## Parameters
 
   - connection (GoogleApi.DNS.V1.Connection): Connection to server
-  - project (String.t): 
+  - project (String.t): Identifies the project addressed by this request.
   - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
@@ -39,7 +39,7 @@ defmodule GoogleApi.DNS.V1.Api.Projects do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :clientOperationId (String.t): 
+    - :clientOperationId (String.t): For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.
 
   ## Returns
 

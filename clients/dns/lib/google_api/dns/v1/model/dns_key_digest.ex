@@ -22,8 +22,8 @@ defmodule GoogleApi.DNS.V1.Model.DnsKeyDigest do
 
   ## Attributes
 
-  - digest (String.t):  Defaults to: `null`.
-  - type (String.t):  Defaults to: `null`.
+  - digest (String.t): The base-16 encoded bytes of this digest. Suitable for use in a DS resource record. Defaults to: `null`.
+  - type (String.t): Specifies the algorithm used to calculate this digest. Defaults to: `null`.
     - Enum - one of [sha1, sha256, sha384]
   """
 

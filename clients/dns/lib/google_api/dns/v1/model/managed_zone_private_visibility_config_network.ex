@@ -23,7 +23,7 @@ defmodule GoogleApi.DNS.V1.Model.ManagedZonePrivateVisibilityConfigNetwork do
   ## Attributes
 
   - kind (String.t): Identifies what kind of resource this is. Value: the fixed string \&quot;dns#managedZonePrivateVisibilityConfigNetwork\&quot;. Defaults to: `null`.
-  - networkUrl (String.t):  Defaults to: `null`.
+  - networkUrl (String.t): The fully qualified URL of the VPC network to bind to. This should be formatted like https://www.googleapis.com/compute/v1/projects/{project}/global/networks/{network} Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

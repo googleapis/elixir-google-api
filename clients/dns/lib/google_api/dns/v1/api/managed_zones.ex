@@ -25,12 +25,12 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZones do
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
-
+  Create a new ManagedZone.
 
   ## Parameters
 
   - connection (GoogleApi.DNS.V1.Connection): Connection to server
-  - project (String.t): 
+  - project (String.t): Identifies the project addressed by this request.
   - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
@@ -39,7 +39,7 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZones do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :clientOperationId (String.t): 
+    - :clientOperationId (String.t): For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.
     - :body (ManagedZone): 
 
   ## Returns
@@ -76,13 +76,13 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZones do
   end
 
   @doc """
-
+  Delete a previously created ManagedZone.
 
   ## Parameters
 
   - connection (GoogleApi.DNS.V1.Connection): Connection to server
-  - project (String.t): 
-  - managed_zone (String.t): 
+  - project (String.t): Identifies the project addressed by this request.
+  - managed_zone (String.t): Identifies the managed zone addressed by this request. Can be the managed zone name or id.
   - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
@@ -91,7 +91,7 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZones do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :clientOperationId (String.t): 
+    - :clientOperationId (String.t): For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.
 
   ## Returns
 
@@ -133,13 +133,13 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZones do
   end
 
   @doc """
-
+  Fetch the representation of an existing ManagedZone.
 
   ## Parameters
 
   - connection (GoogleApi.DNS.V1.Connection): Connection to server
-  - project (String.t): 
-  - managed_zone (String.t): 
+  - project (String.t): Identifies the project addressed by this request.
+  - managed_zone (String.t): Identifies the managed zone addressed by this request. Can be the managed zone name or id.
   - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
@@ -148,7 +148,7 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZones do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :clientOperationId (String.t): 
+    - :clientOperationId (String.t): For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.
 
   ## Returns
 
@@ -184,12 +184,12 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZones do
   end
 
   @doc """
-
+  Enumerate ManagedZones that have been created but not yet deleted.
 
   ## Parameters
 
   - connection (GoogleApi.DNS.V1.Connection): Connection to server
-  - project (String.t): 
+  - project (String.t): Identifies the project addressed by this request.
   - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
@@ -198,9 +198,9 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZones do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :dnsName (String.t): 
-    - :maxResults (integer()): 
-    - :pageToken (String.t): 
+    - :dnsName (String.t): Restricts the list to return only zones with this domain name.
+    - :maxResults (integer()): Optional. Maximum number of results to be returned. If unspecified, the server will decide how many results to return.
+    - :pageToken (String.t): Optional. A tag returned by a previous list request that was truncated. Use this parameter to continue a previous list request.
 
   ## Returns
 
@@ -237,13 +237,13 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZones do
   end
 
   @doc """
-
+  Apply a partial update to an existing ManagedZone.
 
   ## Parameters
 
   - connection (GoogleApi.DNS.V1.Connection): Connection to server
-  - project (String.t): 
-  - managed_zone (String.t): 
+  - project (String.t): Identifies the project addressed by this request.
+  - managed_zone (String.t): Identifies the managed zone addressed by this request. Can be the managed zone name or id.
   - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
@@ -252,7 +252,7 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZones do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :clientOperationId (String.t): 
+    - :clientOperationId (String.t): For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.
     - :body (ManagedZone): 
 
   ## Returns
@@ -296,13 +296,13 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZones do
   end
 
   @doc """
-
+  Update an existing ManagedZone.
 
   ## Parameters
 
   - connection (GoogleApi.DNS.V1.Connection): Connection to server
-  - project (String.t): 
-  - managed_zone (String.t): 
+  - project (String.t): Identifies the project addressed by this request.
+  - managed_zone (String.t): Identifies the managed zone addressed by this request. Can be the managed zone name or id.
   - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
@@ -311,7 +311,7 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZones do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :clientOperationId (String.t): 
+    - :clientOperationId (String.t): For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.
     - :body (ManagedZone): 
 
   ## Returns

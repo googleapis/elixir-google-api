@@ -18,21 +18,21 @@
 
 defmodule GoogleApi.DNS.V1.Model.Quota do
   @moduledoc """
-
+  Limits associated with a Project.
 
   ## Attributes
 
-  - dnsKeysPerManagedZone (integer()):  Defaults to: `null`.
+  - dnsKeysPerManagedZone (integer()): Maximum allowed number of DnsKeys per ManagedZone. Defaults to: `null`.
   - kind (String.t): Identifies what kind of resource this is. Value: the fixed string \&quot;dns#quota\&quot;. Defaults to: `null`.
-  - managedZones (integer()):  Defaults to: `null`.
-  - managedZonesPerNetwork (integer()):  Defaults to: `null`.
-  - networksPerManagedZone (integer()):  Defaults to: `null`.
-  - resourceRecordsPerRrset (integer()):  Defaults to: `null`.
-  - rrsetAdditionsPerChange (integer()):  Defaults to: `null`.
-  - rrsetDeletionsPerChange (integer()):  Defaults to: `null`.
-  - rrsetsPerManagedZone (integer()):  Defaults to: `null`.
-  - totalRrdataSizePerChange (integer()):  Defaults to: `null`.
-  - whitelistedKeySpecs ([DnsKeySpec]):  Defaults to: `null`.
+  - managedZones (integer()): Maximum allowed number of managed zones in the project. Defaults to: `null`.
+  - managedZonesPerNetwork (integer()): Maximum allowed number of managed zones which can be attached to a network. Defaults to: `null`.
+  - networksPerManagedZone (integer()): Maximum allowed number of networks to which a privately scoped zone can be attached. Defaults to: `null`.
+  - resourceRecordsPerRrset (integer()): Maximum allowed number of ResourceRecords per ResourceRecordSet. Defaults to: `null`.
+  - rrsetAdditionsPerChange (integer()): Maximum allowed number of ResourceRecordSets to add per ChangesCreateRequest. Defaults to: `null`.
+  - rrsetDeletionsPerChange (integer()): Maximum allowed number of ResourceRecordSets to delete per ChangesCreateRequest. Defaults to: `null`.
+  - rrsetsPerManagedZone (integer()): Maximum allowed number of ResourceRecordSets per zone in the project. Defaults to: `null`.
+  - totalRrdataSizePerChange (integer()): Maximum allowed size for total rrdata in one ChangesCreateRequest in bytes. Defaults to: `null`.
+  - whitelistedKeySpecs ([DnsKeySpec]): DNSSEC algorithm and key length types that can be used for DnsKeys. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
