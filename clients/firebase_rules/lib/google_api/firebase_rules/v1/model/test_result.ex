@@ -27,7 +27,7 @@ defmodule GoogleApi.FirebaseRules.V1.Model.TestResult do
   - functionCalls ([FunctionCall]): The set of function calls made to service-defined methods.  Function calls are included in the order in which they are encountered during evaluation, are provided for both mocked and unmocked functions, and included on the response regardless of the test &#x60;state&#x60;. Defaults to: `null`.
   - state (String.t): State of the test. Defaults to: `null`.
     - Enum - one of [STATE_UNSPECIFIED, SUCCESS, FAILURE]
-  - visitedExpressions ([VisitedExpression]): The set of visited expressions for a given test. This returns positions and evaluation results of all visited expressions. Defaults to: `null`.
+  - visitedExpressions ([VisitedExpression]): The set of visited permission expressions for a given test. This returns the positions and evaluation results of all visited permission expressions which were relevant to the test case, e.g. &#x60;&#x60;&#x60; match /path {   allow read if: &lt;expr&gt; } &#x60;&#x60;&#x60; For a detailed report of the intermediate evaluation states, see the &#x60;expression_reports&#x60; field Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
