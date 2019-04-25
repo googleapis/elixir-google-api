@@ -25,7 +25,7 @@ defmodule GoogleApi.Content.V2.Api.Orderinvoices do
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
-  Creates a charge invoice for a shipment group, and triggers a charge capture for non-facilitated payment orders.
+  Creates a charge invoice for a shipment group, and triggers a charge capture for orderinvoice enabled orders.
 
   ## Parameters
 
@@ -90,7 +90,7 @@ defmodule GoogleApi.Content.V2.Api.Orderinvoices do
   end
 
   @doc """
-  Creates a refund invoice for one or more shipment groups, and triggers a refund for non-facilitated payment orders. This can only be used for line items that have previously been charged using createChargeInvoice. All amounts (except for the summary) are incremental with respect to the previous invoice.
+  Creates a refund invoice for one or more shipment groups, and triggers a refund for orderinvoice enabled orders. This can only be used for line items that have previously been charged using createChargeInvoice. All amounts (except for the summary) are incremental with respect to the previous invoice.
 
   ## Parameters
 
