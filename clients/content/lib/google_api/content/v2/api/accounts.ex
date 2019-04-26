@@ -339,7 +339,7 @@ defmodule GoogleApi.Content.V2.Api.Accounts do
   end
 
   @doc """
-  Performs an action on a link between a Merchant Center account and another account.
+  Performs an action on a link between two Merchant Center accounts, namely accountId and linkedAccountId.
 
   ## Parameters
 

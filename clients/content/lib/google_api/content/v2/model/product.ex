@@ -23,7 +23,7 @@ defmodule GoogleApi.Content.V2.Model.Product do
   ## Attributes
 
   - additionalImageLinks ([String.t]): Additional URLs of images of the item. Defaults to: `null`.
-  - additionalProductTypes ([String.t]): Additional categories of the item (formatted as in products feed specification). Defaults to: `null`.
+  - additionalProductTypes ([String.t]): Additional categories of the item (formatted as in products data specification). Defaults to: `null`.
   - adult (boolean()): Set to true if the item is targeted towards adults. Defaults to: `null`.
   - adwordsGrouping (String.t): Used to group items in an arbitrary way. Only for CPA%, discouraged otherwise. Defaults to: `null`.
   - adwordsLabels ([String.t]): Similar to adwords_grouping, but only works on CPC. Defaults to: `null`.
@@ -78,10 +78,10 @@ defmodule GoogleApi.Content.V2.Model.Product do
   - onlineOnly (boolean()): Deprecated. Whether an item is available for purchase only online. Defaults to: `null`.
   - pattern (String.t): The item&#39;s pattern (e.g. polka dots). Defaults to: `null`.
   - price (Price): Price of the item. Defaults to: `null`.
-  - productType (String.t): Your category of the item (formatted as in products feed specification). Defaults to: `null`.
+  - productType (String.t): Your category of the item (formatted as in products data specification). Defaults to: `null`.
   - promotionIds ([String.t]): The unique ID of a promotion. Defaults to: `null`.
   - salePrice (Price): Advertised sale price of the item. Defaults to: `null`.
-  - salePriceEffectiveDate (String.t): Date range during which the item is on sale (see products feed specification). Defaults to: `null`.
+  - salePriceEffectiveDate (String.t): Date range during which the item is on sale (see products data specification). Defaults to: `null`.
   - sellOnGoogleQuantity (String.t): The quantity of the product that is available for selling on Google. Supported only for online products. Defaults to: `null`.
   - shipping ([ProductShipping]): Shipping rules. Defaults to: `null`.
   - shippingHeight (ProductShippingDimension): Height of the item for shipping. Defaults to: `null`.
