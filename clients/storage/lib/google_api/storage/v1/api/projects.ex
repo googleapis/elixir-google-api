@@ -25,6 +25,283 @@ defmodule GoogleApi.Storage.V1.Api.Projects do
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
+  Creates a new HMAC key for the specified service account.
+
+  ## Parameters
+
+  - connection (GoogleApi.Storage.V1.Connection): Connection to server
+  - project_id (String.t): Project ID owning the service account.
+  - service_account_email (String.t): Email address of the service account.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :alt (String.t): Data format for the response.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+
+  ## Returns
+
+  {:ok, %GoogleApi.Storage.V1.Model.HmacKey{}} on success
+  {:error, info} on failure
+  """
+  @spec storage_projects_hmac_keys_create(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, GoogleApi.Storage.V1.Model.HmacKey.t()} | {:error, Tesla.Env.t()}
+  def storage_projects_hmac_keys_create(
+        connection,
+        project_id,
+        service_account_email,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :alt => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :userIp => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/storage/v1/projects/{projectId}/hmacKeys", %{
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_param(:query, :serviceAccountEmail, service_account_email)
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Storage.V1.Model.HmacKey{}])
+  end
+
+  @doc """
+  Deletes an HMAC key.
+
+  ## Parameters
+
+  - connection (GoogleApi.Storage.V1.Connection): Connection to server
+  - project_id (String.t): Project ID owning the requested key
+  - access_id (String.t): Name of the HMAC key to be deleted.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :alt (String.t): Data format for the response.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+
+  ## Returns
+
+  {:ok, %{}} on success
+  {:error, info} on failure
+  """
+  @spec storage_projects_hmac_keys_delete(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, nil} | {:error, Tesla.Env.t()}
+  def storage_projects_hmac_keys_delete(
+        connection,
+        project_id,
+        access_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :alt => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :userIp => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url("/storage/v1/projects/{projectId}/hmacKeys/{accessId}", %{
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "accessId" => URI.encode(access_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [decode: false])
+  end
+
+  @doc """
+  Retrieves an HMAC key&#39;s metadata
+
+  ## Parameters
+
+  - connection (GoogleApi.Storage.V1.Connection): Connection to server
+  - project_id (String.t): Project ID owning the service account of the requested key.
+  - access_id (String.t): Name of the HMAC key.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :alt (String.t): Data format for the response.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+
+  ## Returns
+
+  {:ok, %GoogleApi.Storage.V1.Model.HmacKeyMetadata{}} on success
+  {:error, info} on failure
+  """
+  @spec storage_projects_hmac_keys_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, GoogleApi.Storage.V1.Model.HmacKeyMetadata.t()} | {:error, Tesla.Env.t()}
+  def storage_projects_hmac_keys_get(
+        connection,
+        project_id,
+        access_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :alt => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :userIp => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/storage/v1/projects/{projectId}/hmacKeys/{accessId}", %{
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "accessId" => URI.encode(access_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Storage.V1.Model.HmacKeyMetadata{}])
+  end
+
+  @doc """
+  Retrieves a list of HMAC keys matching the criteria.
+
+  ## Parameters
+
+  - connection (GoogleApi.Storage.V1.Connection): Connection to server
+  - project_id (String.t): Name of the project in which to look for HMAC keys.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :alt (String.t): Data format for the response.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+    - :maxResults (integer()): Maximum number of items plus prefixes to return in a single page of responses. Because duplicate prefixes are omitted, fewer total results may be returned than requested. The service uses this parameter or 1,000 items, whichever is smaller.
+    - :pageToken (String.t): A previously-returned page token representing part of the larger set of results to view.
+    - :serviceAccountEmail (String.t): If present, only keys for the given service account are returned.
+    - :showDeletedKeys (boolean()): Whether or not to show keys in the DELETED state.
+
+  ## Returns
+
+  {:ok, %GoogleApi.Storage.V1.Model.HmacKeysMetadata{}} on success
+  {:error, info} on failure
+  """
+  @spec storage_projects_hmac_keys_list(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, GoogleApi.Storage.V1.Model.HmacKeysMetadata.t()} | {:error, Tesla.Env.t()}
+  def storage_projects_hmac_keys_list(connection, project_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :alt => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :userIp => :query,
+      :maxResults => :query,
+      :pageToken => :query,
+      :serviceAccountEmail => :query,
+      :showDeletedKeys => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/storage/v1/projects/{projectId}/hmacKeys", %{
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Storage.V1.Model.HmacKeysMetadata{}])
+  end
+
+  @doc """
+  Updates the state of an HMAC key. See the HMAC Key resource descriptor for valid states.
+
+  ## Parameters
+
+  - connection (GoogleApi.Storage.V1.Connection): Connection to server
+  - project_id (String.t): Project ID owning the service account of the updated key.
+  - access_id (String.t): Name of the HMAC key being updated.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :alt (String.t): Data format for the response.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+    - :body (HmacKeyMetadata): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.Storage.V1.Model.HmacKeyMetadata{}} on success
+  {:error, info} on failure
+  """
+  @spec storage_projects_hmac_keys_update(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, GoogleApi.Storage.V1.Model.HmacKeyMetadata.t()} | {:error, Tesla.Env.t()}
+  def storage_projects_hmac_keys_update(
+        connection,
+        project_id,
+        access_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :alt => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :userIp => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:put)
+      |> Request.url("/storage/v1/projects/{projectId}/hmacKeys/{accessId}", %{
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "accessId" => URI.encode(access_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Storage.V1.Model.HmacKeyMetadata{}])
+  end
+
+  @doc """
   Get the email address of this project&#39;s Google Cloud Storage service account.
 
   ## Parameters
