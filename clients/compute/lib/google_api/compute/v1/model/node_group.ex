@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.NodeGroup do
   @moduledoc """
-  A NodeGroup resource. (&#x3D;&#x3D; resource_for beta.nodeGroups &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.nodeGroups &#x3D;&#x3D;)
+  A NodeGroup resource. To create a node group, you must first create a node templates. To learn more about node groups and sole-tenant nodes, read the Sole-tenant nodes documentation. (&#x3D;&#x3D; resource_for beta.nodeGroups &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.nodeGroups &#x3D;&#x3D;)
 
   ## Attributes
 

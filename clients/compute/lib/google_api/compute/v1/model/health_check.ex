@@ -36,7 +36,7 @@ defmodule GoogleApi.Compute.V1.Model.HealthCheck do
   - sslHealthCheck (SslHealthCheck):  Defaults to: `null`.
   - tcpHealthCheck (TcpHealthCheck):  Defaults to: `null`.
   - timeoutSec (integer()): How long (in seconds) to wait before claiming failure. The default value is 5 seconds. It is invalid for timeoutSec to have greater value than checkIntervalSec. Defaults to: `null`.
-  - type (String.t): Specifies the type of the healthCheck, either TCP, SSL, HTTP or HTTPS. If not specified, the default is TCP. Exactly one of the protocol-specific health check field must be specified, which must match type field. Defaults to: `null`.
+  - type (String.t): Specifies the type of the healthCheck, either TCP, SSL, HTTP, HTTPS or HTTP2. If not specified, the default is TCP. Exactly one of the protocol-specific health check field must be specified, which must match type field. Defaults to: `null`.
     - Enum - one of [HTTP, HTTP2, HTTPS, INVALID, SSL, TCP]
   - unhealthyThreshold (integer()): A so-far healthy instance will be marked unhealthy after this many consecutive failures. The default value is 2. Defaults to: `null`.
   """

@@ -22,7 +22,7 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManagerVersion do
 
   ## Attributes
 
-  - instanceTemplate (String.t):  Defaults to: `null`.
+  - instanceTemplate (String.t): The URL of the instance template that is specified for this managed instance group. The group uses this template to create new instances in the managed instance group until the &#x60;targetSize&#x60; for this version is reached. Defaults to: `null`.
   - name (String.t): Name of the version. Unique among all versions in the scope of this managed instance group. Defaults to: `null`.
   - targetSize (FixedOrPercent): Specifies the intended number of instances to be created from the instanceTemplate. The final number of instances created from the template will be equal to:   - If expressed as a fixed number, the minimum of either targetSize.fixed or instanceGroupManager.targetSize is used.  - if expressed as a percent, the targetSize would be (targetSize.percent/100 * InstanceGroupManager.targetSize) If there is a remainder, the number is rounded up.  If unset, this version will update any remaining instances not updated by another version. Read Starting a canary update for more information. Defaults to: `null`.
   """
