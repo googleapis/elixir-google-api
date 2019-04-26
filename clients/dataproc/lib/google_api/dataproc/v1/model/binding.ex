@@ -22,7 +22,7 @@ defmodule GoogleApi.Dataproc.V1.Model.Binding do
 
   ## Attributes
 
-  - condition (Expr): Unimplemented. The condition that is associated with this binding. NOTE: an unsatisfied condition will not allow user access via current binding. Different bindings, including their conditions, are examined independently. Defaults to: `null`.
+  - condition (Expr): The condition that is associated with this binding. NOTE: An unsatisfied condition will not allow user access via current binding. Different bindings, including their conditions, are examined independently. Defaults to: `null`.
   - members ([String.t]): Specifies the identities requesting access for a Cloud Platform resource. members can have the following values: allUsers: A special identifier that represents anyone who is  on the internet; with or without a Google account. allAuthenticatedUsers: A special identifier that represents anyone  who is authenticated with a Google account or a service account. user:{emailid}: An email address that represents a specific Google  account. For example, alice@gmail.com . serviceAccount:{emailid}: An email address that represents a service  account. For example, my-other-app@appspot.gserviceaccount.com. group:{emailid}: An email address that represents a Google group.  For example, admins@example.com. domain:{domain}: The G Suite domain (primary) that represents all the  users of that domain. For example, google.com or example.com. Defaults to: `null`.
   - role (String.t): Role that is assigned to members. For example, roles/viewer, roles/editor, or roles/owner. Defaults to: `null`.
   """
