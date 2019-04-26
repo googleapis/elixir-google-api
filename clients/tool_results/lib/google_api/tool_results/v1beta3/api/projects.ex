@@ -1417,6 +1417,158 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
   end
 
   @doc """
+  Gets details of a Test Case for a Step. Experimental test cases API. Still in active development.  May return any of the following canonical error codes:  - PERMISSION_DENIED - if the user is not authorized to write to project - INVALID_ARGUMENT - if the request is malformed - NOT_FOUND - if the containing Test Case does not exist
+
+  ## Parameters
+
+  - connection (GoogleApi.ToolResults.V1beta3.Connection): Connection to server
+  - project_id (String.t): A Project id.  Required.
+  - history_id (String.t): A History id.  Required.
+  - execution_id (String.t): A Execution id  Required.
+  - step_id (String.t): A Step id. Note: This step must include a TestExecutionStep.  Required.
+  - test_case_id (String.t): A Test Case id.  Required.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :alt (String.t): Data format for the response.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+
+  ## Returns
+
+  {:ok, %GoogleApi.ToolResults.V1beta3.Model.TestCase{}} on success
+  {:error, info} on failure
+  """
+  @spec toolresults_projects_histories_executions_steps_test_cases_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) :: {:ok, GoogleApi.ToolResults.V1beta3.Model.TestCase.t()} | {:error, Tesla.Env.t()}
+  def toolresults_projects_histories_executions_steps_test_cases_get(
+        connection,
+        project_id,
+        history_id,
+        execution_id,
+        step_id,
+        test_case_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :alt => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :userIp => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url(
+        "/{projectId}/histories/{historyId}/executions/{executionId}/steps/{stepId}/testCases/{testCaseId}",
+        %{
+          "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+          "historyId" => URI.encode(history_id, &URI.char_unreserved?/1),
+          "executionId" => URI.encode(execution_id, &URI.char_unreserved?/1),
+          "stepId" => URI.encode(step_id, &URI.char_unreserved?/1),
+          "testCaseId" => URI.encode(test_case_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.ToolResults.V1beta3.Model.TestCase{}])
+  end
+
+  @doc """
+  Lists Test Cases attached to a Step. Experimental test cases API. Still in active development.  May return any of the following canonical error codes:  - PERMISSION_DENIED - if the user is not authorized to write to project - INVALID_ARGUMENT - if the request is malformed - NOT_FOUND - if the containing Step does not exist
+
+  ## Parameters
+
+  - connection (GoogleApi.ToolResults.V1beta3.Connection): Connection to server
+  - project_id (String.t): A Project id.  Required.
+  - history_id (String.t): A History id.  Required.
+  - execution_id (String.t): A Execution id  Required.
+  - step_id (String.t): A Step id. Note: This step must include a TestExecutionStep.  Required.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :alt (String.t): Data format for the response.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+    - :pageSize (integer()): The maximum number of TestCases to fetch.  Default value: 100. The server will use this default if the field is not set or has a value of 0.  Optional.
+    - :pageToken (String.t): A continuation token to resume the query at the next item.  Optional.
+
+  ## Returns
+
+  {:ok, %GoogleApi.ToolResults.V1beta3.Model.ListTestCasesResponse{}} on success
+  {:error, info} on failure
+  """
+  @spec toolresults_projects_histories_executions_steps_test_cases_list(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.ToolResults.V1beta3.Model.ListTestCasesResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def toolresults_projects_histories_executions_steps_test_cases_list(
+        connection,
+        project_id,
+        history_id,
+        execution_id,
+        step_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :alt => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :userIp => :query,
+      :pageSize => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url(
+        "/{projectId}/histories/{historyId}/executions/{executionId}/steps/{stepId}/testCases",
+        %{
+          "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+          "historyId" => URI.encode(history_id, &URI.char_unreserved?/1),
+          "executionId" => URI.encode(execution_id, &URI.char_unreserved?/1),
+          "stepId" => URI.encode(step_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.ToolResults.V1beta3.Model.ListTestCasesResponse{}]
+    )
+  end
+
+  @doc """
   Lists thumbnails of images attached to a step.  May return any of the following canonical error codes: - PERMISSION_DENIED - if the user is not authorized to read from the project, or from any of the images - INVALID_ARGUMENT - if the request is malformed - NOT_FOUND - if the step does not exist, or if any of the images do not exist
 
   ## Parameters
