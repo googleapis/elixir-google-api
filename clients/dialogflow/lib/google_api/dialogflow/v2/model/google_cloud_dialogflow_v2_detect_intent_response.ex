@@ -22,6 +22,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2DetectIntentRespo
 
   ## Attributes
 
+  - outputAudio (binary()): The audio data bytes encoded as specified in the request. Note: The output audio is generated based on the values of default platform text responses found in the &#x60;query_result.fulfillment_messages&#x60; field. If multiple default text responses exist, they will be concatenated when generating audio. If no default platform text responses exist, the generated audio content will be empty. Defaults to: `null`.
+  - outputAudioConfig (GoogleCloudDialogflowV2OutputAudioConfig): The config used by the speech synthesizer to generate the output audio. Defaults to: `null`.
   - queryResult (GoogleCloudDialogflowV2QueryResult): The selected results of the conversational query or event processing. See &#x60;alternative_query_results&#x60; for additional potential results. Defaults to: `null`.
   - responseId (String.t): The unique identifier of the response. It can be used to locate a response in the training example set or for reporting issues. Defaults to: `null`.
   - webhookStatus (GoogleRpcStatus): Specifies the status of the webhook request. Defaults to: `null`.
@@ -30,10 +32,20 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2DetectIntentRespo
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :outputAudio => any(),
+          :outputAudioConfig =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2OutputAudioConfig.t(),
           :queryResult => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2QueryResult.t(),
           :responseId => any(),
           :webhookStatus => GoogleApi.Dialogflow.V2.Model.GoogleRpcStatus.t()
         }
+
+  field(:outputAudio)
+
+  field(
+    :outputAudioConfig,
+    as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2OutputAudioConfig
+  )
 
   field(:queryResult, as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2QueryResult)
   field(:responseId)

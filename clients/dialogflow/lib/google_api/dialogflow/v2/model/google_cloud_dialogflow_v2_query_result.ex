@@ -33,6 +33,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2QueryResult do
   - languageCode (String.t): The language that was triggered during intent detection. See [Language Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language) for a list of the currently supported language codes. Defaults to: `null`.
   - outputContexts ([GoogleCloudDialogflowV2Context]): The collection of output contexts. If applicable, &#x60;output_contexts.parameters&#x60; contains entries with name &#x60;&lt;parameter name&gt;.original&#x60; containing the original parameter values before the query. Defaults to: `null`.
   - queryText (String.t): The original conversational query text: - If natural language text was provided as input, &#x60;query_text&#x60; contains   a copy of the input. - If natural language speech audio was provided as input, &#x60;query_text&#x60;   contains the speech recognition result. If speech recognizer produced   multiple alternatives, a particular one is picked. - If an event was provided as input, &#x60;query_text&#x60; is not set. Defaults to: `null`.
+  - sentimentAnalysisResult (GoogleCloudDialogflowV2SentimentAnalysisResult): The sentiment analysis result, which depends on the &#x60;sentiment_analysis_request_config&#x60; specified in the request. Defaults to: `null`.
   - speechRecognitionConfidence (float()): The Speech recognition confidence between 0.0 and 1.0. A higher number indicates an estimated greater likelihood that the recognized words are correct. The default of 0.0 is a sentinel value indicating that confidence was not set.  This field is not guaranteed to be accurate or set. In particular this field isn&#39;t set for StreamingDetectIntent since the streaming endpoint has separate confidence estimates per portion of the audio in StreamingRecognitionResult. Defaults to: `null`.
   - webhookPayload (%{optional(String.t) &#x3D;&gt; String.t}): If the query was fulfilled by a webhook call, this field is set to the value of the &#x60;payload&#x60; field returned in the webhook response. Defaults to: `null`.
   - webhookSource (String.t): If the query was fulfilled by a webhook call, this field is set to the value of the &#x60;source&#x60; field returned in the webhook response. Defaults to: `null`.
@@ -54,6 +55,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2QueryResult do
           :outputContexts =>
             list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Context.t()),
           :queryText => any(),
+          :sentimentAnalysisResult =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SentimentAnalysisResult.t(),
           :speechRecognitionConfidence => any(),
           :webhookPayload => map(),
           :webhookSource => any()
@@ -82,6 +85,12 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2QueryResult do
   )
 
   field(:queryText)
+
+  field(
+    :sentimentAnalysisResult,
+    as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SentimentAnalysisResult
+  )
+
   field(:speechRecognitionConfidence)
   field(:webhookPayload, type: :map)
   field(:webhookSource)

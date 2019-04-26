@@ -23,6 +23,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2DetectIntentReque
   ## Attributes
 
   - inputAudio (binary()): Optional. The natural language speech audio to be processed. This field should be populated iff &#x60;query_input&#x60; is set to an input audio config. A single request can contain up to 1 minute of speech audio data. Defaults to: `null`.
+  - outputAudioConfig (GoogleCloudDialogflowV2OutputAudioConfig): Optional. Instructs the speech synthesizer how to generate the output audio. If this field is not set and agent-level speech synthesizer is not configured, no output audio is generated. Defaults to: `null`.
   - queryInput (GoogleCloudDialogflowV2QueryInput): Required. The input specification. It can be set to:  1.  an audio config     which instructs the speech recognizer how to process the speech audio,  2.  a conversational query in the form of text, or  3.  an event that specifies which intent to trigger. Defaults to: `null`.
   - queryParams (GoogleCloudDialogflowV2QueryParameters): Optional. The parameters of this query. Defaults to: `null`.
   """
@@ -31,11 +32,19 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2DetectIntentReque
 
   @type t :: %__MODULE__{
           :inputAudio => any(),
+          :outputAudioConfig =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2OutputAudioConfig.t(),
           :queryInput => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2QueryInput.t(),
           :queryParams => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2QueryParameters.t()
         }
 
   field(:inputAudio)
+
+  field(
+    :outputAudioConfig,
+    as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2OutputAudioConfig
+  )
+
   field(:queryInput, as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2QueryInput)
   field(:queryParams, as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2QueryParameters)
 end

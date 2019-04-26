@@ -26,6 +26,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2QueryParameters d
   - geoLocation (GoogleTypeLatLng): Optional. The geo location of this conversational query. Defaults to: `null`.
   - payload (%{optional(String.t) &#x3D;&gt; String.t}): Optional. This field can be used to pass custom data into the webhook associated with the agent. Arbitrary JSON objects are supported. Defaults to: `null`.
   - resetContexts (boolean()): Optional. Specifies whether to delete all contexts in the current session before the new ones are activated. Defaults to: `null`.
+  - sentimentAnalysisRequestConfig (GoogleCloudDialogflowV2SentimentAnalysisRequestConfig): Optional. Configures the type of sentiment analysis to perform. If not provided, sentiment analysis is not performed. Defaults to: `null`.
   - sessionEntityTypes ([GoogleCloudDialogflowV2SessionEntityType]): Optional. Additional session entity types to replace or extend developer entity types with. The entity synonyms apply to all languages and persist for the session of this query. Defaults to: `null`.
   - timeZone (String.t): Optional. The time zone of this conversational query from the [time zone database](https://www.iana.org/time-zones), e.g., America/New_York, Europe/Paris. If not provided, the time zone specified in agent settings is used. Defaults to: `null`.
   """
@@ -37,6 +38,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2QueryParameters d
           :geoLocation => GoogleApi.Dialogflow.V2.Model.GoogleTypeLatLng.t(),
           :payload => map(),
           :resetContexts => any(),
+          :sentimentAnalysisRequestConfig =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SentimentAnalysisRequestConfig.t(),
           :sessionEntityTypes =>
             list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SessionEntityType.t()),
           :timeZone => any()
@@ -46,6 +49,11 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2QueryParameters d
   field(:geoLocation, as: GoogleApi.Dialogflow.V2.Model.GoogleTypeLatLng)
   field(:payload, type: :map)
   field(:resetContexts)
+
+  field(
+    :sentimentAnalysisRequestConfig,
+    as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SentimentAnalysisRequestConfig
+  )
 
   field(
     :sessionEntityTypes,
