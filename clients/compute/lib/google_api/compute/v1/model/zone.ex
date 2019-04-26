@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.Zone do
   @moduledoc """
-  A Zone resource. (&#x3D;&#x3D; resource_for beta.zones &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.zones &#x3D;&#x3D;) Next ID: 17
+  A Zone resource. (&#x3D;&#x3D; resource_for beta.zones &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.zones &#x3D;&#x3D;)
 
   ## Attributes
 
