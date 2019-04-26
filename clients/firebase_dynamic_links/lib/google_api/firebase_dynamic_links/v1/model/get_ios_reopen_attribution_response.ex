@@ -27,8 +27,10 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.GetIosReopenAttributionRespons
   - iosMinAppVersion (String.t): FDL input value of the \&quot;&amp;imv&#x3D;\&quot; parameter, minimum app version to be returned to Google Firebase SDK running on iOS-9. Defaults to: `null`.
   - resolvedLink (String.t): The entire FDL, expanded from a short link. It is the same as the requested_link, if it is long. Defaults to: `null`.
   - utmCampaign (String.t): Scion campaign value to be propagated by iSDK to Scion at app-reopen. Defaults to: `null`.
+  - utmContent (String.t): Scion content value to be propagated by iSDK to Scion at app-reopen. Defaults to: `null`.
   - utmMedium (String.t): Scion medium value to be propagated by iSDK to Scion at app-reopen. Defaults to: `null`.
   - utmSource (String.t): Scion source value to be propagated by iSDK to Scion at app-reopen. Defaults to: `null`.
+  - utmTerm (String.t): Scion term value to be propagated by iSDK to Scion at app-reopen. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -39,8 +41,10 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.GetIosReopenAttributionRespons
           :iosMinAppVersion => any(),
           :resolvedLink => any(),
           :utmCampaign => any(),
+          :utmContent => any(),
           :utmMedium => any(),
-          :utmSource => any()
+          :utmSource => any(),
+          :utmTerm => any()
         }
 
   field(:deepLink)
@@ -48,8 +52,10 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.GetIosReopenAttributionRespons
   field(:iosMinAppVersion)
   field(:resolvedLink)
   field(:utmCampaign)
+  field(:utmContent)
   field(:utmMedium)
   field(:utmSource)
+  field(:utmTerm)
 end
 
 defimpl Poison.Decoder,
