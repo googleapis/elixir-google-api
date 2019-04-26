@@ -36,8 +36,10 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.GetIosPostInstallAttributionRe
   - requestedLink (String.t): Entire FDL (short or long) attributed post-install via one of several techniques (fingerprint, copy unique). Defaults to: `null`.
   - resolvedLink (String.t): The entire FDL, expanded from a short link. It is the same as the requested_link, if it is long. Parameters from this should not be used directly (ie: server can default utm_[campaign|medium|source] to a value when requested_link lack them, server determine the best fallback_link when requested_link specifies &gt;1 fallback links). Defaults to: `null`.
   - utmCampaign (String.t): Scion campaign value to be propagated by iSDK to Scion at post-install. Defaults to: `null`.
+  - utmContent (String.t): Scion content value to be propagated by iSDK to Scion at app-reopen. Defaults to: `null`.
   - utmMedium (String.t): Scion medium value to be propagated by iSDK to Scion at post-install. Defaults to: `null`.
   - utmSource (String.t): Scion source value to be propagated by iSDK to Scion at post-install. Defaults to: `null`.
+  - utmTerm (String.t): Scion term value to be propagated by iSDK to Scion at app-reopen. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -55,8 +57,10 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.GetIosPostInstallAttributionRe
           :requestedLink => any(),
           :resolvedLink => any(),
           :utmCampaign => any(),
+          :utmContent => any(),
           :utmMedium => any(),
-          :utmSource => any()
+          :utmSource => any(),
+          :utmTerm => any()
         }
 
   field(:appMinimumVersion)
@@ -71,8 +75,10 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.GetIosPostInstallAttributionRe
   field(:requestedLink)
   field(:resolvedLink)
   field(:utmCampaign)
+  field(:utmContent)
   field(:utmMedium)
   field(:utmSource)
+  field(:utmTerm)
 end
 
 defimpl Poison.Decoder,
