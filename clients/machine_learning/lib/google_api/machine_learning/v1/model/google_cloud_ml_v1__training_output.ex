@@ -22,7 +22,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1TrainingOutput do
 
   ## Attributes
 
-  - builtInAlgorithmOutput (GoogleCloudMlV1BuiltInAlgorithmOutput): Details related to built-in algorithms job. Only set for built-in algorithms jobs. Defaults to: `null`.
+  - builtInAlgorithmOutput (GoogleCloudMlV1BuiltInAlgorithmOutput): Details related to built-in algorithms jobs. Only set for built-in algorithms jobs. Defaults to: `null`.
   - completedTrialCount (String.t): The number of hyperparameter tuning trials that completed successfully. Only set for hyperparameter tuning jobs. Defaults to: `null`.
   - consumedMLUnits (float()): The amount of ML units consumed by the job. Defaults to: `null`.
   - isBuiltInAlgorithmJob (boolean()): Whether this job is a built-in Algorithm job. Defaults to: `null`.
