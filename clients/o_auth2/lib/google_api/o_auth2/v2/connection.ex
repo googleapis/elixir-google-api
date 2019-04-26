@@ -23,7 +23,7 @@ defmodule GoogleApi.OAuth2.V2.Connection do
 
   use GoogleApi.Gax.Connection,
     scopes: [
-      # Know who you are on Google
+      # Associate you with your personal info on Google
       "https://www.googleapis.com/auth/plus.me",
       # View your email address
       "https://www.googleapis.com/auth/userinfo.email",
