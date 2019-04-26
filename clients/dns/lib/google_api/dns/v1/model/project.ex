@@ -18,14 +18,14 @@
 
 defmodule GoogleApi.DNS.V1.Model.Project do
   @moduledoc """
-
+  A project resource. The project is a top level container for resources including Cloud DNS ManagedZones. Projects can be created only in the APIs console.
 
   ## Attributes
 
-  - id (String.t):  Defaults to: `null`.
+  - id (String.t): User assigned unique identifier for the resource (output only). Defaults to: `null`.
   - kind (String.t): Identifies what kind of resource this is. Value: the fixed string \&quot;dns#project\&quot;. Defaults to: `null`.
-  - number (String.t):  Defaults to: `null`.
-  - quota (Quota):  Defaults to: `null`.
+  - number (String.t): Unique numeric identifier for the resource; defined by the server (output only). Defaults to: `null`.
+  - quota (Quota): Quotas assigned to this project (output only). Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

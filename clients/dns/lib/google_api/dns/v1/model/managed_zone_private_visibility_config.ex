@@ -23,7 +23,7 @@ defmodule GoogleApi.DNS.V1.Model.ManagedZonePrivateVisibilityConfig do
   ## Attributes
 
   - kind (String.t): Identifies what kind of resource this is. Value: the fixed string \&quot;dns#managedZonePrivateVisibilityConfig\&quot;. Defaults to: `null`.
-  - networks ([ManagedZonePrivateVisibilityConfigNetwork]):  Defaults to: `null`.
+  - networks ([ManagedZonePrivateVisibilityConfigNetwork]): The list of VPC networks that can see this zone. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

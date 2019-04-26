@@ -18,16 +18,16 @@
 
 defmodule GoogleApi.DNS.V1.Model.ResourceRecordSet do
   @moduledoc """
-
+  A unit of data that will be returned by the DNS servers.
 
   ## Attributes
 
   - kind (String.t): Identifies what kind of resource this is. Value: the fixed string \&quot;dns#resourceRecordSet\&quot;. Defaults to: `null`.
-  - name (String.t):  Defaults to: `null`.
-  - rrdatas ([String.t]):  Defaults to: `null`.
-  - signatureRrdatas ([String.t]):  Defaults to: `null`.
-  - ttl (integer()):  Defaults to: `null`.
-  - type (String.t):  Defaults to: `null`.
+  - name (String.t): For example, www.example.com. Defaults to: `null`.
+  - rrdatas ([String.t]): As defined in RFC 1035 (section 5) and RFC 1034 (section 3.6.1) -- see examples. Defaults to: `null`.
+  - signatureRrdatas ([String.t]): As defined in RFC 4034 (section 3.2). Defaults to: `null`.
+  - ttl (integer()): Number of seconds that this ResourceRecordSet can be cached by resolvers. Defaults to: `null`.
+  - type (String.t): The identifier of a supported record type. See the list of Supported DNS record types. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
