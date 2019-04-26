@@ -27,7 +27,7 @@ defmodule GoogleApi.Games.V1.Connection do
       "https://www.googleapis.com/auth/drive.appdata",
       # Create, edit, and delete your Google Play Games activity
       "https://www.googleapis.com/auth/games",
-      # Know who you are on Google
+      # Associate you with your personal info on Google
       "https://www.googleapis.com/auth/plus.me"
     ],
     otp_app: :google_api_games,
