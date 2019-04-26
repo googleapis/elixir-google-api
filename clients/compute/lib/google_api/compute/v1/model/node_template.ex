@@ -34,7 +34,7 @@ defmodule GoogleApi.Compute.V1.Model.NodeTemplate do
   - selfLink (String.t): [Output Only] Server-defined URL for the resource. Defaults to: `null`.
   - status (String.t): [Output Only] The status of the node template. One of the following values: CREATING, READY, and DELETING. Defaults to: `null`.
     - Enum - one of [CREATING, DELETING, INVALID, READY]
-  - statusMessage (String.t): [Output Only] An optional, human-readable explanation of the status.  Defaults to: `null`.
+  - statusMessage (String.t): [Output Only] An optional, human-readable explanation of the status. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
