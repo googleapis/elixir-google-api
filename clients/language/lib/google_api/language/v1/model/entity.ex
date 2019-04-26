@@ -28,7 +28,7 @@ defmodule GoogleApi.Language.V1.Model.Entity do
   - salience (float()): The salience score associated with the entity in the [0, 1.0] range.  The salience score for an entity provides information about the importance or centrality of that entity to the entire document text. Scores closer to 0 are less salient, while scores closer to 1.0 are highly salient. Defaults to: `null`.
   - sentiment (Sentiment): For calls to AnalyzeEntitySentiment or if AnnotateTextRequest.Features.extract_entity_sentiment is set to true, this field will contain the aggregate sentiment expressed for this entity in the provided document. Defaults to: `null`.
   - type (String.t): The entity type. Defaults to: `null`.
-    - Enum - one of [UNKNOWN, PERSON, LOCATION, ORGANIZATION, EVENT, WORK_OF_ART, CONSUMER_GOOD, OTHER]
+    - Enum - one of [UNKNOWN, PERSON, LOCATION, ORGANIZATION, EVENT, WORK_OF_ART, CONSUMER_GOOD, OTHER, PHONE_NUMBER, ADDRESS, DATE, NUMBER, PRICE]
   """
 
   use GoogleApi.Gax.ModelBase
