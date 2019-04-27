@@ -22,19 +22,25 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.IndividualOutcome do
 
   ## Attributes
 
+  - multistepNumber (integer()): Unique int given to each step. Ranges from 0(inclusive) to total number of steps(exclusive). The primary step is 0. Defaults to: `null`.
   - outcomeSummary (String.t):  Defaults to: `null`.
     - Enum - one of [failure, flaky, inconclusive, skipped, success, unset]
+  - runDuration (Duration): How long it took for this step to run. Defaults to: `null`.
   - stepId (String.t):  Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :multistepNumber => any(),
           :outcomeSummary => any(),
+          :runDuration => GoogleApi.ToolResults.V1beta3.Model.Duration.t(),
           :stepId => any()
         }
 
+  field(:multistepNumber)
   field(:outcomeSummary)
+  field(:runDuration, as: GoogleApi.ToolResults.V1beta3.Model.Duration)
   field(:stepId)
 end
 
