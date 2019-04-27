@@ -22,6 +22,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.StatusReportingSettings do
 
   ## Attributes
 
+  - applicationReportingSettings (ApplicationReportingSettings): Application reporting settings. Only applicable if application_reports_enabled is true. Defaults to: `null`.
   - applicationReportsEnabled (boolean()): Whether app reports are enabled. Defaults to: `null`.
   - deviceSettingsEnabled (boolean()): Whether device settings reporting is enabled. Defaults to: `null`.
   - displayInfoEnabled (boolean()): Whether displays reporting is enabled. Defaults to: `null`.
@@ -35,6 +36,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.StatusReportingSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :applicationReportingSettings =>
+            GoogleApi.AndroidManagement.V1.Model.ApplicationReportingSettings.t(),
           :applicationReportsEnabled => any(),
           :deviceSettingsEnabled => any(),
           :displayInfoEnabled => any(),
@@ -44,6 +47,11 @@ defmodule GoogleApi.AndroidManagement.V1.Model.StatusReportingSettings do
           :powerManagementEventsEnabled => any(),
           :softwareInfoEnabled => any()
         }
+
+  field(
+    :applicationReportingSettings,
+    as: GoogleApi.AndroidManagement.V1.Model.ApplicationReportingSettings
+  )
 
   field(:applicationReportsEnabled)
   field(:deviceSettingsEnabled)
