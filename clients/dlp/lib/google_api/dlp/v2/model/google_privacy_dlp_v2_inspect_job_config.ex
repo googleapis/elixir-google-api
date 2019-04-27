@@ -22,7 +22,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectJobConfig do
 
   ## Attributes
 
-  - actions ([GooglePrivacyDlpV2Action]): Actions to execute at the completion of the job. Are executed in the order provided. Defaults to: `null`.
+  - actions ([GooglePrivacyDlpV2Action]): Actions to execute at the completion of the job. Defaults to: `null`.
   - inspectConfig (GooglePrivacyDlpV2InspectConfig): How and what to scan for. Defaults to: `null`.
   - inspectTemplateName (String.t): If provided, will be used as the default for all values in InspectConfig. &#x60;inspect_config&#x60; will be merged into the values persisted as part of the template. Defaults to: `null`.
   - storageConfig (GooglePrivacyDlpV2StorageConfig): The data to scan. Defaults to: `null`.
