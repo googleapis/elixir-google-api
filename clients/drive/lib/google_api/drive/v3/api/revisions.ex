@@ -25,7 +25,7 @@ defmodule GoogleApi.Drive.V3.Api.Revisions do
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
-  Permanently deletes a file version. You can only delete revisions for files with binary content, like images or videos. Revisions for other files, like Google Docs or Sheets, and the last remaining file version can&#39;t be deleted.
+  Permanently deletes a file version. You can only delete revisions for files with binary content in Google Drive, like images or videos. Revisions for other files, like Google Docs or Sheets, and the last remaining file version can&#39;t be deleted.
 
   ## Parameters
 

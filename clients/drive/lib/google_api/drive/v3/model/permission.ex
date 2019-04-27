@@ -30,9 +30,10 @@ defmodule GoogleApi.Drive.V3.Model.Permission do
   - expirationTime (DateTime.t): The time at which this permission will expire (RFC 3339 date-time). Expiration times have the following restrictions:   - They can only be set on user and group permissions  - The time must be in the future  - The time cannot be more than a year in the future Defaults to: `null`.
   - id (String.t): The ID of this permission. This is a unique identifier for the grantee, and is published in User resources as permissionId. Defaults to: `null`.
   - kind (String.t): Identifies what kind of resource this is. Value: the fixed string \&quot;drive#permission\&quot;. Defaults to: `null`.
+  - permissionDetails ([PermissionPermissionDetails]): Details of whether the permissions on this shared drive item are inherited or directly on this item. This is an output-only field which is present only for shared drive items. Defaults to: `null`.
   - photoLink (String.t): A link to the user&#39;s profile photo, if available. Defaults to: `null`.
   - role (String.t): The role granted by this permission. While new values may be supported in the future, the following are currently allowed:   - owner  - organizer  - fileOrganizer  - writer  - commenter  - reader Defaults to: `null`.
-  - teamDrivePermissionDetails ([PermissionTeamDrivePermissionDetails]): Details of whether the permissions on this Team Drive item are inherited or directly on this item. This is an output-only field which is present only for Team Drive items. Defaults to: `null`.
+  - teamDrivePermissionDetails ([PermissionTeamDrivePermissionDetails]): Deprecated - use permissionDetails instead. Defaults to: `null`.
   - type (String.t): The type of the grantee. Valid values are:   - user  - group  - domain  - anyone Defaults to: `null`.
   """
 
@@ -47,6 +48,7 @@ defmodule GoogleApi.Drive.V3.Model.Permission do
           :expirationTime => DateTime.t(),
           :id => any(),
           :kind => any(),
+          :permissionDetails => list(GoogleApi.Drive.V3.Model.PermissionPermissionDetails.t()),
           :photoLink => any(),
           :role => any(),
           :teamDrivePermissionDetails =>
@@ -62,6 +64,7 @@ defmodule GoogleApi.Drive.V3.Model.Permission do
   field(:expirationTime, as: DateTime)
   field(:id)
   field(:kind)
+  field(:permissionDetails, as: GoogleApi.Drive.V3.Model.PermissionPermissionDetails, type: :list)
   field(:photoLink)
   field(:role)
 

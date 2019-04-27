@@ -25,12 +25,12 @@ defmodule GoogleApi.Drive.V3.Api.Permissions do
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
-  Creates a permission for a file or Team Drive.
+  Creates a permission for a file or shared drive.
 
   ## Parameters
 
   - connection (GoogleApi.Drive.V3.Connection): Connection to server
-  - file_id (String.t): The ID of the file or Team Drive.
+  - file_id (String.t): The ID of the file or shared drive.
   - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
@@ -41,9 +41,10 @@ defmodule GoogleApi.Drive.V3.Api.Permissions do
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :emailMessage (String.t): A plain text custom message to include in the notification email.
     - :sendNotificationEmail (boolean()): Whether to send a notification email when sharing to users or groups. This defaults to true for users and groups, and is not allowed for other requests. It must not be disabled for ownership transfers.
-    - :supportsTeamDrives (boolean()): Whether the requesting application supports Team Drives.
+    - :supportsAllDrives (boolean()): Whether the requesting application supports both My Drives and shared drives.
+    - :supportsTeamDrives (boolean()): Deprecated use supportsAllDrives instead.
     - :transferOwnership (boolean()): Whether to transfer ownership to the specified user and downgrade the current owner to a writer. This parameter is required as an acknowledgement of the side effect.
-    - :useDomainAdminAccess (boolean()): Issue the request as a domain administrator; if set to true, then the requester will be granted access if the file ID parameter refers to a Team Drive and the requester is an administrator of the domain to which the Team Drive belongs.
+    - :useDomainAdminAccess (boolean()): Issue the request as a domain administrator; if set to true, then the requester will be granted access if the file ID parameter refers to a shared drive and the requester is an administrator of the domain to which the shared drive belongs.
     - :body (Permission): 
 
   ## Returns
@@ -64,6 +65,7 @@ defmodule GoogleApi.Drive.V3.Api.Permissions do
       :userIp => :query,
       :emailMessage => :query,
       :sendNotificationEmail => :query,
+      :supportsAllDrives => :query,
       :supportsTeamDrives => :query,
       :transferOwnership => :query,
       :useDomainAdminAccess => :query,
@@ -89,7 +91,7 @@ defmodule GoogleApi.Drive.V3.Api.Permissions do
   ## Parameters
 
   - connection (GoogleApi.Drive.V3.Connection): Connection to server
-  - file_id (String.t): The ID of the file or Team Drive.
+  - file_id (String.t): The ID of the file or shared drive.
   - permission_id (String.t): The ID of the permission.
   - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
@@ -99,8 +101,9 @@ defmodule GoogleApi.Drive.V3.Api.Permissions do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :supportsTeamDrives (boolean()): Whether the requesting application supports Team Drives.
-    - :useDomainAdminAccess (boolean()): Issue the request as a domain administrator; if set to true, then the requester will be granted access if the file ID parameter refers to a Team Drive and the requester is an administrator of the domain to which the Team Drive belongs.
+    - :supportsAllDrives (boolean()): Whether the requesting application supports both My Drives and shared drives.
+    - :supportsTeamDrives (boolean()): Deprecated use supportsAllDrives instead.
+    - :useDomainAdminAccess (boolean()): Issue the request as a domain administrator; if set to true, then the requester will be granted access if the file ID parameter refers to a shared drive and the requester is an administrator of the domain to which the shared drive belongs.
 
   ## Returns
 
@@ -124,6 +127,7 @@ defmodule GoogleApi.Drive.V3.Api.Permissions do
       :prettyPrint => :query,
       :quotaUser => :query,
       :userIp => :query,
+      :supportsAllDrives => :query,
       :supportsTeamDrives => :query,
       :useDomainAdminAccess => :query
     }
@@ -158,8 +162,9 @@ defmodule GoogleApi.Drive.V3.Api.Permissions do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :supportsTeamDrives (boolean()): Whether the requesting application supports Team Drives.
-    - :useDomainAdminAccess (boolean()): Issue the request as a domain administrator; if set to true, then the requester will be granted access if the file ID parameter refers to a Team Drive and the requester is an administrator of the domain to which the Team Drive belongs.
+    - :supportsAllDrives (boolean()): Whether the requesting application supports both My Drives and shared drives.
+    - :supportsTeamDrives (boolean()): Deprecated use supportsAllDrives instead.
+    - :useDomainAdminAccess (boolean()): Issue the request as a domain administrator; if set to true, then the requester will be granted access if the file ID parameter refers to a shared drive and the requester is an administrator of the domain to which the shared drive belongs.
 
   ## Returns
 
@@ -177,6 +182,7 @@ defmodule GoogleApi.Drive.V3.Api.Permissions do
       :prettyPrint => :query,
       :quotaUser => :query,
       :userIp => :query,
+      :supportsAllDrives => :query,
       :supportsTeamDrives => :query,
       :useDomainAdminAccess => :query
     }
@@ -196,12 +202,12 @@ defmodule GoogleApi.Drive.V3.Api.Permissions do
   end
 
   @doc """
-  Lists a file&#39;s or Team Drive&#39;s permissions.
+  Lists a file&#39;s or shared drive&#39;s permissions.
 
   ## Parameters
 
   - connection (GoogleApi.Drive.V3.Connection): Connection to server
-  - file_id (String.t): The ID of the file or Team Drive.
+  - file_id (String.t): The ID of the file or shared drive.
   - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
     - :fields (String.t): Selector specifying which fields to include in a partial response.
@@ -210,10 +216,11 @@ defmodule GoogleApi.Drive.V3.Api.Permissions do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :pageSize (integer()): The maximum number of permissions to return per page. When not set for files in a Team Drive, at most 100 results will be returned. When not set for files that are not in a Team Drive, the entire list will be returned.
+    - :pageSize (integer()): The maximum number of permissions to return per page. When not set for files in a shared drive, at most 100 results will be returned. When not set for files that are not in a shared drive, the entire list will be returned.
     - :pageToken (String.t): The token for continuing a previous list request on the next page. This should be set to the value of &#39;nextPageToken&#39; from the previous response.
-    - :supportsTeamDrives (boolean()): Whether the requesting application supports Team Drives.
-    - :useDomainAdminAccess (boolean()): Issue the request as a domain administrator; if set to true, then the requester will be granted access if the file ID parameter refers to a Team Drive and the requester is an administrator of the domain to which the Team Drive belongs.
+    - :supportsAllDrives (boolean()): Whether the requesting application supports both My Drives and shared drives.
+    - :supportsTeamDrives (boolean()): Deprecated use supportsAllDrives instead.
+    - :useDomainAdminAccess (boolean()): Issue the request as a domain administrator; if set to true, then the requester will be granted access if the file ID parameter refers to a shared drive and the requester is an administrator of the domain to which the shared drive belongs.
 
   ## Returns
 
@@ -233,6 +240,7 @@ defmodule GoogleApi.Drive.V3.Api.Permissions do
       :userIp => :query,
       :pageSize => :query,
       :pageToken => :query,
+      :supportsAllDrives => :query,
       :supportsTeamDrives => :query,
       :useDomainAdminAccess => :query
     }
@@ -256,7 +264,7 @@ defmodule GoogleApi.Drive.V3.Api.Permissions do
   ## Parameters
 
   - connection (GoogleApi.Drive.V3.Connection): Connection to server
-  - file_id (String.t): The ID of the file or Team Drive.
+  - file_id (String.t): The ID of the file or shared drive.
   - permission_id (String.t): The ID of the permission.
   - optional_params (KeywordList): [optional] Optional parameters
     - :alt (String.t): Data format for the response.
@@ -267,9 +275,10 @@ defmodule GoogleApi.Drive.V3.Api.Permissions do
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :removeExpiration (boolean()): Whether to remove the expiration date.
-    - :supportsTeamDrives (boolean()): Whether the requesting application supports Team Drives.
+    - :supportsAllDrives (boolean()): Whether the requesting application supports both My Drives and shared drives.
+    - :supportsTeamDrives (boolean()): Deprecated use supportsAllDrives instead.
     - :transferOwnership (boolean()): Whether to transfer ownership to the specified user and downgrade the current owner to a writer. This parameter is required as an acknowledgement of the side effect.
-    - :useDomainAdminAccess (boolean()): Issue the request as a domain administrator; if set to true, then the requester will be granted access if the file ID parameter refers to a Team Drive and the requester is an administrator of the domain to which the Team Drive belongs.
+    - :useDomainAdminAccess (boolean()): Issue the request as a domain administrator; if set to true, then the requester will be granted access if the file ID parameter refers to a shared drive and the requester is an administrator of the domain to which the shared drive belongs.
     - :body (Permission): 
 
   ## Returns
@@ -295,6 +304,7 @@ defmodule GoogleApi.Drive.V3.Api.Permissions do
       :quotaUser => :query,
       :userIp => :query,
       :removeExpiration => :query,
+      :supportsAllDrives => :query,
       :supportsTeamDrives => :query,
       :transferOwnership => :query,
       :useDomainAdminAccess => :query,

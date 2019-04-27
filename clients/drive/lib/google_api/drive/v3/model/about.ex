@@ -23,7 +23,9 @@ defmodule GoogleApi.Drive.V3.Model.About do
   ## Attributes
 
   - appInstalled (boolean()): Whether the user has installed the requesting app. Defaults to: `null`.
-  - canCreateTeamDrives (boolean()): Whether the user can create Team Drives. Defaults to: `null`.
+  - canCreateDrives (boolean()): Whether the user can create shared drives. Defaults to: `null`.
+  - canCreateTeamDrives (boolean()): Deprecated - use canCreateDrives instead. Defaults to: `null`.
+  - driveThemes ([AboutDriveThemes]): A list of themes that are supported for shared drives. Defaults to: `null`.
   - exportFormats (%{optional(String.t) &#x3D;&gt; [String.t]}): A map of source MIME type to possible targets for all supported exports. Defaults to: `null`.
   - folderColorPalette ([String.t]): The currently supported folder colors as RGB hex strings. Defaults to: `null`.
   - importFormats (%{optional(String.t) &#x3D;&gt; [String.t]}): A map of source MIME type to possible targets for all supported imports. Defaults to: `null`.
@@ -31,7 +33,7 @@ defmodule GoogleApi.Drive.V3.Model.About do
   - maxImportSizes (%{optional(String.t) &#x3D;&gt; String.t}): A map of maximum import sizes by MIME type, in bytes. Defaults to: `null`.
   - maxUploadSize (String.t): The maximum upload size in bytes. Defaults to: `null`.
   - storageQuota (AboutStorageQuota):  Defaults to: `null`.
-  - teamDriveThemes ([AboutTeamDriveThemes]): A list of themes that are supported for Team Drives. Defaults to: `null`.
+  - teamDriveThemes ([AboutTeamDriveThemes]): Deprecated - use driveThemes instead. Defaults to: `null`.
   - user (User): The authenticated user. Defaults to: `null`.
   """
 
@@ -39,7 +41,9 @@ defmodule GoogleApi.Drive.V3.Model.About do
 
   @type t :: %__MODULE__{
           :appInstalled => any(),
+          :canCreateDrives => any(),
           :canCreateTeamDrives => any(),
+          :driveThemes => list(GoogleApi.Drive.V3.Model.AboutDriveThemes.t()),
           :exportFormats => map(),
           :folderColorPalette => list(any()),
           :importFormats => map(),
@@ -52,7 +56,9 @@ defmodule GoogleApi.Drive.V3.Model.About do
         }
 
   field(:appInstalled)
+  field(:canCreateDrives)
   field(:canCreateTeamDrives)
+  field(:driveThemes, as: GoogleApi.Drive.V3.Model.AboutDriveThemes, type: :list)
   field(:exportFormats, type: :map)
   field(:folderColorPalette, type: :list)
   field(:importFormats, type: :map)

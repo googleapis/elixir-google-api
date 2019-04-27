@@ -16,34 +16,37 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Drive.V3.Model.FileContentHintsThumbnail do
+defmodule GoogleApi.Drive.V3.Model.AboutDriveThemes do
   @moduledoc """
-  A thumbnail for the file. This will only be used if Google Drive cannot generate a standard thumbnail.
+
 
   ## Attributes
 
-  - image (binary()): The thumbnail data encoded with URL-safe Base64 (RFC 4648 section 5). Defaults to: `null`.
-  - mimeType (String.t): The MIME type of the thumbnail. Defaults to: `null`.
+  - backgroundImageLink (String.t): A link to this theme&#39;s background image. Defaults to: `null`.
+  - colorRgb (String.t): The color of this theme as an RGB hex string. Defaults to: `null`.
+  - id (String.t): The ID of the theme. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :image => any(),
-          :mimeType => any()
+          :backgroundImageLink => any(),
+          :colorRgb => any(),
+          :id => any()
         }
 
-  field(:image)
-  field(:mimeType)
+  field(:backgroundImageLink)
+  field(:colorRgb)
+  field(:id)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Drive.V3.Model.FileContentHintsThumbnail do
+defimpl Poison.Decoder, for: GoogleApi.Drive.V3.Model.AboutDriveThemes do
   def decode(value, options) do
-    GoogleApi.Drive.V3.Model.FileContentHintsThumbnail.decode(value, options)
+    GoogleApi.Drive.V3.Model.AboutDriveThemes.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.Drive.V3.Model.FileContentHintsThumbnail do
+defimpl Poison.Encoder, for: GoogleApi.Drive.V3.Model.AboutDriveThemes do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
