@@ -22,15 +22,15 @@ defmodule GoogleApi.Container.V1.Model.Jwk do
 
   ## Attributes
 
-  - alg (String.t): NOLINT Defaults to: `null`.
-  - crv (String.t): NOLINT Defaults to: `null`.
-  - e (String.t): NOLINT Defaults to: `null`.
-  - kid (String.t): NOLINT Defaults to: `null`.
-  - kty (String.t): NOLINT Defaults to: `null`.
-  - n (String.t): Fields for RSA keys. NOLINT Defaults to: `null`.
-  - use (String.t): NOLINT Defaults to: `null`.
-  - x (String.t): Fields for ECDSA keys. NOLINT Defaults to: `null`.
-  - y (String.t): NOLINT Defaults to: `null`.
+  - alg (String.t): Algorithm. Defaults to: `null`.
+  - crv (String.t): Used for ECDSA keys. Defaults to: `null`.
+  - e (String.t): Used for RSA keys. Defaults to: `null`.
+  - kid (String.t): Key ID. Defaults to: `null`.
+  - kty (String.t): Key Type. Defaults to: `null`.
+  - n (String.t): Used for RSA keys. Defaults to: `null`.
+  - use (String.t): Permitted uses for the public keys. Defaults to: `null`.
+  - x (String.t): Used for ECDSA keys. Defaults to: `null`.
+  - y (String.t): Used for ECDSA keys. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

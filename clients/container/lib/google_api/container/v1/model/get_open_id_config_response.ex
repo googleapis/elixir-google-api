@@ -22,13 +22,13 @@ defmodule GoogleApi.Container.V1.Model.GetOpenIdConfigResponse do
 
   ## Attributes
 
-  - claims_supported ([String.t]): NOLINT Defaults to: `null`.
-  - grant_types ([String.t]): NOLINT Defaults to: `null`.
-  - id_token_signing_alg_values_supported ([String.t]): NOLINT Defaults to: `null`.
-  - issuer (String.t): NOLINT Defaults to: `null`.
-  - jwks_uri (String.t): NOLINT Defaults to: `null`.
-  - response_types_supported ([String.t]): NOLINT Defaults to: `null`.
-  - subject_types_supported ([String.t]): NOLINT Defaults to: `null`.
+  - claims_supported ([String.t]): Supported claims. Defaults to: `null`.
+  - grant_types ([String.t]): Supported grant types. Defaults to: `null`.
+  - id_token_signing_alg_values_supported ([String.t]): supported ID Token signing Algorithms. Defaults to: `null`.
+  - issuer (String.t): OIDC Issuer. Defaults to: `null`.
+  - jwks_uri (String.t): JSON Web Key uri. Defaults to: `null`.
+  - response_types_supported ([String.t]): Supported response types. Defaults to: `null`.
+  - subject_types_supported ([String.t]): Supported subject types. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

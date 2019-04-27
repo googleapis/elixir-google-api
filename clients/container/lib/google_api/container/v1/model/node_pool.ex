@@ -28,6 +28,7 @@ defmodule GoogleApi.Container.V1.Model.NodePool do
   - initialNodeCount (integer()): The initial node count for the pool. You must ensure that your Compute Engine &lt;a href&#x3D;\&quot;/compute/docs/resource-quotas\&quot;&gt;resource quota&lt;/a&gt; is sufficient for this number of instances. You must also have available firewall and routes quota. Defaults to: `null`.
   - instanceGroupUrls ([String.t]): [Output only] The resource URLs of the [managed instance groups](/compute/docs/instance-groups/creating-groups-of-managed-instances) associated with this node pool. Defaults to: `null`.
   - management (NodeManagement): NodeManagement configuration for this NodePool. Defaults to: `null`.
+  - maxPodsConstraint (MaxPodsConstraint): The constraint on the maximum number of pods that can be run simultaneously on a node in the node pool. Defaults to: `null`.
   - name (String.t): The name of the node pool. Defaults to: `null`.
   - selfLink (String.t): [Output only] Server-defined URL for the resource. Defaults to: `null`.
   - status (String.t): [Output only] The status of the nodes in this pool instance. Defaults to: `null`.
@@ -45,6 +46,7 @@ defmodule GoogleApi.Container.V1.Model.NodePool do
           :initialNodeCount => any(),
           :instanceGroupUrls => list(any()),
           :management => GoogleApi.Container.V1.Model.NodeManagement.t(),
+          :maxPodsConstraint => GoogleApi.Container.V1.Model.MaxPodsConstraint.t(),
           :name => any(),
           :selfLink => any(),
           :status => any(),
@@ -58,6 +60,7 @@ defmodule GoogleApi.Container.V1.Model.NodePool do
   field(:initialNodeCount)
   field(:instanceGroupUrls, type: :list)
   field(:management, as: GoogleApi.Container.V1.Model.NodeManagement)
+  field(:maxPodsConstraint, as: GoogleApi.Container.V1.Model.MaxPodsConstraint)
   field(:name)
   field(:selfLink)
   field(:status)
