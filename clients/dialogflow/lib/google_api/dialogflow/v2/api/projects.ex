@@ -163,73 +163,6 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   end
 
   @doc """
-  Creates an entity type in the specified agent.
-
-  ## Parameters
-
-  - connection (GoogleApi.Dialogflow.V2.Connection): Connection to server
-  - parent (String.t): Required. The agent to create a entity type for. Format: &#x60;projects/&lt;Project ID&gt;/agent&#x60;.
-  - optional_params (KeywordList): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :languageCode (String.t): Optional. The language of entity synonyms defined in &#x60;entity_type&#x60;. If not specified, the agent&#39;s default language is used. [Many languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language) are supported. Note: languages must be enabled in the agent before they can be used.
-    - :body (GoogleCloudDialogflowV2EntityType): 
-
-  ## Returns
-
-  {:ok, %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EntityType{}} on success
-  {:error, info} on failure
-  """
-  @spec dialogflow_projects_agent_entity_types_create(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EntityType.t()}
-          | {:error, Tesla.Env.t()}
-  def dialogflow_projects_agent_entity_types_create(
-        connection,
-        parent,
-        optional_params \\ [],
-        opts \\ []
-      ) do
-    optional_params_config = %{
-      :"$.xgafv" => :query,
-      :access_token => :query,
-      :alt => :query,
-      :callback => :query,
-      :fields => :query,
-      :key => :query,
-      :oauth_token => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :upload_protocol => :query,
-      :uploadType => :query,
-      :languageCode => :query,
-      :body => :body
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:post)
-      |> Request.url("/v2/{+parent}/entityTypes", %{
-        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
-      })
-      |> Request.add_optional_params(optional_params_config, optional_params)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(
-      opts ++ [struct: %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EntityType{}]
-    )
-  end
-
-  @doc """
   Creates multiple new entities in the specified entity type.  Operation &lt;response: google.protobuf.Empty&gt;
 
   ## Parameters
@@ -433,76 +366,6 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
     |> Connection.execute(request)
     |> Response.decode(
       opts ++ [struct: %GoogleApi.Dialogflow.V2.Model.GoogleLongrunningOperation{}]
-    )
-  end
-
-  @doc """
-  Returns the list of all entity types in the specified agent.
-
-  ## Parameters
-
-  - connection (GoogleApi.Dialogflow.V2.Connection): Connection to server
-  - parent (String.t): Required. The agent to list all entity types from. Format: &#x60;projects/&lt;Project ID&gt;/agent&#x60;.
-  - optional_params (KeywordList): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :languageCode (String.t): Optional. The language to list entity synonyms for. If not specified, the agent&#39;s default language is used. [Many languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language) are supported. Note: languages must be enabled in the agent before they can be used.
-    - :pageSize (integer()): Optional. The maximum number of items to return in a single page. By default 100 and at most 1000.
-    - :pageToken (String.t): Optional. The next_page_token value returned from a previous list request.
-
-  ## Returns
-
-  {:ok, %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListEntityTypesResponse{}} on success
-  {:error, info} on failure
-  """
-  @spec dialogflow_projects_agent_entity_types_list(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListEntityTypesResponse.t()}
-          | {:error, Tesla.Env.t()}
-  def dialogflow_projects_agent_entity_types_list(
-        connection,
-        parent,
-        optional_params \\ [],
-        opts \\ []
-      ) do
-    optional_params_config = %{
-      :"$.xgafv" => :query,
-      :access_token => :query,
-      :alt => :query,
-      :callback => :query,
-      :fields => :query,
-      :key => :query,
-      :oauth_token => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :upload_protocol => :query,
-      :uploadType => :query,
-      :languageCode => :query,
-      :pageSize => :query,
-      :pageToken => :query
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:get)
-      |> Request.url("/v2/{+parent}/entityTypes", %{
-        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
-      })
-      |> Request.add_optional_params(optional_params_config, optional_params)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(
-      opts ++
-        [struct: %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListEntityTypesResponse{}]
     )
   end
 
@@ -826,66 +689,6 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   end
 
   @doc """
-  Deletes the specified intent and its direct or indirect followup intents.
-
-  ## Parameters
-
-  - connection (GoogleApi.Dialogflow.V2.Connection): Connection to server
-  - name (String.t): Required. The name of the intent to delete. If this intent has direct or indirect followup intents, we also delete them. Format: &#x60;projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;&#x60;.
-  - optional_params (KeywordList): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-
-  ## Returns
-
-  {:ok, %GoogleApi.Dialogflow.V2.Model.GoogleProtobufEmpty{}} on success
-  {:error, info} on failure
-  """
-  @spec dialogflow_projects_agent_intents_delete(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleProtobufEmpty.t()} | {:error, Tesla.Env.t()}
-  def dialogflow_projects_agent_intents_delete(
-        connection,
-        name,
-        optional_params \\ [],
-        opts \\ []
-      ) do
-    optional_params_config = %{
-      :"$.xgafv" => :query,
-      :access_token => :query,
-      :alt => :query,
-      :callback => :query,
-      :fields => :query,
-      :key => :query,
-      :oauth_token => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :upload_protocol => :query,
-      :uploadType => :query
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:delete)
-      |> Request.url("/v2/{+name}", %{
-        "name" => URI.encode(name, &URI.char_unreserved?/1)
-      })
-      |> Request.add_optional_params(optional_params_config, optional_params)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(opts ++ [struct: %GoogleApi.Dialogflow.V2.Model.GoogleProtobufEmpty{}])
-  end
-
-  @doc """
   Returns the list of all intents in the specified agent.
 
   ## Parameters
@@ -954,72 +757,6 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
     |> Response.decode(
       opts ++
         [struct: %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListIntentsResponse{}]
-    )
-  end
-
-  @doc """
-  Updates the specified intent.
-
-  ## Parameters
-
-  - connection (GoogleApi.Dialogflow.V2.Connection): Connection to server
-  - name (String.t): The unique identifier of this intent. Required for Intents.UpdateIntent and Intents.BatchUpdateIntents methods. Format: &#x60;projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;&#x60;.
-  - optional_params (KeywordList): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :intentView (String.t): Optional. The resource view to apply to the returned intent.
-    - :languageCode (String.t): Optional. The language of training phrases, parameters and rich messages defined in &#x60;intent&#x60;. If not specified, the agent&#39;s default language is used. [Many languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language) are supported. Note: languages must be enabled in the agent before they can be used.
-    - :updateMask (String.t): Optional. The mask to control which fields get updated.
-    - :body (GoogleCloudDialogflowV2Intent): 
-
-  ## Returns
-
-  {:ok, %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Intent{}} on success
-  {:error, info} on failure
-  """
-  @spec dialogflow_projects_agent_intents_patch(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Intent.t()}
-          | {:error, Tesla.Env.t()}
-  def dialogflow_projects_agent_intents_patch(connection, name, optional_params \\ [], opts \\ []) do
-    optional_params_config = %{
-      :"$.xgafv" => :query,
-      :access_token => :query,
-      :alt => :query,
-      :callback => :query,
-      :fields => :query,
-      :key => :query,
-      :oauth_token => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :upload_protocol => :query,
-      :uploadType => :query,
-      :intentView => :query,
-      :languageCode => :query,
-      :updateMask => :query,
-      :body => :body
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:patch)
-      |> Request.url("/v2/{+name}", %{
-        "name" => URI.encode(name, &URI.char_unreserved?/1)
-      })
-      |> Request.add_optional_params(optional_params_config, optional_params)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(
-      opts ++ [struct: %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Intent{}]
     )
   end
 
@@ -1216,6 +953,70 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   end
 
   @doc """
+  Deletes the specified context.
+
+  ## Parameters
+
+  - connection (GoogleApi.Dialogflow.V2.Connection): Connection to server
+  - name (String.t): Required. The name of the context to delete. Format: &#x60;projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;/contexts/&lt;Context ID&gt;&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+
+  ## Returns
+
+  {:ok, %GoogleApi.Dialogflow.V2.Model.GoogleProtobufEmpty{}} on success
+  {:error, info} on failure
+  """
+  @spec dialogflow_projects_agent_sessions_contexts_delete(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleProtobufEmpty.t()} | {:error, Tesla.Env.t()}
+  def dialogflow_projects_agent_sessions_contexts_delete(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dialogflow.V2.Model.GoogleProtobufEmpty{}])
+  end
+
+  @doc """
   Returns the list of all contexts in the specified session.
 
   ## Parameters
@@ -1284,6 +1085,81 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
     |> Response.decode(
       opts ++
         [struct: %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListContextsResponse{}]
+    )
+  end
+
+  @doc """
+  Updates the specified context.
+
+  ## Parameters
+
+  - connection (GoogleApi.Dialogflow.V2.Connection): Connection to server
+  - name (String.t): Required. The unique identifier of the context. Format: &#x60;projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;/contexts/&lt;Context ID&gt;&#x60;.  The &#x60;Context ID&#x60; is always converted to lowercase, may only contain characters in [a-zA-Z0-9_-%] and may be at most 250 bytes long.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :updateMask (String.t): Optional. The mask to control which fields get updated.
+    - :body (GoogleCloudDialogflowV2Context): Optional. The language of training phrases, parameters and rich messages defined in &#x60;intent&#x60;. If not specified, the agent&#39;s default language is used. [Many languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language) are supported. Note: languages must be enabled in the agent before they can be used.
+    - :updateMask (String.t): Optional. The mask to control which fields get updated.
+    - :body (GoogleCloudDialogflowV2Intent): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Context{}} on success
+  {:error, info} on failure
+  """
+  @spec dialogflow_projects_agent_sessions_contexts_patch(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Context.t()}
+          | {:error, Tesla.Env.t()}
+  def dialogflow_projects_agent_sessions_contexts_patch(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :updateMask => :query,
+      :body => :body,
+      :updateMask => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:patch)
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Context{}]
     )
   end
 
@@ -1418,6 +1294,155 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
     |> Response.decode(
       opts ++
         [struct: %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2DetectIntentResponse{}]
+    )
+  end
+
+  @doc """
+  Creates a session entity type.  If the specified session entity type already exists, overrides the session entity type.
+
+  ## Parameters
+
+  - connection (GoogleApi.Dialogflow.V2.Connection): Connection to server
+  - parent (String.t): Required. The session to create a session entity type for. Format: &#x60;projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :body (GoogleCloudDialogflowV2SessionEntityType): Optional. The language of entity synonyms defined in &#x60;entity_type&#x60;. If not specified, the agent&#39;s default language is used. [Many languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language) are supported. Note: languages must be enabled in the agent before they can be used.
+    - :body (GoogleCloudDialogflowV2EntityType): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SessionEntityType{}} on success
+  {:error, info} on failure
+  """
+  @spec dialogflow_projects_agent_sessions_entity_types_create(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SessionEntityType.t()}
+          | {:error, Tesla.Env.t()}
+  def dialogflow_projects_agent_sessions_entity_types_create(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :body => :body,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v2/{+parent}/entityTypes", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SessionEntityType{}]
+    )
+  end
+
+  @doc """
+  Returns the list of all session entity types in the specified session.
+
+  ## Parameters
+
+  - connection (GoogleApi.Dialogflow.V2.Connection): Connection to server
+  - parent (String.t): Required. The session to list all session entity types from. Format: &#x60;projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :pageSize (integer()): Optional. The maximum number of items to return in a single page. By default 100 and at most 1000.
+    - :pageToken (String.t): Optional. The next_page_token value returned from a previous list request.
+    - :pageToken (String.t): Optional. The next_page_token value returned from a previous list request.
+
+  ## Returns
+
+  {:ok, %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListSessionEntityTypesResponse{}} on success
+  {:error, info} on failure
+  """
+  @spec dialogflow_projects_agent_sessions_entity_types_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListSessionEntityTypesResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def dialogflow_projects_agent_sessions_entity_types_list(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :pageSize => :query,
+      :pageToken => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v2/{+parent}/entityTypes", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [
+          struct:
+            %GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListSessionEntityTypesResponse{}
+        ]
     )
   end
 

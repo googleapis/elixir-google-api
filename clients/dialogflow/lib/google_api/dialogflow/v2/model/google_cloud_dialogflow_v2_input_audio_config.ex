@@ -25,6 +25,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2InputAudioConfig 
   - audioEncoding (String.t): Required. Audio encoding of the audio content to process. Defaults to: `null`.
     - Enum - one of [AUDIO_ENCODING_UNSPECIFIED, AUDIO_ENCODING_LINEAR_16, AUDIO_ENCODING_FLAC, AUDIO_ENCODING_MULAW, AUDIO_ENCODING_AMR, AUDIO_ENCODING_AMR_WB, AUDIO_ENCODING_OGG_OPUS, AUDIO_ENCODING_SPEEX_WITH_HEADER_BYTE]
   - languageCode (String.t): Required. The language of the supplied audio. Dialogflow does not do translations. See [Language Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language) for a list of the currently supported language codes. Note that queries in the same session do not necessarily need to specify the same language. Defaults to: `null`.
+  - modelVariant (String.t): Optional. Which variant of the Speech model to use. Defaults to: `null`.
+    - Enum - one of [SPEECH_MODEL_VARIANT_UNSPECIFIED, USE_BEST_AVAILABLE, USE_STANDARD, USE_ENHANCED]
   - phraseHints ([String.t]): Optional. The collection of phrase hints which are used to boost accuracy of speech recognition. Refer to [Cloud Speech API documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints) for more details. Defaults to: `null`.
   - sampleRateHertz (integer()): Required. Sample rate (in Hertz) of the audio content sent in the query. Refer to [Cloud Speech API documentation](https://cloud.google.com/speech-to-text/docs/basics) for more details. Defaults to: `null`.
   """
@@ -34,12 +36,14 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2InputAudioConfig 
   @type t :: %__MODULE__{
           :audioEncoding => any(),
           :languageCode => any(),
+          :modelVariant => any(),
           :phraseHints => list(any()),
           :sampleRateHertz => any()
         }
 
   field(:audioEncoding)
   field(:languageCode)
+  field(:modelVariant)
   field(:phraseHints, type: :list)
   field(:sampleRateHertz)
 end
