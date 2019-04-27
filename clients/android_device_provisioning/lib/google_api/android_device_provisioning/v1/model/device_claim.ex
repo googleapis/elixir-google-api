@@ -26,6 +26,8 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceClaim do
   - resellerId (String.t): The ID of the reseller that claimed the device. Defaults to: `null`.
   - sectionType (String.t): Output only. The type of claim made on the device. Defaults to: `null`.
     - Enum - one of [SECTION_TYPE_UNSPECIFIED, SECTION_TYPE_SIM_LOCK, SECTION_TYPE_ZERO_TOUCH]
+  - vacationModeExpireTime (DateTime.t): The timestamp when the device will exit ‘vacation mode’. This value is present iff the device is in &#39;vacation mode&#39;. Defaults to: `null`.
+  - vacationModeStartTime (DateTime.t): The timestamp when the device was put into ‘vacation mode’. This value is present iff the device is in &#39;vacation mode&#39;. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -33,12 +35,16 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceClaim do
   @type t :: %__MODULE__{
           :ownerCompanyId => any(),
           :resellerId => any(),
-          :sectionType => any()
+          :sectionType => any(),
+          :vacationModeExpireTime => DateTime.t(),
+          :vacationModeStartTime => DateTime.t()
         }
 
   field(:ownerCompanyId)
   field(:resellerId)
   field(:sectionType)
+  field(:vacationModeExpireTime, as: DateTime)
+  field(:vacationModeStartTime, as: DateTime)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceClaim do

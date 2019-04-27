@@ -26,6 +26,8 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.UnclaimDeviceRequest do
   - deviceIdentifier (DeviceIdentifier): The device identifier you used when you claimed this device. Defaults to: `null`.
   - sectionType (String.t): Required. The section type of the device&#39;s provisioning record. Defaults to: `null`.
     - Enum - one of [SECTION_TYPE_UNSPECIFIED, SECTION_TYPE_SIM_LOCK, SECTION_TYPE_ZERO_TOUCH]
+  - vacationModeDays (integer()): The duration of the vacation unlock starting from when the request is processed. (1 day is treated as 24 hours) Defaults to: `null`.
+  - vacationModeExpireTime (DateTime.t): The expiration time of the vacation unlock. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -33,12 +35,16 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.UnclaimDeviceRequest do
   @type t :: %__MODULE__{
           :deviceId => any(),
           :deviceIdentifier => GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier.t(),
-          :sectionType => any()
+          :sectionType => any(),
+          :vacationModeDays => any(),
+          :vacationModeExpireTime => DateTime.t()
         }
 
   field(:deviceId)
   field(:deviceIdentifier, as: GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier)
   field(:sectionType)
+  field(:vacationModeDays)
+  field(:vacationModeExpireTime, as: DateTime)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AndroidDeviceProvisioning.V1.Model.UnclaimDeviceRequest do
