@@ -25,6 +25,71 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
+  Deletes a snapshot.
+
+  ## Parameters
+
+  - connection (GoogleApi.Dataflow.V1b3.Connection): Connection to server
+  - project_id (String.t): The ID of the Cloud Platform project that the snapshot belongs to.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :location (String.t): The location that contains this snapshot.
+    - :snapshotId (String.t): The ID of the snapshot.
+
+  ## Returns
+
+  {:ok, %GoogleApi.Dataflow.V1b3.Model.DeleteSnapshotResponse{}} on success
+  {:error, info} on failure
+  """
+  @spec dataflow_projects_delete_snapshots(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, GoogleApi.Dataflow.V1b3.Model.DeleteSnapshotResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def dataflow_projects_delete_snapshots(
+        connection,
+        project_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :location => :query,
+      :snapshotId => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url("/v1b3/projects/{projectId}/snapshots", %{
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataflow.V1b3.Model.DeleteSnapshotResponse{}])
+  end
+
+  @doc """
   List the jobs of a project across all regions.
 
   ## Parameters
@@ -1690,6 +1755,287 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   end
 
   @doc """
+  Deletes a snapshot.
+
+  ## Parameters
+
+  - connection (GoogleApi.Dataflow.V1b3.Connection): Connection to server
+  - project_id (String.t): The ID of the Cloud Platform project that the snapshot belongs to.
+  - location (String.t): The location that contains this snapshot.
+  - snapshot_id (String.t): The ID of the snapshot.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+
+  ## Returns
+
+  {:ok, %GoogleApi.Dataflow.V1b3.Model.DeleteSnapshotResponse{}} on success
+  {:error, info} on failure
+  """
+  @spec dataflow_projects_locations_snapshots_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dataflow.V1b3.Model.DeleteSnapshotResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def dataflow_projects_locations_snapshots_delete(
+        connection,
+        project_id,
+        location,
+        snapshot_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url("/v1b3/projects/{projectId}/locations/{location}/snapshots/{snapshotId}", %{
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "location" => URI.encode(location, &URI.char_unreserved?/1),
+        "snapshotId" => URI.encode(snapshot_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataflow.V1b3.Model.DeleteSnapshotResponse{}])
+  end
+
+  @doc """
+  Gets information about a snapshot.
+
+  ## Parameters
+
+  - connection (GoogleApi.Dataflow.V1b3.Connection): Connection to server
+  - project_id (String.t): The ID of the Cloud Platform project that the snapshot belongs to.
+  - location (String.t): The location that contains this snapshot.
+  - snapshot_id (String.t): The ID of the snapshot.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+
+  ## Returns
+
+  {:ok, %GoogleApi.Dataflow.V1b3.Model.Snapshot{}} on success
+  {:error, info} on failure
+  """
+  @spec dataflow_projects_locations_snapshots_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) :: {:ok, GoogleApi.Dataflow.V1b3.Model.Snapshot.t()} | {:error, Tesla.Env.t()}
+  def dataflow_projects_locations_snapshots_get(
+        connection,
+        project_id,
+        location,
+        snapshot_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1b3/projects/{projectId}/locations/{location}/snapshots/{snapshotId}", %{
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "location" => URI.encode(location, &URI.char_unreserved?/1),
+        "snapshotId" => URI.encode(snapshot_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataflow.V1b3.Model.Snapshot{}])
+  end
+
+  @doc """
+  Lists snapshots.
+
+  ## Parameters
+
+  - connection (GoogleApi.Dataflow.V1b3.Connection): Connection to server
+  - project_id (String.t): The project ID to list snapshots for.
+  - location (String.t): The location to list snapshots in.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+
+  ## Returns
+
+  {:ok, %GoogleApi.Dataflow.V1b3.Model.ListSnapshotsResponse{}} on success
+  {:error, info} on failure
+  """
+  @spec dataflow_projects_locations_snapshots_list(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dataflow.V1b3.Model.ListSnapshotsResponse.t()} | {:error, Tesla.Env.t()}
+  def dataflow_projects_locations_snapshots_list(
+        connection,
+        project_id,
+        location,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1b3/projects/{projectId}/locations/{location}/snapshots", %{
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "location" => URI.encode(location, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataflow.V1b3.Model.ListSnapshotsResponse{}])
+  end
+
+  @doc """
+  Validates a GoogleSQL query for Cloud Dataflow syntax. Will always confirm the given query parses correctly, and if able to look up schema information from DataCatalog, will validate that the query analyzes properly as well.
+
+  ## Parameters
+
+  - connection (GoogleApi.Dataflow.V1b3.Connection): Connection to server
+  - project_id (String.t): Required. The ID of the Cloud Platform project that the job belongs to.
+  - location (String.t): The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to which to direct the request.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :query (String.t): The sql query to validate.
+
+  ## Returns
+
+  {:ok, %GoogleApi.Dataflow.V1b3.Model.ValidateResponse{}} on success
+  {:error, info} on failure
+  """
+  @spec dataflow_projects_locations_sql_validate(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) :: {:ok, GoogleApi.Dataflow.V1b3.Model.ValidateResponse.t()} | {:error, Tesla.Env.t()}
+  def dataflow_projects_locations_sql_validate(
+        connection,
+        project_id,
+        location,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :query => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1b3/projects/{projectId}/locations/{location}/sql:validate", %{
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "location" => URI.encode(location, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataflow.V1b3.Model.ValidateResponse{}])
+  end
+
+  @doc """
   Creates a Cloud Dataflow job from a template.
 
   ## Parameters
@@ -1980,6 +2326,128 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
     |> Response.decode(
       opts ++ [struct: %GoogleApi.Dataflow.V1b3.Model.SendWorkerMessagesResponse{}]
     )
+  end
+
+  @doc """
+  Gets information about a snapshot.
+
+  ## Parameters
+
+  - connection (GoogleApi.Dataflow.V1b3.Connection): Connection to server
+  - project_id (String.t): The ID of the Cloud Platform project that the snapshot belongs to.
+  - snapshot_id (String.t): The ID of the snapshot.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :location (String.t): The location that contains this snapshot.
+
+  ## Returns
+
+  {:ok, %GoogleApi.Dataflow.V1b3.Model.Snapshot{}} on success
+  {:error, info} on failure
+  """
+  @spec dataflow_projects_snapshots_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, GoogleApi.Dataflow.V1b3.Model.Snapshot.t()} | {:error, Tesla.Env.t()}
+  def dataflow_projects_snapshots_get(
+        connection,
+        project_id,
+        snapshot_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :location => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1b3/projects/{projectId}/snapshots/{snapshotId}", %{
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "snapshotId" => URI.encode(snapshot_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataflow.V1b3.Model.Snapshot{}])
+  end
+
+  @doc """
+  Lists snapshots.
+
+  ## Parameters
+
+  - connection (GoogleApi.Dataflow.V1b3.Connection): Connection to server
+  - project_id (String.t): The project ID to list snapshots for.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :location (String.t): The location to list snapshots in.
+
+  ## Returns
+
+  {:ok, %GoogleApi.Dataflow.V1b3.Model.ListSnapshotsResponse{}} on success
+  {:error, info} on failure
+  """
+  @spec dataflow_projects_snapshots_list(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, GoogleApi.Dataflow.V1b3.Model.ListSnapshotsResponse.t()} | {:error, Tesla.Env.t()}
+  def dataflow_projects_snapshots_list(connection, project_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :location => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1b3/projects/{projectId}/snapshots", %{
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataflow.V1b3.Model.ListSnapshotsResponse{}])
   end
 
   @doc """

@@ -23,7 +23,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.RuntimeEnvironment do
   ## Attributes
 
   - additionalExperiments ([String.t]): Additional experiment flags for the job. Defaults to: `null`.
-  - additionalUserLabels (%{optional(String.t) &#x3D;&gt; String.t}): Additional user labels attached to the job. Defaults to: `null`.
+  - additionalUserLabels (%{optional(String.t) &#x3D;&gt; String.t}): Additional user labels to be specified for the job. Keys and values should follow the restrictions specified in the [labeling restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions) page. Defaults to: `null`.
   - bypassTempDirValidation (boolean()): Whether to bypass the safety checks for the job&#39;s temporary directory. Use with caution. Defaults to: `null`.
   - machineType (String.t): The machine type to use for the job. Defaults to the value from the template if not specified. Defaults to: `null`.
   - maxWorkers (integer()): The maximum number of Google Compute Engine instances to be made available to your pipeline during execution, from 1 to 1000. Defaults to: `null`.
