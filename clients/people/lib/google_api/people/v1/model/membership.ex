@@ -18,12 +18,12 @@
 
 defmodule GoogleApi.People.V1.Model.Membership do
   @moduledoc """
-  A person&#39;s read-only membership in a group.
+  A person&#39;s membership in a group. Only contact group memberships can be modified.
 
   ## Attributes
 
   - contactGroupMembership (ContactGroupMembership): The contact group membership. Defaults to: `null`.
-  - domainMembership (DomainMembership): The domain membership. Defaults to: `null`.
+  - domainMembership (DomainMembership): The read-only domain membership. Defaults to: `null`.
   - metadata (FieldMetadata): Metadata about the membership. Defaults to: `null`.
   """
 

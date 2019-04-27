@@ -37,7 +37,7 @@ defmodule GoogleApi.People.V1.Model.Person do
   - imClients ([ImClient]): The person&#39;s instant messaging clients. Defaults to: `null`.
   - interests ([Interest]): The person&#39;s interests. Defaults to: `null`.
   - locales ([Locale]): The person&#39;s locale preferences. Defaults to: `null`.
-  - memberships ([Membership]): The person&#39;s read-only group memberships. Defaults to: `null`.
+  - memberships ([Membership]): The person&#39;s group memberships. Defaults to: `null`.
   - metadata (PersonMetadata): Read-only metadata about the person. Defaults to: `null`.
   - names ([Name]): The person&#39;s names. Defaults to: `null`.
   - nicknames ([Nickname]): The person&#39;s nicknames. Defaults to: `null`.

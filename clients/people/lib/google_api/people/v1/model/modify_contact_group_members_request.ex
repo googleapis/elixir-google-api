@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.People.V1.Model.ModifyContactGroupMembersRequest do
   @moduledoc """
-  A request to modify an existing contact group&#39;s members. Contacts can be removed from any group but they can only be added to a user group or myContacts or starred system groups.
+  A request to modify an existing contact group&#39;s members. Contacts can be removed from any group but they can only be added to a user group or \&quot;myContacts\&quot; or \&quot;starred\&quot; system groups.
 
   ## Attributes
 

@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.People.V1.Model.DomainMembership do
   @moduledoc """
-  A G Suite Domain membership.
+  A read-only G Suite Domain membership.
 
   ## Attributes
 
