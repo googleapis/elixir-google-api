@@ -24,7 +24,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1AcceleratorConfig do
 
   - count (String.t): The number of accelerators to attach to each machine running the job. Defaults to: `null`.
   - type (String.t): The type of accelerator to use. Defaults to: `null`.
-    - Enum - one of [ACCELERATOR_TYPE_UNSPECIFIED, NVIDIA_TESLA_K80, NVIDIA_TESLA_P100, NVIDIA_TESLA_V100, NVIDIA_TESLA_P4, TPU_V2]
+    - Enum - one of [ACCELERATOR_TYPE_UNSPECIFIED, NVIDIA_TESLA_K80, NVIDIA_TESLA_P100, NVIDIA_TESLA_V100, NVIDIA_TESLA_P4, NVIDIA_TESLA_T4, TPU_V2]
   """
 
   use GoogleApi.Gax.ModelBase
