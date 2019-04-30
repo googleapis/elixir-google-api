@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.AppContext do
   @moduledoc """
-  @OutputOnly The app type the restriction applies to for mobile device.
+  Output only. The app type the restriction applies to for mobile device.
 
   ## Attributes
 

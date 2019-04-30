@@ -27,29 +27,29 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.Deal do
   - buyerPrivateData (PrivateData): Buyer private data (hidden from seller). Defaults to: `null`.
   - createProductId (String.t): The product ID from which this deal was created.  Note: This field may be set only when creating the resource. Modifying this field while updating the resource will result in an error. Defaults to: `null`.
   - createProductRevision (String.t): Optional revision number of the product that the deal was created from. If present on create, and the server &#x60;product_revision&#x60; has advanced sinced the passed-in &#x60;create_product_revision&#x60;, an &#x60;ABORTED&#x60; error will be returned.  Note: This field may be set only when creating the resource. Modifying this field while updating the resource will result in an error. Defaults to: `null`.
-  - createTime (DateTime.t): The time of the deal creation. @OutputOnly Defaults to: `null`.
-  - creativePreApprovalPolicy (String.t): Specifies the creative pre-approval policy. @OutputOnly Defaults to: `null`.
+  - createTime (DateTime.t): Output only. The time of the deal creation. Defaults to: `null`.
+  - creativePreApprovalPolicy (String.t): Output only. Specifies the creative pre-approval policy. Defaults to: `null`.
     - Enum - one of [CREATIVE_PRE_APPROVAL_POLICY_UNSPECIFIED, SELLER_PRE_APPROVAL_REQUIRED, SELLER_PRE_APPROVAL_NOT_REQUIRED]
-  - creativeRestrictions (CreativeRestrictions): Restricitions about the creatives associated with the deal (i.e., size) This is available for Programmatic Guaranteed/Preferred Deals in Ad Manager. @OutputOnly Defaults to: `null`.
-  - creativeSafeFrameCompatibility (String.t): Specifies whether the creative is safeFrame compatible. @OutputOnly Defaults to: `null`.
+  - creativeRestrictions (CreativeRestrictions): Output only. Restricitions about the creatives associated with the deal (i.e., size) This is available for Programmatic Guaranteed/Preferred Deals in Ad Manager. Defaults to: `null`.
+  - creativeSafeFrameCompatibility (String.t): Output only. Specifies whether the creative is safeFrame compatible. Defaults to: `null`.
     - Enum - one of [CREATIVE_SAFE_FRAME_COMPATIBILITY_UNSPECIFIED, COMPATIBLE, INCOMPATIBLE]
-  - dealId (String.t): A unique deal ID for the deal (server-assigned). @OutputOnly Defaults to: `null`.
-  - dealServingMetadata (DealServingMetadata): Metadata about the serving status of this deal. @OutputOnly Defaults to: `null`.
+  - dealId (String.t): Output only. A unique deal ID for the deal (server-assigned). Defaults to: `null`.
+  - dealServingMetadata (DealServingMetadata): Output only. Metadata about the serving status of this deal. Defaults to: `null`.
   - dealTerms (DealTerms): The negotiable terms of the deal. Defaults to: `null`.
   - deliveryControl (DeliveryControl): The set of fields around delivery control that are interesting for a buyer to see but are non-negotiable. These are set by the publisher. Defaults to: `null`.
   - description (String.t): Description for the deal terms. Defaults to: `null`.
   - displayName (String.t): The name of the deal. Defaults to: `null`.
-  - externalDealId (String.t): The external deal ID assigned to this deal once the deal is finalized. This is the deal ID that shows up in serving/reporting etc. @OutputOnly Defaults to: `null`.
-  - isSetupComplete (boolean()): True, if the buyside inventory setup is complete for this deal. @OutputOnly Defaults to: `null`.
-  - programmaticCreativeSource (String.t): Specifies the creative source for programmatic deals. PUBLISHER means creative is provided by seller and ADVERTISER means creative is provided by buyer. @OutputOnly Defaults to: `null`.
+  - externalDealId (String.t): Output only. The external deal ID assigned to this deal once the deal is finalized. This is the deal ID that shows up in serving/reporting etc. Defaults to: `null`.
+  - isSetupComplete (boolean()): Output only. True, if the buyside inventory setup is complete for this deal. Defaults to: `null`.
+  - programmaticCreativeSource (String.t): Output only. Specifies the creative source for programmatic deals. PUBLISHER means creative is provided by seller and ADVERTISER means creative is provided by buyer. Defaults to: `null`.
     - Enum - one of [PROGRAMMATIC_CREATIVE_SOURCE_UNSPECIFIED, ADVERTISER, PUBLISHER]
-  - proposalId (String.t): ID of the proposal that this deal is part of. @OutputOnly Defaults to: `null`.
-  - sellerContacts ([ContactInformation]): Seller contact information for the deal. @OutputOnly Defaults to: `null`.
+  - proposalId (String.t): Output only. ID of the proposal that this deal is part of. Defaults to: `null`.
+  - sellerContacts ([ContactInformation]): Output only. Seller contact information for the deal. Defaults to: `null`.
   - syndicationProduct (String.t): The syndication product associated with the deal.  Note: This field may be set only when creating the resource. Modifying this field while updating the resource will result in an error. Defaults to: `null`.
     - Enum - one of [SYNDICATION_PRODUCT_UNSPECIFIED, CONTENT, MOBILE, VIDEO, GAMES]
-  - targeting (MarketplaceTargeting): Specifies the subset of inventory targeted by the deal. @OutputOnly Defaults to: `null`.
+  - targeting (MarketplaceTargeting): Output only. Specifies the subset of inventory targeted by the deal. Defaults to: `null`.
   - targetingCriterion ([TargetingCriteria]): The shared targeting visible to buyers and sellers. Each shared targeting entity is AND&#39;d together. Defaults to: `null`.
-  - updateTime (DateTime.t): The time when the deal was last updated. @OutputOnly Defaults to: `null`.
+  - updateTime (DateTime.t): Output only. The time when the deal was last updated. Defaults to: `null`.
   - webPropertyCode (String.t): The web property code for the seller copied over from the product. Defaults to: `null`.
   """
 

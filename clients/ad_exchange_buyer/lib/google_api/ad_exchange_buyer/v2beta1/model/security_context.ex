@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.SecurityContext do
   @moduledoc """
-  @OutputOnly A security context.
+  Output only. A security context.
 
   ## Attributes
 

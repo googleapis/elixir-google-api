@@ -22,27 +22,27 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.Proposal do
 
   ## Attributes
 
-  - billedBuyer (Buyer): Reference to the buyer that will get billed for this proposal. @OutputOnly Defaults to: `null`.
+  - billedBuyer (Buyer): Output only. Reference to the buyer that will get billed for this proposal. Defaults to: `null`.
   - buyer (Buyer): Reference to the buyer on the proposal.  Note: This field may be set only when creating the resource. Modifying this field while updating the resource will result in an error. Defaults to: `null`.
   - buyerContacts ([ContactInformation]): Contact information for the buyer. Defaults to: `null`.
   - buyerPrivateData (PrivateData): Private data for buyer. (hidden from seller). Defaults to: `null`.
   - deals ([Deal]): The deals associated with this proposal. For Private Auction proposals (whose deals have NonGuaranteedAuctionTerms), there will only be one deal. Defaults to: `null`.
   - displayName (String.t): The name for the proposal. Defaults to: `null`.
-  - isRenegotiating (boolean()): True if the proposal is being renegotiated. @OutputOnly Defaults to: `null`.
-  - isSetupComplete (boolean()): True, if the buyside inventory setup is complete for this proposal. @OutputOnly Defaults to: `null`.
-  - lastUpdaterOrCommentorRole (String.t): The role of the last user that either updated the proposal or left a comment. @OutputOnly Defaults to: `null`.
+  - isRenegotiating (boolean()): Output only. True if the proposal is being renegotiated. Defaults to: `null`.
+  - isSetupComplete (boolean()): Output only. True, if the buyside inventory setup is complete for this proposal. Defaults to: `null`.
+  - lastUpdaterOrCommentorRole (String.t): Output only. The role of the last user that either updated the proposal or left a comment. Defaults to: `null`.
     - Enum - one of [BUYER_SELLER_ROLE_UNSPECIFIED, BUYER, SELLER]
-  - notes ([Note]): The notes associated with this proposal. @OutputOnly Defaults to: `null`.
-  - originatorRole (String.t): Indicates whether the buyer/seller created the proposal. @OutputOnly Defaults to: `null`.
+  - notes ([Note]): Output only. The notes associated with this proposal. Defaults to: `null`.
+  - originatorRole (String.t): Output only. Indicates whether the buyer/seller created the proposal. Defaults to: `null`.
     - Enum - one of [BUYER_SELLER_ROLE_UNSPECIFIED, BUYER, SELLER]
-  - privateAuctionId (String.t): Private auction ID if this proposal is a private auction proposal. @OutputOnly Defaults to: `null`.
-  - proposalId (String.t): The unique ID of the proposal. @OutputOnly Defaults to: `null`.
-  - proposalRevision (String.t): The revision number for the proposal. Each update to the proposal or the deal causes the proposal revision number to auto-increment. The buyer keeps track of the last revision number they know of and pass it in when making an update. If the head revision number on the server has since incremented, then an ABORTED error is returned during the update operation to let the buyer know that a subsequent update was made. @OutputOnly Defaults to: `null`.
-  - proposalState (String.t): The current state of the proposal. @OutputOnly Defaults to: `null`.
+  - privateAuctionId (String.t): Output only. Private auction ID if this proposal is a private auction proposal. Defaults to: `null`.
+  - proposalId (String.t): Output only. The unique ID of the proposal. Defaults to: `null`.
+  - proposalRevision (String.t): Output only. The revision number for the proposal. Each update to the proposal or the deal causes the proposal revision number to auto-increment. The buyer keeps track of the last revision number they know of and pass it in when making an update. If the head revision number on the server has since incremented, then an ABORTED error is returned during the update operation to let the buyer know that a subsequent update was made. Defaults to: `null`.
+  - proposalState (String.t): Output only. The current state of the proposal. Defaults to: `null`.
     - Enum - one of [PROPOSAL_STATE_UNSPECIFIED, PROPOSED, BUYER_ACCEPTED, SELLER_ACCEPTED, CANCELED, FINALIZED]
   - seller (Seller): Reference to the seller on the proposal.  Note: This field may be set only when creating the resource. Modifying this field while updating the resource will result in an error. Defaults to: `null`.
-  - sellerContacts ([ContactInformation]): Contact information for the seller. @OutputOnly Defaults to: `null`.
-  - updateTime (DateTime.t): The time when the proposal was last revised. @OutputOnly Defaults to: `null`.
+  - sellerContacts ([ContactInformation]): Output only. Contact information for the seller. Defaults to: `null`.
+  - updateTime (DateTime.t): Output only. The time when the proposal was last revised. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

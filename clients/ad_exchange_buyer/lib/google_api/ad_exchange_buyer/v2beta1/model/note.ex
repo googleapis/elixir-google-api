@@ -22,12 +22,12 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.Note do
 
   ## Attributes
 
-  - createTime (DateTime.t): The timestamp for when this note was created. @OutputOnly Defaults to: `null`.
-  - creatorRole (String.t): The role of the person (buyer/seller) creating the note. @OutputOnly Defaults to: `null`.
+  - createTime (DateTime.t): Output only. The timestamp for when this note was created. Defaults to: `null`.
+  - creatorRole (String.t): Output only. The role of the person (buyer/seller) creating the note. Defaults to: `null`.
     - Enum - one of [BUYER_SELLER_ROLE_UNSPECIFIED, BUYER, SELLER]
   - note (String.t): The actual note to attach. (max-length: 1024 unicode code units)  Note: This field may be set only when creating the resource. Modifying this field while updating the resource will result in an error. Defaults to: `null`.
-  - noteId (String.t): The unique ID for the note. @OutputOnly Defaults to: `null`.
-  - proposalRevision (String.t): The revision number of the proposal when the note is created. @OutputOnly Defaults to: `null`.
+  - noteId (String.t): Output only. The unique ID for the note. Defaults to: `null`.
+  - proposalRevision (String.t): Output only. The revision number of the proposal when the note is created. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

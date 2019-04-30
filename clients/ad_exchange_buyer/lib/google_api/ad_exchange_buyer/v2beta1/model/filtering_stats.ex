@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.FilteringStats do
   @moduledoc """
-  @OutputOnly Filtering reasons for this creative during a period of a single day (from midnight to midnight Pacific).
+  Output only. Filtering reasons for this creative during a period of a single day (from midnight to midnight Pacific).
 
   ## Attributes
 

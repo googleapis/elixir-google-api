@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.Correction do
   @moduledoc """
-  @OutputOnly Shows any corrections that were applied to this creative.
+  Output only. Shows any corrections that were applied to this creative.
 
   ## Attributes
 

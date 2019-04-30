@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.LocationContext do
   @moduledoc """
-  @OutputOnly The Geo criteria the restriction applies to.
+  Output only. The Geo criteria the restriction applies to.
 
   ## Attributes
 
