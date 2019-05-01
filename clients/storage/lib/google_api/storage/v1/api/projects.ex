@@ -40,6 +40,7 @@ defmodule GoogleApi.Storage.V1.Api.Projects do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
+    - :userProject (String.t): The project to be billed for this request.
 
   ## Returns
 
@@ -62,7 +63,8 @@ defmodule GoogleApi.Storage.V1.Api.Projects do
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :userIp => :query,
+      :userProject => :query
     }
 
     request =
@@ -95,6 +97,7 @@ defmodule GoogleApi.Storage.V1.Api.Projects do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
+    - :userProject (String.t): The project to be billed for this request.
 
   ## Returns
 
@@ -117,7 +120,8 @@ defmodule GoogleApi.Storage.V1.Api.Projects do
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :userIp => :query,
+      :userProject => :query
     }
 
     request =
@@ -150,6 +154,7 @@ defmodule GoogleApi.Storage.V1.Api.Projects do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
+    - :userProject (String.t): The project to be billed for this request.
 
   ## Returns
 
@@ -172,7 +177,8 @@ defmodule GoogleApi.Storage.V1.Api.Projects do
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :userIp => :query,
+      :userProject => :query
     }
 
     request =
@@ -204,10 +210,11 @@ defmodule GoogleApi.Storage.V1.Api.Projects do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :maxResults (integer()): Maximum number of items plus prefixes to return in a single page of responses. Because duplicate prefixes are omitted, fewer total results may be returned than requested. The service uses this parameter or 1,000 items, whichever is smaller.
+    - :maxResults (integer()): Maximum number of items to return in a single page of responses. The service uses this parameter or 250 items, whichever is smaller. The max number of items per page will also be limited by the number of distinct service accounts in the response. If the number of service accounts in a single response is too high, the page will truncated and a next page token will be returned.
     - :pageToken (String.t): A previously-returned page token representing part of the larger set of results to view.
     - :serviceAccountEmail (String.t): If present, only keys for the given service account are returned.
     - :showDeletedKeys (boolean()): Whether or not to show keys in the DELETED state.
+    - :userProject (String.t): The project to be billed for this request.
 
   ## Returns
 
@@ -228,7 +235,8 @@ defmodule GoogleApi.Storage.V1.Api.Projects do
       :maxResults => :query,
       :pageToken => :query,
       :serviceAccountEmail => :query,
-      :showDeletedKeys => :query
+      :showDeletedKeys => :query,
+      :userProject => :query
     }
 
     request =
@@ -260,6 +268,7 @@ defmodule GoogleApi.Storage.V1.Api.Projects do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
+    - :userProject (String.t): The project to be billed for this request.
     - :body (HmacKeyMetadata): 
 
   ## Returns
@@ -284,6 +293,7 @@ defmodule GoogleApi.Storage.V1.Api.Projects do
       :prettyPrint => :query,
       :quotaUser => :query,
       :userIp => :query,
+      :userProject => :query,
       :body => :body
     }
 
@@ -316,6 +326,7 @@ defmodule GoogleApi.Storage.V1.Api.Projects do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
+    - :provisionalUserProject (String.t): The project to be billed for this request if the target bucket is requester-pays bucket.
     - :userProject (String.t): The project to be billed for this request.
 
   ## Returns
@@ -339,6 +350,7 @@ defmodule GoogleApi.Storage.V1.Api.Projects do
       :prettyPrint => :query,
       :quotaUser => :query,
       :userIp => :query,
+      :provisionalUserProject => :query,
       :userProject => :query
     }
 

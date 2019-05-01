@@ -23,15 +23,15 @@ defmodule GoogleApi.Storage.V1.Model.HmacKeyMetadata do
   ## Attributes
 
   - accessId (String.t): The ID of the HMAC Key. Defaults to: `null`.
-  - etag (String.t): HTTP 1.1 Entity tag for the access-control entry. Defaults to: `null`.
+  - etag (String.t): HTTP 1.1 Entity tag for the HMAC key. Defaults to: `null`.
   - id (String.t): The ID of the HMAC key, including the Project ID and the Access ID. Defaults to: `null`.
   - kind (String.t): The kind of item this is. For HMAC Key metadata, this is always storage#hmacKeyMetadata. Defaults to: `null`.
   - projectId (String.t): Project ID owning the service account to which the key authenticates. Defaults to: `null`.
   - selfLink (String.t): The link to this resource. Defaults to: `null`.
   - serviceAccountEmail (String.t): The email address of the key&#39;s associated service account. Defaults to: `null`.
   - state (String.t): The state of the key. Can be one of ACTIVE, INACTIVE, or DELETED. Defaults to: `null`.
-  - timeCreated (String.t): The creation time of the HMAC key in RFC 3339 format. Defaults to: `null`.
-  - updated (String.t): The last modification time of the HMAC key metadata in RFC 3339 format. Defaults to: `null`.
+  - timeCreated (DateTime.t): The creation time of the HMAC key in RFC 3339 format. Defaults to: `null`.
+  - updated (DateTime.t): The last modification time of the HMAC key metadata in RFC 3339 format. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -45,8 +45,8 @@ defmodule GoogleApi.Storage.V1.Model.HmacKeyMetadata do
           :selfLink => any(),
           :serviceAccountEmail => any(),
           :state => any(),
-          :timeCreated => any(),
-          :updated => any()
+          :timeCreated => DateTime.t(),
+          :updated => DateTime.t()
         }
 
   field(:accessId)
@@ -57,8 +57,8 @@ defmodule GoogleApi.Storage.V1.Model.HmacKeyMetadata do
   field(:selfLink)
   field(:serviceAccountEmail)
   field(:state)
-  field(:timeCreated)
-  field(:updated)
+  field(:timeCreated, as: DateTime)
+  field(:updated, as: DateTime)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Storage.V1.Model.HmacKeyMetadata do

@@ -35,6 +35,7 @@ defmodule GoogleApi.Storage.V1.Model.Bucket do
   - labels (%{optional(String.t) &#x3D;&gt; String.t}): User-provided labels, in key/value pairs. Defaults to: `null`.
   - lifecycle (BucketLifecycle):  Defaults to: `null`.
   - location (String.t): The location of the bucket. Object data for objects in the bucket resides in physical storage within this region. Defaults to US. See the developer&#39;s guide for the authoritative list. Defaults to: `null`.
+  - locationType (String.t): The type of the bucket location. Defaults to: `null`.
   - logging (BucketLogging):  Defaults to: `null`.
   - metageneration (String.t): The metadata generation of this bucket. Defaults to: `null`.
   - name (String.t): The name of the bucket. Defaults to: `null`.
@@ -65,6 +66,7 @@ defmodule GoogleApi.Storage.V1.Model.Bucket do
           :labels => map(),
           :lifecycle => GoogleApi.Storage.V1.Model.BucketLifecycle.t(),
           :location => any(),
+          :locationType => any(),
           :logging => GoogleApi.Storage.V1.Model.BucketLogging.t(),
           :metageneration => any(),
           :name => any(),
@@ -92,6 +94,7 @@ defmodule GoogleApi.Storage.V1.Model.Bucket do
   field(:labels, type: :map)
   field(:lifecycle, as: GoogleApi.Storage.V1.Model.BucketLifecycle)
   field(:location)
+  field(:locationType)
   field(:logging, as: GoogleApi.Storage.V1.Model.BucketLogging)
   field(:metageneration)
   field(:name)
