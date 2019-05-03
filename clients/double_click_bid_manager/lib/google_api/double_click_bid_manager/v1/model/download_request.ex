@@ -22,10 +22,10 @@ defmodule GoogleApi.DoubleClickBidManager.V1.Model.DownloadRequest do
 
   ## Attributes
 
-  - fileTypes ([String.t]): File types that will be returned.  Acceptable values are:   - \&quot;AD\&quot;  - \&quot;AD_GROUP\&quot;  - \&quot;CAMPAIGN\&quot;  - \&quot;INSERTION_ORDER\&quot;  - \&quot;LINE_ITEM\&quot;  - \&quot;INVENTORY_SOURCE\&quot; Defaults to: `null`.
+  - fileTypes ([String.t]): File types that will be returned. If INVENTORY_SOURCE is requested, no other file types may be requested.  Acceptable values are:   - \&quot;AD\&quot;  - \&quot;AD_GROUP\&quot;  - \&quot;CAMPAIGN\&quot;  - \&quot;INSERTION_ORDER\&quot;  - \&quot;INVENTORY_SOURCE\&quot;  - \&quot;LINE_ITEM\&quot; Defaults to: `null`.
     - Enum - one of 
   - filterIds ([String.t]): The IDs of the specified filter type. This is used to filter entities to fetch. At least one ID must be specified. Defaults to: `null`.
-  - filterType (String.t): Filter type used to filter entities to fetch. Defaults to: `null`.
+  - filterType (String.t): Filter type used to filter entities to fetch. PARTNER_ID and INVENTORY_SOURCE_ID may only be used when downloading inventory sources. Defaults to: `null`.
     - Enum - one of [ADVERTISER_ID, CAMPAIGN_ID, INSERTION_ORDER_ID, INVENTORY_SOURCE_ID, LINE_ITEM_ID, PARTNER_ID]
   - version (String.t): SDF Version (column names, types, order) in which the entities will be returned. Default to 3.1. Defaults to: `null`.
   """

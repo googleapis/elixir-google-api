@@ -25,7 +25,7 @@ defmodule GoogleApi.DoubleClickBidManager.V1.Model.Parameters do
   - filters ([FilterPair]): Filters used to match traffic data in your report. Defaults to: `null`.
   - groupBys ([String.t]): Data is grouped by the filters listed in this field. Defaults to: `null`.
     - Enum - one of 
-  - includeInviteData (boolean()): Whether to include data from Invite Media. Defaults to: `null`.
+  - includeInviteData (boolean()): Deprecated. This field is no longer in use. Defaults to: `null`.
   - metrics ([String.t]): Metrics to include as columns in your report. Defaults to: `null`.
     - Enum - one of 
   - type (String.t): Report type. Defaults to: `null`.
