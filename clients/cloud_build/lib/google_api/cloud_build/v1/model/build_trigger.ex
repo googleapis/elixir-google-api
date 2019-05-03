@@ -22,6 +22,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.BuildTrigger do
 
   ## Attributes
 
+  - tags ([String.t]): Tags for annotation of a &#x60;BuildTrigger&#x60; Defaults to: `null`.
   - build (Build): Contents of the build template. Defaults to: `null`.
   - createTime (DateTime.t): Output only. Time when the trigger was created. Defaults to: `null`.
   - description (String.t): Human-readable description of this trigger. Defaults to: `null`.
@@ -38,6 +39,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.BuildTrigger do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :tags => list(any()),
           :build => GoogleApi.CloudBuild.V1.Model.Build.t(),
           :createTime => DateTime.t(),
           :description => any(),
@@ -51,6 +53,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.BuildTrigger do
           :triggerTemplate => GoogleApi.CloudBuild.V1.Model.RepoSource.t()
         }
 
+  field(:tags, type: :list)
   field(:build, as: GoogleApi.CloudBuild.V1.Model.Build)
   field(:createTime, as: DateTime)
   field(:description)
