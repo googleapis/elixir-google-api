@@ -25,6 +25,79 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
+  Lists subnetworks that are usable for creating clusters in a project.
+
+  ## Parameters
+
+  - connection (GoogleApi.Container.V1.Connection): Connection to server
+  - parent (String.t): The parent project where subnetworks are usable. Specified in the format &#39;projects/*&#39;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :filter (String.t): Filtering currently only supports equality on the networkProjectId and must be in the form: \&quot;networkProjectId&#x3D;[PROJECTID]\&quot;, where &#x60;networkProjectId&#x60; is the project which owns the listed subnetworks. This defaults to the parent project ID.
+    - :pageSize (integer()): The max number of results per page that should be returned. If the number of available results is larger than &#x60;page_size&#x60;, a &#x60;next_page_token&#x60; is returned which can be used to get the next page of results in subsequent requests. Acceptable values are 0 to 500, inclusive. (Default: 500)
+    - :pageToken (String.t): Specifies a page token to use. Set this to the nextPageToken returned by previous list requests to get the next page of results.
+
+  ## Returns
+
+  {:ok, %GoogleApi.Container.V1.Model.ListUsableSubnetworksResponse{}} on success
+  {:error, info} on failure
+  """
+  @spec container_projects_aggregated_usable_subnetworks_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Container.V1.Model.ListUsableSubnetworksResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def container_projects_aggregated_usable_subnetworks_list(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :filter => :query,
+      :pageSize => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1/{+parent}/aggregated/usableSubnetworks", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Container.V1.Model.ListUsableSubnetworksResponse{}]
+    )
+  end
+
+  @doc """
   Completes master IP rotation.
 
   ## Parameters
@@ -90,7 +163,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   end
 
   @doc """
-  Creates a cluster, consisting of the specified number and type of Google Compute Engine instances.  By default, the cluster is created in the project&#39;s [default network](/compute/docs/networks-and-firewalls#networks).  One firewall is added for the cluster. After cluster creation, the cluster creates routes for each node to allow the containers on that node to communicate with all other instances in the cluster.  Finally, an entry is added to the project&#39;s global metadata indicating which CIDR range is being used by the cluster.
+  Creates a cluster, consisting of the specified number and type of Google Compute Engine instances.  By default, the cluster is created in the project&#39;s [default network](/compute/docs/networks-and-firewalls#networks).  One firewall is added for the cluster. After cluster creation, the Kubelet creates routes for each node to allow the containers on that node to communicate with all other instances in the cluster.  Finally, an entry is added to the project&#39;s global metadata indicating which CIDR range the cluster is using.
 
   ## Parameters
 
@@ -152,7 +225,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   end
 
   @doc """
-  GetJSONWebKeys gets the public component of the cluster signing keys in JSON Web Key format. This API is not yet intended for general use, and is not available for all clusters.
+  Gets the public component of the cluster signing keys in JSON Web Key format. This API is not yet intended for general use, and is not available for all clusters.
 
   ## Parameters
 
@@ -482,7 +555,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   end
 
   @doc """
-  Roll back the previously Aborted or Failed NodePool upgrade. This will be an no-op if the last upgrade successfully completed.
+  Rolls back a previously Aborted or Failed NodePool upgrade. This makes no changes if the last upgrade successfully completed.
 
   ## Parameters
 
@@ -547,7 +620,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   end
 
   @doc """
-  Sets the autoscaling settings for a specific node pool.
+  Sets the autoscaling settings for the specified node pool.
 
   ## Parameters
 
@@ -742,7 +815,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   end
 
   @doc """
-  Updates the version and/or image type for a specific node pool.
+  Updates the version and/or image type for the specified node pool.
 
   ## Parameters
 
@@ -1132,7 +1205,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   end
 
   @doc """
-  Used to set master auth materials. Currently supports :- Changing the admin password for a specific cluster. This can be either via password generation or explicitly set the password.
+  Sets master auth materials. Currently supports changing the admin password or a specific cluster, either via password generation or explicitly setting the password.
 
   ## Parameters
 
@@ -1262,7 +1335,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   end
 
   @doc """
-  Enables/Disables Network Policy for a cluster.
+  Enables or disables Network Policy for a cluster.
 
   ## Parameters
 
@@ -1392,7 +1465,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   end
 
   @doc """
-  Start master IP rotation.
+  Starts master IP rotation.
 
   ## Parameters
 
@@ -1522,7 +1595,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   end
 
   @doc """
-  GetOpenIDConfig gets the OIDC discovery document for the cluster. See the OpenID Connect Discovery 1.0 specification for details. https://openid.net/specs/openid-connect-discovery-1_0.html This API is not yet intended for general use, and is not available for all clusters.
+  Gets the OIDC discovery document for the cluster. See the [OpenID Connect Discovery 1.0 specification](https://openid.net/specs/openid-connect-discovery-1_0.html) for details. This API is not yet intended for general use, and is not available for all clusters.
 
   ## Parameters
 
@@ -1587,7 +1660,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   end
 
   @doc """
-  Returns configuration info about the Kubernetes Engine service.
+  Returns configuration info about the Google Kubernetes Engine service.
 
   ## Parameters
 
@@ -1994,7 +2067,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   end
 
   @doc """
-  Creates a cluster, consisting of the specified number and type of Google Compute Engine instances.  By default, the cluster is created in the project&#39;s [default network](/compute/docs/networks-and-firewalls#networks).  One firewall is added for the cluster. After cluster creation, the cluster creates routes for each node to allow the containers on that node to communicate with all other instances in the cluster.  Finally, an entry is added to the project&#39;s global metadata indicating which CIDR range is being used by the cluster.
+  Creates a cluster, consisting of the specified number and type of Google Compute Engine instances.  By default, the cluster is created in the project&#39;s [default network](/compute/docs/networks-and-firewalls#networks).  One firewall is added for the cluster. After cluster creation, the Kubelet creates routes for each node to allow the containers on that node to communicate with all other instances in the cluster.  Finally, an entry is added to the project&#39;s global metadata indicating which CIDR range the cluster is using.
 
   ## Parameters
 
@@ -2063,7 +2136,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   end
 
   @doc """
-  Deletes the cluster, including the Kubernetes endpoint and all worker nodes.  Firewalls and routes that were configured during cluster creation are also deleted.  Other Google Compute Engine resources that might be in use by the cluster (e.g. load balancer resources) will not be deleted if they weren&#39;t present at the initial create time.
+  Deletes the cluster, including the Kubernetes endpoint and all worker nodes.  Firewalls and routes that were configured during cluster creation are also deleted.  Other Google Compute Engine resources that might be in use by the cluster, such as load balancer resources, are not deleted if they weren&#39;t present when the cluster was initially created.
 
   ## Parameters
 
@@ -2644,7 +2717,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   end
 
   @doc """
-  Sets the autoscaling settings for a specific node pool.
+  Sets the autoscaling settings for the specified node pool.
 
   ## Parameters
 
@@ -2877,7 +2950,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   end
 
   @doc """
-  Retrieves the node pool requested.
+  Retrieves the requested node pool.
 
   ## Parameters
 
@@ -3031,7 +3104,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   end
 
   @doc """
-  Roll back the previously Aborted or Failed NodePool upgrade. This will be an no-op if the last upgrade successfully completed.
+  Rolls back a previously Aborted or Failed NodePool upgrade. This makes no changes if the last upgrade successfully completed.
 
   ## Parameters
 
@@ -3271,7 +3344,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   end
 
   @doc """
-  Updates the version and/or image type for a specific node pool.
+  Updates the version and/or image type for the specified node pool.
 
   ## Parameters
 
@@ -3503,7 +3576,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   end
 
   @doc """
-  Used to set master auth materials. Currently supports :- Changing the admin password for a specific cluster. This can be either via password generation or explicitly set the password.
+  Sets master auth materials. Currently supports changing the admin password or a specific cluster, either via password generation or explicitly setting the password.
 
   ## Parameters
 
@@ -3579,7 +3652,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   end
 
   @doc """
-  Enables/Disables Network Policy for a cluster.
+  Enables or disables Network Policy for a cluster.
 
   ## Parameters
 
@@ -3655,7 +3728,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   end
 
   @doc """
-  Start master IP rotation.
+  Starts master IP rotation.
 
   ## Parameters
 
@@ -3804,7 +3877,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   end
 
   @doc """
-  Returns configuration info about the Kubernetes Engine service.
+  Returns configuration info about the Google Kubernetes Engine service.
 
   ## Parameters
 

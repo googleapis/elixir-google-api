@@ -28,7 +28,8 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
   - createTime (String.t): [Output only] The time the cluster was created, in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format. Defaults to: `null`.
   - currentMasterVersion (String.t): [Output only] The current software version of the master endpoint. Defaults to: `null`.
   - currentNodeCount (integer()): [Output only]  The number of nodes currently in the cluster. Deprecated. Call Kubernetes API directly to retrieve node information. Defaults to: `null`.
-  - currentNodeVersion (String.t): [Output only] Deprecated, use [NodePool.version](/kubernetes-engine/docs/reference/rest/v1/projects.zones.clusters.nodePool) instead. The current version of the node software components. If they are currently at multiple versions because they&#39;re in the process of being upgraded, this reflects the minimum version of all nodes. Defaults to: `null`.
+  - currentNodeVersion (String.t): [Output only] Deprecated, use [NodePools.version](/kubernetes-engine/docs/reference/rest/v1/projects.zones.clusters.nodePools) instead. The current version of the node software components. If they are currently at multiple versions because they&#39;re in the process of being upgraded, this reflects the minimum version of all nodes. Defaults to: `null`.
+  - defaultMaxPodsConstraint (MaxPodsConstraint): The default constraint on the maximum number of pods that can be run simultaneously on a node in the node pool of this cluster. Only honored if cluster created with IP Alias support. Defaults to: `null`.
   - description (String.t): An optional description of this cluster. Defaults to: `null`.
   - enableKubernetesAlpha (boolean()): Kubernetes alpha features are enabled on this cluster. This includes alpha API groups (e.g. v1alpha1) and features that may not be production ready in the kubernetes version of the master and nodes. The cluster has no SLA for uptime and master/node upgrades are disabled. Alpha enabled clusters are automatically deleted thirty days after creation. Defaults to: `null`.
   - enableTpu (boolean()): Enable the ability to use Cloud TPUs in this cluster. Defaults to: `null`.
@@ -76,6 +77,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
           :currentMasterVersion => any(),
           :currentNodeCount => any(),
           :currentNodeVersion => any(),
+          :defaultMaxPodsConstraint => GoogleApi.Container.V1.Model.MaxPodsConstraint.t(),
           :description => any(),
           :enableKubernetesAlpha => any(),
           :enableTpu => any(),
@@ -120,6 +122,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
   field(:currentMasterVersion)
   field(:currentNodeCount)
   field(:currentNodeVersion)
+  field(:defaultMaxPodsConstraint, as: GoogleApi.Container.V1.Model.MaxPodsConstraint)
   field(:description)
   field(:enableKubernetesAlpha)
   field(:enableTpu)
