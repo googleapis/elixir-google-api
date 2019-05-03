@@ -43,6 +43,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance do
   - region (String.t): The geographical region. Can be us-central (FIRST_GEN instances only), us-central1 (SECOND_GEN instances only), asia-east1 or europe-west1. Defaults to us-central or us-central1 depending on the instance type (First Generation or Second Generation). The region can not be changed after instance creation. Defaults to: `null`.
   - replicaConfiguration (ReplicaConfiguration): Configuration specific to failover replicas and read replicas. Defaults to: `null`.
   - replicaNames ([String.t]): The replicas of the instance. Defaults to: `null`.
+  - rootPassword (String.t): Initial root password. Use only on creation. Defaults to: `null`.
   - selfLink (String.t): The URI of this resource. Defaults to: `null`.
   - serverCaCert (SslCert): SSL configuration. Defaults to: `null`.
   - serviceAccountEmailAddress (String.t): The service account email address assigned to the instance. This property is applicable only to Second Generation instances. Defaults to: `null`.
@@ -78,6 +79,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance do
           :region => any(),
           :replicaConfiguration => GoogleApi.SQLAdmin.V1beta4.Model.ReplicaConfiguration.t(),
           :replicaNames => list(any()),
+          :rootPassword => any(),
           :selfLink => any(),
           :serverCaCert => GoogleApi.SQLAdmin.V1beta4.Model.SslCert.t(),
           :serviceAccountEmailAddress => any(),
@@ -112,6 +114,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance do
   field(:region)
   field(:replicaConfiguration, as: GoogleApi.SQLAdmin.V1beta4.Model.ReplicaConfiguration)
   field(:replicaNames, type: :list)
+  field(:rootPassword)
   field(:selfLink)
   field(:serverCaCert, as: GoogleApi.SQLAdmin.V1beta4.Model.SslCert)
   field(:serviceAccountEmailAddress)
