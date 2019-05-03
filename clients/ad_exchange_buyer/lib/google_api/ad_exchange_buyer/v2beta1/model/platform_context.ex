@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.PlatformContext do
   @moduledoc """
-  @OutputOnly The type of platform the restriction applies to.
+  Output only. The type of platform the restriction applies to.
 
   ## Attributes
 

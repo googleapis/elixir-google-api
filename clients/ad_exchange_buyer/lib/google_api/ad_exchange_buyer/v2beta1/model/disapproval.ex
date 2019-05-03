@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.Disapproval do
   @moduledoc """
-  @OutputOnly The reason and details for a disapproval.
+  Output only. The reason and details for a disapproval.
 
   ## Attributes
 

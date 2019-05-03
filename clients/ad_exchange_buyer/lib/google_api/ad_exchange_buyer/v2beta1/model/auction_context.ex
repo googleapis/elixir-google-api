@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.AuctionContext do
   @moduledoc """
-  @OutputOnly The auction type the restriction applies to.
+  Output only. The auction type the restriction applies to.
 
   ## Attributes
 

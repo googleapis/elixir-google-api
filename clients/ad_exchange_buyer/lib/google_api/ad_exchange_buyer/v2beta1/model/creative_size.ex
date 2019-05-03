@@ -27,7 +27,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.CreativeSize do
   - companionSizes ([Size]): For video creatives specifies the sizes of companion ads (if present). Companion sizes may be filled in only when creative_size_type &#x3D; VIDEO Defaults to: `null`.
   - creativeSizeType (String.t): The creative size type. Defaults to: `null`.
     - Enum - one of [CREATIVE_SIZE_TYPE_UNSPECIFIED, REGULAR, INTERSTITIAL, VIDEO, NATIVE]
-  - nativeTemplate (String.t): The native template for this creative. It will have a value only if creative_size_type &#x3D; CreativeSizeType.NATIVE. @OutputOnly Defaults to: `null`.
+  - nativeTemplate (String.t): Output only. The native template for this creative. It will have a value only if creative_size_type &#x3D; CreativeSizeType.NATIVE. Defaults to: `null`.
     - Enum - one of [UNKNOWN_NATIVE_TEMPLATE, NATIVE_CONTENT_AD, NATIVE_APP_INSTALL_AD, NATIVE_VIDEO_CONTENT_AD, NATIVE_VIDEO_APP_INSTALL_AD]
   - size (Size): For regular or video creative size type, specifies the size of the creative Defaults to: `null`.
   - skippableAdType (String.t): The type of skippable ad for this creative. It will have a value only if creative_size_type &#x3D; CreativeSizeType.VIDEO. Defaults to: `null`.

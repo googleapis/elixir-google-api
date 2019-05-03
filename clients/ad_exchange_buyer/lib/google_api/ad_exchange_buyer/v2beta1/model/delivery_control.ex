@@ -22,11 +22,11 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.DeliveryControl do
 
   ## Attributes
 
-  - creativeBlockingLevel (String.t): Specified the creative blocking levels to be applied. @OutputOnly Defaults to: `null`.
+  - creativeBlockingLevel (String.t): Output only. Specified the creative blocking levels to be applied. Defaults to: `null`.
     - Enum - one of [CREATIVE_BLOCKING_LEVEL_UNSPECIFIED, PUBLISHER_BLOCKING_RULES, ADX_POLICY_BLOCKING_ONLY]
-  - deliveryRateType (String.t): Specifies how the impression delivery will be paced. @OutputOnly Defaults to: `null`.
+  - deliveryRateType (String.t): Output only. Specifies how the impression delivery will be paced. Defaults to: `null`.
     - Enum - one of [DELIVERY_RATE_TYPE_UNSPECIFIED, EVENLY, FRONT_LOADED, AS_FAST_AS_POSSIBLE]
-  - frequencyCaps ([FrequencyCap]): Specifies any frequency caps. @OutputOnly Defaults to: `null`.
+  - frequencyCaps ([FrequencyCap]): Output only. Specifies any frequency caps. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
