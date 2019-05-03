@@ -19,23 +19,26 @@ defmodule GoogleApis.Generator.ElixirGenerator.Parameter do
 
   @type t :: %__MODULE__{
           :name => String.t(),
+          :variable_name => String.t(),
           :description => String.t(),
-          :typespec => String.t(),
+          :type => Type.t(),
           :location => String.t()
         }
 
-  defstruct [:name, :description, :typespec, :location]
+  defstruct [:name, :variable_name, :description, :type, :location]
 
   alias GoogleApi.Discovery.V1.Model.{JsonSchema, RestMethod}
+  alias GoogleApis.Generator.ElixirGenerator.Type
 
   @doc """
   Parse a RestMethod's parameters and split into required and optional
   parameters.
   """
   @spec from_discovery_method(RestMethod.t()) :: {list(t), list(t)}
-  def from_discovery_method(method) do
+  def from_discovery_method(%RestMethod{parameters: nil}), do: {[], []}
+  def from_discovery_method(%RestMethod{parameters: parameters, parameterOrder: order}) do
     {required, optional} =
-      method.parameters
+    parameters
       |> Enum.split_with(fn {_name, schema} ->
         schema.required
       end)
@@ -45,7 +48,7 @@ defmodule GoogleApis.Generator.ElixirGenerator.Parameter do
         Map.put(acc, name, from_json_schema(name, schema))
       end)
 
-    required = Enum.map(method.parameterOrder, fn name -> required_by_name[name] end)
+    required = Enum.map(order || [], fn name -> required_by_name[name] end)
     optional = Enum.map(optional, fn {name, schema} -> from_json_schema(name, schema) end)
     {required, optional}
   end
@@ -57,8 +60,9 @@ defmodule GoogleApis.Generator.ElixirGenerator.Parameter do
   def from_json_schema(name, schema) do
     %__MODULE__{
       name: name,
+      variable_name: Macro.underscore(name),
       description: schema.description,
-      typespec: "FIXME",
+      type: Type.from_schema(schema),
       location: schema.location
     }
   end

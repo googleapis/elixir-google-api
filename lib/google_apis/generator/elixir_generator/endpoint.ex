@@ -18,7 +18,7 @@ defmodule GoogleApis.Generator.ElixirGenerator.Endpoint do
   a user can make.
   """
 
-  alias GoogleApis.Generator.ElixirGenerator.Parameter
+  alias GoogleApis.Generator.ElixirGenerator.{Parameter, ResourceContext, Type}
   alias GoogleApi.Discovery.V1.Model.RestMethod
 
   @type t :: %__MODULE__{
@@ -28,7 +28,7 @@ defmodule GoogleApis.Generator.ElixirGenerator.Endpoint do
           :required_parameters => list(Parameter.t()),
           :optional_parameters => list(Parameter.t()),
           :typespec => String.t(),
-          :return => String.t(),
+          :return => Type.t(),
           :method => String.t(),
           :path => String.t()
         }
@@ -44,32 +44,35 @@ defmodule GoogleApis.Generator.ElixirGenerator.Endpoint do
     :path
   ]
 
-  @spec from_discovery_method(RestMethod.t()) :: t
-  def from_discovery_method(method) do
+  @spec from_discovery_method(RestMethod.t(), ResourceContext.t()) :: t
+  def from_discovery_method(method, context) do
     parameters = method.parameters || []
 
-    required_parameters =
-      parameters
-      |> Enum.filter(fn {name, parameter} -> parameter.required end)
-      |> Enum.map(fn {name, parameter} ->
-        %Parameter{
-          name: name,
-          description: parameter.description,
-          location: parameter.location,
-          typespec: "String.t"
-        }
-      end)
+    {required_parameters, optional_parameters} = Parameter.from_discovery_method(method)
+
+    name = method_name_to_endpoint_name(method.id)
+    ret = return_type(method, context)
 
     %__MODULE__{
-      name: method_name_to_endpoint_name(method.id),
+      name: name,
       description: method.description,
       method: String.downcase(method.httpMethod),
       path: method.path,
       required_parameters: required_parameters,
-      optional_parameters: [],
-      typespec: "String.t",
-      return: ""
+      optional_parameters: optional_parameters,
+      typespec: typespec(name, required_parameters, ret),
+      return: ret
     }
+  end
+
+  defp typespec(name, params, ret) do
+    param_specs = Enum.map_join(params, ", ", fn param -> param.type.typespec end)
+    "#{name}(Tesla.Env.client(), #{param_specs}, keyword()) :: {:ok, #{ret.typespec}} | {:error, Tesla.Env.t()}"
+  end
+
+  defp return_type(%{response: nil}, _context), do: Type.empty
+  defp return_type(%{response: schema}, context) do
+    Type.from_schema(schema, context)
   end
 
   defp method_name_to_endpoint_name(method_name) do

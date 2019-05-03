@@ -28,18 +28,20 @@ defmodule <%= namespace %>.Api.<%= api.name %> do
   <%= endpoint.description %>
 
   ## Parameters
+
   - connection (GoogleApi.Books.V1.Connection): Connection to server
-  <%= for parameter <- endpoint.required_parameters do %>- <%= parameter.name %> (<%= parameter.typespec %>): <%= parameter.description %>
+  <%= for parameter <- endpoint.required_parameters do %>- <%= parameter.variable_name %> (<%= parameter.type.typespec %>): <%= parameter.description %>
 <% end %>  - optional_params (keyword()): [optional] Optional parameters
-    <%= for parameter <- endpoint.optional_parameters do %>- :<%= parameter.name %> (<%= parameter.typespec %>): <%= parameter.description %>
-    <% end %>
+    <%= for parameter <- endpoint.optional_parameters do %>- :<%= parameter.name %> (<%= parameter.type.typespec %>): <%= parameter.description %>
+<% end %>
   ## Returns
-  {:ok, %<%= endpoint.return %>{}} on success
+
+  {:ok, %<%= endpoint.return.struct %>{}} on success
   {:error, info} on failure
   """
   @spec <%= endpoint.typespec %>
-  def <%= endpoint.name %>(connection, <%= for parameter <- endpoint.required_parameters do %><%= parameter.name %>, <% end %>opts \\ []) do
-    optional_params = %{
+  def <%= endpoint.name %>(connection, <%= for parameter <- endpoint.required_parameters do %><%= parameter.variable_name %>, <% end %>optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
     <%= for parameter <- endpoint.optional_parameters do %>
       :"<%= parameter.name%>" => :"<%= parameter.location %>",
     <% end %>
@@ -50,13 +52,13 @@ defmodule <%= namespace %>.Api.<%= api.name %> do
       |> Request.method(:"<%= endpoint.method %>")
       |> Request.url("<%= endpoint.path %>")
       <%= for parameter <- endpoint.required_parameters do %>
-      |> Request.add_param(:"<%= parameter.location %>", :"<%= parameter.name %>", <%= parameter.name %>)
+      |> Request.add_param(:"<%= parameter.location %>", :"<%= parameter.variable_name %>", <%= parameter.name %>)
       <% end %>
       |> Request.add_optional_params(optional_params, opts)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(struct: %<%= endpoint.return %>{})
+    |> Response.decode(opts ++ [struct: %<%= endpoint.return.struct %>{}])
   end
   <% end %>
 end

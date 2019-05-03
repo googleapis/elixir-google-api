@@ -27,6 +27,11 @@ defmodule GoogleApis.Generator.ElixirGenerator.Type do
 
   alias GoogleApis.Generator.ElixirGenerator.ResourceContext
 
+  @spec from_schema(GoogleApi.Discovery.V1.Model.JsonSchema.t()) :: t
+  def from_schema(schema) do
+    from_schema(schema, %ResourceContext{})
+  end
+
   @spec from_schema(GoogleApi.Discovery.V1.Model.JsonSchema.t(), ResourceContext.t()) :: t
   def from_schema(%{type: "array", items: items}, context) do
     t = from_schema(items, context)
@@ -105,10 +110,14 @@ defmodule GoogleApis.Generator.ElixirGenerator.Type do
     }
   end
 
-  def from_schema(_schema) do
+  def from_schema(_schema, _context) do
     %__MODULE__{
       name: "string",
       typespec: "String.t"
     }
+  end
+
+  def empty() do
+    %__MODULE__{}
   end
 end

@@ -85,7 +85,7 @@ defmodule GoogleApis.Generator.ElixirGenerator do
   end
 
   defp load_apis(token) do
-    Map.put(token, :apis, all_apis(token.rest_description))
+    Map.put(token, :apis, all_apis(token.rest_description, token))
   end
 
   defp write_api_files(token) do
@@ -102,18 +102,22 @@ defmodule GoogleApis.Generator.ElixirGenerator do
     end)
   end
 
-  def all_apis(%{resources: resources}) do
+  def all_apis(%{resources: resources}, token) do
     resources
     |> Enum.map(fn {name, resource} ->
       name = Macro.camelize(name)
       methods = resource.methods || []
+
+      context = %ResourceContext{
+        namespace: token.namespace
+      }
 
       %Api{
         name: name,
         description: "API calls for all endpoints tagged `#{name}`.",
         endpoints:
           Enum.map(methods, fn {_, method} ->
-            Endpoint.from_discovery_method(method)
+            Endpoint.from_discovery_method(method, context)
           end)
       }
     end)
