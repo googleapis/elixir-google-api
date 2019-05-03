@@ -37,13 +37,13 @@ defmodule GoogleApis.Generator.ElixirGenerator do
     Token.build(api_config)
     |> load_models
     |> update_model_properties
-    |> write_model_files
+    # |> write_model_files
 
-    # |> load_apis
-    # |> write_api_files
+    |> load_apis
+    |> write_api_files
   end
 
-  def load_models(token) do
+  defp load_models(token) do
     models = all_models(token.rest_description)
 
     token
@@ -54,7 +54,7 @@ defmodule GoogleApis.Generator.ElixirGenerator do
     )
   end
 
-  def update_model_properties(token) do
+  defp update_model_properties(token) do
     Map.update!(token, :models, fn models ->
       models
       |> Enum.map(fn model ->
@@ -69,7 +69,7 @@ defmodule GoogleApis.Generator.ElixirGenerator do
     end)
   end
 
-  def write_model_files(%{models: models, namespace: namespace, base_dir: base_dir} = token) do
+  defp write_model_files(%{models: models, namespace: namespace, base_dir: base_dir} = token) do
     models
     |> Enum.each(fn model ->
       path = Path.join([base_dir, "model", Model.filename(model)])
@@ -84,19 +84,20 @@ defmodule GoogleApis.Generator.ElixirGenerator do
     token
   end
 
-  def load_apis(token) do
+  defp load_apis(token) do
     Map.put(token, :apis, all_apis(token.rest_description))
   end
 
-  def write_api_files(%{apis: apis, namespace: namespace, base_dir: base_dir}) do
-    apis
+  defp write_api_files(token) do
+    token.apis
+    |> Enum.take(1)
     |> Enum.each(fn api ->
-      path = Path.join([base_dir, "api", Api.filename(api)])
+      path = Path.join([token.base_dir, "api", Api.filename(api)])
       IO.puts("Writing #{api.name} to #{path}.")
 
       File.write!(
         path,
-        Renderer.api(api, namespace)
+        Renderer.api(api, token.namespace)
       )
     end)
   end

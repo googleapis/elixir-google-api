@@ -19,6 +19,7 @@ defmodule GoogleApis.Generator.ElixirGenerator.Endpoint do
   """
 
   alias GoogleApis.Generator.ElixirGenerator.Parameter
+  alias GoogleApi.Discovery.V1.Model.RestMethod
 
   @type t :: %__MODULE__{
           :name => String.t(),
@@ -43,6 +44,7 @@ defmodule GoogleApis.Generator.ElixirGenerator.Endpoint do
     :path
   ]
 
+  @spec from_discovery_method(RestMethod.t()) :: t
   def from_discovery_method(method) do
     parameters = method.parameters || []
 

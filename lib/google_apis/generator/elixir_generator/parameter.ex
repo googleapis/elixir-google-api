@@ -25,4 +25,41 @@ defmodule GoogleApis.Generator.ElixirGenerator.Parameter do
         }
 
   defstruct [:name, :description, :typespec, :location]
+
+  alias GoogleApi.Discovery.V1.Model.{JsonSchema, RestMethod}
+
+  @doc """
+  Parse a RestMethod's parameters and split into required and optional
+  parameters.
+  """
+  @spec from_discovery_method(RestMethod.t()) :: {list(t), list(t)}
+  def from_discovery_method(method) do
+    {required, optional} =
+      method.parameters
+      |> Enum.split_with(fn {_name, schema} ->
+        schema.required
+      end)
+
+    required_by_name =
+      Enum.reduce(required, %{}, fn {name, schema}, acc ->
+        Map.put(acc, name, from_json_schema(name, schema))
+      end)
+
+    required = Enum.map(method.parameterOrder, fn name -> required_by_name[name] end)
+    optional = Enum.map(optional, fn {name, schema} -> from_json_schema(name, schema) end)
+    {required, optional}
+  end
+
+  @doc """
+  Build a Parameter from the parameter name and JsonSchema
+  """
+  @spec from_json_schema(String.t(), JsonSchema.t()) :: t
+  def from_json_schema(name, schema) do
+    %__MODULE__{
+      name: name,
+      description: schema.description,
+      typespec: "FIXME",
+      location: schema.location
+    }
+  end
 end
