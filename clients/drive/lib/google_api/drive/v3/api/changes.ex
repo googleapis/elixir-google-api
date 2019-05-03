@@ -38,8 +38,10 @@ defmodule GoogleApi.Drive.V3.Api.Changes do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :supportsTeamDrives (boolean()): Whether the requesting application supports Team Drives.
-    - :teamDriveId (String.t): The ID of the Team Drive for which the starting pageToken for listing future changes from that Team Drive will be returned.
+    - :driveId (String.t): The ID of the shared drive for which the starting pageToken for listing future changes from that shared drive will be returned.
+    - :supportsAllDrives (boolean()): Whether the requesting application supports both My Drives and shared drives.
+    - :supportsTeamDrives (boolean()): Deprecated use supportsAllDrives instead.
+    - :teamDriveId (String.t): Deprecated use driveId instead.
 
   ## Returns
 
@@ -57,6 +59,8 @@ defmodule GoogleApi.Drive.V3.Api.Changes do
       :prettyPrint => :query,
       :quotaUser => :query,
       :userIp => :query,
+      :driveId => :query,
+      :supportsAllDrives => :query,
       :supportsTeamDrives => :query,
       :teamDriveId => :query
     }
@@ -73,7 +77,7 @@ defmodule GoogleApi.Drive.V3.Api.Changes do
   end
 
   @doc """
-  Lists the changes for a user or Team Drive.
+  Lists the changes for a user or shared drive.
 
   ## Parameters
 
@@ -87,14 +91,17 @@ defmodule GoogleApi.Drive.V3.Api.Changes do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
+    - :driveId (String.t): The shared drive from which changes will be returned. If specified the change IDs will be reflective of the shared drive; use the combined drive ID and change ID as an identifier.
     - :includeCorpusRemovals (boolean()): Whether changes should include the file resource if the file is still accessible by the user at the time of the request, even when a file was removed from the list of changes and there will be no further change entries for this file.
+    - :includeItemsFromAllDrives (boolean()): Whether both My Drive and shared drive items should be included in results.
     - :includeRemoved (boolean()): Whether to include changes indicating that items have been removed from the list of changes, for example by deletion or loss of access.
-    - :includeTeamDriveItems (boolean()): Whether Team Drive files or changes should be included in results.
+    - :includeTeamDriveItems (boolean()): Deprecated use includeItemsFromAllDrives instead.
     - :pageSize (integer()): The maximum number of changes to return per page.
     - :restrictToMyDrive (boolean()): Whether to restrict the results to changes inside the My Drive hierarchy. This omits changes to files such as those in the Application Data folder or shared files which have not been added to My Drive.
     - :spaces (String.t): A comma-separated list of spaces to query within the user corpus. Supported values are &#39;drive&#39;, &#39;appDataFolder&#39; and &#39;photos&#39;.
-    - :supportsTeamDrives (boolean()): Whether the requesting application supports Team Drives.
-    - :teamDriveId (String.t): The Team Drive from which changes will be returned. If specified the change IDs will be reflective of the Team Drive; use the combined Team Drive ID and change ID as an identifier.
+    - :supportsAllDrives (boolean()): Whether the requesting application supports both My Drives and shared drives.
+    - :supportsTeamDrives (boolean()): Deprecated use supportsAllDrives instead.
+    - :teamDriveId (String.t): Deprecated use driveId instead.
 
   ## Returns
 
@@ -112,12 +119,15 @@ defmodule GoogleApi.Drive.V3.Api.Changes do
       :prettyPrint => :query,
       :quotaUser => :query,
       :userIp => :query,
+      :driveId => :query,
       :includeCorpusRemovals => :query,
+      :includeItemsFromAllDrives => :query,
       :includeRemoved => :query,
       :includeTeamDriveItems => :query,
       :pageSize => :query,
       :restrictToMyDrive => :query,
       :spaces => :query,
+      :supportsAllDrives => :query,
       :supportsTeamDrives => :query,
       :teamDriveId => :query
     }
@@ -149,14 +159,17 @@ defmodule GoogleApi.Drive.V3.Api.Changes do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
+    - :driveId (String.t): The shared drive from which changes will be returned. If specified the change IDs will be reflective of the shared drive; use the combined drive ID and change ID as an identifier.
     - :includeCorpusRemovals (boolean()): Whether changes should include the file resource if the file is still accessible by the user at the time of the request, even when a file was removed from the list of changes and there will be no further change entries for this file.
+    - :includeItemsFromAllDrives (boolean()): Whether both My Drive and shared drive items should be included in results.
     - :includeRemoved (boolean()): Whether to include changes indicating that items have been removed from the list of changes, for example by deletion or loss of access.
-    - :includeTeamDriveItems (boolean()): Whether Team Drive files or changes should be included in results.
+    - :includeTeamDriveItems (boolean()): Deprecated use includeItemsFromAllDrives instead.
     - :pageSize (integer()): The maximum number of changes to return per page.
     - :restrictToMyDrive (boolean()): Whether to restrict the results to changes inside the My Drive hierarchy. This omits changes to files such as those in the Application Data folder or shared files which have not been added to My Drive.
     - :spaces (String.t): A comma-separated list of spaces to query within the user corpus. Supported values are &#39;drive&#39;, &#39;appDataFolder&#39; and &#39;photos&#39;.
-    - :supportsTeamDrives (boolean()): Whether the requesting application supports Team Drives.
-    - :teamDriveId (String.t): The Team Drive from which changes will be returned. If specified the change IDs will be reflective of the Team Drive; use the combined Team Drive ID and change ID as an identifier.
+    - :supportsAllDrives (boolean()): Whether the requesting application supports both My Drives and shared drives.
+    - :supportsTeamDrives (boolean()): Deprecated use supportsAllDrives instead.
+    - :teamDriveId (String.t): Deprecated use driveId instead.
     - :resource (Channel): 
 
   ## Returns
@@ -175,12 +188,15 @@ defmodule GoogleApi.Drive.V3.Api.Changes do
       :prettyPrint => :query,
       :quotaUser => :query,
       :userIp => :query,
+      :driveId => :query,
       :includeCorpusRemovals => :query,
+      :includeItemsFromAllDrives => :query,
       :includeRemoved => :query,
       :includeTeamDriveItems => :query,
       :pageSize => :query,
       :restrictToMyDrive => :query,
       :spaces => :query,
+      :supportsAllDrives => :query,
       :supportsTeamDrives => :query,
       :teamDriveId => :query,
       :resource => :body

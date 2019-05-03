@@ -26,25 +26,30 @@ defmodule GoogleApi.Drive.V3.Model.FileCapabilities do
   - canChangeCopyRequiresWriterPermission (boolean()): Whether the current user can change the copyRequiresWriterPermission restriction of this file. Defaults to: `null`.
   - canChangeViewersCanCopyContent (boolean()): Deprecated Defaults to: `null`.
   - canComment (boolean()): Whether the current user can comment on this file. Defaults to: `null`.
-  - canCopy (boolean()): Whether the current user can copy this file. For a Team Drive item, whether the current user can copy non-folder descendants of this item, or this item itself if it is not a folder. Defaults to: `null`.
+  - canCopy (boolean()): Whether the current user can copy this file. For an item in a shared drive, whether the current user can copy non-folder descendants of this item, or this item itself if it is not a folder. Defaults to: `null`.
   - canDelete (boolean()): Whether the current user can delete this file. Defaults to: `null`.
-  - canDeleteChildren (boolean()): Whether the current user can delete children of this folder. This is false when the item is not a folder. Only populated for Team Drive items. Defaults to: `null`.
+  - canDeleteChildren (boolean()): Whether the current user can delete children of this folder. This is false when the item is not a folder. Only populated for items in shared drives. Defaults to: `null`.
   - canDownload (boolean()): Whether the current user can download this file. Defaults to: `null`.
   - canEdit (boolean()): Whether the current user can edit this file. Defaults to: `null`.
   - canListChildren (boolean()): Whether the current user can list the children of this folder. This is always false when the item is not a folder. Defaults to: `null`.
-  - canMoveChildrenOutOfTeamDrive (boolean()): Whether the current user can move children of this folder outside of the Team Drive. This is false when the item is not a folder. Only populated for Team Drive items. Defaults to: `null`.
-  - canMoveChildrenWithinTeamDrive (boolean()): Whether the current user can move children of this folder within the Team Drive. This is false when the item is not a folder. Only populated for Team Drive items. Defaults to: `null`.
-  - canMoveItemIntoTeamDrive (boolean()): Whether the current user can move this item into a Team Drive. If the item is in a Team Drive, this field is equivalent to canMoveTeamDriveItem. Defaults to: `null`.
-  - canMoveItemOutOfTeamDrive (boolean()): Whether the current user can move this Team Drive item outside of this Team Drive by changing its parent. Note that a request to change the parent of the item may still fail depending on the new parent that is being added. Only populated for Team Drive items. Defaults to: `null`.
-  - canMoveItemWithinTeamDrive (boolean()): Whether the current user can move this Team Drive item within this Team Drive. Note that a request to change the parent of the item may still fail depending on the new parent that is being added. Only populated for Team Drive items. Defaults to: `null`.
-  - canMoveTeamDriveItem (boolean()): Deprecated - use canMoveItemWithinTeamDrive or canMoveItemOutOfTeamDrive instead. Defaults to: `null`.
-  - canReadRevisions (boolean()): Whether the current user can read the revisions resource of this file. For a Team Drive item, whether revisions of non-folder descendants of this item, or this item itself if it is not a folder, can be read. Defaults to: `null`.
-  - canReadTeamDrive (boolean()): Whether the current user can read the Team Drive to which this file belongs. Only populated for Team Drive files. Defaults to: `null`.
-  - canRemoveChildren (boolean()): Whether the current user can remove children from this folder. This is always false when the item is not a folder. For Team Drive items, use canDeleteChildren or canTrashChildren instead. Defaults to: `null`.
+  - canMoveChildrenOutOfDrive (boolean()): Whether the current user can move children of this folder outside of the shared drive. This is false when the item is not a folder. Only populated for items in shared drives. Defaults to: `null`.
+  - canMoveChildrenOutOfTeamDrive (boolean()): Deprecated - use canMoveChildrenOutOfDrive instead. Defaults to: `null`.
+  - canMoveChildrenWithinDrive (boolean()): Whether the current user can move children of this folder within the shared drive. This is false when the item is not a folder. Only populated for items in shared drives. Defaults to: `null`.
+  - canMoveChildrenWithinTeamDrive (boolean()): Deprecated - use canMoveChildrenWithinDrive instead. Defaults to: `null`.
+  - canMoveItemIntoTeamDrive (boolean()): Deprecated - use canMoveItemOutOfDrive instead. Defaults to: `null`.
+  - canMoveItemOutOfDrive (boolean()): Whether the current user can move this item outside of this drive by changing its parent. Note that a request to change the parent of the item may still fail depending on the new parent that is being added. Defaults to: `null`.
+  - canMoveItemOutOfTeamDrive (boolean()): Deprecated - use canMoveItemOutOfDrive instead. Defaults to: `null`.
+  - canMoveItemWithinDrive (boolean()): Whether the current user can move this item within this shared drive. Note that a request to change the parent of the item may still fail depending on the new parent that is being added. Only populated for items in shared drives. Defaults to: `null`.
+  - canMoveItemWithinTeamDrive (boolean()): Deprecated - use canMoveItemWithinDrive instead. Defaults to: `null`.
+  - canMoveTeamDriveItem (boolean()): Deprecated - use canMoveItemWithinDrive or canMoveItemOutOfDrive instead. Defaults to: `null`.
+  - canReadDrive (boolean()): Whether the current user can read the shared drive to which this file belongs. Only populated for items in shared drives. Defaults to: `null`.
+  - canReadRevisions (boolean()): Whether the current user can read the revisions resource of this file. For a shared drive item, whether revisions of non-folder descendants of this item, or this item itself if it is not a folder, can be read. Defaults to: `null`.
+  - canReadTeamDrive (boolean()): Deprecated - use canReadDrive instead. Defaults to: `null`.
+  - canRemoveChildren (boolean()): Whether the current user can remove children from this folder. This is always false when the item is not a folder. For a folder in a shared drive, use canDeleteChildren or canTrashChildren instead. Defaults to: `null`.
   - canRename (boolean()): Whether the current user can rename this file. Defaults to: `null`.
   - canShare (boolean()): Whether the current user can modify the sharing settings for this file. Defaults to: `null`.
   - canTrash (boolean()): Whether the current user can move this file to trash. Defaults to: `null`.
-  - canTrashChildren (boolean()): Whether the current user can trash children of this folder. This is false when the item is not a folder. Only populated for Team Drive items. Defaults to: `null`.
+  - canTrashChildren (boolean()): Whether the current user can trash children of this folder. This is false when the item is not a folder. Only populated for items in shared drives. Defaults to: `null`.
   - canUntrash (boolean()): Whether the current user can restore this file from trash. Defaults to: `null`.
   """
 
@@ -61,12 +66,17 @@ defmodule GoogleApi.Drive.V3.Model.FileCapabilities do
           :canDownload => any(),
           :canEdit => any(),
           :canListChildren => any(),
+          :canMoveChildrenOutOfDrive => any(),
           :canMoveChildrenOutOfTeamDrive => any(),
+          :canMoveChildrenWithinDrive => any(),
           :canMoveChildrenWithinTeamDrive => any(),
           :canMoveItemIntoTeamDrive => any(),
+          :canMoveItemOutOfDrive => any(),
           :canMoveItemOutOfTeamDrive => any(),
+          :canMoveItemWithinDrive => any(),
           :canMoveItemWithinTeamDrive => any(),
           :canMoveTeamDriveItem => any(),
+          :canReadDrive => any(),
           :canReadRevisions => any(),
           :canReadTeamDrive => any(),
           :canRemoveChildren => any(),
@@ -87,12 +97,17 @@ defmodule GoogleApi.Drive.V3.Model.FileCapabilities do
   field(:canDownload)
   field(:canEdit)
   field(:canListChildren)
+  field(:canMoveChildrenOutOfDrive)
   field(:canMoveChildrenOutOfTeamDrive)
+  field(:canMoveChildrenWithinDrive)
   field(:canMoveChildrenWithinTeamDrive)
   field(:canMoveItemIntoTeamDrive)
+  field(:canMoveItemOutOfDrive)
   field(:canMoveItemOutOfTeamDrive)
+  field(:canMoveItemWithinDrive)
   field(:canMoveItemWithinTeamDrive)
   field(:canMoveTeamDriveItem)
+  field(:canReadDrive)
   field(:canReadRevisions)
   field(:canReadTeamDrive)
   field(:canRemoveChildren)

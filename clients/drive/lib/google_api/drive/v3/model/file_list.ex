@@ -23,7 +23,7 @@ defmodule GoogleApi.Drive.V3.Model.FileList do
   ## Attributes
 
   - files ([File]): The list of files. If nextPageToken is populated, then this list may be incomplete and an additional page of results should be fetched. Defaults to: `null`.
-  - incompleteSearch (boolean()): Whether the search process was incomplete. If true, then some search results may be missing, since all documents were not searched. This may occur when searching multiple Team Drives with the \&quot;user,allTeamDrives\&quot; corpora, but all corpora could not be searched. When this happens, it is suggested that clients narrow their query by choosing a different corpus such as \&quot;user\&quot; or \&quot;teamDrive\&quot;. Defaults to: `null`.
+  - incompleteSearch (boolean()): Whether the search process was incomplete. If true, then some search results may be missing, since all documents were not searched. This may occur when searching multiple drives with the \&quot;allDrives\&quot; corpora, but all corpora could not be searched. When this happens, it is suggested that clients narrow their query by choosing a different corpus such as \&quot;user\&quot; or \&quot;drive\&quot;. Defaults to: `null`.
   - kind (String.t): Identifies what kind of resource this is. Value: the fixed string \&quot;drive#fileList\&quot;. Defaults to: `null`.
   - nextPageToken (String.t): The page token for the next page of files. This will be absent if the end of the files list has been reached. If the token is rejected for any reason, it should be discarded, and pagination should be restarted from the first page of results. Defaults to: `null`.
   """
