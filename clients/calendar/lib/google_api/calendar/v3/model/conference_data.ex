@@ -28,7 +28,7 @@ defmodule GoogleApi.Calendar.V3.Model.ConferenceData do
   - createRequest (CreateConferenceRequest): A request to generate a new conference and attach it to the event. The data is generated asynchronously. To see whether the data is present check the status field. Either conferenceSolution and at least one entryPoint, or createRequest is required. Defaults to: `null`.
   - entryPoints ([EntryPoint]): Information about individual conference entry points, such as URLs or phone numbers. All of them must belong to the same conference. Either conferenceSolution and at least one entryPoint, or createRequest is required. Defaults to: `null`.
   - notes (String.t): Additional notes (such as instructions from the domain administrator, legal notices) to display to the user. Can contain HTML. The maximum length is 2048 characters. Optional. Defaults to: `null`.
-  - signature (String.t): The signature of the conference data. Genereated on server side. Must be preserved while copying the conference data between events, otherwise the conference data will not be copied. Unset for a conference with a failed create request. Optional for a conference with a pending create request. Defaults to: `null`.
+  - signature (String.t): The signature of the conference data. Generated on server side. Must be preserved while copying the conference data between events, otherwise the conference data will not be copied. Unset for a conference with a failed create request. Optional for a conference with a pending create request. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
