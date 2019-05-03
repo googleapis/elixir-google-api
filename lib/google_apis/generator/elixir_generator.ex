@@ -21,7 +21,7 @@ defmodule GoogleApis.Generator.ElixirGenerator do
   @behaviour GoogleApis.Generator
   alias GoogleApis.ApiConfig
   alias GoogleApi.Discovery.V1.Model.JsonSchema
-  alias GoogleApis.Generator.ElixirGenerator.{Api, Endpoint, Model, Property}
+  alias GoogleApis.Generator.ElixirGenerator.{Api, Endpoint, Model, Property, Renderer, ResourceContext, Type}
 
   defmodule Token do
 
@@ -62,7 +62,7 @@ defmodule GoogleApis.Generator.ElixirGenerator do
     end
 
     def build_property(token, model, name, schema) do
-      type = Type.from_schema(schema)
+      type = Type.from_schema(schema, %ResourceContext{namespace: token.namespace, model: model, property: name})
       %Property{
         name: name,
         description: schema.description,
@@ -78,8 +78,8 @@ defmodule GoogleApis.Generator.ElixirGenerator do
     |> load_models
     |> update_model_properties
     |> write_model_files
-    |> load_apis
-    |> write_api_files
+    # |> load_apis
+    # |> write_api_files
   end
 
   def load_models(token) do
@@ -103,7 +103,6 @@ defmodule GoogleApis.Generator.ElixirGenerator do
 
   def write_model_files(%{models: models, namespace: namespace, base_dir: base_dir} = token) do
     models
-    |> Enum.take(1)
     |> Enum.each(fn model ->
       path = Path.join([base_dir, "model", Model.filename(model)])
       IO.puts "Writing #{model.name} to #{path}."

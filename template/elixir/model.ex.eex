@@ -21,18 +21,18 @@ defmodule <%= namespace %>.Model.<%= model.name %> do
 
   ## Attributes
   <%= for property <- model.properties do %>
-  - <%= property.name %> (<%= property.typespec %>): <%= property.description %> Defaults to `<%= GoogleApis.Generator.ElixirGenerator.Model.value_string(property.default) %>`.<% end %>
+  - <%= property.name %> (<%= property.type.typespec %>): <%= property.description %> Defaults to `<%= GoogleApis.Generator.ElixirGenerator.Model.value_string(property.default) %>`.<% end %>
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
     <%= for property <- model.properties do %>
-      :"<%= property.name %>" => <%= property.typespec %>,
+      :"<%= property.name %>" => <%= property.type.typespec %>,
     <% end %>
   }
   <%= for property <- model.properties do %>
-  field(:"<%= property.name %>"<%= if property.struct do %>, as: <%= property.struct %><% end %>)<% end %>
+  field(:"<%= property.name %>"<%= if property.type.struct do %>, as: <%= property.type.struct %><% end %><%= if property.type.name == "array" do %>, type: :list<% end %>)<% end %>
 end
 
 defimpl Poison.Decoder, for: <%= namespace %>.Model.<%= model.name %> do
