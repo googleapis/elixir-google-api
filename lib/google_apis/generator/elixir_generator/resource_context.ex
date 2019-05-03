@@ -13,12 +13,11 @@
 # limitations under the License.
 
 defmodule GoogleApis.Generator.ElixirGenerator.ResourceContext do
-
   @type t :: %__MODULE__{
-    :namespace => String.t(),
-    :model => Model.t(),
-    :property => String.t()
-  }
+          :namespace => String.t(),
+          :model => Model.t(),
+          :property => String.t()
+        }
 
   defstruct [:namespace, :model, :property]
 
@@ -41,5 +40,4 @@ defmodule GoogleApis.Generator.ElixirGenerator.ResourceContext do
   defp default_name(context) do
     Macro.camelize("#{context.model.name}_#{context.property}")
   end
-
 end

@@ -17,5 +17,4 @@ defmodule GoogleApis.Generator.ElixirGenerator.TypeTest do
   doctest GoogleApis.Generator.ElixirGenerator.Type
 
   alias GoogleApis.Generator.ElixirGenerator.Type
-
 end

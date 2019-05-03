@@ -48,7 +48,7 @@ defmodule GoogleApis.Mixfile do
       {:tesla, "~> 1.0"},
       {:oauth2, "~> 0.9"},
       {:temp, "~> 0.4"},
-      {:poison,"~> 3.1"}
+      {:poison, "~> 3.1"}
     ]
   end
 end

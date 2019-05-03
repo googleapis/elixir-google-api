@@ -4,6 +4,14 @@ defmodule GoogleApis.Generator.ElixirGenerator.Renderer do
   """
 
   require EEx
-  EEx.function_from_file(:def, :model, Path.expand("./template/elixir/model.ex.eex"), [:model, :namespace])
-  EEx.function_from_file(:def, :api, Path.expand("./template/elixir/api.ex.eex"), [:api, :namespace])
+
+  EEx.function_from_file(:def, :model, Path.expand("./template/elixir/model.ex.eex"), [
+    :model,
+    :namespace
+  ])
+
+  EEx.function_from_file(:def, :api, Path.expand("./template/elixir/api.ex.eex"), [
+    :api,
+    :namespace
+  ])
 end

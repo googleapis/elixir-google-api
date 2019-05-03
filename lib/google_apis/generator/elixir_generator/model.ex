@@ -3,12 +3,12 @@ defmodule GoogleApis.Generator.ElixirGenerator.Model do
   A model is a resource type that is used by the API.
   """
 
-  @type t :: %__MODULE__ {
-    :name => String.t(),
-    :description => String.t(),
-    :properties => list(Property.t()),
-    :schema => GoogleApi.Discovery.V1.Model.JsonSchema.t()
-  }
+  @type t :: %__MODULE__{
+          :name => String.t(),
+          :description => String.t(),
+          :properties => list(Property.t()),
+          :schema => GoogleApi.Discovery.V1.Model.JsonSchema.t()
+        }
 
   defstruct [:name, :description, :properties, :schema]
 

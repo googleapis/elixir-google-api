@@ -21,10 +21,18 @@ defmodule GoogleApis.Generator.ElixirGenerator do
   @behaviour GoogleApis.Generator
   alias GoogleApis.ApiConfig
   alias GoogleApi.Discovery.V1.Model.JsonSchema
-  alias GoogleApis.Generator.ElixirGenerator.{Api, Endpoint, Model, Property, Renderer, ResourceContext, Type}
+
+  alias GoogleApis.Generator.ElixirGenerator.{
+    Api,
+    Endpoint,
+    Model,
+    Property,
+    Renderer,
+    ResourceContext,
+    Type
+  }
 
   defmodule Token do
-
     defstruct [
       :filename,
       :library_name,
@@ -38,18 +46,21 @@ defmodule GoogleApis.Generator.ElixirGenerator do
       filename = ApiConfig.file(api_config)
       library_name = ApiConfig.library_name(api_config)
       namespace = ApiConfig.library_namespace(api_config)
-      base_dir = Path.join([
-        "clients",
-        library_name,
-        "lib",
-        "google_api",
-        library_name,
-        String.downcase(ApiConfig.module_version(api_config))
-      ])
+
+      base_dir =
+        Path.join([
+          "clients",
+          library_name,
+          "lib",
+          "google_api",
+          library_name,
+          String.downcase(ApiConfig.module_version(api_config))
+        ])
+
       rest_description =
         api_config
-        |> ApiConfig.google_spec_file
-        |> File.read!
+        |> ApiConfig.google_spec_file()
+        |> File.read!()
         |> Poison.decode!(as: %GoogleApi.Discovery.V1.Model.RestDescription{})
 
       %__MODULE__{
@@ -62,7 +73,13 @@ defmodule GoogleApis.Generator.ElixirGenerator do
     end
 
     def build_property(token, model, name, schema) do
-      type = Type.from_schema(schema, %ResourceContext{namespace: token.namespace, model: model, property: name})
+      type =
+        Type.from_schema(schema, %ResourceContext{
+          namespace: token.namespace,
+          model: model,
+          property: name
+        })
+
       %Property{
         name: name,
         description: schema.description,
@@ -78,6 +95,7 @@ defmodule GoogleApis.Generator.ElixirGenerator do
     |> load_models
     |> update_model_properties
     |> write_model_files
+
     # |> load_apis
     # |> write_api_files
   end
@@ -87,16 +105,23 @@ defmodule GoogleApis.Generator.ElixirGenerator do
 
     token
     |> Map.put(:models, models)
-    |> Map.put(:models_by_name, Enum.reduce(models, %{}, fn model, acc -> Map.put(acc, model.name, model) end))
+    |> Map.put(
+      :models_by_name,
+      Enum.reduce(models, %{}, fn model, acc -> Map.put(acc, model.name, model) end)
+    )
   end
 
   def update_model_properties(token) do
     Map.update!(token, :models, fn models ->
       models
       |> Enum.map(fn model ->
-        Map.put(model, :properties, Enum.map(model.schema.properties, fn {name, property} ->
-          Token.build_property(token, model, name, property)
-        end))
+        Map.put(
+          model,
+          :properties,
+          Enum.map(model.schema.properties, fn {name, property} ->
+            Token.build_property(token, model, name, property)
+          end)
+        )
       end)
     end)
   end
@@ -105,12 +130,14 @@ defmodule GoogleApis.Generator.ElixirGenerator do
     models
     |> Enum.each(fn model ->
       path = Path.join([base_dir, "model", Model.filename(model)])
-      IO.puts "Writing #{model.name} to #{path}."
+      IO.puts("Writing #{model.name} to #{path}.")
+
       File.write!(
         path,
         Renderer.model(model, namespace)
       )
     end)
+
     token
   end
 
@@ -122,7 +149,8 @@ defmodule GoogleApis.Generator.ElixirGenerator do
     apis
     |> Enum.each(fn api ->
       path = Path.join([base_dir, "api", Api.filename(api)])
-      IO.puts "Writing #{api.name} to #{path}."
+      IO.puts("Writing #{api.name} to #{path}.")
+
       File.write!(
         path,
         Renderer.api(api, namespace)
@@ -135,25 +163,28 @@ defmodule GoogleApis.Generator.ElixirGenerator do
     |> Enum.map(fn {name, resource} ->
       name = Macro.camelize(name)
       methods = resource.methods || []
+
       %Api{
         name: name,
         description: "API calls for all endpoints tagged `#{name}`.",
-        endpoints: Enum.map(methods, fn {_, method} ->
-          Endpoint.from_discovery_method(method)
-        end)
+        endpoints:
+          Enum.map(methods, fn {_, method} ->
+            Endpoint.from_discovery_method(method)
+          end)
       }
     end)
   end
 
   def all_models(rest_description) do
     rest_description.schemas
-    |> Enum.flat_map(&(all_schemas("", &1)))
+    |> Enum.flat_map(&all_schemas("", &1))
   end
 
-  defp all_schemas(context, {name, schema = %JsonSchema{type: "object", properties: properties}}) when not is_nil(properties) do
+  defp all_schemas(context, {name, schema = %JsonSchema{type: "object", properties: properties}})
+       when not is_nil(properties) do
     full_name = "#{context}#{Macro.camelize(name)}"
 
-    property_models = Enum.flat_map(properties, &(all_schemas(full_name, &1)))
+    property_models = Enum.flat_map(properties, &all_schemas(full_name, &1))
 
     model = %Model{
       name: full_name,
@@ -164,6 +195,7 @@ defmodule GoogleApis.Generator.ElixirGenerator do
 
     [model | property_models]
   end
+
   defp all_schemas(_context, {_name, _schema}) do
     []
   end

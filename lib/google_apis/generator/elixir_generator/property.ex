@@ -5,13 +5,13 @@ defmodule GoogleApis.Generator.ElixirGenerator.Property do
 
   alias GoogleApis.Generator.ElixirGenerator.Type
 
-  @type t :: %__MODULE__ {
-    :name => String.t(),
-    :description => String.t(),
-    :type => Type.t(),
-    :required => boolean(),
-    :default => any()
-  }
+  @type t :: %__MODULE__{
+          :name => String.t(),
+          :description => String.t(),
+          :type => Type.t(),
+          :required => boolean(),
+          :default => any()
+        }
 
   defstruct [:name, :description, :type, :required, :default]
 

@@ -4,11 +4,11 @@ defmodule GoogleApis.Generator.ElixirGenerator.Parameter do
   """
 
   @type t :: %__MODULE__{
-    :name => String.t(),
-    :description => String.t(),
-    :typespec => String.t(),
-    :location => String.t()
-  }
+          :name => String.t(),
+          :description => String.t(),
+          :typespec => String.t(),
+          :location => String.t()
+        }
 
   defstruct [:name, :description, :typespec, :location]
 end

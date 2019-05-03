@@ -22,14 +22,16 @@ defmodule GoogleApis.Generator.ElixirGeneratorTest do
     rest = rest_description("specifications/gdd/TestClient-v1.json")
 
     all_models = ElixirGenerator.all_models(rest)
+
     all_model_names =
       all_models
-      |> Enum.map(&(Map.get(&1, :name)))
-      |> Enum.sort
+      |> Enum.map(&Map.get(&1, :name))
+      |> Enum.sort()
 
     assert 5 == length(all_models)
 
-    assert ~w(Container ContainerObjectVal DateContainer GenericContainer NestedContainer) == all_model_names
+    assert ~w(Container ContainerObjectVal DateContainer GenericContainer NestedContainer) ==
+             all_model_names
   end
 
   test "find all apis" do
@@ -39,8 +41,8 @@ defmodule GoogleApis.Generator.ElixirGeneratorTest do
 
     all_api_names =
       all_apis
-      |> Enum.map(&(Map.get(&1, :name)))
-      |> Enum.sort
+      |> Enum.map(&Map.get(&1, :name))
+      |> Enum.sort()
 
     assert 1 == length(all_apis)
 
@@ -63,7 +65,7 @@ defmodule GoogleApis.Generator.ElixirGeneratorTest do
 
   defp rest_description(file) do
     file
-    |> File.read!
+    |> File.read!()
     |> Poison.decode!(as: %GoogleApi.Discovery.V1.Model.RestDescription{})
   end
 end
