@@ -22,16 +22,19 @@ defmodule GoogleApi.People.V1.Model.ContactGroupMembership do
 
   ## Attributes
 
-  - contactGroupId (String.t): The contact group ID for the contact group membership. The contact group ID can be custom or one of these predefined values:  *  &#x60;myContacts&#x60; *  &#x60;starred&#x60; *  A numerical ID for user-created groups. Defaults to: `null`.
+  - contactGroupId (String.t): The read-only contact group ID for the contact group membership. Defaults to: `null`.
+  - contactGroupResourceName (String.t): The resource name for the contact group, assigned by the server. An ASCII string, in the form of &#x60;contactGroups/&#x60;&lt;var&gt;contact_group_id&lt;/var&gt;. Only contact_group_resource_name can be used for modifying memberships. Any contact group membership can be removed, but only user group or \&quot;myContacts\&quot; or \&quot;starred\&quot; system groups memberships can be added. A contact must always have at least one contact group membership. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contactGroupId => any()
+          :contactGroupId => any(),
+          :contactGroupResourceName => any()
         }
 
   field(:contactGroupId)
+  field(:contactGroupResourceName)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.People.V1.Model.ContactGroupMembership do
