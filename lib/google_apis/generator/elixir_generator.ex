@@ -62,53 +62,14 @@ defmodule GoogleApis.Generator.ElixirGenerator do
     end
 
     def build_property(token, model, name, schema) do
-      {type, struct, typespec} = determine_type(token, model, name, schema)
+      type = Type.from_schema(schema)
       %Property{
         name: name,
         description: schema.description,
         required: schema.required,
         default: schema.default,
-        struct: struct,
-        type: type,
-        typespec: typespec
+        type: type
       }
-    end
-
-    defp determine_type(token, model, name, %{type: "array", items: items}) do
-      {_type, struct, typespec} = determine_type(token, model, name, items)
-      {"array", struct, "list(#{typespec})"}
-    end
-    defp determine_type(_token, _model, _name, %{"$ref": ref}) when not is_nil(ref) do
-      {"object", nil, "#{ref}.t"}
-    end
-    defp determine_type(_token, _model, _name, %{type: int}) when int in ["int", "integer"] do
-      {"integer", nil, "integer()"}
-    end
-    defp determine_type(_token, _model, _name, %{type: "string", format: date_or_time}) when date_or_time in ["date", "date-time", "time"] do
-      {"datetime", nil, "DateTime.t"}
-    end
-    defp determine_type(_token, _model, _name, %{type: "string"}) do
-      {"string", nil, "String.t"}
-    end
-    defp determine_type(_token, _model, _name, %{type: "boolean"}) do
-      {"boolean", nil, "boolean()"}
-    end
-    defp determine_type(_token, _model, _name, %{type: "number", format: "double"}) do
-      {"float", nil, "float()"}
-    end
-    defp determine_type(_token, _model, _name, %{type: "number"}) do
-      {"number", nil, "number()"}
-    end
-    defp determine_type(_token, _model, _name, %{type: "any"}) do
-      {"any", nil, "any()"}
-    end
-    defp determine_type(token, model, name, %{type: "object"}) do
-      full_name = "#{model.name}#{Macro.camelize(name)}"
-      struct = "#{token.namespace}.Model.#{full_name}"
-      {"object", struct, "#{struct}.t"}
-    end
-    defp determine_type(_token, _model, _name, _schema) do
-      {"string", nil, "String.t"}
     end
   end
 

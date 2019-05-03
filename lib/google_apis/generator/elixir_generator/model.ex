@@ -7,7 +7,7 @@ defmodule GoogleApis.Generator.ElixirGenerator.Model do
     :name => String.t(),
     :description => String.t(),
     :properties => list(Property.t()),
-    :schema => any() # FIXME
+    :schema => GoogleApi.Discovery.V1.Model.JsonSchema.t()
   }
 
   defstruct [:name, :description, :properties, :schema]
