@@ -27,6 +27,7 @@ defmodule GoogleApis.Generator.ElixirGenerator.Endpoint do
           :typespec => String.t(),
           :required_parameters => list(Parameter.t()),
           :optional_parameters => list(Parameter.t()),
+          :path_parameters => list(Parameter.t()),
           :typespec => String.t(),
           :return => Type.t(),
           :method => String.t(),
@@ -38,6 +39,7 @@ defmodule GoogleApis.Generator.ElixirGenerator.Endpoint do
     :description,
     :required_parameters,
     :optional_parameters,
+    :path_parameters,
     :typespec,
     :return,
     :method,
@@ -60,6 +62,7 @@ defmodule GoogleApis.Generator.ElixirGenerator.Endpoint do
       path: method.path,
       required_parameters: required_parameters,
       optional_parameters: optional_parameters,
+      path_parameters: Enum.filter(required_parameters, fn p -> p.location == "path" end),
       typespec: typespec(name, required_parameters, ret),
       return: ret
     }

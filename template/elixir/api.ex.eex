@@ -50,11 +50,13 @@ defmodule <%= namespace %>.Api.<%= api.name %> do
     request =
       Request.new()
       |> Request.method(:"<%= endpoint.method %>")
-      |> Request.url("<%= endpoint.path %>")
-      <%= for parameter <- endpoint.required_parameters do %>
+      |> Request.url("/<%= endpoint.path %>"<%= if endpoint.path_parameters do %>, %{<%= for parameter <- endpoint.path_parameters do %>
+        "<%= parameter.name %>" => URI.encode(<%= parameter.variable_name %>, &URI.char_unreserved?/1),
+      <% end %>}<% end %>)
+      <%= for parameter <- endpoint.required_parameters do %><%= if parameter.location != "path" do %>
       |> Request.add_param(:"<%= parameter.location %>", :"<%= parameter.variable_name %>", <%= parameter.name %>)
-      <% end %>
-      |> Request.add_optional_params(optional_params, opts)
+      <% end %><% end %>
+      |> Request.add_optional_params(optional_params_config, optional_params)
 
     connection
     |> Connection.execute(request)
