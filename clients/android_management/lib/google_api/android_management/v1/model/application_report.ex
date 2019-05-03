@@ -27,6 +27,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ApplicationReport do
   - displayName (String.t): The display name of the app. Defaults to: `null`.
   - events ([ApplicationEvent]): List of app events. The most recent 20 events are stored in the list. Defaults to: `null`.
   - installerPackageName (String.t): The package name of the app that installed this app. Defaults to: `null`.
+  - keyedAppStates ([KeyedAppState]): List of keyed app states reported by the app. Defaults to: `null`.
   - packageName (String.t): Package name of the app. Defaults to: `null`.
   - packageSha256Hash (String.t): The SHA-256 hash of the app&#39;s APK file, which can be used to verify the app hasn&#39;t been modified. Each byte of the hash value is represented as a two-digit hexadecimal number. Defaults to: `null`.
   - signingKeyCertFingerprints ([String.t]): The SHA-1 hash of each android.content.pm.Signature (https://developer.android.com/reference/android/content/pm/Signature.html) associated with the app package. Each byte of each hash value is represented as a two-digit hexadecimal number. Defaults to: `null`.
@@ -43,6 +44,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ApplicationReport do
           :displayName => any(),
           :events => list(GoogleApi.AndroidManagement.V1.Model.ApplicationEvent.t()),
           :installerPackageName => any(),
+          :keyedAppStates => list(GoogleApi.AndroidManagement.V1.Model.KeyedAppState.t()),
           :packageName => any(),
           :packageSha256Hash => any(),
           :signingKeyCertFingerprints => list(any()),
@@ -55,6 +57,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ApplicationReport do
   field(:displayName)
   field(:events, as: GoogleApi.AndroidManagement.V1.Model.ApplicationEvent, type: :list)
   field(:installerPackageName)
+  field(:keyedAppStates, as: GoogleApi.AndroidManagement.V1.Model.KeyedAppState, type: :list)
   field(:packageName)
   field(:packageSha256Hash)
   field(:signingKeyCertFingerprints, type: :list)
