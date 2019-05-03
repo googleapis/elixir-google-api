@@ -36,9 +36,10 @@ defmodule GoogleApis.Generator.ElixirGenerator.Parameter do
   """
   @spec from_discovery_method(RestMethod.t()) :: {list(t), list(t)}
   def from_discovery_method(%RestMethod{parameters: nil}), do: {[], []}
+
   def from_discovery_method(%RestMethod{parameters: parameters, parameterOrder: order}) do
     {required, optional} =
-    parameters
+      parameters
       |> Enum.split_with(fn {_name, schema} ->
         schema.required
       end)

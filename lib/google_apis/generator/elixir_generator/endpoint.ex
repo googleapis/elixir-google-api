@@ -70,10 +70,12 @@ defmodule GoogleApis.Generator.ElixirGenerator.Endpoint do
 
   defp typespec(name, params, ret) do
     param_specs = Enum.map_join(params, ", ", fn param -> param.type.typespec end)
+
     "#{name}(Tesla.Env.client(), #{param_specs}, keyword()) :: {:ok, #{ret.typespec}} | {:error, Tesla.Env.t()}"
   end
 
-  defp return_type(%{response: nil}, _context), do: Type.empty
+  defp return_type(%{response: nil}, _context), do: Type.empty()
+
   defp return_type(%{response: schema}, context) do
     Type.from_schema(schema, context)
   end

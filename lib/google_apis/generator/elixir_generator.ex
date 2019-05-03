@@ -20,7 +20,7 @@ defmodule GoogleApis.Generator.ElixirGenerator do
 
   @behaviour GoogleApis.Generator
   alias GoogleApis.ApiConfig
-  alias GoogleApi.Discovery.V1.Model.JsonSchema
+  alias GoogleApi.Discovery.V1.Model.{JsonSchema, RestDescription}
 
   alias GoogleApis.Generator.ElixirGenerator.{
     Api,
@@ -34,7 +34,7 @@ defmodule GoogleApis.Generator.ElixirGenerator do
     Type
   }
 
-  @spec generate_client(ApiConfig.t()) :: {:ok, any()} | {:error, String.t}
+  @spec generate_client(ApiConfig.t()) :: {:ok, any()} | {:error, String.t()}
   def generate_client(api_config) do
     Token.build(api_config)
     |> load_models
@@ -89,13 +89,15 @@ defmodule GoogleApis.Generator.ElixirGenerator do
 
   defp load_global_optional_params(token) do
     params = token.rest_description.parameters || []
+
     global_optional_parameters =
       params
       |> Enum.map(fn {name, schema} ->
         Parameter.from_json_schema(name, schema)
       end)
       |> Enum.sort_by(fn param -> param.name end)
-    IO.inspect global_optional_parameters
+
+    IO.inspect(global_optional_parameters)
     Map.put(token, :global_optional_parameters, global_optional_parameters)
   end
 
@@ -103,6 +105,7 @@ defmodule GoogleApis.Generator.ElixirGenerator do
     context = %ResourceContext{
       namespace: token.namespace
     }
+
     Map.put(token, :apis, all_apis(token.rest_description, context))
   end
 
@@ -120,13 +123,14 @@ defmodule GoogleApis.Generator.ElixirGenerator do
     end)
   end
 
-
+  @spec all_apis(RestDescription.t()) :: list(Api.t())
   def all_apis(rest_description) do
     all_apis(rest_description, %ResourceContext{
       namespace: "DefaultNamespace"
     })
   end
 
+  @spec all_apis(RestDescription.t(), ResourceContext.t()) :: list(Api.t())
   def all_apis(%{resources: resources}, context) do
     resources
     |> Enum.map(fn {name, resource} ->
@@ -144,6 +148,7 @@ defmodule GoogleApis.Generator.ElixirGenerator do
     end)
   end
 
+  @spec all_models(RestDescription.t()) :: list(Model.t())
   def all_models(rest_description) do
     rest_description.schemas
     |> Enum.flat_map(&all_schemas("", &1))
