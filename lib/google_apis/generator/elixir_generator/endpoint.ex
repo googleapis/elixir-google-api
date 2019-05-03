@@ -48,8 +48,6 @@ defmodule GoogleApis.Generator.ElixirGenerator.Endpoint do
 
   @spec from_discovery_method(RestMethod.t(), ResourceContext.t()) :: t
   def from_discovery_method(method, context) do
-    parameters = method.parameters || []
-
     {required_parameters, optional_parameters} = Parameter.from_discovery_method(method)
 
     name = method_name_to_endpoint_name(method.id)

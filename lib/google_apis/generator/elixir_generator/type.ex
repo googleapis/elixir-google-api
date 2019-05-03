@@ -26,13 +26,20 @@ defmodule GoogleApis.Generator.ElixirGenerator.Type do
   defstruct [:name, :struct, :typespec]
 
   alias GoogleApis.Generator.ElixirGenerator.ResourceContext
+  alias GoogleApi.Discovery.V1.Model.JsonSchema
 
-  @spec from_schema(GoogleApi.Discovery.V1.Model.JsonSchema.t()) :: t
+  @doc """
+  Return a type definition given the JsonSchema and the default ResourceContext
+  """
+  @spec from_schema(JsonSchema.t()) :: t
   def from_schema(schema) do
-    from_schema(schema, %ResourceContext{})
+    from_schema(schema, ResourceContext.default())
   end
 
-  @spec from_schema(GoogleApi.Discovery.V1.Model.JsonSchema.t(), ResourceContext.t()) :: t
+  @doc """
+  Return a type definition given the JsonSchema and a ResourceContext
+  """
+  @spec from_schema(JsonSchema.t(), ResourceContext.t()) :: t
   def from_schema(%{type: "array", items: items}, context) do
     t = from_schema(items, context)
 
@@ -117,6 +124,10 @@ defmodule GoogleApis.Generator.ElixirGenerator.Type do
     }
   end
 
+  @doc """
+  Return an empty Type
+  """
+  @spec empty() :: t
   def empty() do
     %__MODULE__{}
   end

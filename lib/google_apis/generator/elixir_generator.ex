@@ -27,20 +27,20 @@ defmodule GoogleApis.Generator.ElixirGenerator do
     Endpoint,
     Model,
     Parameter,
-    Property,
     Renderer,
     ResourceContext,
-    Token,
-    Type
+    Token
   }
 
+  @doc """
+  Run the generator for the specified api configuration
+  """
   @spec generate_client(ApiConfig.t()) :: {:ok, any()} | {:error, String.t()}
   def generate_client(api_config) do
     Token.build(api_config)
     |> load_models
     |> update_model_properties
-    # |> write_model_files
-
+    |> write_model_files
     |> load_global_optional_params
     |> load_apis
     |> write_api_files
@@ -123,13 +123,17 @@ defmodule GoogleApis.Generator.ElixirGenerator do
     end)
   end
 
+  @doc """
+  Returns all Apis found from the provided RestDescription
+  """
   @spec all_apis(RestDescription.t()) :: list(Api.t())
   def all_apis(rest_description) do
-    all_apis(rest_description, %ResourceContext{
-      namespace: "DefaultNamespace"
-    })
+    all_apis(rest_description, ResourceContext.default())
   end
 
+  @doc """
+  Returns all Apis found from the provided RestDescription and ResourceContext
+  """
   @spec all_apis(RestDescription.t(), ResourceContext.t()) :: list(Api.t())
   def all_apis(%{resources: resources}, context) do
     resources
@@ -148,6 +152,9 @@ defmodule GoogleApis.Generator.ElixirGenerator do
     end)
   end
 
+  @doc """
+  Returns all Models found from the provided RestDescription
+  """
   @spec all_models(RestDescription.t()) :: list(Model.t())
   def all_models(rest_description) do
     rest_description.schemas

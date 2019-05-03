@@ -19,19 +19,31 @@ defmodule GoogleApis.Generator.ElixirGenerator.ResourceContext do
           :property => String.t()
         }
 
-  defstruct [:namespace, :model, :property]
+  defstruct namespace: "Default Namespace", model: nil, property: nil
 
+  @doc """
+  Return the default struct name for this context.
+  """
   @spec struct_name(t) :: String.t()
   def struct_name(context), do: struct_name(context, default_name(context))
 
+  @doc """
+  Return the struct name for this context with a specific model name
+  """
   @spec struct_name(t, String.t()) :: String.t()
   def struct_name(context, name) do
     "#{context.namespace}.Model.#{name}"
   end
 
+  @doc """
+  Return the default typespec for this context.
+  """
   @spec typespec(t) :: String.t()
   def typespec(context), do: typespec(context, default_name(context))
 
+  @doc """
+  Return the typespec for this context with a specific model name
+  """
   @spec typespec(t, String.t()) :: String.t()
   def typespec(context, name) do
     "#{context.namespace}.Model.#{name}.t"
@@ -39,5 +51,15 @@ defmodule GoogleApis.Generator.ElixirGenerator.ResourceContext do
 
   defp default_name(context) do
     Macro.camelize("#{context.model.name}_#{context.property}")
+  end
+
+  @doc """
+  Returns a default ResourceContext
+  """
+  @spec default() :: t
+  def default() do
+    %__MODULE__{
+      namespace: "Default Namespace"
+    }
   end
 end
