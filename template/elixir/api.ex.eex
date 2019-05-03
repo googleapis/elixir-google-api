@@ -31,9 +31,10 @@ defmodule <%= namespace %>.Api.<%= api.name %> do
 
   - connection (GoogleApi.Books.V1.Connection): Connection to server
   <%= for parameter <- endpoint.required_parameters do %>- <%= parameter.variable_name %> (<%= parameter.type.typespec %>): <%= parameter.description %>
-<% end %>  - optional_params (keyword()): [optional] Optional parameters
-    <%= for parameter <- endpoint.optional_parameters do %>- :<%= parameter.name %> (<%= parameter.type.typespec %>): <%= parameter.description %>
-<% end %>
+<% end %>  - optional_params (keyword()): [optional] Optional parameters<%= for parameter <- global_optional_parameters do %>
+    - :<%= parameter.name %> (<%= parameter.type.typespec %>): <%= parameter.description %><% end %><%= for parameter <- endpoint.optional_parameters do %>
+    - :<%= parameter.name %> (<%= parameter.type.typespec %>): <%= parameter.description %><% end %>
+
   ## Returns
 
   {:ok, %<%= endpoint.return.struct %>{}} on success
@@ -42,6 +43,9 @@ defmodule <%= namespace %>.Api.<%= api.name %> do
   @spec <%= endpoint.typespec %>
   def <%= endpoint.name %>(connection, <%= for parameter <- endpoint.required_parameters do %><%= parameter.variable_name %>, <% end %>optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+    <%= for parameter <- global_optional_parameters do %>
+      :"<%= parameter.name%>" => :"<%= parameter.location %>",
+    <% end %>
     <%= for parameter <- endpoint.optional_parameters do %>
       :"<%= parameter.name%>" => :"<%= parameter.location %>",
     <% end %>

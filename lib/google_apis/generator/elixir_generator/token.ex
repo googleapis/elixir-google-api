@@ -18,7 +18,7 @@ defmodule GoogleApis.Generator.ElixirGenerator.Token do
   """
 
   alias GoogleApi.Discovery.V1.Model.RestDescription
-  alias GoogleApis.Generator.ElixirGenerator.{Model, Property, ResourceContext, Type}
+  alias GoogleApis.Generator.ElixirGenerator.{Model, Parameter, Property, ResourceContext, Type}
   alias GoogleApis.ApiConfig
 
   @type t :: %__MODULE__{
@@ -28,7 +28,8 @@ defmodule GoogleApis.Generator.ElixirGenerator.Token do
           :base_dir => String.t(),
           :rest_description => RestDescription.t(),
           :models => list(Model.t()),
-          :models_by_name => %{String.t() => Model.t()}
+          :models_by_name => %{String.t() => Model.t()},
+          :global_optional_parameters => list(Parameter.t())
         }
 
   defstruct [
@@ -38,7 +39,8 @@ defmodule GoogleApis.Generator.ElixirGenerator.Token do
     :base_dir,
     :rest_description,
     :models,
-    :models_by_name
+    :models_by_name,
+    :global_optional_parameters
   ]
 
   def build(api_config) do

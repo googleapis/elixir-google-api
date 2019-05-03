@@ -26,6 +26,7 @@ defmodule GoogleApis.Generator.ElixirGenerator do
     Api,
     Endpoint,
     Model,
+    Parameter,
     Property,
     Renderer,
     ResourceContext,
@@ -33,12 +34,14 @@ defmodule GoogleApis.Generator.ElixirGenerator do
     Type
   }
 
+  @spec generate_client(ApiConfig.t()) :: {:ok, any()} | {:error, String.t}
   def generate_client(api_config) do
     Token.build(api_config)
     |> load_models
     |> update_model_properties
     # |> write_model_files
 
+    |> load_global_optional_params
     |> load_apis
     |> write_api_files
   end
@@ -84,8 +87,23 @@ defmodule GoogleApis.Generator.ElixirGenerator do
     token
   end
 
+  defp load_global_optional_params(token) do
+    params = token.rest_description.parameters || []
+    global_optional_parameters =
+      params
+      |> Enum.map(fn {name, schema} ->
+        Parameter.from_json_schema(name, schema)
+      end)
+      |> Enum.sort_by(fn param -> param.name end)
+    IO.inspect global_optional_parameters
+    Map.put(token, :global_optional_parameters, global_optional_parameters)
+  end
+
   defp load_apis(token) do
-    Map.put(token, :apis, all_apis(token.rest_description, token))
+    context = %ResourceContext{
+      namespace: token.namespace
+    }
+    Map.put(token, :apis, all_apis(token.rest_description, context))
   end
 
   defp write_api_files(token) do
@@ -97,20 +115,23 @@ defmodule GoogleApis.Generator.ElixirGenerator do
 
       File.write!(
         path,
-        Renderer.api(api, token.namespace)
+        Renderer.api(api, token.namespace, token.global_optional_parameters)
       )
     end)
   end
 
-  def all_apis(%{resources: resources}, token) do
+
+  def all_apis(rest_description) do
+    all_apis(rest_description, %ResourceContext{
+      namespace: "DefaultNamespace"
+    })
+  end
+
+  def all_apis(%{resources: resources}, context) do
     resources
     |> Enum.map(fn {name, resource} ->
       name = Macro.camelize(name)
       methods = resource.methods || []
-
-      context = %ResourceContext{
-        namespace: token.namespace
-      }
 
       %Api{
         name: name,
