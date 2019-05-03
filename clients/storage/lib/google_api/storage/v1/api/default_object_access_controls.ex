@@ -40,6 +40,7 @@ defmodule GoogleApi.Storage.V1.Api.DefaultObjectAccessControls do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
+    - :provisionalUserProject (String.t): The project to be billed for this request if the target bucket is requester-pays bucket.
     - :userProject (String.t): The project to be billed for this request. Required for Requester Pays buckets.
 
   ## Returns
@@ -68,6 +69,7 @@ defmodule GoogleApi.Storage.V1.Api.DefaultObjectAccessControls do
       :prettyPrint => :query,
       :quotaUser => :query,
       :userIp => :query,
+      :provisionalUserProject => :query,
       :userProject => :query
     }
 
@@ -101,6 +103,7 @@ defmodule GoogleApi.Storage.V1.Api.DefaultObjectAccessControls do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
+    - :provisionalUserProject (String.t): The project to be billed for this request if the target bucket is requester-pays bucket.
     - :userProject (String.t): The project to be billed for this request. Required for Requester Pays buckets.
 
   ## Returns
@@ -129,6 +132,7 @@ defmodule GoogleApi.Storage.V1.Api.DefaultObjectAccessControls do
       :prettyPrint => :query,
       :quotaUser => :query,
       :userIp => :query,
+      :provisionalUserProject => :query,
       :userProject => :query
     }
 
@@ -161,6 +165,7 @@ defmodule GoogleApi.Storage.V1.Api.DefaultObjectAccessControls do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
+    - :provisionalUserProject (String.t): The project to be billed for this request if the target bucket is requester-pays bucket.
     - :userProject (String.t): The project to be billed for this request. Required for Requester Pays buckets.
     - :body (ObjectAccessControl): 
 
@@ -185,6 +190,7 @@ defmodule GoogleApi.Storage.V1.Api.DefaultObjectAccessControls do
       :prettyPrint => :query,
       :quotaUser => :query,
       :userIp => :query,
+      :provisionalUserProject => :query,
       :userProject => :query,
       :body => :body
     }
@@ -219,6 +225,7 @@ defmodule GoogleApi.Storage.V1.Api.DefaultObjectAccessControls do
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :ifMetagenerationMatch (String.t): If present, only return default ACL listing if the bucket&#39;s current metageneration matches this value.
     - :ifMetagenerationNotMatch (String.t): If present, only return default ACL listing if the bucket&#39;s current metageneration does not match the given value.
+    - :provisionalUserProject (String.t): The project to be billed for this request if the target bucket is requester-pays bucket.
     - :userProject (String.t): The project to be billed for this request. Required for Requester Pays buckets.
 
   ## Returns
@@ -244,6 +251,7 @@ defmodule GoogleApi.Storage.V1.Api.DefaultObjectAccessControls do
       :userIp => :query,
       :ifMetagenerationMatch => :query,
       :ifMetagenerationNotMatch => :query,
+      :provisionalUserProject => :query,
       :userProject => :query
     }
 
@@ -276,6 +284,7 @@ defmodule GoogleApi.Storage.V1.Api.DefaultObjectAccessControls do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
+    - :provisionalUserProject (String.t): The project to be billed for this request if the target bucket is requester-pays bucket.
     - :userProject (String.t): The project to be billed for this request. Required for Requester Pays buckets.
     - :body (ObjectAccessControl): 
 
@@ -305,6 +314,7 @@ defmodule GoogleApi.Storage.V1.Api.DefaultObjectAccessControls do
       :prettyPrint => :query,
       :quotaUser => :query,
       :userIp => :query,
+      :provisionalUserProject => :query,
       :userProject => :query,
       :body => :body
     }
@@ -339,6 +349,7 @@ defmodule GoogleApi.Storage.V1.Api.DefaultObjectAccessControls do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
+    - :provisionalUserProject (String.t): The project to be billed for this request if the target bucket is requester-pays bucket.
     - :userProject (String.t): The project to be billed for this request. Required for Requester Pays buckets.
     - :body (ObjectAccessControl): 
 
@@ -368,6 +379,7 @@ defmodule GoogleApi.Storage.V1.Api.DefaultObjectAccessControls do
       :prettyPrint => :query,
       :quotaUser => :query,
       :userIp => :query,
+      :provisionalUserProject => :query,
       :userProject => :query,
       :body => :body
     }

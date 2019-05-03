@@ -42,6 +42,7 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :generation (String.t): If present, selects a specific revision of this object (as opposed to the latest version, the default).
+    - :provisionalUserProject (String.t): The project to be billed for this request if the target bucket is requester-pays bucket.
     - :userProject (String.t): The project to be billed for this request. Required for Requester Pays buckets.
 
   ## Returns
@@ -73,6 +74,7 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
       :quotaUser => :query,
       :userIp => :query,
       :generation => :query,
+      :provisionalUserProject => :query,
       :userProject => :query
     }
 
@@ -109,6 +111,7 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :generation (String.t): If present, selects a specific revision of this object (as opposed to the latest version, the default).
+    - :provisionalUserProject (String.t): The project to be billed for this request if the target bucket is requester-pays bucket.
     - :userProject (String.t): The project to be billed for this request. Required for Requester Pays buckets.
 
   ## Returns
@@ -140,6 +143,7 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
       :quotaUser => :query,
       :userIp => :query,
       :generation => :query,
+      :provisionalUserProject => :query,
       :userProject => :query
     }
 
@@ -175,6 +179,7 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :generation (String.t): If present, selects a specific revision of this object (as opposed to the latest version, the default).
+    - :provisionalUserProject (String.t): The project to be billed for this request if the target bucket is requester-pays bucket.
     - :userProject (String.t): The project to be billed for this request. Required for Requester Pays buckets.
     - :body (ObjectAccessControl): 
 
@@ -205,6 +210,7 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
       :quotaUser => :query,
       :userIp => :query,
       :generation => :query,
+      :provisionalUserProject => :query,
       :userProject => :query,
       :body => :body
     }
@@ -240,6 +246,7 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :generation (String.t): If present, selects a specific revision of this object (as opposed to the latest version, the default).
+    - :provisionalUserProject (String.t): The project to be billed for this request if the target bucket is requester-pays bucket.
     - :userProject (String.t): The project to be billed for this request. Required for Requester Pays buckets.
 
   ## Returns
@@ -265,6 +272,7 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
       :quotaUser => :query,
       :userIp => :query,
       :generation => :query,
+      :provisionalUserProject => :query,
       :userProject => :query
     }
 
@@ -300,6 +308,7 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :generation (String.t): If present, selects a specific revision of this object (as opposed to the latest version, the default).
+    - :provisionalUserProject (String.t): The project to be billed for this request if the target bucket is requester-pays bucket.
     - :userProject (String.t): The project to be billed for this request. Required for Requester Pays buckets.
     - :body (ObjectAccessControl): 
 
@@ -332,6 +341,7 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
       :quotaUser => :query,
       :userIp => :query,
       :generation => :query,
+      :provisionalUserProject => :query,
       :userProject => :query,
       :body => :body
     }
@@ -369,6 +379,7 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :generation (String.t): If present, selects a specific revision of this object (as opposed to the latest version, the default).
+    - :provisionalUserProject (String.t): The project to be billed for this request if the target bucket is requester-pays bucket.
     - :userProject (String.t): The project to be billed for this request. Required for Requester Pays buckets.
     - :body (ObjectAccessControl): 
 
@@ -401,6 +412,7 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
       :quotaUser => :query,
       :userIp => :query,
       :generation => :query,
+      :provisionalUserProject => :query,
       :userProject => :query,
       :body => :body
     }
