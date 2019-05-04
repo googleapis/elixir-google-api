@@ -157,27 +157,6 @@ defmodule GoogleApis.Generator.ElixirGenerator do
   """
   @spec all_models(RestDescription.t()) :: list(Model.t())
   def all_models(rest_description) do
-    rest_description.schemas
-    |> Enum.flat_map(&all_schemas("", &1))
-  end
-
-  defp all_schemas(context, {name, schema = %JsonSchema{type: "object", properties: properties}})
-       when not is_nil(properties) do
-    full_name = "#{context}#{Macro.camelize(name)}"
-
-    property_models = Enum.flat_map(properties, &all_schemas(full_name, &1))
-
-    model = %Model{
-      name: full_name,
-      description: schema.description,
-      properties: [],
-      schema: schema
-    }
-
-    [model | property_models]
-  end
-
-  defp all_schemas(_context, {_name, _schema}) do
-    []
+    Model.from_schemas(rest_description.schemas)
   end
 end

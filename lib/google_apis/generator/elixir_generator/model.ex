@@ -21,10 +21,12 @@ defmodule GoogleApis.Generator.ElixirGenerator.Model do
           :name => String.t(),
           :description => String.t(),
           :properties => list(Property.t()),
-          :schema => GoogleApi.Discovery.V1.Model.JsonSchema.t()
+          :schema => JsonSchema.t()
         }
 
   defstruct [:name, :description, :properties, :schema]
+
+  alias GoogleApi.Discovery.V1.Model.JsonSchema
 
   @doc """
   Returns the name of the file that should be generated.
@@ -41,4 +43,33 @@ defmodule GoogleApis.Generator.ElixirGenerator.Model do
   def value_string(nil), do: "nil"
   def value_string(""), do: "\"\""
   def value_string(value), do: "#{value}"
+
+  @spec from_schemas(%{optional(String.t()) => JsonSchema.t()}) :: list(t)
+  def from_schemas(schemas) do
+    Enum.flat_map(schemas, &all_schemas("", &1))
+  end
+
+  @spec from_schema(String.t(), JsonSchema.t()) :: list(t)
+  def from_schema(name, schema) do
+  end
+
+  defp all_schemas(context, {name, schema = %JsonSchema{type: "object", properties: properties}})
+       when not is_nil(properties) do
+    full_name = "#{context}#{Macro.camelize(name)}"
+
+    property_models = Enum.flat_map(properties, &all_schemas(full_name, &1))
+
+    model = %__MODULE__{
+      name: full_name,
+      description: schema.description,
+      properties: [],
+      schema: schema
+    }
+
+    [model | property_models]
+  end
+
+  defp all_schemas(_context, {_name, _schema}) do
+    []
+  end
 end
