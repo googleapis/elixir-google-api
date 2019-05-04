@@ -39,7 +39,7 @@ defmodule GoogleApi.Drive.V3.Api.Changes do
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :driveId (String.t): The ID of the shared drive for which the starting pageToken for listing future changes from that shared drive will be returned.
-    - :supportsAllDrives (boolean()): Whether the requesting application supports both My Drives and shared drives.
+    - :supportsAllDrives (boolean()): Deprecated - Whether the requesting application supports both My Drives and shared drives. This parameter will only be effective until June 1, 2020. Afterwards all applications are assumed to support shared drives.
     - :supportsTeamDrives (boolean()): Deprecated use supportsAllDrives instead.
     - :teamDriveId (String.t): Deprecated use driveId instead.
 
@@ -93,13 +93,13 @@ defmodule GoogleApi.Drive.V3.Api.Changes do
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :driveId (String.t): The shared drive from which changes will be returned. If specified the change IDs will be reflective of the shared drive; use the combined drive ID and change ID as an identifier.
     - :includeCorpusRemovals (boolean()): Whether changes should include the file resource if the file is still accessible by the user at the time of the request, even when a file was removed from the list of changes and there will be no further change entries for this file.
-    - :includeItemsFromAllDrives (boolean()): Whether both My Drive and shared drive items should be included in results.
+    - :includeItemsFromAllDrives (boolean()): Deprecated - Whether both My Drive and shared drive items should be included in results. This parameter will only be effective until June 1, 2020. Afterwards shared drive items will be included in the results.
     - :includeRemoved (boolean()): Whether to include changes indicating that items have been removed from the list of changes, for example by deletion or loss of access.
     - :includeTeamDriveItems (boolean()): Deprecated use includeItemsFromAllDrives instead.
     - :pageSize (integer()): The maximum number of changes to return per page.
     - :restrictToMyDrive (boolean()): Whether to restrict the results to changes inside the My Drive hierarchy. This omits changes to files such as those in the Application Data folder or shared files which have not been added to My Drive.
     - :spaces (String.t): A comma-separated list of spaces to query within the user corpus. Supported values are &#39;drive&#39;, &#39;appDataFolder&#39; and &#39;photos&#39;.
-    - :supportsAllDrives (boolean()): Whether the requesting application supports both My Drives and shared drives.
+    - :supportsAllDrives (boolean()): Deprecated - Whether the requesting application supports both My Drives and shared drives. This parameter will only be effective until June 1, 2020. Afterwards all applications are assumed to support shared drives.
     - :supportsTeamDrives (boolean()): Deprecated use supportsAllDrives instead.
     - :teamDriveId (String.t): Deprecated use driveId instead.
 
@@ -161,13 +161,13 @@ defmodule GoogleApi.Drive.V3.Api.Changes do
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :driveId (String.t): The shared drive from which changes will be returned. If specified the change IDs will be reflective of the shared drive; use the combined drive ID and change ID as an identifier.
     - :includeCorpusRemovals (boolean()): Whether changes should include the file resource if the file is still accessible by the user at the time of the request, even when a file was removed from the list of changes and there will be no further change entries for this file.
-    - :includeItemsFromAllDrives (boolean()): Whether both My Drive and shared drive items should be included in results.
+    - :includeItemsFromAllDrives (boolean()): Deprecated - Whether both My Drive and shared drive items should be included in results. This parameter will only be effective until June 1, 2020. Afterwards shared drive items will be included in the results.
     - :includeRemoved (boolean()): Whether to include changes indicating that items have been removed from the list of changes, for example by deletion or loss of access.
     - :includeTeamDriveItems (boolean()): Deprecated use includeItemsFromAllDrives instead.
     - :pageSize (integer()): The maximum number of changes to return per page.
     - :restrictToMyDrive (boolean()): Whether to restrict the results to changes inside the My Drive hierarchy. This omits changes to files such as those in the Application Data folder or shared files which have not been added to My Drive.
     - :spaces (String.t): A comma-separated list of spaces to query within the user corpus. Supported values are &#39;drive&#39;, &#39;appDataFolder&#39; and &#39;photos&#39;.
-    - :supportsAllDrives (boolean()): Whether the requesting application supports both My Drives and shared drives.
+    - :supportsAllDrives (boolean()): Deprecated - Whether the requesting application supports both My Drives and shared drives. This parameter will only be effective until June 1, 2020. Afterwards all applications are assumed to support shared drives.
     - :supportsTeamDrives (boolean()): Deprecated use supportsAllDrives instead.
     - :teamDriveId (String.t): Deprecated use driveId instead.
     - :resource (Channel): 

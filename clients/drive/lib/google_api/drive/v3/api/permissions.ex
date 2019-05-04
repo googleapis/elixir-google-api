@@ -41,7 +41,7 @@ defmodule GoogleApi.Drive.V3.Api.Permissions do
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :emailMessage (String.t): A plain text custom message to include in the notification email.
     - :sendNotificationEmail (boolean()): Whether to send a notification email when sharing to users or groups. This defaults to true for users and groups, and is not allowed for other requests. It must not be disabled for ownership transfers.
-    - :supportsAllDrives (boolean()): Whether the requesting application supports both My Drives and shared drives.
+    - :supportsAllDrives (boolean()): Deprecated - Whether the requesting application supports both My Drives and shared drives. This parameter will only be effective until June 1, 2020. Afterwards all applications are assumed to support shared drives.
     - :supportsTeamDrives (boolean()): Deprecated use supportsAllDrives instead.
     - :transferOwnership (boolean()): Whether to transfer ownership to the specified user and downgrade the current owner to a writer. This parameter is required as an acknowledgement of the side effect.
     - :useDomainAdminAccess (boolean()): Issue the request as a domain administrator; if set to true, then the requester will be granted access if the file ID parameter refers to a shared drive and the requester is an administrator of the domain to which the shared drive belongs.
@@ -101,7 +101,7 @@ defmodule GoogleApi.Drive.V3.Api.Permissions do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :supportsAllDrives (boolean()): Whether the requesting application supports both My Drives and shared drives.
+    - :supportsAllDrives (boolean()): Deprecated - Whether the requesting application supports both My Drives and shared drives. This parameter will only be effective until June 1, 2020. Afterwards all applications are assumed to support shared drives.
     - :supportsTeamDrives (boolean()): Deprecated use supportsAllDrives instead.
     - :useDomainAdminAccess (boolean()): Issue the request as a domain administrator; if set to true, then the requester will be granted access if the file ID parameter refers to a shared drive and the requester is an administrator of the domain to which the shared drive belongs.
 
@@ -162,7 +162,7 @@ defmodule GoogleApi.Drive.V3.Api.Permissions do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :supportsAllDrives (boolean()): Whether the requesting application supports both My Drives and shared drives.
+    - :supportsAllDrives (boolean()): Deprecated - Whether the requesting application supports both My Drives and shared drives. This parameter will only be effective until June 1, 2020. Afterwards all applications are assumed to support shared drives.
     - :supportsTeamDrives (boolean()): Deprecated use supportsAllDrives instead.
     - :useDomainAdminAccess (boolean()): Issue the request as a domain administrator; if set to true, then the requester will be granted access if the file ID parameter refers to a shared drive and the requester is an administrator of the domain to which the shared drive belongs.
 
@@ -218,7 +218,7 @@ defmodule GoogleApi.Drive.V3.Api.Permissions do
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :pageSize (integer()): The maximum number of permissions to return per page. When not set for files in a shared drive, at most 100 results will be returned. When not set for files that are not in a shared drive, the entire list will be returned.
     - :pageToken (String.t): The token for continuing a previous list request on the next page. This should be set to the value of &#39;nextPageToken&#39; from the previous response.
-    - :supportsAllDrives (boolean()): Whether the requesting application supports both My Drives and shared drives.
+    - :supportsAllDrives (boolean()): Deprecated - Whether the requesting application supports both My Drives and shared drives. This parameter will only be effective until June 1, 2020. Afterwards all applications are assumed to support shared drives.
     - :supportsTeamDrives (boolean()): Deprecated use supportsAllDrives instead.
     - :useDomainAdminAccess (boolean()): Issue the request as a domain administrator; if set to true, then the requester will be granted access if the file ID parameter refers to a shared drive and the requester is an administrator of the domain to which the shared drive belongs.
 
@@ -275,7 +275,7 @@ defmodule GoogleApi.Drive.V3.Api.Permissions do
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :removeExpiration (boolean()): Whether to remove the expiration date.
-    - :supportsAllDrives (boolean()): Whether the requesting application supports both My Drives and shared drives.
+    - :supportsAllDrives (boolean()): Deprecated - Whether the requesting application supports both My Drives and shared drives. This parameter will only be effective until June 1, 2020. Afterwards all applications are assumed to support shared drives.
     - :supportsTeamDrives (boolean()): Deprecated use supportsAllDrives instead.
     - :transferOwnership (boolean()): Whether to transfer ownership to the specified user and downgrade the current owner to a writer. This parameter is required as an acknowledgement of the side effect.
     - :useDomainAdminAccess (boolean()): Issue the request as a domain administrator; if set to true, then the requester will be granted access if the file ID parameter refers to a shared drive and the requester is an administrator of the domain to which the shared drive belongs.
