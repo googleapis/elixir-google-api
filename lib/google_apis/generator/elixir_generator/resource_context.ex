@@ -49,6 +49,8 @@ defmodule GoogleApis.Generator.ElixirGenerator.ResourceContext do
     "#{context.namespace}.Model.#{name}.t"
   end
 
+  defp default_name(%{model: nil}), do: "Unknown"
+
   defp default_name(context) do
     Macro.camelize("#{context.model.name}_#{context.property}")
   end
@@ -59,7 +61,8 @@ defmodule GoogleApis.Generator.ElixirGenerator.ResourceContext do
   @spec default() :: t
   def default() do
     %__MODULE__{
-      namespace: "Default Namespace"
+      namespace: "Default.Namespace",
+      property: "DefaultProperty"
     }
   end
 end
