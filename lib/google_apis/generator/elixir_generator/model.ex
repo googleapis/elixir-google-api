@@ -56,7 +56,7 @@ defmodule GoogleApis.Generator.ElixirGenerator.Model do
     from_schema(name, schema, context)
   end
 
-  def from_schema(name, schema = %JsonSchema{type: "object", properties: properties}, context)
+  defp from_schema(name, schema = %JsonSchema{type: "object", properties: properties}, context)
       when not is_nil(properties) do
     full_name = ResourceContext.name(context, name)
 
@@ -75,5 +75,5 @@ defmodule GoogleApis.Generator.ElixirGenerator.Model do
     [model | property_models]
   end
 
-  def from_schema(_, _, _), do: []
+  defp from_schema(_, _, _), do: []
 end
