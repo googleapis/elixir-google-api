@@ -93,7 +93,7 @@ defmodule GoogleApi.Redis.V1beta1.Api.Projects do
   ## Parameters
 
   - connection (GoogleApi.Redis.V1beta1.Connection): Connection to server
-  - projects_id (String.t): Part of &#x60;parent&#x60;. Required. The resource name of the instance location using the form:     &#x60;projects/{project_id}/locations/{location_id}&#x60; where &#x60;location_id&#x60; refers to a GCP region
+  - projects_id (String.t): Part of &#x60;parent&#x60;. Required. The resource name of the instance location using the form:     &#x60;projects/{project_id}/locations/{location_id}&#x60; where &#x60;location_id&#x60; refers to a GCP region.
   - locations_id (String.t): Part of &#x60;parent&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
@@ -164,7 +164,7 @@ defmodule GoogleApi.Redis.V1beta1.Api.Projects do
   ## Parameters
 
   - connection (GoogleApi.Redis.V1beta1.Connection): Connection to server
-  - projects_id (String.t): Part of &#x60;name&#x60;. Required. Redis instance resource name using the form:     &#x60;projects/{project_id}/locations/{location_id}/instances/{instance_id}&#x60; where &#x60;location_id&#x60; refers to a GCP region
+  - projects_id (String.t): Part of &#x60;name&#x60;. Required. Redis instance resource name using the form:     &#x60;projects/{project_id}/locations/{location_id}/instances/{instance_id}&#x60; where &#x60;location_id&#x60; refers to a GCP region.
   - locations_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - instances_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
@@ -238,7 +238,7 @@ defmodule GoogleApi.Redis.V1beta1.Api.Projects do
   ## Parameters
 
   - connection (GoogleApi.Redis.V1beta1.Connection): Connection to server
-  - projects_id (String.t): Part of &#x60;name&#x60;. Required. Redis instance resource name using the form:     &#x60;projects/{project_id}/locations/{location_id}/instances/{instance_id}&#x60; where &#x60;location_id&#x60; refers to a GCP region
+  - projects_id (String.t): Part of &#x60;name&#x60;. Required. Redis instance resource name using the form:     &#x60;projects/{project_id}/locations/{location_id}/instances/{instance_id}&#x60; where &#x60;location_id&#x60; refers to a GCP region.
   - locations_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - instances_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
@@ -312,7 +312,7 @@ defmodule GoogleApi.Redis.V1beta1.Api.Projects do
   ## Parameters
 
   - connection (GoogleApi.Redis.V1beta1.Connection): Connection to server
-  - projects_id (String.t): Part of &#x60;parent&#x60;. Required. The resource name of the instance location using the form:     &#x60;projects/{project_id}/locations/{location_id}&#x60; where &#x60;location_id&#x60; refers to a GCP region
+  - projects_id (String.t): Part of &#x60;parent&#x60;. Required. The resource name of the instance location using the form:     &#x60;projects/{project_id}/locations/{location_id}&#x60; where &#x60;location_id&#x60; refers to a GCP region.
   - locations_id (String.t): Part of &#x60;parent&#x60;. See documentation of &#x60;projectsId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
     - :$.xgafv (String.t): V1 error format.
