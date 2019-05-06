@@ -65,4 +65,19 @@ defmodule GoogleApis.Generator.ElixirGenerator.ResourceContext do
       property: "DefaultProperty"
     }
   end
+
+  def empty() do
+    %__MODULE__{
+      namespace: "",
+      property: ""
+    }
+  end
+
+  def with_property(context, property) do
+    Map.update!(context, :property, fn prop -> "#{prop}#{Macro.camelize(property)}" end)
+  end
+
+  def name(context, name) do
+    "#{context.property}#{Macro.camelize(name)}"
+  end
 end
