@@ -40,7 +40,6 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.Creative do
   - detectedLanguages ([String.t]): Output only. The detected languages for this creative. The order is arbitrary. The codes are 2 or 5 characters and are documented at https://developers.google.com/adwords/api/docs/appendix/languagecodes. Defaults to: `null`.
   - detectedProductCategories ([integer()]): Output only. Detected product categories, if any. See the ad-product-categories.txt file in the technical documentation for a list of IDs. Defaults to: `null`.
   - detectedSensitiveCategories ([integer()]): Output only. Detected sensitive categories, if any. See the ad-sensitive-categories.txt file in the technical documentation for a list of IDs. You should use these IDs along with the excluded-sensitive-category field in the bid request to filter your bids. Defaults to: `null`.
-  - filteringStats (FilteringStats): Output only. The filtering stats for this creative. Deprecated; please use bidders.accounts.filterSets.filteredBids.creatives.list method instead. Defaults to: `null`.
   - html (HtmlContent): An HTML creative. Defaults to: `null`.
   - impressionTrackingUrls ([String.t]): The set of URLs to be called to record an impression. Defaults to: `null`.
   - native (NativeContent): A native creative. Defaults to: `null`.
@@ -73,7 +72,6 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.Creative do
           :detectedLanguages => list(any()),
           :detectedProductCategories => list(any()),
           :detectedSensitiveCategories => list(any()),
-          :filteringStats => GoogleApi.AdExchangeBuyer.V2beta1.Model.FilteringStats.t(),
           :html => GoogleApi.AdExchangeBuyer.V2beta1.Model.HtmlContent.t(),
           :impressionTrackingUrls => list(any()),
           :native => GoogleApi.AdExchangeBuyer.V2beta1.Model.NativeContent.t(),
@@ -102,7 +100,6 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.Creative do
   field(:detectedLanguages, type: :list)
   field(:detectedProductCategories, type: :list)
   field(:detectedSensitiveCategories, type: :list)
-  field(:filteringStats, as: GoogleApi.AdExchangeBuyer.V2beta1.Model.FilteringStats)
   field(:html, as: GoogleApi.AdExchangeBuyer.V2beta1.Model.HtmlContent)
   field(:impressionTrackingUrls, type: :list)
   field(:native, as: GoogleApi.AdExchangeBuyer.V2beta1.Model.NativeContent)
