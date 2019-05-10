@@ -45,15 +45,21 @@ defmodule GoogleApis.Generator.ElixirGenerator.Model do
   def value_string(""), do: "\"\""
   def value_string(value), do: "#{value}"
 
+  @doc """
+  Returns a list of models parsed from a map of JsonSchemas
+  """
   @spec from_schemas(%{optional(String.t()) => JsonSchema.t()}) :: list(t)
   def from_schemas(schemas) do
     Enum.flat_map(schemas, fn {name, schema} -> from_schema(name, schema) end)
   end
 
+  @doc """
+  Returns a list of schemas from a resource name and JsonSchema which may
+  contain nested schemas
+  """
   @spec from_schema(String.t(), JsonSchema.t()) :: list(t)
   def from_schema(name, schema) do
-    context =
-      ResourceContext.empty()
+    context = ResourceContext.empty()
 
     from_schema(name, schema, context)
   end
@@ -75,7 +81,7 @@ defmodule GoogleApis.Generator.ElixirGenerator.Model do
     [model | property_models]
   end
 
-  defp from_schema(name, schema = %JsonSchema{type: "array", items: items}, context) do
+  defp from_schema(name, %JsonSchema{type: "array", items: items}, context) do
     from_schema(name, items, context)
   end
 
