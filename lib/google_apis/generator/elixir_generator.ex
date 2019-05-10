@@ -138,7 +138,7 @@ defmodule GoogleApis.Generator.ElixirGenerator do
     resources
     |> Enum.map(fn {name, resource} ->
       name = Macro.camelize(name)
-      methods = resource.methods || []
+      methods = collect_methods(resource)
 
       %Api{
         name: name,
@@ -148,6 +148,20 @@ defmodule GoogleApis.Generator.ElixirGenerator do
             Endpoint.from_discovery_method(method, context)
           end)
       }
+    end)
+  end
+
+  defp collect_methods(%{resources: resources, methods: methods}) do
+    collect_methods_from_methods(methods) ++ collect_methods_from_resources(resources)
+  end
+
+  defp collect_methods_from_methods(nil), do: []
+  defp collect_methods_from_methods(methods), do: Enum.into(methods, [])
+
+  defp collect_methods_from_resources(nil), do: []
+  defp collect_methods_from_resources(resources) do
+    Enum.flat_map(resources, fn {name, resource} ->
+      collect_methods(resource)
     end)
   end
 
