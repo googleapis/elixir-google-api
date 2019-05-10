@@ -58,7 +58,7 @@ defmodule <%= namespace %>.Api.<%= api.name %> do
         "<%= parameter.name %>" => URI.encode(<%= parameter.variable_name %>, &URI.char_unreserved?/1),
       <% end %>}<% end %>)
       <%= for parameter <- endpoint.required_parameters do %><%= if parameter.location != "path" do %>
-      |> Request.add_param(:"<%= parameter.location %>", :"<%= parameter.variable_name %>", <%= parameter.name %>)
+      |> Request.add_param(:"<%= parameter.location %>", :"<%= parameter.name %>", <%= parameter.variable_name %>)
       <% end %><% end %>
       |> Request.add_optional_params(optional_params_config, optional_params)
 
