@@ -178,6 +178,6 @@ defmodule GoogleApis.Generator.ElixirGenerator.ModelTest do
     models = Model.from_schemas(%{"Offers" => schema})
     assert 3 == length(models)
 
-    assert ["Offers", "OffersItems", "OffersItemsItems"] == Enum.map(models, & &1.name)
+    assert ["Offers", "OffersItems", "OffersItems1"] == Enum.map(models, & &1.name)
   end
 end
