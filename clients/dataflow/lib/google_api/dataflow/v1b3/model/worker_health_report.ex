@@ -22,23 +22,29 @@ defmodule GoogleApi.Dataflow.V1b3.Model.WorkerHealthReport do
 
   ## Attributes
 
+  - msg (String.t): A message describing any unusual health reports. Defaults to: `null`.
   - pods ([Object]): The pods running on the worker. See: http://kubernetes.io/v1.1/docs/api-reference/v1/definitions.html#_v1_pod  This field is used by the worker to send the status of the indvidual containers running on each worker. Defaults to: `null`.
   - reportInterval (String.t): The interval at which the worker is sending health reports. The default value of 0 should be interpreted as the field is not being explicitly set by the worker. Defaults to: `null`.
-  - vmIsHealthy (boolean()): Whether the VM is healthy. Defaults to: `null`.
+  - vmIsBroken (boolean()): Whether the VM is in a permanently broken state. Broken VMs should be abandoned or deleted ASAP to avoid assigning or completing any work. Defaults to: `null`.
+  - vmIsHealthy (boolean()): Whether the VM is currently healthy. Defaults to: `null`.
   - vmStartupTime (DateTime.t): The time the VM was booted. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :msg => any(),
           :pods => list(GoogleApi.Dataflow.V1b3.Model.Object.t()),
           :reportInterval => any(),
+          :vmIsBroken => any(),
           :vmIsHealthy => any(),
           :vmStartupTime => DateTime.t()
         }
 
+  field(:msg)
   field(:pods, as: GoogleApi.Dataflow.V1b3.Model.Object, type: :list)
   field(:reportInterval)
+  field(:vmIsBroken)
   field(:vmIsHealthy)
   field(:vmStartupTime, as: DateTime)
 end
