@@ -22,10 +22,10 @@ defmodule GoogleApi.Drive.V3.Model.PermissionTeamDrivePermissionDetails do
 
   ## Attributes
 
-  - inherited (boolean()): Whether this permission is inherited. This field is always populated. This is an output-only field. Defaults to: `null`.
-  - inheritedFrom (String.t): The ID of the item from which this permission is inherited. This is an output-only field and is only populated for members of the Team Drive. Defaults to: `null`.
-  - role (String.t): The primary role for this user. While new values may be added in the future, the following are currently possible:   - organizer  - fileOrganizer  - writer  - commenter  - reader Defaults to: `null`.
-  - teamDrivePermissionType (String.t): The Team Drive permission type for this user. While new values may be added in future, the following are currently possible:   - file  - member Defaults to: `null`.
+  - inherited (boolean()): Deprecated - use permissionDetails/inherited instead. Defaults to: `null`.
+  - inheritedFrom (String.t): Deprecated - use permissionDetails/inheritedFrom instead. Defaults to: `null`.
+  - role (String.t): Deprecated - use permissionDetails/role instead. Defaults to: `null`.
+  - teamDrivePermissionType (String.t): Deprecated - use permissionDetails/permissionType instead. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

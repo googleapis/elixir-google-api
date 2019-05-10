@@ -22,9 +22,9 @@ defmodule GoogleApi.Drive.V3.Model.AboutTeamDriveThemes do
 
   ## Attributes
 
-  - backgroundImageLink (String.t): A link to this Team Drive theme&#39;s background image. Defaults to: `null`.
-  - colorRgb (String.t): The color of this Team Drive theme as an RGB hex string. Defaults to: `null`.
-  - id (String.t): The ID of the theme. Defaults to: `null`.
+  - backgroundImageLink (String.t): Deprecated - use driveThemes/backgroundImageLink instead. Defaults to: `null`.
+  - colorRgb (String.t): Deprecated - use driveThemes/colorRgb instead. Defaults to: `null`.
+  - id (String.t): Deprecated - use driveThemes/id instead. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
