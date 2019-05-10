@@ -25,7 +25,7 @@ defmodule GoogleApi.Content.V2.Model.OrderCustomer do
   - email (String.t): Deprecated. Defaults to: `null`.
   - explicitMarketingPreference (boolean()): Deprecated. Please use marketingRightsInfo instead. Defaults to: `null`.
   - fullName (String.t): Full name of the customer. Defaults to: `null`.
-  - marketingRightsInfo (OrderCustomerMarketingRightsInfo): Customer&#39;s marketing preferences. Defaults to: `null`.
+  - marketingRightsInfo (OrderCustomerMarketingRightsInfo): Customer&#39;s marketing preferences. Contains the marketing opt-in information that is current at the time that the merchant call. User preference selections can change from one order to the next so preferences must be checked with every order. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
