@@ -93,6 +93,64 @@ defmodule GoogleApis.Generator.ElixirGenerator.ModelTest do
    }
   """
 
+  @nested_schema """
+  {
+    "id": "Offers",
+    "type": "object",
+    "properties": {
+     "items": {
+      "type": "array",
+      "description": "A list of offers.",
+      "items": {
+       "type": "object",
+       "properties": {
+        "artUrl": {
+         "type": "string"
+        },
+        "gservicesKey": {
+         "type": "string"
+        },
+        "id": {
+         "type": "string"
+        },
+        "items": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "author": {
+            "type": "string"
+           },
+           "canonicalVolumeLink": {
+            "type": "string"
+           },
+           "coverUrl": {
+            "type": "string"
+           },
+           "description": {
+            "type": "string"
+           },
+           "title": {
+            "type": "string"
+           },
+           "volumeId": {
+            "type": "string"
+           }
+          }
+         }
+        }
+       }
+      }
+     },
+     "kind": {
+      "type": "string",
+      "description": "Resource type.",
+      "default": "promooffer#offers"
+     }
+    }
+   }
+  """
+
   test "loads nested schemas" do
     schema = Poison.decode!(@test_schema, as: %JsonSchema{})
 
@@ -111,5 +169,15 @@ defmodule GoogleApis.Generator.ElixirGenerator.ModelTest do
 
     assert ["Annotation", "AnnotationClientVersionRanges", "AnnotationCurrentVersionRanges"] ==
              Enum.map(models, & &1.name)
+  end
+
+  @tag :wip
+  test "loads unnamed schemas depth first" do
+    schema = Poison.decode!(@nested_schema, as: %JsonSchema{})
+
+    models = Model.from_schemas(%{"Offers" => schema})
+    assert 3 == length(models)
+
+    assert ["Offers", "OffersItems", "OffersItemsItems"] == Enum.map(models, & &1.name)
   end
 end
