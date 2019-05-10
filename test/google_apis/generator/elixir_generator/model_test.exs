@@ -93,7 +93,7 @@ defmodule GoogleApis.Generator.ElixirGenerator.ModelTest do
    }
   """
 
-  @nested_schema """
+  @nested_unnamed_schema """
   {
     "id": "Offers",
     "type": "object",
@@ -151,6 +151,38 @@ defmodule GoogleApis.Generator.ElixirGenerator.ModelTest do
    }
   """
 
+  @nested_named_schema """
+  {
+    "properties": {
+      "accessInfo": {
+        "description": "Any information about a volume related to reading or obtaining that volume text. This information can depend on country (books may be public domain in one country but not in another, e.g.).",
+        "properties": {
+          "epub": {
+            "description": "Information about epub content. (In LITE projection.)",
+            "properties": {
+              "acsTokenLink": {
+                "description": "URL to retrieve ACS token for epub download. (In LITE projection.)",
+                "type": "string"
+              },
+              "downloadLink": {
+                "description": "URL to download epub. (In LITE projection.)",
+                "type": "string"
+              },
+              "isAvailable": {
+                "description": "Is a flowing text epub available either as public domain or for purchase. (In LITE projection.)",
+                "type": "boolean"
+              }
+            },
+            "type": "object"
+          }
+        },
+        "type": "object"
+      }
+    },
+    "type": "object"
+  }
+  """
+
   test "loads nested schemas" do
     schema = Poison.decode!(@test_schema, as: %JsonSchema{})
 
@@ -171,13 +203,21 @@ defmodule GoogleApis.Generator.ElixirGenerator.ModelTest do
              Enum.map(models, & &1.name)
   end
 
-  @tag :wip
-  test "loads unnamed schemas depth first" do
-    schema = Poison.decode!(@nested_schema, as: %JsonSchema{})
+  test "loads unnamed nested schemas depth first" do
+    schema = Poison.decode!(@nested_unnamed_schema, as: %JsonSchema{})
 
     models = Model.from_schemas(%{"Offers" => schema})
     assert 3 == length(models)
 
-    assert ["Offers", "OffersItems", "OffersItems1"] == Enum.map(models, & &1.name)
+    assert ["Offers", "OffersItems", "OffersItemsItems"] == Enum.map(models, & &1.name)
+  end
+
+  test "loads named nested schemas" do
+    schema = Poison.decode!(@nested_named_schema, as: %JsonSchema{})
+
+    models = Model.from_schemas(%{"Volume" => schema})
+    assert 3 == length(models)
+
+    assert ["Volume", "VolumeAccessInfo", "VolumeAccessInfoEpub"] == Enum.map(models, & &1.name)
   end
 end

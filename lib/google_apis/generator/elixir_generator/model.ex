@@ -54,55 +54,22 @@ defmodule GoogleApis.Generator.ElixirGenerator.Model do
   def from_schema(name, schema) do
     context =
       ResourceContext.empty()
-      |> ResourceContext.with_property(name)
 
-    from_schema("", schema, context)
-    |> fix_collisions
-  end
-
-  defp fix_collisions(models) do
-    do_fix_collisions(models)
-    |> Map.values()
-  end
-
-  defp do_fix_collisions([]), do: %{}
-
-  defp do_fix_collisions([model | rest]) do
-    do_fix_collisions(rest)
-    |> add_with_name_collision(model)
-  end
-
-  defp add_with_name_collision(by_name, model) do
-    if Map.has_key?(by_name, model.name) do
-      add_with_name_collision(by_name, model, 1)
-    else
-      Map.put(by_name, model.name, model)
-    end
-  end
-
-  defp add_with_name_collision(by_name, model, inc) do
-    new_name = "#{model.name}#{inc}"
-
-    if Map.has_key?(by_name, new_name) do
-      add_with_name_collision(by_name, model, inc + 1)
-    else
-      Map.put(by_name, new_name, Map.put(model, :name, new_name))
-    end
+    from_schema(name, schema, context)
   end
 
   defp from_schema(name, schema = %JsonSchema{type: "object", properties: properties}, context)
        when not is_nil(properties) do
     property_models =
       Enum.flat_map(properties, fn {n, s} ->
-        from_schema(n, s, context)
+        from_schema(n, s, ResourceContext.with_property(context, name))
       end)
 
     model = %__MODULE__{
       name: ResourceContext.name(context, name),
       description: schema.description,
-      properties: Map.keys(properties),
-      schema: []
-      # schema: schema
+      properties: [],
+      schema: schema
     }
 
     [model | property_models]

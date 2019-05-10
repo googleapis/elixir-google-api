@@ -28,9 +28,9 @@ defmodule GoogleApis.Generator.ElixirGeneratorTest do
       |> Enum.map(&Map.get(&1, :name))
       |> Enum.sort()
 
-    assert 5 == length(all_models)
+    assert 7 == length(all_models)
 
-    assert ~w(Container ContainerObjectVal DateContainer GenericContainer NestedContainer) ==
+    assert ~w(Container ContainerObjectVal DateContainer GenericContainer NestedContainer NestedContainerRows NestedContainerRowsNestedArrayValue) ==
              all_model_names
   end
 
