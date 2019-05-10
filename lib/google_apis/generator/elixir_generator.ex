@@ -111,7 +111,6 @@ defmodule GoogleApis.Generator.ElixirGenerator do
 
   defp write_api_files(token) do
     token.apis
-    |> Enum.take(1)
     |> Enum.each(fn api ->
       path = Path.join([token.base_dir, "api", Api.filename(api)])
       IO.puts("Writing #{api.name} to #{path}.")
