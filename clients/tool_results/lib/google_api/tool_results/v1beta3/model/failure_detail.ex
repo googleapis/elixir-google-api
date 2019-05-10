@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.ToolResults.V1beta3.Model.FailureDetail do
   @moduledoc """
-
+  Details for an outcome with a FAILURE outcome summary.
 
   ## Attributes
 
