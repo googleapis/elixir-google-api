@@ -26,6 +26,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.Snapshot do
   - id (String.t): The unique ID of this snapshot. Defaults to: `null`.
   - projectId (String.t): The project this snapshot belongs to. Defaults to: `null`.
   - sourceJobId (String.t): The job this snapshot was created from. Defaults to: `null`.
+  - state (String.t): State of the snapshot. Defaults to: `null`.
+    - Enum - one of [UNKNOWN_SNAPSHOT_STATE, PENDING, RUNNING, READY, FAILED, DELETED]
   - ttl (String.t): The time after which this snapshot will be automatically deleted. Defaults to: `null`.
   """
 
@@ -36,6 +38,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.Snapshot do
           :id => any(),
           :projectId => any(),
           :sourceJobId => any(),
+          :state => any(),
           :ttl => any()
         }
 
@@ -43,6 +46,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.Snapshot do
   field(:id)
   field(:projectId)
   field(:sourceJobId)
+  field(:state)
   field(:ttl)
 end
 
