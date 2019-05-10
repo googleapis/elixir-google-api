@@ -25,6 +25,8 @@ defmodule GoogleApi.Logging.V2.Model.MonitoredResourceDescriptor do
   - description (String.t): Optional. A detailed description of the monitored resource type that might be used in documentation. Defaults to: `null`.
   - displayName (String.t): Optional. A concise name for the monitored resource type that might be displayed in user interfaces. It should be a Title Cased Noun Phrase, without any article or other determiners. For example, \&quot;Google Cloud SQL Database\&quot;. Defaults to: `null`.
   - labels ([LabelDescriptor]): Required. A set of labels used to describe instances of this monitored resource type. For example, an individual Google Cloud SQL database is identified by values for the labels \&quot;database_id\&quot; and \&quot;zone\&quot;. Defaults to: `null`.
+  - launchStage (String.t): Optional. The launch stage of the monitored resource definition. Defaults to: `null`.
+    - Enum - one of [LAUNCH_STAGE_UNSPECIFIED, EARLY_ACCESS, ALPHA, BETA, GA, DEPRECATED]
   - name (String.t): Optional. The resource name of the monitored resource descriptor: \&quot;projects/{project_id}/monitoredResourceDescriptors/{type}\&quot; where {type} is the value of the type field in this object and {project_id} is a project ID that provides API-specific context for accessing the type. APIs that do not use project information can use the resource name format \&quot;monitoredResourceDescriptors/{type}\&quot;. Defaults to: `null`.
   - type (String.t): Required. The monitored resource type. For example, the type \&quot;cloudsql_database\&quot; represents databases in Google Cloud SQL. The maximum length of this value is 256 characters. Defaults to: `null`.
   """
@@ -35,6 +37,7 @@ defmodule GoogleApi.Logging.V2.Model.MonitoredResourceDescriptor do
           :description => any(),
           :displayName => any(),
           :labels => list(GoogleApi.Logging.V2.Model.LabelDescriptor.t()),
+          :launchStage => any(),
           :name => any(),
           :type => any()
         }
@@ -42,6 +45,7 @@ defmodule GoogleApi.Logging.V2.Model.MonitoredResourceDescriptor do
   field(:description)
   field(:displayName)
   field(:labels, as: GoogleApi.Logging.V2.Model.LabelDescriptor, type: :list)
+  field(:launchStage)
   field(:name)
   field(:type)
 end
