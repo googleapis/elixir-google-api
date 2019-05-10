@@ -30,6 +30,7 @@ defmodule GoogleApi.Container.V1.Model.NodePool do
   - management (NodeManagement): NodeManagement configuration for this NodePool. Defaults to: `null`.
   - maxPodsConstraint (MaxPodsConstraint): The constraint on the maximum number of pods that can be run simultaneously on a node in the node pool. Defaults to: `null`.
   - name (String.t): The name of the node pool. Defaults to: `null`.
+  - podIpv4CidrSize (integer()): [Output only] The pod CIDR block size per node in this node pool. Defaults to: `null`.
   - selfLink (String.t): [Output only] Server-defined URL for the resource. Defaults to: `null`.
   - status (String.t): [Output only] The status of the nodes in this pool instance. Defaults to: `null`.
     - Enum - one of [STATUS_UNSPECIFIED, PROVISIONING, RUNNING, RUNNING_WITH_ERROR, RECONCILING, STOPPING, ERROR]
@@ -48,6 +49,7 @@ defmodule GoogleApi.Container.V1.Model.NodePool do
           :management => GoogleApi.Container.V1.Model.NodeManagement.t(),
           :maxPodsConstraint => GoogleApi.Container.V1.Model.MaxPodsConstraint.t(),
           :name => any(),
+          :podIpv4CidrSize => any(),
           :selfLink => any(),
           :status => any(),
           :statusMessage => any(),
@@ -62,6 +64,7 @@ defmodule GoogleApi.Container.V1.Model.NodePool do
   field(:management, as: GoogleApi.Container.V1.Model.NodeManagement)
   field(:maxPodsConstraint, as: GoogleApi.Container.V1.Model.MaxPodsConstraint)
   field(:name)
+  field(:podIpv4CidrSize)
   field(:selfLink)
   field(:status)
   field(:statusMessage)

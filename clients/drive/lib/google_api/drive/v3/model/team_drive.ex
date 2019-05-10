@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.Drive.V3.Model.TeamDrive do
   @moduledoc """
-  Representation of a Team Drive.
+  Deprecated: use the drive collection instead.
 
   ## Attributes
 

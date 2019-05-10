@@ -42,7 +42,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
     - :ignoreDefaultVisibility (boolean()): Whether to ignore the domain&#39;s default visibility settings for the created file. Domain administrators can choose to make all uploaded files visible to the domain by default; this parameter bypasses that behavior for the request. Permissions are still inherited from parent folders.
     - :keepRevisionForever (boolean()): Whether to set the &#39;keepForever&#39; field in the new head revision. This is only applicable to files with binary content in Google Drive.
     - :ocrLanguage (String.t): A language hint for OCR processing during image import (ISO 639-1 code).
-    - :supportsAllDrives (boolean()): Whether the requesting application supports both My Drives and shared drives.
+    - :supportsAllDrives (boolean()): Deprecated - Whether the requesting application supports both My Drives and shared drives. This parameter will only be effective until June 1, 2020. Afterwards all applications are assumed to support shared drives.
     - :supportsTeamDrives (boolean()): Deprecated use supportsAllDrives instead.
     - :body (File): 
 
@@ -100,7 +100,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
     - :ignoreDefaultVisibility (boolean()): Whether to ignore the domain&#39;s default visibility settings for the created file. Domain administrators can choose to make all uploaded files visible to the domain by default; this parameter bypasses that behavior for the request. Permissions are still inherited from parent folders.
     - :keepRevisionForever (boolean()): Whether to set the &#39;keepForever&#39; field in the new head revision. This is only applicable to files with binary content in Google Drive.
     - :ocrLanguage (String.t): A language hint for OCR processing during image import (ISO 639-1 code).
-    - :supportsAllDrives (boolean()): Whether the requesting application supports both My Drives and shared drives.
+    - :supportsAllDrives (boolean()): Deprecated - Whether the requesting application supports both My Drives and shared drives. This parameter will only be effective until June 1, 2020. Afterwards all applications are assumed to support shared drives.
     - :supportsTeamDrives (boolean()): Deprecated use supportsAllDrives instead.
     - :useContentAsIndexableText (boolean()): Whether to use the uploaded content as indexable text.
     - :body (File): 
@@ -159,7 +159,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
     - :ignoreDefaultVisibility (boolean()): Whether to ignore the domain&#39;s default visibility settings for the created file. Domain administrators can choose to make all uploaded files visible to the domain by default; this parameter bypasses that behavior for the request. Permissions are still inherited from parent folders.
     - :keepRevisionForever (boolean()): Whether to set the &#39;keepForever&#39; field in the new head revision. This is only applicable to files with binary content in Google Drive.
     - :ocrLanguage (String.t): A language hint for OCR processing during image import (ISO 639-1 code).
-    - :supportsAllDrives (boolean()): Whether the requesting application supports both My Drives and shared drives.
+    - :supportsAllDrives (boolean()): Deprecated - Whether the requesting application supports both My Drives and shared drives. This parameter will only be effective until June 1, 2020. Afterwards all applications are assumed to support shared drives.
     - :supportsTeamDrives (boolean()): Deprecated use supportsAllDrives instead.
     - :useContentAsIndexableText (boolean()): Whether to use the uploaded content as indexable text.
     - :body (File): 
@@ -221,7 +221,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
     - :ignoreDefaultVisibility (boolean()): Whether to ignore the domain&#39;s default visibility settings for the created file. Domain administrators can choose to make all uploaded files visible to the domain by default; this parameter bypasses that behavior for the request. Permissions are still inherited from parent folders.
     - :keepRevisionForever (boolean()): Whether to set the &#39;keepForever&#39; field in the new head revision. This is only applicable to files with binary content in Google Drive.
     - :ocrLanguage (String.t): A language hint for OCR processing during image import (ISO 639-1 code).
-    - :supportsAllDrives (boolean()): Whether the requesting application supports both My Drives and shared drives.
+    - :supportsAllDrives (boolean()): Deprecated - Whether the requesting application supports both My Drives and shared drives. This parameter will only be effective until June 1, 2020. Afterwards all applications are assumed to support shared drives.
     - :supportsTeamDrives (boolean()): Deprecated use supportsAllDrives instead.
     - :useContentAsIndexableText (boolean()): Whether to use the uploaded content as indexable text.
 
@@ -290,7 +290,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :supportsAllDrives (boolean()): Whether the requesting application supports both My Drives and shared drives.
+    - :supportsAllDrives (boolean()): Deprecated - Whether the requesting application supports both My Drives and shared drives. This parameter will only be effective until June 1, 2020. Afterwards all applications are assumed to support shared drives.
     - :supportsTeamDrives (boolean()): Deprecated use supportsAllDrives instead.
 
   ## Returns
@@ -483,7 +483,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :acknowledgeAbuse (boolean()): Whether the user is acknowledging the risk of downloading known malware or other abusive files. This is only applicable when alt&#x3D;media.
-    - :supportsAllDrives (boolean()): Whether the requesting application supports both My Drives and shared drives.
+    - :supportsAllDrives (boolean()): Deprecated - Whether the requesting application supports both My Drives and shared drives. This parameter will only be effective until June 1, 2020. Afterwards all applications are assumed to support shared drives.
     - :supportsTeamDrives (boolean()): Deprecated use supportsAllDrives instead.
 
   ## Returns
@@ -537,14 +537,14 @@ defmodule GoogleApi.Drive.V3.Api.Files do
     - :corpora (String.t): Bodies of items (files/documents) to which the query applies. Supported bodies are &#39;user&#39;, &#39;domain&#39;, &#39;drive&#39; and &#39;allDrives&#39;. Prefer &#39;user&#39; or &#39;drive&#39; to &#39;allDrives&#39; for efficiency.
     - :corpus (String.t): The source of files to list. Deprecated: use &#39;corpora&#39; instead.
     - :driveId (String.t): ID of the shared drive to search.
-    - :includeItemsFromAllDrives (boolean()): Whether both My Drive and shared drive items should be included in results.
+    - :includeItemsFromAllDrives (boolean()): Deprecated - Whether both My Drive and shared drive items should be included in results. This parameter will only be effective until June 1, 2020. Afterwards shared drive items will be included in the results.
     - :includeTeamDriveItems (boolean()): Deprecated use includeItemsFromAllDrives instead.
     - :orderBy (String.t): A comma-separated list of sort keys. Valid keys are &#39;createdTime&#39;, &#39;folder&#39;, &#39;modifiedByMeTime&#39;, &#39;modifiedTime&#39;, &#39;name&#39;, &#39;name_natural&#39;, &#39;quotaBytesUsed&#39;, &#39;recency&#39;, &#39;sharedWithMeTime&#39;, &#39;starred&#39;, and &#39;viewedByMeTime&#39;. Each key sorts ascending by default, but may be reversed with the &#39;desc&#39; modifier. Example usage: ?orderBy&#x3D;folder,modifiedTime desc,name. Please note that there is a current limitation for users with approximately one million files in which the requested sort order is ignored.
     - :pageSize (integer()): The maximum number of files to return per page. Partial or empty result pages are possible even before the end of the files list has been reached.
     - :pageToken (String.t): The token for continuing a previous list request on the next page. This should be set to the value of &#39;nextPageToken&#39; from the previous response.
     - :q (String.t): A query for filtering the file results. See the \&quot;Search for Files\&quot; guide for supported syntax.
     - :spaces (String.t): A comma-separated list of spaces to query within the corpus. Supported values are &#39;drive&#39;, &#39;appDataFolder&#39; and &#39;photos&#39;.
-    - :supportsAllDrives (boolean()): Whether the requesting application supports both My Drives and shared drives.
+    - :supportsAllDrives (boolean()): Deprecated - Whether the requesting application supports both My Drives and shared drives. This parameter will only be effective until June 1, 2020. Afterwards all applications are assumed to support shared drives.
     - :supportsTeamDrives (boolean()): Deprecated use supportsAllDrives instead.
     - :teamDriveId (String.t): Deprecated use driveId instead.
 
@@ -609,7 +609,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
     - :keepRevisionForever (boolean()): Whether to set the &#39;keepForever&#39; field in the new head revision. This is only applicable to files with binary content in Google Drive.
     - :ocrLanguage (String.t): A language hint for OCR processing during image import (ISO 639-1 code).
     - :removeParents (String.t): A comma-separated list of parent IDs to remove.
-    - :supportsAllDrives (boolean()): Whether the requesting application supports both My Drives and shared drives.
+    - :supportsAllDrives (boolean()): Deprecated - Whether the requesting application supports both My Drives and shared drives. This parameter will only be effective until June 1, 2020. Afterwards all applications are assumed to support shared drives.
     - :supportsTeamDrives (boolean()): Deprecated use supportsAllDrives instead.
     - :useContentAsIndexableText (boolean()): Whether to use the uploaded content as indexable text.
     - :body (File): 
@@ -673,7 +673,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
     - :keepRevisionForever (boolean()): Whether to set the &#39;keepForever&#39; field in the new head revision. This is only applicable to files with binary content in Google Drive.
     - :ocrLanguage (String.t): A language hint for OCR processing during image import (ISO 639-1 code).
     - :removeParents (String.t): A comma-separated list of parent IDs to remove.
-    - :supportsAllDrives (boolean()): Whether the requesting application supports both My Drives and shared drives.
+    - :supportsAllDrives (boolean()): Deprecated - Whether the requesting application supports both My Drives and shared drives. This parameter will only be effective until June 1, 2020. Afterwards all applications are assumed to support shared drives.
     - :supportsTeamDrives (boolean()): Deprecated use supportsAllDrives instead.
     - :useContentAsIndexableText (boolean()): Whether to use the uploaded content as indexable text.
     - :body (File): 
@@ -746,7 +746,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
     - :keepRevisionForever (boolean()): Whether to set the &#39;keepForever&#39; field in the new head revision. This is only applicable to files with binary content in Google Drive.
     - :ocrLanguage (String.t): A language hint for OCR processing during image import (ISO 639-1 code).
     - :removeParents (String.t): A comma-separated list of parent IDs to remove.
-    - :supportsAllDrives (boolean()): Whether the requesting application supports both My Drives and shared drives.
+    - :supportsAllDrives (boolean()): Deprecated - Whether the requesting application supports both My Drives and shared drives. This parameter will only be effective until June 1, 2020. Afterwards all applications are assumed to support shared drives.
     - :supportsTeamDrives (boolean()): Deprecated use supportsAllDrives instead.
     - :useContentAsIndexableText (boolean()): Whether to use the uploaded content as indexable text.
 
@@ -821,7 +821,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :acknowledgeAbuse (boolean()): Whether the user is acknowledging the risk of downloading known malware or other abusive files. This is only applicable when alt&#x3D;media.
-    - :supportsAllDrives (boolean()): Whether the requesting application supports both My Drives and shared drives.
+    - :supportsAllDrives (boolean()): Deprecated - Whether the requesting application supports both My Drives and shared drives. This parameter will only be effective until June 1, 2020. Afterwards all applications are assumed to support shared drives.
     - :supportsTeamDrives (boolean()): Deprecated use supportsAllDrives instead.
     - :resource (Channel): 
 

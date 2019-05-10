@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.ToolResults.V1beta3.Model.SuccessDetail do
   @moduledoc """
-
+  Details for an outcome with a SUCCESS outcome summary.
 
   ## Attributes
 

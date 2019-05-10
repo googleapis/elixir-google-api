@@ -22,7 +22,7 @@ defmodule GoogleApi.Container.V1.Model.MasterAuthorizedNetworksConfig do
 
   ## Attributes
 
-  - cidrBlocks ([CidrBlock]): cidr_blocks define up to 10 external networks that could access Kubernetes master through HTTPS. Defaults to: `null`.
+  - cidrBlocks ([CidrBlock]): cidr_blocks define up to 50 external networks that could access Kubernetes master through HTTPS. Defaults to: `null`.
   - enabled (boolean()): Whether or not master authorized networks is enabled. Defaults to: `null`.
   """
 

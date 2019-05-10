@@ -165,6 +165,11 @@
     "url": "https://cloudresourcemanager.googleapis.com/$discovery/rest?version=v1"
   },
   {
+    "version": "v1alpha1",
+    "url": "https://run.googleapis.com/$discovery/rest?version=v1alpha1",
+    "name": "CloudRun"
+  },
+  {
     "version": "v1",
     "name": "CloudShell",
     "url": "https://cloudshell.googleapis.com/$discovery/rest?version=v1"

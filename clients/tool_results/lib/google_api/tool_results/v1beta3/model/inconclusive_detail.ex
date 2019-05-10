@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.ToolResults.V1beta3.Model.InconclusiveDetail do
   @moduledoc """
-
+  Details for an outcome with an INCONCLUSIVE outcome summary.
 
   ## Attributes
 

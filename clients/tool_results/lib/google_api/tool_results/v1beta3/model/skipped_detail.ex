@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.ToolResults.V1beta3.Model.SkippedDetail do
   @moduledoc """
-
+  Details for an outcome with a SKIPPED outcome summary.
 
   ## Attributes
 

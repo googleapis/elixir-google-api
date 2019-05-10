@@ -23,7 +23,7 @@ defmodule GoogleApi.Storage.V1.Model.HmacKey do
   ## Attributes
 
   - kind (String.t): The kind of item this is. For HMAC keys, this is always storage#hmacKey. Defaults to: `null`.
-  - metadata (String.t): Key metadata. Defaults to: `null`.
+  - metadata (HmacKeyMetadata): Key metadata. Defaults to: `null`.
   - secret (String.t): HMAC secret key material. Defaults to: `null`.
   """
 
@@ -31,12 +31,12 @@ defmodule GoogleApi.Storage.V1.Model.HmacKey do
 
   @type t :: %__MODULE__{
           :kind => any(),
-          :metadata => any(),
+          :metadata => GoogleApi.Storage.V1.Model.HmacKeyMetadata.t(),
           :secret => any()
         }
 
   field(:kind)
-  field(:metadata)
+  field(:metadata, as: GoogleApi.Storage.V1.Model.HmacKeyMetadata)
   field(:secret)
 end
 

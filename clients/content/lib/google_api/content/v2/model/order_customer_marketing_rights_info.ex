@@ -22,7 +22,7 @@ defmodule GoogleApi.Content.V2.Model.OrderCustomerMarketingRightsInfo do
 
   ## Attributes
 
-  - explicitMarketingPreference (String.t): Last known user selection regarding marketing preferences. In certain cases this selection might not be known, so this field would be empty. Defaults to: `null`.
+  - explicitMarketingPreference (String.t): Last known customer selection regarding marketing preferences. In certain cases this selection might not be known, so this field would be empty. If a customer selected granted in their most recent order, they can be subscribed to marketing emails. Customers who have chosen denied must not be subscribed, or must be unsubscribed if already opted-in. Defaults to: `null`.
   - lastUpdatedTimestamp (String.t): Timestamp when last time marketing preference was updated. Could be empty, if user wasn&#39;t offered a selection yet. Defaults to: `null`.
   - marketingEmailAddress (String.t): Email address that can be used for marketing purposes. The field may be empty even if explicitMarketingPreference is &#39;granted&#39;. This happens when retrieving an old order from the customer who deleted their account. Defaults to: `null`.
   """
