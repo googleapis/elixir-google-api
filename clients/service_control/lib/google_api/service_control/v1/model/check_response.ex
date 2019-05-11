@@ -27,6 +27,7 @@ defmodule GoogleApi.ServiceControl.V1.Model.CheckResponse do
   - operationId (String.t): The same operation_id value used in the CheckRequest. Used for logging and diagnostics purposes. Defaults to: `null`.
   - quotaInfo (QuotaInfo): Quota information for the check request associated with this response.  Defaults to: `null`.
   - serviceConfigId (String.t): The actual config id used to process the request. Defaults to: `null`.
+  - serviceRolloutId (String.t): Unimplemented. The current service rollout id used to process the request. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -36,7 +37,8 @@ defmodule GoogleApi.ServiceControl.V1.Model.CheckResponse do
           :checkInfo => GoogleApi.ServiceControl.V1.Model.CheckInfo.t(),
           :operationId => any(),
           :quotaInfo => GoogleApi.ServiceControl.V1.Model.QuotaInfo.t(),
-          :serviceConfigId => any()
+          :serviceConfigId => any(),
+          :serviceRolloutId => any()
         }
 
   field(:checkErrors, as: GoogleApi.ServiceControl.V1.Model.CheckError, type: :list)
@@ -44,6 +46,7 @@ defmodule GoogleApi.ServiceControl.V1.Model.CheckResponse do
   field(:operationId)
   field(:quotaInfo, as: GoogleApi.ServiceControl.V1.Model.QuotaInfo)
   field(:serviceConfigId)
+  field(:serviceRolloutId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ServiceControl.V1.Model.CheckResponse do

@@ -25,6 +25,7 @@ defmodule GoogleApi.ServiceControl.V1.Model.ReportResponse do
   - reportErrors ([ReportError]): Partial failures, one for each &#x60;Operation&#x60; in the request that failed processing. There are three possible combinations of the RPC status:  1. The combination of a successful RPC status and an empty &#x60;report_errors&#x60;    list indicates a complete success where all &#x60;Operations&#x60; in the    request are processed successfully. 2. The combination of a successful RPC status and a non-empty    &#x60;report_errors&#x60; list indicates a partial success where some    &#x60;Operations&#x60; in the request succeeded. Each    &#x60;Operation&#x60; that failed processing has a corresponding item    in this list. 3. A failed RPC status indicates a general non-deterministic failure.    When this happens, it&#39;s impossible to know which of the    &#39;Operations&#39; in the request succeeded or failed. Defaults to: `null`.
   - reportInfos ([ReportInfo]): Quota usage for each quota release &#x60;Operation&#x60; request.  Fully or partially failed quota release request may or may not be present in &#x60;report_quota_info&#x60;. For example, a failed quota release request will have the current quota usage info when precise quota library returns the info. A deadline exceeded quota request will not have quota usage info.  If there is no quota release request, report_quota_info will be empty.  Defaults to: `null`.
   - serviceConfigId (String.t): The actual config id used to process the request. Defaults to: `null`.
+  - serviceRolloutId (String.t): Unimplemented. The current service rollout id used to process the request. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -32,12 +33,14 @@ defmodule GoogleApi.ServiceControl.V1.Model.ReportResponse do
   @type t :: %__MODULE__{
           :reportErrors => list(GoogleApi.ServiceControl.V1.Model.ReportError.t()),
           :reportInfos => list(GoogleApi.ServiceControl.V1.Model.ReportInfo.t()),
-          :serviceConfigId => any()
+          :serviceConfigId => any(),
+          :serviceRolloutId => any()
         }
 
   field(:reportErrors, as: GoogleApi.ServiceControl.V1.Model.ReportError, type: :list)
   field(:reportInfos, as: GoogleApi.ServiceControl.V1.Model.ReportInfo, type: :list)
   field(:serviceConfigId)
+  field(:serviceRolloutId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ServiceControl.V1.Model.ReportResponse do
