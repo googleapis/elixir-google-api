@@ -16,17 +16,17 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudRun.V1alpha1.Model.ServiceCondition do
+defmodule GoogleApi.CloudRun.V1alpha1.Model.TriggerCondition do
   @moduledoc """
-  ServiceCondition defines a readiness condition for a Service.
+  TriggerCondition contains state information for an Trigger.
 
   ## Attributes
 
   - lastTransitionTime (DateTime.t): Last time the condition transitioned from one status to another. +optional Defaults to: `null`.
-  - message (String.t): Human-readable message indicating details about last transition. +optional Defaults to: `null`.
-  - reason (String.t): One-word CamelCase reason for the condition&#39;s last transition. +optional Defaults to: `null`.
+  - message (String.t): Human readable message indicating details about the current status. +optional Defaults to: `null`.
+  - reason (String.t): One-word CamelCase reason for the condition&#39;s current status. +optional Defaults to: `null`.
   - status (String.t): Status of the condition, one of True, False, Unknown. Defaults to: `null`.
-  - type (String.t): ServiceConditionType is used to communicate the status of the reconciliation process. See also: https://github.com/knative/serving/blob/master/docs/spec/errors.md#error-conditions-and-reporting  Types include: \&quot;Ready\&quot;, \&quot;ConfigurationsReady\&quot;, and \&quot;RoutesReady\&quot;. \&quot;Ready\&quot; will be true when the underlying Route and Configuration are ready. Defaults to: `null`.
+  - type (String.t): Type of Trigger condition. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -46,13 +46,13 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ServiceCondition do
   field(:type)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudRun.V1alpha1.Model.ServiceCondition do
+defimpl Poison.Decoder, for: GoogleApi.CloudRun.V1alpha1.Model.TriggerCondition do
   def decode(value, options) do
-    GoogleApi.CloudRun.V1alpha1.Model.ServiceCondition.decode(value, options)
+    GoogleApi.CloudRun.V1alpha1.Model.TriggerCondition.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.CloudRun.V1alpha1.Model.ServiceCondition do
+defimpl Poison.Encoder, for: GoogleApi.CloudRun.V1alpha1.Model.TriggerCondition do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

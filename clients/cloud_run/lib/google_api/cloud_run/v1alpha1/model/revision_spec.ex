@@ -25,6 +25,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.RevisionSpec do
   - concurrencyModel (String.t): ConcurrencyModel specifies the desired concurrency model (Single or Multi) for the Revision. Defaults to Multi. Deprecated in favor of ContainerConcurrency. +optional Defaults to: `null`.
   - container (Container): Container defines the unit of execution for this Revision. In the context of a Revision, we disallow a number of the fields of this Container, including: name, ports, and volumeMounts. The runtime contract is documented here: https://github.com/knative/serving/blob/master/docs/runtime-contract.md Defaults to: `null`.
   - containerConcurrency (integer()): ContainerConcurrency specifies the maximum allowed in-flight (concurrent) requests per container of the Revision. Values are: - &#x60;0&#x60; thread-safe, the system should manage the max concurrency. This is    the default value. - &#x60;1&#x60; not-thread-safe. Single concurrency - &#x60;2-N&#x60; thread-safe, max concurrency of N Defaults to: `null`.
+  - containers ([Container]): Containers holds the single container that defines the unit of execution for this Revision. In the context of a Revision, we disallow a number of fields on this Container, including: name and lifecycle. Defaults to: `null`.
   - generation (integer()): Deprecated and not currently populated by Cloud Run. See metadata.generation instead, which is the sequence number containing the latest generation of the desired state.  Read-only. Defaults to: `null`.
   - serviceAccountName (String.t): Not currently used by Cloud Run. Defaults to: `null`.
   - servingState (String.t): ServingState holds a value describing the state the resources are in for this Revision. Users must not specify this when creating a revision. It is expected that the system will manipulate this based on routability and load.  Populated by the system. Read-only. Defaults to: `null`.
@@ -38,6 +39,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.RevisionSpec do
           :concurrencyModel => any(),
           :container => GoogleApi.CloudRun.V1alpha1.Model.Container.t(),
           :containerConcurrency => any(),
+          :containers => list(GoogleApi.CloudRun.V1alpha1.Model.Container.t()),
           :generation => any(),
           :serviceAccountName => any(),
           :servingState => any(),
@@ -47,6 +49,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.RevisionSpec do
   field(:concurrencyModel)
   field(:container, as: GoogleApi.CloudRun.V1alpha1.Model.Container)
   field(:containerConcurrency)
+  field(:containers, as: GoogleApi.CloudRun.V1alpha1.Model.Container, type: :list)
   field(:generation)
   field(:serviceAccountName)
   field(:servingState)

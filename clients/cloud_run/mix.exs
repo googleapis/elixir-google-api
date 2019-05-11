@@ -1,7 +1,7 @@
 defmodule GoogleApi.CloudRun.V1alpha1.Mixfile do
   use Mix.Project
 
-  @version "0.0.1"
+  @version "0.1.0"
 
   def project do
     [app: :google_api_cloud_run,
@@ -12,7 +12,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Mixfile do
      description: description(),
      package: package(),
      deps: deps(),
-     source_url: "https://github.com/GoogleCloudPlatform/elixir-google-api/tree/master/clients/cloud_run"
+     source_url: "https://github.com/GoogleCloudPlatform/elixir-google-api/tree/master/clients/FIXME"
     ]
   end
 
@@ -40,7 +40,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Mixfile do
       maintainers: ["Jeff Ching"],
       licenses: ["Apache 2.0"],
       links: %{
-        "GitHub" => "https://github.com/GoogleCloudPlatform/elixir-google-api/tree/master/clients/cloud_run",
+        "GitHub" => "https://github.com/GoogleCloudPlatform/elixir-google-api/tree/master/clients/FIXME",
         "Homepage" => "https://cloud.google.com/run/"
       }
     ]

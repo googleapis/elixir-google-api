@@ -22,7 +22,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.RouteCondition do
 
   ## Attributes
 
-  - lastTransitionTime (String.t): Last time the condition transitioned from one status to another. +optional Defaults to: `null`.
+  - lastTransitionTime (DateTime.t): Last time the condition transitioned from one status to another. +optional Defaults to: `null`.
   - message (String.t): Human-readable message indicating details about last transition. +optional Defaults to: `null`.
   - reason (String.t): One-word CamelCase reason for the condition&#39;s last transition. +optional Defaults to: `null`.
   - status (String.t): Status of the condition, one of \&quot;True\&quot;, \&quot;False\&quot;, \&quot;Unknown\&quot;. Defaults to: `null`.
@@ -32,14 +32,14 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.RouteCondition do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :lastTransitionTime => any(),
+          :lastTransitionTime => DateTime.t(),
           :message => any(),
           :reason => any(),
           :status => any(),
           :type => any()
         }
 
-  field(:lastTransitionTime)
+  field(:lastTransitionTime, as: DateTime)
   field(:message)
   field(:reason)
   field(:status)

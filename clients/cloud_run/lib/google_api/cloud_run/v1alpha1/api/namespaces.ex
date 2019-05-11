@@ -32,19 +32,19 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
   - connection (GoogleApi.CloudRun.V1alpha1.Connection): Connection to server
   - namespaces_id (String.t): Part of &#x60;parent&#x60;. Name of the parent Application resource. Example: &#x60;apps/myapp&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :pageToken (String.t): Continuation token for fetching the next page of results.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :pageSize (integer()): Maximum results to return per page.
+    - :pageToken (String.t): Continuation token for fetching the next page of results.
 
   ## Returns
 
@@ -61,19 +61,19 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
         opts \\ []
       ) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :pageToken => :query,
-      :pageSize => :query
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
@@ -103,17 +103,17 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
   - namespaces_id (String.t): Part of &#x60;name&#x60;. The name of the configuration being retrieved. If needed, replace {namespace_id} with the project ID.
   - configurations_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;namespacesId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -130,17 +130,17 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
         opts \\ []
       ) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :access_token => :query
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -168,24 +168,24 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
   - connection (GoogleApi.CloudRun.V1alpha1.Connection): Connection to server
   - namespaces_id (String.t): Part of &#x60;parent&#x60;. The project ID or project number from which the configurations should be listed.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :limit (integer()): The maximum number of records that should be returned.
-    - :watch (boolean()): Flag that indicates that the client expects to watch this resource as well. Not currently used by Cloud Run.
-    - :labelSelector (String.t): Allows to filter resources based on a label. Supported operations are &#x3D;, !&#x3D;, exists, in, and notIn.
-    - :resourceVersion (String.t): The baseline resource version from which the list or watch operation should start. Not currently used by Cloud Run.
-    - :includeUninitialized (boolean()): Not currently used by Cloud Run.
-    - :fieldSelector (String.t): Allows to filter resources based on a specific value for a field name. Send this in a query string format. i.e. &#39;metadata.name%3Dlorem&#39;. Not currently used by Cloud Run.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :continue (String.t): Optional encoded string to continue paging.
+    - :fieldSelector (String.t): Allows to filter resources based on a specific value for a field name. Send this in a query string format. i.e. &#39;metadata.name%3Dlorem&#39;. Not currently used by Cloud Run.
+    - :includeUninitialized (boolean()): Not currently used by Cloud Run.
+    - :labelSelector (String.t): Allows to filter resources based on a label. Supported operations are &#x3D;, !&#x3D;, exists, in, and notIn.
+    - :limit (integer()): The maximum number of records that should be returned.
+    - :resourceVersion (String.t): The baseline resource version from which the list or watch operation should start. Not currently used by Cloud Run.
+    - :watch (boolean()): Flag that indicates that the client expects to watch this resource as well. Not currently used by Cloud Run.
 
   ## Returns
 
@@ -202,24 +202,24 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
         opts \\ []
       ) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :limit => :query,
-      :watch => :query,
-      :labelSelector => :query,
-      :resourceVersion => :query,
-      :includeUninitialized => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :continue => :query,
       :fieldSelector => :query,
-      :continue => :query
+      :includeUninitialized => :query,
+      :labelSelector => :query,
+      :limit => :query,
+      :resourceVersion => :query,
+      :watch => :query
     }
 
     request =
@@ -248,17 +248,17 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
   - connection (GoogleApi.CloudRun.V1alpha1.Connection): Connection to server
   - namespaces_id (String.t): Part of &#x60;parent&#x60;. The project ID or project number in which this domain mapping should be created.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (DomainMapping): 
 
   ## Returns
@@ -275,17 +275,17 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
         opts \\ []
       ) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -314,21 +314,21 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
   - namespaces_id (String.t): Part of &#x60;name&#x60;. The name of the domain mapping being deleted. If needed, replace {namespace_id} with the project ID.
   - domainmappings_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;namespacesId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :propagationPolicy (String.t): Specifies the propagation policy of delete. Cloud Run currently ignores this setting, and deletes in the background. Please see kubernetes.io/docs/concepts/workloads/controllers/garbage-collection/ for more information.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :apiVersion (String.t): Cloud Run currently ignores this parameter.
     - :kind (String.t): Cloud Run currently ignores this parameter.
     - :orphanDependents (boolean()): Deprecated. Specifies the cascade behavior on delete. Cloud Run only supports cascading behavior, so this must be false. This attribute is deprecated, and is now replaced with PropagationPolicy See https://github.com/kubernetes/kubernetes/issues/46659 for more info.
-    - :apiVersion (String.t): Cloud Run currently ignores this parameter.
+    - :propagationPolicy (String.t): Specifies the propagation policy of delete. Cloud Run currently ignores this setting, and deletes in the background. Please see kubernetes.io/docs/concepts/workloads/controllers/garbage-collection/ for more information.
 
   ## Returns
 
@@ -349,21 +349,21 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
         opts \\ []
       ) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :propagationPolicy => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :apiVersion => :query,
       :kind => :query,
       :orphanDependents => :query,
-      :apiVersion => :query
+      :propagationPolicy => :query
     }
 
     request =
@@ -392,17 +392,17 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
   - namespaces_id (String.t): Part of &#x60;name&#x60;. The name of the domain mapping being retrieved. If needed, replace {namespace_id} with the project ID.
   - domainmappings_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;namespacesId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -419,17 +419,17 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
         opts \\ []
       ) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :access_token => :query
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -457,23 +457,23 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
   - connection (GoogleApi.CloudRun.V1alpha1.Connection): Connection to server
   - namespaces_id (String.t): Part of &#x60;parent&#x60;. The project ID or project number from which the domain mappings should be listed.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :labelSelector (String.t): Allows to filter resources based on a label. Supported operations are &#x3D;, !&#x3D;, exists, in, and notIn.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :continue (String.t): Optional encoded string to continue paging.
     - :fieldSelector (String.t): Allows to filter resources based on a specific value for a field name. Send this in a query string format. i.e. &#39;metadata.name%3Dlorem&#39;. Not currently used by Cloud Run.
     - :includeUninitialized (boolean()): Not currently used by Cloud Run.
-    - :resourceVersion (String.t): The baseline resource version from which the list or watch operation should start. Not currently used by Cloud Run.
-    - :continue (String.t): Optional encoded string to continue paging.
+    - :labelSelector (String.t): Allows to filter resources based on a label. Supported operations are &#x3D;, !&#x3D;, exists, in, and notIn.
     - :limit (integer()): The maximum number of records that should be returned.
+    - :resourceVersion (String.t): The baseline resource version from which the list or watch operation should start. Not currently used by Cloud Run.
     - :watch (boolean()): Flag that indicates that the client expects to watch this resource as well. Not currently used by Cloud Run.
 
   ## Returns
@@ -491,23 +491,23 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
         opts \\ []
       ) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :labelSelector => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :continue => :query,
       :fieldSelector => :query,
       :includeUninitialized => :query,
-      :resourceVersion => :query,
-      :continue => :query,
+      :labelSelector => :query,
       :limit => :query,
+      :resourceVersion => :query,
       :watch => :query
     }
 
@@ -538,21 +538,21 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
   - namespaces_id (String.t): Part of &#x60;name&#x60;. The name of the revision being deleted. If needed, replace {namespace_id} with the project ID.
   - revisions_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;namespacesId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :propagationPolicy (String.t): Specifies the propagation policy of delete. Cloud Run currently ignores this setting, and deletes in the background. Please see kubernetes.io/docs/concepts/workloads/controllers/garbage-collection/ for more information.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :apiVersion (String.t): Cloud Run currently ignores this parameter.
     - :kind (String.t): Cloud Run currently ignores this parameter.
     - :orphanDependents (boolean()): Deprecated. Specifies the cascade behavior on delete. Cloud Run only supports cascading behavior, so this must be false. This attribute is deprecated, and is now replaced with PropagationPolicy See https://github.com/kubernetes/kubernetes/issues/46659 for more info.
-    - :apiVersion (String.t): Cloud Run currently ignores this parameter.
+    - :propagationPolicy (String.t): Specifies the propagation policy of delete. Cloud Run currently ignores this setting, and deletes in the background. Please see kubernetes.io/docs/concepts/workloads/controllers/garbage-collection/ for more information.
 
   ## Returns
 
@@ -569,21 +569,21 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
         opts \\ []
       ) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :propagationPolicy => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :apiVersion => :query,
       :kind => :query,
       :orphanDependents => :query,
-      :apiVersion => :query
+      :propagationPolicy => :query
     }
 
     request =
@@ -612,17 +612,17 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
   - namespaces_id (String.t): Part of &#x60;name&#x60;. The name of the revision being retrieved. If needed, replace {namespace_id} with the project ID.
   - revisions_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;namespacesId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -639,17 +639,17 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
         opts \\ []
       ) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :access_token => :query
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -677,24 +677,24 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
   - connection (GoogleApi.CloudRun.V1alpha1.Connection): Connection to server
   - namespaces_id (String.t): Part of &#x60;parent&#x60;. The project ID or project number from which the revisions should be listed.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :limit (integer()): The maximum number of records that should be returned.
-    - :watch (boolean()): Flag that indicates that the client expects to watch this resource as well. Not currently used by Cloud Run.
-    - :labelSelector (String.t): Allows to filter resources based on a label. Supported operations are &#x3D;, !&#x3D;, exists, in, and notIn.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :continue (String.t): Optional encoded string to continue paging.
     - :fieldSelector (String.t): Allows to filter resources based on a specific value for a field name. Send this in a query string format. i.e. &#39;metadata.name%3Dlorem&#39;. Not currently used by Cloud Run.
     - :includeUninitialized (boolean()): Not currently used by Cloud Run.
+    - :labelSelector (String.t): Allows to filter resources based on a label. Supported operations are &#x3D;, !&#x3D;, exists, in, and notIn.
+    - :limit (integer()): The maximum number of records that should be returned.
     - :resourceVersion (String.t): The baseline resource version from which the list or watch operation should start. Not currently used by Cloud Run.
-    - :continue (String.t): Optional encoded string to continue paging.
+    - :watch (boolean()): Flag that indicates that the client expects to watch this resource as well. Not currently used by Cloud Run.
 
   ## Returns
 
@@ -706,24 +706,24 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
           | {:error, Tesla.Env.t()}
   def run_namespaces_revisions_list(connection, namespaces_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :limit => :query,
-      :watch => :query,
-      :labelSelector => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :continue => :query,
       :fieldSelector => :query,
       :includeUninitialized => :query,
+      :labelSelector => :query,
+      :limit => :query,
       :resourceVersion => :query,
-      :continue => :query
+      :watch => :query
     }
 
     request =
@@ -750,17 +750,17 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
   - namespaces_id (String.t): Part of &#x60;name&#x60;. The name of the route being retrieved. If needed, replace {namespace_id} with the project ID.
   - routes_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;namespacesId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -777,17 +777,17 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
         opts \\ []
       ) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :access_token => :query
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -815,24 +815,24 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
   - connection (GoogleApi.CloudRun.V1alpha1.Connection): Connection to server
   - namespaces_id (String.t): Part of &#x60;parent&#x60;. The project ID or project number from which the routes should be listed.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :limit (integer()): The maximum number of records that should be returned.
-    - :watch (boolean()): Flag that indicates that the client expects to watch this resource as well. Not currently used by Cloud Run.
-    - :labelSelector (String.t): Allows to filter resources based on a label. Supported operations are &#x3D;, !&#x3D;, exists, in, and notIn.
-    - :resourceVersion (String.t): The baseline resource version from which the list or watch operation should start. Not currently used by Cloud Run.
-    - :includeUninitialized (boolean()): Not currently used by Cloud Run.
-    - :fieldSelector (String.t): Allows to filter resources based on a specific value for a field name. Send this in a query string format. i.e. &#39;metadata.name%3Dlorem&#39;. Not currently used by Cloud Run.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :continue (String.t): Optional encoded string to continue paging.
+    - :fieldSelector (String.t): Allows to filter resources based on a specific value for a field name. Send this in a query string format. i.e. &#39;metadata.name%3Dlorem&#39;. Not currently used by Cloud Run.
+    - :includeUninitialized (boolean()): Not currently used by Cloud Run.
+    - :labelSelector (String.t): Allows to filter resources based on a label. Supported operations are &#x3D;, !&#x3D;, exists, in, and notIn.
+    - :limit (integer()): The maximum number of records that should be returned.
+    - :resourceVersion (String.t): The baseline resource version from which the list or watch operation should start. Not currently used by Cloud Run.
+    - :watch (boolean()): Flag that indicates that the client expects to watch this resource as well. Not currently used by Cloud Run.
 
   ## Returns
 
@@ -844,24 +844,24 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
           | {:error, Tesla.Env.t()}
   def run_namespaces_routes_list(connection, namespaces_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :limit => :query,
-      :watch => :query,
-      :labelSelector => :query,
-      :resourceVersion => :query,
-      :includeUninitialized => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :continue => :query,
       :fieldSelector => :query,
-      :continue => :query
+      :includeUninitialized => :query,
+      :labelSelector => :query,
+      :limit => :query,
+      :resourceVersion => :query,
+      :watch => :query
     }
 
     request =
@@ -885,17 +885,17 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
   - connection (GoogleApi.CloudRun.V1alpha1.Connection): Connection to server
   - namespaces_id (String.t): Part of &#x60;parent&#x60;. The project ID or project number in which this service should be created.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (Service): 
 
   ## Returns
@@ -907,17 +907,17 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.Service.t()} | {:error, Tesla.Env.t()}
   def run_namespaces_services_create(connection, namespaces_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -943,21 +943,21 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
   - namespaces_id (String.t): Part of &#x60;name&#x60;. The name of the service being deleted. If needed, replace {namespace_id} with the project ID.
   - services_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;namespacesId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :propagationPolicy (String.t): Specifies the propagation policy of delete. Cloud Run currently ignores this setting, and deletes in the background. Please see kubernetes.io/docs/concepts/workloads/controllers/garbage-collection/ for more information.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :apiVersion (String.t): Cloud Run currently ignores this parameter.
     - :kind (String.t): Cloud Run currently ignores this parameter.
     - :orphanDependents (boolean()): Deprecated. Specifies the cascade behavior on delete. Cloud Run only supports cascading behavior, so this must be false. This attribute is deprecated, and is now replaced with PropagationPolicy See https://github.com/kubernetes/kubernetes/issues/46659 for more info.
-    - :apiVersion (String.t): Cloud Run currently ignores this parameter.
+    - :propagationPolicy (String.t): Specifies the propagation policy of delete. Cloud Run currently ignores this setting, and deletes in the background. Please see kubernetes.io/docs/concepts/workloads/controllers/garbage-collection/ for more information.
 
   ## Returns
 
@@ -974,21 +974,21 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
         opts \\ []
       ) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :propagationPolicy => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :apiVersion => :query,
       :kind => :query,
       :orphanDependents => :query,
-      :apiVersion => :query
+      :propagationPolicy => :query
     }
 
     request =
@@ -1017,17 +1017,17 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
   - namespaces_id (String.t): Part of &#x60;name&#x60;. The name of the service being retrieved. If needed, replace {namespace_id} with the project ID.
   - services_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;namespacesId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
 
   ## Returns
 
@@ -1044,17 +1044,17 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
         opts \\ []
       ) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
+      :fields => :query,
       :key => :query,
-      :access_token => :query
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
     }
 
     request =
@@ -1082,24 +1082,24 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
   - connection (GoogleApi.CloudRun.V1alpha1.Connection): Connection to server
   - namespaces_id (String.t): Part of &#x60;parent&#x60;. The project ID or project number from which the services should be listed.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
-    - :limit (integer()): The maximum number of records that should be returned.
-    - :watch (boolean()): Flag that indicates that the client expects to watch this resource as well. Not currently used by Cloud Run.
-    - :labelSelector (String.t): Allows to filter resources based on a label. Supported operations are &#x3D;, !&#x3D;, exists, in, and notIn.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :continue (String.t): Optional encoded string to continue paging.
     - :fieldSelector (String.t): Allows to filter resources based on a specific value for a field name. Send this in a query string format. i.e. &#39;metadata.name%3Dlorem&#39;. Not currently used by Cloud Run.
     - :includeUninitialized (boolean()): Not currently used by Cloud Run.
+    - :labelSelector (String.t): Allows to filter resources based on a label. Supported operations are &#x3D;, !&#x3D;, exists, in, and notIn.
+    - :limit (integer()): The maximum number of records that should be returned.
     - :resourceVersion (String.t): The baseline resource version from which the list or watch operation should start. Not currently used by Cloud Run.
-    - :continue (String.t): Optional encoded string to continue paging.
+    - :watch (boolean()): Flag that indicates that the client expects to watch this resource as well. Not currently used by Cloud Run.
 
   ## Returns
 
@@ -1111,24 +1111,24 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
           | {:error, Tesla.Env.t()}
   def run_namespaces_services_list(connection, namespaces_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
-      :limit => :query,
-      :watch => :query,
-      :labelSelector => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :continue => :query,
       :fieldSelector => :query,
       :includeUninitialized => :query,
+      :labelSelector => :query,
+      :limit => :query,
       :resourceVersion => :query,
-      :continue => :query
+      :watch => :query
     }
 
     request =
@@ -1155,17 +1155,17 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
   - namespaces_id (String.t): Part of &#x60;name&#x60;. The name of the service being replaced. If needed, replace {namespace_id} with the project ID.
   - services_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;namespacesId&#x60;.
   - optional_params (KeywordList): [optional] Optional parameters
-    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :callback (String.t): JSONP
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
     - :$.xgafv (String.t): V1 error format.
-    - :alt (String.t): Data format for response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
     - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
     - :body (Service): 
 
   ## Returns
@@ -1187,17 +1187,17 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
         opts \\ []
       ) do
     optional_params_config = %{
-      :upload_protocol => :query,
-      :quotaUser => :query,
-      :prettyPrint => :query,
-      :uploadType => :query,
-      :fields => :query,
-      :callback => :query,
-      :oauth_token => :query,
       :"$.xgafv" => :query,
-      :alt => :query,
-      :key => :query,
       :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
       :body => :body
     }
 
@@ -1216,5 +1216,344 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
     connection
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.CloudRun.V1alpha1.Model.Service{}])
+  end
+
+  @doc """
+  Creates a new trigger.
+
+  ## Parameters
+
+  - connection (GoogleApi.CloudRun.V1alpha1.Connection): Connection to server
+  - namespaces_id (String.t): Part of &#x60;parent&#x60;. The project ID or project number in which this trigger should be created.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :body (Trigger): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.CloudRun.V1alpha1.Model.Trigger{}} on success
+  {:error, info} on failure
+  """
+  @spec run_namespaces_triggers_create(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, GoogleApi.CloudRun.V1alpha1.Model.Trigger.t()} | {:error, Tesla.Env.t()}
+  def run_namespaces_triggers_create(connection, namespaces_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/apis/eventing.knative.dev/v1alpha1/namespaces/{namespacesId}/triggers", %{
+        "namespacesId" => URI.encode(namespaces_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudRun.V1alpha1.Model.Trigger{}])
+  end
+
+  @doc """
+  Rpc to delete a trigger.
+
+  ## Parameters
+
+  - connection (GoogleApi.CloudRun.V1alpha1.Connection): Connection to server
+  - namespaces_id (String.t): Part of &#x60;name&#x60;. The name of the trigger being deleted. If needed, replace {namespace_id} with the project ID.
+  - triggers_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;namespacesId&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :apiVersion (String.t): Cloud Run currently ignores this parameter.
+    - :kind (String.t): Cloud Run currently ignores this parameter.
+    - :propagationPolicy (String.t): Specifies the propagation policy of delete. Cloud Run currently ignores this setting, and deletes in the background. Please see kubernetes.io/docs/concepts/workloads/controllers/garbage-collection/ for more information.
+
+  ## Returns
+
+  {:ok, %GoogleApi.CloudRun.V1alpha1.Model.Empty{}} on success
+  {:error, info} on failure
+  """
+  @spec run_namespaces_triggers_delete(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, GoogleApi.CloudRun.V1alpha1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+  def run_namespaces_triggers_delete(
+        connection,
+        namespaces_id,
+        triggers_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :apiVersion => :query,
+      :kind => :query,
+      :propagationPolicy => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url(
+        "/apis/eventing.knative.dev/v1alpha1/namespaces/{namespacesId}/triggers/{triggersId}",
+        %{
+          "namespacesId" => URI.encode(namespaces_id, &URI.char_unreserved?/1),
+          "triggersId" => URI.encode(triggers_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudRun.V1alpha1.Model.Empty{}])
+  end
+
+  @doc """
+  Rpc to get information about a trigger.
+
+  ## Parameters
+
+  - connection (GoogleApi.CloudRun.V1alpha1.Connection): Connection to server
+  - namespaces_id (String.t): Part of &#x60;name&#x60;. The name of the trigger being retrieved. If needed, replace {namespace_id} with the project ID.
+  - triggers_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;namespacesId&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+
+  ## Returns
+
+  {:ok, %GoogleApi.CloudRun.V1alpha1.Model.Trigger{}} on success
+  {:error, info} on failure
+  """
+  @spec run_namespaces_triggers_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, GoogleApi.CloudRun.V1alpha1.Model.Trigger.t()} | {:error, Tesla.Env.t()}
+  def run_namespaces_triggers_get(
+        connection,
+        namespaces_id,
+        triggers_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url(
+        "/apis/eventing.knative.dev/v1alpha1/namespaces/{namespacesId}/triggers/{triggersId}",
+        %{
+          "namespacesId" => URI.encode(namespaces_id, &URI.char_unreserved?/1),
+          "triggersId" => URI.encode(triggers_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudRun.V1alpha1.Model.Trigger{}])
+  end
+
+  @doc """
+  Rpc to list triggers.
+
+  ## Parameters
+
+  - connection (GoogleApi.CloudRun.V1alpha1.Connection): Connection to server
+  - namespaces_id (String.t): Part of &#x60;parent&#x60;. The project ID or project number from which the triggers should be listed.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :continue (String.t): Optional encoded string to continue paging.
+    - :fieldSelector (String.t): Allows to filter resources based on a specific value for a field name. Send this in a query string format. i.e. &#39;metadata.name%3Dlorem&#39;. Not currently used by Cloud Run.
+    - :includeUninitialized (boolean()): Not currently used by Cloud Run.
+    - :labelSelector (String.t): Allows to filter resources based on a label. Supported operations are &#x3D;, !&#x3D;, exists, in, and notIn.
+    - :limit (integer()): The maximum number of records that should be returned.
+    - :resourceVersion (String.t): The baseline resource version from which the list or watch operation should start. Not currently used by Cloud Run.
+    - :watch (boolean()): Flag that indicates that the client expects to watch this resource as well. Not currently used by Cloud Run.
+
+  ## Returns
+
+  {:ok, %GoogleApi.CloudRun.V1alpha1.Model.ListTriggersResponse{}} on success
+  {:error, info} on failure
+  """
+  @spec run_namespaces_triggers_list(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, GoogleApi.CloudRun.V1alpha1.Model.ListTriggersResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def run_namespaces_triggers_list(connection, namespaces_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :continue => :query,
+      :fieldSelector => :query,
+      :includeUninitialized => :query,
+      :labelSelector => :query,
+      :limit => :query,
+      :resourceVersion => :query,
+      :watch => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/apis/eventing.knative.dev/v1alpha1/namespaces/{namespacesId}/triggers", %{
+        "namespacesId" => URI.encode(namespaces_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.CloudRun.V1alpha1.Model.ListTriggersResponse{}]
+    )
+  end
+
+  @doc """
+  Rpc to replace a trigger.  Only the spec and metadata labels and annotations are modifiable. After the Update request, Cloud Run will work to make the &#39;status&#39; match the requested &#39;spec&#39;.  May provide metadata.resourceVersion to enforce update from last read for optimistic concurrency control.
+
+  ## Parameters
+
+  - connection (GoogleApi.CloudRun.V1alpha1.Connection): Connection to server
+  - namespaces_id (String.t): Part of &#x60;name&#x60;. The name of the trigger being retrieved. If needed, replace {namespace_id} with the project ID.
+  - triggers_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;namespacesId&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :body (Trigger): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.CloudRun.V1alpha1.Model.Trigger{}} on success
+  {:error, info} on failure
+  """
+  @spec run_namespaces_triggers_replace_trigger(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) :: {:ok, GoogleApi.CloudRun.V1alpha1.Model.Trigger.t()} | {:error, Tesla.Env.t()}
+  def run_namespaces_triggers_replace_trigger(
+        connection,
+        namespaces_id,
+        triggers_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:put)
+      |> Request.url(
+        "/apis/eventing.knative.dev/v1alpha1/namespaces/{namespacesId}/triggers/{triggersId}",
+        %{
+          "namespacesId" => URI.encode(namespaces_id, &URI.char_unreserved?/1),
+          "triggersId" => URI.encode(triggers_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudRun.V1alpha1.Model.Trigger{}])
   end
 end
