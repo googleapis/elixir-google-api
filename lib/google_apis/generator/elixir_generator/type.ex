@@ -129,6 +129,8 @@ defmodule GoogleApis.Generator.ElixirGenerator.Type do
   """
   @spec empty() :: t
   def empty() do
-    %__MODULE__{}
+    %__MODULE__{
+      typespec: "nil"
+    }
   end
 end
