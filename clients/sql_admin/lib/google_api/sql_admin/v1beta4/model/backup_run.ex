@@ -29,6 +29,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.BackupRun do
   - id (String.t): The identifier for this backup run. Unique only for a specific Cloud SQL instance. Defaults to: `null`.
   - instance (String.t): Name of the database instance. Defaults to: `null`.
   - kind (String.t): This is always sql#backupRun. Defaults to: `null`.
+  - location (String.t): The location of the backup. Defaults to: `null`.
   - selfLink (String.t): The URI of this resource. Defaults to: `null`.
   - startTime (DateTime.t): The time the backup operation actually started in UTC timezone in RFC 3339 format, for example 2012-11-15T16:19:00.094Z. Defaults to: `null`.
   - status (String.t): The status of this run. Defaults to: `null`.
@@ -46,6 +47,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.BackupRun do
           :id => any(),
           :instance => any(),
           :kind => any(),
+          :location => any(),
           :selfLink => any(),
           :startTime => DateTime.t(),
           :status => any(),
@@ -60,6 +62,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.BackupRun do
   field(:id)
   field(:instance)
   field(:kind)
+  field(:location)
   field(:selfLink)
   field(:startTime, as: DateTime)
   field(:status)

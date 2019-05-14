@@ -25,6 +25,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.BackupConfiguration do
   - binaryLogEnabled (boolean()): Whether binary log is enabled. If backup configuration is disabled, binary log must be disabled as well. Defaults to: `null`.
   - enabled (boolean()): Whether this configuration is enabled. Defaults to: `null`.
   - kind (String.t): This is always sql#backupConfiguration. Defaults to: `null`.
+  - location (String.t): The location of the backup. Defaults to: `null`.
   - replicationLogArchivingEnabled (boolean()): Reserved for future use. Defaults to: `null`.
   - startTime (String.t): Start time for the daily backup configuration in UTC timezone in the 24 hour format - HH:MM. Defaults to: `null`.
   """
@@ -35,6 +36,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.BackupConfiguration do
           :binaryLogEnabled => any(),
           :enabled => any(),
           :kind => any(),
+          :location => any(),
           :replicationLogArchivingEnabled => any(),
           :startTime => any()
         }
@@ -42,6 +44,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.BackupConfiguration do
   field(:binaryLogEnabled)
   field(:enabled)
   field(:kind)
+  field(:location)
   field(:replicationLogArchivingEnabled)
   field(:startTime)
 end
