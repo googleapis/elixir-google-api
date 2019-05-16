@@ -723,12 +723,12 @@ defmodule GoogleApi.Content.V2.Api.Orders do
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
     - :acknowledged (boolean()): Obtains orders that match the acknowledgement status. When set to true, obtains orders that have been acknowledged. When false, obtains orders that have not been acknowledged. We recommend using this filter set to false, in conjunction with the acknowledge call, such that only un-acknowledged orders are returned.
-    - :maxResults (integer()): The maximum number of orders to return in the response, used for paging. The default value is 25 orders per page, and the maximum allowed value is 250 orders per page. Known issue: All List calls will return all Orders without limit regardless of the value of this field.
-    - :orderBy (String.t): The ordering of the returned list. The only supported value are placedDate desc and placedDate asc for now, which returns orders sorted by placement date. \&quot;placedDate desc\&quot; stands for listing orders by placement date, from oldest to most recent. \&quot;placedDate asc\&quot; stands for listing orders by placement date, from most recent to oldest. In future releases we&#39;ll support other sorting criteria.
+    - :maxResults (integer()): The maximum number of orders to return in the response, used for paging. The default value is 25 orders per page, and the maximum allowed value is 250 orders per page.
+    - :orderBy (String.t): Order results by placement date in descending or ascending order.  Acceptable values are: - placedDateAsc - placedDateDesc
     - :pageToken (String.t): The token returned by the previous request.
     - :placedDateEnd (String.t): Obtains orders placed before this date (exclusively), in ISO 8601 format.
     - :placedDateStart (String.t): Obtains orders placed after this date (inclusively), in ISO 8601 format.
-    - :statuses ([String.t]): Obtains orders that match any of the specified statuses. Multiple values can be specified with comma separation. Additionally, please note that active is a shortcut for pendingShipment and partiallyShipped, and completed is a shortcut for shipped , partiallyDelivered, delivered, partiallyReturned, returned, and canceled.
+    - :statuses ([String.t]): Obtains orders that match any of the specified statuses. Multiple values can be specified with comma separation. Additionally, please note that active is a shortcut for pendingShipment and partiallyShipped, and completed is a shortcut for shipped, partiallyDelivered, delivered, partiallyReturned, returned, and canceled.
 
   ## Returns
 
