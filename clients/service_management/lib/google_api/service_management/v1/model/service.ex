@@ -33,7 +33,6 @@ defmodule GoogleApi.ServiceManagement.V1.Model.Service do
   - documentation (Documentation): Additional API documentation. Defaults to: `null`.
   - endpoints ([Endpoint]): Configuration for network endpoints.  If this is empty, then an endpoint with the same name as the service is automatically generated to service all defined APIs. Defaults to: `null`.
   - enums ([Enum]): A list of all enum types included in this API service.  Enums referenced directly or indirectly by the &#x60;apis&#x60; are automatically included.  Enums which are not referenced but shall be included should be listed here by name. Example:      enums:     - name: google.someapi.v1.SomeEnum Defaults to: `null`.
-  - experimental (Experimental): Experimental configuration. Defaults to: `null`.
   - http (Http): HTTP configuration. Defaults to: `null`.
   - id (String.t): A unique ID for a specific instance of this message, typically assigned by the client for tracking purpose. If empty, the server may choose to generate one instead. Must be no longer than 60 characters. Defaults to: `null`.
   - logging (Logging): Logging configuration. Defaults to: `null`.
@@ -66,7 +65,6 @@ defmodule GoogleApi.ServiceManagement.V1.Model.Service do
           :documentation => GoogleApi.ServiceManagement.V1.Model.Documentation.t(),
           :endpoints => list(GoogleApi.ServiceManagement.V1.Model.Endpoint.t()),
           :enums => list(GoogleApi.ServiceManagement.V1.Model.Enum.t()),
-          :experimental => GoogleApi.ServiceManagement.V1.Model.Experimental.t(),
           :http => GoogleApi.ServiceManagement.V1.Model.Http.t(),
           :id => any(),
           :logging => GoogleApi.ServiceManagement.V1.Model.Logging.t(),
@@ -97,7 +95,6 @@ defmodule GoogleApi.ServiceManagement.V1.Model.Service do
   field(:documentation, as: GoogleApi.ServiceManagement.V1.Model.Documentation)
   field(:endpoints, as: GoogleApi.ServiceManagement.V1.Model.Endpoint, type: :list)
   field(:enums, as: GoogleApi.ServiceManagement.V1.Model.Enum, type: :list)
-  field(:experimental, as: GoogleApi.ServiceManagement.V1.Model.Experimental)
   field(:http, as: GoogleApi.ServiceManagement.V1.Model.Http)
   field(:id)
   field(:logging, as: GoogleApi.ServiceManagement.V1.Model.Logging)
