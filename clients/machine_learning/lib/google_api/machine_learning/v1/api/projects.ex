@@ -1895,7 +1895,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   end
 
   @doc """
-  Performs prediction on the data in the request. Cloud ML Engine implements a custom &#x60;predict&#x60; verb on top of an HTTP POST method. &lt;p&gt;For details of the request and response format, see the **guide to the [predict request format](/ml-engine/docs/v1/predict-request)**.
+  Performs prediction on the data in the request. AI Platform implements a custom &#x60;predict&#x60; verb on top of an HTTP POST method. &lt;p&gt;For details of the request and response format, see the **guide to the [predict request format](/ml-engine/docs/v1/predict-request)**.
 
   ## Parameters
 
