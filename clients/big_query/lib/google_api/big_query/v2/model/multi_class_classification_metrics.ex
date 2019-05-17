@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.MultiClassClassificationMetrics do
   @moduledoc """
-  Evaluation metrics for multi-class classification models.
+  Evaluation metrics for multi-class classification/classifier models.
 
   ## Attributes
 

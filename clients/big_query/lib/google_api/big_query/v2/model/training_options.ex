@@ -28,20 +28,23 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
     - Enum - one of [DATA_SPLIT_METHOD_UNSPECIFIED, RANDOM, CUSTOM, SEQUENTIAL, NO_SPLIT, AUTO_SPLIT]
   - distanceType (String.t): [Beta] Distance type for clustering models. Defaults to: `null`.
     - Enum - one of [DISTANCE_TYPE_UNSPECIFIED, EUCLIDEAN, COSINE]
-  - earlyStop (boolean()): Whether to stop early when the loss doesn&#39;t improve significantly any more (compared to min_relative_progress). Defaults to: `null`.
-  - initialLearnRate (float()): Specifies the initial learning rate for line search to start at. Defaults to: `null`.
+  - earlyStop (boolean()): Whether to stop early when the loss doesn&#39;t improve significantly any more (compared to min_relative_progress). Used only for iterative training algorithms. Defaults to: `null`.
+  - initialLearnRate (float()): Specifies the initial learning rate for the line search learn rate strategy. Defaults to: `null`.
   - inputLabelColumns ([String.t]): Name of input label columns in training data. Defaults to: `null`.
   - l1Regularization (float()): L1 regularization coefficient. Defaults to: `null`.
   - l2Regularization (float()): L2 regularization coefficient. Defaults to: `null`.
-  - labelClassWeights (%{optional(String.t) &#x3D;&gt; float()}): Weights associated with each label class, for rebalancing the training data. Defaults to: `null`.
-  - learnRate (float()): Learning rate in training. Defaults to: `null`.
-  - learnRateStrategy (String.t): The strategy to determine learning rate. Defaults to: `null`.
+  - labelClassWeights (%{optional(String.t) &#x3D;&gt; float()}): Weights associated with each label class, for rebalancing the training data. Only applicable for classification models. Defaults to: `null`.
+  - learnRate (float()): Learning rate in training. Used only for iterative training algorithms. Defaults to: `null`.
+  - learnRateStrategy (String.t): The strategy to determine learn rate for the current iteration. Defaults to: `null`.
     - Enum - one of [LEARN_RATE_STRATEGY_UNSPECIFIED, LINE_SEARCH, CONSTANT]
   - lossType (String.t): Type of loss function used during training run. Defaults to: `null`.
     - Enum - one of [LOSS_TYPE_UNSPECIFIED, MEAN_SQUARED_LOSS, MEAN_LOG_LOSS]
-  - maxIterations (String.t): The maximum number of iterations in training. Defaults to: `null`.
-  - minRelativeProgress (float()): When early_stop is true, stops training when accuracy improvement is less than &#39;min_relative_progress&#39;. Defaults to: `null`.
+  - maxIterations (String.t): The maximum number of iterations in training. Used only for iterative training algorithms. Defaults to: `null`.
+  - minRelativeProgress (float()): When early_stop is true, stops training when accuracy improvement is less than &#39;min_relative_progress&#39;. Used only for iterative training algorithms. Defaults to: `null`.
+  - modelUri (String.t): [Beta] Google Cloud Storage URI from which the model was imported. Only applicable for imported models. Defaults to: `null`.
   - numClusters (String.t): [Beta] Number of clusters for clustering models. Defaults to: `null`.
+  - optimizationStrategy (String.t): Optimization strategy for training linear regression models. Defaults to: `null`.
+    - Enum - one of [OPTIMIZATION_STRATEGY_UNSPECIFIED, BATCH_GRADIENT_DESCENT, NORMAL_EQUATION]
   - warmStart (boolean()): Whether to train a model from the last checkpoint. Defaults to: `null`.
   """
 
@@ -63,7 +66,9 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
           :lossType => any(),
           :maxIterations => any(),
           :minRelativeProgress => any(),
+          :modelUri => any(),
           :numClusters => any(),
+          :optimizationStrategy => any(),
           :warmStart => any()
         }
 
@@ -82,7 +87,9 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
   field(:lossType)
   field(:maxIterations)
   field(:minRelativeProgress)
+  field(:modelUri)
   field(:numClusters)
+  field(:optimizationStrategy)
   field(:warmStart)
 end
 

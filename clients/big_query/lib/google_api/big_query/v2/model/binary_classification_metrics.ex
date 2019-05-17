@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.BinaryClassificationMetrics do
   @moduledoc """
-  Evaluation metrics for binary classification models.
+  Evaluation metrics for binary classification/classifier models.
 
   ## Attributes
 
