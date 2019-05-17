@@ -25,6 +25,8 @@ defmodule GoogleApi.Monitoring.V3.Model.MetricDescriptor do
   - description (String.t): A detailed description of the metric, which can be used in documentation. Defaults to: `null`.
   - displayName (String.t): A concise name for the metric, which can be displayed in user interfaces. Use sentence case without an ending period, for example \&quot;Request count\&quot;. This field is optional but it is recommended to be set for any metrics associated with user-visible concepts, such as Quota. Defaults to: `null`.
   - labels ([LabelDescriptor]): The set of labels that can be used to describe a specific instance of this metric type. For example, the appengine.googleapis.com/http/server/response_latencies metric type has a label for the HTTP response code, response_code, so you can look at latencies for successful responses or just for responses that failed. Defaults to: `null`.
+  - launchStage (String.t): Optional. The launch stage of the metric definition. Defaults to: `null`.
+    - Enum - one of [LAUNCH_STAGE_UNSPECIFIED, EARLY_ACCESS, ALPHA, BETA, GA, DEPRECATED]
   - metadata (MetricDescriptorMetadata): Optional. Metadata which can be used to guide usage of the metric. Defaults to: `null`.
   - metricKind (String.t): Whether the metric records instantaneous values, changes to a value, etc. Some combinations of metric_kind and value_type might not be supported. Defaults to: `null`.
     - Enum - one of [METRIC_KIND_UNSPECIFIED, GAUGE, DELTA, CUMULATIVE]
@@ -41,6 +43,7 @@ defmodule GoogleApi.Monitoring.V3.Model.MetricDescriptor do
           :description => any(),
           :displayName => any(),
           :labels => list(GoogleApi.Monitoring.V3.Model.LabelDescriptor.t()),
+          :launchStage => any(),
           :metadata => GoogleApi.Monitoring.V3.Model.MetricDescriptorMetadata.t(),
           :metricKind => any(),
           :name => any(),
@@ -52,6 +55,7 @@ defmodule GoogleApi.Monitoring.V3.Model.MetricDescriptor do
   field(:description)
   field(:displayName)
   field(:labels, as: GoogleApi.Monitoring.V3.Model.LabelDescriptor, type: :list)
+  field(:launchStage)
   field(:metadata, as: GoogleApi.Monitoring.V3.Model.MetricDescriptorMetadata)
   field(:metricKind)
   field(:name)
