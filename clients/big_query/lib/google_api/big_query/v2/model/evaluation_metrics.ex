@@ -18,13 +18,13 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.EvaluationMetrics do
   @moduledoc """
-  Evaluation metrics of a model. These are either computed on all training data or just the eval data based on whether eval data was used during training.
+  Evaluation metrics of a model. These are either computed on all training data or just the eval data based on whether eval data was used during training. These are not present for imported models.
 
   ## Attributes
 
-  - binaryClassificationMetrics (BinaryClassificationMetrics): Populated for binary classification models. Defaults to: `null`.
+  - binaryClassificationMetrics (BinaryClassificationMetrics): Populated for binary classification/classifier models. Defaults to: `null`.
   - clusteringMetrics (ClusteringMetrics): [Beta] Populated for clustering models. Defaults to: `null`.
-  - multiClassClassificationMetrics (MultiClassClassificationMetrics): Populated for multi-class classification models. Defaults to: `null`.
+  - multiClassClassificationMetrics (MultiClassClassificationMetrics): Populated for multi-class classification/classifier models. Defaults to: `null`.
   - regressionMetrics (RegressionMetrics): Populated for regression models. Defaults to: `null`.
   """
 
