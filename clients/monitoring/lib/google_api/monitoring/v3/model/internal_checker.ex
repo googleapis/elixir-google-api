@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.Monitoring.V3.Model.InternalChecker do
   @moduledoc """
-  An internal checker allows uptime checks to run on private/internal GCP resources.DEPRECATED. Use PrivateChecker instead.
+  An internal checker allows uptime checks to run on private/internal GCP resources.
 
   ## Attributes
 
