@@ -22,13 +22,13 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1HyperparameterSpec d
 
   ## Attributes
 
-  - algorithm (String.t): Optional. The search algorithm specified for the hyperparameter tuning job. Uses the default CloudML Engine hyperparameter tuning algorithm if unspecified. Defaults to: `null`.
+  - algorithm (String.t): Optional. The search algorithm specified for the hyperparameter tuning job. Uses the default AI Platform hyperparameter tuning algorithm if unspecified. Defaults to: `null`.
     - Enum - one of [ALGORITHM_UNSPECIFIED, GRID_SEARCH, RANDOM_SEARCH]
   - enableTrialEarlyStopping (boolean()): Optional. Indicates if the hyperparameter tuning job enables auto trial early stopping. Defaults to: `null`.
   - goal (String.t): Required. The type of goal to use for tuning. Available types are &#x60;MAXIMIZE&#x60; and &#x60;MINIMIZE&#x60;.  Defaults to &#x60;MAXIMIZE&#x60;. Defaults to: `null`.
     - Enum - one of [GOAL_TYPE_UNSPECIFIED, MAXIMIZE, MINIMIZE]
   - hyperparameterMetricTag (String.t): Optional. The Tensorflow summary tag name to use for optimizing trials. For current versions of Tensorflow, this tag name should exactly match what is shown in Tensorboard, including all scopes.  For versions of Tensorflow prior to 0.12, this should be only the tag passed to tf.Summary. By default, \&quot;training/hptuning/metric\&quot; will be used. Defaults to: `null`.
-  - maxFailedTrials (integer()): Optional. The number of failed trials that need to be seen before failing the hyperparameter tuning job. You can specify this field to override the default failing criteria for Cloud ML Engine hyperparameter tuning jobs.  Defaults to zero, which means the service decides when a hyperparameter job should fail. Defaults to: `null`.
+  - maxFailedTrials (integer()): Optional. The number of failed trials that need to be seen before failing the hyperparameter tuning job. You can specify this field to override the default failing criteria for AI Platform hyperparameter tuning jobs.  Defaults to zero, which means the service decides when a hyperparameter job should fail. Defaults to: `null`.
   - maxParallelTrials (integer()): Optional. The number of training trials to run concurrently. You can reduce the time it takes to perform hyperparameter tuning by adding trials in parallel. However, each trail only benefits from the information gained in completed trials. That means that a trial does not get access to the results of trials running at the same time, which could reduce the quality of the overall optimization.  Each trial will use the same scale tier and machine types.  Defaults to one. Defaults to: `null`.
   - maxTrials (integer()): Optional. How many training trials should be attempted to optimize the specified hyperparameters.  Defaults to one. Defaults to: `null`.
   - params ([GoogleCloudMlV1ParameterSpec]): Required. The set of parameters to tune. Defaults to: `null`.

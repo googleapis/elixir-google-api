@@ -25,7 +25,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1BuiltInAlgorithmOutp
   - framework (String.t): Framework on which the built-in algorithm was trained. Defaults to: `null`.
   - modelPath (String.t): The Cloud Storage path to the &#x60;model/&#x60; directory where the training job saves the trained model. Only set for successful jobs that don&#39;t use hyperparameter tuning. Defaults to: `null`.
   - pythonVersion (String.t): Python version on which the built-in algorithm was trained. Defaults to: `null`.
-  - runtimeVersion (String.t): Cloud ML Engine runtime version on which the built-in algorithm was trained. Defaults to: `null`.
+  - runtimeVersion (String.t): AI Platform runtime version on which the built-in algorithm was trained. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
