@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.Testing.V1.Model.IosTestSetup do
   @moduledoc """
-  A description of how to set up an iOS device prior to a test.
+  A description of how to set up an iOS device prior to running the test.
 
   ## Attributes
 
