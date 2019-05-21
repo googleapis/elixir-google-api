@@ -1,11 +1,11 @@
 ExUnit.start()
 
-defmodule GoogleApi.AndroidPublisher.V2.TestHelper do
+defmodule GoogleApi.AndroidPublisher.V3.TestHelper do
 
   defmacro __using__(opts) do
     quote do
       use ExUnit.Case, unquote(opts)
-      import GoogleApi.AndroidPublisher.V2.TestHelper
+      import GoogleApi.AndroidPublisher.V3.TestHelper
     end
   end
 

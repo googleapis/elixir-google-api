@@ -1,4 +1,4 @@
-defmodule GoogleApi.AndroidPublisher.V2.Mixfile do
+defmodule GoogleApi.AndroidPublisher.V3.Mixfile do
   use Mix.Project
 
   @version "0.1.0"

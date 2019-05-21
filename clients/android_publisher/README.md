@@ -1,4 +1,4 @@
-# GoogleApi.AndroidPublisher.V2
+# GoogleApi.AndroidPublisher.V3
 
 Accesses Android application developers&#39; Google Play accounts.
 
