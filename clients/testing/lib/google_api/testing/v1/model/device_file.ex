@@ -22,8 +22,8 @@ defmodule GoogleApi.Testing.V1.Model.DeviceFile do
 
   ## Attributes
 
-  - obbFile (ObbFile): A reference to an opaque binary blob file. Defaults to: `null`.
-  - regularFile (RegularFile): A reference to a regular file. Defaults to: `null`.
+  - obbFile (ObbFile): A reference to an opaque binary blob file Defaults to: `null`.
+  - regularFile (RegularFile): A reference to a regular file Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

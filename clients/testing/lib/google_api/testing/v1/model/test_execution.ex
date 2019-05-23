@@ -18,12 +18,12 @@
 
 defmodule GoogleApi.Testing.V1.Model.TestExecution do
   @moduledoc """
-  A single test executed in a single environment.
+  Specifies a single test to be executed in a single environment.
 
   ## Attributes
 
   - environment (Environment): Output only. How the host machine(s) are configured. Defaults to: `null`.
-  - id (String.t): Output only. Unique id set by the service. Defaults to: `null`.
+  - id (String.t): Output only. Unique id set by the backend. Defaults to: `null`.
   - matrixId (String.t): Output only. Id of the containing TestMatrix. Defaults to: `null`.
   - projectId (String.t): Output only. The cloud project that owns the test execution. Defaults to: `null`.
   - state (String.t): Output only. Indicates the current progress of the test execution (e.g., FINISHED). Defaults to: `null`.

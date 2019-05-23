@@ -22,8 +22,8 @@ defmodule GoogleApi.Testing.V1.Model.RoboStartingIntent do
 
   ## Attributes
 
-  - launcherActivity (LauncherActivityIntent): An intent that starts the main launcher activity. Defaults to: `null`.
-  - startActivity (StartActivityIntent): An intent that starts an activity with specific details. Defaults to: `null`.
+  - launcherActivity (LauncherActivityIntent):  Defaults to: `null`.
+  - startActivity (StartActivityIntent):  Defaults to: `null`.
   - timeout (String.t): Timeout in seconds for each intent. Defaults to: `null`.
   """
 

@@ -25,8 +25,8 @@ defmodule GoogleApi.Testing.V1.Model.TestSpecification do
   - androidInstrumentationTest (AndroidInstrumentationTest): An Android instrumentation test. Defaults to: `null`.
   - androidRoboTest (AndroidRoboTest): An Android robo test. Defaults to: `null`.
   - androidTestLoop (AndroidTestLoop): An Android Application with a Test Loop. Defaults to: `null`.
-  - disablePerformanceMetrics (boolean()): Disables performance metrics recording. May reduce test latency. Defaults to: `null`.
-  - disableVideoRecording (boolean()): Disables video recording. May reduce test latency. Defaults to: `null`.
+  - disablePerformanceMetrics (boolean()): Disables performance metrics recording; may reduce test latency. Defaults to: `null`.
+  - disableVideoRecording (boolean()): Disables video recording; may reduce test latency. Defaults to: `null`.
   - iosTestSetup (IosTestSetup): Test setup requirements for iOS. Defaults to: `null`.
   - iosXcTest (IosXcTest): An iOS XCTest, via an .xctestrun file. Defaults to: `null`.
   - testSetup (TestSetup): Test setup requirements for Android e.g. files to install, bootstrap scripts. Defaults to: `null`.
