@@ -1525,6 +1525,78 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   end
 
   @doc """
+  Lists snapshots.
+
+  ## Parameters
+
+  - connection (GoogleApi.Dataflow.V1b3.Connection): Connection to server
+  - project_id (String.t): The project ID to list snapshots for.
+  - location (String.t): The location to list snapshots in.
+  - job_id (String.t): If specified, list snapshots created from this job.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+
+  ## Returns
+
+  {:ok, %GoogleApi.Dataflow.V1b3.Model.ListSnapshotsResponse{}} on success
+  {:error, info} on failure
+  """
+  @spec dataflow_projects_locations_jobs_snapshots_list(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dataflow.V1b3.Model.ListSnapshotsResponse.t()} | {:error, Tesla.Env.t()}
+  def dataflow_projects_locations_jobs_snapshots_list(
+        connection,
+        project_id,
+        location,
+        job_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1b3/projects/{projectId}/locations/{location}/jobs/{jobId}/snapshots", %{
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "location" => URI.encode(location, &URI.char_unreserved?/1),
+        "jobId" => URI.encode(job_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataflow.V1b3.Model.ListSnapshotsResponse{}])
+  end
+
+  @doc """
   Updates the state of an existing Cloud Dataflow job.  To update the state of an existing job, we recommend using &#x60;projects.locations.jobs.update&#x60; with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using &#x60;projects.jobs.update&#x60; is not recommended, as you can only update the state of jobs that are running in &#x60;us-central1&#x60;.
 
   ## Parameters
@@ -1918,6 +1990,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :jobId (String.t): If specified, list snapshots created from this job.
 
   ## Returns
 
@@ -1949,7 +2022,8 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       :prettyPrint => :query,
       :quotaUser => :query,
       :upload_protocol => :query,
-      :uploadType => :query
+      :uploadType => :query,
+      :jobId => :query
     }
 
     request =
@@ -2412,6 +2486,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :jobId (String.t): If specified, list snapshots created from this job.
     - :location (String.t): The location to list snapshots in.
 
   ## Returns
@@ -2434,6 +2509,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       :quotaUser => :query,
       :upload_protocol => :query,
       :uploadType => :query,
+      :jobId => :query,
       :location => :query
     }
 
