@@ -1569,6 +1569,121 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   end
 
   @doc """
+  Creates a GTM Custom Template.
+
+  ## Parameters
+
+  - connection (GoogleApi.TagManager.V2.Connection): Connection to server
+  - parent (String.t): GTM Workspace&#39;s API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :alt (String.t): Data format for the response.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+    - :body (CustomTemplate): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.TagManager.V2.Model.CustomTemplate{}} on success
+  {:error, info} on failure
+  """
+  @spec tagmanager_accounts_containers_workspaces_templates_create(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) :: {:ok, GoogleApi.TagManager.V2.Model.CustomTemplate.t()} | {:error, Tesla.Env.t()}
+  def tagmanager_accounts_containers_workspaces_templates_create(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :alt => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :userIp => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/{+parent}/templates", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.TagManager.V2.Model.CustomTemplate{}])
+  end
+
+  @doc """
+  Lists all GTM Templates of a GTM container workspace.
+
+  ## Parameters
+
+  - connection (GoogleApi.TagManager.V2.Connection): Connection to server
+  - parent (String.t): GTM Workspace&#39;s API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :alt (String.t): Data format for the response.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+    - :pageToken (String.t): Continuation token for fetching the next page of results.
+
+  ## Returns
+
+  {:ok, %GoogleApi.TagManager.V2.Model.ListTemplatesResponse{}} on success
+  {:error, info} on failure
+  """
+  @spec tagmanager_accounts_containers_workspaces_templates_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.TagManager.V2.Model.ListTemplatesResponse.t()} | {:error, Tesla.Env.t()}
+  def tagmanager_accounts_containers_workspaces_templates_list(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :alt => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :userIp => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/{+parent}/templates", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.TagManager.V2.Model.ListTemplatesResponse{}])
+  end
+
+  @doc """
   Creates a GTM Trigger.
 
   ## Parameters
