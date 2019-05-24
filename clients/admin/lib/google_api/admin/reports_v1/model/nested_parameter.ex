@@ -16,18 +16,17 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Admin.Reports_v1.Model.ActivityParameters do
+defmodule GoogleApi.Admin.Reports_v1.Model.NestedParameter do
   @moduledoc """
-
+  JSON template for a parameter used in various reports.
 
   ## Attributes
 
   - boolValue (boolean()): Boolean value of the parameter. Defaults to: `null`.
   - intValue (String.t): Integral value of the parameter. Defaults to: `null`.
-  - messageValue (ActivityMessageValue):  Defaults to: `null`.
-  - multiIntValue ([String.t]): Multi-int value of the parameter. Defaults to: `null`.
-  - multiMessageValue ([ActivityMultiMessageValue]): Nested values of the parameter. Defaults to: `null`.
-  - multiValue ([String.t]): Multi-string value of the parameter. Defaults to: `null`.
+  - multiBoolValue ([boolean()]): Multiple boolean values of the parameter. Defaults to: `null`.
+  - multiIntValue ([String.t]): Multiple integral values of the parameter. Defaults to: `null`.
+  - multiValue ([String.t]): Multiple string values of the parameter. Defaults to: `null`.
   - name (String.t): The name of the parameter. Defaults to: `null`.
   - value (String.t): String value of the parameter. Defaults to: `null`.
   """
@@ -37,10 +36,8 @@ defmodule GoogleApi.Admin.Reports_v1.Model.ActivityParameters do
   @type t :: %__MODULE__{
           :boolValue => any(),
           :intValue => any(),
-          :messageValue => GoogleApi.Admin.Reports_v1.Model.ActivityMessageValue.t(),
+          :multiBoolValue => list(any()),
           :multiIntValue => list(any()),
-          :multiMessageValue =>
-            list(GoogleApi.Admin.Reports_v1.Model.ActivityMultiMessageValue.t()),
           :multiValue => list(any()),
           :name => any(),
           :value => any()
@@ -48,27 +45,20 @@ defmodule GoogleApi.Admin.Reports_v1.Model.ActivityParameters do
 
   field(:boolValue)
   field(:intValue)
-  field(:messageValue, as: GoogleApi.Admin.Reports_v1.Model.ActivityMessageValue)
+  field(:multiBoolValue, type: :list)
   field(:multiIntValue, type: :list)
-
-  field(
-    :multiMessageValue,
-    as: GoogleApi.Admin.Reports_v1.Model.ActivityMultiMessageValue,
-    type: :list
-  )
-
   field(:multiValue, type: :list)
   field(:name)
   field(:value)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Admin.Reports_v1.Model.ActivityParameters do
+defimpl Poison.Decoder, for: GoogleApi.Admin.Reports_v1.Model.NestedParameter do
   def decode(value, options) do
-    GoogleApi.Admin.Reports_v1.Model.ActivityParameters.decode(value, options)
+    GoogleApi.Admin.Reports_v1.Model.NestedParameter.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.Admin.Reports_v1.Model.ActivityParameters do
+defimpl Poison.Encoder, for: GoogleApi.Admin.Reports_v1.Model.NestedParameter do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
