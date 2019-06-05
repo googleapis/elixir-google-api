@@ -24,6 +24,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.Creative do
 
   - accountId (String.t): The account that this creative belongs to. Can be used to filter the response of the creatives.list method. Defaults to: `null`.
   - adChoicesDestinationUrl (String.t): The link to AdChoices destination page. Defaults to: `null`.
+  - adTechnologyProviders (AdTechnologyProviders): Output only. The detected ad technology providers. Defaults to: `null`.
   - advertiserName (String.t): The name of the company being advertised in the creative. Defaults to: `null`.
   - agencyId (String.t): The agency ID for this creative. Defaults to: `null`.
   - apiUpdateTime (DateTime.t): Output only. The last update timestamp of the creative via API. Defaults to: `null`.
@@ -58,6 +59,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.Creative do
   @type t :: %__MODULE__{
           :accountId => any(),
           :adChoicesDestinationUrl => any(),
+          :adTechnologyProviders =>
+            GoogleApi.AdExchangeBuyer.V2beta1.Model.AdTechnologyProviders.t(),
           :advertiserName => any(),
           :agencyId => any(),
           :apiUpdateTime => DateTime.t(),
@@ -86,6 +89,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.Creative do
 
   field(:accountId)
   field(:adChoicesDestinationUrl)
+  field(:adTechnologyProviders, as: GoogleApi.AdExchangeBuyer.V2beta1.Model.AdTechnologyProviders)
   field(:advertiserName)
   field(:agencyId)
   field(:apiUpdateTime, as: DateTime)
