@@ -25,6 +25,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1TrainingOutput do
   - builtInAlgorithmOutput (GoogleCloudMlV1BuiltInAlgorithmOutput): Details related to built-in algorithms jobs. Only set for built-in algorithms jobs. Defaults to: `null`.
   - completedTrialCount (String.t): The number of hyperparameter tuning trials that completed successfully. Only set for hyperparameter tuning jobs. Defaults to: `null`.
   - consumedMLUnits (float()): The amount of ML units consumed by the job. Defaults to: `null`.
+  - hyperparameterMetricTag (String.t): The TensorFlow summary tag name used for optimizing hyperparameter tuning trials. See [&#x60;HyperparameterSpec.hyperparameterMetricTag&#x60;](#HyperparameterSpec.FIELDS.hyperparameter_metric_tag) for more information. Only set for hyperparameter tuning jobs. Defaults to: `null`.
   - isBuiltInAlgorithmJob (boolean()): Whether this job is a built-in Algorithm job. Defaults to: `null`.
   - isHyperparameterTuningJob (boolean()): Whether this job is a hyperparameter tuning job. Defaults to: `null`.
   - trials ([GoogleCloudMlV1HyperparameterOutput]): Results for individual Hyperparameter trials. Only set for hyperparameter tuning jobs. Defaults to: `null`.
@@ -37,6 +38,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1TrainingOutput do
             GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1BuiltInAlgorithmOutput.t(),
           :completedTrialCount => any(),
           :consumedMLUnits => any(),
+          :hyperparameterMetricTag => any(),
           :isBuiltInAlgorithmJob => any(),
           :isHyperparameterTuningJob => any(),
           :trials =>
@@ -50,6 +52,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1TrainingOutput do
 
   field(:completedTrialCount)
   field(:consumedMLUnits)
+  field(:hyperparameterMetricTag)
   field(:isBuiltInAlgorithmJob)
   field(:isHyperparameterTuningJob)
 

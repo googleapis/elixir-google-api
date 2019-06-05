@@ -40,6 +40,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1Version do
   - predictionClass (String.t): Optional. The fully qualified name (&lt;var&gt;module_name&lt;/var&gt;.&lt;var&gt;class_name&lt;/var&gt;) of a class that implements the Predictor interface described in this reference field. The module containing this class should be included in a package provided to the [&#x60;packageUris&#x60; field](#Version.FIELDS.package_uris).  Specify this field if and only if you are deploying a [custom prediction routine (beta)](/ml-engine/docs/tensorflow/custom-prediction-routines). If you specify this field, you must set [&#x60;runtimeVersion&#x60;](#Version.FIELDS.runtime_version) to 1.4 or greater.  The following code sample provides the Predictor interface:  &#x60;&#x60;&#x60;py class Predictor(object): \&quot;\&quot;\&quot;Interface for constructing custom predictors.\&quot;\&quot;\&quot;  def predict(self, instances, **kwargs):     \&quot;\&quot;\&quot;Performs custom prediction.      Instances are the decoded values from the request. They have already     been deserialized from JSON.      Args:         instances: A list of prediction input instances.         **kwargs: A dictionary of keyword args provided as additional             fields on the predict request body.      Returns:         A list of outputs containing the prediction results. This list must         be JSON serializable.     \&quot;\&quot;\&quot;     raise NotImplementedError()  @classmethod def from_path(cls, model_dir):     \&quot;\&quot;\&quot;Creates an instance of Predictor using the given path.      Loading of the predictor should be done in this method.      Args:         model_dir: The local directory that contains the exported model             file along with any additional files uploaded when creating the             version resource.      Returns:         An instance implementing this Predictor class.     \&quot;\&quot;\&quot;     raise NotImplementedError() &#x60;&#x60;&#x60;  Learn more about [the Predictor interface and custom prediction routines](/ml-engine/docs/tensorflow/custom-prediction-routines). Defaults to: `null`.
   - pythonVersion (String.t): Optional. The version of Python used in prediction. If not set, the default version is &#39;2.7&#39;. Python &#39;3.5&#39; is available when &#x60;runtime_version&#x60; is set to &#39;1.4&#39; and above. Python &#39;2.7&#39; works with all supported runtime versions. Defaults to: `null`.
   - runtimeVersion (String.t): Optional. The AI Platform runtime version to use for this deployment. If not set, AI Platform uses the default stable version, 1.0. For more information, see the [runtime version list](/ml-engine/docs/runtime-version-list) and [how to manage runtime versions](/ml-engine/docs/versioning). Defaults to: `null`.
+  - serviceAccount (String.t): Optional. Specifies the service account for resource access control. Defaults to: `null`.
   - state (String.t): Output only. The state of a version. Defaults to: `null`.
     - Enum - one of [UNKNOWN, READY, CREATING, FAILED, DELETING, UPDATING]
   """
@@ -64,6 +65,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1Version do
           :predictionClass => any(),
           :pythonVersion => any(),
           :runtimeVersion => any(),
+          :serviceAccount => any(),
           :state => any()
         }
 
@@ -84,6 +86,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1Version do
   field(:predictionClass)
   field(:pythonVersion)
   field(:runtimeVersion)
+  field(:serviceAccount)
   field(:state)
 end
 
