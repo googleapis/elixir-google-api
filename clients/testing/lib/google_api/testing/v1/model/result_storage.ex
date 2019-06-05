@@ -23,6 +23,7 @@ defmodule GoogleApi.Testing.V1.Model.ResultStorage do
   ## Attributes
 
   - googleCloudStorage (GoogleCloudStorage): Required. Defaults to: `null`.
+  - resultsUrl (String.t): Output only. URL to the results in the Firebase Web Console. Defaults to: `null`.
   - toolResultsExecution (ToolResultsExecution): Output only. The tool results execution that results are written to. Defaults to: `null`.
   - toolResultsHistory (ToolResultsHistory): The tool results history that contains the tool results execution that results are written to.  If not provided, the service will choose an appropriate value. Defaults to: `null`.
   """
@@ -31,11 +32,13 @@ defmodule GoogleApi.Testing.V1.Model.ResultStorage do
 
   @type t :: %__MODULE__{
           :googleCloudStorage => GoogleApi.Testing.V1.Model.GoogleCloudStorage.t(),
+          :resultsUrl => any(),
           :toolResultsExecution => GoogleApi.Testing.V1.Model.ToolResultsExecution.t(),
           :toolResultsHistory => GoogleApi.Testing.V1.Model.ToolResultsHistory.t()
         }
 
   field(:googleCloudStorage, as: GoogleApi.Testing.V1.Model.GoogleCloudStorage)
+  field(:resultsUrl)
   field(:toolResultsExecution, as: GoogleApi.Testing.V1.Model.ToolResultsExecution)
   field(:toolResultsHistory, as: GoogleApi.Testing.V1.Model.ToolResultsHistory)
 end
