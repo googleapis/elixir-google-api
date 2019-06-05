@@ -96,7 +96,7 @@ defmodule GoogleApi.Compute.V1.Api.Disks do
     - :prettyPrint (boolean()): Returns response with indentations and line breaks.
     - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
     - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :guestFlush (boolean()): 
+    - :guestFlush (boolean()): [Input Only] Specifies to create an application consistent snapshot by informing the OS to prepare for the snapshot process. Currently only supported on Windows instances using the Volume Shadow Copy Service (VSS).
     - :requestId (String.t): An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.  For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.  The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
     - :body (Snapshot): 
 

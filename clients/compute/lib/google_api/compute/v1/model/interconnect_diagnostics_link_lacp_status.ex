@@ -24,7 +24,7 @@ defmodule GoogleApi.Compute.V1.Model.InterconnectDiagnosticsLinkLacpStatus do
 
   - googleSystemId (String.t): System ID of the port on Google?s side of the LACP exchange. Defaults to: `null`.
   - neighborSystemId (String.t): System ID of the port on the neighbor?s side of the LACP exchange. Defaults to: `null`.
-  - state (String.t):  Defaults to: `null`.
+  - state (String.t): The state of a LACP link, which can take one of the following values:  - ACTIVE: The link is configured and active within the bundle.  - DETACHED: The link is not configured within the bundle. This means that the rest of the object should be empty. Defaults to: `null`.
     - Enum - one of [ACTIVE, DETACHED]
   """
 

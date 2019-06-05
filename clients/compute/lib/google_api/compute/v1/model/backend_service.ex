@@ -36,7 +36,7 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
   - id (String.t): [Output Only] The unique identifier for the resource. This identifier is defined by the server. Defaults to: `null`.
   - kind (String.t): [Output Only] Type of resource. Always compute#backendService for backend services. Defaults to: `null`.
   - loadBalancingScheme (String.t): Indicates whether the backend service will be used with internal or external load balancing. A backend service created for one type of load balancing cannot be used with the other. Possible values are INTERNAL and EXTERNAL. Defaults to: `null`.
-    - Enum - one of [EXTERNAL, INTERNAL, INVALID_LOAD_BALANCING_SCHEME]
+    - Enum - one of [EXTERNAL, INTERNAL, INTERNAL_SELF_MANAGED, INVALID_LOAD_BALANCING_SCHEME]
   - name (String.t): Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression &#x60;[a-z]([-a-z0-9]*[a-z0-9])?&#x60; which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. Defaults to: `null`.
   - port (integer()): Deprecated in favor of portName. The TCP port to connect on the backend. The default value is 80.  This cannot be used for internal load balancing. Defaults to: `null`.
   - portName (String.t): Name of backend port. The same name should appear in the instance groups referenced by this service. Required when the load balancing scheme is EXTERNAL.  When the load balancing scheme is INTERNAL, this field is not used. Defaults to: `null`.

@@ -22,9 +22,9 @@ defmodule GoogleApi.Compute.V1.Model.RouterNatSubnetworkToNat do
 
   ## Attributes
 
-  - name (String.t): URL for the subnetwork resource to use NAT. Defaults to: `null`.
+  - name (String.t): URL for the subnetwork resource that will use NAT. Defaults to: `null`.
   - secondaryIpRangeNames ([String.t]): A list of the secondary ranges of the Subnetwork that are allowed to use NAT. This can be populated only if \&quot;LIST_OF_SECONDARY_IP_RANGES\&quot; is one of the values in source_ip_ranges_to_nat. Defaults to: `null`.
-  - sourceIpRangesToNat ([String.t]): Specify the options for NAT ranges in the Subnetwork. All usages of single value are valid except NAT_IP_RANGE_OPTION_UNSPECIFIED. The only valid option with multiple values is: [\&quot;PRIMARY_IP_RANGE\&quot;, \&quot;LIST_OF_SECONDARY_IP_RANGES\&quot;] Default: [ALL_IP_RANGES] Defaults to: `null`.
+  - sourceIpRangesToNat ([String.t]): Specify the options for NAT ranges in the Subnetwork. All options of a single value are valid except NAT_IP_RANGE_OPTION_UNSPECIFIED. The only valid option with multiple values is: [\&quot;PRIMARY_IP_RANGE\&quot;, \&quot;LIST_OF_SECONDARY_IP_RANGES\&quot;] Default: [ALL_IP_RANGES] Defaults to: `null`.
     - Enum - one of 
   """
 

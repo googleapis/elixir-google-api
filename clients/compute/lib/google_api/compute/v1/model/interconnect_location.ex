@@ -25,7 +25,7 @@ defmodule GoogleApi.Compute.V1.Model.InterconnectLocation do
   - address (String.t): [Output Only] The postal address of the Point of Presence, each line in the address is separated by a newline character. Defaults to: `null`.
   - availabilityZone (String.t): [Output Only] Availability zone for this InterconnectLocation. Within a metropolitan area (metro), maintenance will not be simultaneously scheduled in more than one availability zone. Example: \&quot;zone1\&quot; or \&quot;zone2\&quot;. Defaults to: `null`.
   - city (String.t): [Output Only] Metropolitan area designator that indicates which city an interconnect is located. For example: \&quot;Chicago, IL\&quot;, \&quot;Amsterdam, Netherlands\&quot;. Defaults to: `null`.
-  - continent (String.t): [Output Only] Continent for this location. Defaults to: `null`.
+  - continent (String.t): [Output Only] Continent for this location, which can take one of the following values:  - AFRICA  - ASIA_PAC  - EUROPE  - NORTH_AMERICA  - SOUTH_AMERICA Defaults to: `null`.
     - Enum - one of [AFRICA, ASIA_PAC, C_AFRICA, C_ASIA_PAC, C_EUROPE, C_NORTH_AMERICA, C_SOUTH_AMERICA, EUROPE, NORTH_AMERICA, SOUTH_AMERICA]
   - creationTimestamp (String.t): [Output Only] Creation timestamp in RFC3339 text format. Defaults to: `null`.
   - description (String.t): [Output Only] An optional description of the resource. Defaults to: `null`.
@@ -37,7 +37,7 @@ defmodule GoogleApi.Compute.V1.Model.InterconnectLocation do
   - peeringdbFacilityId (String.t): [Output Only] The peeringdb identifier for this facility (corresponding with a netfac type in peeringdb). Defaults to: `null`.
   - regionInfos ([InterconnectLocationRegionInfo]): [Output Only] A list of InterconnectLocation.RegionInfo objects, that describe parameters pertaining to the relation between this InterconnectLocation and various Google Cloud regions. Defaults to: `null`.
   - selfLink (String.t): [Output Only] Server-defined URL for the resource. Defaults to: `null`.
-  - status (String.t): [Output Only] The status of this InterconnectLocation. If the status is AVAILABLE, new Interconnects may be provisioned in this InterconnectLocation. Otherwise, no new Interconnects may be provisioned. Defaults to: `null`.
+  - status (String.t): [Output Only] The status of this InterconnectLocation, which can take one of the following values:  - CLOSED: The InterconnectLocation is closed and is unavailable for provisioning new Interconnects.  - AVAILABLE: The InterconnectLocation is available for provisioning new Interconnects. Defaults to: `null`.
     - Enum - one of [AVAILABLE, CLOSED]
   """
 

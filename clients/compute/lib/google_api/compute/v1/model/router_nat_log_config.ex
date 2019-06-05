@@ -16,32 +16,35 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Compute.V1.Model.LogConfigDataAccessOptions do
+defmodule GoogleApi.Compute.V1.Model.RouterNatLogConfig do
   @moduledoc """
-  Write a Data Access (Gin) log
+  Configuration of logging on a NAT.
 
   ## Attributes
 
-  - logMode (String.t): Whether Gin logging should happen in a fail-closed manner at the caller. This is relevant only in the LocalIAM implementation, for now. Defaults to: `null`.
-    - Enum - one of [LOG_FAIL_CLOSED, LOG_MODE_UNSPECIFIED]
+  - enable (boolean()): Indicates whether or not to export logs. This is false by default. Defaults to: `null`.
+  - filter (String.t): Specifies the desired filtering of logs on this NAT. If unspecified, logs are exported for all connections handled by this NAT. Defaults to: `null`.
+    - Enum - one of [ALL, ERRORS_ONLY, TRANSLATIONS_ONLY]
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :logMode => any()
+          :enable => any(),
+          :filter => any()
         }
 
-  field(:logMode)
+  field(:enable)
+  field(:filter)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.LogConfigDataAccessOptions do
+defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.RouterNatLogConfig do
   def decode(value, options) do
-    GoogleApi.Compute.V1.Model.LogConfigDataAccessOptions.decode(value, options)
+    GoogleApi.Compute.V1.Model.RouterNatLogConfig.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.Compute.V1.Model.LogConfigDataAccessOptions do
+defimpl Poison.Encoder, for: GoogleApi.Compute.V1.Model.RouterNatLogConfig do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

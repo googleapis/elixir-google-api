@@ -23,14 +23,14 @@ defmodule GoogleApi.Compute.V1.Model.Router do
   ## Attributes
 
   - bgp (RouterBgp): BGP information specific to this router. Defaults to: `null`.
-  - bgpPeers ([RouterBgpPeer]): BGP information that needs to be configured into the routing stack to establish the BGP peering. It must specify peer ASN and either interface name, IP, or peer IP. Please refer to RFC4273. Defaults to: `null`.
+  - bgpPeers ([RouterBgpPeer]): BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer to RFC4273. Defaults to: `null`.
   - creationTimestamp (String.t): [Output Only] Creation timestamp in RFC3339 text format. Defaults to: `null`.
   - description (String.t): An optional description of this resource. Provide this property when you create the resource. Defaults to: `null`.
   - id (String.t): [Output Only] The unique identifier for the resource. This identifier is defined by the server. Defaults to: `null`.
-  - interfaces ([RouterInterface]): Router interfaces. Each interface requires either one linked resource (e.g. linkedVpnTunnel), or IP address and IP address range (e.g. ipRange), or both. Defaults to: `null`.
+  - interfaces ([RouterInterface]): Router interfaces. Each interface requires either one linked resource, (for example, linkedVpnTunnel), or IP address and IP address range (for example, ipRange), or both. Defaults to: `null`.
   - kind (String.t): [Output Only] Type of resource. Always compute#router for routers. Defaults to: `null`.
   - name (String.t): Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression &#x60;[a-z]([-a-z0-9]*[a-z0-9])?&#x60; which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. Defaults to: `null`.
-  - nats ([RouterNat]): A list of Nat services created in this router. Defaults to: `null`.
+  - nats ([RouterNat]): A list of NAT services created in this router. Defaults to: `null`.
   - network (String.t): URI of the network to which this router belongs. Defaults to: `null`.
   - region (String.t): [Output Only] URI of the region where the router resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body. Defaults to: `null`.
   - selfLink (String.t): [Output Only] Server-defined URL for the resource. Defaults to: `null`.
