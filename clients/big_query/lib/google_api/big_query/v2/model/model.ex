@@ -23,13 +23,13 @@ defmodule GoogleApi.BigQuery.V2.Model.Model do
   ## Attributes
 
   - creationTime (String.t): Output only. The time when this model was created, in millisecs since the epoch. Defaults to: `null`.
-  - description (String.t): [Optional] A user-friendly description of this model. @mutable bigquery.models.patch Defaults to: `null`.
+  - description (String.t): [Optional] A user-friendly description of this model. Defaults to: `null`.
   - etag (String.t): Output only. A hash of this resource. Defaults to: `null`.
-  - expirationTime (String.t): [Optional] The time when this model expires, in milliseconds since the epoch. If not present, the model will persist indefinitely. Expired models will be deleted and their storage reclaimed.  The defaultTableExpirationMs property of the encapsulating dataset can be used to set a default expirationTime on newly created models. @mutable bigquery.models.patch Defaults to: `null`.
+  - expirationTime (String.t): [Optional] The time when this model expires, in milliseconds since the epoch. If not present, the model will persist indefinitely. Expired models will be deleted and their storage reclaimed.  The defaultTableExpirationMs property of the encapsulating dataset can be used to set a default expirationTime on newly created models. Defaults to: `null`.
   - featureColumns ([StandardSqlField]): Output only. Input feature columns that were used to train this model. Defaults to: `null`.
-  - friendlyName (String.t): [Optional] A descriptive name for this model. @mutable bigquery.models.patch Defaults to: `null`.
+  - friendlyName (String.t): [Optional] A descriptive name for this model. Defaults to: `null`.
   - labelColumns ([StandardSqlField]): Output only. Label columns that were used to train this model. The output of the model will have a \&quot;predicted_\&quot; prefix to these columns. Defaults to: `null`.
-  - labels (%{optional(String.t) &#x3D;&gt; String.t}): [Optional] The labels associated with this model. You can use these to organize and group your models. Label keys and values can be no longer than 63 characters, can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. Label values are optional. Label keys must start with a letter and each label in the list must have a different key. @mutable bigquery.models.patch Defaults to: `null`.
+  - labels (%{optional(String.t) &#x3D;&gt; String.t}): [Optional] The labels associated with this model. You can use these to organize and group your models. Label keys and values can be no longer than 63 characters, can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. Label values are optional. Label keys must start with a letter and each label in the list must have a different key. Defaults to: `null`.
   - lastModifiedTime (String.t): Output only. The time when this model was last modified, in millisecs since the epoch. Defaults to: `null`.
   - location (String.t): Output only. The geographic location where the model resides. This value is inherited from the dataset. Defaults to: `null`.
   - modelReference (ModelReference): Required. Unique identifier for this model. Defaults to: `null`.

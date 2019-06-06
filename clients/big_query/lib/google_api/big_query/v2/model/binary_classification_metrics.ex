@@ -24,6 +24,8 @@ defmodule GoogleApi.BigQuery.V2.Model.BinaryClassificationMetrics do
 
   - aggregateClassificationMetrics (AggregateClassificationMetrics): Aggregate classification metrics. Defaults to: `null`.
   - binaryConfusionMatrixList ([BinaryConfusionMatrix]): Binary confusion matrix at multiple thresholds. Defaults to: `null`.
+  - negativeLabel (String.t): Label representing the negative class. Defaults to: `null`.
+  - positiveLabel (String.t): Label representing the positive class. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -32,7 +34,9 @@ defmodule GoogleApi.BigQuery.V2.Model.BinaryClassificationMetrics do
           :aggregateClassificationMetrics =>
             GoogleApi.BigQuery.V2.Model.AggregateClassificationMetrics.t(),
           :binaryConfusionMatrixList =>
-            list(GoogleApi.BigQuery.V2.Model.BinaryConfusionMatrix.t())
+            list(GoogleApi.BigQuery.V2.Model.BinaryConfusionMatrix.t()),
+          :negativeLabel => any(),
+          :positiveLabel => any()
         }
 
   field(
@@ -45,6 +49,9 @@ defmodule GoogleApi.BigQuery.V2.Model.BinaryClassificationMetrics do
     as: GoogleApi.BigQuery.V2.Model.BinaryConfusionMatrix,
     type: :list
   )
+
+  field(:negativeLabel)
+  field(:positiveLabel)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.BinaryClassificationMetrics do
