@@ -24,6 +24,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.Notification do
 
   - appRestrictionsSchemaChangeEvent (AppRestrictionsSchemaChangeEvent): Notifications about new app restrictions schema changes. Defaults to: `null`.
   - appUpdateEvent (AppUpdateEvent): Notifications about app updates. Defaults to: `null`.
+  - deviceReportUpdateEvent (DeviceReportUpdateEvent): Notifications about device report updates. Defaults to: `null`.
   - enterpriseId (String.t): The ID of the enterprise for which the notification is sent. This will always be present. Defaults to: `null`.
   - installFailureEvent (InstallFailureEvent): Notifications about an app installation failure. Defaults to: `null`.
   - newDeviceEvent (NewDeviceEvent): Notifications about new devices. Defaults to: `null`.
@@ -40,6 +41,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.Notification do
           :appRestrictionsSchemaChangeEvent =>
             GoogleApi.AndroidEnterprise.V1.Model.AppRestrictionsSchemaChangeEvent.t(),
           :appUpdateEvent => GoogleApi.AndroidEnterprise.V1.Model.AppUpdateEvent.t(),
+          :deviceReportUpdateEvent =>
+            GoogleApi.AndroidEnterprise.V1.Model.DeviceReportUpdateEvent.t(),
           :enterpriseId => any(),
           :installFailureEvent => GoogleApi.AndroidEnterprise.V1.Model.InstallFailureEvent.t(),
           :newDeviceEvent => GoogleApi.AndroidEnterprise.V1.Model.NewDeviceEvent.t(),
@@ -57,6 +60,12 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.Notification do
   )
 
   field(:appUpdateEvent, as: GoogleApi.AndroidEnterprise.V1.Model.AppUpdateEvent)
+
+  field(
+    :deviceReportUpdateEvent,
+    as: GoogleApi.AndroidEnterprise.V1.Model.DeviceReportUpdateEvent
+  )
+
   field(:enterpriseId)
   field(:installFailureEvent, as: GoogleApi.AndroidEnterprise.V1.Model.InstallFailureEvent)
   field(:newDeviceEvent, as: GoogleApi.AndroidEnterprise.V1.Model.NewDeviceEvent)

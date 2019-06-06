@@ -25,6 +25,72 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Devices do
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
+  Uploads a report containing any changes in app states on the device since the last report was generated. You can call this method up to 3 times every 24 hours for a given device.
+
+  ## Parameters
+
+  - connection (GoogleApi.AndroidEnterprise.V1.Connection): Connection to server
+  - enterprise_id (String.t): The ID of the enterprise.
+  - user_id (String.t): The ID of the user.
+  - device_id (String.t): The ID of the device.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :alt (String.t): Data format for the response.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+
+  ## Returns
+
+  {:ok, %{}} on success
+  {:error, info} on failure
+  """
+  @spec androidenterprise_devices_force_report_upload(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+  def androidenterprise_devices_force_report_upload(
+        connection,
+        enterprise_id,
+        user_id,
+        device_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :alt => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :userIp => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/enterprises/{enterpriseId}/users/{userId}/devices/{deviceId}/forceReportUpload",
+        %{
+          "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
+          "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
+          "deviceId" => URI.encode(device_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [decode: false])
+  end
+
+  @doc """
   Retrieves the details of a device.
 
   ## Parameters
