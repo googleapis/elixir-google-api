@@ -24,7 +24,7 @@ defmodule GoogleApi.Compute.V1.Model.InterconnectAttachmentPartnerMetadata do
 
   - interconnectName (String.t): Plain text name of the Interconnect this attachment is connected to, as displayed in the Partner?s portal. For instance \&quot;Chicago 1\&quot;. This value may be validated to match approved Partner values. Defaults to: `null`.
   - partnerName (String.t): Plain text name of the Partner providing this attachment. This value may be validated to match approved Partner values. Defaults to: `null`.
-  - portalUrl (String.t): URL of the Partner?s portal for this Attachment. Partners may customise this to be a deep-link to the specific resource on the Partner portal. This value may be validated to match approved Partner values. Defaults to: `null`.
+  - portalUrl (String.t): URL of the Partner?s portal for this Attachment. Partners may customise this to be a deep link to the specific resource on the Partner portal. This value may be validated to match approved Partner values. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

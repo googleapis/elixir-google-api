@@ -24,7 +24,7 @@ defmodule GoogleApi.Compute.V1.Model.Disk do
 
   - creationTimestamp (String.t): [Output Only] Creation timestamp in RFC3339 text format. Defaults to: `null`.
   - description (String.t): An optional description of this resource. Provide this property when you create the resource. Defaults to: `null`.
-  - diskEncryptionKey (CustomerEncryptionKey): Encrypts the disk using a customer-supplied encryption key.  After you encrypt a disk with a customer-supplied key, you must provide the same key if you use the disk later (e.g. to create a disk snapshot or an image, or to attach the disk to a virtual machine).  Customer-supplied encryption keys do not protect access to metadata of the disk.  If you do not provide an encryption key when creating the disk, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later. Defaults to: `null`.
+  - diskEncryptionKey (CustomerEncryptionKey): Encrypts the disk using a customer-supplied encryption key.  After you encrypt a disk with a customer-supplied key, you must provide the same key if you use the disk later (e.g. to create a disk snapshot, to create a disk image, to create a machine image, or to attach the disk to a virtual machine).  Customer-supplied encryption keys do not protect access to metadata of the disk.  If you do not provide an encryption key when creating the disk, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later. Defaults to: `null`.
   - guestOsFeatures ([GuestOsFeature]): A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options. Defaults to: `null`.
   - id (String.t): [Output Only] The unique identifier for the resource. This identifier is defined by the server. Defaults to: `null`.
   - kind (String.t): [Output Only] Type of the resource. Always compute#disk for disks. Defaults to: `null`.
@@ -49,8 +49,8 @@ defmodule GoogleApi.Compute.V1.Model.Disk do
   - sourceSnapshotId (String.t): [Output Only] The unique ID of the snapshot used to create this disk. This value identifies the exact snapshot that was used to create this persistent disk. For example, if you created the persistent disk from a snapshot that was later deleted and recreated under the same name, the source snapshot ID would identify the exact version of the snapshot that was used. Defaults to: `null`.
   - status (String.t): [Output Only] The status of disk creation. Defaults to: `null`.
     - Enum - one of [CREATING, DELETING, FAILED, READY, RESTORING]
-  - type (String.t): URL of the disk type resource describing which disk type to use to create the disk. Provide this when creating the disk. For example: project/zones/zone/diskTypes/pd-standard or pd-ssd Defaults to: `null`.
-  - users ([String.t]): [Output Only] Links to the users of the disk (attached instances) in form: project/zones/zone/instances/instance Defaults to: `null`.
+  - type (String.t): URL of the disk type resource describing which disk type to use to create the disk. Provide this when creating the disk. For example: projects/project/zones/zone/diskTypes/pd-standard or pd-ssd Defaults to: `null`.
+  - users ([String.t]): [Output Only] Links to the users of the disk (attached instances) in form: projects/project/zones/zone/instances/instance Defaults to: `null`.
   - zone (String.t): [Output Only] URL of the zone where the disk resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body. Defaults to: `null`.
   """
 

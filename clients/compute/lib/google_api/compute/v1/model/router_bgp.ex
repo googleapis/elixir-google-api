@@ -22,7 +22,7 @@ defmodule GoogleApi.Compute.V1.Model.RouterBgp do
 
   ## Attributes
 
-  - advertiseMode (String.t): User-specified flag to indicate which mode to use for advertisement. Defaults to: `null`.
+  - advertiseMode (String.t): User-specified flag to indicate which mode to use for advertisement. The options are DEFAULT or CUSTOM. Defaults to: `null`.
     - Enum - one of [CUSTOM, DEFAULT]
   - advertisedGroups ([String.t]): User-specified list of prefix groups to advertise in custom mode. This field can only be populated if advertise_mode is CUSTOM and is advertised to all peers of the router. These groups will be advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups. Defaults to: `null`.
     - Enum - one of 
