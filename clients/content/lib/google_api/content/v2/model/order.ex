@@ -25,7 +25,7 @@ defmodule GoogleApi.Content.V2.Model.Order do
   - acknowledged (boolean()): Whether the order was acknowledged. Defaults to: `null`.
   - channelType (String.t): Deprecated. Defaults to: `null`.
   - customer (OrderCustomer): The details of the customer who placed the order. Defaults to: `null`.
-  - deliveryDetails (OrderDeliveryDetails): The details for the delivery. Defaults to: `null`.
+  - deliveryDetails (OrderDeliveryDetails): Delivery details for shipments. Defaults to: `null`.
   - id (String.t): The REST ID of the order. Globally unique. Defaults to: `null`.
   - kind (String.t): Identifies what kind of resource this is. Value: the fixed string \&quot;content#order\&quot;. Defaults to: `null`.
   - lineItems ([OrderLineItem]): Line items that are ordered. Defaults to: `null`.
