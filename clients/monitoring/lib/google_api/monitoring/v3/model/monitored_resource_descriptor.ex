@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.Monitoring.V3.Model.MonitoredResourceDescriptor do
   @moduledoc """
-  An object that describes the schema of a MonitoredResource object using a type name and a set of labels. For example, the monitored resource descriptor for Google Compute Engine VM instances has a type of \&quot;gce_instance\&quot; and specifies the use of the labels \&quot;instance_id\&quot; and \&quot;zone\&quot; to identify particular VM instances.Different APIs can support different monitored resource types. APIs generally provide a list method that returns the monitored resource descriptors used by the API.
+  An object that describes the schema of a MonitoredResource object using a type name and a set of labels. For example, the monitored resource descriptor for Google Compute Engine VM instances has a type of \&quot;gce_instance\&quot; and specifies the use of the labels \&quot;instance_id\&quot; and \&quot;zone\&quot; to identify particular VM instances.Different APIs can support different monitored resource types. APIs generally provide a list method that returns the monitored resource descriptors used by the API.Next ID: 10
 
   ## Attributes
 
