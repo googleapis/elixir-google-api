@@ -24,7 +24,6 @@ defmodule GoogleApi.Storage.V1.Model.Expr do
 
   - description (String.t): An optional description of the expression. This is a longer text which describes the expression, e.g. when hovered over it in a UI. Defaults to: `null`.
   - expression (String.t): Textual representation of an expression in Common Expression Language syntax. The application context of the containing message determines which well-known feature set of CEL is supported. Defaults to: `null`.
-  - kind (String.t): The kind of item this is. For storage, this is always storage#expr. This field is ignored on input. Defaults to: `null`.
   - location (String.t): An optional string indicating the location of the expression for error reporting, e.g. a file name and a position in the file. Defaults to: `null`.
   - title (String.t): An optional title for the expression, i.e. a short string describing its purpose. This can be used e.g. in UIs which allow to enter the expression. Defaults to: `null`.
   """
@@ -34,14 +33,12 @@ defmodule GoogleApi.Storage.V1.Model.Expr do
   @type t :: %__MODULE__{
           :description => any(),
           :expression => any(),
-          :kind => any(),
           :location => any(),
           :title => any()
         }
 
   field(:description)
   field(:expression)
-  field(:kind)
   field(:location)
   field(:title)
 end
