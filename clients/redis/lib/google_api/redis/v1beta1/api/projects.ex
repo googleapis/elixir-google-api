@@ -233,6 +233,82 @@ defmodule GoogleApi.Redis.V1beta1.Api.Projects do
   end
 
   @doc """
+  Export Redis instance data into a Redis RDB format file in GCS.  Redis will continue serving during this operation.  The returned operation is automatically deleted after a few hours, so there is no need to call DeleteOperation.
+
+  ## Parameters
+
+  - connection (GoogleApi.Redis.V1beta1.Connection): Connection to server
+  - projects_id (String.t): Part of &#x60;name&#x60;. Required. Redis instance resource name using the form:     &#x60;projects/{project_id}/locations/{location_id}/instances/{instance_id}&#x60; where &#x60;location_id&#x60; refers to a GCP region.
+  - locations_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - instances_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :body (ExportInstanceRequest): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.Redis.V1beta1.Model.Operation{}} on success
+  {:error, info} on failure
+  """
+  @spec redis_projects_locations_instances_export(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) :: {:ok, GoogleApi.Redis.V1beta1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+  def redis_projects_locations_instances_export(
+        connection,
+        projects_id,
+        locations_id,
+        instances_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1beta1/projects/{projectsId}/locations/{locationsId}/instances/{instancesId}:export",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Redis.V1beta1.Model.Operation{}])
+  end
+
+  @doc """
   Gets the details of a specific Redis instance.
 
   ## Parameters
@@ -304,6 +380,82 @@ defmodule GoogleApi.Redis.V1beta1.Api.Projects do
     connection
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.Redis.V1beta1.Model.Instance{}])
+  end
+
+  @doc """
+  Import a Redis RDB snapshot file from GCS into a Redis instance.  Redis may stop serving during this operation. Instance state will be IMPORTING for entire operation. When complete, the instance will contain only data from the imported file.  The returned operation is automatically deleted after a few hours, so there is no need to call DeleteOperation.
+
+  ## Parameters
+
+  - connection (GoogleApi.Redis.V1beta1.Connection): Connection to server
+  - projects_id (String.t): Part of &#x60;name&#x60;. Required. Redis instance resource name using the form:     &#x60;projects/{project_id}/locations/{location_id}/instances/{instance_id}&#x60; where &#x60;location_id&#x60; refers to a GCP region.
+  - locations_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - instances_id (String.t): Part of &#x60;name&#x60;. See documentation of &#x60;projectsId&#x60;.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :body (ImportInstanceRequest): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.Redis.V1beta1.Model.Operation{}} on success
+  {:error, info} on failure
+  """
+  @spec redis_projects_locations_instances_import(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) :: {:ok, GoogleApi.Redis.V1beta1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+  def redis_projects_locations_instances_import(
+        connection,
+        projects_id,
+        locations_id,
+        instances_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1beta1/projects/{projectsId}/locations/{locationsId}/instances/{instancesId}:import",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Redis.V1beta1.Model.Operation{}])
   end
 
   @doc """
