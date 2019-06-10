@@ -22,18 +22,7 @@ defmodule GoogleApi.YouTubeAnalytics.V1.Connection do
   """
 
   use GoogleApi.Gax.Connection,
-    scopes: [
-      # Manage your YouTube account
-      "https://www.googleapis.com/auth/youtube",
-      # View your YouTube account
-      "https://www.googleapis.com/auth/youtube.readonly",
-      # View and manage your assets and associated content on YouTube
-      "https://www.googleapis.com/auth/youtubepartner",
-      # View monetary and non-monetary YouTube Analytics reports for your YouTube content
-      "https://www.googleapis.com/auth/yt-analytics-monetary.readonly",
-      # View YouTube Analytics reports for your YouTube content
-      "https://www.googleapis.com/auth/yt-analytics.readonly"
-    ],
+    scopes: [],
     otp_app: :google_api_you_tube_analytics,
-    base_url: "https://www.googleapis.com/youtube/analytics/v1"
+    base_url: "https://youtubeanalytics.googleapis.com"
 end
