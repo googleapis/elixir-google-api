@@ -159,6 +159,7 @@ defmodule GoogleApis.Generator.ElixirGenerator do
   defp collect_methods_from_methods(methods), do: Enum.into(methods, [])
 
   defp collect_methods_from_resources(nil), do: []
+
   defp collect_methods_from_resources(resources) do
     Enum.flat_map(resources, fn {name, resource} ->
       collect_methods(resource)

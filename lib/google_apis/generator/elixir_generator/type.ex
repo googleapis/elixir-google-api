@@ -50,6 +50,18 @@ defmodule GoogleApis.Generator.ElixirGenerator.Type do
     }
   end
 
+  def from_schema(%{repeated: true} = schema, context) do
+    t = schema
+    |> Map.put(:repeated, nil)
+    |> from_schema(context)
+
+    %__MODULE__{
+      name: "array",
+      struct: t.struct,
+      typespec: "list(#{t.typespec})"
+    }
+  end
+
   def from_schema(%{"$ref": ref}, context) when not is_nil(ref) do
     %__MODULE__{
       name: "object",

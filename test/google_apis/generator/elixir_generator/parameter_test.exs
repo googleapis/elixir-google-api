@@ -16,7 +16,7 @@ defmodule GoogleApis.Generator.ElixirGenerator.ParameterTest do
   use ExUnit.Case
   doctest GoogleApis.Generator.ElixirGenerator.Parameter
 
-  alias GoogleApis.Generator.ElixirGenerator.Parameter
+  alias GoogleApis.Generator.ElixirGenerator.{Parameter, Type}
   alias GoogleApi.Discovery.V1.Model.RestMethod
 
   @test_json """
@@ -57,6 +57,33 @@ defmodule GoogleApis.Generator.ElixirGenerator.ParameterTest do
   }
   """
 
+  @array_param """
+  {
+    "id": "books.myconfig.releaseDownloadAccess",
+    "path": "myconfig/releaseDownloadAccess",
+    "httpMethod": "POST",
+    "description": "Release downloaded content access restriction.",
+    "parameters": {
+     "volumeIds": {
+      "type": "string",
+      "description": "The volume(s) to release restrictions for.",
+      "required": true,
+      "repeated": true,
+      "location": "query"
+     }
+    },
+    "parameterOrder": [
+     "volumeIds"
+    ],
+    "response": {
+     "$ref": "DownloadAccesses"
+    },
+    "scopes": [
+     "https://www.googleapis.com/auth/books"
+    ]
+  }
+  """
+
   test "split method parameters" do
     method = Poison.decode!(@test_json, as: %RestMethod{})
     {required, optional} = Parameter.from_discovery_method(method)
@@ -69,5 +96,17 @@ defmodule GoogleApis.Generator.ElixirGenerator.ParameterTest do
 
     assert ["userId", "shelf"] == Enum.map(required, & &1.name)
     assert ["source"] == Enum.map(optional, & &1.name)
+  end
+
+  test "array types" do
+    method = Poison.decode!(@array_param, as: %RestMethod{})
+    {required, optional} = Parameter.from_discovery_method(method)
+
+    assert 1 == length(required)
+    assert 0 == length(optional)
+
+    [param | _rest] = required
+    assert %Type{} = param.type
+    assert "list(String.t)" == param.type.typespec
   end
 end
