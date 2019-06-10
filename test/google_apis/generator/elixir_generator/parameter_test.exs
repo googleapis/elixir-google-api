@@ -84,6 +84,49 @@ defmodule GoogleApis.Generator.ElixirGenerator.ParameterTest do
   }
   """
 
+  @request_with_body """
+  {
+    "id": "books.myconfig.updateUserSettings",
+    "path": "myconfig/updateUserSettings",
+    "httpMethod": "POST",
+    "description": "Sets the settings for the user. If a sub-object is specified, it will overwrite the existing sub-object stored in the server. Unspecified sub-objects will retain the existing value.",
+    "parameters": {
+     "source": {
+      "type": "string",
+      "description": "String to identify the originator of this request.",
+      "location": "query"
+     }
+    },
+    "request": {
+     "$ref": "Usersettings"
+    },
+    "response": {
+     "$ref": "Usersettings"
+    },
+    "scopes": [
+     "https://www.googleapis.com/auth/books"
+    ]
+  }
+  """
+
+  @request_body """
+  {
+    "id": "books.myconfig.updateUserSettings",
+    "path": "myconfig/updateUserSettings",
+    "httpMethod": "POST",
+    "description": "Sets the settings for the user. If a sub-object is specified, it will overwrite the existing sub-object stored in the server. Unspecified sub-objects will retain the existing value.",
+    "request": {
+     "$ref": "Usersettings"
+    },
+    "response": {
+     "$ref": "Usersettings"
+    },
+    "scopes": [
+     "https://www.googleapis.com/auth/books"
+    ]
+  }
+  """
+
   test "split method parameters" do
     method = Poison.decode!(@test_json, as: %RestMethod{})
     {required, optional} = Parameter.from_discovery_method(method)
@@ -106,7 +149,36 @@ defmodule GoogleApis.Generator.ElixirGenerator.ParameterTest do
     assert 0 == length(optional)
 
     [param | _rest] = required
+    assert "volumeIds" == param.name
     assert %Type{} = param.type
     assert "list(String.t)" == param.type.typespec
+  end
+
+  # @tag :wip
+  test "request type adds optional body parameter" do
+    method = Poison.decode!(@request_body, as: %RestMethod{})
+    {required, optional} = Parameter.from_discovery_method(method)
+
+    assert 0 == length(required)
+    assert 1 == length(optional)
+
+    param = Enum.at(optional, 0)
+    assert "body" == param.name
+    assert %Type{} = param.type
+    assert "Default.Namespace.Model.Usersettings.t" == param.type.typespec
+  end
+
+  @tag :wip
+  test "request type adds optional body parameter as last parameter" do
+    method = Poison.decode!(@request_with_body, as: %RestMethod{})
+    {required, optional} = Parameter.from_discovery_method(method)
+
+    assert 0 == length(required)
+    assert 2 == length(optional)
+
+    param = Enum.at(optional, -1)
+    assert "body" == param.name
+    assert %Type{} = param.type
+    assert "Default.Namespace.Model.Usersettings.t" == param.type.typespec
   end
 end

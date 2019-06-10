@@ -35,9 +35,11 @@ defmodule GoogleApis.Generator.ElixirGenerator.Parameter do
   parameters.
   """
   @spec from_discovery_method(RestMethod.t()) :: {list(t), list(t)}
+  def from_discovery_method(%RestMethod{parameters: nil, request: request}), do: {[], [body_param(request)]}
+
   def from_discovery_method(%RestMethod{parameters: nil}), do: {[], []}
 
-  def from_discovery_method(%RestMethod{parameters: parameters, parameterOrder: order}) do
+  def from_discovery_method(%RestMethod{parameters: parameters, parameterOrder: order, request: request}) do
     {required, optional} =
       parameters
       |> Enum.split_with(fn {_name, schema} ->
@@ -51,7 +53,26 @@ defmodule GoogleApis.Generator.ElixirGenerator.Parameter do
 
     required = Enum.map(order || [], fn name -> required_by_name[name] end)
     optional = Enum.map(optional, fn {name, schema} -> from_json_schema(name, schema) end)
+
+    optional = case request do
+      nil -> optional
+      _   -> add_body_param(optional, request)
+    end
     {required, optional}
+  end
+
+  defp add_body_param(params, request) do
+    List.insert_at(params, -1, body_param(request))
+  end
+
+  defp body_param(request) do
+    %__MODULE__{
+      name: "body",
+      variable_name: "body",
+      description: "",
+      type: Type.from_schema(request),
+      location: "body"
+    }
   end
 
   @doc """
