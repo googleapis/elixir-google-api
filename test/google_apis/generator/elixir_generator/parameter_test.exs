@@ -127,6 +127,21 @@ defmodule GoogleApis.Generator.ElixirGenerator.ParameterTest do
   }
   """
 
+  @no_parameters """
+  {
+    "id": "noparams",
+    "path": "myconfig/updateUserSettings",
+    "httpMethod": "GET",
+    "description": "No parameter method",
+    "response": {
+     "$ref": "Usersettings"
+    },
+    "scopes": [
+     "https://www.googleapis.com/auth/books"
+    ]
+  }
+  """
+
   test "split method parameters" do
     method = Poison.decode!(@test_json, as: %RestMethod{})
     {required, optional} = Parameter.from_discovery_method(method)
@@ -154,7 +169,6 @@ defmodule GoogleApis.Generator.ElixirGenerator.ParameterTest do
     assert "list(String.t)" == param.type.typespec
   end
 
-  # @tag :wip
   test "request type adds optional body parameter" do
     method = Poison.decode!(@request_body, as: %RestMethod{})
     {required, optional} = Parameter.from_discovery_method(method)
@@ -168,7 +182,6 @@ defmodule GoogleApis.Generator.ElixirGenerator.ParameterTest do
     assert "Default.Namespace.Model.Usersettings.t" == param.type.typespec
   end
 
-  @tag :wip
   test "request type adds optional body parameter as last parameter" do
     method = Poison.decode!(@request_with_body, as: %RestMethod{})
     {required, optional} = Parameter.from_discovery_method(method)
@@ -180,5 +193,13 @@ defmodule GoogleApis.Generator.ElixirGenerator.ParameterTest do
     assert "body" == param.name
     assert %Type{} = param.type
     assert "Default.Namespace.Model.Usersettings.t" == param.type.typespec
+  end
+
+  test "no parameters" do
+    method = Poison.decode!(@no_parameters, as: %RestMethod{})
+    {required, optional} = Parameter.from_discovery_method(method)
+
+    assert 0 == length(required)
+    assert 0 == length(optional)
   end
 end

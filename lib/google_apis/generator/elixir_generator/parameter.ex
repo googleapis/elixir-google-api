@@ -35,9 +35,9 @@ defmodule GoogleApis.Generator.ElixirGenerator.Parameter do
   parameters.
   """
   @spec from_discovery_method(RestMethod.t()) :: {list(t), list(t)}
-  def from_discovery_method(%RestMethod{parameters: nil, request: request}), do: {[], [body_param(request)]}
+  def from_discovery_method(%RestMethod{parameters: nil, request: nil}), do: {[], []}
 
-  def from_discovery_method(%RestMethod{parameters: nil}), do: {[], []}
+  def from_discovery_method(%RestMethod{parameters: nil, request: request}), do: {[], [body_param(request)]}
 
   def from_discovery_method(%RestMethod{parameters: parameters, parameterOrder: order, request: request}) do
     {required, optional} =
