@@ -26,6 +26,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.Device do
   - kind (String.t): Identifies what kind of resource this is. Value: the fixed string \&quot;androidenterprise#device\&quot;. Defaults to: `null`.
   - managementType (String.t): Identifies the extent to which the device is controlled by a managed Google Play EMM in various deployment configurations.  Possible values include:  - \&quot;managedDevice\&quot;, a device that has the EMM&#39;s device policy controller (DPC) as the device owner.  - \&quot;managedProfile\&quot;, a device that has a profile managed by the DPC (DPC is profile owner) in addition to a separate, personal profile that is unavailable to the DPC.  - \&quot;containerApp\&quot;, no longer used (deprecated).  - \&quot;unmanagedProfile\&quot;, a device that has been allowed (by the domain&#39;s admin, using the Admin Console to enable the privilege) to use managed Google Play, but the profile is itself not owned by a DPC. Defaults to: `null`.
   - policy (Policy): The policy enforced on the device. Defaults to: `null`.
+  - report (DeviceReport): The device report updated with the latest app states. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -34,13 +35,15 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.Device do
           :androidId => any(),
           :kind => any(),
           :managementType => any(),
-          :policy => GoogleApi.AndroidEnterprise.V1.Model.Policy.t()
+          :policy => GoogleApi.AndroidEnterprise.V1.Model.Policy.t(),
+          :report => GoogleApi.AndroidEnterprise.V1.Model.DeviceReport.t()
         }
 
   field(:androidId)
   field(:kind)
   field(:managementType)
   field(:policy, as: GoogleApi.AndroidEnterprise.V1.Model.Policy)
+  field(:report, as: GoogleApi.AndroidEnterprise.V1.Model.DeviceReport)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.Device do

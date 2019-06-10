@@ -23,6 +23,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.Policy do
   ## Attributes
 
   - autoUpdatePolicy (String.t): The auto-update policy for apps installed on the device. \&quot;choiceToTheUser\&quot; allows the device&#39;s user to configure the app update policy. \&quot;always\&quot; enables auto updates. \&quot;never\&quot; disables auto updates. \&quot;wifiOnly\&quot; enables auto updates only when the device is connected to wifi. Defaults to: `null`.
+  - deviceReportPolicy (String.t): Whether the device reports app states to the EMM. The default value is \&quot;deviceReportDisabled\&quot;. Defaults to: `null`.
   - maintenanceWindow (MaintenanceWindow): The maintenance window defining when apps running in the foreground should be updated. Defaults to: `null`.
   - productAvailabilityPolicy (String.t): The availability granted to the device for the specified products. \&quot;all\&quot; gives the device access to all products, regardless of approval status. \&quot;all\&quot; does not enable automatic visibility of \&quot;alpha\&quot; or \&quot;beta\&quot; tracks. \&quot;whitelist\&quot; grants the device access the products specified in productPolicy[]. Only products that are approved or products that were previously approved (products with revoked approval) by the enterprise can be whitelisted. If no value is provided, the availability set at the user level is applied by default. Defaults to: `null`.
   - productPolicy ([ProductPolicy]): The list of product policies. Defaults to: `null`.
@@ -32,12 +33,14 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.Policy do
 
   @type t :: %__MODULE__{
           :autoUpdatePolicy => any(),
+          :deviceReportPolicy => any(),
           :maintenanceWindow => GoogleApi.AndroidEnterprise.V1.Model.MaintenanceWindow.t(),
           :productAvailabilityPolicy => any(),
           :productPolicy => list(GoogleApi.AndroidEnterprise.V1.Model.ProductPolicy.t())
         }
 
   field(:autoUpdatePolicy)
+  field(:deviceReportPolicy)
   field(:maintenanceWindow, as: GoogleApi.AndroidEnterprise.V1.Model.MaintenanceWindow)
   field(:productAvailabilityPolicy)
   field(:productPolicy, as: GoogleApi.AndroidEnterprise.V1.Model.ProductPolicy, type: :list)
