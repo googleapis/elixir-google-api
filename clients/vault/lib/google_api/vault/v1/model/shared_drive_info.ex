@@ -16,37 +16,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Vault.V1.Model.DriveOptions do
+defmodule GoogleApi.Vault.V1.Model.SharedDriveInfo do
   @moduledoc """
-  Drive search advanced options
+  Shared drives to search
 
   ## Attributes
 
-  - includeSharedDrives (boolean()): Set to true to include shared drive. Defaults to: `null`.
-  - includeTeamDrives (boolean()): Set to true to include Team Drive. Defaults to: `null`.
-  - versionDate (DateTime.t): Search the versions of the Drive file as of the reference date. These timestamps are in GMT and rounded down to the given date. Defaults to: `null`.
+  - sharedDriveIds ([String.t]): List of Shared drive ids, as provided by &lt;a href&#x3D;\&quot;https://developers.google.com/drive\&quot;&gt;Drive API&lt;/a&gt;. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :includeSharedDrives => any(),
-          :includeTeamDrives => any(),
-          :versionDate => DateTime.t()
+          :sharedDriveIds => list(any())
         }
 
-  field(:includeSharedDrives)
-  field(:includeTeamDrives)
-  field(:versionDate, as: DateTime)
+  field(:sharedDriveIds, type: :list)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Vault.V1.Model.DriveOptions do
+defimpl Poison.Decoder, for: GoogleApi.Vault.V1.Model.SharedDriveInfo do
   def decode(value, options) do
-    GoogleApi.Vault.V1.Model.DriveOptions.decode(value, options)
+    GoogleApi.Vault.V1.Model.SharedDriveInfo.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.Vault.V1.Model.DriveOptions do
+defimpl Poison.Encoder, for: GoogleApi.Vault.V1.Model.SharedDriveInfo do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
