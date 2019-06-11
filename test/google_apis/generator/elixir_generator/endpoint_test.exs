@@ -233,6 +233,17 @@ defmodule GoogleApis.Generator.ElixirGenerator.EndpointTest do
     assert "nil" == endpoint.return.typespec
   end
 
+  test "basic url" do
+    endpoints =
+      Poison.decode!(@basic, as: %RestMethod{})
+      |> Endpoint.from_discovery_method(ResourceContext.default())
+
+    assert 1 == length(endpoints)
+    endpoint = List.first(endpoints)
+
+    assert "/familysharing/unshare" == endpoint.path
+  end
+
   @tag :wip
   test "media upload" do
     context =
@@ -244,12 +255,10 @@ defmodule GoogleApis.Generator.ElixirGenerator.EndpointTest do
       Poison.decode!(@media_upload, as: %RestMethod{})
       |> Endpoint.from_discovery_method(context)
 
-    # |> IO.inspect()
-
     assert 3 == length(endpoints)
     [base, resumable, simple] = endpoints
     assert "storage_objects_insert" == base.name
-    assert "v1/storage/b/{bucket}/o" == base.path
+    assert "/v1/storage/b/{bucket}/o" == base.path
     assert 1 == length(base.optional_parameters)
 
     assert "storage_objects_insert_resumable" == resumable.name

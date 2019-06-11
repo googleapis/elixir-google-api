@@ -54,7 +54,7 @@ defmodule <%= namespace %>.Api.<%= api.name %> do
     request =
       Request.new()
       |> Request.method(:"<%= endpoint.method %>")
-      |> Request.url("/<%= endpoint.path %>"<%= if endpoint.path_parameters do %>, %{<%= for parameter <- endpoint.path_parameters do %>
+      |> Request.url("<%= endpoint.path %>"<%= if endpoint.path_parameters do %>, %{<%= for parameter <- endpoint.path_parameters do %>
         "<%= parameter.name %>" => URI.encode(<%= parameter.variable_name %>, &URI.char_unreserved?/1),
       <% end %>}<% end %>)
       <%= for parameter <- endpoint.required_parameters do %><%= if parameter.location != "path" do %>

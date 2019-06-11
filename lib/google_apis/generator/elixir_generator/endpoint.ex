@@ -73,7 +73,7 @@ defmodule GoogleApis.Generator.ElixirGenerator.Endpoint do
       name: name,
       description: method.description,
       method: String.downcase(method.httpMethod),
-      path: ResourceContext.path(context, method.path),
+      path: "/" <> ResourceContext.path(context, method.path),
       required_parameters: required_parameters,
       optional_parameters: optional_parameters,
       path_parameters: Enum.filter(required_parameters, fn p -> p.location == "path" end),
