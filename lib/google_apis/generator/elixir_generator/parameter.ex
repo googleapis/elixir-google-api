@@ -65,9 +65,19 @@ defmodule GoogleApis.Generator.ElixirGenerator.Parameter do
     List.insert_at(params, -1, body_param(request))
   end
 
-  defp body_param(request) do
+  defp body_param(%{parameterName: nil} = request) do
     %__MODULE__{
       name: "body",
+      variable_name: "body",
+      description: "",
+      type: Type.from_schema(request),
+      location: "body"
+    }
+  end
+
+  defp body_param(%{parameterName: name} = request) do
+    %__MODULE__{
+      name: name,
       variable_name: "body",
       description: "",
       type: Type.from_schema(request),

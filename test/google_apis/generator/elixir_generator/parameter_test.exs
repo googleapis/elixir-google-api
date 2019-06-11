@@ -127,6 +127,25 @@ defmodule GoogleApis.Generator.ElixirGenerator.ParameterTest do
   }
   """
 
+  @request_with_parameter_name """
+  {
+    "id": "books.myconfig.updateUserSettings",
+    "path": "myconfig/updateUserSettings",
+    "httpMethod": "POST",
+    "description": "Sets the settings for the user. If a sub-object is specified, it will overwrite the existing sub-object stored in the server. Unspecified sub-objects will retain the existing value.",
+    "request": {
+     "$ref": "Usersettings",
+     "parameterName": "settings"
+    },
+    "response": {
+     "$ref": "Usersettings"
+    },
+    "scopes": [
+     "https://www.googleapis.com/auth/books"
+    ]
+  }
+  """
+
   @no_parameters """
   {
     "id": "noparams",
@@ -178,6 +197,20 @@ defmodule GoogleApis.Generator.ElixirGenerator.ParameterTest do
 
     param = Enum.at(optional, 0)
     assert "body" == param.name
+    assert %Type{} = param.type
+    assert "Default.Namespace.Model.Usersettings.t" == param.type.typespec
+  end
+
+  @tag :wip
+  test "request type adds optional body parameter with specified name" do
+    method = Poison.decode!(@request_with_parameter_name, as: %RestMethod{})
+    {required, optional} = Parameter.from_discovery_method(method)
+
+    assert 0 == length(required)
+    assert 1 == length(optional)
+
+    param = Enum.at(optional, 0)
+    assert "settings" == param.name
     assert %Type{} = param.type
     assert "Default.Namespace.Model.Usersettings.t" == param.type.typespec
   end
