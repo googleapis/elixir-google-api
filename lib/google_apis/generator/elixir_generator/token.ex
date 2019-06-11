@@ -69,6 +69,7 @@ defmodule GoogleApis.Generator.ElixirGenerator.Token do
       |> Poison.decode!(as: %RestDescription{})
 
     {base_url, base_path} = determine_base_paths(rest_description)
+
     resource_context =
       ResourceContext.empty()
       |> ResourceContext.with_namespace(namespace)
@@ -94,10 +95,10 @@ defmodule GoogleApis.Generator.ElixirGenerator.Token do
   end
 
   defp supports_media_upload?(nil), do: false
+
   defp supports_media_upload?(resources) do
     Enum.any?(resources, fn {_name, resource} ->
-      supports_media_upload?(resource.resources) ||
-        has_media_upload_method?(resource.methods)
+      supports_media_upload?(resource.resources) || has_media_upload_method?(resource.methods)
     end)
   end
 
@@ -105,22 +106,5 @@ defmodule GoogleApis.Generator.ElixirGenerator.Token do
     Enum.any?(methods, fn {_name, method} ->
       method.supportsMediaUpload
     end)
-  end
-
-  def build_property(token, model, name, schema) do
-    context =
-      ResourceContext.empty()
-      |> ResourceContext.with_namespace(token.namespace)
-      |> ResourceContext.with_property(name)
-
-    type = Type.from_schema(schema, context)
-
-    %Property{
-      name: name,
-      description: schema.description,
-      required: schema.required,
-      default: schema.default,
-      type: type
-    }
   end
 end

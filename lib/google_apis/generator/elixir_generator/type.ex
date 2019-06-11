@@ -40,6 +40,23 @@ defmodule GoogleApis.Generator.ElixirGenerator.Type do
   Return a type definition given the JsonSchema and a ResourceContext
   """
   @spec from_schema(JsonSchema.t(), ResourceContext.t()) :: t
+  def from_schema(%{additionalProperties: %{"$ref": nil}}, _context) do
+    %__MODULE__{
+      name: "map",
+      typespec: "map()"
+    }
+  end
+
+  def from_schema(%{additionalProperties: %{"$ref": ref}}, context) do
+    typespec = ResourceContext.typespec(context, ref)
+
+    %__MODULE__{
+      name: "map",
+      struct: ResourceContext.struct_name(context, ref),
+      typespec: "%{optional(String.t) => #{typespec}}"
+    }
+  end
+
   def from_schema(%{type: "array", items: items}, context) do
     t = from_schema(items, context)
 

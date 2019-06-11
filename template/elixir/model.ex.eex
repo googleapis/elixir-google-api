@@ -32,7 +32,7 @@ defmodule <%= namespace %>.Model.<%= model.name %> do
     <% end %>
   }
   <%= for property <- model.properties do %>
-  field(:"<%= property.name %>"<%= if property.type.struct do %>, as: <%= property.type.struct %><% end %><%= if property.type.name == "array" do %>, type: :list<% end %>)<% end %>
+  field(:"<%= property.name %>"<%= if property.type.struct do %>, as: <%= property.type.struct %><% end %><%= if property.type.name == "array" do %>, type: :list<% end %><%= if property.type.name == "map" do %>, type: :map<% end %>)<% end %>
 end
 
 defimpl Poison.Decoder, for: <%= namespace %>.Model.<%= model.name %> do

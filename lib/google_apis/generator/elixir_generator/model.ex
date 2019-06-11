@@ -27,7 +27,7 @@ defmodule GoogleApis.Generator.ElixirGenerator.Model do
   defstruct [:name, :description, :properties, :schema]
 
   alias GoogleApi.Discovery.V1.Model.JsonSchema
-  alias GoogleApis.Generator.ElixirGenerator.ResourceContext
+  alias GoogleApis.Generator.ElixirGenerator.{Property, ResourceContext}
 
   @doc """
   Returns the name of the file that should be generated.
@@ -86,4 +86,16 @@ defmodule GoogleApis.Generator.ElixirGenerator.Model do
   end
 
   defp from_schema(_, _, _), do: []
+
+  @spec update_properties(t, ResourceContext.t()) :: t
+  def update_properties(model, context) do
+    model
+    |> Map.put(
+      :properties,
+      Enum.map(model.schema.properties, fn {name, schema} ->
+        Property.from_schema(schema, name, context)
+      end)
+    )
+    |> Map.put(:schema, nil)
+  end
 end

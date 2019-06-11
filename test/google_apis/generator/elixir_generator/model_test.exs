@@ -16,7 +16,7 @@ defmodule GoogleApis.Generator.ElixirGenerator.ModelTest do
   use ExUnit.Case
   doctest GoogleApis.Generator.ElixirGenerator.Model
 
-  alias GoogleApis.Generator.ElixirGenerator.Model
+  alias GoogleApis.Generator.ElixirGenerator.{Model, ResourceContext}
   alias GoogleApi.Discovery.V1.Model.JsonSchema
 
   @test_schema """
@@ -183,6 +183,43 @@ defmodule GoogleApis.Generator.ElixirGenerator.ModelTest do
   }
   """
 
+  @map_schema """
+  {
+    "id": "GenericContainer",
+    "type": "object",
+    "description": "A data structure to test different any types",
+    "properties": {
+      "any": {
+        "type": "any",
+        "description": "A generic field type"
+      },
+      "listOfAny": {
+        "type": "array",
+        "description": "Contains a list of anything",
+        "items": {
+          "type": "any"
+        }
+      },
+      "attributes": {
+        "description": "This field can contain anything",
+        "type": "object",
+        "additionalProperties": {
+          "description": "Properties of the object.",
+          "type": "any"
+        }
+      },
+      "mapOfRefs": {
+        "description": "A map of references to objects",
+        "type": "object",
+        "additionalProperties": {
+          "description": "Object value of the map",
+          "$ref": "Container"
+        }
+      }
+    }
+  }
+  """
+
   test "loads nested schemas" do
     schema = Poison.decode!(@test_schema, as: %JsonSchema{})
 
@@ -219,5 +256,43 @@ defmodule GoogleApis.Generator.ElixirGenerator.ModelTest do
     assert 3 == length(models)
 
     assert ["Volume", "VolumeAccessInfo", "VolumeAccessInfoEpub"] == Enum.map(models, & &1.name)
+  end
+
+  test "loads map types" do
+    context = ResourceContext.default()
+
+    schema = Poison.decode!(@map_schema, as: %JsonSchema{})
+    models = Model.from_schema("GenericContainer", schema)
+
+    assert 1 == length(models)
+
+    model =
+      models
+      |> List.first()
+      |> Model.update_properties(context)
+      |> IO.inspect()
+
+    assert 4 == length(model.properties)
+
+    [any_property, map_property, list_of_any_property, map_of_references_property] =
+      model.properties
+
+    assert "any" == any_property.name
+    assert "A generic field type" == any_property.description
+    assert "any()" == any_property.type.typespec
+
+    assert "attributes" == map_property.name
+    assert "This field can contain anything" == map_property.description
+    assert "map()" == map_property.type.typespec
+
+    assert "listOfAny" == list_of_any_property.name
+    assert "Contains a list of anything" == list_of_any_property.description
+    assert "list(any())" == list_of_any_property.type.typespec
+
+    assert "mapOfRefs" == map_of_references_property.name
+    assert "A map of references to objects" == map_of_references_property.description
+
+    assert "%{optional(String.t) => Default.Namespace.Model.Container.t}" ==
+             map_of_references_property.type.typespec
   end
 end

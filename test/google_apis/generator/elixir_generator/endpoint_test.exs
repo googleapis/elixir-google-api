@@ -244,7 +244,6 @@ defmodule GoogleApis.Generator.ElixirGenerator.EndpointTest do
     assert "/familysharing/unshare" == endpoint.path
   end
 
-  @tag :wip
   test "media upload" do
     context =
       ResourceContext.empty()

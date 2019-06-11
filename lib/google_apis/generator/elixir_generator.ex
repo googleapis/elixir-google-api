@@ -63,13 +63,7 @@ defmodule GoogleApis.Generator.ElixirGenerator do
     Map.update!(token, :models, fn models ->
       models
       |> Enum.map(fn model ->
-        Map.put(
-          model,
-          :properties,
-          Enum.map(model.schema.properties, fn {name, property} ->
-            Token.build_property(token, model, name, property)
-          end)
-        )
+        Model.update_properties(model, token.resource_context)
       end)
     end)
   end

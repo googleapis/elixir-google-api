@@ -17,7 +17,8 @@ defmodule GoogleApis.Generator.ElixirGenerator.Property do
   A property is a field of a resource object
   """
 
-  alias GoogleApis.Generator.ElixirGenerator.Type
+  alias GoogleApi.Discovery.V1.Model.JsonSchema
+  alias GoogleApis.Generator.ElixirGenerator.{ResourceContext, Type}
 
   @type t :: %__MODULE__{
           :name => String.t(),
@@ -36,5 +37,19 @@ defmodule GoogleApis.Generator.ElixirGenerator.Property do
   @spec full_description(t) :: String.t()
   def full_description(property) do
     "#{property.name} (#{property.type.typespec}): #{property.description}"
+  end
+
+  @doc """
+  Builds a property from the given schema and name.
+  """
+  @spec from_schema(JsonSchema.t(), String.t(), ResourceContext.t()) :: t
+  def from_schema(schema, name, context) do
+    %__MODULE__{
+      name: name,
+      description: schema.description,
+      required: schema.required,
+      default: schema.default,
+      type: Type.from_schema(schema, ResourceContext.with_property(context, name))
+    }
   end
 end
