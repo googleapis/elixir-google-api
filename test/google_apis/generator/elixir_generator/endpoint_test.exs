@@ -127,6 +127,48 @@ defmodule GoogleApis.Generator.ElixirGenerator.EndpointTest do
   }
   """
 
+  @media_upload """
+   {
+    "id": "storage.objects.insert",
+    "path": "b/{bucket}/o",
+    "httpMethod": "POST",
+    "description": "Stores a new object and metadata.",
+    "parameters": {
+     "bucket": {
+      "type": "string",
+      "description": "Name of the bucket in which to store the new object. Overrides the provided object metadata's bucket value, if any.",
+      "required": true,
+      "location": "path"
+     }
+    },
+    "parameterOrder": [
+     "bucket"
+    ],
+    "request": {
+     "$ref": "Object"
+    },
+    "response": {
+     "$ref": "Object"
+    },
+    "supportsMediaUpload": true,
+    "mediaUpload": {
+     "accept": [
+      "*/*"
+     ],
+     "protocols": {
+      "simple": {
+       "multipart": true,
+       "path": "/upload/storage/v1/b/{bucket}/o"
+      },
+      "resumable": {
+       "multipart": true,
+       "path": "/resumable/upload/storage/v1/b/{bucket}/o"
+      }
+     }
+    }
+   }
+  """
+
   test "typespec" do
     endpoints =
       Poison.decode!(@basic, as: %RestMethod{})
@@ -189,5 +231,33 @@ defmodule GoogleApis.Generator.ElixirGenerator.EndpointTest do
     assert nil == endpoint.return.name
     assert nil == endpoint.return.struct
     assert "nil" == endpoint.return.typespec
+  end
+
+  @tag :wip
+  test "media upload" do
+    context =
+      ResourceContext.empty()
+      |> ResourceContext.with_namespace("Storage.V1")
+      |> ResourceContext.with_base_path("v1/storage")
+
+    endpoints =
+      Poison.decode!(@media_upload, as: %RestMethod{})
+      |> Endpoint.from_discovery_method(context)
+
+    # |> IO.inspect()
+
+    assert 3 == length(endpoints)
+    [base, resumable, simple] = endpoints
+    assert "storage_objects_insert" == base.name
+    assert "v1/storage/b/{bucket}/o" == base.path
+    assert 1 == length(base.optional_parameters)
+
+    assert "storage_objects_insert_resumable" == resumable.name
+    assert "/resumable/upload/storage/v1/b/{bucket}/o" == resumable.path
+    assert 1 == length(resumable.optional_parameters)
+
+    assert "storage_objects_insert_simple" == simple.name
+    assert "/upload/storage/v1/b/{bucket}/o" == simple.path
+    assert 0 == length(simple.optional_parameters)
   end
 end

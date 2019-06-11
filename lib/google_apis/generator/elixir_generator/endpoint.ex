@@ -47,25 +47,129 @@ defmodule GoogleApis.Generator.ElixirGenerator.Endpoint do
   ]
 
   @spec from_discovery_method(RestMethod.t(), ResourceContext.t()) :: list(t)
+  def from_discovery_method(
+        %{
+          supportsMediaUpload: true,
+          mediaUpload: %{protocols: %{resumable: resumable, simple: simple}}
+        } = method,
+        context
+      ) do
+    simple_endpoint = simple_upload_endpoint(method, simple, context)
+    resumable_endpoint = resumable_upload_endpoint(method, resumable, context)
+    [basic_endpoint(method, context), resumable_endpoint, simple_endpoint]
+  end
+
   def from_discovery_method(method, context) do
+    [basic_endpoint(method, context)]
+  end
+
+  defp basic_endpoint(method, context) do
     {required_parameters, optional_parameters} = Parameter.from_discovery_method(method, context)
 
     name = method_name_to_endpoint_name(method.id)
     ret = return_type(method, context)
 
-    [
-      %__MODULE__{
-        name: name,
-        description: method.description,
-        method: String.downcase(method.httpMethod),
-        path: ResourceContext.path(context, method.path),
-        required_parameters: required_parameters,
-        optional_parameters: optional_parameters,
-        path_parameters: Enum.filter(required_parameters, fn p -> p.location == "path" end),
-        typespec: typespec(name, required_parameters, ret),
-        return: ret
-      }
-    ]
+    %__MODULE__{
+      name: name,
+      description: method.description,
+      method: String.downcase(method.httpMethod),
+      path: ResourceContext.path(context, method.path),
+      required_parameters: required_parameters,
+      optional_parameters: optional_parameters,
+      path_parameters: Enum.filter(required_parameters, fn p -> p.location == "path" end),
+      typespec: typespec(name, required_parameters, ret),
+      return: ret
+    }
+  end
+
+  defp simple_upload_endpoint(method, simple_protocol, context) do
+    {required_parameters, optional_parameters} = Parameter.from_discovery_method(method, context)
+
+    # simple upload should not have body param
+    optional_parameters =
+      Enum.filter(optional_parameters, fn parameter -> parameter.location != "body" end)
+
+    name = method_name_to_endpoint_name(method.id <> "_simple")
+    ret = return_type(method, context)
+    metadata_type = Type.from_schema(method.request, context)
+
+    required_parameters =
+      required_parameters ++
+        [
+          %Parameter{
+            name: "uploadType",
+            variable_name: "upload_type",
+            description: "Upload type. Must be \"simple\".",
+            type: %Type{
+              name: "string",
+              typespec: "String.t"
+            },
+            location: "query"
+          },
+          %Parameter{
+            name: "metadata",
+            variable_name: "metadata",
+            description: "#{metadata_type.name} metadata",
+            type: metadata_type,
+            location: "body"
+          },
+          %Parameter{
+            name: "data",
+            variable_name: "data",
+            description: "Path to file",
+            type: %Type{
+              name: "string",
+              typespec: "String.t"
+            },
+            location: "file"
+          }
+        ]
+
+    %__MODULE__{
+      name: name,
+      description: method.description,
+      method: String.downcase(method.httpMethod),
+      path: simple_protocol.path,
+      required_parameters: required_parameters,
+      optional_parameters: optional_parameters,
+      path_parameters: Enum.filter(required_parameters, fn p -> p.location == "path" end),
+      typespec: typespec(name, required_parameters, ret),
+      return: ret
+    }
+  end
+
+  defp resumable_upload_endpoint(method, resumable_protocol, context) do
+    {required_parameters, optional_parameters} = Parameter.from_discovery_method(method, context)
+
+    name = method_name_to_endpoint_name(method.id <> "_resumable")
+    ret = return_type(method, context)
+
+    required_parameters =
+      required_parameters ++
+        [
+          %Parameter{
+            name: "uploadType",
+            variable_name: "upload_type",
+            description: "Upload type. Must be \"resumable\".",
+            type: %Type{
+              name: "string",
+              typespec: "String.t"
+            },
+            location: "query"
+          }
+        ]
+
+    %__MODULE__{
+      name: name,
+      description: method.description,
+      method: String.downcase(method.httpMethod),
+      path: resumable_protocol.path,
+      required_parameters: required_parameters,
+      optional_parameters: optional_parameters,
+      path_parameters: Enum.filter(required_parameters, fn p -> p.location == "path" end),
+      typespec: typespec(name, required_parameters, ret),
+      return: ret
+    }
   end
 
   defp typespec(name, params, ret) do

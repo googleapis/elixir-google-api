@@ -16,7 +16,7 @@ defmodule GoogleApis.Generator.ElixirGenerator.TypeTest do
   use ExUnit.Case
   doctest GoogleApis.Generator.ElixirGenerator.Type
 
-  alias GoogleApis.Generator.ElixirGenerator.{Model, ResourceContext, Type}
+  alias GoogleApis.Generator.ElixirGenerator.{ResourceContext, Type}
   alias GoogleApi.Discovery.V1.Model.JsonSchema
 
   @test_schema """
