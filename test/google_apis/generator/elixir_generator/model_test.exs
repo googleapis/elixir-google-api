@@ -220,6 +220,31 @@ defmodule GoogleApis.Generator.ElixirGenerator.ModelTest do
   }
   """
 
+  @date_schema """
+  {
+    "id": "DateContainer",
+    "type": "object",
+    "description": "A data structure to test different date types",
+    "properties": {
+      "dateVal": {
+        "type": "string",
+        "description": "A simple date field",
+        "format": "date"
+      },
+      "dateTimeVal": {
+        "type": "string",
+        "description": "A simple date-time field",
+        "format": "date-time"
+      },
+      "googleDateVal": {
+        "type": "string",
+        "description": "A google-datetime field",
+        "format": "google-datetime"
+      }
+    }
+  }
+  """
+
   test "loads nested schemas" do
     schema = Poison.decode!(@test_schema, as: %JsonSchema{})
 
@@ -270,7 +295,6 @@ defmodule GoogleApis.Generator.ElixirGenerator.ModelTest do
       models
       |> List.first()
       |> Model.update_properties(context)
-      |> IO.inspect()
 
     assert 4 == length(model.properties)
 
@@ -294,5 +318,26 @@ defmodule GoogleApis.Generator.ElixirGenerator.ModelTest do
 
     assert "%{optional(String.t) => Default.Namespace.Model.Container.t}" ==
              map_of_references_property.type.typespec
+  end
+
+  test "handles date types" do
+    context = ResourceContext.default()
+
+    schema = Poison.decode!(@date_schema, as: %JsonSchema{})
+    models = Model.from_schema("GenericContainer", schema)
+
+    assert 1 == length(models)
+
+    model =
+      models
+      |> List.first()
+      |> Model.update_properties(context)
+
+    assert 3 == length(model.properties)
+    assert Enum.all?(model.properties, fn property ->
+      assert "datetime" == property.type.name
+      assert "DateTime" == property.type.struct
+      assert "DateTime.t" == property.type.typespec
+    end)
   end
 end

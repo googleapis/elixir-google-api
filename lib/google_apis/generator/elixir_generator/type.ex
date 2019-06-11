@@ -96,7 +96,7 @@ defmodule GoogleApis.Generator.ElixirGenerator.Type do
   end
 
   def from_schema(%{type: "string", format: date_or_time}, _context)
-      when date_or_time in ["date", "date-time", "time"] do
+      when date_or_time in ["date", "date-time", "time", "google-datetime"] do
     %__MODULE__{
       name: "datetime",
       struct: "DateTime",
