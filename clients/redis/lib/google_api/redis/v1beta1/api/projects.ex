@@ -233,7 +233,7 @@ defmodule GoogleApi.Redis.V1beta1.Api.Projects do
   end
 
   @doc """
-  Export Redis instance data into a Redis RDB format file in GCS.  Redis will continue serving during this operation.  The returned operation is automatically deleted after a few hours, so there is no need to call DeleteOperation.
+  Export Redis instance data into a Redis RDB format file in Cloud Storage.  Redis will continue serving during this operation.  The returned operation is automatically deleted after a few hours, so there is no need to call DeleteOperation.
 
   ## Parameters
 
@@ -383,7 +383,7 @@ defmodule GoogleApi.Redis.V1beta1.Api.Projects do
   end
 
   @doc """
-  Import a Redis RDB snapshot file from GCS into a Redis instance.  Redis may stop serving during this operation. Instance state will be IMPORTING for entire operation. When complete, the instance will contain only data from the imported file.  The returned operation is automatically deleted after a few hours, so there is no need to call DeleteOperation.
+  Import a Redis RDB snapshot file from Cloud Storage into a Redis instance.  Redis may stop serving during this operation. Instance state will be IMPORTING for entire operation. When complete, the instance will contain only data from the imported file.  The returned operation is automatically deleted after a few hours, so there is no need to call DeleteOperation.
 
   ## Parameters
 
