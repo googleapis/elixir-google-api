@@ -25,7 +25,7 @@ defmodule GoogleApi.Analytics.V3.Model.Webproperty do
   - accountId (String.t): Account ID to which this web property belongs. Defaults to: `null`.
   - childLink (WebpropertyChildLink):  Defaults to: `null`.
   - created (DateTime.t): Time this web property was created. Defaults to: `null`.
-  - dataRetentionResetOnNewActivity (boolean()): Set to true to reset the retention period of the user identifier with each new event from that user (thus setting the expiration date to current time plus retention period). Set to false to delete data associated with the user identifer automatically after the rentention period. This property cannot be set on insert. Defaults to: `null`.
+  - dataRetentionResetOnNewActivity (boolean()): Set to true to reset the retention period of the user identifier with each new event from that user (thus setting the expiration date to current time plus retention period). Set to false to delete data associated with the user identifier automatically after the rentention period. This property cannot be set on insert. Defaults to: `null`.
   - dataRetentionTtl (String.t): The length of time for which user and event data is retained. This property cannot be set on insert. Defaults to: `null`.
   - defaultProfileId (String.t): Default view (profile) ID. Defaults to: `null`.
   - id (String.t): Web property ID of the form UA-XXXXX-YY. Defaults to: `null`.

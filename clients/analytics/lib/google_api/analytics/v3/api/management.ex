@@ -1612,7 +1612,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
   end
 
   @doc """
-  Returns a filters to which the user has access.
+  Returns filters to which the user has access.
 
   ## Parameters
 
