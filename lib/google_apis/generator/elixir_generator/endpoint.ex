@@ -99,7 +99,7 @@ defmodule GoogleApis.Generator.ElixirGenerator.Endpoint do
           %Parameter{
             name: "uploadType",
             variable_name: "upload_type",
-            description: "Upload type. Must be \"simple\".",
+            description: "Upload type. Must be \"multipart\".",
             type: %Type{
               name: "string",
               typespec: "String.t"
@@ -142,7 +142,7 @@ defmodule GoogleApis.Generator.ElixirGenerator.Endpoint do
     {required_parameters, optional_parameters} = Parameter.from_discovery_method(method, context)
 
     name = method_name_to_endpoint_name(method.id <> "_resumable")
-    ret = return_type(method, context)
+    ret = Type.empty()
 
     required_parameters =
       required_parameters ++

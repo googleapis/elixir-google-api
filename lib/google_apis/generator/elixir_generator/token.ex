@@ -87,7 +87,7 @@ defmodule GoogleApis.Generator.ElixirGenerator.Token do
 
   defp determine_base_paths(rest_description) do
     if supports_media_upload?(rest_description.resources) do
-      {rest_description.rootUrl, rest_description.basePath}
+      {rest_description.rootUrl, rest_description.servicePath}
     else
       {rest_description.baseUrl, ""}
     end
