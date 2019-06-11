@@ -40,6 +40,7 @@ defmodule GoogleApis.Generator.ElixirGenerator do
     Token.build(api_config)
     |> load_models
     |> update_model_properties
+    |> create_directories
     |> write_model_files
     |> load_global_optional_params
     |> load_apis
@@ -71,6 +72,13 @@ defmodule GoogleApis.Generator.ElixirGenerator do
         )
       end)
     end)
+  end
+
+  defp create_directories(token) do
+    IO.puts("Creating leading directories")
+    File.mkdir_p!(Path.join(token.base_dir, "api"))
+    File.mkdir_p!(Path.join(token.base_dir, "model"))
+    token
   end
 
   defp write_connection(token) do
