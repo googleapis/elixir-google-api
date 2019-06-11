@@ -28,18 +28,21 @@ defmodule GoogleApis.Generator.ElixirGenerator.Parameter do
   defstruct [:name, :variable_name, :description, :type, :location]
 
   alias GoogleApi.Discovery.V1.Model.{JsonSchema, RestMethod}
-  alias GoogleApis.Generator.ElixirGenerator.Type
+  alias GoogleApis.Generator.ElixirGenerator.{ResourceContext, Type}
 
   @doc """
   Parse a RestMethod's parameters and split into required and optional
   parameters.
   """
   @spec from_discovery_method(RestMethod.t()) :: {list(t), list(t)}
-  def from_discovery_method(%RestMethod{parameters: nil, request: nil}), do: {[], []}
+  def from_discovery_method(method), do: from_discovery_method(method, ResourceContext.default())
 
-  def from_discovery_method(%RestMethod{parameters: nil, request: request}), do: {[], [body_param(request)]}
+  @spec from_discovery_method(RestMethod.t(), ResourceContext.t()) :: {list(t), list(t)}
+  def from_discovery_method(%RestMethod{parameters: nil, request: nil}, _context), do: {[], []}
 
-  def from_discovery_method(%RestMethod{parameters: parameters, parameterOrder: order, request: request}) do
+  def from_discovery_method(%RestMethod{parameters: nil, request: request}, context), do: {[], [body_param(request, context)]}
+
+  def from_discovery_method(%RestMethod{parameters: parameters, parameterOrder: order, request: request}, context) do
     {required, optional} =
       parameters
       |> Enum.split_with(fn {_name, schema} ->
@@ -48,39 +51,39 @@ defmodule GoogleApis.Generator.ElixirGenerator.Parameter do
 
     required_by_name =
       Enum.reduce(required, %{}, fn {name, schema}, acc ->
-        Map.put(acc, name, from_json_schema(name, schema))
+        Map.put(acc, name, from_json_schema(name, schema, context))
       end)
 
     required = Enum.map(order || [], fn name -> required_by_name[name] end)
-    optional = Enum.map(optional, fn {name, schema} -> from_json_schema(name, schema) end)
+    optional = Enum.map(optional, fn {name, schema} -> from_json_schema(name, schema, context) end)
 
     optional = case request do
       nil -> optional
-      _   -> add_body_param(optional, request)
+      _   -> add_body_param(optional, request, context)
     end
     {required, optional}
   end
 
-  defp add_body_param(params, request) do
-    List.insert_at(params, -1, body_param(request))
+  defp add_body_param(params, request, context) do
+    List.insert_at(params, -1, body_param(request, context))
   end
 
-  defp body_param(%{parameterName: nil} = request) do
+  defp body_param(%{parameterName: nil} = request, context) do
     %__MODULE__{
       name: "body",
       variable_name: "body",
-      description: "",
-      type: Type.from_schema(request),
+      description: nil,
+      type: Type.from_schema(request, context),
       location: "body"
     }
   end
 
-  defp body_param(%{parameterName: name} = request) do
+  defp body_param(%{parameterName: name} = request, context) do
     %__MODULE__{
       name: name,
       variable_name: "body",
-      description: "",
-      type: Type.from_schema(request),
+      description: nil,
+      type: Type.from_schema(request, context),
       location: "body"
     }
   end
@@ -88,13 +91,13 @@ defmodule GoogleApis.Generator.ElixirGenerator.Parameter do
   @doc """
   Build a Parameter from the parameter name and JsonSchema
   """
-  @spec from_json_schema(String.t(), JsonSchema.t()) :: t
-  def from_json_schema(name, schema) do
+  @spec from_json_schema(String.t(), JsonSchema.t(), ResourceContext.t()) :: t
+  def from_json_schema(name, schema, context) do
     %__MODULE__{
       name: name,
       variable_name: Macro.underscore(name),
       description: schema.description,
-      type: Type.from_schema(schema),
+      type: Type.from_schema(schema, context),
       location: schema.location
     }
   end

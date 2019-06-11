@@ -77,6 +77,10 @@ defmodule GoogleApis.Generator.ElixirGenerator.ResourceContext do
     Map.update!(context, :property, fn prop -> "#{prop}#{Macro.camelize(property)}" end)
   end
 
+  def with_namespace(context, namespace) do
+    Map.put(context, :property, namespace)
+  end
+
   def name(context, name) do
     "#{context.property}#{Macro.camelize(name)}"
   end

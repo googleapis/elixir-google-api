@@ -89,15 +89,16 @@ defmodule GoogleApis.Generator.ElixirGenerator do
 
   defp load_global_optional_params(token) do
     params = token.rest_description.parameters || []
+    context = ResourceContext.empty()
+    |> ResourceContext.with_namespace(token.namespace)
 
     global_optional_parameters =
       params
       |> Enum.map(fn {name, schema} ->
-        Parameter.from_json_schema(name, schema)
+        Parameter.from_json_schema(name, schema, context)
       end)
       |> Enum.sort_by(fn param -> param.name end)
 
-    IO.inspect(global_optional_parameters)
     Map.put(token, :global_optional_parameters, global_optional_parameters)
   end
 
