@@ -147,7 +147,7 @@ defmodule GoogleApis.Generator.ElixirGenerator do
         name: name,
         description: "API calls for all endpoints tagged `#{name}`.",
         endpoints:
-          Enum.map(methods, fn {_, method} ->
+          Enum.flat_map(methods, fn {_, method} ->
             Endpoint.from_discovery_method(method, context)
           end)
       }

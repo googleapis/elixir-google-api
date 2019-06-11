@@ -128,36 +128,48 @@ defmodule GoogleApis.Generator.ElixirGenerator.EndpointTest do
   """
 
   test "typespec" do
-    endpoint =
+    endpoints =
       Poison.decode!(@basic, as: %RestMethod{})
       |> Endpoint.from_discovery_method(ResourceContext.default())
+
+    assert 1 == length(endpoints)
+    endpoint = List.first(endpoints)
 
     assert "books_familysharing_unshare(Tesla.Env.client(), String.t, integer(), keyword()) :: {:ok, Default.Namespace.Model.Annotationsdata.t} | {:error, Tesla.Env.t()}" ==
              endpoint.typespec
   end
 
   test "typespec with no required params" do
-    endpoint =
+    endpoints =
       Poison.decode!(@no_response, as: %RestMethod{})
       |> Endpoint.from_discovery_method(ResourceContext.default())
+
+    assert 1 == length(endpoints)
+    endpoint = List.first(endpoints)
 
     assert "books_familysharing_unshare(Tesla.Env.client(), keyword()) :: {:ok, nil} | {:error, Tesla.Env.t()}" ==
              endpoint.typespec
   end
 
   test "typespec array_param" do
-    endpoint =
+    endpoints =
       Poison.decode!(@array_param, as: %RestMethod{})
       |> Endpoint.from_discovery_method(ResourceContext.default())
+
+    assert 1 == length(endpoints)
+    endpoint = List.first(endpoints)
 
     assert "books_myconfig_release_download_access(Tesla.Env.client(), list(String.t), String.t, keyword()) :: {:ok, Default.Namespace.Model.DownloadAccesses.t} | {:error, Tesla.Env.t()}" ==
              endpoint.typespec
   end
 
   test "return type" do
-    endpoint =
+    endpoints =
       Poison.decode!(@basic, as: %RestMethod{})
       |> Endpoint.from_discovery_method(ResourceContext.default())
+
+    assert 1 == length(endpoints)
+    endpoint = List.first(endpoints)
 
     assert %Type{} = endpoint.return
     assert "object" == endpoint.return.name
@@ -166,13 +178,16 @@ defmodule GoogleApis.Generator.ElixirGenerator.EndpointTest do
   end
 
   test "return type without response in schema" do
-    endpoint =
+    endpoints =
       Poison.decode!(@no_response, as: %RestMethod{})
       |> Endpoint.from_discovery_method(ResourceContext.default())
 
-      assert %Type{} = endpoint.return
-      assert nil == endpoint.return.name
-      assert nil == endpoint.return.struct
-      assert "nil" == endpoint.return.typespec
+    assert 1 == length(endpoints)
+    endpoint = List.first(endpoints)
+
+    assert %Type{} = endpoint.return
+    assert nil == endpoint.return.name
+    assert nil == endpoint.return.struct
+    assert "nil" == endpoint.return.typespec
   end
 end

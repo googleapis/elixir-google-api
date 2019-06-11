@@ -201,7 +201,6 @@ defmodule GoogleApis.Generator.ElixirGenerator.ParameterTest do
     assert "Default.Namespace.Model.Usersettings.t" == param.type.typespec
   end
 
-  @tag :wip
   test "request type adds optional body parameter with specified name" do
     method = Poison.decode!(@request_with_parameter_name, as: %RestMethod{})
     {required, optional} = Parameter.from_discovery_method(method)

@@ -46,24 +46,26 @@ defmodule GoogleApis.Generator.ElixirGenerator.Endpoint do
     :path
   ]
 
-  @spec from_discovery_method(RestMethod.t(), ResourceContext.t()) :: t
+  @spec from_discovery_method(RestMethod.t(), ResourceContext.t()) :: list(t)
   def from_discovery_method(method, context) do
     {required_parameters, optional_parameters} = Parameter.from_discovery_method(method, context)
 
     name = method_name_to_endpoint_name(method.id)
     ret = return_type(method, context)
 
-    %__MODULE__{
-      name: name,
-      description: method.description,
-      method: String.downcase(method.httpMethod),
-      path: ResourceContext.path(context, method.path),
-      required_parameters: required_parameters,
-      optional_parameters: optional_parameters,
-      path_parameters: Enum.filter(required_parameters, fn p -> p.location == "path" end),
-      typespec: typespec(name, required_parameters, ret),
-      return: ret
-    }
+    [
+      %__MODULE__{
+        name: name,
+        description: method.description,
+        method: String.downcase(method.httpMethod),
+        path: ResourceContext.path(context, method.path),
+        required_parameters: required_parameters,
+        optional_parameters: optional_parameters,
+        path_parameters: Enum.filter(required_parameters, fn p -> p.location == "path" end),
+        typespec: typespec(name, required_parameters, ret),
+        return: ret
+      }
+    ]
   end
 
   defp typespec(name, params, ret) do
