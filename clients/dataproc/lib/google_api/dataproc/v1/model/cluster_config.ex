@@ -28,6 +28,7 @@ defmodule GoogleApi.Dataproc.V1.Model.ClusterConfig do
   - initializationActions ([NodeInitializationAction]): Optional. Commands to execute on each node after config is completed. By default, executables are run on master and all worker nodes. You can test a node&#39;s role metadata to run an executable on a master or worker node, as shown below using curl (you can also use wget): ROLE&#x3D;$(curl -H Metadata-Flavor:Google http://metadata/computeMetadata/v1/instance/attributes/dataproc-role) if [[ \&quot;${ROLE}\&quot; &#x3D;&#x3D; &#39;Master&#39; ]]; then   ... master specific actions ... else   ... worker specific actions ... fi  Defaults to: `null`.
   - masterConfig (InstanceGroupConfig): Optional. The Compute Engine config settings for the master instance in a cluster. Defaults to: `null`.
   - secondaryWorkerConfig (InstanceGroupConfig): Optional. The Compute Engine config settings for additional worker instances in a cluster. Defaults to: `null`.
+  - securityConfig (SecurityConfig): Optional. Security settings for the cluster. Defaults to: `null`.
   - softwareConfig (SoftwareConfig): Optional. The config settings for software inside the cluster. Defaults to: `null`.
   - workerConfig (InstanceGroupConfig): Optional. The Compute Engine config settings for worker instances in a cluster. Defaults to: `null`.
   """
@@ -42,6 +43,7 @@ defmodule GoogleApi.Dataproc.V1.Model.ClusterConfig do
             list(GoogleApi.Dataproc.V1.Model.NodeInitializationAction.t()),
           :masterConfig => GoogleApi.Dataproc.V1.Model.InstanceGroupConfig.t(),
           :secondaryWorkerConfig => GoogleApi.Dataproc.V1.Model.InstanceGroupConfig.t(),
+          :securityConfig => GoogleApi.Dataproc.V1.Model.SecurityConfig.t(),
           :softwareConfig => GoogleApi.Dataproc.V1.Model.SoftwareConfig.t(),
           :workerConfig => GoogleApi.Dataproc.V1.Model.InstanceGroupConfig.t()
         }
@@ -58,6 +60,7 @@ defmodule GoogleApi.Dataproc.V1.Model.ClusterConfig do
 
   field(:masterConfig, as: GoogleApi.Dataproc.V1.Model.InstanceGroupConfig)
   field(:secondaryWorkerConfig, as: GoogleApi.Dataproc.V1.Model.InstanceGroupConfig)
+  field(:securityConfig, as: GoogleApi.Dataproc.V1.Model.SecurityConfig)
   field(:softwareConfig, as: GoogleApi.Dataproc.V1.Model.SoftwareConfig)
   field(:workerConfig, as: GoogleApi.Dataproc.V1.Model.InstanceGroupConfig)
 end
