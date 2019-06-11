@@ -105,15 +105,12 @@ defmodule GoogleApis.Generator.ElixirGenerator.TypeTest do
 
     context = %ResourceContext{
       namespace: "Foo.Bar",
-      model: %Model{
-        name: "Baz"
-      },
       property: "asdf"
     }
 
     type = Type.from_schema(schema, context)
     assert "object" == type.name
-    assert "Foo.Bar.Model.BazAsdf.t" == type.typespec
-    assert "Foo.Bar.Model.BazAsdf" == type.struct
+    assert "Foo.Bar.Model.Asdf.t" == type.typespec
+    assert "Foo.Bar.Model.Asdf" == type.struct
   end
 end

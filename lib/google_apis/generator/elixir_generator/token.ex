@@ -74,12 +74,12 @@ defmodule GoogleApis.Generator.ElixirGenerator.Token do
   end
 
   def build_property(token, model, name, schema) do
-    type =
-      Type.from_schema(schema, %ResourceContext{
-        namespace: token.namespace,
-        model: model,
-        property: name
-      })
+    context =
+      ResourceContext.empty()
+      |> ResourceContext.with_namespace(token.namespace)
+      |> ResourceContext.with_property(name)
+
+    type =Type.from_schema(schema, context)
 
     %Property{
       name: name,

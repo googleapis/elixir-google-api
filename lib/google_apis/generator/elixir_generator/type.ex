@@ -51,9 +51,10 @@ defmodule GoogleApis.Generator.ElixirGenerator.Type do
   end
 
   def from_schema(%{repeated: true} = schema, context) do
-    t = schema
-    |> Map.put(:repeated, nil)
-    |> from_schema(context)
+    t =
+      schema
+      |> Map.put(:repeated, nil)
+      |> from_schema(context)
 
     %__MODULE__{
       name: "array",

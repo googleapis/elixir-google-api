@@ -89,8 +89,10 @@ defmodule GoogleApis.Generator.ElixirGenerator do
 
   defp load_global_optional_params(token) do
     params = token.rest_description.parameters || []
-    context = ResourceContext.empty()
-    |> ResourceContext.with_namespace(token.namespace)
+
+    context =
+      ResourceContext.empty()
+      |> ResourceContext.with_namespace(token.namespace)
 
     global_optional_parameters =
       params

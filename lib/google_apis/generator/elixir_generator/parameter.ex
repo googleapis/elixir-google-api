@@ -40,9 +40,13 @@ defmodule GoogleApis.Generator.ElixirGenerator.Parameter do
   @spec from_discovery_method(RestMethod.t(), ResourceContext.t()) :: {list(t), list(t)}
   def from_discovery_method(%RestMethod{parameters: nil, request: nil}, _context), do: {[], []}
 
-  def from_discovery_method(%RestMethod{parameters: nil, request: request}, context), do: {[], [body_param(request, context)]}
+  def from_discovery_method(%RestMethod{parameters: nil, request: request}, context),
+    do: {[], [body_param(request, context)]}
 
-  def from_discovery_method(%RestMethod{parameters: parameters, parameterOrder: order, request: request}, context) do
+  def from_discovery_method(
+        %RestMethod{parameters: parameters, parameterOrder: order, request: request},
+        context
+      ) do
     {required, optional} =
       parameters
       |> Enum.split_with(fn {_name, schema} ->
@@ -55,12 +59,16 @@ defmodule GoogleApis.Generator.ElixirGenerator.Parameter do
       end)
 
     required = Enum.map(order || [], fn name -> required_by_name[name] end)
-    optional = Enum.map(optional, fn {name, schema} -> from_json_schema(name, schema, context) end)
 
-    optional = case request do
-      nil -> optional
-      _   -> add_body_param(optional, request, context)
-    end
+    optional =
+      Enum.map(optional, fn {name, schema} -> from_json_schema(name, schema, context) end)
+
+    optional =
+      case request do
+        nil -> optional
+        _ -> add_body_param(optional, request, context)
+      end
+
     {required, optional}
   end
 

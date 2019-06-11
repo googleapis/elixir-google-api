@@ -15,11 +15,11 @@
 defmodule GoogleApis.Generator.ElixirGenerator.ResourceContext do
   @type t :: %__MODULE__{
           :namespace => String.t(),
-          :model => Model.t(),
-          :property => String.t()
+          :property => String.t(),
+          :base_path => String.t()
         }
 
-  defstruct namespace: "Default Namespace", model: nil, property: nil
+  defstruct namespace: "Default Namespace", property: nil, base_path: ""
 
   @doc """
   Return the default struct name for this context.
@@ -49,10 +49,10 @@ defmodule GoogleApis.Generator.ElixirGenerator.ResourceContext do
     "#{context.namespace}.Model.#{name}.t"
   end
 
-  defp default_name(%{model: nil}), do: "Unknown"
+  defp default_name(%{property: nil}), do: "Unknown"
 
   defp default_name(context) do
-    Macro.camelize("#{context.model.name}_#{context.property}")
+    Macro.camelize(context.property)
   end
 
   @doc """
@@ -66,6 +66,10 @@ defmodule GoogleApis.Generator.ElixirGenerator.ResourceContext do
     }
   end
 
+  @doc """
+  Returns an empty ResourceContext
+  """
+  @spec empty() :: t
   def empty() do
     %__MODULE__{
       namespace: "",
@@ -73,15 +77,41 @@ defmodule GoogleApis.Generator.ElixirGenerator.ResourceContext do
     }
   end
 
+  @doc """
+  Returns a new ResourceContext under a new property
+  """
+  @spec with_property(t, String.t()) :: t
   def with_property(context, property) do
     Map.update!(context, :property, fn prop -> "#{prop}#{Macro.camelize(property)}" end)
   end
 
+  @doc """
+  Returns a new ResourceContext with a new namespace
+  """
+  @spec with_namespace(t, String.t()) :: t
   def with_namespace(context, namespace) do
-    Map.put(context, :property, namespace)
+    Map.put(context, :namespace, namespace)
   end
 
+  @doc """
+  Returns a new ResourceContext with appended base path
+  """
+  def with_base_path(context, base_path) do
+    Map.put(context, :base_path, path(context, base_path))
+  end
+
+  @doc """
+  Return a resource name given the provided context
+  """
+  @spec name(t, String.t()) :: String.t()
   def name(context, name) do
     "#{context.property}#{Macro.camelize(name)}"
   end
+
+  @doc """
+  Return a full endpoint path given the provided context
+  """
+  def path(%{base_path: nil}, path_suffix), do: path_suffix
+
+  def path(%{base_path: base_path}, path_suffix), do: Path.join([base_path, path_suffix])
 end

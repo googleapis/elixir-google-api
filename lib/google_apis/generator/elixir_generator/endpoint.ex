@@ -57,7 +57,7 @@ defmodule GoogleApis.Generator.ElixirGenerator.Endpoint do
       name: name,
       description: method.description,
       method: String.downcase(method.httpMethod),
-      path: method.path,
+      path: ResourceContext.path(context, method.path),
       required_parameters: required_parameters,
       optional_parameters: optional_parameters,
       path_parameters: Enum.filter(required_parameters, fn p -> p.location == "path" end),
@@ -69,10 +69,11 @@ defmodule GoogleApis.Generator.ElixirGenerator.Endpoint do
   defp typespec(name, params, ret) do
     param_specs = Enum.map_join(params, ", ", fn param -> param.type.typespec end)
 
-    param_specs = case param_specs do
-      "" -> param_specs
-      _  -> ", " <> param_specs
-    end
+    param_specs =
+      case param_specs do
+        "" -> param_specs
+        _ -> ", " <> param_specs
+      end
 
     "#{name}(Tesla.Env.client()#{param_specs}, keyword()) :: {:ok, #{ret.typespec}} | {:error, Tesla.Env.t()}"
   end
