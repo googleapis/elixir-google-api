@@ -44,6 +44,7 @@ defmodule GoogleApis.Generator.ElixirGenerator do
     |> load_global_optional_params
     |> load_apis
     |> write_api_files
+    |> write_connection
   end
 
   defp load_models(token) do
@@ -72,6 +73,19 @@ defmodule GoogleApis.Generator.ElixirGenerator do
     end)
   end
 
+  defp write_connection(token) do
+    scopes = token.rest_description.auth.oauth2.scopes
+    otp_app = "google_api_#{Macro.underscore(token.rest_description.name)}"
+
+    path = Path.join(token.base_dir, "connection.ex")
+    IO.puts("Writing connection.ex.")
+
+    File.write!(
+      path,
+      Renderer.connection(token.namespace, scopes, otp_app, token.base_url)
+    )
+  end
+
   defp write_model_files(%{models: models, namespace: namespace, base_dir: base_dir} = token) do
     models
     |> Enum.each(fn model ->
@@ -90,14 +104,10 @@ defmodule GoogleApis.Generator.ElixirGenerator do
   defp load_global_optional_params(token) do
     params = token.rest_description.parameters || []
 
-    context =
-      ResourceContext.empty()
-      |> ResourceContext.with_namespace(token.namespace)
-
     global_optional_parameters =
       params
       |> Enum.map(fn {name, schema} ->
-        Parameter.from_json_schema(name, schema, context)
+        Parameter.from_json_schema(name, schema, token.resource_context)
       end)
       |> Enum.sort_by(fn param -> param.name end)
 
@@ -105,11 +115,7 @@ defmodule GoogleApis.Generator.ElixirGenerator do
   end
 
   defp load_apis(token) do
-    context = %ResourceContext{
-      namespace: token.namespace
-    }
-
-    Map.put(token, :apis, all_apis(token.rest_description, context))
+    Map.put(token, :apis, all_apis(token.rest_description, token.resource_context))
   end
 
   defp write_api_files(token) do
@@ -123,6 +129,8 @@ defmodule GoogleApis.Generator.ElixirGenerator do
         Renderer.api(api, token.namespace, token.global_optional_parameters)
       )
     end)
+
+    token
   end
 
   @doc """

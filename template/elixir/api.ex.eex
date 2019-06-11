@@ -29,7 +29,7 @@ defmodule <%= namespace %>.Api.<%= api.name %> do
 
   ## Parameters
 
-  - connection (GoogleApi.Books.V1.Connection): Connection to server
+  - connection (<%= namespace %>.Connection): Connection to server
   <%= for parameter <- endpoint.required_parameters do %>- <%= parameter.variable_name %> (<%= parameter.type.typespec %>): <%= parameter.description %>
 <% end %>  - optional_params (keyword()): [optional] Optional parameters<%= for parameter <- global_optional_parameters do %>
     - :<%= parameter.name %> (<%= parameter.type.typespec %>): <%= parameter.description %><% end %><%= for parameter <- endpoint.optional_parameters do %>

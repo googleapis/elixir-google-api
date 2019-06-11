@@ -29,4 +29,11 @@ defmodule GoogleApis.Generator.ElixirGenerator.Renderer do
     :namespace,
     :global_optional_parameters
   ])
+
+  EEx.function_from_file(:def, :connection, Path.expand("./template/elixir/connection.ex.eex"), [
+    :namespace,
+    :scopes,
+    :otp_app,
+    :base_url
+  ])
 end

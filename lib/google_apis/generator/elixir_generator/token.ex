@@ -26,7 +26,9 @@ defmodule GoogleApis.Generator.ElixirGenerator.Token do
           :library_name => String.t(),
           :namespace => String.t(),
           :base_dir => String.t(),
+          :base_url => String.t(),
           :rest_description => RestDescription.t(),
+          :resource_context => ResourceContext.t(),
           :models => list(Model.t()),
           :models_by_name => %{String.t() => Model.t()},
           :global_optional_parameters => list(Parameter.t())
@@ -37,7 +39,9 @@ defmodule GoogleApis.Generator.ElixirGenerator.Token do
     :library_name,
     :namespace,
     :base_dir,
+    :base_url,
     :rest_description,
+    :resource_context,
     :models,
     :models_by_name,
     :global_optional_parameters
@@ -64,13 +68,43 @@ defmodule GoogleApis.Generator.ElixirGenerator.Token do
       |> File.read!()
       |> Poison.decode!(as: %RestDescription{})
 
+    {base_url, base_path} = determine_base_paths(rest_description)
+    resource_context =
+      ResourceContext.empty()
+      |> ResourceContext.with_namespace(namespace)
+      |> ResourceContext.with_base_path(base_path)
+
     %__MODULE__{
       filename: filename,
       library_name: library_name,
       namespace: namespace,
       base_dir: base_dir,
-      rest_description: rest_description
+      base_url: base_url,
+      rest_description: rest_description,
+      resource_context: resource_context
     }
+  end
+
+  defp determine_base_paths(rest_description) do
+    if supports_media_upload?(rest_description.resources) do
+      {rest_description.rootUrl, rest_description.basePath}
+    else
+      {rest_description.baseUrl, ""}
+    end
+  end
+
+  defp supports_media_upload?(nil), do: false
+  defp supports_media_upload?(resources) do
+    Enum.any?(resources, fn {_name, resource} ->
+      supports_media_upload?(resource.resources) ||
+        has_media_upload_method?(resource.methods)
+    end)
+  end
+
+  defp has_media_upload_method?(methods) do
+    Enum.any?(methods, fn {_name, method} ->
+      method.supportsMediaUpload
+    end)
   end
 
   def build_property(token, model, name, schema) do
