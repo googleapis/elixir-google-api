@@ -16,9 +16,9 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.VideoIntelligence.V1.Api.Operations do
+defmodule GoogleApi.VideoIntelligence.V1.Api.Projects do
   @moduledoc """
-  API calls for all endpoints tagged `Operations`.
+  API calls for all endpoints tagged `Projects`.
   """
 
   alias GoogleApi.VideoIntelligence.V1.Connection
@@ -43,20 +43,21 @@ defmodule GoogleApi.VideoIntelligence.V1.Api.Operations do
     - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
     - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
     - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :body (GoogleLongrunningCancelOperationRequest): 
 
   ## Returns
 
   {:ok, %GoogleApi.VideoIntelligence.V1.Model.GoogleProtobufEmpty{}} on success
   {:error, info} on failure
   """
-  @spec videointelligence_operations_projects_locations_operations_cancel(
+  @spec videointelligence_projects_locations_operations_cancel(
           Tesla.Env.client(),
           String.t(),
           keyword()
         ) ::
           {:ok, GoogleApi.VideoIntelligence.V1.Model.GoogleProtobufEmpty.t()}
           | {:error, Tesla.Env.t()}
-  def videointelligence_operations_projects_locations_operations_cancel(
+  def videointelligence_projects_locations_operations_cancel(
         connection,
         name,
         optional_params \\ [],
@@ -73,13 +74,14 @@ defmodule GoogleApi.VideoIntelligence.V1.Api.Operations do
       :prettyPrint => :query,
       :quotaUser => :query,
       :upload_protocol => :query,
-      :uploadType => :query
+      :uploadType => :query,
+      :body => :body
     }
 
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/operations/{+name}:cancel", %{
+      |> Request.url("/v1/{+name}:cancel", %{
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -116,14 +118,14 @@ defmodule GoogleApi.VideoIntelligence.V1.Api.Operations do
   {:ok, %GoogleApi.VideoIntelligence.V1.Model.GoogleProtobufEmpty{}} on success
   {:error, info} on failure
   """
-  @spec videointelligence_operations_projects_locations_operations_delete(
+  @spec videointelligence_projects_locations_operations_delete(
           Tesla.Env.client(),
           String.t(),
           keyword()
         ) ::
           {:ok, GoogleApi.VideoIntelligence.V1.Model.GoogleProtobufEmpty.t()}
           | {:error, Tesla.Env.t()}
-  def videointelligence_operations_projects_locations_operations_delete(
+  def videointelligence_projects_locations_operations_delete(
         connection,
         name,
         optional_params \\ [],
@@ -146,7 +148,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Api.Operations do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/v1/operations/{+name}", %{
+      |> Request.url("/v1/{+name}", %{
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -183,14 +185,14 @@ defmodule GoogleApi.VideoIntelligence.V1.Api.Operations do
   {:ok, %GoogleApi.VideoIntelligence.V1.Model.GoogleLongrunningOperation{}} on success
   {:error, info} on failure
   """
-  @spec videointelligence_operations_projects_locations_operations_get(
+  @spec videointelligence_projects_locations_operations_get(
           Tesla.Env.client(),
           String.t(),
           keyword()
         ) ::
           {:ok, GoogleApi.VideoIntelligence.V1.Model.GoogleLongrunningOperation.t()}
           | {:error, Tesla.Env.t()}
-  def videointelligence_operations_projects_locations_operations_get(
+  def videointelligence_projects_locations_operations_get(
         connection,
         name,
         optional_params \\ [],
@@ -213,7 +215,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Api.Operations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/operations/{+name}", %{
+      |> Request.url("/v1/{+name}", %{
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -222,6 +224,80 @@ defmodule GoogleApi.VideoIntelligence.V1.Api.Operations do
     |> Connection.execute(request)
     |> Response.decode(
       opts ++ [struct: %GoogleApi.VideoIntelligence.V1.Model.GoogleLongrunningOperation{}]
+    )
+  end
+
+  @doc """
+  Lists operations that match the specified filter in the request. If the server doesn&#39;t support this method, it returns &#x60;UNIMPLEMENTED&#x60;.  NOTE: the &#x60;name&#x60; binding allows API services to override the binding to use different resource name schemes, such as &#x60;users/*/operations&#x60;. To override the binding, API services can add a binding such as &#x60;\&quot;/v1/{name&#x3D;users/*}/operations\&quot;&#x60; to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.
+
+  ## Parameters
+
+  - connection (GoogleApi.VideoIntelligence.V1.Connection): Connection to server
+  - name (String.t): The name of the operation&#39;s parent resource.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :$.xgafv (String.t): V1 error format.
+    - :access_token (String.t): OAuth access token.
+    - :alt (String.t): Data format for response.
+    - :callback (String.t): JSONP
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+    - :upload_protocol (String.t): Upload protocol for media (e.g. \&quot;raw\&quot;, \&quot;multipart\&quot;).
+    - :uploadType (String.t): Legacy upload protocol for media (e.g. \&quot;media\&quot;, \&quot;multipart\&quot;).
+    - :filter (String.t): The standard list filter.
+    - :pageSize (integer()): The standard list page size.
+    - :pageToken (String.t): The standard list page token.
+
+  ## Returns
+
+  {:ok, %GoogleApi.VideoIntelligence.V1.Model.GoogleLongrunningListOperationsResponse{}} on success
+  {:error, info} on failure
+  """
+  @spec videointelligence_projects_locations_operations_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.VideoIntelligence.V1.Model.GoogleLongrunningListOperationsResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def videointelligence_projects_locations_operations_list(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :upload_protocol => :query,
+      :uploadType => :query,
+      :filter => :query,
+      :pageSize => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1/{+name}/operations", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [struct: %GoogleApi.VideoIntelligence.V1.Model.GoogleLongrunningListOperationsResponse{}]
     )
   end
 end

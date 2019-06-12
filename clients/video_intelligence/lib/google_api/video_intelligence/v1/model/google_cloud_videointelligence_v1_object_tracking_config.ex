@@ -16,31 +16,28 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1TextDetectionConfig do
+defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1ObjectTrackingConfig do
   @moduledoc """
-  Config for TEXT_DETECTION.
+  Config for OBJECT_TRACKING.
 
   ## Attributes
 
-  - languageHints ([String.t]): Language hint can be specified if the language to be detected is known a priori. It can increase the accuracy of the detection. Language hint must be language code in BCP-47 format.  Automatic language detection is performed if no hint is provided. Defaults to: `null`.
-  - model (String.t): Model to use for text detection. Supported values: \&quot;builtin/stable\&quot; (the default if unset) and \&quot;builtin/latest\&quot;. Defaults to: `null`.
+  - model (String.t): Model to use for object tracking. Supported values: \&quot;builtin/stable\&quot; (the default if unset) and \&quot;builtin/latest\&quot;. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :languageHints => list(any()),
           :model => any()
         }
 
-  field(:languageHints, type: :list)
   field(:model)
 end
 
 defimpl Poison.Decoder,
-  for: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1TextDetectionConfig do
+  for: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1ObjectTrackingConfig do
   def decode(value, options) do
-    GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1TextDetectionConfig.decode(
+    GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1ObjectTrackingConfig.decode(
       value,
       options
     )
@@ -48,7 +45,7 @@ defimpl Poison.Decoder,
 end
 
 defimpl Poison.Encoder,
-  for: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1TextDetectionConfig do
+  for: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1ObjectTrackingConfig do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
