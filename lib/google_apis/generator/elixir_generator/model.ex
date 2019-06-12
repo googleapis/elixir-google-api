@@ -93,7 +93,7 @@ defmodule GoogleApis.Generator.ElixirGenerator.Model do
     |> Map.put(
       :properties,
       Enum.map(model.schema.properties, fn {name, schema} ->
-        Property.from_schema(schema, name, context)
+        Property.from_schema(schema, name, ResourceContext.with_property(context, model.name))
       end)
     )
     |> Map.put(:schema, nil)

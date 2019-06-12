@@ -374,19 +374,21 @@ defmodule GoogleApis.Generator.ElixirGenerator.ModelTest do
       |> Model.update_properties(context)
 
     assert 3 == length(model.properties)
+
     assert Enum.all?(model.properties, fn property ->
-      assert "datetime" == property.type.name
-      assert "DateTime" == property.type.struct
-      assert "DateTime.t" == property.type.typespec
-    end)
+             assert "datetime" == property.type.name
+             assert "DateTime" == property.type.struct
+             assert "DateTime.t" == property.type.typespec
+           end)
   end
 
   test "handles nested lists" do
-    context = ResourceContext.default()
+    context =
+      ResourceContext.empty()
+      |> ResourceContext.with_namespace("My.Namespace")
 
     schema = Poison.decode!(@nested_list_schema, as: %JsonSchema{})
     models = Model.from_schema("NestedContainer", schema)
-    |> IO.inspect
 
     assert 3 == length(models)
 
@@ -399,5 +401,6 @@ defmodule GoogleApis.Generator.ElixirGenerator.ModelTest do
     property = List.first(model.properties)
 
     assert nil == property.type.struct
+    assert "list(list(My.Namespace.Model.NestedContainerRows.t))" == property.type.typespec
   end
 end
