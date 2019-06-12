@@ -22,15 +22,18 @@ defmodule GoogleApi.Vault.V1.Model.HeldDriveQuery do
 
   ## Attributes
 
+  - includeSharedDriveFiles (boolean()): If true, include files in shared drives in the hold. Defaults to: `null`.
   - includeTeamDriveFiles (boolean()): If true, include files in Team Drives in the hold. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :includeSharedDriveFiles => any(),
           :includeTeamDriveFiles => any()
         }
 
+  field(:includeSharedDriveFiles)
   field(:includeTeamDriveFiles)
 end
 

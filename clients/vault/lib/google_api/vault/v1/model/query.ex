@@ -32,9 +32,12 @@ defmodule GoogleApi.Vault.V1.Model.Query do
   - hangoutsChatInfo (HangoutsChatInfo): When &#39;ROOM&#39; is chosen as search method, hangout_chats_info needs to be specified. (read-only) Defaults to: `null`.
   - hangoutsChatOptions (HangoutsChatOptions): For hangouts chat search, specify more options in this field. (read-only) Defaults to: `null`.
   - mailOptions (MailOptions): For mail search, specify more options in this field. Defaults to: `null`.
+  - method (String.t): The search method to use. This field is similar to the search_method field but is introduced to support shared drives. It supports all search method types. In case the search_method is TEAM_DRIVE the response of this field will be SHARED_DRIVE only. Defaults to: `null`.
+    - Enum - one of [SEARCH_METHOD_UNSPECIFIED, ACCOUNT, ORG_UNIT, TEAM_DRIVE, ENTIRE_ORG, ROOM, SHARED_DRIVE]
   - orgUnitInfo (OrgUnitInfo): When &#39;ORG_UNIT&#39; is chosen as as search method, org_unit_info needs to be specified. Defaults to: `null`.
   - searchMethod (String.t): The search method to use. Defaults to: `null`.
-    - Enum - one of [SEARCH_METHOD_UNSPECIFIED, ACCOUNT, ORG_UNIT, TEAM_DRIVE, ENTIRE_ORG, ROOM]
+    - Enum - one of [SEARCH_METHOD_UNSPECIFIED, ACCOUNT, ORG_UNIT, TEAM_DRIVE, ENTIRE_ORG, ROOM, SHARED_DRIVE]
+  - sharedDriveInfo (SharedDriveInfo): When &#39;SHARED_DRIVE&#39; is chosen as search method, shared_drive_info needs to be specified. Defaults to: `null`.
   - startTime (DateTime.t): The start time range for the search query. These timestamps are in GMT and rounded down to the start of the given date. Defaults to: `null`.
   - teamDriveInfo (TeamDriveInfo): When &#39;TEAM_DRIVE&#39; is chosen as search method, team_drive_info needs to be specified. Defaults to: `null`.
   - terms (String.t): The corpus-specific &lt;a href&#x3D;\&quot;https://support.google.com/vault/answer/2474474\&quot;&gt;search operators&lt;/a&gt; used to generate search results. Defaults to: `null`.
@@ -52,8 +55,10 @@ defmodule GoogleApi.Vault.V1.Model.Query do
           :hangoutsChatInfo => GoogleApi.Vault.V1.Model.HangoutsChatInfo.t(),
           :hangoutsChatOptions => GoogleApi.Vault.V1.Model.HangoutsChatOptions.t(),
           :mailOptions => GoogleApi.Vault.V1.Model.MailOptions.t(),
+          :method => any(),
           :orgUnitInfo => GoogleApi.Vault.V1.Model.OrgUnitInfo.t(),
           :searchMethod => any(),
+          :sharedDriveInfo => GoogleApi.Vault.V1.Model.SharedDriveInfo.t(),
           :startTime => DateTime.t(),
           :teamDriveInfo => GoogleApi.Vault.V1.Model.TeamDriveInfo.t(),
           :terms => any(),
@@ -68,8 +73,10 @@ defmodule GoogleApi.Vault.V1.Model.Query do
   field(:hangoutsChatInfo, as: GoogleApi.Vault.V1.Model.HangoutsChatInfo)
   field(:hangoutsChatOptions, as: GoogleApi.Vault.V1.Model.HangoutsChatOptions)
   field(:mailOptions, as: GoogleApi.Vault.V1.Model.MailOptions)
+  field(:method)
   field(:orgUnitInfo, as: GoogleApi.Vault.V1.Model.OrgUnitInfo)
   field(:searchMethod)
+  field(:sharedDriveInfo, as: GoogleApi.Vault.V1.Model.SharedDriveInfo)
   field(:startTime, as: DateTime)
   field(:teamDriveInfo, as: GoogleApi.Vault.V1.Model.TeamDriveInfo)
   field(:terms)
