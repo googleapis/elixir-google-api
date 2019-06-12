@@ -137,7 +137,7 @@ defmodule GoogleApi.Compute.V1.Api.GlobalAddresses do
   end
 
   @doc """
-  Creates an address resource in the specified project using the data included in the request.
+  Creates an address resource in the specified project by using the data included in the request.
 
   ## Parameters
 

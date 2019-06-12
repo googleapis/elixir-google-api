@@ -22,7 +22,7 @@ defmodule GoogleApi.Compute.V1.Model.NetworkRoutingConfig do
 
   ## Attributes
 
-  - routingMode (String.t): The network-wide routing mode to use. If set to REGIONAL, this network&#39;s cloud routers will only advertise routes with subnets of this network in the same region as the router. If set to GLOBAL, this network&#39;s cloud routers will advertise routes with all subnets of this network, across regions. Defaults to: `null`.
+  - routingMode (String.t): The network-wide routing mode to use. If set to REGIONAL, this network&#39;s Cloud Routers will only advertise routes with subnets of this network in the same region as the router. If set to GLOBAL, this network&#39;s Cloud Routers will advertise routes with all subnets of this network, across regions. Defaults to: `null`.
     - Enum - one of [GLOBAL, REGIONAL]
   """
 

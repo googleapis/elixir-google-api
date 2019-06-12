@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.MachineType do
   @moduledoc """
-  A Machine Type resource. (&#x3D;&#x3D; resource_for v1.machineTypes &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for beta.machineTypes &#x3D;&#x3D;)
+  Represents a Machine Type resource.  You can use specific machine types for your VM instances based on performance and pricing requirements. For more information, read Machine Types. (&#x3D;&#x3D; resource_for v1.machineTypes &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for beta.machineTypes &#x3D;&#x3D;)
 
   ## Attributes
 

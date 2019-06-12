@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.Region do
   @moduledoc """
-  Region resource. (&#x3D;&#x3D; resource_for beta.regions &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.regions &#x3D;&#x3D;)
+  Represents a Region resource.  A region is a geographical area where a resource is located. For more information, read Regions and Zones. (&#x3D;&#x3D; resource_for beta.regions &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.regions &#x3D;&#x3D;)
 
   ## Attributes
 

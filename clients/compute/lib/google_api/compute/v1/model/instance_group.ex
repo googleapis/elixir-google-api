@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.InstanceGroup do
   @moduledoc """
-  InstanceGroups (&#x3D;&#x3D; resource_for beta.instanceGroups &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.instanceGroups &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for beta.regionInstanceGroups &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.regionInstanceGroups &#x3D;&#x3D;)
+  Represents an unmanaged Instance Group resource.  Use unmanaged instance groups if you need to apply load balancing to groups of heterogeneous instances or if you need to manage the instances yourself. For more information, read  Instance groups.  For zonal unmanaged Instance Group, use instanceGroups resource.  For regional unmanaged Instance Group, use regionInstanceGroups resource. (&#x3D;&#x3D; resource_for beta.instanceGroups &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.instanceGroups &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for beta.regionInstanceGroups &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.regionInstanceGroups &#x3D;&#x3D;)
 
   ## Attributes
 

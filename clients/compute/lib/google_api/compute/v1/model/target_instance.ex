@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.TargetInstance do
   @moduledoc """
-  A TargetInstance resource. This resource defines an endpoint instance that terminates traffic of certain protocols. (&#x3D;&#x3D; resource_for beta.targetInstances &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.targetInstances &#x3D;&#x3D;)
+  Represents a Target Instance resource.  You can use a target instance to handle traffic for one or more forwarding rules, which is ideal for forwarding protocol traffic that is managed by a single source. For example, ESP, AH, TCP, or UDP. For more information, read Target instances. (&#x3D;&#x3D; resource_for beta.targetInstances &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.targetInstances &#x3D;&#x3D;)
 
   ## Attributes
 

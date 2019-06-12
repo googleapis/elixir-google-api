@@ -23,12 +23,12 @@ defmodule GoogleApi.Compute.V1.Model.AccessConfig do
   ## Attributes
 
   - kind (String.t): [Output Only] Type of the resource. Always compute#accessConfig for access configs. Defaults to: `null`.
-  - name (String.t): The name of this access configuration. The default and recommended name is External NAT but you can use any arbitrary string you would like. For example, My external IP or Network Access. Defaults to: `null`.
+  - name (String.t): The name of this access configuration. The default and recommended name is External NAT, but you can use any arbitrary string, such as My external IP or Network Access. Defaults to: `null`.
   - natIP (String.t): An external IP address associated with this instance. Specify an unused static external IP address available to the project or leave this field undefined to use an IP from a shared ephemeral IP address pool. If you specify a static external IP address, it must live in the same region as the zone of the instance. Defaults to: `null`.
   - networkTier (String.t): This signifies the networking tier used for configuring this access configuration and can only take the following values: PREMIUM, STANDARD.  If an AccessConfig is specified without a valid external IP address, an ephemeral IP will be created with this networkTier.  If an AccessConfig with a valid external IP address is specified, it must match that of the networkTier associated with the Address resource owning that IP. Defaults to: `null`.
     - Enum - one of [PREMIUM, STANDARD]
-  - publicPtrDomainName (String.t): The DNS domain name for the public PTR record. This field can only be set when the set_public_ptr field is enabled. Defaults to: `null`.
-  - setPublicPtr (boolean()): Specifies whether a public DNS ?PTR? record should be created to map the external IP address of the instance to a DNS domain name. Defaults to: `null`.
+  - publicPtrDomainName (String.t): The DNS domain name for the public PTR record. You can set this field only if the &#x60;setPublicPtr&#x60; field is enabled. Defaults to: `null`.
+  - setPublicPtr (boolean()): Specifies whether a public DNS &#39;PTR&#39; record should be created to map the external IP address of the instance to a DNS domain name. Defaults to: `null`.
   - type (String.t): The type of configuration. The default and only option is ONE_TO_ONE_NAT. Defaults to: `null`.
     - Enum - one of [ONE_TO_ONE_NAT]
   """

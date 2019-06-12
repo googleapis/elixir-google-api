@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.Autoscaler do
   @moduledoc """
-  Represents an Autoscaler resource. Autoscalers allow you to automatically scale virtual machine instances in managed instance groups according to an autoscaling policy that you define. For more information, read Autoscaling Groups of Instances. (&#x3D;&#x3D; resource_for beta.autoscalers &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.autoscalers &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for beta.regionAutoscalers &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.regionAutoscalers &#x3D;&#x3D;)
+  Represents an Autoscaler resource.    Use autoscalers to automatically add or delete instances from a managed instance group according to your defined autoscaling policy. For more information, read Autoscaling Groups of Instances.  For zonal managed instance groups resource, use the autoscaler resource.  For regional managed instance groups, use the regionAutoscalers resource. (&#x3D;&#x3D; resource_for beta.autoscalers &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.autoscalers &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for beta.regionAutoscalers &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.regionAutoscalers &#x3D;&#x3D;)
 
   ## Attributes
 

@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.DiskType do
   @moduledoc """
-  A DiskType resource. (&#x3D;&#x3D; resource_for beta.diskTypes &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.diskTypes &#x3D;&#x3D;)
+  Represents a Disk Type resource.  You can choose from a variety of disk types based on your needs. For more information, read Storage options.  The diskTypes resource represents disk types for a zonal persistent disk. For more information, read Zonal persistent disks.  The regionDiskTypes resource represents disk types for a regional persistent disk. For more information, read Regional persistent disks. (&#x3D;&#x3D; resource_for beta.diskTypes &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.diskTypes &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.regionDiskTypes &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for beta.regionDiskTypes &#x3D;&#x3D;)
 
   ## Attributes
 

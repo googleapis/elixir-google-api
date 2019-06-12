@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.Instance do
   @moduledoc """
-  An Instance resource. (&#x3D;&#x3D; resource_for beta.instances &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.instances &#x3D;&#x3D;)
+  Represents an Instance resource.  An instance is a virtual machine that is hosted on Google Cloud Platform. For more information, read Virtual Machine Instances. (&#x3D;&#x3D; resource_for beta.instances &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.instances &#x3D;&#x3D;)
 
   ## Attributes
 

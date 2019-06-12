@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.Operation do
   @moduledoc """
-  An Operation resource, used to manage asynchronous API requests. (&#x3D;&#x3D; resource_for v1.globalOperations &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for beta.globalOperations &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.regionOperations &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for beta.regionOperations &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.zoneOperations &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for beta.zoneOperations &#x3D;&#x3D;)
+  Represents an Operation resource.  You can use an operation resource to manage asynchronous API requests. For more information, read Handling API responses.  Operations can be global, regional or zonal.   - For global operations, use the globalOperations resource.  - For regional operations, use the regionOperations resource.  - For zonal operations, use the zonalOperations resource.    For more information, read  Global, Regional, and Zonal Resources. (&#x3D;&#x3D; resource_for v1.globalOperations &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for beta.globalOperations &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.regionOperations &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for beta.regionOperations &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.zoneOperations &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for beta.zoneOperations &#x3D;&#x3D;)
 
   ## Attributes
 
@@ -35,7 +35,7 @@ defmodule GoogleApi.Compute.V1.Model.Operation do
   - name (String.t): [Output Only] Name of the resource. Defaults to: `null`.
   - operationType (String.t): [Output Only] The type of operation, such as insert, update, or delete, and so on. Defaults to: `null`.
   - progress (integer()): [Output Only] An optional progress indicator that ranges from 0 to 100. There is no requirement that this be linear or support any granularity of operations. This should not be used to guess when the operation will be complete. This number should monotonically increase as the operation progresses. Defaults to: `null`.
-  - region (String.t): [Output Only] The URL of the region where the operation resides. Only available when performing regional operations. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body. Defaults to: `null`.
+  - region (String.t): [Output Only] The URL of the region where the operation resides. Only applicable when performing regional operations. Defaults to: `null`.
   - selfLink (String.t): [Output Only] Server-defined URL for the resource. Defaults to: `null`.
   - startTime (String.t): [Output Only] The time that this operation was started by the server. This value is in RFC3339 text format. Defaults to: `null`.
   - status (String.t): [Output Only] The status of the operation, which can be one of the following: PENDING, RUNNING, or DONE. Defaults to: `null`.
@@ -45,7 +45,7 @@ defmodule GoogleApi.Compute.V1.Model.Operation do
   - targetLink (String.t): [Output Only] The URL of the resource that the operation modifies. For operations related to creating a snapshot, this points to the persistent disk that the snapshot was created from. Defaults to: `null`.
   - user (String.t): [Output Only] User who requested the operation, for example: user@example.com. Defaults to: `null`.
   - warnings ([OperationWarnings]): [Output Only] If warning messages are generated during processing of the operation, this field will be populated. Defaults to: `null`.
-  - zone (String.t): [Output Only] The URL of the zone where the operation resides. Only available when performing per-zone operations. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body. Defaults to: `null`.
+  - zone (String.t): [Output Only] The URL of the zone where the operation resides. Only applicable when performing per-zone operations. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase

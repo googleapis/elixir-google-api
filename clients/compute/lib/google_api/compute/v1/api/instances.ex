@@ -485,6 +485,73 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   end
 
   @doc """
+  Returns the specified guest attributes entry.
+
+  ## Parameters
+
+  - connection (GoogleApi.Compute.V1.Connection): Connection to server
+  - project (String.t): Project ID for this request.
+  - zone (String.t): The name of the zone for this request.
+  - instance (String.t): Name of the instance scoping this request.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :alt (String.t): Data format for the response.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+    - :queryPath (String.t): Specifies the guest attributes path to be queried.
+    - :variableKey (String.t): Specifies the key for the guest attributes entry.
+
+  ## Returns
+
+  {:ok, %GoogleApi.Compute.V1.Model.GuestAttributes{}} on success
+  {:error, info} on failure
+  """
+  @spec compute_instances_get_guest_attributes(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) :: {:ok, GoogleApi.Compute.V1.Model.GuestAttributes.t()} | {:error, Tesla.Env.t()}
+  def compute_instances_get_guest_attributes(
+        connection,
+        project,
+        zone,
+        instance,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :alt => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :userIp => :query,
+      :queryPath => :query,
+      :variableKey => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/{project}/zones/{zone}/instances/{instance}/getGuestAttributes", %{
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.GuestAttributes{}])
+  end
+
+  @doc """
   Gets the access control policy for a resource. May be empty if no such policy or resource exists.
 
   ## Parameters

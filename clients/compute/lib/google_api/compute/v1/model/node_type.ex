@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.NodeType do
   @moduledoc """
-  A Node Type resource.
+  Represent a sole-tenant Node Type resource.  Each node within a node group must have a node type. A node type specifies the total amount of cores and memory for that node. Currently, the only available node type is n1-node-96-624 node type that has 96 vCPUs and 624 GB of memory, available in multiple zones. For more information read Node types. (&#x3D;&#x3D; resource_for beta.nodeTypes &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.nodeTypes &#x3D;&#x3D;)
 
   ## Attributes
 
