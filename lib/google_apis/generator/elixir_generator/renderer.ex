@@ -27,7 +27,8 @@ defmodule GoogleApis.Generator.ElixirGenerator.Renderer do
   EEx.function_from_file(:def, :api, Path.expand("./template/elixir/api.ex.eex"), [
     :api,
     :namespace,
-    :global_optional_parameters
+    :global_optional_parameters,
+    :data_wrapped
   ])
 
   EEx.function_from_file(:def, :connection, Path.expand("./template/elixir/connection.ex.eex"), [

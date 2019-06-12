@@ -31,7 +31,8 @@ defmodule GoogleApis.Generator.ElixirGenerator.Token do
           :resource_context => ResourceContext.t(),
           :models => list(Model.t()),
           :models_by_name => %{String.t() => Model.t()},
-          :global_optional_parameters => list(Parameter.t())
+          :global_optional_parameters => list(Parameter.t()),
+          :data_wrapped => boolean()
         }
 
   defstruct [
@@ -44,7 +45,8 @@ defmodule GoogleApis.Generator.ElixirGenerator.Token do
     :resource_context,
     :models,
     :models_by_name,
-    :global_optional_parameters
+    :global_optional_parameters,
+    :data_wrapped
   ]
 
   def build(api_config) do
@@ -75,6 +77,8 @@ defmodule GoogleApis.Generator.ElixirGenerator.Token do
       |> ResourceContext.with_namespace(namespace)
       |> ResourceContext.with_base_path(base_path)
 
+    data_wrapped = has_data_wrapper_feature?(rest_description)
+
     %__MODULE__{
       filename: filename,
       library_name: library_name,
@@ -82,7 +86,8 @@ defmodule GoogleApis.Generator.ElixirGenerator.Token do
       base_dir: base_dir,
       base_url: base_url,
       rest_description: rest_description,
-      resource_context: resource_context
+      resource_context: resource_context,
+      data_wrapped: data_wrapped
     }
   end
 
@@ -106,5 +111,10 @@ defmodule GoogleApis.Generator.ElixirGenerator.Token do
     Enum.any?(methods, fn {_name, method} ->
       method.supportsMediaUpload
     end)
+  end
+
+  defp has_data_wrapper_feature?(%{features: nil}), do: false
+  defp has_data_wrapper_feature?(%{features: features}) do
+    Enum.any?(features, fn feature -> feature == "dataWrapper" end)
   end
 end

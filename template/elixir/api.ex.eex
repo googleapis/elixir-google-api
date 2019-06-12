@@ -64,7 +64,7 @@ defmodule <%= namespace %>.Api.<%= api.name %> do
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(opts ++ [<%= if endpoint.return.struct do %>struct: %<%= endpoint.return.struct %>{}<% else %>decode: false<% end %>])
+    |> Response.decode(opts ++ [<%= if endpoint.return.struct do %>struct: %<%= endpoint.return.struct %>{}<% else %>decode: false<% end %><%= if data_wrapped do %>, data_wrapped: true<% end %>])
   end
   <% end %>
 end

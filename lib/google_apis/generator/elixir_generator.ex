@@ -128,7 +128,7 @@ defmodule GoogleApis.Generator.ElixirGenerator do
 
       File.write!(
         path,
-        Renderer.api(api, token.namespace, token.global_optional_parameters)
+        Renderer.api(api, token.namespace, token.global_optional_parameters, token.data_wrapped)
       )
     end)
 
