@@ -59,10 +59,14 @@ defmodule GoogleApis.Generator.ElixirGenerator.Type do
 
   def from_schema(%{type: "array", items: items}, context) do
     t = from_schema(items, context)
+    struct = case t.name do
+      "array" -> nil
+      _       -> t.struct
+    end
 
     %__MODULE__{
       name: "array",
-      struct: t.struct,
+      struct: struct,
       typespec: "list(#{t.typespec})"
     }
   end
@@ -72,10 +76,14 @@ defmodule GoogleApis.Generator.ElixirGenerator.Type do
       schema
       |> Map.put(:repeated, nil)
       |> from_schema(context)
+    struct = case t.name do
+      "array" -> nil
+      _       -> t.struct
+    end
 
     %__MODULE__{
       name: "array",
-      struct: t.struct,
+      struct: struct,
       typespec: "list(#{t.typespec})"
     }
   end

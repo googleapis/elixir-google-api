@@ -245,6 +245,46 @@ defmodule GoogleApis.Generator.ElixirGenerator.ModelTest do
   }
   """
 
+  @nested_list_schema """
+  {
+    "id": "NestedContainer",
+    "type": "object",
+    "description": "Container that has lists of lists of data objects",
+    "properties": {
+      "rows": {
+        "type": "array",
+        "description": "A list of lists of data objects",
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "description": "A deeply nested object",
+            "properties": {
+              "nestedArrayValue": {
+                "type": "array",
+                "description": "An array value on a deeply nested object",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "stringVal": {
+                      "type": "string",
+                      "description": "A string value on a deeply nested object"
+                    }
+                  }
+                }
+              },
+              "primitiveValue": {
+                "type": "string",
+                "description": "A primitive dimension value. A primitive metric value."
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  """
+
   test "loads nested schemas" do
     schema = Poison.decode!(@test_schema, as: %JsonSchema{})
 
@@ -339,5 +379,25 @@ defmodule GoogleApis.Generator.ElixirGenerator.ModelTest do
       assert "DateTime" == property.type.struct
       assert "DateTime.t" == property.type.typespec
     end)
+  end
+
+  test "handles nested lists" do
+    context = ResourceContext.default()
+
+    schema = Poison.decode!(@nested_list_schema, as: %JsonSchema{})
+    models = Model.from_schema("NestedContainer", schema)
+    |> IO.inspect
+
+    assert 3 == length(models)
+
+    model =
+      models
+      |> List.first()
+      |> Model.update_properties(context)
+
+    assert 1 == length(model.properties)
+    property = List.first(model.properties)
+
+    assert nil == property.type.struct
   end
 end
