@@ -375,11 +375,16 @@ defmodule GoogleApis.Generator.ElixirGenerator.ModelTest do
 
     assert 3 == length(model.properties)
 
-    assert Enum.all?(model.properties, fn property ->
-             assert "datetime" == property.type.name
-             assert "DateTime" == property.type.struct
-             assert "DateTime.t" == property.type.typespec
-           end)
+    [datetime_property, date_property, google_datetime_property] = model.properties
+    assert "date" == date_property.type.name
+    assert "Date" == date_property.type.struct
+    assert "Date.t" == date_property.type.typespec
+    assert "datetime" == datetime_property.type.name
+    assert "DateTime" == datetime_property.type.struct
+    assert "DateTime.t" == datetime_property.type.typespec
+    assert "datetime" == google_datetime_property.type.name
+    assert "DateTime" == google_datetime_property.type.struct
+    assert "DateTime.t" == google_datetime_property.type.typespec
   end
 
   test "handles nested lists" do

@@ -107,8 +107,16 @@ defmodule GoogleApis.Generator.ElixirGenerator.Type do
     }
   end
 
+  def from_schema(%{type: "string", format: "date"}, _context) do
+    %__MODULE__{
+      name: "date",
+      struct: "Date",
+      typespec: "Date.t"
+    }
+  end
+
   def from_schema(%{type: "string", format: date_or_time}, _context)
-      when date_or_time in ["date", "date-time", "time", "google-datetime"] do
+      when date_or_time in ["date-time", "time", "google-datetime"] do
     %__MODULE__{
       name: "datetime",
       struct: "DateTime",
