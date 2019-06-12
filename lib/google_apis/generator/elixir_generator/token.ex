@@ -107,6 +107,8 @@ defmodule GoogleApis.Generator.ElixirGenerator.Token do
     end)
   end
 
+  defp has_media_upload_method?(nil), do: false
+
   defp has_media_upload_method?(methods) do
     Enum.any?(methods, fn {_name, method} ->
       method.supportsMediaUpload
