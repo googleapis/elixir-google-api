@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.NodeTemplate do
   @moduledoc """
-  A Node Template resource. To learn more about node templates and sole-tenant nodes, read the Sole-tenant nodes documentation. (&#x3D;&#x3D; resource_for beta.nodeTemplates &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.nodeTemplates &#x3D;&#x3D;)
+  Represent a sole-tenant Node Template resource.  You can use a template to define properties for nodes in a node group. For more information, read Creating node groups and instances. (&#x3D;&#x3D; resource_for beta.nodeTemplates &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.nodeTemplates &#x3D;&#x3D;) NextID: 16
 
   ## Attributes
 
@@ -32,6 +32,7 @@ defmodule GoogleApi.Compute.V1.Model.NodeTemplate do
   - nodeTypeFlexibility (NodeTemplateNodeTypeFlexibility): The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties.  This field is mutually exclusive with the node_type property; you can only define one or the other, but not both. Defaults to: `null`.
   - region (String.t): [Output Only] The name of the region where the node template resides, such as us-central1. Defaults to: `null`.
   - selfLink (String.t): [Output Only] Server-defined URL for the resource. Defaults to: `null`.
+  - serverBinding (ServerBinding): Binding properties for the physical server. Defaults to: `null`.
   - status (String.t): [Output Only] The status of the node template. One of the following values: CREATING, READY, and DELETING. Defaults to: `null`.
     - Enum - one of [CREATING, DELETING, INVALID, READY]
   - statusMessage (String.t): [Output Only] An optional, human-readable explanation of the status. Defaults to: `null`.
@@ -50,6 +51,7 @@ defmodule GoogleApi.Compute.V1.Model.NodeTemplate do
           :nodeTypeFlexibility => GoogleApi.Compute.V1.Model.NodeTemplateNodeTypeFlexibility.t(),
           :region => any(),
           :selfLink => any(),
+          :serverBinding => GoogleApi.Compute.V1.Model.ServerBinding.t(),
           :status => any(),
           :statusMessage => any()
         }
@@ -64,6 +66,7 @@ defmodule GoogleApi.Compute.V1.Model.NodeTemplate do
   field(:nodeTypeFlexibility, as: GoogleApi.Compute.V1.Model.NodeTemplateNodeTypeFlexibility)
   field(:region)
   field(:selfLink)
+  field(:serverBinding, as: GoogleApi.Compute.V1.Model.ServerBinding)
   field(:status)
   field(:statusMessage)
 end

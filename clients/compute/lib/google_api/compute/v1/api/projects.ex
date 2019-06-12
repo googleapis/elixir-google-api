@@ -74,7 +74,7 @@ defmodule GoogleApi.Compute.V1.Api.Projects do
   end
 
   @doc """
-  Disable a serivce resource (a.k.a service project) associated with this host project.
+  Disable a service resource (also known as service project) associated with this host project.
 
   ## Parameters
 

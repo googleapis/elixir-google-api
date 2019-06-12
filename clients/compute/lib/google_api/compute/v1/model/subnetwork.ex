@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.Subnetwork do
   @moduledoc """
-  A Subnetwork resource. (&#x3D;&#x3D; resource_for beta.subnetworks &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.subnetworks &#x3D;&#x3D;)
+  Represents a Subnetwork resource.  A subnetwork (also known as a subnet) is a logical partition of a Virtual Private Cloud network with one primary IP range and zero or more secondary IP ranges. For more information, read  Virtual Private Cloud (VPC) Network. (&#x3D;&#x3D; resource_for beta.subnetworks &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.subnetworks &#x3D;&#x3D;)
 
   ## Attributes
 

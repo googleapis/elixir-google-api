@@ -18,10 +18,11 @@
 
 defmodule GoogleApi.Compute.V1.Model.Snapshot do
   @moduledoc """
-  A persistent disk snapshot resource. (&#x3D;&#x3D; resource_for beta.snapshots &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.snapshots &#x3D;&#x3D;)
+  Represents a Persistent Disk Snapshot resource.  You can use snapshots to back up data on a regular interval. For more information, read  Creating persistent disk snapshots. (&#x3D;&#x3D; resource_for beta.snapshots &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.snapshots &#x3D;&#x3D;)
 
   ## Attributes
 
+  - autoCreated (boolean()): [Output Only] Set to true if snapshots are automatically by applying resource policy on the target disk. Defaults to: `null`.
   - creationTimestamp (String.t): [Output Only] Creation timestamp in RFC3339 text format. Defaults to: `null`.
   - description (String.t): An optional description of this resource. Provide this property when you create the resource. Defaults to: `null`.
   - diskSizeGb (String.t): [Output Only] Size of the snapshot, specified in GB. Defaults to: `null`.
@@ -48,6 +49,7 @@ defmodule GoogleApi.Compute.V1.Model.Snapshot do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :autoCreated => any(),
           :creationTimestamp => any(),
           :description => any(),
           :diskSizeGb => any(),
@@ -69,6 +71,7 @@ defmodule GoogleApi.Compute.V1.Model.Snapshot do
           :storageLocations => list(any())
         }
 
+  field(:autoCreated)
   field(:creationTimestamp)
   field(:description)
   field(:diskSizeGb)

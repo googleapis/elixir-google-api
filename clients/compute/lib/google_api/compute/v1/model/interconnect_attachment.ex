@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.InterconnectAttachment do
   @moduledoc """
-  Represents an InterconnectAttachment (VLAN attachment) resource. For more information, see  Creating VLAN Attachments. (&#x3D;&#x3D; resource_for beta.interconnectAttachments &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.interconnectAttachments &#x3D;&#x3D;)
+  Represents an Interconnect Attachment (VLAN) resource.  You can use Interconnect attachments (VLANS) to connect your Virtual Private Cloud networks to your on-premises networks through an Interconnect. For more information, read  Creating VLAN Attachments. (&#x3D;&#x3D; resource_for beta.interconnectAttachments &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.interconnectAttachments &#x3D;&#x3D;)
 
   ## Attributes
 
@@ -32,7 +32,7 @@ defmodule GoogleApi.Compute.V1.Model.InterconnectAttachment do
   - description (String.t): An optional description of this resource. Defaults to: `null`.
   - edgeAvailabilityDomain (String.t): Desired availability domain for the attachment. Only available for type PARTNER, at creation time, and can take one of the following values:  - AVAILABILITY_DOMAIN_ANY  - AVAILABILITY_DOMAIN_1  - AVAILABILITY_DOMAIN_2 For improved reliability, customers should configure a pair of attachments, one per availability domain. The selected availability domain will be provided to the Partner via the pairing key, so that the provisioned circuit will lie in the specified domain. If not specified, the value will default to AVAILABILITY_DOMAIN_ANY. Defaults to: `null`.
     - Enum - one of [AVAILABILITY_DOMAIN_1, AVAILABILITY_DOMAIN_2, AVAILABILITY_DOMAIN_ANY]
-  - googleReferenceId (String.t): [Output Only] Google reference ID, to be used when raising support tickets with Google or otherwise to debug backend connectivity issues. Defaults to: `null`.
+  - googleReferenceId (String.t): [Output Only] Google reference ID, to be used when raising support tickets with Google or otherwise to debug backend connectivity issues. [Deprecated] This field is not used. Defaults to: `null`.
   - id (String.t): [Output Only] The unique identifier for the resource. This identifier is defined by the server. Defaults to: `null`.
   - interconnect (String.t): URL of the underlying Interconnect object that this attachment&#39;s traffic will traverse through. Defaults to: `null`.
   - kind (String.t): [Output Only] Type of the resource. Always compute#interconnectAttachment for interconnect attachments. Defaults to: `null`.

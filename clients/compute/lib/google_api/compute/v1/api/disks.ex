@@ -25,6 +25,73 @@ defmodule GoogleApi.Compute.V1.Api.Disks do
   alias GoogleApi.Gax.{Request, Response}
 
   @doc """
+  Adds existing resource policies to a disk. You can only add one policy which will be applied to this disk for scheduling snapshot creation.
+
+  ## Parameters
+
+  - connection (GoogleApi.Compute.V1.Connection): Connection to server
+  - project (String.t): Project ID for this request.
+  - zone (String.t): The name of the zone for this request.
+  - disk (String.t): The disk name for this request.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :alt (String.t): Data format for the response.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+    - :requestId (String.t): An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.  For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.  The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+    - :body (DisksAddResourcePoliciesRequest): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.Compute.V1.Model.Operation{}} on success
+  {:error, info} on failure
+  """
+  @spec compute_disks_add_resource_policies(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+  def compute_disks_add_resource_policies(
+        connection,
+        project,
+        zone,
+        disk,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :alt => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :userIp => :query,
+      :requestId => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/{project}/zones/{zone}/disks/{disk}/addResourcePolicies", %{
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "disk" => URI.encode(disk, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
+  end
+
+  @doc """
   Retrieves an aggregated list of persistent disks.
 
   ## Parameters
@@ -425,6 +492,73 @@ defmodule GoogleApi.Compute.V1.Api.Disks do
     connection
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.DiskList{}])
+  end
+
+  @doc """
+  Removes resource policies from a disk.
+
+  ## Parameters
+
+  - connection (GoogleApi.Compute.V1.Connection): Connection to server
+  - project (String.t): Project ID for this request.
+  - zone (String.t): The name of the zone for this request.
+  - disk (String.t): The disk name for this request.
+  - optional_params (KeywordList): [optional] Optional parameters
+    - :alt (String.t): Data format for the response.
+    - :fields (String.t): Selector specifying which fields to include in a partial response.
+    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+    - :oauth_token (String.t): OAuth 2.0 token for the current user.
+    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
+    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+    - :requestId (String.t): An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.  For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.  The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+    - :body (DisksRemoveResourcePoliciesRequest): 
+
+  ## Returns
+
+  {:ok, %GoogleApi.Compute.V1.Model.Operation{}} on success
+  {:error, info} on failure
+  """
+  @spec compute_disks_remove_resource_policies(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+  def compute_disks_remove_resource_policies(
+        connection,
+        project,
+        zone,
+        disk,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :alt => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :userIp => :query,
+      :requestId => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/{project}/zones/{zone}/disks/{disk}/removeResourcePolicies", %{
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+        "disk" => URI.encode(disk, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 
   @doc """

@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.TargetVpnGateway do
   @moduledoc """
-  Represents a Target VPN gateway resource. (&#x3D;&#x3D; resource_for beta.targetVpnGateways &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.targetVpnGateways &#x3D;&#x3D;)
+  Represents a Target VPN Gateway resource.  The target VPN gateway resource represents a Classic Cloud VPN gateway. For more information, read the the Cloud VPN Overview. (&#x3D;&#x3D; resource_for beta.targetVpnGateways &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.targetVpnGateways &#x3D;&#x3D;)
 
   ## Attributes
 

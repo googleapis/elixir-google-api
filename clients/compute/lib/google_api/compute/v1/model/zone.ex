@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.Zone do
   @moduledoc """
-  A Zone resource. (&#x3D;&#x3D; resource_for beta.zones &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.zones &#x3D;&#x3D;) Next ID: 17
+  Represents a Zone resource.  A zone is a deployment area. These deployment areas are subsets of a region. For example the zone us-east1-a is located in the us-east1 region. For more information, read Regions and Zones. (&#x3D;&#x3D; resource_for beta.zones &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.zones &#x3D;&#x3D;)
 
   ## Attributes
 

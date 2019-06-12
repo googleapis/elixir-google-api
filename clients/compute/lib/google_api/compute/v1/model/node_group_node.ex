@@ -25,6 +25,7 @@ defmodule GoogleApi.Compute.V1.Model.NodeGroupNode do
   - instances ([String.t]): Instances scheduled on this node. Defaults to: `null`.
   - name (String.t): The name of the node. Defaults to: `null`.
   - nodeType (String.t): The type of this node. Defaults to: `null`.
+  - serverBinding (ServerBinding): Binding properties for the physical server. Defaults to: `null`.
   - status (String.t):  Defaults to: `null`.
     - Enum - one of [CREATING, DELETING, INVALID, READY, REPAIRING]
   """
@@ -35,12 +36,14 @@ defmodule GoogleApi.Compute.V1.Model.NodeGroupNode do
           :instances => list(any()),
           :name => any(),
           :nodeType => any(),
+          :serverBinding => GoogleApi.Compute.V1.Model.ServerBinding.t(),
           :status => any()
         }
 
   field(:instances, type: :list)
   field(:name)
   field(:nodeType)
+  field(:serverBinding, as: GoogleApi.Compute.V1.Model.ServerBinding)
   field(:status)
 end
 

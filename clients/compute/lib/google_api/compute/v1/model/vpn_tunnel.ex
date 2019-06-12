@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.VpnTunnel do
   @moduledoc """
-  VPN tunnel resource. (&#x3D;&#x3D; resource_for beta.vpnTunnels &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.vpnTunnels &#x3D;&#x3D;)
+  Represents a Cloud VPN Tunnel resource.  For more information about VPN, read the the Cloud VPN Overview. (&#x3D;&#x3D; resource_for beta.vpnTunnels &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.vpnTunnels &#x3D;&#x3D;)
 
   ## Attributes
 

@@ -18,25 +18,25 @@
 
 defmodule GoogleApi.Compute.V1.Model.Route do
   @moduledoc """
-  Represents a Route resource. A route specifies how certain packets should be handled by the network. Routes are associated with instances by tags and the set of routes for a particular instance is called its routing table.  For each packet leaving an instance, the system searches that instance&#39;s routing table for a single best matching route. Routes match packets by destination IP address, preferring smaller or more specific ranges over larger ones. If there is a tie, the system selects the route with the smallest priority value. If there is still a tie, it uses the layer three and four packet headers to select just one of the remaining matching routes. The packet is then forwarded as specified by the nextHop field of the winning route - either to another instance destination, an instance gateway, or a Google Compute Engine-operated gateway.  Packets that do not match any route in the sending instance&#39;s routing table are dropped. (&#x3D;&#x3D; resource_for beta.routes &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.routes &#x3D;&#x3D;)
+  Represents a Route resource.  A route defines a path from VM instances in the VPC network to a specific destination. This destination can be inside or outside the VPC network. For more information, read the Routes overview. (&#x3D;&#x3D; resource_for beta.routes &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.routes &#x3D;&#x3D;)
 
   ## Attributes
 
   - tags ([String.t]): A list of instance tags to which this route applies. Defaults to: `null`.
   - creationTimestamp (String.t): [Output Only] Creation timestamp in RFC3339 text format. Defaults to: `null`.
-  - description (String.t): An optional description of this resource. Provide this property when you create the resource. Defaults to: `null`.
+  - description (String.t): An optional description of this resource. Provide this field when you create the resource. Defaults to: `null`.
   - destRange (String.t): The destination range of outgoing packets that this route applies to. Only IPv4 is supported. Defaults to: `null`.
   - id (String.t): [Output Only] The unique identifier for the resource. This identifier is defined by the server. Defaults to: `null`.
   - kind (String.t): [Output Only] Type of this resource. Always compute#routes for Route resources. Defaults to: `null`.
-  - name (String.t): Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression &#x60;[a-z]([-a-z0-9]*[a-z0-9])?&#x60; which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. Defaults to: `null`.
+  - name (String.t): Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression &#x60;[a-z]([-a-z0-9]*[a-z0-9])?&#x60;. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit. Defaults to: `null`.
   - network (String.t): Fully-qualified URL of the network that this route applies to. Defaults to: `null`.
-  - nextHopGateway (String.t): The URL to a gateway that should handle matching packets. You can only specify the internet gateway using a full or partial valid URL:  projects/&lt;project-id&gt;/global/gateways/default-internet-gateway Defaults to: `null`.
+  - nextHopGateway (String.t): The URL to a gateway that should handle matching packets. You can only specify the internet gateway using a full or partial valid URL:  projects/project/global/gateways/default-internet-gateway Defaults to: `null`.
   - nextHopInstance (String.t): The URL to an instance that should handle matching packets. You can specify this as a full or partial URL. For example: https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/ Defaults to: `null`.
   - nextHopIp (String.t): The network IP address of an instance that should handle matching packets. Only IPv4 is supported. Defaults to: `null`.
   - nextHopNetwork (String.t): The URL of the local network if it should handle matching packets. Defaults to: `null`.
   - nextHopPeering (String.t): [Output Only] The network peering name that should handle matching packets, which should conform to RFC1035. Defaults to: `null`.
   - nextHopVpnTunnel (String.t): The URL to a VpnTunnel that should handle matching packets. Defaults to: `null`.
-  - priority (integer()): The priority of this route. Priority is used to break ties in cases where there is more than one matching route of equal prefix length. In the case of two routes with equal prefix length, the one with the lowest-numbered priority value wins. Default value is 1000. Valid range is 0 through 65535. Defaults to: `null`.
+  - priority (integer()): The priority of this route. Priority is used to break ties in cases where there is more than one matching route of equal prefix length. In cases where multiple routes have equal prefix length, the one with the lowest-numbered priority value wins. The default value is &#x60;1000&#x60;. The priority value must be from &#x60;0&#x60; to &#x60;65535&#x60;, inclusive. Defaults to: `null`.
   - selfLink (String.t): [Output Only] Server-defined fully-qualified URL for this resource. Defaults to: `null`.
   - warnings ([OperationWarnings]): [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages. Defaults to: `null`.
   """

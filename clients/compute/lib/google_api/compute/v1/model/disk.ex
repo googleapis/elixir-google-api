@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.Disk do
   @moduledoc """
-  A Disk resource. (&#x3D;&#x3D; resource_for beta.disks &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.disks &#x3D;&#x3D;)
+  Represents a Persistent Disk resource.  Persistent disks are required for running your VM instances. Create both boot and non-boot (data) persistent disks. For more information, read Persistent Disks. For more storage options, read Storage options.  The disks resource represents a zonal persistent disk. For more information, read Zonal persistent disks.  The regionDisks resource represents a regional persistent disk. For more information, read  Regional resources. (&#x3D;&#x3D; resource_for beta.disks &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.disks &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.regionDisks &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for beta.regionDisks &#x3D;&#x3D;)
 
   ## Attributes
 
@@ -39,6 +39,7 @@ defmodule GoogleApi.Compute.V1.Model.Disk do
   - physicalBlockSizeBytes (String.t): Physical block size of the persistent disk, in bytes. If not present in a request, a default value is used. Currently supported sizes are 4096 and 16384, other sizes may be added in the future. If an unsupported value is requested, the error message will list the supported values for the caller&#39;s project. Defaults to: `null`.
   - region (String.t): [Output Only] URL of the region where the disk resides. Only applicable for regional resources. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body. Defaults to: `null`.
   - replicaZones ([String.t]): URLs of the zones where the disk should be replicated to. Only applicable for regional resources. Defaults to: `null`.
+  - resourcePolicies ([String.t]): Resource policies applied to this disk for automatic snapshot creations. Defaults to: `null`.
   - selfLink (String.t): [Output Only] Server-defined fully-qualified URL for this resource. Defaults to: `null`.
   - sizeGb (String.t): Size of the persistent disk, specified in GB. You can specify this field when creating a persistent disk using the sourceImage or sourceSnapshot parameter, or specify it alone to create an empty persistent disk.  If you specify this field along with sourceImage or sourceSnapshot, the value of sizeGb must not be less than the size of the sourceImage or the size of the snapshot. Acceptable values are 1 to 65536, inclusive. Defaults to: `null`.
   - sourceImage (String.t): The source image used to create this disk. If the source image is deleted, this field will not be set.  To create a disk with one of the public operating system images, specify the image by its family name. For example, specify family/debian-9 to use the latest Debian 9 image: projects/debian-cloud/global/images/family/debian-9   Alternatively, use a specific version of a public operating system image: projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD   To create a disk with a custom image that you created, specify the image name in the following format: global/images/my-custom-image   You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name: global/images/family/my-image-family Defaults to: `null`.
@@ -74,6 +75,7 @@ defmodule GoogleApi.Compute.V1.Model.Disk do
           :physicalBlockSizeBytes => any(),
           :region => any(),
           :replicaZones => list(any()),
+          :resourcePolicies => list(any()),
           :selfLink => any(),
           :sizeGb => any(),
           :sourceImage => any(),
@@ -105,6 +107,7 @@ defmodule GoogleApi.Compute.V1.Model.Disk do
   field(:physicalBlockSizeBytes)
   field(:region)
   field(:replicaZones, type: :list)
+  field(:resourcePolicies, type: :list)
   field(:selfLink)
   field(:sizeGb)
   field(:sourceImage)

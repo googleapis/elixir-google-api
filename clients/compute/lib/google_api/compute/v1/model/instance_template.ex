@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.InstanceTemplate do
   @moduledoc """
-  An Instance Template resource. (&#x3D;&#x3D; resource_for beta.instanceTemplates &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.instanceTemplates &#x3D;&#x3D;)
+  Represents an Instance Template resource.  You can use instance templates to create VM instances and managed instance groups. For more information, read Instance Templates. (&#x3D;&#x3D; resource_for beta.instanceTemplates &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.instanceTemplates &#x3D;&#x3D;)
 
   ## Attributes
 

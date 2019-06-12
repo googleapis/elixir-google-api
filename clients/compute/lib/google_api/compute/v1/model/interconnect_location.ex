@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.InterconnectLocation do
   @moduledoc """
-  Represents an InterconnectLocations resource. The InterconnectLocations resource describes the locations where you can connect to Google&#39;s networks. For more information, see  Colocation Facilities.
+  Represents an Interconnect Attachment (VLAN) Location resource.  You can use this resource to find location details about an Interconnect attachment (VLAN). For more information about interconnect attachments, read  Creating VLAN Attachments.
 
   ## Attributes
 

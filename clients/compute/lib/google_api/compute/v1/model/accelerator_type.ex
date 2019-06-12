@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.AcceleratorType do
   @moduledoc """
-  An Accelerator Type resource. (&#x3D;&#x3D; resource_for beta.acceleratorTypes &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.acceleratorTypes &#x3D;&#x3D;)
+  Represents an Accelerator Type resource.  Google Cloud Platform provides graphics processing units (accelerators) that you can add to VM instances to improve or accelerate performance when working with intensive workloads. For more information, read GPUs on Compute Engine. (&#x3D;&#x3D; resource_for beta.acceleratorTypes &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.acceleratorTypes &#x3D;&#x3D;)
 
   ## Attributes
 

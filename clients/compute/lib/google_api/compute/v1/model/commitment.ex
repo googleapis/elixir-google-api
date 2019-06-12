@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.Commitment do
   @moduledoc """
-  Represents a Commitment resource. Creating a Commitment resource means that you are purchasing a committed use contract with an explicit start and end time. You can create commitments based on vCPUs and memory usage and receive discounted rates. For full details, read Signing Up for Committed Use Discounts.  Committed use discounts are subject to Google Cloud Platform&#39;s Service Specific Terms. By purchasing a committed use discount, you agree to these terms. Committed use discounts will not renew, so you must purchase a new commitment to continue receiving discounts. (&#x3D;&#x3D; resource_for beta.commitments &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.commitments &#x3D;&#x3D;)
+  Represents a regional Commitment resource.  Creating a commitment resource means that you are purchasing a committed use contract with an explicit start and end time. You can create commitments based on vCPUs and memory usage and receive discounted rates. For full details, read Signing Up for Committed Use Discounts. (&#x3D;&#x3D; resource_for beta.regionCommitments &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.regionCommitments &#x3D;&#x3D;)
 
   ## Attributes
 

@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.Interconnect do
   @moduledoc """
-  Represents an Interconnects resource. The Interconnects resource is a dedicated connection between Google&#39;s network and your on-premises network. For more information, see the  Dedicated overview page. (&#x3D;&#x3D; resource_for v1.interconnects &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for beta.interconnects &#x3D;&#x3D;)
+  Represents an Interconnect resource.  An Interconnect resource is a dedicated connection between the GCP network and your on-premises network. For more information, read the  Dedicated Interconnect Overview. (&#x3D;&#x3D; resource_for v1.interconnects &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for beta.interconnects &#x3D;&#x3D;)
 
   ## Attributes
 

@@ -18,18 +18,18 @@
 
 defmodule GoogleApi.Compute.V1.Model.Network do
   @moduledoc """
-  Represents a Network resource. Read Virtual Private Cloud (VPC) Network Overview for more information. (&#x3D;&#x3D; resource_for v1.networks &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for beta.networks &#x3D;&#x3D;)
+  Represents a VPC Network resource.  Networks connect resources to each other and to the internet. For more information, read Virtual Private Cloud (VPC) Network. (&#x3D;&#x3D; resource_for v1.networks &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for beta.networks &#x3D;&#x3D;)
 
   ## Attributes
 
   - IPv4Range (String.t): Deprecated in favor of subnet mode networks. The range of internal addresses that are legal on this network. This range is a CIDR specification, for example: 192.168.0.0/16. Provided by the client when the network is created. Defaults to: `null`.
   - autoCreateSubnetworks (boolean()): When set to true, the VPC network is created in \&quot;auto\&quot; mode. When set to false, the VPC network is created in \&quot;custom\&quot; mode.  An auto mode VPC network starts with one subnet per region. Each subnet has a predetermined range as described in Auto mode VPC network IP ranges. Defaults to: `null`.
   - creationTimestamp (String.t): [Output Only] Creation timestamp in RFC3339 text format. Defaults to: `null`.
-  - description (String.t): An optional description of this resource. Provide this property when you create the resource. Defaults to: `null`.
-  - gatewayIPv4 (String.t): [Output Only] The gateway address for default routing out of the network. This value is read only and is selected by GCP. Defaults to: `null`.
+  - description (String.t): An optional description of this resource. Provide this field when you create the resource. Defaults to: `null`.
+  - gatewayIPv4 (String.t): [Output Only] The gateway address for default routing out of the network, selected by GCP. Defaults to: `null`.
   - id (String.t): [Output Only] The unique identifier for the resource. This identifier is defined by the server. Defaults to: `null`.
   - kind (String.t): [Output Only] Type of the resource. Always compute#network for networks. Defaults to: `null`.
-  - name (String.t): Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression &#x60;[a-z]([-a-z0-9]*[a-z0-9])?&#x60; which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. Defaults to: `null`.
+  - name (String.t): Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression &#x60;[a-z]([-a-z0-9]*[a-z0-9])?. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit. Defaults to: `null`.
   - peerings ([NetworkPeering]): [Output Only] A list of network peerings for the resource. Defaults to: `null`.
   - routingConfig (NetworkRoutingConfig): The network-level routing configuration for this network. Used by Cloud Router to determine what type of network-wide routing behavior to enforce. Defaults to: `null`.
   - selfLink (String.t): [Output Only] Server-defined URL for the resource. Defaults to: `null`.

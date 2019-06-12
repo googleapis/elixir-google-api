@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.NodeGroup do
   @moduledoc """
-  A NodeGroup resource. To create a node group, you must first create a node templates. To learn more about node groups and sole-tenant nodes, read the Sole-tenant nodes documentation. (&#x3D;&#x3D; resource_for beta.nodeGroups &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.nodeGroups &#x3D;&#x3D;)
+  Represent a sole-tenant Node Group resource.  A sole-tenant node is a physical server that is dedicated to hosting VM instances only for your specific project. Use sole-tenant nodes to keep your instances physically separated from instances in other projects, or to group your instances together on the same host hardware. For more information, read Sole-tenant nodes. (&#x3D;&#x3D; resource_for beta.nodeGroups &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.nodeGroups &#x3D;&#x3D;) NextID: 15
 
   ## Attributes
 

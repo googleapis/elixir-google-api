@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.InstanceGroupManager do
   @moduledoc """
-  An Instance Group Manager resource. (&#x3D;&#x3D; resource_for beta.instanceGroupManagers &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.instanceGroupManagers &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for beta.regionInstanceGroupManagers &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.regionInstanceGroupManagers &#x3D;&#x3D;)
+  Represents a Managed Instance Group resource.  An instance group is a collection of VM instances that you can manage as a single entity. For more information, read Instance groups.  For zonal Managed Instance Group, use the instanceGroupManagers resource.  For regional Managed Instance Group, use the regionInstanceGroupManagers resource. (&#x3D;&#x3D; resource_for beta.instanceGroupManagers &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.instanceGroupManagers &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for beta.regionInstanceGroupManagers &#x3D;&#x3D;) (&#x3D;&#x3D; resource_for v1.regionInstanceGroupManagers &#x3D;&#x3D;)
 
   ## Attributes
 
