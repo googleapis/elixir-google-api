@@ -24,6 +24,8 @@ defmodule GoogleApi.IAM.V1.Model.ServiceAccountKey do
 
   - keyAlgorithm (String.t): Specifies the algorithm (and possibly key size) for the key. Defaults to: `null`.
     - Enum - one of [KEY_ALG_UNSPECIFIED, KEY_ALG_RSA_1024, KEY_ALG_RSA_2048]
+  - keyOrigin (String.t): The key origin. Defaults to: `null`.
+    - Enum - one of [ORIGIN_UNSPECIFIED, USER_PROVIDED, GOOGLE_PROVIDED]
   - name (String.t): The resource name of the service account key in the following format &#x60;projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{key}&#x60;. Defaults to: `null`.
   - privateKeyData (binary()): The private key data. Only provided in &#x60;CreateServiceAccountKey&#x60; responses. Make sure to keep the private key data secure because it allows for the assertion of the service account identity. When base64 decoded, the private key data can be used to authenticate with Google API client libraries and with &lt;a href&#x3D;\&quot;/sdk/gcloud/reference/auth/activate-service-account\&quot;&gt;gcloud auth activate-service-account&lt;/a&gt;. Defaults to: `null`.
   - privateKeyType (String.t): The output format for the private key. Only provided in &#x60;CreateServiceAccountKey&#x60; responses, not in &#x60;GetServiceAccountKey&#x60; or &#x60;ListServiceAccountKey&#x60; responses.  Google never exposes system-managed private keys, and never retains user-managed private keys. Defaults to: `null`.
@@ -37,6 +39,7 @@ defmodule GoogleApi.IAM.V1.Model.ServiceAccountKey do
 
   @type t :: %__MODULE__{
           :keyAlgorithm => any(),
+          :keyOrigin => any(),
           :name => any(),
           :privateKeyData => any(),
           :privateKeyType => any(),
@@ -46,6 +49,7 @@ defmodule GoogleApi.IAM.V1.Model.ServiceAccountKey do
         }
 
   field(:keyAlgorithm)
+  field(:keyOrigin)
   field(:name)
   field(:privateKeyData)
   field(:privateKeyType)
