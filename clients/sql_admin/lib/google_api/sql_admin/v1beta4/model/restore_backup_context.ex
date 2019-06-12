@@ -25,6 +25,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.RestoreBackupContext do
   - backupRunId (String.t): The ID of the backup run to restore from. Defaults to: `null`.
   - instanceId (String.t): The ID of the instance that the backup was taken from. Defaults to: `null`.
   - kind (String.t): This is always sql#restoreBackupContext. Defaults to: `null`.
+  - project (String.t): The full project ID of the source instance. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -32,12 +33,14 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.RestoreBackupContext do
   @type t :: %__MODULE__{
           :backupRunId => any(),
           :instanceId => any(),
-          :kind => any()
+          :kind => any(),
+          :project => any()
         }
 
   field(:backupRunId)
   field(:instanceId)
   field(:kind)
+  field(:project)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.RestoreBackupContext do
