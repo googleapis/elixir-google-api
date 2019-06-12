@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.Redis.V1beta1.Model.GcsSource do
   @moduledoc """
-  The GCS location for the input content
+  The Cloud Storage location for the input content
 
   ## Attributes
 

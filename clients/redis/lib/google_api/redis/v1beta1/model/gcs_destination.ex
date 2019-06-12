@@ -18,7 +18,7 @@
 
 defmodule GoogleApi.Redis.V1beta1.Model.GcsDestination do
   @moduledoc """
-  The GCS location for the output content
+  The Cloud Storage location for the output content
 
   ## Attributes
 
