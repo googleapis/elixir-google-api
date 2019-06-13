@@ -22,18 +22,24 @@ defmodule GoogleApi.PubSub.V1.Model.Topic do
 
   ## Attributes
 
+  - kmsKeyName (String.t): The resource name of the Cloud KMS CryptoKey to be used to protect access to messages published on this topic.  The expected format is &#x60;projects/*/locations/*/keyRings/*/cryptoKeys/*&#x60;. Defaults to: `null`.
   - labels (%{optional(String.t) &#x3D;&gt; String.t}): See &lt;a href&#x3D;\&quot;https://cloud.google.com/pubsub/docs/labels\&quot;&gt; Creating and managing labels&lt;/a&gt;. Defaults to: `null`.
+  - messageStoragePolicy (MessageStoragePolicy): Policy constraining how messages published to the topic may be stored. It is determined when the topic is created based on the policy configured at the project level. It must not be set by the caller in the request to CreateTopic or to UpdateTopic. This field will be populated in the responses for GetTopic, CreateTopic, and UpdateTopic: if not present in the response, then no constraints are in effect. Defaults to: `null`.
   - name (String.t): The name of the topic. It must have the format &#x60;\&quot;projects/{project}/topics/{topic}\&quot;&#x60;. &#x60;{topic}&#x60; must start with a letter, and contain only letters (&#x60;[A-Za-z]&#x60;), numbers (&#x60;[0-9]&#x60;), dashes (&#x60;-&#x60;), underscores (&#x60;_&#x60;), periods (&#x60;.&#x60;), tildes (&#x60;~&#x60;), plus (&#x60;+&#x60;) or percent signs (&#x60;%&#x60;). It must be between 3 and 255 characters in length, and it must not start with &#x60;\&quot;goog\&quot;&#x60;. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :kmsKeyName => any(),
           :labels => map(),
+          :messageStoragePolicy => GoogleApi.PubSub.V1.Model.MessageStoragePolicy.t(),
           :name => any()
         }
 
+  field(:kmsKeyName)
   field(:labels, type: :map)
+  field(:messageStoragePolicy, as: GoogleApi.PubSub.V1.Model.MessageStoragePolicy)
   field(:name)
 end
 
