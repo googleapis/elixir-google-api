@@ -16,34 +16,31 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.Container.V1.Model.DailyMaintenanceWindow do
+defmodule GoogleApi.Container.V1.Model.ConsumptionMeteringConfig do
   @moduledoc """
-  Time window specified for daily maintenance operations.
+  Parameters for controlling consumption metering.
 
   ## Attributes
 
-  - duration (String.t): [Output only] Duration of the time window, automatically chosen to be smallest possible in the given scenario. Duration will be in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) format \&quot;PTnHnMnS\&quot;. Defaults to: `null`.
-  - startTime (String.t): Time within the maintenance window to start the maintenance operations. Time format should be in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) format \&quot;HH:MM\&quot;, where HH : [00-23] and MM : [00-59] GMT. Defaults to: `null`.
+  - enabled (boolean()): Whether to enable consumption metering for this cluster. If enabled, a second BigQuery table will be created to hold resource consumption records. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :duration => any(),
-          :startTime => any()
+          :enabled => any()
         }
 
-  field(:duration)
-  field(:startTime)
+  field(:enabled)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.DailyMaintenanceWindow do
+defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.ConsumptionMeteringConfig do
   def decode(value, options) do
-    GoogleApi.Container.V1.Model.DailyMaintenanceWindow.decode(value, options)
+    GoogleApi.Container.V1.Model.ConsumptionMeteringConfig.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.Container.V1.Model.DailyMaintenanceWindow do
+defimpl Poison.Encoder, for: GoogleApi.Container.V1.Model.ConsumptionMeteringConfig do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
