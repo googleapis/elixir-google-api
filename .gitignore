@@ -29,6 +29,6 @@ clients/*/mix.lock
 
 .elixir_ls
 
-synth.metadata
+/synth.metadata
 __pycache__/
 package-lock.json
