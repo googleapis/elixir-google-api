@@ -25,12 +25,14 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
   - desiredAddonsConfig (AddonsConfig): Configurations for the various addons available to run in the cluster. Defaults to: `null`.
   - desiredImageType (String.t): The desired image type for the node pool. NOTE: Set the \&quot;desired_node_pool\&quot; field as well. Defaults to: `null`.
   - desiredLocations ([String.t]): The desired list of Google Compute Engine [zones](/compute/docs/zones#available) in which the cluster&#39;s nodes should be located. Changing the locations a cluster is in will result in nodes being either created or removed from the cluster, depending on whether locations are being added or removed.  This list must always include the cluster&#39;s primary zone. Defaults to: `null`.
+  - desiredLoggingService (String.t): The logging service the cluster should use to write logs. Currently available options:  * \&quot;logging.googleapis.com/kubernetes\&quot; - the Google Cloud Logging service with Kubernetes-native resource model in Stackdriver * \&quot;logging.googleapis.com\&quot; - the Google Cloud Logging service * \&quot;none\&quot; - no logs will be exported from the cluster Defaults to: `null`.
   - desiredMasterAuthorizedNetworksConfig (MasterAuthorizedNetworksConfig): The desired configuration options for master authorized networks feature. Defaults to: `null`.
   - desiredMasterVersion (String.t): The Kubernetes version to change the master to.  Users may specify either explicit versions offered by Kubernetes Engine or version aliases, which have the following behavior:  - \&quot;latest\&quot;: picks the highest valid Kubernetes version - \&quot;1.X\&quot;: picks the highest valid patch+gke.N patch in the 1.X version - \&quot;1.X.Y\&quot;: picks the highest valid gke.N patch in the 1.X.Y version - \&quot;1.X.Y-gke.N\&quot;: picks an explicit Kubernetes version - \&quot;-\&quot;: picks the default Kubernetes version Defaults to: `null`.
-  - desiredMonitoringService (String.t): The monitoring service the cluster should use to write metrics. Currently available options:  * \&quot;monitoring.googleapis.com\&quot; - the Google Cloud Monitoring service * \&quot;none\&quot; - no metrics will be exported from the cluster Defaults to: `null`.
+  - desiredMonitoringService (String.t): The monitoring service the cluster should use to write metrics. Currently available options:  * \&quot;monitoring.googleapis.com/kubernetes\&quot; - the Google Cloud Monitoring service with Kubernetes-native resource model in Stackdriver * \&quot;monitoring.googleapis.com\&quot; - the Google Cloud Monitoring service * \&quot;none\&quot; - no metrics will be exported from the cluster Defaults to: `null`.
   - desiredNodePoolAutoscaling (NodePoolAutoscaling): Autoscaler configuration for the node pool specified in desired_node_pool_id. If there is only one pool in the cluster and desired_node_pool_id is not provided then the change applies to that single node pool. Defaults to: `null`.
   - desiredNodePoolId (String.t): The node pool to be upgraded. This field is mandatory if \&quot;desired_node_version\&quot;, \&quot;desired_image_family\&quot; or \&quot;desired_node_pool_autoscaling\&quot; is specified and there is more than one node pool on the cluster. Defaults to: `null`.
   - desiredNodeVersion (String.t): The Kubernetes version to change the nodes to (typically an upgrade).  Users may specify either explicit versions offered by Kubernetes Engine or version aliases, which have the following behavior:  - \&quot;latest\&quot;: picks the highest valid Kubernetes version - \&quot;1.X\&quot;: picks the highest valid patch+gke.N patch in the 1.X version - \&quot;1.X.Y\&quot;: picks the highest valid gke.N patch in the 1.X.Y version - \&quot;1.X.Y-gke.N\&quot;: picks an explicit Kubernetes version - \&quot;-\&quot;: picks the Kubernetes master version Defaults to: `null`.
+  - desiredResourceUsageExportConfig (ResourceUsageExportConfig): The desired configuration for exporting resource usage. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -39,18 +41,22 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
           :desiredAddonsConfig => GoogleApi.Container.V1.Model.AddonsConfig.t(),
           :desiredImageType => any(),
           :desiredLocations => list(any()),
+          :desiredLoggingService => any(),
           :desiredMasterAuthorizedNetworksConfig =>
             GoogleApi.Container.V1.Model.MasterAuthorizedNetworksConfig.t(),
           :desiredMasterVersion => any(),
           :desiredMonitoringService => any(),
           :desiredNodePoolAutoscaling => GoogleApi.Container.V1.Model.NodePoolAutoscaling.t(),
           :desiredNodePoolId => any(),
-          :desiredNodeVersion => any()
+          :desiredNodeVersion => any(),
+          :desiredResourceUsageExportConfig =>
+            GoogleApi.Container.V1.Model.ResourceUsageExportConfig.t()
         }
 
   field(:desiredAddonsConfig, as: GoogleApi.Container.V1.Model.AddonsConfig)
   field(:desiredImageType)
   field(:desiredLocations, type: :list)
+  field(:desiredLoggingService)
 
   field(
     :desiredMasterAuthorizedNetworksConfig,
@@ -62,6 +68,11 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
   field(:desiredNodePoolAutoscaling, as: GoogleApi.Container.V1.Model.NodePoolAutoscaling)
   field(:desiredNodePoolId)
   field(:desiredNodeVersion)
+
+  field(
+    :desiredResourceUsageExportConfig,
+    as: GoogleApi.Container.V1.Model.ResourceUsageExportConfig
+  )
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.ClusterUpdate do

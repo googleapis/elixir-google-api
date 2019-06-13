@@ -43,7 +43,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
   - legacyAbac (LegacyAbac): Configuration for the legacy ABAC authorization mode. Defaults to: `null`.
   - location (String.t): [Output only] The name of the Google Compute Engine [zone](/compute/docs/regions-zones/regions-zones#available) or [region](/compute/docs/regions-zones/regions-zones#available) in which the cluster resides. Defaults to: `null`.
   - locations ([String.t]): The list of Google Compute Engine [zones](/compute/docs/zones#available) in which the cluster&#39;s nodes should be located. Defaults to: `null`.
-  - loggingService (String.t): The logging service the cluster should use to write logs. Currently available options:  * &#x60;logging.googleapis.com&#x60; - the Google Cloud Logging service. * &#x60;none&#x60; - no logs will be exported from the cluster. * if left as an empty string,&#x60;logging.googleapis.com&#x60; will be used. Defaults to: `null`.
+  - loggingService (String.t): The logging service the cluster should use to write logs. Currently available options:  * \&quot;logging.googleapis.com/kubernetes\&quot; - the Google Cloud Logging service with Kubernetes-native resource model in Stackdriver * &#x60;logging.googleapis.com&#x60; - the Google Cloud Logging service. * &#x60;none&#x60; - no logs will be exported from the cluster. * if left as an empty string,&#x60;logging.googleapis.com&#x60; will be used. Defaults to: `null`.
   - maintenancePolicy (MaintenancePolicy): Configure the maintenance policy for this cluster. Defaults to: `null`.
   - masterAuth (MasterAuth): The authentication information for accessing the master endpoint. If unspecified, the defaults are used: For clusters before v1.12, if master_auth is unspecified, &#x60;username&#x60; will be set to \&quot;admin\&quot;, a random password will be generated, and a client certificate will be issued. Defaults to: `null`.
   - masterAuthorizedNetworksConfig (MasterAuthorizedNetworksConfig): The configuration options for master authorized networks feature. Defaults to: `null`.
@@ -53,10 +53,11 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
   - networkConfig (NetworkConfig): Configuration for cluster networking. Defaults to: `null`.
   - networkPolicy (NetworkPolicy): Configuration options for the NetworkPolicy feature. Defaults to: `null`.
   - nodeConfig (NodeConfig): Parameters used in creating the cluster&#39;s nodes. For requests, this field should only be used in lieu of a \&quot;node_pool\&quot; object, since this configuration (along with the \&quot;initial_node_count\&quot;) will be used to create a \&quot;NodePool\&quot; object with an auto-generated name. Do not use this and a node_pool at the same time. For responses, this field will be populated with the node configuration of the first node pool. (For configuration of each node pool, see &#x60;node_pool.config&#x60;)  If unspecified, the defaults are used. This field is deprecated, use node_pool.config instead. Defaults to: `null`.
-  - nodeIpv4CidrSize (integer()): [Output only] The size of the address space on each node for hosting containers. This is provisioned from within the &#x60;container_ipv4_cidr&#x60; range. Defaults to: `null`.
+  - nodeIpv4CidrSize (integer()): [Output only] The size of the address space on each node for hosting containers. This is provisioned from within the &#x60;container_ipv4_cidr&#x60; range. This field will only be set when cluster is in route-based network mode. Defaults to: `null`.
   - nodePools ([NodePool]): The node pools associated with this cluster. This field should not be set if \&quot;node_config\&quot; or \&quot;initial_node_count\&quot; are specified. Defaults to: `null`.
   - privateClusterConfig (PrivateClusterConfig): Configuration for private cluster. Defaults to: `null`.
   - resourceLabels (%{optional(String.t) &#x3D;&gt; String.t}): The resource labels for the cluster to use to annotate any related Google Compute Engine resources. Defaults to: `null`.
+  - resourceUsageExportConfig (ResourceUsageExportConfig): Configuration for exporting resource usages. Resource usage export is disabled when this config is unspecified. Defaults to: `null`.
   - selfLink (String.t): [Output only] Server-defined URL for the resource. Defaults to: `null`.
   - servicesIpv4Cidr (String.t): [Output only] The IP address range of the Kubernetes services in this cluster, in [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) notation (e.g. &#x60;1.2.3.4/29&#x60;). Service addresses are typically put in the last &#x60;/16&#x60; from the container CIDR. Defaults to: `null`.
   - status (String.t): [Output only] The current status of this cluster. Defaults to: `null`.
@@ -106,6 +107,8 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
           :nodePools => list(GoogleApi.Container.V1.Model.NodePool.t()),
           :privateClusterConfig => GoogleApi.Container.V1.Model.PrivateClusterConfig.t(),
           :resourceLabels => map(),
+          :resourceUsageExportConfig =>
+            GoogleApi.Container.V1.Model.ResourceUsageExportConfig.t(),
           :selfLink => any(),
           :servicesIpv4Cidr => any(),
           :status => any(),
@@ -155,6 +158,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
   field(:nodePools, as: GoogleApi.Container.V1.Model.NodePool, type: :list)
   field(:privateClusterConfig, as: GoogleApi.Container.V1.Model.PrivateClusterConfig)
   field(:resourceLabels, type: :map)
+  field(:resourceUsageExportConfig, as: GoogleApi.Container.V1.Model.ResourceUsageExportConfig)
   field(:selfLink)
   field(:servicesIpv4Cidr)
   field(:status)

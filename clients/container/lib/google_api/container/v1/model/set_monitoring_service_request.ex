@@ -23,7 +23,7 @@ defmodule GoogleApi.Container.V1.Model.SetMonitoringServiceRequest do
   ## Attributes
 
   - clusterId (String.t): Deprecated. The name of the cluster to upgrade. This field has been deprecated and replaced by the name field. Defaults to: `null`.
-  - monitoringService (String.t): The monitoring service the cluster should use to write metrics. Currently available options:  * \&quot;monitoring.googleapis.com\&quot; - the Google Cloud Monitoring service * \&quot;none\&quot; - no metrics will be exported from the cluster Defaults to: `null`.
+  - monitoringService (String.t): The monitoring service the cluster should use to write metrics. Currently available options:  * \&quot;monitoring.googleapis.com/kubernetes\&quot; - the Google Cloud Monitoring service with Kubernetes-native resource model in Stackdriver * \&quot;monitoring.googleapis.com\&quot; - the Google Cloud Monitoring service * \&quot;none\&quot; - no metrics will be exported from the cluster Defaults to: `null`.
   - name (String.t): The name (project, location, cluster) of the cluster to set monitoring. Specified in the format &#39;projects/*/locations/*/clusters/*&#39;. Defaults to: `null`.
   - projectId (String.t): Deprecated. The Google Developers Console [project ID or project number](https://support.google.com/cloud/answer/6158840). This field has been deprecated and replaced by the name field. Defaults to: `null`.
   - zone (String.t): Deprecated. The name of the Google Compute Engine [zone](/compute/docs/zones#available) in which the cluster resides. This field has been deprecated and replaced by the name field. Defaults to: `null`.
