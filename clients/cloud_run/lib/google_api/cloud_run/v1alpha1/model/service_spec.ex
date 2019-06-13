@@ -27,6 +27,8 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ServiceSpec do
   - pinned (ServiceSpecPinnedType): Pins this service to a specific revision name. The revision must be owned by the configuration provided.  Deprecated and not supported by Cloud Run. +optional Defaults to: `null`.
   - release (ServiceSpecReleaseType): Release enables gradual promotion of new revisions by allowing traffic to be split between two revisions. This type replaces the deprecated Pinned type.  Not currently supported by Cloud Run. Defaults to: `null`.
   - runLatest (ServiceSpecRunLatest): RunLatest defines a simple Service. It will automatically configure a route that keeps the latest ready revision from the supplied configuration running. +optional Defaults to: `null`.
+  - template (RevisionTemplate): Template holds the latest specification for the Revision to be stamped out.  Not currently supported by Cloud Run. Defaults to: `null`.
+  - traffic ([TrafficTarget]): Traffic specifies how to distribute traffic over a collection of Knative Revisions and Configurations. This will replace existing service specs (ServiceSpecRunLatest, ServiceSpecPinnedType, ServiceSpecReleaseType, and ServiceSpecManualType).  Not currently supported by Cloud Run. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -36,7 +38,9 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ServiceSpec do
           :manual => GoogleApi.CloudRun.V1alpha1.Model.ServiceSpecManualType.t(),
           :pinned => GoogleApi.CloudRun.V1alpha1.Model.ServiceSpecPinnedType.t(),
           :release => GoogleApi.CloudRun.V1alpha1.Model.ServiceSpecReleaseType.t(),
-          :runLatest => GoogleApi.CloudRun.V1alpha1.Model.ServiceSpecRunLatest.t()
+          :runLatest => GoogleApi.CloudRun.V1alpha1.Model.ServiceSpecRunLatest.t(),
+          :template => GoogleApi.CloudRun.V1alpha1.Model.RevisionTemplate.t(),
+          :traffic => list(GoogleApi.CloudRun.V1alpha1.Model.TrafficTarget.t())
         }
 
   field(:generation)
@@ -44,6 +48,8 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ServiceSpec do
   field(:pinned, as: GoogleApi.CloudRun.V1alpha1.Model.ServiceSpecPinnedType)
   field(:release, as: GoogleApi.CloudRun.V1alpha1.Model.ServiceSpecReleaseType)
   field(:runLatest, as: GoogleApi.CloudRun.V1alpha1.Model.ServiceSpecRunLatest)
+  field(:template, as: GoogleApi.CloudRun.V1alpha1.Model.RevisionTemplate)
+  field(:traffic, as: GoogleApi.CloudRun.V1alpha1.Model.TrafficTarget, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudRun.V1alpha1.Model.ServiceSpec do

@@ -24,17 +24,20 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ConfigurationSpec do
 
   - generation (integer()): Deprecated and not currently populated by Cloud Run. See metadata.generation instead, which is the sequence number containing the latest generation of the desired state.  Read-only. Defaults to: `null`.
   - revisionTemplate (RevisionTemplate): RevisionTemplate holds the latest specification for the Revision to be stamped out. The template references the container image, and may also include labels and annotations that should be attached to the Revision. To correlate a Revision, and/or to force a Revision to be created when the spec doesn&#39;t otherwise change, a nonce label may be provided in the template metadata. For more details, see: https://github.com/knative/serving/blob/master/docs/client-conventions.md#associate-modifications-with-revisions  Cloud Run does not currently support referencing a build that is responsible for materializing the container image from source. Defaults to: `null`.
+  - template (RevisionTemplate): Template holds the latest specification for the Revision to be stamped out. Not currently supported by Cloud Run. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :generation => any(),
-          :revisionTemplate => GoogleApi.CloudRun.V1alpha1.Model.RevisionTemplate.t()
+          :revisionTemplate => GoogleApi.CloudRun.V1alpha1.Model.RevisionTemplate.t(),
+          :template => GoogleApi.CloudRun.V1alpha1.Model.RevisionTemplate.t()
         }
 
   field(:generation)
   field(:revisionTemplate, as: GoogleApi.CloudRun.V1alpha1.Model.RevisionTemplate)
+  field(:template, as: GoogleApi.CloudRun.V1alpha1.Model.RevisionTemplate)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudRun.V1alpha1.Model.ConfigurationSpec do

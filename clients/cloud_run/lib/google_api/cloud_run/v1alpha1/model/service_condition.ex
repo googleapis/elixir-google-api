@@ -22,9 +22,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ServiceCondition do
 
   ## Attributes
 
-  - lastTransitionTime (String.t): Last time the condition transitioned from one status to another. +optional Defaults to: `null`.
+  - lastTransitionTime (DateTime.t): Last time the condition transitioned from one status to another. +optional Defaults to: `null`.
   - message (String.t): Human-readable message indicating details about last transition. +optional Defaults to: `null`.
   - reason (String.t): One-word CamelCase reason for the condition&#39;s last transition. +optional Defaults to: `null`.
+  - severity (String.t): How to interpret failures of this condition, one of Error, Warning, Info +optional Defaults to: `null`.
   - status (String.t): Status of the condition, one of True, False, Unknown. Defaults to: `null`.
   - type (String.t): ServiceConditionType is used to communicate the status of the reconciliation process. See also: https://github.com/knative/serving/blob/master/docs/spec/errors.md#error-conditions-and-reporting  Types include: \&quot;Ready\&quot;, \&quot;ConfigurationsReady\&quot;, and \&quot;RoutesReady\&quot;. \&quot;Ready\&quot; will be true when the underlying Route and Configuration are ready. Defaults to: `null`.
   """
@@ -32,16 +33,18 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ServiceCondition do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :lastTransitionTime => any(),
+          :lastTransitionTime => DateTime.t(),
           :message => any(),
           :reason => any(),
+          :severity => any(),
           :status => any(),
           :type => any()
         }
 
-  field(:lastTransitionTime)
+  field(:lastTransitionTime, as: DateTime)
   field(:message)
   field(:reason)
+  field(:severity)
   field(:status)
   field(:type)
 end

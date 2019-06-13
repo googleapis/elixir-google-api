@@ -16,9 +16,9 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.CloudRun.V1alpha1.Model.DomainMappingCondition do
+defmodule GoogleApi.CloudRun.V1alpha1.Model.TriggerCondition do
   @moduledoc """
-  DomainMappingCondition contains state information for a DomainMapping.
+  TriggerCondition contains state information for an Trigger.
 
   ## Attributes
 
@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.DomainMappingCondition do
   - reason (String.t): One-word CamelCase reason for the condition&#39;s current status. +optional Defaults to: `null`.
   - severity (String.t): How to interpret failures of this condition, one of Error, Warning, Info +optional Defaults to: `null`.
   - status (String.t): Status of the condition, one of True, False, Unknown. Defaults to: `null`.
-  - type (String.t): Type of domain mapping condition. Defaults to: `null`.
+  - type (String.t): Type of Trigger condition. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -49,13 +49,13 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.DomainMappingCondition do
   field(:type)
 end
 
-defimpl Poison.Decoder, for: GoogleApi.CloudRun.V1alpha1.Model.DomainMappingCondition do
+defimpl Poison.Decoder, for: GoogleApi.CloudRun.V1alpha1.Model.TriggerCondition do
   def decode(value, options) do
-    GoogleApi.CloudRun.V1alpha1.Model.DomainMappingCondition.decode(value, options)
+    GoogleApi.CloudRun.V1alpha1.Model.TriggerCondition.decode(value, options)
   end
 end
 
-defimpl Poison.Encoder, for: GoogleApi.CloudRun.V1alpha1.Model.DomainMappingCondition do
+defimpl Poison.Encoder, for: GoogleApi.CloudRun.V1alpha1.Model.TriggerCondition do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end
