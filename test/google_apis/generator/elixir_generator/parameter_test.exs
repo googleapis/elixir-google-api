@@ -161,6 +161,34 @@ defmodule GoogleApis.Generator.ElixirGenerator.ParameterTest do
   }
   """
 
+  @dasherized_parameters """
+  {
+    "id": "analytics.data.ga.get",
+    "path": "data/ga",
+    "httpMethod": "GET",
+    "description": "Returns Analytics data for a view (profile).",
+    "parameters": {
+     "end-date": {
+      "type": "string",
+      "description": "End date for fetching Analytics data. Request can should specify an end date formatted as YYYY-MM-DD, or as a relative date (e.g., today, yesterday, or 7daysAgo). The default value is yesterday.",
+      "required": true,
+      "pattern": "[0-9]{4}-[0-9]{2}-[0-9]{2}|today|yesterday|[0-9]+(daysAgo)",
+      "location": "query"
+     }
+    },
+    "parameterOrder": [
+     "end-date"
+    ],
+    "response": {
+     "$ref": "GaData"
+    },
+    "scopes": [
+     "https://www.googleapis.com/auth/analytics",
+     "https://www.googleapis.com/auth/analytics.readonly"
+    ]
+   }
+  """
+
   test "split method parameters" do
     method = Poison.decode!(@test_json, as: %RestMethod{})
     {required, optional} = Parameter.from_discovery_method(method)
@@ -233,5 +261,17 @@ defmodule GoogleApis.Generator.ElixirGenerator.ParameterTest do
 
     assert 0 == length(required)
     assert 0 == length(optional)
+  end
+
+  test "dasherized parameters" do
+    method = Poison.decode!(@dasherized_parameters, as: %RestMethod{})
+    {required, optional} = Parameter.from_discovery_method(method)
+
+    assert 1 == length(required)
+    assert 0 == length(optional)
+
+    param = Enum.at(required, 0)
+    assert "end-date" == param.name
+    assert "end_date" == param.variable_name
   end
 end

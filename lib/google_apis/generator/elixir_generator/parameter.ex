@@ -101,9 +101,14 @@ defmodule GoogleApis.Generator.ElixirGenerator.Parameter do
   """
   @spec from_json_schema(String.t(), JsonSchema.t(), ResourceContext.t()) :: t
   def from_json_schema(name, schema, context) do
+    variable_name =
+      name
+      |> Macro.underscore
+      |> String.replace("-", "_")
+
     %__MODULE__{
       name: name,
-      variable_name: Macro.underscore(name),
+      variable_name: variable_name,
       description: schema.description,
       type: Type.from_schema(schema, context),
       location: schema.location

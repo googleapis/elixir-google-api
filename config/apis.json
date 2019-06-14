@@ -15,11 +15,6 @@
     "url": "https://adexchangebuyer.googleapis.com/$discovery/rest?version=v2beta1"
   },
   {
-    "version": "v2.0",
-    "name": "AdExchangeSeller",
-    "url": "https://www.googleapis.com/discovery/v1/apis/adexchangeseller/v2.0/rest"
-  },
-  {
     "version": "v1",
     "name": "AdExperienceReport",
     "url": "https://adexperiencereport.googleapis.com/$discovery/rest?version=v1"
