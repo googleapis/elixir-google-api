@@ -76,7 +76,7 @@ defmodule GoogleApis.Generator.ElixirGenerator do
   end
 
   defp write_connection(token) do
-    scopes = token.rest_description.auth.oauth2.scopes
+    scopes = scopes_for(token.rest_description)
     otp_app = "google_api_#{Macro.underscore(token.rest_description.name)}"
 
     path = Path.join(token.base_dir, "connection.ex")
@@ -87,6 +87,9 @@ defmodule GoogleApis.Generator.ElixirGenerator do
       Renderer.connection(token.namespace, scopes, otp_app, token.base_url)
     )
   end
+
+  defp scopes_for(%{auth: nil}), do: []
+  defp scopes_for(%{auth: %{oauth2: %{scopes: scopes}}}), do: scopes
 
   defp write_model_files(%{models: models, namespace: namespace, base_dir: base_dir} = token) do
     models
