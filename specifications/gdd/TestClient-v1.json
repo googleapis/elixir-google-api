@@ -316,6 +316,9 @@
               "pattern": "^b/[^/]+$"
             }
           },
+          "parameterOrder": [
+            "name"
+          ],
           "request": {
             "$ref": "Container"
           }
