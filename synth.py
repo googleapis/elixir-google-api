@@ -21,6 +21,7 @@ import synthtool.log as log
 import synthtool.shell as shell
 import synthtool.sources.git as git
 import logging
+import shutil
 import sys
 
 logging.basicConfig(level=logging.DEBUG)
@@ -29,7 +30,6 @@ repository_url = "https://github.com/googleapis/elixir-google-api.git"
 
 log.debug(f"Cloning {repository_url}.")
 repository = git.clone(repository_url, depth=1)
-shell.run(["git", "clean", "-fdx"], cwd=repository / "clients")
 
 image = "gcr.io/cloud-devrel-public-resources/elixir16"
 generate_command = "scripts/generate_client.sh"
@@ -49,6 +49,9 @@ if extra_args():
 log.debug(f"Running: {' '.join(command)}")
 
 shell.run(command, cwd=repository)
+
+# clean destination before copying
+shutil.rmtree("clients", ignore_errors=True)
 
 # copy all clients
 s.copy(repository / "clients")
