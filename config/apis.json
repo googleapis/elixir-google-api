@@ -65,6 +65,11 @@
     "url": "https://androidmanagement.googleapis.com/$discovery/rest?version=v1"
   },
   {
+    "version": "v3",
+    "name": "AndroidPublisher",
+    "url": "https://www.googleapis.com/discovery/v1/apis/androidpublisher/v3/rest"
+  },
+  {
     "version": "v2",
     "name": "AndroidPublisher",
     "url": "https://www.googleapis.com/discovery/v1/apis/androidpublisher/v2/rest"
