@@ -21,12 +21,13 @@ export TEMPLATE=gax
 
 git clean -fdx clients
 
-# clean the codegen directory
-# if [ -d .codegen ]; then
-#     rm -rf .codegen
-# fi
-# mkdir -p .codegen
-# export TEMPDIR=$(pwd)/.codegen
+function ensure_file_permissions {
+    echo "fixing file permissions"
+    if [[ ! -z "${USER_GROUP}" ]]; then
+        chown -R ${USER_GROUP} clients
+    fi
+}
+trap ensure_file_permissions EXIT
 
 # install npm dependencies
 npm install

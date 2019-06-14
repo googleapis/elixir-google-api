@@ -21,12 +21,13 @@ import synthtool.log as log
 import synthtool.shell as shell
 import synthtool.sources.git as git
 import logging
+import os
 import shutil
 import sys
 
 logging.basicConfig(level=logging.DEBUG)
 
-repository_url = "https://github.com/googleapis/elixir-google-api.git"
+repository_url = "https://github.com/chingor13/elixir-google-api.git"
 
 log.debug(f"Cloning {repository_url}.")
 repository = git.clone(repository_url, depth=1)
@@ -39,6 +40,7 @@ command = [
     "--rm",
     f"-v{repository}:/workspace",
     "-v/var/run/docker.sock:/var/run/docker.sock",
+    "-e", f"USER_GROUP={os.getuid()}:{os.getgid()}",
     "-w", "/workspace",
     image,
     generate_command]
