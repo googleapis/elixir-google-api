@@ -21,6 +21,7 @@ import synthtool.log as log
 import synthtool.shell as shell
 import synthtool.sources.git as git
 import logging
+import shutil
 import sys
 
 logging.basicConfig(level=logging.DEBUG)
@@ -49,6 +50,9 @@ if extra_args():
 log.debug(f"Running: {' '.join(command)}")
 
 shell.run(command, cwd=repository)
+
+# clean destination before copying
+shutil.rmtree("clients", ignore_errors=True)
 
 # copy all clients
 s.copy(repository / "clients")
