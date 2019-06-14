@@ -22,8 +22,11 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1bet
 
   ## Attributes
 
+  - feature (String.t): Specifies which feature is being tracked if the request contains more than one features. Defaults to: `null`.
+    - Enum - one of [FEATURE_UNSPECIFIED, LABEL_DETECTION, SHOT_CHANGE_DETECTION, EXPLICIT_CONTENT_DETECTION, SPEECH_TRANSCRIPTION, TEXT_DETECTION, OBJECT_TRACKING]
   - inputUri (String.t): Video file location in [Google Cloud Storage](https://cloud.google.com/storage/). Defaults to: `null`.
   - progressPercent (integer()): Approximate percentage processed thus far. Guaranteed to be 100 when fully processed. Defaults to: `null`.
+  - segment (GoogleCloudVideointelligenceV1beta2VideoSegment): Specifies which segment is being tracked if the request contains more than one segments. Defaults to: `null`.
   - startTime (DateTime.t): Time when the request was received. Defaults to: `null`.
   - updateTime (DateTime.t): Time of the most recent update. Defaults to: `null`.
   """
@@ -31,14 +34,24 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1bet
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :feature => any(),
           :inputUri => any(),
           :progressPercent => any(),
+          :segment =>
+            GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2VideoSegment.t(),
           :startTime => DateTime.t(),
           :updateTime => DateTime.t()
         }
 
+  field(:feature)
   field(:inputUri)
   field(:progressPercent)
+
+  field(
+    :segment,
+    as: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2VideoSegment
+  )
+
   field(:startTime, as: DateTime)
   field(:updateTime, as: DateTime)
 end

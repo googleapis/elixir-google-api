@@ -16,31 +16,34 @@
 # https://github.com/swagger-api/swagger-codegen.git
 # Do not edit the class manually.
 
-defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1TextDetectionConfig do
+defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1DetectedAttribute do
   @moduledoc """
-  Config for TEXT_DETECTION.
+  A generic detected attribute represented by name in string format.
 
   ## Attributes
 
-  - languageHints ([String.t]): Language hint can be specified if the language to be detected is known a priori. It can increase the accuracy of the detection. Language hint must be language code in BCP-47 format.  Automatic language detection is performed if no hint is provided. Defaults to: `null`.
-  - model (String.t): Model to use for text detection. Supported values: \&quot;builtin/stable\&quot; (the default if unset) and \&quot;builtin/latest\&quot;. Defaults to: `null`.
+  - confidence (float()): Detected attribute confidence. Range [0, 1]. Defaults to: `null`.
+  - name (String.t): The name of the attribute, i.e. glasses, dark_glasses, mouth_open etc. A full list of supported type names will be provided in the document. Defaults to: `null`.
+  - value (String.t): Text value of the detection result. For example, the value for \&quot;HairColor\&quot; can be \&quot;black\&quot;, \&quot;blonde\&quot;, etc. Defaults to: `null`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :languageHints => list(any()),
-          :model => any()
+          :confidence => any(),
+          :name => any(),
+          :value => any()
         }
 
-  field(:languageHints, type: :list)
-  field(:model)
+  field(:confidence)
+  field(:name)
+  field(:value)
 end
 
 defimpl Poison.Decoder,
-  for: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1TextDetectionConfig do
+  for: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1DetectedAttribute do
   def decode(value, options) do
-    GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1TextDetectionConfig.decode(
+    GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1DetectedAttribute.decode(
       value,
       options
     )
@@ -48,7 +51,7 @@ defimpl Poison.Decoder,
 end
 
 defimpl Poison.Encoder,
-  for: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1TextDetectionConfig do
+  for: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1DetectedAttribute do
   def encode(value, options) do
     GoogleApi.Gax.ModelBase.encode(value, options)
   end

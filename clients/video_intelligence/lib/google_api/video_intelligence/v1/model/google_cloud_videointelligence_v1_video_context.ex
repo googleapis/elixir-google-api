@@ -24,6 +24,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1Vid
 
   - explicitContentDetectionConfig (GoogleCloudVideointelligenceV1ExplicitContentDetectionConfig): Config for EXPLICIT_CONTENT_DETECTION. Defaults to: `null`.
   - labelDetectionConfig (GoogleCloudVideointelligenceV1LabelDetectionConfig): Config for LABEL_DETECTION. Defaults to: `null`.
+  - objectTrackingConfig (GoogleCloudVideointelligenceV1ObjectTrackingConfig): Config for OBJECT_TRACKING. Defaults to: `null`.
   - segments ([GoogleCloudVideointelligenceV1VideoSegment]): Video segments to annotate. The segments may overlap and are not required to be contiguous or span the whole video. If unspecified, each video is treated as a single segment. Defaults to: `null`.
   - shotChangeDetectionConfig (GoogleCloudVideointelligenceV1ShotChangeDetectionConfig): Config for SHOT_CHANGE_DETECTION. Defaults to: `null`.
   - speechTranscriptionConfig (GoogleCloudVideointelligenceV1SpeechTranscriptionConfig): Config for SPEECH_TRANSCRIPTION. Defaults to: `null`.
@@ -37,6 +38,8 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1Vid
             GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1ExplicitContentDetectionConfig.t(),
           :labelDetectionConfig =>
             GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1LabelDetectionConfig.t(),
+          :objectTrackingConfig =>
+            GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1ObjectTrackingConfig.t(),
           :segments =>
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1VideoSegment.t()
@@ -58,6 +61,11 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1Vid
   field(
     :labelDetectionConfig,
     as: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1LabelDetectionConfig
+  )
+
+  field(
+    :objectTrackingConfig,
+    as: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1ObjectTrackingConfig
   )
 
   field(

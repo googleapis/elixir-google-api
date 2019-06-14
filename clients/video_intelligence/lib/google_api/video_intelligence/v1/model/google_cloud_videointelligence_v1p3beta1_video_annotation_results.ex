@@ -26,6 +26,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3b
   - explicitAnnotation (GoogleCloudVideointelligenceV1p3beta1ExplicitContentAnnotation): Explicit content annotation. Defaults to: `null`.
   - frameLabelAnnotations ([GoogleCloudVideointelligenceV1p3beta1LabelAnnotation]): Label annotations on frame level. There is exactly one element for each unique label. Defaults to: `null`.
   - inputUri (String.t): Video file location in [Google Cloud Storage](https://cloud.google.com/storage/). Defaults to: `null`.
+  - logoRecognitionAnnotations ([GoogleCloudVideointelligenceV1p3beta1LogoRecognitionAnnotation]): Annotations for list of logos detected, tracked and recognized in video. Defaults to: `null`.
   - objectAnnotations ([GoogleCloudVideointelligenceV1p3beta1ObjectTrackingAnnotation]): Annotations for list of objects detected and tracked in video. Defaults to: `null`.
   - segmentLabelAnnotations ([GoogleCloudVideointelligenceV1p3beta1LabelAnnotation]): Label annotations on video level or user specified segment level. There is exactly one element for each unique label. Defaults to: `null`.
   - shotAnnotations ([GoogleCloudVideointelligenceV1p3beta1VideoSegment]): Shot annotations. Each shot is represented as a video segment. Defaults to: `null`.
@@ -45,6 +46,10 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3b
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1LabelAnnotation.t()
             ),
           :inputUri => any(),
+          :logoRecognitionAnnotations =>
+            list(
+              GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1LogoRecognitionAnnotation.t()
+            ),
           :objectAnnotations =>
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1ObjectTrackingAnnotation.t()
@@ -86,6 +91,13 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3b
   )
 
   field(:inputUri)
+
+  field(
+    :logoRecognitionAnnotations,
+    as:
+      GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1LogoRecognitionAnnotation,
+    type: :list
+  )
 
   field(
     :objectAnnotations,
