@@ -31,7 +31,7 @@ defmodule GoogleApi.Logging.V2.Model.LogEntry do
   - operation (LogEntryOperation): Optional. Information about an operation associated with the log entry, if applicable. Defaults to: `null`.
   - protoPayload (%{optional(String.t) &#x3D;&gt; String.t}): The log entry payload, represented as a protocol buffer. Some Google Cloud Platform services use this field for their log entry payloads.The following protocol buffer types are supported; user-defined types are not supported:\&quot;type.googleapis.com/google.cloud.audit.AuditLog\&quot;  \&quot;type.googleapis.com/google.appengine.logging.v1.RequestLog\&quot; Defaults to: `null`.
   - receiveTimestamp (DateTime.t): Output only. The time the log entry was received by Logging. Defaults to: `null`.
-  - resource (MonitoredResource): Required. The primary monitored resource associated with this log entry.Example: a log entry that reports a database error would be associated with the monitored resource designating the particular database that reported the error. Defaults to: `null`.
+  - resource (MonitoredResource): Required. The monitored resource that produced this log entry.Example: a log entry that reports a database error would be associated with the monitored resource designating the particular database that reported the error. Defaults to: `null`.
   - severity (String.t): Optional. The severity of the log entry. The default value is LogSeverity.DEFAULT. Defaults to: `null`.
     - Enum - one of [DEFAULT, DEBUG, INFO, NOTICE, WARNING, ERROR, CRITICAL, ALERT, EMERGENCY]
   - sourceLocation (LogEntrySourceLocation): Optional. Source code location information associated with the log entry, if any. Defaults to: `null`.
