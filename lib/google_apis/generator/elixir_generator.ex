@@ -70,6 +70,7 @@ defmodule GoogleApis.Generator.ElixirGenerator do
 
   defp create_directories(token) do
     IO.puts("Creating leading directories")
+    File.rm_rf!(token.base_dir)
     File.mkdir_p!(Path.join(token.base_dir, "api"))
     File.mkdir_p!(Path.join(token.base_dir, "model"))
     token
