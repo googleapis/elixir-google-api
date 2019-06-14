@@ -19,6 +19,8 @@ pushd $(dirname "$0")/../
 
 export TEMPLATE=gax
 
+git clean -fdx clients
+
 # clean the codegen directory
 # if [ -d .codegen ]; then
 #     rm -rf .codegen
