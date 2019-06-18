@@ -33,7 +33,6 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.CreativeNativeAd do
   - logo (GoogleApi.AdExchangeBuyer.V14.Model.CreativeNativeAdLogo.t): A smaller image, for the advertiser logo. Defaults to `nil`.
   - price (String.t): The price of the promoted app including the currency info. Defaults to `nil`.
   - starRating (float()): The app rating in the app store. Must be in the range [0-5]. Defaults to `nil`.
-  - store (String.t): The URL to the app store to purchase/download the promoted app. Defaults to `nil`.
   - videoURL (String.t): The URL of the XML VAST for a native ad. Note this is a separate field from resource.video_url. Defaults to `nil`.
   """
 
@@ -52,7 +51,6 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.CreativeNativeAd do
           :logo => GoogleApi.AdExchangeBuyer.V14.Model.CreativeNativeAdLogo.t(),
           :price => String.t(),
           :starRating => float(),
-          :store => String.t(),
           :videoURL => String.t()
         }
 
@@ -68,7 +66,6 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.CreativeNativeAd do
   field(:logo, as: GoogleApi.AdExchangeBuyer.V14.Model.CreativeNativeAdLogo)
   field(:price)
   field(:starRating)
-  field(:store)
   field(:videoURL)
 end
 

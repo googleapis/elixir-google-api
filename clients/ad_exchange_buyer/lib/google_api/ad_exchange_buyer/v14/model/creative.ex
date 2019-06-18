@@ -24,6 +24,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.Creative do
   - HTMLSnippet (String.t): The HTML snippet that displays the ad when inserted in the web page. If set, videoURL, videoVastXML, and nativeAd should not be set. Defaults to `nil`.
   - accountId (integer()): Account id. Defaults to `nil`.
   - adChoicesDestinationUrl (String.t): The link to the Ad Preferences page. This is only supported for native ads. Defaults to `nil`.
+  - adTechnologyProviders (GoogleApi.AdExchangeBuyer.V14.Model.CreativeAdTechnologyProviders.t):  Defaults to `nil`.
   - advertiserId (list(String.t)): Detected advertiser id, if any. Read-only. This field should not be set in requests. Defaults to `nil`.
   - advertiserName (String.t): The name of the company being advertised in the creative. The value provided must exist in the advertisers.txt file. Defaults to `nil`.
   - agencyId (String.t): The agency id for this creative. Defaults to `nil`.
@@ -59,6 +60,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.Creative do
           :HTMLSnippet => String.t(),
           :accountId => integer(),
           :adChoicesDestinationUrl => String.t(),
+          :adTechnologyProviders =>
+            GoogleApi.AdExchangeBuyer.V14.Model.CreativeAdTechnologyProviders.t(),
           :advertiserId => list(String.t()),
           :advertiserName => String.t(),
           :agencyId => String.t(),
@@ -92,6 +95,12 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.Creative do
   field(:HTMLSnippet)
   field(:accountId)
   field(:adChoicesDestinationUrl)
+
+  field(
+    :adTechnologyProviders,
+    as: GoogleApi.AdExchangeBuyer.V14.Model.CreativeAdTechnologyProviders
+  )
+
   field(:advertiserId, type: :list)
   field(:advertiserName)
   field(:agencyId)
