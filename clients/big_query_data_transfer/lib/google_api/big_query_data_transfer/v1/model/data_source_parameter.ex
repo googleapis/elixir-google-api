@@ -27,6 +27,8 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.DataSourceParameter do
   ## Attributes
 
   - allowedValues (list(String.t)): All possible values for the parameter. Defaults to `nil`.
+  - deprecated (boolean()): If true, it should not be used in new transfers, and it should not be
+  visible to users. Defaults to `nil`.
   - description (String.t): Parameter description. Defaults to `nil`.
   - displayName (String.t): Parameter display name in the user interface. Defaults to `nil`.
   - fields (list(GoogleApi.BigQueryDataTransfer.V1.Model.DataSourceParameter.t)): Deprecated. This field has no effect. Defaults to `nil`.
@@ -48,6 +50,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.DataSourceParameter do
 
   @type t :: %__MODULE__{
           :allowedValues => list(String.t()),
+          :deprecated => boolean(),
           :description => String.t(),
           :displayName => String.t(),
           :fields => list(GoogleApi.BigQueryDataTransfer.V1.Model.DataSourceParameter.t()),
@@ -65,6 +68,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.DataSourceParameter do
         }
 
   field(:allowedValues, type: :list)
+  field(:deprecated)
   field(:description)
   field(:displayName)
   field(:fields, as: GoogleApi.BigQueryDataTransfer.V1.Model.DataSourceParameter, type: :list)
