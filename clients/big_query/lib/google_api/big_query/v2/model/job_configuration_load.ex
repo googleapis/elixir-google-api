@@ -31,7 +31,8 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfigurationLoad do
   - destinationTableProperties (GoogleApi.BigQuery.V2.Model.DestinationTableProperties.t): [Beta] [Optional] Properties with which to create the destination table if it is new. Defaults to `nil`.
   - encoding (String.t): [Optional] The character encoding of the data. The supported values are UTF-8 or ISO-8859-1. The default value is UTF-8. BigQuery decodes the data after the raw, binary data has been split using the values of the quote and fieldDelimiter properties. Defaults to `nil`.
   - fieldDelimiter (String.t): [Optional] The separator for fields in a CSV file. The separator can be any ISO-8859-1 single-byte character. To use a character in the range 128-255, you must encode the character as UTF8. BigQuery converts the string to ISO-8859-1 encoding, and then uses the first byte of the encoded string to split the data in its raw, binary state. BigQuery also supports the escape sequence "\t" to specify a tab separator. The default value is a comma (','). Defaults to `nil`.
-  - hivePartitioningMode (String.t): [Optional, Experimental] If hive partitioning is enabled, which mode to use. Two modes are supported: - AUTO: automatically infer partition key name(s) and type(s). - STRINGS: automatic infer partition key name(s). All types are strings. Not all storage formats support hive partitioning -- requesting hive partitioning on an unsupported format will lead to an error. Defaults to `nil`.
+  - hivePartitioningMode (String.t): [Optional, Trusted Tester] If hive partitioning is enabled, which mode to use. Two modes are supported: - AUTO: automatically infer partition key name(s) and type(s). - STRINGS: automatic infer partition key name(s). All types are strings. Not all storage formats support hive partitioning -- requesting hive partitioning on an unsupported format will lead to an error. Defaults to `nil`.
+  - hivePartitioningOptions (GoogleApi.BigQuery.V2.Model.HivePartitioningOptions.t): [Optional, Trusted Tester] Options to configure hive partitioning support. Defaults to `nil`.
   - ignoreUnknownValues (boolean()): [Optional] Indicates if BigQuery should allow extra values that are not represented in the table schema. If true, the extra values are ignored. If false, records with extra columns are treated as bad records, and if there are too many bad records, an invalid error is returned in the job result. The default value is false. The sourceFormat property determines what BigQuery treats as an extra value: CSV: Trailing columns JSON: Named values that don't match any column names Defaults to `nil`.
   - maxBadRecords (integer()): [Optional] The maximum number of bad records that BigQuery can ignore when running the job. If the number of bad records exceeds this value, an invalid error is returned in the job result. This is only valid for CSV and JSON. The default value is 0, which requires that all records are valid. Defaults to `nil`.
   - nullMarker (String.t): [Optional] Specifies a string that represents a null value in a CSV file. For example, if you specify "\N", BigQuery interprets "\N" as a null value when loading a CSV file. The default value is the empty string. If you set this property to a custom value, BigQuery throws an error if an empty string is present for all data types except for STRING and BYTE. For STRING and BYTE columns, BigQuery interprets the empty string as an empty value. Defaults to `nil`.
@@ -66,6 +67,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfigurationLoad do
           :encoding => String.t(),
           :fieldDelimiter => String.t(),
           :hivePartitioningMode => String.t(),
+          :hivePartitioningOptions => GoogleApi.BigQuery.V2.Model.HivePartitioningOptions.t(),
           :ignoreUnknownValues => boolean(),
           :maxBadRecords => integer(),
           :nullMarker => String.t(),
@@ -100,6 +102,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfigurationLoad do
   field(:encoding)
   field(:fieldDelimiter)
   field(:hivePartitioningMode)
+  field(:hivePartitioningOptions, as: GoogleApi.BigQuery.V2.Model.HivePartitioningOptions)
   field(:ignoreUnknownValues)
   field(:maxBadRecords)
   field(:nullMarker)

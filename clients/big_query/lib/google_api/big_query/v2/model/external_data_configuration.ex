@@ -26,7 +26,8 @@ defmodule GoogleApi.BigQuery.V2.Model.ExternalDataConfiguration do
   - compression (String.t): [Optional] The compression type of the data source. Possible values include GZIP and NONE. The default value is NONE. This setting is ignored for Google Cloud Bigtable, Google Cloud Datastore backups and Avro formats. Defaults to `nil`.
   - csvOptions (GoogleApi.BigQuery.V2.Model.CsvOptions.t): Additional properties to set if sourceFormat is set to CSV. Defaults to `nil`.
   - googleSheetsOptions (GoogleApi.BigQuery.V2.Model.GoogleSheetsOptions.t): [Optional] Additional options if sourceFormat is set to GOOGLE_SHEETS. Defaults to `nil`.
-  - hivePartitioningMode (String.t): [Optional, Experimental] If hive partitioning is enabled, which mode to use. Two modes are supported: - AUTO: automatically infer partition key name(s) and type(s). - STRINGS: automatic infer partition key name(s). All types are strings. Not all storage formats support hive partitioning -- requesting hive partitioning on an unsupported format will lead to an error. Defaults to `nil`.
+  - hivePartitioningMode (String.t): [Optional, Trusted Tester] If hive partitioning is enabled, which mode to use. Two modes are supported: - AUTO: automatically infer partition key name(s) and type(s). - STRINGS: automatic infer partition key name(s). All types are strings. Not all storage formats support hive partitioning -- requesting hive partitioning on an unsupported format will lead to an error. Note: this setting is in the process of being deprecated in favor of hivePartitioningOptions. Defaults to `nil`.
+  - hivePartitioningOptions (GoogleApi.BigQuery.V2.Model.HivePartitioningOptions.t): [Optional, Trusted Tester] Options to configure hive partitioning support. Defaults to `nil`.
   - ignoreUnknownValues (boolean()): [Optional] Indicates if BigQuery should allow extra values that are not represented in the table schema. If true, the extra values are ignored. If false, records with extra columns are treated as bad records, and if there are too many bad records, an invalid error is returned in the job result. The default value is false. The sourceFormat property determines what BigQuery treats as an extra value: CSV: Trailing columns JSON: Named values that don't match any column names Google Cloud Bigtable: This setting is ignored. Google Cloud Datastore backups: This setting is ignored. Avro: This setting is ignored. Defaults to `nil`.
   - maxBadRecords (integer()): [Optional] The maximum number of bad records that BigQuery can ignore when reading data. If the number of bad records exceeds this value, an invalid error is returned in the job result. This is only valid for CSV, JSON, and Google Sheets. The default value is 0, which requires that all records are valid. This setting is ignored for Google Cloud Bigtable, Google Cloud Datastore backups and Avro formats. Defaults to `nil`.
   - schema (GoogleApi.BigQuery.V2.Model.TableSchema.t): [Optional] The schema for the data. Schema is required for CSV and JSON formats. Schema is disallowed for Google Cloud Bigtable, Cloud Datastore backups, and Avro formats. Defaults to `nil`.
@@ -43,6 +44,7 @@ defmodule GoogleApi.BigQuery.V2.Model.ExternalDataConfiguration do
           :csvOptions => GoogleApi.BigQuery.V2.Model.CsvOptions.t(),
           :googleSheetsOptions => GoogleApi.BigQuery.V2.Model.GoogleSheetsOptions.t(),
           :hivePartitioningMode => String.t(),
+          :hivePartitioningOptions => GoogleApi.BigQuery.V2.Model.HivePartitioningOptions.t(),
           :ignoreUnknownValues => boolean(),
           :maxBadRecords => integer(),
           :schema => GoogleApi.BigQuery.V2.Model.TableSchema.t(),
@@ -56,6 +58,7 @@ defmodule GoogleApi.BigQuery.V2.Model.ExternalDataConfiguration do
   field(:csvOptions, as: GoogleApi.BigQuery.V2.Model.CsvOptions)
   field(:googleSheetsOptions, as: GoogleApi.BigQuery.V2.Model.GoogleSheetsOptions)
   field(:hivePartitioningMode)
+  field(:hivePartitioningOptions, as: GoogleApi.BigQuery.V2.Model.HivePartitioningOptions)
   field(:ignoreUnknownValues)
   field(:maxBadRecords)
   field(:schema, as: GoogleApi.BigQuery.V2.Model.TableSchema)
