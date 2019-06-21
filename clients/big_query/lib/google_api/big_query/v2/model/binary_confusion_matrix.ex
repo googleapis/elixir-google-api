@@ -21,11 +21,15 @@ defmodule GoogleApi.BigQuery.V2.Model.BinaryConfusionMatrix do
 
   ## Attributes
 
+  - accuracy (float()): The fraction of predictions given the correct label. Defaults to `nil`.
+  - f1Score (float()): The equally weighted average of recall and precision. Defaults to `nil`.
   - falseNegatives (String.t): Number of false samples predicted as false. Defaults to `nil`.
   - falsePositives (String.t): Number of false samples predicted as true. Defaults to `nil`.
   - positiveClassThreshold (float()): Threshold value used when computing each of the following metric. Defaults to `nil`.
-  - precision (float()): Aggregate precision. Defaults to `nil`.
-  - recall (float()): Aggregate recall. Defaults to `nil`.
+  - precision (float()): The fraction of actual positive predictions that had positive actual
+  labels. Defaults to `nil`.
+  - recall (float()): The fraction of actual positive labels that were given a positive
+  prediction. Defaults to `nil`.
   - trueNegatives (String.t): Number of true samples predicted as false. Defaults to `nil`.
   - truePositives (String.t): Number of true samples predicted as true. Defaults to `nil`.
   """
@@ -33,6 +37,8 @@ defmodule GoogleApi.BigQuery.V2.Model.BinaryConfusionMatrix do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :accuracy => float(),
+          :f1Score => float(),
           :falseNegatives => String.t(),
           :falsePositives => String.t(),
           :positiveClassThreshold => float(),
@@ -42,6 +48,8 @@ defmodule GoogleApi.BigQuery.V2.Model.BinaryConfusionMatrix do
           :truePositives => String.t()
         }
 
+  field(:accuracy)
+  field(:f1Score)
   field(:falseNegatives)
   field(:falsePositives)
   field(:positiveClassThreshold)
