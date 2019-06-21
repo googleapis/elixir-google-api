@@ -21,8 +21,8 @@ defmodule GoogleApi.AndroidPublisher.V2.Model.Testers do
 
   ## Attributes
 
-  - googleGroups (list(String.t)):  Defaults to `nil`.
-  - googlePlusCommunities (list(String.t)):  Defaults to `nil`.
+  - googleGroups (list(String.t)): A list of all Google Groups, as email addresses, that define testers for this track. Defaults to `nil`.
+  - googlePlusCommunities (list(String.t)): A list of all Google+ Communities, as URLs, that define testers for this track. Defaults to `nil`.
   """
 
   use GoogleApi.Gax.ModelBase
