@@ -31,8 +31,8 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.TransferRun do
   `projects/{project_id}/locations/{location}/transferConfigs/{config_id}/runs/{run_id}`.
   The name is ignored when creating a transfer run. Defaults to `nil`.
   - params (map()): Output only. Data transfer specific parameters. Defaults to `nil`.
-  - runTime (DateTime.t): For batch transfer runs, specifies the date and time that
-  data should be ingested. Defaults to `nil`.
+  - runTime (DateTime.t): For batch transfer runs, specifies the date and time of the data should be
+  ingested. Defaults to `nil`.
   - schedule (String.t): Output only. Describes the schedule of this transfer run if it was
   created as part of a regular schedule. For batch transfer runs that are
   scheduled manually, this is empty.

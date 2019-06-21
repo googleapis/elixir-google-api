@@ -621,7 +621,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
     - :versionInfo (String.t): Optional version info. If users want to find a very recent access token,
   that is, immediately after approving access, users have to set the
   version_info claim in the token request. To obtain the version_info, users
-  must use the “none+gsession” response type. which be return a
+  must use the "none+gsession" response type. which be return a
   version_info back in the authorization response which be be put in a JWT
   claim in the token request.
     - :body (GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig.t): 
@@ -933,7 +933,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
     - :versionInfo (String.t): Optional version info. If users want to find a very recent access token,
   that is, immediately after approving access, users have to set the
   version_info claim in the token request. To obtain the version_info, users
-  must use the “none+gsession” response type. which be return a
+  must use the "none+gsession" response type. which be return a
   version_info back in the authorization response which be be put in a JWT
   claim in the token request.
     - :body (GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig.t): 
@@ -1466,7 +1466,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
     - :versionInfo (String.t): Optional version info. If users want to find a very recent access token,
   that is, immediately after approving access, users have to set the
   version_info claim in the token request. To obtain the version_info, users
-  must use the “none+gsession” response type. which be return a
+  must use the "none+gsession" response type. which be return a
   version_info back in the authorization response which be be put in a JWT
   claim in the token request.
     - :body (GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig.t): 
@@ -1778,7 +1778,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
     - :versionInfo (String.t): Optional version info. If users want to find a very recent access token,
   that is, immediately after approving access, users have to set the
   version_info claim in the token request. To obtain the version_info, users
-  must use the “none+gsession” response type. which be return a
+  must use the "none+gsession" response type. which be return a
   version_info back in the authorization response which be be put in a JWT
   claim in the token request.
     - :body (GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig.t): 
