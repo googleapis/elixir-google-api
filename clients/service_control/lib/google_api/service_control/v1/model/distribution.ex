@@ -40,6 +40,7 @@ defmodule GoogleApi.ServiceControl.V1.Model.Distribution do
 
   Any suffix of trailing zeros may be omitted. Defaults to `nil`.
   - count (String.t): The total number of samples in the distribution. Must be >= 0. Defaults to `nil`.
+  - exemplars (list(GoogleApi.ServiceControl.V1.Model.Exemplar.t)): Example points. Must be in increasing order of `value` field. Defaults to `nil`.
   - explicitBuckets (GoogleApi.ServiceControl.V1.Model.ExplicitBuckets.t): Buckets with arbitrary user-provided width. Defaults to `nil`.
   - exponentialBuckets (GoogleApi.ServiceControl.V1.Model.ExponentialBuckets.t): Buckets with exponentially growing width. Defaults to `nil`.
   - linearBuckets (GoogleApi.ServiceControl.V1.Model.LinearBuckets.t): Buckets with constant width. Defaults to `nil`.
@@ -58,6 +59,7 @@ defmodule GoogleApi.ServiceControl.V1.Model.Distribution do
   @type t :: %__MODULE__{
           :bucketCounts => list(String.t()),
           :count => String.t(),
+          :exemplars => list(GoogleApi.ServiceControl.V1.Model.Exemplar.t()),
           :explicitBuckets => GoogleApi.ServiceControl.V1.Model.ExplicitBuckets.t(),
           :exponentialBuckets => GoogleApi.ServiceControl.V1.Model.ExponentialBuckets.t(),
           :linearBuckets => GoogleApi.ServiceControl.V1.Model.LinearBuckets.t(),
@@ -69,6 +71,7 @@ defmodule GoogleApi.ServiceControl.V1.Model.Distribution do
 
   field(:bucketCounts, type: :list)
   field(:count)
+  field(:exemplars, as: GoogleApi.ServiceControl.V1.Model.Exemplar, type: :list)
   field(:explicitBuckets, as: GoogleApi.ServiceControl.V1.Model.ExplicitBuckets)
   field(:exponentialBuckets, as: GoogleApi.ServiceControl.V1.Model.ExponentialBuckets)
   field(:linearBuckets, as: GoogleApi.ServiceControl.V1.Model.LinearBuckets)
