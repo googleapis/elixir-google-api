@@ -32,7 +32,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.ProductPurchase do
   - orderId (String.t): The order id associated with the purchase of the inapp product. Defaults to `nil`.
   - purchaseState (integer()): The purchase state of the order. Possible values are:  
   - Purchased 
-  - Canceled Defaults to `nil`.
+  - Canceled 
+  - Pending Defaults to `nil`.
   - purchaseTimeMillis (String.t): The time the product was purchased, in milliseconds since the epoch (Jan 1, 1970). Defaults to `nil`.
   - purchaseType (integer()): The type of purchase of the inapp product. This field is only set if this purchase was not made using the standard in-app billing flow. Possible values are:  
   - Test (i.e. purchased from a license testing account) 
