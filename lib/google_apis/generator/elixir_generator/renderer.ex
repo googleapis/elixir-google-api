@@ -37,4 +37,11 @@ defmodule GoogleApis.Generator.ElixirGenerator.Renderer do
     :otp_app,
     :base_url
   ])
+
+  defp indent_subsequent(nil, _spaces), do: nil
+
+  defp indent_subsequent(str, spaces) do
+    prefix = " " |> List.duplicate(spaces) |> Enum.join()
+    String.replace(str, ~r{(\n+)([^\n])}, "\\1#{prefix}\\2")
+  end
 end

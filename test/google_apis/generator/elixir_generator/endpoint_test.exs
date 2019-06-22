@@ -177,7 +177,7 @@ defmodule GoogleApis.Generator.ElixirGenerator.EndpointTest do
     assert 1 == length(endpoints)
     endpoint = List.first(endpoints)
 
-    assert "books_familysharing_unshare(Tesla.Env.client(), String.t, integer(), keyword()) :: {:ok, Default.Namespace.Model.Annotationsdata.t} | {:error, Tesla.Env.t()}" ==
+    assert "books_familysharing_unshare(Tesla.Env.client(), String.t, integer(), keyword(), keyword()) :: {:ok, Default.Namespace.Model.Annotationsdata.t} | {:error, Tesla.Env.t()}" ==
              endpoint.typespec
   end
 
@@ -189,7 +189,7 @@ defmodule GoogleApis.Generator.ElixirGenerator.EndpointTest do
     assert 1 == length(endpoints)
     endpoint = List.first(endpoints)
 
-    assert "books_familysharing_unshare(Tesla.Env.client(), keyword()) :: {:ok, nil} | {:error, Tesla.Env.t()}" ==
+    assert "books_familysharing_unshare(Tesla.Env.client(), keyword(), keyword()) :: {:ok, nil} | {:error, Tesla.Env.t()}" ==
              endpoint.typespec
   end
 
@@ -201,7 +201,7 @@ defmodule GoogleApis.Generator.ElixirGenerator.EndpointTest do
     assert 1 == length(endpoints)
     endpoint = List.first(endpoints)
 
-    assert "books_myconfig_release_download_access(Tesla.Env.client(), list(String.t), String.t, keyword()) :: {:ok, Default.Namespace.Model.DownloadAccesses.t} | {:error, Tesla.Env.t()}" ==
+    assert "books_myconfig_release_download_access(Tesla.Env.client(), list(String.t), String.t, keyword(), keyword()) :: {:ok, Default.Namespace.Model.DownloadAccesses.t} | {:error, Tesla.Env.t()}" ==
              endpoint.typespec
   end
 

@@ -20,6 +20,8 @@ defmodule <%= namespace %>.Connection do
   Handle Tesla connections for <%= namespace %>.
   """
 
+  @type t :: Tesla.Env.client()
+
   use GoogleApi.Gax.Connection,
     scopes: [
     <%= for {name, description} <- scopes do %>

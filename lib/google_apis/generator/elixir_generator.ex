@@ -20,7 +20,7 @@ defmodule GoogleApis.Generator.ElixirGenerator do
 
   @behaviour GoogleApis.Generator
   alias GoogleApis.ApiConfig
-  alias GoogleApi.Discovery.V1.Model.{JsonSchema, RestDescription}
+  alias GoogleApi.Discovery.V1.Model.RestDescription
 
   alias GoogleApis.Generator.ElixirGenerator.{
     Api,
@@ -178,7 +178,7 @@ defmodule GoogleApis.Generator.ElixirGenerator do
   defp collect_methods_from_resources(nil), do: []
 
   defp collect_methods_from_resources(resources) do
-    Enum.flat_map(resources, fn {name, resource} ->
+    Enum.flat_map(resources, fn {_name, resource} ->
       collect_methods(resource)
     end)
   end

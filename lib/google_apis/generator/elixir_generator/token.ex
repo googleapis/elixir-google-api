@@ -18,7 +18,7 @@ defmodule GoogleApis.Generator.ElixirGenerator.Token do
   """
 
   alias GoogleApi.Discovery.V1.Model.RestDescription
-  alias GoogleApis.Generator.ElixirGenerator.{Model, Parameter, Property, ResourceContext, Type}
+  alias GoogleApis.Generator.ElixirGenerator.{Model, Parameter, ResourceContext}
   alias GoogleApis.ApiConfig
 
   @type t :: %__MODULE__{
@@ -116,6 +116,7 @@ defmodule GoogleApis.Generator.ElixirGenerator.Token do
   end
 
   defp has_data_wrapper_feature?(%{features: nil}), do: false
+
   defp has_data_wrapper_feature?(%{features: features}) do
     Enum.any?(features, fn feature -> feature == "dataWrapper" end)
   end
