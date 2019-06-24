@@ -28,30 +28,31 @@ defmodule GoogleApi.AppsActivity.V1.Api.Activities do
 
   ## Parameters
 
-  - connection (GoogleApi.AppsActivity.V1.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :drive.ancestorId (String.t): Identifies the Drive folder containing the items for which to return activities.
-    - :drive.fileId (String.t): Identifies the Drive item to return activities for.
-    - :groupingStrategy (String.t): Indicates the strategy to use when grouping singleEvents items in the associated combinedEvent object.
-    - :pageSize (integer()): The maximum number of events to return on a page. The response includes a continuation token if there are more events.
-    - :pageToken (String.t): A token to retrieve a specific page of results.
-    - :source (String.t): The Google service from which to return activities. Possible values of source are: 
-  - drive.google.com
-    - :userId (String.t): The ID used for ACL checks (does not filter the resulting event list by the assigned value). Use the special value me to indicate the currently authenticated user.
+  *   `connection` (*type:* `GoogleApi.AppsActivity.V1.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:drive.ancestorId` (*type:* `String.t`) - Identifies the Drive folder containing the items for which to return activities.
+      *   `:drive.fileId` (*type:* `String.t`) - Identifies the Drive item to return activities for.
+      *   `:groupingStrategy` (*type:* `String.t`) - Indicates the strategy to use when grouping singleEvents items in the associated combinedEvent object.
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of events to return on a page. The response includes a continuation token if there are more events.
+      *   `:pageToken` (*type:* `String.t`) - A token to retrieve a specific page of results.
+      *   `:source` (*type:* `String.t`) - The Google service from which to return activities. Possible values of source are: 
+          - drive.google.com
+      *   `:userId` (*type:* `String.t`) - The ID used for ACL checks (does not filter the resulting event list by the assigned value). Use the special value me to indicate the currently authenticated user.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AppsActivity.V1.Model.ListActivitiesResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AppsActivity.V1.Model.ListActivitiesResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec appsactivity_activities_list(Tesla.Env.client(), keyword()) ::
+  @spec appsactivity_activities_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.AppsActivity.V1.Model.ListActivitiesResponse.t()}
           | {:error, Tesla.Env.t()}
   def appsactivity_activities_list(connection, optional_params \\ [], opts \\ []) do

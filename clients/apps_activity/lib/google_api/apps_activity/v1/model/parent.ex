@@ -21,9 +21,9 @@ defmodule GoogleApi.AppsActivity.V1.Model.Parent do
 
   ## Attributes
 
-  - id (String.t): The parent's ID. Defaults to `nil`.
-  - isRoot (boolean()): Whether this is the root folder. Defaults to `nil`.
-  - title (String.t): The parent's title. Defaults to `nil`.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The parent's ID.
+  *   `isRoot` (*type:* `boolean()`, *default:* `nil`) - Whether this is the root folder.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - The parent's title.
   """
 
   use GoogleApi.Gax.ModelBase

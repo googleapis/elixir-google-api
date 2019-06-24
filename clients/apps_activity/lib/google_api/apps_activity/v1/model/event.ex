@@ -21,15 +21,15 @@ defmodule GoogleApi.AppsActivity.V1.Model.Event do
 
   ## Attributes
 
-  - additionalEventTypes (list(String.t)): Additional event types. Some events may have multiple types when multiple actions are part of a single event. For example, creating a document, renaming it, and sharing it may be part of a single file-creation event. Defaults to `nil`.
-  - eventTimeMillis (String.t): The time at which the event occurred formatted as Unix time in milliseconds. Defaults to `nil`.
-  - fromUserDeletion (boolean()): Whether this event is caused by a user being deleted. Defaults to `nil`.
-  - move (GoogleApi.AppsActivity.V1.Model.Move.t): Extra information for move type events, such as changes in an object's parents. Defaults to `nil`.
-  - permissionChanges (list(GoogleApi.AppsActivity.V1.Model.PermissionChange.t)): Extra information for permissionChange type events, such as the user or group the new permission applies to. Defaults to `nil`.
-  - primaryEventType (String.t): The main type of event that occurred. Defaults to `nil`.
-  - rename (GoogleApi.AppsActivity.V1.Model.Rename.t): Extra information for rename type events, such as the old and new names. Defaults to `nil`.
-  - target (GoogleApi.AppsActivity.V1.Model.Target.t): Information specific to the Target object modified by the event. Defaults to `nil`.
-  - user (GoogleApi.AppsActivity.V1.Model.User.t): Represents the user responsible for the event. Defaults to `nil`.
+  *   `additionalEventTypes` (*type:* `list(String.t)`, *default:* `nil`) - Additional event types. Some events may have multiple types when multiple actions are part of a single event. For example, creating a document, renaming it, and sharing it may be part of a single file-creation event.
+  *   `eventTimeMillis` (*type:* `String.t`, *default:* `nil`) - The time at which the event occurred formatted as Unix time in milliseconds.
+  *   `fromUserDeletion` (*type:* `boolean()`, *default:* `nil`) - Whether this event is caused by a user being deleted.
+  *   `move` (*type:* `GoogleApi.AppsActivity.V1.Model.Move.t`, *default:* `nil`) - Extra information for move type events, such as changes in an object's parents.
+  *   `permissionChanges` (*type:* `list(GoogleApi.AppsActivity.V1.Model.PermissionChange.t)`, *default:* `nil`) - Extra information for permissionChange type events, such as the user or group the new permission applies to.
+  *   `primaryEventType` (*type:* `String.t`, *default:* `nil`) - The main type of event that occurred.
+  *   `rename` (*type:* `GoogleApi.AppsActivity.V1.Model.Rename.t`, *default:* `nil`) - Extra information for rename type events, such as the old and new names.
+  *   `target` (*type:* `GoogleApi.AppsActivity.V1.Model.Target.t`, *default:* `nil`) - Information specific to the Target object modified by the event.
+  *   `user` (*type:* `GoogleApi.AppsActivity.V1.Model.User.t`, *default:* `nil`) - Represents the user responsible for the event.
   """
 
   use GoogleApi.Gax.ModelBase

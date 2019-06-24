@@ -21,8 +21,8 @@ defmodule GoogleApi.AppsActivity.V1.Model.PermissionChange do
 
   ## Attributes
 
-  - addedPermissions (list(GoogleApi.AppsActivity.V1.Model.Permission.t)): Lists all Permission objects added. Defaults to `nil`.
-  - removedPermissions (list(GoogleApi.AppsActivity.V1.Model.Permission.t)): Lists all Permission objects removed. Defaults to `nil`.
+  *   `addedPermissions` (*type:* `list(GoogleApi.AppsActivity.V1.Model.Permission.t)`, *default:* `nil`) - Lists all Permission objects added.
+  *   `removedPermissions` (*type:* `list(GoogleApi.AppsActivity.V1.Model.Permission.t)`, *default:* `nil`) - Lists all Permission objects removed.
   """
 
   use GoogleApi.Gax.ModelBase

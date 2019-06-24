@@ -21,9 +21,9 @@ defmodule GoogleApi.AppsActivity.V1.Model.Target do
 
   ## Attributes
 
-  - id (String.t): The ID of the target. For example, in Google Drive, this is the file or folder ID. Defaults to `nil`.
-  - mimeType (String.t): The MIME type of the target. Defaults to `nil`.
-  - name (String.t): The name of the target. For example, in Google Drive, this is the title of the file. Defaults to `nil`.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The ID of the target. For example, in Google Drive, this is the file or folder ID.
+  *   `mimeType` (*type:* `String.t`, *default:* `nil`) - The MIME type of the target.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the target. For example, in Google Drive, this is the title of the file.
   """
 
   use GoogleApi.Gax.ModelBase

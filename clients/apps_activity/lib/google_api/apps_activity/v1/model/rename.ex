@@ -21,8 +21,8 @@ defmodule GoogleApi.AppsActivity.V1.Model.Rename do
 
   ## Attributes
 
-  - newTitle (String.t): The new title. Defaults to `nil`.
-  - oldTitle (String.t): The old title. Defaults to `nil`.
+  *   `newTitle` (*type:* `String.t`, *default:* `nil`) - The new title.
+  *   `oldTitle` (*type:* `String.t`, *default:* `nil`) - The old title.
   """
 
   use GoogleApi.Gax.ModelBase

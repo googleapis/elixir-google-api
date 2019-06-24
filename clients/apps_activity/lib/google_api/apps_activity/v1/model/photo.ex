@@ -21,7 +21,7 @@ defmodule GoogleApi.AppsActivity.V1.Model.Photo do
 
   ## Attributes
 
-  - url (String.t): The URL of the photo. Defaults to `nil`.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - The URL of the photo.
   """
 
   use GoogleApi.Gax.ModelBase
