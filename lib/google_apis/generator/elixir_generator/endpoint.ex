@@ -181,7 +181,7 @@ defmodule GoogleApis.Generator.ElixirGenerator.Endpoint do
         _ -> ", " <> param_specs
       end
 
-    "#{name}(Tesla.Env.client()#{param_specs}, keyword()) :: {:ok, #{ret.typespec}} | {:error, Tesla.Env.t()}"
+    "#{name}(Tesla.Env.client()#{param_specs}, keyword(), keyword()) :: {:ok, #{ret.typespec}} | {:error, Tesla.Env.t()}"
   end
 
   defp return_type(%{response: nil}, _context), do: Type.empty()

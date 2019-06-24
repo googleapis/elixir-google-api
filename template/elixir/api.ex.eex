@@ -17,7 +17,7 @@
 
 defmodule <%= namespace %>.Api.<%= api.name %> do
   @moduledoc """
-  <%= api.description %>
+  <%= indent_subsequent(api.description, 2) %>
   """
 
   alias <%= namespace %>.Connection
@@ -25,20 +25,20 @@ defmodule <%= namespace %>.Api.<%= api.name %> do
 
   <%= for endpoint <- api.endpoints do %>
   @doc """
-  <%= endpoint.description %>
+  <%= indent_subsequent(endpoint.description, 2) %>
 
   ## Parameters
 
-  - connection (<%= namespace %>.Connection): Connection to server
-  <%= for parameter <- endpoint.required_parameters do %>- <%= parameter.variable_name %> (<%= parameter.type.typespec %>): <%= parameter.description %>
-  <% end %>- optional_params (keyword()): [optional] Optional parameters<%= for parameter <- global_optional_parameters do %>
-    - :<%= parameter.name %> (<%= parameter.type.typespec %>): <%= parameter.description %><% end %><%= for parameter <- endpoint.optional_parameters do %>
-    - :<%= parameter.name %> (<%= parameter.type.typespec %>): <%= parameter.description %><% end %>
+  *   `connection` (*type:* `<%= namespace %>.Connection.t`) - Connection to server<%= for parameter <- endpoint.required_parameters do %>
+  *   `<%= parameter.variable_name %>` (*type:* `<%= parameter.type.typespec %>`) - <%= indent_subsequent(parameter.description, 6) %><% end %>
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters<%= for parameter <- global_optional_parameters ++ endpoint.optional_parameters do %>
+      *   `:<%= parameter.name %>` (*type:* `<%= parameter.type.typespec %>`) - <%= indent_subsequent(parameter.description, 10) %><% end %>
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %<%= endpoint.return.struct %>{}} on success
-  {:error, info} on failure
+  *   `{:ok, %<%= endpoint.return.struct %>{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec <%= endpoint.typespec %>
   def <%= endpoint.name %>(connection, <%= for parameter <- endpoint.required_parameters do %><%= parameter.variable_name %>, <% end %>optional_params \\ [], opts \\ []) do

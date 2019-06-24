@@ -103,7 +103,7 @@ defmodule GoogleApis.Generator.ElixirGenerator.Parameter do
   def from_json_schema(name, schema, context) do
     variable_name =
       name
-      |> Macro.underscore
+      |> Macro.underscore()
       |> String.replace("-", "_")
 
     %__MODULE__{
