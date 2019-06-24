@@ -21,12 +21,12 @@ defmodule GoogleApi.BigQuery.V2.Model.Argument do
 
   ## Attributes
 
-  - argumentKind (String.t): Optional. Defaults to FIXED_TYPE. Defaults to `nil`.
-  - dataType (GoogleApi.BigQuery.V2.Model.StandardSqlDataType.t): Required unless argument_kind = ANY_TYPE. Defaults to `nil`.
-  - mode (String.t): Optional. Specifies whether the argument is input or output.
-  Can be set for procedures only. Defaults to `nil`.
-  - name (String.t): Optional. The name of this argument. Can be absent for function return
-  argument. Defaults to `nil`.
+  *   `argumentKind` (*type:* `String.t`, *default:* `nil`) - Optional. Defaults to FIXED_TYPE.
+  *   `dataType` (*type:* `GoogleApi.BigQuery.V2.Model.StandardSqlDataType.t`, *default:* `nil`) - Required unless argument_kind = ANY_TYPE.
+  *   `mode` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies whether the argument is input or output.
+      Can be set for procedures only.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. The name of this argument. Can be absent for function return
+      argument.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -28,25 +28,26 @@ defmodule GoogleApi.BigQuery.V2.Api.Datasets do
 
   ## Parameters
 
-  - connection (GoogleApi.BigQuery.V2.Connection): Connection to server
-  - project_id (String.t): Project ID of the dataset being deleted
-  - dataset_id (String.t): Dataset ID of dataset being deleted
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :deleteContents (boolean()): If True, delete all the tables in the dataset. If False and the dataset contains tables, the request will fail. Default is False
+  *   `connection` (*type:* `GoogleApi.BigQuery.V2.Connection.t`) - Connection to server
+  *   `project_id` (*type:* `String.t`) - Project ID of the dataset being deleted
+  *   `dataset_id` (*type:* `String.t`) - Dataset ID of dataset being deleted
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:deleteContents` (*type:* `boolean()`) - If True, delete all the tables in the dataset. If False and the dataset contains tables, the request will fail. Default is False
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %{}} on success
-  {:error, info} on failure
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec bigquery_datasets_delete(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+  @spec bigquery_datasets_delete(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
   def bigquery_datasets_delete(
         connection,
@@ -85,24 +86,25 @@ defmodule GoogleApi.BigQuery.V2.Api.Datasets do
 
   ## Parameters
 
-  - connection (GoogleApi.BigQuery.V2.Connection): Connection to server
-  - project_id (String.t): Project ID of the requested dataset
-  - dataset_id (String.t): Dataset ID of the requested dataset
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.BigQuery.V2.Connection.t`) - Connection to server
+  *   `project_id` (*type:* `String.t`) - Project ID of the requested dataset
+  *   `dataset_id` (*type:* `String.t`) - Dataset ID of the requested dataset
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.BigQuery.V2.Model.Dataset{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.BigQuery.V2.Model.Dataset{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec bigquery_datasets_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+  @spec bigquery_datasets_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.BigQuery.V2.Model.Dataset.t()} | {:error, Tesla.Env.t()}
   def bigquery_datasets_get(connection, project_id, dataset_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -134,24 +136,25 @@ defmodule GoogleApi.BigQuery.V2.Api.Datasets do
 
   ## Parameters
 
-  - connection (GoogleApi.BigQuery.V2.Connection): Connection to server
-  - project_id (String.t): Project ID of the new dataset
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.BigQuery.V2.Model.Dataset.t): 
+  *   `connection` (*type:* `GoogleApi.BigQuery.V2.Connection.t`) - Connection to server
+  *   `project_id` (*type:* `String.t`) - Project ID of the new dataset
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.BigQuery.V2.Model.Dataset.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.BigQuery.V2.Model.Dataset{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.BigQuery.V2.Model.Dataset{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec bigquery_datasets_insert(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec bigquery_datasets_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.BigQuery.V2.Model.Dataset.t()} | {:error, Tesla.Env.t()}
   def bigquery_datasets_insert(connection, project_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -183,27 +186,28 @@ defmodule GoogleApi.BigQuery.V2.Api.Datasets do
 
   ## Parameters
 
-  - connection (GoogleApi.BigQuery.V2.Connection): Connection to server
-  - project_id (String.t): Project ID of the datasets to be listed
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :all (boolean()): Whether to list all datasets, including hidden ones
-    - :filter (String.t): An expression for filtering the results of the request by label. The syntax is "labels.<name>[:<value>]". Multiple filters can be ANDed together by connecting with a space. Example: "labels.department:receiving labels.active". See Filtering datasets using labels for details.
-    - :maxResults (integer()): The maximum number of results to return
-    - :pageToken (String.t): Page token, returned by a previous call, to request the next page of results
+  *   `connection` (*type:* `GoogleApi.BigQuery.V2.Connection.t`) - Connection to server
+  *   `project_id` (*type:* `String.t`) - Project ID of the datasets to be listed
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:all` (*type:* `boolean()`) - Whether to list all datasets, including hidden ones
+      *   `:filter` (*type:* `String.t`) - An expression for filtering the results of the request by label. The syntax is "labels.<name>[:<value>]". Multiple filters can be ANDed together by connecting with a space. Example: "labels.department:receiving labels.active". See Filtering datasets using labels for details.
+      *   `:maxResults` (*type:* `integer()`) - The maximum number of results to return
+      *   `:pageToken` (*type:* `String.t`) - Page token, returned by a previous call, to request the next page of results
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.BigQuery.V2.Model.DatasetList{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.BigQuery.V2.Model.DatasetList{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec bigquery_datasets_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec bigquery_datasets_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.BigQuery.V2.Model.DatasetList.t()} | {:error, Tesla.Env.t()}
   def bigquery_datasets_list(connection, project_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -238,25 +242,26 @@ defmodule GoogleApi.BigQuery.V2.Api.Datasets do
 
   ## Parameters
 
-  - connection (GoogleApi.BigQuery.V2.Connection): Connection to server
-  - project_id (String.t): Project ID of the dataset being updated
-  - dataset_id (String.t): Dataset ID of the dataset being updated
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.BigQuery.V2.Model.Dataset.t): 
+  *   `connection` (*type:* `GoogleApi.BigQuery.V2.Connection.t`) - Connection to server
+  *   `project_id` (*type:* `String.t`) - Project ID of the dataset being updated
+  *   `dataset_id` (*type:* `String.t`) - Dataset ID of the dataset being updated
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.BigQuery.V2.Model.Dataset.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.BigQuery.V2.Model.Dataset{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.BigQuery.V2.Model.Dataset{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec bigquery_datasets_patch(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+  @spec bigquery_datasets_patch(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.BigQuery.V2.Model.Dataset.t()} | {:error, Tesla.Env.t()}
   def bigquery_datasets_patch(
         connection,
@@ -295,25 +300,26 @@ defmodule GoogleApi.BigQuery.V2.Api.Datasets do
 
   ## Parameters
 
-  - connection (GoogleApi.BigQuery.V2.Connection): Connection to server
-  - project_id (String.t): Project ID of the dataset being updated
-  - dataset_id (String.t): Dataset ID of the dataset being updated
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.BigQuery.V2.Model.Dataset.t): 
+  *   `connection` (*type:* `GoogleApi.BigQuery.V2.Connection.t`) - Connection to server
+  *   `project_id` (*type:* `String.t`) - Project ID of the dataset being updated
+  *   `dataset_id` (*type:* `String.t`) - Dataset ID of the dataset being updated
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.BigQuery.V2.Model.Dataset.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.BigQuery.V2.Model.Dataset{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.BigQuery.V2.Model.Dataset{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec bigquery_datasets_update(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+  @spec bigquery_datasets_update(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.BigQuery.V2.Model.Dataset.t()} | {:error, Tesla.Env.t()}
   def bigquery_datasets_update(
         connection,

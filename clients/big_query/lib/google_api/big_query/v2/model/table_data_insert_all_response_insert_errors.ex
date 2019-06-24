@@ -21,8 +21,8 @@ defmodule GoogleApi.BigQuery.V2.Model.TableDataInsertAllResponseInsertErrors do
 
   ## Attributes
 
-  - errors (list(GoogleApi.BigQuery.V2.Model.ErrorProto.t)): Error information for the row indicated by the index property. Defaults to `nil`.
-  - index (integer()): The index of the row that error applies to. Defaults to `nil`.
+  *   `errors` (*type:* `list(GoogleApi.BigQuery.V2.Model.ErrorProto.t)`, *default:* `nil`) - Error information for the row indicated by the index property.
+  *   `index` (*type:* `integer()`, *default:* `nil`) - The index of the row that error applies to.
   """
 
   use GoogleApi.Gax.ModelBase

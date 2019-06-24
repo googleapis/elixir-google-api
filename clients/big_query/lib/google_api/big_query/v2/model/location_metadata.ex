@@ -23,8 +23,8 @@ defmodule GoogleApi.BigQuery.V2.Model.LocationMetadata do
 
   ## Attributes
 
-  - legacyLocationId (String.t): The legacy BigQuery location ID, e.g. “EU” for the “europe” location.
-  This is for any API consumers that need the legacy “US” and “EU” locations. Defaults to `nil`.
+  *   `legacyLocationId` (*type:* `String.t`, *default:* `nil`) - The legacy BigQuery location ID, e.g. “EU” for the “europe” location.
+      This is for any API consumers that need the legacy “US” and “EU” locations.
   """
 
   use GoogleApi.Gax.ModelBase

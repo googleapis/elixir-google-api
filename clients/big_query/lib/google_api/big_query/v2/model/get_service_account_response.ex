@@ -21,8 +21,8 @@ defmodule GoogleApi.BigQuery.V2.Model.GetServiceAccountResponse do
 
   ## Attributes
 
-  - email (String.t): The service account email address. Defaults to `nil`.
-  - kind (String.t): The resource type of the response. Defaults to `bigquery#getServiceAccountResponse`.
+  *   `email` (*type:* `String.t`, *default:* `nil`) - The service account email address.
+  *   `kind` (*type:* `String.t`, *default:* `bigquery#getServiceAccountResponse`) - The resource type of the response.
   """
 
   use GoogleApi.Gax.ModelBase

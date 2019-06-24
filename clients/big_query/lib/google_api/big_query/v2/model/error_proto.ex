@@ -21,10 +21,10 @@ defmodule GoogleApi.BigQuery.V2.Model.ErrorProto do
 
   ## Attributes
 
-  - debugInfo (String.t): Debugging information. This property is internal to Google and should not be used. Defaults to `nil`.
-  - location (String.t): Specifies where the error occurred, if present. Defaults to `nil`.
-  - message (String.t): A human-readable description of the error. Defaults to `nil`.
-  - reason (String.t): A short error code that summarizes the error. Defaults to `nil`.
+  *   `debugInfo` (*type:* `String.t`, *default:* `nil`) - Debugging information. This property is internal to Google and should not be used.
+  *   `location` (*type:* `String.t`, *default:* `nil`) - Specifies where the error occurred, if present.
+  *   `message` (*type:* `String.t`, *default:* `nil`) - A human-readable description of the error.
+  *   `reason` (*type:* `String.t`, *default:* `nil`) - A short error code that summarizes the error.
   """
 
   use GoogleApi.Gax.ModelBase

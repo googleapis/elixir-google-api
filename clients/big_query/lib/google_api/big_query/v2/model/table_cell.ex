@@ -21,7 +21,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TableCell do
 
   ## Attributes
 
-  - v (any()):  Defaults to `nil`.
+  *   `v` (*type:* `any()`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

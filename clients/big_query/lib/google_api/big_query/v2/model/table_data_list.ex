@@ -21,11 +21,11 @@ defmodule GoogleApi.BigQuery.V2.Model.TableDataList do
 
   ## Attributes
 
-  - etag (String.t): A hash of this page of results. Defaults to `nil`.
-  - kind (String.t): The resource type of the response. Defaults to `bigquery#tableDataList`.
-  - pageToken (String.t): A token used for paging results. Providing this token instead of the startIndex parameter can help you retrieve stable results when an underlying table is changing. Defaults to `nil`.
-  - rows (list(GoogleApi.BigQuery.V2.Model.TableRow.t)): Rows of results. Defaults to `nil`.
-  - totalRows (String.t): The total number of rows in the complete table. Defaults to `nil`.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - A hash of this page of results.
+  *   `kind` (*type:* `String.t`, *default:* `bigquery#tableDataList`) - The resource type of the response.
+  *   `pageToken` (*type:* `String.t`, *default:* `nil`) - A token used for paging results. Providing this token instead of the startIndex parameter can help you retrieve stable results when an underlying table is changing.
+  *   `rows` (*type:* `list(GoogleApi.BigQuery.V2.Model.TableRow.t)`, *default:* `nil`) - Rows of results.
+  *   `totalRows` (*type:* `String.t`, *default:* `nil`) - The total number of rows in the complete table.
   """
 
   use GoogleApi.Gax.ModelBase

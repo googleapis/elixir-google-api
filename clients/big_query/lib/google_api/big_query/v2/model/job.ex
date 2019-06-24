@@ -21,15 +21,15 @@ defmodule GoogleApi.BigQuery.V2.Model.Job do
 
   ## Attributes
 
-  - configuration (GoogleApi.BigQuery.V2.Model.JobConfiguration.t): [Required] Describes the job configuration. Defaults to `nil`.
-  - etag (String.t): [Output-only] A hash of this resource. Defaults to `nil`.
-  - id (String.t): [Output-only] Opaque ID field of the job Defaults to `nil`.
-  - jobReference (GoogleApi.BigQuery.V2.Model.JobReference.t): [Optional] Reference describing the unique-per-user name of the job. Defaults to `nil`.
-  - kind (String.t): [Output-only] The type of the resource. Defaults to `bigquery#job`.
-  - selfLink (String.t): [Output-only] A URL that can be used to access this resource again. Defaults to `nil`.
-  - statistics (GoogleApi.BigQuery.V2.Model.JobStatistics.t): [Output-only] Information about the job, including starting time and ending time of the job. Defaults to `nil`.
-  - status (GoogleApi.BigQuery.V2.Model.JobStatus.t): [Output-only] The status of this job. Examine this value when polling an asynchronous job to see if the job is complete. Defaults to `nil`.
-  - user_email (String.t): [Output-only] Email address of the user who ran the job. Defaults to `nil`.
+  *   `configuration` (*type:* `GoogleApi.BigQuery.V2.Model.JobConfiguration.t`, *default:* `nil`) - [Required] Describes the job configuration.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - [Output-only] A hash of this resource.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - [Output-only] Opaque ID field of the job
+  *   `jobReference` (*type:* `GoogleApi.BigQuery.V2.Model.JobReference.t`, *default:* `nil`) - [Optional] Reference describing the unique-per-user name of the job.
+  *   `kind` (*type:* `String.t`, *default:* `bigquery#job`) - [Output-only] The type of the resource.
+  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output-only] A URL that can be used to access this resource again.
+  *   `statistics` (*type:* `GoogleApi.BigQuery.V2.Model.JobStatistics.t`, *default:* `nil`) - [Output-only] Information about the job, including starting time and ending time of the job.
+  *   `status` (*type:* `GoogleApi.BigQuery.V2.Model.JobStatus.t`, *default:* `nil`) - [Output-only] The status of this job. Examine this value when polling an asynchronous job to see if the job is complete.
+  *   `user_email` (*type:* `String.t`, *default:* `nil`) - [Output-only] Email address of the user who ran the job.
   """
 
   use GoogleApi.Gax.ModelBase

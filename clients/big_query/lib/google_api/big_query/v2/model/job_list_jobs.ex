@@ -21,15 +21,15 @@ defmodule GoogleApi.BigQuery.V2.Model.JobListJobs do
 
   ## Attributes
 
-  - configuration (GoogleApi.BigQuery.V2.Model.JobConfiguration.t): [Full-projection-only] Specifies the job configuration. Defaults to `nil`.
-  - errorResult (GoogleApi.BigQuery.V2.Model.ErrorProto.t): A result object that will be present only if the job has failed. Defaults to `nil`.
-  - id (String.t): Unique opaque ID of the job. Defaults to `nil`.
-  - jobReference (GoogleApi.BigQuery.V2.Model.JobReference.t): Job reference uniquely identifying the job. Defaults to `nil`.
-  - kind (String.t): The resource type. Defaults to `bigquery#job`.
-  - state (String.t): Running state of the job. When the state is DONE, errorResult can be checked to determine whether the job succeeded or failed. Defaults to `nil`.
-  - statistics (GoogleApi.BigQuery.V2.Model.JobStatistics.t): [Output-only] Information about the job, including starting time and ending time of the job. Defaults to `nil`.
-  - status (GoogleApi.BigQuery.V2.Model.JobStatus.t): [Full-projection-only] Describes the state of the job. Defaults to `nil`.
-  - user_email (String.t): [Full-projection-only] Email address of the user who ran the job. Defaults to `nil`.
+  *   `configuration` (*type:* `GoogleApi.BigQuery.V2.Model.JobConfiguration.t`, *default:* `nil`) - [Full-projection-only] Specifies the job configuration.
+  *   `errorResult` (*type:* `GoogleApi.BigQuery.V2.Model.ErrorProto.t`, *default:* `nil`) - A result object that will be present only if the job has failed.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Unique opaque ID of the job.
+  *   `jobReference` (*type:* `GoogleApi.BigQuery.V2.Model.JobReference.t`, *default:* `nil`) - Job reference uniquely identifying the job.
+  *   `kind` (*type:* `String.t`, *default:* `bigquery#job`) - The resource type.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - Running state of the job. When the state is DONE, errorResult can be checked to determine whether the job succeeded or failed.
+  *   `statistics` (*type:* `GoogleApi.BigQuery.V2.Model.JobStatistics.t`, *default:* `nil`) - [Output-only] Information about the job, including starting time and ending time of the job.
+  *   `status` (*type:* `GoogleApi.BigQuery.V2.Model.JobStatus.t`, *default:* `nil`) - [Full-projection-only] Describes the state of the job.
+  *   `user_email` (*type:* `String.t`, *default:* `nil`) - [Full-projection-only] Email address of the user who ran the job.
   """
 
   use GoogleApi.Gax.ModelBase

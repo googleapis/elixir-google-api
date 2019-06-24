@@ -21,9 +21,9 @@ defmodule GoogleApi.BigQuery.V2.Model.RangePartitioningRange do
 
   ## Attributes
 
-  - end (String.t): [TrustedTester] [Required] The end of range partitioning, exclusive. Defaults to `nil`.
-  - interval (String.t): [TrustedTester] [Required] The width of each interval. Defaults to `nil`.
-  - start (String.t): [TrustedTester] [Required] The start of range partitioning, inclusive. Defaults to `nil`.
+  *   `end` (*type:* `String.t`, *default:* `nil`) - [TrustedTester] [Required] The end of range partitioning, exclusive.
+  *   `interval` (*type:* `String.t`, *default:* `nil`) - [TrustedTester] [Required] The width of each interval.
+  *   `start` (*type:* `String.t`, *default:* `nil`) - [TrustedTester] [Required] The start of range partitioning, inclusive.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,19 +21,19 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics do
 
   ## Attributes
 
-  - completionRatio (float()): [TrustedTester] [Output-only] Job progress (0.0 -> 1.0) for LOAD and EXTRACT jobs. Defaults to `nil`.
-  - creationTime (String.t): [Output-only] Creation time of this job, in milliseconds since the epoch. This field will be present on all jobs. Defaults to `nil`.
-  - endTime (String.t): [Output-only] End time of this job, in milliseconds since the epoch. This field will be present whenever a job is in the DONE state. Defaults to `nil`.
-  - extract (GoogleApi.BigQuery.V2.Model.JobStatistics4.t): [Output-only] Statistics for an extract job. Defaults to `nil`.
-  - load (GoogleApi.BigQuery.V2.Model.JobStatistics3.t): [Output-only] Statistics for a load job. Defaults to `nil`.
-  - numChildJobs (String.t): [Output-only] Number of child jobs executed. Defaults to `nil`.
-  - parentJobId (String.t): [Output-only] If this is a child job, the id of the parent. Defaults to `nil`.
-  - query (GoogleApi.BigQuery.V2.Model.JobStatistics2.t): [Output-only] Statistics for a query job. Defaults to `nil`.
-  - quotaDeferments (list(String.t)): [Output-only] Quotas which delayed this job's start time. Defaults to `nil`.
-  - reservationUsage (list(GoogleApi.BigQuery.V2.Model.JobStatisticsReservationUsage.t)): [Output-only] Job resource usage breakdown by reservation. Defaults to `nil`.
-  - startTime (String.t): [Output-only] Start time of this job, in milliseconds since the epoch. This field will be present when the job transitions from the PENDING state to either RUNNING or DONE. Defaults to `nil`.
-  - totalBytesProcessed (String.t): [Output-only] [Deprecated] Use the bytes processed in the query statistics instead. Defaults to `nil`.
-  - totalSlotMs (String.t): [Output-only] Slot-milliseconds for the job. Defaults to `nil`.
+  *   `completionRatio` (*type:* `float()`, *default:* `nil`) - [TrustedTester] [Output-only] Job progress (0.0 -> 1.0) for LOAD and EXTRACT jobs.
+  *   `creationTime` (*type:* `String.t`, *default:* `nil`) - [Output-only] Creation time of this job, in milliseconds since the epoch. This field will be present on all jobs.
+  *   `endTime` (*type:* `String.t`, *default:* `nil`) - [Output-only] End time of this job, in milliseconds since the epoch. This field will be present whenever a job is in the DONE state.
+  *   `extract` (*type:* `GoogleApi.BigQuery.V2.Model.JobStatistics4.t`, *default:* `nil`) - [Output-only] Statistics for an extract job.
+  *   `load` (*type:* `GoogleApi.BigQuery.V2.Model.JobStatistics3.t`, *default:* `nil`) - [Output-only] Statistics for a load job.
+  *   `numChildJobs` (*type:* `String.t`, *default:* `nil`) - [Output-only] Number of child jobs executed.
+  *   `parentJobId` (*type:* `String.t`, *default:* `nil`) - [Output-only] If this is a child job, the id of the parent.
+  *   `query` (*type:* `GoogleApi.BigQuery.V2.Model.JobStatistics2.t`, *default:* `nil`) - [Output-only] Statistics for a query job.
+  *   `quotaDeferments` (*type:* `list(String.t)`, *default:* `nil`) - [Output-only] Quotas which delayed this job's start time.
+  *   `reservationUsage` (*type:* `list(GoogleApi.BigQuery.V2.Model.JobStatisticsReservationUsage.t)`, *default:* `nil`) - [Output-only] Job resource usage breakdown by reservation.
+  *   `startTime` (*type:* `String.t`, *default:* `nil`) - [Output-only] Start time of this job, in milliseconds since the epoch. This field will be present when the job transitions from the PENDING state to either RUNNING or DONE.
+  *   `totalBytesProcessed` (*type:* `String.t`, *default:* `nil`) - [Output-only] [Deprecated] Use the bytes processed in the query statistics instead.
+  *   `totalSlotMs` (*type:* `String.t`, *default:* `nil`) - [Output-only] Slot-milliseconds for the job.
   """
 
   use GoogleApi.Gax.ModelBase

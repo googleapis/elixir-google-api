@@ -21,11 +21,11 @@ defmodule GoogleApi.BigQuery.V2.Model.ProjectListProjects do
 
   ## Attributes
 
-  - friendlyName (String.t): A descriptive name for this project. Defaults to `nil`.
-  - id (String.t): An opaque ID of this project. Defaults to `nil`.
-  - kind (String.t): The resource type. Defaults to `bigquery#project`.
-  - numericId (String.t): The numeric ID of this project. Defaults to `nil`.
-  - projectReference (GoogleApi.BigQuery.V2.Model.ProjectReference.t): A unique reference to this project. Defaults to `nil`.
+  *   `friendlyName` (*type:* `String.t`, *default:* `nil`) - A descriptive name for this project.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - An opaque ID of this project.
+  *   `kind` (*type:* `String.t`, *default:* `bigquery#project`) - The resource type.
+  *   `numericId` (*type:* `String.t`, *default:* `nil`) - The numeric ID of this project.
+  *   `projectReference` (*type:* `GoogleApi.BigQuery.V2.Model.ProjectReference.t`, *default:* `nil`) - A unique reference to this project.
   """
 
   use GoogleApi.Gax.ModelBase

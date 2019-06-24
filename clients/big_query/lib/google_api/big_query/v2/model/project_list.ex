@@ -21,11 +21,11 @@ defmodule GoogleApi.BigQuery.V2.Model.ProjectList do
 
   ## Attributes
 
-  - etag (String.t): A hash of the page of results Defaults to `nil`.
-  - kind (String.t): The type of list. Defaults to `bigquery#projectList`.
-  - nextPageToken (String.t): A token to request the next page of results. Defaults to `nil`.
-  - projects (list(GoogleApi.BigQuery.V2.Model.ProjectListProjects.t)): Projects to which you have at least READ access. Defaults to `nil`.
-  - totalItems (integer()): The total number of projects in the list. Defaults to `nil`.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - A hash of the page of results
+  *   `kind` (*type:* `String.t`, *default:* `bigquery#projectList`) - The type of list.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to request the next page of results.
+  *   `projects` (*type:* `list(GoogleApi.BigQuery.V2.Model.ProjectListProjects.t)`, *default:* `nil`) - Projects to which you have at least READ access.
+  *   `totalItems` (*type:* `integer()`, *default:* `nil`) - The total number of projects in the list.
   """
 
   use GoogleApi.Gax.ModelBase

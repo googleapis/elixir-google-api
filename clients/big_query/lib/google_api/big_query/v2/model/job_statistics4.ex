@@ -21,8 +21,8 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics4 do
 
   ## Attributes
 
-  - destinationUriFileCounts (list(String.t)): [Output-only] Number of files per destination URI or URI pattern specified in the extract configuration. These values will be in the same order as the URIs specified in the 'destinationUris' field. Defaults to `nil`.
-  - inputBytes (String.t): [Output-only] Number of user bytes extracted into the result. This is the byte count as computed by BigQuery for billing purposes. Defaults to `nil`.
+  *   `destinationUriFileCounts` (*type:* `list(String.t)`, *default:* `nil`) - [Output-only] Number of files per destination URI or URI pattern specified in the extract configuration. These values will be in the same order as the URIs specified in the 'destinationUris' field.
+  *   `inputBytes` (*type:* `String.t`, *default:* `nil`) - [Output-only] Number of user bytes extracted into the result. This is the byte count as computed by BigQuery for billing purposes.
   """
 
   use GoogleApi.Gax.ModelBase

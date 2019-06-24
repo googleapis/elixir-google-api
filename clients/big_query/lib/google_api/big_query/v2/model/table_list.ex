@@ -21,11 +21,11 @@ defmodule GoogleApi.BigQuery.V2.Model.TableList do
 
   ## Attributes
 
-  - etag (String.t): A hash of this page of results. Defaults to `nil`.
-  - kind (String.t): The type of list. Defaults to `bigquery#tableList`.
-  - nextPageToken (String.t): A token to request the next page of results. Defaults to `nil`.
-  - tables (list(GoogleApi.BigQuery.V2.Model.TableListTables.t)): Tables in the requested dataset. Defaults to `nil`.
-  - totalItems (integer()): The total number of tables in the dataset. Defaults to `nil`.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - A hash of this page of results.
+  *   `kind` (*type:* `String.t`, *default:* `bigquery#tableList`) - The type of list.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to request the next page of results.
+  *   `tables` (*type:* `list(GoogleApi.BigQuery.V2.Model.TableListTables.t)`, *default:* `nil`) - Tables in the requested dataset.
+  *   `totalItems` (*type:* `integer()`, *default:* `nil`) - The total number of tables in the dataset.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -23,10 +23,10 @@ defmodule GoogleApi.BigQuery.V2.Model.EvaluationMetrics do
 
   ## Attributes
 
-  - binaryClassificationMetrics (GoogleApi.BigQuery.V2.Model.BinaryClassificationMetrics.t): Populated for binary classification/classifier models. Defaults to `nil`.
-  - clusteringMetrics (GoogleApi.BigQuery.V2.Model.ClusteringMetrics.t): [Beta] Populated for clustering models. Defaults to `nil`.
-  - multiClassClassificationMetrics (GoogleApi.BigQuery.V2.Model.MultiClassClassificationMetrics.t): Populated for multi-class classification/classifier models. Defaults to `nil`.
-  - regressionMetrics (GoogleApi.BigQuery.V2.Model.RegressionMetrics.t): Populated for regression models. Defaults to `nil`.
+  *   `binaryClassificationMetrics` (*type:* `GoogleApi.BigQuery.V2.Model.BinaryClassificationMetrics.t`, *default:* `nil`) - Populated for binary classification/classifier models.
+  *   `clusteringMetrics` (*type:* `GoogleApi.BigQuery.V2.Model.ClusteringMetrics.t`, *default:* `nil`) - [Beta] Populated for clustering models.
+  *   `multiClassClassificationMetrics` (*type:* `GoogleApi.BigQuery.V2.Model.MultiClassClassificationMetrics.t`, *default:* `nil`) - Populated for multi-class classification/classifier models.
+  *   `regressionMetrics` (*type:* `GoogleApi.BigQuery.V2.Model.RegressionMetrics.t`, *default:* `nil`) - Populated for regression models.
   """
 
   use GoogleApi.Gax.ModelBase

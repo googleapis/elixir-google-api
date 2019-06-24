@@ -21,8 +21,8 @@ defmodule GoogleApi.BigQuery.V2.Model.Row do
 
   ## Attributes
 
-  - actualLabel (String.t): The original label of this row. Defaults to `nil`.
-  - entries (list(GoogleApi.BigQuery.V2.Model.Entry.t)): Info describing predicted label distribution. Defaults to `nil`.
+  *   `actualLabel` (*type:* `String.t`, *default:* `nil`) - The original label of this row.
+  *   `entries` (*type:* `list(GoogleApi.BigQuery.V2.Model.Entry.t)`, *default:* `nil`) - Info describing predicted label distribution.
   """
 
   use GoogleApi.Gax.ModelBase

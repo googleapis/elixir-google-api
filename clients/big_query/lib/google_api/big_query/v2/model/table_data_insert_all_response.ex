@@ -21,8 +21,8 @@ defmodule GoogleApi.BigQuery.V2.Model.TableDataInsertAllResponse do
 
   ## Attributes
 
-  - insertErrors (list(GoogleApi.BigQuery.V2.Model.TableDataInsertAllResponseInsertErrors.t)): An array of errors for rows that were not inserted. Defaults to `nil`.
-  - kind (String.t): The resource type of the response. Defaults to `bigquery#tableDataInsertAllResponse`.
+  *   `insertErrors` (*type:* `list(GoogleApi.BigQuery.V2.Model.TableDataInsertAllResponseInsertErrors.t)`, *default:* `nil`) - An array of errors for rows that were not inserted.
+  *   `kind` (*type:* `String.t`, *default:* `bigquery#tableDataInsertAllResponse`) - The resource type of the response.
   """
 
   use GoogleApi.Gax.ModelBase

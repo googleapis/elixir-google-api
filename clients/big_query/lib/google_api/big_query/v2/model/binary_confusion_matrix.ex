@@ -21,17 +21,17 @@ defmodule GoogleApi.BigQuery.V2.Model.BinaryConfusionMatrix do
 
   ## Attributes
 
-  - accuracy (float()): The fraction of predictions given the correct label. Defaults to `nil`.
-  - f1Score (float()): The equally weighted average of recall and precision. Defaults to `nil`.
-  - falseNegatives (String.t): Number of false samples predicted as false. Defaults to `nil`.
-  - falsePositives (String.t): Number of false samples predicted as true. Defaults to `nil`.
-  - positiveClassThreshold (float()): Threshold value used when computing each of the following metric. Defaults to `nil`.
-  - precision (float()): The fraction of actual positive predictions that had positive actual
-  labels. Defaults to `nil`.
-  - recall (float()): The fraction of actual positive labels that were given a positive
-  prediction. Defaults to `nil`.
-  - trueNegatives (String.t): Number of true samples predicted as false. Defaults to `nil`.
-  - truePositives (String.t): Number of true samples predicted as true. Defaults to `nil`.
+  *   `accuracy` (*type:* `float()`, *default:* `nil`) - The fraction of predictions given the correct label.
+  *   `f1Score` (*type:* `float()`, *default:* `nil`) - The equally weighted average of recall and precision.
+  *   `falseNegatives` (*type:* `String.t`, *default:* `nil`) - Number of false samples predicted as false.
+  *   `falsePositives` (*type:* `String.t`, *default:* `nil`) - Number of false samples predicted as true.
+  *   `positiveClassThreshold` (*type:* `float()`, *default:* `nil`) - Threshold value used when computing each of the following metric.
+  *   `precision` (*type:* `float()`, *default:* `nil`) - The fraction of actual positive predictions that had positive actual
+      labels.
+  *   `recall` (*type:* `float()`, *default:* `nil`) - The fraction of actual positive labels that were given a positive
+      prediction.
+  *   `trueNegatives` (*type:* `String.t`, *default:* `nil`) - Number of true samples predicted as false.
+  *   `truePositives` (*type:* `String.t`, *default:* `nil`) - Number of true samples predicted as true.
   """
 
   use GoogleApi.Gax.ModelBase

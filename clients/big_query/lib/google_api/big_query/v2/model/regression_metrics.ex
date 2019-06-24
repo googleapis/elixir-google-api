@@ -21,11 +21,11 @@ defmodule GoogleApi.BigQuery.V2.Model.RegressionMetrics do
 
   ## Attributes
 
-  - meanAbsoluteError (float()): Mean absolute error. Defaults to `nil`.
-  - meanSquaredError (float()): Mean squared error. Defaults to `nil`.
-  - meanSquaredLogError (float()): Mean squared log error. Defaults to `nil`.
-  - medianAbsoluteError (float()): Median absolute error. Defaults to `nil`.
-  - rSquared (float()): R^2 score. Defaults to `nil`.
+  *   `meanAbsoluteError` (*type:* `float()`, *default:* `nil`) - Mean absolute error.
+  *   `meanSquaredError` (*type:* `float()`, *default:* `nil`) - Mean squared error.
+  *   `meanSquaredLogError` (*type:* `float()`, *default:* `nil`) - Mean squared log error.
+  *   `medianAbsoluteError` (*type:* `float()`, *default:* `nil`) - Median absolute error.
+  *   `rSquared` (*type:* `float()`, *default:* `nil`) - R^2 score.
   """
 
   use GoogleApi.Gax.ModelBase

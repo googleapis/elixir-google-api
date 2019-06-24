@@ -21,12 +21,12 @@ defmodule GoogleApi.BigQuery.V2.Model.TableFieldSchema do
 
   ## Attributes
 
-  - categories (GoogleApi.BigQuery.V2.Model.TableFieldSchemaCategories.t): [Optional] The categories attached to this field, used for field-level access control. Defaults to `nil`.
-  - description (String.t): [Optional] The field description. The maximum length is 1,024 characters. Defaults to `nil`.
-  - fields (list(GoogleApi.BigQuery.V2.Model.TableFieldSchema.t)): [Optional] Describes the nested schema fields if the type property is set to RECORD. Defaults to `nil`.
-  - mode (String.t): [Optional] The field mode. Possible values include NULLABLE, REQUIRED and REPEATED. The default value is NULLABLE. Defaults to `nil`.
-  - name (String.t): [Required] The field name. The name must contain only letters (a-z, A-Z), numbers (0-9), or underscores (_), and must start with a letter or underscore. The maximum length is 128 characters. Defaults to `nil`.
-  - type (String.t): [Required] The field data type. Possible values include STRING, BYTES, INTEGER, INT64 (same as INTEGER), FLOAT, FLOAT64 (same as FLOAT), BOOLEAN, BOOL (same as BOOLEAN), TIMESTAMP, DATE, TIME, DATETIME, RECORD (where RECORD indicates that the field contains a nested schema) or STRUCT (same as RECORD). Defaults to `nil`.
+  *   `categories` (*type:* `GoogleApi.BigQuery.V2.Model.TableFieldSchemaCategories.t`, *default:* `nil`) - [Optional] The categories attached to this field, used for field-level access control.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - [Optional] The field description. The maximum length is 1,024 characters.
+  *   `fields` (*type:* `list(GoogleApi.BigQuery.V2.Model.TableFieldSchema.t)`, *default:* `nil`) - [Optional] Describes the nested schema fields if the type property is set to RECORD.
+  *   `mode` (*type:* `String.t`, *default:* `nil`) - [Optional] The field mode. Possible values include NULLABLE, REQUIRED and REPEATED. The default value is NULLABLE.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - [Required] The field name. The name must contain only letters (a-z, A-Z), numbers (0-9), or underscores (_), and must start with a letter or underscore. The maximum length is 128 characters.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - [Required] The field data type. Possible values include STRING, BYTES, INTEGER, INT64 (same as INTEGER), FLOAT, FLOAT64 (same as FLOAT), BOOLEAN, BOOL (same as BOOLEAN), TIMESTAMP, DATE, TIME, DATETIME, RECORD (where RECORD indicates that the field contains a nested schema) or STRUCT (same as RECORD).
   """
 
   use GoogleApi.Gax.ModelBase

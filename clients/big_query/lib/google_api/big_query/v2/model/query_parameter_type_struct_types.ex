@@ -21,9 +21,9 @@ defmodule GoogleApi.BigQuery.V2.Model.QueryParameterTypeStructTypes do
 
   ## Attributes
 
-  - description (String.t): [Optional] Human-oriented description of the field. Defaults to `nil`.
-  - name (String.t): [Optional] The name of this field. Defaults to `nil`.
-  - type (GoogleApi.BigQuery.V2.Model.QueryParameterType.t): [Required] The type of this field. Defaults to `nil`.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - [Optional] Human-oriented description of the field.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - [Optional] The name of this field.
+  *   `type` (*type:* `GoogleApi.BigQuery.V2.Model.QueryParameterType.t`, *default:* `nil`) - [Required] The type of this field.
   """
 
   use GoogleApi.Gax.ModelBase

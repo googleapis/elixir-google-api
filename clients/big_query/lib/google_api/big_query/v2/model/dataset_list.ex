@@ -21,10 +21,10 @@ defmodule GoogleApi.BigQuery.V2.Model.DatasetList do
 
   ## Attributes
 
-  - datasets (list(GoogleApi.BigQuery.V2.Model.DatasetListDatasets.t)): An array of the dataset resources in the project. Each resource contains basic information. For full information about a particular dataset resource, use the Datasets: get method. This property is omitted when there are no datasets in the project. Defaults to `nil`.
-  - etag (String.t): A hash value of the results page. You can use this property to determine if the page has changed since the last request. Defaults to `nil`.
-  - kind (String.t): The list type. This property always returns the value "bigquery#datasetList". Defaults to `bigquery#datasetList`.
-  - nextPageToken (String.t): A token that can be used to request the next results page. This property is omitted on the final results page. Defaults to `nil`.
+  *   `datasets` (*type:* `list(GoogleApi.BigQuery.V2.Model.DatasetListDatasets.t)`, *default:* `nil`) - An array of the dataset resources in the project. Each resource contains basic information. For full information about a particular dataset resource, use the Datasets: get method. This property is omitted when there are no datasets in the project.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - A hash value of the results page. You can use this property to determine if the page has changed since the last request.
+  *   `kind` (*type:* `String.t`, *default:* `bigquery#datasetList`) - The list type. This property always returns the value "bigquery#datasetList".
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token that can be used to request the next results page. This property is omitted on the final results page.
   """
 
   use GoogleApi.Gax.ModelBase

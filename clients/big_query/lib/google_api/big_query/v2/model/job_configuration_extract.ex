@@ -21,13 +21,13 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfigurationExtract do
 
   ## Attributes
 
-  - compression (String.t): [Optional] The compression type to use for exported files. Possible values include GZIP, DEFLATE, SNAPPY, and NONE. The default value is NONE. DEFLATE and SNAPPY are only supported for Avro. Defaults to `nil`.
-  - destinationFormat (String.t): [Optional] The exported file format. Possible values include CSV, NEWLINE_DELIMITED_JSON and AVRO. The default value is CSV. Tables with nested or repeated fields cannot be exported as CSV. Defaults to `nil`.
-  - destinationUri (String.t): [Pick one] DEPRECATED: Use destinationUris instead, passing only one URI as necessary. The fully-qualified Google Cloud Storage URI where the extracted table should be written. Defaults to `nil`.
-  - destinationUris (list(String.t)): [Pick one] A list of fully-qualified Google Cloud Storage URIs where the extracted table should be written. Defaults to `nil`.
-  - fieldDelimiter (String.t): [Optional] Delimiter to use between fields in the exported data. Default is ',' Defaults to `nil`.
-  - printHeader (boolean()): [Optional] Whether to print out a header row in the results. Default is true. Defaults to `true`.
-  - sourceTable (GoogleApi.BigQuery.V2.Model.TableReference.t): [Required] A reference to the table being exported. Defaults to `nil`.
+  *   `compression` (*type:* `String.t`, *default:* `nil`) - [Optional] The compression type to use for exported files. Possible values include GZIP, DEFLATE, SNAPPY, and NONE. The default value is NONE. DEFLATE and SNAPPY are only supported for Avro.
+  *   `destinationFormat` (*type:* `String.t`, *default:* `nil`) - [Optional] The exported file format. Possible values include CSV, NEWLINE_DELIMITED_JSON and AVRO. The default value is CSV. Tables with nested or repeated fields cannot be exported as CSV.
+  *   `destinationUri` (*type:* `String.t`, *default:* `nil`) - [Pick one] DEPRECATED: Use destinationUris instead, passing only one URI as necessary. The fully-qualified Google Cloud Storage URI where the extracted table should be written.
+  *   `destinationUris` (*type:* `list(String.t)`, *default:* `nil`) - [Pick one] A list of fully-qualified Google Cloud Storage URIs where the extracted table should be written.
+  *   `fieldDelimiter` (*type:* `String.t`, *default:* `nil`) - [Optional] Delimiter to use between fields in the exported data. Default is ','
+  *   `printHeader` (*type:* `boolean()`, *default:* `true`) - [Optional] Whether to print out a header row in the results. Default is true.
+  *   `sourceTable` (*type:* `GoogleApi.BigQuery.V2.Model.TableReference.t`, *default:* `nil`) - [Required] A reference to the table being exported.
   """
 
   use GoogleApi.Gax.ModelBase

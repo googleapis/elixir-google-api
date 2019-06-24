@@ -28,25 +28,26 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
 
   ## Parameters
 
-  - connection (GoogleApi.BigQuery.V2.Connection): Connection to server
-  - project_id (String.t): [Required] Project ID of the job to cancel
-  - job_id (String.t): [Required] Job ID of the job to cancel
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :location (String.t): The geographic location of the job. Required except for US and EU. See details at https://cloud.google.com/bigquery/docs/locations#specifying_your_location.
+  *   `connection` (*type:* `GoogleApi.BigQuery.V2.Connection.t`) - Connection to server
+  *   `project_id` (*type:* `String.t`) - [Required] Project ID of the job to cancel
+  *   `job_id` (*type:* `String.t`) - [Required] Job ID of the job to cancel
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:location` (*type:* `String.t`) - The geographic location of the job. Required except for US and EU. See details at https://cloud.google.com/bigquery/docs/locations#specifying_your_location.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.BigQuery.V2.Model.JobCancelResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.BigQuery.V2.Model.JobCancelResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec bigquery_jobs_cancel(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+  @spec bigquery_jobs_cancel(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.BigQuery.V2.Model.JobCancelResponse.t()} | {:error, Tesla.Env.t()}
   def bigquery_jobs_cancel(connection, project_id, job_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -79,25 +80,26 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
 
   ## Parameters
 
-  - connection (GoogleApi.BigQuery.V2.Connection): Connection to server
-  - project_id (String.t): [Required] Project ID of the requested job
-  - job_id (String.t): [Required] Job ID of the requested job
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :location (String.t): The geographic location of the job. Required except for US and EU. See details at https://cloud.google.com/bigquery/docs/locations#specifying_your_location.
+  *   `connection` (*type:* `GoogleApi.BigQuery.V2.Connection.t`) - Connection to server
+  *   `project_id` (*type:* `String.t`) - [Required] Project ID of the requested job
+  *   `job_id` (*type:* `String.t`) - [Required] Job ID of the requested job
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:location` (*type:* `String.t`) - The geographic location of the job. Required except for US and EU. See details at https://cloud.google.com/bigquery/docs/locations#specifying_your_location.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.BigQuery.V2.Model.Job{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.BigQuery.V2.Model.Job{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec bigquery_jobs_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+  @spec bigquery_jobs_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.BigQuery.V2.Model.Job.t()} | {:error, Tesla.Env.t()}
   def bigquery_jobs_get(connection, project_id, job_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -130,29 +132,36 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
 
   ## Parameters
 
-  - connection (GoogleApi.BigQuery.V2.Connection): Connection to server
-  - project_id (String.t): [Required] Project ID of the query job
-  - job_id (String.t): [Required] Job ID of the query job
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :location (String.t): The geographic location where the job should run. Required except for US and EU. See details at https://cloud.google.com/bigquery/docs/locations#specifying_your_location.
-    - :maxResults (integer()): Maximum number of results to read
-    - :pageToken (String.t): Page token, returned by a previous call, to request the next page of results
-    - :startIndex (String.t): Zero-based index of the starting row
-    - :timeoutMs (integer()): How long to wait for the query to complete, in milliseconds, before returning. Default is 10 seconds. If the timeout passes before the job completes, the 'jobComplete' field in the response will be false
+  *   `connection` (*type:* `GoogleApi.BigQuery.V2.Connection.t`) - Connection to server
+  *   `project_id` (*type:* `String.t`) - [Required] Project ID of the query job
+  *   `job_id` (*type:* `String.t`) - [Required] Job ID of the query job
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:location` (*type:* `String.t`) - The geographic location where the job should run. Required except for US and EU. See details at https://cloud.google.com/bigquery/docs/locations#specifying_your_location.
+      *   `:maxResults` (*type:* `integer()`) - Maximum number of results to read
+      *   `:pageToken` (*type:* `String.t`) - Page token, returned by a previous call, to request the next page of results
+      *   `:startIndex` (*type:* `String.t`) - Zero-based index of the starting row
+      *   `:timeoutMs` (*type:* `integer()`) - How long to wait for the query to complete, in milliseconds, before returning. Default is 10 seconds. If the timeout passes before the job completes, the 'jobComplete' field in the response will be false
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.BigQuery.V2.Model.GetQueryResultsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.BigQuery.V2.Model.GetQueryResultsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec bigquery_jobs_get_query_results(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+  @spec bigquery_jobs_get_query_results(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.BigQuery.V2.Model.GetQueryResultsResponse.t()} | {:error, Tesla.Env.t()}
   def bigquery_jobs_get_query_results(
         connection,
@@ -195,24 +204,25 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
 
   ## Parameters
 
-  - connection (GoogleApi.BigQuery.V2.Connection): Connection to server
-  - project_id (String.t): Project ID of the project that will be billed for the job
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.BigQuery.V2.Model.Job.t): 
+  *   `connection` (*type:* `GoogleApi.BigQuery.V2.Connection.t`) - Connection to server
+  *   `project_id` (*type:* `String.t`) - Project ID of the project that will be billed for the job
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.BigQuery.V2.Model.Job.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.BigQuery.V2.Model.Job{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.BigQuery.V2.Model.Job{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec bigquery_jobs_insert(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec bigquery_jobs_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.BigQuery.V2.Model.Job.t()} | {:error, Tesla.Env.t()}
   def bigquery_jobs_insert(connection, project_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -244,26 +254,32 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
 
   ## Parameters
 
-  - connection (GoogleApi.BigQuery.V2.Connection): Connection to server
-  - project_id (String.t): Project ID of the project that will be billed for the job
-  - upload_type (String.t): Upload type. Must be "resumable".
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.BigQuery.V2.Model.Job.t): 
+  *   `connection` (*type:* `GoogleApi.BigQuery.V2.Connection.t`) - Connection to server
+  *   `project_id` (*type:* `String.t`) - Project ID of the project that will be billed for the job
+  *   `upload_type` (*type:* `String.t`) - Upload type. Must be "resumable".
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.BigQuery.V2.Model.Job.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %{}} on success
-  {:error, info} on failure
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec bigquery_jobs_insert_resumable(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, nil} | {:error, Tesla.Env.t()}
+  @spec bigquery_jobs_insert_resumable(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
   def bigquery_jobs_insert_resumable(
         connection,
         project_id,
@@ -301,24 +317,25 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
 
   ## Parameters
 
-  - connection (GoogleApi.BigQuery.V2.Connection): Connection to server
-  - project_id (String.t): Project ID of the project that will be billed for the job
-  - upload_type (String.t): Upload type. Must be "multipart".
-  - metadata (GoogleApi.BigQuery.V2.Model.Job.t): object metadata
-  - data (String.t): Path to file
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.BigQuery.V2.Connection.t`) - Connection to server
+  *   `project_id` (*type:* `String.t`) - Project ID of the project that will be billed for the job
+  *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
+  *   `metadata` (*type:* `GoogleApi.BigQuery.V2.Model.Job.t`) - object metadata
+  *   `data` (*type:* `String.t`) - Path to file
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.BigQuery.V2.Model.Job{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.BigQuery.V2.Model.Job{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec bigquery_jobs_insert_simple(
           Tesla.Env.client(),
@@ -326,6 +343,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
           String.t(),
           GoogleApi.BigQuery.V2.Model.Job.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.BigQuery.V2.Model.Job.t()} | {:error, Tesla.Env.t()}
   def bigquery_jobs_insert_simple(
@@ -368,30 +386,31 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
 
   ## Parameters
 
-  - connection (GoogleApi.BigQuery.V2.Connection): Connection to server
-  - project_id (String.t): Project ID of the jobs to list
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :allUsers (boolean()): Whether to display jobs owned by all users in the project. Default false
-    - :maxCreationTime (String.t): Max value for job creation time, in milliseconds since the POSIX epoch. If set, only jobs created before or at this timestamp are returned
-    - :maxResults (integer()): Maximum number of results to return
-    - :minCreationTime (String.t): Min value for job creation time, in milliseconds since the POSIX epoch. If set, only jobs created after or at this timestamp are returned
-    - :pageToken (String.t): Page token, returned by a previous call, to request the next page of results
-    - :projection (String.t): Restrict information returned to a set of selected fields
-    - :stateFilter (list(String.t)): Filter for job state
+  *   `connection` (*type:* `GoogleApi.BigQuery.V2.Connection.t`) - Connection to server
+  *   `project_id` (*type:* `String.t`) - Project ID of the jobs to list
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:allUsers` (*type:* `boolean()`) - Whether to display jobs owned by all users in the project. Default false
+      *   `:maxCreationTime` (*type:* `String.t`) - Max value for job creation time, in milliseconds since the POSIX epoch. If set, only jobs created before or at this timestamp are returned
+      *   `:maxResults` (*type:* `integer()`) - Maximum number of results to return
+      *   `:minCreationTime` (*type:* `String.t`) - Min value for job creation time, in milliseconds since the POSIX epoch. If set, only jobs created after or at this timestamp are returned
+      *   `:pageToken` (*type:* `String.t`) - Page token, returned by a previous call, to request the next page of results
+      *   `:projection` (*type:* `String.t`) - Restrict information returned to a set of selected fields
+      *   `:stateFilter` (*type:* `list(String.t)`) - Filter for job state
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.BigQuery.V2.Model.JobList{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.BigQuery.V2.Model.JobList{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec bigquery_jobs_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec bigquery_jobs_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.BigQuery.V2.Model.JobList.t()} | {:error, Tesla.Env.t()}
   def bigquery_jobs_list(connection, project_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -429,24 +448,25 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
 
   ## Parameters
 
-  - connection (GoogleApi.BigQuery.V2.Connection): Connection to server
-  - project_id (String.t): Project ID of the project billed for the query
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.BigQuery.V2.Model.QueryRequest.t): 
+  *   `connection` (*type:* `GoogleApi.BigQuery.V2.Connection.t`) - Connection to server
+  *   `project_id` (*type:* `String.t`) - Project ID of the project billed for the query
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.BigQuery.V2.Model.QueryRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.BigQuery.V2.Model.QueryResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.BigQuery.V2.Model.QueryResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec bigquery_jobs_query(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec bigquery_jobs_query(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.BigQuery.V2.Model.QueryResponse.t()} | {:error, Tesla.Env.t()}
   def bigquery_jobs_query(connection, project_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
