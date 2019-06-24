@@ -1,7 +1,7 @@
 defmodule GoogleApi.AdSenseHost.V41.Mixfile do
   use Mix.Project
 
-  @version "0.4.0"
+  @version "0.3.1"
 
   def project do
     [app: :google_api_ad_sense_host,
