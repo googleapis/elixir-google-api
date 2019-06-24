@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Model.GetEffectiveOrgPolicyRequest d
 
   ## Attributes
 
-  - constraint (String.t): The name of the `Constraint` to compute the effective `Policy`. Defaults to `nil`.
+  *   `constraint` (*type:* `String.t`, *default:* `nil`) - The name of the `Constraint` to compute the effective `Policy`.
   """
 
   use GoogleApi.Gax.ModelBase

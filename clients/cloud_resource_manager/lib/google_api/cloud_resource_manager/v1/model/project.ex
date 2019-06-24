@@ -23,54 +23,54 @@ defmodule GoogleApi.CloudResourceManager.V1.Model.Project do
 
   ## Attributes
 
-  - createTime (DateTime.t): Creation time.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Creation time.
 
-  Read-only. Defaults to `nil`.
-  - labels (map()): The labels associated with this Project.
+      Read-only.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - The labels associated with this Project.
 
-  Label keys must be between 1 and 63 characters long and must conform
-  to the following regular expression: \[a-z\](\[-a-z0-9\]*\[a-z0-9\])?.
+      Label keys must be between 1 and 63 characters long and must conform
+      to the following regular expression: \[a-z\](\[-a-z0-9\]*\[a-z0-9\])?.
 
-  Label values must be between 0 and 63 characters long and must conform
-  to the regular expression (\[a-z\](\[-a-z0-9\]*\[a-z0-9\])?)?. A label
-  value can be empty.
+      Label values must be between 0 and 63 characters long and must conform
+      to the regular expression (\[a-z\](\[-a-z0-9\]*\[a-z0-9\])?)?. A label
+      value can be empty.
 
-  No more than 256 labels can be associated with a given resource.
+      No more than 256 labels can be associated with a given resource.
 
-  Clients should store labels in a representation such as JSON that does not
-  depend on specific characters being disallowed.
+      Clients should store labels in a representation such as JSON that does not
+      depend on specific characters being disallowed.
 
-  Example: <code>"environment" : "dev"</code>
-  Read-write. Defaults to `nil`.
-  - lifecycleState (String.t): The Project lifecycle state.
+      Example: <code>"environment" : "dev"</code>
+      Read-write.
+  *   `lifecycleState` (*type:* `String.t`, *default:* `nil`) - The Project lifecycle state.
 
-  Read-only. Defaults to `nil`.
-  - name (String.t): The optional user-assigned display name of the Project.
-  When present it must be between 4 to 30 characters.
-  Allowed characters are: lowercase and uppercase letters, numbers,
-  hyphen, single-quote, double-quote, space, and exclamation point.
+      Read-only.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The optional user-assigned display name of the Project.
+      When present it must be between 4 to 30 characters.
+      Allowed characters are: lowercase and uppercase letters, numbers,
+      hyphen, single-quote, double-quote, space, and exclamation point.
 
-  Example: <code>My Project</code>
-  Read-write. Defaults to `nil`.
-  - parent (GoogleApi.CloudResourceManager.V1.Model.ResourceId.t): An optional reference to a parent Resource.
+      Example: <code>My Project</code>
+      Read-write.
+  *   `parent` (*type:* `GoogleApi.CloudResourceManager.V1.Model.ResourceId.t`, *default:* `nil`) - An optional reference to a parent Resource.
 
-  Supported parent types include "organization" and "folder". Once set, the
-  parent cannot be cleared. The `parent` can be set on creation or using the
-  `UpdateProject` method; the end user must have the
-  `resourcemanager.projects.create` permission on the parent.
+      Supported parent types include "organization" and "folder". Once set, the
+      parent cannot be cleared. The `parent` can be set on creation or using the
+      `UpdateProject` method; the end user must have the
+      `resourcemanager.projects.create` permission on the parent.
 
-  Read-write. Defaults to `nil`.
-  - projectId (String.t): The unique, user-assigned ID of the Project.
-  It must be 6 to 30 lowercase letters, digits, or hyphens.
-  It must start with a letter.
-  Trailing hyphens are prohibited.
+      Read-write.
+  *   `projectId` (*type:* `String.t`, *default:* `nil`) - The unique, user-assigned ID of the Project.
+      It must be 6 to 30 lowercase letters, digits, or hyphens.
+      It must start with a letter.
+      Trailing hyphens are prohibited.
 
-  Example: <code>tokyo-rain-123</code>
-  Read-only after creation. Defaults to `nil`.
-  - projectNumber (String.t): The number uniquely identifying the project.
+      Example: <code>tokyo-rain-123</code>
+      Read-only after creation.
+  *   `projectNumber` (*type:* `String.t`, *default:* `nil`) - The number uniquely identifying the project.
 
-  Example: <code>415104041262</code>
-  Read-only. Defaults to `nil`.
+      Example: <code>415104041262</code>
+      Read-only.
   """
 
   use GoogleApi.Gax.ModelBase

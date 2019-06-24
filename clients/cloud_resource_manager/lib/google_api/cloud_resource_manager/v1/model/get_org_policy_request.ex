@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Model.GetOrgPolicyRequest do
 
   ## Attributes
 
-  - constraint (String.t): Name of the `Constraint` to get the `Policy`. Defaults to `nil`.
+  *   `constraint` (*type:* `String.t`, *default:* `nil`) - Name of the `Constraint` to get the `Policy`.
   """
 
   use GoogleApi.Gax.ModelBase

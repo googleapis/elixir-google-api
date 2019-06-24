@@ -34,19 +34,19 @@ defmodule GoogleApi.CloudResourceManager.V1.Model.Constraint do
 
   ## Attributes
 
-  - booleanConstraint (GoogleApi.CloudResourceManager.V1.Model.BooleanConstraint.t): Defines this constraint as being a BooleanConstraint. Defaults to `nil`.
-  - constraintDefault (String.t): The evaluation behavior of this constraint in the absense of 'Policy'. Defaults to `nil`.
-  - description (String.t): Detailed description of what this `Constraint` controls as well as how and
-  where it is enforced.
+  *   `booleanConstraint` (*type:* `GoogleApi.CloudResourceManager.V1.Model.BooleanConstraint.t`, *default:* `nil`) - Defines this constraint as being a BooleanConstraint.
+  *   `constraintDefault` (*type:* `String.t`, *default:* `nil`) - The evaluation behavior of this constraint in the absense of 'Policy'.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Detailed description of what this `Constraint` controls as well as how and
+      where it is enforced.
 
-  Mutable. Defaults to `nil`.
-  - displayName (String.t): The human readable name.
+      Mutable.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The human readable name.
 
-  Mutable. Defaults to `nil`.
-  - listConstraint (GoogleApi.CloudResourceManager.V1.Model.ListConstraint.t): Defines this constraint as being a ListConstraint. Defaults to `nil`.
-  - name (String.t): Immutable value, required to globally be unique. For example,
-  `constraints/serviceuser.services` Defaults to `nil`.
-  - version (integer()): Version of the `Constraint`. Default version is 0; Defaults to `nil`.
+      Mutable.
+  *   `listConstraint` (*type:* `GoogleApi.CloudResourceManager.V1.Model.ListConstraint.t`, *default:* `nil`) - Defines this constraint as being a ListConstraint.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable value, required to globally be unique. For example,
+      `constraints/serviceuser.services`
+  *   `version` (*type:* `integer()`, *default:* `nil`) - Version of the `Constraint`. Default version is 0;
   """
 
   use GoogleApi.Gax.ModelBase

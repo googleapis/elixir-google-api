@@ -24,7 +24,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Model.OrganizationOwner do
 
   ## Attributes
 
-  - directoryCustomerId (String.t): The G Suite customer id used in the Directory API. Defaults to `nil`.
+  *   `directoryCustomerId` (*type:* `String.t`, *default:* `nil`) - The G Suite customer id used in the Directory API.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,9 +21,9 @@ defmodule GoogleApi.CloudResourceManager.V1.Model.ListLiensResponse do
 
   ## Attributes
 
-  - liens (list(GoogleApi.CloudResourceManager.V1.Model.Lien.t)): A list of Liens. Defaults to `nil`.
-  - nextPageToken (String.t): Token to retrieve the next page of results, or empty if there are no more
-  results in the list. Defaults to `nil`.
+  *   `liens` (*type:* `list(GoogleApi.CloudResourceManager.V1.Model.Lien.t)`, *default:* `nil`) - A list of Liens.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no more
+      results in the list.
   """
 
   use GoogleApi.Gax.ModelBase

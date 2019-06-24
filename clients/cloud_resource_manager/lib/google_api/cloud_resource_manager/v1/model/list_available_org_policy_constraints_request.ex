@@ -22,11 +22,11 @@ defmodule GoogleApi.CloudResourceManager.V1.Model.ListAvailableOrgPolicyConstrai
 
   ## Attributes
 
-  - pageSize (integer()): Size of the pages to be returned. This is currently unsupported and will
-  be ignored. The server may at any point start using this field to limit
-  page size. Defaults to `nil`.
-  - pageToken (String.t): Page token used to retrieve the next page. This is currently unsupported
-  and will be ignored. The server may at any point start using this field. Defaults to `nil`.
+  *   `pageSize` (*type:* `integer()`, *default:* `nil`) - Size of the pages to be returned. This is currently unsupported and will
+      be ignored. The server may at any point start using this field to limit
+      page size.
+  *   `pageToken` (*type:* `String.t`, *default:* `nil`) - Page token used to retrieve the next page. This is currently unsupported
+      and will be ignored. The server may at any point start using this field.
   """
 
   use GoogleApi.Gax.ModelBase

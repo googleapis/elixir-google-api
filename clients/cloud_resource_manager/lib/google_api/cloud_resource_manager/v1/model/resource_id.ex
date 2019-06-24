@@ -24,10 +24,10 @@ defmodule GoogleApi.CloudResourceManager.V1.Model.ResourceId do
 
   ## Attributes
 
-  - id (String.t): Required field for the type-specific id. This should correspond to the id
-  used in the type-specific API's. Defaults to `nil`.
-  - type (String.t): Required field representing the resource type this id is for.
-  At present, the valid types are: "organization" and "folder". Defaults to `nil`.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Required field for the type-specific id. This should correspond to the id
+      used in the type-specific API's.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Required field representing the resource type this id is for.
+      At present, the valid types are: "organization" and "folder".
   """
 
   use GoogleApi.Gax.ModelBase

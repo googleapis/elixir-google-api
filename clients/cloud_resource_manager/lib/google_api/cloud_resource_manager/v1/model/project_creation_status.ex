@@ -23,11 +23,11 @@ defmodule GoogleApi.CloudResourceManager.V1.Model.ProjectCreationStatus do
 
   ## Attributes
 
-  - createTime (DateTime.t): Creation time of the project creation workflow. Defaults to `nil`.
-  - gettable (boolean()): True if the project can be retrieved using GetProject. No other operations
-  on the project are guaranteed to work until the project creation is
-  complete. Defaults to `nil`.
-  - ready (boolean()): True if the project creation process is complete. Defaults to `nil`.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Creation time of the project creation workflow.
+  *   `gettable` (*type:* `boolean()`, *default:* `nil`) - True if the project can be retrieved using GetProject. No other operations
+      on the project are guaranteed to work until the project creation is
+      complete.
+  *   `ready` (*type:* `boolean()`, *default:* `nil`) - True if the project creation process is complete.
   """
 
   use GoogleApi.Gax.ModelBase

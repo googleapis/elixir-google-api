@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Model.FolderOperationError do
 
   ## Attributes
 
-  - errorMessageId (String.t): The type of operation error experienced. Defaults to `nil`.
+  *   `errorMessageId` (*type:* `String.t`, *default:* `nil`) - The type of operation error experienced.
   """
 
   use GoogleApi.Gax.ModelBase

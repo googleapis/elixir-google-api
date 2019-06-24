@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Model.Ancestor do
 
   ## Attributes
 
-  - resourceId (GoogleApi.CloudResourceManager.V1.Model.ResourceId.t): Resource id of the ancestor. Defaults to `nil`.
+  *   `resourceId` (*type:* `GoogleApi.CloudResourceManager.V1.Model.ResourceId.t`, *default:* `nil`) - Resource id of the ancestor.
   """
 
   use GoogleApi.Gax.ModelBase

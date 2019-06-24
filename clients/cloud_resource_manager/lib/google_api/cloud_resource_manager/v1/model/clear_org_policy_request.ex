@@ -21,9 +21,9 @@ defmodule GoogleApi.CloudResourceManager.V1.Model.ClearOrgPolicyRequest do
 
   ## Attributes
 
-  - constraint (String.t): Name of the `Constraint` of the `Policy` to clear. Defaults to `nil`.
-  - etag (String.t): The current version, for concurrency control. Not sending an `etag`
-  will cause the `Policy` to be cleared blindly. Defaults to `nil`.
+  *   `constraint` (*type:* `String.t`, *default:* `nil`) - Name of the `Constraint` of the `Policy` to clear.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - The current version, for concurrency control. Not sending an `etag`
+      will cause the `Policy` to be cleared blindly.
   """
 
   use GoogleApi.Gax.ModelBase

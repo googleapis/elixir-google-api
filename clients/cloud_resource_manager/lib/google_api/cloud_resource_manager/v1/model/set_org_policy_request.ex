@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Model.SetOrgPolicyRequest do
 
   ## Attributes
 
-  - policy (GoogleApi.CloudResourceManager.V1.Model.OrgPolicy.t): `Policy` to set on the resource. Defaults to `nil`.
+  *   `policy` (*type:* `GoogleApi.CloudResourceManager.V1.Model.OrgPolicy.t`, *default:* `nil`) - `Policy` to set on the resource.
   """
 
   use GoogleApi.Gax.ModelBase
