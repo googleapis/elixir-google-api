@@ -21,7 +21,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Model.ApksAddExternallyHostedRequest do
 
   ## Attributes
 
-  - externallyHostedApk (GoogleApi.AndroidPublisher.V2.Model.ExternallyHostedApk.t): The definition of the externally-hosted APK and where it is located. Defaults to `nil`.
+  *   `externallyHostedApk` (*type:* `GoogleApi.AndroidPublisher.V2.Model.ExternallyHostedApk.t`, *default:* `nil`) - The definition of the externally-hosted APK and where it is located.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,8 +21,8 @@ defmodule GoogleApi.AndroidPublisher.V2.Model.Apk do
 
   ## Attributes
 
-  - binary (GoogleApi.AndroidPublisher.V2.Model.ApkBinary.t): Information about the binary payload of this APK. Defaults to `nil`.
-  - versionCode (integer()): The version code of the APK, as specified in the APK's manifest file. Defaults to `nil`.
+  *   `binary` (*type:* `GoogleApi.AndroidPublisher.V2.Model.ApkBinary.t`, *default:* `nil`) - Information about the binary payload of this APK.
+  *   `versionCode` (*type:* `integer()`, *default:* `nil`) - The version code of the APK, as specified in the APK's manifest file.
   """
 
   use GoogleApi.Gax.ModelBase

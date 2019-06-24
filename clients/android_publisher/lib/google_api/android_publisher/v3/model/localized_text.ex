@@ -21,8 +21,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.LocalizedText do
 
   ## Attributes
 
-  - language (String.t): The language code, in BCP 47 format (eg "en-US"). Defaults to `nil`.
-  - text (String.t): The text in the given `language`. Defaults to `nil`.
+  *   `language` (*type:* `String.t`, *default:* `nil`) - The language code, in BCP 47 format (eg "en-US").
+  *   `text` (*type:* `String.t`, *default:* `nil`) - The text in the given `language`.
   """
 
   use GoogleApi.Gax.ModelBase

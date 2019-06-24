@@ -21,10 +21,10 @@ defmodule GoogleApi.AndroidPublisher.V2.Model.VoidedPurchase do
 
   ## Attributes
 
-  - kind (String.t): This kind represents a voided purchase object in the androidpublisher service. Defaults to `androidpublisher#voidedPurchase`.
-  - purchaseTimeMillis (String.t): The time at which the purchase was made, in milliseconds since the epoch (Jan 1, 1970). Defaults to `nil`.
-  - purchaseToken (String.t): The token that was generated when a purchase was made. This uniquely identifies a purchase. Defaults to `nil`.
-  - voidedTimeMillis (String.t): The time at which the purchase was canceled/refunded/charged-back, in milliseconds since the epoch (Jan 1, 1970). Defaults to `nil`.
+  *   `kind` (*type:* `String.t`, *default:* `androidpublisher#voidedPurchase`) - This kind represents a voided purchase object in the androidpublisher service.
+  *   `purchaseTimeMillis` (*type:* `String.t`, *default:* `nil`) - The time at which the purchase was made, in milliseconds since the epoch (Jan 1, 1970).
+  *   `purchaseToken` (*type:* `String.t`, *default:* `nil`) - The token that was generated when a purchase was made. This uniquely identifies a purchase.
+  *   `voidedTimeMillis` (*type:* `String.t`, *default:* `nil`) - The time at which the purchase was canceled/refunded/charged-back, in milliseconds since the epoch (Jan 1, 1970).
   """
 
   use GoogleApi.Gax.ModelBase

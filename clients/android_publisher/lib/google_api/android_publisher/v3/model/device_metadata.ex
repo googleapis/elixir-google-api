@@ -21,17 +21,17 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.DeviceMetadata do
 
   ## Attributes
 
-  - cpuMake (String.t): Device CPU make e.g. "Qualcomm" Defaults to `nil`.
-  - cpuModel (String.t): Device CPU model e.g. "MSM8974" Defaults to `nil`.
-  - deviceClass (String.t): Device class (e.g. tablet) Defaults to `nil`.
-  - glEsVersion (integer()): OpenGL version Defaults to `nil`.
-  - manufacturer (String.t): Device manufacturer (e.g. Motorola) Defaults to `nil`.
-  - nativePlatform (String.t): Comma separated list of native platforms (e.g. "arm", "arm7") Defaults to `nil`.
-  - productName (String.t): Device model name (e.g. Droid) Defaults to `nil`.
-  - ramMb (integer()): Device RAM in Megabytes e.g. "2048" Defaults to `nil`.
-  - screenDensityDpi (integer()): Screen density in DPI Defaults to `nil`.
-  - screenHeightPx (integer()): Screen height in pixels Defaults to `nil`.
-  - screenWidthPx (integer()): Screen width in pixels Defaults to `nil`.
+  *   `cpuMake` (*type:* `String.t`, *default:* `nil`) - Device CPU make e.g. "Qualcomm"
+  *   `cpuModel` (*type:* `String.t`, *default:* `nil`) - Device CPU model e.g. "MSM8974"
+  *   `deviceClass` (*type:* `String.t`, *default:* `nil`) - Device class (e.g. tablet)
+  *   `glEsVersion` (*type:* `integer()`, *default:* `nil`) - OpenGL version
+  *   `manufacturer` (*type:* `String.t`, *default:* `nil`) - Device manufacturer (e.g. Motorola)
+  *   `nativePlatform` (*type:* `String.t`, *default:* `nil`) - Comma separated list of native platforms (e.g. "arm", "arm7")
+  *   `productName` (*type:* `String.t`, *default:* `nil`) - Device model name (e.g. Droid)
+  *   `ramMb` (*type:* `integer()`, *default:* `nil`) - Device RAM in Megabytes e.g. "2048"
+  *   `screenDensityDpi` (*type:* `integer()`, *default:* `nil`) - Screen density in DPI
+  *   `screenHeightPx` (*type:* `integer()`, *default:* `nil`) - Screen height in pixels
+  *   `screenWidthPx` (*type:* `integer()`, *default:* `nil`) - Screen width in pixels
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,10 +21,10 @@ defmodule GoogleApi.AndroidPublisher.V2.Model.InappproductsListResponse do
 
   ## Attributes
 
-  - inappproduct (list(GoogleApi.AndroidPublisher.V2.Model.InAppProduct.t)):  Defaults to `nil`.
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "androidpublisher#inappproductsListResponse". Defaults to `androidpublisher#inappproductsListResponse`.
-  - pageInfo (GoogleApi.AndroidPublisher.V2.Model.PageInfo.t):  Defaults to `nil`.
-  - tokenPagination (GoogleApi.AndroidPublisher.V2.Model.TokenPagination.t):  Defaults to `nil`.
+  *   `inappproduct` (*type:* `list(GoogleApi.AndroidPublisher.V2.Model.InAppProduct.t)`, *default:* `nil`) - 
+  *   `kind` (*type:* `String.t`, *default:* `androidpublisher#inappproductsListResponse`) - Identifies what kind of resource this is. Value: the fixed string "androidpublisher#inappproductsListResponse".
+  *   `pageInfo` (*type:* `GoogleApi.AndroidPublisher.V2.Model.PageInfo.t`, *default:* `nil`) - 
+  *   `tokenPagination` (*type:* `GoogleApi.AndroidPublisher.V2.Model.TokenPagination.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

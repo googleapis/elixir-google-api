@@ -21,8 +21,8 @@ defmodule GoogleApi.AndroidPublisher.V2.Model.Prorate do
 
   ## Attributes
 
-  - defaultPrice (GoogleApi.AndroidPublisher.V2.Model.Price.t): Default price cannot be zero and must be less than the full subscription price. Default price is always in the developer's Checkout merchant currency. Targeted countries have their prices set automatically based on the default_price. Defaults to `nil`.
-  - start (GoogleApi.AndroidPublisher.V2.Model.MonthDay.t): Defines the first day on which the price takes effect. Defaults to `nil`.
+  *   `defaultPrice` (*type:* `GoogleApi.AndroidPublisher.V2.Model.Price.t`, *default:* `nil`) - Default price cannot be zero and must be less than the full subscription price. Default price is always in the developer's Checkout merchant currency. Targeted countries have their prices set automatically based on the default_price.
+  *   `start` (*type:* `GoogleApi.AndroidPublisher.V2.Model.MonthDay.t`, *default:* `nil`) - Defines the first day on which the price takes effect.
   """
 
   use GoogleApi.Gax.ModelBase

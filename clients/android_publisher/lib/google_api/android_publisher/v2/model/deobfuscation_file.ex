@@ -21,7 +21,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Model.DeobfuscationFile do
 
   ## Attributes
 
-  - symbolType (String.t): The type of the deobfuscation file. Defaults to `nil`.
+  *   `symbolType` (*type:* `String.t`, *default:* `nil`) - The type of the deobfuscation file.
   """
 
   use GoogleApi.Gax.ModelBase

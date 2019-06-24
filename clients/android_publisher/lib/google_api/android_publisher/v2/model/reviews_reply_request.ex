@@ -21,7 +21,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Model.ReviewsReplyRequest do
 
   ## Attributes
 
-  - replyText (String.t): The text to set as the reply. Replies of more than approximately 350 characters will be rejected. HTML tags will be stripped. Defaults to `nil`.
+  *   `replyText` (*type:* `String.t`, *default:* `nil`) - The text to set as the reply. Replies of more than approximately 350 characters will be rejected. HTML tags will be stripped.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,8 +21,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.ExternallyHostedApkUsesPermission 
 
   ## Attributes
 
-  - maxSdkVersion (integer()): Optionally, the maximum SDK version for which the permission is required. Defaults to `nil`.
-  - name (String.t): The name of the permission requested. Defaults to `nil`.
+  *   `maxSdkVersion` (*type:* `integer()`, *default:* `nil`) - Optionally, the maximum SDK version for which the permission is required.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the permission requested.
   """
 
   use GoogleApi.Gax.ModelBase

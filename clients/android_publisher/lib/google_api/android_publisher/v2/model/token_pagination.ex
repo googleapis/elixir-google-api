@@ -21,8 +21,8 @@ defmodule GoogleApi.AndroidPublisher.V2.Model.TokenPagination do
 
   ## Attributes
 
-  - nextPageToken (String.t):  Defaults to `nil`.
-  - previousPageToken (String.t):  Defaults to `nil`.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - 
+  *   `previousPageToken` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

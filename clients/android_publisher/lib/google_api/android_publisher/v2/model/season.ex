@@ -21,9 +21,9 @@ defmodule GoogleApi.AndroidPublisher.V2.Model.Season do
 
   ## Attributes
 
-  - end (GoogleApi.AndroidPublisher.V2.Model.MonthDay.t): Inclusive end date of the recurrence period. Defaults to `nil`.
-  - prorations (list(GoogleApi.AndroidPublisher.V2.Model.Prorate.t)): Optionally present list of prorations for the season. Each proration is a one-off discounted entry into a subscription. Each proration contains the first date on which the discount is available and the new pricing information. Defaults to `nil`.
-  - start (GoogleApi.AndroidPublisher.V2.Model.MonthDay.t): Inclusive start date of the recurrence period. Defaults to `nil`.
+  *   `end` (*type:* `GoogleApi.AndroidPublisher.V2.Model.MonthDay.t`, *default:* `nil`) - Inclusive end date of the recurrence period.
+  *   `prorations` (*type:* `list(GoogleApi.AndroidPublisher.V2.Model.Prorate.t)`, *default:* `nil`) - Optionally present list of prorations for the season. Each proration is a one-off discounted entry into a subscription. Each proration contains the first date on which the discount is available and the new pricing information.
+  *   `start` (*type:* `GoogleApi.AndroidPublisher.V2.Model.MonthDay.t`, *default:* `nil`) - Inclusive start date of the recurrence period.
   """
 
   use GoogleApi.Gax.ModelBase

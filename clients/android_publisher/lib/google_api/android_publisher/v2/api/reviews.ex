@@ -28,26 +28,32 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Reviews do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V2.Connection): Connection to server
-  - package_name (String.t): Unique identifier for the Android app for which we want reviews; for example, "com.spiffygame".
-  - review_id (String.t): 
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :translationLanguage (String.t): 
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V2.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app for which we want reviews; for example, "com.spiffygame".
+  *   `review_id` (*type:* `String.t`) - 
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:translationLanguage` (*type:* `String.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidPublisher.V2.Model.Review{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidPublisher.V2.Model.Review{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec androidpublisher_reviews_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.AndroidPublisher.V2.Model.Review.t()} | {:error, Tesla.Env.t()}
+  @spec androidpublisher_reviews_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.AndroidPublisher.V2.Model.Review.t()} | {:error, Tesla.Env.t()}
   def androidpublisher_reviews_get(
         connection,
         package_name,
@@ -85,27 +91,28 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Reviews do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V2.Connection): Connection to server
-  - package_name (String.t): Unique identifier for the Android app for which we want reviews; for example, "com.spiffygame".
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :maxResults (integer()): 
-    - :startIndex (integer()): 
-    - :token (String.t): 
-    - :translationLanguage (String.t): 
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V2.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app for which we want reviews; for example, "com.spiffygame".
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:maxResults` (*type:* `integer()`) - 
+      *   `:startIndex` (*type:* `integer()`) - 
+      *   `:token` (*type:* `String.t`) - 
+      *   `:translationLanguage` (*type:* `String.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidPublisher.V2.Model.ReviewsListResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidPublisher.V2.Model.ReviewsListResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec androidpublisher_reviews_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec androidpublisher_reviews_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AndroidPublisher.V2.Model.ReviewsListResponse.t()}
           | {:error, Tesla.Env.t()}
   def androidpublisher_reviews_list(connection, package_name, optional_params \\ [], opts \\ []) do
@@ -143,25 +150,32 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Reviews do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V2.Connection): Connection to server
-  - package_name (String.t): Unique identifier for the Android app for which we want reviews; for example, "com.spiffygame".
-  - review_id (String.t): 
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.AndroidPublisher.V2.Model.ReviewsReplyRequest.t): 
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V2.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app for which we want reviews; for example, "com.spiffygame".
+  *   `review_id` (*type:* `String.t`) - 
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.AndroidPublisher.V2.Model.ReviewsReplyRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidPublisher.V2.Model.ReviewsReplyResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidPublisher.V2.Model.ReviewsReplyResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec androidpublisher_reviews_reply(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+  @spec androidpublisher_reviews_reply(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.AndroidPublisher.V2.Model.ReviewsReplyResponse.t()}
           | {:error, Tesla.Env.t()}
   def androidpublisher_reviews_reply(

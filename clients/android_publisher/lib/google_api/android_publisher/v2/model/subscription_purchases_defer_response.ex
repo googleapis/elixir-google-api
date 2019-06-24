@@ -21,7 +21,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Model.SubscriptionPurchasesDeferResponse
 
   ## Attributes
 
-  - newExpiryTimeMillis (String.t): The new expiry time for the subscription in milliseconds since the Epoch. Defaults to `nil`.
+  *   `newExpiryTimeMillis` (*type:* `String.t`, *default:* `nil`) - The new expiry time for the subscription in milliseconds since the Epoch.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,11 +21,11 @@ defmodule GoogleApi.AndroidPublisher.V2.Model.Listing do
 
   ## Attributes
 
-  - fullDescription (String.t): Full description of the app; this may be up to 4000 characters in length. Defaults to `nil`.
-  - language (String.t): Language localization code (for example, "de-AT" for Austrian German). Defaults to `nil`.
-  - shortDescription (String.t): Short description of the app (previously known as promo text); this may be up to 80 characters in length. Defaults to `nil`.
-  - title (String.t): App's localized title. Defaults to `nil`.
-  - video (String.t): URL of a promotional YouTube video for the app. Defaults to `nil`.
+  *   `fullDescription` (*type:* `String.t`, *default:* `nil`) - Full description of the app; this may be up to 4000 characters in length.
+  *   `language` (*type:* `String.t`, *default:* `nil`) - Language localization code (for example, "de-AT" for Austrian German).
+  *   `shortDescription` (*type:* `String.t`, *default:* `nil`) - Short description of the app (previously known as promo text); this may be up to 80 characters in length.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - App's localized title.
+  *   `video` (*type:* `String.t`, *default:* `nil`) - URL of a promotional YouTube video for the app.
   """
 
   use GoogleApi.Gax.ModelBase

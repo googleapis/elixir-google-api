@@ -21,7 +21,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.ProductPurchasesAcknowledgeRequest
 
   ## Attributes
 
-  - developerPayload (String.t): Payload to attach to the purchase. Defaults to `nil`.
+  *   `developerPayload` (*type:* `String.t`, *default:* `nil`) - Payload to attach to the purchase.
   """
 
   use GoogleApi.Gax.ModelBase

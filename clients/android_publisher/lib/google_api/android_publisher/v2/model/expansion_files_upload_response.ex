@@ -21,7 +21,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Model.ExpansionFilesUploadResponse do
 
   ## Attributes
 
-  - expansionFile (GoogleApi.AndroidPublisher.V2.Model.ExpansionFile.t):  Defaults to `nil`.
+  *   `expansionFile` (*type:* `GoogleApi.AndroidPublisher.V2.Model.ExpansionFile.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

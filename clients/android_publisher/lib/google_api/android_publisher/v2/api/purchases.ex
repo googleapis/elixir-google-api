@@ -28,29 +28,31 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Purchases do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V2.Connection): Connection to server
-  - package_name (String.t): The package name of the application the inapp product was sold in (for example, 'com.some.thing').
-  - product_id (String.t): The inapp product SKU (for example, 'com.some.thing.inapp1').
-  - token (String.t): The token provided to the user's device when the inapp product was purchased.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V2.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - The package name of the application the inapp product was sold in (for example, 'com.some.thing').
+  *   `product_id` (*type:* `String.t`) - The inapp product SKU (for example, 'com.some.thing.inapp1').
+  *   `token` (*type:* `String.t`) - The token provided to the user's device when the inapp product was purchased.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidPublisher.V2.Model.ProductPurchase{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidPublisher.V2.Model.ProductPurchase{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec androidpublisher_purchases_products_get(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidPublisher.V2.Model.ProductPurchase.t()} | {:error, Tesla.Env.t()}
@@ -95,29 +97,31 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Purchases do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V2.Connection): Connection to server
-  - package_name (String.t): The package name of the application for which this subscription was purchased (for example, 'com.some.thing').
-  - subscription_id (String.t): The purchased subscription ID (for example, 'monthly001').
-  - token (String.t): The token provided to the user's device when the subscription was purchased.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V2.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - The package name of the application for which this subscription was purchased (for example, 'com.some.thing').
+  *   `subscription_id` (*type:* `String.t`) - The purchased subscription ID (for example, 'monthly001').
+  *   `token` (*type:* `String.t`) - The token provided to the user's device when the subscription was purchased.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %{}} on success
-  {:error, info} on failure
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec androidpublisher_purchases_subscriptions_cancel(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, nil} | {:error, Tesla.Env.t()}
   def androidpublisher_purchases_subscriptions_cancel(
@@ -161,30 +165,32 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Purchases do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V2.Connection): Connection to server
-  - package_name (String.t): The package name of the application for which this subscription was purchased (for example, 'com.some.thing').
-  - subscription_id (String.t): The purchased subscription ID (for example, 'monthly001').
-  - token (String.t): The token provided to the user's device when the subscription was purchased.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.AndroidPublisher.V2.Model.SubscriptionPurchasesDeferRequest.t): 
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V2.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - The package name of the application for which this subscription was purchased (for example, 'com.some.thing').
+  *   `subscription_id` (*type:* `String.t`) - The purchased subscription ID (for example, 'monthly001').
+  *   `token` (*type:* `String.t`) - The token provided to the user's device when the subscription was purchased.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.AndroidPublisher.V2.Model.SubscriptionPurchasesDeferRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidPublisher.V2.Model.SubscriptionPurchasesDeferResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidPublisher.V2.Model.SubscriptionPurchasesDeferResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec androidpublisher_purchases_subscriptions_defer(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidPublisher.V2.Model.SubscriptionPurchasesDeferResponse.t()}
@@ -233,29 +239,31 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Purchases do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V2.Connection): Connection to server
-  - package_name (String.t): The package name of the application for which this subscription was purchased (for example, 'com.some.thing').
-  - subscription_id (String.t): The purchased subscription ID (for example, 'monthly001').
-  - token (String.t): The token provided to the user's device when the subscription was purchased.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V2.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - The package name of the application for which this subscription was purchased (for example, 'com.some.thing').
+  *   `subscription_id` (*type:* `String.t`) - The purchased subscription ID (for example, 'monthly001').
+  *   `token` (*type:* `String.t`) - The token provided to the user's device when the subscription was purchased.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidPublisher.V2.Model.SubscriptionPurchase{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidPublisher.V2.Model.SubscriptionPurchase{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec androidpublisher_purchases_subscriptions_get(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidPublisher.V2.Model.SubscriptionPurchase.t()}
@@ -303,29 +311,31 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Purchases do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V2.Connection): Connection to server
-  - package_name (String.t): The package name of the application for which this subscription was purchased (for example, 'com.some.thing').
-  - subscription_id (String.t): The purchased subscription ID (for example, 'monthly001').
-  - token (String.t): The token provided to the user's device when the subscription was purchased.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V2.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - The package name of the application for which this subscription was purchased (for example, 'com.some.thing').
+  *   `subscription_id` (*type:* `String.t`) - The purchased subscription ID (for example, 'monthly001').
+  *   `token` (*type:* `String.t`) - The token provided to the user's device when the subscription was purchased.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %{}} on success
-  {:error, info} on failure
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec androidpublisher_purchases_subscriptions_refund(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, nil} | {:error, Tesla.Env.t()}
   def androidpublisher_purchases_subscriptions_refund(
@@ -369,29 +379,31 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Purchases do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V2.Connection): Connection to server
-  - package_name (String.t): The package name of the application for which this subscription was purchased (for example, 'com.some.thing').
-  - subscription_id (String.t): The purchased subscription ID (for example, 'monthly001').
-  - token (String.t): The token provided to the user's device when the subscription was purchased.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V2.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - The package name of the application for which this subscription was purchased (for example, 'com.some.thing').
+  *   `subscription_id` (*type:* `String.t`) - The purchased subscription ID (for example, 'monthly001').
+  *   `token` (*type:* `String.t`) - The token provided to the user's device when the subscription was purchased.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %{}} on success
-  {:error, info} on failure
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec androidpublisher_purchases_subscriptions_revoke(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, nil} | {:error, Tesla.Env.t()}
   def androidpublisher_purchases_subscriptions_revoke(
@@ -435,28 +447,34 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Purchases do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V2.Connection): Connection to server
-  - package_name (String.t): The package name of the application for which voided purchases need to be returned (for example, 'com.some.thing').
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :endTime (String.t): The time, in milliseconds since the Epoch, of the newest voided in-app product purchase that you want to see in the response. The value of this parameter cannot be greater than the current time and is ignored if a pagination token is set. Default value is current time. Note: This filter is applied on the time at which the record is seen as voided by our systems and not the actual voided time returned in the response.
-    - :maxResults (integer()): 
-    - :startIndex (integer()): 
-    - :startTime (String.t): The time, in milliseconds since the Epoch, of the oldest voided in-app product purchase that you want to see in the response. The value of this parameter cannot be older than 30 days and is ignored if a pagination token is set. Default value is current time minus 30 days. Note: This filter is applied on the time at which the record is seen as voided by our systems and not the actual voided time returned in the response.
-    - :token (String.t): 
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V2.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - The package name of the application for which voided purchases need to be returned (for example, 'com.some.thing').
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:endTime` (*type:* `String.t`) - The time, in milliseconds since the Epoch, of the newest voided in-app product purchase that you want to see in the response. The value of this parameter cannot be greater than the current time and is ignored if a pagination token is set. Default value is current time. Note: This filter is applied on the time at which the record is seen as voided by our systems and not the actual voided time returned in the response.
+      *   `:maxResults` (*type:* `integer()`) - 
+      *   `:startIndex` (*type:* `integer()`) - 
+      *   `:startTime` (*type:* `String.t`) - The time, in milliseconds since the Epoch, of the oldest voided in-app product purchase that you want to see in the response. The value of this parameter cannot be older than 30 days and is ignored if a pagination token is set. Default value is current time minus 30 days. Note: This filter is applied on the time at which the record is seen as voided by our systems and not the actual voided time returned in the response.
+      *   `:token` (*type:* `String.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidPublisher.V2.Model.VoidedPurchasesListResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidPublisher.V2.Model.VoidedPurchasesListResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec androidpublisher_purchases_voidedpurchases_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec androidpublisher_purchases_voidedpurchases_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.AndroidPublisher.V2.Model.VoidedPurchasesListResponse.t()}
           | {:error, Tesla.Env.t()}
   def androidpublisher_purchases_voidedpurchases_list(

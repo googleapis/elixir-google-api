@@ -21,18 +21,18 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.InAppProduct do
 
   ## Attributes
 
-  - defaultLanguage (String.t): The default language of the localized data, as defined by BCP 47. e.g. "en-US", "en-GB". Defaults to `nil`.
-  - defaultPrice (GoogleApi.AndroidPublisher.V3.Model.Price.t): Default price cannot be zero. In-app products can never be free. Default price is always in the developer's Checkout merchant currency. Defaults to `nil`.
-  - gracePeriod (String.t): Grace period of the subscription, specified in ISO 8601 format. It will allow developers to give their subscribers a grace period when the payment for the new recurrence period is declined. Acceptable values = "P3D" (three days) and "P7D" (seven days) Defaults to `nil`.
-  - listings (%{optional(String.t) => GoogleApi.AndroidPublisher.V3.Model.InAppProductListing.t}): List of localized title and description data. Defaults to `nil`.
-  - packageName (String.t): The package name of the parent app. Defaults to `nil`.
-  - prices (%{optional(String.t) => GoogleApi.AndroidPublisher.V3.Model.Price.t}): Prices per buyer region. None of these prices should be zero. In-app products can never be free. Defaults to `nil`.
-  - purchaseType (String.t): Purchase type enum value. Unmodifiable after creation. Defaults to `nil`.
-  - season (GoogleApi.AndroidPublisher.V3.Model.Season.t): Definition of a season for a seasonal subscription. Can be defined only for yearly subscriptions. Defaults to `nil`.
-  - sku (String.t): The stock-keeping-unit (SKU) of the product, unique within an app. Defaults to `nil`.
-  - status (String.t):  Defaults to `nil`.
-  - subscriptionPeriod (String.t): Subscription period, specified in ISO 8601 format. Acceptable values are "P1W" (one week), "P1M" (one month), "P3M" (three months), "P6M" (six months), and "P1Y" (one year). Defaults to `nil`.
-  - trialPeriod (String.t): Trial period, specified in ISO 8601 format. Acceptable values are anything between "P7D" (seven days) and "P999D" (999 days). Seasonal subscriptions cannot have a trial period. Defaults to `nil`.
+  *   `defaultLanguage` (*type:* `String.t`, *default:* `nil`) - The default language of the localized data, as defined by BCP 47. e.g. "en-US", "en-GB".
+  *   `defaultPrice` (*type:* `GoogleApi.AndroidPublisher.V3.Model.Price.t`, *default:* `nil`) - Default price cannot be zero. In-app products can never be free. Default price is always in the developer's Checkout merchant currency.
+  *   `gracePeriod` (*type:* `String.t`, *default:* `nil`) - Grace period of the subscription, specified in ISO 8601 format. It will allow developers to give their subscribers a grace period when the payment for the new recurrence period is declined. Acceptable values = "P3D" (three days) and "P7D" (seven days)
+  *   `listings` (*type:* `%{optional(String.t) => GoogleApi.AndroidPublisher.V3.Model.InAppProductListing.t}`, *default:* `nil`) - List of localized title and description data.
+  *   `packageName` (*type:* `String.t`, *default:* `nil`) - The package name of the parent app.
+  *   `prices` (*type:* `%{optional(String.t) => GoogleApi.AndroidPublisher.V3.Model.Price.t}`, *default:* `nil`) - Prices per buyer region. None of these prices should be zero. In-app products can never be free.
+  *   `purchaseType` (*type:* `String.t`, *default:* `nil`) - Purchase type enum value. Unmodifiable after creation.
+  *   `season` (*type:* `GoogleApi.AndroidPublisher.V3.Model.Season.t`, *default:* `nil`) - Definition of a season for a seasonal subscription. Can be defined only for yearly subscriptions.
+  *   `sku` (*type:* `String.t`, *default:* `nil`) - The stock-keeping-unit (SKU) of the product, unique within an app.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - 
+  *   `subscriptionPeriod` (*type:* `String.t`, *default:* `nil`) - Subscription period, specified in ISO 8601 format. Acceptable values are "P1W" (one week), "P1M" (one month), "P3M" (three months), "P6M" (six months), and "P1Y" (one year).
+  *   `trialPeriod` (*type:* `String.t`, *default:* `nil`) - Trial period, specified in ISO 8601 format. Acceptable values are anything between "P7D" (seven days) and "P999D" (999 days). Seasonal subscriptions cannot have a trial period.
   """
 
   use GoogleApi.Gax.ModelBase

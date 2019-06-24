@@ -21,21 +21,21 @@ defmodule GoogleApi.AndroidPublisher.V2.Model.ExternallyHostedApk do
 
   ## Attributes
 
-  - applicationLabel (String.t): The application label. Defaults to `nil`.
-  - certificateBase64s (list(String.t)): A certificate (or array of certificates if a certificate-chain is used) used to signed this APK, represented as a base64 encoded byte array. Defaults to `nil`.
-  - externallyHostedUrl (String.t): The URL at which the APK is hosted. This must be an https URL. Defaults to `nil`.
-  - fileSha1Base64 (String.t): The SHA1 checksum of this APK, represented as a base64 encoded byte array. Defaults to `nil`.
-  - fileSha256Base64 (String.t): The SHA256 checksum of this APK, represented as a base64 encoded byte array. Defaults to `nil`.
-  - fileSize (String.t): The file size in bytes of this APK. Defaults to `nil`.
-  - iconBase64 (String.t): The icon image from the APK, as a base64 encoded byte array. Defaults to `nil`.
-  - maximumSdk (integer()): The maximum SDK supported by this APK (optional). Defaults to `nil`.
-  - minimumSdk (integer()): The minimum SDK targeted by this APK. Defaults to `nil`.
-  - nativeCodes (list(String.t)): The native code environments supported by this APK (optional). Defaults to `nil`.
-  - packageName (String.t): The package name. Defaults to `nil`.
-  - usesFeatures (list(String.t)): The features required by this APK (optional). Defaults to `nil`.
-  - usesPermissions (list(GoogleApi.AndroidPublisher.V2.Model.ExternallyHostedApkUsesPermission.t)): The permissions requested by this APK. Defaults to `nil`.
-  - versionCode (integer()): The version code of this APK. Defaults to `nil`.
-  - versionName (String.t): The version name of this APK. Defaults to `nil`.
+  *   `applicationLabel` (*type:* `String.t`, *default:* `nil`) - The application label.
+  *   `certificateBase64s` (*type:* `list(String.t)`, *default:* `nil`) - A certificate (or array of certificates if a certificate-chain is used) used to signed this APK, represented as a base64 encoded byte array.
+  *   `externallyHostedUrl` (*type:* `String.t`, *default:* `nil`) - The URL at which the APK is hosted. This must be an https URL.
+  *   `fileSha1Base64` (*type:* `String.t`, *default:* `nil`) - The SHA1 checksum of this APK, represented as a base64 encoded byte array.
+  *   `fileSha256Base64` (*type:* `String.t`, *default:* `nil`) - The SHA256 checksum of this APK, represented as a base64 encoded byte array.
+  *   `fileSize` (*type:* `String.t`, *default:* `nil`) - The file size in bytes of this APK.
+  *   `iconBase64` (*type:* `String.t`, *default:* `nil`) - The icon image from the APK, as a base64 encoded byte array.
+  *   `maximumSdk` (*type:* `integer()`, *default:* `nil`) - The maximum SDK supported by this APK (optional).
+  *   `minimumSdk` (*type:* `integer()`, *default:* `nil`) - The minimum SDK targeted by this APK.
+  *   `nativeCodes` (*type:* `list(String.t)`, *default:* `nil`) - The native code environments supported by this APK (optional).
+  *   `packageName` (*type:* `String.t`, *default:* `nil`) - The package name.
+  *   `usesFeatures` (*type:* `list(String.t)`, *default:* `nil`) - The features required by this APK (optional).
+  *   `usesPermissions` (*type:* `list(GoogleApi.AndroidPublisher.V2.Model.ExternallyHostedApkUsesPermission.t)`, *default:* `nil`) - The permissions requested by this APK.
+  *   `versionCode` (*type:* `integer()`, *default:* `nil`) - The version code of this APK.
+  *   `versionName` (*type:* `String.t`, *default:* `nil`) - The version name of this APK.
   """
 
   use GoogleApi.Gax.ModelBase

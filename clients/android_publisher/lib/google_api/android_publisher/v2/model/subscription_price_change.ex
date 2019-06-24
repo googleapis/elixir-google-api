@@ -21,10 +21,10 @@ defmodule GoogleApi.AndroidPublisher.V2.Model.SubscriptionPriceChange do
 
   ## Attributes
 
-  - newPrice (GoogleApi.AndroidPublisher.V2.Model.Price.t): The new price the subscription will renew with if the price change is accepted by the user. Defaults to `nil`.
-  - state (integer()): The current state of the price change. Possible values are:  
-  - Outstanding: State for a pending price change waiting for the user to agree. In this state, you can optionally seek confirmation from the user using the In-App API. 
-  - Accepted: State for an accepted price change that the subscription will renew with unless it's canceled. The price change takes effect on a future date when the subscription renews. Note that the change might not occur when the subscription is renewed next. Defaults to `nil`.
+  *   `newPrice` (*type:* `GoogleApi.AndroidPublisher.V2.Model.Price.t`, *default:* `nil`) - The new price the subscription will renew with if the price change is accepted by the user.
+  *   `state` (*type:* `integer()`, *default:* `nil`) - The current state of the price change. Possible values are:  
+      - Outstanding: State for a pending price change waiting for the user to agree. In this state, you can optionally seek confirmation from the user using the In-App API. 
+      - Accepted: State for an accepted price change that the subscription will renew with unless it's canceled. The price change takes effect on a future date when the subscription renews. Note that the change might not occur when the subscription is renewed next.
   """
 
   use GoogleApi.Gax.ModelBase

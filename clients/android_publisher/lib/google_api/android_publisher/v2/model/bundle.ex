@@ -21,9 +21,9 @@ defmodule GoogleApi.AndroidPublisher.V2.Model.Bundle do
 
   ## Attributes
 
-  - sha1 (String.t): A sha1 hash of the upload payload, encoded as a hex string and matching the output of the sha1sum command. Defaults to `nil`.
-  - sha256 (String.t): A sha256 hash of the upload payload, encoded as a hex string and matching the output of the sha256sum command. Defaults to `nil`.
-  - versionCode (integer()): The version code of the Android App Bundle. As specified in the Android App Bundle's base module APK manifest file. Defaults to `nil`.
+  *   `sha1` (*type:* `String.t`, *default:* `nil`) - A sha1 hash of the upload payload, encoded as a hex string and matching the output of the sha1sum command.
+  *   `sha256` (*type:* `String.t`, *default:* `nil`) - A sha256 hash of the upload payload, encoded as a hex string and matching the output of the sha256sum command.
+  *   `versionCode` (*type:* `integer()`, *default:* `nil`) - The version code of the Android App Bundle. As specified in the Android App Bundle's base module APK manifest file.
   """
 
   use GoogleApi.Gax.ModelBase

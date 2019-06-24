@@ -21,7 +21,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.ReviewsReplyResponse do
 
   ## Attributes
 
-  - result (GoogleApi.AndroidPublisher.V3.Model.ReviewReplyResult.t):  Defaults to `nil`.
+  *   `result` (*type:* `GoogleApi.AndroidPublisher.V3.Model.ReviewReplyResult.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

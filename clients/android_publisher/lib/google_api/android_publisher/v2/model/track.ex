@@ -21,9 +21,9 @@ defmodule GoogleApi.AndroidPublisher.V2.Model.Track do
 
   ## Attributes
 
-  - track (String.t): Identifier for this track. Defaults to `nil`.
-  - userFraction (float()):  Defaults to `nil`.
-  - versionCodes (list(integer())): Version codes to make active on this track. Note that this list should contain all versions you wish to be active, including those you wish to retain from previous releases. Defaults to `nil`.
+  *   `track` (*type:* `String.t`, *default:* `nil`) - Identifier for this track.
+  *   `userFraction` (*type:* `float()`, *default:* `nil`) - 
+  *   `versionCodes` (*type:* `list(integer())`, *default:* `nil`) - Version codes to make active on this track. Note that this list should contain all versions you wish to be active, including those you wish to retain from previous releases.
   """
 
   use GoogleApi.Gax.ModelBase
