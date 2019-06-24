@@ -21,9 +21,9 @@ defmodule GoogleApi.AndroidManagement.V1.Model.PersistentPreferredActivity do
 
   ## Attributes
 
-  - actions (list(String.t)): The intent actions to match in the filter. If any actions are included in the filter, then an intent's action must be one of those values for it to match. If no actions are included, the intent action is ignored. Defaults to `nil`.
-  - categories (list(String.t)): The intent categories to match in the filter. An intent includes the categories that it requires, all of which must be included in the filter in order to match. In other words, adding a category to the filter has no impact on matching unless that category is specified in the intent. Defaults to `nil`.
-  - receiverActivity (String.t): The activity that should be the default intent handler. This should be an Android component name, e.g. com.android.enterprise.app/.MainActivity. Alternatively, the value may be the package name of an app, which causes Android Device Policy to choose an appropriate activity from the app to handle the intent. Defaults to `nil`.
+  *   `actions` (*type:* `list(String.t)`, *default:* `nil`) - The intent actions to match in the filter. If any actions are included in the filter, then an intent's action must be one of those values for it to match. If no actions are included, the intent action is ignored.
+  *   `categories` (*type:* `list(String.t)`, *default:* `nil`) - The intent categories to match in the filter. An intent includes the categories that it requires, all of which must be included in the filter in order to match. In other words, adding a category to the filter has no impact on matching unless that category is specified in the intent.
+  *   `receiverActivity` (*type:* `String.t`, *default:* `nil`) - The activity that should be the default intent handler. This should be an Android component name, e.g. com.android.enterprise.app/.MainActivity. Alternatively, the value may be the package name of an app, which causes Android Device Policy to choose an appropriate activity from the app to handle the intent.
   """
 
   use GoogleApi.Gax.ModelBase

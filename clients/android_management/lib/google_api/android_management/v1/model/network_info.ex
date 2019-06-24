@@ -21,10 +21,10 @@ defmodule GoogleApi.AndroidManagement.V1.Model.NetworkInfo do
 
   ## Attributes
 
-  - imei (String.t): IMEI number of the GSM device. For example, A1000031212. Defaults to `nil`.
-  - meid (String.t): MEID number of the CDMA device. For example, A00000292788E1. Defaults to `nil`.
-  - networkOperatorName (String.t): Alphabetic name of current registered operator. For example, Vodafone. Defaults to `nil`.
-  - wifiMacAddress (String.t): Wi-Fi MAC address of the device. For example, 7c:11:11:11:11:11. Defaults to `nil`.
+  *   `imei` (*type:* `String.t`, *default:* `nil`) - IMEI number of the GSM device. For example, A1000031212.
+  *   `meid` (*type:* `String.t`, *default:* `nil`) - MEID number of the CDMA device. For example, A00000292788E1.
+  *   `networkOperatorName` (*type:* `String.t`, *default:* `nil`) - Alphabetic name of current registered operator. For example, Vodafone.
+  *   `wifiMacAddress` (*type:* `String.t`, *default:* `nil`) - Wi-Fi MAC address of the device. For example, 7c:11:11:11:11:11.
   """
 
   use GoogleApi.Gax.ModelBase

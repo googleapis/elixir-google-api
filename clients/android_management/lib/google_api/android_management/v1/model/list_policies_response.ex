@@ -21,8 +21,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ListPoliciesResponse do
 
   ## Attributes
 
-  - nextPageToken (String.t): If there are more results, a token to retrieve next page of results. Defaults to `nil`.
-  - policies (list(GoogleApi.AndroidManagement.V1.Model.Policy.t)): The list of policies. Defaults to `nil`.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If there are more results, a token to retrieve next page of results.
+  *   `policies` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.Policy.t)`, *default:* `nil`) - The list of policies.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,8 +21,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ListWebAppsResponse do
 
   ## Attributes
 
-  - nextPageToken (String.t): If there are more results, a token to retrieve next page of results. Defaults to `nil`.
-  - webApps (list(GoogleApi.AndroidManagement.V1.Model.WebApp.t)): The list of web apps. Defaults to `nil`.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If there are more results, a token to retrieve next page of results.
+  *   `webApps` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.WebApp.t)`, *default:* `nil`) - The list of web apps.
   """
 
   use GoogleApi.Gax.ModelBase

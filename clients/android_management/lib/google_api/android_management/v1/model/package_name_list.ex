@@ -21,7 +21,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.PackageNameList do
 
   ## Attributes
 
-  - packageNames (list(String.t)): A list of package names. Defaults to `nil`.
+  *   `packageNames` (*type:* `list(String.t)`, *default:* `nil`) - A list of package names.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,10 +21,10 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Application do
 
   ## Attributes
 
-  - managedProperties (list(GoogleApi.AndroidManagement.V1.Model.ManagedProperty.t)): The set of managed properties available to be pre-configured for the app. Defaults to `nil`.
-  - name (String.t): The name of the app in the form enterprises/{enterpriseId}/applications/{package_name}. Defaults to `nil`.
-  - permissions (list(GoogleApi.AndroidManagement.V1.Model.ApplicationPermission.t)): The permissions required by the app. Defaults to `nil`.
-  - title (String.t): The title of the app. Localized. Defaults to `nil`.
+  *   `managedProperties` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.ManagedProperty.t)`, *default:* `nil`) - The set of managed properties available to be pre-configured for the app.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the app in the form enterprises/{enterpriseId}/applications/{package_name}.
+  *   `permissions` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.ApplicationPermission.t)`, *default:* `nil`) - The permissions required by the app.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - The title of the app. Localized.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,9 +21,9 @@ defmodule GoogleApi.AndroidManagement.V1.Model.NonComplianceDetailCondition do
 
   ## Attributes
 
-  - nonComplianceReason (String.t): The reason the device is not in compliance with the setting. If not set, then this condition matches any reason. Defaults to `nil`.
-  - packageName (String.t): The package name of the app that's out of compliance. If not set, then this condition matches any package name. Defaults to `nil`.
-  - settingName (String.t): The name of the policy setting. This is the JSON field name of a top-level Policy field. If not set, then this condition matches any setting name. Defaults to `nil`.
+  *   `nonComplianceReason` (*type:* `String.t`, *default:* `nil`) - The reason the device is not in compliance with the setting. If not set, then this condition matches any reason.
+  *   `packageName` (*type:* `String.t`, *default:* `nil`) - The package name of the app that's out of compliance. If not set, then this condition matches any package name.
+  *   `settingName` (*type:* `String.t`, *default:* `nil`) - The name of the policy setting. This is the JSON field name of a top-level Policy field. If not set, then this condition matches any setting name.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,8 +21,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.TermsAndConditions do
 
   ## Attributes
 
-  - content (GoogleApi.AndroidManagement.V1.Model.UserFacingMessage.t): A well-formatted HTML string. It will be parsed on the client with android.text.Html#fromHtml. Defaults to `nil`.
-  - header (GoogleApi.AndroidManagement.V1.Model.UserFacingMessage.t): A short header which appears above the HTML content. Defaults to `nil`.
+  *   `content` (*type:* `GoogleApi.AndroidManagement.V1.Model.UserFacingMessage.t`, *default:* `nil`) - A well-formatted HTML string. It will be parsed on the client with android.text.Html#fromHtml.
+  *   `header` (*type:* `GoogleApi.AndroidManagement.V1.Model.UserFacingMessage.t`, *default:* `nil`) - A short header which appears above the HTML content.
   """
 
   use GoogleApi.Gax.ModelBase

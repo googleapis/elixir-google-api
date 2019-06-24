@@ -21,8 +21,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ListDevicesResponse do
 
   ## Attributes
 
-  - devices (list(GoogleApi.AndroidManagement.V1.Model.Device.t)): The list of devices. Defaults to `nil`.
-  - nextPageToken (String.t): If there are more results, a token to retrieve next page of results. Defaults to `nil`.
+  *   `devices` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.Device.t)`, *default:* `nil`) - The list of devices.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If there are more results, a token to retrieve next page of results.
   """
 
   use GoogleApi.Gax.ModelBase

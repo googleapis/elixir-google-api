@@ -21,9 +21,9 @@ defmodule GoogleApi.AndroidManagement.V1.Model.SetupAction do
 
   ## Attributes
 
-  - description (GoogleApi.AndroidManagement.V1.Model.UserFacingMessage.t): Description of this action. Defaults to `nil`.
-  - launchApp (GoogleApi.AndroidManagement.V1.Model.LaunchAppAction.t): An action to launch an app. Defaults to `nil`.
-  - title (GoogleApi.AndroidManagement.V1.Model.UserFacingMessage.t): Title of this action. Defaults to `nil`.
+  *   `description` (*type:* `GoogleApi.AndroidManagement.V1.Model.UserFacingMessage.t`, *default:* `nil`) - Description of this action.
+  *   `launchApp` (*type:* `GoogleApi.AndroidManagement.V1.Model.LaunchAppAction.t`, *default:* `nil`) - An action to launch an app.
+  *   `title` (*type:* `GoogleApi.AndroidManagement.V1.Model.UserFacingMessage.t`, *default:* `nil`) - Title of this action.
   """
 
   use GoogleApi.Gax.ModelBase

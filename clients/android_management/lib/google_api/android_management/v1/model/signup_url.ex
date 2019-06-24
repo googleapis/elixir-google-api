@@ -21,8 +21,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.SignupUrl do
 
   ## Attributes
 
-  - name (String.t): The name of the resource. Use this value in the signupUrl field when calling enterprises.create to complete the enterprise signup flow. Defaults to `nil`.
-  - url (String.t): A URL where an enterprise admin can register their enterprise. The page can't be rendered in an iframe. Defaults to `nil`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the resource. Use this value in the signupUrl field when calling enterprises.create to complete the enterprise signup flow.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - A URL where an enterprise admin can register their enterprise. The page can't be rendered in an iframe.
   """
 
   use GoogleApi.Gax.ModelBase

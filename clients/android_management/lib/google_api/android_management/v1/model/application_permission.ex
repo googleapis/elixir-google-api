@@ -21,9 +21,9 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ApplicationPermission do
 
   ## Attributes
 
-  - description (String.t): A longer description of the permission, providing more detail on what it affects. Localized. Defaults to `nil`.
-  - name (String.t): The name of the permission. Localized. Defaults to `nil`.
-  - permissionId (String.t): An opaque string uniquely identifying the permission. Not localized. Defaults to `nil`.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - A longer description of the permission, providing more detail on what it affects. Localized.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the permission. Localized.
+  *   `permissionId` (*type:* `String.t`, *default:* `nil`) - An opaque string uniquely identifying the permission. Not localized.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,9 +21,9 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ChoosePrivateKeyRule do
 
   ## Attributes
 
-  - packageNames (list(String.t)): The package names for which outgoing requests are subject to this rule. If no package names are specified, then the rule applies to all packages. For each package name listed, the rule applies to that package and all other packages that shared the same Android UID. The SHA256 hash of the signing key signatures of each package_name will be verified against those provided by Play Defaults to `nil`.
-  - privateKeyAlias (String.t): The alias of the private key to be used. Defaults to `nil`.
-  - urlPattern (String.t): The URL pattern to match against the URL of the outgoing request. The pattern may contain asterisk (*) wildcards. Any URL is matched if unspecified. Defaults to `nil`.
+  *   `packageNames` (*type:* `list(String.t)`, *default:* `nil`) - The package names for which outgoing requests are subject to this rule. If no package names are specified, then the rule applies to all packages. For each package name listed, the rule applies to that package and all other packages that shared the same Android UID. The SHA256 hash of the signing key signatures of each package_name will be verified against those provided by Play
+  *   `privateKeyAlias` (*type:* `String.t`, *default:* `nil`) - The alias of the private key to be used.
+  *   `urlPattern` (*type:* `String.t`, *default:* `nil`) - The URL pattern to match against the URL of the outgoing request. The pattern may contain asterisk (*) wildcards. Any URL is matched if unspecified.
   """
 
   use GoogleApi.Gax.ModelBase

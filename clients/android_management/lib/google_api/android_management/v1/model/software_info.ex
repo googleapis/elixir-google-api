@@ -21,16 +21,16 @@ defmodule GoogleApi.AndroidManagement.V1.Model.SoftwareInfo do
 
   ## Attributes
 
-  - androidBuildNumber (String.t): Android build ID string meant for displaying to the user. For example, shamu-userdebug 6.0.1 MOB30I 2756745 dev-keys. Defaults to `nil`.
-  - androidBuildTime (DateTime.t): Build time. Defaults to `nil`.
-  - androidDevicePolicyVersionCode (integer()): The Android Device Policy app version code. Defaults to `nil`.
-  - androidDevicePolicyVersionName (String.t): The Android Device Policy app version as displayed to the user. Defaults to `nil`.
-  - androidVersion (String.t): The user-visible Android version string. For example, 6.0.1. Defaults to `nil`.
-  - bootloaderVersion (String.t): The system bootloader version number, e.g. 0.6.7. Defaults to `nil`.
-  - deviceBuildSignature (String.t): SHA-256 hash of android.content.pm.Signature (https://developer.android.com/reference/android/content/pm/Signature.html) associated with the system package, which can be used to verify that the system build hasn't been modified. Defaults to `nil`.
-  - deviceKernelVersion (String.t): Kernel version, for example, 2.6.32.9-g103d848. Defaults to `nil`.
-  - primaryLanguageCode (String.t): An IETF BCP 47 language code for the primary locale on the device. Defaults to `nil`.
-  - securityPatchLevel (String.t): Security patch level, e.g. 2016-05-01. Defaults to `nil`.
+  *   `androidBuildNumber` (*type:* `String.t`, *default:* `nil`) - Android build ID string meant for displaying to the user. For example, shamu-userdebug 6.0.1 MOB30I 2756745 dev-keys.
+  *   `androidBuildTime` (*type:* `DateTime.t`, *default:* `nil`) - Build time.
+  *   `androidDevicePolicyVersionCode` (*type:* `integer()`, *default:* `nil`) - The Android Device Policy app version code.
+  *   `androidDevicePolicyVersionName` (*type:* `String.t`, *default:* `nil`) - The Android Device Policy app version as displayed to the user.
+  *   `androidVersion` (*type:* `String.t`, *default:* `nil`) - The user-visible Android version string. For example, 6.0.1.
+  *   `bootloaderVersion` (*type:* `String.t`, *default:* `nil`) - The system bootloader version number, e.g. 0.6.7.
+  *   `deviceBuildSignature` (*type:* `String.t`, *default:* `nil`) - SHA-256 hash of android.content.pm.Signature (https://developer.android.com/reference/android/content/pm/Signature.html) associated with the system package, which can be used to verify that the system build hasn't been modified.
+  *   `deviceKernelVersion` (*type:* `String.t`, *default:* `nil`) - Kernel version, for example, 2.6.32.9-g103d848.
+  *   `primaryLanguageCode` (*type:* `String.t`, *default:* `nil`) - An IETF BCP 47 language code for the primary locale on the device.
+  *   `securityPatchLevel` (*type:* `String.t`, *default:* `nil`) - Security patch level, e.g. 2016-05-01.
   """
 
   use GoogleApi.Gax.ModelBase

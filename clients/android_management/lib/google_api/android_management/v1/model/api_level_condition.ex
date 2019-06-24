@@ -21,7 +21,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ApiLevelCondition do
 
   ## Attributes
 
-  - minApiLevel (integer()): The minimum desired Android Framework API level. If the device doesn't meet the minimum requirement, this condition is satisfied. Must be greater than zero. Defaults to `nil`.
+  *   `minApiLevel` (*type:* `integer()`, *default:* `nil`) - The minimum desired Android Framework API level. If the device doesn't meet the minimum requirement, this condition is satisfied. Must be greater than zero.
   """
 
   use GoogleApi.Gax.ModelBase

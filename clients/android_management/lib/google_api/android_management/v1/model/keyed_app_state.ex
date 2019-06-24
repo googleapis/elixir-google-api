@@ -21,12 +21,12 @@ defmodule GoogleApi.AndroidManagement.V1.Model.KeyedAppState do
 
   ## Attributes
 
-  - createTime (DateTime.t): The creation time of the app state on the device. Defaults to `nil`.
-  - data (String.t): Optionally, a machine-readable value to be read by the EMM. For example, setting values that the admin can choose to query against in the EMM console (e.g. “notify me if the battery_warning data < 10”). Defaults to `nil`.
-  - key (String.t): The key for the app state. Acts as a point of reference for what the app is providing state for. For example, when providing managed configuration feedback, this key could be the managed configuration key. Defaults to `nil`.
-  - lastUpdateTime (DateTime.t): The time the app state was most recently updated. Defaults to `nil`.
-  - message (String.t): Optionally, a free-form message string to explain the app state. If the state was triggered by a particular value (e.g. a managed configuration value), it should be included in the message. Defaults to `nil`.
-  - severity (String.t): The severity of the app state. Defaults to `nil`.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The creation time of the app state on the device.
+  *   `data` (*type:* `String.t`, *default:* `nil`) - Optionally, a machine-readable value to be read by the EMM. For example, setting values that the admin can choose to query against in the EMM console (e.g. “notify me if the battery_warning data < 10”).
+  *   `key` (*type:* `String.t`, *default:* `nil`) - The key for the app state. Acts as a point of reference for what the app is providing state for. For example, when providing managed configuration feedback, this key could be the managed configuration key.
+  *   `lastUpdateTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the app state was most recently updated.
+  *   `message` (*type:* `String.t`, *default:* `nil`) - Optionally, a free-form message string to explain the app state. If the state was triggered by a particular value (e.g. a managed configuration value), it should be included in the message.
+  *   `severity` (*type:* `String.t`, *default:* `nil`) - The severity of the app state.
   """
 
   use GoogleApi.Gax.ModelBase
