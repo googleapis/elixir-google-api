@@ -21,9 +21,9 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.LocationPreference do
 
   ## Attributes
 
-  - followGaeApplication (String.t): The AppEngine application to follow, it must be in the same region as the Cloud SQL instance. Defaults to `nil`.
-  - kind (String.t): This is always sql#locationPreference. Defaults to `sql#locationPreference`.
-  - zone (String.t): The preferred Compute Engine zone (e.g. us-central1-a, us-central1-b, etc.). Defaults to `nil`.
+  *   `followGaeApplication` (*type:* `String.t`, *default:* `nil`) - The AppEngine application to follow, it must be in the same region as the Cloud SQL instance.
+  *   `kind` (*type:* `String.t`, *default:* `sql#locationPreference`) - This is always sql#locationPreference.
+  *   `zone` (*type:* `String.t`, *default:* `nil`) - The preferred Compute Engine zone (e.g. us-central1-a, us-central1-b, etc.).
   """
 
   use GoogleApi.Gax.ModelBase

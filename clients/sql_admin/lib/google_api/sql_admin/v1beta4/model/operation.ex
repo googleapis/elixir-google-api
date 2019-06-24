@@ -21,21 +21,21 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.Operation do
 
   ## Attributes
 
-  - endTime (DateTime.t): The time this operation finished in UTC timezone in RFC 3339 format, for example 2012-11-15T16:19:00.094Z. Defaults to `nil`.
-  - error (GoogleApi.SQLAdmin.V1beta4.Model.OperationErrors.t): If errors occurred during processing of this operation, this field will be populated. Defaults to `nil`.
-  - exportContext (GoogleApi.SQLAdmin.V1beta4.Model.ExportContext.t): The context for export operation, if applicable. Defaults to `nil`.
-  - importContext (GoogleApi.SQLAdmin.V1beta4.Model.ImportContext.t): The context for import operation, if applicable. Defaults to `nil`.
-  - insertTime (DateTime.t): The time this operation was enqueued in UTC timezone in RFC 3339 format, for example 2012-11-15T16:19:00.094Z. Defaults to `nil`.
-  - kind (String.t): This is always sql#operation. Defaults to `sql#operation`.
-  - name (String.t): An identifier that uniquely identifies the operation. You can use this identifier to retrieve the Operations resource that has information about the operation. Defaults to `nil`.
-  - operationType (String.t): The type of the operation. Valid values are CREATE, DELETE, UPDATE, RESTART, IMPORT, EXPORT, BACKUP_VOLUME, RESTORE_VOLUME, CREATE_USER, DELETE_USER, CREATE_DATABASE, DELETE_DATABASE . Defaults to `nil`.
-  - selfLink (String.t): The URI of this resource. Defaults to `nil`.
-  - startTime (DateTime.t): The time this operation actually started in UTC timezone in RFC 3339 format, for example 2012-11-15T16:19:00.094Z. Defaults to `nil`.
-  - status (String.t): The status of an operation. Valid values are PENDING, RUNNING, DONE, UNKNOWN. Defaults to `nil`.
-  - targetId (String.t): Name of the database instance related to this operation. Defaults to `nil`.
-  - targetLink (String.t):  Defaults to `nil`.
-  - targetProject (String.t): The project ID of the target instance related to this operation. Defaults to `nil`.
-  - user (String.t): The email address of the user who initiated this operation. Defaults to `nil`.
+  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The time this operation finished in UTC timezone in RFC 3339 format, for example 2012-11-15T16:19:00.094Z.
+  *   `error` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.OperationErrors.t`, *default:* `nil`) - If errors occurred during processing of this operation, this field will be populated.
+  *   `exportContext` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.ExportContext.t`, *default:* `nil`) - The context for export operation, if applicable.
+  *   `importContext` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.ImportContext.t`, *default:* `nil`) - The context for import operation, if applicable.
+  *   `insertTime` (*type:* `DateTime.t`, *default:* `nil`) - The time this operation was enqueued in UTC timezone in RFC 3339 format, for example 2012-11-15T16:19:00.094Z.
+  *   `kind` (*type:* `String.t`, *default:* `sql#operation`) - This is always sql#operation.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - An identifier that uniquely identifies the operation. You can use this identifier to retrieve the Operations resource that has information about the operation.
+  *   `operationType` (*type:* `String.t`, *default:* `nil`) - The type of the operation. Valid values are CREATE, DELETE, UPDATE, RESTART, IMPORT, EXPORT, BACKUP_VOLUME, RESTORE_VOLUME, CREATE_USER, DELETE_USER, CREATE_DATABASE, DELETE_DATABASE .
+  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - The URI of this resource.
+  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The time this operation actually started in UTC timezone in RFC 3339 format, for example 2012-11-15T16:19:00.094Z.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - The status of an operation. Valid values are PENDING, RUNNING, DONE, UNKNOWN.
+  *   `targetId` (*type:* `String.t`, *default:* `nil`) - Name of the database instance related to this operation.
+  *   `targetLink` (*type:* `String.t`, *default:* `nil`) - 
+  *   `targetProject` (*type:* `String.t`, *default:* `nil`) - The project ID of the target instance related to this operation.
+  *   `user` (*type:* `String.t`, *default:* `nil`) - The email address of the user who initiated this operation.
   """
 
   use GoogleApi.Gax.ModelBase

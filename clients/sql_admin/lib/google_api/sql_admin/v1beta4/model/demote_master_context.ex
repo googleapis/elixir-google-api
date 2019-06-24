@@ -21,10 +21,10 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.DemoteMasterContext do
 
   ## Attributes
 
-  - kind (String.t): This is always sql#demoteMasterContext. Defaults to `sql#demoteMasterContext`.
-  - masterInstanceName (String.t): The name of the instance which will act as on-premises master in the replication setup. Defaults to `nil`.
-  - replicaConfiguration (GoogleApi.SQLAdmin.V1beta4.Model.DemoteMasterConfiguration.t): Configuration specific to read-replicas replicating from the on-premises master. Defaults to `nil`.
-  - verifyGtidConsistency (boolean()): Verify GTID consistency for demote operation. Default value: True. Second Generation instances only. Setting this flag to false enables you to bypass GTID consistency check between on-premises master and Cloud SQL instance during the demotion operation but also exposes you to the risk of future replication failures. Change the value only if you know the reason for the GTID divergence and are confident that doing so will not cause any replication issues. Defaults to `nil`.
+  *   `kind` (*type:* `String.t`, *default:* `sql#demoteMasterContext`) - This is always sql#demoteMasterContext.
+  *   `masterInstanceName` (*type:* `String.t`, *default:* `nil`) - The name of the instance which will act as on-premises master in the replication setup.
+  *   `replicaConfiguration` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.DemoteMasterConfiguration.t`, *default:* `nil`) - Configuration specific to read-replicas replicating from the on-premises master.
+  *   `verifyGtidConsistency` (*type:* `boolean()`, *default:* `nil`) - Verify GTID consistency for demote operation. Default value: True. Second Generation instances only. Setting this flag to false enables you to bypass GTID consistency check between on-premises master and Cloud SQL instance during the demotion operation but also exposes you to the risk of future replication failures. Change the value only if you know the reason for the GTID divergence and are confident that doing so will not cause any replication issues.
   """
 
   use GoogleApi.Gax.ModelBase

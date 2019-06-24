@@ -21,8 +21,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.OperationErrors do
 
   ## Attributes
 
-  - errors (list(GoogleApi.SQLAdmin.V1beta4.Model.OperationError.t)): The list of errors encountered while processing this operation. Defaults to `nil`.
-  - kind (String.t): This is always sql#operationErrors. Defaults to `sql#operationErrors`.
+  *   `errors` (*type:* `list(GoogleApi.SQLAdmin.V1beta4.Model.OperationError.t)`, *default:* `nil`) - The list of errors encountered while processing this operation.
+  *   `kind` (*type:* `String.t`, *default:* `sql#operationErrors`) - This is always sql#operationErrors.
   """
 
   use GoogleApi.Gax.ModelBase

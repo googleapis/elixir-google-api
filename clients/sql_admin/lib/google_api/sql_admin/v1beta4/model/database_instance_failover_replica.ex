@@ -21,8 +21,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstanceFailoverReplica do
 
   ## Attributes
 
-  - available (boolean()): The availability status of the failover replica. A false status indicates that the failover replica is out of sync. The master can only failover to the falover replica when the status is true. Defaults to `nil`.
-  - name (String.t): The name of the failover replica. If specified at instance creation, a failover replica is created for the instance. The name doesn't include the project ID. This property is applicable only to Second Generation instances. Defaults to `nil`.
+  *   `available` (*type:* `boolean()`, *default:* `nil`) - The availability status of the failover replica. A false status indicates that the failover replica is out of sync. The master can only failover to the falover replica when the status is true.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the failover replica. If specified at instance creation, a failover replica is created for the instance. The name doesn't include the project ID. This property is applicable only to Second Generation instances.
   """
 
   use GoogleApi.Gax.ModelBase

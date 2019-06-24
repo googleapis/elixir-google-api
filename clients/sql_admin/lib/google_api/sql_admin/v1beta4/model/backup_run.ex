@@ -21,19 +21,19 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.BackupRun do
 
   ## Attributes
 
-  - description (String.t): The description of this run, only applicable to on-demand backups. Defaults to `nil`.
-  - endTime (DateTime.t): The time the backup operation completed in UTC timezone in RFC 3339 format, for example 2012-11-15T16:19:00.094Z. Defaults to `nil`.
-  - enqueuedTime (DateTime.t): The time the run was enqueued in UTC timezone in RFC 3339 format, for example 2012-11-15T16:19:00.094Z. Defaults to `nil`.
-  - error (GoogleApi.SQLAdmin.V1beta4.Model.OperationError.t): Information about why the backup operation failed. This is only present if the run has the FAILED status. Defaults to `nil`.
-  - id (String.t): The identifier for this backup run. Unique only for a specific Cloud SQL instance. Defaults to `nil`.
-  - instance (String.t): Name of the database instance. Defaults to `nil`.
-  - kind (String.t): This is always sql#backupRun. Defaults to `sql#backupRun`.
-  - location (String.t): The location of the backup. Defaults to `nil`.
-  - selfLink (String.t): The URI of this resource. Defaults to `nil`.
-  - startTime (DateTime.t): The time the backup operation actually started in UTC timezone in RFC 3339 format, for example 2012-11-15T16:19:00.094Z. Defaults to `nil`.
-  - status (String.t): The status of this run. Defaults to `nil`.
-  - type (String.t): The type of this run; can be either "AUTOMATED" or "ON_DEMAND". Defaults to `nil`.
-  - windowStartTime (DateTime.t): The start time of the backup window during which this the backup was attempted in RFC 3339 format, for example 2012-11-15T16:19:00.094Z. Defaults to `nil`.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - The description of this run, only applicable to on-demand backups.
+  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the backup operation completed in UTC timezone in RFC 3339 format, for example 2012-11-15T16:19:00.094Z.
+  *   `enqueuedTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the run was enqueued in UTC timezone in RFC 3339 format, for example 2012-11-15T16:19:00.094Z.
+  *   `error` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.OperationError.t`, *default:* `nil`) - Information about why the backup operation failed. This is only present if the run has the FAILED status.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The identifier for this backup run. Unique only for a specific Cloud SQL instance.
+  *   `instance` (*type:* `String.t`, *default:* `nil`) - Name of the database instance.
+  *   `kind` (*type:* `String.t`, *default:* `sql#backupRun`) - This is always sql#backupRun.
+  *   `location` (*type:* `String.t`, *default:* `nil`) - The location of the backup.
+  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - The URI of this resource.
+  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the backup operation actually started in UTC timezone in RFC 3339 format, for example 2012-11-15T16:19:00.094Z.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - The status of this run.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of this run; can be either "AUTOMATED" or "ON_DEMAND".
+  *   `windowStartTime` (*type:* `DateTime.t`, *default:* `nil`) - The start time of the backup window during which this the backup was attempted in RFC 3339 format, for example 2012-11-15T16:19:00.094Z.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -28,24 +28,25 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Operations do
 
   ## Parameters
 
-  - connection (GoogleApi.SQLAdmin.V1beta4.Connection): Connection to server
-  - project (String.t): Project ID of the project that contains the instance.
-  - operation (String.t): Instance operation ID.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.SQLAdmin.V1beta4.Connection.t`) - Connection to server
+  *   `project` (*type:* `String.t`) - Project ID of the project that contains the instance.
+  *   `operation` (*type:* `String.t`) - Instance operation ID.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec sql_operations_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+  @spec sql_operations_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def sql_operations_get(connection, project, operation, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -77,26 +78,27 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Operations do
 
   ## Parameters
 
-  - connection (GoogleApi.SQLAdmin.V1beta4.Connection): Connection to server
-  - project (String.t): Project ID of the project that contains the instance.
-  - instance (String.t): Cloud SQL instance ID. This does not include the project ID.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :maxResults (integer()): Maximum number of operations per response.
-    - :pageToken (String.t): A previously-returned page token representing part of the larger set of results to view.
+  *   `connection` (*type:* `GoogleApi.SQLAdmin.V1beta4.Connection.t`) - Connection to server
+  *   `project` (*type:* `String.t`) - Project ID of the project that contains the instance.
+  *   `instance` (*type:* `String.t`) - Cloud SQL instance ID. This does not include the project ID.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:maxResults` (*type:* `integer()`) - Maximum number of operations per response.
+      *   `:pageToken` (*type:* `String.t`) - A previously-returned page token representing part of the larger set of results to view.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.SQLAdmin.V1beta4.Model.OperationsListResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.SQLAdmin.V1beta4.Model.OperationsListResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec sql_operations_list(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+  @spec sql_operations_list(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.OperationsListResponse.t()}
           | {:error, Tesla.Env.t()}
   def sql_operations_list(connection, project, instance, optional_params \\ [], opts \\ []) do

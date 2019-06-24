@@ -21,7 +21,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.InstancesRotateServerCaRequest do
 
   ## Attributes
 
-  - rotateServerCaContext (GoogleApi.SQLAdmin.V1beta4.Model.RotateServerCaContext.t): Contains details about the rotate server CA operation. Defaults to `nil`.
+  *   `rotateServerCaContext` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.RotateServerCaContext.t`, *default:* `nil`) - Contains details about the rotate server CA operation.
   """
 
   use GoogleApi.Gax.ModelBase

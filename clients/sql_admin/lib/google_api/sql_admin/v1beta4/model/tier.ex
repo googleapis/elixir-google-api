@@ -21,11 +21,11 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.Tier do
 
   ## Attributes
 
-  - DiskQuota (String.t): The maximum disk size of this tier in bytes. Defaults to `nil`.
-  - RAM (String.t): The maximum RAM usage of this tier in bytes. Defaults to `nil`.
-  - kind (String.t): This is always sql#tier. Defaults to `sql#tier`.
-  - region (list(String.t)): The applicable regions for this tier. Defaults to `nil`.
-  - tier (String.t): An identifier for the machine type, for example, db-n1-standard-1. For related information, see Pricing. Defaults to `nil`.
+  *   `DiskQuota` (*type:* `String.t`, *default:* `nil`) - The maximum disk size of this tier in bytes.
+  *   `RAM` (*type:* `String.t`, *default:* `nil`) - The maximum RAM usage of this tier in bytes.
+  *   `kind` (*type:* `String.t`, *default:* `sql#tier`) - This is always sql#tier.
+  *   `region` (*type:* `list(String.t)`, *default:* `nil`) - The applicable regions for this tier.
+  *   `tier` (*type:* `String.t`, *default:* `nil`) - An identifier for the machine type, for example, db-n1-standard-1. For related information, see Pricing.
   """
 
   use GoogleApi.Gax.ModelBase

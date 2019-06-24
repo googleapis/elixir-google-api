@@ -21,9 +21,9 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.ExportContextSqlExportOptions do
 
   ## Attributes
 
-  - mysqlExportOptions (GoogleApi.SQLAdmin.V1beta4.Model.ExportContextSqlExportOptionsMysqlExportOptions.t): Options for exporting from MySQL. Defaults to `nil`.
-  - schemaOnly (boolean()): Export only schemas. Defaults to `nil`.
-  - tables (list(String.t)): Tables to export, or that were exported, from the specified database. If you specify tables, specify one and only one database. For PostgreSQL instances, you can specify only one table. Defaults to `nil`.
+  *   `mysqlExportOptions` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.ExportContextSqlExportOptionsMysqlExportOptions.t`, *default:* `nil`) - Options for exporting from MySQL.
+  *   `schemaOnly` (*type:* `boolean()`, *default:* `nil`) - Export only schemas.
+  *   `tables` (*type:* `list(String.t)`, *default:* `nil`) - Tables to export, or that were exported, from the specified database. If you specify tables, specify one and only one database. For PostgreSQL instances, you can specify only one table.
   """
 
   use GoogleApi.Gax.ModelBase

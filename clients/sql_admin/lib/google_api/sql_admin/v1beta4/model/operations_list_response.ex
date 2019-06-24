@@ -21,9 +21,9 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.OperationsListResponse do
 
   ## Attributes
 
-  - items (list(GoogleApi.SQLAdmin.V1beta4.Model.Operation.t)): List of operation resources. Defaults to `nil`.
-  - kind (String.t): This is always sql#operationsList. Defaults to `sql#operationsList`.
-  - nextPageToken (String.t): The continuation token, used to page through large result sets. Provide this value in a subsequent request to return the next page of results. Defaults to `nil`.
+  *   `items` (*type:* `list(GoogleApi.SQLAdmin.V1beta4.Model.Operation.t)`, *default:* `nil`) - List of operation resources.
+  *   `kind` (*type:* `String.t`, *default:* `sql#operationsList`) - This is always sql#operationsList.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The continuation token, used to page through large result sets. Provide this value in a subsequent request to return the next page of results.
   """
 
   use GoogleApi.Gax.ModelBase

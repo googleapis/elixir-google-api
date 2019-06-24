@@ -21,7 +21,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.ExportContextCsvExportOptions do
 
   ## Attributes
 
-  - selectQuery (String.t): The select query used to extract the data. Defaults to `nil`.
+  *   `selectQuery` (*type:* `String.t`, *default:* `nil`) - The select query used to extract the data.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -20,6 +20,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Connection do
   Handle Tesla connections for GoogleApi.SQLAdmin.V1beta4.
   """
 
+  @type t :: Tesla.Env.client()
+
   use GoogleApi.Gax.Connection,
     scopes: [
       # View and manage your data across Google Cloud Platform services

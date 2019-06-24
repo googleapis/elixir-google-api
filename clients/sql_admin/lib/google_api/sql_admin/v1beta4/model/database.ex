@@ -21,14 +21,14 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.Database do
 
   ## Attributes
 
-  - charset (String.t): The MySQL charset value. Defaults to `nil`.
-  - collation (String.t): The MySQL collation value. Defaults to `nil`.
-  - etag (String.t): This field is deprecated and will be removed from a future version of the API. Defaults to `nil`.
-  - instance (String.t): The name of the Cloud SQL instance. This does not include the project ID. Defaults to `nil`.
-  - kind (String.t): This is always sql#database. Defaults to `sql#database`.
-  - name (String.t): The name of the database in the Cloud SQL instance. This does not include the project ID or instance name. Defaults to `nil`.
-  - project (String.t): The project ID of the project containing the Cloud SQL database. The Google apps domain is prefixed if applicable. Defaults to `nil`.
-  - selfLink (String.t): The URI of this resource. Defaults to `nil`.
+  *   `charset` (*type:* `String.t`, *default:* `nil`) - The MySQL charset value.
+  *   `collation` (*type:* `String.t`, *default:* `nil`) - The MySQL collation value.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - This field is deprecated and will be removed from a future version of the API.
+  *   `instance` (*type:* `String.t`, *default:* `nil`) - The name of the Cloud SQL instance. This does not include the project ID.
+  *   `kind` (*type:* `String.t`, *default:* `sql#database`) - This is always sql#database.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the database in the Cloud SQL instance. This does not include the project ID or instance name.
+  *   `project` (*type:* `String.t`, *default:* `nil`) - The project ID of the project containing the Cloud SQL database. The Google apps domain is prefixed if applicable.
+  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - The URI of this resource.
   """
 
   use GoogleApi.Gax.ModelBase

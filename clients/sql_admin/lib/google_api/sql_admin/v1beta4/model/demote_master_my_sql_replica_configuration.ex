@@ -21,12 +21,12 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.DemoteMasterMySqlReplicaConfiguration
 
   ## Attributes
 
-  - caCertificate (String.t): PEM representation of the trusted CA's x509 certificate. Defaults to `nil`.
-  - clientCertificate (String.t): PEM representation of the slave's x509 certificate. Defaults to `nil`.
-  - clientKey (String.t): PEM representation of the slave's private key. The corresponsing public key is encoded in the client's certificate. The format of the slave's private key can be either PKCS #1 or PKCS #8. Defaults to `nil`.
-  - kind (String.t): This is always sql#demoteMasterMysqlReplicaConfiguration. Defaults to `sql#demoteMasterMysqlReplicaConfiguration`.
-  - password (String.t): The password for the replication connection. Defaults to `nil`.
-  - username (String.t): The username for the replication connection. Defaults to `nil`.
+  *   `caCertificate` (*type:* `String.t`, *default:* `nil`) - PEM representation of the trusted CA's x509 certificate.
+  *   `clientCertificate` (*type:* `String.t`, *default:* `nil`) - PEM representation of the slave's x509 certificate.
+  *   `clientKey` (*type:* `String.t`, *default:* `nil`) - PEM representation of the slave's private key. The corresponsing public key is encoded in the client's certificate. The format of the slave's private key can be either PKCS #1 or PKCS #8.
+  *   `kind` (*type:* `String.t`, *default:* `sql#demoteMasterMysqlReplicaConfiguration`) - This is always sql#demoteMasterMysqlReplicaConfiguration.
+  *   `password` (*type:* `String.t`, *default:* `nil`) - The password for the replication connection.
+  *   `username` (*type:* `String.t`, *default:* `nil`) - The username for the replication connection.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,8 +21,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.TruncateLogContext do
 
   ## Attributes
 
-  - kind (String.t): This is always sql#truncateLogContext. Defaults to `sql#truncateLogContext`.
-  - logType (String.t): The type of log to truncate. Valid values are MYSQL_GENERAL_TABLE and MYSQL_SLOW_TABLE. Defaults to `nil`.
+  *   `kind` (*type:* `String.t`, *default:* `sql#truncateLogContext`) - This is always sql#truncateLogContext.
+  *   `logType` (*type:* `String.t`, *default:* `nil`) - The type of log to truncate. Valid values are MYSQL_GENERAL_TABLE and MYSQL_SLOW_TABLE.
   """
 
   use GoogleApi.Gax.ModelBase

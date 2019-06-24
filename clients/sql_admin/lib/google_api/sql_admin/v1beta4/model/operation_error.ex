@@ -21,9 +21,9 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.OperationError do
 
   ## Attributes
 
-  - code (String.t): Identifies the specific error that occurred. Defaults to `nil`.
-  - kind (String.t): This is always sql#operationError. Defaults to `sql#operationError`.
-  - message (String.t): Additional information about the error encountered. Defaults to `nil`.
+  *   `code` (*type:* `String.t`, *default:* `nil`) - Identifies the specific error that occurred.
+  *   `kind` (*type:* `String.t`, *default:* `sql#operationError`) - This is always sql#operationError.
+  *   `message` (*type:* `String.t`, *default:* `nil`) - Additional information about the error encountered.
   """
 
   use GoogleApi.Gax.ModelBase

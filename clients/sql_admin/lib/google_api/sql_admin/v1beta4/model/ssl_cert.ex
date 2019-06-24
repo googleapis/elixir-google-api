@@ -21,15 +21,15 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.SslCert do
 
   ## Attributes
 
-  - cert (String.t): PEM representation. Defaults to `nil`.
-  - certSerialNumber (String.t): Serial number, as extracted from the certificate. Defaults to `nil`.
-  - commonName (String.t): User supplied name. Constrained to [a-zA-Z.-_ ]+. Defaults to `nil`.
-  - createTime (DateTime.t): The time when the certificate was created in RFC 3339 format, for example 2012-11-15T16:19:00.094Z Defaults to `nil`.
-  - expirationTime (DateTime.t): The time when the certificate expires in RFC 3339 format, for example 2012-11-15T16:19:00.094Z. Defaults to `nil`.
-  - instance (String.t): Name of the database instance. Defaults to `nil`.
-  - kind (String.t): This is always sql#sslCert. Defaults to `sql#sslCert`.
-  - selfLink (String.t): The URI of this resource. Defaults to `nil`.
-  - sha1Fingerprint (String.t): Sha1 Fingerprint. Defaults to `nil`.
+  *   `cert` (*type:* `String.t`, *default:* `nil`) - PEM representation.
+  *   `certSerialNumber` (*type:* `String.t`, *default:* `nil`) - Serial number, as extracted from the certificate.
+  *   `commonName` (*type:* `String.t`, *default:* `nil`) - User supplied name. Constrained to [a-zA-Z.-_ ]+.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The time when the certificate was created in RFC 3339 format, for example 2012-11-15T16:19:00.094Z
+  *   `expirationTime` (*type:* `DateTime.t`, *default:* `nil`) - The time when the certificate expires in RFC 3339 format, for example 2012-11-15T16:19:00.094Z.
+  *   `instance` (*type:* `String.t`, *default:* `nil`) - Name of the database instance.
+  *   `kind` (*type:* `String.t`, *default:* `sql#sslCert`) - This is always sql#sslCert.
+  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - The URI of this resource.
+  *   `sha1Fingerprint` (*type:* `String.t`, *default:* `nil`) - Sha1 Fingerprint.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,17 +21,17 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.MySqlReplicaConfiguration do
 
   ## Attributes
 
-  - caCertificate (String.t): PEM representation of the trusted CA's x509 certificate. Defaults to `nil`.
-  - clientCertificate (String.t): PEM representation of the slave's x509 certificate. Defaults to `nil`.
-  - clientKey (String.t): PEM representation of the slave's private key. The corresponsing public key is encoded in the client's certificate. Defaults to `nil`.
-  - connectRetryInterval (integer()): Seconds to wait between connect retries. MySQL's default is 60 seconds. Defaults to `nil`.
-  - dumpFilePath (String.t): Path to a SQL dump file in Google Cloud Storage from which the slave instance is to be created. The URI is in the form gs://bucketName/fileName. Compressed gzip files (.gz) are also supported. Dumps should have the binlog co-ordinates from which replication should begin. This can be accomplished by setting --master-data to 1 when using mysqldump. Defaults to `nil`.
-  - kind (String.t): This is always sql#mysqlReplicaConfiguration. Defaults to `sql#mysqlReplicaConfiguration`.
-  - masterHeartbeatPeriod (String.t): Interval in milliseconds between replication heartbeats. Defaults to `nil`.
-  - password (String.t): The password for the replication connection. Defaults to `nil`.
-  - sslCipher (String.t): A list of permissible ciphers to use for SSL encryption. Defaults to `nil`.
-  - username (String.t): The username for the replication connection. Defaults to `nil`.
-  - verifyServerCertificate (boolean()): Whether or not to check the master's Common Name value in the certificate that it sends during the SSL handshake. Defaults to `nil`.
+  *   `caCertificate` (*type:* `String.t`, *default:* `nil`) - PEM representation of the trusted CA's x509 certificate.
+  *   `clientCertificate` (*type:* `String.t`, *default:* `nil`) - PEM representation of the slave's x509 certificate.
+  *   `clientKey` (*type:* `String.t`, *default:* `nil`) - PEM representation of the slave's private key. The corresponsing public key is encoded in the client's certificate.
+  *   `connectRetryInterval` (*type:* `integer()`, *default:* `nil`) - Seconds to wait between connect retries. MySQL's default is 60 seconds.
+  *   `dumpFilePath` (*type:* `String.t`, *default:* `nil`) - Path to a SQL dump file in Google Cloud Storage from which the slave instance is to be created. The URI is in the form gs://bucketName/fileName. Compressed gzip files (.gz) are also supported. Dumps should have the binlog co-ordinates from which replication should begin. This can be accomplished by setting --master-data to 1 when using mysqldump.
+  *   `kind` (*type:* `String.t`, *default:* `sql#mysqlReplicaConfiguration`) - This is always sql#mysqlReplicaConfiguration.
+  *   `masterHeartbeatPeriod` (*type:* `String.t`, *default:* `nil`) - Interval in milliseconds between replication heartbeats.
+  *   `password` (*type:* `String.t`, *default:* `nil`) - The password for the replication connection.
+  *   `sslCipher` (*type:* `String.t`, *default:* `nil`) - A list of permissible ciphers to use for SSL encryption.
+  *   `username` (*type:* `String.t`, *default:* `nil`) - The username for the replication connection.
+  *   `verifyServerCertificate` (*type:* `boolean()`, *default:* `nil`) - Whether or not to check the master's Common Name value in the certificate that it sends during the SSL handshake.
   """
 
   use GoogleApi.Gax.ModelBase

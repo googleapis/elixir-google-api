@@ -28,26 +28,33 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.BackupRuns do
 
   ## Parameters
 
-  - connection (GoogleApi.SQLAdmin.V1beta4.Connection): Connection to server
-  - project (String.t): Project ID of the project that contains the instance.
-  - instance (String.t): Cloud SQL instance ID. This does not include the project ID.
-  - id (String.t): The ID of the Backup Run to delete. To find a Backup Run ID, use the list method.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.SQLAdmin.V1beta4.Connection.t`) - Connection to server
+  *   `project` (*type:* `String.t`) - Project ID of the project that contains the instance.
+  *   `instance` (*type:* `String.t`) - Cloud SQL instance ID. This does not include the project ID.
+  *   `id` (*type:* `String.t`) - The ID of the Backup Run to delete. To find a Backup Run ID, use the list method.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec sql_backup_runs_delete(Tesla.Env.client(), String.t(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
+  @spec sql_backup_runs_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def sql_backup_runs_delete(connection, project, instance, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -79,26 +86,33 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.BackupRuns do
 
   ## Parameters
 
-  - connection (GoogleApi.SQLAdmin.V1beta4.Connection): Connection to server
-  - project (String.t): Project ID of the project that contains the instance.
-  - instance (String.t): Cloud SQL instance ID. This does not include the project ID.
-  - id (String.t): The ID of this Backup Run.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.SQLAdmin.V1beta4.Connection.t`) - Connection to server
+  *   `project` (*type:* `String.t`) - Project ID of the project that contains the instance.
+  *   `instance` (*type:* `String.t`) - Cloud SQL instance ID. This does not include the project ID.
+  *   `id` (*type:* `String.t`) - The ID of this Backup Run.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.SQLAdmin.V1beta4.Model.BackupRun{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.SQLAdmin.V1beta4.Model.BackupRun{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec sql_backup_runs_get(Tesla.Env.client(), String.t(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.SQLAdmin.V1beta4.Model.BackupRun.t()} | {:error, Tesla.Env.t()}
+  @spec sql_backup_runs_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.SQLAdmin.V1beta4.Model.BackupRun.t()} | {:error, Tesla.Env.t()}
   def sql_backup_runs_get(connection, project, instance, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -130,25 +144,26 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.BackupRuns do
 
   ## Parameters
 
-  - connection (GoogleApi.SQLAdmin.V1beta4.Connection): Connection to server
-  - project (String.t): Project ID of the project that contains the instance.
-  - instance (String.t): Cloud SQL instance ID. This does not include the project ID.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.SQLAdmin.V1beta4.Model.BackupRun.t): 
+  *   `connection` (*type:* `GoogleApi.SQLAdmin.V1beta4.Connection.t`) - Connection to server
+  *   `project` (*type:* `String.t`) - Project ID of the project that contains the instance.
+  *   `instance` (*type:* `String.t`) - Cloud SQL instance ID. This does not include the project ID.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.BackupRun.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec sql_backup_runs_insert(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+  @spec sql_backup_runs_insert(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def sql_backup_runs_insert(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -181,26 +196,27 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.BackupRuns do
 
   ## Parameters
 
-  - connection (GoogleApi.SQLAdmin.V1beta4.Connection): Connection to server
-  - project (String.t): Project ID of the project that contains the instance.
-  - instance (String.t): Cloud SQL instance ID. This does not include the project ID.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :maxResults (integer()): Maximum number of backup runs per response.
-    - :pageToken (String.t): A previously-returned page token representing part of the larger set of results to view.
+  *   `connection` (*type:* `GoogleApi.SQLAdmin.V1beta4.Connection.t`) - Connection to server
+  *   `project` (*type:* `String.t`) - Project ID of the project that contains the instance.
+  *   `instance` (*type:* `String.t`) - Cloud SQL instance ID. This does not include the project ID.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:maxResults` (*type:* `integer()`) - Maximum number of backup runs per response.
+      *   `:pageToken` (*type:* `String.t`) - A previously-returned page token representing part of the larger set of results to view.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.SQLAdmin.V1beta4.Model.BackupRunsListResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.SQLAdmin.V1beta4.Model.BackupRunsListResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec sql_backup_runs_list(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+  @spec sql_backup_runs_list(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.BackupRunsListResponse.t()}
           | {:error, Tesla.Env.t()}
   def sql_backup_runs_list(connection, project, instance, optional_params \\ [], opts \\ []) do

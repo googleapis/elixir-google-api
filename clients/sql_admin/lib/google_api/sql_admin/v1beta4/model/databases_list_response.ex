@@ -21,8 +21,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.DatabasesListResponse do
 
   ## Attributes
 
-  - items (list(GoogleApi.SQLAdmin.V1beta4.Model.Database.t)): List of database resources in the instance. Defaults to `nil`.
-  - kind (String.t): This is always sql#databasesList. Defaults to `sql#databasesList`.
+  *   `items` (*type:* `list(GoogleApi.SQLAdmin.V1beta4.Model.Database.t)`, *default:* `nil`) - List of database resources in the instance.
+  *   `kind` (*type:* `String.t`, *default:* `sql#databasesList`) - This is always sql#databasesList.
   """
 
   use GoogleApi.Gax.ModelBase
