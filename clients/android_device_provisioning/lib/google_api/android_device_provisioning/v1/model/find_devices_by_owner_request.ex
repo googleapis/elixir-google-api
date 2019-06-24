@@ -21,11 +21,11 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.FindDevicesByOwnerRequest
 
   ## Attributes
 
-  - customerId (list(String.t)): Required. The list of customer IDs to search for. Defaults to `nil`.
-  - limit (String.t): Required. The maximum number of devices to show in a page of results. Must
-  be between 1 and 100 inclusive. Defaults to `nil`.
-  - pageToken (String.t): A token specifying which result page to return. Defaults to `nil`.
-  - sectionType (String.t): Required. The section type of the device's provisioning record. Defaults to `nil`.
+  *   `customerId` (*type:* `list(String.t)`, *default:* `nil`) - Required. The list of customer IDs to search for.
+  *   `limit` (*type:* `String.t`, *default:* `nil`) - Required. The maximum number of devices to show in a page of results. Must
+      be between 1 and 100 inclusive.
+  *   `pageToken` (*type:* `String.t`, *default:* `nil`) - A token specifying which result page to return.
+  *   `sectionType` (*type:* `String.t`, *default:* `nil`) - Required. The section type of the device's provisioning record.
   """
 
   use GoogleApi.Gax.ModelBase

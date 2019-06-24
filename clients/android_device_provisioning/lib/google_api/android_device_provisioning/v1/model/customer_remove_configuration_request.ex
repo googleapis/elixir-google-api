@@ -21,7 +21,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.CustomerRemoveConfigurati
 
   ## Attributes
 
-  - device (GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceReference.t): Required. The device to remove the configuration from. Defaults to `nil`.
+  *   `device` (*type:* `GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceReference.t`, *default:* `nil`) - Required. The device to remove the configuration from.
   """
 
   use GoogleApi.Gax.ModelBase

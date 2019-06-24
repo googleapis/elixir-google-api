@@ -25,15 +25,15 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.Dpc do
 
   ## Attributes
 
-  - dpcName (String.t): Output only. The title of the DPC app in Google Play. For example, _Google
-  Apps Device Policy_. Useful in an application's user interface. Defaults to `nil`.
-  - name (String.t): Output only. The API resource name in the format
-  `customers/[CUSTOMER_ID]/dpcs/[DPC_ID]`. Assigned by
-  the server. To maintain a reference to a DPC across customer accounts,
-  persist and match the last path component (`DPC_ID`). Defaults to `nil`.
-  - packageName (String.t): Output only. The DPC's Android application ID that looks like a Java
-  package name. Zero-touch enrollment installs the DPC app onto a device
-  using this identifier. Defaults to `nil`.
+  *   `dpcName` (*type:* `String.t`, *default:* `nil`) - Output only. The title of the DPC app in Google Play. For example, _Google
+      Apps Device Policy_. Useful in an application's user interface.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The API resource name in the format
+      `customers/[CUSTOMER_ID]/dpcs/[DPC_ID]`. Assigned by
+      the server. To maintain a reference to a DPC across customer accounts,
+      persist and match the last path component (`DPC_ID`).
+  *   `packageName` (*type:* `String.t`, *default:* `nil`) - Output only. The DPC's Android application ID that looks like a Java
+      package name. Zero-touch enrollment installs the DPC app onto a device
+      using this identifier.
   """
 
   use GoogleApi.Gax.ModelBase

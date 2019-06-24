@@ -21,9 +21,9 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.CustomerApplyConfiguratio
 
   ## Attributes
 
-  - configuration (String.t): Required. The configuration applied to the device in the format
-  `customers/[CUSTOMER_ID]/configurations/[CONFIGURATION_ID]`. Defaults to `nil`.
-  - device (GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceReference.t): Required. The device the configuration is applied to. Defaults to `nil`.
+  *   `configuration` (*type:* `String.t`, *default:* `nil`) - Required. The configuration applied to the device in the format
+      `customers/[CUSTOMER_ID]/configurations/[CONFIGURATION_ID]`.
+  *   `device` (*type:* `GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceReference.t`, *default:* `nil`) - Required. The device the configuration is applied to.
   """
 
   use GoogleApi.Gax.ModelBase

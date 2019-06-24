@@ -21,7 +21,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.CustomerUnclaimDeviceRequ
 
   ## Attributes
 
-  - device (GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceReference.t): Required. The device to unclaim. Defaults to `nil`.
+  *   `device` (*type:* `GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceReference.t`, *default:* `nil`) - Required. The device to unclaim.
   """
 
   use GoogleApi.Gax.ModelBase

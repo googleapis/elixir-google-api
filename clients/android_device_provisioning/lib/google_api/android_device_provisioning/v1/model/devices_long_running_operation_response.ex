@@ -23,11 +23,11 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.DevicesLongRunningOperati
 
   ## Attributes
 
-  - perDeviceStatus (list(GoogleApi.AndroidDeviceProvisioning.V1.Model.OperationPerDevice.t)): The processing status for each device in the operation.
-  One `PerDeviceStatus` per device. The list order matches the items in the
-  original request. Defaults to `nil`.
-  - successCount (integer()): A summary of how many items in the operation the server processed
-  successfully. Updated as the operation progresses. Defaults to `nil`.
+  *   `perDeviceStatus` (*type:* `list(GoogleApi.AndroidDeviceProvisioning.V1.Model.OperationPerDevice.t)`, *default:* `nil`) - The processing status for each device in the operation.
+      One `PerDeviceStatus` per device. The list order matches the items in the
+      original request.
+  *   `successCount` (*type:* `integer()`, *default:* `nil`) - A summary of how many items in the operation the server processed
+      successfully. Updated as the operation progresses.
   """
 
   use GoogleApi.Gax.ModelBase

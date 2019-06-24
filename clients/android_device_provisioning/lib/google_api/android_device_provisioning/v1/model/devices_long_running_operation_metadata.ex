@@ -23,13 +23,13 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.DevicesLongRunningOperati
 
   ## Attributes
 
-  - devicesCount (integer()): The number of metadata updates in the operation. This might be different
-  from the number of updates in the request if the API can't parse some of
-  the updates. Defaults to `nil`.
-  - processingStatus (String.t): The processing status of the operation. Defaults to `nil`.
-  - progress (integer()): The processing progress of the operation. Measured as a number from 0 to
-  100. A value of 10O doesnt always mean the operation completed—check for
-  the inclusion of a `done` field. Defaults to `nil`.
+  *   `devicesCount` (*type:* `integer()`, *default:* `nil`) - The number of metadata updates in the operation. This might be different
+      from the number of updates in the request if the API can't parse some of
+      the updates.
+  *   `processingStatus` (*type:* `String.t`, *default:* `nil`) - The processing status of the operation.
+  *   `progress` (*type:* `integer()`, *default:* `nil`) - The processing progress of the operation. Measured as a number from 0 to
+      100. A value of 10O doesnt always mean the operation completed—check for
+      the inclusion of a `done` field.
   """
 
   use GoogleApi.Gax.ModelBase

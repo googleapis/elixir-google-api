@@ -21,7 +21,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.UnclaimDevicesRequest do
 
   ## Attributes
 
-  - unclaims (list(GoogleApi.AndroidDeviceProvisioning.V1.Model.PartnerUnclaim.t)): Required. The list of devices to unclaim. Defaults to `nil`.
+  *   `unclaims` (*type:* `list(GoogleApi.AndroidDeviceProvisioning.V1.Model.PartnerUnclaim.t)`, *default:* `nil`) - Required. The list of devices to unclaim.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,10 +21,10 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.FindDevicesByDeviceIdenti
 
   ## Attributes
 
-  - deviceIdentifier (GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier.t): Required. The device identifier to search for. Defaults to `nil`.
-  - limit (String.t): Required. The maximum number of devices to show in a page of results. Must
-  be between 1 and 100 inclusive. Defaults to `nil`.
-  - pageToken (String.t): A token specifying which result page to return. Defaults to `nil`.
+  *   `deviceIdentifier` (*type:* `GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier.t`, *default:* `nil`) - Required. The device identifier to search for.
+  *   `limit` (*type:* `String.t`, *default:* `nil`) - Required. The maximum number of devices to show in a page of results. Must
+      be between 1 and 100 inclusive.
+  *   `pageToken` (*type:* `String.t`, *default:* `nil`) - A token specifying which result page to return.
   """
 
   use GoogleApi.Gax.ModelBase

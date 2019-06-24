@@ -21,10 +21,10 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.ListCustomersResponse do
 
   ## Attributes
 
-  - customers (list(GoogleApi.AndroidDeviceProvisioning.V1.Model.Company.t)): List of customers related to this reseller partner. Defaults to `nil`.
-  - nextPageToken (String.t): A token to retrieve the next page of results. Omitted if no further results
-  are available. Defaults to `nil`.
-  - totalSize (integer()): The total count of items in the list irrespective of pagination. Defaults to `nil`.
+  *   `customers` (*type:* `list(GoogleApi.AndroidDeviceProvisioning.V1.Model.Company.t)`, *default:* `nil`) - List of customers related to this reseller partner.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results. Omitted if no further results
+      are available.
+  *   `totalSize` (*type:* `integer()`, *default:* `nil`) - The total count of items in the list irrespective of pagination.
   """
 
   use GoogleApi.Gax.ModelBase

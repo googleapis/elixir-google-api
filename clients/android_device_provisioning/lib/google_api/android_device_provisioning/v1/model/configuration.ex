@@ -30,35 +30,35 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.Configuration do
 
   ## Attributes
 
-  - companyName (String.t): Required. The name of the organization. Zero-touch enrollment shows this
-  organization name to device users during device provisioning. Defaults to `nil`.
-  - configurationId (String.t): Output only. The ID of the configuration. Assigned by the server. Defaults to `nil`.
-  - configurationName (String.t): Required. A short name that describes the configuration's purpose. For
-  example, _Sales team_ or _Temporary employees_. The zero-touch enrollment
-  portal displays this name to IT admins. Defaults to `nil`.
-  - contactEmail (String.t): Required. The email address that device users can contact to get help.
-  Zero-touch enrollment shows this email address to device users before
-  device provisioning. The value is validated on input. Defaults to `nil`.
-  - contactPhone (String.t): Required. The telephone number that device users can call, using another
-  device, to get help. Zero-touch enrollment shows this number to device
-  users before device provisioning. Accepts numerals, spaces, the plus sign,
-  hyphens, and parentheses. Defaults to `nil`.
-  - customMessage (String.t): A message, containing one or two sentences, to help device users get help
-  or give them more details about what’s happening to their device.
-  Zero-touch enrollment shows this message before the device is provisioned. Defaults to `nil`.
-  - dpcExtras (String.t): The JSON-formatted EMM provisioning extras that are passed to the DPC. Defaults to `nil`.
-  - dpcResourcePath (String.t): Required. The resource name of the selected DPC (device policy controller)
-  in the format `customers/[CUSTOMER_ID]/dpcs/*`. To list the supported DPCs,
-  call
-  `customers.dpcs.list`. Defaults to `nil`.
-  - isDefault (boolean()): Required. Whether this is the default configuration that zero-touch
-  enrollment applies to any new devices the organization purchases in the
-  future. Only one customer configuration can be the default. Setting this
-  value to `true`, changes the previous default configuration's `isDefault`
-  value to `false`. Defaults to `nil`.
-  - name (String.t): Output only. The API resource name in the format
-  `customers/[CUSTOMER_ID]/configurations/[CONFIGURATION_ID]`. Assigned by
-  the server. Defaults to `nil`.
+  *   `companyName` (*type:* `String.t`, *default:* `nil`) - Required. The name of the organization. Zero-touch enrollment shows this
+      organization name to device users during device provisioning.
+  *   `configurationId` (*type:* `String.t`, *default:* `nil`) - Output only. The ID of the configuration. Assigned by the server.
+  *   `configurationName` (*type:* `String.t`, *default:* `nil`) - Required. A short name that describes the configuration's purpose. For
+      example, _Sales team_ or _Temporary employees_. The zero-touch enrollment
+      portal displays this name to IT admins.
+  *   `contactEmail` (*type:* `String.t`, *default:* `nil`) - Required. The email address that device users can contact to get help.
+      Zero-touch enrollment shows this email address to device users before
+      device provisioning. The value is validated on input.
+  *   `contactPhone` (*type:* `String.t`, *default:* `nil`) - Required. The telephone number that device users can call, using another
+      device, to get help. Zero-touch enrollment shows this number to device
+      users before device provisioning. Accepts numerals, spaces, the plus sign,
+      hyphens, and parentheses.
+  *   `customMessage` (*type:* `String.t`, *default:* `nil`) - A message, containing one or two sentences, to help device users get help
+      or give them more details about what’s happening to their device.
+      Zero-touch enrollment shows this message before the device is provisioned.
+  *   `dpcExtras` (*type:* `String.t`, *default:* `nil`) - The JSON-formatted EMM provisioning extras that are passed to the DPC.
+  *   `dpcResourcePath` (*type:* `String.t`, *default:* `nil`) - Required. The resource name of the selected DPC (device policy controller)
+      in the format `customers/[CUSTOMER_ID]/dpcs/*`. To list the supported DPCs,
+      call
+      `customers.dpcs.list`.
+  *   `isDefault` (*type:* `boolean()`, *default:* `nil`) - Required. Whether this is the default configuration that zero-touch
+      enrollment applies to any new devices the organization purchases in the
+      future. Only one customer configuration can be the default. Setting this
+      value to `true`, changes the previous default configuration's `isDefault`
+      value to `false`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The API resource name in the format
+      `customers/[CUSTOMER_ID]/configurations/[CONFIGURATION_ID]`. Assigned by
+      the server.
   """
 
   use GoogleApi.Gax.ModelBase

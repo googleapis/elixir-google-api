@@ -21,10 +21,10 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.FindDevicesByDeviceIdenti
 
   ## Attributes
 
-  - devices (list(GoogleApi.AndroidDeviceProvisioning.V1.Model.Device.t)): Found devices. Defaults to `nil`.
-  - nextPageToken (String.t): A token used to access the next page of results. Omitted if no further
-  results are available. Defaults to `nil`.
-  - totalSize (integer()): The total count of items in the list irrespective of pagination. Defaults to `nil`.
+  *   `devices` (*type:* `list(GoogleApi.AndroidDeviceProvisioning.V1.Model.Device.t)`, *default:* `nil`) - Found devices.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token used to access the next page of results. Omitted if no further
+      results are available.
+  *   `totalSize` (*type:* `integer()`, *default:* `nil`) - The total count of items in the list irrespective of pagination.
   """
 
   use GoogleApi.Gax.ModelBase

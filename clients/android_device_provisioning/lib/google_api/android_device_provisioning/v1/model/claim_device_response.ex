@@ -21,9 +21,9 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.ClaimDeviceResponse do
 
   ## Attributes
 
-  - deviceId (String.t): The device ID of the claimed device. Defaults to `nil`.
-  - deviceName (String.t): The resource name of the device in the format
-  `partners/[PARTNER_ID]/devices/[DEVICE_ID]`. Defaults to `nil`.
+  *   `deviceId` (*type:* `String.t`, *default:* `nil`) - The device ID of the claimed device.
+  *   `deviceName` (*type:* `String.t`, *default:* `nil`) - The resource name of the device in the format
+      `partners/[PARTNER_ID]/devices/[DEVICE_ID]`.
   """
 
   use GoogleApi.Gax.ModelBase

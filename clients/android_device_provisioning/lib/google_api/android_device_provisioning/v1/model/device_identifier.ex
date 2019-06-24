@@ -23,17 +23,17 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier do
 
   ## Attributes
 
-  - imei (String.t): The device’s IMEI number. Validated on input. Defaults to `nil`.
-  - manufacturer (String.t): The device manufacturer’s name. Matches the device's built-in
-  value returned from `android.os.Build.MANUFACTURER`. Allowed values are
-  listed in
-  [manufacturers](/zero-touch/resources/manufacturer-names#manufacturers-names). Defaults to `nil`.
-  - meid (String.t): The device’s MEID number. Defaults to `nil`.
-  - model (String.t): The device model's name. Matches the device's built-in value returned from
-  `android.os.Build.MODEL`. Allowed values are listed in
-  [models](/zero-touch/resources/manufacturer-names#model-names). Defaults to `nil`.
-  - serialNumber (String.t): The manufacturer's serial number for the device. This value might not be
-  unique across different device models. Defaults to `nil`.
+  *   `imei` (*type:* `String.t`, *default:* `nil`) - The device’s IMEI number. Validated on input.
+  *   `manufacturer` (*type:* `String.t`, *default:* `nil`) - The device manufacturer’s name. Matches the device's built-in
+      value returned from `android.os.Build.MANUFACTURER`. Allowed values are
+      listed in
+      [manufacturers](/zero-touch/resources/manufacturer-names#manufacturers-names).
+  *   `meid` (*type:* `String.t`, *default:* `nil`) - The device’s MEID number.
+  *   `model` (*type:* `String.t`, *default:* `nil`) - The device model's name. Matches the device's built-in value returned from
+      `android.os.Build.MODEL`. Allowed values are listed in
+      [models](/zero-touch/resources/manufacturer-names#model-names).
+  *   `serialNumber` (*type:* `String.t`, *default:* `nil`) - The manufacturer's serial number for the device. This value might not be
+      unique across different device models.
   """
 
   use GoogleApi.Gax.ModelBase

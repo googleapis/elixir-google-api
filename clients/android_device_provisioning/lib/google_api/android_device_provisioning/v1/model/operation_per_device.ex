@@ -22,10 +22,10 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.OperationPerDevice do
 
   ## Attributes
 
-  - claim (GoogleApi.AndroidDeviceProvisioning.V1.Model.PartnerClaim.t): A copy of the original device-claim request received by the server. Defaults to `nil`.
-  - result (GoogleApi.AndroidDeviceProvisioning.V1.Model.PerDeviceStatusInBatch.t): The processing result for each device. Defaults to `nil`.
-  - unclaim (GoogleApi.AndroidDeviceProvisioning.V1.Model.PartnerUnclaim.t): A copy of the original device-unclaim request received by the server. Defaults to `nil`.
-  - updateMetadata (GoogleApi.AndroidDeviceProvisioning.V1.Model.UpdateMetadataArguments.t): A copy of the original metadata-update request received by the server. Defaults to `nil`.
+  *   `claim` (*type:* `GoogleApi.AndroidDeviceProvisioning.V1.Model.PartnerClaim.t`, *default:* `nil`) - A copy of the original device-claim request received by the server.
+  *   `result` (*type:* `GoogleApi.AndroidDeviceProvisioning.V1.Model.PerDeviceStatusInBatch.t`, *default:* `nil`) - The processing result for each device.
+  *   `unclaim` (*type:* `GoogleApi.AndroidDeviceProvisioning.V1.Model.PartnerUnclaim.t`, *default:* `nil`) - A copy of the original device-unclaim request received by the server.
+  *   `updateMetadata` (*type:* `GoogleApi.AndroidDeviceProvisioning.V1.Model.UpdateMetadataArguments.t`, *default:* `nil`) - A copy of the original metadata-update request received by the server.
   """
 
   use GoogleApi.Gax.ModelBase

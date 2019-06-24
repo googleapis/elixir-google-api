@@ -22,7 +22,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceReference do
 
   * A numeric API resource ID.
   * Real-world hardware IDs, such as IMEI number, belonging to the manufactured
-  device.
+    device.
 
   Methods that operate on devices take a `DeviceReference` as a parameter type
   because it's more flexible for the caller. To learn more about device
@@ -30,8 +30,8 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceReference do
 
   ## Attributes
 
-  - deviceId (String.t): The ID of the device. Defaults to `nil`.
-  - deviceIdentifier (GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier.t): The hardware IDs of the device. Defaults to `nil`.
+  *   `deviceId` (*type:* `String.t`, *default:* `nil`) - The ID of the device.
+  *   `deviceIdentifier` (*type:* `GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier.t`, *default:* `nil`) - The hardware IDs of the device.
   """
 
   use GoogleApi.Gax.ModelBase
