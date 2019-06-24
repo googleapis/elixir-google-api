@@ -21,9 +21,9 @@ defmodule GoogleApi.AcceleratedMobilePageUrl.V1.Model.AmpUrlError do
 
   ## Attributes
 
-  - errorCode (String.t): The error code of an API call. Defaults to `nil`.
-  - errorMessage (String.t): An optional descriptive error message. Defaults to `nil`.
-  - originalUrl (String.t): The original non-AMP URL. Defaults to `nil`.
+  *   `errorCode` (*type:* `String.t`, *default:* `nil`) - The error code of an API call.
+  *   `errorMessage` (*type:* `String.t`, *default:* `nil`) - An optional descriptive error message.
+  *   `originalUrl` (*type:* `String.t`, *default:* `nil`) - The original non-AMP URL.
   """
 
   use GoogleApi.Gax.ModelBase
