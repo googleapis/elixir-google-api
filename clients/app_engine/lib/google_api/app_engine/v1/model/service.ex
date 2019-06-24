@@ -21,9 +21,9 @@ defmodule GoogleApi.AppEngine.V1.Model.Service do
 
   ## Attributes
 
-  - id (String.t): Relative name of the service within the application. Example: default.@OutputOnly Defaults to `nil`.
-  - name (String.t): Full path to the Service resource in the API. Example: apps/myapp/services/default.@OutputOnly Defaults to `nil`.
-  - split (GoogleApi.AppEngine.V1.Model.TrafficSplit.t): Mapping that defines fractional HTTP traffic diversion to different versions within the service. Defaults to `nil`.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Relative name of the service within the application. Example: default.@OutputOnly
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Full path to the Service resource in the API. Example: apps/myapp/services/default.@OutputOnly
+  *   `split` (*type:* `GoogleApi.AppEngine.V1.Model.TrafficSplit.t`, *default:* `nil`) - Mapping that defines fractional HTTP traffic diversion to different versions within the service.
   """
 
   use GoogleApi.Gax.ModelBase

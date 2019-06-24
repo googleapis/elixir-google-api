@@ -21,7 +21,7 @@ defmodule GoogleApi.AppEngine.V1.Model.ContainerInfo do
 
   ## Attributes
 
-  - image (String.t): URI to the hosted container image in Google Container Registry. The URI must be fully qualified and include a tag or digest. Examples: "gcr.io/my-project/image:tag" or "gcr.io/my-project/image@digest" Defaults to `nil`.
+  *   `image` (*type:* `String.t`, *default:* `nil`) - URI to the hosted container image in Google Container Registry. The URI must be fully qualified and include a tag or digest. Examples: "gcr.io/my-project/image:tag" or "gcr.io/my-project/image@digest"
   """
 
   use GoogleApi.Gax.ModelBase

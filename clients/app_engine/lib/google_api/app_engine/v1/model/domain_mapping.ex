@@ -21,10 +21,10 @@ defmodule GoogleApi.AppEngine.V1.Model.DomainMapping do
 
   ## Attributes
 
-  - id (String.t): Relative name of the domain serving the application. Example: example.com. Defaults to `nil`.
-  - name (String.t): Full path to the DomainMapping resource in the API. Example: apps/myapp/domainMapping/example.com.@OutputOnly Defaults to `nil`.
-  - resourceRecords (list(GoogleApi.AppEngine.V1.Model.ResourceRecord.t)): The resource records required to configure this domain mapping. These records must be added to the domain's DNS configuration in order to serve the application via this domain mapping.@OutputOnly Defaults to `nil`.
-  - sslSettings (GoogleApi.AppEngine.V1.Model.SslSettings.t): SSL configuration for this domain. If unconfigured, this domain will not serve with SSL. Defaults to `nil`.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Relative name of the domain serving the application. Example: example.com.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Full path to the DomainMapping resource in the API. Example: apps/myapp/domainMapping/example.com.@OutputOnly
+  *   `resourceRecords` (*type:* `list(GoogleApi.AppEngine.V1.Model.ResourceRecord.t)`, *default:* `nil`) - The resource records required to configure this domain mapping. These records must be added to the domain's DNS configuration in order to serve the application via this domain mapping.@OutputOnly
+  *   `sslSettings` (*type:* `GoogleApi.AppEngine.V1.Model.SslSettings.t`, *default:* `nil`) - SSL configuration for this domain. If unconfigured, this domain will not serve with SSL.
   """
 
   use GoogleApi.Gax.ModelBase

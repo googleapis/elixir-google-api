@@ -21,8 +21,8 @@ defmodule GoogleApi.AppEngine.V1.Model.ListIngressRulesResponse do
 
   ## Attributes
 
-  - ingressRules (list(GoogleApi.AppEngine.V1.Model.FirewallRule.t)): The ingress FirewallRules for this application. Defaults to `nil`.
-  - nextPageToken (String.t): Continuation token for fetching the next page of results. Defaults to `nil`.
+  *   `ingressRules` (*type:* `list(GoogleApi.AppEngine.V1.Model.FirewallRule.t)`, *default:* `nil`) - The ingress FirewallRules for this application.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Continuation token for fetching the next page of results.
   """
 
   use GoogleApi.Gax.ModelBase

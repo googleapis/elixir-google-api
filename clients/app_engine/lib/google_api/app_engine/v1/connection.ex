@@ -20,6 +20,8 @@ defmodule GoogleApi.AppEngine.V1.Connection do
   Handle Tesla connections for GoogleApi.AppEngine.V1.
   """
 
+  @type t :: Tesla.Env.client()
+
   use GoogleApi.Gax.Connection,
     scopes: [
       # View and manage your applications deployed on Google App Engine

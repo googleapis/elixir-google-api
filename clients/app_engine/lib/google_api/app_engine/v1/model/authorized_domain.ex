@@ -21,8 +21,8 @@ defmodule GoogleApi.AppEngine.V1.Model.AuthorizedDomain do
 
   ## Attributes
 
-  - id (String.t): Fully qualified domain name of the domain authorized for use. Example: example.com. Defaults to `nil`.
-  - name (String.t): Full path to the AuthorizedDomain resource in the API. Example: apps/myapp/authorizedDomains/example.com.@OutputOnly Defaults to `nil`.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Fully qualified domain name of the domain authorized for use. Example: example.com.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Full path to the AuthorizedDomain resource in the API. Example: apps/myapp/authorizedDomains/example.com.@OutputOnly
   """
 
   use GoogleApi.Gax.ModelBase

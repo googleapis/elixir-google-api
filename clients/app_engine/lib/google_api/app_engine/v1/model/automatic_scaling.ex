@@ -21,19 +21,19 @@ defmodule GoogleApi.AppEngine.V1.Model.AutomaticScaling do
 
   ## Attributes
 
-  - coolDownPeriod (String.t): The time period that the Autoscaler (https://cloud.google.com/compute/docs/autoscaler/) should wait before it starts collecting information from a new instance. This prevents the autoscaler from collecting information when the instance is initializing, during which the collected usage would not be reliable. Only applicable in the App Engine flexible environment. Defaults to `nil`.
-  - cpuUtilization (GoogleApi.AppEngine.V1.Model.CpuUtilization.t): Target scaling by CPU usage. Defaults to `nil`.
-  - diskUtilization (GoogleApi.AppEngine.V1.Model.DiskUtilization.t): Target scaling by disk usage. Defaults to `nil`.
-  - maxConcurrentRequests (integer()): Number of concurrent requests an automatic scaling instance can accept before the scheduler spawns a new instance.Defaults to a runtime-specific value. Defaults to `nil`.
-  - maxIdleInstances (integer()): Maximum number of idle instances that should be maintained for this version. Defaults to `nil`.
-  - maxPendingLatency (String.t): Maximum amount of time that a request should wait in the pending queue before starting a new instance to handle it. Defaults to `nil`.
-  - maxTotalInstances (integer()): Maximum number of instances that should be started to handle requests for this version. Defaults to `nil`.
-  - minIdleInstances (integer()): Minimum number of idle instances that should be maintained for this version. Only applicable for the default version of a service. Defaults to `nil`.
-  - minPendingLatency (String.t): Minimum amount of time a request should wait in the pending queue before starting a new instance to handle it. Defaults to `nil`.
-  - minTotalInstances (integer()): Minimum number of running instances that should be maintained for this version. Defaults to `nil`.
-  - networkUtilization (GoogleApi.AppEngine.V1.Model.NetworkUtilization.t): Target scaling by network usage. Defaults to `nil`.
-  - requestUtilization (GoogleApi.AppEngine.V1.Model.RequestUtilization.t): Target scaling by request utilization. Defaults to `nil`.
-  - standardSchedulerSettings (GoogleApi.AppEngine.V1.Model.StandardSchedulerSettings.t): Scheduler settings for standard environment. Defaults to `nil`.
+  *   `coolDownPeriod` (*type:* `String.t`, *default:* `nil`) - The time period that the Autoscaler (https://cloud.google.com/compute/docs/autoscaler/) should wait before it starts collecting information from a new instance. This prevents the autoscaler from collecting information when the instance is initializing, during which the collected usage would not be reliable. Only applicable in the App Engine flexible environment.
+  *   `cpuUtilization` (*type:* `GoogleApi.AppEngine.V1.Model.CpuUtilization.t`, *default:* `nil`) - Target scaling by CPU usage.
+  *   `diskUtilization` (*type:* `GoogleApi.AppEngine.V1.Model.DiskUtilization.t`, *default:* `nil`) - Target scaling by disk usage.
+  *   `maxConcurrentRequests` (*type:* `integer()`, *default:* `nil`) - Number of concurrent requests an automatic scaling instance can accept before the scheduler spawns a new instance.Defaults to a runtime-specific value.
+  *   `maxIdleInstances` (*type:* `integer()`, *default:* `nil`) - Maximum number of idle instances that should be maintained for this version.
+  *   `maxPendingLatency` (*type:* `String.t`, *default:* `nil`) - Maximum amount of time that a request should wait in the pending queue before starting a new instance to handle it.
+  *   `maxTotalInstances` (*type:* `integer()`, *default:* `nil`) - Maximum number of instances that should be started to handle requests for this version.
+  *   `minIdleInstances` (*type:* `integer()`, *default:* `nil`) - Minimum number of idle instances that should be maintained for this version. Only applicable for the default version of a service.
+  *   `minPendingLatency` (*type:* `String.t`, *default:* `nil`) - Minimum amount of time a request should wait in the pending queue before starting a new instance to handle it.
+  *   `minTotalInstances` (*type:* `integer()`, *default:* `nil`) - Minimum number of running instances that should be maintained for this version.
+  *   `networkUtilization` (*type:* `GoogleApi.AppEngine.V1.Model.NetworkUtilization.t`, *default:* `nil`) - Target scaling by network usage.
+  *   `requestUtilization` (*type:* `GoogleApi.AppEngine.V1.Model.RequestUtilization.t`, *default:* `nil`) - Target scaling by request utilization.
+  *   `standardSchedulerSettings` (*type:* `GoogleApi.AppEngine.V1.Model.StandardSchedulerSettings.t`, *default:* `nil`) - Scheduler settings for standard environment.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,8 +21,8 @@ defmodule GoogleApi.AppEngine.V1.Model.CloudBuildOptions do
 
   ## Attributes
 
-  - appYamlPath (String.t): Path to the yaml file used in deployment, used to determine runtime configuration details.Required for flexible environment builds.See https://cloud.google.com/appengine/docs/standard/python/config/appref for more details. Defaults to `nil`.
-  - cloudBuildTimeout (String.t): The Cloud Build timeout used as part of any dependent builds performed by version creation. Defaults to 10 minutes. Defaults to `nil`.
+  *   `appYamlPath` (*type:* `String.t`, *default:* `nil`) - Path to the yaml file used in deployment, used to determine runtime configuration details.Required for flexible environment builds.See https://cloud.google.com/appengine/docs/standard/python/config/appref for more details.
+  *   `cloudBuildTimeout` (*type:* `String.t`, *default:* `nil`) - The Cloud Build timeout used as part of any dependent builds performed by version creation. Defaults to 10 minutes.
   """
 
   use GoogleApi.Gax.ModelBase

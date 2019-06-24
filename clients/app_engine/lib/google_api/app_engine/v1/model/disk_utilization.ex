@@ -21,10 +21,10 @@ defmodule GoogleApi.AppEngine.V1.Model.DiskUtilization do
 
   ## Attributes
 
-  - targetReadBytesPerSecond (integer()): Target bytes read per second. Defaults to `nil`.
-  - targetReadOpsPerSecond (integer()): Target ops read per seconds. Defaults to `nil`.
-  - targetWriteBytesPerSecond (integer()): Target bytes written per second. Defaults to `nil`.
-  - targetWriteOpsPerSecond (integer()): Target ops written per second. Defaults to `nil`.
+  *   `targetReadBytesPerSecond` (*type:* `integer()`, *default:* `nil`) - Target bytes read per second.
+  *   `targetReadOpsPerSecond` (*type:* `integer()`, *default:* `nil`) - Target ops read per seconds.
+  *   `targetWriteBytesPerSecond` (*type:* `integer()`, *default:* `nil`) - Target bytes written per second.
+  *   `targetWriteOpsPerSecond` (*type:* `integer()`, *default:* `nil`) - Target ops written per second.
   """
 
   use GoogleApi.Gax.ModelBase

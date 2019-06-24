@@ -21,7 +21,7 @@ defmodule GoogleApi.AppEngine.V1.Model.ManualScaling do
 
   ## Attributes
 
-  - instances (integer()): Number of instances to assign to the service at the start. This number can later be altered by using the Modules API (https://cloud.google.com/appengine/docs/python/modules/functions) set_num_instances() function. Defaults to `nil`.
+  *   `instances` (*type:* `integer()`, *default:* `nil`) - Number of instances to assign to the service at the start. This number can later be altered by using the Modules API (https://cloud.google.com/appengine/docs/python/modules/functions) set_num_instances() function.
   """
 
   use GoogleApi.Gax.ModelBase

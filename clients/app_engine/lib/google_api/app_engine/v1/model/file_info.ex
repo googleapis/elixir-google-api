@@ -21,9 +21,9 @@ defmodule GoogleApi.AppEngine.V1.Model.FileInfo do
 
   ## Attributes
 
-  - mimeType (String.t): The MIME type of the file.Defaults to the value from Google Cloud Storage. Defaults to `nil`.
-  - sha1Sum (String.t): The SHA1 hash of the file, in hex. Defaults to `nil`.
-  - sourceUrl (String.t): URL source to use to fetch this file. Must be a URL to a resource in Google Cloud Storage in the form 'http(s)://storage.googleapis.com/<bucket>/<object>'. Defaults to `nil`.
+  *   `mimeType` (*type:* `String.t`, *default:* `nil`) - The MIME type of the file.Defaults to the value from Google Cloud Storage.
+  *   `sha1Sum` (*type:* `String.t`, *default:* `nil`) - The SHA1 hash of the file, in hex.
+  *   `sourceUrl` (*type:* `String.t`, *default:* `nil`) - URL source to use to fetch this file. Must be a URL to a resource in Google Cloud Storage in the form 'http(s)://storage.googleapis.com/<bucket>/<object>'.
   """
 
   use GoogleApi.Gax.ModelBase

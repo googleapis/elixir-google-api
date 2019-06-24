@@ -21,9 +21,9 @@ defmodule GoogleApi.AppEngine.V1.Model.ResourceRecord do
 
   ## Attributes
 
-  - name (String.t): Relative name of the object affected by this record. Only applicable for CNAME records. Example: 'www'. Defaults to `nil`.
-  - rrdata (String.t): Data for this record. Values vary by record type, as defined in RFC 1035 (section 5) and RFC 1034 (section 3.6.1). Defaults to `nil`.
-  - type (String.t): Resource record type. Example: AAAA. Defaults to `nil`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Relative name of the object affected by this record. Only applicable for CNAME records. Example: 'www'.
+  *   `rrdata` (*type:* `String.t`, *default:* `nil`) - Data for this record. Values vary by record type, as defined in RFC 1035 (section 5) and RFC 1034 (section 3.6.1).
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Resource record type. Example: AAAA.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,8 +21,8 @@ defmodule GoogleApi.AppEngine.V1.Model.RequestUtilization do
 
   ## Attributes
 
-  - targetConcurrentRequests (integer()): Target number of concurrent requests. Defaults to `nil`.
-  - targetRequestCountPerSecond (integer()): Target requests per second. Defaults to `nil`.
+  *   `targetConcurrentRequests` (*type:* `integer()`, *default:* `nil`) - Target number of concurrent requests.
+  *   `targetRequestCountPerSecond` (*type:* `integer()`, *default:* `nil`) - Target requests per second.
   """
 
   use GoogleApi.Gax.ModelBase

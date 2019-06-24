@@ -21,10 +21,10 @@ defmodule GoogleApi.AppEngine.V1.Model.EndpointsApiService do
 
   ## Attributes
 
-  - configId (String.t): Endpoints service configuration ID as specified by the Service Management API. For example "2016-09-19r1".By default, the rollout strategy for Endpoints is RolloutStrategy.FIXED. This means that Endpoints starts up with a particular configuration ID. When a new configuration is rolled out, Endpoints must be given the new configuration ID. The config_id field is used to give the configuration ID and is required in this case.Endpoints also has a rollout strategy called RolloutStrategy.MANAGED. When using this, Endpoints fetches the latest configuration and does not need the configuration ID. In this case, config_id must be omitted. Defaults to `nil`.
-  - disableTraceSampling (boolean()): Enable or disable trace sampling. By default, this is set to false for enabled. Defaults to `nil`.
-  - name (String.t): Endpoints service name which is the name of the "service" resource in the Service Management API. For example "myapi.endpoints.myproject.cloud.goog" Defaults to `nil`.
-  - rolloutStrategy (String.t): Endpoints rollout strategy. If FIXED, config_id must be specified. If MANAGED, config_id must be omitted. Defaults to `nil`.
+  *   `configId` (*type:* `String.t`, *default:* `nil`) - Endpoints service configuration ID as specified by the Service Management API. For example "2016-09-19r1".By default, the rollout strategy for Endpoints is RolloutStrategy.FIXED. This means that Endpoints starts up with a particular configuration ID. When a new configuration is rolled out, Endpoints must be given the new configuration ID. The config_id field is used to give the configuration ID and is required in this case.Endpoints also has a rollout strategy called RolloutStrategy.MANAGED. When using this, Endpoints fetches the latest configuration and does not need the configuration ID. In this case, config_id must be omitted.
+  *   `disableTraceSampling` (*type:* `boolean()`, *default:* `nil`) - Enable or disable trace sampling. By default, this is set to false for enabled.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Endpoints service name which is the name of the "service" resource in the Service Management API. For example "myapi.endpoints.myproject.cloud.goog"
+  *   `rolloutStrategy` (*type:* `String.t`, *default:* `nil`) - Endpoints rollout strategy. If FIXED, config_id must be specified. If MANAGED, config_id must be omitted.
   """
 
   use GoogleApi.Gax.ModelBase

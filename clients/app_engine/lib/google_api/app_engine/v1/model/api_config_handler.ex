@@ -21,11 +21,11 @@ defmodule GoogleApi.AppEngine.V1.Model.ApiConfigHandler do
 
   ## Attributes
 
-  - authFailAction (String.t): Action to take when users access resources that require authentication. Defaults to redirect. Defaults to `nil`.
-  - login (String.t): Level of login required to access this resource. Defaults to optional. Defaults to `nil`.
-  - script (String.t): Path to the script from the application root directory. Defaults to `nil`.
-  - securityLevel (String.t): Security (HTTPS) enforcement for this URL. Defaults to `nil`.
-  - url (String.t): URL to serve the endpoint at. Defaults to `nil`.
+  *   `authFailAction` (*type:* `String.t`, *default:* `nil`) - Action to take when users access resources that require authentication. Defaults to redirect.
+  *   `login` (*type:* `String.t`, *default:* `nil`) - Level of login required to access this resource. Defaults to optional.
+  *   `script` (*type:* `String.t`, *default:* `nil`) - Path to the script from the application root directory.
+  *   `securityLevel` (*type:* `String.t`, *default:* `nil`) - Security (HTTPS) enforcement for this URL.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - URL to serve the endpoint at.
   """
 
   use GoogleApi.Gax.ModelBase

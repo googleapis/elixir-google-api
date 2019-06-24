@@ -21,14 +21,14 @@ defmodule GoogleApi.AppEngine.V1.Model.UrlMap do
 
   ## Attributes
 
-  - apiEndpoint (GoogleApi.AppEngine.V1.Model.ApiEndpointHandler.t): Uses API Endpoints to handle requests. Defaults to `nil`.
-  - authFailAction (String.t): Action to take when users access resources that require authentication. Defaults to redirect. Defaults to `nil`.
-  - login (String.t): Level of login required to access this resource. Not supported for Node.js in the App Engine standard environment. Defaults to `nil`.
-  - redirectHttpResponseCode (String.t): 30x code to use when performing redirects for the secure field. Defaults to 302. Defaults to `nil`.
-  - script (GoogleApi.AppEngine.V1.Model.ScriptHandler.t): Executes a script to handle the requests that match this URL pattern. Only the auto value is supported for Node.js in the App Engine standard environment, for example "script": "auto". Defaults to `nil`.
-  - securityLevel (String.t): Security (HTTPS) enforcement for this URL. Defaults to `nil`.
-  - staticFiles (GoogleApi.AppEngine.V1.Model.StaticFilesHandler.t): Returns the contents of a file, such as an image, as the response. Defaults to `nil`.
-  - urlRegex (String.t): URL prefix. Uses regular expression syntax, which means regexp special characters must be escaped, but should not contain groupings. All URLs that begin with this prefix are handled by this handler, using the portion of the URL after the prefix as part of the file path. Defaults to `nil`.
+  *   `apiEndpoint` (*type:* `GoogleApi.AppEngine.V1.Model.ApiEndpointHandler.t`, *default:* `nil`) - Uses API Endpoints to handle requests.
+  *   `authFailAction` (*type:* `String.t`, *default:* `nil`) - Action to take when users access resources that require authentication. Defaults to redirect.
+  *   `login` (*type:* `String.t`, *default:* `nil`) - Level of login required to access this resource. Not supported for Node.js in the App Engine standard environment.
+  *   `redirectHttpResponseCode` (*type:* `String.t`, *default:* `nil`) - 30x code to use when performing redirects for the secure field. Defaults to 302.
+  *   `script` (*type:* `GoogleApi.AppEngine.V1.Model.ScriptHandler.t`, *default:* `nil`) - Executes a script to handle the requests that match this URL pattern. Only the auto value is supported for Node.js in the App Engine standard environment, for example "script": "auto".
+  *   `securityLevel` (*type:* `String.t`, *default:* `nil`) - Security (HTTPS) enforcement for this URL.
+  *   `staticFiles` (*type:* `GoogleApi.AppEngine.V1.Model.StaticFilesHandler.t`, *default:* `nil`) - Returns the contents of a file, such as an image, as the response.
+  *   `urlRegex` (*type:* `String.t`, *default:* `nil`) - URL prefix. Uses regular expression syntax, which means regexp special characters must be escaped, but should not contain groupings. All URLs that begin with this prefix are handled by this handler, using the portion of the URL after the prefix as part of the file path.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,8 +21,8 @@ defmodule GoogleApi.AppEngine.V1.Model.FeatureSettings do
 
   ## Attributes
 
-  - splitHealthChecks (boolean()): Boolean value indicating if split health checks should be used instead of the legacy health checks. At an app.yaml level, this means defaulting to 'readiness_check' and 'liveness_check' values instead of 'health_check' ones. Once the legacy 'health_check' behavior is deprecated, and this value is always true, this setting can be removed. Defaults to `nil`.
-  - useContainerOptimizedOs (boolean()): If true, use Container-Optimized OS (https://cloud.google.com/container-optimized-os/) base image for VMs, rather than a base Debian image. Defaults to `nil`.
+  *   `splitHealthChecks` (*type:* `boolean()`, *default:* `nil`) - Boolean value indicating if split health checks should be used instead of the legacy health checks. At an app.yaml level, this means defaulting to 'readiness_check' and 'liveness_check' values instead of 'health_check' ones. Once the legacy 'health_check' behavior is deprecated, and this value is always true, this setting can be removed.
+  *   `useContainerOptimizedOs` (*type:* `boolean()`, *default:* `nil`) - If true, use Container-Optimized OS (https://cloud.google.com/container-optimized-os/) base image for VMs, rather than a base Debian image.
   """
 
   use GoogleApi.Gax.ModelBase

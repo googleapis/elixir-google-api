@@ -21,8 +21,8 @@ defmodule GoogleApi.AppEngine.V1.Model.LocationMetadata do
 
   ## Attributes
 
-  - flexibleEnvironmentAvailable (boolean()): App Engine flexible environment is available in the given location.@OutputOnly Defaults to `nil`.
-  - standardEnvironmentAvailable (boolean()): App Engine standard environment is available in the given location.@OutputOnly Defaults to `nil`.
+  *   `flexibleEnvironmentAvailable` (*type:* `boolean()`, *default:* `nil`) - App Engine flexible environment is available in the given location.@OutputOnly
+  *   `standardEnvironmentAvailable` (*type:* `boolean()`, *default:* `nil`) - App Engine standard environment is available in the given location.@OutputOnly
   """
 
   use GoogleApi.Gax.ModelBase

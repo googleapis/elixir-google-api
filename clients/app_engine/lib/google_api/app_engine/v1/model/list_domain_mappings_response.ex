@@ -21,8 +21,8 @@ defmodule GoogleApi.AppEngine.V1.Model.ListDomainMappingsResponse do
 
   ## Attributes
 
-  - domainMappings (list(GoogleApi.AppEngine.V1.Model.DomainMapping.t)): The domain mappings for the application. Defaults to `nil`.
-  - nextPageToken (String.t): Continuation token for fetching the next page of results. Defaults to `nil`.
+  *   `domainMappings` (*type:* `list(GoogleApi.AppEngine.V1.Model.DomainMapping.t)`, *default:* `nil`) - The domain mappings for the application.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Continuation token for fetching the next page of results.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,8 +21,8 @@ defmodule GoogleApi.AppEngine.V1.Model.ListInstancesResponse do
 
   ## Attributes
 
-  - instances (list(GoogleApi.AppEngine.V1.Model.Instance.t)): The instances belonging to the requested version. Defaults to `nil`.
-  - nextPageToken (String.t): Continuation token for fetching the next page of results. Defaults to `nil`.
+  *   `instances` (*type:* `list(GoogleApi.AppEngine.V1.Model.Instance.t)`, *default:* `nil`) - The instances belonging to the requested version.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Continuation token for fetching the next page of results.
   """
 
   use GoogleApi.Gax.ModelBase

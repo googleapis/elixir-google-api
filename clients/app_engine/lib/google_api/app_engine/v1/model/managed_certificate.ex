@@ -21,8 +21,8 @@ defmodule GoogleApi.AppEngine.V1.Model.ManagedCertificate do
 
   ## Attributes
 
-  - lastRenewalTime (DateTime.t): Time at which the certificate was last renewed. The renewal process is fully managed. Certificate renewal will automatically occur before the certificate expires. Renewal errors can be tracked via ManagementStatus.@OutputOnly Defaults to `nil`.
-  - status (String.t): Status of certificate management. Refers to the most recent certificate acquisition or renewal attempt.@OutputOnly Defaults to `nil`.
+  *   `lastRenewalTime` (*type:* `DateTime.t`, *default:* `nil`) - Time at which the certificate was last renewed. The renewal process is fully managed. Certificate renewal will automatically occur before the certificate expires. Renewal errors can be tracked via ManagementStatus.@OutputOnly
+  *   `status` (*type:* `String.t`, *default:* `nil`) - Status of certificate management. Refers to the most recent certificate acquisition or renewal attempt.@OutputOnly
   """
 
   use GoogleApi.Gax.ModelBase

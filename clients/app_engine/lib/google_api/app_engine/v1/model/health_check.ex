@@ -21,13 +21,13 @@ defmodule GoogleApi.AppEngine.V1.Model.HealthCheck do
 
   ## Attributes
 
-  - checkInterval (String.t): Interval between health checks. Defaults to `nil`.
-  - disableHealthCheck (boolean()): Whether to explicitly disable health checks for this instance. Defaults to `nil`.
-  - healthyThreshold (integer()): Number of consecutive successful health checks required before receiving traffic. Defaults to `nil`.
-  - host (String.t): Host header to send when performing an HTTP health check. Example: "myapp.appspot.com" Defaults to `nil`.
-  - restartThreshold (integer()): Number of consecutive failed health checks required before an instance is restarted. Defaults to `nil`.
-  - timeout (String.t): Time before the health check is considered failed. Defaults to `nil`.
-  - unhealthyThreshold (integer()): Number of consecutive failed health checks required before removing traffic. Defaults to `nil`.
+  *   `checkInterval` (*type:* `String.t`, *default:* `nil`) - Interval between health checks.
+  *   `disableHealthCheck` (*type:* `boolean()`, *default:* `nil`) - Whether to explicitly disable health checks for this instance.
+  *   `healthyThreshold` (*type:* `integer()`, *default:* `nil`) - Number of consecutive successful health checks required before receiving traffic.
+  *   `host` (*type:* `String.t`, *default:* `nil`) - Host header to send when performing an HTTP health check. Example: "myapp.appspot.com"
+  *   `restartThreshold` (*type:* `integer()`, *default:* `nil`) - Number of consecutive failed health checks required before an instance is restarted.
+  *   `timeout` (*type:* `String.t`, *default:* `nil`) - Time before the health check is considered failed.
+  *   `unhealthyThreshold` (*type:* `integer()`, *default:* `nil`) - Number of consecutive failed health checks required before removing traffic.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,10 +21,10 @@ defmodule GoogleApi.AppEngine.V1.Model.NetworkUtilization do
 
   ## Attributes
 
-  - targetReceivedBytesPerSecond (integer()): Target bytes received per second. Defaults to `nil`.
-  - targetReceivedPacketsPerSecond (integer()): Target packets received per second. Defaults to `nil`.
-  - targetSentBytesPerSecond (integer()): Target bytes sent per second. Defaults to `nil`.
-  - targetSentPacketsPerSecond (integer()): Target packets sent per second. Defaults to `nil`.
+  *   `targetReceivedBytesPerSecond` (*type:* `integer()`, *default:* `nil`) - Target bytes received per second.
+  *   `targetReceivedPacketsPerSecond` (*type:* `integer()`, *default:* `nil`) - Target packets received per second.
+  *   `targetSentBytesPerSecond` (*type:* `integer()`, *default:* `nil`) - Target bytes sent per second.
+  *   `targetSentPacketsPerSecond` (*type:* `integer()`, *default:* `nil`) - Target packets sent per second.
   """
 
   use GoogleApi.Gax.ModelBase

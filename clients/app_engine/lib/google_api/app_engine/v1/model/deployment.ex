@@ -21,10 +21,10 @@ defmodule GoogleApi.AppEngine.V1.Model.Deployment do
 
   ## Attributes
 
-  - cloudBuildOptions (GoogleApi.AppEngine.V1.Model.CloudBuildOptions.t): Options for any Google Cloud Build builds created as a part of this deployment.These options will only be used if a new build is created, such as when deploying to the App Engine flexible environment using files or zip. Defaults to `nil`.
-  - container (GoogleApi.AppEngine.V1.Model.ContainerInfo.t): The Docker image for the container that runs the version. Only applicable for instances running in the App Engine flexible environment. Defaults to `nil`.
-  - files (%{optional(String.t) => GoogleApi.AppEngine.V1.Model.FileInfo.t}): Manifest of the files stored in Google Cloud Storage that are included as part of this version. All files must be readable using the credentials supplied with this call. Defaults to `nil`.
-  - zip (GoogleApi.AppEngine.V1.Model.ZipInfo.t): The zip file for this deployment, if this is a zip deployment. Defaults to `nil`.
+  *   `cloudBuildOptions` (*type:* `GoogleApi.AppEngine.V1.Model.CloudBuildOptions.t`, *default:* `nil`) - Options for any Google Cloud Build builds created as a part of this deployment.These options will only be used if a new build is created, such as when deploying to the App Engine flexible environment using files or zip.
+  *   `container` (*type:* `GoogleApi.AppEngine.V1.Model.ContainerInfo.t`, *default:* `nil`) - The Docker image for the container that runs the version. Only applicable for instances running in the App Engine flexible environment.
+  *   `files` (*type:* `%{optional(String.t) => GoogleApi.AppEngine.V1.Model.FileInfo.t}`, *default:* `nil`) - Manifest of the files stored in Google Cloud Storage that are included as part of this version. All files must be readable using the credentials supplied with this call.
+  *   `zip` (*type:* `GoogleApi.AppEngine.V1.Model.ZipInfo.t`, *default:* `nil`) - The zip file for this deployment, if this is a zip deployment.
   """
 
   use GoogleApi.Gax.ModelBase
