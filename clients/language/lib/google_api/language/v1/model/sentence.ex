@@ -21,10 +21,10 @@ defmodule GoogleApi.Language.V1.Model.Sentence do
 
   ## Attributes
 
-  - sentiment (GoogleApi.Language.V1.Model.Sentiment.t): For calls to AnalyzeSentiment or if
-  AnnotateTextRequest.Features.extract_document_sentiment is set to
-  true, this field will contain the sentiment for the sentence. Defaults to `nil`.
-  - text (GoogleApi.Language.V1.Model.TextSpan.t): The sentence text. Defaults to `nil`.
+  *   `sentiment` (*type:* `GoogleApi.Language.V1.Model.Sentiment.t`, *default:* `nil`) - For calls to AnalyzeSentiment or if
+      AnnotateTextRequest.Features.extract_document_sentiment is set to
+      true, this field will contain the sentiment for the sentence.
+  *   `text` (*type:* `GoogleApi.Language.V1.Model.TextSpan.t`, *default:* `nil`) - The sentence text.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,11 +21,11 @@ defmodule GoogleApi.Language.V1.Model.AnalyzeSentimentResponse do
 
   ## Attributes
 
-  - documentSentiment (GoogleApi.Language.V1.Model.Sentiment.t): The overall sentiment of the input document. Defaults to `nil`.
-  - language (String.t): The language of the text, which will be the same as the language specified
-  in the request or, if not specified, the automatically-detected language.
-  See Document.language field for more details. Defaults to `nil`.
-  - sentences (list(GoogleApi.Language.V1.Model.Sentence.t)): The sentiment for all the sentences in the document. Defaults to `nil`.
+  *   `documentSentiment` (*type:* `GoogleApi.Language.V1.Model.Sentiment.t`, *default:* `nil`) - The overall sentiment of the input document.
+  *   `language` (*type:* `String.t`, *default:* `nil`) - The language of the text, which will be the same as the language specified
+      in the request or, if not specified, the automatically-detected language.
+      See Document.language field for more details.
+  *   `sentences` (*type:* `list(GoogleApi.Language.V1.Model.Sentence.t)`, *default:* `nil`) - The sentiment for all the sentences in the document.
   """
 
   use GoogleApi.Gax.ModelBase

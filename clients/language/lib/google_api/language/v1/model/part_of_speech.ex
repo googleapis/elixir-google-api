@@ -23,18 +23,18 @@ defmodule GoogleApi.Language.V1.Model.PartOfSpeech do
 
   ## Attributes
 
-  - aspect (String.t): The grammatical aspect. Defaults to `nil`.
-  - case (String.t): The grammatical case. Defaults to `nil`.
-  - form (String.t): The grammatical form. Defaults to `nil`.
-  - gender (String.t): The grammatical gender. Defaults to `nil`.
-  - mood (String.t): The grammatical mood. Defaults to `nil`.
-  - number (String.t): The grammatical number. Defaults to `nil`.
-  - person (String.t): The grammatical person. Defaults to `nil`.
-  - proper (String.t): The grammatical properness. Defaults to `nil`.
-  - reciprocity (String.t): The grammatical reciprocity. Defaults to `nil`.
-  - tag (String.t): The part of speech tag. Defaults to `nil`.
-  - tense (String.t): The grammatical tense. Defaults to `nil`.
-  - voice (String.t): The grammatical voice. Defaults to `nil`.
+  *   `aspect` (*type:* `String.t`, *default:* `nil`) - The grammatical aspect.
+  *   `case` (*type:* `String.t`, *default:* `nil`) - The grammatical case.
+  *   `form` (*type:* `String.t`, *default:* `nil`) - The grammatical form.
+  *   `gender` (*type:* `String.t`, *default:* `nil`) - The grammatical gender.
+  *   `mood` (*type:* `String.t`, *default:* `nil`) - The grammatical mood.
+  *   `number` (*type:* `String.t`, *default:* `nil`) - The grammatical number.
+  *   `person` (*type:* `String.t`, *default:* `nil`) - The grammatical person.
+  *   `proper` (*type:* `String.t`, *default:* `nil`) - The grammatical properness.
+  *   `reciprocity` (*type:* `String.t`, *default:* `nil`) - The grammatical reciprocity.
+  *   `tag` (*type:* `String.t`, *default:* `nil`) - The part of speech tag.
+  *   `tense` (*type:* `String.t`, *default:* `nil`) - The grammatical tense.
+  *   `voice` (*type:* `String.t`, *default:* `nil`) - The grammatical voice.
   """
 
   use GoogleApi.Gax.ModelBase

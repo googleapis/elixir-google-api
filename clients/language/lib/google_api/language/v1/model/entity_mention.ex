@@ -22,12 +22,12 @@ defmodule GoogleApi.Language.V1.Model.EntityMention do
 
   ## Attributes
 
-  - sentiment (GoogleApi.Language.V1.Model.Sentiment.t): For calls to AnalyzeEntitySentiment or if
-  AnnotateTextRequest.Features.extract_entity_sentiment is set to
-  true, this field will contain the sentiment expressed for this mention of
-  the entity in the provided document. Defaults to `nil`.
-  - text (GoogleApi.Language.V1.Model.TextSpan.t): The mention text. Defaults to `nil`.
-  - type (String.t): The type of the entity mention. Defaults to `nil`.
+  *   `sentiment` (*type:* `GoogleApi.Language.V1.Model.Sentiment.t`, *default:* `nil`) - For calls to AnalyzeEntitySentiment or if
+      AnnotateTextRequest.Features.extract_entity_sentiment is set to
+      true, this field will contain the sentiment expressed for this mention of
+      the entity in the provided document.
+  *   `text` (*type:* `GoogleApi.Language.V1.Model.TextSpan.t`, *default:* `nil`) - The mention text.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the entity mention.
   """
 
   use GoogleApi.Gax.ModelBase

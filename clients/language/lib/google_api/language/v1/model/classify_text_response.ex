@@ -21,7 +21,7 @@ defmodule GoogleApi.Language.V1.Model.ClassifyTextResponse do
 
   ## Attributes
 
-  - categories (list(GoogleApi.Language.V1.Model.ClassificationCategory.t)): Categories representing the input document. Defaults to `nil`.
+  *   `categories` (*type:* `list(GoogleApi.Language.V1.Model.ClassificationCategory.t)`, *default:* `nil`) - Categories representing the input document.
   """
 
   use GoogleApi.Gax.ModelBase

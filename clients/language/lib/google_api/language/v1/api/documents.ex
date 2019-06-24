@@ -30,27 +30,28 @@ defmodule GoogleApi.Language.V1.Api.Documents do
 
   ## Parameters
 
-  - connection (GoogleApi.Language.V1.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.Language.V1.Model.AnalyzeEntitiesRequest.t): 
+  *   `connection` (*type:* `GoogleApi.Language.V1.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Language.V1.Model.AnalyzeEntitiesRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Language.V1.Model.AnalyzeEntitiesResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Language.V1.Model.AnalyzeEntitiesResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec language_documents_analyze_entities(Tesla.Env.client(), keyword()) ::
+  @spec language_documents_analyze_entities(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Language.V1.Model.AnalyzeEntitiesResponse.t()} | {:error, Tesla.Env.t()}
   def language_documents_analyze_entities(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -85,27 +86,28 @@ defmodule GoogleApi.Language.V1.Api.Documents do
 
   ## Parameters
 
-  - connection (GoogleApi.Language.V1.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.Language.V1.Model.AnalyzeEntitySentimentRequest.t): 
+  *   `connection` (*type:* `GoogleApi.Language.V1.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Language.V1.Model.AnalyzeEntitySentimentRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Language.V1.Model.AnalyzeEntitySentimentResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Language.V1.Model.AnalyzeEntitySentimentResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec language_documents_analyze_entity_sentiment(Tesla.Env.client(), keyword()) ::
+  @spec language_documents_analyze_entity_sentiment(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Language.V1.Model.AnalyzeEntitySentimentResponse.t()}
           | {:error, Tesla.Env.t()}
   def language_documents_analyze_entity_sentiment(connection, optional_params \\ [], opts \\ []) do
@@ -142,27 +144,28 @@ defmodule GoogleApi.Language.V1.Api.Documents do
 
   ## Parameters
 
-  - connection (GoogleApi.Language.V1.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.Language.V1.Model.AnalyzeSentimentRequest.t): 
+  *   `connection` (*type:* `GoogleApi.Language.V1.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Language.V1.Model.AnalyzeSentimentRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Language.V1.Model.AnalyzeSentimentResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Language.V1.Model.AnalyzeSentimentResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec language_documents_analyze_sentiment(Tesla.Env.client(), keyword()) ::
+  @spec language_documents_analyze_sentiment(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Language.V1.Model.AnalyzeSentimentResponse.t()}
           | {:error, Tesla.Env.t()}
   def language_documents_analyze_sentiment(connection, optional_params \\ [], opts \\ []) do
@@ -199,27 +202,28 @@ defmodule GoogleApi.Language.V1.Api.Documents do
 
   ## Parameters
 
-  - connection (GoogleApi.Language.V1.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.Language.V1.Model.AnalyzeSyntaxRequest.t): 
+  *   `connection` (*type:* `GoogleApi.Language.V1.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Language.V1.Model.AnalyzeSyntaxRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Language.V1.Model.AnalyzeSyntaxResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Language.V1.Model.AnalyzeSyntaxResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec language_documents_analyze_syntax(Tesla.Env.client(), keyword()) ::
+  @spec language_documents_analyze_syntax(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Language.V1.Model.AnalyzeSyntaxResponse.t()} | {:error, Tesla.Env.t()}
   def language_documents_analyze_syntax(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -254,27 +258,28 @@ defmodule GoogleApi.Language.V1.Api.Documents do
 
   ## Parameters
 
-  - connection (GoogleApi.Language.V1.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.Language.V1.Model.AnnotateTextRequest.t): 
+  *   `connection` (*type:* `GoogleApi.Language.V1.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Language.V1.Model.AnnotateTextRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Language.V1.Model.AnnotateTextResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Language.V1.Model.AnnotateTextResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec language_documents_annotate_text(Tesla.Env.client(), keyword()) ::
+  @spec language_documents_annotate_text(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Language.V1.Model.AnnotateTextResponse.t()} | {:error, Tesla.Env.t()}
   def language_documents_annotate_text(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -308,27 +313,28 @@ defmodule GoogleApi.Language.V1.Api.Documents do
 
   ## Parameters
 
-  - connection (GoogleApi.Language.V1.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.Language.V1.Model.ClassifyTextRequest.t): 
+  *   `connection` (*type:* `GoogleApi.Language.V1.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Language.V1.Model.ClassifyTextRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Language.V1.Model.ClassifyTextResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Language.V1.Model.ClassifyTextResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec language_documents_classify_text(Tesla.Env.client(), keyword()) ::
+  @spec language_documents_classify_text(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Language.V1.Model.ClassifyTextResponse.t()} | {:error, Tesla.Env.t()}
   def language_documents_classify_text(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

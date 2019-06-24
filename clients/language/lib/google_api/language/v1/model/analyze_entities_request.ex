@@ -21,8 +21,8 @@ defmodule GoogleApi.Language.V1.Model.AnalyzeEntitiesRequest do
 
   ## Attributes
 
-  - document (GoogleApi.Language.V1.Model.Document.t): Input document. Defaults to `nil`.
-  - encodingType (String.t): The encoding type used by the API to calculate offsets. Defaults to `nil`.
+  *   `document` (*type:* `GoogleApi.Language.V1.Model.Document.t`, *default:* `nil`) - Input document.
+  *   `encodingType` (*type:* `String.t`, *default:* `nil`) - The encoding type used by the API to calculate offsets.
   """
 
   use GoogleApi.Gax.ModelBase

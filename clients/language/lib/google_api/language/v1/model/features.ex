@@ -22,11 +22,11 @@ defmodule GoogleApi.Language.V1.Model.Features do
 
   ## Attributes
 
-  - classifyText (boolean()): Classify the full document into categories. Defaults to `nil`.
-  - extractDocumentSentiment (boolean()): Extract document-level sentiment. Defaults to `nil`.
-  - extractEntities (boolean()): Extract entities. Defaults to `nil`.
-  - extractEntitySentiment (boolean()): Extract entities and their associated sentiment. Defaults to `nil`.
-  - extractSyntax (boolean()): Extract syntax information. Defaults to `nil`.
+  *   `classifyText` (*type:* `boolean()`, *default:* `nil`) - Classify the full document into categories.
+  *   `extractDocumentSentiment` (*type:* `boolean()`, *default:* `nil`) - Extract document-level sentiment.
+  *   `extractEntities` (*type:* `boolean()`, *default:* `nil`) - Extract entities.
+  *   `extractEntitySentiment` (*type:* `boolean()`, *default:* `nil`) - Extract entities and their associated sentiment.
+  *   `extractSyntax` (*type:* `boolean()`, *default:* `nil`) - Extract syntax information.
   """
 
   use GoogleApi.Gax.ModelBase

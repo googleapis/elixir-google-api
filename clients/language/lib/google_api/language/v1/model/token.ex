@@ -21,10 +21,10 @@ defmodule GoogleApi.Language.V1.Model.Token do
 
   ## Attributes
 
-  - dependencyEdge (GoogleApi.Language.V1.Model.DependencyEdge.t): Dependency tree parse for this token. Defaults to `nil`.
-  - lemma (String.t): [Lemma](https://en.wikipedia.org/wiki/Lemma_%28morphology%29) of the token. Defaults to `nil`.
-  - partOfSpeech (GoogleApi.Language.V1.Model.PartOfSpeech.t): Parts of speech tag for this token. Defaults to `nil`.
-  - text (GoogleApi.Language.V1.Model.TextSpan.t): The token text. Defaults to `nil`.
+  *   `dependencyEdge` (*type:* `GoogleApi.Language.V1.Model.DependencyEdge.t`, *default:* `nil`) - Dependency tree parse for this token.
+  *   `lemma` (*type:* `String.t`, *default:* `nil`) - [Lemma](https://en.wikipedia.org/wiki/Lemma_%28morphology%29) of the token.
+  *   `partOfSpeech` (*type:* `GoogleApi.Language.V1.Model.PartOfSpeech.t`, *default:* `nil`) - Parts of speech tag for this token.
+  *   `text` (*type:* `GoogleApi.Language.V1.Model.TextSpan.t`, *default:* `nil`) - The token text.
   """
 
   use GoogleApi.Gax.ModelBase
