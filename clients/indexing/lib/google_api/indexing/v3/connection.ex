@@ -20,6 +20,8 @@ defmodule GoogleApi.Indexing.V3.Connection do
   Handle Tesla connections for GoogleApi.Indexing.V3.
   """
 
+  @type t :: Tesla.Env.client()
+
   use GoogleApi.Gax.Connection,
     scopes: [
       # Submit data to Google for indexing

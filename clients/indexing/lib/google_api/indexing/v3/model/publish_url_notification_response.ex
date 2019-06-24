@@ -21,7 +21,7 @@ defmodule GoogleApi.Indexing.V3.Model.PublishUrlNotificationResponse do
 
   ## Attributes
 
-  - urlNotificationMetadata (GoogleApi.Indexing.V3.Model.UrlNotificationMetadata.t): Description of the notification events received for this URL. Defaults to `nil`.
+  *   `urlNotificationMetadata` (*type:* `GoogleApi.Indexing.V3.Model.UrlNotificationMetadata.t`, *default:* `nil`) - Description of the notification events received for this URL.
   """
 
   use GoogleApi.Gax.ModelBase
