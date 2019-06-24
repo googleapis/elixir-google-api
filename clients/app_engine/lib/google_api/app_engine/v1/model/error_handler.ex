@@ -21,9 +21,9 @@ defmodule GoogleApi.AppEngine.V1.Model.ErrorHandler do
 
   ## Attributes
 
-  - errorCode (String.t): Error condition this handler applies to. Defaults to `nil`.
-  - mimeType (String.t): MIME type of file. Defaults to text/html. Defaults to `nil`.
-  - staticFile (String.t): Static file content to be served for this error. Defaults to `nil`.
+  *   `errorCode` (*type:* `String.t`, *default:* `nil`) - Error condition this handler applies to.
+  *   `mimeType` (*type:* `String.t`, *default:* `nil`) - MIME type of file. Defaults to text/html.
+  *   `staticFile` (*type:* `String.t`, *default:* `nil`) - Static file content to be served for this error.
   """
 
   use GoogleApi.Gax.ModelBase

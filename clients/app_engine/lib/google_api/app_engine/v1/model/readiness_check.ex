@@ -21,13 +21,13 @@ defmodule GoogleApi.AppEngine.V1.Model.ReadinessCheck do
 
   ## Attributes
 
-  - appStartTimeout (String.t): A maximum time limit on application initialization, measured from moment the application successfully replies to a healthcheck until it is ready to serve traffic. Defaults to `nil`.
-  - checkInterval (String.t): Interval between health checks. Defaults to `nil`.
-  - failureThreshold (integer()): Number of consecutive failed checks required before removing traffic. Defaults to `nil`.
-  - host (String.t): Host header to send when performing a HTTP Readiness check. Example: "myapp.appspot.com" Defaults to `nil`.
-  - path (String.t): The request path. Defaults to `nil`.
-  - successThreshold (integer()): Number of consecutive successful checks required before receiving traffic. Defaults to `nil`.
-  - timeout (String.t): Time before the check is considered failed. Defaults to `nil`.
+  *   `appStartTimeout` (*type:* `String.t`, *default:* `nil`) - A maximum time limit on application initialization, measured from moment the application successfully replies to a healthcheck until it is ready to serve traffic.
+  *   `checkInterval` (*type:* `String.t`, *default:* `nil`) - Interval between health checks.
+  *   `failureThreshold` (*type:* `integer()`, *default:* `nil`) - Number of consecutive failed checks required before removing traffic.
+  *   `host` (*type:* `String.t`, *default:* `nil`) - Host header to send when performing a HTTP Readiness check. Example: "myapp.appspot.com"
+  *   `path` (*type:* `String.t`, *default:* `nil`) - The request path.
+  *   `successThreshold` (*type:* `integer()`, *default:* `nil`) - Number of consecutive successful checks required before receiving traffic.
+  *   `timeout` (*type:* `String.t`, *default:* `nil`) - Time before the check is considered failed.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,7 +21,7 @@ defmodule GoogleApi.AppEngine.V1.Model.ScriptHandler do
 
   ## Attributes
 
-  - scriptPath (String.t): Path to the script from the application root directory. Defaults to `nil`.
+  *   `scriptPath` (*type:* `String.t`, *default:* `nil`) - Path to the script from the application root directory.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,19 +21,19 @@ defmodule GoogleApi.AppEngine.V1.Model.Application do
 
   ## Attributes
 
-  - authDomain (String.t): Google Apps authentication domain that controls which users can access this application.Defaults to open access for any Google Account. Defaults to `nil`.
-  - codeBucket (String.t): Google Cloud Storage bucket that can be used for storing files associated with this application. This bucket is associated with the application and can be used by the gcloud deployment commands.@OutputOnly Defaults to `nil`.
-  - defaultBucket (String.t): Google Cloud Storage bucket that can be used by this application to store content.@OutputOnly Defaults to `nil`.
-  - defaultCookieExpiration (String.t): Cookie expiration policy for this application. Defaults to `nil`.
-  - defaultHostname (String.t): Hostname used to reach this application, as resolved by App Engine.@OutputOnly Defaults to `nil`.
-  - dispatchRules (list(GoogleApi.AppEngine.V1.Model.UrlDispatchRule.t)): HTTP path dispatch rules for requests to the application that do not explicitly target a service or version. Rules are order-dependent. Up to 20 dispatch rules can be supported. Defaults to `nil`.
-  - featureSettings (GoogleApi.AppEngine.V1.Model.FeatureSettings.t): The feature specific settings to be used in the application. Defaults to `nil`.
-  - gcrDomain (String.t): The Google Container Registry domain used for storing managed build docker images for this application. Defaults to `nil`.
-  - iap (GoogleApi.AppEngine.V1.Model.IdentityAwareProxy.t):  Defaults to `nil`.
-  - id (String.t): Identifier of the Application resource. This identifier is equivalent to the project ID of the Google Cloud Platform project where you want to deploy your application. Example: myapp. Defaults to `nil`.
-  - locationId (String.t): Location from which this application runs. Application instances run out of the data centers in the specified location, which is also where all of the application's end user content is stored.Defaults to us-central.View the list of supported locations (https://cloud.google.com/appengine/docs/locations). Defaults to `nil`.
-  - name (String.t): Full path to the Application resource in the API. Example: apps/myapp.@OutputOnly Defaults to `nil`.
-  - servingStatus (String.t): Serving status of this application. Defaults to `nil`.
+  *   `authDomain` (*type:* `String.t`, *default:* `nil`) - Google Apps authentication domain that controls which users can access this application.Defaults to open access for any Google Account.
+  *   `codeBucket` (*type:* `String.t`, *default:* `nil`) - Google Cloud Storage bucket that can be used for storing files associated with this application. This bucket is associated with the application and can be used by the gcloud deployment commands.@OutputOnly
+  *   `defaultBucket` (*type:* `String.t`, *default:* `nil`) - Google Cloud Storage bucket that can be used by this application to store content.@OutputOnly
+  *   `defaultCookieExpiration` (*type:* `String.t`, *default:* `nil`) - Cookie expiration policy for this application.
+  *   `defaultHostname` (*type:* `String.t`, *default:* `nil`) - Hostname used to reach this application, as resolved by App Engine.@OutputOnly
+  *   `dispatchRules` (*type:* `list(GoogleApi.AppEngine.V1.Model.UrlDispatchRule.t)`, *default:* `nil`) - HTTP path dispatch rules for requests to the application that do not explicitly target a service or version. Rules are order-dependent. Up to 20 dispatch rules can be supported.
+  *   `featureSettings` (*type:* `GoogleApi.AppEngine.V1.Model.FeatureSettings.t`, *default:* `nil`) - The feature specific settings to be used in the application.
+  *   `gcrDomain` (*type:* `String.t`, *default:* `nil`) - The Google Container Registry domain used for storing managed build docker images for this application.
+  *   `iap` (*type:* `GoogleApi.AppEngine.V1.Model.IdentityAwareProxy.t`, *default:* `nil`) - 
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Identifier of the Application resource. This identifier is equivalent to the project ID of the Google Cloud Platform project where you want to deploy your application. Example: myapp.
+  *   `locationId` (*type:* `String.t`, *default:* `nil`) - Location from which this application runs. Application instances run out of the data centers in the specified location, which is also where all of the application's end user content is stored.Defaults to us-central.View the list of supported locations (https://cloud.google.com/appengine/docs/locations).
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Full path to the Application resource in the API. Example: apps/myapp.@OutputOnly
+  *   `servingStatus` (*type:* `String.t`, *default:* `nil`) - Serving status of this application.
   """
 
   use GoogleApi.Gax.ModelBase

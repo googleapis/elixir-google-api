@@ -21,8 +21,8 @@ defmodule GoogleApi.AppEngine.V1.Model.Library do
 
   ## Attributes
 
-  - name (String.t): Name of the library. Example: "django". Defaults to `nil`.
-  - version (String.t): Version of the library to select, or "latest". Defaults to `nil`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the library. Example: "django".
+  *   `version` (*type:* `String.t`, *default:* `nil`) - Version of the library to select, or "latest".
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,7 +21,7 @@ defmodule GoogleApi.AppEngine.V1.Model.Entrypoint do
 
   ## Attributes
 
-  - shell (String.t): The format should be a shell command that can be fed to bash -c. Defaults to `nil`.
+  *   `shell` (*type:* `String.t`, *default:* `nil`) - The format should be a shell command that can be fed to bash -c.
   """
 
   use GoogleApi.Gax.ModelBase

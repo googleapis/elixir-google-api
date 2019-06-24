@@ -21,10 +21,10 @@ defmodule GoogleApi.AppEngine.V1.Model.StandardSchedulerSettings do
 
   ## Attributes
 
-  - maxInstances (integer()): Maximum number of instances to run for this version. Set to zero to disable max_instances configuration. Defaults to `nil`.
-  - minInstances (integer()): Minimum number of instances to run for this version. Set to zero to disable min_instances configuration. Defaults to `nil`.
-  - targetCpuUtilization (float()): Target CPU utilization ratio to maintain when scaling. Defaults to `nil`.
-  - targetThroughputUtilization (float()): Target throughput utilization ratio to maintain when scaling Defaults to `nil`.
+  *   `maxInstances` (*type:* `integer()`, *default:* `nil`) - Maximum number of instances to run for this version. Set to zero to disable max_instances configuration.
+  *   `minInstances` (*type:* `integer()`, *default:* `nil`) - Minimum number of instances to run for this version. Set to zero to disable min_instances configuration.
+  *   `targetCpuUtilization` (*type:* `float()`, *default:* `nil`) - Target CPU utilization ratio to maintain when scaling.
+  *   `targetThroughputUtilization` (*type:* `float()`, *default:* `nil`) - Target throughput utilization ratio to maintain when scaling
   """
 
   use GoogleApi.Gax.ModelBase

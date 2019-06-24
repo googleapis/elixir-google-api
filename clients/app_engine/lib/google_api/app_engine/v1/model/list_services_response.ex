@@ -21,8 +21,8 @@ defmodule GoogleApi.AppEngine.V1.Model.ListServicesResponse do
 
   ## Attributes
 
-  - nextPageToken (String.t): Continuation token for fetching the next page of results. Defaults to `nil`.
-  - services (list(GoogleApi.AppEngine.V1.Model.Service.t)): The services belonging to the requested application. Defaults to `nil`.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Continuation token for fetching the next page of results.
+  *   `services` (*type:* `list(GoogleApi.AppEngine.V1.Model.Service.t)`, *default:* `nil`) - The services belonging to the requested application.
   """
 
   use GoogleApi.Gax.ModelBase

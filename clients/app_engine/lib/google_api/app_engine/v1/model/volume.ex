@@ -21,9 +21,9 @@ defmodule GoogleApi.AppEngine.V1.Model.Volume do
 
   ## Attributes
 
-  - name (String.t): Unique name for the volume. Defaults to `nil`.
-  - sizeGb (float()): Volume size in gigabytes. Defaults to `nil`.
-  - volumeType (String.t): Underlying volume type, e.g. 'tmpfs'. Defaults to `nil`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Unique name for the volume.
+  *   `sizeGb` (*type:* `float()`, *default:* `nil`) - Volume size in gigabytes.
+  *   `volumeType` (*type:* `String.t`, *default:* `nil`) - Underlying volume type, e.g. 'tmpfs'.
   """
 
   use GoogleApi.Gax.ModelBase

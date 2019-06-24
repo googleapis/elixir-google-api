@@ -21,8 +21,8 @@ defmodule GoogleApi.AppEngine.V1.Model.CpuUtilization do
 
   ## Attributes
 
-  - aggregationWindowLength (String.t): Period of time over which CPU utilization is calculated. Defaults to `nil`.
-  - targetUtilization (float()): Target CPU utilization ratio to maintain when scaling. Must be between 0 and 1. Defaults to `nil`.
+  *   `aggregationWindowLength` (*type:* `String.t`, *default:* `nil`) - Period of time over which CPU utilization is calculated.
+  *   `targetUtilization` (*type:* `float()`, *default:* `nil`) - Target CPU utilization ratio to maintain when scaling. Must be between 0 and 1.
   """
 
   use GoogleApi.Gax.ModelBase

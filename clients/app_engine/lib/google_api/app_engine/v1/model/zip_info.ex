@@ -21,8 +21,8 @@ defmodule GoogleApi.AppEngine.V1.Model.ZipInfo do
 
   ## Attributes
 
-  - filesCount (integer()): An estimate of the number of files in a zip for a zip deployment. If set, must be greater than or equal to the actual number of files. Used for optimizing performance; if not provided, deployment may be slow. Defaults to `nil`.
-  - sourceUrl (String.t): URL of the zip file to deploy from. Must be a URL to a resource in Google Cloud Storage in the form 'http(s)://storage.googleapis.com/<bucket>/<object>'. Defaults to `nil`.
+  *   `filesCount` (*type:* `integer()`, *default:* `nil`) - An estimate of the number of files in a zip for a zip deployment. If set, must be greater than or equal to the actual number of files. Used for optimizing performance; if not provided, deployment may be slow.
+  *   `sourceUrl` (*type:* `String.t`, *default:* `nil`) - URL of the zip file to deploy from. Must be a URL to a resource in Google Cloud Storage in the form 'http(s)://storage.googleapis.com/<bucket>/<object>'.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -30,27 +30,28 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
 
   ## Parameters
 
-  - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.AppEngine.V1.Model.Application.t): 
+  *   `connection` (*type:* `GoogleApi.AppEngine.V1.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.AppEngine.V1.Model.Application.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AppEngine.V1.Model.Operation{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AppEngine.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec appengine_apps_create(Tesla.Env.client(), keyword()) ::
+  @spec appengine_apps_create(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.AppEngine.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def appengine_apps_create(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -84,27 +85,28 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
 
   ## Parameters
 
-  - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
-  - apps_id (String.t): Part of `name`. Name of the Application resource to get. Example: apps/myapp.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.AppEngine.V1.Connection.t`) - Connection to server
+  *   `apps_id` (*type:* `String.t`) - Part of `name`. Name of the Application resource to get. Example: apps/myapp.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AppEngine.V1.Model.Application{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AppEngine.V1.Model.Application{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec appengine_apps_get(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec appengine_apps_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AppEngine.V1.Model.Application.t()} | {:error, Tesla.Env.t()}
   def appengine_apps_get(connection, apps_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -141,29 +143,30 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
 
   ## Parameters
 
-  - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
-  - apps_id (String.t): Part of `name`. Name of the Application resource to update. Example: apps/myapp.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :updateMask (String.t): Standard field mask for the set of fields to be updated.
-    - :body (GoogleApi.AppEngine.V1.Model.Application.t): 
+  *   `connection` (*type:* `GoogleApi.AppEngine.V1.Connection.t`) - Connection to server
+  *   `apps_id` (*type:* `String.t`) - Part of `name`. Name of the Application resource to update. Example: apps/myapp.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:updateMask` (*type:* `String.t`) - Standard field mask for the set of fields to be updated.
+      *   `:body` (*type:* `GoogleApi.AppEngine.V1.Model.Application.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AppEngine.V1.Model.Operation{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AppEngine.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec appengine_apps_patch(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec appengine_apps_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AppEngine.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def appengine_apps_patch(connection, apps_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -200,28 +203,29 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
 
   ## Parameters
 
-  - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
-  - apps_id (String.t): Part of `name`. Name of the application to repair. Example: apps/myapp
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.AppEngine.V1.Model.RepairApplicationRequest.t): 
+  *   `connection` (*type:* `GoogleApi.AppEngine.V1.Connection.t`) - Connection to server
+  *   `apps_id` (*type:* `String.t`) - Part of `name`. Name of the application to repair. Example: apps/myapp
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.AppEngine.V1.Model.RepairApplicationRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AppEngine.V1.Model.Operation{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AppEngine.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec appengine_apps_repair(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec appengine_apps_repair(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AppEngine.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def appengine_apps_repair(connection, apps_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -257,28 +261,34 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
 
   ## Parameters
 
-  - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
-  - apps_id (String.t): Part of `parent`. Name of the parent Application resource. Example: apps/myapp.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.AppEngine.V1.Model.AuthorizedCertificate.t): 
+  *   `connection` (*type:* `GoogleApi.AppEngine.V1.Connection.t`) - Connection to server
+  *   `apps_id` (*type:* `String.t`) - Part of `parent`. Name of the parent Application resource. Example: apps/myapp.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.AppEngine.V1.Model.AuthorizedCertificate.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AppEngine.V1.Model.AuthorizedCertificate{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AppEngine.V1.Model.AuthorizedCertificate{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec appengine_apps_authorized_certificates_create(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec appengine_apps_authorized_certificates_create(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.AppEngine.V1.Model.AuthorizedCertificate.t()} | {:error, Tesla.Env.t()}
   def appengine_apps_authorized_certificates_create(
         connection,
@@ -319,31 +329,33 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
 
   ## Parameters
 
-  - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
-  - apps_id (String.t): Part of `name`. Name of the resource to delete. Example: apps/myapp/authorizedCertificates/12345.
-  - authorized_certificates_id (String.t): Part of `name`. See documentation of `appsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.AppEngine.V1.Connection.t`) - Connection to server
+  *   `apps_id` (*type:* `String.t`) - Part of `name`. Name of the resource to delete. Example: apps/myapp/authorizedCertificates/12345.
+  *   `authorized_certificates_id` (*type:* `String.t`) - Part of `name`. See documentation of `appsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AppEngine.V1.Model.Empty{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AppEngine.V1.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec appengine_apps_authorized_certificates_delete(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.AppEngine.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
   def appengine_apps_authorized_certificates_delete(
@@ -387,32 +399,34 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
 
   ## Parameters
 
-  - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
-  - apps_id (String.t): Part of `name`. Name of the resource requested. Example: apps/myapp/authorizedCertificates/12345.
-  - authorized_certificates_id (String.t): Part of `name`. See documentation of `appsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :view (String.t): Controls the set of fields returned in the GET response.
+  *   `connection` (*type:* `GoogleApi.AppEngine.V1.Connection.t`) - Connection to server
+  *   `apps_id` (*type:* `String.t`) - Part of `name`. Name of the resource requested. Example: apps/myapp/authorizedCertificates/12345.
+  *   `authorized_certificates_id` (*type:* `String.t`) - Part of `name`. See documentation of `appsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:view` (*type:* `String.t`) - Controls the set of fields returned in the GET response.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AppEngine.V1.Model.AuthorizedCertificate{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AppEngine.V1.Model.AuthorizedCertificate{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec appengine_apps_authorized_certificates_get(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.AppEngine.V1.Model.AuthorizedCertificate.t()} | {:error, Tesla.Env.t()}
@@ -458,30 +472,36 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
 
   ## Parameters
 
-  - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
-  - apps_id (String.t): Part of `parent`. Name of the parent Application resource. Example: apps/myapp.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :pageSize (integer()): Maximum results to return per page.
-    - :pageToken (String.t): Continuation token for fetching the next page of results.
-    - :view (String.t): Controls the set of fields returned in the LIST response.
+  *   `connection` (*type:* `GoogleApi.AppEngine.V1.Connection.t`) - Connection to server
+  *   `apps_id` (*type:* `String.t`) - Part of `parent`. Name of the parent Application resource. Example: apps/myapp.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - Maximum results to return per page.
+      *   `:pageToken` (*type:* `String.t`) - Continuation token for fetching the next page of results.
+      *   `:view` (*type:* `String.t`) - Controls the set of fields returned in the LIST response.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AppEngine.V1.Model.ListAuthorizedCertificatesResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AppEngine.V1.Model.ListAuthorizedCertificatesResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec appengine_apps_authorized_certificates_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec appengine_apps_authorized_certificates_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.AppEngine.V1.Model.ListAuthorizedCertificatesResponse.t()}
           | {:error, Tesla.Env.t()}
   def appengine_apps_authorized_certificates_list(
@@ -527,33 +547,35 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
 
   ## Parameters
 
-  - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
-  - apps_id (String.t): Part of `name`. Name of the resource to update. Example: apps/myapp/authorizedCertificates/12345.
-  - authorized_certificates_id (String.t): Part of `name`. See documentation of `appsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :updateMask (String.t): Standard field mask for the set of fields to be updated. Updates are only supported on the certificate_raw_data and display_name fields.
-    - :body (GoogleApi.AppEngine.V1.Model.AuthorizedCertificate.t): 
+  *   `connection` (*type:* `GoogleApi.AppEngine.V1.Connection.t`) - Connection to server
+  *   `apps_id` (*type:* `String.t`) - Part of `name`. Name of the resource to update. Example: apps/myapp/authorizedCertificates/12345.
+  *   `authorized_certificates_id` (*type:* `String.t`) - Part of `name`. See documentation of `appsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:updateMask` (*type:* `String.t`) - Standard field mask for the set of fields to be updated. Updates are only supported on the certificate_raw_data and display_name fields.
+      *   `:body` (*type:* `GoogleApi.AppEngine.V1.Model.AuthorizedCertificate.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AppEngine.V1.Model.AuthorizedCertificate{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AppEngine.V1.Model.AuthorizedCertificate{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec appengine_apps_authorized_certificates_patch(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.AppEngine.V1.Model.AuthorizedCertificate.t()} | {:error, Tesla.Env.t()}
@@ -600,29 +622,35 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
 
   ## Parameters
 
-  - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
-  - apps_id (String.t): Part of `parent`. Name of the parent Application resource. Example: apps/myapp.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :pageSize (integer()): Maximum results to return per page.
-    - :pageToken (String.t): Continuation token for fetching the next page of results.
+  *   `connection` (*type:* `GoogleApi.AppEngine.V1.Connection.t`) - Connection to server
+  *   `apps_id` (*type:* `String.t`) - Part of `parent`. Name of the parent Application resource. Example: apps/myapp.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - Maximum results to return per page.
+      *   `:pageToken` (*type:* `String.t`) - Continuation token for fetching the next page of results.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AppEngine.V1.Model.ListAuthorizedDomainsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AppEngine.V1.Model.ListAuthorizedDomainsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec appengine_apps_authorized_domains_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec appengine_apps_authorized_domains_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.AppEngine.V1.Model.ListAuthorizedDomainsResponse.t()}
           | {:error, Tesla.Env.t()}
   def appengine_apps_authorized_domains_list(
@@ -667,30 +695,35 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
 
   ## Parameters
 
-  - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
-  - apps_id (String.t): Part of `parent`. Name of the parent Application resource. Example: apps/myapp.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :overrideStrategy (String.t): Whether the domain creation should override any existing mappings for this domain. By default, overrides are rejected.
-    - :body (GoogleApi.AppEngine.V1.Model.DomainMapping.t): 
+  *   `connection` (*type:* `GoogleApi.AppEngine.V1.Connection.t`) - Connection to server
+  *   `apps_id` (*type:* `String.t`) - Part of `parent`. Name of the parent Application resource. Example: apps/myapp.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:overrideStrategy` (*type:* `String.t`) - Whether the domain creation should override any existing mappings for this domain. By default, overrides are rejected.
+      *   `:body` (*type:* `GoogleApi.AppEngine.V1.Model.DomainMapping.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AppEngine.V1.Model.Operation{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AppEngine.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec appengine_apps_domain_mappings_create(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, GoogleApi.AppEngine.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+  @spec appengine_apps_domain_mappings_create(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.AppEngine.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def appengine_apps_domain_mappings_create(
         connection,
         apps_id,
@@ -731,31 +764,33 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
 
   ## Parameters
 
-  - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
-  - apps_id (String.t): Part of `name`. Name of the resource to delete. Example: apps/myapp/domainMappings/example.com.
-  - domain_mappings_id (String.t): Part of `name`. See documentation of `appsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.AppEngine.V1.Connection.t`) - Connection to server
+  *   `apps_id` (*type:* `String.t`) - Part of `name`. Name of the resource to delete. Example: apps/myapp/domainMappings/example.com.
+  *   `domain_mappings_id` (*type:* `String.t`) - Part of `name`. See documentation of `appsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AppEngine.V1.Model.Operation{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AppEngine.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec appengine_apps_domain_mappings_delete(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.AppEngine.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def appengine_apps_domain_mappings_delete(
@@ -798,29 +833,35 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
 
   ## Parameters
 
-  - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
-  - apps_id (String.t): Part of `name`. Name of the resource requested. Example: apps/myapp/domainMappings/example.com.
-  - domain_mappings_id (String.t): Part of `name`. See documentation of `appsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.AppEngine.V1.Connection.t`) - Connection to server
+  *   `apps_id` (*type:* `String.t`) - Part of `name`. Name of the resource requested. Example: apps/myapp/domainMappings/example.com.
+  *   `domain_mappings_id` (*type:* `String.t`) - Part of `name`. See documentation of `appsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AppEngine.V1.Model.DomainMapping{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AppEngine.V1.Model.DomainMapping{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec appengine_apps_domain_mappings_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.AppEngine.V1.Model.DomainMapping.t()} | {:error, Tesla.Env.t()}
+  @spec appengine_apps_domain_mappings_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.AppEngine.V1.Model.DomainMapping.t()} | {:error, Tesla.Env.t()}
   def appengine_apps_domain_mappings_get(
         connection,
         apps_id,
@@ -861,29 +902,30 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
 
   ## Parameters
 
-  - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
-  - apps_id (String.t): Part of `parent`. Name of the parent Application resource. Example: apps/myapp.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :pageSize (integer()): Maximum results to return per page.
-    - :pageToken (String.t): Continuation token for fetching the next page of results.
+  *   `connection` (*type:* `GoogleApi.AppEngine.V1.Connection.t`) - Connection to server
+  *   `apps_id` (*type:* `String.t`) - Part of `parent`. Name of the parent Application resource. Example: apps/myapp.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - Maximum results to return per page.
+      *   `:pageToken` (*type:* `String.t`) - Continuation token for fetching the next page of results.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AppEngine.V1.Model.ListDomainMappingsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AppEngine.V1.Model.ListDomainMappingsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec appengine_apps_domain_mappings_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec appengine_apps_domain_mappings_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AppEngine.V1.Model.ListDomainMappingsResponse.t()}
           | {:error, Tesla.Env.t()}
   def appengine_apps_domain_mappings_list(connection, apps_id, optional_params \\ [], opts \\ []) do
@@ -923,33 +965,35 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
 
   ## Parameters
 
-  - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
-  - apps_id (String.t): Part of `name`. Name of the resource to update. Example: apps/myapp/domainMappings/example.com.
-  - domain_mappings_id (String.t): Part of `name`. See documentation of `appsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :updateMask (String.t): Standard field mask for the set of fields to be updated.
-    - :body (GoogleApi.AppEngine.V1.Model.DomainMapping.t): 
+  *   `connection` (*type:* `GoogleApi.AppEngine.V1.Connection.t`) - Connection to server
+  *   `apps_id` (*type:* `String.t`) - Part of `name`. Name of the resource to update. Example: apps/myapp/domainMappings/example.com.
+  *   `domain_mappings_id` (*type:* `String.t`) - Part of `name`. See documentation of `appsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:updateMask` (*type:* `String.t`) - Standard field mask for the set of fields to be updated.
+      *   `:body` (*type:* `GoogleApi.AppEngine.V1.Model.DomainMapping.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AppEngine.V1.Model.Operation{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AppEngine.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec appengine_apps_domain_mappings_patch(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.AppEngine.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def appengine_apps_domain_mappings_patch(
@@ -994,30 +1038,32 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
 
   ## Parameters
 
-  - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
-  - apps_id (String.t): Part of `name`. Name of the Firewall collection to set. Example: apps/myapp/firewall/ingressRules.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.AppEngine.V1.Model.BatchUpdateIngressRulesRequest.t): 
+  *   `connection` (*type:* `GoogleApi.AppEngine.V1.Connection.t`) - Connection to server
+  *   `apps_id` (*type:* `String.t`) - Part of `name`. Name of the Firewall collection to set. Example: apps/myapp/firewall/ingressRules.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.AppEngine.V1.Model.BatchUpdateIngressRulesRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AppEngine.V1.Model.BatchUpdateIngressRulesResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AppEngine.V1.Model.BatchUpdateIngressRulesResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec appengine_apps_firewall_ingress_rules_batch_update(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.AppEngine.V1.Model.BatchUpdateIngressRulesResponse.t()}
@@ -1063,29 +1109,34 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
 
   ## Parameters
 
-  - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
-  - apps_id (String.t): Part of `parent`. Name of the parent Firewall collection in which to create a new rule. Example: apps/myapp/firewall/ingressRules.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.AppEngine.V1.Model.FirewallRule.t): 
+  *   `connection` (*type:* `GoogleApi.AppEngine.V1.Connection.t`) - Connection to server
+  *   `apps_id` (*type:* `String.t`) - Part of `parent`. Name of the parent Firewall collection in which to create a new rule. Example: apps/myapp/firewall/ingressRules.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.AppEngine.V1.Model.FirewallRule.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AppEngine.V1.Model.FirewallRule{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AppEngine.V1.Model.FirewallRule{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec appengine_apps_firewall_ingress_rules_create(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, GoogleApi.AppEngine.V1.Model.FirewallRule.t()} | {:error, Tesla.Env.t()}
+  @spec appengine_apps_firewall_ingress_rules_create(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.AppEngine.V1.Model.FirewallRule.t()} | {:error, Tesla.Env.t()}
   def appengine_apps_firewall_ingress_rules_create(
         connection,
         apps_id,
@@ -1125,31 +1176,33 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
 
   ## Parameters
 
-  - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
-  - apps_id (String.t): Part of `name`. Name of the Firewall resource to delete. Example: apps/myapp/firewall/ingressRules/100.
-  - ingress_rules_id (String.t): Part of `name`. See documentation of `appsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.AppEngine.V1.Connection.t`) - Connection to server
+  *   `apps_id` (*type:* `String.t`) - Part of `name`. Name of the Firewall resource to delete. Example: apps/myapp/firewall/ingressRules/100.
+  *   `ingress_rules_id` (*type:* `String.t`) - Part of `name`. See documentation of `appsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AppEngine.V1.Model.Empty{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AppEngine.V1.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec appengine_apps_firewall_ingress_rules_delete(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.AppEngine.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
   def appengine_apps_firewall_ingress_rules_delete(
@@ -1192,31 +1245,33 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
 
   ## Parameters
 
-  - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
-  - apps_id (String.t): Part of `name`. Name of the Firewall resource to retrieve. Example: apps/myapp/firewall/ingressRules/100.
-  - ingress_rules_id (String.t): Part of `name`. See documentation of `appsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.AppEngine.V1.Connection.t`) - Connection to server
+  *   `apps_id` (*type:* `String.t`) - Part of `name`. Name of the Firewall resource to retrieve. Example: apps/myapp/firewall/ingressRules/100.
+  *   `ingress_rules_id` (*type:* `String.t`) - Part of `name`. See documentation of `appsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AppEngine.V1.Model.FirewallRule{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AppEngine.V1.Model.FirewallRule{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec appengine_apps_firewall_ingress_rules_get(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.AppEngine.V1.Model.FirewallRule.t()} | {:error, Tesla.Env.t()}
   def appengine_apps_firewall_ingress_rules_get(
@@ -1259,30 +1314,36 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
 
   ## Parameters
 
-  - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
-  - apps_id (String.t): Part of `parent`. Name of the Firewall collection to retrieve. Example: apps/myapp/firewall/ingressRules.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :matchingAddress (String.t): A valid IP Address. If set, only rules matching this address will be returned. The first returned rule will be the rule that fires on requests from this IP.
-    - :pageSize (integer()): Maximum results to return per page.
-    - :pageToken (String.t): Continuation token for fetching the next page of results.
+  *   `connection` (*type:* `GoogleApi.AppEngine.V1.Connection.t`) - Connection to server
+  *   `apps_id` (*type:* `String.t`) - Part of `parent`. Name of the Firewall collection to retrieve. Example: apps/myapp/firewall/ingressRules.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:matchingAddress` (*type:* `String.t`) - A valid IP Address. If set, only rules matching this address will be returned. The first returned rule will be the rule that fires on requests from this IP.
+      *   `:pageSize` (*type:* `integer()`) - Maximum results to return per page.
+      *   `:pageToken` (*type:* `String.t`) - Continuation token for fetching the next page of results.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AppEngine.V1.Model.ListIngressRulesResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AppEngine.V1.Model.ListIngressRulesResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec appengine_apps_firewall_ingress_rules_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec appengine_apps_firewall_ingress_rules_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.AppEngine.V1.Model.ListIngressRulesResponse.t()}
           | {:error, Tesla.Env.t()}
   def appengine_apps_firewall_ingress_rules_list(
@@ -1326,33 +1387,35 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
 
   ## Parameters
 
-  - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
-  - apps_id (String.t): Part of `name`. Name of the Firewall resource to update. Example: apps/myapp/firewall/ingressRules/100.
-  - ingress_rules_id (String.t): Part of `name`. See documentation of `appsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :updateMask (String.t): Standard field mask for the set of fields to be updated.
-    - :body (GoogleApi.AppEngine.V1.Model.FirewallRule.t): 
+  *   `connection` (*type:* `GoogleApi.AppEngine.V1.Connection.t`) - Connection to server
+  *   `apps_id` (*type:* `String.t`) - Part of `name`. Name of the Firewall resource to update. Example: apps/myapp/firewall/ingressRules/100.
+  *   `ingress_rules_id` (*type:* `String.t`) - Part of `name`. See documentation of `appsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:updateMask` (*type:* `String.t`) - Standard field mask for the set of fields to be updated.
+      *   `:body` (*type:* `GoogleApi.AppEngine.V1.Model.FirewallRule.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AppEngine.V1.Model.FirewallRule{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AppEngine.V1.Model.FirewallRule{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec appengine_apps_firewall_ingress_rules_patch(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.AppEngine.V1.Model.FirewallRule.t()} | {:error, Tesla.Env.t()}
   def appengine_apps_firewall_ingress_rules_patch(
@@ -1397,29 +1460,35 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
 
   ## Parameters
 
-  - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
-  - apps_id (String.t): Part of `name`. Resource name for the location.
-  - locations_id (String.t): Part of `name`. See documentation of `appsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.AppEngine.V1.Connection.t`) - Connection to server
+  *   `apps_id` (*type:* `String.t`) - Part of `name`. Resource name for the location.
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `appsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AppEngine.V1.Model.Location{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AppEngine.V1.Model.Location{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec appengine_apps_locations_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.AppEngine.V1.Model.Location.t()} | {:error, Tesla.Env.t()}
+  @spec appengine_apps_locations_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.AppEngine.V1.Model.Location.t()} | {:error, Tesla.Env.t()}
   def appengine_apps_locations_get(
         connection,
         apps_id,
@@ -1460,30 +1529,31 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
 
   ## Parameters
 
-  - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
-  - apps_id (String.t): Part of `name`. The resource that owns the locations collection, if applicable.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :filter (String.t): The standard list filter.
-    - :pageSize (integer()): The standard list page size.
-    - :pageToken (String.t): The standard list page token.
+  *   `connection` (*type:* `GoogleApi.AppEngine.V1.Connection.t`) - Connection to server
+  *   `apps_id` (*type:* `String.t`) - Part of `name`. The resource that owns the locations collection, if applicable.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:filter` (*type:* `String.t`) - The standard list filter.
+      *   `:pageSize` (*type:* `integer()`) - The standard list page size.
+      *   `:pageToken` (*type:* `String.t`) - The standard list page token.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AppEngine.V1.Model.ListLocationsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AppEngine.V1.Model.ListLocationsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec appengine_apps_locations_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec appengine_apps_locations_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AppEngine.V1.Model.ListLocationsResponse.t()} | {:error, Tesla.Env.t()}
   def appengine_apps_locations_list(connection, apps_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -1521,29 +1591,35 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
 
   ## Parameters
 
-  - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
-  - apps_id (String.t): Part of `name`. The name of the operation resource.
-  - operations_id (String.t): Part of `name`. See documentation of `appsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.AppEngine.V1.Connection.t`) - Connection to server
+  *   `apps_id` (*type:* `String.t`) - Part of `name`. The name of the operation resource.
+  *   `operations_id` (*type:* `String.t`) - Part of `name`. See documentation of `appsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AppEngine.V1.Model.Operation{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AppEngine.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec appengine_apps_operations_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.AppEngine.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+  @spec appengine_apps_operations_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.AppEngine.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def appengine_apps_operations_get(
         connection,
         apps_id,
@@ -1584,30 +1660,31 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
 
   ## Parameters
 
-  - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
-  - apps_id (String.t): Part of `name`. The name of the operation's parent resource.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :filter (String.t): The standard list filter.
-    - :pageSize (integer()): The standard list page size.
-    - :pageToken (String.t): The standard list page token.
+  *   `connection` (*type:* `GoogleApi.AppEngine.V1.Connection.t`) - Connection to server
+  *   `apps_id` (*type:* `String.t`) - Part of `name`. The name of the operation's parent resource.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:filter` (*type:* `String.t`) - The standard list filter.
+      *   `:pageSize` (*type:* `integer()`) - The standard list page size.
+      *   `:pageToken` (*type:* `String.t`) - The standard list page token.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AppEngine.V1.Model.ListOperationsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AppEngine.V1.Model.ListOperationsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec appengine_apps_operations_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec appengine_apps_operations_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AppEngine.V1.Model.ListOperationsResponse.t()} | {:error, Tesla.Env.t()}
   def appengine_apps_operations_list(connection, apps_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -1645,29 +1722,35 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
 
   ## Parameters
 
-  - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
-  - apps_id (String.t): Part of `name`. Name of the resource requested. Example: apps/myapp/services/default.
-  - services_id (String.t): Part of `name`. See documentation of `appsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.AppEngine.V1.Connection.t`) - Connection to server
+  *   `apps_id` (*type:* `String.t`) - Part of `name`. Name of the resource requested. Example: apps/myapp/services/default.
+  *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `appsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AppEngine.V1.Model.Operation{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AppEngine.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec appengine_apps_services_delete(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.AppEngine.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+  @spec appengine_apps_services_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.AppEngine.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def appengine_apps_services_delete(
         connection,
         apps_id,
@@ -1708,29 +1791,35 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
 
   ## Parameters
 
-  - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
-  - apps_id (String.t): Part of `name`. Name of the resource requested. Example: apps/myapp/services/default.
-  - services_id (String.t): Part of `name`. See documentation of `appsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.AppEngine.V1.Connection.t`) - Connection to server
+  *   `apps_id` (*type:* `String.t`) - Part of `name`. Name of the resource requested. Example: apps/myapp/services/default.
+  *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `appsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AppEngine.V1.Model.Service{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AppEngine.V1.Model.Service{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec appengine_apps_services_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.AppEngine.V1.Model.Service.t()} | {:error, Tesla.Env.t()}
+  @spec appengine_apps_services_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.AppEngine.V1.Model.Service.t()} | {:error, Tesla.Env.t()}
   def appengine_apps_services_get(
         connection,
         apps_id,
@@ -1771,29 +1860,30 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
 
   ## Parameters
 
-  - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
-  - apps_id (String.t): Part of `parent`. Name of the parent Application resource. Example: apps/myapp.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :pageSize (integer()): Maximum results to return per page.
-    - :pageToken (String.t): Continuation token for fetching the next page of results.
+  *   `connection` (*type:* `GoogleApi.AppEngine.V1.Connection.t`) - Connection to server
+  *   `apps_id` (*type:* `String.t`) - Part of `parent`. Name of the parent Application resource. Example: apps/myapp.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - Maximum results to return per page.
+      *   `:pageToken` (*type:* `String.t`) - Continuation token for fetching the next page of results.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AppEngine.V1.Model.ListServicesResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AppEngine.V1.Model.ListServicesResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec appengine_apps_services_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec appengine_apps_services_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AppEngine.V1.Model.ListServicesResponse.t()} | {:error, Tesla.Env.t()}
   def appengine_apps_services_list(connection, apps_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -1830,32 +1920,38 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
 
   ## Parameters
 
-  - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
-  - apps_id (String.t): Part of `name`. Name of the resource to update. Example: apps/myapp/services/default.
-  - services_id (String.t): Part of `name`. See documentation of `appsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :migrateTraffic (boolean()): Set to true to gradually shift traffic to one or more versions that you specify. By default, traffic is shifted immediately. For gradual traffic migration, the target versions must be located within instances that are configured for both warmup requests (https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#InboundServiceType) and automatic scaling (https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#AutomaticScaling). You must specify the shardBy (https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services#ShardBy) field in the Service resource. Gradual traffic migration is not supported in the App Engine flexible environment. For examples, see Migrating and Splitting Traffic (https://cloud.google.com/appengine/docs/admin-api/migrating-splitting-traffic).
-    - :updateMask (String.t): Standard field mask for the set of fields to be updated.
-    - :body (GoogleApi.AppEngine.V1.Model.Service.t): 
+  *   `connection` (*type:* `GoogleApi.AppEngine.V1.Connection.t`) - Connection to server
+  *   `apps_id` (*type:* `String.t`) - Part of `name`. Name of the resource to update. Example: apps/myapp/services/default.
+  *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `appsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:migrateTraffic` (*type:* `boolean()`) - Set to true to gradually shift traffic to one or more versions that you specify. By default, traffic is shifted immediately. For gradual traffic migration, the target versions must be located within instances that are configured for both warmup requests (https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#InboundServiceType) and automatic scaling (https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#AutomaticScaling). You must specify the shardBy (https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services#ShardBy) field in the Service resource. Gradual traffic migration is not supported in the App Engine flexible environment. For examples, see Migrating and Splitting Traffic (https://cloud.google.com/appengine/docs/admin-api/migrating-splitting-traffic).
+      *   `:updateMask` (*type:* `String.t`) - Standard field mask for the set of fields to be updated.
+      *   `:body` (*type:* `GoogleApi.AppEngine.V1.Model.Service.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AppEngine.V1.Model.Operation{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AppEngine.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec appengine_apps_services_patch(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.AppEngine.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+  @spec appengine_apps_services_patch(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.AppEngine.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def appengine_apps_services_patch(
         connection,
         apps_id,
@@ -1899,32 +1995,34 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
 
   ## Parameters
 
-  - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
-  - apps_id (String.t): Part of `parent`. Name of the parent resource to create this version under. Example: apps/myapp/services/default.
-  - services_id (String.t): Part of `parent`. See documentation of `appsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.AppEngine.V1.Model.Version.t): 
+  *   `connection` (*type:* `GoogleApi.AppEngine.V1.Connection.t`) - Connection to server
+  *   `apps_id` (*type:* `String.t`) - Part of `parent`. Name of the parent resource to create this version under. Example: apps/myapp/services/default.
+  *   `services_id` (*type:* `String.t`) - Part of `parent`. See documentation of `appsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.AppEngine.V1.Model.Version.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AppEngine.V1.Model.Operation{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AppEngine.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec appengine_apps_services_versions_create(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.AppEngine.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def appengine_apps_services_versions_create(
@@ -1968,33 +2066,35 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
 
   ## Parameters
 
-  - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
-  - apps_id (String.t): Part of `name`. Name of the resource requested. Example: apps/myapp/services/default/versions/v1.
-  - services_id (String.t): Part of `name`. See documentation of `appsId`.
-  - versions_id (String.t): Part of `name`. See documentation of `appsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.AppEngine.V1.Connection.t`) - Connection to server
+  *   `apps_id` (*type:* `String.t`) - Part of `name`. Name of the resource requested. Example: apps/myapp/services/default/versions/v1.
+  *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `appsId`.
+  *   `versions_id` (*type:* `String.t`) - Part of `name`. See documentation of `appsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AppEngine.V1.Model.Operation{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AppEngine.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec appengine_apps_services_versions_delete(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.AppEngine.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def appengine_apps_services_versions_delete(
@@ -2039,34 +2139,36 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
 
   ## Parameters
 
-  - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
-  - apps_id (String.t): Part of `name`. Name of the resource requested. Example: apps/myapp/services/default/versions/v1.
-  - services_id (String.t): Part of `name`. See documentation of `appsId`.
-  - versions_id (String.t): Part of `name`. See documentation of `appsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :view (String.t): Controls the set of fields returned in the Get response.
+  *   `connection` (*type:* `GoogleApi.AppEngine.V1.Connection.t`) - Connection to server
+  *   `apps_id` (*type:* `String.t`) - Part of `name`. Name of the resource requested. Example: apps/myapp/services/default/versions/v1.
+  *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `appsId`.
+  *   `versions_id` (*type:* `String.t`) - Part of `name`. See documentation of `appsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:view` (*type:* `String.t`) - Controls the set of fields returned in the Get response.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AppEngine.V1.Model.Version{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AppEngine.V1.Model.Version{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec appengine_apps_services_versions_get(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.AppEngine.V1.Model.Version.t()} | {:error, Tesla.Env.t()}
   def appengine_apps_services_versions_get(
@@ -2112,34 +2214,36 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
 
   ## Parameters
 
-  - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
-  - apps_id (String.t): Part of `parent`. Name of the parent Service resource. Example: apps/myapp/services/default.
-  - services_id (String.t): Part of `parent`. See documentation of `appsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :pageSize (integer()): Maximum results to return per page.
-    - :pageToken (String.t): Continuation token for fetching the next page of results.
-    - :view (String.t): Controls the set of fields returned in the List response.
+  *   `connection` (*type:* `GoogleApi.AppEngine.V1.Connection.t`) - Connection to server
+  *   `apps_id` (*type:* `String.t`) - Part of `parent`. Name of the parent Service resource. Example: apps/myapp/services/default.
+  *   `services_id` (*type:* `String.t`) - Part of `parent`. See documentation of `appsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - Maximum results to return per page.
+      *   `:pageToken` (*type:* `String.t`) - Continuation token for fetching the next page of results.
+      *   `:view` (*type:* `String.t`) - Controls the set of fields returned in the List response.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AppEngine.V1.Model.ListVersionsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AppEngine.V1.Model.ListVersionsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec appengine_apps_services_versions_list(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.AppEngine.V1.Model.ListVersionsResponse.t()} | {:error, Tesla.Env.t()}
@@ -2199,35 +2303,37 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
 
   ## Parameters
 
-  - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
-  - apps_id (String.t): Part of `name`. Name of the resource to update. Example: apps/myapp/services/default/versions/1.
-  - services_id (String.t): Part of `name`. See documentation of `appsId`.
-  - versions_id (String.t): Part of `name`. See documentation of `appsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :updateMask (String.t): Standard field mask for the set of fields to be updated.
-    - :body (GoogleApi.AppEngine.V1.Model.Version.t): 
+  *   `connection` (*type:* `GoogleApi.AppEngine.V1.Connection.t`) - Connection to server
+  *   `apps_id` (*type:* `String.t`) - Part of `name`. Name of the resource to update. Example: apps/myapp/services/default/versions/1.
+  *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `appsId`.
+  *   `versions_id` (*type:* `String.t`) - Part of `name`. See documentation of `appsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:updateMask` (*type:* `String.t`) - Standard field mask for the set of fields to be updated.
+      *   `:body` (*type:* `GoogleApi.AppEngine.V1.Model.Version.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AppEngine.V1.Model.Operation{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AppEngine.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec appengine_apps_services_versions_patch(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.AppEngine.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def appengine_apps_services_versions_patch(
@@ -2274,29 +2380,30 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
 
   ## Parameters
 
-  - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
-  - apps_id (String.t): Part of `name`. Name of the resource requested. Example: apps/myapp/services/default/versions/v1/instances/instance-1.
-  - services_id (String.t): Part of `name`. See documentation of `appsId`.
-  - versions_id (String.t): Part of `name`. See documentation of `appsId`.
-  - instances_id (String.t): Part of `name`. See documentation of `appsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.AppEngine.V1.Model.DebugInstanceRequest.t): 
+  *   `connection` (*type:* `GoogleApi.AppEngine.V1.Connection.t`) - Connection to server
+  *   `apps_id` (*type:* `String.t`) - Part of `name`. Name of the resource requested. Example: apps/myapp/services/default/versions/v1/instances/instance-1.
+  *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `appsId`.
+  *   `versions_id` (*type:* `String.t`) - Part of `name`. See documentation of `appsId`.
+  *   `instances_id` (*type:* `String.t`) - Part of `name`. See documentation of `appsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.AppEngine.V1.Model.DebugInstanceRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AppEngine.V1.Model.Operation{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AppEngine.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec appengine_apps_services_versions_instances_debug(
           Tesla.Env.client(),
@@ -2304,6 +2411,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.AppEngine.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def appengine_apps_services_versions_instances_debug(
@@ -2354,28 +2462,29 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
 
   ## Parameters
 
-  - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
-  - apps_id (String.t): Part of `name`. Name of the resource requested. Example: apps/myapp/services/default/versions/v1/instances/instance-1.
-  - services_id (String.t): Part of `name`. See documentation of `appsId`.
-  - versions_id (String.t): Part of `name`. See documentation of `appsId`.
-  - instances_id (String.t): Part of `name`. See documentation of `appsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.AppEngine.V1.Connection.t`) - Connection to server
+  *   `apps_id` (*type:* `String.t`) - Part of `name`. Name of the resource requested. Example: apps/myapp/services/default/versions/v1/instances/instance-1.
+  *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `appsId`.
+  *   `versions_id` (*type:* `String.t`) - Part of `name`. See documentation of `appsId`.
+  *   `instances_id` (*type:* `String.t`) - Part of `name`. See documentation of `appsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AppEngine.V1.Model.Operation{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AppEngine.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec appengine_apps_services_versions_instances_delete(
           Tesla.Env.client(),
@@ -2383,6 +2492,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.AppEngine.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def appengine_apps_services_versions_instances_delete(
@@ -2432,28 +2542,29 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
 
   ## Parameters
 
-  - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
-  - apps_id (String.t): Part of `name`. Name of the resource requested. Example: apps/myapp/services/default/versions/v1/instances/instance-1.
-  - services_id (String.t): Part of `name`. See documentation of `appsId`.
-  - versions_id (String.t): Part of `name`. See documentation of `appsId`.
-  - instances_id (String.t): Part of `name`. See documentation of `appsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.AppEngine.V1.Connection.t`) - Connection to server
+  *   `apps_id` (*type:* `String.t`) - Part of `name`. Name of the resource requested. Example: apps/myapp/services/default/versions/v1/instances/instance-1.
+  *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `appsId`.
+  *   `versions_id` (*type:* `String.t`) - Part of `name`. See documentation of `appsId`.
+  *   `instances_id` (*type:* `String.t`) - Part of `name`. See documentation of `appsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AppEngine.V1.Model.Instance{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AppEngine.V1.Model.Instance{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec appengine_apps_services_versions_instances_get(
           Tesla.Env.client(),
@@ -2461,6 +2572,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.AppEngine.V1.Model.Instance.t()} | {:error, Tesla.Env.t()}
   def appengine_apps_services_versions_instances_get(
@@ -2510,35 +2622,37 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
 
   ## Parameters
 
-  - connection (GoogleApi.AppEngine.V1.Connection): Connection to server
-  - apps_id (String.t): Part of `parent`. Name of the parent Version resource. Example: apps/myapp/services/default/versions/v1.
-  - services_id (String.t): Part of `parent`. See documentation of `appsId`.
-  - versions_id (String.t): Part of `parent`. See documentation of `appsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :pageSize (integer()): Maximum results to return per page.
-    - :pageToken (String.t): Continuation token for fetching the next page of results.
+  *   `connection` (*type:* `GoogleApi.AppEngine.V1.Connection.t`) - Connection to server
+  *   `apps_id` (*type:* `String.t`) - Part of `parent`. Name of the parent Version resource. Example: apps/myapp/services/default/versions/v1.
+  *   `services_id` (*type:* `String.t`) - Part of `parent`. See documentation of `appsId`.
+  *   `versions_id` (*type:* `String.t`) - Part of `parent`. See documentation of `appsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - Maximum results to return per page.
+      *   `:pageToken` (*type:* `String.t`) - Continuation token for fetching the next page of results.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AppEngine.V1.Model.ListInstancesResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AppEngine.V1.Model.ListInstancesResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec appengine_apps_services_versions_instances_list(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.AppEngine.V1.Model.ListInstancesResponse.t()} | {:error, Tesla.Env.t()}

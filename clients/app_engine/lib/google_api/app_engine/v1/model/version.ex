@@ -21,45 +21,45 @@ defmodule GoogleApi.AppEngine.V1.Model.Version do
 
   ## Attributes
 
-  - healthCheck (GoogleApi.AppEngine.V1.Model.HealthCheck.t): Configures health checking for instances. Unhealthy instances are stopped and replaced with new instances. Only applicable in the App Engine flexible environment.Only returned in GET requests if view=FULL is set. Defaults to `nil`.
-  - automaticScaling (GoogleApi.AppEngine.V1.Model.AutomaticScaling.t): Automatic scaling is based on request rate, response latencies, and other application metrics. Defaults to `nil`.
-  - runtime (String.t): Desired runtime. Example: python27. Defaults to `nil`.
-  - threadsafe (boolean()): Whether multiple requests can be dispatched to this version at once. Defaults to `nil`.
-  - diskUsageBytes (String.t): Total size in bytes of all the files that are included in this version and currently hosted on the App Engine disk.@OutputOnly Defaults to `nil`.
-  - id (String.t): Relative name of the version within the service. Example: v1. Version names can contain only lowercase letters, numbers, or hyphens. Reserved names: "default", "latest", and any name with the prefix "ah-". Defaults to `nil`.
-  - defaultExpiration (String.t): Duration that static files should be cached by web proxies and browsers. Only applicable if the corresponding StaticFilesHandler (https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#StaticFilesHandler) does not specify its own expiration time.Only returned in GET requests if view=FULL is set. Defaults to `nil`.
-  - entrypoint (GoogleApi.AppEngine.V1.Model.Entrypoint.t): The entrypoint for the application. Defaults to `nil`.
-  - deployment (GoogleApi.AppEngine.V1.Model.Deployment.t): Code and application artifacts that make up this version.Only returned in GET requests if view=FULL is set. Defaults to `nil`.
-  - runtimeApiVersion (String.t): The version of the API in the given runtime environment. Please see the app.yaml reference for valid values at https://cloud.google.com/appengine/docs/standard/<language>/config/appref Defaults to `nil`.
-  - env (String.t): App Engine execution environment for this version.Defaults to standard. Defaults to `nil`.
-  - readinessCheck (GoogleApi.AppEngine.V1.Model.ReadinessCheck.t): Configures readiness health checking for instances. Unhealthy instances are not put into the backend traffic rotation.Only returned in GET requests if view=FULL is set. Defaults to `nil`.
-  - vpcAccessConnector (GoogleApi.AppEngine.V1.Model.VpcAccessConnector.t): Enables VPC connectivity for standard apps. Defaults to `nil`.
-  - endpointsApiService (GoogleApi.AppEngine.V1.Model.EndpointsApiService.t): Cloud Endpoints configuration.If endpoints_api_service is set, the Cloud Endpoints Extensible Service Proxy will be provided to serve the API implemented by the app. Defaults to `nil`.
-  - versionUrl (String.t): Serving URL for this version. Example: "https://myversion-dot-myservice-dot-myapp.appspot.com"@OutputOnly Defaults to `nil`.
-  - network (GoogleApi.AppEngine.V1.Model.Network.t): Extra network settings. Only applicable in the App Engine flexible environment. Defaults to `nil`.
-  - createdBy (String.t): Email address of the user who created this version.@OutputOnly Defaults to `nil`.
-  - resources (GoogleApi.AppEngine.V1.Model.Resources.t): Machine resources for this version. Only applicable in the App Engine flexible environment. Defaults to `nil`.
-  - runtimeChannel (String.t): The channel of the runtime to use. Only available for some runtimes. Defaults to the default channel. Defaults to `nil`.
-  - name (String.t): Full path to the Version resource in the API. Example: apps/myapp/services/default/versions/v1.@OutputOnly Defaults to `nil`.
-  - instanceClass (String.t): Instance class that is used to run this version. Valid values are:
-  AutomaticScaling: F1, F2, F4, F4_1G
-  ManualScaling or BasicScaling: B1, B2, B4, B8, B4_1GDefaults to F1 for AutomaticScaling and B1 for ManualScaling or BasicScaling. Defaults to `nil`.
-  - envVariables (map()): Environment variables available to the application.Only returned in GET requests if view=FULL is set. Defaults to `nil`.
-  - runtimeMainExecutablePath (String.t): The path or name of the app's main executable. Defaults to `nil`.
-  - vm (boolean()): Whether to deploy this version in a container on a virtual machine. Defaults to `nil`.
-  - betaSettings (map()): Metadata settings that are supplied to this version to enable beta runtime features. Defaults to `nil`.
-  - libraries (list(GoogleApi.AppEngine.V1.Model.Library.t)): Configuration for third-party Python runtime libraries that are required by the application.Only returned in GET requests if view=FULL is set. Defaults to `nil`.
-  - zones (list(String.t)): The Google Compute Engine zones that are supported by this version in the App Engine flexible environment. Deprecated. Defaults to `nil`.
-  - servingStatus (String.t): Current serving status of this version. Only the versions with a SERVING status create instances and can be billed.SERVING_STATUS_UNSPECIFIED is an invalid value. Defaults to SERVING. Defaults to `nil`.
-  - createTime (DateTime.t): Time that this version was created.@OutputOnly Defaults to `nil`.
-  - inboundServices (list(String.t)): Before an application can receive email or XMPP messages, the application must be configured to enable the service. Defaults to `nil`.
-  - handlers (list(GoogleApi.AppEngine.V1.Model.UrlMap.t)): An ordered list of URL-matching patterns that should be applied to incoming requests. The first matching URL handles the request and other request handlers are not attempted.Only returned in GET requests if view=FULL is set. Defaults to `nil`.
-  - apiConfig (GoogleApi.AppEngine.V1.Model.ApiConfigHandler.t): Serving configuration for Google Cloud Endpoints (https://cloud.google.com/appengine/docs/python/endpoints/).Only returned in GET requests if view=FULL is set. Defaults to `nil`.
-  - livenessCheck (GoogleApi.AppEngine.V1.Model.LivenessCheck.t): Configures liveness health checking for instances. Unhealthy instances are stopped and replaced with new instancesOnly returned in GET requests if view=FULL is set. Defaults to `nil`.
-  - nobuildFilesRegex (String.t): Files that match this pattern will not be built into this version. Only applicable for Go runtimes.Only returned in GET requests if view=FULL is set. Defaults to `nil`.
-  - basicScaling (GoogleApi.AppEngine.V1.Model.BasicScaling.t): A service with basic scaling will create an instance when the application receives a request. The instance will be turned down when the app becomes idle. Basic scaling is ideal for work that is intermittent or driven by user activity. Defaults to `nil`.
-  - errorHandlers (list(GoogleApi.AppEngine.V1.Model.ErrorHandler.t)): Custom static error pages. Limited to 10KB per page.Only returned in GET requests if view=FULL is set. Defaults to `nil`.
-  - manualScaling (GoogleApi.AppEngine.V1.Model.ManualScaling.t): A service with manual scaling runs continuously, allowing you to perform complex initialization and rely on the state of its memory over time. Defaults to `nil`.
+  *   `healthCheck` (*type:* `GoogleApi.AppEngine.V1.Model.HealthCheck.t`, *default:* `nil`) - Configures health checking for instances. Unhealthy instances are stopped and replaced with new instances. Only applicable in the App Engine flexible environment.Only returned in GET requests if view=FULL is set.
+  *   `automaticScaling` (*type:* `GoogleApi.AppEngine.V1.Model.AutomaticScaling.t`, *default:* `nil`) - Automatic scaling is based on request rate, response latencies, and other application metrics.
+  *   `runtime` (*type:* `String.t`, *default:* `nil`) - Desired runtime. Example: python27.
+  *   `threadsafe` (*type:* `boolean()`, *default:* `nil`) - Whether multiple requests can be dispatched to this version at once.
+  *   `diskUsageBytes` (*type:* `String.t`, *default:* `nil`) - Total size in bytes of all the files that are included in this version and currently hosted on the App Engine disk.@OutputOnly
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Relative name of the version within the service. Example: v1. Version names can contain only lowercase letters, numbers, or hyphens. Reserved names: "default", "latest", and any name with the prefix "ah-".
+  *   `defaultExpiration` (*type:* `String.t`, *default:* `nil`) - Duration that static files should be cached by web proxies and browsers. Only applicable if the corresponding StaticFilesHandler (https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#StaticFilesHandler) does not specify its own expiration time.Only returned in GET requests if view=FULL is set.
+  *   `entrypoint` (*type:* `GoogleApi.AppEngine.V1.Model.Entrypoint.t`, *default:* `nil`) - The entrypoint for the application.
+  *   `deployment` (*type:* `GoogleApi.AppEngine.V1.Model.Deployment.t`, *default:* `nil`) - Code and application artifacts that make up this version.Only returned in GET requests if view=FULL is set.
+  *   `runtimeApiVersion` (*type:* `String.t`, *default:* `nil`) - The version of the API in the given runtime environment. Please see the app.yaml reference for valid values at https://cloud.google.com/appengine/docs/standard/<language>/config/appref
+  *   `env` (*type:* `String.t`, *default:* `nil`) - App Engine execution environment for this version.Defaults to standard.
+  *   `readinessCheck` (*type:* `GoogleApi.AppEngine.V1.Model.ReadinessCheck.t`, *default:* `nil`) - Configures readiness health checking for instances. Unhealthy instances are not put into the backend traffic rotation.Only returned in GET requests if view=FULL is set.
+  *   `vpcAccessConnector` (*type:* `GoogleApi.AppEngine.V1.Model.VpcAccessConnector.t`, *default:* `nil`) - Enables VPC connectivity for standard apps.
+  *   `endpointsApiService` (*type:* `GoogleApi.AppEngine.V1.Model.EndpointsApiService.t`, *default:* `nil`) - Cloud Endpoints configuration.If endpoints_api_service is set, the Cloud Endpoints Extensible Service Proxy will be provided to serve the API implemented by the app.
+  *   `versionUrl` (*type:* `String.t`, *default:* `nil`) - Serving URL for this version. Example: "https://myversion-dot-myservice-dot-myapp.appspot.com"@OutputOnly
+  *   `network` (*type:* `GoogleApi.AppEngine.V1.Model.Network.t`, *default:* `nil`) - Extra network settings. Only applicable in the App Engine flexible environment.
+  *   `createdBy` (*type:* `String.t`, *default:* `nil`) - Email address of the user who created this version.@OutputOnly
+  *   `resources` (*type:* `GoogleApi.AppEngine.V1.Model.Resources.t`, *default:* `nil`) - Machine resources for this version. Only applicable in the App Engine flexible environment.
+  *   `runtimeChannel` (*type:* `String.t`, *default:* `nil`) - The channel of the runtime to use. Only available for some runtimes. Defaults to the default channel.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Full path to the Version resource in the API. Example: apps/myapp/services/default/versions/v1.@OutputOnly
+  *   `instanceClass` (*type:* `String.t`, *default:* `nil`) - Instance class that is used to run this version. Valid values are:
+      AutomaticScaling: F1, F2, F4, F4_1G
+      ManualScaling or BasicScaling: B1, B2, B4, B8, B4_1GDefaults to F1 for AutomaticScaling and B1 for ManualScaling or BasicScaling.
+  *   `envVariables` (*type:* `map()`, *default:* `nil`) - Environment variables available to the application.Only returned in GET requests if view=FULL is set.
+  *   `runtimeMainExecutablePath` (*type:* `String.t`, *default:* `nil`) - The path or name of the app's main executable.
+  *   `vm` (*type:* `boolean()`, *default:* `nil`) - Whether to deploy this version in a container on a virtual machine.
+  *   `betaSettings` (*type:* `map()`, *default:* `nil`) - Metadata settings that are supplied to this version to enable beta runtime features.
+  *   `libraries` (*type:* `list(GoogleApi.AppEngine.V1.Model.Library.t)`, *default:* `nil`) - Configuration for third-party Python runtime libraries that are required by the application.Only returned in GET requests if view=FULL is set.
+  *   `zones` (*type:* `list(String.t)`, *default:* `nil`) - The Google Compute Engine zones that are supported by this version in the App Engine flexible environment. Deprecated.
+  *   `servingStatus` (*type:* `String.t`, *default:* `nil`) - Current serving status of this version. Only the versions with a SERVING status create instances and can be billed.SERVING_STATUS_UNSPECIFIED is an invalid value. Defaults to SERVING.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Time that this version was created.@OutputOnly
+  *   `inboundServices` (*type:* `list(String.t)`, *default:* `nil`) - Before an application can receive email or XMPP messages, the application must be configured to enable the service.
+  *   `handlers` (*type:* `list(GoogleApi.AppEngine.V1.Model.UrlMap.t)`, *default:* `nil`) - An ordered list of URL-matching patterns that should be applied to incoming requests. The first matching URL handles the request and other request handlers are not attempted.Only returned in GET requests if view=FULL is set.
+  *   `apiConfig` (*type:* `GoogleApi.AppEngine.V1.Model.ApiConfigHandler.t`, *default:* `nil`) - Serving configuration for Google Cloud Endpoints (https://cloud.google.com/appengine/docs/python/endpoints/).Only returned in GET requests if view=FULL is set.
+  *   `livenessCheck` (*type:* `GoogleApi.AppEngine.V1.Model.LivenessCheck.t`, *default:* `nil`) - Configures liveness health checking for instances. Unhealthy instances are stopped and replaced with new instancesOnly returned in GET requests if view=FULL is set.
+  *   `nobuildFilesRegex` (*type:* `String.t`, *default:* `nil`) - Files that match this pattern will not be built into this version. Only applicable for Go runtimes.Only returned in GET requests if view=FULL is set.
+  *   `basicScaling` (*type:* `GoogleApi.AppEngine.V1.Model.BasicScaling.t`, *default:* `nil`) - A service with basic scaling will create an instance when the application receives a request. The instance will be turned down when the app becomes idle. Basic scaling is ideal for work that is intermittent or driven by user activity.
+  *   `errorHandlers` (*type:* `list(GoogleApi.AppEngine.V1.Model.ErrorHandler.t)`, *default:* `nil`) - Custom static error pages. Limited to 10KB per page.Only returned in GET requests if view=FULL is set.
+  *   `manualScaling` (*type:* `GoogleApi.AppEngine.V1.Model.ManualScaling.t`, *default:* `nil`) - A service with manual scaling runs continuously, allowing you to perform complex initialization and rely on the state of its memory over time.
   """
 
   use GoogleApi.Gax.ModelBase

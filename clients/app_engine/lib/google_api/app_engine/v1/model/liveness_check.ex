@@ -21,13 +21,13 @@ defmodule GoogleApi.AppEngine.V1.Model.LivenessCheck do
 
   ## Attributes
 
-  - checkInterval (String.t): Interval between health checks. Defaults to `nil`.
-  - failureThreshold (integer()): Number of consecutive failed checks required before considering the VM unhealthy. Defaults to `nil`.
-  - host (String.t): Host header to send when performing a HTTP Liveness check. Example: "myapp.appspot.com" Defaults to `nil`.
-  - initialDelay (String.t): The initial delay before starting to execute the checks. Defaults to `nil`.
-  - path (String.t): The request path. Defaults to `nil`.
-  - successThreshold (integer()): Number of consecutive successful checks required before considering the VM healthy. Defaults to `nil`.
-  - timeout (String.t): Time before the check is considered failed. Defaults to `nil`.
+  *   `checkInterval` (*type:* `String.t`, *default:* `nil`) - Interval between health checks.
+  *   `failureThreshold` (*type:* `integer()`, *default:* `nil`) - Number of consecutive failed checks required before considering the VM unhealthy.
+  *   `host` (*type:* `String.t`, *default:* `nil`) - Host header to send when performing a HTTP Liveness check. Example: "myapp.appspot.com"
+  *   `initialDelay` (*type:* `String.t`, *default:* `nil`) - The initial delay before starting to execute the checks.
+  *   `path` (*type:* `String.t`, *default:* `nil`) - The request path.
+  *   `successThreshold` (*type:* `integer()`, *default:* `nil`) - Number of consecutive successful checks required before considering the VM healthy.
+  *   `timeout` (*type:* `String.t`, *default:* `nil`) - Time before the check is considered failed.
   """
 
   use GoogleApi.Gax.ModelBase

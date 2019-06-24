@@ -21,14 +21,14 @@ defmodule GoogleApi.AppEngine.V1.Model.OperationMetadataV1Beta do
 
   ## Attributes
 
-  - createVersionMetadata (GoogleApi.AppEngine.V1.Model.CreateVersionMetadataV1Beta.t):  Defaults to `nil`.
-  - endTime (DateTime.t): Time that this operation completed.@OutputOnly Defaults to `nil`.
-  - ephemeralMessage (String.t): Ephemeral message that may change every time the operation is polled. @OutputOnly Defaults to `nil`.
-  - insertTime (DateTime.t): Time that this operation was created.@OutputOnly Defaults to `nil`.
-  - method (String.t): API method that initiated this operation. Example: google.appengine.v1beta.Versions.CreateVersion.@OutputOnly Defaults to `nil`.
-  - target (String.t): Name of the resource that this operation is acting on. Example: apps/myapp/services/default.@OutputOnly Defaults to `nil`.
-  - user (String.t): User who requested this operation.@OutputOnly Defaults to `nil`.
-  - warning (list(String.t)): Durable messages that persist on every operation poll. @OutputOnly Defaults to `nil`.
+  *   `createVersionMetadata` (*type:* `GoogleApi.AppEngine.V1.Model.CreateVersionMetadataV1Beta.t`, *default:* `nil`) - 
+  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Time that this operation completed.@OutputOnly
+  *   `ephemeralMessage` (*type:* `String.t`, *default:* `nil`) - Ephemeral message that may change every time the operation is polled. @OutputOnly
+  *   `insertTime` (*type:* `DateTime.t`, *default:* `nil`) - Time that this operation was created.@OutputOnly
+  *   `method` (*type:* `String.t`, *default:* `nil`) - API method that initiated this operation. Example: google.appengine.v1beta.Versions.CreateVersion.@OutputOnly
+  *   `target` (*type:* `String.t`, *default:* `nil`) - Name of the resource that this operation is acting on. Example: apps/myapp/services/default.@OutputOnly
+  *   `user` (*type:* `String.t`, *default:* `nil`) - User who requested this operation.@OutputOnly
+  *   `warning` (*type:* `list(String.t)`, *default:* `nil`) - Durable messages that persist on every operation poll. @OutputOnly
   """
 
   use GoogleApi.Gax.ModelBase

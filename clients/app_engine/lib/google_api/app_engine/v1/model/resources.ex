@@ -21,10 +21,10 @@ defmodule GoogleApi.AppEngine.V1.Model.Resources do
 
   ## Attributes
 
-  - cpu (float()): Number of CPU cores needed. Defaults to `nil`.
-  - diskGb (float()): Disk size (GB) needed. Defaults to `nil`.
-  - memoryGb (float()): Memory (GB) needed. Defaults to `nil`.
-  - volumes (list(GoogleApi.AppEngine.V1.Model.Volume.t)): User specified volumes. Defaults to `nil`.
+  *   `cpu` (*type:* `float()`, *default:* `nil`) - Number of CPU cores needed.
+  *   `diskGb` (*type:* `float()`, *default:* `nil`) - Disk size (GB) needed.
+  *   `memoryGb` (*type:* `float()`, *default:* `nil`) - Memory (GB) needed.
+  *   `volumes` (*type:* `list(GoogleApi.AppEngine.V1.Model.Volume.t)`, *default:* `nil`) - User specified volumes.
   """
 
   use GoogleApi.Gax.ModelBase

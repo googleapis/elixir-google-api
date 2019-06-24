@@ -21,7 +21,7 @@ defmodule GoogleApi.AppEngine.V1.Model.CreateVersionMetadataV1Alpha do
 
   ## Attributes
 
-  - cloudBuildId (String.t): The Cloud Build ID if one was created as part of the version create. @OutputOnly Defaults to `nil`.
+  *   `cloudBuildId` (*type:* `String.t`, *default:* `nil`) - The Cloud Build ID if one was created as part of the version create. @OutputOnly
   """
 
   use GoogleApi.Gax.ModelBase

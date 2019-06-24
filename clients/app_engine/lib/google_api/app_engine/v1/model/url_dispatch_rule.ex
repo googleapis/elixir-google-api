@@ -21,9 +21,9 @@ defmodule GoogleApi.AppEngine.V1.Model.UrlDispatchRule do
 
   ## Attributes
 
-  - domain (String.t): Domain name to match against. The wildcard "*" is supported if specified before a period: "*.".Defaults to matching all domains: "*". Defaults to `nil`.
-  - path (String.t): Pathname within the host. Must start with a "/". A single "*" can be included at the end of the path.The sum of the lengths of the domain and path may not exceed 100 characters. Defaults to `nil`.
-  - service (String.t): Resource ID of a service in this application that should serve the matched request. The service must already exist. Example: default. Defaults to `nil`.
+  *   `domain` (*type:* `String.t`, *default:* `nil`) - Domain name to match against. The wildcard "*" is supported if specified before a period: "*.".Defaults to matching all domains: "*".
+  *   `path` (*type:* `String.t`, *default:* `nil`) - Pathname within the host. Must start with a "/". A single "*" can be included at the end of the path.The sum of the lengths of the domain and path may not exceed 100 characters.
+  *   `service` (*type:* `String.t`, *default:* `nil`) - Resource ID of a service in this application that should serve the matched request. The service must already exist. Example: default.
   """
 
   use GoogleApi.Gax.ModelBase

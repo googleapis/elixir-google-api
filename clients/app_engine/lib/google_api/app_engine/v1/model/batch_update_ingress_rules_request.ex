@@ -21,7 +21,7 @@ defmodule GoogleApi.AppEngine.V1.Model.BatchUpdateIngressRulesRequest do
 
   ## Attributes
 
-  - ingressRules (list(GoogleApi.AppEngine.V1.Model.FirewallRule.t)): A list of FirewallRules to replace the existing set. Defaults to `nil`.
+  *   `ingressRules` (*type:* `list(GoogleApi.AppEngine.V1.Model.FirewallRule.t)`, *default:* `nil`) - A list of FirewallRules to replace the existing set.
   """
 
   use GoogleApi.Gax.ModelBase

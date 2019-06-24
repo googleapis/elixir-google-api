@@ -21,13 +21,13 @@ defmodule GoogleApi.AppEngine.V1.Model.StaticFilesHandler do
 
   ## Attributes
 
-  - applicationReadable (boolean()): Whether files should also be uploaded as code data. By default, files declared in static file handlers are uploaded as static data and are only served to end users; they cannot be read by the application. If enabled, uploads are charged against both your code and static data storage resource quotas. Defaults to `nil`.
-  - expiration (String.t): Time a static file served by this handler should be cached by web proxies and browsers. Defaults to `nil`.
-  - httpHeaders (map()): HTTP headers to use for all responses from these URLs. Defaults to `nil`.
-  - mimeType (String.t): MIME type used to serve all files served by this handler.Defaults to file-specific MIME types, which are derived from each file's filename extension. Defaults to `nil`.
-  - path (String.t): Path to the static files matched by the URL pattern, from the application root directory. The path can refer to text matched in groupings in the URL pattern. Defaults to `nil`.
-  - requireMatchingFile (boolean()): Whether this handler should match the request if the file referenced by the handler does not exist. Defaults to `nil`.
-  - uploadPathRegex (String.t): Regular expression that matches the file paths for all files that should be referenced by this handler. Defaults to `nil`.
+  *   `applicationReadable` (*type:* `boolean()`, *default:* `nil`) - Whether files should also be uploaded as code data. By default, files declared in static file handlers are uploaded as static data and are only served to end users; they cannot be read by the application. If enabled, uploads are charged against both your code and static data storage resource quotas.
+  *   `expiration` (*type:* `String.t`, *default:* `nil`) - Time a static file served by this handler should be cached by web proxies and browsers.
+  *   `httpHeaders` (*type:* `map()`, *default:* `nil`) - HTTP headers to use for all responses from these URLs.
+  *   `mimeType` (*type:* `String.t`, *default:* `nil`) - MIME type used to serve all files served by this handler.Defaults to file-specific MIME types, which are derived from each file's filename extension.
+  *   `path` (*type:* `String.t`, *default:* `nil`) - Path to the static files matched by the URL pattern, from the application root directory. The path can refer to text matched in groupings in the URL pattern.
+  *   `requireMatchingFile` (*type:* `boolean()`, *default:* `nil`) - Whether this handler should match the request if the file referenced by the handler does not exist.
+  *   `uploadPathRegex` (*type:* `String.t`, *default:* `nil`) - Regular expression that matches the file paths for all files that should be referenced by this handler.
   """
 
   use GoogleApi.Gax.ModelBase

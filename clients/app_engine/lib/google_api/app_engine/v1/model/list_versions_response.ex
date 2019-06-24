@@ -21,8 +21,8 @@ defmodule GoogleApi.AppEngine.V1.Model.ListVersionsResponse do
 
   ## Attributes
 
-  - nextPageToken (String.t): Continuation token for fetching the next page of results. Defaults to `nil`.
-  - versions (list(GoogleApi.AppEngine.V1.Model.Version.t)): The versions belonging to the requested service. Defaults to `nil`.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Continuation token for fetching the next page of results.
+  *   `versions` (*type:* `list(GoogleApi.AppEngine.V1.Model.Version.t)`, *default:* `nil`) - The versions belonging to the requested service.
   """
 
   use GoogleApi.Gax.ModelBase

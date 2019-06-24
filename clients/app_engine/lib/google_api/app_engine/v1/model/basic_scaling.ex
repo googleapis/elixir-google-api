@@ -21,8 +21,8 @@ defmodule GoogleApi.AppEngine.V1.Model.BasicScaling do
 
   ## Attributes
 
-  - idleTimeout (String.t): Duration of time after the last request that an instance must wait before the instance is shut down. Defaults to `nil`.
-  - maxInstances (integer()): Maximum number of instances to create for this version. Defaults to `nil`.
+  *   `idleTimeout` (*type:* `String.t`, *default:* `nil`) - Duration of time after the last request that an instance must wait before the instance is shut down.
+  *   `maxInstances` (*type:* `integer()`, *default:* `nil`) - Maximum number of instances to create for this version.
   """
 
   use GoogleApi.Gax.ModelBase

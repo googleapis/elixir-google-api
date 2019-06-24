@@ -21,8 +21,8 @@ defmodule GoogleApi.AppEngine.V1.Model.ListAuthorizedCertificatesResponse do
 
   ## Attributes
 
-  - certificates (list(GoogleApi.AppEngine.V1.Model.AuthorizedCertificate.t)): The SSL certificates the user is authorized to administer. Defaults to `nil`.
-  - nextPageToken (String.t): Continuation token for fetching the next page of results. Defaults to `nil`.
+  *   `certificates` (*type:* `list(GoogleApi.AppEngine.V1.Model.AuthorizedCertificate.t)`, *default:* `nil`) - The SSL certificates the user is authorized to administer.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Continuation token for fetching the next page of results.
   """
 
   use GoogleApi.Gax.ModelBase
