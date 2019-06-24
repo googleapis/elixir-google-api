@@ -28,25 +28,31 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V3.Connection): Connection to server
-  - package_name (String.t): Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
-  - edit_id (String.t): Unique identifier for this edit.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
+  *   `edit_id` (*type:* `String.t`) - Unique identifier for this edit.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidPublisher.V3.Model.AppEdit{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidPublisher.V3.Model.AppEdit{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec androidpublisher_edits_commit(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.AndroidPublisher.V3.Model.AppEdit.t()} | {:error, Tesla.Env.t()}
+  @spec androidpublisher_edits_commit(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.AndroidPublisher.V3.Model.AppEdit.t()} | {:error, Tesla.Env.t()}
   def androidpublisher_edits_commit(
         connection,
         package_name,
@@ -83,25 +89,31 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V3.Connection): Connection to server
-  - package_name (String.t): Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
-  - edit_id (String.t): Unique identifier for this edit.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
+  *   `edit_id` (*type:* `String.t`) - Unique identifier for this edit.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %{}} on success
-  {:error, info} on failure
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec androidpublisher_edits_delete(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, nil} | {:error, Tesla.Env.t()}
+  @spec androidpublisher_edits_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
   def androidpublisher_edits_delete(
         connection,
         package_name,
@@ -138,25 +150,31 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V3.Connection): Connection to server
-  - package_name (String.t): Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
-  - edit_id (String.t): Unique identifier for this edit.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
+  *   `edit_id` (*type:* `String.t`) - Unique identifier for this edit.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidPublisher.V3.Model.AppEdit{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidPublisher.V3.Model.AppEdit{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec androidpublisher_edits_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.AndroidPublisher.V3.Model.AppEdit.t()} | {:error, Tesla.Env.t()}
+  @spec androidpublisher_edits_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.AndroidPublisher.V3.Model.AppEdit.t()} | {:error, Tesla.Env.t()}
   def androidpublisher_edits_get(
         connection,
         package_name,
@@ -193,24 +211,25 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V3.Connection): Connection to server
-  - package_name (String.t): Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.AndroidPublisher.V3.Model.AppEdit.t): 
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.AndroidPublisher.V3.Model.AppEdit.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidPublisher.V3.Model.AppEdit{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidPublisher.V3.Model.AppEdit{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec androidpublisher_edits_insert(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec androidpublisher_edits_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AndroidPublisher.V3.Model.AppEdit.t()} | {:error, Tesla.Env.t()}
   def androidpublisher_edits_insert(connection, package_name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -242,25 +261,31 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V3.Connection): Connection to server
-  - package_name (String.t): Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
-  - edit_id (String.t): Unique identifier for this edit.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
+  *   `edit_id` (*type:* `String.t`) - Unique identifier for this edit.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidPublisher.V3.Model.AppEdit{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidPublisher.V3.Model.AppEdit{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec androidpublisher_edits_validate(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.AndroidPublisher.V3.Model.AppEdit.t()} | {:error, Tesla.Env.t()}
+  @spec androidpublisher_edits_validate(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.AndroidPublisher.V3.Model.AppEdit.t()} | {:error, Tesla.Env.t()}
   def androidpublisher_edits_validate(
         connection,
         package_name,
@@ -297,28 +322,30 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V3.Connection): Connection to server
-  - package_name (String.t): Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
-  - edit_id (String.t): Unique identifier for this edit.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.AndroidPublisher.V3.Model.ApksAddExternallyHostedRequest.t): 
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
+  *   `edit_id` (*type:* `String.t`) - Unique identifier for this edit.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.AndroidPublisher.V3.Model.ApksAddExternallyHostedRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidPublisher.V3.Model.ApksAddExternallyHostedResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidPublisher.V3.Model.ApksAddExternallyHostedResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec androidpublisher_edits_apks_addexternallyhosted(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidPublisher.V3.Model.ApksAddExternallyHostedResponse.t()}
@@ -365,24 +392,31 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V3.Connection): Connection to server
-  - package_name (String.t): Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
-  - edit_id (String.t): Unique identifier for this edit.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
+  *   `edit_id` (*type:* `String.t`) - Unique identifier for this edit.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidPublisher.V3.Model.ApksListResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidPublisher.V3.Model.ApksListResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec androidpublisher_edits_apks_list(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+  @spec androidpublisher_edits_apks_list(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.AndroidPublisher.V3.Model.ApksListResponse.t()}
           | {:error, Tesla.Env.t()}
   def androidpublisher_edits_apks_list(
@@ -421,25 +455,31 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V3.Connection): Connection to server
-  - package_name (String.t): Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
-  - edit_id (String.t): Unique identifier for this edit.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
+  *   `edit_id` (*type:* `String.t`) - Unique identifier for this edit.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidPublisher.V3.Model.Apk{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidPublisher.V3.Model.Apk{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec androidpublisher_edits_apks_upload(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.AndroidPublisher.V3.Model.Apk.t()} | {:error, Tesla.Env.t()}
+  @spec androidpublisher_edits_apks_upload(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.AndroidPublisher.V3.Model.Apk.t()} | {:error, Tesla.Env.t()}
   def androidpublisher_edits_apks_upload(
         connection,
         package_name,
@@ -476,29 +516,31 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V3.Connection): Connection to server
-  - package_name (String.t): Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
-  - edit_id (String.t): Unique identifier for this edit.
-  - upload_type (String.t): Upload type. Must be "resumable".
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
+  *   `edit_id` (*type:* `String.t`) - Unique identifier for this edit.
+  *   `upload_type` (*type:* `String.t`) - Upload type. Must be "resumable".
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %{}} on success
-  {:error, info} on failure
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec androidpublisher_edits_apks_upload_resumable(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, nil} | {:error, Tesla.Env.t()}
   def androidpublisher_edits_apks_upload_resumable(
@@ -542,25 +584,26 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V3.Connection): Connection to server
-  - package_name (String.t): Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
-  - edit_id (String.t): Unique identifier for this edit.
-  - upload_type (String.t): Upload type. Must be "multipart".
-  - metadata (String.t): string metadata
-  - data (String.t): Path to file
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
+  *   `edit_id` (*type:* `String.t`) - Unique identifier for this edit.
+  *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
+  *   `metadata` (*type:* `String.t`) - string metadata
+  *   `data` (*type:* `String.t`) - Path to file
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidPublisher.V3.Model.Apk{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidPublisher.V3.Model.Apk{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec androidpublisher_edits_apks_upload_simple(
           Tesla.Env.client(),
@@ -569,6 +612,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.AndroidPublisher.V3.Model.Apk.t()} | {:error, Tesla.Env.t()}
   def androidpublisher_edits_apks_upload_simple(
@@ -616,24 +660,31 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V3.Connection): Connection to server
-  - package_name (String.t): Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
-  - edit_id (String.t): Unique identifier for this edit.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
+  *   `edit_id` (*type:* `String.t`) - Unique identifier for this edit.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidPublisher.V3.Model.BundlesListResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidPublisher.V3.Model.BundlesListResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec androidpublisher_edits_bundles_list(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+  @spec androidpublisher_edits_bundles_list(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.AndroidPublisher.V3.Model.BundlesListResponse.t()}
           | {:error, Tesla.Env.t()}
   def androidpublisher_edits_bundles_list(
@@ -674,28 +725,30 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V3.Connection): Connection to server
-  - package_name (String.t): Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
-  - edit_id (String.t): Unique identifier for this edit.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :ackBundleInstallationWarning (boolean()): Must be set to true if the bundle installation may trigger a warning on user devices (for example, if installation size may be over a threshold, typically 100 MB).
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
+  *   `edit_id` (*type:* `String.t`) - Unique identifier for this edit.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:ackBundleInstallationWarning` (*type:* `boolean()`) - Must be set to true if the bundle installation may trigger a warning on user devices (for example, if installation size may be over a threshold, typically 100 MB).
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidPublisher.V3.Model.Bundle{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidPublisher.V3.Model.Bundle{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec androidpublisher_edits_bundles_upload(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.AndroidPublisher.V3.Model.Bundle.t()} | {:error, Tesla.Env.t()}
   def androidpublisher_edits_bundles_upload(
@@ -735,30 +788,32 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V3.Connection): Connection to server
-  - package_name (String.t): Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
-  - edit_id (String.t): Unique identifier for this edit.
-  - upload_type (String.t): Upload type. Must be "resumable".
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :ackBundleInstallationWarning (boolean()): Must be set to true if the bundle installation may trigger a warning on user devices (for example, if installation size may be over a threshold, typically 100 MB).
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
+  *   `edit_id` (*type:* `String.t`) - Unique identifier for this edit.
+  *   `upload_type` (*type:* `String.t`) - Upload type. Must be "resumable".
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:ackBundleInstallationWarning` (*type:* `boolean()`) - Must be set to true if the bundle installation may trigger a warning on user devices (for example, if installation size may be over a threshold, typically 100 MB).
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %{}} on success
-  {:error, info} on failure
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec androidpublisher_edits_bundles_upload_resumable(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, nil} | {:error, Tesla.Env.t()}
   def androidpublisher_edits_bundles_upload_resumable(
@@ -803,26 +858,27 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V3.Connection): Connection to server
-  - package_name (String.t): Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
-  - edit_id (String.t): Unique identifier for this edit.
-  - upload_type (String.t): Upload type. Must be "multipart".
-  - metadata (String.t): string metadata
-  - data (String.t): Path to file
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :ackBundleInstallationWarning (boolean()): Must be set to true if the bundle installation may trigger a warning on user devices (for example, if installation size may be over a threshold, typically 100 MB).
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
+  *   `edit_id` (*type:* `String.t`) - Unique identifier for this edit.
+  *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
+  *   `metadata` (*type:* `String.t`) - string metadata
+  *   `data` (*type:* `String.t`) - Path to file
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:ackBundleInstallationWarning` (*type:* `boolean()`) - Must be set to true if the bundle installation may trigger a warning on user devices (for example, if installation size may be over a threshold, typically 100 MB).
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidPublisher.V3.Model.Bundle{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidPublisher.V3.Model.Bundle{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec androidpublisher_edits_bundles_upload_simple(
           Tesla.Env.client(),
@@ -831,6 +887,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.AndroidPublisher.V3.Model.Bundle.t()} | {:error, Tesla.Env.t()}
   def androidpublisher_edits_bundles_upload_simple(
@@ -879,24 +936,25 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V3.Connection): Connection to server
-  - package_name (String.t): Unique identifier of the Android app for which the deobfuscatiuon files are being uploaded; for example, "com.spiffygame".
-  - edit_id (String.t): Unique identifier for this edit.
-  - apk_version_code (integer()): The version code of the APK whose deobfuscation file is being uploaded.
-  - deobfuscation_file_type (String.t): 
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Unique identifier of the Android app for which the deobfuscatiuon files are being uploaded; for example, "com.spiffygame".
+  *   `edit_id` (*type:* `String.t`) - Unique identifier for this edit.
+  *   `apk_version_code` (*type:* `integer()`) - The version code of the APK whose deobfuscation file is being uploaded.
+  *   `deobfuscation_file_type` (*type:* `String.t`) - 
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidPublisher.V3.Model.DeobfuscationFilesUploadResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidPublisher.V3.Model.DeobfuscationFilesUploadResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec androidpublisher_edits_deobfuscationfiles_upload(
           Tesla.Env.client(),
@@ -904,6 +962,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           String.t(),
           integer(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidPublisher.V3.Model.DeobfuscationFilesUploadResponse.t()}
@@ -953,25 +1012,26 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V3.Connection): Connection to server
-  - package_name (String.t): Unique identifier of the Android app for which the deobfuscatiuon files are being uploaded; for example, "com.spiffygame".
-  - edit_id (String.t): Unique identifier for this edit.
-  - apk_version_code (integer()): The version code of the APK whose deobfuscation file is being uploaded.
-  - deobfuscation_file_type (String.t): 
-  - upload_type (String.t): Upload type. Must be "resumable".
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Unique identifier of the Android app for which the deobfuscatiuon files are being uploaded; for example, "com.spiffygame".
+  *   `edit_id` (*type:* `String.t`) - Unique identifier for this edit.
+  *   `apk_version_code` (*type:* `integer()`) - The version code of the APK whose deobfuscation file is being uploaded.
+  *   `deobfuscation_file_type` (*type:* `String.t`) - 
+  *   `upload_type` (*type:* `String.t`) - Upload type. Must be "resumable".
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %{}} on success
-  {:error, info} on failure
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec androidpublisher_edits_deobfuscationfiles_upload_resumable(
           Tesla.Env.client(),
@@ -980,6 +1040,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           integer(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, nil} | {:error, Tesla.Env.t()}
   def androidpublisher_edits_deobfuscationfiles_upload_resumable(
@@ -1027,27 +1088,28 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V3.Connection): Connection to server
-  - package_name (String.t): Unique identifier of the Android app for which the deobfuscatiuon files are being uploaded; for example, "com.spiffygame".
-  - edit_id (String.t): Unique identifier for this edit.
-  - apk_version_code (integer()): The version code of the APK whose deobfuscation file is being uploaded.
-  - deobfuscation_file_type (String.t): 
-  - upload_type (String.t): Upload type. Must be "multipart".
-  - metadata (String.t): string metadata
-  - data (String.t): Path to file
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Unique identifier of the Android app for which the deobfuscatiuon files are being uploaded; for example, "com.spiffygame".
+  *   `edit_id` (*type:* `String.t`) - Unique identifier for this edit.
+  *   `apk_version_code` (*type:* `integer()`) - The version code of the APK whose deobfuscation file is being uploaded.
+  *   `deobfuscation_file_type` (*type:* `String.t`) - 
+  *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
+  *   `metadata` (*type:* `String.t`) - string metadata
+  *   `data` (*type:* `String.t`) - Path to file
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidPublisher.V3.Model.DeobfuscationFilesUploadResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidPublisher.V3.Model.DeobfuscationFilesUploadResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec androidpublisher_edits_deobfuscationfiles_upload_simple(
           Tesla.Env.client(),
@@ -1058,6 +1120,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidPublisher.V3.Model.DeobfuscationFilesUploadResponse.t()}
@@ -1113,25 +1176,31 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V3.Connection): Connection to server
-  - package_name (String.t): Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
-  - edit_id (String.t): Unique identifier for this edit.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
+  *   `edit_id` (*type:* `String.t`) - Unique identifier for this edit.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidPublisher.V3.Model.AppDetails{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidPublisher.V3.Model.AppDetails{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec androidpublisher_edits_details_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.AndroidPublisher.V3.Model.AppDetails.t()} | {:error, Tesla.Env.t()}
+  @spec androidpublisher_edits_details_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.AndroidPublisher.V3.Model.AppDetails.t()} | {:error, Tesla.Env.t()}
   def androidpublisher_edits_details_get(
         connection,
         package_name,
@@ -1168,28 +1237,30 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V3.Connection): Connection to server
-  - package_name (String.t): Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
-  - edit_id (String.t): Unique identifier for this edit.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.AndroidPublisher.V3.Model.AppDetails.t): 
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
+  *   `edit_id` (*type:* `String.t`) - Unique identifier for this edit.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.AndroidPublisher.V3.Model.AppDetails.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidPublisher.V3.Model.AppDetails{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidPublisher.V3.Model.AppDetails{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec androidpublisher_edits_details_patch(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.AndroidPublisher.V3.Model.AppDetails.t()} | {:error, Tesla.Env.t()}
   def androidpublisher_edits_details_patch(
@@ -1229,28 +1300,30 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V3.Connection): Connection to server
-  - package_name (String.t): Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
-  - edit_id (String.t): Unique identifier for this edit.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.AndroidPublisher.V3.Model.AppDetails.t): 
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
+  *   `edit_id` (*type:* `String.t`) - Unique identifier for this edit.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.AndroidPublisher.V3.Model.AppDetails.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidPublisher.V3.Model.AppDetails{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidPublisher.V3.Model.AppDetails{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec androidpublisher_edits_details_update(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.AndroidPublisher.V3.Model.AppDetails.t()} | {:error, Tesla.Env.t()}
   def androidpublisher_edits_details_update(
@@ -1290,24 +1363,25 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V3.Connection): Connection to server
-  - package_name (String.t): Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
-  - edit_id (String.t): Unique identifier for this edit.
-  - apk_version_code (integer()): The version code of the APK whose Expansion File configuration is being read or modified.
-  - expansion_file_type (String.t): 
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
+  *   `edit_id` (*type:* `String.t`) - Unique identifier for this edit.
+  *   `apk_version_code` (*type:* `integer()`) - The version code of the APK whose Expansion File configuration is being read or modified.
+  *   `expansion_file_type` (*type:* `String.t`) - 
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidPublisher.V3.Model.ExpansionFile{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidPublisher.V3.Model.ExpansionFile{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec androidpublisher_edits_expansionfiles_get(
           Tesla.Env.client(),
@@ -1315,6 +1389,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           String.t(),
           integer(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidPublisher.V3.Model.ExpansionFile.t()} | {:error, Tesla.Env.t()}
@@ -1361,25 +1436,26 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V3.Connection): Connection to server
-  - package_name (String.t): Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
-  - edit_id (String.t): Unique identifier for this edit.
-  - apk_version_code (integer()): The version code of the APK whose Expansion File configuration is being read or modified.
-  - expansion_file_type (String.t): 
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.AndroidPublisher.V3.Model.ExpansionFile.t): 
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
+  *   `edit_id` (*type:* `String.t`) - Unique identifier for this edit.
+  *   `apk_version_code` (*type:* `integer()`) - The version code of the APK whose Expansion File configuration is being read or modified.
+  *   `expansion_file_type` (*type:* `String.t`) - 
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.AndroidPublisher.V3.Model.ExpansionFile.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidPublisher.V3.Model.ExpansionFile{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidPublisher.V3.Model.ExpansionFile{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec androidpublisher_edits_expansionfiles_patch(
           Tesla.Env.client(),
@@ -1387,6 +1463,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           String.t(),
           integer(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidPublisher.V3.Model.ExpansionFile.t()} | {:error, Tesla.Env.t()}
@@ -1434,25 +1511,26 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V3.Connection): Connection to server
-  - package_name (String.t): Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
-  - edit_id (String.t): Unique identifier for this edit.
-  - apk_version_code (integer()): The version code of the APK whose Expansion File configuration is being read or modified.
-  - expansion_file_type (String.t): 
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.AndroidPublisher.V3.Model.ExpansionFile.t): 
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
+  *   `edit_id` (*type:* `String.t`) - Unique identifier for this edit.
+  *   `apk_version_code` (*type:* `integer()`) - The version code of the APK whose Expansion File configuration is being read or modified.
+  *   `expansion_file_type` (*type:* `String.t`) - 
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.AndroidPublisher.V3.Model.ExpansionFile.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidPublisher.V3.Model.ExpansionFile{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidPublisher.V3.Model.ExpansionFile{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec androidpublisher_edits_expansionfiles_update(
           Tesla.Env.client(),
@@ -1460,6 +1538,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           String.t(),
           integer(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidPublisher.V3.Model.ExpansionFile.t()} | {:error, Tesla.Env.t()}
@@ -1507,24 +1586,25 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V3.Connection): Connection to server
-  - package_name (String.t): Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
-  - edit_id (String.t): Unique identifier for this edit.
-  - apk_version_code (integer()): The version code of the APK whose Expansion File configuration is being read or modified.
-  - expansion_file_type (String.t): 
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
+  *   `edit_id` (*type:* `String.t`) - Unique identifier for this edit.
+  *   `apk_version_code` (*type:* `integer()`) - The version code of the APK whose Expansion File configuration is being read or modified.
+  *   `expansion_file_type` (*type:* `String.t`) - 
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidPublisher.V3.Model.ExpansionFilesUploadResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidPublisher.V3.Model.ExpansionFilesUploadResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec androidpublisher_edits_expansionfiles_upload(
           Tesla.Env.client(),
@@ -1532,6 +1612,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           String.t(),
           integer(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidPublisher.V3.Model.ExpansionFilesUploadResponse.t()}
@@ -1581,25 +1662,26 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V3.Connection): Connection to server
-  - package_name (String.t): Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
-  - edit_id (String.t): Unique identifier for this edit.
-  - apk_version_code (integer()): The version code of the APK whose Expansion File configuration is being read or modified.
-  - expansion_file_type (String.t): 
-  - upload_type (String.t): Upload type. Must be "resumable".
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
+  *   `edit_id` (*type:* `String.t`) - Unique identifier for this edit.
+  *   `apk_version_code` (*type:* `integer()`) - The version code of the APK whose Expansion File configuration is being read or modified.
+  *   `expansion_file_type` (*type:* `String.t`) - 
+  *   `upload_type` (*type:* `String.t`) - Upload type. Must be "resumable".
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %{}} on success
-  {:error, info} on failure
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec androidpublisher_edits_expansionfiles_upload_resumable(
           Tesla.Env.client(),
@@ -1608,6 +1690,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           integer(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, nil} | {:error, Tesla.Env.t()}
   def androidpublisher_edits_expansionfiles_upload_resumable(
@@ -1655,27 +1738,28 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V3.Connection): Connection to server
-  - package_name (String.t): Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
-  - edit_id (String.t): Unique identifier for this edit.
-  - apk_version_code (integer()): The version code of the APK whose Expansion File configuration is being read or modified.
-  - expansion_file_type (String.t): 
-  - upload_type (String.t): Upload type. Must be "multipart".
-  - metadata (String.t): string metadata
-  - data (String.t): Path to file
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
+  *   `edit_id` (*type:* `String.t`) - Unique identifier for this edit.
+  *   `apk_version_code` (*type:* `integer()`) - The version code of the APK whose Expansion File configuration is being read or modified.
+  *   `expansion_file_type` (*type:* `String.t`) - 
+  *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
+  *   `metadata` (*type:* `String.t`) - string metadata
+  *   `data` (*type:* `String.t`) - Path to file
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidPublisher.V3.Model.ExpansionFilesUploadResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidPublisher.V3.Model.ExpansionFilesUploadResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec androidpublisher_edits_expansionfiles_upload_simple(
           Tesla.Env.client(),
@@ -1686,6 +1770,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidPublisher.V3.Model.ExpansionFilesUploadResponse.t()}
@@ -1741,25 +1826,26 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V3.Connection): Connection to server
-  - package_name (String.t): Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
-  - edit_id (String.t): Unique identifier for this edit.
-  - language (String.t): The language code (a BCP-47 language tag) of the localized listing whose images are to read or modified. For example, to select Austrian German, pass "de-AT".
-  - image_type (String.t): 
-  - image_id (String.t): Unique identifier an image within the set of images attached to this edit.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
+  *   `edit_id` (*type:* `String.t`) - Unique identifier for this edit.
+  *   `language` (*type:* `String.t`) - The language code (a BCP-47 language tag) of the localized listing whose images are to read or modified. For example, to select Austrian German, pass "de-AT".
+  *   `image_type` (*type:* `String.t`) - 
+  *   `image_id` (*type:* `String.t`) - Unique identifier an image within the set of images attached to this edit.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %{}} on success
-  {:error, info} on failure
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec androidpublisher_edits_images_delete(
           Tesla.Env.client(),
@@ -1768,6 +1854,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, nil} | {:error, Tesla.Env.t()}
   def androidpublisher_edits_images_delete(
@@ -1815,24 +1902,25 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V3.Connection): Connection to server
-  - package_name (String.t): Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
-  - edit_id (String.t): Unique identifier for this edit.
-  - language (String.t): The language code (a BCP-47 language tag) of the localized listing whose images are to read or modified. For example, to select Austrian German, pass "de-AT".
-  - image_type (String.t): 
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
+  *   `edit_id` (*type:* `String.t`) - Unique identifier for this edit.
+  *   `language` (*type:* `String.t`) - The language code (a BCP-47 language tag) of the localized listing whose images are to read or modified. For example, to select Austrian German, pass "de-AT".
+  *   `image_type` (*type:* `String.t`) - 
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidPublisher.V3.Model.ImagesDeleteAllResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidPublisher.V3.Model.ImagesDeleteAllResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec androidpublisher_edits_images_deleteall(
           Tesla.Env.client(),
@@ -1840,6 +1928,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidPublisher.V3.Model.ImagesDeleteAllResponse.t()}
@@ -1889,24 +1978,25 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V3.Connection): Connection to server
-  - package_name (String.t): Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
-  - edit_id (String.t): Unique identifier for this edit.
-  - language (String.t): The language code (a BCP-47 language tag) of the localized listing whose images are to read or modified. For example, to select Austrian German, pass "de-AT".
-  - image_type (String.t): 
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
+  *   `edit_id` (*type:* `String.t`) - Unique identifier for this edit.
+  *   `language` (*type:* `String.t`) - The language code (a BCP-47 language tag) of the localized listing whose images are to read or modified. For example, to select Austrian German, pass "de-AT".
+  *   `image_type` (*type:* `String.t`) - 
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidPublisher.V3.Model.ImagesListResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidPublisher.V3.Model.ImagesListResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec androidpublisher_edits_images_list(
           Tesla.Env.client(),
@@ -1914,6 +2004,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidPublisher.V3.Model.ImagesListResponse.t()}
@@ -1963,24 +2054,25 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V3.Connection): Connection to server
-  - package_name (String.t): Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
-  - edit_id (String.t): Unique identifier for this edit.
-  - language (String.t): The language code (a BCP-47 language tag) of the localized listing whose images are to read or modified. For example, to select Austrian German, pass "de-AT".
-  - image_type (String.t): 
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
+  *   `edit_id` (*type:* `String.t`) - Unique identifier for this edit.
+  *   `language` (*type:* `String.t`) - The language code (a BCP-47 language tag) of the localized listing whose images are to read or modified. For example, to select Austrian German, pass "de-AT".
+  *   `image_type` (*type:* `String.t`) - 
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidPublisher.V3.Model.ImagesUploadResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidPublisher.V3.Model.ImagesUploadResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec androidpublisher_edits_images_upload(
           Tesla.Env.client(),
@@ -1988,6 +2080,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidPublisher.V3.Model.ImagesUploadResponse.t()}
@@ -2037,25 +2130,26 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V3.Connection): Connection to server
-  - package_name (String.t): Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
-  - edit_id (String.t): Unique identifier for this edit.
-  - language (String.t): The language code (a BCP-47 language tag) of the localized listing whose images are to read or modified. For example, to select Austrian German, pass "de-AT".
-  - image_type (String.t): 
-  - upload_type (String.t): Upload type. Must be "resumable".
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
+  *   `edit_id` (*type:* `String.t`) - Unique identifier for this edit.
+  *   `language` (*type:* `String.t`) - The language code (a BCP-47 language tag) of the localized listing whose images are to read or modified. For example, to select Austrian German, pass "de-AT".
+  *   `image_type` (*type:* `String.t`) - 
+  *   `upload_type` (*type:* `String.t`) - Upload type. Must be "resumable".
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %{}} on success
-  {:error, info} on failure
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec androidpublisher_edits_images_upload_resumable(
           Tesla.Env.client(),
@@ -2064,6 +2158,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, nil} | {:error, Tesla.Env.t()}
   def androidpublisher_edits_images_upload_resumable(
@@ -2111,27 +2206,28 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V3.Connection): Connection to server
-  - package_name (String.t): Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
-  - edit_id (String.t): Unique identifier for this edit.
-  - language (String.t): The language code (a BCP-47 language tag) of the localized listing whose images are to read or modified. For example, to select Austrian German, pass "de-AT".
-  - image_type (String.t): 
-  - upload_type (String.t): Upload type. Must be "multipart".
-  - metadata (String.t): string metadata
-  - data (String.t): Path to file
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
+  *   `edit_id` (*type:* `String.t`) - Unique identifier for this edit.
+  *   `language` (*type:* `String.t`) - The language code (a BCP-47 language tag) of the localized listing whose images are to read or modified. For example, to select Austrian German, pass "de-AT".
+  *   `image_type` (*type:* `String.t`) - 
+  *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
+  *   `metadata` (*type:* `String.t`) - string metadata
+  *   `data` (*type:* `String.t`) - Path to file
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidPublisher.V3.Model.ImagesUploadResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidPublisher.V3.Model.ImagesUploadResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec androidpublisher_edits_images_upload_simple(
           Tesla.Env.client(),
@@ -2142,6 +2238,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidPublisher.V3.Model.ImagesUploadResponse.t()}
@@ -2197,29 +2294,31 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V3.Connection): Connection to server
-  - package_name (String.t): Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
-  - edit_id (String.t): Unique identifier for this edit.
-  - language (String.t): The language code (a BCP-47 language tag) of the localized listing to read or modify. For example, to select Austrian German, pass "de-AT".
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
+  *   `edit_id` (*type:* `String.t`) - Unique identifier for this edit.
+  *   `language` (*type:* `String.t`) - The language code (a BCP-47 language tag) of the localized listing to read or modify. For example, to select Austrian German, pass "de-AT".
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %{}} on success
-  {:error, info} on failure
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec androidpublisher_edits_listings_delete(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, nil} | {:error, Tesla.Env.t()}
   def androidpublisher_edits_listings_delete(
@@ -2263,27 +2362,29 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V3.Connection): Connection to server
-  - package_name (String.t): Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
-  - edit_id (String.t): Unique identifier for this edit.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
+  *   `edit_id` (*type:* `String.t`) - Unique identifier for this edit.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %{}} on success
-  {:error, info} on failure
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec androidpublisher_edits_listings_deleteall(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, nil} | {:error, Tesla.Env.t()}
   def androidpublisher_edits_listings_deleteall(
@@ -2322,29 +2423,31 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V3.Connection): Connection to server
-  - package_name (String.t): Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
-  - edit_id (String.t): Unique identifier for this edit.
-  - language (String.t): The language code (a BCP-47 language tag) of the localized listing to read or modify. For example, to select Austrian German, pass "de-AT".
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
+  *   `edit_id` (*type:* `String.t`) - Unique identifier for this edit.
+  *   `language` (*type:* `String.t`) - The language code (a BCP-47 language tag) of the localized listing to read or modify. For example, to select Austrian German, pass "de-AT".
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidPublisher.V3.Model.Listing{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidPublisher.V3.Model.Listing{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec androidpublisher_edits_listings_get(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.AndroidPublisher.V3.Model.Listing.t()} | {:error, Tesla.Env.t()}
   def androidpublisher_edits_listings_get(
@@ -2388,27 +2491,29 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V3.Connection): Connection to server
-  - package_name (String.t): Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
-  - edit_id (String.t): Unique identifier for this edit.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
+  *   `edit_id` (*type:* `String.t`) - Unique identifier for this edit.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidPublisher.V3.Model.ListingsListResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidPublisher.V3.Model.ListingsListResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec androidpublisher_edits_listings_list(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidPublisher.V3.Model.ListingsListResponse.t()}
@@ -2451,30 +2556,32 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V3.Connection): Connection to server
-  - package_name (String.t): Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
-  - edit_id (String.t): Unique identifier for this edit.
-  - language (String.t): The language code (a BCP-47 language tag) of the localized listing to read or modify. For example, to select Austrian German, pass "de-AT".
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.AndroidPublisher.V3.Model.Listing.t): 
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
+  *   `edit_id` (*type:* `String.t`) - Unique identifier for this edit.
+  *   `language` (*type:* `String.t`) - The language code (a BCP-47 language tag) of the localized listing to read or modify. For example, to select Austrian German, pass "de-AT".
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.AndroidPublisher.V3.Model.Listing.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidPublisher.V3.Model.Listing{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidPublisher.V3.Model.Listing{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec androidpublisher_edits_listings_patch(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.AndroidPublisher.V3.Model.Listing.t()} | {:error, Tesla.Env.t()}
   def androidpublisher_edits_listings_patch(
@@ -2519,30 +2626,32 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V3.Connection): Connection to server
-  - package_name (String.t): Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
-  - edit_id (String.t): Unique identifier for this edit.
-  - language (String.t): The language code (a BCP-47 language tag) of the localized listing to read or modify. For example, to select Austrian German, pass "de-AT".
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.AndroidPublisher.V3.Model.Listing.t): 
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
+  *   `edit_id` (*type:* `String.t`) - Unique identifier for this edit.
+  *   `language` (*type:* `String.t`) - The language code (a BCP-47 language tag) of the localized listing to read or modify. For example, to select Austrian German, pass "de-AT".
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.AndroidPublisher.V3.Model.Listing.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidPublisher.V3.Model.Listing{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidPublisher.V3.Model.Listing{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec androidpublisher_edits_listings_update(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.AndroidPublisher.V3.Model.Listing.t()} | {:error, Tesla.Env.t()}
   def androidpublisher_edits_listings_update(
@@ -2587,29 +2696,31 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V3.Connection): Connection to server
-  - package_name (String.t): Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
-  - edit_id (String.t): Unique identifier for this edit.
-  - track (String.t): The track to read or modify.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
+  *   `edit_id` (*type:* `String.t`) - Unique identifier for this edit.
+  *   `track` (*type:* `String.t`) - The track to read or modify.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidPublisher.V3.Model.Testers{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidPublisher.V3.Model.Testers{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec androidpublisher_edits_testers_get(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.AndroidPublisher.V3.Model.Testers.t()} | {:error, Tesla.Env.t()}
   def androidpublisher_edits_testers_get(
@@ -2653,30 +2764,32 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V3.Connection): Connection to server
-  - package_name (String.t): Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
-  - edit_id (String.t): Unique identifier for this edit.
-  - track (String.t): The track to read or modify.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.AndroidPublisher.V3.Model.Testers.t): 
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
+  *   `edit_id` (*type:* `String.t`) - Unique identifier for this edit.
+  *   `track` (*type:* `String.t`) - The track to read or modify.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.AndroidPublisher.V3.Model.Testers.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidPublisher.V3.Model.Testers{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidPublisher.V3.Model.Testers{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec androidpublisher_edits_testers_patch(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.AndroidPublisher.V3.Model.Testers.t()} | {:error, Tesla.Env.t()}
   def androidpublisher_edits_testers_patch(
@@ -2721,30 +2834,32 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V3.Connection): Connection to server
-  - package_name (String.t): Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
-  - edit_id (String.t): Unique identifier for this edit.
-  - track (String.t): The track to read or modify.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.AndroidPublisher.V3.Model.Testers.t): 
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
+  *   `edit_id` (*type:* `String.t`) - Unique identifier for this edit.
+  *   `track` (*type:* `String.t`) - The track to read or modify.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.AndroidPublisher.V3.Model.Testers.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidPublisher.V3.Model.Testers{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidPublisher.V3.Model.Testers{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec androidpublisher_edits_testers_update(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.AndroidPublisher.V3.Model.Testers.t()} | {:error, Tesla.Env.t()}
   def androidpublisher_edits_testers_update(
@@ -2789,29 +2904,31 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V3.Connection): Connection to server
-  - package_name (String.t): Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
-  - edit_id (String.t): Unique identifier for this edit.
-  - track (String.t): The track to read or modify.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
+  *   `edit_id` (*type:* `String.t`) - Unique identifier for this edit.
+  *   `track` (*type:* `String.t`) - The track to read or modify.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidPublisher.V3.Model.Track{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidPublisher.V3.Model.Track{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec androidpublisher_edits_tracks_get(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.AndroidPublisher.V3.Model.Track.t()} | {:error, Tesla.Env.t()}
   def androidpublisher_edits_tracks_get(
@@ -2855,24 +2972,31 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V3.Connection): Connection to server
-  - package_name (String.t): Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
-  - edit_id (String.t): Unique identifier for this edit.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
+  *   `edit_id` (*type:* `String.t`) - Unique identifier for this edit.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidPublisher.V3.Model.TracksListResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidPublisher.V3.Model.TracksListResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec androidpublisher_edits_tracks_list(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+  @spec androidpublisher_edits_tracks_list(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.AndroidPublisher.V3.Model.TracksListResponse.t()}
           | {:error, Tesla.Env.t()}
   def androidpublisher_edits_tracks_list(
@@ -2913,30 +3037,32 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V3.Connection): Connection to server
-  - package_name (String.t): Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
-  - edit_id (String.t): Unique identifier for this edit.
-  - track (String.t): The track to read or modify.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.AndroidPublisher.V3.Model.Track.t): 
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
+  *   `edit_id` (*type:* `String.t`) - Unique identifier for this edit.
+  *   `track` (*type:* `String.t`) - The track to read or modify.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.AndroidPublisher.V3.Model.Track.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidPublisher.V3.Model.Track{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidPublisher.V3.Model.Track{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec androidpublisher_edits_tracks_patch(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.AndroidPublisher.V3.Model.Track.t()} | {:error, Tesla.Env.t()}
   def androidpublisher_edits_tracks_patch(
@@ -2981,30 +3107,32 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V3.Connection): Connection to server
-  - package_name (String.t): Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
-  - edit_id (String.t): Unique identifier for this edit.
-  - track (String.t): The track to read or modify.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.AndroidPublisher.V3.Model.Track.t): 
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
+  *   `edit_id` (*type:* `String.t`) - Unique identifier for this edit.
+  *   `track` (*type:* `String.t`) - The track to read or modify.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.AndroidPublisher.V3.Model.Track.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidPublisher.V3.Model.Track{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidPublisher.V3.Model.Track{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec androidpublisher_edits_tracks_update(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.AndroidPublisher.V3.Model.Track.t()} | {:error, Tesla.Env.t()}
   def androidpublisher_edits_tracks_update(

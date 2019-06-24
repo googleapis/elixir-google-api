@@ -21,9 +21,9 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.InternalAppSharingArtifact do
 
   ## Attributes
 
-  - certificateFingerprint (String.t): The SHA256 fingerprint of the certificate used to signed the generated artifact. Defaults to `nil`.
-  - downloadUrl (String.t): The download URL generated for the uploaded artifact. Users that are authorized to download can follow the link to the Play Store app to install it. Defaults to `nil`.
-  - sha256 (String.t): The SHA-256 hash of the artifact represented as a lowercase hexadecimal number, matching the output of the sha256sum command. Defaults to `nil`.
+  *   `certificateFingerprint` (*type:* `String.t`, *default:* `nil`) - The SHA256 fingerprint of the certificate used to signed the generated artifact.
+  *   `downloadUrl` (*type:* `String.t`, *default:* `nil`) - The download URL generated for the uploaded artifact. Users that are authorized to download can follow the link to the Play Store app to install it.
+  *   `sha256` (*type:* `String.t`, *default:* `nil`) - The SHA-256 hash of the artifact represented as a lowercase hexadecimal number, matching the output of the sha256sum command.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,7 +21,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Model.SubscriptionPurchasesDeferRequest 
 
   ## Attributes
 
-  - deferralInfo (GoogleApi.AndroidPublisher.V2.Model.SubscriptionDeferralInfo.t): The information about the new desired expiry time for the subscription. Defaults to `nil`.
+  *   `deferralInfo` (*type:* `GoogleApi.AndroidPublisher.V2.Model.SubscriptionDeferralInfo.t`, *default:* `nil`) - The information about the new desired expiry time for the subscription.
   """
 
   use GoogleApi.Gax.ModelBase

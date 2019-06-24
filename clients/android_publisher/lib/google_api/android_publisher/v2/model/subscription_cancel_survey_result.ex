@@ -21,13 +21,13 @@ defmodule GoogleApi.AndroidPublisher.V2.Model.SubscriptionCancelSurveyResult do
 
   ## Attributes
 
-  - cancelSurveyReason (integer()): The cancellation reason the user chose in the survey. Possible values are:  
-  - Other 
-  - I don't use this service enough 
-  - Technical issues 
-  - Cost-related reasons 
-  - I found a better app Defaults to `nil`.
-  - userInputCancelReason (String.t): The customized input cancel reason from the user. Only present when cancelReason is 0. Defaults to `nil`.
+  *   `cancelSurveyReason` (*type:* `integer()`, *default:* `nil`) - The cancellation reason the user chose in the survey. Possible values are:  
+      - Other 
+      - I don't use this service enough 
+      - Technical issues 
+      - Cost-related reasons 
+      - I found a better app
+  *   `userInputCancelReason` (*type:* `String.t`, *default:* `nil`) - The customized input cancel reason from the user. Only present when cancelReason is 0.
   """
 
   use GoogleApi.Gax.ModelBase

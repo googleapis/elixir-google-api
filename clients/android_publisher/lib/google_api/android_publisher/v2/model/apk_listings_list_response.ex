@@ -21,8 +21,8 @@ defmodule GoogleApi.AndroidPublisher.V2.Model.ApkListingsListResponse do
 
   ## Attributes
 
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "androidpublisher#apkListingsListResponse". Defaults to `androidpublisher#apkListingsListResponse`.
-  - listings (list(GoogleApi.AndroidPublisher.V2.Model.ApkListing.t)):  Defaults to `nil`.
+  *   `kind` (*type:* `String.t`, *default:* `androidpublisher#apkListingsListResponse`) - Identifies what kind of resource this is. Value: the fixed string "androidpublisher#apkListingsListResponse".
+  *   `listings` (*type:* `list(GoogleApi.AndroidPublisher.V2.Model.ApkListing.t)`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

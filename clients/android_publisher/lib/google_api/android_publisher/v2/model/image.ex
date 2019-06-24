@@ -21,9 +21,9 @@ defmodule GoogleApi.AndroidPublisher.V2.Model.Image do
 
   ## Attributes
 
-  - id (String.t): A unique id representing this image. Defaults to `nil`.
-  - sha1 (String.t): A sha1 hash of the image that was uploaded. Defaults to `nil`.
-  - url (String.t): A URL that will serve a preview of the image. Defaults to `nil`.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - A unique id representing this image.
+  *   `sha1` (*type:* `String.t`, *default:* `nil`) - A sha1 hash of the image that was uploaded.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - A URL that will serve a preview of the image.
   """
 
   use GoogleApi.Gax.ModelBase

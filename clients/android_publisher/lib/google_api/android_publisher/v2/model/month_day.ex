@@ -21,8 +21,8 @@ defmodule GoogleApi.AndroidPublisher.V2.Model.MonthDay do
 
   ## Attributes
 
-  - day (integer()): Day of a month, value in [1, 31] range. Valid range depends on the specified month. Defaults to `nil`.
-  - month (integer()): Month of a year. e.g. 1 = JAN, 2 = FEB etc. Defaults to `nil`.
+  *   `day` (*type:* `integer()`, *default:* `nil`) - Day of a month, value in [1, 31] range. Valid range depends on the specified month.
+  *   `month` (*type:* `integer()`, *default:* `nil`) - Month of a year. e.g. 1 = JAN, 2 = FEB etc.
   """
 
   use GoogleApi.Gax.ModelBase

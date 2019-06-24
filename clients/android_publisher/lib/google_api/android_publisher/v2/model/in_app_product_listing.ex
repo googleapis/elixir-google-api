@@ -21,8 +21,8 @@ defmodule GoogleApi.AndroidPublisher.V2.Model.InAppProductListing do
 
   ## Attributes
 
-  - description (String.t):  Defaults to `nil`.
-  - title (String.t):  Defaults to `nil`.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - 
+  *   `title` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

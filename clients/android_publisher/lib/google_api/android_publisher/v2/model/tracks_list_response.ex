@@ -21,8 +21,8 @@ defmodule GoogleApi.AndroidPublisher.V2.Model.TracksListResponse do
 
   ## Attributes
 
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "androidpublisher#tracksListResponse". Defaults to `androidpublisher#tracksListResponse`.
-  - tracks (list(GoogleApi.AndroidPublisher.V2.Model.Track.t)):  Defaults to `nil`.
+  *   `kind` (*type:* `String.t`, *default:* `androidpublisher#tracksListResponse`) - Identifies what kind of resource this is. Value: the fixed string "androidpublisher#tracksListResponse".
+  *   `tracks` (*type:* `list(GoogleApi.AndroidPublisher.V2.Model.Track.t)`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

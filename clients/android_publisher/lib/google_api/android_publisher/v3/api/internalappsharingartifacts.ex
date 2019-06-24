@@ -28,25 +28,27 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Internalappsharingartifacts do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V3.Connection): Connection to server
-  - package_name (String.t): Unique identifier for the Android app; for example, "com.spiffygame".
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app; for example, "com.spiffygame".
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidPublisher.V3.Model.InternalAppSharingArtifact{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidPublisher.V3.Model.InternalAppSharingArtifact{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec androidpublisher_internalappsharingartifacts_uploadapk(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidPublisher.V3.Model.InternalAppSharingArtifact.t()}
@@ -90,27 +92,29 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Internalappsharingartifacts do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V3.Connection): Connection to server
-  - package_name (String.t): Unique identifier for the Android app; for example, "com.spiffygame".
-  - upload_type (String.t): Upload type. Must be "resumable".
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app; for example, "com.spiffygame".
+  *   `upload_type` (*type:* `String.t`) - Upload type. Must be "resumable".
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %{}} on success
-  {:error, info} on failure
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec androidpublisher_internalappsharingartifacts_uploadapk_resumable(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, nil} | {:error, Tesla.Env.t()}
   def androidpublisher_internalappsharingartifacts_uploadapk_resumable(
@@ -152,24 +156,25 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Internalappsharingartifacts do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V3.Connection): Connection to server
-  - package_name (String.t): Unique identifier for the Android app; for example, "com.spiffygame".
-  - upload_type (String.t): Upload type. Must be "multipart".
-  - metadata (String.t): string metadata
-  - data (String.t): Path to file
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app; for example, "com.spiffygame".
+  *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
+  *   `metadata` (*type:* `String.t`) - string metadata
+  *   `data` (*type:* `String.t`) - Path to file
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidPublisher.V3.Model.InternalAppSharingArtifact{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidPublisher.V3.Model.InternalAppSharingArtifact{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec androidpublisher_internalappsharingartifacts_uploadapk_simple(
           Tesla.Env.client(),
@@ -177,6 +182,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Internalappsharingartifacts do
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidPublisher.V3.Model.InternalAppSharingArtifact.t()}
@@ -226,25 +232,27 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Internalappsharingartifacts do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V3.Connection): Connection to server
-  - package_name (String.t): Unique identifier for the Android app; for example, "com.spiffygame".
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app; for example, "com.spiffygame".
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidPublisher.V3.Model.InternalAppSharingArtifact{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidPublisher.V3.Model.InternalAppSharingArtifact{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec androidpublisher_internalappsharingartifacts_uploadbundle(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidPublisher.V3.Model.InternalAppSharingArtifact.t()}
@@ -288,27 +296,29 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Internalappsharingartifacts do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V3.Connection): Connection to server
-  - package_name (String.t): Unique identifier for the Android app; for example, "com.spiffygame".
-  - upload_type (String.t): Upload type. Must be "resumable".
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app; for example, "com.spiffygame".
+  *   `upload_type` (*type:* `String.t`) - Upload type. Must be "resumable".
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %{}} on success
-  {:error, info} on failure
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec androidpublisher_internalappsharingartifacts_uploadbundle_resumable(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, nil} | {:error, Tesla.Env.t()}
   def androidpublisher_internalappsharingartifacts_uploadbundle_resumable(
@@ -350,24 +360,25 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Internalappsharingartifacts do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidPublisher.V3.Connection): Connection to server
-  - package_name (String.t): Unique identifier for the Android app; for example, "com.spiffygame".
-  - upload_type (String.t): Upload type. Must be "multipart".
-  - metadata (String.t): string metadata
-  - data (String.t): Path to file
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app; for example, "com.spiffygame".
+  *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
+  *   `metadata` (*type:* `String.t`) - string metadata
+  *   `data` (*type:* `String.t`) - Path to file
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidPublisher.V3.Model.InternalAppSharingArtifact{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidPublisher.V3.Model.InternalAppSharingArtifact{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec androidpublisher_internalappsharingartifacts_uploadbundle_simple(
           Tesla.Env.client(),
@@ -375,6 +386,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Internalappsharingartifacts do
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidPublisher.V3.Model.InternalAppSharingArtifact.t()}

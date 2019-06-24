@@ -21,20 +21,21 @@ defmodule GoogleApi.AndroidPublisher.V2.Model.ProductPurchase do
 
   ## Attributes
 
-  - consumptionState (integer()): The consumption state of the inapp product. Possible values are:  
-  - Yet to be consumed 
-  - Consumed Defaults to `nil`.
-  - developerPayload (String.t): A developer-specified string that contains supplemental information about an order. Defaults to `nil`.
-  - kind (String.t): This kind represents an inappPurchase object in the androidpublisher service. Defaults to `androidpublisher#productPurchase`.
-  - orderId (String.t): The order id associated with the purchase of the inapp product. Defaults to `nil`.
-  - purchaseState (integer()): The purchase state of the order. Possible values are:  
-  - Purchased 
-  - Canceled Defaults to `nil`.
-  - purchaseTimeMillis (String.t): The time the product was purchased, in milliseconds since the epoch (Jan 1, 1970). Defaults to `nil`.
-  - purchaseType (integer()): The type of purchase of the inapp product. This field is only set if this purchase was not made using the standard in-app billing flow. Possible values are:  
-  - Test (i.e. purchased from a license testing account) 
-  - Promo (i.e. purchased using a promo code) 
-  - Rewarded (i.e. from watching a video ad instead of paying) Defaults to `nil`.
+  *   `consumptionState` (*type:* `integer()`, *default:* `nil`) - The consumption state of the inapp product. Possible values are:  
+      - Yet to be consumed 
+      - Consumed
+  *   `developerPayload` (*type:* `String.t`, *default:* `nil`) - A developer-specified string that contains supplemental information about an order.
+  *   `kind` (*type:* `String.t`, *default:* `androidpublisher#productPurchase`) - This kind represents an inappPurchase object in the androidpublisher service.
+  *   `orderId` (*type:* `String.t`, *default:* `nil`) - The order id associated with the purchase of the inapp product.
+  *   `purchaseState` (*type:* `integer()`, *default:* `nil`) - The purchase state of the order. Possible values are:  
+      - Purchased 
+      - Canceled 
+      - Pending
+  *   `purchaseTimeMillis` (*type:* `String.t`, *default:* `nil`) - The time the product was purchased, in milliseconds since the epoch (Jan 1, 1970).
+  *   `purchaseType` (*type:* `integer()`, *default:* `nil`) - The type of purchase of the inapp product. This field is only set if this purchase was not made using the standard in-app billing flow. Possible values are:  
+      - Test (i.e. purchased from a license testing account) 
+      - Promo (i.e. purchased using a promo code) 
+      - Rewarded (i.e. from watching a video ad instead of paying)
   """
 
   use GoogleApi.Gax.ModelBase

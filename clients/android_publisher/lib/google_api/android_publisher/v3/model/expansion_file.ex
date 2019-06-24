@@ -21,8 +21,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.ExpansionFile do
 
   ## Attributes
 
-  - fileSize (String.t): If set this field indicates that this APK has an Expansion File uploaded to it: this APK does not reference another APK's Expansion File. The field's value is the size of the uploaded Expansion File in bytes. Defaults to `nil`.
-  - referencesVersion (integer()): If set this APK's Expansion File references another APK's Expansion File. The file_size field will not be set. Defaults to `nil`.
+  *   `fileSize` (*type:* `String.t`, *default:* `nil`) - If set this field indicates that this APK has an Expansion File uploaded to it: this APK does not reference another APK's Expansion File. The field's value is the size of the uploaded Expansion File in bytes.
+  *   `referencesVersion` (*type:* `integer()`, *default:* `nil`) - If set this APK's Expansion File references another APK's Expansion File. The file_size field will not be set.
   """
 
   use GoogleApi.Gax.ModelBase

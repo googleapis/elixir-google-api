@@ -21,9 +21,9 @@ defmodule GoogleApi.AndroidPublisher.V2.Model.VoidedPurchasesListResponse do
 
   ## Attributes
 
-  - pageInfo (GoogleApi.AndroidPublisher.V2.Model.PageInfo.t):  Defaults to `nil`.
-  - tokenPagination (GoogleApi.AndroidPublisher.V2.Model.TokenPagination.t):  Defaults to `nil`.
-  - voidedPurchases (list(GoogleApi.AndroidPublisher.V2.Model.VoidedPurchase.t)):  Defaults to `nil`.
+  *   `pageInfo` (*type:* `GoogleApi.AndroidPublisher.V2.Model.PageInfo.t`, *default:* `nil`) - 
+  *   `tokenPagination` (*type:* `GoogleApi.AndroidPublisher.V2.Model.TokenPagination.t`, *default:* `nil`) - 
+  *   `voidedPurchases` (*type:* `list(GoogleApi.AndroidPublisher.V2.Model.VoidedPurchase.t)`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

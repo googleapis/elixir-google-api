@@ -21,10 +21,10 @@ defmodule GoogleApi.AndroidPublisher.V2.Model.AppDetails do
 
   ## Attributes
 
-  - contactEmail (String.t): The user-visible support email for this app. Defaults to `nil`.
-  - contactPhone (String.t): The user-visible support telephone number for this app. Defaults to `nil`.
-  - contactWebsite (String.t): The user-visible website for this app. Defaults to `nil`.
-  - defaultLanguage (String.t): Default language code, in BCP 47 format (eg "en-US"). Defaults to `nil`.
+  *   `contactEmail` (*type:* `String.t`, *default:* `nil`) - The user-visible support email for this app.
+  *   `contactPhone` (*type:* `String.t`, *default:* `nil`) - The user-visible support telephone number for this app.
+  *   `contactWebsite` (*type:* `String.t`, *default:* `nil`) - The user-visible website for this app.
+  *   `defaultLanguage` (*type:* `String.t`, *default:* `nil`) - Default language code, in BCP 47 format (eg "en-US").
   """
 
   use GoogleApi.Gax.ModelBase

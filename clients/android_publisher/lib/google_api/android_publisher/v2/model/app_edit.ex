@@ -21,8 +21,8 @@ defmodule GoogleApi.AndroidPublisher.V2.Model.AppEdit do
 
   ## Attributes
 
-  - expiryTimeSeconds (String.t): The time at which the edit will expire and will be no longer valid for use in any subsequent API calls (encoded as seconds since the Epoch). Defaults to `nil`.
-  - id (String.t): The ID of the edit that can be used in subsequent API calls. Defaults to `nil`.
+  *   `expiryTimeSeconds` (*type:* `String.t`, *default:* `nil`) - The time at which the edit will expire and will be no longer valid for use in any subsequent API calls (encoded as seconds since the Epoch).
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The ID of the edit that can be used in subsequent API calls.
   """
 
   use GoogleApi.Gax.ModelBase

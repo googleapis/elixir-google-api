@@ -21,8 +21,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.Track do
 
   ## Attributes
 
-  - releases (list(GoogleApi.AndroidPublisher.V3.Model.TrackRelease.t)): A list of all active releases in this track during a read request. On an update request, it represents desired changes. Defaults to `nil`.
-  - track (String.t): Identifier for this track. Defaults to `nil`.
+  *   `releases` (*type:* `list(GoogleApi.AndroidPublisher.V3.Model.TrackRelease.t)`, *default:* `nil`) - A list of all active releases in this track during a read request. On an update request, it represents desired changes.
+  *   `track` (*type:* `String.t`, *default:* `nil`) - Identifier for this track.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -20,6 +20,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Connection do
   Handle Tesla connections for GoogleApi.AndroidPublisher.V3.
   """
 
+  @type t :: Tesla.Env.client()
+
   use GoogleApi.Gax.Connection,
     scopes: [
       # View and manage your Google Play Developer account

@@ -21,8 +21,8 @@ defmodule GoogleApi.AndroidPublisher.V2.Model.ReviewReplyResult do
 
   ## Attributes
 
-  - lastEdited (GoogleApi.AndroidPublisher.V2.Model.Timestamp.t): The time at which the reply took effect. Defaults to `nil`.
-  - replyText (String.t): The reply text that was applied. Defaults to `nil`.
+  *   `lastEdited` (*type:* `GoogleApi.AndroidPublisher.V2.Model.Timestamp.t`, *default:* `nil`) - The time at which the reply took effect.
+  *   `replyText` (*type:* `String.t`, *default:* `nil`) - The reply text that was applied.
   """
 
   use GoogleApi.Gax.ModelBase

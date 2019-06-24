@@ -21,7 +21,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.ImagesDeleteAllResponse do
 
   ## Attributes
 
-  - deleted (list(GoogleApi.AndroidPublisher.V3.Model.Image.t)):  Defaults to `nil`.
+  *   `deleted` (*type:* `list(GoogleApi.AndroidPublisher.V3.Model.Image.t)`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,9 +21,9 @@ defmodule GoogleApi.AndroidPublisher.V2.Model.Review do
 
   ## Attributes
 
-  - authorName (String.t): The name of the user who wrote the review. Defaults to `nil`.
-  - comments (list(GoogleApi.AndroidPublisher.V2.Model.Comment.t)): A repeated field containing comments for the review. Defaults to `nil`.
-  - reviewId (String.t): Unique identifier for this review. Defaults to `nil`.
+  *   `authorName` (*type:* `String.t`, *default:* `nil`) - The name of the user who wrote the review.
+  *   `comments` (*type:* `list(GoogleApi.AndroidPublisher.V2.Model.Comment.t)`, *default:* `nil`) - A repeated field containing comments for the review.
+  *   `reviewId` (*type:* `String.t`, *default:* `nil`) - Unique identifier for this review.
   """
 
   use GoogleApi.Gax.ModelBase

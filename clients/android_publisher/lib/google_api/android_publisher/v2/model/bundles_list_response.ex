@@ -21,8 +21,8 @@ defmodule GoogleApi.AndroidPublisher.V2.Model.BundlesListResponse do
 
   ## Attributes
 
-  - bundles (list(GoogleApi.AndroidPublisher.V2.Model.Bundle.t)):  Defaults to `nil`.
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "androidpublisher#bundlesListResponse". Defaults to `androidpublisher#bundlesListResponse`.
+  *   `bundles` (*type:* `list(GoogleApi.AndroidPublisher.V2.Model.Bundle.t)`, *default:* `nil`) - 
+  *   `kind` (*type:* `String.t`, *default:* `androidpublisher#bundlesListResponse`) - Identifies what kind of resource this is. Value: the fixed string "androidpublisher#bundlesListResponse".
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,8 +21,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.CountryTargeting do
 
   ## Attributes
 
-  - countries (list(String.t)):  Defaults to `nil`.
-  - includeRestOfWorld (boolean()):  Defaults to `nil`.
+  *   `countries` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `includeRestOfWorld` (*type:* `boolean()`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

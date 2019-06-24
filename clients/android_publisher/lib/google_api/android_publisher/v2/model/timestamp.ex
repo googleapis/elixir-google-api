@@ -21,8 +21,8 @@ defmodule GoogleApi.AndroidPublisher.V2.Model.Timestamp do
 
   ## Attributes
 
-  - nanos (integer()):  Defaults to `nil`.
-  - seconds (String.t):  Defaults to `nil`.
+  *   `nanos` (*type:* `integer()`, *default:* `nil`) - 
+  *   `seconds` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,8 +21,8 @@ defmodule GoogleApi.AndroidPublisher.V2.Model.ApkListing do
 
   ## Attributes
 
-  - language (String.t): The language code, in BCP 47 format (eg "en-US"). Defaults to `nil`.
-  - recentChanges (String.t): Describe what's new in your APK. Defaults to `nil`.
+  *   `language` (*type:* `String.t`, *default:* `nil`) - The language code, in BCP 47 format (eg "en-US").
+  *   `recentChanges` (*type:* `String.t`, *default:* `nil`) - Describe what's new in your APK.
   """
 
   use GoogleApi.Gax.ModelBase

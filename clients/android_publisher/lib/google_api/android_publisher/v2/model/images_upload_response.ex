@@ -21,7 +21,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Model.ImagesUploadResponse do
 
   ## Attributes
 
-  - image (GoogleApi.AndroidPublisher.V2.Model.Image.t):  Defaults to `nil`.
+  *   `image` (*type:* `GoogleApi.AndroidPublisher.V2.Model.Image.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,7 +21,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.DeobfuscationFilesUploadResponse d
 
   ## Attributes
 
-  - deobfuscationFile (GoogleApi.AndroidPublisher.V3.Model.DeobfuscationFile.t):  Defaults to `nil`.
+  *   `deobfuscationFile` (*type:* `GoogleApi.AndroidPublisher.V3.Model.DeobfuscationFile.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

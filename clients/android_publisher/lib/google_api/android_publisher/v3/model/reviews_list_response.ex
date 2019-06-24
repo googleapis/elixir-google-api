@@ -21,9 +21,9 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.ReviewsListResponse do
 
   ## Attributes
 
-  - pageInfo (GoogleApi.AndroidPublisher.V3.Model.PageInfo.t):  Defaults to `nil`.
-  - reviews (list(GoogleApi.AndroidPublisher.V3.Model.Review.t)):  Defaults to `nil`.
-  - tokenPagination (GoogleApi.AndroidPublisher.V3.Model.TokenPagination.t):  Defaults to `nil`.
+  *   `pageInfo` (*type:* `GoogleApi.AndroidPublisher.V3.Model.PageInfo.t`, *default:* `nil`) - 
+  *   `reviews` (*type:* `list(GoogleApi.AndroidPublisher.V3.Model.Review.t)`, *default:* `nil`) - 
+  *   `tokenPagination` (*type:* `GoogleApi.AndroidPublisher.V3.Model.TokenPagination.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

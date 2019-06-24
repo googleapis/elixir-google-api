@@ -21,8 +21,8 @@ defmodule GoogleApi.AndroidPublisher.V2.Model.Comment do
 
   ## Attributes
 
-  - developerComment (GoogleApi.AndroidPublisher.V2.Model.DeveloperComment.t): A comment from a developer. Defaults to `nil`.
-  - userComment (GoogleApi.AndroidPublisher.V2.Model.UserComment.t): A comment from a user. Defaults to `nil`.
+  *   `developerComment` (*type:* `GoogleApi.AndroidPublisher.V2.Model.DeveloperComment.t`, *default:* `nil`) - A comment from a developer.
+  *   `userComment` (*type:* `GoogleApi.AndroidPublisher.V2.Model.UserComment.t`, *default:* `nil`) - A comment from a user.
   """
 
   use GoogleApi.Gax.ModelBase

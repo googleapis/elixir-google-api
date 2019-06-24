@@ -21,8 +21,8 @@ defmodule GoogleApi.AndroidPublisher.V2.Model.Price do
 
   ## Attributes
 
-  - currency (String.t): 3 letter Currency code, as defined by ISO 4217. Defaults to `nil`.
-  - priceMicros (String.t): The price in millionths of the currency base unit represented as a string. Defaults to `nil`.
+  *   `currency` (*type:* `String.t`, *default:* `nil`) - 3 letter Currency code, as defined by ISO 4217.
+  *   `priceMicros` (*type:* `String.t`, *default:* `nil`) - The price in millionths of the currency base unit represented as a string.
   """
 
   use GoogleApi.Gax.ModelBase

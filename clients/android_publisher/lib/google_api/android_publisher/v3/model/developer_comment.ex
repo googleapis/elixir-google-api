@@ -21,8 +21,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.DeveloperComment do
 
   ## Attributes
 
-  - lastModified (GoogleApi.AndroidPublisher.V3.Model.Timestamp.t): The last time at which this comment was updated. Defaults to `nil`.
-  - text (String.t): The content of the comment, i.e. reply body. Defaults to `nil`.
+  *   `lastModified` (*type:* `GoogleApi.AndroidPublisher.V3.Model.Timestamp.t`, *default:* `nil`) - The last time at which this comment was updated.
+  *   `text` (*type:* `String.t`, *default:* `nil`) - The content of the comment, i.e. reply body.
   """
 
   use GoogleApi.Gax.ModelBase
