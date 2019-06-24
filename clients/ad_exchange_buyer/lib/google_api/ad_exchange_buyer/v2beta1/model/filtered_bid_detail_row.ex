@@ -23,10 +23,10 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.FilteredBidDetailRow do
 
   ## Attributes
 
-  - bidCount (GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t): The number of bids with the specified detail. Defaults to `nil`.
-  - detailId (integer()): The ID of the detail. The associated value can be looked up in the
-  dictionary file corresponding to the DetailType in the response message. Defaults to `nil`.
-  - rowDimensions (GoogleApi.AdExchangeBuyer.V2beta1.Model.RowDimensions.t): The values of all dimensions associated with metric values in this row. Defaults to `nil`.
+  *   `bidCount` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t`, *default:* `nil`) - The number of bids with the specified detail.
+  *   `detailId` (*type:* `integer()`, *default:* `nil`) - The ID of the detail. The associated value can be looked up in the
+      dictionary file corresponding to the DetailType in the response message.
+  *   `rowDimensions` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.RowDimensions.t`, *default:* `nil`) - The values of all dimensions associated with metric values in this row.
   """
 
   use GoogleApi.Gax.ModelBase

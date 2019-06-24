@@ -21,8 +21,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.BillingInfoList do
 
   ## Attributes
 
-  - items (list(GoogleApi.AdExchangeBuyer.V14.Model.BillingInfo.t)): A list of billing info relevant for your account. Defaults to `nil`.
-  - kind (String.t): Resource type. Defaults to `adexchangebuyer#billingInfoList`.
+  *   `items` (*type:* `list(GoogleApi.AdExchangeBuyer.V14.Model.BillingInfo.t)`, *default:* `nil`) - A list of billing info relevant for your account.
+  *   `kind` (*type:* `String.t`, *default:* `adexchangebuyer#billingInfoList`) - Resource type.
   """
 
   use GoogleApi.Gax.ModelBase

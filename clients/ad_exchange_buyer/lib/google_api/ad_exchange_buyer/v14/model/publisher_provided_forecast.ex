@@ -21,9 +21,9 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.PublisherProvidedForecast do
 
   ## Attributes
 
-  - dimensions (list(GoogleApi.AdExchangeBuyer.V14.Model.Dimension.t)): Publisher provided dimensions. E.g. geo, sizes etc... Defaults to `nil`.
-  - weeklyImpressions (String.t): Publisher provided weekly impressions. Defaults to `nil`.
-  - weeklyUniques (String.t): Publisher provided weekly uniques. Defaults to `nil`.
+  *   `dimensions` (*type:* `list(GoogleApi.AdExchangeBuyer.V14.Model.Dimension.t)`, *default:* `nil`) - Publisher provided dimensions. E.g. geo, sizes etc...
+  *   `weeklyImpressions` (*type:* `String.t`, *default:* `nil`) - Publisher provided weekly impressions.
+  *   `weeklyUniques` (*type:* `String.t`, *default:* `nil`) - Publisher provided weekly uniques.
   """
 
   use GoogleApi.Gax.ModelBase

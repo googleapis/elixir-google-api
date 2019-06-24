@@ -21,8 +21,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfigExcludedPlacemen
 
   ## Attributes
 
-  - token (String.t): The value of the placement. Interpretation depends on the placement type, e.g. URL for a site placement, channel name for a channel placement, app id for a mobile app placement. Defaults to `nil`.
-  - type (String.t): The type of the placement. Defaults to `nil`.
+  *   `token` (*type:* `String.t`, *default:* `nil`) - The value of the placement. Interpretation depends on the placement type, e.g. URL for a site placement, channel name for a channel placement, app id for a mobile app placement.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the placement.
   """
 
   use GoogleApi.Gax.ModelBase

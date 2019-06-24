@@ -25,11 +25,11 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.MarketplaceTargeting do
 
   ## Attributes
 
-  - geoTargeting (GoogleApi.AdExchangeBuyer.V2beta1.Model.CriteriaTargeting.t): Geo criteria IDs to be included/excluded. Defaults to `nil`.
-  - inventorySizeTargeting (GoogleApi.AdExchangeBuyer.V2beta1.Model.InventorySizeTargeting.t): Inventory sizes to be included/excluded. Defaults to `nil`.
-  - placementTargeting (GoogleApi.AdExchangeBuyer.V2beta1.Model.PlacementTargeting.t): Placement targeting information, e.g., URL, mobile applications. Defaults to `nil`.
-  - technologyTargeting (GoogleApi.AdExchangeBuyer.V2beta1.Model.TechnologyTargeting.t): Technology targeting information, e.g., operating system, device category. Defaults to `nil`.
-  - videoTargeting (GoogleApi.AdExchangeBuyer.V2beta1.Model.VideoTargeting.t): Video targeting information. Defaults to `nil`.
+  *   `geoTargeting` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.CriteriaTargeting.t`, *default:* `nil`) - Geo criteria IDs to be included/excluded.
+  *   `inventorySizeTargeting` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.InventorySizeTargeting.t`, *default:* `nil`) - Inventory sizes to be included/excluded.
+  *   `placementTargeting` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.PlacementTargeting.t`, *default:* `nil`) - Placement targeting information, e.g., URL, mobile applications.
+  *   `technologyTargeting` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.TechnologyTargeting.t`, *default:* `nil`) - Technology targeting information, e.g., operating system, device category.
+  *   `videoTargeting` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.VideoTargeting.t`, *default:* `nil`) - Video targeting information.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,67 +21,67 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.Creative do
 
   ## Attributes
 
-  - accountId (String.t): The account that this creative belongs to.
-  Can be used to filter the response of the
-  creatives.list
-  method. Defaults to `nil`.
-  - adChoicesDestinationUrl (String.t): The link to AdChoices destination page. Defaults to `nil`.
-  - adTechnologyProviders (GoogleApi.AdExchangeBuyer.V2beta1.Model.AdTechnologyProviders.t): Output only. The detected ad technology providers. Defaults to `nil`.
-  - advertiserName (String.t): The name of the company being advertised in the creative. Defaults to `nil`.
-  - agencyId (String.t): The agency ID for this creative. Defaults to `nil`.
-  - apiUpdateTime (DateTime.t): Output only. The last update timestamp of the creative via API. Defaults to `nil`.
-  - attributes (list(String.t)): All attributes for the ads that may be shown from this creative.
-  Can be used to filter the response of the
-  creatives.list
-  method. Defaults to `nil`.
-  - clickThroughUrls (list(String.t)): The set of destination URLs for the creative. Defaults to `nil`.
-  - corrections (list(GoogleApi.AdExchangeBuyer.V2beta1.Model.Correction.t)): Output only. Shows any corrections that were applied to this creative. Defaults to `nil`.
-  - creativeId (String.t): The buyer-defined creative ID of this creative.
-  Can be used to filter the response of the
-  creatives.list
-  method. Defaults to `nil`.
-  - dealsStatus (String.t): Output only. The top-level deals status of this creative.
-  If disapproved, an entry for 'auctionType=DIRECT_DEALS' (or 'ALL') in
-  serving_restrictions will also exist. Note
-  that this may be nuanced with other contextual restrictions, in which case,
-  it may be preferable to read from serving_restrictions directly.
-  Can be used to filter the response of the
-  creatives.list
-  method. Defaults to `nil`.
-  - declaredClickThroughUrls (list(String.t)): The set of declared destination URLs for the creative. Defaults to `nil`.
-  - detectedAdvertiserIds (list(String.t)): Output only. Detected advertiser IDs, if any. Defaults to `nil`.
-  - detectedDomains (list(String.t)): Output only. The detected domains for this creative. Defaults to `nil`.
-  - detectedLanguages (list(String.t)): Output only. The detected languages for this creative. The order is
-  arbitrary. The codes are 2 or 5 characters and are documented at
-  https://developers.google.com/adwords/api/docs/appendix/languagecodes. Defaults to `nil`.
-  - detectedProductCategories (list(integer())): Output only. Detected product categories, if any.
-  See the ad-product-categories.txt file in the technical documentation
-  for a list of IDs. Defaults to `nil`.
-  - detectedSensitiveCategories (list(integer())): Output only. Detected sensitive categories, if any.
-  See the ad-sensitive-categories.txt file in the technical documentation for
-  a list of IDs. You should use these IDs along with the
-  excluded-sensitive-category field in the bid request to filter your bids. Defaults to `nil`.
-  - html (GoogleApi.AdExchangeBuyer.V2beta1.Model.HtmlContent.t): An HTML creative. Defaults to `nil`.
-  - impressionTrackingUrls (list(String.t)): The set of URLs to be called to record an impression. Defaults to `nil`.
-  - native (GoogleApi.AdExchangeBuyer.V2beta1.Model.NativeContent.t): A native creative. Defaults to `nil`.
-  - openAuctionStatus (String.t): Output only. The top-level open auction status of this creative.
-  If disapproved, an entry for 'auctionType = OPEN_AUCTION' (or 'ALL') in
-  serving_restrictions will also exist. Note
-  that this may be nuanced with other contextual restrictions, in which case,
-  it may be preferable to read from serving_restrictions directly.
-  Can be used to filter the response of the
-  creatives.list
-  method. Defaults to `nil`.
-  - restrictedCategories (list(String.t)): All restricted categories for the ads that may be shown from this creative. Defaults to `nil`.
-  - servingRestrictions (list(GoogleApi.AdExchangeBuyer.V2beta1.Model.ServingRestriction.t)): Output only. The granular status of this ad in specific contexts.
-  A context here relates to where something ultimately serves (for example,
-  a physical location, a platform, an HTTPS vs HTTP request, or the type
-  of auction). Defaults to `nil`.
-  - vendorIds (list(integer())): All vendor IDs for the ads that may be shown from this creative.
-  See https://storage.googleapis.com/adx-rtb-dictionaries/vendors.txt
-  for possible values. Defaults to `nil`.
-  - version (integer()): Output only. The version of this creative. Defaults to `nil`.
-  - video (GoogleApi.AdExchangeBuyer.V2beta1.Model.VideoContent.t): A video creative. Defaults to `nil`.
+  *   `accountId` (*type:* `String.t`, *default:* `nil`) - The account that this creative belongs to.
+      Can be used to filter the response of the
+      creatives.list
+      method.
+  *   `adChoicesDestinationUrl` (*type:* `String.t`, *default:* `nil`) - The link to AdChoices destination page.
+  *   `adTechnologyProviders` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.AdTechnologyProviders.t`, *default:* `nil`) - Output only. The detected ad technology providers.
+  *   `advertiserName` (*type:* `String.t`, *default:* `nil`) - The name of the company being advertised in the creative.
+  *   `agencyId` (*type:* `String.t`, *default:* `nil`) - The agency ID for this creative.
+  *   `apiUpdateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last update timestamp of the creative via API.
+  *   `attributes` (*type:* `list(String.t)`, *default:* `nil`) - All attributes for the ads that may be shown from this creative.
+      Can be used to filter the response of the
+      creatives.list
+      method.
+  *   `clickThroughUrls` (*type:* `list(String.t)`, *default:* `nil`) - The set of destination URLs for the creative.
+  *   `corrections` (*type:* `list(GoogleApi.AdExchangeBuyer.V2beta1.Model.Correction.t)`, *default:* `nil`) - Output only. Shows any corrections that were applied to this creative.
+  *   `creativeId` (*type:* `String.t`, *default:* `nil`) - The buyer-defined creative ID of this creative.
+      Can be used to filter the response of the
+      creatives.list
+      method.
+  *   `dealsStatus` (*type:* `String.t`, *default:* `nil`) - Output only. The top-level deals status of this creative.
+      If disapproved, an entry for 'auctionType=DIRECT_DEALS' (or 'ALL') in
+      serving_restrictions will also exist. Note
+      that this may be nuanced with other contextual restrictions, in which case,
+      it may be preferable to read from serving_restrictions directly.
+      Can be used to filter the response of the
+      creatives.list
+      method.
+  *   `declaredClickThroughUrls` (*type:* `list(String.t)`, *default:* `nil`) - The set of declared destination URLs for the creative.
+  *   `detectedAdvertiserIds` (*type:* `list(String.t)`, *default:* `nil`) - Output only. Detected advertiser IDs, if any.
+  *   `detectedDomains` (*type:* `list(String.t)`, *default:* `nil`) - Output only. The detected domains for this creative.
+  *   `detectedLanguages` (*type:* `list(String.t)`, *default:* `nil`) - Output only. The detected languages for this creative. The order is
+      arbitrary. The codes are 2 or 5 characters and are documented at
+      https://developers.google.com/adwords/api/docs/appendix/languagecodes.
+  *   `detectedProductCategories` (*type:* `list(integer())`, *default:* `nil`) - Output only. Detected product categories, if any.
+      See the ad-product-categories.txt file in the technical documentation
+      for a list of IDs.
+  *   `detectedSensitiveCategories` (*type:* `list(integer())`, *default:* `nil`) - Output only. Detected sensitive categories, if any.
+      See the ad-sensitive-categories.txt file in the technical documentation for
+      a list of IDs. You should use these IDs along with the
+      excluded-sensitive-category field in the bid request to filter your bids.
+  *   `html` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.HtmlContent.t`, *default:* `nil`) - An HTML creative.
+  *   `impressionTrackingUrls` (*type:* `list(String.t)`, *default:* `nil`) - The set of URLs to be called to record an impression.
+  *   `native` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.NativeContent.t`, *default:* `nil`) - A native creative.
+  *   `openAuctionStatus` (*type:* `String.t`, *default:* `nil`) - Output only. The top-level open auction status of this creative.
+      If disapproved, an entry for 'auctionType = OPEN_AUCTION' (or 'ALL') in
+      serving_restrictions will also exist. Note
+      that this may be nuanced with other contextual restrictions, in which case,
+      it may be preferable to read from serving_restrictions directly.
+      Can be used to filter the response of the
+      creatives.list
+      method.
+  *   `restrictedCategories` (*type:* `list(String.t)`, *default:* `nil`) - All restricted categories for the ads that may be shown from this creative.
+  *   `servingRestrictions` (*type:* `list(GoogleApi.AdExchangeBuyer.V2beta1.Model.ServingRestriction.t)`, *default:* `nil`) - Output only. The granular status of this ad in specific contexts.
+      A context here relates to where something ultimately serves (for example,
+      a physical location, a platform, an HTTPS vs HTTP request, or the type
+      of auction).
+  *   `vendorIds` (*type:* `list(integer())`, *default:* `nil`) - All vendor IDs for the ads that may be shown from this creative.
+      See https://storage.googleapis.com/adx-rtb-dictionaries/vendors.txt
+      for possible values.
+  *   `version` (*type:* `integer()`, *default:* `nil`) - Output only. The version of this creative.
+  *   `video` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.VideoContent.t`, *default:* `nil`) - A video creative.
   """
 
   use GoogleApi.Gax.ModelBase

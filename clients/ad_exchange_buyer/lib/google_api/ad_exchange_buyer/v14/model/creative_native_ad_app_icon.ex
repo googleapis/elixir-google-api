@@ -21,9 +21,9 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.CreativeNativeAdAppIcon do
 
   ## Attributes
 
-  - height (integer()):  Defaults to `nil`.
-  - url (String.t):  Defaults to `nil`.
-  - width (integer()):  Defaults to `nil`.
+  *   `height` (*type:* `integer()`, *default:* `nil`) - 
+  *   `url` (*type:* `String.t`, *default:* `nil`) - 
+  *   `width` (*type:* `integer()`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

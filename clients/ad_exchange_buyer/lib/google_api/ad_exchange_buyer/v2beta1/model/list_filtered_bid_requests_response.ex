@@ -22,13 +22,13 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ListFilteredBidRequestsRespons
 
   ## Attributes
 
-  - calloutStatusRows (list(GoogleApi.AdExchangeBuyer.V2beta1.Model.CalloutStatusRow.t)): List of rows, with counts of filtered bid requests aggregated by callout
-  status. Defaults to `nil`.
-  - nextPageToken (String.t): A token to retrieve the next page of results.
-  Pass this value in the
-  ListFilteredBidRequestsRequest.pageToken
-  field in the subsequent call to the filteredBidRequests.list
-  method to retrieve the next page of results. Defaults to `nil`.
+  *   `calloutStatusRows` (*type:* `list(GoogleApi.AdExchangeBuyer.V2beta1.Model.CalloutStatusRow.t)`, *default:* `nil`) - List of rows, with counts of filtered bid requests aggregated by callout
+      status.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results.
+      Pass this value in the
+      ListFilteredBidRequestsRequest.pageToken
+      field in the subsequent call to the filteredBidRequests.list
+      method to retrieve the next page of results.
   """
 
   use GoogleApi.Gax.ModelBase

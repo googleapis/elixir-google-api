@@ -21,7 +21,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.CreateOrdersResponse do
 
   ## Attributes
 
-  - proposals (list(GoogleApi.AdExchangeBuyer.V14.Model.Proposal.t)): The list of proposals successfully created. Defaults to `nil`.
+  *   `proposals` (*type:* `list(GoogleApi.AdExchangeBuyer.V14.Model.Proposal.t)`, *default:* `nil`) - The list of proposals successfully created.
   """
 
   use GoogleApi.Gax.ModelBase

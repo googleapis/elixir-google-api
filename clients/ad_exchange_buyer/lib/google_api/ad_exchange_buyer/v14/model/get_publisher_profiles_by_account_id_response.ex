@@ -21,7 +21,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.GetPublisherProfilesByAccountIdRes
 
   ## Attributes
 
-  - profiles (list(GoogleApi.AdExchangeBuyer.V14.Model.PublisherProfileApiProto.t)): Profiles for the requested publisher Defaults to `nil`.
+  *   `profiles` (*type:* `list(GoogleApi.AdExchangeBuyer.V14.Model.PublisherProfileApiProto.t)`, *default:* `nil`) - Profiles for the requested publisher
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,9 +21,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.TechnologyTargeting do
 
   ## Attributes
 
-  - deviceCapabilityTargeting (GoogleApi.AdExchangeBuyer.V2beta1.Model.CriteriaTargeting.t): IDs of device capabilities to be included/excluded. Defaults to `nil`.
-  - deviceCategoryTargeting (GoogleApi.AdExchangeBuyer.V2beta1.Model.CriteriaTargeting.t): IDs of device categories to be included/excluded. Defaults to `nil`.
-  - operatingSystemTargeting (GoogleApi.AdExchangeBuyer.V2beta1.Model.OperatingSystemTargeting.t): Operating system related targeting information. Defaults to `nil`.
+  *   `deviceCapabilityTargeting` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.CriteriaTargeting.t`, *default:* `nil`) - IDs of device capabilities to be included/excluded.
+  *   `deviceCategoryTargeting` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.CriteriaTargeting.t`, *default:* `nil`) - IDs of device categories to be included/excluded.
+  *   `operatingSystemTargeting` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.OperatingSystemTargeting.t`, *default:* `nil`) - Operating system related targeting information.
   """
 
   use GoogleApi.Gax.ModelBase

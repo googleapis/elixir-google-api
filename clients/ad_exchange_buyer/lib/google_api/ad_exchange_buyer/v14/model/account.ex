@@ -21,15 +21,15 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.Account do
 
   ## Attributes
 
-  - applyPretargetingToNonGuaranteedDeals (boolean()): When this is false, bid requests that include a deal ID for a private auction or preferred deal are always sent to your bidder. When true, all active pretargeting configs will be applied to private auctions and preferred deals. Programmatic Guaranteed deals (when enabled) are always sent to your bidder. Defaults to `nil`.
-  - bidderLocation (list(GoogleApi.AdExchangeBuyer.V14.Model.AccountBidderLocation.t)): Your bidder locations that have distinct URLs. Defaults to `nil`.
-  - cookieMatchingNid (String.t): The nid parameter value used in cookie match requests. Please contact your technical account manager if you need to change this. Defaults to `nil`.
-  - cookieMatchingUrl (String.t): The base URL used in cookie match requests. Defaults to `nil`.
-  - id (integer()): Account id. Defaults to `nil`.
-  - kind (String.t): Resource type. Defaults to `adexchangebuyer#account`.
-  - maximumActiveCreatives (integer()): The maximum number of active creatives that an account can have, where a creative is active if it was inserted or bid with in the last 30 days. Please contact your technical account manager if you need to change this. Defaults to `nil`.
-  - maximumTotalQps (integer()): The sum of all bidderLocation.maximumQps values cannot exceed this. Please contact your technical account manager if you need to change this. Defaults to `nil`.
-  - numberActiveCreatives (integer()): The number of creatives that this account inserted or bid with in the last 30 days. Defaults to `nil`.
+  *   `applyPretargetingToNonGuaranteedDeals` (*type:* `boolean()`, *default:* `nil`) - When this is false, bid requests that include a deal ID for a private auction or preferred deal are always sent to your bidder. When true, all active pretargeting configs will be applied to private auctions and preferred deals. Programmatic Guaranteed deals (when enabled) are always sent to your bidder.
+  *   `bidderLocation` (*type:* `list(GoogleApi.AdExchangeBuyer.V14.Model.AccountBidderLocation.t)`, *default:* `nil`) - Your bidder locations that have distinct URLs.
+  *   `cookieMatchingNid` (*type:* `String.t`, *default:* `nil`) - The nid parameter value used in cookie match requests. Please contact your technical account manager if you need to change this.
+  *   `cookieMatchingUrl` (*type:* `String.t`, *default:* `nil`) - The base URL used in cookie match requests.
+  *   `id` (*type:* `integer()`, *default:* `nil`) - Account id.
+  *   `kind` (*type:* `String.t`, *default:* `adexchangebuyer#account`) - Resource type.
+  *   `maximumActiveCreatives` (*type:* `integer()`, *default:* `nil`) - The maximum number of active creatives that an account can have, where a creative is active if it was inserted or bid with in the last 30 days. Please contact your technical account manager if you need to change this.
+  *   `maximumTotalQps` (*type:* `integer()`, *default:* `nil`) - The sum of all bidderLocation.maximumQps values cannot exceed this. Please contact your technical account manager if you need to change this.
+  *   `numberActiveCreatives` (*type:* `integer()`, *default:* `nil`) - The number of creatives that this account inserted or bid with in the last 30 days.
   """
 
   use GoogleApi.Gax.ModelBase

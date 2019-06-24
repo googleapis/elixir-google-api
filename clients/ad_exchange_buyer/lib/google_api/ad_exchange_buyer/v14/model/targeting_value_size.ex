@@ -21,8 +21,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueSize do
 
   ## Attributes
 
-  - height (integer()): The height of the creative. Defaults to `nil`.
-  - width (integer()): The width of the creative. Defaults to `nil`.
+  *   `height` (*type:* `integer()`, *default:* `nil`) - The height of the creative.
+  *   `width` (*type:* `integer()`, *default:* `nil`) - The width of the creative.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,8 +21,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.DealServingMetadata do
 
   ## Attributes
 
-  - alcoholAdsAllowed (boolean()): True if alcohol ads are allowed for this deal (read-only). This field is only populated when querying for finalized orders using the method GetFinalizedOrderDeals Defaults to `nil`.
-  - dealPauseStatus (GoogleApi.AdExchangeBuyer.V14.Model.DealServingMetadataDealPauseStatus.t): Tracks which parties (if any) have paused a deal. (readonly, except via PauseResumeOrderDeals action) Defaults to `nil`.
+  *   `alcoholAdsAllowed` (*type:* `boolean()`, *default:* `nil`) - True if alcohol ads are allowed for this deal (read-only). This field is only populated when querying for finalized orders using the method GetFinalizedOrderDeals
+  *   `dealPauseStatus` (*type:* `GoogleApi.AdExchangeBuyer.V14.Model.DealServingMetadataDealPauseStatus.t`, *default:* `nil`) - Tracks which parties (if any) have paused a deal. (readonly, except via PauseResumeOrderDeals action)
   """
 
   use GoogleApi.Gax.ModelBase

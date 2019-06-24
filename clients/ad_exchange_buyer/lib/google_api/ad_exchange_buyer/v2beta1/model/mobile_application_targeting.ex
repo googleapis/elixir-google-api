@@ -21,8 +21,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.MobileApplicationTargeting do
 
   ## Attributes
 
-  - firstPartyTargeting (GoogleApi.AdExchangeBuyer.V2beta1.Model.FirstPartyMobileApplicationTargeting.t): Publisher owned apps to be targeted or excluded by the publisher to
-  display the ads in. Defaults to `nil`.
+  *   `firstPartyTargeting` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.FirstPartyMobileApplicationTargeting.t`, *default:* `nil`) - Publisher owned apps to be targeted or excluded by the publisher to
+      display the ads in.
   """
 
   use GoogleApi.Gax.ModelBase

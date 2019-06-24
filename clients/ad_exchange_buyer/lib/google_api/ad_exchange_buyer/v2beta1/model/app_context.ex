@@ -21,7 +21,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.AppContext do
 
   ## Attributes
 
-  - appTypes (list(String.t)): The app types this restriction applies to. Defaults to `nil`.
+  *   `appTypes` (*type:* `list(String.t)`, *default:* `nil`) - The app types this restriction applies to.
   """
 
   use GoogleApi.Gax.ModelBase

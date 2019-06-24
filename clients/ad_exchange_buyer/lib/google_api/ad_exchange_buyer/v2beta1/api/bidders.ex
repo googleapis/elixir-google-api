@@ -28,44 +28,46 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
 
   ## Parameters
 
-  - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
-  - bidders_id (String.t): Part of `ownerName`. Name of the owner (bidder or account) of the filter set to be created.
-  For example:
+  *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
+  *   `bidders_id` (*type:* `String.t`) - Part of `ownerName`. Name of the owner (bidder or account) of the filter set to be created.
+      For example:
 
-  - For a bidder-level filter set for bidder 123: `bidders/123`
+      - For a bidder-level filter set for bidder 123: `bidders/123`
 
-  - For an account-level filter set for the buyer account representing bidder
-  123: `bidders/123/accounts/123`
+      - For an account-level filter set for the buyer account representing bidder
+        123: `bidders/123/accounts/123`
 
-  - For an account-level filter set for the child seat buyer account 456
-  whose bidder is 123: `bidders/123/accounts/456`
-  - accounts_id (String.t): Part of `ownerName`. See documentation of `biddersId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :isTransient (boolean()): Whether the filter set is transient, or should be persisted indefinitely.
-  By default, filter sets are not transient.
-  If transient, it will be available for at least 1 hour after creation.
-    - :body (GoogleApi.AdExchangeBuyer.V2beta1.Model.FilterSet.t): 
+      - For an account-level filter set for the child seat buyer account 456
+        whose bidder is 123: `bidders/123/accounts/456`
+  *   `accounts_id` (*type:* `String.t`) - Part of `ownerName`. See documentation of `biddersId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:isTransient` (*type:* `boolean()`) - Whether the filter set is transient, or should be persisted indefinitely.
+          By default, filter sets are not transient.
+          If transient, it will be available for at least 1 hour after creation.
+      *   `:body` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.FilterSet.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.FilterSet{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.FilterSet{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec adexchangebuyer2_bidders_accounts_filter_sets_create(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.FilterSet.t()} | {:error, Tesla.Env.t()}
@@ -112,43 +114,45 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
 
   ## Parameters
 
-  - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
-  - bidders_id (String.t): Part of `name`. Full name of the resource to delete.
-  For example:
+  *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
+  *   `bidders_id` (*type:* `String.t`) - Part of `name`. Full name of the resource to delete.
+      For example:
 
-  - For a bidder-level filter set for bidder 123:
-  `bidders/123/filterSets/abc`
+      - For a bidder-level filter set for bidder 123:
+        `bidders/123/filterSets/abc`
 
-  - For an account-level filter set for the buyer account representing bidder
-  123: `bidders/123/accounts/123/filterSets/abc`
+      - For an account-level filter set for the buyer account representing bidder
+        123: `bidders/123/accounts/123/filterSets/abc`
 
-  - For an account-level filter set for the child seat buyer account 456
-  whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
-  - accounts_id (String.t): Part of `name`. See documentation of `biddersId`.
-  - filter_sets_id (String.t): Part of `name`. See documentation of `biddersId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+      - For an account-level filter set for the child seat buyer account 456
+        whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
+  *   `accounts_id` (*type:* `String.t`) - Part of `name`. See documentation of `biddersId`.
+  *   `filter_sets_id` (*type:* `String.t`) - Part of `name`. See documentation of `biddersId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.Empty{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec adexchangebuyer2_bidders_accounts_filter_sets_delete(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.Empty.t()} | {:error, Tesla.Env.t()}
   def adexchangebuyer2_bidders_accounts_filter_sets_delete(
@@ -197,43 +201,45 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
 
   ## Parameters
 
-  - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
-  - bidders_id (String.t): Part of `name`. Full name of the resource being requested.
-  For example:
+  *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
+  *   `bidders_id` (*type:* `String.t`) - Part of `name`. Full name of the resource being requested.
+      For example:
 
-  - For a bidder-level filter set for bidder 123:
-  `bidders/123/filterSets/abc`
+      - For a bidder-level filter set for bidder 123:
+        `bidders/123/filterSets/abc`
 
-  - For an account-level filter set for the buyer account representing bidder
-  123: `bidders/123/accounts/123/filterSets/abc`
+      - For an account-level filter set for the buyer account representing bidder
+        123: `bidders/123/accounts/123/filterSets/abc`
 
-  - For an account-level filter set for the child seat buyer account 456
-  whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
-  - accounts_id (String.t): Part of `name`. See documentation of `biddersId`.
-  - filter_sets_id (String.t): Part of `name`. See documentation of `biddersId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+      - For an account-level filter set for the child seat buyer account 456
+        whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
+  *   `accounts_id` (*type:* `String.t`) - Part of `name`. See documentation of `biddersId`.
+  *   `filter_sets_id` (*type:* `String.t`) - Part of `name`. See documentation of `biddersId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.FilterSet{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.FilterSet{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec adexchangebuyer2_bidders_accounts_filter_sets_get(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.FilterSet.t()} | {:error, Tesla.Env.t()}
@@ -282,48 +288,50 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
 
   ## Parameters
 
-  - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
-  - bidders_id (String.t): Part of `ownerName`. Name of the owner (bidder or account) of the filter sets to be listed.
-  For example:
+  *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
+  *   `bidders_id` (*type:* `String.t`) - Part of `ownerName`. Name of the owner (bidder or account) of the filter sets to be listed.
+      For example:
 
-  - For a bidder-level filter set for bidder 123: `bidders/123`
+      - For a bidder-level filter set for bidder 123: `bidders/123`
 
-  - For an account-level filter set for the buyer account representing bidder
-  123: `bidders/123/accounts/123`
+      - For an account-level filter set for the buyer account representing bidder
+        123: `bidders/123/accounts/123`
 
-  - For an account-level filter set for the child seat buyer account 456
-  whose bidder is 123: `bidders/123/accounts/456`
-  - accounts_id (String.t): Part of `ownerName`. See documentation of `biddersId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :pageSize (integer()): Requested page size. The server may return fewer results than requested.
-  If unspecified, the server will pick an appropriate default.
-    - :pageToken (String.t): A token identifying a page of results the server should return.
-  Typically, this is the value of
-  ListFilterSetsResponse.nextPageToken
-  returned from the previous call to the
-  accounts.filterSets.list
-  method.
+      - For an account-level filter set for the child seat buyer account 456
+        whose bidder is 123: `bidders/123/accounts/456`
+  *   `accounts_id` (*type:* `String.t`) - Part of `ownerName`. See documentation of `biddersId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested.
+          If unspecified, the server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
+          Typically, this is the value of
+          ListFilterSetsResponse.nextPageToken
+          returned from the previous call to the
+          accounts.filterSets.list
+          method.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListFilterSetsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListFilterSetsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec adexchangebuyer2_bidders_accounts_filter_sets_list(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.ListFilterSetsResponse.t()}
@@ -372,50 +380,52 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
 
   ## Parameters
 
-  - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
-  - bidders_id (String.t): Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
-  For example:
+  *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
+  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
+      For example:
 
-  - For a bidder-level filter set for bidder 123:
-  `bidders/123/filterSets/abc`
+      - For a bidder-level filter set for bidder 123:
+        `bidders/123/filterSets/abc`
 
-  - For an account-level filter set for the buyer account representing bidder
-  123: `bidders/123/accounts/123/filterSets/abc`
+      - For an account-level filter set for the buyer account representing bidder
+        123: `bidders/123/accounts/123/filterSets/abc`
 
-  - For an account-level filter set for the child seat buyer account 456
-  whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
-  - accounts_id (String.t): Part of `filterSetName`. See documentation of `biddersId`.
-  - filter_sets_id (String.t): Part of `filterSetName`. See documentation of `biddersId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :pageSize (integer()): Requested page size. The server may return fewer results than requested.
-  If unspecified, the server will pick an appropriate default.
-    - :pageToken (String.t): A token identifying a page of results the server should return.
-  Typically, this is the value of
-  ListBidMetricsResponse.nextPageToken
-  returned from the previous call to the bidMetrics.list
-  method.
+      - For an account-level filter set for the child seat buyer account 456
+        whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
+  *   `accounts_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
+  *   `filter_sets_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested.
+          If unspecified, the server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
+          Typically, this is the value of
+          ListBidMetricsResponse.nextPageToken
+          returned from the previous call to the bidMetrics.list
+          method.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListBidMetricsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListBidMetricsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec adexchangebuyer2_bidders_accounts_filter_sets_bid_metrics_list(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.ListBidMetricsResponse.t()}
@@ -470,50 +480,52 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
 
   ## Parameters
 
-  - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
-  - bidders_id (String.t): Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
-  For example:
+  *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
+  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
+      For example:
 
-  - For a bidder-level filter set for bidder 123:
-  `bidders/123/filterSets/abc`
+      - For a bidder-level filter set for bidder 123:
+        `bidders/123/filterSets/abc`
 
-  - For an account-level filter set for the buyer account representing bidder
-  123: `bidders/123/accounts/123/filterSets/abc`
+      - For an account-level filter set for the buyer account representing bidder
+        123: `bidders/123/accounts/123/filterSets/abc`
 
-  - For an account-level filter set for the child seat buyer account 456
-  whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
-  - accounts_id (String.t): Part of `filterSetName`. See documentation of `biddersId`.
-  - filter_sets_id (String.t): Part of `filterSetName`. See documentation of `biddersId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :pageSize (integer()): Requested page size. The server may return fewer results than requested.
-  If unspecified, the server will pick an appropriate default.
-    - :pageToken (String.t): A token identifying a page of results the server should return.
-  Typically, this is the value of
-  ListBidResponseErrorsResponse.nextPageToken
-  returned from the previous call to the bidResponseErrors.list
-  method.
+      - For an account-level filter set for the child seat buyer account 456
+        whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
+  *   `accounts_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
+  *   `filter_sets_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested.
+          If unspecified, the server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
+          Typically, this is the value of
+          ListBidResponseErrorsResponse.nextPageToken
+          returned from the previous call to the bidResponseErrors.list
+          method.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListBidResponseErrorsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListBidResponseErrorsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec adexchangebuyer2_bidders_accounts_filter_sets_bid_response_errors_list(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.ListBidResponseErrorsResponse.t()}
@@ -568,50 +580,52 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
 
   ## Parameters
 
-  - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
-  - bidders_id (String.t): Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
-  For example:
+  *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
+  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
+      For example:
 
-  - For a bidder-level filter set for bidder 123:
-  `bidders/123/filterSets/abc`
+      - For a bidder-level filter set for bidder 123:
+        `bidders/123/filterSets/abc`
 
-  - For an account-level filter set for the buyer account representing bidder
-  123: `bidders/123/accounts/123/filterSets/abc`
+      - For an account-level filter set for the buyer account representing bidder
+        123: `bidders/123/accounts/123/filterSets/abc`
 
-  - For an account-level filter set for the child seat buyer account 456
-  whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
-  - accounts_id (String.t): Part of `filterSetName`. See documentation of `biddersId`.
-  - filter_sets_id (String.t): Part of `filterSetName`. See documentation of `biddersId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :pageSize (integer()): Requested page size. The server may return fewer results than requested.
-  If unspecified, the server will pick an appropriate default.
-    - :pageToken (String.t): A token identifying a page of results the server should return.
-  Typically, this is the value of
-  ListBidResponsesWithoutBidsResponse.nextPageToken
-  returned from the previous call to the bidResponsesWithoutBids.list
-  method.
+      - For an account-level filter set for the child seat buyer account 456
+        whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
+  *   `accounts_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
+  *   `filter_sets_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested.
+          If unspecified, the server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
+          Typically, this is the value of
+          ListBidResponsesWithoutBidsResponse.nextPageToken
+          returned from the previous call to the bidResponsesWithoutBids.list
+          method.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListBidResponsesWithoutBidsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListBidResponsesWithoutBidsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec adexchangebuyer2_bidders_accounts_filter_sets_bid_responses_without_bids_list(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.ListBidResponsesWithoutBidsResponse.t()}
@@ -667,50 +681,52 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
 
   ## Parameters
 
-  - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
-  - bidders_id (String.t): Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
-  For example:
+  *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
+  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
+      For example:
 
-  - For a bidder-level filter set for bidder 123:
-  `bidders/123/filterSets/abc`
+      - For a bidder-level filter set for bidder 123:
+        `bidders/123/filterSets/abc`
 
-  - For an account-level filter set for the buyer account representing bidder
-  123: `bidders/123/accounts/123/filterSets/abc`
+      - For an account-level filter set for the buyer account representing bidder
+        123: `bidders/123/accounts/123/filterSets/abc`
 
-  - For an account-level filter set for the child seat buyer account 456
-  whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
-  - accounts_id (String.t): Part of `filterSetName`. See documentation of `biddersId`.
-  - filter_sets_id (String.t): Part of `filterSetName`. See documentation of `biddersId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :pageSize (integer()): Requested page size. The server may return fewer results than requested.
-  If unspecified, the server will pick an appropriate default.
-    - :pageToken (String.t): A token identifying a page of results the server should return.
-  Typically, this is the value of
-  ListFilteredBidRequestsResponse.nextPageToken
-  returned from the previous call to the filteredBidRequests.list
-  method.
+      - For an account-level filter set for the child seat buyer account 456
+        whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
+  *   `accounts_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
+  *   `filter_sets_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested.
+          If unspecified, the server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
+          Typically, this is the value of
+          ListFilteredBidRequestsResponse.nextPageToken
+          returned from the previous call to the filteredBidRequests.list
+          method.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListFilteredBidRequestsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListFilteredBidRequestsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec adexchangebuyer2_bidders_accounts_filter_sets_filtered_bid_requests_list(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.ListFilteredBidRequestsResponse.t()}
@@ -765,50 +781,52 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
 
   ## Parameters
 
-  - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
-  - bidders_id (String.t): Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
-  For example:
+  *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
+  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
+      For example:
 
-  - For a bidder-level filter set for bidder 123:
-  `bidders/123/filterSets/abc`
+      - For a bidder-level filter set for bidder 123:
+        `bidders/123/filterSets/abc`
 
-  - For an account-level filter set for the buyer account representing bidder
-  123: `bidders/123/accounts/123/filterSets/abc`
+      - For an account-level filter set for the buyer account representing bidder
+        123: `bidders/123/accounts/123/filterSets/abc`
 
-  - For an account-level filter set for the child seat buyer account 456
-  whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
-  - accounts_id (String.t): Part of `filterSetName`. See documentation of `biddersId`.
-  - filter_sets_id (String.t): Part of `filterSetName`. See documentation of `biddersId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :pageSize (integer()): Requested page size. The server may return fewer results than requested.
-  If unspecified, the server will pick an appropriate default.
-    - :pageToken (String.t): A token identifying a page of results the server should return.
-  Typically, this is the value of
-  ListFilteredBidsResponse.nextPageToken
-  returned from the previous call to the filteredBids.list
-  method.
+      - For an account-level filter set for the child seat buyer account 456
+        whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
+  *   `accounts_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
+  *   `filter_sets_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested.
+          If unspecified, the server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
+          Typically, this is the value of
+          ListFilteredBidsResponse.nextPageToken
+          returned from the previous call to the filteredBids.list
+          method.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListFilteredBidsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListFilteredBidsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec adexchangebuyer2_bidders_accounts_filter_sets_filtered_bids_list(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.ListFilteredBidsResponse.t()}
@@ -863,48 +881,49 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
 
   ## Parameters
 
-  - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
-  - bidders_id (String.t): Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
-  For example:
+  *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
+  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
+      For example:
 
-  - For a bidder-level filter set for bidder 123:
-  `bidders/123/filterSets/abc`
+      - For a bidder-level filter set for bidder 123:
+        `bidders/123/filterSets/abc`
 
-  - For an account-level filter set for the buyer account representing bidder
-  123: `bidders/123/accounts/123/filterSets/abc`
+      - For an account-level filter set for the buyer account representing bidder
+        123: `bidders/123/accounts/123/filterSets/abc`
 
-  - For an account-level filter set for the child seat buyer account 456
-  whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
-  - accounts_id (String.t): Part of `filterSetName`. See documentation of `biddersId`.
-  - filter_sets_id (String.t): Part of `filterSetName`. See documentation of `biddersId`.
-  - creative_status_id (integer()): The ID of the creative status for which to retrieve a breakdown by
-  creative.
-  See
-  [creative-status-codes](https://developers.google.com/authorized-buyers/rtb/downloads/creative-status-codes).
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :pageSize (integer()): Requested page size. The server may return fewer results than requested.
-  If unspecified, the server will pick an appropriate default.
-    - :pageToken (String.t): A token identifying a page of results the server should return.
-  Typically, this is the value of
-  ListCreativeStatusBreakdownByCreativeResponse.nextPageToken
-  returned from the previous call to the filteredBids.creatives.list
-  method.
+      - For an account-level filter set for the child seat buyer account 456
+        whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
+  *   `accounts_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
+  *   `filter_sets_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
+  *   `creative_status_id` (*type:* `integer()`) - The ID of the creative status for which to retrieve a breakdown by
+      creative.
+      See
+      [creative-status-codes](https://developers.google.com/authorized-buyers/rtb/downloads/creative-status-codes).
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested.
+          If unspecified, the server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
+          Typically, this is the value of
+          ListCreativeStatusBreakdownByCreativeResponse.nextPageToken
+          returned from the previous call to the filteredBids.creatives.list
+          method.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListCreativeStatusBreakdownByCreativeResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListCreativeStatusBreakdownByCreativeResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec adexchangebuyer2_bidders_accounts_filter_sets_filtered_bids_creatives_list(
           Tesla.Env.client(),
@@ -912,6 +931,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
           String.t(),
           String.t(),
           integer(),
+          keyword(),
           keyword()
         ) ::
           {:ok,
@@ -973,48 +993,49 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
 
   ## Parameters
 
-  - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
-  - bidders_id (String.t): Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
-  For example:
+  *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
+  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
+      For example:
 
-  - For a bidder-level filter set for bidder 123:
-  `bidders/123/filterSets/abc`
+      - For a bidder-level filter set for bidder 123:
+        `bidders/123/filterSets/abc`
 
-  - For an account-level filter set for the buyer account representing bidder
-  123: `bidders/123/accounts/123/filterSets/abc`
+      - For an account-level filter set for the buyer account representing bidder
+        123: `bidders/123/accounts/123/filterSets/abc`
 
-  - For an account-level filter set for the child seat buyer account 456
-  whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
-  - accounts_id (String.t): Part of `filterSetName`. See documentation of `biddersId`.
-  - filter_sets_id (String.t): Part of `filterSetName`. See documentation of `biddersId`.
-  - creative_status_id (integer()): The ID of the creative status for which to retrieve a breakdown by detail.
-  See
-  [creative-status-codes](https://developers.google.com/authorized-buyers/rtb/downloads/creative-status-codes).
-  Details are only available for statuses 10, 14, 15, 17, 18, 19, 86, and 87.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :pageSize (integer()): Requested page size. The server may return fewer results than requested.
-  If unspecified, the server will pick an appropriate default.
-    - :pageToken (String.t): A token identifying a page of results the server should return.
-  Typically, this is the value of
-  ListCreativeStatusBreakdownByDetailResponse.nextPageToken
-  returned from the previous call to the filteredBids.details.list
-  method.
+      - For an account-level filter set for the child seat buyer account 456
+        whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
+  *   `accounts_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
+  *   `filter_sets_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
+  *   `creative_status_id` (*type:* `integer()`) - The ID of the creative status for which to retrieve a breakdown by detail.
+      See
+      [creative-status-codes](https://developers.google.com/authorized-buyers/rtb/downloads/creative-status-codes).
+      Details are only available for statuses 10, 14, 15, 17, 18, 19, 86, and 87.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested.
+          If unspecified, the server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
+          Typically, this is the value of
+          ListCreativeStatusBreakdownByDetailResponse.nextPageToken
+          returned from the previous call to the filteredBids.details.list
+          method.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListCreativeStatusBreakdownByDetailResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListCreativeStatusBreakdownByDetailResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec adexchangebuyer2_bidders_accounts_filter_sets_filtered_bids_details_list(
           Tesla.Env.client(),
@@ -1022,6 +1043,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
           String.t(),
           String.t(),
           integer(),
+          keyword(),
           keyword()
         ) ::
           {:ok,
@@ -1082,50 +1104,52 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
 
   ## Parameters
 
-  - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
-  - bidders_id (String.t): Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
-  For example:
+  *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
+  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
+      For example:
 
-  - For a bidder-level filter set for bidder 123:
-  `bidders/123/filterSets/abc`
+      - For a bidder-level filter set for bidder 123:
+        `bidders/123/filterSets/abc`
 
-  - For an account-level filter set for the buyer account representing bidder
-  123: `bidders/123/accounts/123/filterSets/abc`
+      - For an account-level filter set for the buyer account representing bidder
+        123: `bidders/123/accounts/123/filterSets/abc`
 
-  - For an account-level filter set for the child seat buyer account 456
-  whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
-  - accounts_id (String.t): Part of `filterSetName`. See documentation of `biddersId`.
-  - filter_sets_id (String.t): Part of `filterSetName`. See documentation of `biddersId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :pageSize (integer()): Requested page size. The server may return fewer results than requested.
-  If unspecified, the server will pick an appropriate default.
-    - :pageToken (String.t): A token identifying a page of results the server should return.
-  Typically, this is the value of
-  ListImpressionMetricsResponse.nextPageToken
-  returned from the previous call to the impressionMetrics.list
-  method.
+      - For an account-level filter set for the child seat buyer account 456
+        whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
+  *   `accounts_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
+  *   `filter_sets_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested.
+          If unspecified, the server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
+          Typically, this is the value of
+          ListImpressionMetricsResponse.nextPageToken
+          returned from the previous call to the impressionMetrics.list
+          method.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListImpressionMetricsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListImpressionMetricsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec adexchangebuyer2_bidders_accounts_filter_sets_impression_metrics_list(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.ListImpressionMetricsResponse.t()}
@@ -1180,50 +1204,52 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
 
   ## Parameters
 
-  - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
-  - bidders_id (String.t): Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
-  For example:
+  *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
+  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
+      For example:
 
-  - For a bidder-level filter set for bidder 123:
-  `bidders/123/filterSets/abc`
+      - For a bidder-level filter set for bidder 123:
+        `bidders/123/filterSets/abc`
 
-  - For an account-level filter set for the buyer account representing bidder
-  123: `bidders/123/accounts/123/filterSets/abc`
+      - For an account-level filter set for the buyer account representing bidder
+        123: `bidders/123/accounts/123/filterSets/abc`
 
-  - For an account-level filter set for the child seat buyer account 456
-  whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
-  - accounts_id (String.t): Part of `filterSetName`. See documentation of `biddersId`.
-  - filter_sets_id (String.t): Part of `filterSetName`. See documentation of `biddersId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :pageSize (integer()): Requested page size. The server may return fewer results than requested.
-  If unspecified, the server will pick an appropriate default.
-    - :pageToken (String.t): A token identifying a page of results the server should return.
-  Typically, this is the value of
-  ListLosingBidsResponse.nextPageToken
-  returned from the previous call to the losingBids.list
-  method.
+      - For an account-level filter set for the child seat buyer account 456
+        whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
+  *   `accounts_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
+  *   `filter_sets_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested.
+          If unspecified, the server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
+          Typically, this is the value of
+          ListLosingBidsResponse.nextPageToken
+          returned from the previous call to the losingBids.list
+          method.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListLosingBidsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListLosingBidsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec adexchangebuyer2_bidders_accounts_filter_sets_losing_bids_list(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.ListLosingBidsResponse.t()}
@@ -1278,50 +1304,52 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
 
   ## Parameters
 
-  - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
-  - bidders_id (String.t): Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
-  For example:
+  *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
+  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
+      For example:
 
-  - For a bidder-level filter set for bidder 123:
-  `bidders/123/filterSets/abc`
+      - For a bidder-level filter set for bidder 123:
+        `bidders/123/filterSets/abc`
 
-  - For an account-level filter set for the buyer account representing bidder
-  123: `bidders/123/accounts/123/filterSets/abc`
+      - For an account-level filter set for the buyer account representing bidder
+        123: `bidders/123/accounts/123/filterSets/abc`
 
-  - For an account-level filter set for the child seat buyer account 456
-  whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
-  - accounts_id (String.t): Part of `filterSetName`. See documentation of `biddersId`.
-  - filter_sets_id (String.t): Part of `filterSetName`. See documentation of `biddersId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :pageSize (integer()): Requested page size. The server may return fewer results than requested.
-  If unspecified, the server will pick an appropriate default.
-    - :pageToken (String.t): A token identifying a page of results the server should return.
-  Typically, this is the value of
-  ListNonBillableWinningBidsResponse.nextPageToken
-  returned from the previous call to the nonBillableWinningBids.list
-  method.
+      - For an account-level filter set for the child seat buyer account 456
+        whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
+  *   `accounts_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
+  *   `filter_sets_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested.
+          If unspecified, the server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
+          Typically, this is the value of
+          ListNonBillableWinningBidsResponse.nextPageToken
+          returned from the previous call to the nonBillableWinningBids.list
+          method.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListNonBillableWinningBidsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListNonBillableWinningBidsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec adexchangebuyer2_bidders_accounts_filter_sets_non_billable_winning_bids_list(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.ListNonBillableWinningBidsResponse.t()}
@@ -1376,40 +1404,46 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
 
   ## Parameters
 
-  - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
-  - bidders_id (String.t): Part of `ownerName`. Name of the owner (bidder or account) of the filter set to be created.
-  For example:
+  *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
+  *   `bidders_id` (*type:* `String.t`) - Part of `ownerName`. Name of the owner (bidder or account) of the filter set to be created.
+      For example:
 
-  - For a bidder-level filter set for bidder 123: `bidders/123`
+      - For a bidder-level filter set for bidder 123: `bidders/123`
 
-  - For an account-level filter set for the buyer account representing bidder
-  123: `bidders/123/accounts/123`
+      - For an account-level filter set for the buyer account representing bidder
+        123: `bidders/123/accounts/123`
 
-  - For an account-level filter set for the child seat buyer account 456
-  whose bidder is 123: `bidders/123/accounts/456`
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :isTransient (boolean()): Whether the filter set is transient, or should be persisted indefinitely.
-  By default, filter sets are not transient.
-  If transient, it will be available for at least 1 hour after creation.
-    - :body (GoogleApi.AdExchangeBuyer.V2beta1.Model.FilterSet.t): 
+      - For an account-level filter set for the child seat buyer account 456
+        whose bidder is 123: `bidders/123/accounts/456`
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:isTransient` (*type:* `boolean()`) - Whether the filter set is transient, or should be persisted indefinitely.
+          By default, filter sets are not transient.
+          If transient, it will be available for at least 1 hour after creation.
+      *   `:body` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.FilterSet.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.FilterSet{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.FilterSet{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec adexchangebuyer2_bidders_filter_sets_create(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec adexchangebuyer2_bidders_filter_sets_create(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.FilterSet.t()} | {:error, Tesla.Env.t()}
   def adexchangebuyer2_bidders_filter_sets_create(
         connection,
@@ -1452,41 +1486,43 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
 
   ## Parameters
 
-  - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
-  - bidders_id (String.t): Part of `name`. Full name of the resource to delete.
-  For example:
+  *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
+  *   `bidders_id` (*type:* `String.t`) - Part of `name`. Full name of the resource to delete.
+      For example:
 
-  - For a bidder-level filter set for bidder 123:
-  `bidders/123/filterSets/abc`
+      - For a bidder-level filter set for bidder 123:
+        `bidders/123/filterSets/abc`
 
-  - For an account-level filter set for the buyer account representing bidder
-  123: `bidders/123/accounts/123/filterSets/abc`
+      - For an account-level filter set for the buyer account representing bidder
+        123: `bidders/123/accounts/123/filterSets/abc`
 
-  - For an account-level filter set for the child seat buyer account 456
-  whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
-  - filter_sets_id (String.t): Part of `name`. See documentation of `biddersId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+      - For an account-level filter set for the child seat buyer account 456
+        whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
+  *   `filter_sets_id` (*type:* `String.t`) - Part of `name`. See documentation of `biddersId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.Empty{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec adexchangebuyer2_bidders_filter_sets_delete(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.Empty.t()} | {:error, Tesla.Env.t()}
   def adexchangebuyer2_bidders_filter_sets_delete(
@@ -1530,41 +1566,43 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
 
   ## Parameters
 
-  - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
-  - bidders_id (String.t): Part of `name`. Full name of the resource being requested.
-  For example:
+  *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
+  *   `bidders_id` (*type:* `String.t`) - Part of `name`. Full name of the resource being requested.
+      For example:
 
-  - For a bidder-level filter set for bidder 123:
-  `bidders/123/filterSets/abc`
+      - For a bidder-level filter set for bidder 123:
+        `bidders/123/filterSets/abc`
 
-  - For an account-level filter set for the buyer account representing bidder
-  123: `bidders/123/accounts/123/filterSets/abc`
+      - For an account-level filter set for the buyer account representing bidder
+        123: `bidders/123/accounts/123/filterSets/abc`
 
-  - For an account-level filter set for the child seat buyer account 456
-  whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
-  - filter_sets_id (String.t): Part of `name`. See documentation of `biddersId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+      - For an account-level filter set for the child seat buyer account 456
+        whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
+  *   `filter_sets_id` (*type:* `String.t`) - Part of `name`. See documentation of `biddersId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.FilterSet{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.FilterSet{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec adexchangebuyer2_bidders_filter_sets_get(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.FilterSet.t()} | {:error, Tesla.Env.t()}
@@ -1608,44 +1646,50 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
 
   ## Parameters
 
-  - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
-  - bidders_id (String.t): Part of `ownerName`. Name of the owner (bidder or account) of the filter sets to be listed.
-  For example:
+  *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
+  *   `bidders_id` (*type:* `String.t`) - Part of `ownerName`. Name of the owner (bidder or account) of the filter sets to be listed.
+      For example:
 
-  - For a bidder-level filter set for bidder 123: `bidders/123`
+      - For a bidder-level filter set for bidder 123: `bidders/123`
 
-  - For an account-level filter set for the buyer account representing bidder
-  123: `bidders/123/accounts/123`
+      - For an account-level filter set for the buyer account representing bidder
+        123: `bidders/123/accounts/123`
 
-  - For an account-level filter set for the child seat buyer account 456
-  whose bidder is 123: `bidders/123/accounts/456`
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :pageSize (integer()): Requested page size. The server may return fewer results than requested.
-  If unspecified, the server will pick an appropriate default.
-    - :pageToken (String.t): A token identifying a page of results the server should return.
-  Typically, this is the value of
-  ListFilterSetsResponse.nextPageToken
-  returned from the previous call to the
-  accounts.filterSets.list
-  method.
+      - For an account-level filter set for the child seat buyer account 456
+        whose bidder is 123: `bidders/123/accounts/456`
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested.
+          If unspecified, the server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
+          Typically, this is the value of
+          ListFilterSetsResponse.nextPageToken
+          returned from the previous call to the
+          accounts.filterSets.list
+          method.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListFilterSetsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListFilterSetsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec adexchangebuyer2_bidders_filter_sets_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec adexchangebuyer2_bidders_filter_sets_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.ListFilterSetsResponse.t()}
           | {:error, Tesla.Env.t()}
   def adexchangebuyer2_bidders_filter_sets_list(
@@ -1690,48 +1734,50 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
 
   ## Parameters
 
-  - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
-  - bidders_id (String.t): Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
-  For example:
+  *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
+  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
+      For example:
 
-  - For a bidder-level filter set for bidder 123:
-  `bidders/123/filterSets/abc`
+      - For a bidder-level filter set for bidder 123:
+        `bidders/123/filterSets/abc`
 
-  - For an account-level filter set for the buyer account representing bidder
-  123: `bidders/123/accounts/123/filterSets/abc`
+      - For an account-level filter set for the buyer account representing bidder
+        123: `bidders/123/accounts/123/filterSets/abc`
 
-  - For an account-level filter set for the child seat buyer account 456
-  whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
-  - filter_sets_id (String.t): Part of `filterSetName`. See documentation of `biddersId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :pageSize (integer()): Requested page size. The server may return fewer results than requested.
-  If unspecified, the server will pick an appropriate default.
-    - :pageToken (String.t): A token identifying a page of results the server should return.
-  Typically, this is the value of
-  ListBidMetricsResponse.nextPageToken
-  returned from the previous call to the bidMetrics.list
-  method.
+      - For an account-level filter set for the child seat buyer account 456
+        whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
+  *   `filter_sets_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested.
+          If unspecified, the server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
+          Typically, this is the value of
+          ListBidMetricsResponse.nextPageToken
+          returned from the previous call to the bidMetrics.list
+          method.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListBidMetricsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListBidMetricsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec adexchangebuyer2_bidders_filter_sets_bid_metrics_list(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.ListBidMetricsResponse.t()}
@@ -1781,48 +1827,50 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
 
   ## Parameters
 
-  - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
-  - bidders_id (String.t): Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
-  For example:
+  *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
+  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
+      For example:
 
-  - For a bidder-level filter set for bidder 123:
-  `bidders/123/filterSets/abc`
+      - For a bidder-level filter set for bidder 123:
+        `bidders/123/filterSets/abc`
 
-  - For an account-level filter set for the buyer account representing bidder
-  123: `bidders/123/accounts/123/filterSets/abc`
+      - For an account-level filter set for the buyer account representing bidder
+        123: `bidders/123/accounts/123/filterSets/abc`
 
-  - For an account-level filter set for the child seat buyer account 456
-  whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
-  - filter_sets_id (String.t): Part of `filterSetName`. See documentation of `biddersId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :pageSize (integer()): Requested page size. The server may return fewer results than requested.
-  If unspecified, the server will pick an appropriate default.
-    - :pageToken (String.t): A token identifying a page of results the server should return.
-  Typically, this is the value of
-  ListBidResponseErrorsResponse.nextPageToken
-  returned from the previous call to the bidResponseErrors.list
-  method.
+      - For an account-level filter set for the child seat buyer account 456
+        whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
+  *   `filter_sets_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested.
+          If unspecified, the server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
+          Typically, this is the value of
+          ListBidResponseErrorsResponse.nextPageToken
+          returned from the previous call to the bidResponseErrors.list
+          method.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListBidResponseErrorsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListBidResponseErrorsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec adexchangebuyer2_bidders_filter_sets_bid_response_errors_list(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.ListBidResponseErrorsResponse.t()}
@@ -1875,48 +1923,50 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
 
   ## Parameters
 
-  - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
-  - bidders_id (String.t): Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
-  For example:
+  *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
+  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
+      For example:
 
-  - For a bidder-level filter set for bidder 123:
-  `bidders/123/filterSets/abc`
+      - For a bidder-level filter set for bidder 123:
+        `bidders/123/filterSets/abc`
 
-  - For an account-level filter set for the buyer account representing bidder
-  123: `bidders/123/accounts/123/filterSets/abc`
+      - For an account-level filter set for the buyer account representing bidder
+        123: `bidders/123/accounts/123/filterSets/abc`
 
-  - For an account-level filter set for the child seat buyer account 456
-  whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
-  - filter_sets_id (String.t): Part of `filterSetName`. See documentation of `biddersId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :pageSize (integer()): Requested page size. The server may return fewer results than requested.
-  If unspecified, the server will pick an appropriate default.
-    - :pageToken (String.t): A token identifying a page of results the server should return.
-  Typically, this is the value of
-  ListBidResponsesWithoutBidsResponse.nextPageToken
-  returned from the previous call to the bidResponsesWithoutBids.list
-  method.
+      - For an account-level filter set for the child seat buyer account 456
+        whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
+  *   `filter_sets_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested.
+          If unspecified, the server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
+          Typically, this is the value of
+          ListBidResponsesWithoutBidsResponse.nextPageToken
+          returned from the previous call to the bidResponsesWithoutBids.list
+          method.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListBidResponsesWithoutBidsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListBidResponsesWithoutBidsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec adexchangebuyer2_bidders_filter_sets_bid_responses_without_bids_list(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.ListBidResponsesWithoutBidsResponse.t()}
@@ -1970,48 +2020,50 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
 
   ## Parameters
 
-  - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
-  - bidders_id (String.t): Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
-  For example:
+  *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
+  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
+      For example:
 
-  - For a bidder-level filter set for bidder 123:
-  `bidders/123/filterSets/abc`
+      - For a bidder-level filter set for bidder 123:
+        `bidders/123/filterSets/abc`
 
-  - For an account-level filter set for the buyer account representing bidder
-  123: `bidders/123/accounts/123/filterSets/abc`
+      - For an account-level filter set for the buyer account representing bidder
+        123: `bidders/123/accounts/123/filterSets/abc`
 
-  - For an account-level filter set for the child seat buyer account 456
-  whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
-  - filter_sets_id (String.t): Part of `filterSetName`. See documentation of `biddersId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :pageSize (integer()): Requested page size. The server may return fewer results than requested.
-  If unspecified, the server will pick an appropriate default.
-    - :pageToken (String.t): A token identifying a page of results the server should return.
-  Typically, this is the value of
-  ListFilteredBidRequestsResponse.nextPageToken
-  returned from the previous call to the filteredBidRequests.list
-  method.
+      - For an account-level filter set for the child seat buyer account 456
+        whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
+  *   `filter_sets_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested.
+          If unspecified, the server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
+          Typically, this is the value of
+          ListFilteredBidRequestsResponse.nextPageToken
+          returned from the previous call to the filteredBidRequests.list
+          method.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListFilteredBidRequestsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListFilteredBidRequestsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec adexchangebuyer2_bidders_filter_sets_filtered_bid_requests_list(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.ListFilteredBidRequestsResponse.t()}
@@ -2064,48 +2116,50 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
 
   ## Parameters
 
-  - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
-  - bidders_id (String.t): Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
-  For example:
+  *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
+  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
+      For example:
 
-  - For a bidder-level filter set for bidder 123:
-  `bidders/123/filterSets/abc`
+      - For a bidder-level filter set for bidder 123:
+        `bidders/123/filterSets/abc`
 
-  - For an account-level filter set for the buyer account representing bidder
-  123: `bidders/123/accounts/123/filterSets/abc`
+      - For an account-level filter set for the buyer account representing bidder
+        123: `bidders/123/accounts/123/filterSets/abc`
 
-  - For an account-level filter set for the child seat buyer account 456
-  whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
-  - filter_sets_id (String.t): Part of `filterSetName`. See documentation of `biddersId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :pageSize (integer()): Requested page size. The server may return fewer results than requested.
-  If unspecified, the server will pick an appropriate default.
-    - :pageToken (String.t): A token identifying a page of results the server should return.
-  Typically, this is the value of
-  ListFilteredBidsResponse.nextPageToken
-  returned from the previous call to the filteredBids.list
-  method.
+      - For an account-level filter set for the child seat buyer account 456
+        whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
+  *   `filter_sets_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested.
+          If unspecified, the server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
+          Typically, this is the value of
+          ListFilteredBidsResponse.nextPageToken
+          returned from the previous call to the filteredBids.list
+          method.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListFilteredBidsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListFilteredBidsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec adexchangebuyer2_bidders_filter_sets_filtered_bids_list(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.ListFilteredBidsResponse.t()}
@@ -2155,53 +2209,55 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
 
   ## Parameters
 
-  - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
-  - bidders_id (String.t): Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
-  For example:
+  *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
+  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
+      For example:
 
-  - For a bidder-level filter set for bidder 123:
-  `bidders/123/filterSets/abc`
+      - For a bidder-level filter set for bidder 123:
+        `bidders/123/filterSets/abc`
 
-  - For an account-level filter set for the buyer account representing bidder
-  123: `bidders/123/accounts/123/filterSets/abc`
+      - For an account-level filter set for the buyer account representing bidder
+        123: `bidders/123/accounts/123/filterSets/abc`
 
-  - For an account-level filter set for the child seat buyer account 456
-  whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
-  - filter_sets_id (String.t): Part of `filterSetName`. See documentation of `biddersId`.
-  - creative_status_id (integer()): The ID of the creative status for which to retrieve a breakdown by
-  creative.
-  See
-  [creative-status-codes](https://developers.google.com/authorized-buyers/rtb/downloads/creative-status-codes).
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :pageSize (integer()): Requested page size. The server may return fewer results than requested.
-  If unspecified, the server will pick an appropriate default.
-    - :pageToken (String.t): A token identifying a page of results the server should return.
-  Typically, this is the value of
-  ListCreativeStatusBreakdownByCreativeResponse.nextPageToken
-  returned from the previous call to the filteredBids.creatives.list
-  method.
+      - For an account-level filter set for the child seat buyer account 456
+        whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
+  *   `filter_sets_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
+  *   `creative_status_id` (*type:* `integer()`) - The ID of the creative status for which to retrieve a breakdown by
+      creative.
+      See
+      [creative-status-codes](https://developers.google.com/authorized-buyers/rtb/downloads/creative-status-codes).
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested.
+          If unspecified, the server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
+          Typically, this is the value of
+          ListCreativeStatusBreakdownByCreativeResponse.nextPageToken
+          returned from the previous call to the filteredBids.creatives.list
+          method.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListCreativeStatusBreakdownByCreativeResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListCreativeStatusBreakdownByCreativeResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec adexchangebuyer2_bidders_filter_sets_filtered_bids_creatives_list(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           integer(),
+          keyword(),
           keyword()
         ) ::
           {:ok,
@@ -2261,53 +2317,55 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
 
   ## Parameters
 
-  - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
-  - bidders_id (String.t): Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
-  For example:
+  *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
+  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
+      For example:
 
-  - For a bidder-level filter set for bidder 123:
-  `bidders/123/filterSets/abc`
+      - For a bidder-level filter set for bidder 123:
+        `bidders/123/filterSets/abc`
 
-  - For an account-level filter set for the buyer account representing bidder
-  123: `bidders/123/accounts/123/filterSets/abc`
+      - For an account-level filter set for the buyer account representing bidder
+        123: `bidders/123/accounts/123/filterSets/abc`
 
-  - For an account-level filter set for the child seat buyer account 456
-  whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
-  - filter_sets_id (String.t): Part of `filterSetName`. See documentation of `biddersId`.
-  - creative_status_id (integer()): The ID of the creative status for which to retrieve a breakdown by detail.
-  See
-  [creative-status-codes](https://developers.google.com/authorized-buyers/rtb/downloads/creative-status-codes).
-  Details are only available for statuses 10, 14, 15, 17, 18, 19, 86, and 87.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :pageSize (integer()): Requested page size. The server may return fewer results than requested.
-  If unspecified, the server will pick an appropriate default.
-    - :pageToken (String.t): A token identifying a page of results the server should return.
-  Typically, this is the value of
-  ListCreativeStatusBreakdownByDetailResponse.nextPageToken
-  returned from the previous call to the filteredBids.details.list
-  method.
+      - For an account-level filter set for the child seat buyer account 456
+        whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
+  *   `filter_sets_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
+  *   `creative_status_id` (*type:* `integer()`) - The ID of the creative status for which to retrieve a breakdown by detail.
+      See
+      [creative-status-codes](https://developers.google.com/authorized-buyers/rtb/downloads/creative-status-codes).
+      Details are only available for statuses 10, 14, 15, 17, 18, 19, 86, and 87.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested.
+          If unspecified, the server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
+          Typically, this is the value of
+          ListCreativeStatusBreakdownByDetailResponse.nextPageToken
+          returned from the previous call to the filteredBids.details.list
+          method.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListCreativeStatusBreakdownByDetailResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListCreativeStatusBreakdownByDetailResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec adexchangebuyer2_bidders_filter_sets_filtered_bids_details_list(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           integer(),
+          keyword(),
           keyword()
         ) ::
           {:ok,
@@ -2366,48 +2424,50 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
 
   ## Parameters
 
-  - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
-  - bidders_id (String.t): Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
-  For example:
+  *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
+  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
+      For example:
 
-  - For a bidder-level filter set for bidder 123:
-  `bidders/123/filterSets/abc`
+      - For a bidder-level filter set for bidder 123:
+        `bidders/123/filterSets/abc`
 
-  - For an account-level filter set for the buyer account representing bidder
-  123: `bidders/123/accounts/123/filterSets/abc`
+      - For an account-level filter set for the buyer account representing bidder
+        123: `bidders/123/accounts/123/filterSets/abc`
 
-  - For an account-level filter set for the child seat buyer account 456
-  whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
-  - filter_sets_id (String.t): Part of `filterSetName`. See documentation of `biddersId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :pageSize (integer()): Requested page size. The server may return fewer results than requested.
-  If unspecified, the server will pick an appropriate default.
-    - :pageToken (String.t): A token identifying a page of results the server should return.
-  Typically, this is the value of
-  ListImpressionMetricsResponse.nextPageToken
-  returned from the previous call to the impressionMetrics.list
-  method.
+      - For an account-level filter set for the child seat buyer account 456
+        whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
+  *   `filter_sets_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested.
+          If unspecified, the server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
+          Typically, this is the value of
+          ListImpressionMetricsResponse.nextPageToken
+          returned from the previous call to the impressionMetrics.list
+          method.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListImpressionMetricsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListImpressionMetricsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec adexchangebuyer2_bidders_filter_sets_impression_metrics_list(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.ListImpressionMetricsResponse.t()}
@@ -2460,48 +2520,50 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
 
   ## Parameters
 
-  - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
-  - bidders_id (String.t): Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
-  For example:
+  *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
+  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
+      For example:
 
-  - For a bidder-level filter set for bidder 123:
-  `bidders/123/filterSets/abc`
+      - For a bidder-level filter set for bidder 123:
+        `bidders/123/filterSets/abc`
 
-  - For an account-level filter set for the buyer account representing bidder
-  123: `bidders/123/accounts/123/filterSets/abc`
+      - For an account-level filter set for the buyer account representing bidder
+        123: `bidders/123/accounts/123/filterSets/abc`
 
-  - For an account-level filter set for the child seat buyer account 456
-  whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
-  - filter_sets_id (String.t): Part of `filterSetName`. See documentation of `biddersId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :pageSize (integer()): Requested page size. The server may return fewer results than requested.
-  If unspecified, the server will pick an appropriate default.
-    - :pageToken (String.t): A token identifying a page of results the server should return.
-  Typically, this is the value of
-  ListLosingBidsResponse.nextPageToken
-  returned from the previous call to the losingBids.list
-  method.
+      - For an account-level filter set for the child seat buyer account 456
+        whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
+  *   `filter_sets_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested.
+          If unspecified, the server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
+          Typically, this is the value of
+          ListLosingBidsResponse.nextPageToken
+          returned from the previous call to the losingBids.list
+          method.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListLosingBidsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListLosingBidsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec adexchangebuyer2_bidders_filter_sets_losing_bids_list(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.ListLosingBidsResponse.t()}
@@ -2551,48 +2613,50 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
 
   ## Parameters
 
-  - connection (GoogleApi.AdExchangeBuyer.V2beta1.Connection): Connection to server
-  - bidders_id (String.t): Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
-  For example:
+  *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
+  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
+      For example:
 
-  - For a bidder-level filter set for bidder 123:
-  `bidders/123/filterSets/abc`
+      - For a bidder-level filter set for bidder 123:
+        `bidders/123/filterSets/abc`
 
-  - For an account-level filter set for the buyer account representing bidder
-  123: `bidders/123/accounts/123/filterSets/abc`
+      - For an account-level filter set for the buyer account representing bidder
+        123: `bidders/123/accounts/123/filterSets/abc`
 
-  - For an account-level filter set for the child seat buyer account 456
-  whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
-  - filter_sets_id (String.t): Part of `filterSetName`. See documentation of `biddersId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :pageSize (integer()): Requested page size. The server may return fewer results than requested.
-  If unspecified, the server will pick an appropriate default.
-    - :pageToken (String.t): A token identifying a page of results the server should return.
-  Typically, this is the value of
-  ListNonBillableWinningBidsResponse.nextPageToken
-  returned from the previous call to the nonBillableWinningBids.list
-  method.
+      - For an account-level filter set for the child seat buyer account 456
+        whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
+  *   `filter_sets_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested.
+          If unspecified, the server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
+          Typically, this is the value of
+          ListNonBillableWinningBidsResponse.nextPageToken
+          returned from the previous call to the nonBillableWinningBids.list
+          method.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListNonBillableWinningBidsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdExchangeBuyer.V2beta1.Model.ListNonBillableWinningBidsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec adexchangebuyer2_bidders_filter_sets_non_billable_winning_bids_list(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.ListNonBillableWinningBidsResponse.t()}

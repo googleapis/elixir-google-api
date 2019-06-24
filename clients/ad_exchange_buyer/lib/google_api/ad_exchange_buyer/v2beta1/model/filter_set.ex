@@ -26,52 +26,52 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.FilterSet do
 
   ## Attributes
 
-  - absoluteDateRange (GoogleApi.AdExchangeBuyer.V2beta1.Model.AbsoluteDateRange.t): An absolute date range, defined by a start date and an end date.
-  Interpreted relative to Pacific time zone. Defaults to `nil`.
-  - breakdownDimensions (list(String.t)): The set of dimensions along which to break down the response; may be empty.
-  If multiple dimensions are requested, the breakdown is along the Cartesian
-  product of the requested dimensions. Defaults to `nil`.
-  - creativeId (String.t): The ID of the creative on which to filter; optional. This field may be set
-  only for a filter set that accesses account-level troubleshooting data,
-  i.e., one whose name matches the `bidders/*/accounts/*/filterSets/*`
-  pattern. Defaults to `nil`.
-  - dealId (String.t): The ID of the deal on which to filter; optional. This field may be set
-  only for a filter set that accesses account-level troubleshooting data,
-  i.e., one whose name matches the `bidders/*/accounts/*/filterSets/*`
-  pattern. Defaults to `nil`.
-  - environment (String.t): The environment on which to filter; optional. Defaults to `nil`.
-  - formats (list(String.t)): The list of formats on which to filter; may be empty. The filters
-  represented by multiple formats are ORed together (i.e., if non-empty,
-  results must match any one of the formats). Defaults to `nil`.
-  - name (String.t): A user-defined name of the filter set. Filter set names must be unique
-  globally and match one of the patterns:
+  *   `absoluteDateRange` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.AbsoluteDateRange.t`, *default:* `nil`) - An absolute date range, defined by a start date and an end date.
+      Interpreted relative to Pacific time zone.
+  *   `breakdownDimensions` (*type:* `list(String.t)`, *default:* `nil`) - The set of dimensions along which to break down the response; may be empty.
+      If multiple dimensions are requested, the breakdown is along the Cartesian
+      product of the requested dimensions.
+  *   `creativeId` (*type:* `String.t`, *default:* `nil`) - The ID of the creative on which to filter; optional. This field may be set
+      only for a filter set that accesses account-level troubleshooting data,
+      i.e., one whose name matches the `bidders/*/accounts/*/filterSets/*`
+      pattern.
+  *   `dealId` (*type:* `String.t`, *default:* `nil`) - The ID of the deal on which to filter; optional. This field may be set
+      only for a filter set that accesses account-level troubleshooting data,
+      i.e., one whose name matches the `bidders/*/accounts/*/filterSets/*`
+      pattern.
+  *   `environment` (*type:* `String.t`, *default:* `nil`) - The environment on which to filter; optional.
+  *   `formats` (*type:* `list(String.t)`, *default:* `nil`) - The list of formats on which to filter; may be empty. The filters
+      represented by multiple formats are ORed together (i.e., if non-empty,
+      results must match any one of the formats).
+  *   `name` (*type:* `String.t`, *default:* `nil`) - A user-defined name of the filter set. Filter set names must be unique
+      globally and match one of the patterns:
 
-  - `bidders/*/filterSets/*` (for accessing bidder-level troubleshooting
-  data)
-  - `bidders/*/accounts/*/filterSets/*` (for accessing account-level
-  troubleshooting data)
+      - `bidders/*/filterSets/*` (for accessing bidder-level troubleshooting
+      data)
+      - `bidders/*/accounts/*/filterSets/*` (for accessing account-level
+      troubleshooting data)
 
-  This field is required in create operations. Defaults to `nil`.
-  - platforms (list(String.t)): The list of platforms on which to filter; may be empty. The filters
-  represented by multiple platforms are ORed together (i.e., if non-empty,
-  results must match any one of the platforms). Defaults to `nil`.
-  - publisherIdentifiers (list(String.t)): For Open Bidding partners only.
-  The list of publisher identifiers on which to filter; may be empty.
-  The filters represented by multiple publisher identifiers are ORed
-  together. Defaults to `nil`.
-  - realtimeTimeRange (GoogleApi.AdExchangeBuyer.V2beta1.Model.RealtimeTimeRange.t): An open-ended realtime time range, defined by the aggregation start
-  timestamp. Defaults to `nil`.
-  - relativeDateRange (GoogleApi.AdExchangeBuyer.V2beta1.Model.RelativeDateRange.t): A relative date range, defined by an offset from today and a duration.
-  Interpreted relative to Pacific time zone. Defaults to `nil`.
-  - sellerNetworkIds (list(integer())): For Authorized Buyers only.
-  The list of IDs of the seller (publisher) networks on which to filter;
-  may be empty. The filters represented by multiple seller network IDs are
-  ORed together (i.e., if non-empty, results must match any one of the
-  publisher networks). See
-  [seller-network-ids](https://developers.google.com/authorized-buyers/rtb/downloads/seller-network-ids)
-  file for the set of existing seller network IDs. Defaults to `nil`.
-  - timeSeriesGranularity (String.t): The granularity of time intervals if a time series breakdown is desired;
-  optional. Defaults to `nil`.
+      This field is required in create operations.
+  *   `platforms` (*type:* `list(String.t)`, *default:* `nil`) - The list of platforms on which to filter; may be empty. The filters
+      represented by multiple platforms are ORed together (i.e., if non-empty,
+      results must match any one of the platforms).
+  *   `publisherIdentifiers` (*type:* `list(String.t)`, *default:* `nil`) - For Open Bidding partners only.
+      The list of publisher identifiers on which to filter; may be empty.
+      The filters represented by multiple publisher identifiers are ORed
+      together.
+  *   `realtimeTimeRange` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.RealtimeTimeRange.t`, *default:* `nil`) - An open-ended realtime time range, defined by the aggregation start
+      timestamp.
+  *   `relativeDateRange` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.RelativeDateRange.t`, *default:* `nil`) - A relative date range, defined by an offset from today and a duration.
+      Interpreted relative to Pacific time zone.
+  *   `sellerNetworkIds` (*type:* `list(integer())`, *default:* `nil`) - For Authorized Buyers only.
+      The list of IDs of the seller (publisher) networks on which to filter;
+      may be empty. The filters represented by multiple seller network IDs are
+      ORed together (i.e., if non-empty, results must match any one of the
+      publisher networks). See
+      [seller-network-ids](https://developers.google.com/authorized-buyers/rtb/downloads/seller-network-ids)
+      file for the set of existing seller network IDs.
+  *   `timeSeriesGranularity` (*type:* `String.t`, *default:* `nil`) - The granularity of time intervals if a time series breakdown is desired;
+      optional.
   """
 
   use GoogleApi.Gax.ModelBase

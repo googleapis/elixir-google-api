@@ -25,12 +25,12 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.AbsoluteDateRange do
 
   ## Attributes
 
-  - endDate (GoogleApi.AdExchangeBuyer.V2beta1.Model.Date.t): The end date of the range (inclusive).
-  Must be within the 30 days leading up to current date, and must be equal to
-  or after start_date. Defaults to `nil`.
-  - startDate (GoogleApi.AdExchangeBuyer.V2beta1.Model.Date.t): The start date of the range (inclusive).
-  Must be within the 30 days leading up to current date, and must be equal to
-  or before end_date. Defaults to `nil`.
+  *   `endDate` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.Date.t`, *default:* `nil`) - The end date of the range (inclusive).
+      Must be within the 30 days leading up to current date, and must be equal to
+      or after start_date.
+  *   `startDate` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.Date.t`, *default:* `nil`) - The start date of the range (inclusive).
+      Must be within the 30 days leading up to current date, and must be equal to
+      or before end_date.
   """
 
   use GoogleApi.Gax.ModelBase

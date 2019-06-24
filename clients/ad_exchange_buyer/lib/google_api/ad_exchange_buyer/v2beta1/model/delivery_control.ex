@@ -21,9 +21,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.DeliveryControl do
 
   ## Attributes
 
-  - creativeBlockingLevel (String.t): Output only. Specified the creative blocking levels to be applied. Defaults to `nil`.
-  - deliveryRateType (String.t): Output only. Specifies how the impression delivery will be paced. Defaults to `nil`.
-  - frequencyCaps (list(GoogleApi.AdExchangeBuyer.V2beta1.Model.FrequencyCap.t)): Output only. Specifies any frequency caps. Defaults to `nil`.
+  *   `creativeBlockingLevel` (*type:* `String.t`, *default:* `nil`) - Output only. Specified the creative blocking levels to be applied.
+  *   `deliveryRateType` (*type:* `String.t`, *default:* `nil`) - Output only. Specifies how the impression delivery will be paced.
+  *   `frequencyCaps` (*type:* `list(GoogleApi.AdExchangeBuyer.V2beta1.Model.FrequencyCap.t)`, *default:* `nil`) - Output only. Specifies any frequency caps.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,12 +21,12 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.TargetingValue do
 
   ## Attributes
 
-  - creativeSizeValue (GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueCreativeSize.t): The creative size value to exclude/include. Defaults to `nil`.
-  - dayPartTargetingValue (GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueDayPartTargeting.t): The daypart targeting to include / exclude. Filled in when the key is GOOG_DAYPART_TARGETING. Defaults to `nil`.
-  - demogAgeCriteriaValue (GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueDemogAgeCriteria.t):  Defaults to `nil`.
-  - demogGenderCriteriaValue (GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueDemogGenderCriteria.t):  Defaults to `nil`.
-  - longValue (String.t): The long value to exclude/include. Defaults to `nil`.
-  - stringValue (String.t): The string value to exclude/include. Defaults to `nil`.
+  *   `creativeSizeValue` (*type:* `GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueCreativeSize.t`, *default:* `nil`) - The creative size value to exclude/include.
+  *   `dayPartTargetingValue` (*type:* `GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueDayPartTargeting.t`, *default:* `nil`) - The daypart targeting to include / exclude. Filled in when the key is GOOG_DAYPART_TARGETING.
+  *   `demogAgeCriteriaValue` (*type:* `GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueDemogAgeCriteria.t`, *default:* `nil`) - 
+  *   `demogGenderCriteriaValue` (*type:* `GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueDemogGenderCriteria.t`, *default:* `nil`) - 
+  *   `longValue` (*type:* `String.t`, *default:* `nil`) - The long value to exclude/include.
+  *   `stringValue` (*type:* `String.t`, *default:* `nil`) - The string value to exclude/include.
   """
 
   use GoogleApi.Gax.ModelBase

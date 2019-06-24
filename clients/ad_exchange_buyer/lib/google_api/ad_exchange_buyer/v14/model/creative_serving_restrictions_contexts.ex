@@ -21,10 +21,10 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.CreativeServingRestrictionsContext
 
   ## Attributes
 
-  - auctionType (list(String.t)): Only set when contextType=AUCTION_TYPE. Represents the auction types this restriction applies to. Defaults to `nil`.
-  - contextType (String.t): The type of context (e.g., location, platform, auction type, SSL-ness). Defaults to `nil`.
-  - geoCriteriaId (list(integer())): Only set when contextType=LOCATION. Represents the geo criterias this restriction applies to. Impressions are considered to match a context if either the user location or publisher location matches a given geoCriteriaId. Defaults to `nil`.
-  - platform (list(String.t)): Only set when contextType=PLATFORM. Represents the platforms this restriction applies to. Defaults to `nil`.
+  *   `auctionType` (*type:* `list(String.t)`, *default:* `nil`) - Only set when contextType=AUCTION_TYPE. Represents the auction types this restriction applies to.
+  *   `contextType` (*type:* `String.t`, *default:* `nil`) - The type of context (e.g., location, platform, auction type, SSL-ness).
+  *   `geoCriteriaId` (*type:* `list(integer())`, *default:* `nil`) - Only set when contextType=LOCATION. Represents the geo criterias this restriction applies to. Impressions are considered to match a context if either the user location or publisher location matches a given geoCriteriaId.
+  *   `platform` (*type:* `list(String.t)`, *default:* `nil`) - Only set when contextType=PLATFORM. Represents the platforms this restriction applies to.
   """
 
   use GoogleApi.Gax.ModelBase

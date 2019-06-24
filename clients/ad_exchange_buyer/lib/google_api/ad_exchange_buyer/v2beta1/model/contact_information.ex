@@ -21,8 +21,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ContactInformation do
 
   ## Attributes
 
-  - email (String.t): Email address for the contact. Defaults to `nil`.
-  - name (String.t): The name of the contact. Defaults to `nil`.
+  *   `email` (*type:* `String.t`, *default:* `nil`) - Email address for the contact.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the contact.
   """
 
   use GoogleApi.Gax.ModelBase

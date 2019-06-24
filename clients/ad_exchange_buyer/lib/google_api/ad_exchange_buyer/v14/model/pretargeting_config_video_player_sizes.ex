@@ -21,9 +21,9 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfigVideoPlayerSizes
 
   ## Attributes
 
-  - aspectRatio (String.t): The type of aspect ratio. Leave this field blank to match all aspect ratios. Defaults to `nil`.
-  - minHeight (String.t): The minimum player height in pixels. Leave this field blank to match any player height. Defaults to `nil`.
-  - minWidth (String.t): The minimum player width in pixels. Leave this field blank to match any player width. Defaults to `nil`.
+  *   `aspectRatio` (*type:* `String.t`, *default:* `nil`) - The type of aspect ratio. Leave this field blank to match all aspect ratios.
+  *   `minHeight` (*type:* `String.t`, *default:* `nil`) - The minimum player height in pixels. Leave this field blank to match any player height.
+  *   `minWidth` (*type:* `String.t`, *default:* `nil`) - The minimum player width in pixels. Leave this field blank to match any player width.
   """
 
   use GoogleApi.Gax.ModelBase

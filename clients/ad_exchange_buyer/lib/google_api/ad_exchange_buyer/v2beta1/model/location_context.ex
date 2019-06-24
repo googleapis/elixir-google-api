@@ -21,10 +21,10 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.LocationContext do
 
   ## Attributes
 
-  - geoCriteriaIds (list(integer())): IDs representing the geo location for this context.
-  Please refer to the
-  [geo-table.csv](https://storage.googleapis.com/adx-rtb-dictionaries/geo-table.csv)
-  file for different geo criteria IDs. Defaults to `nil`.
+  *   `geoCriteriaIds` (*type:* `list(integer())`, *default:* `nil`) - IDs representing the geo location for this context.
+      Please refer to the
+      [geo-table.csv](https://storage.googleapis.com/adx-rtb-dictionaries/geo-table.csv)
+      file for different geo criteria IDs.
   """
 
   use GoogleApi.Gax.ModelBase

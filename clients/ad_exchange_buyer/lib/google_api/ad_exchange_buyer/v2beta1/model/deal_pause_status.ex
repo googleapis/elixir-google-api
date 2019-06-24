@@ -23,11 +23,11 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.DealPauseStatus do
 
   ## Attributes
 
-  - buyerPauseReason (String.t): The buyer's reason for pausing, if the buyer paused the deal. Defaults to `nil`.
-  - firstPausedBy (String.t): The role of the person who first paused this deal. Defaults to `nil`.
-  - hasBuyerPaused (boolean()): True, if the buyer has paused the deal unilaterally. Defaults to `nil`.
-  - hasSellerPaused (boolean()): True, if the seller has paused the deal unilaterally. Defaults to `nil`.
-  - sellerPauseReason (String.t): The seller's reason for pausing, if the seller paused the deal. Defaults to `nil`.
+  *   `buyerPauseReason` (*type:* `String.t`, *default:* `nil`) - The buyer's reason for pausing, if the buyer paused the deal.
+  *   `firstPausedBy` (*type:* `String.t`, *default:* `nil`) - The role of the person who first paused this deal.
+  *   `hasBuyerPaused` (*type:* `boolean()`, *default:* `nil`) - True, if the buyer has paused the deal unilaterally.
+  *   `hasSellerPaused` (*type:* `boolean()`, *default:* `nil`) - True, if the seller has paused the deal unilaterally.
+  *   `sellerPauseReason` (*type:* `String.t`, *default:* `nil`) - The seller's reason for pausing, if the seller paused the deal.
   """
 
   use GoogleApi.Gax.ModelBase

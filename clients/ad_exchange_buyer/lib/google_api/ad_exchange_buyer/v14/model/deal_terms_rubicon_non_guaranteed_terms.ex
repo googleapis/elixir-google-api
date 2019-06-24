@@ -21,8 +21,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.DealTermsRubiconNonGuaranteedTerms
 
   ## Attributes
 
-  - priorityPrice (GoogleApi.AdExchangeBuyer.V14.Model.Price.t): Optional price for Rubicon priority access in the auction. Defaults to `nil`.
-  - standardPrice (GoogleApi.AdExchangeBuyer.V14.Model.Price.t): Optional price for Rubicon standard access in the auction. Defaults to `nil`.
+  *   `priorityPrice` (*type:* `GoogleApi.AdExchangeBuyer.V14.Model.Price.t`, *default:* `nil`) - Optional price for Rubicon priority access in the auction.
+  *   `standardPrice` (*type:* `GoogleApi.AdExchangeBuyer.V14.Model.Price.t`, *default:* `nil`) - Optional price for Rubicon standard access in the auction.
   """
 
   use GoogleApi.Gax.ModelBase

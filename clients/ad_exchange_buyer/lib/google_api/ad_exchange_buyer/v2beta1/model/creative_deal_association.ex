@@ -21,9 +21,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.CreativeDealAssociation do
 
   ## Attributes
 
-  - accountId (String.t): The account the creative belongs to. Defaults to `nil`.
-  - creativeId (String.t): The ID of the creative associated with the deal. Defaults to `nil`.
-  - dealsId (String.t): The externalDealId for the deal associated with the creative. Defaults to `nil`.
+  *   `accountId` (*type:* `String.t`, *default:* `nil`) - The account the creative belongs to.
+  *   `creativeId` (*type:* `String.t`, *default:* `nil`) - The ID of the creative associated with the deal.
+  *   `dealsId` (*type:* `String.t`, *default:* `nil`) - The externalDealId for the deal associated with the creative.
   """
 
   use GoogleApi.Gax.ModelBase

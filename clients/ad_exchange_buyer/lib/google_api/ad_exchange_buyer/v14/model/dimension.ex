@@ -21,8 +21,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.Dimension do
 
   ## Attributes
 
-  - dimensionType (String.t):  Defaults to `nil`.
-  - dimensionValues (list(GoogleApi.AdExchangeBuyer.V14.Model.DimensionDimensionValue.t)):  Defaults to `nil`.
+  *   `dimensionType` (*type:* `String.t`, *default:* `nil`) - 
+  *   `dimensionValues` (*type:* `list(GoogleApi.AdExchangeBuyer.V14.Model.DimensionDimensionValue.t)`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

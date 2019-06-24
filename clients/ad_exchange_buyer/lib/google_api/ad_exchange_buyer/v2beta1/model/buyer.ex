@@ -22,7 +22,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.Buyer do
 
   ## Attributes
 
-  - accountId (String.t): Authorized Buyers account ID of the buyer. Defaults to `nil`.
+  *   `accountId` (*type:* `String.t`, *default:* `nil`) - Authorized Buyers account ID of the buyer.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -23,15 +23,15 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.TargetingCriteria do
 
   ## Attributes
 
-  - exclusions (list(GoogleApi.AdExchangeBuyer.V2beta1.Model.TargetingValue.t)): The list of values to exclude from targeting. Each value is AND'd
-  together. Defaults to `nil`.
-  - inclusions (list(GoogleApi.AdExchangeBuyer.V2beta1.Model.TargetingValue.t)): The list of value to include as part of the targeting. Each value is OR'd
-  together. Defaults to `nil`.
-  - key (String.t): The key representing the shared targeting criterion.
-  Targeting criteria defined by Google ad servers will begin with GOOG_.
-  Third parties may define their own keys.
-  A list of permissible keys along with the acceptable values will be
-  provided as part of the external documentation. Defaults to `nil`.
+  *   `exclusions` (*type:* `list(GoogleApi.AdExchangeBuyer.V2beta1.Model.TargetingValue.t)`, *default:* `nil`) - The list of values to exclude from targeting. Each value is AND'd
+      together.
+  *   `inclusions` (*type:* `list(GoogleApi.AdExchangeBuyer.V2beta1.Model.TargetingValue.t)`, *default:* `nil`) - The list of value to include as part of the targeting. Each value is OR'd
+      together.
+  *   `key` (*type:* `String.t`, *default:* `nil`) - The key representing the shared targeting criterion.
+      Targeting criteria defined by Google ad servers will begin with GOOG_.
+      Third parties may define their own keys.
+      A list of permissible keys along with the acceptable values will be
+      provided as part of the external documentation.
   """
 
   use GoogleApi.Gax.ModelBase

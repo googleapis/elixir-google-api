@@ -21,9 +21,9 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.DeleteOrderDealsRequest do
 
   ## Attributes
 
-  - dealIds (list(String.t)): List of deals to delete for a given proposal Defaults to `nil`.
-  - proposalRevisionNumber (String.t): The last known proposal revision number. Defaults to `nil`.
-  - updateAction (String.t): Indicates an optional action to take on the proposal Defaults to `nil`.
+  *   `dealIds` (*type:* `list(String.t)`, *default:* `nil`) - List of deals to delete for a given proposal
+  *   `proposalRevisionNumber` (*type:* `String.t`, *default:* `nil`) - The last known proposal revision number.
+  *   `updateAction` (*type:* `String.t`, *default:* `nil`) - Indicates an optional action to take on the proposal
   """
 
   use GoogleApi.Gax.ModelBase

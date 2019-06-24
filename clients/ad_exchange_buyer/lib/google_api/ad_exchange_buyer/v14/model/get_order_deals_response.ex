@@ -21,7 +21,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.GetOrderDealsResponse do
 
   ## Attributes
 
-  - deals (list(GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceDeal.t)): List of deals for the proposal Defaults to `nil`.
+  *   `deals` (*type:* `list(GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceDeal.t)`, *default:* `nil`) - List of deals for the proposal
   """
 
   use GoogleApi.Gax.ModelBase

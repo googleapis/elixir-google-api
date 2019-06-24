@@ -21,9 +21,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.HtmlContent do
 
   ## Attributes
 
-  - height (integer()): The height of the HTML snippet in pixels. Defaults to `nil`.
-  - snippet (String.t): The HTML snippet that displays the ad when inserted in the web page. Defaults to `nil`.
-  - width (integer()): The width of the HTML snippet in pixels. Defaults to `nil`.
+  *   `height` (*type:* `integer()`, *default:* `nil`) - The height of the HTML snippet in pixels.
+  *   `snippet` (*type:* `String.t`, *default:* `nil`) - The HTML snippet that displays the ad when inserted in the web page.
+  *   `width` (*type:* `integer()`, *default:* `nil`) - The width of the HTML snippet in pixels.
   """
 
   use GoogleApi.Gax.ModelBase

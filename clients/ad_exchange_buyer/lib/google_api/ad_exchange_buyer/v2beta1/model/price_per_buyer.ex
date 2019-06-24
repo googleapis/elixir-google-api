@@ -26,12 +26,12 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.PricePerBuyer do
 
   ## Attributes
 
-  - advertiserIds (list(String.t)): The list of advertisers for this price when associated with this buyer.
-  If empty, all advertisers with this buyer pay this price. Defaults to `nil`.
-  - buyer (GoogleApi.AdExchangeBuyer.V2beta1.Model.Buyer.t): The buyer who will pay this price. If unset, all buyers can pay this price
-  (if the
-  advertisers match, and there's no more specific rule matching the buyer). Defaults to `nil`.
-  - price (GoogleApi.AdExchangeBuyer.V2beta1.Model.Price.t): The specified price. Defaults to `nil`.
+  *   `advertiserIds` (*type:* `list(String.t)`, *default:* `nil`) - The list of advertisers for this price when associated with this buyer.
+      If empty, all advertisers with this buyer pay this price.
+  *   `buyer` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.Buyer.t`, *default:* `nil`) - The buyer who will pay this price. If unset, all buyers can pay this price
+      (if the
+      advertisers match, and there's no more specific rule matching the buyer).
+  *   `price` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.Price.t`, *default:* `nil`) - The specified price.
   """
 
   use GoogleApi.Gax.ModelBase

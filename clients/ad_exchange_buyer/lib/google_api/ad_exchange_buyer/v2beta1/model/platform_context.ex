@@ -21,7 +21,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.PlatformContext do
 
   ## Attributes
 
-  - platforms (list(String.t)): The platforms this restriction applies to. Defaults to `nil`.
+  *   `platforms` (*type:* `list(String.t)`, *default:* `nil`) - The platforms this restriction applies to.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,14 +21,14 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.TargetingValue do
 
   ## Attributes
 
-  - creativeSizeValue (GoogleApi.AdExchangeBuyer.V2beta1.Model.CreativeSize.t): The creative size value to include/exclude.
-  Filled in when key = GOOG_CREATIVE_SIZE Defaults to `nil`.
-  - dayPartTargetingValue (GoogleApi.AdExchangeBuyer.V2beta1.Model.DayPartTargeting.t): The daypart targeting to include / exclude.
-  Filled in when the key is GOOG_DAYPART_TARGETING.
-  The definition of this targeting is derived from the structure
-  used by Ad Manager. Defaults to `nil`.
-  - longValue (String.t): The long value to include/exclude. Defaults to `nil`.
-  - stringValue (String.t): The string value to include/exclude. Defaults to `nil`.
+  *   `creativeSizeValue` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.CreativeSize.t`, *default:* `nil`) - The creative size value to include/exclude.
+      Filled in when key = GOOG_CREATIVE_SIZE
+  *   `dayPartTargetingValue` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.DayPartTargeting.t`, *default:* `nil`) - The daypart targeting to include / exclude.
+      Filled in when the key is GOOG_DAYPART_TARGETING.
+      The definition of this targeting is derived from the structure
+      used by Ad Manager.
+  *   `longValue` (*type:* `String.t`, *default:* `nil`) - The long value to include/exclude.
+  *   `stringValue` (*type:* `String.t`, *default:* `nil`) - The string value to include/exclude.
   """
 
   use GoogleApi.Gax.ModelBase

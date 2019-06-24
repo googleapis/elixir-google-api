@@ -21,9 +21,9 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.CreativeDealIdsDealStatuses do
 
   ## Attributes
 
-  - arcStatus (String.t): ARC approval status. Defaults to `nil`.
-  - dealId (String.t): External deal ID. Defaults to `nil`.
-  - webPropertyId (integer()): Publisher ID. Defaults to `nil`.
+  *   `arcStatus` (*type:* `String.t`, *default:* `nil`) - ARC approval status.
+  *   `dealId` (*type:* `String.t`, *default:* `nil`) - External deal ID.
+  *   `webPropertyId` (*type:* `integer()`, *default:* `nil`) - Publisher ID.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,12 +21,12 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ListBidMetricsResponse do
 
   ## Attributes
 
-  - bidMetricsRows (list(GoogleApi.AdExchangeBuyer.V2beta1.Model.BidMetricsRow.t)): List of rows, each containing a set of bid metrics. Defaults to `nil`.
-  - nextPageToken (String.t): A token to retrieve the next page of results.
-  Pass this value in the
-  ListBidMetricsRequest.pageToken
-  field in the subsequent call to the bidMetrics.list
-  method to retrieve the next page of results. Defaults to `nil`.
+  *   `bidMetricsRows` (*type:* `list(GoogleApi.AdExchangeBuyer.V2beta1.Model.BidMetricsRow.t)`, *default:* `nil`) - List of rows, each containing a set of bid metrics.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results.
+      Pass this value in the
+      ListBidMetricsRequest.pageToken
+      field in the subsequent call to the bidMetrics.list
+      method to retrieve the next page of results.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -25,8 +25,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.UrlTargeting do
 
   ## Attributes
 
-  - excludedUrls (list(String.t)): A list of URLs to be excluded. Defaults to `nil`.
-  - targetedUrls (list(String.t)): A list of URLs to be included. Defaults to `nil`.
+  *   `excludedUrls` (*type:* `list(String.t)`, *default:* `nil`) - A list of URLs to be excluded.
+  *   `targetedUrls` (*type:* `list(String.t)`, *default:* `nil`) - A list of URLs to be included.
   """
 
   use GoogleApi.Gax.ModelBase

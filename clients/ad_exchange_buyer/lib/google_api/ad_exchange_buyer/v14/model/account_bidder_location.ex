@@ -21,22 +21,22 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.AccountBidderLocation do
 
   ## Attributes
 
-  - bidProtocol (String.t): The protocol that the bidder endpoint is using. OpenRTB protocols with prefix PROTOCOL_OPENRTB_PROTOBUF use proto buffer, otherwise use JSON.  Allowed values:  
-  - PROTOCOL_ADX 
-  - PROTOCOL_OPENRTB_2_2 
-  - PROTOCOL_OPENRTB_2_3 
-  - PROTOCOL_OPENRTB_2_4 
-  - PROTOCOL_OPENRTB_2_5 
-  - PROTOCOL_OPENRTB_PROTOBUF_2_3 
-  - PROTOCOL_OPENRTB_PROTOBUF_2_4 
-  - PROTOCOL_OPENRTB_PROTOBUF_2_5 Defaults to `nil`.
-  - maximumQps (integer()): The maximum queries per second the Ad Exchange will send. Defaults to `nil`.
-  - region (String.t): The geographical region the Ad Exchange should send requests from. Only used by some quota systems, but always setting the value is recommended. Allowed values:  
-  - ASIA 
-  - EUROPE 
-  - US_EAST 
-  - US_WEST Defaults to `nil`.
-  - url (String.t): The URL to which the Ad Exchange will send bid requests. Defaults to `nil`.
+  *   `bidProtocol` (*type:* `String.t`, *default:* `nil`) - The protocol that the bidder endpoint is using. OpenRTB protocols with prefix PROTOCOL_OPENRTB_PROTOBUF use proto buffer, otherwise use JSON.  Allowed values:  
+      - PROTOCOL_ADX 
+      - PROTOCOL_OPENRTB_2_2 
+      - PROTOCOL_OPENRTB_2_3 
+      - PROTOCOL_OPENRTB_2_4 
+      - PROTOCOL_OPENRTB_2_5 
+      - PROTOCOL_OPENRTB_PROTOBUF_2_3 
+      - PROTOCOL_OPENRTB_PROTOBUF_2_4 
+      - PROTOCOL_OPENRTB_PROTOBUF_2_5
+  *   `maximumQps` (*type:* `integer()`, *default:* `nil`) - The maximum queries per second the Ad Exchange will send.
+  *   `region` (*type:* `String.t`, *default:* `nil`) - The geographical region the Ad Exchange should send requests from. Only used by some quota systems, but always setting the value is recommended. Allowed values:  
+      - ASIA 
+      - EUROPE 
+      - US_EAST 
+      - US_WEST
+  *   `url` (*type:* `String.t`, *default:* `nil`) - The URL to which the Ad Exchange will send bid requests.
   """
 
   use GoogleApi.Gax.ModelBase

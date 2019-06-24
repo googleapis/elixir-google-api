@@ -21,8 +21,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.CreativeDealIds do
 
   ## Attributes
 
-  - dealStatuses (list(GoogleApi.AdExchangeBuyer.V14.Model.CreativeDealIdsDealStatuses.t)): A list of external deal ids and ARC approval status. Defaults to `nil`.
-  - kind (String.t): Resource type. Defaults to `adexchangebuyer#creativeDealIds`.
+  *   `dealStatuses` (*type:* `list(GoogleApi.AdExchangeBuyer.V14.Model.CreativeDealIdsDealStatuses.t)`, *default:* `nil`) - A list of external deal ids and ARC approval status.
+  *   `kind` (*type:* `String.t`, *default:* `adexchangebuyer#creativeDealIds`) - Resource type.
   """
 
   use GoogleApi.Gax.ModelBase

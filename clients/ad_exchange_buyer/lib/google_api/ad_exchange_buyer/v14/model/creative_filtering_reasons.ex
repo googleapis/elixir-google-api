@@ -21,8 +21,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.CreativeFilteringReasons do
 
   ## Attributes
 
-  - date (String.t): The date in ISO 8601 format for the data. The data is collected from 00:00:00 to 23:59:59 in PST. Defaults to `nil`.
-  - reasons (list(GoogleApi.AdExchangeBuyer.V14.Model.CreativeFilteringReasonsReasons.t)): The filtering reasons. Defaults to `nil`.
+  *   `date` (*type:* `String.t`, *default:* `nil`) - The date in ISO 8601 format for the data. The data is collected from 00:00:00 to 23:59:59 in PST.
+  *   `reasons` (*type:* `list(GoogleApi.AdExchangeBuyer.V14.Model.CreativeFilteringReasonsReasons.t)`, *default:* `nil`) - The filtering reasons.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -28,29 +28,31 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Creatives do
 
   ## Parameters
 
-  - connection (GoogleApi.AdExchangeBuyer.V14.Connection): Connection to server
-  - account_id (integer()): The id for the account that will serve this creative.
-  - buyer_creative_id (String.t): The buyer-specific id for this creative.
-  - deal_id (String.t): The id of the deal id to associate with this creative.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V14.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `integer()`) - The id for the account that will serve this creative.
+  *   `buyer_creative_id` (*type:* `String.t`) - The buyer-specific id for this creative.
+  *   `deal_id` (*type:* `String.t`) - The id of the deal id to associate with this creative.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %{}} on success
-  {:error, info} on failure
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec adexchangebuyer_creatives_add_deal(
           Tesla.Env.client(),
           integer(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, nil} | {:error, Tesla.Env.t()}
   def adexchangebuyer_creatives_add_deal(
@@ -91,25 +93,31 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Creatives do
 
   ## Parameters
 
-  - connection (GoogleApi.AdExchangeBuyer.V14.Connection): Connection to server
-  - account_id (integer()): The id for the account that will serve this creative.
-  - buyer_creative_id (String.t): The buyer-specific id for this creative.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V14.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `integer()`) - The id for the account that will serve this creative.
+  *   `buyer_creative_id` (*type:* `String.t`) - The buyer-specific id for this creative.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdExchangeBuyer.V14.Model.Creative{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdExchangeBuyer.V14.Model.Creative{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec adexchangebuyer_creatives_get(Tesla.Env.client(), integer(), String.t(), keyword()) ::
-          {:ok, GoogleApi.AdExchangeBuyer.V14.Model.Creative.t()} | {:error, Tesla.Env.t()}
+  @spec adexchangebuyer_creatives_get(
+          Tesla.Env.client(),
+          integer(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.AdExchangeBuyer.V14.Model.Creative.t()} | {:error, Tesla.Env.t()}
   def adexchangebuyer_creatives_get(
         connection,
         account_id,
@@ -146,23 +154,24 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Creatives do
 
   ## Parameters
 
-  - connection (GoogleApi.AdExchangeBuyer.V14.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.AdExchangeBuyer.V14.Model.Creative.t): 
+  *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V14.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.AdExchangeBuyer.V14.Model.Creative.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdExchangeBuyer.V14.Model.Creative{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdExchangeBuyer.V14.Model.Creative{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec adexchangebuyer_creatives_insert(Tesla.Env.client(), keyword()) ::
+  @spec adexchangebuyer_creatives_insert(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.AdExchangeBuyer.V14.Model.Creative.t()} | {:error, Tesla.Env.t()}
   def adexchangebuyer_creatives_insert(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -192,28 +201,29 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Creatives do
 
   ## Parameters
 
-  - connection (GoogleApi.AdExchangeBuyer.V14.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :accountId (list(integer())): When specified, only creatives for the given account ids are returned.
-    - :buyerCreativeId (list(String.t)): When specified, only creatives for the given buyer creative ids are returned.
-    - :dealsStatusFilter (String.t): When specified, only creatives having the given deals status are returned.
-    - :maxResults (integer()): Maximum number of entries returned on one result page. If not set, the default is 100. Optional.
-    - :openAuctionStatusFilter (String.t): When specified, only creatives having the given open auction status are returned.
-    - :pageToken (String.t): A continuation token, used to page through ad clients. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response. Optional.
+  *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V14.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:accountId` (*type:* `list(integer())`) - When specified, only creatives for the given account ids are returned.
+      *   `:buyerCreativeId` (*type:* `list(String.t)`) - When specified, only creatives for the given buyer creative ids are returned.
+      *   `:dealsStatusFilter` (*type:* `String.t`) - When specified, only creatives having the given deals status are returned.
+      *   `:maxResults` (*type:* `integer()`) - Maximum number of entries returned on one result page. If not set, the default is 100. Optional.
+      *   `:openAuctionStatusFilter` (*type:* `String.t`) - When specified, only creatives having the given open auction status are returned.
+      *   `:pageToken` (*type:* `String.t`) - A continuation token, used to page through ad clients. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response. Optional.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdExchangeBuyer.V14.Model.CreativesList{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdExchangeBuyer.V14.Model.CreativesList{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec adexchangebuyer_creatives_list(Tesla.Env.client(), keyword()) ::
+  @spec adexchangebuyer_creatives_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.AdExchangeBuyer.V14.Model.CreativesList.t()} | {:error, Tesla.Env.t()}
   def adexchangebuyer_creatives_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -248,24 +258,31 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Creatives do
 
   ## Parameters
 
-  - connection (GoogleApi.AdExchangeBuyer.V14.Connection): Connection to server
-  - account_id (integer()): The id for the account that will serve this creative.
-  - buyer_creative_id (String.t): The buyer-specific id for this creative.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V14.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `integer()`) - The id for the account that will serve this creative.
+  *   `buyer_creative_id` (*type:* `String.t`) - The buyer-specific id for this creative.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdExchangeBuyer.V14.Model.CreativeDealIds{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdExchangeBuyer.V14.Model.CreativeDealIds{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec adexchangebuyer_creatives_list_deals(Tesla.Env.client(), integer(), String.t(), keyword()) ::
+  @spec adexchangebuyer_creatives_list_deals(
+          Tesla.Env.client(),
+          integer(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V14.Model.CreativeDealIds.t()} | {:error, Tesla.Env.t()}
   def adexchangebuyer_creatives_list_deals(
         connection,
@@ -303,29 +320,31 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Creatives do
 
   ## Parameters
 
-  - connection (GoogleApi.AdExchangeBuyer.V14.Connection): Connection to server
-  - account_id (integer()): The id for the account that will serve this creative.
-  - buyer_creative_id (String.t): The buyer-specific id for this creative.
-  - deal_id (String.t): The id of the deal id to disassociate with this creative.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V14.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `integer()`) - The id for the account that will serve this creative.
+  *   `buyer_creative_id` (*type:* `String.t`) - The buyer-specific id for this creative.
+  *   `deal_id` (*type:* `String.t`) - The id of the deal id to disassociate with this creative.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %{}} on success
-  {:error, info} on failure
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec adexchangebuyer_creatives_remove_deal(
           Tesla.Env.client(),
           integer(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, nil} | {:error, Tesla.Env.t()}
   def adexchangebuyer_creatives_remove_deal(

@@ -21,7 +21,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.Buyer do
 
   ## Attributes
 
-  - accountId (String.t): Adx account id of the buyer. Defaults to `nil`.
+  *   `accountId` (*type:* `String.t`, *default:* `nil`) - Adx account id of the buyer.
   """
 
   use GoogleApi.Gax.ModelBase

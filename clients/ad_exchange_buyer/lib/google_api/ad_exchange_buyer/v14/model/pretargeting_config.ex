@@ -21,32 +21,32 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfig do
 
   ## Attributes
 
-  - billingId (String.t): The id for billing purposes, provided for reference. Leave this field blank for insert requests; the id will be generated automatically. Defaults to `nil`.
-  - configId (String.t): The config id; generated automatically. Leave this field blank for insert requests. Defaults to `nil`.
-  - configName (String.t): The name of the config. Must be unique. Required for all requests. Defaults to `nil`.
-  - creativeType (list(String.t)): List must contain exactly one of PRETARGETING_CREATIVE_TYPE_HTML or PRETARGETING_CREATIVE_TYPE_VIDEO. Defaults to `nil`.
-  - dimensions (list(GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfigDimensions.t)): Requests which allow one of these (width, height) pairs will match. All pairs must be supported ad dimensions. Defaults to `nil`.
-  - excludedContentLabels (list(String.t)): Requests with any of these content labels will not match. Values are from content-labels.txt in the downloadable files section. Defaults to `nil`.
-  - excludedGeoCriteriaIds (list(String.t)): Requests containing any of these geo criteria ids will not match. Defaults to `nil`.
-  - excludedPlacements (list(GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfigExcludedPlacements.t)): Requests containing any of these placements will not match. Defaults to `nil`.
-  - excludedUserLists (list(String.t)): Requests containing any of these users list ids will not match. Defaults to `nil`.
-  - excludedVerticals (list(String.t)): Requests containing any of these vertical ids will not match. Values are from the publisher-verticals.txt file in the downloadable files section. Defaults to `nil`.
-  - geoCriteriaIds (list(String.t)): Requests containing any of these geo criteria ids will match. Defaults to `nil`.
-  - isActive (boolean()): Whether this config is active. Required for all requests. Defaults to `nil`.
-  - kind (String.t): The kind of the resource, i.e. "adexchangebuyer#pretargetingConfig". Defaults to `adexchangebuyer#pretargetingConfig`.
-  - languages (list(String.t)): Request containing any of these language codes will match. Defaults to `nil`.
-  - minimumViewabilityDecile (integer()): Requests where the predicted viewability is below the specified decile will not match. E.g. if the buyer sets this value to 5, requests from slots where the predicted viewability is below 50% will not match. If the predicted viewability is unknown this field will be ignored. Defaults to `nil`.
-  - mobileCarriers (list(String.t)): Requests containing any of these mobile carrier ids will match. Values are from mobile-carriers.csv in the downloadable files section. Defaults to `nil`.
-  - mobileDevices (list(String.t)): Requests containing any of these mobile device ids will match. Values are from mobile-devices.csv in the downloadable files section. Defaults to `nil`.
-  - mobileOperatingSystemVersions (list(String.t)): Requests containing any of these mobile operating system version ids will match. Values are from mobile-os.csv in the downloadable files section. Defaults to `nil`.
-  - placements (list(GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfigPlacements.t)): Requests containing any of these placements will match. Defaults to `nil`.
-  - platforms (list(String.t)): Requests matching any of these platforms will match. Possible values are PRETARGETING_PLATFORM_MOBILE, PRETARGETING_PLATFORM_DESKTOP, and PRETARGETING_PLATFORM_TABLET. Defaults to `nil`.
-  - supportedCreativeAttributes (list(String.t)): Creative attributes should be declared here if all creatives corresponding to this pretargeting configuration have that creative attribute. Values are from pretargetable-creative-attributes.txt in the downloadable files section. Defaults to `nil`.
-  - userIdentifierDataRequired (list(String.t)): Requests containing the specified type of user data will match. Possible values are HOSTED_MATCH_DATA, which means the request is cookie-targetable and has a match in the buyer's hosted match table, and COOKIE_OR_IDFA, which means the request has either a targetable cookie or an iOS IDFA. Defaults to `nil`.
-  - userLists (list(String.t)): Requests containing any of these user list ids will match. Defaults to `nil`.
-  - vendorTypes (list(String.t)): Requests that allow any of these vendor ids will match. Values are from vendors.txt in the downloadable files section. Defaults to `nil`.
-  - verticals (list(String.t)): Requests containing any of these vertical ids will match. Defaults to `nil`.
-  - videoPlayerSizes (list(GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfigVideoPlayerSizes.t)): Video requests satisfying any of these player size constraints will match. Defaults to `nil`.
+  *   `billingId` (*type:* `String.t`, *default:* `nil`) - The id for billing purposes, provided for reference. Leave this field blank for insert requests; the id will be generated automatically.
+  *   `configId` (*type:* `String.t`, *default:* `nil`) - The config id; generated automatically. Leave this field blank for insert requests.
+  *   `configName` (*type:* `String.t`, *default:* `nil`) - The name of the config. Must be unique. Required for all requests.
+  *   `creativeType` (*type:* `list(String.t)`, *default:* `nil`) - List must contain exactly one of PRETARGETING_CREATIVE_TYPE_HTML or PRETARGETING_CREATIVE_TYPE_VIDEO.
+  *   `dimensions` (*type:* `list(GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfigDimensions.t)`, *default:* `nil`) - Requests which allow one of these (width, height) pairs will match. All pairs must be supported ad dimensions.
+  *   `excludedContentLabels` (*type:* `list(String.t)`, *default:* `nil`) - Requests with any of these content labels will not match. Values are from content-labels.txt in the downloadable files section.
+  *   `excludedGeoCriteriaIds` (*type:* `list(String.t)`, *default:* `nil`) - Requests containing any of these geo criteria ids will not match.
+  *   `excludedPlacements` (*type:* `list(GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfigExcludedPlacements.t)`, *default:* `nil`) - Requests containing any of these placements will not match.
+  *   `excludedUserLists` (*type:* `list(String.t)`, *default:* `nil`) - Requests containing any of these users list ids will not match.
+  *   `excludedVerticals` (*type:* `list(String.t)`, *default:* `nil`) - Requests containing any of these vertical ids will not match. Values are from the publisher-verticals.txt file in the downloadable files section.
+  *   `geoCriteriaIds` (*type:* `list(String.t)`, *default:* `nil`) - Requests containing any of these geo criteria ids will match.
+  *   `isActive` (*type:* `boolean()`, *default:* `nil`) - Whether this config is active. Required for all requests.
+  *   `kind` (*type:* `String.t`, *default:* `adexchangebuyer#pretargetingConfig`) - The kind of the resource, i.e. "adexchangebuyer#pretargetingConfig".
+  *   `languages` (*type:* `list(String.t)`, *default:* `nil`) - Request containing any of these language codes will match.
+  *   `minimumViewabilityDecile` (*type:* `integer()`, *default:* `nil`) - Requests where the predicted viewability is below the specified decile will not match. E.g. if the buyer sets this value to 5, requests from slots where the predicted viewability is below 50% will not match. If the predicted viewability is unknown this field will be ignored.
+  *   `mobileCarriers` (*type:* `list(String.t)`, *default:* `nil`) - Requests containing any of these mobile carrier ids will match. Values are from mobile-carriers.csv in the downloadable files section.
+  *   `mobileDevices` (*type:* `list(String.t)`, *default:* `nil`) - Requests containing any of these mobile device ids will match. Values are from mobile-devices.csv in the downloadable files section.
+  *   `mobileOperatingSystemVersions` (*type:* `list(String.t)`, *default:* `nil`) - Requests containing any of these mobile operating system version ids will match. Values are from mobile-os.csv in the downloadable files section.
+  *   `placements` (*type:* `list(GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfigPlacements.t)`, *default:* `nil`) - Requests containing any of these placements will match.
+  *   `platforms` (*type:* `list(String.t)`, *default:* `nil`) - Requests matching any of these platforms will match. Possible values are PRETARGETING_PLATFORM_MOBILE, PRETARGETING_PLATFORM_DESKTOP, and PRETARGETING_PLATFORM_TABLET.
+  *   `supportedCreativeAttributes` (*type:* `list(String.t)`, *default:* `nil`) - Creative attributes should be declared here if all creatives corresponding to this pretargeting configuration have that creative attribute. Values are from pretargetable-creative-attributes.txt in the downloadable files section.
+  *   `userIdentifierDataRequired` (*type:* `list(String.t)`, *default:* `nil`) - Requests containing the specified type of user data will match. Possible values are HOSTED_MATCH_DATA, which means the request is cookie-targetable and has a match in the buyer's hosted match table, and COOKIE_OR_IDFA, which means the request has either a targetable cookie or an iOS IDFA.
+  *   `userLists` (*type:* `list(String.t)`, *default:* `nil`) - Requests containing any of these user list ids will match.
+  *   `vendorTypes` (*type:* `list(String.t)`, *default:* `nil`) - Requests that allow any of these vendor ids will match. Values are from vendors.txt in the downloadable files section.
+  *   `verticals` (*type:* `list(String.t)`, *default:* `nil`) - Requests containing any of these vertical ids will match.
+  *   `videoPlayerSizes` (*type:* `list(GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfigVideoPlayerSizes.t)`, *default:* `nil`) - Video requests satisfying any of these player size constraints will match.
   """
 
   use GoogleApi.Gax.ModelBase

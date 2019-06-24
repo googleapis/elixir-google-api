@@ -22,9 +22,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.NonBillableWinningBidStatusRow
 
   ## Attributes
 
-  - bidCount (GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t): The number of bids with the specified status. Defaults to `nil`.
-  - rowDimensions (GoogleApi.AdExchangeBuyer.V2beta1.Model.RowDimensions.t): The values of all dimensions associated with metric values in this row. Defaults to `nil`.
-  - status (String.t): The status specifying why the winning bids were not billed. Defaults to `nil`.
+  *   `bidCount` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t`, *default:* `nil`) - The number of bids with the specified status.
+  *   `rowDimensions` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.RowDimensions.t`, *default:* `nil`) - The values of all dimensions associated with metric values in this row.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - The status specifying why the winning bids were not billed.
   """
 
   use GoogleApi.Gax.ModelBase

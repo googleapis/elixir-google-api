@@ -22,9 +22,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.NonGuaranteedAuctionTerms do
 
   ## Attributes
 
-  - autoOptimizePrivateAuction (boolean()): True if open auction buyers are allowed to compete with invited buyers
-  in this private auction. Defaults to `nil`.
-  - reservePricesPerBuyer (list(GoogleApi.AdExchangeBuyer.V2beta1.Model.PricePerBuyer.t)): Reserve price for the specified buyer. Defaults to `nil`.
+  *   `autoOptimizePrivateAuction` (*type:* `boolean()`, *default:* `nil`) - True if open auction buyers are allowed to compete with invited buyers
+      in this private auction.
+  *   `reservePricesPerBuyer` (*type:* `list(GoogleApi.AdExchangeBuyer.V2beta1.Model.PricePerBuyer.t)`, *default:* `nil`) - Reserve price for the specified buyer.
   """
 
   use GoogleApi.Gax.ModelBase

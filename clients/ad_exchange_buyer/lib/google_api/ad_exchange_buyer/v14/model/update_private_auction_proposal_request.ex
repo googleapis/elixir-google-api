@@ -21,10 +21,10 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.UpdatePrivateAuctionProposalReques
 
   ## Attributes
 
-  - externalDealId (String.t): The externalDealId of the deal to be updated. Defaults to `nil`.
-  - note (GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceNote.t): Optional note to be added. Defaults to `nil`.
-  - proposalRevisionNumber (String.t): The current revision number of the proposal to be updated. Defaults to `nil`.
-  - updateAction (String.t): The proposed action on the private auction proposal. Defaults to `nil`.
+  *   `externalDealId` (*type:* `String.t`, *default:* `nil`) - The externalDealId of the deal to be updated.
+  *   `note` (*type:* `GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceNote.t`, *default:* `nil`) - Optional note to be added.
+  *   `proposalRevisionNumber` (*type:* `String.t`, *default:* `nil`) - The current revision number of the proposal to be updated.
+  *   `updateAction` (*type:* `String.t`, *default:* `nil`) - The proposed action on the private auction proposal.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,9 +21,9 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.AddOrderDealsRequest do
 
   ## Attributes
 
-  - deals (list(GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceDeal.t)): The list of deals to add Defaults to `nil`.
-  - proposalRevisionNumber (String.t): The last known proposal revision number. Defaults to `nil`.
-  - updateAction (String.t): Indicates an optional action to take on the proposal Defaults to `nil`.
+  *   `deals` (*type:* `list(GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceDeal.t)`, *default:* `nil`) - The list of deals to add
+  *   `proposalRevisionNumber` (*type:* `String.t`, *default:* `nil`) - The last known proposal revision number.
+  *   `updateAction` (*type:* `String.t`, *default:* `nil`) - Indicates an optional action to take on the proposal
   """
 
   use GoogleApi.Gax.ModelBase

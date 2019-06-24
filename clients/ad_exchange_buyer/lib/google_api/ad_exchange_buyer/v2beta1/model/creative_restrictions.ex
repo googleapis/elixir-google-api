@@ -23,9 +23,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.CreativeRestrictions do
 
   ## Attributes
 
-  - creativeFormat (String.t): The format of the environment that the creatives will be displayed in. Defaults to `nil`.
-  - creativeSpecifications (list(GoogleApi.AdExchangeBuyer.V2beta1.Model.CreativeSpecification.t)):  Defaults to `nil`.
-  - skippableAdType (String.t): Skippable video ads allow viewers to skip ads after 5 seconds. Defaults to `nil`.
+  *   `creativeFormat` (*type:* `String.t`, *default:* `nil`) - The format of the environment that the creatives will be displayed in.
+  *   `creativeSpecifications` (*type:* `list(GoogleApi.AdExchangeBuyer.V2beta1.Model.CreativeSpecification.t)`, *default:* `nil`) - 
+  *   `skippableAdType` (*type:* `String.t`, *default:* `nil`) - Skippable video ads allow viewers to skip ads after 5 seconds.
   """
 
   use GoogleApi.Gax.ModelBase

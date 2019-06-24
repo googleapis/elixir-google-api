@@ -21,10 +21,10 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.TimeInterval do
 
   ## Attributes
 
-  - endTime (DateTime.t): The timestamp marking the end of the range (exclusive) for which data is
-  included. Defaults to `nil`.
-  - startTime (DateTime.t): The timestamp marking the start of the range (inclusive) for which data is
-  included. Defaults to `nil`.
+  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp marking the end of the range (exclusive) for which data is
+      included.
+  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp marking the start of the range (inclusive) for which data is
+      included.
   """
 
   use GoogleApi.Gax.ModelBase

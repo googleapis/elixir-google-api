@@ -21,7 +21,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueDemogGenderCriteria 
 
   ## Attributes
 
-  - demogGenderCriteriaIds (list(String.t)):  Defaults to `nil`.
+  *   `demogGenderCriteriaIds` (*type:* `list(String.t)`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

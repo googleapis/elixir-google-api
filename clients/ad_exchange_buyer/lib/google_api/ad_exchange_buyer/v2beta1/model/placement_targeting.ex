@@ -23,9 +23,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.PlacementTargeting do
 
   ## Attributes
 
-  - mobileApplicationTargeting (GoogleApi.AdExchangeBuyer.V2beta1.Model.MobileApplicationTargeting.t): Mobile application targeting information in a deal.
-  This doesn't apply to Auction Packages. Defaults to `nil`.
-  - urlTargeting (GoogleApi.AdExchangeBuyer.V2beta1.Model.UrlTargeting.t): URLs to be included/excluded. Defaults to `nil`.
+  *   `mobileApplicationTargeting` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.MobileApplicationTargeting.t`, *default:* `nil`) - Mobile application targeting information in a deal.
+      This doesn't apply to Auction Packages.
+  *   `urlTargeting` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.UrlTargeting.t`, *default:* `nil`) - URLs to be included/excluded.
   """
 
   use GoogleApi.Gax.ModelBase

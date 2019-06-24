@@ -21,8 +21,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.PrivateData do
 
   ## Attributes
 
-  - referenceId (String.t): A buyer or seller specified reference ID. This can be queried in the list
-  operations (max-length: 1024 unicode code units). Defaults to `nil`.
+  *   `referenceId` (*type:* `String.t`, *default:* `nil`) - A buyer or seller specified reference ID. This can be queried in the list
+      operations (max-length: 1024 unicode code units).
   """
 
   use GoogleApi.Gax.ModelBase

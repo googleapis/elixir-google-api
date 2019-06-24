@@ -21,8 +21,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.AccountsList do
 
   ## Attributes
 
-  - items (list(GoogleApi.AdExchangeBuyer.V14.Model.Account.t)): A list of accounts. Defaults to `nil`.
-  - kind (String.t): Resource type. Defaults to `adexchangebuyer#accountsList`.
+  *   `items` (*type:* `list(GoogleApi.AdExchangeBuyer.V14.Model.Account.t)`, *default:* `nil`) - A list of accounts.
+  *   `kind` (*type:* `String.t`, *default:* `adexchangebuyer#accountsList`) - Resource type.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,9 +21,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.Correction do
 
   ## Attributes
 
-  - contexts (list(GoogleApi.AdExchangeBuyer.V2beta1.Model.ServingContext.t)): The contexts for the correction. Defaults to `nil`.
-  - details (list(String.t)): Additional details about what was corrected. Defaults to `nil`.
-  - type (String.t): The type of correction that was applied to the creative. Defaults to `nil`.
+  *   `contexts` (*type:* `list(GoogleApi.AdExchangeBuyer.V2beta1.Model.ServingContext.t)`, *default:* `nil`) - The contexts for the correction.
+  *   `details` (*type:* `list(String.t)`, *default:* `nil`) - Additional details about what was corrected.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of correction that was applied to the creative.
   """
 
   use GoogleApi.Gax.ModelBase

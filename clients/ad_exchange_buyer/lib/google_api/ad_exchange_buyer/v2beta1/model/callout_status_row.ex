@@ -23,12 +23,12 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.CalloutStatusRow do
 
   ## Attributes
 
-  - calloutStatusId (integer()): The ID of the callout status.
-  See
-  [callout-status-codes](https://developers.google.com/authorized-buyers/rtb/downloads/callout-status-codes). Defaults to `nil`.
-  - impressionCount (GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t): The number of impressions for which there was a bid request or bid response
-  with the specified callout status. Defaults to `nil`.
-  - rowDimensions (GoogleApi.AdExchangeBuyer.V2beta1.Model.RowDimensions.t): The values of all dimensions associated with metric values in this row. Defaults to `nil`.
+  *   `calloutStatusId` (*type:* `integer()`, *default:* `nil`) - The ID of the callout status.
+      See
+      [callout-status-codes](https://developers.google.com/authorized-buyers/rtb/downloads/callout-status-codes).
+  *   `impressionCount` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t`, *default:* `nil`) - The number of impressions for which there was a bid request or bid response
+      with the specified callout status.
+  *   `rowDimensions` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.RowDimensions.t`, *default:* `nil`) - The values of all dimensions associated with metric values in this row.
   """
 
   use GoogleApi.Gax.ModelBase

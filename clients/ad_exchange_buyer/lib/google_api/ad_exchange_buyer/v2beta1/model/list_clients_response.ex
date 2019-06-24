@@ -21,13 +21,13 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ListClientsResponse do
 
   ## Attributes
 
-  - clients (list(GoogleApi.AdExchangeBuyer.V2beta1.Model.Client.t)): The returned list of clients. Defaults to `nil`.
-  - nextPageToken (String.t): A token to retrieve the next page of results.
-  Pass this value in the
-  ListClientsRequest.pageToken
-  field in the subsequent call to the
-  accounts.clients.list
-  method to retrieve the next page of results. Defaults to `nil`.
+  *   `clients` (*type:* `list(GoogleApi.AdExchangeBuyer.V2beta1.Model.Client.t)`, *default:* `nil`) - The returned list of clients.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results.
+      Pass this value in the
+      ListClientsRequest.pageToken
+      field in the subsequent call to the
+      accounts.clients.list
+      method to retrieve the next page of results.
   """
 
   use GoogleApi.Gax.ModelBase

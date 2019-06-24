@@ -28,24 +28,30 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Marketplacedeals do
 
   ## Parameters
 
-  - connection (GoogleApi.AdExchangeBuyer.V14.Connection): Connection to server
-  - proposal_id (String.t): The proposalId to delete deals from.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.AdExchangeBuyer.V14.Model.DeleteOrderDealsRequest.t): 
+  *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V14.Connection.t`) - Connection to server
+  *   `proposal_id` (*type:* `String.t`) - The proposalId to delete deals from.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.AdExchangeBuyer.V14.Model.DeleteOrderDealsRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdExchangeBuyer.V14.Model.DeleteOrderDealsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdExchangeBuyer.V14.Model.DeleteOrderDealsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec adexchangebuyer_marketplacedeals_delete(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec adexchangebuyer_marketplacedeals_delete(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V14.Model.DeleteOrderDealsResponse.t()}
           | {:error, Tesla.Env.t()}
   def adexchangebuyer_marketplacedeals_delete(
@@ -85,24 +91,30 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Marketplacedeals do
 
   ## Parameters
 
-  - connection (GoogleApi.AdExchangeBuyer.V14.Connection): Connection to server
-  - proposal_id (String.t): proposalId for which deals need to be added.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.AdExchangeBuyer.V14.Model.AddOrderDealsRequest.t): 
+  *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V14.Connection.t`) - Connection to server
+  *   `proposal_id` (*type:* `String.t`) - proposalId for which deals need to be added.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.AdExchangeBuyer.V14.Model.AddOrderDealsRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdExchangeBuyer.V14.Model.AddOrderDealsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdExchangeBuyer.V14.Model.AddOrderDealsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec adexchangebuyer_marketplacedeals_insert(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec adexchangebuyer_marketplacedeals_insert(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V14.Model.AddOrderDealsResponse.t()}
           | {:error, Tesla.Env.t()}
   def adexchangebuyer_marketplacedeals_insert(
@@ -142,24 +154,30 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Marketplacedeals do
 
   ## Parameters
 
-  - connection (GoogleApi.AdExchangeBuyer.V14.Connection): Connection to server
-  - proposal_id (String.t): The proposalId to get deals for. To search across all proposals specify order_id = '-' as part of the URL.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :pqlQuery (String.t): Query string to retrieve specific deals.
+  *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V14.Connection.t`) - Connection to server
+  *   `proposal_id` (*type:* `String.t`) - The proposalId to get deals for. To search across all proposals specify order_id = '-' as part of the URL.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:pqlQuery` (*type:* `String.t`) - Query string to retrieve specific deals.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdExchangeBuyer.V14.Model.GetOrderDealsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdExchangeBuyer.V14.Model.GetOrderDealsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec adexchangebuyer_marketplacedeals_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec adexchangebuyer_marketplacedeals_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V14.Model.GetOrderDealsResponse.t()}
           | {:error, Tesla.Env.t()}
   def adexchangebuyer_marketplacedeals_list(
@@ -199,24 +217,30 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Marketplacedeals do
 
   ## Parameters
 
-  - connection (GoogleApi.AdExchangeBuyer.V14.Connection): Connection to server
-  - proposal_id (String.t): The proposalId to edit deals on.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.AdExchangeBuyer.V14.Model.EditAllOrderDealsRequest.t): 
+  *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V14.Connection.t`) - Connection to server
+  *   `proposal_id` (*type:* `String.t`) - The proposalId to edit deals on.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.AdExchangeBuyer.V14.Model.EditAllOrderDealsRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdExchangeBuyer.V14.Model.EditAllOrderDealsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdExchangeBuyer.V14.Model.EditAllOrderDealsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec adexchangebuyer_marketplacedeals_update(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec adexchangebuyer_marketplacedeals_update(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V14.Model.EditAllOrderDealsResponse.t()}
           | {:error, Tesla.Env.t()}
   def adexchangebuyer_marketplacedeals_update(

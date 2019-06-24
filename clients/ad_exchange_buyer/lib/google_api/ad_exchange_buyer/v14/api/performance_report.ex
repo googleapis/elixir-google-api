@@ -28,31 +28,33 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.PerformanceReport do
 
   ## Parameters
 
-  - connection (GoogleApi.AdExchangeBuyer.V14.Connection): Connection to server
-  - account_id (String.t): The account id to get the reports.
-  - end_date_time (String.t): The end time of the report in ISO 8601 timestamp format using UTC.
-  - start_date_time (String.t): The start time of the report in ISO 8601 timestamp format using UTC.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :maxResults (integer()): Maximum number of entries returned on one result page. If not set, the default is 100. Optional.
-    - :pageToken (String.t): A continuation token, used to page through performance reports. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response. Optional.
+  *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V14.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - The account id to get the reports.
+  *   `end_date_time` (*type:* `String.t`) - The end time of the report in ISO 8601 timestamp format using UTC.
+  *   `start_date_time` (*type:* `String.t`) - The start time of the report in ISO 8601 timestamp format using UTC.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:maxResults` (*type:* `integer()`) - Maximum number of entries returned on one result page. If not set, the default is 100. Optional.
+      *   `:pageToken` (*type:* `String.t`) - A continuation token, used to page through performance reports. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response. Optional.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdExchangeBuyer.V14.Model.PerformanceReportList{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdExchangeBuyer.V14.Model.PerformanceReportList{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec adexchangebuyer_performance_report_list(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V14.Model.PerformanceReportList.t()}

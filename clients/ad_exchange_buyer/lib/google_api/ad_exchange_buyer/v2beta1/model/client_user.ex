@@ -31,16 +31,16 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ClientUser do
 
   ## Attributes
 
-  - clientAccountId (String.t): Numerical account ID of the client buyer
-  with which the user is associated; the
-  buyer must be a client of the current sponsor buyer.
-  The value of this field is ignored in an update operation. Defaults to `nil`.
-  - email (String.t): User's email address. The value of this field
-  is ignored in an update operation. Defaults to `nil`.
-  - status (String.t): The status of the client user. Defaults to `nil`.
-  - userId (String.t): The unique numerical ID of the client user
-  that has accepted an invitation.
-  The value of this field is ignored in an update operation. Defaults to `nil`.
+  *   `clientAccountId` (*type:* `String.t`, *default:* `nil`) - Numerical account ID of the client buyer
+      with which the user is associated; the
+      buyer must be a client of the current sponsor buyer.
+      The value of this field is ignored in an update operation.
+  *   `email` (*type:* `String.t`, *default:* `nil`) - User's email address. The value of this field
+      is ignored in an update operation.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - The status of the client user.
+  *   `userId` (*type:* `String.t`, *default:* `nil`) - The unique numerical ID of the client user
+      that has accepted an invitation.
+      The value of this field is ignored in an update operation.
   """
 
   use GoogleApi.Gax.ModelBase

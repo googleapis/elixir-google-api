@@ -21,8 +21,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.CreativeFilteringReasonsReasons do
 
   ## Attributes
 
-  - filteringCount (String.t): The number of times the creative was filtered for the status. The count is aggregated across all publishers on the exchange. Defaults to `nil`.
-  - filteringStatus (integer()): The filtering status code as defined in  creative-status-codes.txt. Defaults to `nil`.
+  *   `filteringCount` (*type:* `String.t`, *default:* `nil`) - The number of times the creative was filtered for the status. The count is aggregated across all publishers on the exchange.
+  *   `filteringStatus` (*type:* `integer()`, *default:* `nil`) - The filtering status code as defined in  creative-status-codes.txt.
   """
 
   use GoogleApi.Gax.ModelBase

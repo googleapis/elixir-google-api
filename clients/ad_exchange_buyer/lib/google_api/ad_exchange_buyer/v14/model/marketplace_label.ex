@@ -21,10 +21,10 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceLabel do
 
   ## Attributes
 
-  - accountId (String.t): The accountId of the party that created the label. Defaults to `nil`.
-  - createTimeMs (String.t): The creation time (in ms since epoch) for the label. Defaults to `nil`.
-  - deprecatedMarketplaceDealParty (GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceDealParty.t): Information about the party that created the label. Defaults to `nil`.
-  - label (String.t): The label to use. Defaults to `nil`.
+  *   `accountId` (*type:* `String.t`, *default:* `nil`) - The accountId of the party that created the label.
+  *   `createTimeMs` (*type:* `String.t`, *default:* `nil`) - The creation time (in ms since epoch) for the label.
+  *   `deprecatedMarketplaceDealParty` (*type:* `GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceDealParty.t`, *default:* `nil`) - Information about the party that created the label.
+  *   `label` (*type:* `String.t`, *default:* `nil`) - The label to use.
   """
 
   use GoogleApi.Gax.ModelBase

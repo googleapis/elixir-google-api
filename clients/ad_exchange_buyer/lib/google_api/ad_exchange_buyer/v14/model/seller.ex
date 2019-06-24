@@ -21,8 +21,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.Seller do
 
   ## Attributes
 
-  - accountId (String.t): The unique id for the seller. The seller fills in this field. The seller account id is then available to buyer in the product. Defaults to `nil`.
-  - subAccountId (String.t): Optional sub-account id for the seller. Defaults to `nil`.
+  *   `accountId` (*type:* `String.t`, *default:* `nil`) - The unique id for the seller. The seller fills in this field. The seller account id is then available to buyer in the product.
+  *   `subAccountId` (*type:* `String.t`, *default:* `nil`) - Optional sub-account id for the seller.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -22,14 +22,14 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ClientUserInvitation do
 
   ## Attributes
 
-  - clientAccountId (String.t): Numerical account ID of the client buyer
-  that the invited user is associated with.
-  The value of this field is ignored in create operations. Defaults to `nil`.
-  - email (String.t): The email address to which the invitation is sent. Email
-  addresses should be unique among all client users under each sponsor
-  buyer. Defaults to `nil`.
-  - invitationId (String.t): The unique numerical ID of the invitation that is sent to the user.
-  The value of this field is ignored in create operations. Defaults to `nil`.
+  *   `clientAccountId` (*type:* `String.t`, *default:* `nil`) - Numerical account ID of the client buyer
+      that the invited user is associated with.
+      The value of this field is ignored in create operations.
+  *   `email` (*type:* `String.t`, *default:* `nil`) - The email address to which the invitation is sent. Email
+      addresses should be unique among all client users under each sponsor
+      buyer.
+  *   `invitationId` (*type:* `String.t`, *default:* `nil`) - The unique numerical ID of the invitation that is sent to the user.
+      The value of this field is ignored in create operations.
   """
 
   use GoogleApi.Gax.ModelBase

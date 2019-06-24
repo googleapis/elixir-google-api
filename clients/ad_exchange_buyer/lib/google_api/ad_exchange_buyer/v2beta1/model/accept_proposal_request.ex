@@ -21,7 +21,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.AcceptProposalRequest do
 
   ## Attributes
 
-  - proposalRevision (String.t): The last known client revision number of the proposal. Defaults to `nil`.
+  *   `proposalRevision` (*type:* `String.t`, *default:* `nil`) - The last known client revision number of the proposal.
   """
 
   use GoogleApi.Gax.ModelBase

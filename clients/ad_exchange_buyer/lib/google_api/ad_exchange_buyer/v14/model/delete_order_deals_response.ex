@@ -21,8 +21,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.DeleteOrderDealsResponse do
 
   ## Attributes
 
-  - deals (list(GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceDeal.t)): List of deals deleted (in the same proposal as passed in the request) Defaults to `nil`.
-  - proposalRevisionNumber (String.t): The updated revision number for the proposal. Defaults to `nil`.
+  *   `deals` (*type:* `list(GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceDeal.t)`, *default:* `nil`) - List of deals deleted (in the same proposal as passed in the request)
+  *   `proposalRevisionNumber` (*type:* `String.t`, *default:* `nil`) - The updated revision number for the proposal.
   """
 
   use GoogleApi.Gax.ModelBase

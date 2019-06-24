@@ -26,31 +26,31 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.Product do
 
   ## Attributes
 
-  - availableEndTime (DateTime.t): The proposed end time for the deal. The field will be truncated to the
-  order of seconds during serving. Defaults to `nil`.
-  - availableStartTime (DateTime.t): Inventory availability dates. The start time will be truncated to seconds
-  during serving. Thus, a field specified as 3:23:34.456 (HH:mm:ss.SSS) will
-  be truncated to 3:23:34 when serving. Defaults to `nil`.
-  - createTime (DateTime.t): Creation time. Defaults to `nil`.
-  - creatorContacts (list(GoogleApi.AdExchangeBuyer.V2beta1.Model.ContactInformation.t)): Optional contact information for the creator of this product. Defaults to `nil`.
-  - displayName (String.t): The display name for this product as set by the seller. Defaults to `nil`.
-  - hasCreatorSignedOff (boolean()): If the creator has already signed off on the product, then the buyer can
-  finalize the deal by accepting the product as is. When copying to a
-  proposal, if any of the terms are changed, then auto_finalize is
-  automatically set to false. Defaults to `nil`.
-  - productId (String.t): The unique ID for the product. Defaults to `nil`.
-  - productRevision (String.t): The revision number of the product (auto-assigned by Marketplace). Defaults to `nil`.
-  - publisherProfileId (String.t): An ID which can be used by the Publisher Profile API to get more
-  information about the seller that created this product. Defaults to `nil`.
-  - seller (GoogleApi.AdExchangeBuyer.V2beta1.Model.Seller.t): Information about the seller that created this product. Defaults to `nil`.
-  - syndicationProduct (String.t): The syndication product associated with the deal. Defaults to `nil`.
-  - targetingCriterion (list(GoogleApi.AdExchangeBuyer.V2beta1.Model.TargetingCriteria.t)): Targeting that is shared between the buyer and the seller. Each targeting
-  criterion has a specified key and for each key there is a list of inclusion
-  value or exclusion values. Defaults to `nil`.
-  - terms (GoogleApi.AdExchangeBuyer.V2beta1.Model.DealTerms.t): The negotiable terms of the deal. Defaults to `nil`.
-  - updateTime (DateTime.t): Time of last update. Defaults to `nil`.
-  - webPropertyCode (String.t): The web-property code for the seller. This needs to be copied as is when
-  adding a new deal to a proposal. Defaults to `nil`.
+  *   `availableEndTime` (*type:* `DateTime.t`, *default:* `nil`) - The proposed end time for the deal. The field will be truncated to the
+      order of seconds during serving.
+  *   `availableStartTime` (*type:* `DateTime.t`, *default:* `nil`) - Inventory availability dates. The start time will be truncated to seconds
+      during serving. Thus, a field specified as 3:23:34.456 (HH:mm:ss.SSS) will
+      be truncated to 3:23:34 when serving.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Creation time.
+  *   `creatorContacts` (*type:* `list(GoogleApi.AdExchangeBuyer.V2beta1.Model.ContactInformation.t)`, *default:* `nil`) - Optional contact information for the creator of this product.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name for this product as set by the seller.
+  *   `hasCreatorSignedOff` (*type:* `boolean()`, *default:* `nil`) - If the creator has already signed off on the product, then the buyer can
+      finalize the deal by accepting the product as is. When copying to a
+      proposal, if any of the terms are changed, then auto_finalize is
+      automatically set to false.
+  *   `productId` (*type:* `String.t`, *default:* `nil`) - The unique ID for the product.
+  *   `productRevision` (*type:* `String.t`, *default:* `nil`) - The revision number of the product (auto-assigned by Marketplace).
+  *   `publisherProfileId` (*type:* `String.t`, *default:* `nil`) - An ID which can be used by the Publisher Profile API to get more
+      information about the seller that created this product.
+  *   `seller` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.Seller.t`, *default:* `nil`) - Information about the seller that created this product.
+  *   `syndicationProduct` (*type:* `String.t`, *default:* `nil`) - The syndication product associated with the deal.
+  *   `targetingCriterion` (*type:* `list(GoogleApi.AdExchangeBuyer.V2beta1.Model.TargetingCriteria.t)`, *default:* `nil`) - Targeting that is shared between the buyer and the seller. Each targeting
+      criterion has a specified key and for each key there is a list of inclusion
+      value or exclusion values.
+  *   `terms` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.DealTerms.t`, *default:* `nil`) - The negotiable terms of the deal.
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Time of last update.
+  *   `webPropertyCode` (*type:* `String.t`, *default:* `nil`) - The web-property code for the seller. This needs to be copied as is when
+      adding a new deal to a proposal.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,10 +21,10 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.BillingInfo do
 
   ## Attributes
 
-  - accountId (integer()): Account id. Defaults to `nil`.
-  - accountName (String.t): Account name. Defaults to `nil`.
-  - billingId (list(String.t)): A list of adgroup IDs associated with this particular account. These IDs may show up as part of a realtime bidding BidRequest, which indicates a bid request for this account. Defaults to `nil`.
-  - kind (String.t): Resource type. Defaults to `adexchangebuyer#billingInfo`.
+  *   `accountId` (*type:* `integer()`, *default:* `nil`) - Account id.
+  *   `accountName` (*type:* `String.t`, *default:* `nil`) - Account name.
+  *   `billingId` (*type:* `list(String.t)`, *default:* `nil`) - A list of adgroup IDs associated with this particular account. These IDs may show up as part of a realtime bidding BidRequest, which indicates a bid request for this account.
+  *   `kind` (*type:* `String.t`, *default:* `adexchangebuyer#billingInfo`) - Resource type.
   """
 
   use GoogleApi.Gax.ModelBase

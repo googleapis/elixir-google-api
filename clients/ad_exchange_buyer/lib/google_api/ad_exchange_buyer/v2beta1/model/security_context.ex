@@ -21,7 +21,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.SecurityContext do
 
   ## Attributes
 
-  - securities (list(String.t)): The security types in this context. Defaults to `nil`.
+  *   `securities` (*type:* `list(String.t)`, *default:* `nil`) - The security types in this context.
   """
 
   use GoogleApi.Gax.ModelBase

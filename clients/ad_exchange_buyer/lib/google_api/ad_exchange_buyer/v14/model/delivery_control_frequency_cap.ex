@@ -21,9 +21,9 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.DeliveryControlFrequencyCap do
 
   ## Attributes
 
-  - maxImpressions (integer()):  Defaults to `nil`.
-  - numTimeUnits (integer()):  Defaults to `nil`.
-  - timeUnitType (String.t):  Defaults to `nil`.
+  *   `maxImpressions` (*type:* `integer()`, *default:* `nil`) - 
+  *   `numTimeUnits` (*type:* `integer()`, *default:* `nil`) - 
+  *   `timeUnitType` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase
