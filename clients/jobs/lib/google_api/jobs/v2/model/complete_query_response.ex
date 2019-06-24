@@ -23,9 +23,9 @@ defmodule GoogleApi.Jobs.V2.Model.CompleteQueryResponse do
 
   ## Attributes
 
-  - completionResults (list(GoogleApi.Jobs.V2.Model.CompletionResult.t)): Results of the matching job/company candidates. Defaults to `nil`.
-  - metadata (GoogleApi.Jobs.V2.Model.ResponseMetadata.t): Additional information for the API invocation, such as the request
-  tracking id. Defaults to `nil`.
+  *   `completionResults` (*type:* `list(GoogleApi.Jobs.V2.Model.CompletionResult.t)`, *default:* `nil`) - Results of the matching job/company candidates.
+  *   `metadata` (*type:* `GoogleApi.Jobs.V2.Model.ResponseMetadata.t`, *default:* `nil`) - Additional information for the API invocation, such as the request
+      tracking id.
   """
 
   use GoogleApi.Gax.ModelBase

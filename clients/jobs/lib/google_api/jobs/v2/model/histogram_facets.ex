@@ -23,18 +23,18 @@ defmodule GoogleApi.Jobs.V2.Model.HistogramFacets do
 
   ## Attributes
 
-  - compensationHistogramFacets (list(GoogleApi.Jobs.V2.Model.CompensationHistogramRequest.t)): Optional.
+  *   `compensationHistogramFacets` (*type:* `list(GoogleApi.Jobs.V2.Model.CompensationHistogramRequest.t)`, *default:* `nil`) - Optional.
 
-  Specifies compensation field-based histogram requests.
-  Duplicate values of CompensationHistogramRequest.type are not allowed. Defaults to `nil`.
-  - customAttributeHistogramFacets (list(GoogleApi.Jobs.V2.Model.CustomAttributeHistogramRequest.t)): Optional.
+      Specifies compensation field-based histogram requests.
+      Duplicate values of CompensationHistogramRequest.type are not allowed.
+  *   `customAttributeHistogramFacets` (*type:* `list(GoogleApi.Jobs.V2.Model.CustomAttributeHistogramRequest.t)`, *default:* `nil`) - Optional.
 
-  Specifies the custom attributes histogram requests.
-  Duplicate values of CustomAttributeHistogramRequest.key are not
-  allowed. Defaults to `nil`.
-  - simpleHistogramFacets (list(String.t)): Optional. Specifies the simple type of histogram facets, for example,
-  `COMPANY_SIZE`, `EMPLOYMENT_TYPE` etc. This field is equivalent to
-  GetHistogramRequest. Defaults to `nil`.
+      Specifies the custom attributes histogram requests.
+      Duplicate values of CustomAttributeHistogramRequest.key are not
+      allowed.
+  *   `simpleHistogramFacets` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Specifies the simple type of histogram facets, for example,
+      `COMPANY_SIZE`, `EMPLOYMENT_TYPE` etc. This field is equivalent to
+      GetHistogramRequest.
   """
 
   use GoogleApi.Gax.ModelBase

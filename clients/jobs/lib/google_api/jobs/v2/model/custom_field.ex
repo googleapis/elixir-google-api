@@ -21,9 +21,9 @@ defmodule GoogleApi.Jobs.V2.Model.CustomField do
 
   ## Attributes
 
-  - values (list(String.t)): Optional.
+  *   `values` (*type:* `list(String.t)`, *default:* `nil`) - Optional.
 
-  The values of the custom data. Defaults to `nil`.
+      The values of the custom data.
   """
 
   use GoogleApi.Gax.ModelBase

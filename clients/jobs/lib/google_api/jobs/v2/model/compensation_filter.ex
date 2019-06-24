@@ -23,19 +23,19 @@ defmodule GoogleApi.Jobs.V2.Model.CompensationFilter do
 
   ## Attributes
 
-  - includeJobsWithUnspecifiedCompensationRange (boolean()): Optional.
+  *   `includeJobsWithUnspecifiedCompensationRange` (*type:* `boolean()`, *default:* `nil`) - Optional.
 
-  Whether to include jobs whose compensation range is unspecified. Defaults to `nil`.
-  - range (GoogleApi.Jobs.V2.Model.CompensationRange.t): Optional.
+      Whether to include jobs whose compensation range is unspecified.
+  *   `range` (*type:* `GoogleApi.Jobs.V2.Model.CompensationRange.t`, *default:* `nil`) - Optional.
 
-  Compensation range. Defaults to `nil`.
-  - type (String.t): Required.
+      Compensation range.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Required.
 
-  Type of filter. Defaults to `nil`.
-  - units (list(String.t)): Required.
+      Type of filter.
+  *   `units` (*type:* `list(String.t)`, *default:* `nil`) - Required.
 
-  Specify desired `base compensation entry's`
-  CompensationInfo.CompensationUnit. Defaults to `nil`.
+      Specify desired `base compensation entry's`
+      CompensationInfo.CompensationUnit.
   """
 
   use GoogleApi.Gax.ModelBase

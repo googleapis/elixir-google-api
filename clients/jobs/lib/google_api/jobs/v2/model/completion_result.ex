@@ -23,9 +23,9 @@ defmodule GoogleApi.Jobs.V2.Model.CompletionResult do
 
   ## Attributes
 
-  - imageUrl (String.t): The URL for the company logo if `type=COMPANY_NAME`. Defaults to `nil`.
-  - suggestion (String.t): The suggestion for the query. Defaults to `nil`.
-  - type (String.t): The completion topic. Defaults to `nil`.
+  *   `imageUrl` (*type:* `String.t`, *default:* `nil`) - The URL for the company logo if `type=COMPANY_NAME`.
+  *   `suggestion` (*type:* `String.t`, *default:* `nil`) - The suggestion for the query.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The completion topic.
   """
 
   use GoogleApi.Gax.ModelBase

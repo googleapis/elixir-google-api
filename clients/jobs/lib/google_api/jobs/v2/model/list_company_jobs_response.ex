@@ -25,16 +25,16 @@ defmodule GoogleApi.Jobs.V2.Model.ListCompanyJobsResponse do
 
   ## Attributes
 
-  - jobs (list(GoogleApi.Jobs.V2.Model.Job.t)): The Jobs for a given company.
+  *   `jobs` (*type:* `list(GoogleApi.Jobs.V2.Model.Job.t)`, *default:* `nil`) - The Jobs for a given company.
 
-  The maximum number of items returned is based on the limit field
-  provided in the request. Defaults to `nil`.
-  - metadata (GoogleApi.Jobs.V2.Model.ResponseMetadata.t): Additional information for the API invocation, such as the request
-  tracking id. Defaults to `nil`.
-  - nextPageToken (String.t): A token to retrieve the next page of results. Defaults to `nil`.
-  - totalSize (String.t): The total number of open jobs. The result will be
-  empty if ListCompanyJobsRequest.include_jobs_count is not enabled
-  or if no open jobs are available. Defaults to `nil`.
+      The maximum number of items returned is based on the limit field
+      provided in the request.
+  *   `metadata` (*type:* `GoogleApi.Jobs.V2.Model.ResponseMetadata.t`, *default:* `nil`) - Additional information for the API invocation, such as the request
+      tracking id.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results.
+  *   `totalSize` (*type:* `String.t`, *default:* `nil`) - The total number of open jobs. The result will be
+      empty if ListCompanyJobsRequest.include_jobs_count is not enabled
+      or if no open jobs are available.
   """
 
   use GoogleApi.Gax.ModelBase

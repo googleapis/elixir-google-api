@@ -24,20 +24,20 @@ defmodule GoogleApi.Jobs.V2.Model.JobLocation do
 
   ## Attributes
 
-  - latLng (GoogleApi.Jobs.V2.Model.LatLng.t): An object representing a latitude/longitude pair. Defaults to `nil`.
-  - locationType (String.t): The type of a location, which corresponds to the address lines field of
-  PostalAddress. For example, "Downtown, Atlanta, GA, USA" has a type of
-  LocationType#NEIGHBORHOOD, and "Kansas City, KS, USA" has a type of
-  LocationType#LOCALITY. Defaults to `nil`.
-  - postalAddress (GoogleApi.Jobs.V2.Model.PostalAddress.t): Postal address of the location that includes human readable information,
-  such as postal delivery and payments addresses. Given a postal address,
-  a postal service can deliver items to a premises, P.O. Box, or other
-  delivery location. Defaults to `nil`.
-  - radiusMeters (float()): Radius in meters of the job location. This value is derived from the
-  location bounding box in which a circle with the specified radius
-  centered from LatLng coves the area associated with the job location.
-  For example, currently, "Mountain View, CA, USA" has a radius of
-  7885.79 meters. Defaults to `nil`.
+  *   `latLng` (*type:* `GoogleApi.Jobs.V2.Model.LatLng.t`, *default:* `nil`) - An object representing a latitude/longitude pair.
+  *   `locationType` (*type:* `String.t`, *default:* `nil`) - The type of a location, which corresponds to the address lines field of
+      PostalAddress. For example, "Downtown, Atlanta, GA, USA" has a type of
+      LocationType#NEIGHBORHOOD, and "Kansas City, KS, USA" has a type of
+      LocationType#LOCALITY.
+  *   `postalAddress` (*type:* `GoogleApi.Jobs.V2.Model.PostalAddress.t`, *default:* `nil`) - Postal address of the location that includes human readable information,
+      such as postal delivery and payments addresses. Given a postal address,
+      a postal service can deliver items to a premises, P.O. Box, or other
+      delivery location.
+  *   `radiusMeters` (*type:* `float()`, *default:* `nil`) - Radius in meters of the job location. This value is derived from the
+      location bounding box in which a circle with the specified radius
+      centered from LatLng coves the area associated with the job location.
+      For example, currently, "Mountain View, CA, USA" has a radius of
+      7885.79 meters.
   """
 
   use GoogleApi.Gax.ModelBase

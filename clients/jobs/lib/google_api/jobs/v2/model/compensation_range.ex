@@ -21,17 +21,17 @@ defmodule GoogleApi.Jobs.V2.Model.CompensationRange do
 
   ## Attributes
 
-  - max (GoogleApi.Jobs.V2.Model.Money.t): Optional.
+  *   `max` (*type:* `GoogleApi.Jobs.V2.Model.Money.t`, *default:* `nil`) - Optional.
 
-  The maximum amount of compensation. If left empty, the value is set
-  to a maximal compensation value and the currency code is set to
-  match the currency code of
-  min_compensation. Defaults to `nil`.
-  - min (GoogleApi.Jobs.V2.Model.Money.t): Optional.
+      The maximum amount of compensation. If left empty, the value is set
+      to a maximal compensation value and the currency code is set to
+      match the currency code of
+      min_compensation.
+  *   `min` (*type:* `GoogleApi.Jobs.V2.Model.Money.t`, *default:* `nil`) - Optional.
 
-  The minimum amount of compensation. If left empty, the value is set
-  to zero and the currency code is set to match the
-  currency code of max_compensation. Defaults to `nil`.
+      The minimum amount of compensation. If left empty, the value is set
+      to zero and the currency code is set to match the
+      currency code of max_compensation.
   """
 
   use GoogleApi.Gax.ModelBase

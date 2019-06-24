@@ -28,14 +28,14 @@ defmodule GoogleApi.Jobs.V2.Model.DeleteJobsByFilterRequest do
 
   ## Attributes
 
-  - disableFastProcess (boolean()): Optional.
+  *   `disableFastProcess` (*type:* `boolean()`, *default:* `nil`) - Optional.
 
-  If set to true, this call waits for all processing steps to complete
-  before the job is cleaned up. Otherwise, the call returns while some
-  steps are still taking place asynchronously, hence faster. Defaults to `nil`.
-  - filter (GoogleApi.Jobs.V2.Model.Filter.t): Required.
+      If set to true, this call waits for all processing steps to complete
+      before the job is cleaned up. Otherwise, the call returns while some
+      steps are still taking place asynchronously, hence faster.
+  *   `filter` (*type:* `GoogleApi.Jobs.V2.Model.Filter.t`, *default:* `nil`) - Required.
 
-  Restrictions on the scope of the delete request. Defaults to `nil`.
+      Restrictions on the scope of the delete request.
   """
 
   use GoogleApi.Gax.ModelBase

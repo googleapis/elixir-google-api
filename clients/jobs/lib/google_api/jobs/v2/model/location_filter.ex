@@ -23,46 +23,46 @@ defmodule GoogleApi.Jobs.V2.Model.LocationFilter do
 
   ## Attributes
 
-  - distanceInMiles (float()): Optional.
+  *   `distanceInMiles` (*type:* `float()`, *default:* `nil`) - Optional.
 
 
-  The distance_in_miles is applied when the location being searched for is
-  identified as a city or smaller. When the location being searched for is a
-  state or larger, this field is ignored. Defaults to `nil`.
-  - isTelecommute (boolean()): Optional.
+      The distance_in_miles is applied when the location being searched for is
+      identified as a city or smaller. When the location being searched for is a
+      state or larger, this field is ignored.
+  *   `isTelecommute` (*type:* `boolean()`, *default:* `nil`) - Optional.
 
-  Allows the client to return jobs without a
-  set location, specifically, telecommuting jobs (telecomuting is considered
-  by the service as a special location.
-  Job.allow_telecommute indicates if a job permits telecommuting.
-  If this field is true, telecommuting jobs are searched, and
-  name and lat_lng are
-  ignored.
-  This filter can be used by itself to search exclusively for telecommuting
-  jobs, or it can be combined with another location
-  filter to search for a combination of job locations,
-  such as "Mountain View" or "telecommuting" jobs. However, when used in
-  combination with other location filters, telecommuting jobs can be
-  treated as less relevant than other jobs in the search response. Defaults to `nil`.
-  - latLng (GoogleApi.Jobs.V2.Model.LatLng.t): Optional.
+      Allows the client to return jobs without a
+      set location, specifically, telecommuting jobs (telecomuting is considered
+      by the service as a special location.
+      Job.allow_telecommute indicates if a job permits telecommuting.
+      If this field is true, telecommuting jobs are searched, and
+      name and lat_lng are
+      ignored.
+      This filter can be used by itself to search exclusively for telecommuting
+      jobs, or it can be combined with another location
+      filter to search for a combination of job locations,
+      such as "Mountain View" or "telecommuting" jobs. However, when used in
+      combination with other location filters, telecommuting jobs can be
+      treated as less relevant than other jobs in the search response.
+  *   `latLng` (*type:* `GoogleApi.Jobs.V2.Model.LatLng.t`, *default:* `nil`) - Optional.
 
-  The latitude and longitude of the geographic center from which to
-  search. This field is ignored if `location_name` is provided. Defaults to `nil`.
-  - name (String.t): Optional.
+      The latitude and longitude of the geographic center from which to
+      search. This field is ignored if `location_name` is provided.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Optional.
 
-  The address name, such as "Mountain View" or "Bay Area". Defaults to `nil`.
-  - regionCode (String.t): Optional.
+      The address name, such as "Mountain View" or "Bay Area".
+  *   `regionCode` (*type:* `String.t`, *default:* `nil`) - Optional.
 
-  CLDR region code of the country/region of the address. This will be used
-  to address ambiguity of the user-input location, e.g. "Liverpool"
-  against "Liverpool, NY, US" or "Liverpool, UK".
+      CLDR region code of the country/region of the address. This will be used
+      to address ambiguity of the user-input location, e.g. "Liverpool"
+      against "Liverpool, NY, US" or "Liverpool, UK".
 
-  Set this field if all the jobs to search against are from a same region,
-  or jobs are world-wide but the job seeker is from a specific region.
+      Set this field if all the jobs to search against are from a same region,
+      or jobs are world-wide but the job seeker is from a specific region.
 
-  See http://cldr.unicode.org/ and
-  http://www.unicode.org/cldr/charts/30/supplemental/territory_information.html
-  for details. Example: "CH" for Switzerland. Defaults to `nil`.
+      See http://cldr.unicode.org/ and
+      http://www.unicode.org/cldr/charts/30/supplemental/territory_information.html
+      for details. Example: "CH" for Switzerland.
   """
 
   use GoogleApi.Gax.ModelBase

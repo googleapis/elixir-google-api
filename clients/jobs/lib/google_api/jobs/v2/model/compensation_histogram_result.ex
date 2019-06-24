@@ -23,9 +23,9 @@ defmodule GoogleApi.Jobs.V2.Model.CompensationHistogramResult do
 
   ## Attributes
 
-  - result (GoogleApi.Jobs.V2.Model.NumericBucketingResult.t): Histogram result. Defaults to `nil`.
-  - type (String.t): Type of the request, corresponding to
-  CompensationHistogramRequest.type. Defaults to `nil`.
+  *   `result` (*type:* `GoogleApi.Jobs.V2.Model.NumericBucketingResult.t`, *default:* `nil`) - Histogram result.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Type of the request, corresponding to
+      CompensationHistogramRequest.type.
   """
 
   use GoogleApi.Gax.ModelBase

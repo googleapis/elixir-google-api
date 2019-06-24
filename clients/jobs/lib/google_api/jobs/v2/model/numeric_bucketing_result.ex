@@ -23,12 +23,12 @@ defmodule GoogleApi.Jobs.V2.Model.NumericBucketingResult do
 
   ## Attributes
 
-  - counts (list(GoogleApi.Jobs.V2.Model.BucketizedCount.t)): Count within each bucket. Its size is the length of
-  NumericBucketingOption.bucket_bounds plus 1. Defaults to `nil`.
-  - maxValue (float()): Stores the maximum value of the numeric field. Will be populated only if
-  [NumericBucketingOption.requires_min_max] is set to true. Defaults to `nil`.
-  - minValue (float()): Stores the minimum value of the numeric field. Will be populated only if
-  [NumericBucketingOption.requires_min_max] is set to true. Defaults to `nil`.
+  *   `counts` (*type:* `list(GoogleApi.Jobs.V2.Model.BucketizedCount.t)`, *default:* `nil`) - Count within each bucket. Its size is the length of
+      NumericBucketingOption.bucket_bounds plus 1.
+  *   `maxValue` (*type:* `float()`, *default:* `nil`) - Stores the maximum value of the numeric field. Will be populated only if
+      [NumericBucketingOption.requires_min_max] is set to true.
+  *   `minValue` (*type:* `float()`, *default:* `nil`) - Stores the minimum value of the numeric field. Will be populated only if
+      [NumericBucketingOption.requires_min_max] is set to true.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,9 +21,9 @@ defmodule GoogleApi.Jobs.V2.Model.StringValues do
 
   ## Attributes
 
-  - values (list(String.t)): Required.
+  *   `values` (*type:* `list(String.t)`, *default:* `nil`) - Required.
 
-  String values. Defaults to `nil`.
+      String values.
   """
 
   use GoogleApi.Gax.ModelBase

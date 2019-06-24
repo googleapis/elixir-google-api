@@ -28,27 +28,28 @@ defmodule GoogleApi.Jobs.V2.Api.Jobs do
 
   ## Parameters
 
-  - connection (GoogleApi.Jobs.V2.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.Jobs.V2.Model.BatchDeleteJobsRequest.t): 
+  *   `connection` (*type:* `GoogleApi.Jobs.V2.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Jobs.V2.Model.BatchDeleteJobsRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Jobs.V2.Model.Empty{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Jobs.V2.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec jobs_jobs_batch_delete(Tesla.Env.client(), keyword()) ::
+  @spec jobs_jobs_batch_delete(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Jobs.V2.Model.Empty.t()} | {:error, Tesla.Env.t()}
   def jobs_jobs_batch_delete(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -85,27 +86,28 @@ defmodule GoogleApi.Jobs.V2.Api.Jobs do
 
   ## Parameters
 
-  - connection (GoogleApi.Jobs.V2.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.Jobs.V2.Model.CreateJobRequest.t): 
+  *   `connection` (*type:* `GoogleApi.Jobs.V2.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Jobs.V2.Model.CreateJobRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Jobs.V2.Model.Job{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Jobs.V2.Model.Job{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec jobs_jobs_create(Tesla.Env.client(), keyword()) ::
+  @spec jobs_jobs_create(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Jobs.V2.Model.Job.t()} | {:error, Tesla.Env.t()}
   def jobs_jobs_create(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -142,36 +144,37 @@ defmodule GoogleApi.Jobs.V2.Api.Jobs do
 
   ## Parameters
 
-  - connection (GoogleApi.Jobs.V2.Connection): Connection to server
-  - name (String.t): Required.
+  *   `connection` (*type:* `GoogleApi.Jobs.V2.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required.
 
-  The resource name of the job to be deleted, such as "jobs/11111111".
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :disableFastProcess (boolean()): Deprecated. This field is not working anymore.
+      The resource name of the job to be deleted, such as "jobs/11111111".
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:disableFastProcess` (*type:* `boolean()`) - Deprecated. This field is not working anymore.
 
-  Optional.
+          Optional.
 
-  If set to true, this call waits for all processing steps to complete
-  before the job is cleaned up. Otherwise, the call returns while some
-  steps are still taking place asynchronously, hence faster.
+          If set to true, this call waits for all processing steps to complete
+          before the job is cleaned up. Otherwise, the call returns while some
+          steps are still taking place asynchronously, hence faster.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Jobs.V2.Model.Empty{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Jobs.V2.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec jobs_jobs_delete(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec jobs_jobs_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Jobs.V2.Model.Empty.t()} | {:error, Tesla.Env.t()}
   def jobs_jobs_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -211,27 +214,28 @@ defmodule GoogleApi.Jobs.V2.Api.Jobs do
 
   ## Parameters
 
-  - connection (GoogleApi.Jobs.V2.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.Jobs.V2.Model.DeleteJobsByFilterRequest.t): 
+  *   `connection` (*type:* `GoogleApi.Jobs.V2.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Jobs.V2.Model.DeleteJobsByFilterRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Jobs.V2.Model.Empty{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Jobs.V2.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec jobs_jobs_delete_by_filter(Tesla.Env.client(), keyword()) ::
+  @spec jobs_jobs_delete_by_filter(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Jobs.V2.Model.Empty.t()} | {:error, Tesla.Env.t()}
   def jobs_jobs_delete_by_filter(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -266,29 +270,30 @@ defmodule GoogleApi.Jobs.V2.Api.Jobs do
 
   ## Parameters
 
-  - connection (GoogleApi.Jobs.V2.Connection): Connection to server
-  - name (String.t): Required.
+  *   `connection` (*type:* `GoogleApi.Jobs.V2.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required.
 
-  The resource name of the job to retrieve, such as "jobs/11111111".
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+      The resource name of the job to retrieve, such as "jobs/11111111".
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Jobs.V2.Model.Job{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Jobs.V2.Model.Job{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec jobs_jobs_get(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec jobs_jobs_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Jobs.V2.Model.Job.t()} | {:error, Tesla.Env.t()}
   def jobs_jobs_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -336,27 +341,28 @@ defmodule GoogleApi.Jobs.V2.Api.Jobs do
 
   ## Parameters
 
-  - connection (GoogleApi.Jobs.V2.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.Jobs.V2.Model.GetHistogramRequest.t): 
+  *   `connection` (*type:* `GoogleApi.Jobs.V2.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Jobs.V2.Model.GetHistogramRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Jobs.V2.Model.GetHistogramResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Jobs.V2.Model.GetHistogramResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec jobs_jobs_histogram(Tesla.Env.client(), keyword()) ::
+  @spec jobs_jobs_histogram(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Jobs.V2.Model.GetHistogramResponse.t()} | {:error, Tesla.Env.t()}
   def jobs_jobs_histogram(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -390,60 +396,61 @@ defmodule GoogleApi.Jobs.V2.Api.Jobs do
 
   ## Parameters
 
-  - connection (GoogleApi.Jobs.V2.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :filter (String.t): Required.
+  *   `connection` (*type:* `GoogleApi.Jobs.V2.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:filter` (*type:* `String.t`) - Required.
 
-  The filter string specifies the jobs to be enumerated.
+          The filter string specifies the jobs to be enumerated.
 
-  Supported operator: =, AND
+          Supported operator: =, AND
 
-  The fields eligible for filtering are:
+          The fields eligible for filtering are:
 
-  * `companyName` (Required)
-  * `requisitionId` (Optional)
+          * `companyName` (Required)
+          * `requisitionId` (Optional)
 
-  Sample Query:
+          Sample Query:
 
-  * companyName = "companies/123"
-  * companyName = "companies/123" AND requisitionId = "req-1"
-    - :idsOnly (boolean()): Optional.
+          * companyName = "companies/123"
+          * companyName = "companies/123" AND requisitionId = "req-1"
+      *   `:idsOnly` (*type:* `boolean()`) - Optional.
 
-  If set to `true`, only Job.name, Job.requisition_id and
-  Job.language_code will be returned.
+          If set to `true`, only Job.name, Job.requisition_id and
+          Job.language_code will be returned.
 
-  A typical use case is to synchronize job repositories.
+          A typical use case is to synchronize job repositories.
 
-  Defaults to false.
-    - :pageSize (integer()): Optional.
+          Defaults to false.
+      *   `:pageSize` (*type:* `integer()`) - Optional.
 
-  The maximum number of jobs to be returned per page of results.
+          The maximum number of jobs to be returned per page of results.
 
-  If ids_only is set to true, the maximum allowed page size
-  is 1000. Otherwise, the maximum allowed page size is 100.
+          If ids_only is set to true, the maximum allowed page size
+          is 1000. Otherwise, the maximum allowed page size is 100.
 
-  Default is 100 if empty or a number < 1 is specified.
-    - :pageToken (String.t): Optional.
+          Default is 100 if empty or a number < 1 is specified.
+      *   `:pageToken` (*type:* `String.t`) - Optional.
 
-  The starting point of a query result.
+          The starting point of a query result.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Jobs.V2.Model.ListJobsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Jobs.V2.Model.ListJobsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec jobs_jobs_list(Tesla.Env.client(), keyword()) ::
+  @spec jobs_jobs_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Jobs.V2.Model.ListJobsResponse.t()} | {:error, Tesla.Env.t()}
   def jobs_jobs_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -483,32 +490,33 @@ defmodule GoogleApi.Jobs.V2.Api.Jobs do
 
   ## Parameters
 
-  - connection (GoogleApi.Jobs.V2.Connection): Connection to server
-  - name (String.t): Required during job update.
+  *   `connection` (*type:* `GoogleApi.Jobs.V2.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required during job update.
 
-  Resource name assigned to a job by the API, for example, "/jobs/foo". Use
-  of this field in job queries and API calls is preferred over the use of
-  requisition_id since this value is unique.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.Jobs.V2.Model.UpdateJobRequest.t): 
+      Resource name assigned to a job by the API, for example, "/jobs/foo". Use
+      of this field in job queries and API calls is preferred over the use of
+      requisition_id since this value is unique.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Jobs.V2.Model.UpdateJobRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Jobs.V2.Model.Job{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Jobs.V2.Model.Job{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec jobs_jobs_patch(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec jobs_jobs_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Jobs.V2.Model.Job.t()} | {:error, Tesla.Env.t()}
   def jobs_jobs_patch(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -548,27 +556,28 @@ defmodule GoogleApi.Jobs.V2.Api.Jobs do
 
   ## Parameters
 
-  - connection (GoogleApi.Jobs.V2.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.Jobs.V2.Model.SearchJobsRequest.t): 
+  *   `connection` (*type:* `GoogleApi.Jobs.V2.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Jobs.V2.Model.SearchJobsRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Jobs.V2.Model.SearchJobsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Jobs.V2.Model.SearchJobsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec jobs_jobs_search(Tesla.Env.client(), keyword()) ::
+  @spec jobs_jobs_search(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Jobs.V2.Model.SearchJobsResponse.t()} | {:error, Tesla.Env.t()}
   def jobs_jobs_search(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -611,27 +620,28 @@ defmodule GoogleApi.Jobs.V2.Api.Jobs do
 
   ## Parameters
 
-  - connection (GoogleApi.Jobs.V2.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.Jobs.V2.Model.SearchJobsRequest.t): 
+  *   `connection` (*type:* `GoogleApi.Jobs.V2.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Jobs.V2.Model.SearchJobsRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Jobs.V2.Model.SearchJobsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Jobs.V2.Model.SearchJobsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec jobs_jobs_search_for_alert(Tesla.Env.client(), keyword()) ::
+  @spec jobs_jobs_search_for_alert(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Jobs.V2.Model.SearchJobsResponse.t()} | {:error, Tesla.Env.t()}
   def jobs_jobs_search_for_alert(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

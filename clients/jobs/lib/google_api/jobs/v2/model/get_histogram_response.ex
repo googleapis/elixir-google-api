@@ -26,9 +26,9 @@ defmodule GoogleApi.Jobs.V2.Model.GetHistogramResponse do
 
   ## Attributes
 
-  - metadata (GoogleApi.Jobs.V2.Model.ResponseMetadata.t): Additional information for the API invocation, such as the request
-  tracking id. Defaults to `nil`.
-  - results (list(GoogleApi.Jobs.V2.Model.HistogramResult.t)): The Histogram results. Defaults to `nil`.
+  *   `metadata` (*type:* `GoogleApi.Jobs.V2.Model.ResponseMetadata.t`, *default:* `nil`) - Additional information for the API invocation, such as the request
+      tracking id.
+  *   `results` (*type:* `list(GoogleApi.Jobs.V2.Model.HistogramResult.t)`, *default:* `nil`) - The Histogram results.
   """
 
   use GoogleApi.Gax.ModelBase

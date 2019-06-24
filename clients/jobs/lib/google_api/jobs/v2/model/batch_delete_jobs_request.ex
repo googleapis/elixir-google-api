@@ -23,18 +23,18 @@ defmodule GoogleApi.Jobs.V2.Model.BatchDeleteJobsRequest do
 
   ## Attributes
 
-  - filter (String.t): Required.
+  *   `filter` (*type:* `String.t`, *default:* `nil`) - Required.
 
-  The filter string specifies the jobs to be deleted.
+      The filter string specifies the jobs to be deleted.
 
-  Supported operator: =, AND
+      Supported operator: =, AND
 
-  The fields eligible for filtering are:
+      The fields eligible for filtering are:
 
-  * `companyName` (Required)
-  * `requisitionId` (Required)
+      * `companyName` (Required)
+      * `requisitionId` (Required)
 
-  Sample Query: companyName = "companies/123" AND requisitionId = "req-1" Defaults to `nil`.
+      Sample Query: companyName = "companies/123" AND requisitionId = "req-1"
   """
 
   use GoogleApi.Gax.ModelBase

@@ -23,13 +23,13 @@ defmodule GoogleApi.Jobs.V2.Model.ExtendedCompensationInfoDecimal do
 
   ## Attributes
 
-  - micros (integer()): Micro (10^-6) units.
-  The value must be between -999,999 and +999,999 inclusive.
-  If `units` is positive, `micros` must be positive or zero.
-  If `units` is zero, `micros` can be positive, zero, or negative.
-  If `units` is negative, `micros` must be negative or zero.
-  For example -1.75 is represented as `units`=-1 and `micros`=-750,000. Defaults to `nil`.
-  - units (String.t): Whole units. Defaults to `nil`.
+  *   `micros` (*type:* `integer()`, *default:* `nil`) - Micro (10^-6) units.
+      The value must be between -999,999 and +999,999 inclusive.
+      If `units` is positive, `micros` must be positive or zero.
+      If `units` is zero, `micros` can be positive, zero, or negative.
+      If `units` is negative, `micros` must be negative or zero.
+      For example -1.75 is represented as `units`=-1 and `micros`=-750,000.
+  *   `units` (*type:* `String.t`, *default:* `nil`) - Whole units.
   """
 
   use GoogleApi.Gax.ModelBase

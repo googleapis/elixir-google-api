@@ -21,8 +21,8 @@ defmodule GoogleApi.Jobs.V2.Model.BucketRange do
 
   ## Attributes
 
-  - from (float()): Starting value of the bucket range. Defaults to `nil`.
-  - to (float()): Ending value of the bucket range. Defaults to `nil`.
+  *   `from` (*type:* `float()`, *default:* `nil`) - Starting value of the bucket range.
+  *   `to` (*type:* `float()`, *default:* `nil`) - Ending value of the bucket range.
   """
 
   use GoogleApi.Gax.ModelBase

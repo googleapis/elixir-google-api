@@ -23,19 +23,19 @@ defmodule GoogleApi.Jobs.V2.Model.CreateJobRequest do
 
   ## Attributes
 
-  - disableStreetAddressResolution (boolean()): Deprecated. Please use processing_options. This flag is ignored if
-  processing_options is set.
+  *   `disableStreetAddressResolution` (*type:* `boolean()`, *default:* `nil`) - Deprecated. Please use processing_options. This flag is ignored if
+      processing_options is set.
 
-  Optional.
+      Optional.
 
-  If set to `true`, the service does not attempt to resolve a
-  more precise address for the job. Defaults to `nil`.
-  - job (GoogleApi.Jobs.V2.Model.Job.t): Required.
+      If set to `true`, the service does not attempt to resolve a
+      more precise address for the job.
+  *   `job` (*type:* `GoogleApi.Jobs.V2.Model.Job.t`, *default:* `nil`) - Required.
 
-  The Job to be created. Defaults to `nil`.
-  - processingOptions (GoogleApi.Jobs.V2.Model.JobProcessingOptions.t): Optional.
+      The Job to be created.
+  *   `processingOptions` (*type:* `GoogleApi.Jobs.V2.Model.JobProcessingOptions.t`, *default:* `nil`) - Optional.
 
-  Options for job processing. Defaults to `nil`.
+      Options for job processing.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -25,13 +25,13 @@ defmodule GoogleApi.Jobs.V2.Model.DeviceInfo do
 
   ## Attributes
 
-  - deviceType (String.t): Optional.
+  *   `deviceType` (*type:* `String.t`, *default:* `nil`) - Optional.
 
-  Type of the device. Defaults to `nil`.
-  - id (String.t): Optional.
+      Type of the device.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Optional.
 
-  A device-specific ID. The ID must be a unique identifier that distinguishes
-  the device from other devices. Defaults to `nil`.
+      A device-specific ID. The ID must be a unique identifier that distinguishes
+      the device from other devices.
   """
 
   use GoogleApi.Gax.ModelBase
