@@ -28,27 +28,28 @@ defmodule GoogleApi.AnalyticsReporting.V4.Api.UserActivity do
 
   ## Parameters
 
-  - connection (GoogleApi.AnalyticsReporting.V4.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.AnalyticsReporting.V4.Model.SearchUserActivityRequest.t): 
+  *   `connection` (*type:* `GoogleApi.AnalyticsReporting.V4.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.AnalyticsReporting.V4.Model.SearchUserActivityRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AnalyticsReporting.V4.Model.SearchUserActivityResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AnalyticsReporting.V4.Model.SearchUserActivityResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec analyticsreporting_user_activity_search(Tesla.Env.client(), keyword()) ::
+  @spec analyticsreporting_user_activity_search(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.AnalyticsReporting.V4.Model.SearchUserActivityResponse.t()}
           | {:error, Tesla.Env.t()}
   def analyticsreporting_user_activity_search(connection, optional_params \\ [], opts \\ []) do

@@ -21,8 +21,8 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.MetricHeader do
 
   ## Attributes
 
-  - metricHeaderEntries (list(GoogleApi.AnalyticsReporting.V4.Model.MetricHeaderEntry.t)): Headers for the metrics in the response. Defaults to `nil`.
-  - pivotHeaders (list(GoogleApi.AnalyticsReporting.V4.Model.PivotHeader.t)): Headers for the pivots in the response. Defaults to `nil`.
+  *   `metricHeaderEntries` (*type:* `list(GoogleApi.AnalyticsReporting.V4.Model.MetricHeaderEntry.t)`, *default:* `nil`) - Headers for the metrics in the response.
+  *   `pivotHeaders` (*type:* `list(GoogleApi.AnalyticsReporting.V4.Model.PivotHeader.t)`, *default:* `nil`) - Headers for the pivots in the response.
   """
 
   use GoogleApi.Gax.ModelBase

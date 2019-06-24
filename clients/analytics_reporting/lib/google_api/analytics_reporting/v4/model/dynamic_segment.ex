@@ -22,9 +22,9 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.DynamicSegment do
 
   ## Attributes
 
-  - name (String.t): The name of the dynamic segment. Defaults to `nil`.
-  - sessionSegment (GoogleApi.AnalyticsReporting.V4.Model.SegmentDefinition.t): Session Segment to select sessions to include in the segment. Defaults to `nil`.
-  - userSegment (GoogleApi.AnalyticsReporting.V4.Model.SegmentDefinition.t): User Segment to select users to include in the segment. Defaults to `nil`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the dynamic segment.
+  *   `sessionSegment` (*type:* `GoogleApi.AnalyticsReporting.V4.Model.SegmentDefinition.t`, *default:* `nil`) - Session Segment to select sessions to include in the segment.
+  *   `userSegment` (*type:* `GoogleApi.AnalyticsReporting.V4.Model.SegmentDefinition.t`, *default:* `nil`) - User Segment to select users to include in the segment.
   """
 
   use GoogleApi.Gax.ModelBase

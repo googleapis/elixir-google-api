@@ -23,22 +23,22 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.Cohort do
 
   ## Attributes
 
-  - dateRange (GoogleApi.AnalyticsReporting.V4.Model.DateRange.t): This is used for `FIRST_VISIT_DATE` cohort, the cohort selects users
-  whose first visit date is between start date and end date defined in the
-  DateRange. The date ranges should be aligned for cohort requests. If the
-  request contains `ga:cohortNthDay` it should be exactly one day long,
-  if `ga:cohortNthWeek` it should be aligned to the week boundary (starting
-  at Sunday and ending Saturday), and for `ga:cohortNthMonth` the date range
-  should be aligned to the month (starting at the first and ending on the
-  last day of the month).
-  For LTV requests there are no such restrictions.
-  You do not need to supply a date range for the
-  `reportsRequest.dateRanges` field. Defaults to `nil`.
-  - name (String.t): A unique name for the cohort. If not defined name will be auto-generated
-  with values cohort_[1234...]. Defaults to `nil`.
-  - type (String.t): Type of the cohort. The only supported type as of now is
-  `FIRST_VISIT_DATE`. If this field is unspecified the cohort is treated
-  as `FIRST_VISIT_DATE` type cohort. Defaults to `nil`.
+  *   `dateRange` (*type:* `GoogleApi.AnalyticsReporting.V4.Model.DateRange.t`, *default:* `nil`) - This is used for `FIRST_VISIT_DATE` cohort, the cohort selects users
+      whose first visit date is between start date and end date defined in the
+      DateRange. The date ranges should be aligned for cohort requests. If the
+      request contains `ga:cohortNthDay` it should be exactly one day long,
+      if `ga:cohortNthWeek` it should be aligned to the week boundary (starting
+      at Sunday and ending Saturday), and for `ga:cohortNthMonth` the date range
+      should be aligned to the month (starting at the first and ending on the
+      last day of the month).
+      For LTV requests there are no such restrictions.
+      You do not need to supply a date range for the
+      `reportsRequest.dateRanges` field.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - A unique name for the cohort. If not defined name will be auto-generated
+      with values cohort_[1234...].
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Type of the cohort. The only supported type as of now is
+      `FIRST_VISIT_DATE`. If this field is unspecified the cohort is treated
+      as `FIRST_VISIT_DATE` type cohort.
   """
 
   use GoogleApi.Gax.ModelBase

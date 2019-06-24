@@ -22,8 +22,8 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.DateRangeValues do
 
   ## Attributes
 
-  - pivotValueRegions (list(GoogleApi.AnalyticsReporting.V4.Model.PivotValueRegion.t)): The values of each pivot region. Defaults to `nil`.
-  - values (list(String.t)): Each value corresponds to each Metric in the request. Defaults to `nil`.
+  *   `pivotValueRegions` (*type:* `list(GoogleApi.AnalyticsReporting.V4.Model.PivotValueRegion.t)`, *default:* `nil`) - The values of each pivot region.
+  *   `values` (*type:* `list(String.t)`, *default:* `nil`) - Each value corresponds to each Metric in the request.
   """
 
   use GoogleApi.Gax.ModelBase

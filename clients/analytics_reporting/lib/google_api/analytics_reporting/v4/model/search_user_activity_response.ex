@@ -21,16 +21,16 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.SearchUserActivityResponse do
 
   ## Attributes
 
-  - nextPageToken (String.t): This token should be passed to
-  [SearchUserActivityRequest](#SearchUserActivityRequest) to retrieve the
-  next page. Defaults to `nil`.
-  - sampleRate (float()): This field represents the
-  [sampling rate](https://support.google.com/analytics/answer/2637192) for
-  the given request and is a number between 0.0 to 1.0. See
-  [developer guide](/analytics/devguides/reporting/core/v4/basics#sampling)
-  for details. Defaults to `nil`.
-  - sessions (list(GoogleApi.AnalyticsReporting.V4.Model.UserActivitySession.t)): Each record represents a session (device details, duration, etc). Defaults to `nil`.
-  - totalRows (integer()): Total rows returned by this query (across different pages). Defaults to `nil`.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - This token should be passed to
+      [SearchUserActivityRequest](#SearchUserActivityRequest) to retrieve the
+      next page.
+  *   `sampleRate` (*type:* `float()`, *default:* `nil`) - This field represents the
+      [sampling rate](https://support.google.com/analytics/answer/2637192) for
+      the given request and is a number between 0.0 to 1.0. See
+      [developer guide](/analytics/devguides/reporting/core/v4/basics#sampling)
+      for details.
+  *   `sessions` (*type:* `list(GoogleApi.AnalyticsReporting.V4.Model.UserActivitySession.t)`, *default:* `nil`) - Each record represents a session (device details, duration, etc).
+  *   `totalRows` (*type:* `integer()`, *default:* `nil`) - Total rows returned by this query (across different pages).
   """
 
   use GoogleApi.Gax.ModelBase

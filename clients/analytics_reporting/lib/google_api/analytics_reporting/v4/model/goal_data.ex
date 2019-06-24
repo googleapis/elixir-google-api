@@ -21,14 +21,14 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.GoalData do
 
   ## Attributes
 
-  - goalCompletionLocation (String.t): URL of the page where this goal was completed. Defaults to `nil`.
-  - goalCompletions (String.t): Total number of goal completions in this activity. Defaults to `nil`.
-  - goalIndex (integer()): This identifies the goal as configured for the profile. Defaults to `nil`.
-  - goalName (String.t): Name of the goal. Defaults to `nil`.
-  - goalPreviousStep1 (String.t): URL of the page one step prior to the goal completion. Defaults to `nil`.
-  - goalPreviousStep2 (String.t): URL of the page two steps prior to the goal completion. Defaults to `nil`.
-  - goalPreviousStep3 (String.t): URL of the page three steps prior to the goal completion. Defaults to `nil`.
-  - goalValue (float()): Value in this goal. Defaults to `nil`.
+  *   `goalCompletionLocation` (*type:* `String.t`, *default:* `nil`) - URL of the page where this goal was completed.
+  *   `goalCompletions` (*type:* `String.t`, *default:* `nil`) - Total number of goal completions in this activity.
+  *   `goalIndex` (*type:* `integer()`, *default:* `nil`) - This identifies the goal as configured for the profile.
+  *   `goalName` (*type:* `String.t`, *default:* `nil`) - Name of the goal.
+  *   `goalPreviousStep1` (*type:* `String.t`, *default:* `nil`) - URL of the page one step prior to the goal completion.
+  *   `goalPreviousStep2` (*type:* `String.t`, *default:* `nil`) - URL of the page two steps prior to the goal completion.
+  *   `goalPreviousStep3` (*type:* `String.t`, *default:* `nil`) - URL of the page three steps prior to the goal completion.
+  *   `goalValue` (*type:* `float()`, *default:* `nil`) - Value in this goal.
   """
 
   use GoogleApi.Gax.ModelBase

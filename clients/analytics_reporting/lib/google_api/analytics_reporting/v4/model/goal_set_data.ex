@@ -21,7 +21,7 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.GoalSetData do
 
   ## Attributes
 
-  - goals (list(GoogleApi.AnalyticsReporting.V4.Model.GoalData.t)): All the goals that were reached in the current activity. Defaults to `nil`.
+  *   `goals` (*type:* `list(GoogleApi.AnalyticsReporting.V4.Model.GoalData.t)`, *default:* `nil`) - All the goals that were reached in the current activity.
   """
 
   use GoogleApi.Gax.ModelBase

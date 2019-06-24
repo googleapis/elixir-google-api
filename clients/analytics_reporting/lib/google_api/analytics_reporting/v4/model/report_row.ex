@@ -21,8 +21,8 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.ReportRow do
 
   ## Attributes
 
-  - dimensions (list(String.t)): List of requested dimensions. Defaults to `nil`.
-  - metrics (list(GoogleApi.AnalyticsReporting.V4.Model.DateRangeValues.t)): List of metrics for each requested DateRange. Defaults to `nil`.
+  *   `dimensions` (*type:* `list(String.t)`, *default:* `nil`) - List of requested dimensions.
+  *   `metrics` (*type:* `list(GoogleApi.AnalyticsReporting.V4.Model.DateRangeValues.t)`, *default:* `nil`) - List of metrics for each requested DateRange.
   """
 
   use GoogleApi.Gax.ModelBase

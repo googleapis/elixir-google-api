@@ -22,14 +22,14 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.UserActivitySession do
 
   ## Attributes
 
-  - activities (list(GoogleApi.AnalyticsReporting.V4.Model.Activity.t)): Represents a detailed view into each of the activity in this session. Defaults to `nil`.
-  - dataSource (String.t): The data source of a hit. By default, hits sent from analytics.js are
-  reported as "web" and hits sent from the mobile SDKs are reported as "app".
-  These values can be overridden in the Measurement Protocol. Defaults to `nil`.
-  - deviceCategory (String.t): The type of device used: "mobile", "tablet" etc. Defaults to `nil`.
-  - platform (String.t): Platform on which the activity happened: "android", "ios" etc. Defaults to `nil`.
-  - sessionDate (String.t): Date of this session in ISO-8601 format. Defaults to `nil`.
-  - sessionId (String.t): Unique ID of the session. Defaults to `nil`.
+  *   `activities` (*type:* `list(GoogleApi.AnalyticsReporting.V4.Model.Activity.t)`, *default:* `nil`) - Represents a detailed view into each of the activity in this session.
+  *   `dataSource` (*type:* `String.t`, *default:* `nil`) - The data source of a hit. By default, hits sent from analytics.js are
+      reported as "web" and hits sent from the mobile SDKs are reported as "app".
+      These values can be overridden in the Measurement Protocol.
+  *   `deviceCategory` (*type:* `String.t`, *default:* `nil`) - The type of device used: "mobile", "tablet" etc.
+  *   `platform` (*type:* `String.t`, *default:* `nil`) - Platform on which the activity happened: "android", "ios" etc.
+  *   `sessionDate` (*type:* `String.t`, *default:* `nil`) - Date of this session in ISO-8601 format.
+  *   `sessionId` (*type:* `String.t`, *default:* `nil`) - Unique ID of the session.
   """
 
   use GoogleApi.Gax.ModelBase

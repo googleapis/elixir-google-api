@@ -21,8 +21,8 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.MetricHeaderEntry do
 
   ## Attributes
 
-  - name (String.t): The name of the header. Defaults to `nil`.
-  - type (String.t): The type of the metric, for example `INTEGER`. Defaults to `nil`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the header.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the metric, for example `INTEGER`.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -22,10 +22,10 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.MetricFilterClause do
 
   ## Attributes
 
-  - filters (list(GoogleApi.AnalyticsReporting.V4.Model.MetricFilter.t)): The repeated set of filters. They are logically combined based on the
-  operator specified. Defaults to `nil`.
-  - operator (String.t): The operator for combining multiple metric filters. If unspecified, it is
-  treated as an `OR`. Defaults to `nil`.
+  *   `filters` (*type:* `list(GoogleApi.AnalyticsReporting.V4.Model.MetricFilter.t)`, *default:* `nil`) - The repeated set of filters. They are logically combined based on the
+      operator specified.
+  *   `operator` (*type:* `String.t`, *default:* `nil`) - The operator for combining multiple metric filters. If unspecified, it is
+      treated as an `OR`.
   """
 
   use GoogleApi.Gax.ModelBase

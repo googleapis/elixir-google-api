@@ -28,43 +28,43 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.Activity do
 
   ## Attributes
 
-  - activityTime (DateTime.t): Timestamp of the activity. Defaults to `nil`.
-  - activityType (String.t): Type of this activity. Defaults to `nil`.
-  - appview (GoogleApi.AnalyticsReporting.V4.Model.ScreenviewData.t): This will be set if `activity_type` equals `SCREEN_VIEW`. Defaults to `nil`.
-  - campaign (String.t): For manual campaign tracking, it is the value of the utm_campaign campaign
-  tracking parameter. For AdWords autotagging, it is the name(s) of the
-  online ad campaign(s) you use for the property. If you use neither, its
-  value is (not set). Defaults to `nil`.
-  - channelGrouping (String.t): The Channel Group associated with an end user's session for this View
-  (defined by the View's Channel Groupings). Defaults to `nil`.
-  - customDimension (list(GoogleApi.AnalyticsReporting.V4.Model.CustomDimension.t)): A list of all custom dimensions associated with this activity. Defaults to `nil`.
-  - ecommerce (GoogleApi.AnalyticsReporting.V4.Model.EcommerceData.t): This will be set if `activity_type` equals `ECOMMERCE`. Defaults to `nil`.
-  - event (GoogleApi.AnalyticsReporting.V4.Model.EventData.t): This field contains all the details pertaining to an event and will be
-  set if `activity_type` equals `EVENT`. Defaults to `nil`.
-  - goals (GoogleApi.AnalyticsReporting.V4.Model.GoalSetData.t): This field contains a list of all the goals that were reached in this
-  activity when `activity_type` equals `GOAL`. Defaults to `nil`.
-  - hostname (String.t): The hostname from which the tracking request was made. Defaults to `nil`.
-  - keyword (String.t): For manual campaign tracking, it is the value of the utm_term campaign
-  tracking parameter. For AdWords traffic, it contains the best matching
-  targeting criteria. For the display network, where multiple targeting
-  criteria could have caused the ad to show up, it returns the best matching
-  targeting criteria as selected by Ads. This could be display_keyword, site
-  placement, boomuserlist, user_interest, age, or gender. Otherwise its value
-  is (not set). Defaults to `nil`.
-  - landingPagePath (String.t): The first page in users' sessions, or the landing page. Defaults to `nil`.
-  - medium (String.t): The type of referrals. For manual campaign tracking, it is the value of the
-  utm_medium campaign tracking parameter. For AdWords autotagging, it is cpc.
-  If users came from a search engine detected by Google Analytics, it is
-  organic. If the referrer is not a search engine, it is referral. If users
-  came directly to the property and document.referrer is empty, its value is
-  (none). Defaults to `nil`.
-  - pageview (GoogleApi.AnalyticsReporting.V4.Model.PageviewData.t): This will be set if `activity_type` equals `PAGEVIEW`. This field
-  contains all the details about the visitor and the page that was visited. Defaults to `nil`.
-  - source (String.t): The source of referrals. For manual campaign tracking, it is the value of
-  the utm_source campaign tracking parameter. For AdWords autotagging, it is
-  google. If you use neither, it is the domain of the source
-  (e.g., document.referrer) referring the users. It may also contain a port
-  address. If users arrived without a referrer, its value is (direct). Defaults to `nil`.
+  *   `activityTime` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp of the activity.
+  *   `activityType` (*type:* `String.t`, *default:* `nil`) - Type of this activity.
+  *   `appview` (*type:* `GoogleApi.AnalyticsReporting.V4.Model.ScreenviewData.t`, *default:* `nil`) - This will be set if `activity_type` equals `SCREEN_VIEW`.
+  *   `campaign` (*type:* `String.t`, *default:* `nil`) - For manual campaign tracking, it is the value of the utm_campaign campaign
+      tracking parameter. For AdWords autotagging, it is the name(s) of the
+      online ad campaign(s) you use for the property. If you use neither, its
+      value is (not set).
+  *   `channelGrouping` (*type:* `String.t`, *default:* `nil`) - The Channel Group associated with an end user's session for this View
+      (defined by the View's Channel Groupings).
+  *   `customDimension` (*type:* `list(GoogleApi.AnalyticsReporting.V4.Model.CustomDimension.t)`, *default:* `nil`) - A list of all custom dimensions associated with this activity.
+  *   `ecommerce` (*type:* `GoogleApi.AnalyticsReporting.V4.Model.EcommerceData.t`, *default:* `nil`) - This will be set if `activity_type` equals `ECOMMERCE`.
+  *   `event` (*type:* `GoogleApi.AnalyticsReporting.V4.Model.EventData.t`, *default:* `nil`) - This field contains all the details pertaining to an event and will be
+      set if `activity_type` equals `EVENT`.
+  *   `goals` (*type:* `GoogleApi.AnalyticsReporting.V4.Model.GoalSetData.t`, *default:* `nil`) - This field contains a list of all the goals that were reached in this
+      activity when `activity_type` equals `GOAL`.
+  *   `hostname` (*type:* `String.t`, *default:* `nil`) - The hostname from which the tracking request was made.
+  *   `keyword` (*type:* `String.t`, *default:* `nil`) - For manual campaign tracking, it is the value of the utm_term campaign
+      tracking parameter. For AdWords traffic, it contains the best matching
+      targeting criteria. For the display network, where multiple targeting
+      criteria could have caused the ad to show up, it returns the best matching
+      targeting criteria as selected by Ads. This could be display_keyword, site
+      placement, boomuserlist, user_interest, age, or gender. Otherwise its value
+      is (not set).
+  *   `landingPagePath` (*type:* `String.t`, *default:* `nil`) - The first page in users' sessions, or the landing page.
+  *   `medium` (*type:* `String.t`, *default:* `nil`) - The type of referrals. For manual campaign tracking, it is the value of the
+      utm_medium campaign tracking parameter. For AdWords autotagging, it is cpc.
+      If users came from a search engine detected by Google Analytics, it is
+      organic. If the referrer is not a search engine, it is referral. If users
+      came directly to the property and document.referrer is empty, its value is
+      (none).
+  *   `pageview` (*type:* `GoogleApi.AnalyticsReporting.V4.Model.PageviewData.t`, *default:* `nil`) - This will be set if `activity_type` equals `PAGEVIEW`. This field
+      contains all the details about the visitor and the page that was visited.
+  *   `source` (*type:* `String.t`, *default:* `nil`) - The source of referrals. For manual campaign tracking, it is the value of
+      the utm_source campaign tracking parameter. For AdWords autotagging, it is
+      google. If you use neither, it is the domain of the source
+      (e.g., document.referrer) referring the users. It may also contain a port
+      address. If users arrived without a referrer, its value is (direct).
   """
 
   use GoogleApi.Gax.ModelBase

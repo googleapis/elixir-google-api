@@ -21,8 +21,8 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.PivotHeader do
 
   ## Attributes
 
-  - pivotHeaderEntries (list(GoogleApi.AnalyticsReporting.V4.Model.PivotHeaderEntry.t)): A single pivot section header. Defaults to `nil`.
-  - totalPivotGroupsCount (integer()): The total number of groups for this pivot. Defaults to `nil`.
+  *   `pivotHeaderEntries` (*type:* `list(GoogleApi.AnalyticsReporting.V4.Model.PivotHeaderEntry.t)`, *default:* `nil`) - A single pivot section header.
+  *   `totalPivotGroupsCount` (*type:* `integer()`, *default:* `nil`) - The total number of groups for this pivot.
   """
 
   use GoogleApi.Gax.ModelBase

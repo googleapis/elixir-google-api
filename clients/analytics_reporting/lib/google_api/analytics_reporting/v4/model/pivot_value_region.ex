@@ -21,7 +21,7 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.PivotValueRegion do
 
   ## Attributes
 
-  - values (list(String.t)): The values of the metrics in each of the pivot regions. Defaults to `nil`.
+  *   `values` (*type:* `list(String.t)`, *default:* `nil`) - The values of the metrics in each of the pivot regions.
   """
 
   use GoogleApi.Gax.ModelBase

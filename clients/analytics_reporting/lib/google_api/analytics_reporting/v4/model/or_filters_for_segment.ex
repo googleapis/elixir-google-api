@@ -22,7 +22,7 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.OrFiltersForSegment do
 
   ## Attributes
 
-  - segmentFilterClauses (list(GoogleApi.AnalyticsReporting.V4.Model.SegmentFilterClause.t)): List of segment filters to be combined with a `OR` operator. Defaults to `nil`.
+  *   `segmentFilterClauses` (*type:* `list(GoogleApi.AnalyticsReporting.V4.Model.SegmentFilterClause.t)`, *default:* `nil`) - List of segment filters to be combined with a `OR` operator.
   """
 
   use GoogleApi.Gax.ModelBase
