@@ -25,9 +25,9 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ConfigMapEnvSource do
 
   ## Attributes
 
-  - localObjectReference (GoogleApi.CloudRun.V1alpha1.Model.LocalObjectReference.t): The ConfigMap to select from. Defaults to `nil`.
-  - optional (boolean()): Specify whether the ConfigMap must be defined
-  +optional Defaults to `nil`.
+  *   `localObjectReference` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.LocalObjectReference.t`, *default:* `nil`) - The ConfigMap to select from.
+  *   `optional` (*type:* `boolean()`, *default:* `nil`) - Specify whether the ConfigMap must be defined
+      +optional
   """
 
   use GoogleApi.Gax.ModelBase

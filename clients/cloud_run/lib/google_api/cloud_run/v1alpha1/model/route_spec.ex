@@ -21,14 +21,14 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.RouteSpec do
 
   ## Attributes
 
-  - generation (integer()): Deprecated and not currently populated by Cloud Run. See
-  metadata.generation instead, which is the sequence number containing the
-  latest generation of the desired state.
+  *   `generation` (*type:* `integer()`, *default:* `nil`) - Deprecated and not currently populated by Cloud Run. See
+      metadata.generation instead, which is the sequence number containing the
+      latest generation of the desired state.
 
-  Read-only. Defaults to `nil`.
-  - traffic (list(GoogleApi.CloudRun.V1alpha1.Model.TrafficTarget.t)): Traffic specifies how to distribute traffic over a collection of Knative
-  Revisions and Configurations.
-  Cloud Run currently supports a single configurationName. Defaults to `nil`.
+      Read-only.
+  *   `traffic` (*type:* `list(GoogleApi.CloudRun.V1alpha1.Model.TrafficTarget.t)`, *default:* `nil`) - Traffic specifies how to distribute traffic over a collection of Knative
+      Revisions and Configurations.
+      Cloud Run currently supports a single configurationName.
   """
 
   use GoogleApi.Gax.ModelBase

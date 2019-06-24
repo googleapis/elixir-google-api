@@ -24,17 +24,17 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ServiceSpecReleaseType do
 
   ## Attributes
 
-  - configuration (GoogleApi.CloudRun.V1alpha1.Model.ConfigurationSpec.t): The configuration for this service. All revisions from this service must
-  come from a single configuration. Defaults to `nil`.
-  - revisions (list(String.t)): Revisions is an ordered list of 1 or 2 revisions. The first is the current
-  revision, and the second is the candidate revision. If a single revision
-  is provided, traffic will be pinned at that revision.
+  *   `configuration` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.ConfigurationSpec.t`, *default:* `nil`) - The configuration for this service. All revisions from this service must
+      come from a single configuration.
+  *   `revisions` (*type:* `list(String.t)`, *default:* `nil`) - Revisions is an ordered list of 1 or 2 revisions. The first is the current
+      revision, and the second is the candidate revision. If a single revision
+      is provided, traffic will be pinned at that revision.
 
-  "@latest" is a shortcut for usage that refers to the latest created
-  revision by the configuration. Defaults to `nil`.
-  - rolloutPercent (integer()): RolloutPercent is the percent of traffic that should be sent to the
-  candidate revision, i.e. the 2nd revision in the revisions list.
-  Valid values are between 0 and 99 inclusive. Defaults to `nil`.
+      "@latest" is a shortcut for usage that refers to the latest created
+      revision by the configuration.
+  *   `rolloutPercent` (*type:* `integer()`, *default:* `nil`) - RolloutPercent is the percent of traffic that should be sent to the
+      candidate revision, i.e. the 2nd revision in the revisions list.
+      Valid values are between 0 and 99 inclusive.
   """
 
   use GoogleApi.Gax.ModelBase

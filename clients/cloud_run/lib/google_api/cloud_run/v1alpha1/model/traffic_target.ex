@@ -21,46 +21,46 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.TrafficTarget do
 
   ## Attributes
 
-  - configurationName (String.t): ConfigurationName of a configuration to whose latest revision we will
-  send this portion of traffic. When the "status.latestReadyRevisionName"
-  of the referenced configuration changes, we will automatically migrate
-  traffic from the prior "latest ready" revision to the new one. This field
-  is never set in Route's status, only its spec. This is mutually exclusive
-  with RevisionName.
+  *   `configurationName` (*type:* `String.t`, *default:* `nil`) - ConfigurationName of a configuration to whose latest revision we will
+      send this portion of traffic. When the "status.latestReadyRevisionName"
+      of the referenced configuration changes, we will automatically migrate
+      traffic from the prior "latest ready" revision to the new one. This field
+      is never set in Route's status, only its spec. This is mutually exclusive
+      with RevisionName.
 
-  Cloud Run currently supports a single ConfigurationName. Defaults to `nil`.
-  - latestRevision (boolean()): LatestRevision may be optionally provided to indicate that the latest
-  ready Revision of the Configuration should be used for this traffic
-  target. When provided LatestRevision must be true if RevisionName is
-  empty; it must be false when RevisionName is non-empty.
+      Cloud Run currently supports a single ConfigurationName.
+  *   `latestRevision` (*type:* `boolean()`, *default:* `nil`) - LatestRevision may be optionally provided to indicate that the latest
+      ready Revision of the Configuration should be used for this traffic
+      target. When provided LatestRevision must be true if RevisionName is
+      empty; it must be false when RevisionName is non-empty.
 
-  Not currently supported in Cloud Run.
-  +optional Defaults to `nil`.
-  - name (String.t): Name is optionally used to expose a dedicated hostname for referencing this
-  target exclusively.
+      Not currently supported in Cloud Run.
+      +optional
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name is optionally used to expose a dedicated hostname for referencing this
+      target exclusively.
 
-  Not currently supported by Cloud Run.
-  +optional Defaults to `nil`.
-  - percent (integer()): Percent specifies percent of the traffic to this Revision or Configuration.
-  This defaults to zero if unspecified.
+      Not currently supported by Cloud Run.
+      +optional
+  *   `percent` (*type:* `integer()`, *default:* `nil`) - Percent specifies percent of the traffic to this Revision or Configuration.
+      This defaults to zero if unspecified.
 
-  Cloud Run currently requires 100 percent for a single ConfigurationName
-  TrafficTarget entry. Defaults to `nil`.
-  - revisionName (String.t): RevisionName of a specific revision to which to send this portion of
-  traffic. This is mutually exclusive with ConfigurationName.
+      Cloud Run currently requires 100 percent for a single ConfigurationName
+      TrafficTarget entry.
+  *   `revisionName` (*type:* `String.t`, *default:* `nil`) - RevisionName of a specific revision to which to send this portion of
+      traffic. This is mutually exclusive with ConfigurationName.
 
-  Providing RevisionName in spec is not currently supported by Cloud Run. Defaults to `nil`.
-  - tag (String.t): Tag is optionally used to expose a dedicated url for referencing
-  this target exclusively.
+      Providing RevisionName in spec is not currently supported by Cloud Run.
+  *   `tag` (*type:* `String.t`, *default:* `nil`) - Tag is optionally used to expose a dedicated url for referencing
+      this target exclusively.
 
-  Not currently supported in Cloud Run.
-  +optional Defaults to `nil`.
-  - url (String.t): Output only. URL displays the URL for accessing named traffic targets. URL
-  is displayed in status, and is disallowed on spec. URL must contain a
-  scheme (e.g. http://) and a hostname, but may not contain anything else
-  (e.g. basic auth, url path, etc.
+      Not currently supported in Cloud Run.
+      +optional
+  *   `url` (*type:* `String.t`, *default:* `nil`) - Output only. URL displays the URL for accessing named traffic targets. URL
+      is displayed in status, and is disallowed on spec. URL must contain a
+      scheme (e.g. http://) and a hostname, but may not contain anything else
+      (e.g. basic auth, url path, etc.
 
-  Not currently supported in Cloud Run. Defaults to `nil`.
+      Not currently supported in Cloud Run.
   """
 
   use GoogleApi.Gax.ModelBase

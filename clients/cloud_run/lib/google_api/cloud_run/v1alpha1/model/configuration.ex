@@ -26,13 +26,13 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.Configuration do
 
   ## Attributes
 
-  - apiVersion (String.t): The API version for this call such as "v1alpha1". Defaults to `nil`.
-  - kind (String.t): The kind of resource, in this case always "Configuration". Defaults to `nil`.
-  - metadata (GoogleApi.CloudRun.V1alpha1.Model.ObjectMeta.t): Metadata associated with this Configuration, including name, namespace,
-  labels, and annotations. Defaults to `nil`.
-  - spec (GoogleApi.CloudRun.V1alpha1.Model.ConfigurationSpec.t): Spec holds the desired state of the Configuration (from the client). Defaults to `nil`.
-  - status (GoogleApi.CloudRun.V1alpha1.Model.ConfigurationStatus.t): Status communicates the observed state of the Configuration (from the
-  controller). Defaults to `nil`.
+  *   `apiVersion` (*type:* `String.t`, *default:* `nil`) - The API version for this call such as "v1alpha1".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of resource, in this case always "Configuration".
+  *   `metadata` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.ObjectMeta.t`, *default:* `nil`) - Metadata associated with this Configuration, including name, namespace,
+      labels, and annotations.
+  *   `spec` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.ConfigurationSpec.t`, *default:* `nil`) - Spec holds the desired state of the Configuration (from the client).
+  *   `status` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.ConfigurationStatus.t`, *default:* `nil`) - Status communicates the observed state of the Configuration (from the
+      controller).
   """
 
   use GoogleApi.Gax.ModelBase

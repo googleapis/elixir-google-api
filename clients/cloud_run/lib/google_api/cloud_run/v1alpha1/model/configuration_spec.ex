@@ -22,23 +22,23 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ConfigurationSpec do
 
   ## Attributes
 
-  - generation (integer()): Deprecated and not currently populated by Cloud Run. See
-  metadata.generation instead, which is the sequence number containing the
-  latest generation of the desired state.
+  *   `generation` (*type:* `integer()`, *default:* `nil`) - Deprecated and not currently populated by Cloud Run. See
+      metadata.generation instead, which is the sequence number containing the
+      latest generation of the desired state.
 
-  Read-only. Defaults to `nil`.
-  - revisionTemplate (GoogleApi.CloudRun.V1alpha1.Model.RevisionTemplate.t): RevisionTemplate holds the latest specification for the Revision to
-  be stamped out. The template references the container image, and may also
-  include labels and annotations that should be attached to the Revision.
-  To correlate a Revision, and/or to force a Revision to be created when the
-  spec doesn't otherwise change, a nonce label may be provided in the
-  template metadata. For more details, see:
-  https://github.com/knative/serving/blob/master/docs/client-conventions.md#associate-modifications-with-revisions
+      Read-only.
+  *   `revisionTemplate` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.RevisionTemplate.t`, *default:* `nil`) - RevisionTemplate holds the latest specification for the Revision to
+      be stamped out. The template references the container image, and may also
+      include labels and annotations that should be attached to the Revision.
+      To correlate a Revision, and/or to force a Revision to be created when the
+      spec doesn't otherwise change, a nonce label may be provided in the
+      template metadata. For more details, see:
+      https://github.com/knative/serving/blob/master/docs/client-conventions.md#associate-modifications-with-revisions
 
-  Cloud Run does not currently support referencing a build that is
-  responsible for materializing the container image from source. Defaults to `nil`.
-  - template (GoogleApi.CloudRun.V1alpha1.Model.RevisionTemplate.t): Template holds the latest specification for the Revision to be stamped out.
-  Not currently supported by Cloud Run. Defaults to `nil`.
+      Cloud Run does not currently support referencing a build that is
+      responsible for materializing the container image from source.
+  *   `template` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.RevisionTemplate.t`, *default:* `nil`) - Template holds the latest specification for the Revision to be stamped out.
+      Not currently supported by Cloud Run.
   """
 
   use GoogleApi.Gax.ModelBase

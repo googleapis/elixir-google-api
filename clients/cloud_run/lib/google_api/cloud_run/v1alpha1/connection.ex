@@ -20,6 +20,8 @@ defmodule GoogleApi.CloudRun.V1alpha1.Connection do
   Handle Tesla connections for GoogleApi.CloudRun.V1alpha1.
   """
 
+  @type t :: Tesla.Env.client()
+
   use GoogleApi.Gax.Connection,
     scopes: [
       # View and manage your data across Google Cloud Platform services

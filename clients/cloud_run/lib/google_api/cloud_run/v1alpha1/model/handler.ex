@@ -21,13 +21,13 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.Handler do
 
   ## Attributes
 
-  - exec (GoogleApi.CloudRun.V1alpha1.Model.ExecAction.t): One and only one of the following should be specified.
-  Exec specifies the action to take.
-  +optional Defaults to `nil`.
-  - httpGet (GoogleApi.CloudRun.V1alpha1.Model.HTTPGetAction.t): HTTPGet specifies the http request to perform.
-  +optional Defaults to `nil`.
-  - tcpSocket (GoogleApi.CloudRun.V1alpha1.Model.TCPSocketAction.t): TCPSocket specifies an action involving a TCP port.
-  TCP hooks not yet supported Defaults to `nil`.
+  *   `exec` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.ExecAction.t`, *default:* `nil`) - One and only one of the following should be specified.
+      Exec specifies the action to take.
+      +optional
+  *   `httpGet` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.HTTPGetAction.t`, *default:* `nil`) - HTTPGet specifies the http request to perform.
+      +optional
+  *   `tcpSocket` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.TCPSocketAction.t`, *default:* `nil`) - TCPSocket specifies an action involving a TCP port.
+      TCP hooks not yet supported
   """
 
   use GoogleApi.Gax.ModelBase

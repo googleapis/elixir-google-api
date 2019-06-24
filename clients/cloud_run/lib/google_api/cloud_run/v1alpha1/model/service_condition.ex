@@ -21,21 +21,21 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ServiceCondition do
 
   ## Attributes
 
-  - lastTransitionTime (DateTime.t): Last time the condition transitioned from one status to another.
-  +optional Defaults to `nil`.
-  - message (String.t): Human-readable message indicating details about last transition.
-  +optional Defaults to `nil`.
-  - reason (String.t): One-word CamelCase reason for the condition's last transition.
-  +optional Defaults to `nil`.
-  - severity (String.t): How to interpret failures of this condition, one of Error, Warning, Info
-  +optional Defaults to `nil`.
-  - status (String.t): Status of the condition, one of True, False, Unknown. Defaults to `nil`.
-  - type (String.t): ServiceConditionType is used to communicate the status of the
-  reconciliation process. See also:
-  https://github.com/knative/serving/blob/master/docs/spec/errors.md#error-conditions-and-reporting
+  *   `lastTransitionTime` (*type:* `DateTime.t`, *default:* `nil`) - Last time the condition transitioned from one status to another.
+      +optional
+  *   `message` (*type:* `String.t`, *default:* `nil`) - Human-readable message indicating details about last transition.
+      +optional
+  *   `reason` (*type:* `String.t`, *default:* `nil`) - One-word CamelCase reason for the condition's last transition.
+      +optional
+  *   `severity` (*type:* `String.t`, *default:* `nil`) - How to interpret failures of this condition, one of Error, Warning, Info
+      +optional
+  *   `status` (*type:* `String.t`, *default:* `nil`) - Status of the condition, one of True, False, Unknown.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - ServiceConditionType is used to communicate the status of the
+      reconciliation process. See also:
+      https://github.com/knative/serving/blob/master/docs/spec/errors.md#error-conditions-and-reporting
 
-  Types include: "Ready", "ConfigurationsReady", and "RoutesReady". "Ready"
-  will be true when the underlying Route and Configuration are ready. Defaults to `nil`.
+      Types include: "Ready", "ConfigurationsReady", and "RoutesReady". "Ready"
+      will be true when the underlying Route and Configuration are ready.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,20 +21,20 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.VolumeMount do
 
   ## Attributes
 
-  - mountPath (String.t): Path within the container at which the volume should be mounted.  Must
-  not contain ':'. Defaults to `nil`.
-  - mountPropagation (String.t): mountPropagation determines how mounts are propagated from the host
-  to container and the other way around.
-  When not set, MountPropagationHostToContainer is used.
-  This field is beta in 1.10.
-  +optional Defaults to `nil`.
-  - name (String.t): This must match the Name of a Volume. Defaults to `nil`.
-  - readOnly (boolean()): Mounted read-only if true, read-write otherwise (false or unspecified).
-  Defaults to false.
-  +optional Defaults to `nil`.
-  - subPath (String.t): Path within the volume from which the container's volume should be mounted.
-  Defaults to "" (volume's root).
-  +optional Defaults to `nil`.
+  *   `mountPath` (*type:* `String.t`, *default:* `nil`) - Path within the container at which the volume should be mounted.  Must
+      not contain ':'.
+  *   `mountPropagation` (*type:* `String.t`, *default:* `nil`) - mountPropagation determines how mounts are propagated from the host
+      to container and the other way around.
+      When not set, MountPropagationHostToContainer is used.
+      This field is beta in 1.10.
+      +optional
+  *   `name` (*type:* `String.t`, *default:* `nil`) - This must match the Name of a Volume.
+  *   `readOnly` (*type:* `boolean()`, *default:* `nil`) - Mounted read-only if true, read-write otherwise (false or unspecified).
+      Defaults to false.
+      +optional
+  *   `subPath` (*type:* `String.t`, *default:* `nil`) - Path within the volume from which the container's volume should be mounted.
+      Defaults to "" (volume's root).
+      +optional
   """
 
   use GoogleApi.Gax.ModelBase

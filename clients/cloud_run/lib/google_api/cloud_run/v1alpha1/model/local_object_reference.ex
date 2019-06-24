@@ -22,9 +22,9 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.LocalObjectReference do
 
   ## Attributes
 
-  - name (String.t): Name of the referent.
-  More info:
-  https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names Defaults to `nil`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the referent.
+      More info:
+      https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
   """
 
   use GoogleApi.Gax.ModelBase

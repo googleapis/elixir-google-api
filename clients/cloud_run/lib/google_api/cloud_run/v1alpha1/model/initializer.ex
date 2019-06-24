@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.Initializer do
 
   ## Attributes
 
-  - name (String.t): name of the process that is responsible for initializing this object. Defaults to `nil`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - name of the process that is responsible for initializing this object.
   """
 
   use GoogleApi.Gax.ModelBase

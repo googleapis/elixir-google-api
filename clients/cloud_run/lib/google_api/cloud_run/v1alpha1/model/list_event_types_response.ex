@@ -21,11 +21,11 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ListEventTypesResponse do
 
   ## Attributes
 
-  - apiVersion (String.t): The API version for this call such as "v1alpha1". Defaults to `nil`.
-  - items (list(GoogleApi.CloudRun.V1alpha1.Model.EventType.t)): List of EventTypes. Defaults to `nil`.
-  - kind (String.t): The kind of this resource, in this case "EventTypeList". Defaults to `nil`.
-  - metadata (GoogleApi.CloudRun.V1alpha1.Model.ListMeta.t): Metadata associated with this EventType list. Defaults to `nil`.
-  - unreachable (list(String.t)): Locations that could not be reached. Defaults to `nil`.
+  *   `apiVersion` (*type:* `String.t`, *default:* `nil`) - The API version for this call such as "v1alpha1".
+  *   `items` (*type:* `list(GoogleApi.CloudRun.V1alpha1.Model.EventType.t)`, *default:* `nil`) - List of EventTypes.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of this resource, in this case "EventTypeList".
+  *   `metadata` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.ListMeta.t`, *default:* `nil`) - Metadata associated with this EventType list.
+  *   `unreachable` (*type:* `list(String.t)`, *default:* `nil`) - Locations that could not be reached.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,13 +21,13 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.SubscriberSpec do
 
   ## Attributes
 
-  - ref (GoogleApi.CloudRun.V1alpha1.Model.ObjectReference.t): Reference to an object that will be used to find the target
-  endpoint, which should implement the Addressable duck type.
-  For example, this could be a reference to a Route resource
-  or a Knative Service resource. Defaults to `nil`.
-  - uri (String.t): Reference to a 'known' endpoint where no resolving is done.
-  http://k8s-service for example
-  http://myexternalhandler.example.com/foo/bar Defaults to `nil`.
+  *   `ref` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.ObjectReference.t`, *default:* `nil`) - Reference to an object that will be used to find the target
+      endpoint, which should implement the Addressable duck type.
+      For example, this could be a reference to a Route resource
+      or a Knative Service resource.
+  *   `uri` (*type:* `String.t`, *default:* `nil`) - Reference to a 'known' endpoint where no resolving is done.
+      http://k8s-service for example
+      http://myexternalhandler.example.com/foo/bar
   """
 
   use GoogleApi.Gax.ModelBase

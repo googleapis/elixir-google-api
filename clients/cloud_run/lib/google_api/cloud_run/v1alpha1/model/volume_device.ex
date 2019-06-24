@@ -21,9 +21,9 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.VolumeDevice do
 
   ## Attributes
 
-  - devicePath (String.t): devicePath is the path inside of the container that the device will be
-  mapped to. Defaults to `nil`.
-  - name (String.t): name must match the name of a persistentVolumeClaim in the pod Defaults to `nil`.
+  *   `devicePath` (*type:* `String.t`, *default:* `nil`) - devicePath is the path inside of the container that the device will be
+      mapped to.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - name must match the name of a persistentVolumeClaim in the pod
   """
 
   use GoogleApi.Gax.ModelBase

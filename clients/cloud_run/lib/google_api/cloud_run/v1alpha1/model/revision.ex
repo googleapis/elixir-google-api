@@ -29,13 +29,13 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.Revision do
 
   ## Attributes
 
-  - apiVersion (String.t): The API version for this call such as "v1alpha1". Defaults to `nil`.
-  - kind (String.t): The kind of this resource, in this case "Revision". Defaults to `nil`.
-  - metadata (GoogleApi.CloudRun.V1alpha1.Model.ObjectMeta.t): Metadata associated with this Revision, including name, namespace, labels,
-  and annotations. Defaults to `nil`.
-  - spec (GoogleApi.CloudRun.V1alpha1.Model.RevisionSpec.t): Spec holds the desired state of the Revision (from the client). Defaults to `nil`.
-  - status (GoogleApi.CloudRun.V1alpha1.Model.RevisionStatus.t): Status communicates the observed state of the Revision (from the
-  controller). Defaults to `nil`.
+  *   `apiVersion` (*type:* `String.t`, *default:* `nil`) - The API version for this call such as "v1alpha1".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of this resource, in this case "Revision".
+  *   `metadata` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.ObjectMeta.t`, *default:* `nil`) - Metadata associated with this Revision, including name, namespace, labels,
+      and annotations.
+  *   `spec` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.RevisionSpec.t`, *default:* `nil`) - Spec holds the desired state of the Revision (from the client).
+  *   `status` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.RevisionStatus.t`, *default:* `nil`) - Status communicates the observed state of the Revision (from the
+      controller).
   """
 
   use GoogleApi.Gax.ModelBase

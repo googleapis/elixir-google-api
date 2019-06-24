@@ -22,7 +22,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ServiceSpecRunLatest do
 
   ## Attributes
 
-  - configuration (GoogleApi.CloudRun.V1alpha1.Model.ConfigurationSpec.t): The configuration for this service. Defaults to `nil`.
+  *   `configuration` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.ConfigurationSpec.t`, *default:* `nil`) - The configuration for this service.
   """
 
   use GoogleApi.Gax.ModelBase

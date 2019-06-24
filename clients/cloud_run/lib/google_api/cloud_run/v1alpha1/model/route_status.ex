@@ -22,29 +22,29 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.RouteStatus do
 
   ## Attributes
 
-  - address (GoogleApi.CloudRun.V1alpha1.Model.Addressable.t): Similar to domain, information on where the service is available on HTTP. Defaults to `nil`.
-  - conditions (list(GoogleApi.CloudRun.V1alpha1.Model.RouteCondition.t)): Conditions communicates information about ongoing/complete
-  reconciliation processes that bring the "spec" inline with the observed
-  state of the world. Defaults to `nil`.
-  - domain (String.t): Domain holds the top-level domain that will distribute traffic over the
-  provided targets. It generally has the form
-  https://{route-hash}-{project-hash}-{cluster-level-suffix}.a.run.app Defaults to `nil`.
-  - domainInternal (String.t): For Cloud Run, identifical to domain. Defaults to `nil`.
-  - observedGeneration (integer()): ObservedGeneration is the 'Generation' of the Route that
-  was last processed by the controller.
+  *   `address` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.Addressable.t`, *default:* `nil`) - Similar to domain, information on where the service is available on HTTP.
+  *   `conditions` (*type:* `list(GoogleApi.CloudRun.V1alpha1.Model.RouteCondition.t)`, *default:* `nil`) - Conditions communicates information about ongoing/complete
+      reconciliation processes that bring the "spec" inline with the observed
+      state of the world.
+  *   `domain` (*type:* `String.t`, *default:* `nil`) - Domain holds the top-level domain that will distribute traffic over the
+      provided targets. It generally has the form
+      https://{route-hash}-{project-hash}-{cluster-level-suffix}.a.run.app
+  *   `domainInternal` (*type:* `String.t`, *default:* `nil`) - For Cloud Run, identifical to domain.
+  *   `observedGeneration` (*type:* `integer()`, *default:* `nil`) - ObservedGeneration is the 'Generation' of the Route that
+      was last processed by the controller.
 
-  Clients polling for completed reconciliation should poll until
-  observedGeneration = metadata.generation and the Ready condition's status
-  is True or False.
+      Clients polling for completed reconciliation should poll until
+      observedGeneration = metadata.generation and the Ready condition's status
+      is True or False.
 
-  Note that providing a trafficTarget that only has a configurationName will
-  result in a Route that does not increment either its metadata.generation or
-  its observedGeneration, as new "latest ready" revisions from the
-  Configuration are processed without an update to the Route's spec. Defaults to `nil`.
-  - traffic (list(GoogleApi.CloudRun.V1alpha1.Model.TrafficTarget.t)): Traffic holds the configured traffic distribution.
-  These entries will always contain RevisionName references.
-  When ConfigurationName appears in the spec, this will hold the
-  LatestReadyRevisionName that we last observed. Defaults to `nil`.
+      Note that providing a trafficTarget that only has a configurationName will
+      result in a Route that does not increment either its metadata.generation or
+      its observedGeneration, as new "latest ready" revisions from the
+      Configuration are processed without an update to the Route's spec.
+  *   `traffic` (*type:* `list(GoogleApi.CloudRun.V1alpha1.Model.TrafficTarget.t)`, *default:* `nil`) - Traffic holds the configured traffic distribution.
+      These entries will always contain RevisionName references.
+      When ConfigurationName appears in the spec, this will hold the
+      LatestReadyRevisionName that we last observed.
   """
 
   use GoogleApi.Gax.ModelBase

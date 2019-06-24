@@ -21,10 +21,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ListDomainMappingsResponse do
 
   ## Attributes
 
-  - apiVersion (String.t): The API version for this call such as "v1alpha1". Defaults to `nil`.
-  - items (list(GoogleApi.CloudRun.V1alpha1.Model.DomainMapping.t)): List of DomainMappings. Defaults to `nil`.
-  - kind (String.t): The kind of this resource, in this case "DomainMappingList". Defaults to `nil`.
-  - metadata (GoogleApi.CloudRun.V1alpha1.Model.ListMeta.t): Metadata associated with this DomainMapping list. Defaults to `nil`.
+  *   `apiVersion` (*type:* `String.t`, *default:* `nil`) - The API version for this call such as "v1alpha1".
+  *   `items` (*type:* `list(GoogleApi.CloudRun.V1alpha1.Model.DomainMapping.t)`, *default:* `nil`) - List of DomainMappings.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of this resource, in this case "DomainMappingList".
+  *   `metadata` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.ListMeta.t`, *default:* `nil`) - Metadata associated with this DomainMapping list.
   """
 
   use GoogleApi.Gax.ModelBase

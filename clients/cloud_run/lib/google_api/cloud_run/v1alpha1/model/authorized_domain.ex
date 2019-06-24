@@ -23,9 +23,9 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.AuthorizedDomain do
 
   ## Attributes
 
-  - id (String.t): Relative name of the domain authorized for use. Example: `example.com`. Defaults to `nil`.
-  - name (String.t): Read only. Full path to the `AuthorizedDomain` resource in the API.
-  Example: `apps/myapp/authorizedDomains/example.com`. Defaults to `nil`.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Relative name of the domain authorized for use. Example: `example.com`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Read only. Full path to the `AuthorizedDomain` resource in the API.
+      Example: `apps/myapp/authorizedDomains/example.com`.
   """
 
   use GoogleApi.Gax.ModelBase

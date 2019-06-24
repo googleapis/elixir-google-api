@@ -21,14 +21,14 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.SELinuxOptions do
 
   ## Attributes
 
-  - level (String.t): Level is SELinux level label that applies to the container.
-  +optional Defaults to `nil`.
-  - role (String.t): Role is a SELinux role label that applies to the container.
-  +optional Defaults to `nil`.
-  - type (String.t): Type is a SELinux type label that applies to the container.
-  +optional Defaults to `nil`.
-  - user (String.t): User is a SELinux user label that applies to the container.
-  +optional Defaults to `nil`.
+  *   `level` (*type:* `String.t`, *default:* `nil`) - Level is SELinux level label that applies to the container.
+      +optional
+  *   `role` (*type:* `String.t`, *default:* `nil`) - Role is a SELinux role label that applies to the container.
+      +optional
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Type is a SELinux type label that applies to the container.
+      +optional
+  *   `user` (*type:* `String.t`, *default:* `nil`) - User is a SELinux user label that applies to the container.
+      +optional
   """
 
   use GoogleApi.Gax.ModelBase

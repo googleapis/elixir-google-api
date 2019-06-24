@@ -21,8 +21,8 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.HTTPHeader do
 
   ## Attributes
 
-  - name (String.t): The header field name Defaults to `nil`.
-  - value (String.t): The header field value Defaults to `nil`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The header field name
+  *   `value` (*type:* `String.t`, *default:* `nil`) - The header field value
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,8 +21,8 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ListAuthorizedDomainsResponse do
 
   ## Attributes
 
-  - domains (list(GoogleApi.CloudRun.V1alpha1.Model.AuthorizedDomain.t)): The authorized domains belonging to the user. Defaults to `nil`.
-  - nextPageToken (String.t): Continuation token for fetching the next page of results. Defaults to `nil`.
+  *   `domains` (*type:* `list(GoogleApi.CloudRun.V1alpha1.Model.AuthorizedDomain.t)`, *default:* `nil`) - The authorized domains belonging to the user.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Continuation token for fetching the next page of results.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.Addressable do
 
   ## Attributes
 
-  - hostname (String.t):  Defaults to `nil`.
+  *   `hostname` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

@@ -22,7 +22,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.Quantity do
 
   ## Attributes
 
-  - string (String.t): Stringified version of the quantity, e.g., "800 MiB". Defaults to `nil`.
+  *   `string` (*type:* `String.t`, *default:* `nil`) - Stringified version of the quantity, e.g., "800 MiB".
   """
 
   use GoogleApi.Gax.ModelBase

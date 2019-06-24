@@ -25,20 +25,20 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.Lifecycle do
 
   ## Attributes
 
-  - postStart (GoogleApi.CloudRun.V1alpha1.Model.Handler.t): PostStart is called immediately after a container is created. If the
-  handler fails, the container is terminated and restarted according to its
-  restart policy. Other management of the container blocks until the hook
-  completes. More info:
-  https://kubernetes.io/docs/concepts/containers/container-lifecycle-hooks/#container-hooks
-  +optional Defaults to `nil`.
-  - preStop (GoogleApi.CloudRun.V1alpha1.Model.Handler.t): PreStop is called immediately before a container is terminated.
-  The container is terminated after the handler completes.
-  The reason for termination is passed to the handler.
-  Regardless of the outcome of the handler, the container is eventually
-  terminated. Other management of the container blocks until the hook
-  completes. More info:
-  https://kubernetes.io/docs/concepts/containers/container-lifecycle-hooks/#container-hooks
-  +optional Defaults to `nil`.
+  *   `postStart` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.Handler.t`, *default:* `nil`) - PostStart is called immediately after a container is created. If the
+      handler fails, the container is terminated and restarted according to its
+      restart policy. Other management of the container blocks until the hook
+      completes. More info:
+      https://kubernetes.io/docs/concepts/containers/container-lifecycle-hooks/#container-hooks
+      +optional
+  *   `preStop` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.Handler.t`, *default:* `nil`) - PreStop is called immediately before a container is terminated.
+      The container is terminated after the handler completes.
+      The reason for termination is passed to the handler.
+      Regardless of the outcome of the handler, the container is eventually
+      terminated. Other management of the container blocks until the hook
+      completes. More info:
+      https://kubernetes.io/docs/concepts/containers/container-lifecycle-hooks/#container-hooks
+      +optional
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,9 +21,9 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.Volume do
 
   ## Attributes
 
-  - configMap (GoogleApi.CloudRun.V1alpha1.Model.ConfigMapVolumeSource.t):  Defaults to `nil`.
-  - name (String.t): Volume's name. Defaults to `nil`.
-  - secret (GoogleApi.CloudRun.V1alpha1.Model.SecretVolumeSource.t):  Defaults to `nil`.
+  *   `configMap` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.ConfigMapVolumeSource.t`, *default:* `nil`) - 
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Volume's name.
+  *   `secret` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.SecretVolumeSource.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

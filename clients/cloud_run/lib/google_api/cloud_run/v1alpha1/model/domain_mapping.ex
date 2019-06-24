@@ -21,11 +21,11 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.DomainMapping do
 
   ## Attributes
 
-  - apiVersion (String.t): The API version for this call such as "v1alpha1". Defaults to `nil`.
-  - kind (String.t): The kind of resource, in this case "DomainMapping". Defaults to `nil`.
-  - metadata (GoogleApi.CloudRun.V1alpha1.Model.ObjectMeta.t): Metadata associated with this BuildTemplate. Defaults to `nil`.
-  - spec (GoogleApi.CloudRun.V1alpha1.Model.DomainMappingSpec.t): The spec for this DomainMapping. Defaults to `nil`.
-  - status (GoogleApi.CloudRun.V1alpha1.Model.DomainMappingStatus.t): The current status of the DomainMapping. Defaults to `nil`.
+  *   `apiVersion` (*type:* `String.t`, *default:* `nil`) - The API version for this call such as "v1alpha1".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of resource, in this case "DomainMapping".
+  *   `metadata` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.ObjectMeta.t`, *default:* `nil`) - Metadata associated with this BuildTemplate.
+  *   `spec` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.DomainMappingSpec.t`, *default:* `nil`) - The spec for this DomainMapping.
+  *   `status` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.DomainMappingStatus.t`, *default:* `nil`) - The current status of the DomainMapping.
   """
 
   use GoogleApi.Gax.ModelBase

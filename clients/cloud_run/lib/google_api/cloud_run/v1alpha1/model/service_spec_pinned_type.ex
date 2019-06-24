@@ -24,9 +24,9 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ServiceSpecPinnedType do
 
   ## Attributes
 
-  - configuration (GoogleApi.CloudRun.V1alpha1.Model.ConfigurationSpec.t): The configuration for this service. Defaults to `nil`.
-  - revisionName (String.t): The revision name to pin this service to until changed
-  to a different service type. Defaults to `nil`.
+  *   `configuration` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.ConfigurationSpec.t`, *default:* `nil`) - The configuration for this service.
+  *   `revisionName` (*type:* `String.t`, *default:* `nil`) - The revision name to pin this service to until changed
+      to a different service type.
   """
 
   use GoogleApi.Gax.ModelBase

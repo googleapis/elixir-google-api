@@ -21,19 +21,19 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.HTTPGetAction do
 
   ## Attributes
 
-  - host (String.t): Host name to connect to, defaults to the pod IP. You probably want to set
-  "Host" in httpHeaders instead.
-  +optional Defaults to `nil`.
-  - httpHeaders (list(GoogleApi.CloudRun.V1alpha1.Model.HTTPHeader.t)): Custom headers to set in the request. HTTP allows repeated headers.
-  +optional Defaults to `nil`.
-  - path (String.t): Path to access on the HTTP server.
-  +optional Defaults to `nil`.
-  - port (GoogleApi.CloudRun.V1alpha1.Model.IntOrString.t): Name or number of the port to access on the container.
-  Number must be in the range 1 to 65535.
-  Name must be an IANA_SVC_NAME. Defaults to `nil`.
-  - scheme (String.t): Scheme to use for connecting to the host.
-  Defaults to HTTP.
-  +optional Defaults to `nil`.
+  *   `host` (*type:* `String.t`, *default:* `nil`) - Host name to connect to, defaults to the pod IP. You probably want to set
+      "Host" in httpHeaders instead.
+      +optional
+  *   `httpHeaders` (*type:* `list(GoogleApi.CloudRun.V1alpha1.Model.HTTPHeader.t)`, *default:* `nil`) - Custom headers to set in the request. HTTP allows repeated headers.
+      +optional
+  *   `path` (*type:* `String.t`, *default:* `nil`) - Path to access on the HTTP server.
+      +optional
+  *   `port` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.IntOrString.t`, *default:* `nil`) - Name or number of the port to access on the container.
+      Number must be in the range 1 to 65535.
+      Name must be an IANA_SVC_NAME.
+  *   `scheme` (*type:* `String.t`, *default:* `nil`) - Scheme to use for connecting to the host.
+      Defaults to HTTP.
+      +optional
   """
 
   use GoogleApi.Gax.ModelBase

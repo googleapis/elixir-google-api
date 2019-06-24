@@ -22,24 +22,24 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.Probe do
 
   ## Attributes
 
-  - failureThreshold (integer()): Minimum consecutive failures for the probe to be considered failed after
-  having succeeded. Defaults to 3. Minimum value is 1. +optional Defaults to `nil`.
-  - handler (GoogleApi.CloudRun.V1alpha1.Model.Handler.t): The action taken to determine the health of a container Defaults to `nil`.
-  - initialDelaySeconds (integer()): Number of seconds after the container has started before liveness probes
-  are initiated. More info:
-  https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
-  +optional Defaults to `nil`.
-  - periodSeconds (integer()): How often (in seconds) to perform the probe.
-  Default to 10 seconds. Minimum value is 1.
-  +optional Defaults to `nil`.
-  - successThreshold (integer()): Minimum consecutive successes for the probe to be considered successful
-  after having failed. Defaults to 1. Must be 1 for liveness. Minimum value
-  is 1. +optional Defaults to `nil`.
-  - timeoutSeconds (integer()): Number of seconds after which the probe times out.
-  Defaults to 1 second. Minimum value is 1.
-  More info:
-  https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
-  +optional Defaults to `nil`.
+  *   `failureThreshold` (*type:* `integer()`, *default:* `nil`) - Minimum consecutive failures for the probe to be considered failed after
+      having succeeded. Defaults to 3. Minimum value is 1. +optional
+  *   `handler` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.Handler.t`, *default:* `nil`) - The action taken to determine the health of a container
+  *   `initialDelaySeconds` (*type:* `integer()`, *default:* `nil`) - Number of seconds after the container has started before liveness probes
+      are initiated. More info:
+      https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
+      +optional
+  *   `periodSeconds` (*type:* `integer()`, *default:* `nil`) - How often (in seconds) to perform the probe.
+      Default to 10 seconds. Minimum value is 1.
+      +optional
+  *   `successThreshold` (*type:* `integer()`, *default:* `nil`) - Minimum consecutive successes for the probe to be considered successful
+      after having failed. Defaults to 1. Must be 1 for liveness. Minimum value
+      is 1. +optional
+  *   `timeoutSeconds` (*type:* `integer()`, *default:* `nil`) - Number of seconds after which the probe times out.
+      Defaults to 1 second. Minimum value is 1.
+      More info:
+      https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
+      +optional
   """
 
   use GoogleApi.Gax.ModelBase

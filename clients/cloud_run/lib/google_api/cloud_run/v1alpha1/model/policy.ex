@@ -28,36 +28,36 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.Policy do
 
   **JSON Example**
 
-    {
-      "bindings": [
-        {
-          "role": "roles/owner",
-          "members": [
-            "user:mike@example.com",
-            "group:admins@example.com",
-            "domain:google.com",
-            "serviceAccount:my-other-app@appspot.gserviceaccount.com"
-          ]
-        },
-        {
-          "role": "roles/viewer",
-          "members": ["user:sean@example.com"]
-        }
-      ]
-    }
+      {
+        "bindings": [
+          {
+            "role": "roles/owner",
+            "members": [
+              "user:mike@example.com",
+              "group:admins@example.com",
+              "domain:google.com",
+              "serviceAccount:my-other-app@appspot.gserviceaccount.com"
+            ]
+          },
+          {
+            "role": "roles/viewer",
+            "members": ["user:sean@example.com"]
+          }
+        ]
+      }
 
   **YAML Example**
 
-    bindings:
-    - members:
-      - user:mike@example.com
-      - group:admins@example.com
-      - domain:google.com
-      - serviceAccount:my-other-app@appspot.gserviceaccount.com
-      role: roles/owner
-    - members:
-      - user:sean@example.com
-      role: roles/viewer
+      bindings:
+      - members:
+        - user:mike@example.com
+        - group:admins@example.com
+        - domain:google.com
+        - serviceAccount:my-other-app@appspot.gserviceaccount.com
+        role: roles/owner
+      - members:
+        - user:sean@example.com
+        role: roles/viewer
 
 
   For a description of IAM and its features, see the
@@ -65,20 +65,20 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.Policy do
 
   ## Attributes
 
-  - auditConfigs (list(GoogleApi.CloudRun.V1alpha1.Model.AuditConfig.t)): Specifies cloud audit logging configuration for this policy. Defaults to `nil`.
-  - bindings (list(GoogleApi.CloudRun.V1alpha1.Model.Binding.t)): Associates a list of `members` to a `role`.
-  `bindings` with no members will result in an error. Defaults to `nil`.
-  - etag (String.t): `etag` is used for optimistic concurrency control as a way to help
-  prevent simultaneous updates of a policy from overwriting each other.
-  It is strongly suggested that systems make use of the `etag` in the
-  read-modify-write cycle to perform policy updates in order to avoid race
-  conditions: An `etag` is returned in the response to `getIamPolicy`, and
-  systems are expected to put that etag in the request to `setIamPolicy` to
-  ensure that their change will be applied to the same version of the policy.
+  *   `auditConfigs` (*type:* `list(GoogleApi.CloudRun.V1alpha1.Model.AuditConfig.t)`, *default:* `nil`) - Specifies cloud audit logging configuration for this policy.
+  *   `bindings` (*type:* `list(GoogleApi.CloudRun.V1alpha1.Model.Binding.t)`, *default:* `nil`) - Associates a list of `members` to a `role`.
+      `bindings` with no members will result in an error.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - `etag` is used for optimistic concurrency control as a way to help
+      prevent simultaneous updates of a policy from overwriting each other.
+      It is strongly suggested that systems make use of the `etag` in the
+      read-modify-write cycle to perform policy updates in order to avoid race
+      conditions: An `etag` is returned in the response to `getIamPolicy`, and
+      systems are expected to put that etag in the request to `setIamPolicy` to
+      ensure that their change will be applied to the same version of the policy.
 
-  If no `etag` is provided in the call to `setIamPolicy`, then the existing
-  policy is overwritten blindly. Defaults to `nil`.
-  - version (integer()): Deprecated. Defaults to `nil`.
+      If no `etag` is provided in the call to `setIamPolicy`, then the existing
+      policy is overwritten blindly.
+  *   `version` (*type:* `integer()`, *default:* `nil`) - Deprecated.
   """
 
   use GoogleApi.Gax.ModelBase
