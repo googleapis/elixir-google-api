@@ -20,6 +20,8 @@ defmodule GoogleApi.AdExperienceReport.V1.Connection do
   Handle Tesla connections for GoogleApi.AdExperienceReport.V1.
   """
 
+  @type t :: Tesla.Env.client()
+
   use GoogleApi.Gax.Connection,
     scopes: [
       # Test scope for access to the Zoo service

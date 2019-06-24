@@ -21,9 +21,9 @@ defmodule GoogleApi.AdExperienceReport.V1.Model.SiteSummaryResponse do
 
   ## Attributes
 
-  - desktopSummary (GoogleApi.AdExperienceReport.V1.Model.PlatformSummary.t): Summary for the desktop review of the site. Defaults to `nil`.
-  - mobileSummary (GoogleApi.AdExperienceReport.V1.Model.PlatformSummary.t): Summary for the mobile review of the site. Defaults to `nil`.
-  - reviewedSite (String.t): The name of the site reviewed. Defaults to `nil`.
+  *   `desktopSummary` (*type:* `GoogleApi.AdExperienceReport.V1.Model.PlatformSummary.t`, *default:* `nil`) - Summary for the desktop review of the site.
+  *   `mobileSummary` (*type:* `GoogleApi.AdExperienceReport.V1.Model.PlatformSummary.t`, *default:* `nil`) - Summary for the mobile review of the site.
+  *   `reviewedSite` (*type:* `String.t`, *default:* `nil`) - The name of the site reviewed.
   """
 
   use GoogleApi.Gax.ModelBase

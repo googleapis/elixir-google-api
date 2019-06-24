@@ -21,7 +21,7 @@ defmodule GoogleApi.AdExperienceReport.V1.Model.ViolatingSitesResponse do
 
   ## Attributes
 
-  - violatingSites (list(GoogleApi.AdExperienceReport.V1.Model.SiteSummaryResponse.t)): A list of summaries of violating sites. Defaults to `nil`.
+  *   `violatingSites` (*type:* `list(GoogleApi.AdExperienceReport.V1.Model.SiteSummaryResponse.t)`, *default:* `nil`) - A list of summaries of violating sites.
   """
 
   use GoogleApi.Gax.ModelBase
