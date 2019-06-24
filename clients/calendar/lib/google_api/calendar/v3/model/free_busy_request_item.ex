@@ -21,7 +21,7 @@ defmodule GoogleApi.Calendar.V3.Model.FreeBusyRequestItem do
 
   ## Attributes
 
-  - id (String.t): The identifier of a calendar or a group. Defaults to `nil`.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The identifier of a calendar or a group.
   """
 
   use GoogleApi.Gax.ModelBase

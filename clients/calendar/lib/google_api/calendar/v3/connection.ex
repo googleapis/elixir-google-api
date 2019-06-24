@@ -20,6 +20,8 @@ defmodule GoogleApi.Calendar.V3.Connection do
   Handle Tesla connections for GoogleApi.Calendar.V3.
   """
 
+  @type t :: Tesla.Env.client()
+
   use GoogleApi.Gax.Connection,
     scopes: [
       # See, edit, share, and permanently delete all the calendars you can access using Google Calendar

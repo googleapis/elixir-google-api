@@ -28,28 +28,29 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
 
   ## Parameters
 
-  - connection (GoogleApi.Calendar.V3.Connection): Connection to server
-  - calendar_id (String.t): Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
-  - event_id (String.t): Event identifier.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :sendNotifications (boolean()): Deprecated. Please use sendUpdates instead.
+  *   `connection` (*type:* `GoogleApi.Calendar.V3.Connection.t`) - Connection to server
+  *   `calendar_id` (*type:* `String.t`) - Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
+  *   `event_id` (*type:* `String.t`) - Event identifier.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:sendNotifications` (*type:* `boolean()`) - Deprecated. Please use sendUpdates instead.
 
-  Whether to send notifications about the deletion of the event. Note that some emails might still be sent even if you set the value to false. The default is false.
-    - :sendUpdates (String.t): Guests who should receive notifications about the deletion of the event.
+          Whether to send notifications about the deletion of the event. Note that some emails might still be sent even if you set the value to false. The default is false.
+      *   `:sendUpdates` (*type:* `String.t`) - Guests who should receive notifications about the deletion of the event.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %{}} on success
-  {:error, info} on failure
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec calendar_events_delete(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+  @spec calendar_events_delete(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
   def calendar_events_delete(connection, calendar_id, event_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -83,27 +84,28 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
 
   ## Parameters
 
-  - connection (GoogleApi.Calendar.V3.Connection): Connection to server
-  - calendar_id (String.t): Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
-  - event_id (String.t): Event identifier.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :alwaysIncludeEmail (boolean()): Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.
-    - :maxAttendees (integer()): The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.
-    - :timeZone (String.t): Time zone used in the response. Optional. The default is the time zone of the calendar.
+  *   `connection` (*type:* `GoogleApi.Calendar.V3.Connection.t`) - Connection to server
+  *   `calendar_id` (*type:* `String.t`) - Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
+  *   `event_id` (*type:* `String.t`) - Event identifier.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:alwaysIncludeEmail` (*type:* `boolean()`) - Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.
+      *   `:maxAttendees` (*type:* `integer()`) - The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.
+      *   `:timeZone` (*type:* `String.t`) - Time zone used in the response. Optional. The default is the time zone of the calendar.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Calendar.V3.Model.Event{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Calendar.V3.Model.Event{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec calendar_events_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+  @spec calendar_events_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Calendar.V3.Model.Event.t()} | {:error, Tesla.Env.t()}
   def calendar_events_get(connection, calendar_id, event_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -138,26 +140,27 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
 
   ## Parameters
 
-  - connection (GoogleApi.Calendar.V3.Connection): Connection to server
-  - calendar_id (String.t): Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :conferenceDataVersion (integer()): Version number of conference data supported by the API client. Version 0 assumes no conference data support and ignores conference data in the event's body. Version 1 enables support for copying of ConferenceData as well as for creating new conferences using the createRequest field of conferenceData. The default is 0.
-    - :supportsAttachments (boolean()): Whether API client performing operation supports event attachments. Optional. The default is False.
-    - :body (GoogleApi.Calendar.V3.Model.Event.t): 
+  *   `connection` (*type:* `GoogleApi.Calendar.V3.Connection.t`) - Connection to server
+  *   `calendar_id` (*type:* `String.t`) - Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:conferenceDataVersion` (*type:* `integer()`) - Version number of conference data supported by the API client. Version 0 assumes no conference data support and ignores conference data in the event's body. Version 1 enables support for copying of ConferenceData as well as for creating new conferences using the createRequest field of conferenceData. The default is 0.
+      *   `:supportsAttachments` (*type:* `boolean()`) - Whether API client performing operation supports event attachments. Optional. The default is False.
+      *   `:body` (*type:* `GoogleApi.Calendar.V3.Model.Event.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Calendar.V3.Model.Event{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Calendar.V3.Model.Event{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec calendar_events_import(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec calendar_events_import(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Calendar.V3.Model.Event.t()} | {:error, Tesla.Env.t()}
   def calendar_events_import(connection, calendar_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -191,31 +194,32 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
 
   ## Parameters
 
-  - connection (GoogleApi.Calendar.V3.Connection): Connection to server
-  - calendar_id (String.t): Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :conferenceDataVersion (integer()): Version number of conference data supported by the API client. Version 0 assumes no conference data support and ignores conference data in the event's body. Version 1 enables support for copying of ConferenceData as well as for creating new conferences using the createRequest field of conferenceData. The default is 0.
-    - :maxAttendees (integer()): The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.
-    - :sendNotifications (boolean()): Deprecated. Please use sendUpdates instead.
+  *   `connection` (*type:* `GoogleApi.Calendar.V3.Connection.t`) - Connection to server
+  *   `calendar_id` (*type:* `String.t`) - Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:conferenceDataVersion` (*type:* `integer()`) - Version number of conference data supported by the API client. Version 0 assumes no conference data support and ignores conference data in the event's body. Version 1 enables support for copying of ConferenceData as well as for creating new conferences using the createRequest field of conferenceData. The default is 0.
+      *   `:maxAttendees` (*type:* `integer()`) - The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.
+      *   `:sendNotifications` (*type:* `boolean()`) - Deprecated. Please use sendUpdates instead.
 
-  Whether to send notifications about the creation of the new event. Note that some emails might still be sent even if you set the value to false. The default is false.
-    - :sendUpdates (String.t): Whether to send notifications about the creation of the new event. Note that some emails might still be sent. The default is false.
-    - :supportsAttachments (boolean()): Whether API client performing operation supports event attachments. Optional. The default is False.
-    - :body (GoogleApi.Calendar.V3.Model.Event.t): 
+          Whether to send notifications about the creation of the new event. Note that some emails might still be sent even if you set the value to false. The default is false.
+      *   `:sendUpdates` (*type:* `String.t`) - Whether to send notifications about the creation of the new event. Note that some emails might still be sent. The default is false.
+      *   `:supportsAttachments` (*type:* `boolean()`) - Whether API client performing operation supports event attachments. Optional. The default is False.
+      *   `:body` (*type:* `GoogleApi.Calendar.V3.Model.Event.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Calendar.V3.Model.Event{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Calendar.V3.Model.Event{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec calendar_events_insert(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec calendar_events_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Calendar.V3.Model.Event.t()} | {:error, Tesla.Env.t()}
   def calendar_events_insert(connection, calendar_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -252,34 +256,40 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
 
   ## Parameters
 
-  - connection (GoogleApi.Calendar.V3.Connection): Connection to server
-  - calendar_id (String.t): Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
-  - event_id (String.t): Recurring event identifier.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :alwaysIncludeEmail (boolean()): Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.
-    - :maxAttendees (integer()): The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.
-    - :maxResults (integer()): Maximum number of events returned on one result page. By default the value is 250 events. The page size can never be larger than 2500 events. Optional.
-    - :originalStart (String.t): The original start time of the instance in the result. Optional.
-    - :pageToken (String.t): Token specifying which result page to return. Optional.
-    - :showDeleted (boolean()): Whether to include deleted events (with status equals "cancelled") in the result. Cancelled instances of recurring events will still be included if singleEvents is False. Optional. The default is False.
-    - :timeMax (DateTime.t): Upper bound (exclusive) for an event's start time to filter by. Optional. The default is not to filter by start time. Must be an RFC3339 timestamp with mandatory time zone offset.
-    - :timeMin (DateTime.t): Lower bound (inclusive) for an event's end time to filter by. Optional. The default is not to filter by end time. Must be an RFC3339 timestamp with mandatory time zone offset.
-    - :timeZone (String.t): Time zone used in the response. Optional. The default is the time zone of the calendar.
+  *   `connection` (*type:* `GoogleApi.Calendar.V3.Connection.t`) - Connection to server
+  *   `calendar_id` (*type:* `String.t`) - Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
+  *   `event_id` (*type:* `String.t`) - Recurring event identifier.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:alwaysIncludeEmail` (*type:* `boolean()`) - Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.
+      *   `:maxAttendees` (*type:* `integer()`) - The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.
+      *   `:maxResults` (*type:* `integer()`) - Maximum number of events returned on one result page. By default the value is 250 events. The page size can never be larger than 2500 events. Optional.
+      *   `:originalStart` (*type:* `String.t`) - The original start time of the instance in the result. Optional.
+      *   `:pageToken` (*type:* `String.t`) - Token specifying which result page to return. Optional.
+      *   `:showDeleted` (*type:* `boolean()`) - Whether to include deleted events (with status equals "cancelled") in the result. Cancelled instances of recurring events will still be included if singleEvents is False. Optional. The default is False.
+      *   `:timeMax` (*type:* `DateTime.t`) - Upper bound (exclusive) for an event's start time to filter by. Optional. The default is not to filter by start time. Must be an RFC3339 timestamp with mandatory time zone offset.
+      *   `:timeMin` (*type:* `DateTime.t`) - Lower bound (inclusive) for an event's end time to filter by. Optional. The default is not to filter by end time. Must be an RFC3339 timestamp with mandatory time zone offset.
+      *   `:timeZone` (*type:* `String.t`) - Time zone used in the response. Optional. The default is the time zone of the calendar.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Calendar.V3.Model.Events{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Calendar.V3.Model.Events{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec calendar_events_instances(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.Calendar.V3.Model.Events.t()} | {:error, Tesla.Env.t()}
+  @spec calendar_events_instances(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.Calendar.V3.Model.Events.t()} | {:error, Tesla.Env.t()}
   def calendar_events_instances(
         connection,
         calendar_id,
@@ -325,53 +335,54 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
 
   ## Parameters
 
-  - connection (GoogleApi.Calendar.V3.Connection): Connection to server
-  - calendar_id (String.t): Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :alwaysIncludeEmail (boolean()): Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.
-    - :iCalUID (String.t): Specifies event ID in the iCalendar format to be included in the response. Optional.
-    - :maxAttendees (integer()): The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.
-    - :maxResults (integer()): Maximum number of events returned on one result page. The number of events in the resulting page may be less than this value, or none at all, even if there are more events matching the query. Incomplete pages can be detected by a non-empty nextPageToken field in the response. By default the value is 250 events. The page size can never be larger than 2500 events. Optional.
-    - :orderBy (String.t): The order of the events returned in the result. Optional. The default is an unspecified, stable order.
-    - :pageToken (String.t): Token specifying which result page to return. Optional.
-    - :privateExtendedProperty (list(String.t)): Extended properties constraint specified as propertyName=value. Matches only private properties. This parameter might be repeated multiple times to return events that match all given constraints.
-    - :q (String.t): Free text search terms to find events that match these terms in any field, except for extended properties. Optional.
-    - :sharedExtendedProperty (list(String.t)): Extended properties constraint specified as propertyName=value. Matches only shared properties. This parameter might be repeated multiple times to return events that match all given constraints.
-    - :showDeleted (boolean()): Whether to include deleted events (with status equals "cancelled") in the result. Cancelled instances of recurring events (but not the underlying recurring event) will still be included if showDeleted and singleEvents are both False. If showDeleted and singleEvents are both True, only single instances of deleted events (but not the underlying recurring events) are returned. Optional. The default is False.
-    - :showHiddenInvitations (boolean()): Whether to include hidden invitations in the result. Optional. The default is False.
-    - :singleEvents (boolean()): Whether to expand recurring events into instances and only return single one-off events and instances of recurring events, but not the underlying recurring events themselves. Optional. The default is False.
-    - :syncToken (String.t): Token obtained from the nextSyncToken field returned on the last page of results from the previous list request. It makes the result of this list request contain only entries that have changed since then. All events deleted since the previous list request will always be in the result set and it is not allowed to set showDeleted to False.
-  There are several query parameters that cannot be specified together with nextSyncToken to ensure consistency of the client state.
+  *   `connection` (*type:* `GoogleApi.Calendar.V3.Connection.t`) - Connection to server
+  *   `calendar_id` (*type:* `String.t`) - Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:alwaysIncludeEmail` (*type:* `boolean()`) - Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.
+      *   `:iCalUID` (*type:* `String.t`) - Specifies event ID in the iCalendar format to be included in the response. Optional.
+      *   `:maxAttendees` (*type:* `integer()`) - The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.
+      *   `:maxResults` (*type:* `integer()`) - Maximum number of events returned on one result page. The number of events in the resulting page may be less than this value, or none at all, even if there are more events matching the query. Incomplete pages can be detected by a non-empty nextPageToken field in the response. By default the value is 250 events. The page size can never be larger than 2500 events. Optional.
+      *   `:orderBy` (*type:* `String.t`) - The order of the events returned in the result. Optional. The default is an unspecified, stable order.
+      *   `:pageToken` (*type:* `String.t`) - Token specifying which result page to return. Optional.
+      *   `:privateExtendedProperty` (*type:* `list(String.t)`) - Extended properties constraint specified as propertyName=value. Matches only private properties. This parameter might be repeated multiple times to return events that match all given constraints.
+      *   `:q` (*type:* `String.t`) - Free text search terms to find events that match these terms in any field, except for extended properties. Optional.
+      *   `:sharedExtendedProperty` (*type:* `list(String.t)`) - Extended properties constraint specified as propertyName=value. Matches only shared properties. This parameter might be repeated multiple times to return events that match all given constraints.
+      *   `:showDeleted` (*type:* `boolean()`) - Whether to include deleted events (with status equals "cancelled") in the result. Cancelled instances of recurring events (but not the underlying recurring event) will still be included if showDeleted and singleEvents are both False. If showDeleted and singleEvents are both True, only single instances of deleted events (but not the underlying recurring events) are returned. Optional. The default is False.
+      *   `:showHiddenInvitations` (*type:* `boolean()`) - Whether to include hidden invitations in the result. Optional. The default is False.
+      *   `:singleEvents` (*type:* `boolean()`) - Whether to expand recurring events into instances and only return single one-off events and instances of recurring events, but not the underlying recurring events themselves. Optional. The default is False.
+      *   `:syncToken` (*type:* `String.t`) - Token obtained from the nextSyncToken field returned on the last page of results from the previous list request. It makes the result of this list request contain only entries that have changed since then. All events deleted since the previous list request will always be in the result set and it is not allowed to set showDeleted to False.
+          There are several query parameters that cannot be specified together with nextSyncToken to ensure consistency of the client state.
 
-  These are: 
-  - iCalUID 
-  - orderBy 
-  - privateExtendedProperty 
-  - q 
-  - sharedExtendedProperty 
-  - timeMin 
-  - timeMax 
-  - updatedMin If the syncToken expires, the server will respond with a 410 GONE response code and the client should clear its storage and perform a full synchronization without any syncToken.
-  Learn more about incremental synchronization.
-  Optional. The default is to return all entries.
-    - :timeMax (DateTime.t): Upper bound (exclusive) for an event's start time to filter by. Optional. The default is not to filter by start time. Must be an RFC3339 timestamp with mandatory time zone offset, for example, 2011-06-03T10:00:00-07:00, 2011-06-03T10:00:00Z. Milliseconds may be provided but are ignored. If timeMin is set, timeMax must be greater than timeMin.
-    - :timeMin (DateTime.t): Lower bound (exclusive) for an event's end time to filter by. Optional. The default is not to filter by end time. Must be an RFC3339 timestamp with mandatory time zone offset, for example, 2011-06-03T10:00:00-07:00, 2011-06-03T10:00:00Z. Milliseconds may be provided but are ignored. If timeMax is set, timeMin must be smaller than timeMax.
-    - :timeZone (String.t): Time zone used in the response. Optional. The default is the time zone of the calendar.
-    - :updatedMin (DateTime.t): Lower bound for an event's last modification time (as a RFC3339 timestamp) to filter by. When specified, entries deleted since this time will always be included regardless of showDeleted. Optional. The default is not to filter by last modification time.
+          These are: 
+          - iCalUID 
+          - orderBy 
+          - privateExtendedProperty 
+          - q 
+          - sharedExtendedProperty 
+          - timeMin 
+          - timeMax 
+          - updatedMin If the syncToken expires, the server will respond with a 410 GONE response code and the client should clear its storage and perform a full synchronization without any syncToken.
+          Learn more about incremental synchronization.
+          Optional. The default is to return all entries.
+      *   `:timeMax` (*type:* `DateTime.t`) - Upper bound (exclusive) for an event's start time to filter by. Optional. The default is not to filter by start time. Must be an RFC3339 timestamp with mandatory time zone offset, for example, 2011-06-03T10:00:00-07:00, 2011-06-03T10:00:00Z. Milliseconds may be provided but are ignored. If timeMin is set, timeMax must be greater than timeMin.
+      *   `:timeMin` (*type:* `DateTime.t`) - Lower bound (exclusive) for an event's end time to filter by. Optional. The default is not to filter by end time. Must be an RFC3339 timestamp with mandatory time zone offset, for example, 2011-06-03T10:00:00-07:00, 2011-06-03T10:00:00Z. Milliseconds may be provided but are ignored. If timeMax is set, timeMin must be smaller than timeMax.
+      *   `:timeZone` (*type:* `String.t`) - Time zone used in the response. Optional. The default is the time zone of the calendar.
+      *   `:updatedMin` (*type:* `DateTime.t`) - Lower bound for an event's last modification time (as a RFC3339 timestamp) to filter by. When specified, entries deleted since this time will always be included regardless of showDeleted. Optional. The default is not to filter by last modification time.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Calendar.V3.Model.Events{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Calendar.V3.Model.Events{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec calendar_events_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec calendar_events_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Calendar.V3.Model.Events.t()} | {:error, Tesla.Env.t()}
   def calendar_events_list(connection, calendar_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -419,30 +430,37 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
 
   ## Parameters
 
-  - connection (GoogleApi.Calendar.V3.Connection): Connection to server
-  - calendar_id (String.t): Calendar identifier of the source calendar where the event currently is on.
-  - event_id (String.t): Event identifier.
-  - destination (String.t): Calendar identifier of the target calendar where the event is to be moved to.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :sendNotifications (boolean()): Deprecated. Please use sendUpdates instead.
+  *   `connection` (*type:* `GoogleApi.Calendar.V3.Connection.t`) - Connection to server
+  *   `calendar_id` (*type:* `String.t`) - Calendar identifier of the source calendar where the event currently is on.
+  *   `event_id` (*type:* `String.t`) - Event identifier.
+  *   `destination` (*type:* `String.t`) - Calendar identifier of the target calendar where the event is to be moved to.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:sendNotifications` (*type:* `boolean()`) - Deprecated. Please use sendUpdates instead.
 
-  Whether to send notifications about the change of the event's organizer. Note that some emails might still be sent even if you set the value to false. The default is false.
-    - :sendUpdates (String.t): Guests who should receive notifications about the change of the event's organizer.
+          Whether to send notifications about the change of the event's organizer. Note that some emails might still be sent even if you set the value to false. The default is false.
+      *   `:sendUpdates` (*type:* `String.t`) - Guests who should receive notifications about the change of the event's organizer.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Calendar.V3.Model.Event{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Calendar.V3.Model.Event{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec calendar_events_move(Tesla.Env.client(), String.t(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.Calendar.V3.Model.Event.t()} | {:error, Tesla.Env.t()}
+  @spec calendar_events_move(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.Calendar.V3.Model.Event.t()} | {:error, Tesla.Env.t()}
   def calendar_events_move(
         connection,
         calendar_id,
@@ -483,33 +501,34 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
 
   ## Parameters
 
-  - connection (GoogleApi.Calendar.V3.Connection): Connection to server
-  - calendar_id (String.t): Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
-  - event_id (String.t): Event identifier.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :alwaysIncludeEmail (boolean()): Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.
-    - :conferenceDataVersion (integer()): Version number of conference data supported by the API client. Version 0 assumes no conference data support and ignores conference data in the event's body. Version 1 enables support for copying of ConferenceData as well as for creating new conferences using the createRequest field of conferenceData. The default is 0.
-    - :maxAttendees (integer()): The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.
-    - :sendNotifications (boolean()): Deprecated. Please use sendUpdates instead.
+  *   `connection` (*type:* `GoogleApi.Calendar.V3.Connection.t`) - Connection to server
+  *   `calendar_id` (*type:* `String.t`) - Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
+  *   `event_id` (*type:* `String.t`) - Event identifier.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:alwaysIncludeEmail` (*type:* `boolean()`) - Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.
+      *   `:conferenceDataVersion` (*type:* `integer()`) - Version number of conference data supported by the API client. Version 0 assumes no conference data support and ignores conference data in the event's body. Version 1 enables support for copying of ConferenceData as well as for creating new conferences using the createRequest field of conferenceData. The default is 0.
+      *   `:maxAttendees` (*type:* `integer()`) - The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.
+      *   `:sendNotifications` (*type:* `boolean()`) - Deprecated. Please use sendUpdates instead.
 
-  Whether to send notifications about the event update (for example, description changes, etc.). Note that some emails might still be sent even if you set the value to false. The default is false.
-    - :sendUpdates (String.t): Guests who should receive notifications about the event update (for example, title changes, etc.).
-    - :supportsAttachments (boolean()): Whether API client performing operation supports event attachments. Optional. The default is False.
-    - :body (GoogleApi.Calendar.V3.Model.Event.t): 
+          Whether to send notifications about the event update (for example, description changes, etc.). Note that some emails might still be sent even if you set the value to false. The default is false.
+      *   `:sendUpdates` (*type:* `String.t`) - Guests who should receive notifications about the event update (for example, title changes, etc.).
+      *   `:supportsAttachments` (*type:* `boolean()`) - Whether API client performing operation supports event attachments. Optional. The default is False.
+      *   `:body` (*type:* `GoogleApi.Calendar.V3.Model.Event.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Calendar.V3.Model.Event{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Calendar.V3.Model.Event{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec calendar_events_patch(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+  @spec calendar_events_patch(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Calendar.V3.Model.Event.t()} | {:error, Tesla.Env.t()}
   def calendar_events_patch(connection, calendar_id, event_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -548,29 +567,35 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
 
   ## Parameters
 
-  - connection (GoogleApi.Calendar.V3.Connection): Connection to server
-  - calendar_id (String.t): Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
-  - text (String.t): The text describing the event to be created.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :sendNotifications (boolean()): Deprecated. Please use sendUpdates instead.
+  *   `connection` (*type:* `GoogleApi.Calendar.V3.Connection.t`) - Connection to server
+  *   `calendar_id` (*type:* `String.t`) - Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
+  *   `text` (*type:* `String.t`) - The text describing the event to be created.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:sendNotifications` (*type:* `boolean()`) - Deprecated. Please use sendUpdates instead.
 
-  Whether to send notifications about the creation of the event. Note that some emails might still be sent even if you set the value to false. The default is false.
-    - :sendUpdates (String.t): Guests who should receive notifications about the creation of the new event.
+          Whether to send notifications about the creation of the event. Note that some emails might still be sent even if you set the value to false. The default is false.
+      *   `:sendUpdates` (*type:* `String.t`) - Guests who should receive notifications about the creation of the new event.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Calendar.V3.Model.Event{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Calendar.V3.Model.Event{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec calendar_events_quick_add(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.Calendar.V3.Model.Event.t()} | {:error, Tesla.Env.t()}
+  @spec calendar_events_quick_add(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.Calendar.V3.Model.Event.t()} | {:error, Tesla.Env.t()}
   def calendar_events_quick_add(connection, calendar_id, text, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -603,33 +628,34 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
 
   ## Parameters
 
-  - connection (GoogleApi.Calendar.V3.Connection): Connection to server
-  - calendar_id (String.t): Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
-  - event_id (String.t): Event identifier.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :alwaysIncludeEmail (boolean()): Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.
-    - :conferenceDataVersion (integer()): Version number of conference data supported by the API client. Version 0 assumes no conference data support and ignores conference data in the event's body. Version 1 enables support for copying of ConferenceData as well as for creating new conferences using the createRequest field of conferenceData. The default is 0.
-    - :maxAttendees (integer()): The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.
-    - :sendNotifications (boolean()): Deprecated. Please use sendUpdates instead.
+  *   `connection` (*type:* `GoogleApi.Calendar.V3.Connection.t`) - Connection to server
+  *   `calendar_id` (*type:* `String.t`) - Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
+  *   `event_id` (*type:* `String.t`) - Event identifier.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:alwaysIncludeEmail` (*type:* `boolean()`) - Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.
+      *   `:conferenceDataVersion` (*type:* `integer()`) - Version number of conference data supported by the API client. Version 0 assumes no conference data support and ignores conference data in the event's body. Version 1 enables support for copying of ConferenceData as well as for creating new conferences using the createRequest field of conferenceData. The default is 0.
+      *   `:maxAttendees` (*type:* `integer()`) - The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.
+      *   `:sendNotifications` (*type:* `boolean()`) - Deprecated. Please use sendUpdates instead.
 
-  Whether to send notifications about the event update (for example, description changes, etc.). Note that some emails might still be sent even if you set the value to false. The default is false.
-    - :sendUpdates (String.t): Guests who should receive notifications about the event update (for example, title changes, etc.).
-    - :supportsAttachments (boolean()): Whether API client performing operation supports event attachments. Optional. The default is False.
-    - :body (GoogleApi.Calendar.V3.Model.Event.t): 
+          Whether to send notifications about the event update (for example, description changes, etc.). Note that some emails might still be sent even if you set the value to false. The default is false.
+      *   `:sendUpdates` (*type:* `String.t`) - Guests who should receive notifications about the event update (for example, title changes, etc.).
+      *   `:supportsAttachments` (*type:* `boolean()`) - Whether API client performing operation supports event attachments. Optional. The default is False.
+      *   `:body` (*type:* `GoogleApi.Calendar.V3.Model.Event.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Calendar.V3.Model.Event{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Calendar.V3.Model.Event{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec calendar_events_update(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+  @spec calendar_events_update(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Calendar.V3.Model.Event.t()} | {:error, Tesla.Env.t()}
   def calendar_events_update(connection, calendar_id, event_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -668,54 +694,55 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
 
   ## Parameters
 
-  - connection (GoogleApi.Calendar.V3.Connection): Connection to server
-  - calendar_id (String.t): Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :alwaysIncludeEmail (boolean()): Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.
-    - :iCalUID (String.t): Specifies event ID in the iCalendar format to be included in the response. Optional.
-    - :maxAttendees (integer()): The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.
-    - :maxResults (integer()): Maximum number of events returned on one result page. The number of events in the resulting page may be less than this value, or none at all, even if there are more events matching the query. Incomplete pages can be detected by a non-empty nextPageToken field in the response. By default the value is 250 events. The page size can never be larger than 2500 events. Optional.
-    - :orderBy (String.t): The order of the events returned in the result. Optional. The default is an unspecified, stable order.
-    - :pageToken (String.t): Token specifying which result page to return. Optional.
-    - :privateExtendedProperty (list(String.t)): Extended properties constraint specified as propertyName=value. Matches only private properties. This parameter might be repeated multiple times to return events that match all given constraints.
-    - :q (String.t): Free text search terms to find events that match these terms in any field, except for extended properties. Optional.
-    - :sharedExtendedProperty (list(String.t)): Extended properties constraint specified as propertyName=value. Matches only shared properties. This parameter might be repeated multiple times to return events that match all given constraints.
-    - :showDeleted (boolean()): Whether to include deleted events (with status equals "cancelled") in the result. Cancelled instances of recurring events (but not the underlying recurring event) will still be included if showDeleted and singleEvents are both False. If showDeleted and singleEvents are both True, only single instances of deleted events (but not the underlying recurring events) are returned. Optional. The default is False.
-    - :showHiddenInvitations (boolean()): Whether to include hidden invitations in the result. Optional. The default is False.
-    - :singleEvents (boolean()): Whether to expand recurring events into instances and only return single one-off events and instances of recurring events, but not the underlying recurring events themselves. Optional. The default is False.
-    - :syncToken (String.t): Token obtained from the nextSyncToken field returned on the last page of results from the previous list request. It makes the result of this list request contain only entries that have changed since then. All events deleted since the previous list request will always be in the result set and it is not allowed to set showDeleted to False.
-  There are several query parameters that cannot be specified together with nextSyncToken to ensure consistency of the client state.
+  *   `connection` (*type:* `GoogleApi.Calendar.V3.Connection.t`) - Connection to server
+  *   `calendar_id` (*type:* `String.t`) - Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:alwaysIncludeEmail` (*type:* `boolean()`) - Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.
+      *   `:iCalUID` (*type:* `String.t`) - Specifies event ID in the iCalendar format to be included in the response. Optional.
+      *   `:maxAttendees` (*type:* `integer()`) - The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.
+      *   `:maxResults` (*type:* `integer()`) - Maximum number of events returned on one result page. The number of events in the resulting page may be less than this value, or none at all, even if there are more events matching the query. Incomplete pages can be detected by a non-empty nextPageToken field in the response. By default the value is 250 events. The page size can never be larger than 2500 events. Optional.
+      *   `:orderBy` (*type:* `String.t`) - The order of the events returned in the result. Optional. The default is an unspecified, stable order.
+      *   `:pageToken` (*type:* `String.t`) - Token specifying which result page to return. Optional.
+      *   `:privateExtendedProperty` (*type:* `list(String.t)`) - Extended properties constraint specified as propertyName=value. Matches only private properties. This parameter might be repeated multiple times to return events that match all given constraints.
+      *   `:q` (*type:* `String.t`) - Free text search terms to find events that match these terms in any field, except for extended properties. Optional.
+      *   `:sharedExtendedProperty` (*type:* `list(String.t)`) - Extended properties constraint specified as propertyName=value. Matches only shared properties. This parameter might be repeated multiple times to return events that match all given constraints.
+      *   `:showDeleted` (*type:* `boolean()`) - Whether to include deleted events (with status equals "cancelled") in the result. Cancelled instances of recurring events (but not the underlying recurring event) will still be included if showDeleted and singleEvents are both False. If showDeleted and singleEvents are both True, only single instances of deleted events (but not the underlying recurring events) are returned. Optional. The default is False.
+      *   `:showHiddenInvitations` (*type:* `boolean()`) - Whether to include hidden invitations in the result. Optional. The default is False.
+      *   `:singleEvents` (*type:* `boolean()`) - Whether to expand recurring events into instances and only return single one-off events and instances of recurring events, but not the underlying recurring events themselves. Optional. The default is False.
+      *   `:syncToken` (*type:* `String.t`) - Token obtained from the nextSyncToken field returned on the last page of results from the previous list request. It makes the result of this list request contain only entries that have changed since then. All events deleted since the previous list request will always be in the result set and it is not allowed to set showDeleted to False.
+          There are several query parameters that cannot be specified together with nextSyncToken to ensure consistency of the client state.
 
-  These are: 
-  - iCalUID 
-  - orderBy 
-  - privateExtendedProperty 
-  - q 
-  - sharedExtendedProperty 
-  - timeMin 
-  - timeMax 
-  - updatedMin If the syncToken expires, the server will respond with a 410 GONE response code and the client should clear its storage and perform a full synchronization without any syncToken.
-  Learn more about incremental synchronization.
-  Optional. The default is to return all entries.
-    - :timeMax (DateTime.t): Upper bound (exclusive) for an event's start time to filter by. Optional. The default is not to filter by start time. Must be an RFC3339 timestamp with mandatory time zone offset, for example, 2011-06-03T10:00:00-07:00, 2011-06-03T10:00:00Z. Milliseconds may be provided but are ignored. If timeMin is set, timeMax must be greater than timeMin.
-    - :timeMin (DateTime.t): Lower bound (exclusive) for an event's end time to filter by. Optional. The default is not to filter by end time. Must be an RFC3339 timestamp with mandatory time zone offset, for example, 2011-06-03T10:00:00-07:00, 2011-06-03T10:00:00Z. Milliseconds may be provided but are ignored. If timeMax is set, timeMin must be smaller than timeMax.
-    - :timeZone (String.t): Time zone used in the response. Optional. The default is the time zone of the calendar.
-    - :updatedMin (DateTime.t): Lower bound for an event's last modification time (as a RFC3339 timestamp) to filter by. When specified, entries deleted since this time will always be included regardless of showDeleted. Optional. The default is not to filter by last modification time.
-    - :resource (GoogleApi.Calendar.V3.Model.Channel.t): 
+          These are: 
+          - iCalUID 
+          - orderBy 
+          - privateExtendedProperty 
+          - q 
+          - sharedExtendedProperty 
+          - timeMin 
+          - timeMax 
+          - updatedMin If the syncToken expires, the server will respond with a 410 GONE response code and the client should clear its storage and perform a full synchronization without any syncToken.
+          Learn more about incremental synchronization.
+          Optional. The default is to return all entries.
+      *   `:timeMax` (*type:* `DateTime.t`) - Upper bound (exclusive) for an event's start time to filter by. Optional. The default is not to filter by start time. Must be an RFC3339 timestamp with mandatory time zone offset, for example, 2011-06-03T10:00:00-07:00, 2011-06-03T10:00:00Z. Milliseconds may be provided but are ignored. If timeMin is set, timeMax must be greater than timeMin.
+      *   `:timeMin` (*type:* `DateTime.t`) - Lower bound (exclusive) for an event's end time to filter by. Optional. The default is not to filter by end time. Must be an RFC3339 timestamp with mandatory time zone offset, for example, 2011-06-03T10:00:00-07:00, 2011-06-03T10:00:00Z. Milliseconds may be provided but are ignored. If timeMax is set, timeMin must be smaller than timeMax.
+      *   `:timeZone` (*type:* `String.t`) - Time zone used in the response. Optional. The default is the time zone of the calendar.
+      *   `:updatedMin` (*type:* `DateTime.t`) - Lower bound for an event's last modification time (as a RFC3339 timestamp) to filter by. When specified, entries deleted since this time will always be included regardless of showDeleted. Optional. The default is not to filter by last modification time.
+      *   `:resource` (*type:* `GoogleApi.Calendar.V3.Model.Channel.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Calendar.V3.Model.Channel{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Calendar.V3.Model.Channel{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec calendar_events_watch(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec calendar_events_watch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Calendar.V3.Model.Channel.t()} | {:error, Tesla.Env.t()}
   def calendar_events_watch(connection, calendar_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

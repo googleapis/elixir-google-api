@@ -21,8 +21,8 @@ defmodule GoogleApi.Calendar.V3.Model.ColorDefinition do
 
   ## Attributes
 
-  - background (String.t): The background color associated with this color definition. Defaults to `nil`.
-  - foreground (String.t): The foreground color that can be used to write on top of a background with 'background' color. Defaults to `nil`.
+  *   `background` (*type:* `String.t`, *default:* `nil`) - The background color associated with this color definition.
+  *   `foreground` (*type:* `String.t`, *default:* `nil`) - The foreground color that can be used to write on top of a background with 'background' color.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,18 +21,18 @@ defmodule GoogleApi.Calendar.V3.Model.CalendarNotification do
 
   ## Attributes
 
-  - method (String.t): The method used to deliver the notification. Possible values are:  
-  - "email" - Notifications are sent via email. 
-  - "sms" - Deprecated. Once this feature is shutdown, the API will no longer return notifications using this method. Any newly added SMS notifications will be ignored. See  Google Calendar SMS notifications to be removed for more information.
-  Notifications are sent via SMS. This value is read-only and is ignored on inserts and updates. SMS notifications are only available for G Suite customers.  
-  Required when adding a notification. Defaults to `nil`.
-  - type (String.t): The type of notification. Possible values are:  
-  - "eventCreation" - Notification sent when a new event is put on the calendar. 
-  - "eventChange" - Notification sent when an event is changed. 
-  - "eventCancellation" - Notification sent when an event is cancelled. 
-  - "eventResponse" - Notification sent when an attendee responds to the event invitation. 
-  - "agenda" - An agenda with the events of the day (sent out in the morning).  
-  Required when adding a notification. Defaults to `nil`.
+  *   `method` (*type:* `String.t`, *default:* `nil`) - The method used to deliver the notification. Possible values are:  
+      - "email" - Notifications are sent via email. 
+      - "sms" - Deprecated. Once this feature is shutdown, the API will no longer return notifications using this method. Any newly added SMS notifications will be ignored. See  Google Calendar SMS notifications to be removed for more information.
+      Notifications are sent via SMS. This value is read-only and is ignored on inserts and updates. SMS notifications are only available for G Suite customers.  
+      Required when adding a notification.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of notification. Possible values are:  
+      - "eventCreation" - Notification sent when a new event is put on the calendar. 
+      - "eventChange" - Notification sent when an event is changed. 
+      - "eventCancellation" - Notification sent when an event is cancelled. 
+      - "eventResponse" - Notification sent when an attendee responds to the event invitation. 
+      - "agenda" - An agenda with the events of the day (sent out in the morning).  
+      Required when adding a notification.
   """
 
   use GoogleApi.Gax.ModelBase

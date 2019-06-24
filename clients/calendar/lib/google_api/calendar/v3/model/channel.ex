@@ -21,16 +21,16 @@ defmodule GoogleApi.Calendar.V3.Model.Channel do
 
   ## Attributes
 
-  - address (String.t): The address where notifications are delivered for this channel. Defaults to `nil`.
-  - expiration (String.t): Date and time of notification channel expiration, expressed as a Unix timestamp, in milliseconds. Optional. Defaults to `nil`.
-  - id (String.t): A UUID or similar unique string that identifies this channel. Defaults to `nil`.
-  - kind (String.t): Identifies this as a notification channel used to watch for changes to a resource. Value: the fixed string "api#channel". Defaults to `api#channel`.
-  - params (map()): Additional parameters controlling delivery channel behavior. Optional. Defaults to `nil`.
-  - payload (boolean()): A Boolean value to indicate whether payload is wanted. Optional. Defaults to `nil`.
-  - resourceId (String.t): An opaque ID that identifies the resource being watched on this channel. Stable across different API versions. Defaults to `nil`.
-  - resourceUri (String.t): A version-specific identifier for the watched resource. Defaults to `nil`.
-  - token (String.t): An arbitrary string delivered to the target address with each notification delivered over this channel. Optional. Defaults to `nil`.
-  - type (String.t): The type of delivery mechanism used for this channel. Defaults to `nil`.
+  *   `address` (*type:* `String.t`, *default:* `nil`) - The address where notifications are delivered for this channel.
+  *   `expiration` (*type:* `String.t`, *default:* `nil`) - Date and time of notification channel expiration, expressed as a Unix timestamp, in milliseconds. Optional.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - A UUID or similar unique string that identifies this channel.
+  *   `kind` (*type:* `String.t`, *default:* `api#channel`) - Identifies this as a notification channel used to watch for changes to a resource. Value: the fixed string "api#channel".
+  *   `params` (*type:* `map()`, *default:* `nil`) - Additional parameters controlling delivery channel behavior. Optional.
+  *   `payload` (*type:* `boolean()`, *default:* `nil`) - A Boolean value to indicate whether payload is wanted. Optional.
+  *   `resourceId` (*type:* `String.t`, *default:* `nil`) - An opaque ID that identifies the resource being watched on this channel. Stable across different API versions.
+  *   `resourceUri` (*type:* `String.t`, *default:* `nil`) - A version-specific identifier for the watched resource.
+  *   `token` (*type:* `String.t`, *default:* `nil`) - An arbitrary string delivered to the target address with each notification delivered over this channel. Optional.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of delivery mechanism used for this channel.
   """
 
   use GoogleApi.Gax.ModelBase

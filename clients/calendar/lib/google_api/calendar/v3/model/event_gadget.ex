@@ -21,16 +21,16 @@ defmodule GoogleApi.Calendar.V3.Model.EventGadget do
 
   ## Attributes
 
-  - display (String.t): The gadget's display mode. Optional. Possible values are:  
-  - "icon" - The gadget displays next to the event's title in the calendar view. 
-  - "chip" - The gadget displays when the event is clicked. Defaults to `nil`.
-  - height (integer()): The gadget's height in pixels. The height must be an integer greater than 0. Optional. Defaults to `nil`.
-  - iconLink (String.t): The gadget's icon URL. The URL scheme must be HTTPS. Defaults to `nil`.
-  - link (String.t): The gadget's URL. The URL scheme must be HTTPS. Defaults to `nil`.
-  - preferences (map()): Preferences. Defaults to `nil`.
-  - title (String.t): The gadget's title. Defaults to `nil`.
-  - type (String.t): The gadget's type. Defaults to `nil`.
-  - width (integer()): The gadget's width in pixels. The width must be an integer greater than 0. Optional. Defaults to `nil`.
+  *   `display` (*type:* `String.t`, *default:* `nil`) - The gadget's display mode. Optional. Possible values are:  
+      - "icon" - The gadget displays next to the event's title in the calendar view. 
+      - "chip" - The gadget displays when the event is clicked.
+  *   `height` (*type:* `integer()`, *default:* `nil`) - The gadget's height in pixels. The height must be an integer greater than 0. Optional.
+  *   `iconLink` (*type:* `String.t`, *default:* `nil`) - The gadget's icon URL. The URL scheme must be HTTPS.
+  *   `link` (*type:* `String.t`, *default:* `nil`) - The gadget's URL. The URL scheme must be HTTPS.
+  *   `preferences` (*type:* `map()`, *default:* `nil`) - Preferences.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - The gadget's title.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The gadget's type.
+  *   `width` (*type:* `integer()`, *default:* `nil`) - The gadget's width in pixels. The width must be an integer greater than 0. Optional.
   """
 
   use GoogleApi.Gax.ModelBase

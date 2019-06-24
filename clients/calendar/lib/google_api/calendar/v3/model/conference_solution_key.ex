@@ -21,12 +21,12 @@ defmodule GoogleApi.Calendar.V3.Model.ConferenceSolutionKey do
 
   ## Attributes
 
-  - type (String.t): The conference solution type.
-  If a client encounters an unfamiliar or empty type, it should still be able to display the entry points. However, it should disallow modifications.
-  The possible values are:  
-  - "eventHangout" for Hangouts for consumers (http://hangouts.google.com)
-  - "eventNamedHangout" for classic Hangouts for G Suite users (http://hangouts.google.com)
-  - "hangoutsMeet" for Hangouts Meet (http://meet.google.com) Defaults to `nil`.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The conference solution type.
+      If a client encounters an unfamiliar or empty type, it should still be able to display the entry points. However, it should disallow modifications.
+      The possible values are:  
+      - "eventHangout" for Hangouts for consumers (http://hangouts.google.com)
+      - "eventNamedHangout" for classic Hangouts for G Suite users (http://hangouts.google.com)
+      - "hangoutsMeet" for Hangouts Meet (http://meet.google.com)
   """
 
   use GoogleApi.Gax.ModelBase

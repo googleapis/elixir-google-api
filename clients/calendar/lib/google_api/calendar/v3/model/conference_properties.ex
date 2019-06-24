@@ -21,11 +21,11 @@ defmodule GoogleApi.Calendar.V3.Model.ConferenceProperties do
 
   ## Attributes
 
-  - allowedConferenceSolutionTypes (list(String.t)): The types of conference solutions that are supported for this calendar.
-  The possible values are:  
-  - "eventHangout" 
-  - "eventNamedHangout" 
-  - "hangoutsMeet"  Optional. Defaults to `nil`.
+  *   `allowedConferenceSolutionTypes` (*type:* `list(String.t)`, *default:* `nil`) - The types of conference solutions that are supported for this calendar.
+      The possible values are:  
+      - "eventHangout" 
+      - "eventNamedHangout" 
+      - "hangoutsMeet"  Optional.
   """
 
   use GoogleApi.Gax.ModelBase

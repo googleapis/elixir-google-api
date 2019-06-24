@@ -21,8 +21,8 @@ defmodule GoogleApi.Calendar.V3.Model.FreeBusyGroup do
 
   ## Attributes
 
-  - calendars (list(String.t)): List of calendars' identifiers within a group. Defaults to `nil`.
-  - errors (list(GoogleApi.Calendar.V3.Model.Error.t)): Optional error(s) (if computation for the group failed). Defaults to `nil`.
+  *   `calendars` (*type:* `list(String.t)`, *default:* `nil`) - List of calendars' identifiers within a group.
+  *   `errors` (*type:* `list(GoogleApi.Calendar.V3.Model.Error.t)`, *default:* `nil`) - Optional error(s) (if computation for the group failed).
   """
 
   use GoogleApi.Gax.ModelBase

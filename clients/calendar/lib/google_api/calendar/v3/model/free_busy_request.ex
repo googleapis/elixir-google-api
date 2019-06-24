@@ -21,12 +21,12 @@ defmodule GoogleApi.Calendar.V3.Model.FreeBusyRequest do
 
   ## Attributes
 
-  - calendarExpansionMax (integer()): Maximal number of calendars for which FreeBusy information is to be provided. Optional. Maximum value is 50. Defaults to `nil`.
-  - groupExpansionMax (integer()): Maximal number of calendar identifiers to be provided for a single group. Optional. An error is returned for a group with more members than this value. Maximum value is 100. Defaults to `nil`.
-  - items (list(GoogleApi.Calendar.V3.Model.FreeBusyRequestItem.t)): List of calendars and/or groups to query. Defaults to `nil`.
-  - timeMax (DateTime.t): The end of the interval for the query formatted as per RFC3339. Defaults to `nil`.
-  - timeMin (DateTime.t): The start of the interval for the query formatted as per RFC3339. Defaults to `nil`.
-  - timeZone (String.t): Time zone used in the response. Optional. The default is UTC. Defaults to `UTC`.
+  *   `calendarExpansionMax` (*type:* `integer()`, *default:* `nil`) - Maximal number of calendars for which FreeBusy information is to be provided. Optional. Maximum value is 50.
+  *   `groupExpansionMax` (*type:* `integer()`, *default:* `nil`) - Maximal number of calendar identifiers to be provided for a single group. Optional. An error is returned for a group with more members than this value. Maximum value is 100.
+  *   `items` (*type:* `list(GoogleApi.Calendar.V3.Model.FreeBusyRequestItem.t)`, *default:* `nil`) - List of calendars and/or groups to query.
+  *   `timeMax` (*type:* `DateTime.t`, *default:* `nil`) - The end of the interval for the query formatted as per RFC3339.
+  *   `timeMin` (*type:* `DateTime.t`, *default:* `nil`) - The start of the interval for the query formatted as per RFC3339.
+  *   `timeZone` (*type:* `String.t`, *default:* `UTC`) - Time zone used in the response. Optional. The default is UTC.
   """
 
   use GoogleApi.Gax.ModelBase

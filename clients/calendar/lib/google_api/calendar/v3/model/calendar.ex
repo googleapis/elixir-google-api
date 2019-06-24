@@ -21,14 +21,14 @@ defmodule GoogleApi.Calendar.V3.Model.Calendar do
 
   ## Attributes
 
-  - conferenceProperties (GoogleApi.Calendar.V3.Model.ConferenceProperties.t): Conferencing properties for this calendar, for example what types of conferences are allowed. Defaults to `nil`.
-  - description (String.t): Description of the calendar. Optional. Defaults to `nil`.
-  - etag (String.t): ETag of the resource. Defaults to `nil`.
-  - id (String.t): Identifier of the calendar. To retrieve IDs call the calendarList.list() method. Defaults to `nil`.
-  - kind (String.t): Type of the resource ("calendar#calendar"). Defaults to `calendar#calendar`.
-  - location (String.t): Geographic location of the calendar as free-form text. Optional. Defaults to `nil`.
-  - summary (String.t): Title of the calendar. Defaults to `nil`.
-  - timeZone (String.t): The time zone of the calendar. (Formatted as an IANA Time Zone Database name, e.g. "Europe/Zurich".) Optional. Defaults to `nil`.
+  *   `conferenceProperties` (*type:* `GoogleApi.Calendar.V3.Model.ConferenceProperties.t`, *default:* `nil`) - Conferencing properties for this calendar, for example what types of conferences are allowed.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the calendar. Optional.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Identifier of the calendar. To retrieve IDs call the calendarList.list() method.
+  *   `kind` (*type:* `String.t`, *default:* `calendar#calendar`) - Type of the resource ("calendar#calendar").
+  *   `location` (*type:* `String.t`, *default:* `nil`) - Geographic location of the calendar as free-form text. Optional.
+  *   `summary` (*type:* `String.t`, *default:* `nil`) - Title of the calendar.
+  *   `timeZone` (*type:* `String.t`, *default:* `nil`) - The time zone of the calendar. (Formatted as an IANA Time Zone Database name, e.g. "Europe/Zurich".) Optional.
   """
 
   use GoogleApi.Gax.ModelBase

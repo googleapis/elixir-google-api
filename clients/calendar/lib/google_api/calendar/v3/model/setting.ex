@@ -21,10 +21,10 @@ defmodule GoogleApi.Calendar.V3.Model.Setting do
 
   ## Attributes
 
-  - etag (String.t): ETag of the resource. Defaults to `nil`.
-  - id (String.t): The id of the user setting. Defaults to `nil`.
-  - kind (String.t): Type of the resource ("calendar#setting"). Defaults to `calendar#setting`.
-  - value (String.t): Value of the user setting. The format of the value depends on the ID of the setting. It must always be a UTF-8 string of length up to 1024 characters. Defaults to `nil`.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The id of the user setting.
+  *   `kind` (*type:* `String.t`, *default:* `calendar#setting`) - Type of the resource ("calendar#setting").
+  *   `value` (*type:* `String.t`, *default:* `nil`) - Value of the user setting. The format of the value depends on the ID of the setting. It must always be a UTF-8 string of length up to 1024 characters.
   """
 
   use GoogleApi.Gax.ModelBase

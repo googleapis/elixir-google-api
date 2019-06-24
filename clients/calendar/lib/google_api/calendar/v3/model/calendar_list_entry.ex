@@ -21,29 +21,29 @@ defmodule GoogleApi.Calendar.V3.Model.CalendarListEntry do
 
   ## Attributes
 
-  - accessRole (String.t): The effective access role that the authenticated user has on the calendar. Read-only. Possible values are:  
-  - "freeBusyReader" - Provides read access to free/busy information. 
-  - "reader" - Provides read access to the calendar. Private events will appear to users with reader access, but event details will be hidden. 
-  - "writer" - Provides read and write access to the calendar. Private events will appear to users with writer access, and event details will be visible. 
-  - "owner" - Provides ownership of the calendar. This role has all of the permissions of the writer role with the additional ability to see and manipulate ACLs. Defaults to `nil`.
-  - backgroundColor (String.t): The main color of the calendar in the hexadecimal format "#0088aa". This property supersedes the index-based colorId property. To set or change this property, you need to specify colorRgbFormat=true in the parameters of the insert, update and patch methods. Optional. Defaults to `nil`.
-  - colorId (String.t): The color of the calendar. This is an ID referring to an entry in the calendar section of the colors definition (see the colors endpoint). This property is superseded by the backgroundColor and foregroundColor properties and can be ignored when using these properties. Optional. Defaults to `nil`.
-  - conferenceProperties (GoogleApi.Calendar.V3.Model.ConferenceProperties.t): Conferencing properties for this calendar, for example what types of conferences are allowed. Defaults to `nil`.
-  - defaultReminders (list(GoogleApi.Calendar.V3.Model.EventReminder.t)): The default reminders that the authenticated user has for this calendar. Defaults to `nil`.
-  - deleted (boolean()): Whether this calendar list entry has been deleted from the calendar list. Read-only. Optional. The default is False. Defaults to `false`.
-  - description (String.t): Description of the calendar. Optional. Read-only. Defaults to `nil`.
-  - etag (String.t): ETag of the resource. Defaults to `nil`.
-  - foregroundColor (String.t): The foreground color of the calendar in the hexadecimal format "#ffffff". This property supersedes the index-based colorId property. To set or change this property, you need to specify colorRgbFormat=true in the parameters of the insert, update and patch methods. Optional. Defaults to `nil`.
-  - hidden (boolean()): Whether the calendar has been hidden from the list. Optional. The default is False. Defaults to `false`.
-  - id (String.t): Identifier of the calendar. Defaults to `nil`.
-  - kind (String.t): Type of the resource ("calendar#calendarListEntry"). Defaults to `calendar#calendarListEntry`.
-  - location (String.t): Geographic location of the calendar as free-form text. Optional. Read-only. Defaults to `nil`.
-  - notificationSettings (GoogleApi.Calendar.V3.Model.CalendarListEntryNotificationSettings.t): The notifications that the authenticated user is receiving for this calendar. Defaults to `nil`.
-  - primary (boolean()): Whether the calendar is the primary calendar of the authenticated user. Read-only. Optional. The default is False. Defaults to `false`.
-  - selected (boolean()): Whether the calendar content shows up in the calendar UI. Optional. The default is False. Defaults to `false`.
-  - summary (String.t): Title of the calendar. Read-only. Defaults to `nil`.
-  - summaryOverride (String.t): The summary that the authenticated user has set for this calendar. Optional. Defaults to `nil`.
-  - timeZone (String.t): The time zone of the calendar. Optional. Read-only. Defaults to `nil`.
+  *   `accessRole` (*type:* `String.t`, *default:* `nil`) - The effective access role that the authenticated user has on the calendar. Read-only. Possible values are:  
+      - "freeBusyReader" - Provides read access to free/busy information. 
+      - "reader" - Provides read access to the calendar. Private events will appear to users with reader access, but event details will be hidden. 
+      - "writer" - Provides read and write access to the calendar. Private events will appear to users with writer access, and event details will be visible. 
+      - "owner" - Provides ownership of the calendar. This role has all of the permissions of the writer role with the additional ability to see and manipulate ACLs.
+  *   `backgroundColor` (*type:* `String.t`, *default:* `nil`) - The main color of the calendar in the hexadecimal format "#0088aa". This property supersedes the index-based colorId property. To set or change this property, you need to specify colorRgbFormat=true in the parameters of the insert, update and patch methods. Optional.
+  *   `colorId` (*type:* `String.t`, *default:* `nil`) - The color of the calendar. This is an ID referring to an entry in the calendar section of the colors definition (see the colors endpoint). This property is superseded by the backgroundColor and foregroundColor properties and can be ignored when using these properties. Optional.
+  *   `conferenceProperties` (*type:* `GoogleApi.Calendar.V3.Model.ConferenceProperties.t`, *default:* `nil`) - Conferencing properties for this calendar, for example what types of conferences are allowed.
+  *   `defaultReminders` (*type:* `list(GoogleApi.Calendar.V3.Model.EventReminder.t)`, *default:* `nil`) - The default reminders that the authenticated user has for this calendar.
+  *   `deleted` (*type:* `boolean()`, *default:* `false`) - Whether this calendar list entry has been deleted from the calendar list. Read-only. Optional. The default is False.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the calendar. Optional. Read-only.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
+  *   `foregroundColor` (*type:* `String.t`, *default:* `nil`) - The foreground color of the calendar in the hexadecimal format "#ffffff". This property supersedes the index-based colorId property. To set or change this property, you need to specify colorRgbFormat=true in the parameters of the insert, update and patch methods. Optional.
+  *   `hidden` (*type:* `boolean()`, *default:* `false`) - Whether the calendar has been hidden from the list. Optional. The default is False.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Identifier of the calendar.
+  *   `kind` (*type:* `String.t`, *default:* `calendar#calendarListEntry`) - Type of the resource ("calendar#calendarListEntry").
+  *   `location` (*type:* `String.t`, *default:* `nil`) - Geographic location of the calendar as free-form text. Optional. Read-only.
+  *   `notificationSettings` (*type:* `GoogleApi.Calendar.V3.Model.CalendarListEntryNotificationSettings.t`, *default:* `nil`) - The notifications that the authenticated user is receiving for this calendar.
+  *   `primary` (*type:* `boolean()`, *default:* `false`) - Whether the calendar is the primary calendar of the authenticated user. Read-only. Optional. The default is False.
+  *   `selected` (*type:* `boolean()`, *default:* `false`) - Whether the calendar content shows up in the calendar UI. Optional. The default is False.
+  *   `summary` (*type:* `String.t`, *default:* `nil`) - Title of the calendar. Read-only.
+  *   `summaryOverride` (*type:* `String.t`, *default:* `nil`) - The summary that the authenticated user has set for this calendar. Optional.
+  *   `timeZone` (*type:* `String.t`, *default:* `nil`) - The time zone of the calendar. Optional. Read-only.
   """
 
   use GoogleApi.Gax.ModelBase

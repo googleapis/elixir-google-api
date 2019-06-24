@@ -21,11 +21,11 @@ defmodule GoogleApi.Calendar.V3.Model.ConferenceRequestStatus do
 
   ## Attributes
 
-  - statusCode (String.t): The current status of the conference create request. Read-only.
-  The possible values are:  
-  - "pending": the conference create request is still being processed.
-  - "success": the conference create request succeeded, the entry points are populated.
-  - "failure": the conference create request failed, there are no entry points. Defaults to `nil`.
+  *   `statusCode` (*type:* `String.t`, *default:* `nil`) - The current status of the conference create request. Read-only.
+      The possible values are:  
+      - "pending": the conference create request is still being processed.
+      - "success": the conference create request succeeded, the entry points are populated.
+      - "failure": the conference create request failed, there are no entry points.
   """
 
   use GoogleApi.Gax.ModelBase

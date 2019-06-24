@@ -21,10 +21,10 @@ defmodule GoogleApi.Calendar.V3.Model.EventOrganizer do
 
   ## Attributes
 
-  - displayName (String.t): The organizer's name, if available. Defaults to `nil`.
-  - email (String.t): The organizer's email address, if available. It must be a valid email address as per RFC5322. Defaults to `nil`.
-  - id (String.t): The organizer's Profile ID, if available. It corresponds to the id field in the People collection of the Google+ API Defaults to `nil`.
-  - self (boolean()): Whether the organizer corresponds to the calendar on which this copy of the event appears. Read-only. The default is False. Defaults to `false`.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The organizer's name, if available.
+  *   `email` (*type:* `String.t`, *default:* `nil`) - The organizer's email address, if available. It must be a valid email address as per RFC5322.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The organizer's Profile ID, if available. It corresponds to the id field in the People collection of the Google+ API
+  *   `self` (*type:* `boolean()`, *default:* `false`) - Whether the organizer corresponds to the calendar on which this copy of the event appears. Read-only. The default is False.
   """
 
   use GoogleApi.Gax.ModelBase

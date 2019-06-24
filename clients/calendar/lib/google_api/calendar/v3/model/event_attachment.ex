@@ -21,14 +21,14 @@ defmodule GoogleApi.Calendar.V3.Model.EventAttachment do
 
   ## Attributes
 
-  - fileId (String.t): ID of the attached file. Read-only.
-  For Google Drive files, this is the ID of the corresponding Files resource entry in the Drive API. Defaults to `nil`.
-  - fileUrl (String.t): URL link to the attachment.
-  For adding Google Drive file attachments use the same format as in alternateLink property of the Files resource in the Drive API.
-  Required when adding an attachment. Defaults to `nil`.
-  - iconLink (String.t): URL link to the attachment's icon. Read-only. Defaults to `nil`.
-  - mimeType (String.t): Internet media type (MIME type) of the attachment. Defaults to `nil`.
-  - title (String.t): Attachment title. Defaults to `nil`.
+  *   `fileId` (*type:* `String.t`, *default:* `nil`) - ID of the attached file. Read-only.
+      For Google Drive files, this is the ID of the corresponding Files resource entry in the Drive API.
+  *   `fileUrl` (*type:* `String.t`, *default:* `nil`) - URL link to the attachment.
+      For adding Google Drive file attachments use the same format as in alternateLink property of the Files resource in the Drive API.
+      Required when adding an attachment.
+  *   `iconLink` (*type:* `String.t`, *default:* `nil`) - URL link to the attachment's icon. Read-only.
+  *   `mimeType` (*type:* `String.t`, *default:* `nil`) - Internet media type (MIME type) of the attachment.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - Attachment title.
   """
 
   use GoogleApi.Gax.ModelBase

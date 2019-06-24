@@ -21,8 +21,8 @@ defmodule GoogleApi.Calendar.V3.Model.EventExtendedProperties do
 
   ## Attributes
 
-  - private (map()): Properties that are private to the copy of the event that appears on this calendar. Defaults to `nil`.
-  - shared (map()): Properties that are shared between copies of the event on other attendees' calendars. Defaults to `nil`.
+  *   `private` (*type:* `map()`, *default:* `nil`) - Properties that are private to the copy of the event that appears on this calendar.
+  *   `shared` (*type:* `map()`, *default:* `nil`) - Properties that are shared between copies of the event on other attendees' calendars.
   """
 
   use GoogleApi.Gax.ModelBase

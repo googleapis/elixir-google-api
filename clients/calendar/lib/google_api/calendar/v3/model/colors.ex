@@ -21,10 +21,10 @@ defmodule GoogleApi.Calendar.V3.Model.Colors do
 
   ## Attributes
 
-  - calendar (%{optional(String.t) => GoogleApi.Calendar.V3.Model.ColorDefinition.t}): A global palette of calendar colors, mapping from the color ID to its definition. A calendarListEntry resource refers to one of these color IDs in its color field. Read-only. Defaults to `nil`.
-  - event (%{optional(String.t) => GoogleApi.Calendar.V3.Model.ColorDefinition.t}): A global palette of event colors, mapping from the color ID to its definition. An event resource may refer to one of these color IDs in its color field. Read-only. Defaults to `nil`.
-  - kind (String.t): Type of the resource ("calendar#colors"). Defaults to `calendar#colors`.
-  - updated (DateTime.t): Last modification time of the color palette (as a RFC3339 timestamp). Read-only. Defaults to `nil`.
+  *   `calendar` (*type:* `%{optional(String.t) => GoogleApi.Calendar.V3.Model.ColorDefinition.t}`, *default:* `nil`) - A global palette of calendar colors, mapping from the color ID to its definition. A calendarListEntry resource refers to one of these color IDs in its color field. Read-only.
+  *   `event` (*type:* `%{optional(String.t) => GoogleApi.Calendar.V3.Model.ColorDefinition.t}`, *default:* `nil`) - A global palette of event colors, mapping from the color ID to its definition. An event resource may refer to one of these color IDs in its color field. Read-only.
+  *   `kind` (*type:* `String.t`, *default:* `calendar#colors`) - Type of the resource ("calendar#colors").
+  *   `updated` (*type:* `DateTime.t`, *default:* `nil`) - Last modification time of the color palette (as a RFC3339 timestamp). Read-only.
   """
 
   use GoogleApi.Gax.ModelBase

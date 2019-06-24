@@ -21,11 +21,11 @@ defmodule GoogleApi.Calendar.V3.Model.Settings do
 
   ## Attributes
 
-  - etag (String.t): Etag of the collection. Defaults to `nil`.
-  - items (list(GoogleApi.Calendar.V3.Model.Setting.t)): List of user settings. Defaults to `nil`.
-  - kind (String.t): Type of the collection ("calendar#settings"). Defaults to `calendar#settings`.
-  - nextPageToken (String.t): Token used to access the next page of this result. Omitted if no further results are available, in which case nextSyncToken is provided. Defaults to `nil`.
-  - nextSyncToken (String.t): Token used at a later point in time to retrieve only the entries that have changed since this result was returned. Omitted if further results are available, in which case nextPageToken is provided. Defaults to `nil`.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of the collection.
+  *   `items` (*type:* `list(GoogleApi.Calendar.V3.Model.Setting.t)`, *default:* `nil`) - List of user settings.
+  *   `kind` (*type:* `String.t`, *default:* `calendar#settings`) - Type of the collection ("calendar#settings").
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token used to access the next page of this result. Omitted if no further results are available, in which case nextSyncToken is provided.
+  *   `nextSyncToken` (*type:* `String.t`, *default:* `nil`) - Token used at a later point in time to retrieve only the entries that have changed since this result was returned. Omitted if further results are available, in which case nextPageToken is provided.
   """
 
   use GoogleApi.Gax.ModelBase
