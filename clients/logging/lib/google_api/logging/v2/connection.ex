@@ -20,6 +20,8 @@ defmodule GoogleApi.Logging.V2.Connection do
   Handle Tesla connections for GoogleApi.Logging.V2.
   """
 
+  @type t :: Tesla.Env.client()
+
   use GoogleApi.Gax.Connection,
     scopes: [
       # View and manage your data across Google Cloud Platform services

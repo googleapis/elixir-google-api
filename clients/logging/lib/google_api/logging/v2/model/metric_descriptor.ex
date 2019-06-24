@@ -21,61 +21,61 @@ defmodule GoogleApi.Logging.V2.Model.MetricDescriptor do
 
   ## Attributes
 
-  - description (String.t): A detailed description of the metric, which can be used in documentation. Defaults to `nil`.
-  - displayName (String.t): A concise name for the metric, which can be displayed in user interfaces. Use sentence case without an ending period, for example "Request count". This field is optional but it is recommended to be set for any metrics associated with user-visible concepts, such as Quota. Defaults to `nil`.
-  - labels (list(GoogleApi.Logging.V2.Model.LabelDescriptor.t)): The set of labels that can be used to describe a specific instance of this metric type. For example, the appengine.googleapis.com/http/server/response_latencies metric type has a label for the HTTP response code, response_code, so you can look at latencies for successful responses or just for responses that failed. Defaults to `nil`.
-  - launchStage (String.t): Optional. The launch stage of the metric definition. Defaults to `nil`.
-  - metadata (GoogleApi.Logging.V2.Model.MetricDescriptorMetadata.t): Optional. Metadata which can be used to guide usage of the metric. Defaults to `nil`.
-  - metricKind (String.t): Whether the metric records instantaneous values, changes to a value, etc. Some combinations of metric_kind and value_type might not be supported. Defaults to `nil`.
-  - name (String.t): The resource name of the metric descriptor. Defaults to `nil`.
-  - type (String.t): The metric type, including its DNS name prefix. The type is not URL-encoded. All user-defined metric types have the DNS name custom.googleapis.com or external.googleapis.com. Metric types should use a natural hierarchical grouping. For example:
-  "custom.googleapis.com/invoice/paid/amount"
-  "external.googleapis.com/prometheus/up"
-  "appengine.googleapis.com/http/server/response_latencies"
-  Defaults to `nil`.
-  - unit (String.t): The unit in which the metric value is reported. It is only applicable if the value_type is INT64, DOUBLE, or DISTRIBUTION. The supported units are a subset of The Unified Code for Units of Measure (http://unitsofmeasure.org/ucum.html) standard:Basic units (UNIT)
-  bit bit
-  By byte
-  s second
-  min minute
-  h hour
-  d dayPrefixes (PREFIX)
-  k kilo (10**3)
-  M mega (10**6)
-  G giga (10**9)
-  T tera (10**12)
-  P peta (10**15)
-  E exa (10**18)
-  Z zetta (10**21)
-  Y yotta (10**24)
-  m milli (10**-3)
-  u micro (10**-6)
-  n nano (10**-9)
-  p pico (10**-12)
-  f femto (10**-15)
-  a atto (10**-18)
-  z zepto (10**-21)
-  y yocto (10**-24)
-  Ki kibi (2**10)
-  Mi mebi (2**20)
-  Gi gibi (2**30)
-  Ti tebi (2**40)GrammarThe grammar also includes these connectors:
-  / division (as an infix operator, e.g. 1/s).
-  . multiplication (as an infix operator, e.g. GBy.d)The grammar for a unit is as follows:
-  Expression = Component { "." Component } { "/" Component } ;
+  *   `description` (*type:* `String.t`, *default:* `nil`) - A detailed description of the metric, which can be used in documentation.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - A concise name for the metric, which can be displayed in user interfaces. Use sentence case without an ending period, for example "Request count". This field is optional but it is recommended to be set for any metrics associated with user-visible concepts, such as Quota.
+  *   `labels` (*type:* `list(GoogleApi.Logging.V2.Model.LabelDescriptor.t)`, *default:* `nil`) - The set of labels that can be used to describe a specific instance of this metric type. For example, the appengine.googleapis.com/http/server/response_latencies metric type has a label for the HTTP response code, response_code, so you can look at latencies for successful responses or just for responses that failed.
+  *   `launchStage` (*type:* `String.t`, *default:* `nil`) - Optional. The launch stage of the metric definition.
+  *   `metadata` (*type:* `GoogleApi.Logging.V2.Model.MetricDescriptorMetadata.t`, *default:* `nil`) - Optional. Metadata which can be used to guide usage of the metric.
+  *   `metricKind` (*type:* `String.t`, *default:* `nil`) - Whether the metric records instantaneous values, changes to a value, etc. Some combinations of metric_kind and value_type might not be supported.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the metric descriptor.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The metric type, including its DNS name prefix. The type is not URL-encoded. All user-defined metric types have the DNS name custom.googleapis.com or external.googleapis.com. Metric types should use a natural hierarchical grouping. For example:
+      "custom.googleapis.com/invoice/paid/amount"
+      "external.googleapis.com/prometheus/up"
+      "appengine.googleapis.com/http/server/response_latencies"
 
-  Component = ( [ PREFIX ] UNIT | "%" ) [ Annotation ]
-          | Annotation
-          | "1"
-          ;
+  *   `unit` (*type:* `String.t`, *default:* `nil`) - The unit in which the metric value is reported. It is only applicable if the value_type is INT64, DOUBLE, or DISTRIBUTION. The supported units are a subset of The Unified Code for Units of Measure (http://unitsofmeasure.org/ucum.html) standard:Basic units (UNIT)
+      bit bit
+      By byte
+      s second
+      min minute
+      h hour
+      d dayPrefixes (PREFIX)
+      k kilo (10**3)
+      M mega (10**6)
+      G giga (10**9)
+      T tera (10**12)
+      P peta (10**15)
+      E exa (10**18)
+      Z zetta (10**21)
+      Y yotta (10**24)
+      m milli (10**-3)
+      u micro (10**-6)
+      n nano (10**-9)
+      p pico (10**-12)
+      f femto (10**-15)
+      a atto (10**-18)
+      z zepto (10**-21)
+      y yocto (10**-24)
+      Ki kibi (2**10)
+      Mi mebi (2**20)
+      Gi gibi (2**30)
+      Ti tebi (2**40)GrammarThe grammar also includes these connectors:
+      / division (as an infix operator, e.g. 1/s).
+      . multiplication (as an infix operator, e.g. GBy.d)The grammar for a unit is as follows:
+      Expression = Component { "." Component } { "/" Component } ;
 
-  Annotation = "{" NAME "}" ;
-  Notes:
-  Annotation is just a comment if it follows a UNIT and is  equivalent to 1 if it is used alone. For examples,  {requests}/s == 1/s, By{transmitted}/s == By/s.
-  NAME is a sequence of non-blank printable ASCII characters not  containing '{' or '}'.
-  1 represents dimensionless value 1, such as in 1/s.
-  % represents dimensionless value 1/100, and annotates values giving  a percentage. Defaults to `nil`.
-  - valueType (String.t): Whether the measurement is an integer, a floating-point number, etc. Some combinations of metric_kind and value_type might not be supported. Defaults to `nil`.
+      Component = ( [ PREFIX ] UNIT | "%" ) [ Annotation ]
+                | Annotation
+                | "1"
+                ;
+
+      Annotation = "{" NAME "}" ;
+      Notes:
+      Annotation is just a comment if it follows a UNIT and is  equivalent to 1 if it is used alone. For examples,  {requests}/s == 1/s, By{transmitted}/s == By/s.
+      NAME is a sequence of non-blank printable ASCII characters not  containing '{' or '}'.
+      1 represents dimensionless value 1, such as in 1/s.
+      % represents dimensionless value 1/100, and annotates values giving  a percentage.
+  *   `valueType` (*type:* `String.t`, *default:* `nil`) - Whether the measurement is an integer, a floating-point number, etc. Some combinations of metric_kind and value_type might not be supported.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,10 +21,10 @@ defmodule GoogleApi.Logging.V2.Model.LogEntryOperation do
 
   ## Attributes
 
-  - first (boolean()): Optional. Set this to True if this is the first log entry in the operation. Defaults to `nil`.
-  - id (String.t): Optional. An arbitrary operation identifier. Log entries with the same identifier are assumed to be part of the same operation. Defaults to `nil`.
-  - last (boolean()): Optional. Set this to True if this is the last log entry in the operation. Defaults to `nil`.
-  - producer (String.t): Optional. An arbitrary producer identifier. The combination of id and producer must be globally unique. Examples for producer: "MyDivision.MyBigCompany.com", "github.com/MyProject/MyApplication". Defaults to `nil`.
+  *   `first` (*type:* `boolean()`, *default:* `nil`) - Optional. Set this to True if this is the first log entry in the operation.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Optional. An arbitrary operation identifier. Log entries with the same identifier are assumed to be part of the same operation.
+  *   `last` (*type:* `boolean()`, *default:* `nil`) - Optional. Set this to True if this is the last log entry in the operation.
+  *   `producer` (*type:* `String.t`, *default:* `nil`) - Optional. An arbitrary producer identifier. The combination of id and producer must be globally unique. Examples for producer: "MyDivision.MyBigCompany.com", "github.com/MyProject/MyApplication".
   """
 
   use GoogleApi.Gax.ModelBase

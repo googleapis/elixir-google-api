@@ -28,35 +28,42 @@ defmodule GoogleApi.Logging.V2.Api.Logs do
 
   ## Parameters
 
-  - connection (GoogleApi.Logging.V2.Connection): Connection to server
-  - v2_id (String.t): Part of `logName`. Required. The resource name of the log to delete:
-  "projects/[PROJECT_ID]/logs/[LOG_ID]"
-  "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
-  "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
-  "folders/[FOLDER_ID]/logs/[LOG_ID]"
-  [LOG_ID] must be URL-encoded. For example, "projects/my-project-id/logs/syslog", "organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity". For more information about log names, see LogEntry.
-  - v2_id1 (String.t): Part of `logName`. See documentation of `v2Id`.
-  - logs_id (String.t): Part of `logName`. See documentation of `v2Id`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
+  *   `v2_id` (*type:* `String.t`) - Part of `logName`. Required. The resource name of the log to delete:
+      "projects/[PROJECT_ID]/logs/[LOG_ID]"
+      "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
+      "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
+      "folders/[FOLDER_ID]/logs/[LOG_ID]"
+      [LOG_ID] must be URL-encoded. For example, "projects/my-project-id/logs/syslog", "organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity". For more information about log names, see LogEntry.
+  *   `v2_id1` (*type:* `String.t`) - Part of `logName`. See documentation of `v2Id`.
+  *   `logs_id` (*type:* `String.t`) - Part of `logName`. See documentation of `v2Id`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Logging.V2.Model.Empty{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Logging.V2.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec logging_logs_delete(Tesla.Env.client(), String.t(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.Logging.V2.Model.Empty.t()} | {:error, Tesla.Env.t()}
+  @spec logging_logs_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.Logging.V2.Model.Empty.t()} | {:error, Tesla.Env.t()}
   def logging_logs_delete(connection, v2_id, v2_id1, logs_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -92,35 +99,36 @@ defmodule GoogleApi.Logging.V2.Api.Logs do
 
   ## Parameters
 
-  - connection (GoogleApi.Logging.V2.Connection): Connection to server
-  - v2_id (String.t): Part of `parent`. Required. The resource name that owns the logs:
-  "projects/[PROJECT_ID]"
-  "organizations/[ORGANIZATION_ID]"
-  "billingAccounts/[BILLING_ACCOUNT_ID]"
-  "folders/[FOLDER_ID]"
+  *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
+  *   `v2_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name that owns the logs:
+      "projects/[PROJECT_ID]"
+      "organizations/[ORGANIZATION_ID]"
+      "billingAccounts/[BILLING_ACCOUNT_ID]"
+      "folders/[FOLDER_ID]"
 
-  - v2_id1 (String.t): Part of `parent`. See documentation of `v2Id`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :pageSize (integer()): Optional. The maximum number of results to return from this request. Non-positive values are ignored. The presence of nextPageToken in the response indicates that more results might be available.
-    - :pageToken (String.t): Optional. If present, then retrieve the next batch of results from the preceding call to this method. pageToken must be the value of nextPageToken from the previous response. The values of other method parameters should be identical to those in the previous call.
+  *   `v2_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v2Id`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of results to return from this request. Non-positive values are ignored. The presence of nextPageToken in the response indicates that more results might be available.
+      *   `:pageToken` (*type:* `String.t`) - Optional. If present, then retrieve the next batch of results from the preceding call to this method. pageToken must be the value of nextPageToken from the previous response. The values of other method parameters should be identical to those in the previous call.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Logging.V2.Model.ListLogsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Logging.V2.Model.ListLogsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec logging_logs_list(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+  @spec logging_logs_list(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Logging.V2.Model.ListLogsResponse.t()} | {:error, Tesla.Env.t()}
   def logging_logs_list(connection, v2_id, v2_id1, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

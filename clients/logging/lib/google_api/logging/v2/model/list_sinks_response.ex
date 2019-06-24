@@ -21,8 +21,8 @@ defmodule GoogleApi.Logging.V2.Model.ListSinksResponse do
 
   ## Attributes
 
-  - nextPageToken (String.t): If there might be more results than appear in this response, then nextPageToken is included. To get the next set of results, call the same method again using the value of nextPageToken as pageToken. Defaults to `nil`.
-  - sinks (list(GoogleApi.Logging.V2.Model.LogSink.t)): A list of sinks. Defaults to `nil`.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If there might be more results than appear in this response, then nextPageToken is included. To get the next set of results, call the same method again using the value of nextPageToken as pageToken.
+  *   `sinks` (*type:* `list(GoogleApi.Logging.V2.Model.LogSink.t)`, *default:* `nil`) - A list of sinks.
   """
 
   use GoogleApi.Gax.ModelBase

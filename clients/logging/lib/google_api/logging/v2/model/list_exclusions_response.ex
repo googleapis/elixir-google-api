@@ -21,8 +21,8 @@ defmodule GoogleApi.Logging.V2.Model.ListExclusionsResponse do
 
   ## Attributes
 
-  - exclusions (list(GoogleApi.Logging.V2.Model.LogExclusion.t)): A list of exclusions. Defaults to `nil`.
-  - nextPageToken (String.t): If there might be more results than appear in this response, then nextPageToken is included. To get the next set of results, call the same method again using the value of nextPageToken as pageToken. Defaults to `nil`.
+  *   `exclusions` (*type:* `list(GoogleApi.Logging.V2.Model.LogExclusion.t)`, *default:* `nil`) - A list of exclusions.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If there might be more results than appear in this response, then nextPageToken is included. To get the next set of results, call the same method again using the value of nextPageToken as pageToken.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,9 +21,9 @@ defmodule GoogleApi.Logging.V2.Model.SourceLocation do
 
   ## Attributes
 
-  - file (String.t): Source file name. Depending on the runtime environment, this might be a simple name or a fully-qualified name. Defaults to `nil`.
-  - functionName (String.t): Human-readable name of the function or method being invoked, with optional context such as the class or package name. This information is used in contexts such as the logs viewer, where a file and line number are less meaningful. The format can vary by language. For example: qual.if.ied.Class.method (Java), dir/package.func (Go), function (Python). Defaults to `nil`.
-  - line (String.t): Line within the source file. Defaults to `nil`.
+  *   `file` (*type:* `String.t`, *default:* `nil`) - Source file name. Depending on the runtime environment, this might be a simple name or a fully-qualified name.
+  *   `functionName` (*type:* `String.t`, *default:* `nil`) - Human-readable name of the function or method being invoked, with optional context such as the class or package name. This information is used in contexts such as the logs viewer, where a file and line number are less meaningful. The format can vary by language. For example: qual.if.ied.Class.method (Java), dir/package.func (Go), function (Python).
+  *   `line` (*type:* `String.t`, *default:* `nil`) - Line within the source file.
   """
 
   use GoogleApi.Gax.ModelBase
