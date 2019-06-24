@@ -21,16 +21,16 @@ defmodule GoogleApi.CloudTasks.V2beta2.Model.ListQueuesResponse do
 
   ## Attributes
 
-  - nextPageToken (String.t): A token to retrieve next page of results.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve next page of results.
 
-  To return the next page of results, call
-  ListQueues with this value as the
-  page_token.
+      To return the next page of results, call
+      ListQueues with this value as the
+      page_token.
 
-  If the next_page_token is empty, there are no more results.
+      If the next_page_token is empty, there are no more results.
 
-  The page token is valid for only 2 hours. Defaults to `nil`.
-  - queues (list(GoogleApi.CloudTasks.V2beta2.Model.Queue.t)): The list of queues. Defaults to `nil`.
+      The page token is valid for only 2 hours.
+  *   `queues` (*type:* `list(GoogleApi.CloudTasks.V2beta2.Model.Queue.t)`, *default:* `nil`) - The list of queues.
   """
 
   use GoogleApi.Gax.ModelBase

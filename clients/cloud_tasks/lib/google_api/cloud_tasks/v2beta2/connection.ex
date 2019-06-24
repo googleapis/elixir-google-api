@@ -20,6 +20,8 @@ defmodule GoogleApi.CloudTasks.V2beta2.Connection do
   Handle Tesla connections for GoogleApi.CloudTasks.V2beta2.
   """
 
+  @type t :: Tesla.Env.client()
+
   use GoogleApi.Gax.Connection,
     scopes: [
       # View and manage your data across Google Cloud Platform services
