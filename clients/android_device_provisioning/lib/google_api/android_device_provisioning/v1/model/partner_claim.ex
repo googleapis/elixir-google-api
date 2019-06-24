@@ -21,10 +21,10 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.PartnerClaim do
 
   ## Attributes
 
-  - customerId (String.t): Required. The ID of the customer for whom the device is being claimed. Defaults to `nil`.
-  - deviceIdentifier (GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier.t): Required. Device identifier of the device. Defaults to `nil`.
-  - deviceMetadata (GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceMetadata.t): Required. The metadata to attach to the device at claim. Defaults to `nil`.
-  - sectionType (String.t): Required. The section type of the device's provisioning record. Defaults to `nil`.
+  *   `customerId` (*type:* `String.t`, *default:* `nil`) - Required. The ID of the customer for whom the device is being claimed.
+  *   `deviceIdentifier` (*type:* `GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier.t`, *default:* `nil`) - Required. Device identifier of the device.
+  *   `deviceMetadata` (*type:* `GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceMetadata.t`, *default:* `nil`) - Required. The metadata to attach to the device at claim.
+  *   `sectionType` (*type:* `String.t`, *default:* `nil`) - Required. The section type of the device's provisioning record.
   """
 
   use GoogleApi.Gax.ModelBase

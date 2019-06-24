@@ -21,7 +21,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.UpdateDeviceMetadataReque
 
   ## Attributes
 
-  - deviceMetadata (GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceMetadata.t): Required. The metdata to attach to the device. Defaults to `nil`.
+  *   `deviceMetadata` (*type:* `GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceMetadata.t`, *default:* `nil`) - Required. The metdata to attach to the device.
   """
 
   use GoogleApi.Gax.ModelBase

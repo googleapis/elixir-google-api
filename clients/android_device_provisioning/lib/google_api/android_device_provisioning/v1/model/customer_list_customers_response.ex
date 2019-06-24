@@ -21,9 +21,9 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.CustomerListCustomersResp
 
   ## Attributes
 
-  - customers (list(GoogleApi.AndroidDeviceProvisioning.V1.Model.Company.t)): The customer accounts the calling user is a member of. Defaults to `nil`.
-  - nextPageToken (String.t): A token used to access the next page of results. Omitted if no further
-  results are available. Defaults to `nil`.
+  *   `customers` (*type:* `list(GoogleApi.AndroidDeviceProvisioning.V1.Model.Company.t)`, *default:* `nil`) - The customer accounts the calling user is a member of.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token used to access the next page of results. Omitted if no further
+      results are available.
   """
 
   use GoogleApi.Gax.ModelBase

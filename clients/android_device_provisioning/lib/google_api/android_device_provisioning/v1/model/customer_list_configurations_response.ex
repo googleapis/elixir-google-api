@@ -21,7 +21,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.CustomerListConfiguration
 
   ## Attributes
 
-  - configurations (list(GoogleApi.AndroidDeviceProvisioning.V1.Model.Configuration.t)): The configurations. Defaults to `nil`.
+  *   `configurations` (*type:* `list(GoogleApi.AndroidDeviceProvisioning.V1.Model.Configuration.t)`, *default:* `nil`) - The configurations.
   """
 
   use GoogleApi.Gax.ModelBase

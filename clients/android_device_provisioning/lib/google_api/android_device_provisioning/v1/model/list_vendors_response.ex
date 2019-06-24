@@ -21,11 +21,11 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.ListVendorsResponse do
 
   ## Attributes
 
-  - nextPageToken (String.t): A token to retrieve the next page of results. Omitted if no further results
-  are available. Defaults to `nil`.
-  - totalSize (integer()): The total count of items in the list irrespective of pagination. Defaults to `nil`.
-  - vendors (list(GoogleApi.AndroidDeviceProvisioning.V1.Model.Company.t)): List of vendors of the reseller partner. Fields `name`, `companyId` and
-  `companyName` are populated to the Company object. Defaults to `nil`.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results. Omitted if no further results
+      are available.
+  *   `totalSize` (*type:* `integer()`, *default:* `nil`) - The total count of items in the list irrespective of pagination.
+  *   `vendors` (*type:* `list(GoogleApi.AndroidDeviceProvisioning.V1.Model.Company.t)`, *default:* `nil`) - List of vendors of the reseller partner. Fields `name`, `companyId` and
+      `companyName` are populated to the Company object.
   """
 
   use GoogleApi.Gax.ModelBase

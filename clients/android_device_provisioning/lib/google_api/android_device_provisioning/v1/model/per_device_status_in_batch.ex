@@ -21,10 +21,10 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.PerDeviceStatusInBatch do
 
   ## Attributes
 
-  - deviceId (String.t): If processing succeeds, the device ID of the device. Defaults to `nil`.
-  - errorIdentifier (String.t): If processing fails, the error type. Defaults to `nil`.
-  - errorMessage (String.t): If processing fails, a developer message explaining what went wrong. Defaults to `nil`.
-  - status (String.t): The result status of the device after processing. Defaults to `nil`.
+  *   `deviceId` (*type:* `String.t`, *default:* `nil`) - If processing succeeds, the device ID of the device.
+  *   `errorIdentifier` (*type:* `String.t`, *default:* `nil`) - If processing fails, the error type.
+  *   `errorMessage` (*type:* `String.t`, *default:* `nil`) - If processing fails, a developer message explaining what went wrong.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - The result status of the device after processing.
   """
 
   use GoogleApi.Gax.ModelBase

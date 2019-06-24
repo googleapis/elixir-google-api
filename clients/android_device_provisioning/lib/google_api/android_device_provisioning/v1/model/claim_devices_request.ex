@@ -23,7 +23,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.ClaimDevicesRequest do
 
   ## Attributes
 
-  - claims (list(GoogleApi.AndroidDeviceProvisioning.V1.Model.PartnerClaim.t)): Required. A list of device claims. Defaults to `nil`.
+  *   `claims` (*type:* `list(GoogleApi.AndroidDeviceProvisioning.V1.Model.PartnerClaim.t)`, *default:* `nil`) - Required. A list of device claims.
   """
 
   use GoogleApi.Gax.ModelBase

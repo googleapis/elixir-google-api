@@ -21,7 +21,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.UpdateDeviceMetadataInBat
 
   ## Attributes
 
-  - updates (list(GoogleApi.AndroidDeviceProvisioning.V1.Model.UpdateMetadataArguments.t)): Required. The list of metadata updates. Defaults to `nil`.
+  *   `updates` (*type:* `list(GoogleApi.AndroidDeviceProvisioning.V1.Model.UpdateMetadataArguments.t)`, *default:* `nil`) - Required. The list of metadata updates.
   """
 
   use GoogleApi.Gax.ModelBase

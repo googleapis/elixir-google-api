@@ -24,13 +24,13 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceClaim do
 
   ## Attributes
 
-  - ownerCompanyId (String.t): The ID of the Customer that purchased the device. Defaults to `nil`.
-  - resellerId (String.t): The ID of the reseller that claimed the device. Defaults to `nil`.
-  - sectionType (String.t): Output only. The type of claim made on the device. Defaults to `nil`.
-  - vacationModeExpireTime (DateTime.t): The timestamp when the device will exit ‘vacation mode’. This value is
-  present iff the device is in 'vacation mode'. Defaults to `nil`.
-  - vacationModeStartTime (DateTime.t): The timestamp when the device was put into ‘vacation mode’. This value is
-  present iff the device is in 'vacation mode'. Defaults to `nil`.
+  *   `ownerCompanyId` (*type:* `String.t`, *default:* `nil`) - The ID of the Customer that purchased the device.
+  *   `resellerId` (*type:* `String.t`, *default:* `nil`) - The ID of the reseller that claimed the device.
+  *   `sectionType` (*type:* `String.t`, *default:* `nil`) - Output only. The type of claim made on the device.
+  *   `vacationModeExpireTime` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp when the device will exit ‘vacation mode’. This value is
+      present iff the device is in 'vacation mode'.
+  *   `vacationModeStartTime` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp when the device was put into ‘vacation mode’. This value is
+      present iff the device is in 'vacation mode'.
   """
 
   use GoogleApi.Gax.ModelBase

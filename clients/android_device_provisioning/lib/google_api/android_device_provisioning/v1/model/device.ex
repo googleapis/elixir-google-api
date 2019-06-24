@@ -21,21 +21,21 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.Device do
 
   ## Attributes
 
-  - claims (list(GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceClaim.t)): Output only. The provisioning claims for a device. Devices claimed for
-  zero-touch enrollment have a claim with the type `SECTION_TYPE_ZERO_TOUCH`.
-  Call
-  `partners.devices.unclaim`
-  or
-  `partners.devices.unclaimAsync`
-  to remove the device from zero-touch enrollment. Defaults to `nil`.
-  - configuration (String.t): Not available to resellers. Defaults to `nil`.
-  - deviceId (String.t): Output only. The ID of the device. Assigned by the server. Defaults to `nil`.
-  - deviceIdentifier (GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier.t): The hardware IDs that identify a manufactured device. To learn more, read
-  [Identifiers](/zero-touch/guides/identifiers). Defaults to `nil`.
-  - deviceMetadata (GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceMetadata.t): The metadata attached to the device. Structured as key-value pairs. To
-  learn more, read [Device metadata](/zero-touch/guides/metadata). Defaults to `nil`.
-  - name (String.t): Output only. The API resource name in the format
-  `partners/[PARTNER_ID]/devices/[DEVICE_ID]`. Assigned by the server. Defaults to `nil`.
+  *   `claims` (*type:* `list(GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceClaim.t)`, *default:* `nil`) - Output only. The provisioning claims for a device. Devices claimed for
+      zero-touch enrollment have a claim with the type `SECTION_TYPE_ZERO_TOUCH`.
+      Call
+      `partners.devices.unclaim`
+      or
+      `partners.devices.unclaimAsync`
+      to remove the device from zero-touch enrollment.
+  *   `configuration` (*type:* `String.t`, *default:* `nil`) - Not available to resellers.
+  *   `deviceId` (*type:* `String.t`, *default:* `nil`) - Output only. The ID of the device. Assigned by the server.
+  *   `deviceIdentifier` (*type:* `GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier.t`, *default:* `nil`) - The hardware IDs that identify a manufactured device. To learn more, read
+      [Identifiers](/zero-touch/guides/identifiers).
+  *   `deviceMetadata` (*type:* `GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceMetadata.t`, *default:* `nil`) - The metadata attached to the device. Structured as key-value pairs. To
+      learn more, read [Device metadata](/zero-touch/guides/metadata).
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The API resource name in the format
+      `partners/[PARTNER_ID]/devices/[DEVICE_ID]`. Assigned by the server.
   """
 
   use GoogleApi.Gax.ModelBase

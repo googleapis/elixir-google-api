@@ -22,7 +22,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceMetadata do
 
   ## Attributes
 
-  - entries (map()): Metadata entries recorded as key-value pairs. Defaults to `nil`.
+  *   `entries` (*type:* `map()`, *default:* `nil`) - Metadata entries recorded as key-value pairs.
   """
 
   use GoogleApi.Gax.ModelBase

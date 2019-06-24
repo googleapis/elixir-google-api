@@ -21,9 +21,9 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.CreateCustomerRequest do
 
   ## Attributes
 
-  - customer (GoogleApi.AndroidDeviceProvisioning.V1.Model.Company.t): Required. The company data to populate the new customer. Must contain a
-  value for `companyName` and at least one `owner_email` that's associated
-  with a Google Account. The values for `companyId` and `name` must be empty. Defaults to `nil`.
+  *   `customer` (*type:* `GoogleApi.AndroidDeviceProvisioning.V1.Model.Company.t`, *default:* `nil`) - Required. The company data to populate the new customer. Must contain a
+      value for `companyName` and at least one `owner_email` that's associated
+      with a Google Account. The values for `companyId` and `name` must be empty.
   """
 
   use GoogleApi.Gax.ModelBase
