@@ -21,40 +21,40 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.ReportData do
 
   ## Attributes
 
-  - dataLastRefreshed (DateTime.t): The last time the data in the report was refreshed. All the hits received
-  before this timestamp are included in the calculation of the report. Defaults to `nil`.
-  - isDataGolden (boolean()): Indicates if response to this request is golden or not. Data is
-  golden when the exact same request will not produce any new results if
-  asked at a later point in time. Defaults to `nil`.
-  - maximums (list(GoogleApi.AnalyticsReporting.V4.Model.DateRangeValues.t)): Minimum and maximum values seen over all matching rows. These are both
-  empty when `hideValueRanges` in the request is false, or when
-  rowCount is zero. Defaults to `nil`.
-  - minimums (list(GoogleApi.AnalyticsReporting.V4.Model.DateRangeValues.t)): Minimum and maximum values seen over all matching rows. These are both
-  empty when `hideValueRanges` in the request is false, or when
-  rowCount is zero. Defaults to `nil`.
-  - rowCount (integer()): Total number of matching rows for this query. Defaults to `nil`.
-  - rows (list(GoogleApi.AnalyticsReporting.V4.Model.ReportRow.t)): There's one ReportRow for every unique combination of dimensions. Defaults to `nil`.
-  - samplesReadCounts (list(String.t)): If the results are
-  [sampled](https://support.google.com/analytics/answer/2637192),
-  this returns the total number of samples read, one entry per date range.
-  If the results are not sampled this field will not be defined. See
-  [developer guide](/analytics/devguides/reporting/core/v4/basics#sampling)
-  for details. Defaults to `nil`.
-  - samplingSpaceSizes (list(String.t)): If the results are
-  [sampled](https://support.google.com/analytics/answer/2637192),
-  this returns the total number of
-  samples present, one entry per date range. If the results are not sampled
-  this field will not be defined. See
-  [developer guide](/analytics/devguides/reporting/core/v4/basics#sampling)
-  for details. Defaults to `nil`.
-  - totals (list(GoogleApi.AnalyticsReporting.V4.Model.DateRangeValues.t)): For each requested date range, for the set of all rows that match
-  the query, every requested value format gets a total. The total
-  for a value format is computed by first totaling the metrics
-  mentioned in the value format and then evaluating the value
-  format as a scalar expression.  E.g., The "totals" for
-  `3 / (ga:sessions + 2)` we compute
-  `3 / ((sum of all relevant ga:sessions) + 2)`.
-  Totals are computed before pagination. Defaults to `nil`.
+  *   `dataLastRefreshed` (*type:* `DateTime.t`, *default:* `nil`) - The last time the data in the report was refreshed. All the hits received
+      before this timestamp are included in the calculation of the report.
+  *   `isDataGolden` (*type:* `boolean()`, *default:* `nil`) - Indicates if response to this request is golden or not. Data is
+      golden when the exact same request will not produce any new results if
+      asked at a later point in time.
+  *   `maximums` (*type:* `list(GoogleApi.AnalyticsReporting.V4.Model.DateRangeValues.t)`, *default:* `nil`) - Minimum and maximum values seen over all matching rows. These are both
+      empty when `hideValueRanges` in the request is false, or when
+      rowCount is zero.
+  *   `minimums` (*type:* `list(GoogleApi.AnalyticsReporting.V4.Model.DateRangeValues.t)`, *default:* `nil`) - Minimum and maximum values seen over all matching rows. These are both
+      empty when `hideValueRanges` in the request is false, or when
+      rowCount is zero.
+  *   `rowCount` (*type:* `integer()`, *default:* `nil`) - Total number of matching rows for this query.
+  *   `rows` (*type:* `list(GoogleApi.AnalyticsReporting.V4.Model.ReportRow.t)`, *default:* `nil`) - There's one ReportRow for every unique combination of dimensions.
+  *   `samplesReadCounts` (*type:* `list(String.t)`, *default:* `nil`) - If the results are
+      [sampled](https://support.google.com/analytics/answer/2637192),
+      this returns the total number of samples read, one entry per date range.
+      If the results are not sampled this field will not be defined. See
+      [developer guide](/analytics/devguides/reporting/core/v4/basics#sampling)
+      for details.
+  *   `samplingSpaceSizes` (*type:* `list(String.t)`, *default:* `nil`) - If the results are
+      [sampled](https://support.google.com/analytics/answer/2637192),
+      this returns the total number of
+      samples present, one entry per date range. If the results are not sampled
+      this field will not be defined. See
+      [developer guide](/analytics/devguides/reporting/core/v4/basics#sampling)
+      for details.
+  *   `totals` (*type:* `list(GoogleApi.AnalyticsReporting.V4.Model.DateRangeValues.t)`, *default:* `nil`) - For each requested date range, for the set of all rows that match
+      the query, every requested value format gets a total. The total
+      for a value format is computed by first totaling the metrics
+      mentioned in the value format and then evaluating the value
+      format as a scalar expression.  E.g., The "totals" for
+      `3 / (ga:sessions + 2)` we compute
+      `3 / ((sum of all relevant ga:sessions) + 2)`.
+      Totals are computed before pagination.
   """
 
   use GoogleApi.Gax.ModelBase

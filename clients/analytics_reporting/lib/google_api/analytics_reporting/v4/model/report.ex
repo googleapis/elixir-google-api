@@ -21,9 +21,9 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.Report do
 
   ## Attributes
 
-  - columnHeader (GoogleApi.AnalyticsReporting.V4.Model.ColumnHeader.t): The column headers. Defaults to `nil`.
-  - data (GoogleApi.AnalyticsReporting.V4.Model.ReportData.t): Response data. Defaults to `nil`.
-  - nextPageToken (String.t): Page token to retrieve the next page of results in the list. Defaults to `nil`.
+  *   `columnHeader` (*type:* `GoogleApi.AnalyticsReporting.V4.Model.ColumnHeader.t`, *default:* `nil`) - The column headers.
+  *   `data` (*type:* `GoogleApi.AnalyticsReporting.V4.Model.ReportData.t`, *default:* `nil`) - Response data.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Page token to retrieve the next page of results in the list.
   """
 
   use GoogleApi.Gax.ModelBase

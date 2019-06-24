@@ -21,8 +21,8 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.ColumnHeader do
 
   ## Attributes
 
-  - dimensions (list(String.t)): The dimension names in the response. Defaults to `nil`.
-  - metricHeader (GoogleApi.AnalyticsReporting.V4.Model.MetricHeader.t): Metric headers for the metrics in the response. Defaults to `nil`.
+  *   `dimensions` (*type:* `list(String.t)`, *default:* `nil`) - The dimension names in the response.
+  *   `metricHeader` (*type:* `GoogleApi.AnalyticsReporting.V4.Model.MetricHeader.t`, *default:* `nil`) - Metric headers for the metrics in the response.
   """
 
   use GoogleApi.Gax.ModelBase

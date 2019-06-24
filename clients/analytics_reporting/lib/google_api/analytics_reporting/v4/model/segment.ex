@@ -23,8 +23,8 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.Segment do
 
   ## Attributes
 
-  - dynamicSegment (GoogleApi.AnalyticsReporting.V4.Model.DynamicSegment.t): A dynamic segment definition in the request. Defaults to `nil`.
-  - segmentId (String.t): The segment ID of a built-in or custom segment, for example `gaid::-3`. Defaults to `nil`.
+  *   `dynamicSegment` (*type:* `GoogleApi.AnalyticsReporting.V4.Model.DynamicSegment.t`, *default:* `nil`) - A dynamic segment definition in the request.
+  *   `segmentId` (*type:* `String.t`, *default:* `nil`) - The segment ID of a built-in or custom segment, for example `gaid::-3`.
   """
 
   use GoogleApi.Gax.ModelBase

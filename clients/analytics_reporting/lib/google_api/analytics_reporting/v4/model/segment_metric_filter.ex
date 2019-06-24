@@ -21,17 +21,17 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.SegmentMetricFilter do
 
   ## Attributes
 
-  - comparisonValue (String.t): The value to compare against. If the operator is `BETWEEN`, this value is
-  treated as minimum comparison value. Defaults to `nil`.
-  - maxComparisonValue (String.t): Max comparison value is only used for `BETWEEN` operator. Defaults to `nil`.
-  - metricName (String.t): The metric that will be filtered on. A `metricFilter` must contain a
-  metric name. Defaults to `nil`.
-  - operator (String.t): Specifies is the operation to perform to compare the metric. The default
-  is `EQUAL`. Defaults to `nil`.
-  - scope (String.t): Scope for a metric defines the level at which that metric is defined.  The
-  specified metric scope must be equal to or greater than its primary scope
-  as defined in the data model. The primary scope is defined by if the
-  segment is selecting users or sessions. Defaults to `nil`.
+  *   `comparisonValue` (*type:* `String.t`, *default:* `nil`) - The value to compare against. If the operator is `BETWEEN`, this value is
+      treated as minimum comparison value.
+  *   `maxComparisonValue` (*type:* `String.t`, *default:* `nil`) - Max comparison value is only used for `BETWEEN` operator.
+  *   `metricName` (*type:* `String.t`, *default:* `nil`) - The metric that will be filtered on. A `metricFilter` must contain a
+      metric name.
+  *   `operator` (*type:* `String.t`, *default:* `nil`) - Specifies is the operation to perform to compare the metric. The default
+      is `EQUAL`.
+  *   `scope` (*type:* `String.t`, *default:* `nil`) - Scope for a metric defines the level at which that metric is defined.  The
+      specified metric scope must be equal to or greater than its primary scope
+      as defined in the data model. The primary scope is defined by if the
+      segment is selecting users or sessions.
   """
 
   use GoogleApi.Gax.ModelBase

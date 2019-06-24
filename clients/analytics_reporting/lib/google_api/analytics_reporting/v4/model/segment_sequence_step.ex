@@ -21,10 +21,10 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.SegmentSequenceStep do
 
   ## Attributes
 
-  - matchType (String.t): Specifies if the step immediately precedes or can be any time before the
-  next step. Defaults to `nil`.
-  - orFiltersForSegment (list(GoogleApi.AnalyticsReporting.V4.Model.OrFiltersForSegment.t)): A sequence is specified with a list of Or grouped filters which are
-  combined with `AND` operator. Defaults to `nil`.
+  *   `matchType` (*type:* `String.t`, *default:* `nil`) - Specifies if the step immediately precedes or can be any time before the
+      next step.
+  *   `orFiltersForSegment` (*type:* `list(GoogleApi.AnalyticsReporting.V4.Model.OrFiltersForSegment.t)`, *default:* `nil`) - A sequence is specified with a list of Or grouped filters which are
+      combined with `AND` operator.
   """
 
   use GoogleApi.Gax.ModelBase

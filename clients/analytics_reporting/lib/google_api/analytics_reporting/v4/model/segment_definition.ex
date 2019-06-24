@@ -22,8 +22,8 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.SegmentDefinition do
 
   ## Attributes
 
-  - segmentFilters (list(GoogleApi.AnalyticsReporting.V4.Model.SegmentFilter.t)): A segment is defined by a set of segment filters which are combined
-  together with a logical `AND` operation. Defaults to `nil`.
+  *   `segmentFilters` (*type:* `list(GoogleApi.AnalyticsReporting.V4.Model.SegmentFilter.t)`, *default:* `nil`) - A segment is defined by a set of segment filters which are combined
+      together with a logical `AND` operation.
   """
 
   use GoogleApi.Gax.ModelBase

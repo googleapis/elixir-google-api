@@ -21,10 +21,10 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.ScreenviewData do
 
   ## Attributes
 
-  - appName (String.t): The application name. Defaults to `nil`.
-  - mobileDeviceBranding (String.t): Mobile manufacturer or branded name. Eg: "Google", "Apple" etc. Defaults to `nil`.
-  - mobileDeviceModel (String.t): Mobile device model. Eg: "Pixel", "iPhone" etc. Defaults to `nil`.
-  - screenName (String.t): The name of the screen. Defaults to `nil`.
+  *   `appName` (*type:* `String.t`, *default:* `nil`) - The application name.
+  *   `mobileDeviceBranding` (*type:* `String.t`, *default:* `nil`) - Mobile manufacturer or branded name. Eg: "Google", "Apple" etc.
+  *   `mobileDeviceModel` (*type:* `String.t`, *default:* `nil`) - Mobile device model. Eg: "Pixel", "iPhone" etc.
+  *   `screenName` (*type:* `String.t`, *default:* `nil`) - The name of the screen.
   """
 
   use GoogleApi.Gax.ModelBase

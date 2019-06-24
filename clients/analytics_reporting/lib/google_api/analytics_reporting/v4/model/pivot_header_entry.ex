@@ -22,9 +22,9 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.PivotHeaderEntry do
 
   ## Attributes
 
-  - dimensionNames (list(String.t)): The name of the dimensions in the pivot response. Defaults to `nil`.
-  - dimensionValues (list(String.t)): The values for the dimensions in the pivot. Defaults to `nil`.
-  - metric (GoogleApi.AnalyticsReporting.V4.Model.MetricHeaderEntry.t): The metric header for the metric in the pivot. Defaults to `nil`.
+  *   `dimensionNames` (*type:* `list(String.t)`, *default:* `nil`) - The name of the dimensions in the pivot response.
+  *   `dimensionValues` (*type:* `list(String.t)`, *default:* `nil`) - The values for the dimensions in the pivot.
+  *   `metric` (*type:* `GoogleApi.AnalyticsReporting.V4.Model.MetricHeaderEntry.t`, *default:* `nil`) - The metric header for the metric in the pivot.
   """
 
   use GoogleApi.Gax.ModelBase

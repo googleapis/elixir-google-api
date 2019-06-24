@@ -22,10 +22,10 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.GetReportsResponse do
 
   ## Attributes
 
-  - queryCost (integer()): The amount of resource quota tokens deducted to execute the query. Includes
-  all responses. Defaults to `nil`.
-  - reports (list(GoogleApi.AnalyticsReporting.V4.Model.Report.t)): Responses corresponding to each of the request. Defaults to `nil`.
-  - resourceQuotasRemaining (GoogleApi.AnalyticsReporting.V4.Model.ResourceQuotasRemaining.t): The amount of resource quota remaining for the property. Defaults to `nil`.
+  *   `queryCost` (*type:* `integer()`, *default:* `nil`) - The amount of resource quota tokens deducted to execute the query. Includes
+      all responses.
+  *   `reports` (*type:* `list(GoogleApi.AnalyticsReporting.V4.Model.Report.t)`, *default:* `nil`) - Responses corresponding to each of the request.
+  *   `resourceQuotasRemaining` (*type:* `GoogleApi.AnalyticsReporting.V4.Model.ResourceQuotasRemaining.t`, *default:* `nil`) - The amount of resource quota remaining for the property.
   """
 
   use GoogleApi.Gax.ModelBase

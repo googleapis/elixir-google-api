@@ -22,9 +22,9 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.SegmentFilterClause do
 
   ## Attributes
 
-  - dimensionFilter (GoogleApi.AnalyticsReporting.V4.Model.SegmentDimensionFilter.t): Dimension Filter for the segment definition. Defaults to `nil`.
-  - metricFilter (GoogleApi.AnalyticsReporting.V4.Model.SegmentMetricFilter.t): Metric Filter for the segment definition. Defaults to `nil`.
-  - not (boolean()): Matches the complement (`!`) of the filter. Defaults to `nil`.
+  *   `dimensionFilter` (*type:* `GoogleApi.AnalyticsReporting.V4.Model.SegmentDimensionFilter.t`, *default:* `nil`) - Dimension Filter for the segment definition.
+  *   `metricFilter` (*type:* `GoogleApi.AnalyticsReporting.V4.Model.SegmentMetricFilter.t`, *default:* `nil`) - Metric Filter for the segment definition.
+  *   `not` (*type:* `boolean()`, *default:* `nil`) - Matches the complement (`!`) of the filter.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,8 +21,8 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.PageviewData do
 
   ## Attributes
 
-  - pagePath (String.t): The URL of the page that the visitor viewed. Defaults to `nil`.
-  - pageTitle (String.t): The title of the page that the visitor viewed. Defaults to `nil`.
+  *   `pagePath` (*type:* `String.t`, *default:* `nil`) - The URL of the page that the visitor viewed.
+  *   `pageTitle` (*type:* `String.t`, *default:* `nil`) - The title of the page that the visitor viewed.
   """
 
   use GoogleApi.Gax.ModelBase

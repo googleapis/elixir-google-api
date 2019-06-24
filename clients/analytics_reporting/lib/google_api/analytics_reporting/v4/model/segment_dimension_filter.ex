@@ -21,12 +21,12 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.SegmentDimensionFilter do
 
   ## Attributes
 
-  - caseSensitive (boolean()): Should the match be case sensitive, ignored for `IN_LIST` operator. Defaults to `nil`.
-  - dimensionName (String.t): Name of the dimension for which the filter is being applied. Defaults to `nil`.
-  - expressions (list(String.t)): The list of expressions, only the first element is used for all operators Defaults to `nil`.
-  - maxComparisonValue (String.t): Maximum comparison values for `BETWEEN` match type. Defaults to `nil`.
-  - minComparisonValue (String.t): Minimum comparison values for `BETWEEN` match type. Defaults to `nil`.
-  - operator (String.t): The operator to use to match the dimension with the expressions. Defaults to `nil`.
+  *   `caseSensitive` (*type:* `boolean()`, *default:* `nil`) - Should the match be case sensitive, ignored for `IN_LIST` operator.
+  *   `dimensionName` (*type:* `String.t`, *default:* `nil`) - Name of the dimension for which the filter is being applied.
+  *   `expressions` (*type:* `list(String.t)`, *default:* `nil`) - The list of expressions, only the first element is used for all operators
+  *   `maxComparisonValue` (*type:* `String.t`, *default:* `nil`) - Maximum comparison values for `BETWEEN` match type.
+  *   `minComparisonValue` (*type:* `String.t`, *default:* `nil`) - Minimum comparison values for `BETWEEN` match type.
+  *   `operator` (*type:* `String.t`, *default:* `nil`) - The operator to use to match the dimension with the expressions.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -23,9 +23,9 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.SequenceSegment do
 
   ## Attributes
 
-  - firstStepShouldMatchFirstHit (boolean()): If set, first step condition must match the first hit of the visitor (in
-  the date range). Defaults to `nil`.
-  - segmentSequenceSteps (list(GoogleApi.AnalyticsReporting.V4.Model.SegmentSequenceStep.t)): The list of steps in the sequence. Defaults to `nil`.
+  *   `firstStepShouldMatchFirstHit` (*type:* `boolean()`, *default:* `nil`) - If set, first step condition must match the first hit of the visitor (in
+      the date range).
+  *   `segmentSequenceSteps` (*type:* `list(GoogleApi.AnalyticsReporting.V4.Model.SegmentSequenceStep.t)`, *default:* `nil`) - The list of steps in the sequence.
   """
 
   use GoogleApi.Gax.ModelBase

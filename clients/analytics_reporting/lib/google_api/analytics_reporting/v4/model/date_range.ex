@@ -23,8 +23,8 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.DateRange do
 
   ## Attributes
 
-  - endDate (String.t): The end date for the query in the format `YYYY-MM-DD`. Defaults to `nil`.
-  - startDate (String.t): The start date for the query in the format `YYYY-MM-DD`. Defaults to `nil`.
+  *   `endDate` (*type:* `String.t`, *default:* `nil`) - The end date for the query in the format `YYYY-MM-DD`.
+  *   `startDate` (*type:* `String.t`, *default:* `nil`) - The start date for the query in the format `YYYY-MM-DD`.
   """
 
   use GoogleApi.Gax.ModelBase

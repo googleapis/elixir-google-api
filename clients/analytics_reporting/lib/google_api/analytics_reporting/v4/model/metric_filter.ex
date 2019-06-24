@@ -21,16 +21,16 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.MetricFilter do
 
   ## Attributes
 
-  - comparisonValue (String.t): The value to compare against. Defaults to `nil`.
-  - metricName (String.t): The metric that will be filtered on. A metricFilter must contain a metric
-  name. A metric name can be an alias earlier defined as a metric or it can
-  also be a metric expression. Defaults to `nil`.
-  - not (boolean()): Logical `NOT` operator. If this boolean is set to true, then the matching
-  metric values will be excluded in the report. The default is false. Defaults to `nil`.
-  - operator (String.t): Is the metric `EQUAL`, `LESS_THAN` or `GREATER_THAN` the
-  comparisonValue, the default is `EQUAL`. If the operator is
-  `IS_MISSING`, checks if the metric is missing and would ignore the
-  comparisonValue. Defaults to `nil`.
+  *   `comparisonValue` (*type:* `String.t`, *default:* `nil`) - The value to compare against.
+  *   `metricName` (*type:* `String.t`, *default:* `nil`) - The metric that will be filtered on. A metricFilter must contain a metric
+      name. A metric name can be an alias earlier defined as a metric or it can
+      also be a metric expression.
+  *   `not` (*type:* `boolean()`, *default:* `nil`) - Logical `NOT` operator. If this boolean is set to true, then the matching
+      metric values will be excluded in the report. The default is false.
+  *   `operator` (*type:* `String.t`, *default:* `nil`) - Is the metric `EQUAL`, `LESS_THAN` or `GREATER_THAN` the
+      comparisonValue, the default is `EQUAL`. If the operator is
+      `IS_MISSING`, checks if the metric is missing and would ignore the
+      comparisonValue.
   """
 
   use GoogleApi.Gax.ModelBase

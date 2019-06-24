@@ -21,10 +21,10 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.EcommerceData do
 
   ## Attributes
 
-  - actionType (String.t): Action associated with this e-commerce action. Defaults to `nil`.
-  - ecommerceType (String.t): The type of this e-commerce activity. Defaults to `nil`.
-  - products (list(GoogleApi.AnalyticsReporting.V4.Model.ProductData.t)): Details of the products in this transaction. Defaults to `nil`.
-  - transaction (GoogleApi.AnalyticsReporting.V4.Model.TransactionData.t): Transaction details of this e-commerce action. Defaults to `nil`.
+  *   `actionType` (*type:* `String.t`, *default:* `nil`) - Action associated with this e-commerce action.
+  *   `ecommerceType` (*type:* `String.t`, *default:* `nil`) - The type of this e-commerce activity.
+  *   `products` (*type:* `list(GoogleApi.AnalyticsReporting.V4.Model.ProductData.t)`, *default:* `nil`) - Details of the products in this transaction.
+  *   `transaction` (*type:* `GoogleApi.AnalyticsReporting.V4.Model.TransactionData.t`, *default:* `nil`) - Transaction details of this e-commerce action.
   """
 
   use GoogleApi.Gax.ModelBase

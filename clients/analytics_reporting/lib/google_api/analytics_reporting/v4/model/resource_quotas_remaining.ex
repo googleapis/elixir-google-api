@@ -22,8 +22,8 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.ResourceQuotasRemaining do
 
   ## Attributes
 
-  - dailyQuotaTokensRemaining (integer()): Daily resource quota remaining remaining. Defaults to `nil`.
-  - hourlyQuotaTokensRemaining (integer()): Hourly resource quota tokens remaining. Defaults to `nil`.
+  *   `dailyQuotaTokensRemaining` (*type:* `integer()`, *default:* `nil`) - Daily resource quota remaining remaining.
+  *   `hourlyQuotaTokensRemaining` (*type:* `integer()`, *default:* `nil`) - Hourly resource quota tokens remaining.
   """
 
   use GoogleApi.Gax.ModelBase

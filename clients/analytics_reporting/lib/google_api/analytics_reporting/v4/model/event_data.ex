@@ -21,11 +21,11 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.EventData do
 
   ## Attributes
 
-  - eventAction (String.t): Type of interaction with the object. Eg: 'play'. Defaults to `nil`.
-  - eventCategory (String.t): The object on the page that was interacted with. Eg: 'Video'. Defaults to `nil`.
-  - eventCount (String.t): Number of such events in this activity. Defaults to `nil`.
-  - eventLabel (String.t): Label attached with the event. Defaults to `nil`.
-  - eventValue (String.t): Numeric value associated with the event. Defaults to `nil`.
+  *   `eventAction` (*type:* `String.t`, *default:* `nil`) - Type of interaction with the object. Eg: 'play'.
+  *   `eventCategory` (*type:* `String.t`, *default:* `nil`) - The object on the page that was interacted with. Eg: 'Video'.
+  *   `eventCount` (*type:* `String.t`, *default:* `nil`) - Number of such events in this activity.
+  *   `eventLabel` (*type:* `String.t`, *default:* `nil`) - Label attached with the event.
+  *   `eventValue` (*type:* `String.t`, *default:* `nil`) - Numeric value associated with the event.
   """
 
   use GoogleApi.Gax.ModelBase

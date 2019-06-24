@@ -21,11 +21,11 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.ProductData do
 
   ## Attributes
 
-  - itemRevenue (float()): The total revenue from purchased product items. Defaults to `nil`.
-  - productName (String.t): The product name, supplied by the e-commerce tracking application, for
-  the purchased items. Defaults to `nil`.
-  - productQuantity (String.t): Total number of this product units in the transaction. Defaults to `nil`.
-  - productSku (String.t): Unique code that represents the product. Defaults to `nil`.
+  *   `itemRevenue` (*type:* `float()`, *default:* `nil`) - The total revenue from purchased product items.
+  *   `productName` (*type:* `String.t`, *default:* `nil`) - The product name, supplied by the e-commerce tracking application, for
+      the purchased items.
+  *   `productQuantity` (*type:* `String.t`, *default:* `nil`) - Total number of this product units in the transaction.
+  *   `productSku` (*type:* `String.t`, *default:* `nil`) - Unique code that represents the product.
   """
 
   use GoogleApi.Gax.ModelBase

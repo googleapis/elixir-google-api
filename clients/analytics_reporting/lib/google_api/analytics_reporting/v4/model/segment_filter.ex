@@ -24,30 +24,30 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.SegmentFilter do
 
   ## Attributes
 
-  - not (boolean()): If true, match the complement of simple or sequence segment.
-  For example, to match all visits not from "New York", we can define the
-  segment as follows:
+  *   `not` (*type:* `boolean()`, *default:* `nil`) - If true, match the complement of simple or sequence segment.
+      For example, to match all visits not from "New York", we can define the
+      segment as follows:
 
-      "sessionSegment": {
-        "segmentFilters": [{
-          "simpleSegment" :{
-            "orFiltersForSegment": [{
-              "segmentFilterClauses":[{
-                "dimensionFilter": {
-                  "dimensionName": "ga:city",
-                  "expressions": ["New York"]
-                }
+            "sessionSegment": {
+              "segmentFilters": [{
+                "simpleSegment" :{
+                  "orFiltersForSegment": [{
+                    "segmentFilterClauses":[{
+                      "dimensionFilter": {
+                        "dimensionName": "ga:city",
+                        "expressions": ["New York"]
+                      }
+                    }]
+                  }]
+                },
+                "not": "True"
               }]
-            }]
-          },
-          "not": "True"
-        }]
-      }, Defaults to `nil`.
-  - sequenceSegment (GoogleApi.AnalyticsReporting.V4.Model.SequenceSegment.t): Sequence conditions consist of one or more steps, where each step is
-  defined by one or more dimension/metric conditions. Multiple steps can
-  be combined with special sequence operators. Defaults to `nil`.
-  - simpleSegment (GoogleApi.AnalyticsReporting.V4.Model.SimpleSegment.t): A Simple segment conditions consist of one or more dimension/metric
-  conditions that can be combined Defaults to `nil`.
+            },
+  *   `sequenceSegment` (*type:* `GoogleApi.AnalyticsReporting.V4.Model.SequenceSegment.t`, *default:* `nil`) - Sequence conditions consist of one or more steps, where each step is
+      defined by one or more dimension/metric conditions. Multiple steps can
+      be combined with special sequence operators.
+  *   `simpleSegment` (*type:* `GoogleApi.AnalyticsReporting.V4.Model.SimpleSegment.t`, *default:* `nil`) - A Simple segment conditions consist of one or more dimension/metric
+      conditions that can be combined
   """
 
   use GoogleApi.Gax.ModelBase

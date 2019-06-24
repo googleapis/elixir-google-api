@@ -22,11 +22,11 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.TransactionData do
 
   ## Attributes
 
-  - transactionId (String.t): The transaction ID, supplied by the e-commerce tracking method, for the
-  purchase in the shopping cart. Defaults to `nil`.
-  - transactionRevenue (float()): The total sale revenue (excluding shipping and tax) of the transaction. Defaults to `nil`.
-  - transactionShipping (float()): Total cost of shipping. Defaults to `nil`.
-  - transactionTax (float()): Total tax for the transaction. Defaults to `nil`.
+  *   `transactionId` (*type:* `String.t`, *default:* `nil`) - The transaction ID, supplied by the e-commerce tracking method, for the
+      purchase in the shopping cart.
+  *   `transactionRevenue` (*type:* `float()`, *default:* `nil`) - The total sale revenue (excluding shipping and tax) of the transaction.
+  *   `transactionShipping` (*type:* `float()`, *default:* `nil`) - Total cost of shipping.
+  *   `transactionTax` (*type:* `float()`, *default:* `nil`) - Total tax for the transaction.
   """
 
   use GoogleApi.Gax.ModelBase
