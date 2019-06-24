@@ -21,11 +21,11 @@ defmodule GoogleApi.AppsActivity.V1.Model.User do
 
   ## Attributes
 
-  - isDeleted (boolean()): A boolean which indicates whether the specified User was deleted. If true, name, photo and permission_id will be omitted. Defaults to `nil`.
-  - isMe (boolean()): Whether the user is the authenticated user. Defaults to `nil`.
-  - name (String.t): The displayable name of the user. Defaults to `nil`.
-  - permissionId (String.t): The permission ID associated with this user. Equivalent to the Drive API's permission ID for this user, returned as part of the Drive Permissions resource. Defaults to `nil`.
-  - photo (GoogleApi.AppsActivity.V1.Model.Photo.t): The profile photo of the user. Not present if the user has no profile photo. Defaults to `nil`.
+  *   `isDeleted` (*type:* `boolean()`, *default:* `nil`) - A boolean which indicates whether the specified User was deleted. If true, name, photo and permission_id will be omitted.
+  *   `isMe` (*type:* `boolean()`, *default:* `nil`) - Whether the user is the authenticated user.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The displayable name of the user.
+  *   `permissionId` (*type:* `String.t`, *default:* `nil`) - The permission ID associated with this user. Equivalent to the Drive API's permission ID for this user, returned as part of the Drive Permissions resource.
+  *   `photo` (*type:* `GoogleApi.AppsActivity.V1.Model.Photo.t`, *default:* `nil`) - The profile photo of the user. Not present if the user has no profile photo.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,8 +21,8 @@ defmodule GoogleApi.AppsActivity.V1.Model.Move do
 
   ## Attributes
 
-  - addedParents (list(GoogleApi.AppsActivity.V1.Model.Parent.t)): The added parent(s). Defaults to `nil`.
-  - removedParents (list(GoogleApi.AppsActivity.V1.Model.Parent.t)): The removed parent(s). Defaults to `nil`.
+  *   `addedParents` (*type:* `list(GoogleApi.AppsActivity.V1.Model.Parent.t)`, *default:* `nil`) - The added parent(s).
+  *   `removedParents` (*type:* `list(GoogleApi.AppsActivity.V1.Model.Parent.t)`, *default:* `nil`) - The removed parent(s).
   """
 
   use GoogleApi.Gax.ModelBase

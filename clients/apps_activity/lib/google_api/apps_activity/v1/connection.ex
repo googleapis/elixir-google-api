@@ -20,6 +20,8 @@ defmodule GoogleApi.AppsActivity.V1.Connection do
   Handle Tesla connections for GoogleApi.AppsActivity.V1.
   """
 
+  @type t :: Tesla.Env.client()
+
   use GoogleApi.Gax.Connection,
     scopes: [
       # View the activity history of your Google apps

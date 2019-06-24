@@ -21,12 +21,12 @@ defmodule GoogleApi.AppsActivity.V1.Model.Permission do
 
   ## Attributes
 
-  - name (String.t): The name of the user or group the permission applies to. Defaults to `nil`.
-  - permissionId (String.t): The ID for this permission. Corresponds to the Drive API's permission ID returned as part of the Drive Permissions resource. Defaults to `nil`.
-  - role (String.t): Indicates the Google Drive permissions role. The role determines a user's ability to read, write, or comment on the file. Defaults to `nil`.
-  - type (String.t): Indicates how widely permissions are granted. Defaults to `nil`.
-  - user (GoogleApi.AppsActivity.V1.Model.User.t): The user's information if the type is USER. Defaults to `nil`.
-  - withLink (boolean()): Whether the permission requires a link to the file. Defaults to `nil`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the user or group the permission applies to.
+  *   `permissionId` (*type:* `String.t`, *default:* `nil`) - The ID for this permission. Corresponds to the Drive API's permission ID returned as part of the Drive Permissions resource.
+  *   `role` (*type:* `String.t`, *default:* `nil`) - Indicates the Google Drive permissions role. The role determines a user's ability to read, write, or comment on the file.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Indicates how widely permissions are granted.
+  *   `user` (*type:* `GoogleApi.AppsActivity.V1.Model.User.t`, *default:* `nil`) - The user's information if the type is USER.
+  *   `withLink` (*type:* `boolean()`, *default:* `nil`) - Whether the permission requires a link to the file.
   """
 
   use GoogleApi.Gax.ModelBase

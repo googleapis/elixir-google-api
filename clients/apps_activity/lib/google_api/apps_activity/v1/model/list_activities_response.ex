@@ -21,8 +21,8 @@ defmodule GoogleApi.AppsActivity.V1.Model.ListActivitiesResponse do
 
   ## Attributes
 
-  - activities (list(GoogleApi.AppsActivity.V1.Model.Activity.t)): List of activities. Defaults to `nil`.
-  - nextPageToken (String.t): Token for the next page of results. Defaults to `nil`.
+  *   `activities` (*type:* `list(GoogleApi.AppsActivity.V1.Model.Activity.t)`, *default:* `nil`) - List of activities.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token for the next page of results.
   """
 
   use GoogleApi.Gax.ModelBase

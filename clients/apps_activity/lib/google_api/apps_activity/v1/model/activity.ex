@@ -21,8 +21,8 @@ defmodule GoogleApi.AppsActivity.V1.Model.Activity do
 
   ## Attributes
 
-  - combinedEvent (GoogleApi.AppsActivity.V1.Model.Event.t): The fields common to all of the singleEvents that make up the Activity. Defaults to `nil`.
-  - singleEvents (list(GoogleApi.AppsActivity.V1.Model.Event.t)): A list of all the Events that make up the Activity. Defaults to `nil`.
+  *   `combinedEvent` (*type:* `GoogleApi.AppsActivity.V1.Model.Event.t`, *default:* `nil`) - The fields common to all of the singleEvents that make up the Activity.
+  *   `singleEvents` (*type:* `list(GoogleApi.AppsActivity.V1.Model.Event.t)`, *default:* `nil`) - A list of all the Events that make up the Activity.
   """
 
   use GoogleApi.Gax.ModelBase
