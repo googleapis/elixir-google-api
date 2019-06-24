@@ -21,10 +21,10 @@ defmodule GoogleApi.Admin.Reports_v1.Model.ActivityActor do
 
   ## Attributes
 
-  - callerType (String.t): User or OAuth 2LO request. Defaults to `nil`.
-  - email (String.t): Email address of the user. Defaults to `nil`.
-  - key (String.t): For OAuth 2LO API requests, consumer_key of the requestor. Defaults to `nil`.
-  - profileId (String.t): Obfuscated user id of the user. Defaults to `nil`.
+  *   `callerType` (*type:* `String.t`, *default:* `nil`) - User or OAuth 2LO request.
+  *   `email` (*type:* `String.t`, *default:* `nil`) - Email address of the user.
+  *   `key` (*type:* `String.t`, *default:* `nil`) - For OAuth 2LO API requests, consumer_key of the requestor.
+  *   `profileId` (*type:* `String.t`, *default:* `nil`) - Obfuscated user id of the user.
   """
 
   use GoogleApi.Gax.ModelBase

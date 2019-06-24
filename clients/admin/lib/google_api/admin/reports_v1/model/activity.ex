@@ -21,13 +21,13 @@ defmodule GoogleApi.Admin.Reports_v1.Model.Activity do
 
   ## Attributes
 
-  - actor (GoogleApi.Admin.Reports_v1.Model.ActivityActor.t): User doing the action. Defaults to `nil`.
-  - etag (String.t): ETag of the entry. Defaults to `nil`.
-  - events (list(GoogleApi.Admin.Reports_v1.Model.ActivityEvents.t)): Activity events. Defaults to `nil`.
-  - id (GoogleApi.Admin.Reports_v1.Model.ActivityId.t): Unique identifier for each activity record. Defaults to `nil`.
-  - ipAddress (String.t): IP Address of the user doing the action. Defaults to `nil`.
-  - kind (String.t): Kind of resource this is. Defaults to `admin#reports#activity`.
-  - ownerDomain (String.t): Domain of source customer. Defaults to `nil`.
+  *   `actor` (*type:* `GoogleApi.Admin.Reports_v1.Model.ActivityActor.t`, *default:* `nil`) - User doing the action.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the entry.
+  *   `events` (*type:* `list(GoogleApi.Admin.Reports_v1.Model.ActivityEvents.t)`, *default:* `nil`) - Activity events.
+  *   `id` (*type:* `GoogleApi.Admin.Reports_v1.Model.ActivityId.t`, *default:* `nil`) - Unique identifier for each activity record.
+  *   `ipAddress` (*type:* `String.t`, *default:* `nil`) - IP Address of the user doing the action.
+  *   `kind` (*type:* `String.t`, *default:* `admin#reports#activity`) - Kind of resource this is.
+  *   `ownerDomain` (*type:* `String.t`, *default:* `nil`) - Domain of source customer.
   """
 
   use GoogleApi.Gax.ModelBase

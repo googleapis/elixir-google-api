@@ -21,7 +21,7 @@ defmodule GoogleApi.Admin.Reports_v1.Model.ActivityEventsParametersMessageValue 
 
   ## Attributes
 
-  - parameter (list(GoogleApi.Admin.Reports_v1.Model.NestedParameter.t)): Looping to get parameter values. Defaults to `nil`.
+  *   `parameter` (*type:* `list(GoogleApi.Admin.Reports_v1.Model.NestedParameter.t)`, *default:* `nil`) - Looping to get parameter values.
   """
 
   use GoogleApi.Gax.ModelBase

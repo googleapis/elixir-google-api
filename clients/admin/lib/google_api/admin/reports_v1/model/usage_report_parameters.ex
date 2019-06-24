@@ -21,12 +21,12 @@ defmodule GoogleApi.Admin.Reports_v1.Model.UsageReportParameters do
 
   ## Attributes
 
-  - boolValue (boolean()): Boolean value of the parameter. Defaults to `nil`.
-  - datetimeValue (DateTime.t): RFC 3339 formatted value of the parameter. Defaults to `nil`.
-  - intValue (String.t): Integral value of the parameter. Defaults to `nil`.
-  - msgValue (list(map())): Nested message value of the parameter. Defaults to `nil`.
-  - name (String.t): The name of the parameter. Defaults to `nil`.
-  - stringValue (String.t): String value of the parameter. Defaults to `nil`.
+  *   `boolValue` (*type:* `boolean()`, *default:* `nil`) - Boolean value of the parameter.
+  *   `datetimeValue` (*type:* `DateTime.t`, *default:* `nil`) - RFC 3339 formatted value of the parameter.
+  *   `intValue` (*type:* `String.t`, *default:* `nil`) - Integral value of the parameter.
+  *   `msgValue` (*type:* `list(map())`, *default:* `nil`) - Nested message value of the parameter.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the parameter.
+  *   `stringValue` (*type:* `String.t`, *default:* `nil`) - String value of the parameter.
   """
 
   use GoogleApi.Gax.ModelBase

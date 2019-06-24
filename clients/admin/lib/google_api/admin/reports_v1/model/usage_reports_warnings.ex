@@ -21,9 +21,9 @@ defmodule GoogleApi.Admin.Reports_v1.Model.UsageReportsWarnings do
 
   ## Attributes
 
-  - code (String.t): Machine readable code / warning type. Defaults to `nil`.
-  - data (list(GoogleApi.Admin.Reports_v1.Model.UsageReportsWarningsData.t)): Key-Value pairs to give detailed information on the warning. Defaults to `nil`.
-  - message (String.t): Human readable message for the warning. Defaults to `nil`.
+  *   `code` (*type:* `String.t`, *default:* `nil`) - Machine readable code / warning type.
+  *   `data` (*type:* `list(GoogleApi.Admin.Reports_v1.Model.UsageReportsWarningsData.t)`, *default:* `nil`) - Key-Value pairs to give detailed information on the warning.
+  *   `message` (*type:* `String.t`, *default:* `nil`) - Human readable message for the warning.
   """
 
   use GoogleApi.Gax.ModelBase
