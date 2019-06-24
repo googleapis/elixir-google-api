@@ -21,21 +21,21 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.Relyingparty do
 
   ## Attributes
 
-  - androidInstallApp (boolean()): whether or not to install the android app on the device where the link is opened Defaults to `nil`.
-  - androidMinimumVersion (String.t): minimum version of the app. if the version on the device is lower than this version then the user is taken to the play store to upgrade the app Defaults to `nil`.
-  - androidPackageName (String.t): android package name of the android app to handle the action code Defaults to `nil`.
-  - canHandleCodeInApp (boolean()): whether or not the app can handle the oob code without first going to web Defaults to `nil`.
-  - captchaResp (String.t): The recaptcha response from the user. Defaults to `nil`.
-  - challenge (String.t): The recaptcha challenge presented to the user. Defaults to `nil`.
-  - continueUrl (String.t): The url to continue to the Gitkit app Defaults to `nil`.
-  - email (String.t): The email of the user. Defaults to `nil`.
-  - iOSAppStoreId (String.t): iOS app store id to download the app if it's not already installed Defaults to `nil`.
-  - iOSBundleId (String.t): the iOS bundle id of iOS app to handle the action code Defaults to `nil`.
-  - idToken (String.t): The user's Gitkit login token for email change. Defaults to `nil`.
-  - kind (String.t): The fixed string "identitytoolkit#relyingparty". Defaults to `identitytoolkit#relyingparty`.
-  - newEmail (String.t): The new email if the code is for email change. Defaults to `nil`.
-  - requestType (String.t): The request type. Defaults to `nil`.
-  - userIp (String.t): The IP address of the user. Defaults to `nil`.
+  *   `androidInstallApp` (*type:* `boolean()`, *default:* `nil`) - whether or not to install the android app on the device where the link is opened
+  *   `androidMinimumVersion` (*type:* `String.t`, *default:* `nil`) - minimum version of the app. if the version on the device is lower than this version then the user is taken to the play store to upgrade the app
+  *   `androidPackageName` (*type:* `String.t`, *default:* `nil`) - android package name of the android app to handle the action code
+  *   `canHandleCodeInApp` (*type:* `boolean()`, *default:* `nil`) - whether or not the app can handle the oob code without first going to web
+  *   `captchaResp` (*type:* `String.t`, *default:* `nil`) - The recaptcha response from the user.
+  *   `challenge` (*type:* `String.t`, *default:* `nil`) - The recaptcha challenge presented to the user.
+  *   `continueUrl` (*type:* `String.t`, *default:* `nil`) - The url to continue to the Gitkit app
+  *   `email` (*type:* `String.t`, *default:* `nil`) - The email of the user.
+  *   `iOSAppStoreId` (*type:* `String.t`, *default:* `nil`) - iOS app store id to download the app if it's not already installed
+  *   `iOSBundleId` (*type:* `String.t`, *default:* `nil`) - the iOS bundle id of iOS app to handle the action code
+  *   `idToken` (*type:* `String.t`, *default:* `nil`) - The user's Gitkit login token for email change.
+  *   `kind` (*type:* `String.t`, *default:* `identitytoolkit#relyingparty`) - The fixed string "identitytoolkit#relyingparty".
+  *   `newEmail` (*type:* `String.t`, *default:* `nil`) - The new email if the code is for email change.
+  *   `requestType` (*type:* `String.t`, *default:* `nil`) - The request type.
+  *   `userIp` (*type:* `String.t`, *default:* `nil`) - The IP address of the user.
   """
 
   use GoogleApi.Gax.ModelBase

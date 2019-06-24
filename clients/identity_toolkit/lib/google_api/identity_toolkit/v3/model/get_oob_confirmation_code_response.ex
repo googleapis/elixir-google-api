@@ -21,9 +21,9 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.GetOobConfirmationCodeResponse do
 
   ## Attributes
 
-  - email (String.t): The email address that the email is sent to. Defaults to `nil`.
-  - kind (String.t): The fixed string "identitytoolkit#GetOobConfirmationCodeResponse". Defaults to `identitytoolkit#GetOobConfirmationCodeResponse`.
-  - oobCode (String.t): The code to be send to the user. Defaults to `nil`.
+  *   `email` (*type:* `String.t`, *default:* `nil`) - The email address that the email is sent to.
+  *   `kind` (*type:* `String.t`, *default:* `identitytoolkit#GetOobConfirmationCodeResponse`) - The fixed string "identitytoolkit#GetOobConfirmationCodeResponse".
+  *   `oobCode` (*type:* `String.t`, *default:* `nil`) - The code to be send to the user.
   """
 
   use GoogleApi.Gax.ModelBase

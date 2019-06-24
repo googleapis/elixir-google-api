@@ -21,14 +21,14 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.UserInfoProviderUserInfo do
 
   ## Attributes
 
-  - displayName (String.t): The user's display name at the IDP. Defaults to `nil`.
-  - email (String.t): User's email at IDP. Defaults to `nil`.
-  - federatedId (String.t): User's identifier at IDP. Defaults to `nil`.
-  - phoneNumber (String.t): User's phone number. Defaults to `nil`.
-  - photoUrl (String.t): The user's photo url at the IDP. Defaults to `nil`.
-  - providerId (String.t): The IdP ID. For white listed IdPs it's a short domain name, e.g., google.com, aol.com, live.net and yahoo.com. For other OpenID IdPs it's the OP identifier. Defaults to `nil`.
-  - rawId (String.t): User's raw identifier directly returned from IDP. Defaults to `nil`.
-  - screenName (String.t): User's screen name at Twitter or login name at Github. Defaults to `nil`.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The user's display name at the IDP.
+  *   `email` (*type:* `String.t`, *default:* `nil`) - User's email at IDP.
+  *   `federatedId` (*type:* `String.t`, *default:* `nil`) - User's identifier at IDP.
+  *   `phoneNumber` (*type:* `String.t`, *default:* `nil`) - User's phone number.
+  *   `photoUrl` (*type:* `String.t`, *default:* `nil`) - The user's photo url at the IDP.
+  *   `providerId` (*type:* `String.t`, *default:* `nil`) - The IdP ID. For white listed IdPs it's a short domain name, e.g., google.com, aol.com, live.net and yahoo.com. For other OpenID IdPs it's the OP identifier.
+  *   `rawId` (*type:* `String.t`, *default:* `nil`) - User's raw identifier directly returned from IDP.
+  *   `screenName` (*type:* `String.t`, *default:* `nil`) - User's screen name at Twitter or login name at Github.
   """
 
   use GoogleApi.Gax.ModelBase

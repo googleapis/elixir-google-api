@@ -21,9 +21,9 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyDeleteAc
 
   ## Attributes
 
-  - delegatedProjectNumber (String.t): GCP project number of the requesting delegated app. Currently only intended for Firebase V1 migration. Defaults to `nil`.
-  - idToken (String.t): The GITKit token or STS id token of the authenticated user. Defaults to `nil`.
-  - localId (String.t): The local ID of the user. Defaults to `nil`.
+  *   `delegatedProjectNumber` (*type:* `String.t`, *default:* `nil`) - GCP project number of the requesting delegated app. Currently only intended for Firebase V1 migration.
+  *   `idToken` (*type:* `String.t`, *default:* `nil`) - The GITKit token or STS id token of the authenticated user.
+  *   `localId` (*type:* `String.t`, *default:* `nil`) - The local ID of the user.
   """
 
   use GoogleApi.Gax.ModelBase

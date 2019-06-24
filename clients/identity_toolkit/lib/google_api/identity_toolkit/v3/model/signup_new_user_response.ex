@@ -21,13 +21,13 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.SignupNewUserResponse do
 
   ## Attributes
 
-  - displayName (String.t): The name of the user. Defaults to `nil`.
-  - email (String.t): The email of the user. Defaults to `nil`.
-  - expiresIn (String.t): If idToken is STS id token, then this field will be expiration time of STS id token in seconds. Defaults to `nil`.
-  - idToken (String.t): The Gitkit id token to login the newly sign up user. Defaults to `nil`.
-  - kind (String.t): The fixed string "identitytoolkit#SignupNewUserResponse". Defaults to `identitytoolkit#SignupNewUserResponse`.
-  - localId (String.t): The RP local ID of the user. Defaults to `nil`.
-  - refreshToken (String.t): If idToken is STS id token, then this field will be refresh token. Defaults to `nil`.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The name of the user.
+  *   `email` (*type:* `String.t`, *default:* `nil`) - The email of the user.
+  *   `expiresIn` (*type:* `String.t`, *default:* `nil`) - If idToken is STS id token, then this field will be expiration time of STS id token in seconds.
+  *   `idToken` (*type:* `String.t`, *default:* `nil`) - The Gitkit id token to login the newly sign up user.
+  *   `kind` (*type:* `String.t`, *default:* `identitytoolkit#SignupNewUserResponse`) - The fixed string "identitytoolkit#SignupNewUserResponse".
+  *   `localId` (*type:* `String.t`, *default:* `nil`) - The RP local ID of the user.
+  *   `refreshToken` (*type:* `String.t`, *default:* `nil`) - If idToken is STS id token, then this field will be refresh token.
   """
 
   use GoogleApi.Gax.ModelBase

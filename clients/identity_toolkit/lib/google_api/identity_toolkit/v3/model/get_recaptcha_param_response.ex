@@ -21,9 +21,9 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.GetRecaptchaParamResponse do
 
   ## Attributes
 
-  - kind (String.t): The fixed string "identitytoolkit#GetRecaptchaParamResponse". Defaults to `identitytoolkit#GetRecaptchaParamResponse`.
-  - recaptchaSiteKey (String.t): Site key registered at recaptcha. Defaults to `nil`.
-  - recaptchaStoken (String.t): The stoken field for the recaptcha widget, used to request captcha challenge. Defaults to `nil`.
+  *   `kind` (*type:* `String.t`, *default:* `identitytoolkit#GetRecaptchaParamResponse`) - The fixed string "identitytoolkit#GetRecaptchaParamResponse".
+  *   `recaptchaSiteKey` (*type:* `String.t`, *default:* `nil`) - Site key registered at recaptcha.
+  *   `recaptchaStoken` (*type:* `String.t`, *default:* `nil`) - The stoken field for the recaptcha widget, used to request captcha challenge.
   """
 
   use GoogleApi.Gax.ModelBase

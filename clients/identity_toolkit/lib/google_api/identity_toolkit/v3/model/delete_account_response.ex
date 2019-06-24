@@ -21,7 +21,7 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.DeleteAccountResponse do
 
   ## Attributes
 
-  - kind (String.t): The fixed string "identitytoolkit#DeleteAccountResponse". Defaults to `identitytoolkit#DeleteAccountResponse`.
+  *   `kind` (*type:* `String.t`, *default:* `identitytoolkit#DeleteAccountResponse`) - The fixed string "identitytoolkit#DeleteAccountResponse".
   """
 
   use GoogleApi.Gax.ModelBase

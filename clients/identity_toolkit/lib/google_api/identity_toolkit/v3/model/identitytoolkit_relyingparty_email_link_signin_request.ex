@@ -21,9 +21,9 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyEmailLin
 
   ## Attributes
 
-  - email (String.t): The email address of the user. Defaults to `nil`.
-  - idToken (String.t): Token for linking flow. Defaults to `nil`.
-  - oobCode (String.t): The confirmation code. Defaults to `nil`.
+  *   `email` (*type:* `String.t`, *default:* `nil`) - The email address of the user.
+  *   `idToken` (*type:* `String.t`, *default:* `nil`) - Token for linking flow.
+  *   `oobCode` (*type:* `String.t`, *default:* `nil`) - The confirmation code.
   """
 
   use GoogleApi.Gax.ModelBase

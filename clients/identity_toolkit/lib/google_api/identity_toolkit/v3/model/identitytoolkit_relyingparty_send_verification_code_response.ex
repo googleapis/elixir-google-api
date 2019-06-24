@@ -21,7 +21,7 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySendVeri
 
   ## Attributes
 
-  - sessionInfo (String.t): Encrypted session information Defaults to `nil`.
+  *   `sessionInfo` (*type:* `String.t`, *default:* `nil`) - Encrypted session information
   """
 
   use GoogleApi.Gax.ModelBase

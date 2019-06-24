@@ -21,18 +21,18 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyGetProje
 
   ## Attributes
 
-  - allowPasswordUser (boolean()): Whether to allow password user sign in or sign up. Defaults to `nil`.
-  - apiKey (String.t): Browser API key, needed when making http request to Apiary. Defaults to `nil`.
-  - authorizedDomains (list(String.t)): Authorized domains. Defaults to `nil`.
-  - changeEmailTemplate (GoogleApi.IdentityToolkit.V3.Model.EmailTemplate.t): Change email template. Defaults to `nil`.
-  - dynamicLinksDomain (String.t):  Defaults to `nil`.
-  - enableAnonymousUser (boolean()): Whether anonymous user is enabled. Defaults to `nil`.
-  - idpConfig (list(GoogleApi.IdentityToolkit.V3.Model.IdpConfig.t)): OAuth2 provider configuration. Defaults to `nil`.
-  - legacyResetPasswordTemplate (GoogleApi.IdentityToolkit.V3.Model.EmailTemplate.t): Legacy reset password email template. Defaults to `nil`.
-  - projectId (String.t): Project ID of the relying party. Defaults to `nil`.
-  - resetPasswordTemplate (GoogleApi.IdentityToolkit.V3.Model.EmailTemplate.t): Reset password email template. Defaults to `nil`.
-  - useEmailSending (boolean()): Whether to use email sending provided by Firebear. Defaults to `nil`.
-  - verifyEmailTemplate (GoogleApi.IdentityToolkit.V3.Model.EmailTemplate.t): Verify email template. Defaults to `nil`.
+  *   `allowPasswordUser` (*type:* `boolean()`, *default:* `nil`) - Whether to allow password user sign in or sign up.
+  *   `apiKey` (*type:* `String.t`, *default:* `nil`) - Browser API key, needed when making http request to Apiary.
+  *   `authorizedDomains` (*type:* `list(String.t)`, *default:* `nil`) - Authorized domains.
+  *   `changeEmailTemplate` (*type:* `GoogleApi.IdentityToolkit.V3.Model.EmailTemplate.t`, *default:* `nil`) - Change email template.
+  *   `dynamicLinksDomain` (*type:* `String.t`, *default:* `nil`) - 
+  *   `enableAnonymousUser` (*type:* `boolean()`, *default:* `nil`) - Whether anonymous user is enabled.
+  *   `idpConfig` (*type:* `list(GoogleApi.IdentityToolkit.V3.Model.IdpConfig.t)`, *default:* `nil`) - OAuth2 provider configuration.
+  *   `legacyResetPasswordTemplate` (*type:* `GoogleApi.IdentityToolkit.V3.Model.EmailTemplate.t`, *default:* `nil`) - Legacy reset password email template.
+  *   `projectId` (*type:* `String.t`, *default:* `nil`) - Project ID of the relying party.
+  *   `resetPasswordTemplate` (*type:* `GoogleApi.IdentityToolkit.V3.Model.EmailTemplate.t`, *default:* `nil`) - Reset password email template.
+  *   `useEmailSending` (*type:* `boolean()`, *default:* `nil`) - Whether to use email sending provided by Firebear.
+  *   `verifyEmailTemplate` (*type:* `GoogleApi.IdentityToolkit.V3.Model.EmailTemplate.t`, *default:* `nil`) - Verify email template.
   """
 
   use GoogleApi.Gax.ModelBase

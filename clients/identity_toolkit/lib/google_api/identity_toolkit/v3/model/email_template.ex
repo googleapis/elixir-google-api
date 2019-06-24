@@ -21,12 +21,12 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.EmailTemplate do
 
   ## Attributes
 
-  - body (String.t): Email body. Defaults to `nil`.
-  - format (String.t): Email body format. Defaults to `nil`.
-  - from (String.t): From address of the email. Defaults to `nil`.
-  - fromDisplayName (String.t): From display name. Defaults to `nil`.
-  - replyTo (String.t): Reply-to address. Defaults to `nil`.
-  - subject (String.t): Subject of the email. Defaults to `nil`.
+  *   `body` (*type:* `String.t`, *default:* `nil`) - Email body.
+  *   `format` (*type:* `String.t`, *default:* `nil`) - Email body format.
+  *   `from` (*type:* `String.t`, *default:* `nil`) - From address of the email.
+  *   `fromDisplayName` (*type:* `String.t`, *default:* `nil`) - From display name.
+  *   `replyTo` (*type:* `String.t`, *default:* `nil`) - Reply-to address.
+  *   `subject` (*type:* `String.t`, *default:* `nil`) - Subject of the email.
   """
 
   use GoogleApi.Gax.ModelBase

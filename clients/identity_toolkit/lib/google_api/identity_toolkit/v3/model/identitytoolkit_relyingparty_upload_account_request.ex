@@ -21,20 +21,20 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyUploadAc
 
   ## Attributes
 
-  - allowOverwrite (boolean()): Whether allow overwrite existing account when user local_id exists. Defaults to `nil`.
-  - blockSize (integer()):  Defaults to `nil`.
-  - cpuMemCost (integer()): The following 4 fields are for standard scrypt algorithm. Defaults to `nil`.
-  - delegatedProjectNumber (String.t): GCP project number of the requesting delegated app. Currently only intended for Firebase V1 migration. Defaults to `nil`.
-  - dkLen (integer()):  Defaults to `nil`.
-  - hashAlgorithm (String.t): The password hash algorithm. Defaults to `nil`.
-  - memoryCost (integer()): Memory cost for hash calculation. Used by scrypt similar algorithms. Defaults to `nil`.
-  - parallelization (integer()):  Defaults to `nil`.
-  - rounds (integer()): Rounds for hash calculation. Used by scrypt and similar algorithms. Defaults to `nil`.
-  - saltSeparator (String.t): The salt separator. Defaults to `nil`.
-  - sanityCheck (boolean()): If true, backend will do sanity check(including duplicate email and federated id) when uploading account. Defaults to `nil`.
-  - signerKey (String.t): The key for to hash the password. Defaults to `nil`.
-  - targetProjectId (String.t): Specify which project (field value is actually project id) to operate. Only used when provided credential. Defaults to `nil`.
-  - users (list(GoogleApi.IdentityToolkit.V3.Model.UserInfo.t)): The account info to be stored. Defaults to `nil`.
+  *   `allowOverwrite` (*type:* `boolean()`, *default:* `nil`) - Whether allow overwrite existing account when user local_id exists.
+  *   `blockSize` (*type:* `integer()`, *default:* `nil`) - 
+  *   `cpuMemCost` (*type:* `integer()`, *default:* `nil`) - The following 4 fields are for standard scrypt algorithm.
+  *   `delegatedProjectNumber` (*type:* `String.t`, *default:* `nil`) - GCP project number of the requesting delegated app. Currently only intended for Firebase V1 migration.
+  *   `dkLen` (*type:* `integer()`, *default:* `nil`) - 
+  *   `hashAlgorithm` (*type:* `String.t`, *default:* `nil`) - The password hash algorithm.
+  *   `memoryCost` (*type:* `integer()`, *default:* `nil`) - Memory cost for hash calculation. Used by scrypt similar algorithms.
+  *   `parallelization` (*type:* `integer()`, *default:* `nil`) - 
+  *   `rounds` (*type:* `integer()`, *default:* `nil`) - Rounds for hash calculation. Used by scrypt and similar algorithms.
+  *   `saltSeparator` (*type:* `String.t`, *default:* `nil`) - The salt separator.
+  *   `sanityCheck` (*type:* `boolean()`, *default:* `nil`) - If true, backend will do sanity check(including duplicate email and federated id) when uploading account.
+  *   `signerKey` (*type:* `String.t`, *default:* `nil`) - The key for to hash the password.
+  *   `targetProjectId` (*type:* `String.t`, *default:* `nil`) - Specify which project (field value is actually project id) to operate. Only used when provided credential.
+  *   `users` (*type:* `list(GoogleApi.IdentityToolkit.V3.Model.UserInfo.t)`, *default:* `nil`) - The account info to be stored.
   """
 
   use GoogleApi.Gax.ModelBase

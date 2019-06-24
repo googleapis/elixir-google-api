@@ -21,10 +21,10 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.SetAccountInfoResponseProviderUserI
 
   ## Attributes
 
-  - displayName (String.t): The user's display name at the IDP. Defaults to `nil`.
-  - federatedId (String.t): User's identifier at IDP. Defaults to `nil`.
-  - photoUrl (String.t): The user's photo url at the IDP. Defaults to `nil`.
-  - providerId (String.t): The IdP ID. For whitelisted IdPs it's a short domain name, e.g., google.com, aol.com, live.net and yahoo.com. For other OpenID IdPs it's the OP identifier. Defaults to `nil`.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The user's display name at the IDP.
+  *   `federatedId` (*type:* `String.t`, *default:* `nil`) - User's identifier at IDP.
+  *   `photoUrl` (*type:* `String.t`, *default:* `nil`) - The user's photo url at the IDP.
+  *   `providerId` (*type:* `String.t`, *default:* `nil`) - The IdP ID. For whitelisted IdPs it's a short domain name, e.g., google.com, aol.com, live.net and yahoo.com. For other OpenID IdPs it's the OP identifier.
   """
 
   use GoogleApi.Gax.ModelBase

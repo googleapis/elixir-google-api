@@ -21,13 +21,13 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyVerifyPh
 
   ## Attributes
 
-  - code (String.t):  Defaults to `nil`.
-  - idToken (String.t):  Defaults to `nil`.
-  - operation (String.t):  Defaults to `nil`.
-  - phoneNumber (String.t):  Defaults to `nil`.
-  - sessionInfo (String.t): The session info previously returned by IdentityToolkit-SendVerificationCode. Defaults to `nil`.
-  - temporaryProof (String.t):  Defaults to `nil`.
-  - verificationProof (String.t):  Defaults to `nil`.
+  *   `code` (*type:* `String.t`, *default:* `nil`) - 
+  *   `idToken` (*type:* `String.t`, *default:* `nil`) - 
+  *   `operation` (*type:* `String.t`, *default:* `nil`) - 
+  *   `phoneNumber` (*type:* `String.t`, *default:* `nil`) - 
+  *   `sessionInfo` (*type:* `String.t`, *default:* `nil`) - The session info previously returned by IdentityToolkit-SendVerificationCode.
+  *   `temporaryProof` (*type:* `String.t`, *default:* `nil`) - 
+  *   `verificationProof` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

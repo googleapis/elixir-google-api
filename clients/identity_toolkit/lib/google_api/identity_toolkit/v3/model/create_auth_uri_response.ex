@@ -21,15 +21,15 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.CreateAuthUriResponse do
 
   ## Attributes
 
-  - allProviders (list(String.t)): all providers the user has once used to do federated login Defaults to `nil`.
-  - authUri (String.t): The URI used by the IDP to authenticate the user. Defaults to `nil`.
-  - captchaRequired (boolean()): True if captcha is required. Defaults to `nil`.
-  - forExistingProvider (boolean()): True if the authUri is for user's existing provider. Defaults to `nil`.
-  - kind (String.t): The fixed string identitytoolkit#CreateAuthUriResponse". Defaults to `identitytoolkit#CreateAuthUriResponse`.
-  - providerId (String.t): The provider ID of the auth URI. Defaults to `nil`.
-  - registered (boolean()): Whether the user is registered if the identifier is an email. Defaults to `nil`.
-  - sessionId (String.t): Session ID which should be passed in the following verifyAssertion request. Defaults to `nil`.
-  - signinMethods (list(String.t)): All sign-in methods this user has used. Defaults to `nil`.
+  *   `allProviders` (*type:* `list(String.t)`, *default:* `nil`) - all providers the user has once used to do federated login
+  *   `authUri` (*type:* `String.t`, *default:* `nil`) - The URI used by the IDP to authenticate the user.
+  *   `captchaRequired` (*type:* `boolean()`, *default:* `nil`) - True if captcha is required.
+  *   `forExistingProvider` (*type:* `boolean()`, *default:* `nil`) - True if the authUri is for user's existing provider.
+  *   `kind` (*type:* `String.t`, *default:* `identitytoolkit#CreateAuthUriResponse`) - The fixed string identitytoolkit#CreateAuthUriResponse".
+  *   `providerId` (*type:* `String.t`, *default:* `nil`) - The provider ID of the auth URI.
+  *   `registered` (*type:* `boolean()`, *default:* `nil`) - Whether the user is registered if the identifier is an email.
+  *   `sessionId` (*type:* `String.t`, *default:* `nil`) - Session ID which should be passed in the following verifyAssertion request.
+  *   `signinMethods` (*type:* `list(String.t)`, *default:* `nil`) - All sign-in methods this user has used.
   """
 
   use GoogleApi.Gax.ModelBase

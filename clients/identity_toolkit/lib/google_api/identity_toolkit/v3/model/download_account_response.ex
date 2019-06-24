@@ -21,9 +21,9 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.DownloadAccountResponse do
 
   ## Attributes
 
-  - kind (String.t): The fixed string "identitytoolkit#DownloadAccountResponse". Defaults to `identitytoolkit#DownloadAccountResponse`.
-  - nextPageToken (String.t): The next page token. To be used in a subsequent request to return the next page of results. Defaults to `nil`.
-  - users (list(GoogleApi.IdentityToolkit.V3.Model.UserInfo.t)): The user accounts data. Defaults to `nil`.
+  *   `kind` (*type:* `String.t`, *default:* `identitytoolkit#DownloadAccountResponse`) - The fixed string "identitytoolkit#DownloadAccountResponse".
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The next page token. To be used in a subsequent request to return the next page of results.
+  *   `users` (*type:* `list(GoogleApi.IdentityToolkit.V3.Model.UserInfo.t)`, *default:* `nil`) - The user accounts data.
   """
 
   use GoogleApi.Gax.ModelBase

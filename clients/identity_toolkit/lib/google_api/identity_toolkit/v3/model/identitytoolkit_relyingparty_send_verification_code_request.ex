@@ -21,10 +21,10 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySendVeri
 
   ## Attributes
 
-  - iosReceipt (String.t): Receipt of successful app token validation with APNS. Defaults to `nil`.
-  - iosSecret (String.t): Secret delivered to iOS app via APNS. Defaults to `nil`.
-  - phoneNumber (String.t): The phone number to send the verification code to in E.164 format. Defaults to `nil`.
-  - recaptchaToken (String.t): Recaptcha solution. Defaults to `nil`.
+  *   `iosReceipt` (*type:* `String.t`, *default:* `nil`) - Receipt of successful app token validation with APNS.
+  *   `iosSecret` (*type:* `String.t`, *default:* `nil`) - Secret delivered to iOS app via APNS.
+  *   `phoneNumber` (*type:* `String.t`, *default:* `nil`) - The phone number to send the verification code to in E.164 format.
+  *   `recaptchaToken` (*type:* `String.t`, *default:* `nil`) - Recaptcha solution.
   """
 
   use GoogleApi.Gax.ModelBase

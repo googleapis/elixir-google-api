@@ -21,11 +21,11 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.VerifyCustomTokenResponse do
 
   ## Attributes
 
-  - expiresIn (String.t): If idToken is STS id token, then this field will be expiration time of STS id token in seconds. Defaults to `nil`.
-  - idToken (String.t): The GITKit token for authenticated user. Defaults to `nil`.
-  - isNewUser (boolean()): True if it's a new user sign-in, false if it's a returning user. Defaults to `nil`.
-  - kind (String.t): The fixed string "identitytoolkit#VerifyCustomTokenResponse". Defaults to `identitytoolkit#VerifyCustomTokenResponse`.
-  - refreshToken (String.t): If idToken is STS id token, then this field will be refresh token. Defaults to `nil`.
+  *   `expiresIn` (*type:* `String.t`, *default:* `nil`) - If idToken is STS id token, then this field will be expiration time of STS id token in seconds.
+  *   `idToken` (*type:* `String.t`, *default:* `nil`) - The GITKit token for authenticated user.
+  *   `isNewUser` (*type:* `boolean()`, *default:* `nil`) - True if it's a new user sign-in, false if it's a returning user.
+  *   `kind` (*type:* `String.t`, *default:* `identitytoolkit#VerifyCustomTokenResponse`) - The fixed string "identitytoolkit#VerifyCustomTokenResponse".
+  *   `refreshToken` (*type:* `String.t`, *default:* `nil`) - If idToken is STS id token, then this field will be refresh token.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,13 +21,13 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.EmailLinkSigninResponse do
 
   ## Attributes
 
-  - email (String.t): The user's email. Defaults to `nil`.
-  - expiresIn (String.t): Expiration time of STS id token in seconds. Defaults to `nil`.
-  - idToken (String.t): The STS id token to login the newly signed in user. Defaults to `nil`.
-  - isNewUser (boolean()): Whether the user is new. Defaults to `nil`.
-  - kind (String.t): The fixed string "identitytoolkit#EmailLinkSigninResponse". Defaults to `identitytoolkit#EmailLinkSigninResponse`.
-  - localId (String.t): The RP local ID of the user. Defaults to `nil`.
-  - refreshToken (String.t): The refresh token for the signed in user. Defaults to `nil`.
+  *   `email` (*type:* `String.t`, *default:* `nil`) - The user's email.
+  *   `expiresIn` (*type:* `String.t`, *default:* `nil`) - Expiration time of STS id token in seconds.
+  *   `idToken` (*type:* `String.t`, *default:* `nil`) - The STS id token to login the newly signed in user.
+  *   `isNewUser` (*type:* `boolean()`, *default:* `nil`) - Whether the user is new.
+  *   `kind` (*type:* `String.t`, *default:* `identitytoolkit#EmailLinkSigninResponse`) - The fixed string "identitytoolkit#EmailLinkSigninResponse".
+  *   `localId` (*type:* `String.t`, *default:* `nil`) - The RP local ID of the user.
+  *   `refreshToken` (*type:* `String.t`, *default:* `nil`) - The refresh token for the signed in user.
   """
 
   use GoogleApi.Gax.ModelBase

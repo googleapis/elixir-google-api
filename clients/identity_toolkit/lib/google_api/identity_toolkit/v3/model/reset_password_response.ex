@@ -21,10 +21,10 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.ResetPasswordResponse do
 
   ## Attributes
 
-  - email (String.t): The user's email. If the out-of-band code is for email recovery, the user's original email. Defaults to `nil`.
-  - kind (String.t): The fixed string "identitytoolkit#ResetPasswordResponse". Defaults to `identitytoolkit#ResetPasswordResponse`.
-  - newEmail (String.t): If the out-of-band code is for email recovery, the user's new email. Defaults to `nil`.
-  - requestType (String.t): The request type. Defaults to `nil`.
+  *   `email` (*type:* `String.t`, *default:* `nil`) - The user's email. If the out-of-band code is for email recovery, the user's original email.
+  *   `kind` (*type:* `String.t`, *default:* `identitytoolkit#ResetPasswordResponse`) - The fixed string "identitytoolkit#ResetPasswordResponse".
+  *   `newEmail` (*type:* `String.t`, *default:* `nil`) - If the out-of-band code is for email recovery, the user's new email.
+  *   `requestType` (*type:* `String.t`, *default:* `nil`) - The request type.
   """
 
   use GoogleApi.Gax.ModelBase

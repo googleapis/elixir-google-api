@@ -21,10 +21,10 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyResetPas
 
   ## Attributes
 
-  - email (String.t): The email address of the user. Defaults to `nil`.
-  - newPassword (String.t): The new password inputted by the user. Defaults to `nil`.
-  - oldPassword (String.t): The old password inputted by the user. Defaults to `nil`.
-  - oobCode (String.t): The confirmation code. Defaults to `nil`.
+  *   `email` (*type:* `String.t`, *default:* `nil`) - The email address of the user.
+  *   `newPassword` (*type:* `String.t`, *default:* `nil`) - The new password inputted by the user.
+  *   `oldPassword` (*type:* `String.t`, *default:* `nil`) - The old password inputted by the user.
+  *   `oobCode` (*type:* `String.t`, *default:* `nil`) - The confirmation code.
   """
 
   use GoogleApi.Gax.ModelBase

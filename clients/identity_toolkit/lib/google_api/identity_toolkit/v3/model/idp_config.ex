@@ -21,12 +21,12 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.IdpConfig do
 
   ## Attributes
 
-  - clientId (String.t): OAuth2 client ID. Defaults to `nil`.
-  - enabled (boolean()): Whether this IDP is enabled. Defaults to `nil`.
-  - experimentPercent (integer()): Percent of users who will be prompted/redirected federated login for this IDP. Defaults to `nil`.
-  - provider (String.t): OAuth2 provider. Defaults to `nil`.
-  - secret (String.t): OAuth2 client secret. Defaults to `nil`.
-  - whitelistedAudiences (list(String.t)): Whitelisted client IDs for audience check. Defaults to `nil`.
+  *   `clientId` (*type:* `String.t`, *default:* `nil`) - OAuth2 client ID.
+  *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Whether this IDP is enabled.
+  *   `experimentPercent` (*type:* `integer()`, *default:* `nil`) - Percent of users who will be prompted/redirected federated login for this IDP.
+  *   `provider` (*type:* `String.t`, *default:* `nil`) - OAuth2 provider.
+  *   `secret` (*type:* `String.t`, *default:* `nil`) - OAuth2 client secret.
+  *   `whitelistedAudiences` (*type:* `list(String.t)`, *default:* `nil`) - Whitelisted client IDs for audience check.
   """
 
   use GoogleApi.Gax.ModelBase
