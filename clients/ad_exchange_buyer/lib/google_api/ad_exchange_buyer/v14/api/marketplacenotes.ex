@@ -28,24 +28,30 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Marketplacenotes do
 
   ## Parameters
 
-  - connection (GoogleApi.AdExchangeBuyer.V14.Connection): Connection to server
-  - proposal_id (String.t): The proposalId to add notes for.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.AdExchangeBuyer.V14.Model.AddOrderNotesRequest.t): 
+  *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V14.Connection.t`) - Connection to server
+  *   `proposal_id` (*type:* `String.t`) - The proposalId to add notes for.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.AdExchangeBuyer.V14.Model.AddOrderNotesRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdExchangeBuyer.V14.Model.AddOrderNotesResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdExchangeBuyer.V14.Model.AddOrderNotesResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec adexchangebuyer_marketplacenotes_insert(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec adexchangebuyer_marketplacenotes_insert(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V14.Model.AddOrderNotesResponse.t()}
           | {:error, Tesla.Env.t()}
   def adexchangebuyer_marketplacenotes_insert(
@@ -85,24 +91,30 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Marketplacenotes do
 
   ## Parameters
 
-  - connection (GoogleApi.AdExchangeBuyer.V14.Connection): Connection to server
-  - proposal_id (String.t): The proposalId to get notes for. To search across all proposals specify order_id = '-' as part of the URL.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :pqlQuery (String.t): Query string to retrieve specific notes. To search the text contents of notes, please use syntax like "WHERE note.note = "foo" or "WHERE note.note LIKE "%bar%"
+  *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V14.Connection.t`) - Connection to server
+  *   `proposal_id` (*type:* `String.t`) - The proposalId to get notes for. To search across all proposals specify order_id = '-' as part of the URL.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:pqlQuery` (*type:* `String.t`) - Query string to retrieve specific notes. To search the text contents of notes, please use syntax like "WHERE note.note = "foo" or "WHERE note.note LIKE "%bar%"
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdExchangeBuyer.V14.Model.GetOrderNotesResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdExchangeBuyer.V14.Model.GetOrderNotesResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec adexchangebuyer_marketplacenotes_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec adexchangebuyer_marketplacenotes_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V14.Model.GetOrderNotesResponse.t()}
           | {:error, Tesla.Env.t()}
   def adexchangebuyer_marketplacenotes_list(

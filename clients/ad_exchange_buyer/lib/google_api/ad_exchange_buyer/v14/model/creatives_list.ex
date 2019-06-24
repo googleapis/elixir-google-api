@@ -21,9 +21,9 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.CreativesList do
 
   ## Attributes
 
-  - items (list(GoogleApi.AdExchangeBuyer.V14.Model.Creative.t)): A list of creatives. Defaults to `nil`.
-  - kind (String.t): Resource type. Defaults to `adexchangebuyer#creativesList`.
-  - nextPageToken (String.t): Continuation token used to page through creatives. To retrieve the next page of results, set the next request's "pageToken" value to this. Defaults to `nil`.
+  *   `items` (*type:* `list(GoogleApi.AdExchangeBuyer.V14.Model.Creative.t)`, *default:* `nil`) - A list of creatives.
+  *   `kind` (*type:* `String.t`, *default:* `adexchangebuyer#creativesList`) - Resource type.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Continuation token used to page through creatives. To retrieve the next page of results, set the next request's "pageToken" value to this.
   """
 
   use GoogleApi.Gax.ModelBase

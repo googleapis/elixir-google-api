@@ -22,13 +22,13 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.DayPart do
 
   ## Attributes
 
-  - dayOfWeek (String.t): The day of the week to target. If unspecified, applicable to all days. Defaults to `nil`.
-  - endTime (GoogleApi.AdExchangeBuyer.V2beta1.Model.TimeOfDay.t): The ending time of the day for the ad to show (minute level
-  granularity). The end time is exclusive. This field is not available
-  for filtering in PQL queries. Defaults to `nil`.
-  - startTime (GoogleApi.AdExchangeBuyer.V2beta1.Model.TimeOfDay.t): The starting time of day for the ad to show (minute level granularity).
-  The start time is inclusive.
-  This field is not available for filtering in PQL queries. Defaults to `nil`.
+  *   `dayOfWeek` (*type:* `String.t`, *default:* `nil`) - The day of the week to target. If unspecified, applicable to all days.
+  *   `endTime` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.TimeOfDay.t`, *default:* `nil`) - The ending time of the day for the ad to show (minute level
+      granularity). The end time is exclusive. This field is not available
+      for filtering in PQL queries.
+  *   `startTime` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.TimeOfDay.t`, *default:* `nil`) - The starting time of day for the ad to show (minute level granularity).
+      The start time is inclusive.
+      This field is not available for filtering in PQL queries.
   """
 
   use GoogleApi.Gax.ModelBase

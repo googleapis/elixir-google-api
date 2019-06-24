@@ -21,11 +21,11 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.DealServingMetadataDealPauseStatus
 
   ## Attributes
 
-  - buyerPauseReason (String.t):  Defaults to `nil`.
-  - firstPausedBy (String.t): If the deal is paused, records which party paused the deal first. Defaults to `nil`.
-  - hasBuyerPaused (boolean()):  Defaults to `nil`.
-  - hasSellerPaused (boolean()):  Defaults to `nil`.
-  - sellerPauseReason (String.t):  Defaults to `nil`.
+  *   `buyerPauseReason` (*type:* `String.t`, *default:* `nil`) - 
+  *   `firstPausedBy` (*type:* `String.t`, *default:* `nil`) - If the deal is paused, records which party paused the deal first.
+  *   `hasBuyerPaused` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `hasSellerPaused` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `sellerPauseReason` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,14 +21,14 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ListClientUserInvitationsRespo
 
   ## Attributes
 
-  - invitations (list(GoogleApi.AdExchangeBuyer.V2beta1.Model.ClientUserInvitation.t)): The returned list of client users. Defaults to `nil`.
-  - nextPageToken (String.t): A token to retrieve the next page of results.
-  Pass this value in the
-  ListClientUserInvitationsRequest.pageToken
-  field in the subsequent call to the
-  clients.invitations.list
-  method to retrieve the next
-  page of results. Defaults to `nil`.
+  *   `invitations` (*type:* `list(GoogleApi.AdExchangeBuyer.V2beta1.Model.ClientUserInvitation.t)`, *default:* `nil`) - The returned list of client users.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results.
+      Pass this value in the
+      ListClientUserInvitationsRequest.pageToken
+      field in the subsequent call to the
+      clients.invitations.list
+      method to retrieve the next
+      page of results.
   """
 
   use GoogleApi.Gax.ModelBase

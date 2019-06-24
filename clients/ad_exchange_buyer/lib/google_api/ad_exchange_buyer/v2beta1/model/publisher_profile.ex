@@ -27,31 +27,31 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.PublisherProfile do
 
   ## Attributes
 
-  - audienceDescription (String.t): Description on the publisher's audience. Defaults to `nil`.
-  - buyerPitchStatement (String.t): Statement explaining what's unique about publisher's business, and why
-  buyers should partner with the publisher. Defaults to `nil`.
-  - directDealsContact (String.t): Contact information for direct reservation deals. This is free text entered
-  by the publisher and may include information like names, phone numbers and
-  email addresses. Defaults to `nil`.
-  - displayName (String.t): Name of the publisher profile. Defaults to `nil`.
-  - domains (list(String.t)): The list of domains represented in this publisher profile. Empty if this is
-  a parent profile. These are top private domains, meaning that these will
-  not contain a string like "photos.google.co.uk/123", but will instead
-  contain "google.co.uk". Defaults to `nil`.
-  - googlePlusUrl (String.t): URL to publisher's Google+ page. Defaults to `nil`.
-  - logoUrl (String.t): A Google public URL to the logo for this publisher profile. The logo is
-  stored as a PNG, JPG, or GIF image. Defaults to `nil`.
-  - mediaKitUrl (String.t): URL to additional marketing and sales materials. Defaults to `nil`.
-  - overview (String.t): Overview of the publisher. Defaults to `nil`.
-  - programmaticDealsContact (String.t): Contact information for programmatic deals. This is free text entered by
-  the publisher and may include information like names, phone numbers and
-  email addresses. Defaults to `nil`.
-  - publisherProfileId (String.t): Unique ID for publisher profile. Defaults to `nil`.
-  - rateCardInfoUrl (String.t): URL to a publisher rate card. Defaults to `nil`.
-  - samplePageUrl (String.t): URL to a sample content page. Defaults to `nil`.
-  - seller (GoogleApi.AdExchangeBuyer.V2beta1.Model.Seller.t): Seller of the publisher profile. Defaults to `nil`.
-  - topHeadlines (list(String.t)): Up to three key metrics and rankings. Max 100 characters each.
-  For example "#1 Mobile News Site for 20 Straight Months". Defaults to `nil`.
+  *   `audienceDescription` (*type:* `String.t`, *default:* `nil`) - Description on the publisher's audience.
+  *   `buyerPitchStatement` (*type:* `String.t`, *default:* `nil`) - Statement explaining what's unique about publisher's business, and why
+      buyers should partner with the publisher.
+  *   `directDealsContact` (*type:* `String.t`, *default:* `nil`) - Contact information for direct reservation deals. This is free text entered
+      by the publisher and may include information like names, phone numbers and
+      email addresses.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Name of the publisher profile.
+  *   `domains` (*type:* `list(String.t)`, *default:* `nil`) - The list of domains represented in this publisher profile. Empty if this is
+      a parent profile. These are top private domains, meaning that these will
+      not contain a string like "photos.google.co.uk/123", but will instead
+      contain "google.co.uk".
+  *   `googlePlusUrl` (*type:* `String.t`, *default:* `nil`) - URL to publisher's Google+ page.
+  *   `logoUrl` (*type:* `String.t`, *default:* `nil`) - A Google public URL to the logo for this publisher profile. The logo is
+      stored as a PNG, JPG, or GIF image.
+  *   `mediaKitUrl` (*type:* `String.t`, *default:* `nil`) - URL to additional marketing and sales materials.
+  *   `overview` (*type:* `String.t`, *default:* `nil`) - Overview of the publisher.
+  *   `programmaticDealsContact` (*type:* `String.t`, *default:* `nil`) - Contact information for programmatic deals. This is free text entered by
+      the publisher and may include information like names, phone numbers and
+      email addresses.
+  *   `publisherProfileId` (*type:* `String.t`, *default:* `nil`) - Unique ID for publisher profile.
+  *   `rateCardInfoUrl` (*type:* `String.t`, *default:* `nil`) - URL to a publisher rate card.
+  *   `samplePageUrl` (*type:* `String.t`, *default:* `nil`) - URL to a sample content page.
+  *   `seller` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.Seller.t`, *default:* `nil`) - Seller of the publisher profile.
+  *   `topHeadlines` (*type:* `list(String.t)`, *default:* `nil`) - Up to three key metrics and rankings. Max 100 characters each.
+      For example "#1 Mobile News Site for 20 Straight Months".
   """
 
   use GoogleApi.Gax.ModelBase

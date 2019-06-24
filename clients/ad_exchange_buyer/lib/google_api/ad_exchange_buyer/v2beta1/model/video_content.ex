@@ -21,9 +21,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.VideoContent do
 
   ## Attributes
 
-  - videoUrl (String.t): The URL to fetch a video ad. Defaults to `nil`.
-  - videoVastXml (String.t): The contents of a VAST document for a video ad.
-  This document should conform to the VAST 2.0 or 3.0 standard. Defaults to `nil`.
+  *   `videoUrl` (*type:* `String.t`, *default:* `nil`) - The URL to fetch a video ad.
+  *   `videoVastXml` (*type:* `String.t`, *default:* `nil`) - The contents of a VAST document for a video ad.
+      This document should conform to the VAST 2.0 or 3.0 standard.
   """
 
   use GoogleApi.Gax.ModelBase

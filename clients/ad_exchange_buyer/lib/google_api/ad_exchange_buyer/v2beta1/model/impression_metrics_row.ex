@@ -23,16 +23,16 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ImpressionMetricsRow do
 
   ## Attributes
 
-  - availableImpressions (GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t): The number of impressions available to the buyer on Ad Exchange.
-  In some cases this value may be unavailable. Defaults to `nil`.
-  - bidRequests (GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t): The number of impressions for which Ad Exchange sent the buyer a bid
-  request. Defaults to `nil`.
-  - inventoryMatches (GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t): The number of impressions that match the buyer's inventory pretargeting. Defaults to `nil`.
-  - responsesWithBids (GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t): The number of impressions for which Ad Exchange received a response from
-  the buyer that contained at least one applicable bid. Defaults to `nil`.
-  - rowDimensions (GoogleApi.AdExchangeBuyer.V2beta1.Model.RowDimensions.t): The values of all dimensions associated with metric values in this row. Defaults to `nil`.
-  - successfulResponses (GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t): The number of impressions for which the buyer successfully sent a response
-  to Ad Exchange. Defaults to `nil`.
+  *   `availableImpressions` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t`, *default:* `nil`) - The number of impressions available to the buyer on Ad Exchange.
+      In some cases this value may be unavailable.
+  *   `bidRequests` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t`, *default:* `nil`) - The number of impressions for which Ad Exchange sent the buyer a bid
+      request.
+  *   `inventoryMatches` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t`, *default:* `nil`) - The number of impressions that match the buyer's inventory pretargeting.
+  *   `responsesWithBids` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t`, *default:* `nil`) - The number of impressions for which Ad Exchange received a response from
+      the buyer that contained at least one applicable bid.
+  *   `rowDimensions` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.RowDimensions.t`, *default:* `nil`) - The values of all dimensions associated with metric values in this row.
+  *   `successfulResponses` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t`, *default:* `nil`) - The number of impressions for which the buyer successfully sent a response
+      to Ad Exchange.
   """
 
   use GoogleApi.Gax.ModelBase

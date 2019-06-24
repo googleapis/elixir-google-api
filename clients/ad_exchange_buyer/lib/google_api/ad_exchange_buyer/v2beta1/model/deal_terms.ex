@@ -23,19 +23,19 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.DealTerms do
 
   ## Attributes
 
-  - brandingType (String.t): Visibility of the URL in bid requests. (default: BRANDED) Defaults to `nil`.
-  - description (String.t): Publisher provided description for the terms. Defaults to `nil`.
-  - estimatedGrossSpend (GoogleApi.AdExchangeBuyer.V2beta1.Model.Price.t): Non-binding estimate of the estimated gross spend for this deal.
-  Can be set by buyer or seller. Defaults to `nil`.
-  - estimatedImpressionsPerDay (String.t): Non-binding estimate of the impressions served per day.
-  Can be set by buyer or seller. Defaults to `nil`.
-  - guaranteedFixedPriceTerms (GoogleApi.AdExchangeBuyer.V2beta1.Model.GuaranteedFixedPriceTerms.t): The terms for guaranteed fixed price deals. Defaults to `nil`.
-  - nonGuaranteedAuctionTerms (GoogleApi.AdExchangeBuyer.V2beta1.Model.NonGuaranteedAuctionTerms.t): The terms for non-guaranteed auction deals. Defaults to `nil`.
-  - nonGuaranteedFixedPriceTerms (GoogleApi.AdExchangeBuyer.V2beta1.Model.NonGuaranteedFixedPriceTerms.t): The terms for non-guaranteed fixed price deals. Defaults to `nil`.
-  - sellerTimeZone (String.t): The time zone name. For deals with Cost Per Day billing, defines the
-  time zone used to mark the boundaries of a day. It should be an
-  IANA TZ name, such as "America/Los_Angeles". For more information,
-  see https://en.wikipedia.org/wiki/List_of_tz_database_time_zones. Defaults to `nil`.
+  *   `brandingType` (*type:* `String.t`, *default:* `nil`) - Visibility of the URL in bid requests. (default: BRANDED)
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Publisher provided description for the terms.
+  *   `estimatedGrossSpend` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.Price.t`, *default:* `nil`) - Non-binding estimate of the estimated gross spend for this deal.
+      Can be set by buyer or seller.
+  *   `estimatedImpressionsPerDay` (*type:* `String.t`, *default:* `nil`) - Non-binding estimate of the impressions served per day.
+      Can be set by buyer or seller.
+  *   `guaranteedFixedPriceTerms` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.GuaranteedFixedPriceTerms.t`, *default:* `nil`) - The terms for guaranteed fixed price deals.
+  *   `nonGuaranteedAuctionTerms` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.NonGuaranteedAuctionTerms.t`, *default:* `nil`) - The terms for non-guaranteed auction deals.
+  *   `nonGuaranteedFixedPriceTerms` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.NonGuaranteedFixedPriceTerms.t`, *default:* `nil`) - The terms for non-guaranteed fixed price deals.
+  *   `sellerTimeZone` (*type:* `String.t`, *default:* `nil`) - The time zone name. For deals with Cost Per Day billing, defines the
+      time zone used to mark the boundaries of a day. It should be an
+      IANA TZ name, such as "America/Los_Angeles". For more information,
+      see https://en.wikipedia.org/wiki/List_of_tz_database_time_zones.
   """
 
   use GoogleApi.Gax.ModelBase

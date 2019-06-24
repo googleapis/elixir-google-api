@@ -24,8 +24,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.InventorySizeTargeting do
 
   ## Attributes
 
-  - excludedInventorySizes (list(GoogleApi.AdExchangeBuyer.V2beta1.Model.AdSize.t)): A list of inventory sizes to be excluded. Defaults to `nil`.
-  - targetedInventorySizes (list(GoogleApi.AdExchangeBuyer.V2beta1.Model.AdSize.t)): A list of inventory sizes to be included. Defaults to `nil`.
+  *   `excludedInventorySizes` (*type:* `list(GoogleApi.AdExchangeBuyer.V2beta1.Model.AdSize.t)`, *default:* `nil`) - A list of inventory sizes to be excluded.
+  *   `targetedInventorySizes` (*type:* `list(GoogleApi.AdExchangeBuyer.V2beta1.Model.AdSize.t)`, *default:* `nil`) - A list of inventory sizes to be included.
   """
 
   use GoogleApi.Gax.ModelBase

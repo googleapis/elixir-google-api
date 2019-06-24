@@ -21,28 +21,28 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.PerformanceReport do
 
   ## Attributes
 
-  - bidRate (float()): The number of bid responses with an ad. Defaults to `nil`.
-  - bidRequestRate (float()): The number of bid requests sent to your bidder. Defaults to `nil`.
-  - calloutStatusRate (list(any())): Rate of various prefiltering statuses per match. Please refer to the callout-status-codes.txt file for different statuses. Defaults to `nil`.
-  - cookieMatcherStatusRate (list(any())): Average QPS for cookie matcher operations. Defaults to `nil`.
-  - creativeStatusRate (list(any())): Rate of ads with a given status. Please refer to the creative-status-codes.txt file for different statuses. Defaults to `nil`.
-  - filteredBidRate (float()): The number of bid responses that were filtered due to a policy violation or other errors. Defaults to `nil`.
-  - hostedMatchStatusRate (list(any())): Average QPS for hosted match operations. Defaults to `nil`.
-  - inventoryMatchRate (float()): The number of potential queries based on your pretargeting settings. Defaults to `nil`.
-  - kind (String.t): Resource type. Defaults to `adexchangebuyer#performanceReport`.
-  - latency50thPercentile (float()): The 50th percentile round trip latency(ms) as perceived from Google servers for the duration period covered by the report. Defaults to `nil`.
-  - latency85thPercentile (float()): The 85th percentile round trip latency(ms) as perceived from Google servers for the duration period covered by the report. Defaults to `nil`.
-  - latency95thPercentile (float()): The 95th percentile round trip latency(ms) as perceived from Google servers for the duration period covered by the report. Defaults to `nil`.
-  - noQuotaInRegion (float()): Rate of various quota account statuses per quota check. Defaults to `nil`.
-  - outOfQuota (float()): Rate of various quota account statuses per quota check. Defaults to `nil`.
-  - pixelMatchRequests (float()): Average QPS for pixel match requests from clients. Defaults to `nil`.
-  - pixelMatchResponses (float()): Average QPS for pixel match responses from clients. Defaults to `nil`.
-  - quotaConfiguredLimit (float()): The configured quota limits for this account. Defaults to `nil`.
-  - quotaThrottledLimit (float()): The throttled quota limits for this account. Defaults to `nil`.
-  - region (String.t): The trading location of this data. Defaults to `nil`.
-  - successfulRequestRate (float()): The number of properly formed bid responses received by our servers within the deadline. Defaults to `nil`.
-  - timestamp (String.t): The unix timestamp of the starting time of this performance data. Defaults to `nil`.
-  - unsuccessfulRequestRate (float()): The number of bid responses that were unsuccessful due to timeouts, incorrect formatting, etc. Defaults to `nil`.
+  *   `bidRate` (*type:* `float()`, *default:* `nil`) - The number of bid responses with an ad.
+  *   `bidRequestRate` (*type:* `float()`, *default:* `nil`) - The number of bid requests sent to your bidder.
+  *   `calloutStatusRate` (*type:* `list(any())`, *default:* `nil`) - Rate of various prefiltering statuses per match. Please refer to the callout-status-codes.txt file for different statuses.
+  *   `cookieMatcherStatusRate` (*type:* `list(any())`, *default:* `nil`) - Average QPS for cookie matcher operations.
+  *   `creativeStatusRate` (*type:* `list(any())`, *default:* `nil`) - Rate of ads with a given status. Please refer to the creative-status-codes.txt file for different statuses.
+  *   `filteredBidRate` (*type:* `float()`, *default:* `nil`) - The number of bid responses that were filtered due to a policy violation or other errors.
+  *   `hostedMatchStatusRate` (*type:* `list(any())`, *default:* `nil`) - Average QPS for hosted match operations.
+  *   `inventoryMatchRate` (*type:* `float()`, *default:* `nil`) - The number of potential queries based on your pretargeting settings.
+  *   `kind` (*type:* `String.t`, *default:* `adexchangebuyer#performanceReport`) - Resource type.
+  *   `latency50thPercentile` (*type:* `float()`, *default:* `nil`) - The 50th percentile round trip latency(ms) as perceived from Google servers for the duration period covered by the report.
+  *   `latency85thPercentile` (*type:* `float()`, *default:* `nil`) - The 85th percentile round trip latency(ms) as perceived from Google servers for the duration period covered by the report.
+  *   `latency95thPercentile` (*type:* `float()`, *default:* `nil`) - The 95th percentile round trip latency(ms) as perceived from Google servers for the duration period covered by the report.
+  *   `noQuotaInRegion` (*type:* `float()`, *default:* `nil`) - Rate of various quota account statuses per quota check.
+  *   `outOfQuota` (*type:* `float()`, *default:* `nil`) - Rate of various quota account statuses per quota check.
+  *   `pixelMatchRequests` (*type:* `float()`, *default:* `nil`) - Average QPS for pixel match requests from clients.
+  *   `pixelMatchResponses` (*type:* `float()`, *default:* `nil`) - Average QPS for pixel match responses from clients.
+  *   `quotaConfiguredLimit` (*type:* `float()`, *default:* `nil`) - The configured quota limits for this account.
+  *   `quotaThrottledLimit` (*type:* `float()`, *default:* `nil`) - The throttled quota limits for this account.
+  *   `region` (*type:* `String.t`, *default:* `nil`) - The trading location of this data.
+  *   `successfulRequestRate` (*type:* `float()`, *default:* `nil`) - The number of properly formed bid responses received by our servers within the deadline.
+  *   `timestamp` (*type:* `String.t`, *default:* `nil`) - The unix timestamp of the starting time of this performance data.
+  *   `unsuccessfulRequestRate` (*type:* `float()`, *default:* `nil`) - The number of bid responses that were unsuccessful due to timeouts, incorrect formatting, etc.
   """
 
   use GoogleApi.Gax.ModelBase

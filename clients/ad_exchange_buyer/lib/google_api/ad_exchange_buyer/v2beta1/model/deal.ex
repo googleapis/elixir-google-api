@@ -23,57 +23,57 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.Deal do
 
   ## Attributes
 
-  - availableEndTime (DateTime.t): Proposed flight end time of the deal.
-  This will generally be stored in a granularity of a second.
-  A value is not required for Private Auction deals or Preferred Deals. Defaults to `nil`.
-  - availableStartTime (DateTime.t): Optional proposed flight start time of the deal.
-  This will generally be stored in the granularity of one second since deal
-  serving starts at seconds boundary. Any time specified with more
-  granularity (e.g., in milliseconds) will be truncated towards the start of
-  time in seconds. Defaults to `nil`.
-  - buyerPrivateData (GoogleApi.AdExchangeBuyer.V2beta1.Model.PrivateData.t): Buyer private data (hidden from seller). Defaults to `nil`.
-  - createProductId (String.t): The product ID from which this deal was created.
+  *   `availableEndTime` (*type:* `DateTime.t`, *default:* `nil`) - Proposed flight end time of the deal.
+      This will generally be stored in a granularity of a second.
+      A value is not required for Private Auction deals or Preferred Deals.
+  *   `availableStartTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional proposed flight start time of the deal.
+      This will generally be stored in the granularity of one second since deal
+      serving starts at seconds boundary. Any time specified with more
+      granularity (e.g., in milliseconds) will be truncated towards the start of
+      time in seconds.
+  *   `buyerPrivateData` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.PrivateData.t`, *default:* `nil`) - Buyer private data (hidden from seller).
+  *   `createProductId` (*type:* `String.t`, *default:* `nil`) - The product ID from which this deal was created.
 
-  Note: This field may be set only when creating the resource. Modifying
-  this field while updating the resource will result in an error. Defaults to `nil`.
-  - createProductRevision (String.t): Optional revision number of the product that the deal was created from.
-  If present on create, and the server `product_revision` has advanced sinced
-  the passed-in `create_product_revision`, an `ABORTED` error will be
-  returned.
+      Note: This field may be set only when creating the resource. Modifying
+      this field while updating the resource will result in an error.
+  *   `createProductRevision` (*type:* `String.t`, *default:* `nil`) - Optional revision number of the product that the deal was created from.
+      If present on create, and the server `product_revision` has advanced sinced
+      the passed-in `create_product_revision`, an `ABORTED` error will be
+      returned.
 
-  Note: This field may be set only when creating the resource. Modifying
-  this field while updating the resource will result in an error. Defaults to `nil`.
-  - createTime (DateTime.t): Output only. The time of the deal creation. Defaults to `nil`.
-  - creativePreApprovalPolicy (String.t): Output only. Specifies the creative pre-approval policy. Defaults to `nil`.
-  - creativeRestrictions (GoogleApi.AdExchangeBuyer.V2beta1.Model.CreativeRestrictions.t): Output only. Restricitions about the creatives associated with the deal
-  (i.e., size) This is available for Programmatic Guaranteed/Preferred Deals
-  in Ad Manager. Defaults to `nil`.
-  - creativeSafeFrameCompatibility (String.t): Output only. Specifies whether the creative is safeFrame compatible. Defaults to `nil`.
-  - dealId (String.t): Output only. A unique deal ID for the deal (server-assigned). Defaults to `nil`.
-  - dealServingMetadata (GoogleApi.AdExchangeBuyer.V2beta1.Model.DealServingMetadata.t): Output only. Metadata about the serving status of this deal. Defaults to `nil`.
-  - dealTerms (GoogleApi.AdExchangeBuyer.V2beta1.Model.DealTerms.t): The negotiable terms of the deal. Defaults to `nil`.
-  - deliveryControl (GoogleApi.AdExchangeBuyer.V2beta1.Model.DeliveryControl.t): The set of fields around delivery control that are interesting for a buyer
-  to see but are non-negotiable. These are set by the publisher. Defaults to `nil`.
-  - description (String.t): Description for the deal terms. Defaults to `nil`.
-  - displayName (String.t): The name of the deal. Defaults to `nil`.
-  - externalDealId (String.t): Output only. The external deal ID assigned to this deal once the deal is
-  finalized. This is the deal ID that shows up in serving/reporting etc. Defaults to `nil`.
-  - isSetupComplete (boolean()): Output only. True, if the buyside inventory setup is complete for this
-  deal. Defaults to `nil`.
-  - programmaticCreativeSource (String.t): Output only. Specifies the creative source for programmatic deals.
-  PUBLISHER means creative is provided by seller and ADVERTISER means
-  creative is provided by buyer. Defaults to `nil`.
-  - proposalId (String.t): Output only. ID of the proposal that this deal is part of. Defaults to `nil`.
-  - sellerContacts (list(GoogleApi.AdExchangeBuyer.V2beta1.Model.ContactInformation.t)): Output only. Seller contact information for the deal. Defaults to `nil`.
-  - syndicationProduct (String.t): The syndication product associated with the deal.
+      Note: This field may be set only when creating the resource. Modifying
+      this field while updating the resource will result in an error.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time of the deal creation.
+  *   `creativePreApprovalPolicy` (*type:* `String.t`, *default:* `nil`) - Output only. Specifies the creative pre-approval policy.
+  *   `creativeRestrictions` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.CreativeRestrictions.t`, *default:* `nil`) - Output only. Restricitions about the creatives associated with the deal
+      (i.e., size) This is available for Programmatic Guaranteed/Preferred Deals
+      in Ad Manager.
+  *   `creativeSafeFrameCompatibility` (*type:* `String.t`, *default:* `nil`) - Output only. Specifies whether the creative is safeFrame compatible.
+  *   `dealId` (*type:* `String.t`, *default:* `nil`) - Output only. A unique deal ID for the deal (server-assigned).
+  *   `dealServingMetadata` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.DealServingMetadata.t`, *default:* `nil`) - Output only. Metadata about the serving status of this deal.
+  *   `dealTerms` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.DealTerms.t`, *default:* `nil`) - The negotiable terms of the deal.
+  *   `deliveryControl` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.DeliveryControl.t`, *default:* `nil`) - The set of fields around delivery control that are interesting for a buyer
+      to see but are non-negotiable. These are set by the publisher.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Description for the deal terms.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The name of the deal.
+  *   `externalDealId` (*type:* `String.t`, *default:* `nil`) - Output only. The external deal ID assigned to this deal once the deal is
+      finalized. This is the deal ID that shows up in serving/reporting etc.
+  *   `isSetupComplete` (*type:* `boolean()`, *default:* `nil`) - Output only. True, if the buyside inventory setup is complete for this
+      deal.
+  *   `programmaticCreativeSource` (*type:* `String.t`, *default:* `nil`) - Output only. Specifies the creative source for programmatic deals.
+      PUBLISHER means creative is provided by seller and ADVERTISER means
+      creative is provided by buyer.
+  *   `proposalId` (*type:* `String.t`, *default:* `nil`) - Output only. ID of the proposal that this deal is part of.
+  *   `sellerContacts` (*type:* `list(GoogleApi.AdExchangeBuyer.V2beta1.Model.ContactInformation.t)`, *default:* `nil`) - Output only. Seller contact information for the deal.
+  *   `syndicationProduct` (*type:* `String.t`, *default:* `nil`) - The syndication product associated with the deal.
 
-  Note: This field may be set only when creating the resource. Modifying
-  this field while updating the resource will result in an error. Defaults to `nil`.
-  - targeting (GoogleApi.AdExchangeBuyer.V2beta1.Model.MarketplaceTargeting.t): Output only. Specifies the subset of inventory targeted by the deal. Defaults to `nil`.
-  - targetingCriterion (list(GoogleApi.AdExchangeBuyer.V2beta1.Model.TargetingCriteria.t)): The shared targeting visible to buyers and sellers. Each shared
-  targeting entity is AND'd together. Defaults to `nil`.
-  - updateTime (DateTime.t): Output only. The time when the deal was last updated. Defaults to `nil`.
-  - webPropertyCode (String.t): The web property code for the seller copied over from the product. Defaults to `nil`.
+      Note: This field may be set only when creating the resource. Modifying
+      this field while updating the resource will result in an error.
+  *   `targeting` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.MarketplaceTargeting.t`, *default:* `nil`) - Output only. Specifies the subset of inventory targeted by the deal.
+  *   `targetingCriterion` (*type:* `list(GoogleApi.AdExchangeBuyer.V2beta1.Model.TargetingCriteria.t)`, *default:* `nil`) - The shared targeting visible to buyers and sellers. Each shared
+      targeting entity is AND'd together.
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the deal was last updated.
+  *   `webPropertyCode` (*type:* `String.t`, *default:* `nil`) - The web property code for the seller copied over from the product.
   """
 
   use GoogleApi.Gax.ModelBase

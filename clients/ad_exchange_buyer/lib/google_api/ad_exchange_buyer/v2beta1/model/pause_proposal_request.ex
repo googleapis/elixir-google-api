@@ -21,9 +21,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.PauseProposalRequest do
 
   ## Attributes
 
-  - reason (String.t): The reason why the proposal is being paused.
-  This human readable message will be displayed in the seller's UI.
-  (Max length: 1000 unicode code units.) Defaults to `nil`.
+  *   `reason` (*type:* `String.t`, *default:* `nil`) - The reason why the proposal is being paused.
+      This human readable message will be displayed in the seller's UI.
+      (Max length: 1000 unicode code units.)
   """
 
   use GoogleApi.Gax.ModelBase

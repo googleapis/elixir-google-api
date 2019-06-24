@@ -22,9 +22,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.Image do
 
   ## Attributes
 
-  - height (integer()): Image height in pixels. Defaults to `nil`.
-  - url (String.t): The URL of the image. Defaults to `nil`.
-  - width (integer()): Image width in pixels. Defaults to `nil`.
+  *   `height` (*type:* `integer()`, *default:* `nil`) - Image height in pixels.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - The URL of the image.
+  *   `width` (*type:* `integer()`, *default:* `nil`) - Image width in pixels.
   """
 
   use GoogleApi.Gax.ModelBase

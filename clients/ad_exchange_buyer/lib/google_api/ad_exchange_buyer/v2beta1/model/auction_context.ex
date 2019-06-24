@@ -21,7 +21,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.AuctionContext do
 
   ## Attributes
 
-  - auctionTypes (list(String.t)): The auction types this restriction applies to. Defaults to `nil`.
+  *   `auctionTypes` (*type:* `list(String.t)`, *default:* `nil`) - The auction types this restriction applies to.
   """
 
   use GoogleApi.Gax.ModelBase

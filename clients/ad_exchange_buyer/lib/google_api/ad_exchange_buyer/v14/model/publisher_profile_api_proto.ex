@@ -21,28 +21,28 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.PublisherProfileApiProto do
 
   ## Attributes
 
-  - audience (String.t): Publisher provided info on its audience. Defaults to `nil`.
-  - buyerPitchStatement (String.t): A pitch statement for the buyer Defaults to `nil`.
-  - directContact (String.t): Direct contact for the publisher profile. Defaults to `nil`.
-  - exchange (String.t): Exchange where this publisher profile is from. E.g. AdX, Rubicon etc... Defaults to `nil`.
-  - googlePlusLink (String.t): Link to publisher's Google+ page. Defaults to `nil`.
-  - isParent (boolean()): True, if this is the parent profile, which represents all domains owned by the publisher. Defaults to `nil`.
-  - isPublished (boolean()): True, if this profile is published. Deprecated for state. Defaults to `nil`.
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "adexchangebuyer#publisherProfileApiProto". Defaults to `adexchangebuyer#publisherProfileApiProto`.
-  - logoUrl (String.t): The url to the logo for the publisher. Defaults to `nil`.
-  - mediaKitLink (String.t): The url for additional marketing and sales materials. Defaults to `nil`.
-  - name (String.t):  Defaults to `nil`.
-  - overview (String.t): Publisher provided overview. Defaults to `nil`.
-  - profileId (integer()): The pair of (seller.account_id, profile_id) uniquely identifies a publisher profile for a given publisher. Defaults to `nil`.
-  - programmaticContact (String.t): Programmatic contact for the publisher profile. Defaults to `nil`.
-  - publisherDomains (list(String.t)): The list of domains represented in this publisher profile. Empty if this is a parent profile. Defaults to `nil`.
-  - publisherProfileId (String.t): Unique Id for publisher profile. Defaults to `nil`.
-  - publisherProvidedForecast (GoogleApi.AdExchangeBuyer.V14.Model.PublisherProvidedForecast.t): Publisher provided forecasting information. Defaults to `nil`.
-  - rateCardInfoLink (String.t): Link to publisher rate card Defaults to `nil`.
-  - samplePageLink (String.t): Link for a sample content page. Defaults to `nil`.
-  - seller (GoogleApi.AdExchangeBuyer.V14.Model.Seller.t): Seller of the publisher profile. Defaults to `nil`.
-  - state (String.t): State of the publisher profile. Defaults to `nil`.
-  - topHeadlines (list(String.t)): Publisher provided key metrics and rankings. Defaults to `nil`.
+  *   `audience` (*type:* `String.t`, *default:* `nil`) - Publisher provided info on its audience.
+  *   `buyerPitchStatement` (*type:* `String.t`, *default:* `nil`) - A pitch statement for the buyer
+  *   `directContact` (*type:* `String.t`, *default:* `nil`) - Direct contact for the publisher profile.
+  *   `exchange` (*type:* `String.t`, *default:* `nil`) - Exchange where this publisher profile is from. E.g. AdX, Rubicon etc...
+  *   `googlePlusLink` (*type:* `String.t`, *default:* `nil`) - Link to publisher's Google+ page.
+  *   `isParent` (*type:* `boolean()`, *default:* `nil`) - True, if this is the parent profile, which represents all domains owned by the publisher.
+  *   `isPublished` (*type:* `boolean()`, *default:* `nil`) - True, if this profile is published. Deprecated for state.
+  *   `kind` (*type:* `String.t`, *default:* `adexchangebuyer#publisherProfileApiProto`) - Identifies what kind of resource this is. Value: the fixed string "adexchangebuyer#publisherProfileApiProto".
+  *   `logoUrl` (*type:* `String.t`, *default:* `nil`) - The url to the logo for the publisher.
+  *   `mediaKitLink` (*type:* `String.t`, *default:* `nil`) - The url for additional marketing and sales materials.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - 
+  *   `overview` (*type:* `String.t`, *default:* `nil`) - Publisher provided overview.
+  *   `profileId` (*type:* `integer()`, *default:* `nil`) - The pair of (seller.account_id, profile_id) uniquely identifies a publisher profile for a given publisher.
+  *   `programmaticContact` (*type:* `String.t`, *default:* `nil`) - Programmatic contact for the publisher profile.
+  *   `publisherDomains` (*type:* `list(String.t)`, *default:* `nil`) - The list of domains represented in this publisher profile. Empty if this is a parent profile.
+  *   `publisherProfileId` (*type:* `String.t`, *default:* `nil`) - Unique Id for publisher profile.
+  *   `publisherProvidedForecast` (*type:* `GoogleApi.AdExchangeBuyer.V14.Model.PublisherProvidedForecast.t`, *default:* `nil`) - Publisher provided forecasting information.
+  *   `rateCardInfoLink` (*type:* `String.t`, *default:* `nil`) - Link to publisher rate card
+  *   `samplePageLink` (*type:* `String.t`, *default:* `nil`) - Link for a sample content page.
+  *   `seller` (*type:* `GoogleApi.AdExchangeBuyer.V14.Model.Seller.t`, *default:* `nil`) - Seller of the publisher profile.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - State of the publisher profile.
+  *   `topHeadlines` (*type:* `list(String.t)`, *default:* `nil`) - Publisher provided key metrics and rankings.
   """
 
   use GoogleApi.Gax.ModelBase

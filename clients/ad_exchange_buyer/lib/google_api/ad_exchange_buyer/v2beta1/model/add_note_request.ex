@@ -21,7 +21,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.AddNoteRequest do
 
   ## Attributes
 
-  - note (GoogleApi.AdExchangeBuyer.V2beta1.Model.Note.t): Details of the note to add. Defaults to `nil`.
+  *   `note` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.Note.t`, *default:* `nil`) - Details of the note to add.
   """
 
   use GoogleApi.Gax.ModelBase

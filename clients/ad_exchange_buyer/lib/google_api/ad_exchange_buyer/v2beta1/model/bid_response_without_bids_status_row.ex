@@ -22,11 +22,11 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.BidResponseWithoutBidsStatusRo
 
   ## Attributes
 
-  - impressionCount (GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t): The number of impressions for which there was a bid response with the
-  specified status. Defaults to `nil`.
-  - rowDimensions (GoogleApi.AdExchangeBuyer.V2beta1.Model.RowDimensions.t): The values of all dimensions associated with metric values in this row. Defaults to `nil`.
-  - status (String.t): The status specifying why the bid responses were considered to have no
-  applicable bids. Defaults to `nil`.
+  *   `impressionCount` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t`, *default:* `nil`) - The number of impressions for which there was a bid response with the
+      specified status.
+  *   `rowDimensions` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.RowDimensions.t`, *default:* `nil`) - The values of all dimensions associated with metric values in this row.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - The status specifying why the bid responses were considered to have no
+      applicable bids.
   """
 
   use GoogleApi.Gax.ModelBase

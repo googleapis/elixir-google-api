@@ -21,31 +21,31 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceDeal do
 
   ## Attributes
 
-  - buyerPrivateData (GoogleApi.AdExchangeBuyer.V14.Model.PrivateData.t): Buyer private data (hidden from seller). Defaults to `nil`.
-  - creationTimeMs (String.t): The time (ms since epoch) of the deal creation. (readonly) Defaults to `nil`.
-  - creativePreApprovalPolicy (String.t): Specifies the creative pre-approval policy (buyer-readonly) Defaults to `nil`.
-  - creativeSafeFrameCompatibility (String.t): Specifies whether the creative is safeFrame compatible (buyer-readonly) Defaults to `nil`.
-  - dealId (String.t): A unique deal-id for the deal (readonly). Defaults to `nil`.
-  - dealServingMetadata (GoogleApi.AdExchangeBuyer.V14.Model.DealServingMetadata.t): Metadata about the serving status of this deal (readonly, writes via custom actions) Defaults to `nil`.
-  - deliveryControl (GoogleApi.AdExchangeBuyer.V14.Model.DeliveryControl.t): The set of fields around delivery control that are interesting for a buyer to see but are non-negotiable. These are set by the publisher. This message is assigned an id of 100 since some day we would want to model this as a protobuf extension. Defaults to `nil`.
-  - externalDealId (String.t): The external deal id assigned to this deal once the deal is finalized. This is the deal-id that shows up in serving/reporting etc. (readonly) Defaults to `nil`.
-  - flightEndTimeMs (String.t): Proposed flight end time of the deal (ms since epoch) This will generally be stored in a granularity of a second. (updatable) Defaults to `nil`.
-  - flightStartTimeMs (String.t): Proposed flight start time of the deal (ms since epoch) This will generally be stored in a granularity of a second. (updatable) Defaults to `nil`.
-  - inventoryDescription (String.t): Description for the deal terms. (buyer-readonly) Defaults to `nil`.
-  - isRfpTemplate (boolean()): Indicates whether the current deal is a RFP template. RFP template is created by buyer and not based on seller created products. Defaults to `nil`.
-  - isSetupComplete (boolean()): True, if the buyside inventory setup is complete for this deal. (readonly, except via OrderSetupCompleted action) Defaults to `nil`.
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "adexchangebuyer#marketplaceDeal". Defaults to `adexchangebuyer#marketplaceDeal`.
-  - lastUpdateTimeMs (String.t): The time (ms since epoch) when the deal was last updated. (readonly) Defaults to `nil`.
-  - name (String.t): The name of the deal. (updatable) Defaults to `nil`.
-  - productId (String.t): The product-id from which this deal was created. (readonly, except on create) Defaults to `nil`.
-  - productRevisionNumber (String.t): The revision number of the product that the deal was created from (readonly, except on create) Defaults to `nil`.
-  - programmaticCreativeSource (String.t): Specifies the creative source for programmatic deals, PUBLISHER means creative is provided by seller and ADVERTISR means creative is provided by buyer. (buyer-readonly) Defaults to `nil`.
-  - proposalId (String.t):  Defaults to `nil`.
-  - sellerContacts (list(GoogleApi.AdExchangeBuyer.V14.Model.ContactInformation.t)): Optional Seller contact information for the deal (buyer-readonly) Defaults to `nil`.
-  - sharedTargetings (list(GoogleApi.AdExchangeBuyer.V14.Model.SharedTargeting.t)): The shared targeting visible to buyers and sellers. Each shared targeting entity is AND'd together. (updatable) Defaults to `nil`.
-  - syndicationProduct (String.t): The syndication product associated with the deal. (readonly, except on create) Defaults to `nil`.
-  - terms (GoogleApi.AdExchangeBuyer.V14.Model.DealTerms.t): The negotiable terms of the deal. (updatable) Defaults to `nil`.
-  - webPropertyCode (String.t):  Defaults to `nil`.
+  *   `buyerPrivateData` (*type:* `GoogleApi.AdExchangeBuyer.V14.Model.PrivateData.t`, *default:* `nil`) - Buyer private data (hidden from seller).
+  *   `creationTimeMs` (*type:* `String.t`, *default:* `nil`) - The time (ms since epoch) of the deal creation. (readonly)
+  *   `creativePreApprovalPolicy` (*type:* `String.t`, *default:* `nil`) - Specifies the creative pre-approval policy (buyer-readonly)
+  *   `creativeSafeFrameCompatibility` (*type:* `String.t`, *default:* `nil`) - Specifies whether the creative is safeFrame compatible (buyer-readonly)
+  *   `dealId` (*type:* `String.t`, *default:* `nil`) - A unique deal-id for the deal (readonly).
+  *   `dealServingMetadata` (*type:* `GoogleApi.AdExchangeBuyer.V14.Model.DealServingMetadata.t`, *default:* `nil`) - Metadata about the serving status of this deal (readonly, writes via custom actions)
+  *   `deliveryControl` (*type:* `GoogleApi.AdExchangeBuyer.V14.Model.DeliveryControl.t`, *default:* `nil`) - The set of fields around delivery control that are interesting for a buyer to see but are non-negotiable. These are set by the publisher. This message is assigned an id of 100 since some day we would want to model this as a protobuf extension.
+  *   `externalDealId` (*type:* `String.t`, *default:* `nil`) - The external deal id assigned to this deal once the deal is finalized. This is the deal-id that shows up in serving/reporting etc. (readonly)
+  *   `flightEndTimeMs` (*type:* `String.t`, *default:* `nil`) - Proposed flight end time of the deal (ms since epoch) This will generally be stored in a granularity of a second. (updatable)
+  *   `flightStartTimeMs` (*type:* `String.t`, *default:* `nil`) - Proposed flight start time of the deal (ms since epoch) This will generally be stored in a granularity of a second. (updatable)
+  *   `inventoryDescription` (*type:* `String.t`, *default:* `nil`) - Description for the deal terms. (buyer-readonly)
+  *   `isRfpTemplate` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the current deal is a RFP template. RFP template is created by buyer and not based on seller created products.
+  *   `isSetupComplete` (*type:* `boolean()`, *default:* `nil`) - True, if the buyside inventory setup is complete for this deal. (readonly, except via OrderSetupCompleted action)
+  *   `kind` (*type:* `String.t`, *default:* `adexchangebuyer#marketplaceDeal`) - Identifies what kind of resource this is. Value: the fixed string "adexchangebuyer#marketplaceDeal".
+  *   `lastUpdateTimeMs` (*type:* `String.t`, *default:* `nil`) - The time (ms since epoch) when the deal was last updated. (readonly)
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the deal. (updatable)
+  *   `productId` (*type:* `String.t`, *default:* `nil`) - The product-id from which this deal was created. (readonly, except on create)
+  *   `productRevisionNumber` (*type:* `String.t`, *default:* `nil`) - The revision number of the product that the deal was created from (readonly, except on create)
+  *   `programmaticCreativeSource` (*type:* `String.t`, *default:* `nil`) - Specifies the creative source for programmatic deals, PUBLISHER means creative is provided by seller and ADVERTISR means creative is provided by buyer. (buyer-readonly)
+  *   `proposalId` (*type:* `String.t`, *default:* `nil`) - 
+  *   `sellerContacts` (*type:* `list(GoogleApi.AdExchangeBuyer.V14.Model.ContactInformation.t)`, *default:* `nil`) - Optional Seller contact information for the deal (buyer-readonly)
+  *   `sharedTargetings` (*type:* `list(GoogleApi.AdExchangeBuyer.V14.Model.SharedTargeting.t)`, *default:* `nil`) - The shared targeting visible to buyers and sellers. Each shared targeting entity is AND'd together. (updatable)
+  *   `syndicationProduct` (*type:* `String.t`, *default:* `nil`) - The syndication product associated with the deal. (readonly, except on create)
+  *   `terms` (*type:* `GoogleApi.AdExchangeBuyer.V14.Model.DealTerms.t`, *default:* `nil`) - The negotiable terms of the deal. (updatable)
+  *   `webPropertyCode` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,8 +21,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueDayPartTargeting do
 
   ## Attributes
 
-  - dayParts (list(GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueDayPartTargetingDayPart.t)):  Defaults to `nil`.
-  - timeZoneType (String.t):  Defaults to `nil`.
+  *   `dayParts` (*type:* `list(GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueDayPartTargetingDayPart.t)`, *default:* `nil`) - 
+  *   `timeZoneType` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

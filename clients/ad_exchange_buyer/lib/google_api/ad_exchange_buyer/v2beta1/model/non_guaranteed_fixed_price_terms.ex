@@ -22,7 +22,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.NonGuaranteedFixedPriceTerms d
 
   ## Attributes
 
-  - fixedPrices (list(GoogleApi.AdExchangeBuyer.V2beta1.Model.PricePerBuyer.t)): Fixed price for the specified buyer. Defaults to `nil`.
+  *   `fixedPrices` (*type:* `list(GoogleApi.AdExchangeBuyer.V2beta1.Model.PricePerBuyer.t)`, *default:* `nil`) - Fixed price for the specified buyer.
   """
 
   use GoogleApi.Gax.ModelBase

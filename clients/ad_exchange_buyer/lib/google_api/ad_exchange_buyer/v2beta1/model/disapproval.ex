@@ -21,8 +21,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.Disapproval do
 
   ## Attributes
 
-  - details (list(String.t)): Additional details about the reason for disapproval. Defaults to `nil`.
-  - reason (String.t): The categorized reason for disapproval. Defaults to `nil`.
+  *   `details` (*type:* `list(String.t)`, *default:* `nil`) - Additional details about the reason for disapproval.
+  *   `reason` (*type:* `String.t`, *default:* `nil`) - The categorized reason for disapproval.
   """
 
   use GoogleApi.Gax.ModelBase

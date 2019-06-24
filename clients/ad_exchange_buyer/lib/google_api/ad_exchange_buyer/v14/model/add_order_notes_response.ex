@@ -21,7 +21,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.AddOrderNotesResponse do
 
   ## Attributes
 
-  - notes (list(GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceNote.t)):  Defaults to `nil`.
+  *   `notes` (*type:* `list(GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceNote.t)`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

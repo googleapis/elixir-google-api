@@ -21,9 +21,9 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.DimensionDimensionValue do
 
   ## Attributes
 
-  - id (integer()): Id of the dimension. Defaults to `nil`.
-  - name (String.t): Name of the dimension mainly for debugging purposes, except for the case of CREATIVE_SIZE. For CREATIVE_SIZE, strings are used instead of ids. Defaults to `nil`.
-  - percentage (integer()): Percent of total impressions for a dimension type. e.g. {dimension_type: 'GENDER', [{dimension_value: {id: 1, name: 'MALE', percentage: 60}}]} Gender MALE is 60% of all impressions which have gender. Defaults to `nil`.
+  *   `id` (*type:* `integer()`, *default:* `nil`) - Id of the dimension.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the dimension mainly for debugging purposes, except for the case of CREATIVE_SIZE. For CREATIVE_SIZE, strings are used instead of ids.
+  *   `percentage` (*type:* `integer()`, *default:* `nil`) - Percent of total impressions for a dimension type. e.g. {dimension_type: 'GENDER', [{dimension_value: {id: 1, name: 'MALE', percentage: 60}}]} Gender MALE is 60% of all impressions which have gender.
   """
 
   use GoogleApi.Gax.ModelBase

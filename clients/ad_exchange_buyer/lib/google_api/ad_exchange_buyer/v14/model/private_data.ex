@@ -21,8 +21,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.PrivateData do
 
   ## Attributes
 
-  - referenceId (String.t):  Defaults to `nil`.
-  - referencePayload (String.t):  Defaults to `nil`.
+  *   `referenceId` (*type:* `String.t`, *default:* `nil`) - 
+  *   `referencePayload` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

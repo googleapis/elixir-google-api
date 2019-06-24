@@ -28,23 +28,24 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Accounts do
 
   ## Parameters
 
-  - connection (GoogleApi.AdExchangeBuyer.V14.Connection): Connection to server
-  - id (integer()): The account id
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V14.Connection.t`) - Connection to server
+  *   `id` (*type:* `integer()`) - The account id
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdExchangeBuyer.V14.Model.Account{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdExchangeBuyer.V14.Model.Account{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec adexchangebuyer_accounts_get(Tesla.Env.client(), integer(), keyword()) ::
+  @spec adexchangebuyer_accounts_get(Tesla.Env.client(), integer(), keyword(), keyword()) ::
           {:ok, GoogleApi.AdExchangeBuyer.V14.Model.Account.t()} | {:error, Tesla.Env.t()}
   def adexchangebuyer_accounts_get(connection, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -75,22 +76,23 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Accounts do
 
   ## Parameters
 
-  - connection (GoogleApi.AdExchangeBuyer.V14.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V14.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdExchangeBuyer.V14.Model.AccountsList{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdExchangeBuyer.V14.Model.AccountsList{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec adexchangebuyer_accounts_list(Tesla.Env.client(), keyword()) ::
+  @spec adexchangebuyer_accounts_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.AdExchangeBuyer.V14.Model.AccountsList.t()} | {:error, Tesla.Env.t()}
   def adexchangebuyer_accounts_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -119,25 +121,26 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Accounts do
 
   ## Parameters
 
-  - connection (GoogleApi.AdExchangeBuyer.V14.Connection): Connection to server
-  - id (integer()): The account id
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :confirmUnsafeAccountChange (boolean()): Confirmation for erasing bidder and cookie matching urls.
-    - :body (GoogleApi.AdExchangeBuyer.V14.Model.Account.t): 
+  *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V14.Connection.t`) - Connection to server
+  *   `id` (*type:* `integer()`) - The account id
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:confirmUnsafeAccountChange` (*type:* `boolean()`) - Confirmation for erasing bidder and cookie matching urls.
+      *   `:body` (*type:* `GoogleApi.AdExchangeBuyer.V14.Model.Account.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdExchangeBuyer.V14.Model.Account{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdExchangeBuyer.V14.Model.Account{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec adexchangebuyer_accounts_patch(Tesla.Env.client(), integer(), keyword()) ::
+  @spec adexchangebuyer_accounts_patch(Tesla.Env.client(), integer(), keyword(), keyword()) ::
           {:ok, GoogleApi.AdExchangeBuyer.V14.Model.Account.t()} | {:error, Tesla.Env.t()}
   def adexchangebuyer_accounts_patch(connection, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -170,25 +173,26 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Accounts do
 
   ## Parameters
 
-  - connection (GoogleApi.AdExchangeBuyer.V14.Connection): Connection to server
-  - id (integer()): The account id
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :confirmUnsafeAccountChange (boolean()): Confirmation for erasing bidder and cookie matching urls.
-    - :body (GoogleApi.AdExchangeBuyer.V14.Model.Account.t): 
+  *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V14.Connection.t`) - Connection to server
+  *   `id` (*type:* `integer()`) - The account id
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:confirmUnsafeAccountChange` (*type:* `boolean()`) - Confirmation for erasing bidder and cookie matching urls.
+      *   `:body` (*type:* `GoogleApi.AdExchangeBuyer.V14.Model.Account.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdExchangeBuyer.V14.Model.Account{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdExchangeBuyer.V14.Model.Account{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec adexchangebuyer_accounts_update(Tesla.Env.client(), integer(), keyword()) ::
+  @spec adexchangebuyer_accounts_update(Tesla.Env.client(), integer(), keyword(), keyword()) ::
           {:ok, GoogleApi.AdExchangeBuyer.V14.Model.Account.t()} | {:error, Tesla.Env.t()}
   def adexchangebuyer_accounts_update(connection, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

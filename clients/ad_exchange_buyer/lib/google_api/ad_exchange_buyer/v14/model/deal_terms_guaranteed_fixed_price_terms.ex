@@ -21,11 +21,11 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.DealTermsGuaranteedFixedPriceTerms
 
   ## Attributes
 
-  - billingInfo (GoogleApi.AdExchangeBuyer.V14.Model.DealTermsGuaranteedFixedPriceTermsBillingInfo.t): External billing info for this Deal. This field is relevant when external billing info such as price has a different currency code than DFP/AdX. Defaults to `nil`.
-  - fixedPrices (list(GoogleApi.AdExchangeBuyer.V14.Model.PricePerBuyer.t)): Fixed price for the specified buyer. Defaults to `nil`.
-  - guaranteedImpressions (String.t): Guaranteed impressions as a percentage. This is the percentage of guaranteed looks that the buyer is guaranteeing to buy. Defaults to `nil`.
-  - guaranteedLooks (String.t): Count of guaranteed looks. Required for deal, optional for product. For CPD deals, buyer changes to guaranteed_looks will be ignored. Defaults to `nil`.
-  - minimumDailyLooks (String.t): Count of minimum daily looks for a CPD deal. For CPD deals, buyer should negotiate on this field instead of guaranteed_looks. Defaults to `nil`.
+  *   `billingInfo` (*type:* `GoogleApi.AdExchangeBuyer.V14.Model.DealTermsGuaranteedFixedPriceTermsBillingInfo.t`, *default:* `nil`) - External billing info for this Deal. This field is relevant when external billing info such as price has a different currency code than DFP/AdX.
+  *   `fixedPrices` (*type:* `list(GoogleApi.AdExchangeBuyer.V14.Model.PricePerBuyer.t)`, *default:* `nil`) - Fixed price for the specified buyer.
+  *   `guaranteedImpressions` (*type:* `String.t`, *default:* `nil`) - Guaranteed impressions as a percentage. This is the percentage of guaranteed looks that the buyer is guaranteeing to buy.
+  *   `guaranteedLooks` (*type:* `String.t`, *default:* `nil`) - Count of guaranteed looks. Required for deal, optional for product. For CPD deals, buyer changes to guaranteed_looks will be ignored.
+  *   `minimumDailyLooks` (*type:* `String.t`, *default:* `nil`) - Count of minimum daily looks for a CPD deal. For CPD deals, buyer should negotiate on this field instead of guaranteed_looks.
   """
 
   use GoogleApi.Gax.ModelBase

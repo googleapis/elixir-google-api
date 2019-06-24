@@ -21,8 +21,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ListProductsResponse do
 
   ## Attributes
 
-  - nextPageToken (String.t): List pagination support. Defaults to `nil`.
-  - products (list(GoogleApi.AdExchangeBuyer.V2beta1.Model.Product.t)): The list of matching products at their head revision number. Defaults to `nil`.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - List pagination support.
+  *   `products` (*type:* `list(GoogleApi.AdExchangeBuyer.V2beta1.Model.Product.t)`, *default:* `nil`) - The list of matching products at their head revision number.
   """
 
   use GoogleApi.Gax.ModelBase

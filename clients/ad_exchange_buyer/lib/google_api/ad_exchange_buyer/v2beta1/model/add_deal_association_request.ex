@@ -21,7 +21,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.AddDealAssociationRequest do
 
   ## Attributes
 
-  - association (GoogleApi.AdExchangeBuyer.V2beta1.Model.CreativeDealAssociation.t): The association between a creative and a deal that should be added. Defaults to `nil`.
+  *   `association` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.CreativeDealAssociation.t`, *default:* `nil`) - The association between a creative and a deal that should be added.
   """
 
   use GoogleApi.Gax.ModelBase

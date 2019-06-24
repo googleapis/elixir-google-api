@@ -20,6 +20,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Connection do
   Handle Tesla connections for GoogleApi.AdExchangeBuyer.V14.
   """
 
+  @type t :: Tesla.Env.client()
+
   use GoogleApi.Gax.Connection,
     scopes: [
       # Manage your Ad Exchange buyer account configuration

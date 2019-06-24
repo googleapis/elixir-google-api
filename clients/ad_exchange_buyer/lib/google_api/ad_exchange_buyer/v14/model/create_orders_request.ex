@@ -21,8 +21,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.CreateOrdersRequest do
 
   ## Attributes
 
-  - proposals (list(GoogleApi.AdExchangeBuyer.V14.Model.Proposal.t)): The list of proposals to create. Defaults to `nil`.
-  - webPropertyCode (String.t): Web property id of the seller creating these orders Defaults to `nil`.
+  *   `proposals` (*type:* `list(GoogleApi.AdExchangeBuyer.V14.Model.Proposal.t)`, *default:* `nil`) - The list of proposals to create.
+  *   `webPropertyCode` (*type:* `String.t`, *default:* `nil`) - Web property id of the seller creating these orders
   """
 
   use GoogleApi.Gax.ModelBase

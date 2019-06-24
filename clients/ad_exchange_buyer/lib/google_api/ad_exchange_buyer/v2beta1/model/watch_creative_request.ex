@@ -21,11 +21,11 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.WatchCreativeRequest do
 
   ## Attributes
 
-  - topic (String.t): The Pub/Sub topic to publish notifications to.
-  This topic must already exist and must give permission to
-  ad-exchange-buyside-reports@google.com to write to the topic.
-  This should be the full resource name in
-  "projects/{project_id}/topics/{topic_id}" format. Defaults to `nil`.
+  *   `topic` (*type:* `String.t`, *default:* `nil`) - The Pub/Sub topic to publish notifications to.
+      This topic must already exist and must give permission to
+      ad-exchange-buyside-reports@google.com to write to the topic.
+      This should be the full resource name in
+      "projects/{project_id}/topics/{topic_id}" format.
   """
 
   use GoogleApi.Gax.ModelBase

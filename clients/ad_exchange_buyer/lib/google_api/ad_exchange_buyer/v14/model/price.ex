@@ -21,10 +21,10 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.Price do
 
   ## Attributes
 
-  - amountMicros (float()): The price value in micros. Defaults to `nil`.
-  - currencyCode (String.t): The currency code for the price. Defaults to `nil`.
-  - expectedCpmMicros (float()): In case of CPD deals, the expected CPM in micros. Defaults to `nil`.
-  - pricingType (String.t): The pricing type for the deal/product. Defaults to `nil`.
+  *   `amountMicros` (*type:* `float()`, *default:* `nil`) - The price value in micros.
+  *   `currencyCode` (*type:* `String.t`, *default:* `nil`) - The currency code for the price.
+  *   `expectedCpmMicros` (*type:* `float()`, *default:* `nil`) - In case of CPD deals, the expected CPM in micros.
+  *   `pricingType` (*type:* `String.t`, *default:* `nil`) - The pricing type for the deal/product.
   """
 
   use GoogleApi.Gax.ModelBase

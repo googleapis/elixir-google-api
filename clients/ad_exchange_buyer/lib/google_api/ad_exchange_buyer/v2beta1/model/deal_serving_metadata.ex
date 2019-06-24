@@ -21,7 +21,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.DealServingMetadata do
 
   ## Attributes
 
-  - dealPauseStatus (GoogleApi.AdExchangeBuyer.V2beta1.Model.DealPauseStatus.t): Output only. Tracks which parties (if any) have paused a deal. Defaults to `nil`.
+  *   `dealPauseStatus` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.DealPauseStatus.t`, *default:* `nil`) - Output only. Tracks which parties (if any) have paused a deal.
   """
 
   use GoogleApi.Gax.ModelBase

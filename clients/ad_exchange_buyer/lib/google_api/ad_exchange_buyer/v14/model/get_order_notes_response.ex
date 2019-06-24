@@ -21,7 +21,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.GetOrderNotesResponse do
 
   ## Attributes
 
-  - notes (list(GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceNote.t)): The list of matching notes. The notes for a proposal are ordered from oldest to newest. If the notes span multiple proposals, they will be grouped by proposal, with the notes for the most recently modified proposal appearing first. Defaults to `nil`.
+  *   `notes` (*type:* `list(GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceNote.t)`, *default:* `nil`) - The list of matching notes. The notes for a proposal are ordered from oldest to newest. If the notes span multiple proposals, they will be grouped by proposal, with the notes for the most recently modified proposal appearing first.
   """
 
   use GoogleApi.Gax.ModelBase

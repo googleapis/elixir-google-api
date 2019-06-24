@@ -21,8 +21,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ListPublisherProfilesResponse 
 
   ## Attributes
 
-  - nextPageToken (String.t): List pagination support Defaults to `nil`.
-  - publisherProfiles (list(GoogleApi.AdExchangeBuyer.V2beta1.Model.PublisherProfile.t)): The list of matching publisher profiles. Defaults to `nil`.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - List pagination support
+  *   `publisherProfiles` (*type:* `list(GoogleApi.AdExchangeBuyer.V2beta1.Model.PublisherProfile.t)`, *default:* `nil`) - The list of matching publisher profiles.
   """
 
   use GoogleApi.Gax.ModelBase

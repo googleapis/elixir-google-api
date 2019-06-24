@@ -21,8 +21,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.EditAllOrderDealsResponse do
 
   ## Attributes
 
-  - deals (list(GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceDeal.t)): List of all deals in the proposal after edit. Defaults to `nil`.
-  - orderRevisionNumber (String.t): The latest revision number after the update has been applied. Defaults to `nil`.
+  *   `deals` (*type:* `list(GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceDeal.t)`, *default:* `nil`) - List of all deals in the proposal after edit.
+  *   `orderRevisionNumber` (*type:* `String.t`, *default:* `nil`) - The latest revision number after the update has been applied.
   """
 
   use GoogleApi.Gax.ModelBase

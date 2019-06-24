@@ -21,12 +21,12 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ListDealAssociationsResponse d
 
   ## Attributes
 
-  - associations (list(GoogleApi.AdExchangeBuyer.V2beta1.Model.CreativeDealAssociation.t)): The list of associations. Defaults to `nil`.
-  - nextPageToken (String.t): A token to retrieve the next page of results.
-  Pass this value in the
-  ListDealAssociationsRequest.page_token
-  field in the subsequent call to 'ListDealAssociation' method to retrieve
-  the next page of results. Defaults to `nil`.
+  *   `associations` (*type:* `list(GoogleApi.AdExchangeBuyer.V2beta1.Model.CreativeDealAssociation.t)`, *default:* `nil`) - The list of associations.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results.
+      Pass this value in the
+      ListDealAssociationsRequest.page_token
+      field in the subsequent call to 'ListDealAssociation' method to retrieve
+      the next page of results.
   """
 
   use GoogleApi.Gax.ModelBase

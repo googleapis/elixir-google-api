@@ -21,8 +21,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ListProposalsResponse do
 
   ## Attributes
 
-  - nextPageToken (String.t): Continuation token for fetching the next page of results. Defaults to `nil`.
-  - proposals (list(GoogleApi.AdExchangeBuyer.V2beta1.Model.Proposal.t)): The list of proposals. Defaults to `nil`.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Continuation token for fetching the next page of results.
+  *   `proposals` (*type:* `list(GoogleApi.AdExchangeBuyer.V2beta1.Model.Proposal.t)`, *default:* `nil`) - The list of proposals.
   """
 
   use GoogleApi.Gax.ModelBase

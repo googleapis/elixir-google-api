@@ -21,16 +21,16 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.DealTerms do
 
   ## Attributes
 
-  - brandingType (String.t): Visibilty of the URL in bid requests. Defaults to `nil`.
-  - crossListedExternalDealIdType (String.t): Indicates that this ExternalDealId exists under at least two different AdxInventoryDeals. Currently, the only case that the same ExternalDealId will exist is programmatic cross sell case. Defaults to `nil`.
-  - description (String.t): Description for the proposed terms of the deal. Defaults to `nil`.
-  - estimatedGrossSpend (GoogleApi.AdExchangeBuyer.V14.Model.Price.t): Non-binding estimate of the estimated gross spend for this deal Can be set by buyer or seller. Defaults to `nil`.
-  - estimatedImpressionsPerDay (String.t): Non-binding estimate of the impressions served per day Can be set by buyer or seller. Defaults to `nil`.
-  - guaranteedFixedPriceTerms (GoogleApi.AdExchangeBuyer.V14.Model.DealTermsGuaranteedFixedPriceTerms.t): The terms for guaranteed fixed price deals. Defaults to `nil`.
-  - nonGuaranteedAuctionTerms (GoogleApi.AdExchangeBuyer.V14.Model.DealTermsNonGuaranteedAuctionTerms.t): The terms for non-guaranteed auction deals. Defaults to `nil`.
-  - nonGuaranteedFixedPriceTerms (GoogleApi.AdExchangeBuyer.V14.Model.DealTermsNonGuaranteedFixedPriceTerms.t): The terms for non-guaranteed fixed price deals. Defaults to `nil`.
-  - rubiconNonGuaranteedTerms (GoogleApi.AdExchangeBuyer.V14.Model.DealTermsRubiconNonGuaranteedTerms.t): The terms for rubicon non-guaranteed deals. Defaults to `nil`.
-  - sellerTimeZone (String.t): For deals with Cost Per Day billing, defines the timezone used to mark the boundaries of a day (buyer-readonly) Defaults to `nil`.
+  *   `brandingType` (*type:* `String.t`, *default:* `nil`) - Visibilty of the URL in bid requests.
+  *   `crossListedExternalDealIdType` (*type:* `String.t`, *default:* `nil`) - Indicates that this ExternalDealId exists under at least two different AdxInventoryDeals. Currently, the only case that the same ExternalDealId will exist is programmatic cross sell case.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Description for the proposed terms of the deal.
+  *   `estimatedGrossSpend` (*type:* `GoogleApi.AdExchangeBuyer.V14.Model.Price.t`, *default:* `nil`) - Non-binding estimate of the estimated gross spend for this deal Can be set by buyer or seller.
+  *   `estimatedImpressionsPerDay` (*type:* `String.t`, *default:* `nil`) - Non-binding estimate of the impressions served per day Can be set by buyer or seller.
+  *   `guaranteedFixedPriceTerms` (*type:* `GoogleApi.AdExchangeBuyer.V14.Model.DealTermsGuaranteedFixedPriceTerms.t`, *default:* `nil`) - The terms for guaranteed fixed price deals.
+  *   `nonGuaranteedAuctionTerms` (*type:* `GoogleApi.AdExchangeBuyer.V14.Model.DealTermsNonGuaranteedAuctionTerms.t`, *default:* `nil`) - The terms for non-guaranteed auction deals.
+  *   `nonGuaranteedFixedPriceTerms` (*type:* `GoogleApi.AdExchangeBuyer.V14.Model.DealTermsNonGuaranteedFixedPriceTerms.t`, *default:* `nil`) - The terms for non-guaranteed fixed price deals.
+  *   `rubiconNonGuaranteedTerms` (*type:* `GoogleApi.AdExchangeBuyer.V14.Model.DealTermsRubiconNonGuaranteedTerms.t`, *default:* `nil`) - The terms for rubicon non-guaranteed deals.
+  *   `sellerTimeZone` (*type:* `String.t`, *default:* `nil`) - For deals with Cost Per Day billing, defines the timezone used to mark the boundaries of a day (buyer-readonly)
   """
 
   use GoogleApi.Gax.ModelBase

@@ -23,7 +23,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.RealtimeTimeRange do
 
   ## Attributes
 
-  - startTimestamp (DateTime.t): The start timestamp of the real-time RTB metrics aggregation. Defaults to `nil`.
+  *   `startTimestamp` (*type:* `DateTime.t`, *default:* `nil`) - The start timestamp of the real-time RTB metrics aggregation.
   """
 
   use GoogleApi.Gax.ModelBase

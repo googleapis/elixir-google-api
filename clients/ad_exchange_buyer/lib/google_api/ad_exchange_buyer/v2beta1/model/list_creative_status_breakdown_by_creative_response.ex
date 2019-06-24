@@ -22,13 +22,13 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ListCreativeStatusBreakdownByC
 
   ## Attributes
 
-  - filteredBidCreativeRows (list(GoogleApi.AdExchangeBuyer.V2beta1.Model.FilteredBidCreativeRow.t)): List of rows, with counts of bids with a given creative status aggregated
-  by creative. Defaults to `nil`.
-  - nextPageToken (String.t): A token to retrieve the next page of results.
-  Pass this value in the
-  ListCreativeStatusBreakdownByCreativeRequest.pageToken
-  field in the subsequent call to the filteredBids.creatives.list
-  method to retrieve the next page of results. Defaults to `nil`.
+  *   `filteredBidCreativeRows` (*type:* `list(GoogleApi.AdExchangeBuyer.V2beta1.Model.FilteredBidCreativeRow.t)`, *default:* `nil`) - List of rows, with counts of bids with a given creative status aggregated
+      by creative.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results.
+      Pass this value in the
+      ListCreativeStatusBreakdownByCreativeRequest.pageToken
+      field in the subsequent call to the filteredBids.creatives.list
+      method to retrieve the next page of results.
   """
 
   use GoogleApi.Gax.ModelBase

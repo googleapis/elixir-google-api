@@ -21,8 +21,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.Price do
 
   ## Attributes
 
-  - amount (GoogleApi.AdExchangeBuyer.V2beta1.Model.Money.t): The actual price with currency specified. Defaults to `nil`.
-  - pricingType (String.t): The pricing type for the deal/product. (default: CPM) Defaults to `nil`.
+  *   `amount` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.Money.t`, *default:* `nil`) - The actual price with currency specified.
+  *   `pricingType` (*type:* `String.t`, *default:* `nil`) - The pricing type for the deal/product. (default: CPM)
   """
 
   use GoogleApi.Gax.ModelBase

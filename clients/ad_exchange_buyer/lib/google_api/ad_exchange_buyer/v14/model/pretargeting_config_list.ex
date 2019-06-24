@@ -21,8 +21,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfigList do
 
   ## Attributes
 
-  - items (list(GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfig.t)): A list of pretargeting configs Defaults to `nil`.
-  - kind (String.t): Resource type. Defaults to `adexchangebuyer#pretargetingConfigList`.
+  *   `items` (*type:* `list(GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfig.t)`, *default:* `nil`) - A list of pretargeting configs
+  *   `kind` (*type:* `String.t`, *default:* `adexchangebuyer#pretargetingConfigList`) - Resource type.
   """
 
   use GoogleApi.Gax.ModelBase

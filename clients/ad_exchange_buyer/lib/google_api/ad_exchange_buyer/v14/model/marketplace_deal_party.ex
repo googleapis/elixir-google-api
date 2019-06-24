@@ -21,8 +21,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceDealParty do
 
   ## Attributes
 
-  - buyer (GoogleApi.AdExchangeBuyer.V14.Model.Buyer.t): The buyer/seller associated with the deal. One of buyer/seller is specified for a deal-party. Defaults to `nil`.
-  - seller (GoogleApi.AdExchangeBuyer.V14.Model.Seller.t): The buyer/seller associated with the deal. One of buyer/seller is specified for a deal party. Defaults to `nil`.
+  *   `buyer` (*type:* `GoogleApi.AdExchangeBuyer.V14.Model.Buyer.t`, *default:* `nil`) - The buyer/seller associated with the deal. One of buyer/seller is specified for a deal-party.
+  *   `seller` (*type:* `GoogleApi.AdExchangeBuyer.V14.Model.Seller.t`, *default:* `nil`) - The buyer/seller associated with the deal. One of buyer/seller is specified for a deal party.
   """
 
   use GoogleApi.Gax.ModelBase

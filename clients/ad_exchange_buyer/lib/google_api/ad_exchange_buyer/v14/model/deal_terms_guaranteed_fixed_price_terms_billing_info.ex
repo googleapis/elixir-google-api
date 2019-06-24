@@ -21,10 +21,10 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.DealTermsGuaranteedFixedPriceTerms
 
   ## Attributes
 
-  - currencyConversionTimeMs (String.t): The timestamp (in ms since epoch) when the original reservation price for the deal was first converted to DFP currency. This is used to convert the contracted price into buyer's currency without discrepancy. Defaults to `nil`.
-  - dfpLineItemId (String.t): The DFP line item id associated with this deal. For features like CPD, buyers can retrieve the DFP line item for billing reconciliation. Defaults to `nil`.
-  - originalContractedQuantity (String.t): The original contracted quantity (# impressions) for this deal. To ensure delivery, sometimes the publisher will book the deal with a impression buffer, such that guaranteed_looks is greater than the contracted quantity. However clients are billed using the original contracted quantity. Defaults to `nil`.
-  - price (GoogleApi.AdExchangeBuyer.V14.Model.Price.t): The original reservation price for the deal, if the currency code is different from the one used in negotiation. Defaults to `nil`.
+  *   `currencyConversionTimeMs` (*type:* `String.t`, *default:* `nil`) - The timestamp (in ms since epoch) when the original reservation price for the deal was first converted to DFP currency. This is used to convert the contracted price into buyer's currency without discrepancy.
+  *   `dfpLineItemId` (*type:* `String.t`, *default:* `nil`) - The DFP line item id associated with this deal. For features like CPD, buyers can retrieve the DFP line item for billing reconciliation.
+  *   `originalContractedQuantity` (*type:* `String.t`, *default:* `nil`) - The original contracted quantity (# impressions) for this deal. To ensure delivery, sometimes the publisher will book the deal with a impression buffer, such that guaranteed_looks is greater than the contracted quantity. However clients are billed using the original contracted quantity.
+  *   `price` (*type:* `GoogleApi.AdExchangeBuyer.V14.Model.Price.t`, *default:* `nil`) - The original reservation price for the deal, if the currency code is different from the one used in negotiation.
   """
 
   use GoogleApi.Gax.ModelBase

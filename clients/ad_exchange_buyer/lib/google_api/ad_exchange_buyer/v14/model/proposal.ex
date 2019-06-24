@@ -23,29 +23,29 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.Proposal do
 
   ## Attributes
 
-  - billedBuyer (GoogleApi.AdExchangeBuyer.V14.Model.Buyer.t): Reference to the buyer that will get billed for this proposal. (readonly) Defaults to `nil`.
-  - buyer (GoogleApi.AdExchangeBuyer.V14.Model.Buyer.t): Reference to the buyer on the proposal. (readonly, except on create) Defaults to `nil`.
-  - buyerContacts (list(GoogleApi.AdExchangeBuyer.V14.Model.ContactInformation.t)): Optional contact information of the buyer. (seller-readonly) Defaults to `nil`.
-  - buyerPrivateData (GoogleApi.AdExchangeBuyer.V14.Model.PrivateData.t): Private data for buyer. (hidden from seller). Defaults to `nil`.
-  - dbmAdvertiserIds (list(String.t)): IDs of DBM advertisers permission to this proposal. Defaults to `nil`.
-  - hasBuyerSignedOff (boolean()): When an proposal is in an accepted state, indicates whether the buyer has signed off. Once both sides have signed off on a deal, the proposal can be finalized by the seller. (seller-readonly) Defaults to `nil`.
-  - hasSellerSignedOff (boolean()): When an proposal is in an accepted state, indicates whether the buyer has signed off Once both sides have signed off on a deal, the proposal can be finalized by the seller. (buyer-readonly) Defaults to `nil`.
-  - inventorySource (String.t): What exchange will provide this inventory (readonly, except on create). Defaults to `nil`.
-  - isRenegotiating (boolean()): True if the proposal is being renegotiated (readonly). Defaults to `nil`.
-  - isSetupComplete (boolean()): True, if the buyside inventory setup is complete for this proposal. (readonly, except via OrderSetupCompleted action) Deprecated in favor of deal level setup complete flag. Defaults to `nil`.
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "adexchangebuyer#proposal". Defaults to `adexchangebuyer#proposal`.
-  - labels (list(GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceLabel.t)): List of labels associated with the proposal. (readonly) Defaults to `nil`.
-  - lastUpdaterOrCommentorRole (String.t): The role of the last user that either updated the proposal or left a comment. (readonly) Defaults to `nil`.
-  - name (String.t): The name for the proposal (updatable) Defaults to `nil`.
-  - negotiationId (String.t): Optional negotiation id if this proposal is a preferred deal proposal. Defaults to `nil`.
-  - originatorRole (String.t): Indicates whether the buyer/seller created the proposal.(readonly) Defaults to `nil`.
-  - privateAuctionId (String.t): Optional private auction id if this proposal is a private auction proposal. Defaults to `nil`.
-  - proposalId (String.t): The unique id of the proposal. (readonly). Defaults to `nil`.
-  - proposalState (String.t): The current state of the proposal. (readonly) Defaults to `nil`.
-  - revisionNumber (String.t): The revision number for the proposal (readonly). Defaults to `nil`.
-  - revisionTimeMs (String.t): The time (ms since epoch) when the proposal was last revised (readonly). Defaults to `nil`.
-  - seller (GoogleApi.AdExchangeBuyer.V14.Model.Seller.t): Reference to the seller on the proposal. (readonly, except on create) Defaults to `nil`.
-  - sellerContacts (list(GoogleApi.AdExchangeBuyer.V14.Model.ContactInformation.t)): Optional contact information of the seller (buyer-readonly). Defaults to `nil`.
+  *   `billedBuyer` (*type:* `GoogleApi.AdExchangeBuyer.V14.Model.Buyer.t`, *default:* `nil`) - Reference to the buyer that will get billed for this proposal. (readonly)
+  *   `buyer` (*type:* `GoogleApi.AdExchangeBuyer.V14.Model.Buyer.t`, *default:* `nil`) - Reference to the buyer on the proposal. (readonly, except on create)
+  *   `buyerContacts` (*type:* `list(GoogleApi.AdExchangeBuyer.V14.Model.ContactInformation.t)`, *default:* `nil`) - Optional contact information of the buyer. (seller-readonly)
+  *   `buyerPrivateData` (*type:* `GoogleApi.AdExchangeBuyer.V14.Model.PrivateData.t`, *default:* `nil`) - Private data for buyer. (hidden from seller).
+  *   `dbmAdvertiserIds` (*type:* `list(String.t)`, *default:* `nil`) - IDs of DBM advertisers permission to this proposal.
+  *   `hasBuyerSignedOff` (*type:* `boolean()`, *default:* `nil`) - When an proposal is in an accepted state, indicates whether the buyer has signed off. Once both sides have signed off on a deal, the proposal can be finalized by the seller. (seller-readonly)
+  *   `hasSellerSignedOff` (*type:* `boolean()`, *default:* `nil`) - When an proposal is in an accepted state, indicates whether the buyer has signed off Once both sides have signed off on a deal, the proposal can be finalized by the seller. (buyer-readonly)
+  *   `inventorySource` (*type:* `String.t`, *default:* `nil`) - What exchange will provide this inventory (readonly, except on create).
+  *   `isRenegotiating` (*type:* `boolean()`, *default:* `nil`) - True if the proposal is being renegotiated (readonly).
+  *   `isSetupComplete` (*type:* `boolean()`, *default:* `nil`) - True, if the buyside inventory setup is complete for this proposal. (readonly, except via OrderSetupCompleted action) Deprecated in favor of deal level setup complete flag.
+  *   `kind` (*type:* `String.t`, *default:* `adexchangebuyer#proposal`) - Identifies what kind of resource this is. Value: the fixed string "adexchangebuyer#proposal".
+  *   `labels` (*type:* `list(GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceLabel.t)`, *default:* `nil`) - List of labels associated with the proposal. (readonly)
+  *   `lastUpdaterOrCommentorRole` (*type:* `String.t`, *default:* `nil`) - The role of the last user that either updated the proposal or left a comment. (readonly)
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name for the proposal (updatable)
+  *   `negotiationId` (*type:* `String.t`, *default:* `nil`) - Optional negotiation id if this proposal is a preferred deal proposal.
+  *   `originatorRole` (*type:* `String.t`, *default:* `nil`) - Indicates whether the buyer/seller created the proposal.(readonly)
+  *   `privateAuctionId` (*type:* `String.t`, *default:* `nil`) - Optional private auction id if this proposal is a private auction proposal.
+  *   `proposalId` (*type:* `String.t`, *default:* `nil`) - The unique id of the proposal. (readonly).
+  *   `proposalState` (*type:* `String.t`, *default:* `nil`) - The current state of the proposal. (readonly)
+  *   `revisionNumber` (*type:* `String.t`, *default:* `nil`) - The revision number for the proposal (readonly).
+  *   `revisionTimeMs` (*type:* `String.t`, *default:* `nil`) - The time (ms since epoch) when the proposal was last revised (readonly).
+  *   `seller` (*type:* `GoogleApi.AdExchangeBuyer.V14.Model.Seller.t`, *default:* `nil`) - Reference to the seller on the proposal. (readonly, except on create)
+  *   `sellerContacts` (*type:* `list(GoogleApi.AdExchangeBuyer.V14.Model.ContactInformation.t)`, *default:* `nil`) - Optional contact information of the seller (buyer-readonly).
   """
 
   use GoogleApi.Gax.ModelBase

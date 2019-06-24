@@ -22,8 +22,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.CreativeSpecification do
 
   ## Attributes
 
-  - creativeCompanionSizes (list(GoogleApi.AdExchangeBuyer.V2beta1.Model.AdSize.t)): Companion sizes may be filled in only when this is a video creative. Defaults to `nil`.
-  - creativeSize (GoogleApi.AdExchangeBuyer.V2beta1.Model.AdSize.t): The size of the creative. Defaults to `nil`.
+  *   `creativeCompanionSizes` (*type:* `list(GoogleApi.AdExchangeBuyer.V2beta1.Model.AdSize.t)`, *default:* `nil`) - Companion sizes may be filled in only when this is a video creative.
+  *   `creativeSize` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.AdSize.t`, *default:* `nil`) - The size of the creative.
   """
 
   use GoogleApi.Gax.ModelBase

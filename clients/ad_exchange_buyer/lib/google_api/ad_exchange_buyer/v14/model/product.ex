@@ -23,33 +23,33 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.Product do
 
   ## Attributes
 
-  - billedBuyer (GoogleApi.AdExchangeBuyer.V14.Model.Buyer.t): The billed buyer corresponding to the buyer that created the offer. (readonly, except on create) Defaults to `nil`.
-  - buyer (GoogleApi.AdExchangeBuyer.V14.Model.Buyer.t): The buyer that created the offer if this is a buyer initiated offer (readonly, except on create) Defaults to `nil`.
-  - creationTimeMs (String.t): Creation time in ms. since epoch (readonly) Defaults to `nil`.
-  - creatorContacts (list(GoogleApi.AdExchangeBuyer.V14.Model.ContactInformation.t)): Optional contact information for the creator of this product. (buyer-readonly) Defaults to `nil`.
-  - creatorRole (String.t): The role that created the offer. Set to BUYER for buyer initiated offers. Defaults to `nil`.
-  - deliveryControl (GoogleApi.AdExchangeBuyer.V14.Model.DeliveryControl.t): The set of fields around delivery control that are interesting for a buyer to see but are non-negotiable. These are set by the publisher. This message is assigned an id of 100 since some day we would want to model this as a protobuf extension. Defaults to `nil`.
-  - flightEndTimeMs (String.t): The proposed end time for the deal (ms since epoch) (buyer-readonly) Defaults to `nil`.
-  - flightStartTimeMs (String.t): Inventory availability dates. (times are in ms since epoch) The granularity is generally in the order of seconds. (buyer-readonly) Defaults to `nil`.
-  - hasCreatorSignedOff (boolean()): If the creator has already signed off on the product, then the buyer can finalize the deal by accepting the product as is. When copying to a proposal, if any of the terms are changed, then auto_finalize is automatically set to false. Defaults to `nil`.
-  - inventorySource (String.t): What exchange will provide this inventory (readonly, except on create). Defaults to `nil`.
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "adexchangebuyer#product". Defaults to `adexchangebuyer#product`.
-  - labels (list(GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceLabel.t)): Optional List of labels for the product (optional, buyer-readonly). Defaults to `nil`.
-  - lastUpdateTimeMs (String.t): Time of last update in ms. since epoch (readonly) Defaults to `nil`.
-  - legacyOfferId (String.t): Optional legacy offer id if this offer is a preferred deal offer. Defaults to `nil`.
-  - marketplacePublisherProfileId (String.t): Marketplace publisher profile Id. This Id differs from the regular publisher_profile_id in that 1. This is a new id, the old Id will be deprecated in 2017. 2. This id uniquely identifies a publisher profile by itself. Defaults to `nil`.
-  - name (String.t): The name for this product as set by the seller. (buyer-readonly) Defaults to `nil`.
-  - privateAuctionId (String.t): Optional private auction id if this offer is a private auction offer. Defaults to `nil`.
-  - productId (String.t): The unique id for the product (readonly) Defaults to `nil`.
-  - publisherProfileId (String.t): Id of the publisher profile for a given seller. A (seller.account_id, publisher_profile_id) pair uniquely identifies a publisher profile. Buyers can call the PublisherProfiles::List endpoint to get a list of publisher profiles for a given seller. Defaults to `nil`.
-  - publisherProvidedForecast (GoogleApi.AdExchangeBuyer.V14.Model.PublisherProvidedForecast.t): Publisher self-provided forecast information. Defaults to `nil`.
-  - revisionNumber (String.t): The revision number of the product. (readonly) Defaults to `nil`.
-  - seller (GoogleApi.AdExchangeBuyer.V14.Model.Seller.t): Information about the seller that created this product (readonly, except on create) Defaults to `nil`.
-  - sharedTargetings (list(GoogleApi.AdExchangeBuyer.V14.Model.SharedTargeting.t)): Targeting that is shared between the buyer and the seller. Each targeting criteria has a specified key and for each key there is a list of inclusion value or exclusion values. (buyer-readonly) Defaults to `nil`.
-  - state (String.t): The state of the product. (buyer-readonly) Defaults to `nil`.
-  - syndicationProduct (String.t): The syndication product associated with the deal. (readonly, except on create) Defaults to `nil`.
-  - terms (GoogleApi.AdExchangeBuyer.V14.Model.DealTerms.t): The negotiable terms of the deal (buyer-readonly) Defaults to `nil`.
-  - webPropertyCode (String.t): The web property code for the seller. This field is meant to be copied over as is when creating deals. Defaults to `nil`.
+  *   `billedBuyer` (*type:* `GoogleApi.AdExchangeBuyer.V14.Model.Buyer.t`, *default:* `nil`) - The billed buyer corresponding to the buyer that created the offer. (readonly, except on create)
+  *   `buyer` (*type:* `GoogleApi.AdExchangeBuyer.V14.Model.Buyer.t`, *default:* `nil`) - The buyer that created the offer if this is a buyer initiated offer (readonly, except on create)
+  *   `creationTimeMs` (*type:* `String.t`, *default:* `nil`) - Creation time in ms. since epoch (readonly)
+  *   `creatorContacts` (*type:* `list(GoogleApi.AdExchangeBuyer.V14.Model.ContactInformation.t)`, *default:* `nil`) - Optional contact information for the creator of this product. (buyer-readonly)
+  *   `creatorRole` (*type:* `String.t`, *default:* `nil`) - The role that created the offer. Set to BUYER for buyer initiated offers.
+  *   `deliveryControl` (*type:* `GoogleApi.AdExchangeBuyer.V14.Model.DeliveryControl.t`, *default:* `nil`) - The set of fields around delivery control that are interesting for a buyer to see but are non-negotiable. These are set by the publisher. This message is assigned an id of 100 since some day we would want to model this as a protobuf extension.
+  *   `flightEndTimeMs` (*type:* `String.t`, *default:* `nil`) - The proposed end time for the deal (ms since epoch) (buyer-readonly)
+  *   `flightStartTimeMs` (*type:* `String.t`, *default:* `nil`) - Inventory availability dates. (times are in ms since epoch) The granularity is generally in the order of seconds. (buyer-readonly)
+  *   `hasCreatorSignedOff` (*type:* `boolean()`, *default:* `nil`) - If the creator has already signed off on the product, then the buyer can finalize the deal by accepting the product as is. When copying to a proposal, if any of the terms are changed, then auto_finalize is automatically set to false.
+  *   `inventorySource` (*type:* `String.t`, *default:* `nil`) - What exchange will provide this inventory (readonly, except on create).
+  *   `kind` (*type:* `String.t`, *default:* `adexchangebuyer#product`) - Identifies what kind of resource this is. Value: the fixed string "adexchangebuyer#product".
+  *   `labels` (*type:* `list(GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceLabel.t)`, *default:* `nil`) - Optional List of labels for the product (optional, buyer-readonly).
+  *   `lastUpdateTimeMs` (*type:* `String.t`, *default:* `nil`) - Time of last update in ms. since epoch (readonly)
+  *   `legacyOfferId` (*type:* `String.t`, *default:* `nil`) - Optional legacy offer id if this offer is a preferred deal offer.
+  *   `marketplacePublisherProfileId` (*type:* `String.t`, *default:* `nil`) - Marketplace publisher profile Id. This Id differs from the regular publisher_profile_id in that 1. This is a new id, the old Id will be deprecated in 2017. 2. This id uniquely identifies a publisher profile by itself.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name for this product as set by the seller. (buyer-readonly)
+  *   `privateAuctionId` (*type:* `String.t`, *default:* `nil`) - Optional private auction id if this offer is a private auction offer.
+  *   `productId` (*type:* `String.t`, *default:* `nil`) - The unique id for the product (readonly)
+  *   `publisherProfileId` (*type:* `String.t`, *default:* `nil`) - Id of the publisher profile for a given seller. A (seller.account_id, publisher_profile_id) pair uniquely identifies a publisher profile. Buyers can call the PublisherProfiles::List endpoint to get a list of publisher profiles for a given seller.
+  *   `publisherProvidedForecast` (*type:* `GoogleApi.AdExchangeBuyer.V14.Model.PublisherProvidedForecast.t`, *default:* `nil`) - Publisher self-provided forecast information.
+  *   `revisionNumber` (*type:* `String.t`, *default:* `nil`) - The revision number of the product. (readonly)
+  *   `seller` (*type:* `GoogleApi.AdExchangeBuyer.V14.Model.Seller.t`, *default:* `nil`) - Information about the seller that created this product (readonly, except on create)
+  *   `sharedTargetings` (*type:* `list(GoogleApi.AdExchangeBuyer.V14.Model.SharedTargeting.t)`, *default:* `nil`) - Targeting that is shared between the buyer and the seller. Each targeting criteria has a specified key and for each key there is a list of inclusion value or exclusion values. (buyer-readonly)
+  *   `state` (*type:* `String.t`, *default:* `nil`) - The state of the product. (buyer-readonly)
+  *   `syndicationProduct` (*type:* `String.t`, *default:* `nil`) - The syndication product associated with the deal. (readonly, except on create)
+  *   `terms` (*type:* `GoogleApi.AdExchangeBuyer.V14.Model.DealTerms.t`, *default:* `nil`) - The negotiable terms of the deal (buyer-readonly)
+  *   `webPropertyCode` (*type:* `String.t`, *default:* `nil`) - The web property code for the seller. This field is meant to be copied over as is when creating deals.
   """
 
   use GoogleApi.Gax.ModelBase

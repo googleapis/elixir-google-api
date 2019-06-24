@@ -21,12 +21,12 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueCreativeSize do
 
   ## Attributes
 
-  - allowedFormats (list(String.t)): The formats allowed by the publisher. Defaults to `nil`.
-  - companionSizes (list(GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueSize.t)): For video size type, the list of companion sizes. Defaults to `nil`.
-  - creativeSizeType (String.t): The Creative size type. Defaults to `nil`.
-  - nativeTemplate (String.t): The native template for native ad. Defaults to `nil`.
-  - size (GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueSize.t): For regular or video creative size type, specifies the size of the creative. Defaults to `nil`.
-  - skippableAdType (String.t): The skippable ad type for video size. Defaults to `nil`.
+  *   `allowedFormats` (*type:* `list(String.t)`, *default:* `nil`) - The formats allowed by the publisher.
+  *   `companionSizes` (*type:* `list(GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueSize.t)`, *default:* `nil`) - For video size type, the list of companion sizes.
+  *   `creativeSizeType` (*type:* `String.t`, *default:* `nil`) - The Creative size type.
+  *   `nativeTemplate` (*type:* `String.t`, *default:* `nil`) - The native template for native ad.
+  *   `size` (*type:* `GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueSize.t`, *default:* `nil`) - For regular or video creative size type, specifies the size of the creative.
+  *   `skippableAdType` (*type:* `String.t`, *default:* `nil`) - The skippable ad type for video size.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,8 +21,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.DayPartTargeting do
 
   ## Attributes
 
-  - dayParts (list(GoogleApi.AdExchangeBuyer.V2beta1.Model.DayPart.t)): A list of day part targeting criterion. Defaults to `nil`.
-  - timeZoneType (String.t): The timezone to use for interpreting the day part targeting. Defaults to `nil`.
+  *   `dayParts` (*type:* `list(GoogleApi.AdExchangeBuyer.V2beta1.Model.DayPart.t)`, *default:* `nil`) - A list of day part targeting criterion.
+  *   `timeZoneType` (*type:* `String.t`, *default:* `nil`) - The timezone to use for interpreting the day part targeting.
   """
 
   use GoogleApi.Gax.ModelBase

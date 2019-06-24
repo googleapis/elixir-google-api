@@ -21,20 +21,19 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.CreativeNativeAd do
 
   ## Attributes
 
-  - advertiser (String.t):  Defaults to `nil`.
-  - appIcon (GoogleApi.AdExchangeBuyer.V14.Model.CreativeNativeAdAppIcon.t): The app icon, for app download ads. Defaults to `nil`.
-  - body (String.t): A long description of the ad. Defaults to `nil`.
-  - callToAction (String.t): A label for the button that the user is supposed to click. Defaults to `nil`.
-  - clickLinkUrl (String.t): The URL that the browser/SDK will load when the user clicks the ad. Defaults to `nil`.
-  - clickTrackingUrl (String.t): The URL to use for click tracking. Defaults to `nil`.
-  - headline (String.t): A short title for the ad. Defaults to `nil`.
-  - image (GoogleApi.AdExchangeBuyer.V14.Model.CreativeNativeAdImage.t): A large image. Defaults to `nil`.
-  - impressionTrackingUrl (list(String.t)): The URLs are called when the impression is rendered. Defaults to `nil`.
-  - logo (GoogleApi.AdExchangeBuyer.V14.Model.CreativeNativeAdLogo.t): A smaller image, for the advertiser logo. Defaults to `nil`.
-  - price (String.t): The price of the promoted app including the currency info. Defaults to `nil`.
-  - starRating (float()): The app rating in the app store. Must be in the range [0-5]. Defaults to `nil`.
-  - store (String.t): The URL to the app store to purchase/download the promoted app. Defaults to `nil`.
-  - videoURL (String.t): The URL of the XML VAST for a native ad. Note this is a separate field from resource.video_url. Defaults to `nil`.
+  *   `advertiser` (*type:* `String.t`, *default:* `nil`) - 
+  *   `appIcon` (*type:* `GoogleApi.AdExchangeBuyer.V14.Model.CreativeNativeAdAppIcon.t`, *default:* `nil`) - The app icon, for app download ads.
+  *   `body` (*type:* `String.t`, *default:* `nil`) - A long description of the ad.
+  *   `callToAction` (*type:* `String.t`, *default:* `nil`) - A label for the button that the user is supposed to click.
+  *   `clickLinkUrl` (*type:* `String.t`, *default:* `nil`) - The URL that the browser/SDK will load when the user clicks the ad.
+  *   `clickTrackingUrl` (*type:* `String.t`, *default:* `nil`) - The URL to use for click tracking.
+  *   `headline` (*type:* `String.t`, *default:* `nil`) - A short title for the ad.
+  *   `image` (*type:* `GoogleApi.AdExchangeBuyer.V14.Model.CreativeNativeAdImage.t`, *default:* `nil`) - A large image.
+  *   `impressionTrackingUrl` (*type:* `list(String.t)`, *default:* `nil`) - The URLs are called when the impression is rendered.
+  *   `logo` (*type:* `GoogleApi.AdExchangeBuyer.V14.Model.CreativeNativeAdLogo.t`, *default:* `nil`) - A smaller image, for the advertiser logo.
+  *   `price` (*type:* `String.t`, *default:* `nil`) - The price of the promoted app including the currency info.
+  *   `starRating` (*type:* `float()`, *default:* `nil`) - The app rating in the app store. Must be in the range [0-5].
+  *   `videoURL` (*type:* `String.t`, *default:* `nil`) - The URL of the XML VAST for a native ad. Note this is a separate field from resource.video_url.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -52,7 +51,6 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.CreativeNativeAd do
           :logo => GoogleApi.AdExchangeBuyer.V14.Model.CreativeNativeAdLogo.t(),
           :price => String.t(),
           :starRating => float(),
-          :store => String.t(),
           :videoURL => String.t()
         }
 
@@ -68,7 +66,6 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.CreativeNativeAd do
   field(:logo, as: GoogleApi.AdExchangeBuyer.V14.Model.CreativeNativeAdLogo)
   field(:price)
   field(:starRating)
-  field(:store)
   field(:videoURL)
 end
 

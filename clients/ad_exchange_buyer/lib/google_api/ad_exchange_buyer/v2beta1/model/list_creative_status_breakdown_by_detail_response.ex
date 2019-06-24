@@ -22,14 +22,14 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ListCreativeStatusBreakdownByD
 
   ## Attributes
 
-  - detailType (String.t): The type of detail that the detail IDs represent. Defaults to `nil`.
-  - filteredBidDetailRows (list(GoogleApi.AdExchangeBuyer.V2beta1.Model.FilteredBidDetailRow.t)): List of rows, with counts of bids with a given creative status aggregated
-  by detail. Defaults to `nil`.
-  - nextPageToken (String.t): A token to retrieve the next page of results.
-  Pass this value in the
-  ListCreativeStatusBreakdownByDetailRequest.pageToken
-  field in the subsequent call to the filteredBids.details.list
-  method to retrieve the next page of results. Defaults to `nil`.
+  *   `detailType` (*type:* `String.t`, *default:* `nil`) - The type of detail that the detail IDs represent.
+  *   `filteredBidDetailRows` (*type:* `list(GoogleApi.AdExchangeBuyer.V2beta1.Model.FilteredBidDetailRow.t)`, *default:* `nil`) - List of rows, with counts of bids with a given creative status aggregated
+      by detail.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results.
+      Pass this value in the
+      ListCreativeStatusBreakdownByDetailRequest.pageToken
+      field in the subsequent call to the filteredBids.details.list
+      method to retrieve the next page of results.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,7 +21,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.AddOrderNotesRequest do
 
   ## Attributes
 
-  - notes (list(GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceNote.t)): The list of notes to add. Defaults to `nil`.
+  *   `notes` (*type:* `list(GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceNote.t)`, *default:* `nil`) - The list of notes to add.
   """
 
   use GoogleApi.Gax.ModelBase

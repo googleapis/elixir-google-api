@@ -28,25 +28,31 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Budget do
 
   ## Parameters
 
-  - connection (GoogleApi.AdExchangeBuyer.V14.Connection): Connection to server
-  - account_id (String.t): The account id to get the budget information for.
-  - billing_id (String.t): The billing id to get the budget information for.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V14.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - The account id to get the budget information for.
+  *   `billing_id` (*type:* `String.t`) - The billing id to get the budget information for.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdExchangeBuyer.V14.Model.Budget{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdExchangeBuyer.V14.Model.Budget{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec adexchangebuyer_budget_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.AdExchangeBuyer.V14.Model.Budget.t()} | {:error, Tesla.Env.t()}
+  @spec adexchangebuyer_budget_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.AdExchangeBuyer.V14.Model.Budget.t()} | {:error, Tesla.Env.t()}
   def adexchangebuyer_budget_get(
         connection,
         account_id,
@@ -83,26 +89,32 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Budget do
 
   ## Parameters
 
-  - connection (GoogleApi.AdExchangeBuyer.V14.Connection): Connection to server
-  - account_id (String.t): The account id associated with the budget being updated.
-  - billing_id (String.t): The billing id associated with the budget being updated.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.AdExchangeBuyer.V14.Model.Budget.t): 
+  *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V14.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - The account id associated with the budget being updated.
+  *   `billing_id` (*type:* `String.t`) - The billing id associated with the budget being updated.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.AdExchangeBuyer.V14.Model.Budget.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdExchangeBuyer.V14.Model.Budget{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdExchangeBuyer.V14.Model.Budget{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec adexchangebuyer_budget_patch(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.AdExchangeBuyer.V14.Model.Budget.t()} | {:error, Tesla.Env.t()}
+  @spec adexchangebuyer_budget_patch(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.AdExchangeBuyer.V14.Model.Budget.t()} | {:error, Tesla.Env.t()}
   def adexchangebuyer_budget_patch(
         connection,
         account_id,
@@ -140,26 +152,32 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Budget do
 
   ## Parameters
 
-  - connection (GoogleApi.AdExchangeBuyer.V14.Connection): Connection to server
-  - account_id (String.t): The account id associated with the budget being updated.
-  - billing_id (String.t): The billing id associated with the budget being updated.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.AdExchangeBuyer.V14.Model.Budget.t): 
+  *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V14.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - The account id associated with the budget being updated.
+  *   `billing_id` (*type:* `String.t`) - The billing id associated with the budget being updated.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.AdExchangeBuyer.V14.Model.Budget.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdExchangeBuyer.V14.Model.Budget{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdExchangeBuyer.V14.Model.Budget{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec adexchangebuyer_budget_update(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.AdExchangeBuyer.V14.Model.Budget.t()} | {:error, Tesla.Env.t()}
+  @spec adexchangebuyer_budget_update(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.AdExchangeBuyer.V14.Model.Budget.t()} | {:error, Tesla.Env.t()}
   def adexchangebuyer_budget_update(
         connection,
         account_id,

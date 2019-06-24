@@ -21,19 +21,19 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.CreativeSize do
 
   ## Attributes
 
-  - allowedFormats (list(String.t)): What formats are allowed by the publisher.
-  If this repeated field is empty then all formats are allowed.
-  For example, if this field contains AllowedFormatType.AUDIO then the
-  publisher only allows an audio ad (without any video). Defaults to `nil`.
-  - companionSizes (list(GoogleApi.AdExchangeBuyer.V2beta1.Model.Size.t)): For video creatives specifies the sizes of companion ads (if present).
-  Companion sizes may be filled in only when creative_size_type = VIDEO Defaults to `nil`.
-  - creativeSizeType (String.t): The creative size type. Defaults to `nil`.
-  - nativeTemplate (String.t): Output only. The native template for this creative. It will have a value
-  only if creative_size_type = CreativeSizeType.NATIVE. Defaults to `nil`.
-  - size (GoogleApi.AdExchangeBuyer.V2beta1.Model.Size.t): For regular or video creative size type, specifies the size
-  of the creative Defaults to `nil`.
-  - skippableAdType (String.t): The type of skippable ad for this creative. It will have a value only if
-  creative_size_type = CreativeSizeType.VIDEO. Defaults to `nil`.
+  *   `allowedFormats` (*type:* `list(String.t)`, *default:* `nil`) - What formats are allowed by the publisher.
+      If this repeated field is empty then all formats are allowed.
+      For example, if this field contains AllowedFormatType.AUDIO then the
+      publisher only allows an audio ad (without any video).
+  *   `companionSizes` (*type:* `list(GoogleApi.AdExchangeBuyer.V2beta1.Model.Size.t)`, *default:* `nil`) - For video creatives specifies the sizes of companion ads (if present).
+      Companion sizes may be filled in only when creative_size_type = VIDEO
+  *   `creativeSizeType` (*type:* `String.t`, *default:* `nil`) - The creative size type.
+  *   `nativeTemplate` (*type:* `String.t`, *default:* `nil`) - Output only. The native template for this creative. It will have a value
+      only if creative_size_type = CreativeSizeType.NATIVE.
+  *   `size` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.Size.t`, *default:* `nil`) - For regular or video creative size type, specifies the size
+      of the creative
+  *   `skippableAdType` (*type:* `String.t`, *default:* `nil`) - The type of skippable ad for this creative. It will have a value only if
+      creative_size_type = CreativeSizeType.VIDEO.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -22,8 +22,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.CriteriaTargeting do
 
   ## Attributes
 
-  - excludedCriteriaIds (list(String.t)): A list of numeric IDs to be excluded. Defaults to `nil`.
-  - targetedCriteriaIds (list(String.t)): A list of numeric IDs to be included. Defaults to `nil`.
+  *   `excludedCriteriaIds` (*type:* `list(String.t)`, *default:* `nil`) - A list of numeric IDs to be excluded.
+  *   `targetedCriteriaIds` (*type:* `list(String.t)`, *default:* `nil`) - A list of numeric IDs to be included.
   """
 
   use GoogleApi.Gax.ModelBase

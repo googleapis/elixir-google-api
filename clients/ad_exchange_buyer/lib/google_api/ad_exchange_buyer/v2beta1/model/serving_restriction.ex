@@ -24,22 +24,22 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ServingRestriction do
 
   ## Attributes
 
-  - contexts (list(GoogleApi.AdExchangeBuyer.V2beta1.Model.ServingContext.t)): The contexts for the restriction. Defaults to `nil`.
-  - disapproval (GoogleApi.AdExchangeBuyer.V2beta1.Model.Disapproval.t): Disapproval bound to this restriction.
-  Only present if status=DISAPPROVED.
-  Can be used to filter the response of the
-  creatives.list
-  method. Defaults to `nil`.
-  - disapprovalReasons (list(GoogleApi.AdExchangeBuyer.V2beta1.Model.Disapproval.t)): Any disapprovals bound to this restriction.
-  Only present if status=DISAPPROVED.
-  Can be used to filter the response of the
-  creatives.list
-  method.
-  Deprecated; please use
-  disapproval
-  field instead. Defaults to `nil`.
-  - status (String.t): The status of the creative in this context (for example, it has been
-  explicitly disapproved or is pending review). Defaults to `nil`.
+  *   `contexts` (*type:* `list(GoogleApi.AdExchangeBuyer.V2beta1.Model.ServingContext.t)`, *default:* `nil`) - The contexts for the restriction.
+  *   `disapproval` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.Disapproval.t`, *default:* `nil`) - Disapproval bound to this restriction.
+      Only present if status=DISAPPROVED.
+      Can be used to filter the response of the
+      creatives.list
+      method.
+  *   `disapprovalReasons` (*type:* `list(GoogleApi.AdExchangeBuyer.V2beta1.Model.Disapproval.t)`, *default:* `nil`) - Any disapprovals bound to this restriction.
+      Only present if status=DISAPPROVED.
+      Can be used to filter the response of the
+      creatives.list
+      method.
+      Deprecated; please use
+      disapproval
+      field instead.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - The status of the creative in this context (for example, it has been
+      explicitly disapproved or is pending review).
   """
 
   use GoogleApi.Gax.ModelBase

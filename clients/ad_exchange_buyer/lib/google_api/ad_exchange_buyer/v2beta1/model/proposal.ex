@@ -31,40 +31,40 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.Proposal do
 
   ## Attributes
 
-  - billedBuyer (GoogleApi.AdExchangeBuyer.V2beta1.Model.Buyer.t): Output only. Reference to the buyer that will get billed for this proposal. Defaults to `nil`.
-  - buyer (GoogleApi.AdExchangeBuyer.V2beta1.Model.Buyer.t): Reference to the buyer on the proposal.
+  *   `billedBuyer` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.Buyer.t`, *default:* `nil`) - Output only. Reference to the buyer that will get billed for this proposal.
+  *   `buyer` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.Buyer.t`, *default:* `nil`) - Reference to the buyer on the proposal.
 
-  Note: This field may be set only when creating the resource. Modifying
-  this field while updating the resource will result in an error. Defaults to `nil`.
-  - buyerContacts (list(GoogleApi.AdExchangeBuyer.V2beta1.Model.ContactInformation.t)): Contact information for the buyer. Defaults to `nil`.
-  - buyerPrivateData (GoogleApi.AdExchangeBuyer.V2beta1.Model.PrivateData.t): Private data for buyer. (hidden from seller). Defaults to `nil`.
-  - deals (list(GoogleApi.AdExchangeBuyer.V2beta1.Model.Deal.t)): The deals associated with this proposal. For Private Auction proposals
-  (whose deals have NonGuaranteedAuctionTerms), there will only be one deal. Defaults to `nil`.
-  - displayName (String.t): The name for the proposal. Defaults to `nil`.
-  - isRenegotiating (boolean()): Output only. True if the proposal is being renegotiated. Defaults to `nil`.
-  - isSetupComplete (boolean()): Output only. True, if the buyside inventory setup is complete for this
-  proposal. Defaults to `nil`.
-  - lastUpdaterOrCommentorRole (String.t): Output only. The role of the last user that either updated the proposal or
-  left a comment. Defaults to `nil`.
-  - notes (list(GoogleApi.AdExchangeBuyer.V2beta1.Model.Note.t)): Output only. The notes associated with this proposal. Defaults to `nil`.
-  - originatorRole (String.t): Output only. Indicates whether the buyer/seller created the proposal. Defaults to `nil`.
-  - privateAuctionId (String.t): Output only. Private auction ID if this proposal is a private auction
-  proposal. Defaults to `nil`.
-  - proposalId (String.t): Output only. The unique ID of the proposal. Defaults to `nil`.
-  - proposalRevision (String.t): Output only. The revision number for the proposal.
-  Each update to the proposal or the deal causes the proposal revision number
-  to auto-increment. The buyer keeps track of the last revision number they
-  know of and pass it in when making an update. If the head revision number
-  on the server has since incremented, then an ABORTED error is returned
-  during the update operation to let the buyer know that a subsequent update
-  was made. Defaults to `nil`.
-  - proposalState (String.t): Output only. The current state of the proposal. Defaults to `nil`.
-  - seller (GoogleApi.AdExchangeBuyer.V2beta1.Model.Seller.t): Reference to the seller on the proposal.
+      Note: This field may be set only when creating the resource. Modifying
+      this field while updating the resource will result in an error.
+  *   `buyerContacts` (*type:* `list(GoogleApi.AdExchangeBuyer.V2beta1.Model.ContactInformation.t)`, *default:* `nil`) - Contact information for the buyer.
+  *   `buyerPrivateData` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.PrivateData.t`, *default:* `nil`) - Private data for buyer. (hidden from seller).
+  *   `deals` (*type:* `list(GoogleApi.AdExchangeBuyer.V2beta1.Model.Deal.t)`, *default:* `nil`) - The deals associated with this proposal. For Private Auction proposals
+      (whose deals have NonGuaranteedAuctionTerms), there will only be one deal.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The name for the proposal.
+  *   `isRenegotiating` (*type:* `boolean()`, *default:* `nil`) - Output only. True if the proposal is being renegotiated.
+  *   `isSetupComplete` (*type:* `boolean()`, *default:* `nil`) - Output only. True, if the buyside inventory setup is complete for this
+      proposal.
+  *   `lastUpdaterOrCommentorRole` (*type:* `String.t`, *default:* `nil`) - Output only. The role of the last user that either updated the proposal or
+      left a comment.
+  *   `notes` (*type:* `list(GoogleApi.AdExchangeBuyer.V2beta1.Model.Note.t)`, *default:* `nil`) - Output only. The notes associated with this proposal.
+  *   `originatorRole` (*type:* `String.t`, *default:* `nil`) - Output only. Indicates whether the buyer/seller created the proposal.
+  *   `privateAuctionId` (*type:* `String.t`, *default:* `nil`) - Output only. Private auction ID if this proposal is a private auction
+      proposal.
+  *   `proposalId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique ID of the proposal.
+  *   `proposalRevision` (*type:* `String.t`, *default:* `nil`) - Output only. The revision number for the proposal.
+      Each update to the proposal or the deal causes the proposal revision number
+      to auto-increment. The buyer keeps track of the last revision number they
+      know of and pass it in when making an update. If the head revision number
+      on the server has since incremented, then an ABORTED error is returned
+      during the update operation to let the buyer know that a subsequent update
+      was made.
+  *   `proposalState` (*type:* `String.t`, *default:* `nil`) - Output only. The current state of the proposal.
+  *   `seller` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.Seller.t`, *default:* `nil`) - Reference to the seller on the proposal.
 
-  Note: This field may be set only when creating the resource. Modifying
-  this field while updating the resource will result in an error. Defaults to `nil`.
-  - sellerContacts (list(GoogleApi.AdExchangeBuyer.V2beta1.Model.ContactInformation.t)): Output only. Contact information for the seller. Defaults to `nil`.
-  - updateTime (DateTime.t): Output only. The time when the proposal was last revised. Defaults to `nil`.
+      Note: This field may be set only when creating the resource. Modifying
+      this field while updating the resource will result in an error.
+  *   `sellerContacts` (*type:* `list(GoogleApi.AdExchangeBuyer.V2beta1.Model.ContactInformation.t)`, *default:* `nil`) - Output only. Contact information for the seller.
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the proposal was last revised.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,10 +21,10 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.PricePerBuyer do
 
   ## Attributes
 
-  - auctionTier (String.t): Optional access type for this buyer. Defaults to `nil`.
-  - billedBuyer (GoogleApi.AdExchangeBuyer.V14.Model.Buyer.t): Reference to the buyer that will get billed. Defaults to `nil`.
-  - buyer (GoogleApi.AdExchangeBuyer.V14.Model.Buyer.t): The buyer who will pay this price. If unset, all buyers can pay this price (if the advertisers match, and there's no more specific rule matching the buyer). Defaults to `nil`.
-  - price (GoogleApi.AdExchangeBuyer.V14.Model.Price.t): The specified price Defaults to `nil`.
+  *   `auctionTier` (*type:* `String.t`, *default:* `nil`) - Optional access type for this buyer.
+  *   `billedBuyer` (*type:* `GoogleApi.AdExchangeBuyer.V14.Model.Buyer.t`, *default:* `nil`) - Reference to the buyer that will get billed.
+  *   `buyer` (*type:* `GoogleApi.AdExchangeBuyer.V14.Model.Buyer.t`, *default:* `nil`) - The buyer who will pay this price. If unset, all buyers can pay this price (if the advertisers match, and there's no more specific rule matching the buyer).
+  *   `price` (*type:* `GoogleApi.AdExchangeBuyer.V14.Model.Price.t`, *default:* `nil`) - The specified price
   """
 
   use GoogleApi.Gax.ModelBase

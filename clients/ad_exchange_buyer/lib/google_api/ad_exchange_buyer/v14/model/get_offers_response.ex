@@ -21,7 +21,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.GetOffersResponse do
 
   ## Attributes
 
-  - products (list(GoogleApi.AdExchangeBuyer.V14.Model.Product.t)): The returned list of products. Defaults to `nil`.
+  *   `products` (*type:* `list(GoogleApi.AdExchangeBuyer.V14.Model.Product.t)`, *default:* `nil`) - The returned list of products.
   """
 
   use GoogleApi.Gax.ModelBase

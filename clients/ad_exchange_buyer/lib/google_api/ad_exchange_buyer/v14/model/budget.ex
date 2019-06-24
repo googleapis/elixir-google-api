@@ -21,12 +21,12 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.Budget do
 
   ## Attributes
 
-  - accountId (String.t): The id of the account. This is required for get and update requests. Defaults to `nil`.
-  - billingId (String.t): The billing id to determine which adgroup to provide budget information for. This is required for get and update requests. Defaults to `nil`.
-  - budgetAmount (String.t): The daily budget amount in unit amount of the account currency to apply for the billingId provided. This is required for update requests. Defaults to `nil`.
-  - currencyCode (String.t): The currency code for the buyer. This cannot be altered here. Defaults to `nil`.
-  - id (String.t): The unique id that describes this item. Defaults to `nil`.
-  - kind (String.t): The kind of the resource, i.e. "adexchangebuyer#budget". Defaults to `adexchangebuyer#budget`.
+  *   `accountId` (*type:* `String.t`, *default:* `nil`) - The id of the account. This is required for get and update requests.
+  *   `billingId` (*type:* `String.t`, *default:* `nil`) - The billing id to determine which adgroup to provide budget information for. This is required for get and update requests.
+  *   `budgetAmount` (*type:* `String.t`, *default:* `nil`) - The daily budget amount in unit amount of the account currency to apply for the billingId provided. This is required for update requests.
+  *   `currencyCode` (*type:* `String.t`, *default:* `nil`) - The currency code for the buyer. This cannot be altered here.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The unique id that describes this item.
+  *   `kind` (*type:* `String.t`, *default:* `adexchangebuyer#budget`) - The kind of the resource, i.e. "adexchangebuyer#budget".
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,11 +21,11 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.VideoTargeting do
 
   ## Attributes
 
-  - excludedPositionTypes (list(String.t)): A list of video positions to be excluded.
-  Position types can either be included or excluded (XOR). Defaults to `nil`.
-  - targetedPositionTypes (list(String.t)): A list of video positions to be included.
-  When the included list is present, the excluded list must be empty.
-  When the excluded list is present, the included list must be empty. Defaults to `nil`.
+  *   `excludedPositionTypes` (*type:* `list(String.t)`, *default:* `nil`) - A list of video positions to be excluded.
+      Position types can either be included or excluded (XOR).
+  *   `targetedPositionTypes` (*type:* `list(String.t)`, *default:* `nil`) - A list of video positions to be included.
+      When the included list is present, the excluded list must be empty.
+      When the excluded list is present, the included list must be empty.
   """
 
   use GoogleApi.Gax.ModelBase

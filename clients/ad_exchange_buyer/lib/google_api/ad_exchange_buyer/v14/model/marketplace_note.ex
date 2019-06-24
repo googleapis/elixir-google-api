@@ -21,14 +21,14 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceNote do
 
   ## Attributes
 
-  - creatorRole (String.t): The role of the person (buyer/seller) creating the note. (readonly) Defaults to `nil`.
-  - dealId (String.t): Notes can optionally be associated with a deal. (readonly, except on create) Defaults to `nil`.
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "adexchangebuyer#marketplaceNote". Defaults to `adexchangebuyer#marketplaceNote`.
-  - note (String.t): The actual note to attach. (readonly, except on create) Defaults to `nil`.
-  - noteId (String.t): The unique id for the note. (readonly) Defaults to `nil`.
-  - proposalId (String.t): The proposalId that a note is attached to. (readonly) Defaults to `nil`.
-  - proposalRevisionNumber (String.t): If the note is associated with a proposal revision number, then store that here. (readonly, except on create) Defaults to `nil`.
-  - timestampMs (String.t): The timestamp (ms since epoch) that this note was created. (readonly) Defaults to `nil`.
+  *   `creatorRole` (*type:* `String.t`, *default:* `nil`) - The role of the person (buyer/seller) creating the note. (readonly)
+  *   `dealId` (*type:* `String.t`, *default:* `nil`) - Notes can optionally be associated with a deal. (readonly, except on create)
+  *   `kind` (*type:* `String.t`, *default:* `adexchangebuyer#marketplaceNote`) - Identifies what kind of resource this is. Value: the fixed string "adexchangebuyer#marketplaceNote".
+  *   `note` (*type:* `String.t`, *default:* `nil`) - The actual note to attach. (readonly, except on create)
+  *   `noteId` (*type:* `String.t`, *default:* `nil`) - The unique id for the note. (readonly)
+  *   `proposalId` (*type:* `String.t`, *default:* `nil`) - The proposalId that a note is attached to. (readonly)
+  *   `proposalRevisionNumber` (*type:* `String.t`, *default:* `nil`) - If the note is associated with a proposal revision number, then store that here. (readonly, except on create)
+  *   `timestampMs` (*type:* `String.t`, *default:* `nil`) - The timestamp (ms since epoch) that this note was created. (readonly)
   """
 
   use GoogleApi.Gax.ModelBase

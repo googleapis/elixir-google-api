@@ -21,13 +21,13 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ServingContext do
 
   ## Attributes
 
-  - all (String.t): Matches all contexts. Defaults to `nil`.
-  - appType (GoogleApi.AdExchangeBuyer.V2beta1.Model.AppContext.t): Matches impressions for a particular app type. Defaults to `nil`.
-  - auctionType (GoogleApi.AdExchangeBuyer.V2beta1.Model.AuctionContext.t): Matches impressions for a particular auction type. Defaults to `nil`.
-  - location (GoogleApi.AdExchangeBuyer.V2beta1.Model.LocationContext.t): Matches impressions coming from users *or* publishers in a specific
-  location. Defaults to `nil`.
-  - platform (GoogleApi.AdExchangeBuyer.V2beta1.Model.PlatformContext.t): Matches impressions coming from a particular platform. Defaults to `nil`.
-  - securityType (GoogleApi.AdExchangeBuyer.V2beta1.Model.SecurityContext.t): Matches impressions for a particular security type. Defaults to `nil`.
+  *   `all` (*type:* `String.t`, *default:* `nil`) - Matches all contexts.
+  *   `appType` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.AppContext.t`, *default:* `nil`) - Matches impressions for a particular app type.
+  *   `auctionType` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.AuctionContext.t`, *default:* `nil`) - Matches impressions for a particular auction type.
+  *   `location` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.LocationContext.t`, *default:* `nil`) - Matches impressions coming from users *or* publishers in a specific
+      location.
+  *   `platform` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.PlatformContext.t`, *default:* `nil`) - Matches impressions coming from a particular platform.
+  *   `securityType` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.SecurityContext.t`, *default:* `nil`) - Matches impressions for a particular security type.
   """
 
   use GoogleApi.Gax.ModelBase

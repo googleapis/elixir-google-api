@@ -21,19 +21,19 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.NativeContent do
 
   ## Attributes
 
-  - advertiserName (String.t): The name of the advertiser or sponsor, to be displayed in the ad creative. Defaults to `nil`.
-  - appIcon (GoogleApi.AdExchangeBuyer.V2beta1.Model.Image.t): The app icon, for app download ads. Defaults to `nil`.
-  - body (String.t): A long description of the ad. Defaults to `nil`.
-  - callToAction (String.t): A label for the button that the user is supposed to click. Defaults to `nil`.
-  - clickLinkUrl (String.t): The URL that the browser/SDK will load when the user clicks the ad. Defaults to `nil`.
-  - clickTrackingUrl (String.t): The URL to use for click tracking. Defaults to `nil`.
-  - headline (String.t): A short title for the ad. Defaults to `nil`.
-  - image (GoogleApi.AdExchangeBuyer.V2beta1.Model.Image.t): A large image. Defaults to `nil`.
-  - logo (GoogleApi.AdExchangeBuyer.V2beta1.Model.Image.t): A smaller image, for the advertiser's logo. Defaults to `nil`.
-  - priceDisplayText (String.t): The price of the promoted app including currency info. Defaults to `nil`.
-  - starRating (float()): The app rating in the app store. Must be in the range [0-5]. Defaults to `nil`.
-  - storeUrl (String.t): The URL to the app store to purchase/download the promoted app. Defaults to `nil`.
-  - videoUrl (String.t): The URL to fetch a native video ad. Defaults to `nil`.
+  *   `advertiserName` (*type:* `String.t`, *default:* `nil`) - The name of the advertiser or sponsor, to be displayed in the ad creative.
+  *   `appIcon` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.Image.t`, *default:* `nil`) - The app icon, for app download ads.
+  *   `body` (*type:* `String.t`, *default:* `nil`) - A long description of the ad.
+  *   `callToAction` (*type:* `String.t`, *default:* `nil`) - A label for the button that the user is supposed to click.
+  *   `clickLinkUrl` (*type:* `String.t`, *default:* `nil`) - The URL that the browser/SDK will load when the user clicks the ad.
+  *   `clickTrackingUrl` (*type:* `String.t`, *default:* `nil`) - The URL to use for click tracking.
+  *   `headline` (*type:* `String.t`, *default:* `nil`) - A short title for the ad.
+  *   `image` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.Image.t`, *default:* `nil`) - A large image.
+  *   `logo` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.Image.t`, *default:* `nil`) - A smaller image, for the advertiser's logo.
+  *   `priceDisplayText` (*type:* `String.t`, *default:* `nil`) - The price of the promoted app including currency info.
+  *   `starRating` (*type:* `float()`, *default:* `nil`) - The app rating in the app store. Must be in the range [0-5].
+  *   `storeUrl` (*type:* `String.t`, *default:* `nil`) - The URL to the app store to purchase/download the promoted app.
+  *   `videoUrl` (*type:* `String.t`, *default:* `nil`) - The URL to fetch a native video ad.
   """
 
   use GoogleApi.Gax.ModelBase

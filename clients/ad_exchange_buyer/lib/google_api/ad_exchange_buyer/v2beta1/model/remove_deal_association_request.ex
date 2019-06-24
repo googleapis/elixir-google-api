@@ -21,7 +21,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.RemoveDealAssociationRequest d
 
   ## Attributes
 
-  - association (GoogleApi.AdExchangeBuyer.V2beta1.Model.CreativeDealAssociation.t): The association between a creative and a deal that should be removed. Defaults to `nil`.
+  *   `association` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.CreativeDealAssociation.t`, *default:* `nil`) - The association between a creative and a deal that should be removed.
   """
 
   use GoogleApi.Gax.ModelBase

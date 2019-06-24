@@ -21,9 +21,9 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.SharedTargeting do
 
   ## Attributes
 
-  - exclusions (list(GoogleApi.AdExchangeBuyer.V14.Model.TargetingValue.t)): The list of values to exclude from targeting. Each value is AND'd together. Defaults to `nil`.
-  - inclusions (list(GoogleApi.AdExchangeBuyer.V14.Model.TargetingValue.t)): The list of value to include as part of the targeting. Each value is OR'd together. Defaults to `nil`.
-  - key (String.t): The key representing the shared targeting criterion. Defaults to `nil`.
+  *   `exclusions` (*type:* `list(GoogleApi.AdExchangeBuyer.V14.Model.TargetingValue.t)`, *default:* `nil`) - The list of values to exclude from targeting. Each value is AND'd together.
+  *   `inclusions` (*type:* `list(GoogleApi.AdExchangeBuyer.V14.Model.TargetingValue.t)`, *default:* `nil`) - The list of value to include as part of the targeting. Each value is OR'd together.
+  *   `key` (*type:* `String.t`, *default:* `nil`) - The key representing the shared targeting criterion.
   """
 
   use GoogleApi.Gax.ModelBase

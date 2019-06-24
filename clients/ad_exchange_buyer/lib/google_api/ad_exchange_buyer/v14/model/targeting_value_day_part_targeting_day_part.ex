@@ -21,11 +21,11 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueDayPartTargetingDayP
 
   ## Attributes
 
-  - dayOfWeek (String.t):  Defaults to `nil`.
-  - endHour (integer()):  Defaults to `nil`.
-  - endMinute (integer()):  Defaults to `nil`.
-  - startHour (integer()):  Defaults to `nil`.
-  - startMinute (integer()):  Defaults to `nil`.
+  *   `dayOfWeek` (*type:* `String.t`, *default:* `nil`) - 
+  *   `endHour` (*type:* `integer()`, *default:* `nil`) - 
+  *   `endMinute` (*type:* `integer()`, *default:* `nil`) - 
+  *   `startHour` (*type:* `integer()`, *default:* `nil`) - 
+  *   `startMinute` (*type:* `integer()`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,9 +21,9 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.CreativeServingRestrictions do
 
   ## Attributes
 
-  - contexts (list(GoogleApi.AdExchangeBuyer.V14.Model.CreativeServingRestrictionsContexts.t)): All known contexts/restrictions. Defaults to `nil`.
-  - disapprovalReasons (list(GoogleApi.AdExchangeBuyer.V14.Model.CreativeServingRestrictionsDisapprovalReasons.t)): The reasons for disapproval within this restriction, if any. Note that not all disapproval reasons may be categorized, so it is possible for the creative to have a status of DISAPPROVED or CONDITIONALLY_APPROVED with an empty list for disapproval_reasons. In this case, please reach out to your TAM to help debug the issue. Defaults to `nil`.
-  - reason (String.t): Why the creative is ineligible to serve in this context (e.g., it has been explicitly disapproved or is pending review). Defaults to `nil`.
+  *   `contexts` (*type:* `list(GoogleApi.AdExchangeBuyer.V14.Model.CreativeServingRestrictionsContexts.t)`, *default:* `nil`) - All known contexts/restrictions.
+  *   `disapprovalReasons` (*type:* `list(GoogleApi.AdExchangeBuyer.V14.Model.CreativeServingRestrictionsDisapprovalReasons.t)`, *default:* `nil`) - The reasons for disapproval within this restriction, if any. Note that not all disapproval reasons may be categorized, so it is possible for the creative to have a status of DISAPPROVED or CONDITIONALLY_APPROVED with an empty list for disapproval_reasons. In this case, please reach out to your TAM to help debug the issue.
+  *   `reason` (*type:* `String.t`, *default:* `nil`) - Why the creative is ineligible to serve in this context (e.g., it has been explicitly disapproved or is pending review).
   """
 
   use GoogleApi.Gax.ModelBase

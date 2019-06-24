@@ -21,8 +21,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfigDimensions do
 
   ## Attributes
 
-  - height (String.t): Height in pixels. Defaults to `nil`.
-  - width (String.t): Width in pixels. Defaults to `nil`.
+  *   `height` (*type:* `String.t`, *default:* `nil`) - Height in pixels.
+  *   `width` (*type:* `String.t`, *default:* `nil`) - Width in pixels.
   """
 
   use GoogleApi.Gax.ModelBase

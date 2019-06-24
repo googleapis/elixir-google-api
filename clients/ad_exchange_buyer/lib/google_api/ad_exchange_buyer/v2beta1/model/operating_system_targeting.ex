@@ -21,8 +21,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.OperatingSystemTargeting do
 
   ## Attributes
 
-  - operatingSystemCriteria (GoogleApi.AdExchangeBuyer.V2beta1.Model.CriteriaTargeting.t): IDs of operating systems to be included/excluded. Defaults to `nil`.
-  - operatingSystemVersionCriteria (GoogleApi.AdExchangeBuyer.V2beta1.Model.CriteriaTargeting.t): IDs of operating system versions to be included/excluded. Defaults to `nil`.
+  *   `operatingSystemCriteria` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.CriteriaTargeting.t`, *default:* `nil`) - IDs of operating systems to be included/excluded.
+  *   `operatingSystemVersionCriteria` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.CriteriaTargeting.t`, *default:* `nil`) - IDs of operating system versions to be included/excluded.
   """
 
   use GoogleApi.Gax.ModelBase

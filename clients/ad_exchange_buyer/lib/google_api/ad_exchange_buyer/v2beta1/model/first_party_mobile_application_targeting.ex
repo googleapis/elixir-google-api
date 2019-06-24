@@ -27,8 +27,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.FirstPartyMobileApplicationTar
 
   ## Attributes
 
-  - excludedAppIds (list(String.t)): A list of application IDs to be excluded. Defaults to `nil`.
-  - targetedAppIds (list(String.t)): A list of application IDs to be included. Defaults to `nil`.
+  *   `excludedAppIds` (*type:* `list(String.t)`, *default:* `nil`) - A list of application IDs to be excluded.
+  *   `targetedAppIds` (*type:* `list(String.t)`, *default:* `nil`) - A list of application IDs to be included.
   """
 
   use GoogleApi.Gax.ModelBase
