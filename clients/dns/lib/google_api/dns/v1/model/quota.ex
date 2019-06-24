@@ -21,17 +21,17 @@ defmodule GoogleApi.DNS.V1.Model.Quota do
 
   ## Attributes
 
-  - dnsKeysPerManagedZone (integer()): Maximum allowed number of DnsKeys per ManagedZone. Defaults to `nil`.
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "dns#quota". Defaults to `dns#quota`.
-  - managedZones (integer()): Maximum allowed number of managed zones in the project. Defaults to `nil`.
-  - managedZonesPerNetwork (integer()): Maximum allowed number of managed zones which can be attached to a network. Defaults to `nil`.
-  - networksPerManagedZone (integer()): Maximum allowed number of networks to which a privately scoped zone can be attached. Defaults to `nil`.
-  - resourceRecordsPerRrset (integer()): Maximum allowed number of ResourceRecords per ResourceRecordSet. Defaults to `nil`.
-  - rrsetAdditionsPerChange (integer()): Maximum allowed number of ResourceRecordSets to add per ChangesCreateRequest. Defaults to `nil`.
-  - rrsetDeletionsPerChange (integer()): Maximum allowed number of ResourceRecordSets to delete per ChangesCreateRequest. Defaults to `nil`.
-  - rrsetsPerManagedZone (integer()): Maximum allowed number of ResourceRecordSets per zone in the project. Defaults to `nil`.
-  - totalRrdataSizePerChange (integer()): Maximum allowed size for total rrdata in one ChangesCreateRequest in bytes. Defaults to `nil`.
-  - whitelistedKeySpecs (list(GoogleApi.DNS.V1.Model.DnsKeySpec.t)): DNSSEC algorithm and key length types that can be used for DnsKeys. Defaults to `nil`.
+  *   `dnsKeysPerManagedZone` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of DnsKeys per ManagedZone.
+  *   `kind` (*type:* `String.t`, *default:* `dns#quota`) - Identifies what kind of resource this is. Value: the fixed string "dns#quota".
+  *   `managedZones` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of managed zones in the project.
+  *   `managedZonesPerNetwork` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of managed zones which can be attached to a network.
+  *   `networksPerManagedZone` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of networks to which a privately scoped zone can be attached.
+  *   `resourceRecordsPerRrset` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of ResourceRecords per ResourceRecordSet.
+  *   `rrsetAdditionsPerChange` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of ResourceRecordSets to add per ChangesCreateRequest.
+  *   `rrsetDeletionsPerChange` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of ResourceRecordSets to delete per ChangesCreateRequest.
+  *   `rrsetsPerManagedZone` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of ResourceRecordSets per zone in the project.
+  *   `totalRrdataSizePerChange` (*type:* `integer()`, *default:* `nil`) - Maximum allowed size for total rrdata in one ChangesCreateRequest in bytes.
+  *   `whitelistedKeySpecs` (*type:* `list(GoogleApi.DNS.V1.Model.DnsKeySpec.t)`, *default:* `nil`) - DNSSEC algorithm and key length types that can be used for DnsKeys.
   """
 
   use GoogleApi.Gax.ModelBase

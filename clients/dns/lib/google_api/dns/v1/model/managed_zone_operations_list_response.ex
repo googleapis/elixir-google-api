@@ -21,12 +21,12 @@ defmodule GoogleApi.DNS.V1.Model.ManagedZoneOperationsListResponse do
 
   ## Attributes
 
-  - header (GoogleApi.DNS.V1.Model.ResponseHeader.t):  Defaults to `nil`.
-  - kind (String.t): Type of resource. Defaults to `dns#managedZoneOperationsListResponse`.
-  - nextPageToken (String.t): The presence of this field indicates that there exist more results following your last page of results in pagination order. To fetch them, make another list request using this value as your page token.
+  *   `header` (*type:* `GoogleApi.DNS.V1.Model.ResponseHeader.t`, *default:* `nil`) - 
+  *   `kind` (*type:* `String.t`, *default:* `dns#managedZoneOperationsListResponse`) - Type of resource.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The presence of this field indicates that there exist more results following your last page of results in pagination order. To fetch them, make another list request using this value as your page token.
 
-  In this way you can retrieve the complete contents of even very large collections one page at a time. However, if the contents of the collection change between the first and last paginated list request, the set of all elements returned will be an inconsistent view of the collection. There is no way to retrieve a consistent snapshot of a collection larger than the maximum page size. Defaults to `nil`.
-  - operations (list(GoogleApi.DNS.V1.Model.Operation.t)): The operation resources. Defaults to `nil`.
+      In this way you can retrieve the complete contents of even very large collections one page at a time. However, if the contents of the collection change between the first and last paginated list request, the set of all elements returned will be an inconsistent view of the collection. There is no way to retrieve a consistent snapshot of a collection larger than the maximum page size.
+  *   `operations` (*type:* `list(GoogleApi.DNS.V1.Model.Operation.t)`, *default:* `nil`) - The operation resources.
   """
 
   use GoogleApi.Gax.ModelBase

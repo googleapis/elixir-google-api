@@ -28,28 +28,35 @@ defmodule GoogleApi.DNS.V1.Api.ResourceRecordSets do
 
   ## Parameters
 
-  - connection (GoogleApi.DNS.V1.Connection): Connection to server
-  - project (String.t): Identifies the project addressed by this request.
-  - managed_zone (String.t): Identifies the managed zone addressed by this request. Can be the managed zone name or id.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :maxResults (integer()): Optional. Maximum number of results to be returned. If unspecified, the server will decide how many results to return.
-    - :name (String.t): Restricts the list to return only records with this fully qualified domain name.
-    - :pageToken (String.t): Optional. A tag returned by a previous list request that was truncated. Use this parameter to continue a previous list request.
-    - :type (String.t): Restricts the list to return only records of this type. If present, the "name" parameter must also be present.
+  *   `connection` (*type:* `GoogleApi.DNS.V1.Connection.t`) - Connection to server
+  *   `project` (*type:* `String.t`) - Identifies the project addressed by this request.
+  *   `managed_zone` (*type:* `String.t`) - Identifies the managed zone addressed by this request. Can be the managed zone name or id.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:maxResults` (*type:* `integer()`) - Optional. Maximum number of results to be returned. If unspecified, the server will decide how many results to return.
+      *   `:name` (*type:* `String.t`) - Restricts the list to return only records with this fully qualified domain name.
+      *   `:pageToken` (*type:* `String.t`) - Optional. A tag returned by a previous list request that was truncated. Use this parameter to continue a previous list request.
+      *   `:type` (*type:* `String.t`) - Restricts the list to return only records of this type. If present, the "name" parameter must also be present.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.DNS.V1.Model.ResourceRecordSetsListResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.DNS.V1.Model.ResourceRecordSetsListResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec dns_resource_record_sets_list(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+  @spec dns_resource_record_sets_list(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.DNS.V1.Model.ResourceRecordSetsListResponse.t()}
           | {:error, Tesla.Env.t()}
   def dns_resource_record_sets_list(

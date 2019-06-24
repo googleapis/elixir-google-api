@@ -21,8 +21,8 @@ defmodule GoogleApi.DNS.V1.Model.OperationDnsKeyContext do
 
   ## Attributes
 
-  - newValue (GoogleApi.DNS.V1.Model.DnsKey.t): The post-operation DnsKey resource. Defaults to `nil`.
-  - oldValue (GoogleApi.DNS.V1.Model.DnsKey.t): The pre-operation DnsKey resource. Defaults to `nil`.
+  *   `newValue` (*type:* `GoogleApi.DNS.V1.Model.DnsKey.t`, *default:* `nil`) - The post-operation DnsKey resource.
+  *   `oldValue` (*type:* `GoogleApi.DNS.V1.Model.DnsKey.t`, *default:* `nil`) - The pre-operation DnsKey resource.
   """
 
   use GoogleApi.Gax.ModelBase

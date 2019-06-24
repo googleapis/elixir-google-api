@@ -21,8 +21,8 @@ defmodule GoogleApi.DNS.V1.Model.OperationManagedZoneContext do
 
   ## Attributes
 
-  - newValue (GoogleApi.DNS.V1.Model.ManagedZone.t): The post-operation ManagedZone resource. Defaults to `nil`.
-  - oldValue (GoogleApi.DNS.V1.Model.ManagedZone.t): The pre-operation ManagedZone resource. Defaults to `nil`.
+  *   `newValue` (*type:* `GoogleApi.DNS.V1.Model.ManagedZone.t`, *default:* `nil`) - The post-operation ManagedZone resource.
+  *   `oldValue` (*type:* `GoogleApi.DNS.V1.Model.ManagedZone.t`, *default:* `nil`) - The pre-operation ManagedZone resource.
   """
 
   use GoogleApi.Gax.ModelBase

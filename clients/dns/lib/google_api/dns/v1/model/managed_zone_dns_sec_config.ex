@@ -21,10 +21,10 @@ defmodule GoogleApi.DNS.V1.Model.ManagedZoneDnsSecConfig do
 
   ## Attributes
 
-  - defaultKeySpecs (list(GoogleApi.DNS.V1.Model.DnsKeySpec.t)): Specifies parameters that will be used for generating initial DnsKeys for this ManagedZone. Output only while state is not OFF. Defaults to `nil`.
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "dns#managedZoneDnsSecConfig". Defaults to `dns#managedZoneDnsSecConfig`.
-  - nonExistence (String.t): Specifies the mechanism used to provide authenticated denial-of-existence responses. Output only while state is not OFF. Defaults to `nil`.
-  - state (String.t): Specifies whether DNSSEC is enabled, and what mode it is in. Defaults to `nil`.
+  *   `defaultKeySpecs` (*type:* `list(GoogleApi.DNS.V1.Model.DnsKeySpec.t)`, *default:* `nil`) - Specifies parameters that will be used for generating initial DnsKeys for this ManagedZone. Output only while state is not OFF.
+  *   `kind` (*type:* `String.t`, *default:* `dns#managedZoneDnsSecConfig`) - Identifies what kind of resource this is. Value: the fixed string "dns#managedZoneDnsSecConfig".
+  *   `nonExistence` (*type:* `String.t`, *default:* `nil`) - Specifies the mechanism used to provide authenticated denial-of-existence responses. Output only while state is not OFF.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - Specifies whether DNSSEC is enabled, and what mode it is in.
   """
 
   use GoogleApi.Gax.ModelBase
