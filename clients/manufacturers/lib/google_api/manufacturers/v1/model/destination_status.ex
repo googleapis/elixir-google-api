@@ -21,8 +21,8 @@ defmodule GoogleApi.Manufacturers.V1.Model.DestinationStatus do
 
   ## Attributes
 
-  - destination (String.t): The name of the destination. Defaults to `nil`.
-  - status (String.t): The status of the destination. Defaults to `nil`.
+  *   `destination` (*type:* `String.t`, *default:* `nil`) - The name of the destination.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - The status of the destination.
   """
 
   use GoogleApi.Gax.ModelBase

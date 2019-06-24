@@ -28,42 +28,44 @@ defmodule GoogleApi.Manufacturers.V1.Api.Accounts do
 
   ## Parameters
 
-  - connection (GoogleApi.Manufacturers.V1.Connection): Connection to server
-  - parent (String.t): Parent ID in the format `accounts/{account_id}`.
+  *   `connection` (*type:* `GoogleApi.Manufacturers.V1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Parent ID in the format `accounts/{account_id}`.
 
-  `account_id` - The ID of the Manufacturer Center account.
-  - name (String.t): Name in the format `{target_country}:{content_language}:{product_id}`.
+      `account_id` - The ID of the Manufacturer Center account.
+  *   `name` (*type:* `String.t`) - Name in the format `{target_country}:{content_language}:{product_id}`.
 
-  `target_country`   - The target country of the product as a CLDR territory
-                     code (for example, US).
+      `target_country`   - The target country of the product as a CLDR territory
+                           code (for example, US).
 
-  `content_language` - The content language of the product as a two-letter
-                     ISO 639-1 language code (for example, en).
+      `content_language` - The content language of the product as a two-letter
+                           ISO 639-1 language code (for example, en).
 
-  `product_id`     -   The ID of the product. For more information, see
-                     https://support.google.com/manufacturers/answer/6124116#id.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+      `product_id`     -   The ID of the product. For more information, see
+                           https://support.google.com/manufacturers/answer/6124116#id.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Manufacturers.V1.Model.Empty{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Manufacturers.V1.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec manufacturers_accounts_products_delete(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Manufacturers.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
   def manufacturers_accounts_products_delete(
@@ -112,42 +114,48 @@ defmodule GoogleApi.Manufacturers.V1.Api.Accounts do
 
   ## Parameters
 
-  - connection (GoogleApi.Manufacturers.V1.Connection): Connection to server
-  - parent (String.t): Parent ID in the format `accounts/{account_id}`.
+  *   `connection` (*type:* `GoogleApi.Manufacturers.V1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Parent ID in the format `accounts/{account_id}`.
 
-  `account_id` - The ID of the Manufacturer Center account.
-  - name (String.t): Name in the format `{target_country}:{content_language}:{product_id}`.
+      `account_id` - The ID of the Manufacturer Center account.
+  *   `name` (*type:* `String.t`) - Name in the format `{target_country}:{content_language}:{product_id}`.
 
-  `target_country`   - The target country of the product as a CLDR territory
-                     code (for example, US).
+      `target_country`   - The target country of the product as a CLDR territory
+                           code (for example, US).
 
-  `content_language` - The content language of the product as a two-letter
-                     ISO 639-1 language code (for example, en).
+      `content_language` - The content language of the product as a two-letter
+                           ISO 639-1 language code (for example, en).
 
-  `product_id`     -   The ID of the product. For more information, see
-                     https://support.google.com/manufacturers/answer/6124116#id.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :include (list(String.t)): The information to be included in the response. Only sections listed here
-  will be returned.
+      `product_id`     -   The ID of the product. For more information, see
+                           https://support.google.com/manufacturers/answer/6124116#id.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:include` (*type:* `list(String.t)`) - The information to be included in the response. Only sections listed here
+          will be returned.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Manufacturers.V1.Model.Product{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Manufacturers.V1.Model.Product{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec manufacturers_accounts_products_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.Manufacturers.V1.Model.Product.t()} | {:error, Tesla.Env.t()}
+  @spec manufacturers_accounts_products_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.Manufacturers.V1.Model.Product.t()} | {:error, Tesla.Env.t()}
   def manufacturers_accounts_products_get(
         connection,
         parent,
@@ -189,34 +197,35 @@ defmodule GoogleApi.Manufacturers.V1.Api.Accounts do
 
   ## Parameters
 
-  - connection (GoogleApi.Manufacturers.V1.Connection): Connection to server
-  - parent (String.t): Parent ID in the format `accounts/{account_id}`.
+  *   `connection` (*type:* `GoogleApi.Manufacturers.V1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Parent ID in the format `accounts/{account_id}`.
 
-  `account_id` - The ID of the Manufacturer Center account.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :include (list(String.t)): The information to be included in the response. Only sections listed here
-  will be returned.
-    - :pageSize (integer()): Maximum number of product statuses to return in the response, used for
-  paging.
-    - :pageToken (String.t): The token returned by the previous request.
+      `account_id` - The ID of the Manufacturer Center account.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:include` (*type:* `list(String.t)`) - The information to be included in the response. Only sections listed here
+          will be returned.
+      *   `:pageSize` (*type:* `integer()`) - Maximum number of product statuses to return in the response, used for
+          paging.
+      *   `:pageToken` (*type:* `String.t`) - The token returned by the previous request.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Manufacturers.V1.Model.ListProductsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Manufacturers.V1.Model.ListProductsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec manufacturers_accounts_products_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec manufacturers_accounts_products_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Manufacturers.V1.Model.ListProductsResponse.t()}
           | {:error, Tesla.Env.t()}
   def manufacturers_accounts_products_list(connection, parent, optional_params \\ [], opts \\ []) do
@@ -269,43 +278,45 @@ defmodule GoogleApi.Manufacturers.V1.Api.Accounts do
 
   ## Parameters
 
-  - connection (GoogleApi.Manufacturers.V1.Connection): Connection to server
-  - parent (String.t): Parent ID in the format `accounts/{account_id}`.
+  *   `connection` (*type:* `GoogleApi.Manufacturers.V1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Parent ID in the format `accounts/{account_id}`.
 
-  `account_id` - The ID of the Manufacturer Center account.
-  - name (String.t): Name in the format `{target_country}:{content_language}:{product_id}`.
+      `account_id` - The ID of the Manufacturer Center account.
+  *   `name` (*type:* `String.t`) - Name in the format `{target_country}:{content_language}:{product_id}`.
 
-  `target_country`   - The target country of the product as a CLDR territory
-                     code (for example, US).
+      `target_country`   - The target country of the product as a CLDR territory
+                           code (for example, US).
 
-  `content_language` - The content language of the product as a two-letter
-                     ISO 639-1 language code (for example, en).
+      `content_language` - The content language of the product as a two-letter
+                           ISO 639-1 language code (for example, en).
 
-  `product_id`     -   The ID of the product. For more information, see
-                     https://support.google.com/manufacturers/answer/6124116#id.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.Manufacturers.V1.Model.Attributes.t): 
+      `product_id`     -   The ID of the product. For more information, see
+                           https://support.google.com/manufacturers/answer/6124116#id.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Manufacturers.V1.Model.Attributes.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Manufacturers.V1.Model.Empty{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Manufacturers.V1.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec manufacturers_accounts_products_update(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Manufacturers.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
   def manufacturers_accounts_products_update(

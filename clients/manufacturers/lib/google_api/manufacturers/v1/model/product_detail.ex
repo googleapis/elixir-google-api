@@ -22,9 +22,9 @@ defmodule GoogleApi.Manufacturers.V1.Model.ProductDetail do
 
   ## Attributes
 
-  - attributeName (String.t): The name of the attribute. Defaults to `nil`.
-  - attributeValue (String.t): The value of the attribute. Defaults to `nil`.
-  - sectionName (String.t): A short section name that can be reused between multiple product details. Defaults to `nil`.
+  *   `attributeName` (*type:* `String.t`, *default:* `nil`) - The name of the attribute.
+  *   `attributeValue` (*type:* `String.t`, *default:* `nil`) - The value of the attribute.
+  *   `sectionName` (*type:* `String.t`, *default:* `nil`) - A short section name that can be reused between multiple product details.
   """
 
   use GoogleApi.Gax.ModelBase

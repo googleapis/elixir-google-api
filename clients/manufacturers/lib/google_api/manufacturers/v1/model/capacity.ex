@@ -22,8 +22,8 @@ defmodule GoogleApi.Manufacturers.V1.Model.Capacity do
 
   ## Attributes
 
-  - unit (String.t): The unit of the capacity, i.e., MB, GB, or TB. Defaults to `nil`.
-  - value (String.t): The numeric value of the capacity. Defaults to `nil`.
+  *   `unit` (*type:* `String.t`, *default:* `nil`) - The unit of the capacity, i.e., MB, GB, or TB.
+  *   `value` (*type:* `String.t`, *default:* `nil`) - The numeric value of the capacity.
   """
 
   use GoogleApi.Gax.ModelBase
