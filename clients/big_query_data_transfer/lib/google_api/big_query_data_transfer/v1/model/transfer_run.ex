@@ -21,29 +21,29 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.TransferRun do
 
   ## Attributes
 
-  - dataSourceId (String.t): Output only. Data source id. Defaults to `nil`.
-  - destinationDatasetId (String.t): Output only. The BigQuery target dataset id. Defaults to `nil`.
-  - endTime (DateTime.t): Output only. Time when transfer run ended.
-  Parameter ignored by server for input requests. Defaults to `nil`.
-  - errorStatus (GoogleApi.BigQueryDataTransfer.V1.Model.Status.t): Status of the transfer run. Defaults to `nil`.
-  - name (String.t): The resource name of the transfer run.
-  Transfer run names have the form
-  `projects/{project_id}/locations/{location}/transferConfigs/{config_id}/runs/{run_id}`.
-  The name is ignored when creating a transfer run. Defaults to `nil`.
-  - params (map()): Output only. Data transfer specific parameters. Defaults to `nil`.
-  - runTime (DateTime.t): For batch transfer runs, specifies the date and time of the data should be
-  ingested. Defaults to `nil`.
-  - schedule (String.t): Output only. Describes the schedule of this transfer run if it was
-  created as part of a regular schedule. For batch transfer runs that are
-  scheduled manually, this is empty.
-  NOTE: the system might choose to delay the schedule depending on the
-  current load, so `schedule_time` doesn't always match this. Defaults to `nil`.
-  - scheduleTime (DateTime.t): Minimum time after which a transfer run can be started. Defaults to `nil`.
-  - startTime (DateTime.t): Output only. Time when transfer run was started.
-  Parameter ignored by server for input requests. Defaults to `nil`.
-  - state (String.t): Data transfer run state. Ignored for input requests. Defaults to `nil`.
-  - updateTime (DateTime.t): Output only. Last time the data transfer run state was updated. Defaults to `nil`.
-  - userId (String.t): Deprecated. Unique ID of the user on whose behalf transfer is done. Defaults to `nil`.
+  *   `dataSourceId` (*type:* `String.t`, *default:* `nil`) - Output only. Data source id.
+  *   `destinationDatasetId` (*type:* `String.t`, *default:* `nil`) - Output only. The BigQuery target dataset id.
+  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when transfer run ended.
+      Parameter ignored by server for input requests.
+  *   `errorStatus` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Model.Status.t`, *default:* `nil`) - Status of the transfer run.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the transfer run.
+      Transfer run names have the form
+      `projects/{project_id}/locations/{location}/transferConfigs/{config_id}/runs/{run_id}`.
+      The name is ignored when creating a transfer run.
+  *   `params` (*type:* `map()`, *default:* `nil`) - Output only. Data transfer specific parameters.
+  *   `runTime` (*type:* `DateTime.t`, *default:* `nil`) - For batch transfer runs, specifies the date and time of the data should be
+      ingested.
+  *   `schedule` (*type:* `String.t`, *default:* `nil`) - Output only. Describes the schedule of this transfer run if it was
+      created as part of a regular schedule. For batch transfer runs that are
+      scheduled manually, this is empty.
+      NOTE: the system might choose to delay the schedule depending on the
+      current load, so `schedule_time` doesn't always match this.
+  *   `scheduleTime` (*type:* `DateTime.t`, *default:* `nil`) - Minimum time after which a transfer run can be started.
+  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when transfer run was started.
+      Parameter ignored by server for input requests.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - Data transfer run state. Ignored for input requests.
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Last time the data transfer run state was updated.
+  *   `userId` (*type:* `String.t`, *default:* `nil`) - Deprecated. Unique ID of the user on whose behalf transfer is done.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,9 +21,9 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.TransferMessage do
 
   ## Attributes
 
-  - messageText (String.t): Message text. Defaults to `nil`.
-  - messageTime (DateTime.t): Time when message was logged. Defaults to `nil`.
-  - severity (String.t): Message severity. Defaults to `nil`.
+  *   `messageText` (*type:* `String.t`, *default:* `nil`) - Message text.
+  *   `messageTime` (*type:* `DateTime.t`, *default:* `nil`) - Time when message was logged.
+  *   `severity` (*type:* `String.t`, *default:* `nil`) - Message severity.
   """
 
   use GoogleApi.Gax.ModelBase

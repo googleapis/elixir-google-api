@@ -26,24 +26,24 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.DataSourceParameter do
 
   ## Attributes
 
-  - allowedValues (list(String.t)): All possible values for the parameter. Defaults to `nil`.
-  - deprecated (boolean()): If true, it should not be used in new transfers, and it should not be
-  visible to users. Defaults to `nil`.
-  - description (String.t): Parameter description. Defaults to `nil`.
-  - displayName (String.t): Parameter display name in the user interface. Defaults to `nil`.
-  - fields (list(GoogleApi.BigQueryDataTransfer.V1.Model.DataSourceParameter.t)): Deprecated. This field has no effect. Defaults to `nil`.
-  - immutable (boolean()): Cannot be changed after initial creation. Defaults to `nil`.
-  - maxValue (float()): For integer and double values specifies maxminum allowed value. Defaults to `nil`.
-  - minValue (float()): For integer and double values specifies minimum allowed value. Defaults to `nil`.
-  - paramId (String.t): Parameter identifier. Defaults to `nil`.
-  - recurse (boolean()): Deprecated. This field has no effect. Defaults to `nil`.
-  - repeated (boolean()): Deprecated. This field has no effect. Defaults to `nil`.
-  - required (boolean()): Is parameter required. Defaults to `nil`.
-  - type (String.t): Parameter type. Defaults to `nil`.
-  - validationDescription (String.t): Description of the requirements for this field, in case the user input does
-  not fulfill the regex pattern or min/max values. Defaults to `nil`.
-  - validationHelpUrl (String.t): URL to a help document to further explain the naming requirements. Defaults to `nil`.
-  - validationRegex (String.t): Regular expression which can be used for parameter validation. Defaults to `nil`.
+  *   `allowedValues` (*type:* `list(String.t)`, *default:* `nil`) - All possible values for the parameter.
+  *   `deprecated` (*type:* `boolean()`, *default:* `nil`) - If true, it should not be used in new transfers, and it should not be
+      visible to users.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Parameter description.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Parameter display name in the user interface.
+  *   `fields` (*type:* `list(GoogleApi.BigQueryDataTransfer.V1.Model.DataSourceParameter.t)`, *default:* `nil`) - Deprecated. This field has no effect.
+  *   `immutable` (*type:* `boolean()`, *default:* `nil`) - Cannot be changed after initial creation.
+  *   `maxValue` (*type:* `float()`, *default:* `nil`) - For integer and double values specifies maxminum allowed value.
+  *   `minValue` (*type:* `float()`, *default:* `nil`) - For integer and double values specifies minimum allowed value.
+  *   `paramId` (*type:* `String.t`, *default:* `nil`) - Parameter identifier.
+  *   `recurse` (*type:* `boolean()`, *default:* `nil`) - Deprecated. This field has no effect.
+  *   `repeated` (*type:* `boolean()`, *default:* `nil`) - Deprecated. This field has no effect.
+  *   `required` (*type:* `boolean()`, *default:* `nil`) - Is parameter required.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Parameter type.
+  *   `validationDescription` (*type:* `String.t`, *default:* `nil`) - Description of the requirements for this field, in case the user input does
+      not fulfill the regex pattern or min/max values.
+  *   `validationHelpUrl` (*type:* `String.t`, *default:* `nil`) - URL to a help document to further explain the naming requirements.
+  *   `validationRegex` (*type:* `String.t`, *default:* `nil`) - Regular expression which can be used for parameter validation.
   """
 
   use GoogleApi.Gax.ModelBase

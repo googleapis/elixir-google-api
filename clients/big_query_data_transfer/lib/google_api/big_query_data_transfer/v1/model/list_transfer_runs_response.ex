@@ -21,11 +21,11 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.ListTransferRunsResponse do
 
   ## Attributes
 
-  - nextPageToken (String.t): Output only. The next-pagination token. For multiple-page list results,
-  this token can be used as the
-  `ListTransferRunsRequest.page_token`
-  to request the next page of list results. Defaults to `nil`.
-  - transferRuns (list(GoogleApi.BigQueryDataTransfer.V1.Model.TransferRun.t)): Output only. The stored pipeline transfer runs. Defaults to `nil`.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Output only. The next-pagination token. For multiple-page list results,
+      this token can be used as the
+      `ListTransferRunsRequest.page_token`
+      to request the next page of list results.
+  *   `transferRuns` (*type:* `list(GoogleApi.BigQueryDataTransfer.V1.Model.TransferRun.t)`, *default:* `nil`) - Output only. The stored pipeline transfer runs.
   """
 
   use GoogleApi.Gax.ModelBase

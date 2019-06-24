@@ -20,6 +20,8 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Connection do
   Handle Tesla connections for GoogleApi.BigQueryDataTransfer.V1.
   """
 
+  @type t :: Tesla.Env.client()
+
   use GoogleApi.Gax.Connection,
     scopes: [
       # View and manage your data in Google BigQuery
