@@ -21,8 +21,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.EnterprisesListResponse do
 
   ## Attributes
 
-  - enterprise (list(GoogleApi.AndroidEnterprise.V1.Model.Enterprise.t)): An enterprise. Defaults to `nil`.
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "androidenterprise#enterprisesListResponse". Defaults to `androidenterprise#enterprisesListResponse`.
+  *   `enterprise` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.Enterprise.t)`, *default:* `nil`) - An enterprise.
+  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#enterprisesListResponse`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#enterprisesListResponse".
   """
 
   use GoogleApi.Gax.ModelBase

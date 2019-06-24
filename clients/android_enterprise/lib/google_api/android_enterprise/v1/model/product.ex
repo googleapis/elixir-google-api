@@ -23,30 +23,30 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.Product do
 
   ## Attributes
 
-  - appTracks (list(GoogleApi.AndroidEnterprise.V1.Model.TrackInfo.t)): The tracks visible to the enterprise. Defaults to `nil`.
-  - appVersion (list(GoogleApi.AndroidEnterprise.V1.Model.AppVersion.t)): App versions currently available for this product. Defaults to `nil`.
-  - authorName (String.t): The name of the author of the product (for example, the app developer). Defaults to `nil`.
-  - availableCountries (list(String.t)): The countries which this app is available in. Defaults to `nil`.
-  - availableTracks (list(String.t)): Deprecated, use appTracks instead. Defaults to `nil`.
-  - category (String.t): The app category (e.g. RACING, SOCIAL, etc.) Defaults to `nil`.
-  - contentRating (String.t): The content rating for this app. Defaults to `nil`.
-  - description (String.t): The localized promotional description, if available. Defaults to `nil`.
-  - detailsUrl (String.t): A link to the (consumer) Google Play details page for the product. Defaults to `nil`.
-  - distributionChannel (String.t): How and to whom the package is made available. The value publicGoogleHosted means that the package is available through the Play store and not restricted to a specific enterprise. The value privateGoogleHosted means that the package is a private app (restricted to an enterprise) but hosted by Google. The value privateSelfHosted means that the package is a private app (restricted to an enterprise) and is privately hosted. Defaults to `nil`.
-  - iconUrl (String.t): A link to an image that can be used as an icon for the product. This image is suitable for use at up to 512px x 512px. Defaults to `nil`.
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "androidenterprise#product". Defaults to `androidenterprise#product`.
-  - lastUpdatedTimestampMillis (String.t): The approximate time (within 7 days) the app was last published, expressed in milliseconds since epoch. Defaults to `nil`.
-  - minAndroidSdkVersion (integer()): The minimum Android SDK necessary to run the app. Defaults to `nil`.
-  - permissions (list(GoogleApi.AndroidEnterprise.V1.Model.ProductPermission.t)): A list of permissions required by the app. Defaults to `nil`.
-  - productId (String.t): A string of the form app:<package name>. For example, app:com.google.android.gm represents the Gmail app. Defaults to `nil`.
-  - productPricing (String.t): Whether this product is free, free with in-app purchases, or paid. If the pricing is unknown, this means the product is not generally available anymore (even though it might still be available to people who own it). Defaults to `nil`.
-  - recentChanges (String.t): A description of the recent changes made to the app. Defaults to `nil`.
-  - requiresContainerApp (boolean()): Deprecated. Defaults to `nil`.
-  - screenshotUrls (list(String.t)): A list of screenshot links representing the app. Defaults to `nil`.
-  - signingCertificate (GoogleApi.AndroidEnterprise.V1.Model.ProductSigningCertificate.t): The certificate used to sign this product. Defaults to `nil`.
-  - smallIconUrl (String.t): A link to a smaller image that can be used as an icon for the product. This image is suitable for use at up to 128px x 128px. Defaults to `nil`.
-  - title (String.t): The name of the product. Defaults to `nil`.
-  - workDetailsUrl (String.t): A link to the managed Google Play details page for the product, for use by an Enterprise admin. Defaults to `nil`.
+  *   `appTracks` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.TrackInfo.t)`, *default:* `nil`) - The tracks visible to the enterprise.
+  *   `appVersion` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.AppVersion.t)`, *default:* `nil`) - App versions currently available for this product.
+  *   `authorName` (*type:* `String.t`, *default:* `nil`) - The name of the author of the product (for example, the app developer).
+  *   `availableCountries` (*type:* `list(String.t)`, *default:* `nil`) - The countries which this app is available in.
+  *   `availableTracks` (*type:* `list(String.t)`, *default:* `nil`) - Deprecated, use appTracks instead.
+  *   `category` (*type:* `String.t`, *default:* `nil`) - The app category (e.g. RACING, SOCIAL, etc.)
+  *   `contentRating` (*type:* `String.t`, *default:* `nil`) - The content rating for this app.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - The localized promotional description, if available.
+  *   `detailsUrl` (*type:* `String.t`, *default:* `nil`) - A link to the (consumer) Google Play details page for the product.
+  *   `distributionChannel` (*type:* `String.t`, *default:* `nil`) - How and to whom the package is made available. The value publicGoogleHosted means that the package is available through the Play store and not restricted to a specific enterprise. The value privateGoogleHosted means that the package is a private app (restricted to an enterprise) but hosted by Google. The value privateSelfHosted means that the package is a private app (restricted to an enterprise) and is privately hosted.
+  *   `iconUrl` (*type:* `String.t`, *default:* `nil`) - A link to an image that can be used as an icon for the product. This image is suitable for use at up to 512px x 512px.
+  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#product`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#product".
+  *   `lastUpdatedTimestampMillis` (*type:* `String.t`, *default:* `nil`) - The approximate time (within 7 days) the app was last published, expressed in milliseconds since epoch.
+  *   `minAndroidSdkVersion` (*type:* `integer()`, *default:* `nil`) - The minimum Android SDK necessary to run the app.
+  *   `permissions` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.ProductPermission.t)`, *default:* `nil`) - A list of permissions required by the app.
+  *   `productId` (*type:* `String.t`, *default:* `nil`) - A string of the form app:<package name>. For example, app:com.google.android.gm represents the Gmail app.
+  *   `productPricing` (*type:* `String.t`, *default:* `nil`) - Whether this product is free, free with in-app purchases, or paid. If the pricing is unknown, this means the product is not generally available anymore (even though it might still be available to people who own it).
+  *   `recentChanges` (*type:* `String.t`, *default:* `nil`) - A description of the recent changes made to the app.
+  *   `requiresContainerApp` (*type:* `boolean()`, *default:* `nil`) - Deprecated.
+  *   `screenshotUrls` (*type:* `list(String.t)`, *default:* `nil`) - A list of screenshot links representing the app.
+  *   `signingCertificate` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.ProductSigningCertificate.t`, *default:* `nil`) - The certificate used to sign this product.
+  *   `smallIconUrl` (*type:* `String.t`, *default:* `nil`) - A link to a smaller image that can be used as an icon for the product. This image is suitable for use at up to 128px x 128px.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - The name of the product.
+  *   `workDetailsUrl` (*type:* `String.t`, *default:* `nil`) - A link to the managed Google Play details page for the product, for use by an Enterprise admin.
   """
 
   use GoogleApi.Gax.ModelBase

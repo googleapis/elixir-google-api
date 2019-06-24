@@ -21,7 +21,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.AppUpdateEvent do
 
   ## Attributes
 
-  - productId (String.t): The id of the product (e.g. "app:com.google.android.gm") that was updated. This field will always be present. Defaults to `nil`.
+  *   `productId` (*type:* `String.t`, *default:* `nil`) - The id of the product (e.g. "app:com.google.android.gm") that was updated. This field will always be present.
   """
 
   use GoogleApi.Gax.ModelBase

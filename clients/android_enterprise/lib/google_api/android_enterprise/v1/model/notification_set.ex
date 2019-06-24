@@ -21,9 +21,9 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.NotificationSet do
 
   ## Attributes
 
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "androidenterprise#notificationSet". Defaults to `androidenterprise#notificationSet`.
-  - notification (list(GoogleApi.AndroidEnterprise.V1.Model.Notification.t)): The notifications received, or empty if no notifications are present. Defaults to `nil`.
-  - notificationSetId (String.t): The notification set ID, required to mark the notification as received with the Enterprises.AcknowledgeNotification API. This will be omitted if no notifications are present. Defaults to `nil`.
+  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#notificationSet`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#notificationSet".
+  *   `notification` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.Notification.t)`, *default:* `nil`) - The notifications received, or empty if no notifications are present.
+  *   `notificationSetId` (*type:* `String.t`, *default:* `nil`) - The notification set ID, required to mark the notification as received with the Enterprises.AcknowledgeNotification API. This will be omitted if no notifications are present.
   """
 
   use GoogleApi.Gax.ModelBase

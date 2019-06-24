@@ -21,9 +21,9 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.PageInfo do
 
   ## Attributes
 
-  - resultPerPage (integer()):  Defaults to `nil`.
-  - startIndex (integer()):  Defaults to `nil`.
-  - totalResults (integer()):  Defaults to `nil`.
+  *   `resultPerPage` (*type:* `integer()`, *default:* `nil`) - 
+  *   `startIndex` (*type:* `integer()`, *default:* `nil`) - 
+  *   `totalResults` (*type:* `integer()`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

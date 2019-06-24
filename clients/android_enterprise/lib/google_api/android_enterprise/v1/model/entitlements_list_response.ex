@@ -21,8 +21,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.EntitlementsListResponse do
 
   ## Attributes
 
-  - entitlement (list(GoogleApi.AndroidEnterprise.V1.Model.Entitlement.t)): An entitlement of a user to a product (e.g. an app). For example, a free app that they have installed, or a paid app that they have been allocated a license to. Defaults to `nil`.
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "androidenterprise#entitlementsListResponse". Defaults to `androidenterprise#entitlementsListResponse`.
+  *   `entitlement` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.Entitlement.t)`, *default:* `nil`) - An entitlement of a user to a product (e.g. an app). For example, a free app that they have installed, or a paid app that they have been allocated a license to.
+  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#entitlementsListResponse`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#entitlementsListResponse".
   """
 
   use GoogleApi.Gax.ModelBase

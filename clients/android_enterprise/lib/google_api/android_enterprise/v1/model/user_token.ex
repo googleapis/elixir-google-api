@@ -21,9 +21,9 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.UserToken do
 
   ## Attributes
 
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "androidenterprise#userToken". Defaults to `androidenterprise#userToken`.
-  - token (String.t): The token (activation code) to be entered by the user. This consists of a sequence of decimal digits. Note that the leading digit may be 0. Defaults to `nil`.
-  - userId (String.t): The unique ID for the user. Defaults to `nil`.
+  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#userToken`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#userToken".
+  *   `token` (*type:* `String.t`, *default:* `nil`) - The token (activation code) to be entered by the user. This consists of a sequence of decimal digits. Note that the leading digit may be 0.
+  *   `userId` (*type:* `String.t`, *default:* `nil`) - The unique ID for the user.
   """
 
   use GoogleApi.Gax.ModelBase

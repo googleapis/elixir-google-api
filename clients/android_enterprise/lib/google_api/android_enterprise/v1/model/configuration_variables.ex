@@ -21,9 +21,9 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ConfigurationVariables do
 
   ## Attributes
 
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "androidenterprise#configurationVariables". Defaults to `androidenterprise#configurationVariables`.
-  - mcmId (String.t): The ID of the managed configurations settings. Defaults to `nil`.
-  - variableSet (list(GoogleApi.AndroidEnterprise.V1.Model.VariableSet.t)): The variable set that is attributed to the user. Defaults to `nil`.
+  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#configurationVariables`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#configurationVariables".
+  *   `mcmId` (*type:* `String.t`, *default:* `nil`) - The ID of the managed configurations settings.
+  *   `variableSet` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.VariableSet.t)`, *default:* `nil`) - The variable set that is attributed to the user.
   """
 
   use GoogleApi.Gax.ModelBase

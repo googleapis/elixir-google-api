@@ -21,8 +21,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.AuthenticationToken do
 
   ## Attributes
 
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "androidenterprise#authenticationToken". Defaults to `androidenterprise#authenticationToken`.
-  - token (String.t): The authentication token to be passed to the device policy client on the device where it can be used to provision the account for which this token was generated. Defaults to `nil`.
+  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#authenticationToken`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#authenticationToken".
+  *   `token` (*type:* `String.t`, *default:* `nil`) - The authentication token to be passed to the device policy client on the device where it can be used to provision the account for which this token was generated.
   """
 
   use GoogleApi.Gax.ModelBase

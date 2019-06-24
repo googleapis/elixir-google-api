@@ -21,8 +21,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.AppState do
 
   ## Attributes
 
-  - keyedAppState (list(GoogleApi.AndroidEnterprise.V1.Model.KeyedAppState.t)): List of keyed app states. This field will always be present. Defaults to `nil`.
-  - packageName (String.t): The package name of the app. This field will always be present. Defaults to `nil`.
+  *   `keyedAppState` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.KeyedAppState.t)`, *default:* `nil`) - List of keyed app states. This field will always be present.
+  *   `packageName` (*type:* `String.t`, *default:* `nil`) - The package name of the app. This field will always be present.
   """
 
   use GoogleApi.Gax.ModelBase

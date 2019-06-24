@@ -21,8 +21,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.AppRestrictionsSchema do
 
   ## Attributes
 
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "androidenterprise#appRestrictionsSchema". Defaults to `androidenterprise#appRestrictionsSchema`.
-  - restrictions (list(GoogleApi.AndroidEnterprise.V1.Model.AppRestrictionsSchemaRestriction.t)): The set of restrictions that make up this schema. Defaults to `nil`.
+  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#appRestrictionsSchema`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#appRestrictionsSchema".
+  *   `restrictions` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.AppRestrictionsSchemaRestriction.t)`, *default:* `nil`) - The set of restrictions that make up this schema.
   """
 
   use GoogleApi.Gax.ModelBase

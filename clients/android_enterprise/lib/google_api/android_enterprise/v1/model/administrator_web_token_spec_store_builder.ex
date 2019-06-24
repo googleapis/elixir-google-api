@@ -21,7 +21,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecStoreBui
 
   ## Attributes
 
-  - enabled (boolean()): Whether the Organize apps page is displayed. Default is true. Defaults to `nil`.
+  *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Whether the Organize apps page is displayed. Default is true.
   """
 
   use GoogleApi.Gax.ModelBase

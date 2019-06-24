@@ -21,9 +21,9 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.NewPermissionsEvent do
 
   ## Attributes
 
-  - approvedPermissions (list(String.t)): The set of permissions that the enterprise admin has already approved for this application. Use Permissions.Get on the EMM API to retrieve details about these permissions. Defaults to `nil`.
-  - productId (String.t): The id of the product (e.g. "app:com.google.android.gm") for which new permissions were added. This field will always be present. Defaults to `nil`.
-  - requestedPermissions (list(String.t)): The set of permissions that the app is currently requesting. Use Permissions.Get on the EMM API to retrieve details about these permissions. Defaults to `nil`.
+  *   `approvedPermissions` (*type:* `list(String.t)`, *default:* `nil`) - The set of permissions that the enterprise admin has already approved for this application. Use Permissions.Get on the EMM API to retrieve details about these permissions.
+  *   `productId` (*type:* `String.t`, *default:* `nil`) - The id of the product (e.g. "app:com.google.android.gm") for which new permissions were added. This field will always be present.
+  *   `requestedPermissions` (*type:* `list(String.t)`, *default:* `nil`) - The set of permissions that the app is currently requesting. Use Permissions.Get on the EMM API to retrieve details about these permissions.
   """
 
   use GoogleApi.Gax.ModelBase

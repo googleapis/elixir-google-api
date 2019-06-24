@@ -21,8 +21,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ManagedConfigurationsSettingsList
 
   ## Attributes
 
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "androidenterprise#managedConfigurationsSettingsListResponse". Defaults to `androidenterprise#managedConfigurationsSettingsListResponse`.
-  - managedConfigurationsSettings (list(GoogleApi.AndroidEnterprise.V1.Model.ManagedConfigurationsSettings.t)): A managed configurations settings for an app that may be assigned to a group of users in an enterprise. Defaults to `nil`.
+  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#managedConfigurationsSettingsListResponse`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#managedConfigurationsSettingsListResponse".
+  *   `managedConfigurationsSettings` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.ManagedConfigurationsSettings.t)`, *default:* `nil`) - A managed configurations settings for an app that may be assigned to a group of users in an enterprise.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,8 +21,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ManagedConfigurationsForDeviceLis
 
   ## Attributes
 
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "androidenterprise#managedConfigurationsForDeviceListResponse". Defaults to `androidenterprise#managedConfigurationsForDeviceListResponse`.
-  - managedConfigurationForDevice (list(GoogleApi.AndroidEnterprise.V1.Model.ManagedConfiguration.t)): A managed configuration for an app on a specific device. Defaults to `nil`.
+  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#managedConfigurationsForDeviceListResponse`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#managedConfigurationsForDeviceListResponse".
+  *   `managedConfigurationForDevice` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.ManagedConfiguration.t)`, *default:* `nil`) - A managed configuration for an app on a specific device.
   """
 
   use GoogleApi.Gax.ModelBase

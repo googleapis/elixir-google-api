@@ -21,14 +21,14 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.NewDeviceEvent do
 
   ## Attributes
 
-  - deviceId (String.t): The Android ID of the device. This field will always be present. Defaults to `nil`.
-  - dpcPackageName (String.t): Policy app on the device. Defaults to `nil`.
-  - managementType (String.t): Identifies the extent to which the device is controlled by an Android EMM in various deployment configurations.
+  *   `deviceId` (*type:* `String.t`, *default:* `nil`) - The Android ID of the device. This field will always be present.
+  *   `dpcPackageName` (*type:* `String.t`, *default:* `nil`) - Policy app on the device.
+  *   `managementType` (*type:* `String.t`, *default:* `nil`) - Identifies the extent to which the device is controlled by an Android EMM in various deployment configurations.
 
-  Possible values include: 
-  - "managedDevice", a device where the DPC is set as device owner, 
-  - "managedProfile", a device where the DPC is set as profile owner. Defaults to `nil`.
-  - userId (String.t): The ID of the user. This field will always be present. Defaults to `nil`.
+      Possible values include: 
+      - "managedDevice", a device where the DPC is set as device owner, 
+      - "managedProfile", a device where the DPC is set as profile owner.
+  *   `userId` (*type:* `String.t`, *default:* `nil`) - The ID of the user. This field will always be present.
   """
 
   use GoogleApi.Gax.ModelBase

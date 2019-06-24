@@ -21,10 +21,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ManagedConfiguration do
 
   ## Attributes
 
-  - configurationVariables (GoogleApi.AndroidEnterprise.V1.Model.ConfigurationVariables.t): Contains the ID of the managed configuration profile and the set of configuration variables (if any) defined for the user. Defaults to `nil`.
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "androidenterprise#managedConfiguration". Defaults to `androidenterprise#managedConfiguration`.
-  - managedProperty (list(GoogleApi.AndroidEnterprise.V1.Model.ManagedProperty.t)): The set of managed properties for this configuration. Defaults to `nil`.
-  - productId (String.t): The ID of the product that the managed configuration is for, e.g. "app:com.google.android.gm". Defaults to `nil`.
+  *   `configurationVariables` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.ConfigurationVariables.t`, *default:* `nil`) - Contains the ID of the managed configuration profile and the set of configuration variables (if any) defined for the user.
+  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#managedConfiguration`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#managedConfiguration".
+  *   `managedProperty` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.ManagedProperty.t)`, *default:* `nil`) - The set of managed properties for this configuration.
+  *   `productId` (*type:* `String.t`, *default:* `nil`) - The ID of the product that the managed configuration is for, e.g. "app:com.google.android.gm".
   """
 
   use GoogleApi.Gax.ModelBase

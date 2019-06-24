@@ -21,9 +21,9 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ProductVisibility do
 
   ## Attributes
 
-  - productId (String.t): The product ID to make visible to the user. Required for each item in the productVisibility list. Defaults to `nil`.
-  - trackIds (list(String.t)): Grants the user visibility to the specified product track(s), identified by trackIds. Defaults to `nil`.
-  - tracks (list(String.t)): Deprecated. Use trackIds instead. Defaults to `nil`.
+  *   `productId` (*type:* `String.t`, *default:* `nil`) - The product ID to make visible to the user. Required for each item in the productVisibility list.
+  *   `trackIds` (*type:* `list(String.t)`, *default:* `nil`) - Grants the user visibility to the specified product track(s), identified by trackIds.
+  *   `tracks` (*type:* `list(String.t)`, *default:* `nil`) - Deprecated. Use trackIds instead.
   """
 
   use GoogleApi.Gax.ModelBase

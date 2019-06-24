@@ -20,6 +20,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Connection do
   Handle Tesla connections for GoogleApi.AndroidEnterprise.V1.
   """
 
+  @type t :: Tesla.Env.client()
+
   use GoogleApi.Gax.Connection,
     scopes: [
       # Manage corporate Android devices

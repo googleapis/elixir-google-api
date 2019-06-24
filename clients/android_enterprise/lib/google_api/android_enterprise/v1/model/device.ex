@@ -21,17 +21,17 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.Device do
 
   ## Attributes
 
-  - androidId (String.t): The Google Play Services Android ID for the device encoded as a lowercase hex string. For example, "123456789abcdef0". Defaults to `nil`.
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "androidenterprise#device". Defaults to `androidenterprise#device`.
-  - managementType (String.t): Identifies the extent to which the device is controlled by a managed Google Play EMM in various deployment configurations.
+  *   `androidId` (*type:* `String.t`, *default:* `nil`) - The Google Play Services Android ID for the device encoded as a lowercase hex string. For example, "123456789abcdef0".
+  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#device`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#device".
+  *   `managementType` (*type:* `String.t`, *default:* `nil`) - Identifies the extent to which the device is controlled by a managed Google Play EMM in various deployment configurations.
 
-  Possible values include: 
-  - "managedDevice", a device that has the EMM's device policy controller (DPC) as the device owner. 
-  - "managedProfile", a device that has a profile managed by the DPC (DPC is profile owner) in addition to a separate, personal profile that is unavailable to the DPC. 
-  - "containerApp", no longer used (deprecated). 
-  - "unmanagedProfile", a device that has been allowed (by the domain's admin, using the Admin Console to enable the privilege) to use managed Google Play, but the profile is itself not owned by a DPC. Defaults to `nil`.
-  - policy (GoogleApi.AndroidEnterprise.V1.Model.Policy.t): The policy enforced on the device. Defaults to `nil`.
-  - report (GoogleApi.AndroidEnterprise.V1.Model.DeviceReport.t): The device report updated with the latest app states. Defaults to `nil`.
+      Possible values include: 
+      - "managedDevice", a device that has the EMM's device policy controller (DPC) as the device owner. 
+      - "managedProfile", a device that has a profile managed by the DPC (DPC is profile owner) in addition to a separate, personal profile that is unavailable to the DPC. 
+      - "containerApp", no longer used (deprecated). 
+      - "unmanagedProfile", a device that has been allowed (by the domain's admin, using the Admin Console to enable the privilege) to use managed Google Play, but the profile is itself not owned by a DPC.
+  *   `policy` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.Policy.t`, *default:* `nil`) - The policy enforced on the device.
+  *   `report` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.DeviceReport.t`, *default:* `nil`) - The device report updated with the latest app states.
   """
 
   use GoogleApi.Gax.ModelBase

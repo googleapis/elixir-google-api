@@ -21,8 +21,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.DeviceReport do
 
   ## Attributes
 
-  - appState (list(GoogleApi.AndroidEnterprise.V1.Model.AppState.t)): List of app states set by managed apps on the device. App states are defined by the app's developers. This field will always be present. Defaults to `nil`.
-  - lastUpdatedTimestampMillis (String.t): The timestamp of the last report update in milliseconds since epoch. This field will always be present. Defaults to `nil`.
+  *   `appState` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.AppState.t)`, *default:* `nil`) - List of app states set by managed apps on the device. App states are defined by the app's developers. This field will always be present.
+  *   `lastUpdatedTimestampMillis` (*type:* `String.t`, *default:* `nil`) - The timestamp of the last report update in milliseconds since epoch. This field will always be present.
   """
 
   use GoogleApi.Gax.ModelBase

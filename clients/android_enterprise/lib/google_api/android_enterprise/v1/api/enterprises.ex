@@ -28,24 +28,28 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidEnterprise.V1.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :notificationSetId (String.t): The notification set ID as returned by Enterprises.PullNotificationSet. This must be provided.
+  *   `connection` (*type:* `GoogleApi.AndroidEnterprise.V1.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:notificationSetId` (*type:* `String.t`) - The notification set ID as returned by Enterprises.PullNotificationSet. This must be provided.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %{}} on success
-  {:error, info} on failure
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec androidenterprise_enterprises_acknowledge_notification_set(Tesla.Env.client(), keyword()) ::
-          {:ok, nil} | {:error, Tesla.Env.t()}
+  @spec androidenterprise_enterprises_acknowledge_notification_set(
+          Tesla.Env.client(),
+          keyword(),
+          keyword()
+        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
   def androidenterprise_enterprises_acknowledge_notification_set(
         connection,
         optional_params \\ [],
@@ -78,24 +82,25 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidEnterprise.V1.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :completionToken (String.t): The Completion token initially returned by GenerateSignupUrl.
-    - :enterpriseToken (String.t): The Enterprise token appended to the Callback URL.
+  *   `connection` (*type:* `GoogleApi.AndroidEnterprise.V1.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:completionToken` (*type:* `String.t`) - The Completion token initially returned by GenerateSignupUrl.
+      *   `:enterpriseToken` (*type:* `String.t`) - The Enterprise token appended to the Callback URL.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidEnterprise.V1.Model.Enterprise{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidEnterprise.V1.Model.Enterprise{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec androidenterprise_enterprises_complete_signup(Tesla.Env.client(), keyword()) ::
+  @spec androidenterprise_enterprises_complete_signup(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.Enterprise.t()} | {:error, Tesla.Env.t()}
   def androidenterprise_enterprises_complete_signup(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -126,24 +131,30 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidEnterprise.V1.Connection): Connection to server
-  - enterprise_id (String.t): The ID of the enterprise.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpec.t): 
+  *   `connection` (*type:* `GoogleApi.AndroidEnterprise.V1.Connection.t`) - Connection to server
+  *   `enterprise_id` (*type:* `String.t`) - The ID of the enterprise.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpec.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebToken{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebToken{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec androidenterprise_enterprises_create_web_token(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec androidenterprise_enterprises_create_web_token(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebToken.t()}
           | {:error, Tesla.Env.t()}
   def androidenterprise_enterprises_create_web_token(
@@ -183,24 +194,25 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidEnterprise.V1.Connection): Connection to server
-  - token (String.t): The token provided by the enterprise to register the EMM.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.AndroidEnterprise.V1.Model.Enterprise.t): 
+  *   `connection` (*type:* `GoogleApi.AndroidEnterprise.V1.Connection.t`) - Connection to server
+  *   `token` (*type:* `String.t`) - The token provided by the enterprise to register the EMM.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.Enterprise.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidEnterprise.V1.Model.Enterprise{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidEnterprise.V1.Model.Enterprise{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec androidenterprise_enterprises_enroll(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec androidenterprise_enterprises_enroll(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.Enterprise.t()} | {:error, Tesla.Env.t()}
   def androidenterprise_enterprises_enroll(connection, token, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -231,25 +243,29 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidEnterprise.V1.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :callbackUrl (String.t): The callback URL to which the Admin will be redirected after successfully creating an enterprise. Before redirecting there the system will add a single query parameter to this URL named "enterpriseToken" which will contain an opaque token to be used for the CompleteSignup request.
-  Beware that this means that the URL will be parsed, the parameter added and then a new URL formatted, i.e. there may be some minor formatting changes and, more importantly, the URL must be well-formed so that it can be parsed.
+  *   `connection` (*type:* `GoogleApi.AndroidEnterprise.V1.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:callbackUrl` (*type:* `String.t`) - The callback URL to which the Admin will be redirected after successfully creating an enterprise. Before redirecting there the system will add a single query parameter to this URL named "enterpriseToken" which will contain an opaque token to be used for the CompleteSignup request.
+          Beware that this means that the URL will be parsed, the parameter added and then a new URL formatted, i.e. there may be some minor formatting changes and, more importantly, the URL must be well-formed so that it can be parsed.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidEnterprise.V1.Model.SignupInfo{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidEnterprise.V1.Model.SignupInfo{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec androidenterprise_enterprises_generate_signup_url(Tesla.Env.client(), keyword()) ::
-          {:ok, GoogleApi.AndroidEnterprise.V1.Model.SignupInfo.t()} | {:error, Tesla.Env.t()}
+  @spec androidenterprise_enterprises_generate_signup_url(
+          Tesla.Env.client(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.AndroidEnterprise.V1.Model.SignupInfo.t()} | {:error, Tesla.Env.t()}
   def androidenterprise_enterprises_generate_signup_url(
         connection,
         optional_params \\ [],
@@ -282,23 +298,24 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidEnterprise.V1.Connection): Connection to server
-  - enterprise_id (String.t): The ID of the enterprise.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AndroidEnterprise.V1.Connection.t`) - Connection to server
+  *   `enterprise_id` (*type:* `String.t`) - The ID of the enterprise.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidEnterprise.V1.Model.Enterprise{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidEnterprise.V1.Model.Enterprise{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec androidenterprise_enterprises_get(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec androidenterprise_enterprises_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.Enterprise.t()} | {:error, Tesla.Env.t()}
   def androidenterprise_enterprises_get(
         connection,
@@ -340,26 +357,28 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidEnterprise.V1.Connection): Connection to server
-  - enterprise_id (String.t): The ID of the enterprise.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :keyType (String.t): The type of credential to return with the service account. Required.
+  *   `connection` (*type:* `GoogleApi.AndroidEnterprise.V1.Connection.t`) - Connection to server
+  *   `enterprise_id` (*type:* `String.t`) - The ID of the enterprise.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:keyType` (*type:* `String.t`) - The type of credential to return with the service account. Required.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidEnterprise.V1.Model.ServiceAccount{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidEnterprise.V1.Model.ServiceAccount{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec androidenterprise_enterprises_get_service_account(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.ServiceAccount.t()} | {:error, Tesla.Env.t()}
@@ -398,24 +417,29 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidEnterprise.V1.Connection): Connection to server
-  - enterprise_id (String.t): The ID of the enterprise.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AndroidEnterprise.V1.Connection.t`) - Connection to server
+  *   `enterprise_id` (*type:* `String.t`) - The ID of the enterprise.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidEnterprise.V1.Model.StoreLayout{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidEnterprise.V1.Model.StoreLayout{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec androidenterprise_enterprises_get_store_layout(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, GoogleApi.AndroidEnterprise.V1.Model.StoreLayout.t()} | {:error, Tesla.Env.t()}
+  @spec androidenterprise_enterprises_get_store_layout(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.AndroidEnterprise.V1.Model.StoreLayout.t()} | {:error, Tesla.Env.t()}
   def androidenterprise_enterprises_get_store_layout(
         connection,
         enterprise_id,
@@ -450,23 +474,24 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidEnterprise.V1.Connection): Connection to server
-  - domain (String.t): The exact primary domain name of the enterprise to look up.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AndroidEnterprise.V1.Connection.t`) - Connection to server
+  *   `domain` (*type:* `String.t`) - The exact primary domain name of the enterprise to look up.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidEnterprise.V1.Model.EnterprisesListResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidEnterprise.V1.Model.EnterprisesListResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec androidenterprise_enterprises_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec androidenterprise_enterprises_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.EnterprisesListResponse.t()}
           | {:error, Tesla.Env.t()}
   def androidenterprise_enterprises_list(connection, domain, optional_params \\ [], opts \\ []) do
@@ -503,26 +528,31 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidEnterprise.V1.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :requestMode (String.t): The request mode for pulling notifications.
-  Specifying waitForNotifications will cause the request to block and wait until one or more notifications are present, or return an empty notification list if no notifications are present after some time.
-  Speciying returnImmediately will cause the request to immediately return the pending notifications, or an empty list if no notifications are present.
-  If omitted, defaults to waitForNotifications.
+  *   `connection` (*type:* `GoogleApi.AndroidEnterprise.V1.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:requestMode` (*type:* `String.t`) - The request mode for pulling notifications.
+          Specifying waitForNotifications will cause the request to block and wait until one or more notifications are present, or return an empty notification list if no notifications are present after some time.
+          Speciying returnImmediately will cause the request to immediately return the pending notifications, or an empty list if no notifications are present.
+          If omitted, defaults to waitForNotifications.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidEnterprise.V1.Model.NotificationSet{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidEnterprise.V1.Model.NotificationSet{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec androidenterprise_enterprises_pull_notification_set(Tesla.Env.client(), keyword()) ::
+  @spec androidenterprise_enterprises_pull_notification_set(
+          Tesla.Env.client(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.NotificationSet.t()}
           | {:error, Tesla.Env.t()}
   def androidenterprise_enterprises_pull_notification_set(
@@ -557,25 +587,27 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidEnterprise.V1.Connection): Connection to server
-  - enterprise_id (String.t): The ID of the enterprise.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AndroidEnterprise.V1.Connection.t`) - Connection to server
+  *   `enterprise_id` (*type:* `String.t`) - The ID of the enterprise.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidEnterprise.V1.Model.EnterprisesSendTestPushNotificationResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidEnterprise.V1.Model.EnterprisesSendTestPushNotificationResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec androidenterprise_enterprises_send_test_push_notification(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok,
@@ -621,24 +653,30 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidEnterprise.V1.Connection): Connection to server
-  - enterprise_id (String.t): The ID of the enterprise.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.AndroidEnterprise.V1.Model.EnterpriseAccount.t): 
+  *   `connection` (*type:* `GoogleApi.AndroidEnterprise.V1.Connection.t`) - Connection to server
+  *   `enterprise_id` (*type:* `String.t`) - The ID of the enterprise.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.EnterpriseAccount.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidEnterprise.V1.Model.EnterpriseAccount{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidEnterprise.V1.Model.EnterpriseAccount{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec androidenterprise_enterprises_set_account(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec androidenterprise_enterprises_set_account(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.EnterpriseAccount.t()}
           | {:error, Tesla.Env.t()}
   def androidenterprise_enterprises_set_account(
@@ -678,25 +716,30 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidEnterprise.V1.Connection): Connection to server
-  - enterprise_id (String.t): The ID of the enterprise.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.AndroidEnterprise.V1.Model.StoreLayout.t): 
+  *   `connection` (*type:* `GoogleApi.AndroidEnterprise.V1.Connection.t`) - Connection to server
+  *   `enterprise_id` (*type:* `String.t`) - The ID of the enterprise.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.StoreLayout.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidEnterprise.V1.Model.StoreLayout{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidEnterprise.V1.Model.StoreLayout{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec androidenterprise_enterprises_set_store_layout(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, GoogleApi.AndroidEnterprise.V1.Model.StoreLayout.t()} | {:error, Tesla.Env.t()}
+  @spec androidenterprise_enterprises_set_store_layout(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.AndroidEnterprise.V1.Model.StoreLayout.t()} | {:error, Tesla.Env.t()}
   def androidenterprise_enterprises_set_store_layout(
         connection,
         enterprise_id,
@@ -732,24 +775,29 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidEnterprise.V1.Connection): Connection to server
-  - enterprise_id (String.t): The ID of the enterprise.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AndroidEnterprise.V1.Connection.t`) - Connection to server
+  *   `enterprise_id` (*type:* `String.t`) - The ID of the enterprise.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %{}} on success
-  {:error, info} on failure
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec androidenterprise_enterprises_unenroll(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, nil} | {:error, Tesla.Env.t()}
+  @spec androidenterprise_enterprises_unenroll(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
   def androidenterprise_enterprises_unenroll(
         connection,
         enterprise_id,

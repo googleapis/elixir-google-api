@@ -21,8 +21,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ProductsApproveRequest do
 
   ## Attributes
 
-  - approvalUrlInfo (GoogleApi.AndroidEnterprise.V1.Model.ApprovalUrlInfo.t): The approval URL that was shown to the user. Only the permissions shown to the user with that URL will be accepted, which may not be the product's entire set of permissions. For example, the URL may only display new permissions from an update after the product was approved, or not include new permissions if the product was updated since the URL was generated. Defaults to `nil`.
-  - approvedPermissions (String.t): Sets how new permission requests for the product are handled. "allPermissions" automatically approves all current and future permissions for the product. "currentPermissionsOnly" approves the current set of permissions for the product, but any future permissions added through updates will require manual reapproval. If not specified, only the current set of permissions will be approved. Defaults to `nil`.
+  *   `approvalUrlInfo` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.ApprovalUrlInfo.t`, *default:* `nil`) - The approval URL that was shown to the user. Only the permissions shown to the user with that URL will be accepted, which may not be the product's entire set of permissions. For example, the URL may only display new permissions from an update after the product was approved, or not include new permissions if the product was updated since the URL was generated.
+  *   `approvedPermissions` (*type:* `String.t`, *default:* `nil`) - Sets how new permission requests for the product are handled. "allPermissions" automatically approves all current and future permissions for the product. "currentPermissionsOnly" approves the current set of permissions for the product, but any future permissions added through updates will require manual reapproval. If not specified, only the current set of permissions will be approved.
   """
 
   use GoogleApi.Gax.ModelBase

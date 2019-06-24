@@ -21,12 +21,12 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.StorePage do
 
   ## Attributes
 
-  - id (String.t): Unique ID of this page. Assigned by the server. Immutable once assigned. Defaults to `nil`.
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "androidenterprise#storePage". Defaults to `androidenterprise#storePage`.
-  - link (list(String.t)): Ordered list of pages a user should be able to reach from this page. The list can't include this page. It is recommended that the basic pages are created first, before adding the links between pages.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Unique ID of this page. Assigned by the server. Immutable once assigned.
+  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#storePage`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#storePage".
+  *   `link` (*type:* `list(String.t)`, *default:* `nil`) - Ordered list of pages a user should be able to reach from this page. The list can't include this page. It is recommended that the basic pages are created first, before adding the links between pages.
 
-  The API doesn't verify that the pages exist or the pages are reachable. Defaults to `nil`.
-  - name (list(GoogleApi.AndroidEnterprise.V1.Model.LocalizedText.t)): Ordered list of localized strings giving the name of this page. The text displayed is the one that best matches the user locale, or the first entry if there is no good match. There needs to be at least one entry. Defaults to `nil`.
+      The API doesn't verify that the pages exist or the pages are reachable.
+  *   `name` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.LocalizedText.t)`, *default:* `nil`) - Ordered list of localized strings giving the name of this page. The text displayed is the one that best matches the user locale, or the first entry if there is no good match. There needs to be at least one entry.
   """
 
   use GoogleApi.Gax.ModelBase

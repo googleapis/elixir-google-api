@@ -21,8 +21,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ProductAvailabilityChangeEvent do
 
   ## Attributes
 
-  - availabilityStatus (String.t): The new state of the product. This field will always be present. Defaults to `nil`.
-  - productId (String.t): The id of the product (e.g. "app:com.google.android.gm") for which the product availability changed. This field will always be present. Defaults to `nil`.
+  *   `availabilityStatus` (*type:* `String.t`, *default:* `nil`) - The new state of the product. This field will always be present.
+  *   `productId` (*type:* `String.t`, *default:* `nil`) - The id of the product (e.g. "app:com.google.android.gm") for which the product availability changed. This field will always be present.
   """
 
   use GoogleApi.Gax.ModelBase

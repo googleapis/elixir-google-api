@@ -21,8 +21,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ProductSigningCertificate do
 
   ## Attributes
 
-  - certificateHashSha1 (String.t): The base64 urlsafe encoded SHA1 hash of the certificate. (This field is deprecated in favor of SHA2-256. It should not be used and may be removed at any time.) Defaults to `nil`.
-  - certificateHashSha256 (String.t): The base64 urlsafe encoded SHA2-256 hash of the certificate. Defaults to `nil`.
+  *   `certificateHashSha1` (*type:* `String.t`, *default:* `nil`) - The base64 urlsafe encoded SHA1 hash of the certificate. (This field is deprecated in favor of SHA2-256. It should not be used and may be removed at any time.)
+  *   `certificateHashSha256` (*type:* `String.t`, *default:* `nil`) - The base64 urlsafe encoded SHA2-256 hash of the certificate.
   """
 
   use GoogleApi.Gax.ModelBase

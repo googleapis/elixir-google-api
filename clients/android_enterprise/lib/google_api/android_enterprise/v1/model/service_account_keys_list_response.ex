@@ -21,7 +21,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ServiceAccountKeysListResponse do
 
   ## Attributes
 
-  - serviceAccountKey (list(GoogleApi.AndroidEnterprise.V1.Model.ServiceAccountKey.t)): The service account credentials. Defaults to `nil`.
+  *   `serviceAccountKey` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.ServiceAccountKey.t)`, *default:* `nil`) - The service account credentials.
   """
 
   use GoogleApi.Gax.ModelBase

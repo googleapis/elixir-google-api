@@ -23,13 +23,13 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.User do
 
   ## Attributes
 
-  - accountIdentifier (String.t): A unique identifier you create for this user, such as "user342" or "asset#44418". Do not use personally identifiable information (PII) for this property. Must always be set for EMM-managed users. Not set for Google-managed users. Defaults to `nil`.
-  - accountType (String.t): The type of account that this user represents. A userAccount can be installed on multiple devices, but a deviceAccount is specific to a single device. An EMM-managed user (emmManaged) can be either type (userAccount, deviceAccount), but a Google-managed user (googleManaged) is always a userAccount. Defaults to `nil`.
-  - displayName (String.t): The name that will appear in user interfaces. Setting this property is optional when creating EMM-managed users. If you do set this property, use something generic about the organization (such as "Example, Inc.") or your name (as EMM). Not used for Google-managed user accounts. Defaults to `nil`.
-  - id (String.t): The unique ID for the user. Defaults to `nil`.
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "androidenterprise#user". Defaults to `androidenterprise#user`.
-  - managementType (String.t): The entity that manages the user. With googleManaged users, the source of truth is Google so EMMs have to make sure a Google Account exists for the user. With emmManaged users, the EMM is in charge. Defaults to `nil`.
-  - primaryEmail (String.t): The user's primary email address, for example, "jsmith@example.com". Will always be set for Google managed users and not set for EMM managed users. Defaults to `nil`.
+  *   `accountIdentifier` (*type:* `String.t`, *default:* `nil`) - A unique identifier you create for this user, such as "user342" or "asset#44418". Do not use personally identifiable information (PII) for this property. Must always be set for EMM-managed users. Not set for Google-managed users.
+  *   `accountType` (*type:* `String.t`, *default:* `nil`) - The type of account that this user represents. A userAccount can be installed on multiple devices, but a deviceAccount is specific to a single device. An EMM-managed user (emmManaged) can be either type (userAccount, deviceAccount), but a Google-managed user (googleManaged) is always a userAccount.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The name that will appear in user interfaces. Setting this property is optional when creating EMM-managed users. If you do set this property, use something generic about the organization (such as "Example, Inc.") or your name (as EMM). Not used for Google-managed user accounts.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The unique ID for the user.
+  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#user`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#user".
+  *   `managementType` (*type:* `String.t`, *default:* `nil`) - The entity that manages the user. With googleManaged users, the source of truth is Google so EMMs have to make sure a Google Account exists for the user. With emmManaged users, the EMM is in charge.
+  *   `primaryEmail` (*type:* `String.t`, *default:* `nil`) - The user's primary email address, for example, "jsmith@example.com". Will always be set for Google managed users and not set for EMM managed users.
   """
 
   use GoogleApi.Gax.ModelBase
