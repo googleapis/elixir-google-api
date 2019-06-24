@@ -21,9 +21,9 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.StartManualTransferRunsRequest
 
   ## Attributes
 
-  - requestedRunTime (DateTime.t): Specific run_time for a transfer run to be started. The
-  requested_run_time must not be in the future. Defaults to `nil`.
-  - requestedTimeRange (GoogleApi.BigQueryDataTransfer.V1.Model.TimeRange.t): Time range for the transfer runs that should be started. Defaults to `nil`.
+  *   `requestedRunTime` (*type:* `DateTime.t`, *default:* `nil`) - Specific run_time for a transfer run to be started. The
+      requested_run_time must not be in the future.
+  *   `requestedTimeRange` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Model.TimeRange.t`, *default:* `nil`) - Time range for the transfer runs that should be started.
   """
 
   use GoogleApi.Gax.ModelBase

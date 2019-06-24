@@ -26,43 +26,43 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig do
 
   ## Attributes
 
-  - dataRefreshWindowDays (integer()): The number of days to look back to automatically refresh the data.
-  For example, if `data_refresh_window_days = 10`, then every day
-  BigQuery reingests data for [today-10, today-1], rather than ingesting data
-  for just [today-1].
-  Only valid if the data source supports the feature. Set the value to  0
-  to use the default value. Defaults to `nil`.
-  - dataSourceId (String.t): Data source id. Cannot be changed once data transfer is created. Defaults to `nil`.
-  - datasetRegion (String.t): Output only. Region in which BigQuery dataset is located. Defaults to `nil`.
-  - destinationDatasetId (String.t): The BigQuery target dataset id. Defaults to `nil`.
-  - disabled (boolean()): Is this config disabled. When set to true, no runs are scheduled
-  for a given transfer. Defaults to `nil`.
-  - displayName (String.t): User specified display name for the data transfer. Defaults to `nil`.
-  - name (String.t): The resource name of the transfer config.
-  Transfer config names have the form of
-  `projects/{project_id}/locations/{region}/transferConfigs/{config_id}`.
-  The name is automatically generated based on the config_id specified in
-  CreateTransferConfigRequest along with project_id and region. If config_id
-  is not provided, usually a uuid, even though it is not guaranteed or
-  required, will be generated for config_id. Defaults to `nil`.
-  - nextRunTime (DateTime.t): Output only. Next time when data transfer will run. Defaults to `nil`.
-  - params (map()): Data transfer specific parameters. Defaults to `nil`.
-  - schedule (String.t): Data transfer schedule.
-  If the data source does not support a custom schedule, this should be
-  empty. If it is empty, the default value for the data source will be
-  used.
-  The specified times are in UTC.
-  Examples of valid format:
-  `1st,3rd monday of month 15:30`,
-  `every wed,fri of jan,jun 13:15`, and
-  `first sunday of quarter 00:00`.
-  See more explanation about the format here:
-  https://cloud.google.com/appengine/docs/flexible/python/scheduling-jobs-with-cron-yaml#the_schedule_format
-  NOTE: the granularity should be at least 8 hours, or less frequent. Defaults to `nil`.
-  - scheduleOptions (GoogleApi.BigQueryDataTransfer.V1.Model.ScheduleOptions.t): Options customizing the data transfer schedule. Defaults to `nil`.
-  - state (String.t): Output only. State of the most recently updated transfer run. Defaults to `nil`.
-  - updateTime (DateTime.t): Output only. Data transfer modification time. Ignored by server on input. Defaults to `nil`.
-  - userId (String.t): Deprecated. Unique ID of the user on whose behalf transfer is done. Defaults to `nil`.
+  *   `dataRefreshWindowDays` (*type:* `integer()`, *default:* `nil`) - The number of days to look back to automatically refresh the data.
+      For example, if `data_refresh_window_days = 10`, then every day
+      BigQuery reingests data for [today-10, today-1], rather than ingesting data
+      for just [today-1].
+      Only valid if the data source supports the feature. Set the value to  0
+      to use the default value.
+  *   `dataSourceId` (*type:* `String.t`, *default:* `nil`) - Data source id. Cannot be changed once data transfer is created.
+  *   `datasetRegion` (*type:* `String.t`, *default:* `nil`) - Output only. Region in which BigQuery dataset is located.
+  *   `destinationDatasetId` (*type:* `String.t`, *default:* `nil`) - The BigQuery target dataset id.
+  *   `disabled` (*type:* `boolean()`, *default:* `nil`) - Is this config disabled. When set to true, no runs are scheduled
+      for a given transfer.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - User specified display name for the data transfer.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the transfer config.
+      Transfer config names have the form of
+      `projects/{project_id}/locations/{region}/transferConfigs/{config_id}`.
+      The name is automatically generated based on the config_id specified in
+      CreateTransferConfigRequest along with project_id and region. If config_id
+      is not provided, usually a uuid, even though it is not guaranteed or
+      required, will be generated for config_id.
+  *   `nextRunTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Next time when data transfer will run.
+  *   `params` (*type:* `map()`, *default:* `nil`) - Data transfer specific parameters.
+  *   `schedule` (*type:* `String.t`, *default:* `nil`) - Data transfer schedule.
+      If the data source does not support a custom schedule, this should be
+      empty. If it is empty, the default value for the data source will be
+      used.
+      The specified times are in UTC.
+      Examples of valid format:
+      `1st,3rd monday of month 15:30`,
+      `every wed,fri of jan,jun 13:15`, and
+      `first sunday of quarter 00:00`.
+      See more explanation about the format here:
+      https://cloud.google.com/appengine/docs/flexible/python/scheduling-jobs-with-cron-yaml#the_schedule_format
+      NOTE: the granularity should be at least 8 hours, or less frequent.
+  *   `scheduleOptions` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Model.ScheduleOptions.t`, *default:* `nil`) - Options customizing the data transfer schedule.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of the most recently updated transfer run.
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Data transfer modification time. Ignored by server on input.
+  *   `userId` (*type:* `String.t`, *default:* `nil`) - Deprecated. Unique ID of the user on whose behalf transfer is done.
   """
 
   use GoogleApi.Gax.ModelBase

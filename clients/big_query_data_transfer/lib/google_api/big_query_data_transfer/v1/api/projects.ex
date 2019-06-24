@@ -33,31 +33,33 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.BigQueryDataTransfer.V1.Connection): Connection to server
-  - name (String.t): The data source in the form:
-  `projects/{project_id}/dataSources/{data_source_id}`
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.BigQueryDataTransfer.V1.Model.CheckValidCredsRequest.t): 
+  *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - The data source in the form:
+      `projects/{project_id}/dataSources/{data_source_id}`
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Model.CheckValidCredsRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.CheckValidCredsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.CheckValidCredsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec bigquerydatatransfer_projects_data_sources_check_valid_creds(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.CheckValidCredsResponse.t()}
@@ -104,28 +106,34 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.BigQueryDataTransfer.V1.Connection): Connection to server
-  - name (String.t): The field will contain name of the resource requested, for example:
-  `projects/{project_id}/dataSources/{data_source_id}`
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - The field will contain name of the resource requested, for example:
+      `projects/{project_id}/dataSources/{data_source_id}`
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.DataSource{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.DataSource{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec bigquerydatatransfer_projects_data_sources_get(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec bigquerydatatransfer_projects_data_sources_get(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.DataSource.t()} | {:error, Tesla.Env.t()}
   def bigquerydatatransfer_projects_data_sources_get(
         connection,
@@ -166,34 +174,40 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.BigQueryDataTransfer.V1.Connection): Connection to server
-  - parent (String.t): The BigQuery project id for which data sources should be returned.
-  Must be in the form: `projects/{project_id}`
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :pageSize (integer()): Page size. The default page size is the maximum value of 1000 results.
-    - :pageToken (String.t): Pagination token, which can be used to request a specific page
-  of `ListDataSourcesRequest` list results. For multiple-page
-  results, `ListDataSourcesResponse` outputs
-  a `next_page` token, which can be used as the
-  `page_token` value to request the next page of list results.
+  *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - The BigQuery project id for which data sources should be returned.
+      Must be in the form: `projects/{project_id}`
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - Page size. The default page size is the maximum value of 1000 results.
+      *   `:pageToken` (*type:* `String.t`) - Pagination token, which can be used to request a specific page
+          of `ListDataSourcesRequest` list results. For multiple-page
+          results, `ListDataSourcesResponse` outputs
+          a `next_page` token, which can be used as the
+          `page_token` value to request the next page of list results.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.ListDataSourcesResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.ListDataSourcesResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec bigquerydatatransfer_projects_data_sources_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec bigquerydatatransfer_projects_data_sources_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.ListDataSourcesResponse.t()}
           | {:error, Tesla.Env.t()}
   def bigquerydatatransfer_projects_data_sources_list(
@@ -238,28 +252,33 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.BigQueryDataTransfer.V1.Connection): Connection to server
-  - name (String.t): Resource name for the location.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Resource name for the location.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.Location{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.Location{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec bigquerydatatransfer_projects_locations_get(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.Location.t()} | {:error, Tesla.Env.t()}
+  @spec bigquerydatatransfer_projects_locations_get(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.Location.t()} | {:error, Tesla.Env.t()}
   def bigquerydatatransfer_projects_locations_get(
         connection,
         name,
@@ -298,30 +317,36 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.BigQueryDataTransfer.V1.Connection): Connection to server
-  - name (String.t): The resource that owns the locations collection, if applicable.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :filter (String.t): The standard list filter.
-    - :pageSize (integer()): The standard list page size.
-    - :pageToken (String.t): The standard list page token.
+  *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - The resource that owns the locations collection, if applicable.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:filter` (*type:* `String.t`) - The standard list filter.
+      *   `:pageSize` (*type:* `integer()`) - The standard list page size.
+      *   `:pageToken` (*type:* `String.t`) - The standard list page token.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.ListLocationsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.ListLocationsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec bigquerydatatransfer_projects_locations_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec bigquerydatatransfer_projects_locations_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.ListLocationsResponse.t()}
           | {:error, Tesla.Env.t()}
   def bigquerydatatransfer_projects_locations_list(
@@ -372,31 +397,33 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.BigQueryDataTransfer.V1.Connection): Connection to server
-  - name (String.t): The data source in the form:
-  `projects/{project_id}/dataSources/{data_source_id}`
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.BigQueryDataTransfer.V1.Model.CheckValidCredsRequest.t): 
+  *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - The data source in the form:
+      `projects/{project_id}/dataSources/{data_source_id}`
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Model.CheckValidCredsRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.CheckValidCredsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.CheckValidCredsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec bigquerydatatransfer_projects_locations_data_sources_check_valid_creds(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.CheckValidCredsResponse.t()}
@@ -443,30 +470,32 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.BigQueryDataTransfer.V1.Connection): Connection to server
-  - name (String.t): The field will contain name of the resource requested, for example:
-  `projects/{project_id}/dataSources/{data_source_id}`
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - The field will contain name of the resource requested, for example:
+      `projects/{project_id}/dataSources/{data_source_id}`
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.DataSource{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.DataSource{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec bigquerydatatransfer_projects_locations_data_sources_get(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.DataSource.t()} | {:error, Tesla.Env.t()}
@@ -509,36 +538,38 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.BigQueryDataTransfer.V1.Connection): Connection to server
-  - parent (String.t): The BigQuery project id for which data sources should be returned.
-  Must be in the form: `projects/{project_id}`
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :pageSize (integer()): Page size. The default page size is the maximum value of 1000 results.
-    - :pageToken (String.t): Pagination token, which can be used to request a specific page
-  of `ListDataSourcesRequest` list results. For multiple-page
-  results, `ListDataSourcesResponse` outputs
-  a `next_page` token, which can be used as the
-  `page_token` value to request the next page of list results.
+  *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - The BigQuery project id for which data sources should be returned.
+      Must be in the form: `projects/{project_id}`
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - Page size. The default page size is the maximum value of 1000 results.
+      *   `:pageToken` (*type:* `String.t`) - Pagination token, which can be used to request a specific page
+          of `ListDataSourcesRequest` list results. For multiple-page
+          results, `ListDataSourcesResponse` outputs
+          a `next_page` token, which can be used as the
+          `page_token` value to request the next page of list results.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.ListDataSourcesResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.ListDataSourcesResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec bigquerydatatransfer_projects_locations_data_sources_list(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.ListDataSourcesResponse.t()}
@@ -585,55 +616,57 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.BigQueryDataTransfer.V1.Connection): Connection to server
-  - parent (String.t): The BigQuery project id where the transfer configuration should be created.
-  Must be in the format projects/{project_id}/locations/{location_id}
-  If specified location and location of the destination bigquery dataset
-  do not match - the request will fail.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :authorizationCode (String.t): Optional OAuth2 authorization code to use with this transfer configuration.
-  This is required if new credentials are needed, as indicated by
-  `CheckValidCreds`.
-  In order to obtain authorization_code, please make a
-  request to
-  https://www.gstatic.com/bigquerydatatransfer/oauthz/auth?client_id=<datatransferapiclientid>&scope=<data_source_scopes>&redirect_uri=<redirect_uri>
+  *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - The BigQuery project id where the transfer configuration should be created.
+      Must be in the format projects/{project_id}/locations/{location_id}
+      If specified location and location of the destination bigquery dataset
+      do not match - the request will fail.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:authorizationCode` (*type:* `String.t`) - Optional OAuth2 authorization code to use with this transfer configuration.
+          This is required if new credentials are needed, as indicated by
+          `CheckValidCreds`.
+          In order to obtain authorization_code, please make a
+          request to
+          https://www.gstatic.com/bigquerydatatransfer/oauthz/auth?client_id=<datatransferapiclientid>&scope=<data_source_scopes>&redirect_uri=<redirect_uri>
 
-  * client_id should be OAuth client_id of BigQuery DTS API for the given
-  data source returned by ListDataSources method.
-  * data_source_scopes are the scopes returned by ListDataSources method.
-  * redirect_uri is an optional parameter. If not specified, then
-  authorization code is posted to the opener of authorization flow window.
-  Otherwise it will be sent to the redirect uri. A special value of
-  urn:ietf:wg:oauth:2.0:oob means that authorization code should be
-  returned in the title bar of the browser, with the page text prompting
-  the user to copy the code and paste it in the application.
-    - :versionInfo (String.t): Optional version info. If users want to find a very recent access token,
-  that is, immediately after approving access, users have to set the
-  version_info claim in the token request. To obtain the version_info, users
-  must use the "none+gsession" response type. which be return a
-  version_info back in the authorization response which be be put in a JWT
-  claim in the token request.
-    - :body (GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig.t): 
+          * client_id should be OAuth client_id of BigQuery DTS API for the given
+            data source returned by ListDataSources method.
+          * data_source_scopes are the scopes returned by ListDataSources method.
+          * redirect_uri is an optional parameter. If not specified, then
+            authorization code is posted to the opener of authorization flow window.
+            Otherwise it will be sent to the redirect uri. A special value of
+            urn:ietf:wg:oauth:2.0:oob means that authorization code should be
+            returned in the title bar of the browser, with the page text prompting
+            the user to copy the code and paste it in the application.
+      *   `:versionInfo` (*type:* `String.t`) - Optional version info. If users want to find a very recent access token,
+          that is, immediately after approving access, users have to set the
+          version_info claim in the token request. To obtain the version_info, users
+          must use the "none+gsession" response type. which be return a
+          version_info back in the authorization response which be be put in a JWT
+          claim in the token request.
+      *   `:body` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec bigquerydatatransfer_projects_locations_transfer_configs_create(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig.t()}
@@ -682,30 +715,32 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.BigQueryDataTransfer.V1.Connection): Connection to server
-  - name (String.t): The field will contain name of the resource requested, for example:
-  `projects/{project_id}/transferConfigs/{config_id}`
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - The field will contain name of the resource requested, for example:
+      `projects/{project_id}/transferConfigs/{config_id}`
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.Empty{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec bigquerydatatransfer_projects_locations_transfer_configs_delete(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
   def bigquerydatatransfer_projects_locations_transfer_configs_delete(
@@ -746,30 +781,32 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.BigQueryDataTransfer.V1.Connection): Connection to server
-  - name (String.t): The field will contain name of the resource requested, for example:
-  `projects/{project_id}/transferConfigs/{config_id}`
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - The field will contain name of the resource requested, for example:
+      `projects/{project_id}/transferConfigs/{config_id}`
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec bigquerydatatransfer_projects_locations_transfer_configs_get(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig.t()}
@@ -814,37 +851,39 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.BigQueryDataTransfer.V1.Connection): Connection to server
-  - parent (String.t): The BigQuery project id for which data sources
-  should be returned: `projects/{project_id}`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :dataSourceIds (list(String.t)): When specified, only configurations of requested data sources are returned.
-    - :pageSize (integer()): Page size. The default page size is the maximum value of 1000 results.
-    - :pageToken (String.t): Pagination token, which can be used to request a specific page
-  of `ListTransfersRequest` list results. For multiple-page
-  results, `ListTransfersResponse` outputs
-  a `next_page` token, which can be used as the
-  `page_token` value to request the next page of list results.
+  *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - The BigQuery project id for which data sources
+      should be returned: `projects/{project_id}`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:dataSourceIds` (*type:* `list(String.t)`) - When specified, only configurations of requested data sources are returned.
+      *   `:pageSize` (*type:* `integer()`) - Page size. The default page size is the maximum value of 1000 results.
+      *   `:pageToken` (*type:* `String.t`) - Pagination token, which can be used to request a specific page
+          of `ListTransfersRequest` list results. For multiple-page
+          results, `ListTransfersResponse` outputs
+          a `next_page` token, which can be used as the
+          `page_token` value to request the next page of list results.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.ListTransferConfigsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.ListTransferConfigsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec bigquerydatatransfer_projects_locations_transfer_configs_list(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.ListTransferConfigsResponse.t()}
@@ -893,59 +932,61 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.BigQueryDataTransfer.V1.Connection): Connection to server
-  - name (String.t): The resource name of the transfer config.
-  Transfer config names have the form of
-  `projects/{project_id}/locations/{region}/transferConfigs/{config_id}`.
-  The name is automatically generated based on the config_id specified in
-  CreateTransferConfigRequest along with project_id and region. If config_id
-  is not provided, usually a uuid, even though it is not guaranteed or
-  required, will be generated for config_id.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :authorizationCode (String.t): Optional OAuth2 authorization code to use with this transfer configuration.
-  If it is provided, the transfer configuration will be associated with the
-  authorizing user.
-  In order to obtain authorization_code, please make a
-  request to
-  https://www.gstatic.com/bigquerydatatransfer/oauthz/auth?client_id=<datatransferapiclientid>&scope=<data_source_scopes>&redirect_uri=<redirect_uri>
+  *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - The resource name of the transfer config.
+      Transfer config names have the form of
+      `projects/{project_id}/locations/{region}/transferConfigs/{config_id}`.
+      The name is automatically generated based on the config_id specified in
+      CreateTransferConfigRequest along with project_id and region. If config_id
+      is not provided, usually a uuid, even though it is not guaranteed or
+      required, will be generated for config_id.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:authorizationCode` (*type:* `String.t`) - Optional OAuth2 authorization code to use with this transfer configuration.
+          If it is provided, the transfer configuration will be associated with the
+          authorizing user.
+          In order to obtain authorization_code, please make a
+          request to
+          https://www.gstatic.com/bigquerydatatransfer/oauthz/auth?client_id=<datatransferapiclientid>&scope=<data_source_scopes>&redirect_uri=<redirect_uri>
 
-  * client_id should be OAuth client_id of BigQuery DTS API for the given
-  data source returned by ListDataSources method.
-  * data_source_scopes are the scopes returned by ListDataSources method.
-  * redirect_uri is an optional parameter. If not specified, then
-  authorization code is posted to the opener of authorization flow window.
-  Otherwise it will be sent to the redirect uri. A special value of
-  urn:ietf:wg:oauth:2.0:oob means that authorization code should be
-  returned in the title bar of the browser, with the page text prompting
-  the user to copy the code and paste it in the application.
-    - :updateMask (String.t): Required list of fields to be updated in this request.
-    - :versionInfo (String.t): Optional version info. If users want to find a very recent access token,
-  that is, immediately after approving access, users have to set the
-  version_info claim in the token request. To obtain the version_info, users
-  must use the "none+gsession" response type. which be return a
-  version_info back in the authorization response which be be put in a JWT
-  claim in the token request.
-    - :body (GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig.t): 
+          * client_id should be OAuth client_id of BigQuery DTS API for the given
+            data source returned by ListDataSources method.
+          * data_source_scopes are the scopes returned by ListDataSources method.
+          * redirect_uri is an optional parameter. If not specified, then
+            authorization code is posted to the opener of authorization flow window.
+            Otherwise it will be sent to the redirect uri. A special value of
+            urn:ietf:wg:oauth:2.0:oob means that authorization code should be
+            returned in the title bar of the browser, with the page text prompting
+            the user to copy the code and paste it in the application.
+      *   `:updateMask` (*type:* `String.t`) - Required list of fields to be updated in this request.
+      *   `:versionInfo` (*type:* `String.t`) - Optional version info. If users want to find a very recent access token,
+          that is, immediately after approving access, users have to set the
+          version_info claim in the token request. To obtain the version_info, users
+          must use the "none+gsession" response type. which be return a
+          version_info back in the authorization response which be be put in a JWT
+          claim in the token request.
+      *   `:body` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec bigquerydatatransfer_projects_locations_transfer_configs_patch(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig.t()}
@@ -998,31 +1039,33 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.BigQueryDataTransfer.V1.Connection): Connection to server
-  - parent (String.t): Transfer configuration name in the form:
-  `projects/{project_id}/transferConfigs/{config_id}`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.BigQueryDataTransfer.V1.Model.ScheduleTransferRunsRequest.t): 
+  *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Transfer configuration name in the form:
+      `projects/{project_id}/transferConfigs/{config_id}`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Model.ScheduleTransferRunsRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.ScheduleTransferRunsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.ScheduleTransferRunsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec bigquerydatatransfer_projects_locations_transfer_configs_schedule_runs(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.ScheduleTransferRunsResponse.t()}
@@ -1071,31 +1114,33 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.BigQueryDataTransfer.V1.Connection): Connection to server
-  - parent (String.t): Transfer configuration name in the form:
-  `projects/{project_id}/transferConfigs/{config_id}`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.BigQueryDataTransfer.V1.Model.StartManualTransferRunsRequest.t): 
+  *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Transfer configuration name in the form:
+      `projects/{project_id}/transferConfigs/{config_id}`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Model.StartManualTransferRunsRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.StartManualTransferRunsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.StartManualTransferRunsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec bigquerydatatransfer_projects_locations_transfer_configs_start_manual_runs(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.StartManualTransferRunsResponse.t()}
@@ -1141,30 +1186,32 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.BigQueryDataTransfer.V1.Connection): Connection to server
-  - name (String.t): The field will contain name of the resource requested, for example:
-  `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}`
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - The field will contain name of the resource requested, for example:
+      `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}`
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.Empty{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec bigquerydatatransfer_projects_locations_transfer_configs_runs_delete(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
   def bigquerydatatransfer_projects_locations_transfer_configs_runs_delete(
@@ -1205,30 +1252,32 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.BigQueryDataTransfer.V1.Connection): Connection to server
-  - name (String.t): The field will contain name of the resource requested, for example:
-  `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}`
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - The field will contain name of the resource requested, for example:
+      `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}`
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.TransferRun{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.TransferRun{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec bigquerydatatransfer_projects_locations_transfer_configs_runs_get(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.TransferRun.t()} | {:error, Tesla.Env.t()}
@@ -1270,39 +1319,41 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.BigQueryDataTransfer.V1.Connection): Connection to server
-  - parent (String.t): Name of transfer configuration for which transfer runs should be retrieved.
-  Format of transfer configuration resource name is:
-  `projects/{project_id}/transferConfigs/{config_id}`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :pageSize (integer()): Page size. The default page size is the maximum value of 1000 results.
-    - :pageToken (String.t): Pagination token, which can be used to request a specific page
-  of `ListTransferRunsRequest` list results. For multiple-page
-  results, `ListTransferRunsResponse` outputs
-  a `next_page` token, which can be used as the
-  `page_token` value to request the next page of list results.
-    - :runAttempt (String.t): Indicates how run attempts are to be pulled.
-    - :states (list(String.t)): When specified, only transfer runs with requested states are returned.
+  *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Name of transfer configuration for which transfer runs should be retrieved.
+      Format of transfer configuration resource name is:
+      `projects/{project_id}/transferConfigs/{config_id}`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - Page size. The default page size is the maximum value of 1000 results.
+      *   `:pageToken` (*type:* `String.t`) - Pagination token, which can be used to request a specific page
+          of `ListTransferRunsRequest` list results. For multiple-page
+          results, `ListTransferRunsResponse` outputs
+          a `next_page` token, which can be used as the
+          `page_token` value to request the next page of list results.
+      *   `:runAttempt` (*type:* `String.t`) - Indicates how run attempts are to be pulled.
+      *   `:states` (*type:* `list(String.t)`) - When specified, only transfer runs with requested states are returned.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.ListTransferRunsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.ListTransferRunsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec bigquerydatatransfer_projects_locations_transfer_configs_runs_list(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.ListTransferRunsResponse.t()}
@@ -1351,38 +1402,40 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.BigQueryDataTransfer.V1.Connection): Connection to server
-  - parent (String.t): Transfer run name in the form:
-  `projects/{project_id}/transferConfigs/{config_Id}/runs/{run_id}`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :messageTypes (list(String.t)): Message types to return. If not populated - INFO, WARNING and ERROR
-  messages are returned.
-    - :pageSize (integer()): Page size. The default page size is the maximum value of 1000 results.
-    - :pageToken (String.t): Pagination token, which can be used to request a specific page
-  of `ListTransferLogsRequest` list results. For multiple-page
-  results, `ListTransferLogsResponse` outputs
-  a `next_page` token, which can be used as the
-  `page_token` value to request the next page of list results.
+  *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Transfer run name in the form:
+      `projects/{project_id}/transferConfigs/{config_Id}/runs/{run_id}`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:messageTypes` (*type:* `list(String.t)`) - Message types to return. If not populated - INFO, WARNING and ERROR
+          messages are returned.
+      *   `:pageSize` (*type:* `integer()`) - Page size. The default page size is the maximum value of 1000 results.
+      *   `:pageToken` (*type:* `String.t`) - Pagination token, which can be used to request a specific page
+          of `ListTransferLogsRequest` list results. For multiple-page
+          results, `ListTransferLogsResponse` outputs
+          a `next_page` token, which can be used as the
+          `page_token` value to request the next page of list results.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.ListTransferLogsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.ListTransferLogsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec bigquerydatatransfer_projects_locations_transfer_configs_runs_transfer_logs_list(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.ListTransferLogsResponse.t()}
@@ -1430,55 +1483,57 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.BigQueryDataTransfer.V1.Connection): Connection to server
-  - parent (String.t): The BigQuery project id where the transfer configuration should be created.
-  Must be in the format projects/{project_id}/locations/{location_id}
-  If specified location and location of the destination bigquery dataset
-  do not match - the request will fail.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :authorizationCode (String.t): Optional OAuth2 authorization code to use with this transfer configuration.
-  This is required if new credentials are needed, as indicated by
-  `CheckValidCreds`.
-  In order to obtain authorization_code, please make a
-  request to
-  https://www.gstatic.com/bigquerydatatransfer/oauthz/auth?client_id=<datatransferapiclientid>&scope=<data_source_scopes>&redirect_uri=<redirect_uri>
+  *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - The BigQuery project id where the transfer configuration should be created.
+      Must be in the format projects/{project_id}/locations/{location_id}
+      If specified location and location of the destination bigquery dataset
+      do not match - the request will fail.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:authorizationCode` (*type:* `String.t`) - Optional OAuth2 authorization code to use with this transfer configuration.
+          This is required if new credentials are needed, as indicated by
+          `CheckValidCreds`.
+          In order to obtain authorization_code, please make a
+          request to
+          https://www.gstatic.com/bigquerydatatransfer/oauthz/auth?client_id=<datatransferapiclientid>&scope=<data_source_scopes>&redirect_uri=<redirect_uri>
 
-  * client_id should be OAuth client_id of BigQuery DTS API for the given
-  data source returned by ListDataSources method.
-  * data_source_scopes are the scopes returned by ListDataSources method.
-  * redirect_uri is an optional parameter. If not specified, then
-  authorization code is posted to the opener of authorization flow window.
-  Otherwise it will be sent to the redirect uri. A special value of
-  urn:ietf:wg:oauth:2.0:oob means that authorization code should be
-  returned in the title bar of the browser, with the page text prompting
-  the user to copy the code and paste it in the application.
-    - :versionInfo (String.t): Optional version info. If users want to find a very recent access token,
-  that is, immediately after approving access, users have to set the
-  version_info claim in the token request. To obtain the version_info, users
-  must use the "none+gsession" response type. which be return a
-  version_info back in the authorization response which be be put in a JWT
-  claim in the token request.
-    - :body (GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig.t): 
+          * client_id should be OAuth client_id of BigQuery DTS API for the given
+            data source returned by ListDataSources method.
+          * data_source_scopes are the scopes returned by ListDataSources method.
+          * redirect_uri is an optional parameter. If not specified, then
+            authorization code is posted to the opener of authorization flow window.
+            Otherwise it will be sent to the redirect uri. A special value of
+            urn:ietf:wg:oauth:2.0:oob means that authorization code should be
+            returned in the title bar of the browser, with the page text prompting
+            the user to copy the code and paste it in the application.
+      *   `:versionInfo` (*type:* `String.t`) - Optional version info. If users want to find a very recent access token,
+          that is, immediately after approving access, users have to set the
+          version_info claim in the token request. To obtain the version_info, users
+          must use the "none+gsession" response type. which be return a
+          version_info back in the authorization response which be be put in a JWT
+          claim in the token request.
+      *   `:body` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec bigquerydatatransfer_projects_transfer_configs_create(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig.t()}
@@ -1527,30 +1582,32 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.BigQueryDataTransfer.V1.Connection): Connection to server
-  - name (String.t): The field will contain name of the resource requested, for example:
-  `projects/{project_id}/transferConfigs/{config_id}`
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - The field will contain name of the resource requested, for example:
+      `projects/{project_id}/transferConfigs/{config_id}`
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.Empty{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec bigquerydatatransfer_projects_transfer_configs_delete(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
   def bigquerydatatransfer_projects_transfer_configs_delete(
@@ -1591,30 +1648,32 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.BigQueryDataTransfer.V1.Connection): Connection to server
-  - name (String.t): The field will contain name of the resource requested, for example:
-  `projects/{project_id}/transferConfigs/{config_id}`
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - The field will contain name of the resource requested, for example:
+      `projects/{project_id}/transferConfigs/{config_id}`
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec bigquerydatatransfer_projects_transfer_configs_get(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig.t()}
@@ -1659,37 +1718,39 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.BigQueryDataTransfer.V1.Connection): Connection to server
-  - parent (String.t): The BigQuery project id for which data sources
-  should be returned: `projects/{project_id}`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :dataSourceIds (list(String.t)): When specified, only configurations of requested data sources are returned.
-    - :pageSize (integer()): Page size. The default page size is the maximum value of 1000 results.
-    - :pageToken (String.t): Pagination token, which can be used to request a specific page
-  of `ListTransfersRequest` list results. For multiple-page
-  results, `ListTransfersResponse` outputs
-  a `next_page` token, which can be used as the
-  `page_token` value to request the next page of list results.
+  *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - The BigQuery project id for which data sources
+      should be returned: `projects/{project_id}`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:dataSourceIds` (*type:* `list(String.t)`) - When specified, only configurations of requested data sources are returned.
+      *   `:pageSize` (*type:* `integer()`) - Page size. The default page size is the maximum value of 1000 results.
+      *   `:pageToken` (*type:* `String.t`) - Pagination token, which can be used to request a specific page
+          of `ListTransfersRequest` list results. For multiple-page
+          results, `ListTransfersResponse` outputs
+          a `next_page` token, which can be used as the
+          `page_token` value to request the next page of list results.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.ListTransferConfigsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.ListTransferConfigsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec bigquerydatatransfer_projects_transfer_configs_list(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.ListTransferConfigsResponse.t()}
@@ -1738,59 +1799,61 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.BigQueryDataTransfer.V1.Connection): Connection to server
-  - name (String.t): The resource name of the transfer config.
-  Transfer config names have the form of
-  `projects/{project_id}/locations/{region}/transferConfigs/{config_id}`.
-  The name is automatically generated based on the config_id specified in
-  CreateTransferConfigRequest along with project_id and region. If config_id
-  is not provided, usually a uuid, even though it is not guaranteed or
-  required, will be generated for config_id.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :authorizationCode (String.t): Optional OAuth2 authorization code to use with this transfer configuration.
-  If it is provided, the transfer configuration will be associated with the
-  authorizing user.
-  In order to obtain authorization_code, please make a
-  request to
-  https://www.gstatic.com/bigquerydatatransfer/oauthz/auth?client_id=<datatransferapiclientid>&scope=<data_source_scopes>&redirect_uri=<redirect_uri>
+  *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - The resource name of the transfer config.
+      Transfer config names have the form of
+      `projects/{project_id}/locations/{region}/transferConfigs/{config_id}`.
+      The name is automatically generated based on the config_id specified in
+      CreateTransferConfigRequest along with project_id and region. If config_id
+      is not provided, usually a uuid, even though it is not guaranteed or
+      required, will be generated for config_id.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:authorizationCode` (*type:* `String.t`) - Optional OAuth2 authorization code to use with this transfer configuration.
+          If it is provided, the transfer configuration will be associated with the
+          authorizing user.
+          In order to obtain authorization_code, please make a
+          request to
+          https://www.gstatic.com/bigquerydatatransfer/oauthz/auth?client_id=<datatransferapiclientid>&scope=<data_source_scopes>&redirect_uri=<redirect_uri>
 
-  * client_id should be OAuth client_id of BigQuery DTS API for the given
-  data source returned by ListDataSources method.
-  * data_source_scopes are the scopes returned by ListDataSources method.
-  * redirect_uri is an optional parameter. If not specified, then
-  authorization code is posted to the opener of authorization flow window.
-  Otherwise it will be sent to the redirect uri. A special value of
-  urn:ietf:wg:oauth:2.0:oob means that authorization code should be
-  returned in the title bar of the browser, with the page text prompting
-  the user to copy the code and paste it in the application.
-    - :updateMask (String.t): Required list of fields to be updated in this request.
-    - :versionInfo (String.t): Optional version info. If users want to find a very recent access token,
-  that is, immediately after approving access, users have to set the
-  version_info claim in the token request. To obtain the version_info, users
-  must use the "none+gsession" response type. which be return a
-  version_info back in the authorization response which be be put in a JWT
-  claim in the token request.
-    - :body (GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig.t): 
+          * client_id should be OAuth client_id of BigQuery DTS API for the given
+            data source returned by ListDataSources method.
+          * data_source_scopes are the scopes returned by ListDataSources method.
+          * redirect_uri is an optional parameter. If not specified, then
+            authorization code is posted to the opener of authorization flow window.
+            Otherwise it will be sent to the redirect uri. A special value of
+            urn:ietf:wg:oauth:2.0:oob means that authorization code should be
+            returned in the title bar of the browser, with the page text prompting
+            the user to copy the code and paste it in the application.
+      *   `:updateMask` (*type:* `String.t`) - Required list of fields to be updated in this request.
+      *   `:versionInfo` (*type:* `String.t`) - Optional version info. If users want to find a very recent access token,
+          that is, immediately after approving access, users have to set the
+          version_info claim in the token request. To obtain the version_info, users
+          must use the "none+gsession" response type. which be return a
+          version_info back in the authorization response which be be put in a JWT
+          claim in the token request.
+      *   `:body` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec bigquerydatatransfer_projects_transfer_configs_patch(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig.t()}
@@ -1843,31 +1906,33 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.BigQueryDataTransfer.V1.Connection): Connection to server
-  - parent (String.t): Transfer configuration name in the form:
-  `projects/{project_id}/transferConfigs/{config_id}`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.BigQueryDataTransfer.V1.Model.ScheduleTransferRunsRequest.t): 
+  *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Transfer configuration name in the form:
+      `projects/{project_id}/transferConfigs/{config_id}`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Model.ScheduleTransferRunsRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.ScheduleTransferRunsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.ScheduleTransferRunsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec bigquerydatatransfer_projects_transfer_configs_schedule_runs(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.ScheduleTransferRunsResponse.t()}
@@ -1916,31 +1981,33 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.BigQueryDataTransfer.V1.Connection): Connection to server
-  - parent (String.t): Transfer configuration name in the form:
-  `projects/{project_id}/transferConfigs/{config_id}`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.BigQueryDataTransfer.V1.Model.StartManualTransferRunsRequest.t): 
+  *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Transfer configuration name in the form:
+      `projects/{project_id}/transferConfigs/{config_id}`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Model.StartManualTransferRunsRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.StartManualTransferRunsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.StartManualTransferRunsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec bigquerydatatransfer_projects_transfer_configs_start_manual_runs(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.StartManualTransferRunsResponse.t()}
@@ -1986,30 +2053,32 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.BigQueryDataTransfer.V1.Connection): Connection to server
-  - name (String.t): The field will contain name of the resource requested, for example:
-  `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}`
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - The field will contain name of the resource requested, for example:
+      `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}`
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.Empty{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec bigquerydatatransfer_projects_transfer_configs_runs_delete(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
   def bigquerydatatransfer_projects_transfer_configs_runs_delete(
@@ -2050,30 +2119,32 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.BigQueryDataTransfer.V1.Connection): Connection to server
-  - name (String.t): The field will contain name of the resource requested, for example:
-  `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}`
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - The field will contain name of the resource requested, for example:
+      `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}`
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.TransferRun{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.TransferRun{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec bigquerydatatransfer_projects_transfer_configs_runs_get(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.TransferRun.t()} | {:error, Tesla.Env.t()}
@@ -2115,39 +2186,41 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.BigQueryDataTransfer.V1.Connection): Connection to server
-  - parent (String.t): Name of transfer configuration for which transfer runs should be retrieved.
-  Format of transfer configuration resource name is:
-  `projects/{project_id}/transferConfigs/{config_id}`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :pageSize (integer()): Page size. The default page size is the maximum value of 1000 results.
-    - :pageToken (String.t): Pagination token, which can be used to request a specific page
-  of `ListTransferRunsRequest` list results. For multiple-page
-  results, `ListTransferRunsResponse` outputs
-  a `next_page` token, which can be used as the
-  `page_token` value to request the next page of list results.
-    - :runAttempt (String.t): Indicates how run attempts are to be pulled.
-    - :states (list(String.t)): When specified, only transfer runs with requested states are returned.
+  *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Name of transfer configuration for which transfer runs should be retrieved.
+      Format of transfer configuration resource name is:
+      `projects/{project_id}/transferConfigs/{config_id}`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - Page size. The default page size is the maximum value of 1000 results.
+      *   `:pageToken` (*type:* `String.t`) - Pagination token, which can be used to request a specific page
+          of `ListTransferRunsRequest` list results. For multiple-page
+          results, `ListTransferRunsResponse` outputs
+          a `next_page` token, which can be used as the
+          `page_token` value to request the next page of list results.
+      *   `:runAttempt` (*type:* `String.t`) - Indicates how run attempts are to be pulled.
+      *   `:states` (*type:* `list(String.t)`) - When specified, only transfer runs with requested states are returned.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.ListTransferRunsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.ListTransferRunsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec bigquerydatatransfer_projects_transfer_configs_runs_list(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.ListTransferRunsResponse.t()}
@@ -2196,38 +2269,40 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.BigQueryDataTransfer.V1.Connection): Connection to server
-  - parent (String.t): Transfer run name in the form:
-  `projects/{project_id}/transferConfigs/{config_Id}/runs/{run_id}`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :messageTypes (list(String.t)): Message types to return. If not populated - INFO, WARNING and ERROR
-  messages are returned.
-    - :pageSize (integer()): Page size. The default page size is the maximum value of 1000 results.
-    - :pageToken (String.t): Pagination token, which can be used to request a specific page
-  of `ListTransferLogsRequest` list results. For multiple-page
-  results, `ListTransferLogsResponse` outputs
-  a `next_page` token, which can be used as the
-  `page_token` value to request the next page of list results.
+  *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Transfer run name in the form:
+      `projects/{project_id}/transferConfigs/{config_Id}/runs/{run_id}`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:messageTypes` (*type:* `list(String.t)`) - Message types to return. If not populated - INFO, WARNING and ERROR
+          messages are returned.
+      *   `:pageSize` (*type:* `integer()`) - Page size. The default page size is the maximum value of 1000 results.
+      *   `:pageToken` (*type:* `String.t`) - Pagination token, which can be used to request a specific page
+          of `ListTransferLogsRequest` list results. For multiple-page
+          results, `ListTransferLogsResponse` outputs
+          a `next_page` token, which can be used as the
+          `page_token` value to request the next page of list results.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.ListTransferLogsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.BigQueryDataTransfer.V1.Model.ListTransferLogsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec bigquerydatatransfer_projects_transfer_configs_runs_transfer_logs_list(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.ListTransferLogsResponse.t()}

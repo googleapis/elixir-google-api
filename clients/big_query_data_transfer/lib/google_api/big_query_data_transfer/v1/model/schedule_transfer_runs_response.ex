@@ -21,7 +21,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.ScheduleTransferRunsResponse d
 
   ## Attributes
 
-  - runs (list(GoogleApi.BigQueryDataTransfer.V1.Model.TransferRun.t)): The transfer runs that were scheduled. Defaults to `nil`.
+  *   `runs` (*type:* `list(GoogleApi.BigQueryDataTransfer.V1.Model.TransferRun.t)`, *default:* `nil`) - The transfer runs that were scheduled.
   """
 
   use GoogleApi.Gax.ModelBase

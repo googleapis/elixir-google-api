@@ -21,7 +21,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.CheckValidCredsResponse do
 
   ## Attributes
 
-  - hasValidCreds (boolean()): If set to `true`, the credentials exist and are valid. Defaults to `nil`.
+  *   `hasValidCreds` (*type:* `boolean()`, *default:* `nil`) - If set to `true`, the credentials exist and are valid.
   """
 
   use GoogleApi.Gax.ModelBase

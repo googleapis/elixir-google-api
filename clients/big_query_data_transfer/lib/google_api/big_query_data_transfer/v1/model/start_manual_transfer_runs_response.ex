@@ -21,7 +21,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.StartManualTransferRunsRespons
 
   ## Attributes
 
-  - runs (list(GoogleApi.BigQueryDataTransfer.V1.Model.TransferRun.t)): The transfer runs that were created. Defaults to `nil`.
+  *   `runs` (*type:* `list(GoogleApi.BigQueryDataTransfer.V1.Model.TransferRun.t)`, *default:* `nil`) - The transfer runs that were created.
   """
 
   use GoogleApi.Gax.ModelBase
