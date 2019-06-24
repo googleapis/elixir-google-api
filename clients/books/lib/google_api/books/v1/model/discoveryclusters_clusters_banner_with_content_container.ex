@@ -21,12 +21,12 @@ defmodule GoogleApi.Books.V1.Model.DiscoveryclustersClustersBannerWithContentCon
 
   ## Attributes
 
-  - fillColorArgb (String.t):  Defaults to `nil`.
-  - imageUrl (String.t):  Defaults to `nil`.
-  - maskColorArgb (String.t):  Defaults to `nil`.
-  - moreButtonText (String.t):  Defaults to `nil`.
-  - moreButtonUrl (String.t):  Defaults to `nil`.
-  - textColorArgb (String.t):  Defaults to `nil`.
+  *   `fillColorArgb` (*type:* `String.t`, *default:* `nil`) - 
+  *   `imageUrl` (*type:* `String.t`, *default:* `nil`) - 
+  *   `maskColorArgb` (*type:* `String.t`, *default:* `nil`) - 
+  *   `moreButtonText` (*type:* `String.t`, *default:* `nil`) - 
+  *   `moreButtonUrl` (*type:* `String.t`, *default:* `nil`) - 
+  *   `textColorArgb` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

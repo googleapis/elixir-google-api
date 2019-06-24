@@ -21,16 +21,16 @@ defmodule GoogleApi.Books.V1.Model.Review do
 
   ## Attributes
 
-  - author (GoogleApi.Books.V1.Model.ReviewAuthor.t): Author of this review. Defaults to `nil`.
-  - content (String.t): Review text. Defaults to `nil`.
-  - date (String.t): Date of this review. Defaults to `nil`.
-  - fullTextUrl (String.t): URL for the full review text, for reviews gathered from the web. Defaults to `nil`.
-  - kind (String.t): Resource type for a review. Defaults to `books#review`.
-  - rating (String.t): Star rating for this review. Possible values are ONE, TWO, THREE, FOUR, FIVE or NOT_RATED. Defaults to `nil`.
-  - source (GoogleApi.Books.V1.Model.ReviewSource.t): Information regarding the source of this review, when the review is not from a Google Books user. Defaults to `nil`.
-  - title (String.t): Title for this review. Defaults to `nil`.
-  - type (String.t): Source type for this review. Possible values are EDITORIAL, WEB_USER or GOOGLE_USER. Defaults to `nil`.
-  - volumeId (String.t): Volume that this review is for. Defaults to `nil`.
+  *   `author` (*type:* `GoogleApi.Books.V1.Model.ReviewAuthor.t`, *default:* `nil`) - Author of this review.
+  *   `content` (*type:* `String.t`, *default:* `nil`) - Review text.
+  *   `date` (*type:* `String.t`, *default:* `nil`) - Date of this review.
+  *   `fullTextUrl` (*type:* `String.t`, *default:* `nil`) - URL for the full review text, for reviews gathered from the web.
+  *   `kind` (*type:* `String.t`, *default:* `books#review`) - Resource type for a review.
+  *   `rating` (*type:* `String.t`, *default:* `nil`) - Star rating for this review. Possible values are ONE, TWO, THREE, FOUR, FIVE or NOT_RATED.
+  *   `source` (*type:* `GoogleApi.Books.V1.Model.ReviewSource.t`, *default:* `nil`) - Information regarding the source of this review, when the review is not from a Google Books user.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - Title for this review.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Source type for this review. Possible values are EDITORIAL, WEB_USER or GOOGLE_USER.
+  *   `volumeId` (*type:* `String.t`, *default:* `nil`) - Volume that this review is for.
   """
 
   use GoogleApi.Gax.ModelBase

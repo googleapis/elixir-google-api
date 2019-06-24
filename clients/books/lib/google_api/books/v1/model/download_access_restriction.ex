@@ -21,18 +21,18 @@ defmodule GoogleApi.Books.V1.Model.DownloadAccessRestriction do
 
   ## Attributes
 
-  - deviceAllowed (boolean()): If restricted, whether access is granted for this (user, device, volume). Defaults to `nil`.
-  - downloadsAcquired (integer()): If restricted, the number of content download licenses already acquired (including the requesting client, if licensed). Defaults to `nil`.
-  - justAcquired (boolean()): If deviceAllowed, whether access was just acquired with this request. Defaults to `nil`.
-  - kind (String.t): Resource type. Defaults to `books#downloadAccessRestriction`.
-  - maxDownloadDevices (integer()): If restricted, the maximum number of content download licenses for this volume. Defaults to `nil`.
-  - message (String.t): Error/warning message. Defaults to `nil`.
-  - nonce (String.t): Client nonce for verification. Download access and client-validation only. Defaults to `nil`.
-  - reasonCode (String.t): Error/warning reason code. Additional codes may be added in the future. 0 OK 100 ACCESS_DENIED_PUBLISHER_LIMIT 101 ACCESS_DENIED_LIMIT 200 WARNING_USED_LAST_ACCESS Defaults to `nil`.
-  - restricted (boolean()): Whether this volume has any download access restrictions. Defaults to `nil`.
-  - signature (String.t): Response signature. Defaults to `nil`.
-  - source (String.t): Client app identifier for verification. Download access and client-validation only. Defaults to `nil`.
-  - volumeId (String.t): Identifies the volume for which this entry applies. Defaults to `nil`.
+  *   `deviceAllowed` (*type:* `boolean()`, *default:* `nil`) - If restricted, whether access is granted for this (user, device, volume).
+  *   `downloadsAcquired` (*type:* `integer()`, *default:* `nil`) - If restricted, the number of content download licenses already acquired (including the requesting client, if licensed).
+  *   `justAcquired` (*type:* `boolean()`, *default:* `nil`) - If deviceAllowed, whether access was just acquired with this request.
+  *   `kind` (*type:* `String.t`, *default:* `books#downloadAccessRestriction`) - Resource type.
+  *   `maxDownloadDevices` (*type:* `integer()`, *default:* `nil`) - If restricted, the maximum number of content download licenses for this volume.
+  *   `message` (*type:* `String.t`, *default:* `nil`) - Error/warning message.
+  *   `nonce` (*type:* `String.t`, *default:* `nil`) - Client nonce for verification. Download access and client-validation only.
+  *   `reasonCode` (*type:* `String.t`, *default:* `nil`) - Error/warning reason code. Additional codes may be added in the future. 0 OK 100 ACCESS_DENIED_PUBLISHER_LIMIT 101 ACCESS_DENIED_LIMIT 200 WARNING_USED_LAST_ACCESS
+  *   `restricted` (*type:* `boolean()`, *default:* `nil`) - Whether this volume has any download access restrictions.
+  *   `signature` (*type:* `String.t`, *default:* `nil`) - Response signature.
+  *   `source` (*type:* `String.t`, *default:* `nil`) - Client app identifier for verification. Download access and client-validation only.
+  *   `volumeId` (*type:* `String.t`, *default:* `nil`) - Identifies the volume for which this entry applies.
   """
 
   use GoogleApi.Gax.ModelBase

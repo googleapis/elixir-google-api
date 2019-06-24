@@ -21,8 +21,8 @@ defmodule GoogleApi.Books.V1.Model.DictlayerdataDict do
 
   ## Attributes
 
-  - source (GoogleApi.Books.V1.Model.DictlayerdataDictSource.t): The source, url and attribution for this dictionary data. Defaults to `nil`.
-  - words (list(GoogleApi.Books.V1.Model.DictlayerdataDictWords.t)):  Defaults to `nil`.
+  *   `source` (*type:* `GoogleApi.Books.V1.Model.DictlayerdataDictSource.t`, *default:* `nil`) - The source, url and attribution for this dictionary data.
+  *   `words` (*type:* `list(GoogleApi.Books.V1.Model.DictlayerdataDictWords.t)`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

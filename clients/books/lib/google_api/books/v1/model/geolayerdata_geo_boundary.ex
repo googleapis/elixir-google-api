@@ -21,8 +21,8 @@ defmodule GoogleApi.Books.V1.Model.GeolayerdataGeoBoundary do
 
   ## Attributes
 
-  - latitude (integer()):  Defaults to `nil`.
-  - longitude (integer()):  Defaults to `nil`.
+  *   `latitude` (*type:* `integer()`, *default:* `nil`) - 
+  *   `longitude` (*type:* `integer()`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,8 +21,8 @@ defmodule GoogleApi.Books.V1.Model.Series do
 
   ## Attributes
 
-  - kind (String.t): Resource type. Defaults to `books#series`.
-  - series (list(GoogleApi.Books.V1.Model.SeriesSeries.t)):  Defaults to `nil`.
+  *   `kind` (*type:* `String.t`, *default:* `books#series`) - Resource type.
+  *   `series` (*type:* `list(GoogleApi.Books.V1.Model.SeriesSeries.t)`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

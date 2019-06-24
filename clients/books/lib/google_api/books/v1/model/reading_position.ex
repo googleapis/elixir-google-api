@@ -21,13 +21,13 @@ defmodule GoogleApi.Books.V1.Model.ReadingPosition do
 
   ## Attributes
 
-  - epubCfiPosition (String.t): Position in an EPUB as a CFI. Defaults to `nil`.
-  - gbImagePosition (String.t): Position in a volume for image-based content. Defaults to `nil`.
-  - gbTextPosition (String.t): Position in a volume for text-based content. Defaults to `nil`.
-  - kind (String.t): Resource type for a reading position. Defaults to `books#readingPosition`.
-  - pdfPosition (String.t): Position in a PDF file. Defaults to `nil`.
-  - updated (DateTime.t): Timestamp when this reading position was last updated (formatted UTC timestamp with millisecond resolution). Defaults to `nil`.
-  - volumeId (String.t): Volume id associated with this reading position. Defaults to `nil`.
+  *   `epubCfiPosition` (*type:* `String.t`, *default:* `nil`) - Position in an EPUB as a CFI.
+  *   `gbImagePosition` (*type:* `String.t`, *default:* `nil`) - Position in a volume for image-based content.
+  *   `gbTextPosition` (*type:* `String.t`, *default:* `nil`) - Position in a volume for text-based content.
+  *   `kind` (*type:* `String.t`, *default:* `books#readingPosition`) - Resource type for a reading position.
+  *   `pdfPosition` (*type:* `String.t`, *default:* `nil`) - Position in a PDF file.
+  *   `updated` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp when this reading position was last updated (formatted UTC timestamp with millisecond resolution).
+  *   `volumeId` (*type:* `String.t`, *default:* `nil`) - Volume id associated with this reading position.
   """
 
   use GoogleApi.Gax.ModelBase

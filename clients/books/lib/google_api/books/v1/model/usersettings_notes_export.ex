@@ -21,8 +21,8 @@ defmodule GoogleApi.Books.V1.Model.UsersettingsNotesExport do
 
   ## Attributes
 
-  - folderName (String.t):  Defaults to `nil`.
-  - isEnabled (boolean()):  Defaults to `nil`.
+  *   `folderName` (*type:* `String.t`, *default:* `nil`) - 
+  *   `isEnabled` (*type:* `boolean()`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

@@ -28,23 +28,24 @@ defmodule GoogleApi.Books.V1.Api.Familysharing do
 
   ## Parameters
 
-  - connection (GoogleApi.Books.V1.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :source (String.t): String to identify the originator of this request.
+  *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:source` (*type:* `String.t`) - String to identify the originator of this request.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Books.V1.Model.FamilyInfo{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Books.V1.Model.FamilyInfo{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec books_familysharing_get_family_info(Tesla.Env.client(), keyword()) ::
+  @spec books_familysharing_get_family_info(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Books.V1.Model.FamilyInfo.t()} | {:error, Tesla.Env.t()}
   def books_familysharing_get_family_info(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -74,25 +75,26 @@ defmodule GoogleApi.Books.V1.Api.Familysharing do
 
   ## Parameters
 
-  - connection (GoogleApi.Books.V1.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :docId (String.t): The docid to share.
-    - :source (String.t): String to identify the originator of this request.
-    - :volumeId (String.t): The volume to share.
+  *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:docId` (*type:* `String.t`) - The docid to share.
+      *   `:source` (*type:* `String.t`) - String to identify the originator of this request.
+      *   `:volumeId` (*type:* `String.t`) - The volume to share.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %{}} on success
-  {:error, info} on failure
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec books_familysharing_share(Tesla.Env.client(), keyword()) ::
+  @spec books_familysharing_share(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
   def books_familysharing_share(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -124,25 +126,26 @@ defmodule GoogleApi.Books.V1.Api.Familysharing do
 
   ## Parameters
 
-  - connection (GoogleApi.Books.V1.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :docId (String.t): The docid to unshare.
-    - :source (String.t): String to identify the originator of this request.
-    - :volumeId (String.t): The volume to unshare.
+  *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:docId` (*type:* `String.t`) - The docid to unshare.
+      *   `:source` (*type:* `String.t`) - String to identify the originator of this request.
+      *   `:volumeId` (*type:* `String.t`) - The volume to unshare.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %{}} on success
-  {:error, info} on failure
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec books_familysharing_unshare(Tesla.Env.client(), keyword()) ::
+  @spec books_familysharing_unshare(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
   def books_familysharing_unshare(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

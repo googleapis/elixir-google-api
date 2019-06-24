@@ -21,12 +21,12 @@ defmodule GoogleApi.Books.V1.Model.OffersItemsItems do
 
   ## Attributes
 
-  - author (String.t):  Defaults to `nil`.
-  - canonicalVolumeLink (String.t):  Defaults to `nil`.
-  - coverUrl (String.t):  Defaults to `nil`.
-  - description (String.t):  Defaults to `nil`.
-  - title (String.t):  Defaults to `nil`.
-  - volumeId (String.t):  Defaults to `nil`.
+  *   `author` (*type:* `String.t`, *default:* `nil`) - 
+  *   `canonicalVolumeLink` (*type:* `String.t`, *default:* `nil`) - 
+  *   `coverUrl` (*type:* `String.t`, *default:* `nil`) - 
+  *   `description` (*type:* `String.t`, *default:* `nil`) - 
+  *   `title` (*type:* `String.t`, *default:* `nil`) - 
+  *   `volumeId` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,10 +21,10 @@ defmodule GoogleApi.Books.V1.Model.Volumeseriesinfo do
 
   ## Attributes
 
-  - bookDisplayNumber (String.t): The display number string. This should be used only for display purposes and the actual sequence should be inferred from the below orderNumber. Defaults to `nil`.
-  - kind (String.t): Resource type. Defaults to `books#volume_series_info`.
-  - shortSeriesBookTitle (String.t): Short book title in the context of the series. Defaults to `nil`.
-  - volumeSeries (list(GoogleApi.Books.V1.Model.VolumeseriesinfoVolumeSeries.t)):  Defaults to `nil`.
+  *   `bookDisplayNumber` (*type:* `String.t`, *default:* `nil`) - The display number string. This should be used only for display purposes and the actual sequence should be inferred from the below orderNumber.
+  *   `kind` (*type:* `String.t`, *default:* `books#volume_series_info`) - Resource type.
+  *   `shortSeriesBookTitle` (*type:* `String.t`, *default:* `nil`) - Short book title in the context of the series.
+  *   `volumeSeries` (*type:* `list(GoogleApi.Books.V1.Model.VolumeseriesinfoVolumeSeries.t)`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

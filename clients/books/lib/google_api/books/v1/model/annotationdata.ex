@@ -21,15 +21,15 @@ defmodule GoogleApi.Books.V1.Model.Annotationdata do
 
   ## Attributes
 
-  - annotationType (String.t): The type of annotation this data is for. Defaults to `nil`.
-  - data (any()):  Defaults to `nil`.
-  - encoded_data (String.t): Base64 encoded data for this annotation data. Defaults to `nil`.
-  - id (String.t): Unique id for this annotation data. Defaults to `nil`.
-  - kind (String.t): Resource Type Defaults to `books#annotationdata`.
-  - layerId (String.t): The Layer id for this data. * Defaults to `nil`.
-  - selfLink (String.t): URL for this resource. * Defaults to `nil`.
-  - updated (DateTime.t): Timestamp for the last time this data was updated. (RFC 3339 UTC date-time format). Defaults to `nil`.
-  - volumeId (String.t): The volume id for this data. * Defaults to `nil`.
+  *   `annotationType` (*type:* `String.t`, *default:* `nil`) - The type of annotation this data is for.
+  *   `data` (*type:* `any()`, *default:* `nil`) - 
+  *   `encoded_data` (*type:* `String.t`, *default:* `nil`) - Base64 encoded data for this annotation data.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Unique id for this annotation data.
+  *   `kind` (*type:* `String.t`, *default:* `books#annotationdata`) - Resource Type
+  *   `layerId` (*type:* `String.t`, *default:* `nil`) - The Layer id for this data. *
+  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - URL for this resource. *
+  *   `updated` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp for the last time this data was updated. (RFC 3339 UTC date-time format).
+  *   `volumeId` (*type:* `String.t`, *default:* `nil`) - The volume id for this data. *
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,8 +21,8 @@ defmodule GoogleApi.Books.V1.Model.VolumeSaleInfoRetailPrice do
 
   ## Attributes
 
-  - amount (float()): Amount in the currency listed below. (In LITE projection.) Defaults to `nil`.
-  - currencyCode (String.t): An ISO 4217, three-letter currency code. (In LITE projection.) Defaults to `nil`.
+  *   `amount` (*type:* `float()`, *default:* `nil`) - Amount in the currency listed below. (In LITE projection.)
+  *   `currencyCode` (*type:* `String.t`, *default:* `nil`) - An ISO 4217, three-letter currency code. (In LITE projection.)
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,11 +21,11 @@ defmodule GoogleApi.Books.V1.Model.AnnotationClientVersionRanges do
 
   ## Attributes
 
-  - cfiRange (GoogleApi.Books.V1.Model.BooksAnnotationsRange.t): Range in CFI format for this annotation sent by client. Defaults to `nil`.
-  - contentVersion (String.t): Content version the client sent in. Defaults to `nil`.
-  - gbImageRange (GoogleApi.Books.V1.Model.BooksAnnotationsRange.t): Range in GB image format for this annotation sent by client. Defaults to `nil`.
-  - gbTextRange (GoogleApi.Books.V1.Model.BooksAnnotationsRange.t): Range in GB text format for this annotation sent by client. Defaults to `nil`.
-  - imageCfiRange (GoogleApi.Books.V1.Model.BooksAnnotationsRange.t): Range in image CFI format for this annotation sent by client. Defaults to `nil`.
+  *   `cfiRange` (*type:* `GoogleApi.Books.V1.Model.BooksAnnotationsRange.t`, *default:* `nil`) - Range in CFI format for this annotation sent by client.
+  *   `contentVersion` (*type:* `String.t`, *default:* `nil`) - Content version the client sent in.
+  *   `gbImageRange` (*type:* `GoogleApi.Books.V1.Model.BooksAnnotationsRange.t`, *default:* `nil`) - Range in GB image format for this annotation sent by client.
+  *   `gbTextRange` (*type:* `GoogleApi.Books.V1.Model.BooksAnnotationsRange.t`, *default:* `nil`) - Range in GB text format for this annotation sent by client.
+  *   `imageCfiRange` (*type:* `GoogleApi.Books.V1.Model.BooksAnnotationsRange.t`, *default:* `nil`) - Range in image CFI format for this annotation sent by client.
   """
 
   use GoogleApi.Gax.ModelBase

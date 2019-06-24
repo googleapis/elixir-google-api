@@ -21,7 +21,7 @@ defmodule GoogleApi.Books.V1.Model.VolumeSearchInfo do
 
   ## Attributes
 
-  - textSnippet (String.t): A text snippet containing the search query. Defaults to `nil`.
+  *   `textSnippet` (*type:* `String.t`, *default:* `nil`) - A text snippet containing the search query.
   """
 
   use GoogleApi.Gax.ModelBase

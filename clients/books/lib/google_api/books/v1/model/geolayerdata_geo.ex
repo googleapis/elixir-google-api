@@ -21,14 +21,14 @@ defmodule GoogleApi.Books.V1.Model.GeolayerdataGeo do
 
   ## Attributes
 
-  - boundary (list(list(GoogleApi.Books.V1.Model.GeolayerdataGeoBoundary.t))): The boundary of the location as a set of loops containing pairs of latitude, longitude coordinates. Defaults to `nil`.
-  - cachePolicy (String.t): The cache policy active for this data. EX: UNRESTRICTED, RESTRICTED, NEVER Defaults to `nil`.
-  - countryCode (String.t): The country code of the location. Defaults to `nil`.
-  - latitude (float()): The latitude of the location. Defaults to `nil`.
-  - longitude (float()): The longitude of the location. Defaults to `nil`.
-  - mapType (String.t): The type of map that should be used for this location. EX: HYBRID, ROADMAP, SATELLITE, TERRAIN Defaults to `nil`.
-  - viewport (GoogleApi.Books.V1.Model.GeolayerdataGeoViewport.t): The viewport for showing this location. This is a latitude, longitude rectangle. Defaults to `nil`.
-  - zoom (integer()): The Zoom level to use for the map. Zoom levels between 0 (the lowest zoom level, in which the entire world can be seen on one map) to 21+ (down to individual buildings). See: https://developers.google.com/maps/documentation/staticmaps/#Zoomlevels Defaults to `nil`.
+  *   `boundary` (*type:* `list(list(GoogleApi.Books.V1.Model.GeolayerdataGeoBoundary.t))`, *default:* `nil`) - The boundary of the location as a set of loops containing pairs of latitude, longitude coordinates.
+  *   `cachePolicy` (*type:* `String.t`, *default:* `nil`) - The cache policy active for this data. EX: UNRESTRICTED, RESTRICTED, NEVER
+  *   `countryCode` (*type:* `String.t`, *default:* `nil`) - The country code of the location.
+  *   `latitude` (*type:* `float()`, *default:* `nil`) - The latitude of the location.
+  *   `longitude` (*type:* `float()`, *default:* `nil`) - The longitude of the location.
+  *   `mapType` (*type:* `String.t`, *default:* `nil`) - The type of map that should be used for this location. EX: HYBRID, ROADMAP, SATELLITE, TERRAIN
+  *   `viewport` (*type:* `GoogleApi.Books.V1.Model.GeolayerdataGeoViewport.t`, *default:* `nil`) - The viewport for showing this location. This is a latitude, longitude rectangle.
+  *   `zoom` (*type:* `integer()`, *default:* `nil`) - The Zoom level to use for the map. Zoom levels between 0 (the lowest zoom level, in which the entire world can be seen on one map) to 21+ (down to individual buildings). See: https://developers.google.com/maps/documentation/staticmaps/#Zoomlevels
   """
 
   use GoogleApi.Gax.ModelBase

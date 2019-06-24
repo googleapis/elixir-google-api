@@ -21,9 +21,9 @@ defmodule GoogleApi.Books.V1.Model.Discoveryclusters do
 
   ## Attributes
 
-  - clusters (list(GoogleApi.Books.V1.Model.DiscoveryclustersClusters.t)):  Defaults to `nil`.
-  - kind (String.t): Resorce type. Defaults to `books#discovery#clusters`.
-  - totalClusters (integer()):  Defaults to `nil`.
+  *   `clusters` (*type:* `list(GoogleApi.Books.V1.Model.DiscoveryclustersClusters.t)`, *default:* `nil`) - 
+  *   `kind` (*type:* `String.t`, *default:* `books#discovery#clusters`) - Resorce type.
+  *   `totalClusters` (*type:* `integer()`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

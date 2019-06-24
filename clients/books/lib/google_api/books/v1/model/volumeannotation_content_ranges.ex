@@ -21,10 +21,10 @@ defmodule GoogleApi.Books.V1.Model.VolumeannotationContentRanges do
 
   ## Attributes
 
-  - cfiRange (GoogleApi.Books.V1.Model.BooksAnnotationsRange.t): Range in CFI format for this annotation for version above. Defaults to `nil`.
-  - contentVersion (String.t): Content version applicable to ranges below. Defaults to `nil`.
-  - gbImageRange (GoogleApi.Books.V1.Model.BooksAnnotationsRange.t): Range in GB image format for this annotation for version above. Defaults to `nil`.
-  - gbTextRange (GoogleApi.Books.V1.Model.BooksAnnotationsRange.t): Range in GB text format for this annotation for version above. Defaults to `nil`.
+  *   `cfiRange` (*type:* `GoogleApi.Books.V1.Model.BooksAnnotationsRange.t`, *default:* `nil`) - Range in CFI format for this annotation for version above.
+  *   `contentVersion` (*type:* `String.t`, *default:* `nil`) - Content version applicable to ranges below.
+  *   `gbImageRange` (*type:* `GoogleApi.Books.V1.Model.BooksAnnotationsRange.t`, *default:* `nil`) - Range in GB image format for this annotation for version above.
+  *   `gbTextRange` (*type:* `GoogleApi.Books.V1.Model.BooksAnnotationsRange.t`, *default:* `nil`) - Range in GB text format for this annotation for version above.
   """
 
   use GoogleApi.Gax.ModelBase

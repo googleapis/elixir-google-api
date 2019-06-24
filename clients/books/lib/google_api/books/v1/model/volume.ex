@@ -21,17 +21,17 @@ defmodule GoogleApi.Books.V1.Model.Volume do
 
   ## Attributes
 
-  - accessInfo (GoogleApi.Books.V1.Model.VolumeAccessInfo.t): Any information about a volume related to reading or obtaining that volume text. This information can depend on country (books may be public domain in one country but not in another, e.g.). Defaults to `nil`.
-  - etag (String.t): Opaque identifier for a specific version of a volume resource. (In LITE projection) Defaults to `nil`.
-  - id (String.t): Unique identifier for a volume. (In LITE projection.) Defaults to `nil`.
-  - kind (String.t): Resource type for a volume. (In LITE projection.) Defaults to `books#volume`.
-  - layerInfo (GoogleApi.Books.V1.Model.VolumeLayerInfo.t): What layers exist in this volume and high level information about them. Defaults to `nil`.
-  - recommendedInfo (GoogleApi.Books.V1.Model.VolumeRecommendedInfo.t): Recommendation related information for this volume. Defaults to `nil`.
-  - saleInfo (GoogleApi.Books.V1.Model.VolumeSaleInfo.t): Any information about a volume related to the eBookstore and/or purchaseability. This information can depend on the country where the request originates from (i.e. books may not be for sale in certain countries). Defaults to `nil`.
-  - searchInfo (GoogleApi.Books.V1.Model.VolumeSearchInfo.t): Search result information related to this volume. Defaults to `nil`.
-  - selfLink (String.t): URL to this resource. (In LITE projection.) Defaults to `nil`.
-  - userInfo (GoogleApi.Books.V1.Model.VolumeUserInfo.t): User specific information related to this volume. (e.g. page this user last read or whether they purchased this book) Defaults to `nil`.
-  - volumeInfo (GoogleApi.Books.V1.Model.VolumeVolumeInfo.t): General volume information. Defaults to `nil`.
+  *   `accessInfo` (*type:* `GoogleApi.Books.V1.Model.VolumeAccessInfo.t`, *default:* `nil`) - Any information about a volume related to reading or obtaining that volume text. This information can depend on country (books may be public domain in one country but not in another, e.g.).
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - Opaque identifier for a specific version of a volume resource. (In LITE projection)
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Unique identifier for a volume. (In LITE projection.)
+  *   `kind` (*type:* `String.t`, *default:* `books#volume`) - Resource type for a volume. (In LITE projection.)
+  *   `layerInfo` (*type:* `GoogleApi.Books.V1.Model.VolumeLayerInfo.t`, *default:* `nil`) - What layers exist in this volume and high level information about them.
+  *   `recommendedInfo` (*type:* `GoogleApi.Books.V1.Model.VolumeRecommendedInfo.t`, *default:* `nil`) - Recommendation related information for this volume.
+  *   `saleInfo` (*type:* `GoogleApi.Books.V1.Model.VolumeSaleInfo.t`, *default:* `nil`) - Any information about a volume related to the eBookstore and/or purchaseability. This information can depend on the country where the request originates from (i.e. books may not be for sale in certain countries).
+  *   `searchInfo` (*type:* `GoogleApi.Books.V1.Model.VolumeSearchInfo.t`, *default:* `nil`) - Search result information related to this volume.
+  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - URL to this resource. (In LITE projection.)
+  *   `userInfo` (*type:* `GoogleApi.Books.V1.Model.VolumeUserInfo.t`, *default:* `nil`) - User specific information related to this volume. (e.g. page this user last read or whether they purchased this book)
+  *   `volumeInfo` (*type:* `GoogleApi.Books.V1.Model.VolumeVolumeInfo.t`, *default:* `nil`) - General volume information.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,9 +21,9 @@ defmodule GoogleApi.Books.V1.Model.Usersettings do
 
   ## Attributes
 
-  - kind (String.t): Resource type. Defaults to `books#usersettings`.
-  - notesExport (GoogleApi.Books.V1.Model.UsersettingsNotesExport.t): User settings in sub-objects, each for different purposes. Defaults to `nil`.
-  - notification (GoogleApi.Books.V1.Model.UsersettingsNotification.t):  Defaults to `nil`.
+  *   `kind` (*type:* `String.t`, *default:* `books#usersettings`) - Resource type.
+  *   `notesExport` (*type:* `GoogleApi.Books.V1.Model.UsersettingsNotesExport.t`, *default:* `nil`) - User settings in sub-objects, each for different purposes.
+  *   `notification` (*type:* `GoogleApi.Books.V1.Model.UsersettingsNotification.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

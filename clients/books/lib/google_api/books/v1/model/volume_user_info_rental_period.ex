@@ -21,8 +21,8 @@ defmodule GoogleApi.Books.V1.Model.VolumeUserInfoRentalPeriod do
 
   ## Attributes
 
-  - endUtcSec (String.t):  Defaults to `nil`.
-  - startUtcSec (String.t):  Defaults to `nil`.
+  *   `endUtcSec` (*type:* `String.t`, *default:* `nil`) - 
+  *   `startUtcSec` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

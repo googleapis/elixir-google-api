@@ -21,9 +21,9 @@ defmodule GoogleApi.Books.V1.Model.ReviewSource do
 
   ## Attributes
 
-  - description (String.t): Name of the source. Defaults to `nil`.
-  - extraDescription (String.t): Extra text about the source of the review. Defaults to `nil`.
-  - url (String.t): URL of the source of the review. Defaults to `nil`.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Name of the source.
+  *   `extraDescription` (*type:* `String.t`, *default:* `nil`) - Extra text about the source of the review.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - URL of the source of the review.
   """
 
   use GoogleApi.Gax.ModelBase

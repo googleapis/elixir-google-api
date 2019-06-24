@@ -21,7 +21,7 @@ defmodule GoogleApi.Books.V1.Model.BooksVolumesRecommendedRateResponse do
 
   ## Attributes
 
-  - consistency_token (String.t):  Defaults to `nil`.
+  *   `consistency_token` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

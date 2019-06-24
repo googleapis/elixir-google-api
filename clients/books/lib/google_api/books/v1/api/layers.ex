@@ -28,26 +28,27 @@ defmodule GoogleApi.Books.V1.Api.Layers do
 
   ## Parameters
 
-  - connection (GoogleApi.Books.V1.Connection): Connection to server
-  - volume_id (String.t): The volume to retrieve layers for.
-  - summary_id (String.t): The ID for the layer to get the summary for.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :contentVersion (String.t): The content version for the requested volume.
-    - :source (String.t): String to identify the originator of this request.
+  *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
+  *   `volume_id` (*type:* `String.t`) - The volume to retrieve layers for.
+  *   `summary_id` (*type:* `String.t`) - The ID for the layer to get the summary for.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:contentVersion` (*type:* `String.t`) - The content version for the requested volume.
+      *   `:source` (*type:* `String.t`) - String to identify the originator of this request.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Books.V1.Model.Layersummary{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Books.V1.Model.Layersummary{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec books_layers_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+  @spec books_layers_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Books.V1.Model.Layersummary.t()} | {:error, Tesla.Env.t()}
   def books_layers_get(connection, volume_id, summary_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -81,27 +82,28 @@ defmodule GoogleApi.Books.V1.Api.Layers do
 
   ## Parameters
 
-  - connection (GoogleApi.Books.V1.Connection): Connection to server
-  - volume_id (String.t): The volume to retrieve layers for.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :contentVersion (String.t): The content version for the requested volume.
-    - :maxResults (integer()): Maximum number of results to return
-    - :pageToken (String.t): The value of the nextToken from the previous page.
-    - :source (String.t): String to identify the originator of this request.
+  *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
+  *   `volume_id` (*type:* `String.t`) - The volume to retrieve layers for.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:contentVersion` (*type:* `String.t`) - The content version for the requested volume.
+      *   `:maxResults` (*type:* `integer()`) - Maximum number of results to return
+      *   `:pageToken` (*type:* `String.t`) - The value of the nextToken from the previous page.
+      *   `:source` (*type:* `String.t`) - String to identify the originator of this request.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Books.V1.Model.Layersummaries{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Books.V1.Model.Layersummaries{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec books_layers_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec books_layers_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Books.V1.Model.Layersummaries.t()} | {:error, Tesla.Env.t()}
   def books_layers_list(connection, volume_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -136,30 +138,31 @@ defmodule GoogleApi.Books.V1.Api.Layers do
 
   ## Parameters
 
-  - connection (GoogleApi.Books.V1.Connection): Connection to server
-  - volume_id (String.t): The volume to retrieve annotations for.
-  - layer_id (String.t): The ID for the layer to get the annotations.
-  - annotation_data_id (String.t): The ID of the annotation data to retrieve.
-  - content_version (String.t): The content version for the volume you are trying to retrieve.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :allowWebDefinitions (boolean()): For the dictionary layer. Whether or not to allow web definitions.
-    - :h (integer()): The requested pixel height for any images. If height is provided width must also be provided.
-    - :locale (String.t): The locale information for the data. ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'.
-    - :scale (integer()): The requested scale for the image.
-    - :source (String.t): String to identify the originator of this request.
-    - :w (integer()): The requested pixel width for any images. If width is provided height must also be provided.
+  *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
+  *   `volume_id` (*type:* `String.t`) - The volume to retrieve annotations for.
+  *   `layer_id` (*type:* `String.t`) - The ID for the layer to get the annotations.
+  *   `annotation_data_id` (*type:* `String.t`) - The ID of the annotation data to retrieve.
+  *   `content_version` (*type:* `String.t`) - The content version for the volume you are trying to retrieve.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:allowWebDefinitions` (*type:* `boolean()`) - For the dictionary layer. Whether or not to allow web definitions.
+      *   `:h` (*type:* `integer()`) - The requested pixel height for any images. If height is provided width must also be provided.
+      *   `:locale` (*type:* `String.t`) - The locale information for the data. ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'.
+      *   `:scale` (*type:* `integer()`) - The requested scale for the image.
+      *   `:source` (*type:* `String.t`) - String to identify the originator of this request.
+      *   `:w` (*type:* `integer()`) - The requested pixel width for any images. If width is provided height must also be provided.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Books.V1.Model.Annotationdata{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Books.V1.Model.Annotationdata{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec books_layers_annotation_data_get(
           Tesla.Env.client(),
@@ -167,6 +170,7 @@ defmodule GoogleApi.Books.V1.Api.Layers do
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Books.V1.Model.Annotationdata.t()} | {:error, Tesla.Env.t()}
   def books_layers_annotation_data_get(
@@ -215,39 +219,41 @@ defmodule GoogleApi.Books.V1.Api.Layers do
 
   ## Parameters
 
-  - connection (GoogleApi.Books.V1.Connection): Connection to server
-  - volume_id (String.t): The volume to retrieve annotation data for.
-  - layer_id (String.t): The ID for the layer to get the annotation data.
-  - content_version (String.t): The content version for the requested volume.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :annotationDataId (list(String.t)): The list of Annotation Data Ids to retrieve. Pagination is ignored if this is set.
-    - :h (integer()): The requested pixel height for any images. If height is provided width must also be provided.
-    - :locale (String.t): The locale information for the data. ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'.
-    - :maxResults (integer()): Maximum number of results to return
-    - :pageToken (String.t): The value of the nextToken from the previous page.
-    - :scale (integer()): The requested scale for the image.
-    - :source (String.t): String to identify the originator of this request.
-    - :updatedMax (String.t): RFC 3339 timestamp to restrict to items updated prior to this timestamp (exclusive).
-    - :updatedMin (String.t): RFC 3339 timestamp to restrict to items updated since this timestamp (inclusive).
-    - :w (integer()): The requested pixel width for any images. If width is provided height must also be provided.
+  *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
+  *   `volume_id` (*type:* `String.t`) - The volume to retrieve annotation data for.
+  *   `layer_id` (*type:* `String.t`) - The ID for the layer to get the annotation data.
+  *   `content_version` (*type:* `String.t`) - The content version for the requested volume.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:annotationDataId` (*type:* `list(String.t)`) - The list of Annotation Data Ids to retrieve. Pagination is ignored if this is set.
+      *   `:h` (*type:* `integer()`) - The requested pixel height for any images. If height is provided width must also be provided.
+      *   `:locale` (*type:* `String.t`) - The locale information for the data. ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'.
+      *   `:maxResults` (*type:* `integer()`) - Maximum number of results to return
+      *   `:pageToken` (*type:* `String.t`) - The value of the nextToken from the previous page.
+      *   `:scale` (*type:* `integer()`) - The requested scale for the image.
+      *   `:source` (*type:* `String.t`) - String to identify the originator of this request.
+      *   `:updatedMax` (*type:* `String.t`) - RFC 3339 timestamp to restrict to items updated prior to this timestamp (exclusive).
+      *   `:updatedMin` (*type:* `String.t`) - RFC 3339 timestamp to restrict to items updated since this timestamp (inclusive).
+      *   `:w` (*type:* `integer()`) - The requested pixel width for any images. If width is provided height must also be provided.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Books.V1.Model.Annotationsdata{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Books.V1.Model.Annotationsdata{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec books_layers_annotation_data_list(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Books.V1.Model.Annotationsdata.t()} | {:error, Tesla.Env.t()}
   def books_layers_annotation_data_list(
@@ -298,31 +304,33 @@ defmodule GoogleApi.Books.V1.Api.Layers do
 
   ## Parameters
 
-  - connection (GoogleApi.Books.V1.Connection): Connection to server
-  - volume_id (String.t): The volume to retrieve annotations for.
-  - layer_id (String.t): The ID for the layer to get the annotations.
-  - annotation_id (String.t): The ID of the volume annotation to retrieve.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :locale (String.t): The locale information for the data. ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'.
-    - :source (String.t): String to identify the originator of this request.
+  *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
+  *   `volume_id` (*type:* `String.t`) - The volume to retrieve annotations for.
+  *   `layer_id` (*type:* `String.t`) - The ID for the layer to get the annotations.
+  *   `annotation_id` (*type:* `String.t`) - The ID of the volume annotation to retrieve.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:locale` (*type:* `String.t`) - The locale information for the data. ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'.
+      *   `:source` (*type:* `String.t`) - String to identify the originator of this request.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Books.V1.Model.Volumeannotation{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Books.V1.Model.Volumeannotation{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec books_layers_volume_annotations_get(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Books.V1.Model.Volumeannotation.t()} | {:error, Tesla.Env.t()}
   def books_layers_volume_annotations_get(
@@ -365,41 +373,43 @@ defmodule GoogleApi.Books.V1.Api.Layers do
 
   ## Parameters
 
-  - connection (GoogleApi.Books.V1.Connection): Connection to server
-  - volume_id (String.t): The volume to retrieve annotations for.
-  - layer_id (String.t): The ID for the layer to get the annotations.
-  - content_version (String.t): The content version for the requested volume.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :endOffset (String.t): The end offset to end retrieving data from.
-    - :endPosition (String.t): The end position to end retrieving data from.
-    - :locale (String.t): The locale information for the data. ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'.
-    - :maxResults (integer()): Maximum number of results to return
-    - :pageToken (String.t): The value of the nextToken from the previous page.
-    - :showDeleted (boolean()): Set to true to return deleted annotations. updatedMin must be in the request to use this. Defaults to false.
-    - :source (String.t): String to identify the originator of this request.
-    - :startOffset (String.t): The start offset to start retrieving data from.
-    - :startPosition (String.t): The start position to start retrieving data from.
-    - :updatedMax (String.t): RFC 3339 timestamp to restrict to items updated prior to this timestamp (exclusive).
-    - :updatedMin (String.t): RFC 3339 timestamp to restrict to items updated since this timestamp (inclusive).
-    - :volumeAnnotationsVersion (String.t): The version of the volume annotations that you are requesting.
+  *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
+  *   `volume_id` (*type:* `String.t`) - The volume to retrieve annotations for.
+  *   `layer_id` (*type:* `String.t`) - The ID for the layer to get the annotations.
+  *   `content_version` (*type:* `String.t`) - The content version for the requested volume.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:endOffset` (*type:* `String.t`) - The end offset to end retrieving data from.
+      *   `:endPosition` (*type:* `String.t`) - The end position to end retrieving data from.
+      *   `:locale` (*type:* `String.t`) - The locale information for the data. ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'.
+      *   `:maxResults` (*type:* `integer()`) - Maximum number of results to return
+      *   `:pageToken` (*type:* `String.t`) - The value of the nextToken from the previous page.
+      *   `:showDeleted` (*type:* `boolean()`) - Set to true to return deleted annotations. updatedMin must be in the request to use this. Defaults to false.
+      *   `:source` (*type:* `String.t`) - String to identify the originator of this request.
+      *   `:startOffset` (*type:* `String.t`) - The start offset to start retrieving data from.
+      *   `:startPosition` (*type:* `String.t`) - The start position to start retrieving data from.
+      *   `:updatedMax` (*type:* `String.t`) - RFC 3339 timestamp to restrict to items updated prior to this timestamp (exclusive).
+      *   `:updatedMin` (*type:* `String.t`) - RFC 3339 timestamp to restrict to items updated since this timestamp (inclusive).
+      *   `:volumeAnnotationsVersion` (*type:* `String.t`) - The version of the volume annotations that you are requesting.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Books.V1.Model.Volumeannotations{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Books.V1.Model.Volumeannotations{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec books_layers_volume_annotations_list(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Books.V1.Model.Volumeannotations.t()} | {:error, Tesla.Env.t()}
   def books_layers_volume_annotations_list(

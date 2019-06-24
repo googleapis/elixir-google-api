@@ -21,10 +21,10 @@ defmodule GoogleApi.Books.V1.Model.BooksCloudloadingResource do
 
   ## Attributes
 
-  - author (String.t):  Defaults to `nil`.
-  - processingState (String.t):  Defaults to `nil`.
-  - title (String.t):  Defaults to `nil`.
-  - volumeId (String.t):  Defaults to `nil`.
+  *   `author` (*type:* `String.t`, *default:* `nil`) - 
+  *   `processingState` (*type:* `String.t`, *default:* `nil`) - 
+  *   `title` (*type:* `String.t`, *default:* `nil`) - 
+  *   `volumeId` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

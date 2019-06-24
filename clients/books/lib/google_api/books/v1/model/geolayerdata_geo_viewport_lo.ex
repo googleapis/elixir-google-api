@@ -21,8 +21,8 @@ defmodule GoogleApi.Books.V1.Model.GeolayerdataGeoViewportLo do
 
   ## Attributes
 
-  - latitude (float()):  Defaults to `nil`.
-  - longitude (float()):  Defaults to `nil`.
+  *   `latitude` (*type:* `float()`, *default:* `nil`) - 
+  *   `longitude` (*type:* `float()`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

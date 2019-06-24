@@ -21,11 +21,11 @@ defmodule GoogleApi.Books.V1.Model.SeriesSeries do
 
   ## Attributes
 
-  - bannerImageUrl (String.t):  Defaults to `nil`.
-  - imageUrl (String.t):  Defaults to `nil`.
-  - seriesId (String.t):  Defaults to `nil`.
-  - seriesType (String.t):  Defaults to `nil`.
-  - title (String.t):  Defaults to `nil`.
+  *   `bannerImageUrl` (*type:* `String.t`, *default:* `nil`) - 
+  *   `imageUrl` (*type:* `String.t`, *default:* `nil`) - 
+  *   `seriesId` (*type:* `String.t`, *default:* `nil`) - 
+  *   `seriesType` (*type:* `String.t`, *default:* `nil`) - 
+  *   `title` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

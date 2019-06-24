@@ -21,9 +21,9 @@ defmodule GoogleApi.Books.V1.Model.RequestAccess do
 
   ## Attributes
 
-  - concurrentAccess (GoogleApi.Books.V1.Model.ConcurrentAccessRestriction.t): A concurrent access response. Defaults to `nil`.
-  - downloadAccess (GoogleApi.Books.V1.Model.DownloadAccessRestriction.t): A download access response. Defaults to `nil`.
-  - kind (String.t): Resource type. Defaults to `books#requestAccess`.
+  *   `concurrentAccess` (*type:* `GoogleApi.Books.V1.Model.ConcurrentAccessRestriction.t`, *default:* `nil`) - A concurrent access response.
+  *   `downloadAccess` (*type:* `GoogleApi.Books.V1.Model.DownloadAccessRestriction.t`, *default:* `nil`) - A download access response.
+  *   `kind` (*type:* `String.t`, *default:* `books#requestAccess`) - Resource type.
   """
 
   use GoogleApi.Gax.ModelBase

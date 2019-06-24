@@ -21,10 +21,10 @@ defmodule GoogleApi.Books.V1.Model.VolumeseriesinfoVolumeSeries do
 
   ## Attributes
 
-  - issue (list(GoogleApi.Books.V1.Model.VolumeseriesinfoVolumeSeriesIssue.t)): List of issues. Applicable only for Collection Edition and Omnibus. Defaults to `nil`.
-  - orderNumber (integer()): The book order number in the series. Defaults to `nil`.
-  - seriesBookType (String.t): The book type in the context of series. Examples - Single Issue, Collection Edition, etc. Defaults to `nil`.
-  - seriesId (String.t): The series id. Defaults to `nil`.
+  *   `issue` (*type:* `list(GoogleApi.Books.V1.Model.VolumeseriesinfoVolumeSeriesIssue.t)`, *default:* `nil`) - List of issues. Applicable only for Collection Edition and Omnibus.
+  *   `orderNumber` (*type:* `integer()`, *default:* `nil`) - The book order number in the series.
+  *   `seriesBookType` (*type:* `String.t`, *default:* `nil`) - The book type in the context of series. Examples - Single Issue, Collection Edition, etc.
+  *   `seriesId` (*type:* `String.t`, *default:* `nil`) - The series id.
   """
 
   use GoogleApi.Gax.ModelBase

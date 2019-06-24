@@ -21,22 +21,22 @@ defmodule GoogleApi.Books.V1.Model.Notification do
 
   ## Attributes
 
-  - body (String.t):  Defaults to `nil`.
-  - crmExperimentIds (list(String.t)): The list of crm experiment ids. Defaults to `nil`.
-  - doc_id (String.t):  Defaults to `nil`.
-  - doc_type (String.t):  Defaults to `nil`.
-  - dont_show_notification (boolean()):  Defaults to `nil`.
-  - iconUrl (String.t):  Defaults to `nil`.
-  - is_document_mature (boolean()):  Defaults to `nil`.
-  - kind (String.t): Resource type. Defaults to `books#notification`.
-  - notificationGroup (String.t):  Defaults to `nil`.
-  - notification_type (String.t):  Defaults to `nil`.
-  - pcampaign_id (String.t):  Defaults to `nil`.
-  - reason (String.t):  Defaults to `nil`.
-  - show_notification_settings_action (boolean()):  Defaults to `nil`.
-  - targetUrl (String.t):  Defaults to `nil`.
-  - timeToExpireMs (String.t):  Defaults to `nil`.
-  - title (String.t):  Defaults to `nil`.
+  *   `body` (*type:* `String.t`, *default:* `nil`) - 
+  *   `crmExperimentIds` (*type:* `list(String.t)`, *default:* `nil`) - The list of crm experiment ids.
+  *   `doc_id` (*type:* `String.t`, *default:* `nil`) - 
+  *   `doc_type` (*type:* `String.t`, *default:* `nil`) - 
+  *   `dont_show_notification` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `iconUrl` (*type:* `String.t`, *default:* `nil`) - 
+  *   `is_document_mature` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `kind` (*type:* `String.t`, *default:* `books#notification`) - Resource type.
+  *   `notificationGroup` (*type:* `String.t`, *default:* `nil`) - 
+  *   `notification_type` (*type:* `String.t`, *default:* `nil`) - 
+  *   `pcampaign_id` (*type:* `String.t`, *default:* `nil`) - 
+  *   `reason` (*type:* `String.t`, *default:* `nil`) - 
+  *   `show_notification_settings_action` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `targetUrl` (*type:* `String.t`, *default:* `nil`) - 
+  *   `timeToExpireMs` (*type:* `String.t`, *default:* `nil`) - 
+  *   `title` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

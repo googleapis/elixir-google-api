@@ -21,9 +21,9 @@ defmodule GoogleApi.Books.V1.Model.Geolayerdata do
 
   ## Attributes
 
-  - common (GoogleApi.Books.V1.Model.GeolayerdataCommon.t):  Defaults to `nil`.
-  - geo (GoogleApi.Books.V1.Model.GeolayerdataGeo.t):  Defaults to `nil`.
-  - kind (String.t):  Defaults to `books#geolayerdata`.
+  *   `common` (*type:* `GoogleApi.Books.V1.Model.GeolayerdataCommon.t`, *default:* `nil`) - 
+  *   `geo` (*type:* `GoogleApi.Books.V1.Model.GeolayerdataGeo.t`, *default:* `nil`) - 
+  *   `kind` (*type:* `String.t`, *default:* `books#geolayerdata`) - 
   """
 
   use GoogleApi.Gax.ModelBase

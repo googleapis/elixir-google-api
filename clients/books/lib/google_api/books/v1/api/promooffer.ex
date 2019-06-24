@@ -28,30 +28,31 @@ defmodule GoogleApi.Books.V1.Api.Promooffer do
 
   ## Parameters
 
-  - connection (GoogleApi.Books.V1.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :androidId (String.t): device android_id
-    - :device (String.t): device device
-    - :manufacturer (String.t): device manufacturer
-    - :model (String.t): device model
-    - :offerId (String.t): 
-    - :product (String.t): device product
-    - :serial (String.t): device serial
-    - :volumeId (String.t): Volume id to exercise the offer
+  *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:androidId` (*type:* `String.t`) - device android_id
+      *   `:device` (*type:* `String.t`) - device device
+      *   `:manufacturer` (*type:* `String.t`) - device manufacturer
+      *   `:model` (*type:* `String.t`) - device model
+      *   `:offerId` (*type:* `String.t`) - 
+      *   `:product` (*type:* `String.t`) - device product
+      *   `:serial` (*type:* `String.t`) - device serial
+      *   `:volumeId` (*type:* `String.t`) - Volume id to exercise the offer
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %{}} on success
-  {:error, info} on failure
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec books_promooffer_accept(Tesla.Env.client(), keyword()) ::
+  @spec books_promooffer_accept(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
   def books_promooffer_accept(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -88,29 +89,30 @@ defmodule GoogleApi.Books.V1.Api.Promooffer do
 
   ## Parameters
 
-  - connection (GoogleApi.Books.V1.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :androidId (String.t): device android_id
-    - :device (String.t): device device
-    - :manufacturer (String.t): device manufacturer
-    - :model (String.t): device model
-    - :offerId (String.t): Offer to dimiss
-    - :product (String.t): device product
-    - :serial (String.t): device serial
+  *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:androidId` (*type:* `String.t`) - device android_id
+      *   `:device` (*type:* `String.t`) - device device
+      *   `:manufacturer` (*type:* `String.t`) - device manufacturer
+      *   `:model` (*type:* `String.t`) - device model
+      *   `:offerId` (*type:* `String.t`) - Offer to dimiss
+      *   `:product` (*type:* `String.t`) - device product
+      *   `:serial` (*type:* `String.t`) - device serial
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %{}} on success
-  {:error, info} on failure
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec books_promooffer_dismiss(Tesla.Env.client(), keyword()) ::
+  @spec books_promooffer_dismiss(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
   def books_promooffer_dismiss(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -146,28 +148,29 @@ defmodule GoogleApi.Books.V1.Api.Promooffer do
 
   ## Parameters
 
-  - connection (GoogleApi.Books.V1.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :androidId (String.t): device android_id
-    - :device (String.t): device device
-    - :manufacturer (String.t): device manufacturer
-    - :model (String.t): device model
-    - :product (String.t): device product
-    - :serial (String.t): device serial
+  *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:androidId` (*type:* `String.t`) - device android_id
+      *   `:device` (*type:* `String.t`) - device device
+      *   `:manufacturer` (*type:* `String.t`) - device manufacturer
+      *   `:model` (*type:* `String.t`) - device model
+      *   `:product` (*type:* `String.t`) - device product
+      *   `:serial` (*type:* `String.t`) - device serial
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Books.V1.Model.Offers{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Books.V1.Model.Offers{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec books_promooffer_get(Tesla.Env.client(), keyword()) ::
+  @spec books_promooffer_get(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Books.V1.Model.Offers.t()} | {:error, Tesla.Env.t()}
   def books_promooffer_get(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

@@ -21,10 +21,10 @@ defmodule GoogleApi.Books.V1.Model.VolumeVolumeInfoPanelizationSummary do
 
   ## Attributes
 
-  - containsEpubBubbles (boolean()):  Defaults to `nil`.
-  - containsImageBubbles (boolean()):  Defaults to `nil`.
-  - epubBubbleVersion (String.t):  Defaults to `nil`.
-  - imageBubbleVersion (String.t):  Defaults to `nil`.
+  *   `containsEpubBubbles` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `containsImageBubbles` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `epubBubbleVersion` (*type:* `String.t`, *default:* `nil`) - 
+  *   `imageBubbleVersion` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

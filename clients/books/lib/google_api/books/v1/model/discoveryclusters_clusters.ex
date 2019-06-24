@@ -21,12 +21,12 @@ defmodule GoogleApi.Books.V1.Model.DiscoveryclustersClusters do
 
   ## Attributes
 
-  - banner_with_content_container (GoogleApi.Books.V1.Model.DiscoveryclustersClustersBannerWithContentContainer.t):  Defaults to `nil`.
-  - subTitle (String.t):  Defaults to `nil`.
-  - title (String.t):  Defaults to `nil`.
-  - totalVolumes (integer()):  Defaults to `nil`.
-  - uid (String.t):  Defaults to `nil`.
-  - volumes (list(GoogleApi.Books.V1.Model.Volume.t)):  Defaults to `nil`.
+  *   `banner_with_content_container` (*type:* `GoogleApi.Books.V1.Model.DiscoveryclustersClustersBannerWithContentContainer.t`, *default:* `nil`) - 
+  *   `subTitle` (*type:* `String.t`, *default:* `nil`) - 
+  *   `title` (*type:* `String.t`, *default:* `nil`) - 
+  *   `totalVolumes` (*type:* `integer()`, *default:* `nil`) - 
+  *   `uid` (*type:* `String.t`, *default:* `nil`) - 
+  *   `volumes` (*type:* `list(GoogleApi.Books.V1.Model.Volume.t)`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

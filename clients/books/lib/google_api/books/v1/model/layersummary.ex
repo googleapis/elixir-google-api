@@ -21,19 +21,19 @@ defmodule GoogleApi.Books.V1.Model.Layersummary do
 
   ## Attributes
 
-  - annotationCount (integer()): The number of annotations for this layer. Defaults to `nil`.
-  - annotationTypes (list(String.t)): The list of annotation types contained for this layer. Defaults to `nil`.
-  - annotationsDataLink (String.t): Link to get data for this annotation. Defaults to `nil`.
-  - annotationsLink (String.t): The link to get the annotations for this layer. Defaults to `nil`.
-  - contentVersion (String.t): The content version this resource is for. Defaults to `nil`.
-  - dataCount (integer()): The number of data items for this layer. Defaults to `nil`.
-  - id (String.t): Unique id of this layer summary. Defaults to `nil`.
-  - kind (String.t): Resource Type Defaults to `books#layersummary`.
-  - layerId (String.t): The layer id for this summary. Defaults to `nil`.
-  - selfLink (String.t): URL to this resource. Defaults to `nil`.
-  - updated (DateTime.t): Timestamp for the last time an item in this layer was updated. (RFC 3339 UTC date-time format). Defaults to `nil`.
-  - volumeAnnotationsVersion (String.t): The current version of this layer's volume annotations. Note that this version applies only to the data in the books.layers.volumeAnnotations.* responses. The actual annotation data is versioned separately. Defaults to `nil`.
-  - volumeId (String.t): The volume id this resource is for. Defaults to `nil`.
+  *   `annotationCount` (*type:* `integer()`, *default:* `nil`) - The number of annotations for this layer.
+  *   `annotationTypes` (*type:* `list(String.t)`, *default:* `nil`) - The list of annotation types contained for this layer.
+  *   `annotationsDataLink` (*type:* `String.t`, *default:* `nil`) - Link to get data for this annotation.
+  *   `annotationsLink` (*type:* `String.t`, *default:* `nil`) - The link to get the annotations for this layer.
+  *   `contentVersion` (*type:* `String.t`, *default:* `nil`) - The content version this resource is for.
+  *   `dataCount` (*type:* `integer()`, *default:* `nil`) - The number of data items for this layer.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Unique id of this layer summary.
+  *   `kind` (*type:* `String.t`, *default:* `books#layersummary`) - Resource Type
+  *   `layerId` (*type:* `String.t`, *default:* `nil`) - The layer id for this summary.
+  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - URL to this resource.
+  *   `updated` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp for the last time an item in this layer was updated. (RFC 3339 UTC date-time format).
+  *   `volumeAnnotationsVersion` (*type:* `String.t`, *default:* `nil`) - The current version of this layer's volume annotations. Note that this version applies only to the data in the books.layers.volumeAnnotations.* responses. The actual annotation data is versioned separately.
+  *   `volumeId` (*type:* `String.t`, *default:* `nil`) - The volume id this resource is for.
   """
 
   use GoogleApi.Gax.ModelBase

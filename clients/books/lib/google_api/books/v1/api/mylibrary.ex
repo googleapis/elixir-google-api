@@ -28,24 +28,25 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
 
   ## Parameters
 
-  - connection (GoogleApi.Books.V1.Connection): Connection to server
-  - annotation_id (String.t): The ID for the annotation to delete.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :source (String.t): String to identify the originator of this request.
+  *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
+  *   `annotation_id` (*type:* `String.t`) - The ID for the annotation to delete.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:source` (*type:* `String.t`) - String to identify the originator of this request.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %{}} on success
-  {:error, info} on failure
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec books_mylibrary_annotations_delete(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec books_mylibrary_annotations_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
   def books_mylibrary_annotations_delete(
         connection,
@@ -82,27 +83,28 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
 
   ## Parameters
 
-  - connection (GoogleApi.Books.V1.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :annotationId (String.t): The ID for the annotation to insert.
-    - :country (String.t): ISO-3166-1 code to override the IP-based location.
-    - :showOnlySummaryInResponse (boolean()): Requests that only the summary of the specified layer be provided in the response.
-    - :source (String.t): String to identify the originator of this request.
-    - :body (GoogleApi.Books.V1.Model.Annotation.t): 
+  *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:annotationId` (*type:* `String.t`) - The ID for the annotation to insert.
+      *   `:country` (*type:* `String.t`) - ISO-3166-1 code to override the IP-based location.
+      *   `:showOnlySummaryInResponse` (*type:* `boolean()`) - Requests that only the summary of the specified layer be provided in the response.
+      *   `:source` (*type:* `String.t`) - String to identify the originator of this request.
+      *   `:body` (*type:* `GoogleApi.Books.V1.Model.Annotation.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Books.V1.Model.Annotation{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Books.V1.Model.Annotation{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec books_mylibrary_annotations_insert(Tesla.Env.client(), keyword()) ::
+  @spec books_mylibrary_annotations_insert(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Books.V1.Model.Annotation.t()} | {:error, Tesla.Env.t()}
   def books_mylibrary_annotations_insert(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -136,32 +138,33 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
 
   ## Parameters
 
-  - connection (GoogleApi.Books.V1.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :contentVersion (String.t): The content version for the requested volume.
-    - :layerId (String.t): The layer ID to limit annotation by.
-    - :layerIds (list(String.t)): The layer ID(s) to limit annotation by.
-    - :maxResults (integer()): Maximum number of results to return
-    - :pageToken (String.t): The value of the nextToken from the previous page.
-    - :showDeleted (boolean()): Set to true to return deleted annotations. updatedMin must be in the request to use this. Defaults to false.
-    - :source (String.t): String to identify the originator of this request.
-    - :updatedMax (String.t): RFC 3339 timestamp to restrict to items updated prior to this timestamp (exclusive).
-    - :updatedMin (String.t): RFC 3339 timestamp to restrict to items updated since this timestamp (inclusive).
-    - :volumeId (String.t): The volume to restrict annotations to.
+  *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:contentVersion` (*type:* `String.t`) - The content version for the requested volume.
+      *   `:layerId` (*type:* `String.t`) - The layer ID to limit annotation by.
+      *   `:layerIds` (*type:* `list(String.t)`) - The layer ID(s) to limit annotation by.
+      *   `:maxResults` (*type:* `integer()`) - Maximum number of results to return
+      *   `:pageToken` (*type:* `String.t`) - The value of the nextToken from the previous page.
+      *   `:showDeleted` (*type:* `boolean()`) - Set to true to return deleted annotations. updatedMin must be in the request to use this. Defaults to false.
+      *   `:source` (*type:* `String.t`) - String to identify the originator of this request.
+      *   `:updatedMax` (*type:* `String.t`) - RFC 3339 timestamp to restrict to items updated prior to this timestamp (exclusive).
+      *   `:updatedMin` (*type:* `String.t`) - RFC 3339 timestamp to restrict to items updated since this timestamp (inclusive).
+      *   `:volumeId` (*type:* `String.t`) - The volume to restrict annotations to.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Books.V1.Model.Annotations{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Books.V1.Model.Annotations{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec books_mylibrary_annotations_list(Tesla.Env.client(), keyword()) ::
+  @spec books_mylibrary_annotations_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Books.V1.Model.Annotations.t()} | {:error, Tesla.Env.t()}
   def books_mylibrary_annotations_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -200,27 +203,29 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
 
   ## Parameters
 
-  - connection (GoogleApi.Books.V1.Connection): Connection to server
-  - layer_ids (list(String.t)): Array of layer IDs to get the summary for.
-  - volume_id (String.t): Volume id to get the summary for.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
+  *   `layer_ids` (*type:* `list(String.t)`) - Array of layer IDs to get the summary for.
+  *   `volume_id` (*type:* `String.t`) - Volume id to get the summary for.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Books.V1.Model.AnnotationsSummary{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Books.V1.Model.AnnotationsSummary{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec books_mylibrary_annotations_summary(
           Tesla.Env.client(),
           list(String.t()),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Books.V1.Model.AnnotationsSummary.t()} | {:error, Tesla.Env.t()}
   def books_mylibrary_annotations_summary(
@@ -258,25 +263,26 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
 
   ## Parameters
 
-  - connection (GoogleApi.Books.V1.Connection): Connection to server
-  - annotation_id (String.t): The ID for the annotation to update.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :source (String.t): String to identify the originator of this request.
-    - :body (GoogleApi.Books.V1.Model.Annotation.t): 
+  *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
+  *   `annotation_id` (*type:* `String.t`) - The ID for the annotation to update.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:source` (*type:* `String.t`) - String to identify the originator of this request.
+      *   `:body` (*type:* `GoogleApi.Books.V1.Model.Annotation.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Books.V1.Model.Annotation{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Books.V1.Model.Annotation{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec books_mylibrary_annotations_update(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec books_mylibrary_annotations_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Books.V1.Model.Annotation.t()} | {:error, Tesla.Env.t()}
   def books_mylibrary_annotations_update(
         connection,
@@ -314,29 +320,31 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
 
   ## Parameters
 
-  - connection (GoogleApi.Books.V1.Connection): Connection to server
-  - shelf (String.t): ID of bookshelf to which to add a volume.
-  - volume_id (String.t): ID of volume to add.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :reason (String.t): The reason for which the book is added to the library.
-    - :source (String.t): String to identify the originator of this request.
+  *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
+  *   `shelf` (*type:* `String.t`) - ID of bookshelf to which to add a volume.
+  *   `volume_id` (*type:* `String.t`) - ID of volume to add.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:reason` (*type:* `String.t`) - The reason for which the book is added to the library.
+      *   `:source` (*type:* `String.t`) - String to identify the originator of this request.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %{}} on success
-  {:error, info} on failure
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec books_mylibrary_bookshelves_add_volume(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, nil} | {:error, Tesla.Env.t()}
   def books_mylibrary_bookshelves_add_volume(
@@ -377,25 +385,30 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
 
   ## Parameters
 
-  - connection (GoogleApi.Books.V1.Connection): Connection to server
-  - shelf (String.t): ID of bookshelf from which to remove a volume.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :source (String.t): String to identify the originator of this request.
+  *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
+  *   `shelf` (*type:* `String.t`) - ID of bookshelf from which to remove a volume.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:source` (*type:* `String.t`) - String to identify the originator of this request.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %{}} on success
-  {:error, info} on failure
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec books_mylibrary_bookshelves_clear_volumes(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, nil} | {:error, Tesla.Env.t()}
+  @spec books_mylibrary_bookshelves_clear_volumes(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
   def books_mylibrary_bookshelves_clear_volumes(
         connection,
         shelf,
@@ -431,24 +444,25 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
 
   ## Parameters
 
-  - connection (GoogleApi.Books.V1.Connection): Connection to server
-  - shelf (String.t): ID of bookshelf to retrieve.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :source (String.t): String to identify the originator of this request.
+  *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
+  *   `shelf` (*type:* `String.t`) - ID of bookshelf to retrieve.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:source` (*type:* `String.t`) - String to identify the originator of this request.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Books.V1.Model.Bookshelf{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Books.V1.Model.Bookshelf{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec books_mylibrary_bookshelves_get(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec books_mylibrary_bookshelves_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Books.V1.Model.Bookshelf.t()} | {:error, Tesla.Env.t()}
   def books_mylibrary_bookshelves_get(connection, shelf, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -480,23 +494,24 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
 
   ## Parameters
 
-  - connection (GoogleApi.Books.V1.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :source (String.t): String to identify the originator of this request.
+  *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:source` (*type:* `String.t`) - String to identify the originator of this request.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Books.V1.Model.Bookshelves{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Books.V1.Model.Bookshelves{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec books_mylibrary_bookshelves_list(Tesla.Env.client(), keyword()) ::
+  @spec books_mylibrary_bookshelves_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Books.V1.Model.Bookshelves.t()} | {:error, Tesla.Env.t()}
   def books_mylibrary_bookshelves_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -526,30 +541,32 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
 
   ## Parameters
 
-  - connection (GoogleApi.Books.V1.Connection): Connection to server
-  - shelf (String.t): ID of bookshelf with the volume.
-  - volume_id (String.t): ID of volume to move.
-  - volume_position (integer()): Position on shelf to move the item (0 puts the item before the current first item, 1 puts it between the first and the second and so on.)
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :source (String.t): String to identify the originator of this request.
+  *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
+  *   `shelf` (*type:* `String.t`) - ID of bookshelf with the volume.
+  *   `volume_id` (*type:* `String.t`) - ID of volume to move.
+  *   `volume_position` (*type:* `integer()`) - Position on shelf to move the item (0 puts the item before the current first item, 1 puts it between the first and the second and so on.)
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:source` (*type:* `String.t`) - String to identify the originator of this request.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %{}} on success
-  {:error, info} on failure
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec books_mylibrary_bookshelves_move_volume(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           integer(),
+          keyword(),
           keyword()
         ) :: {:ok, nil} | {:error, Tesla.Env.t()}
   def books_mylibrary_bookshelves_move_volume(
@@ -591,29 +608,31 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
 
   ## Parameters
 
-  - connection (GoogleApi.Books.V1.Connection): Connection to server
-  - shelf (String.t): ID of bookshelf from which to remove a volume.
-  - volume_id (String.t): ID of volume to remove.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :reason (String.t): The reason for which the book is removed from the library.
-    - :source (String.t): String to identify the originator of this request.
+  *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
+  *   `shelf` (*type:* `String.t`) - ID of bookshelf from which to remove a volume.
+  *   `volume_id` (*type:* `String.t`) - ID of volume to remove.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:reason` (*type:* `String.t`) - The reason for which the book is removed from the library.
+      *   `:source` (*type:* `String.t`) - String to identify the originator of this request.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %{}} on success
-  {:error, info} on failure
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec books_mylibrary_bookshelves_remove_volume(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, nil} | {:error, Tesla.Env.t()}
   def books_mylibrary_bookshelves_remove_volume(
@@ -654,31 +673,36 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
 
   ## Parameters
 
-  - connection (GoogleApi.Books.V1.Connection): Connection to server
-  - shelf (String.t): The bookshelf ID or name retrieve volumes for.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :country (String.t): ISO-3166-1 code to override the IP-based location.
-    - :maxResults (integer()): Maximum number of results to return
-    - :projection (String.t): Restrict information returned to a set of selected fields.
-    - :q (String.t): Full-text search query string in this bookshelf.
-    - :showPreorders (boolean()): Set to true to show pre-ordered books. Defaults to false.
-    - :source (String.t): String to identify the originator of this request.
-    - :startIndex (integer()): Index of the first element to return (starts at 0)
+  *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
+  *   `shelf` (*type:* `String.t`) - The bookshelf ID or name retrieve volumes for.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:country` (*type:* `String.t`) - ISO-3166-1 code to override the IP-based location.
+      *   `:maxResults` (*type:* `integer()`) - Maximum number of results to return
+      *   `:projection` (*type:* `String.t`) - Restrict information returned to a set of selected fields.
+      *   `:q` (*type:* `String.t`) - Full-text search query string in this bookshelf.
+      *   `:showPreorders` (*type:* `boolean()`) - Set to true to show pre-ordered books. Defaults to false.
+      *   `:source` (*type:* `String.t`) - String to identify the originator of this request.
+      *   `:startIndex` (*type:* `integer()`) - Index of the first element to return (starts at 0)
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Books.V1.Model.Volumes{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Books.V1.Model.Volumes{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec books_mylibrary_bookshelves_volumes_list(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, GoogleApi.Books.V1.Model.Volumes.t()} | {:error, Tesla.Env.t()}
+  @spec books_mylibrary_bookshelves_volumes_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.Books.V1.Model.Volumes.t()} | {:error, Tesla.Env.t()}
   def books_mylibrary_bookshelves_volumes_list(
         connection,
         shelf,
@@ -720,25 +744,26 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
 
   ## Parameters
 
-  - connection (GoogleApi.Books.V1.Connection): Connection to server
-  - volume_id (String.t): ID of volume for which to retrieve a reading position.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :contentVersion (String.t): Volume content version for which this reading position is requested.
-    - :source (String.t): String to identify the originator of this request.
+  *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
+  *   `volume_id` (*type:* `String.t`) - ID of volume for which to retrieve a reading position.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:contentVersion` (*type:* `String.t`) - Volume content version for which this reading position is requested.
+      *   `:source` (*type:* `String.t`) - String to identify the originator of this request.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Books.V1.Model.ReadingPosition{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Books.V1.Model.ReadingPosition{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec books_mylibrary_readingpositions_get(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec books_mylibrary_readingpositions_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Books.V1.Model.ReadingPosition.t()} | {:error, Tesla.Env.t()}
   def books_mylibrary_readingpositions_get(
         connection,
@@ -776,33 +801,35 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
 
   ## Parameters
 
-  - connection (GoogleApi.Books.V1.Connection): Connection to server
-  - volume_id (String.t): ID of volume for which to update the reading position.
-  - timestamp (String.t): RFC 3339 UTC format timestamp associated with this reading position.
-  - position (String.t): Position string for the new volume reading position.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :action (String.t): Action that caused this reading position to be set.
-    - :contentVersion (String.t): Volume content version for which this reading position applies.
-    - :deviceCookie (String.t): Random persistent device cookie optional on set position.
-    - :source (String.t): String to identify the originator of this request.
+  *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
+  *   `volume_id` (*type:* `String.t`) - ID of volume for which to update the reading position.
+  *   `timestamp` (*type:* `String.t`) - RFC 3339 UTC format timestamp associated with this reading position.
+  *   `position` (*type:* `String.t`) - Position string for the new volume reading position.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:action` (*type:* `String.t`) - Action that caused this reading position to be set.
+      *   `:contentVersion` (*type:* `String.t`) - Volume content version for which this reading position applies.
+      *   `:deviceCookie` (*type:* `String.t`) - Random persistent device cookie optional on set position.
+      *   `:source` (*type:* `String.t`) - String to identify the originator of this request.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %{}} on success
-  {:error, info} on failure
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec books_mylibrary_readingpositions_set_position(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, nil} | {:error, Tesla.Env.t()}
   def books_mylibrary_readingpositions_set_position(

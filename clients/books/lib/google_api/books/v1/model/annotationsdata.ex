@@ -21,10 +21,10 @@ defmodule GoogleApi.Books.V1.Model.Annotationsdata do
 
   ## Attributes
 
-  - items (list(GoogleApi.Books.V1.Model.Annotationdata.t)): A list of Annotation Data. Defaults to `nil`.
-  - kind (String.t): Resource type Defaults to `books#annotationsdata`.
-  - nextPageToken (String.t): Token to pass in for pagination for the next page. This will not be present if this request does not have more results. Defaults to `nil`.
-  - totalItems (integer()): The total number of volume annotations found. Defaults to `nil`.
+  *   `items` (*type:* `list(GoogleApi.Books.V1.Model.Annotationdata.t)`, *default:* `nil`) - A list of Annotation Data.
+  *   `kind` (*type:* `String.t`, *default:* `books#annotationsdata`) - Resource type
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to pass in for pagination for the next page. This will not be present if this request does not have more results.
+  *   `totalItems` (*type:* `integer()`, *default:* `nil`) - The total number of volume annotations found.
   """
 
   use GoogleApi.Gax.ModelBase

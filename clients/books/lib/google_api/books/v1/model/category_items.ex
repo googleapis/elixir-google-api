@@ -21,9 +21,9 @@ defmodule GoogleApi.Books.V1.Model.CategoryItems do
 
   ## Attributes
 
-  - badgeUrl (String.t):  Defaults to `nil`.
-  - categoryId (String.t):  Defaults to `nil`.
-  - name (String.t):  Defaults to `nil`.
+  *   `badgeUrl` (*type:* `String.t`, *default:* `nil`) - 
+  *   `categoryId` (*type:* `String.t`, *default:* `nil`) - 
+  *   `name` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

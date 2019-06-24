@@ -21,8 +21,8 @@ defmodule GoogleApi.Books.V1.Model.GeolayerdataGeoViewport do
 
   ## Attributes
 
-  - hi (GoogleApi.Books.V1.Model.GeolayerdataGeoViewportHi.t):  Defaults to `nil`.
-  - lo (GoogleApi.Books.V1.Model.GeolayerdataGeoViewportLo.t):  Defaults to `nil`.
+  *   `hi` (*type:* `GoogleApi.Books.V1.Model.GeolayerdataGeoViewportHi.t`, *default:* `nil`) - 
+  *   `lo` (*type:* `GoogleApi.Books.V1.Model.GeolayerdataGeoViewportLo.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

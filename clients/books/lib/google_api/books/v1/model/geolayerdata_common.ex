@@ -21,11 +21,11 @@ defmodule GoogleApi.Books.V1.Model.GeolayerdataCommon do
 
   ## Attributes
 
-  - lang (String.t): The language of the information url and description. Defaults to `nil`.
-  - previewImageUrl (String.t): The URL for the preview image information. Defaults to `nil`.
-  - snippet (String.t): The description for this location. Defaults to `nil`.
-  - snippetUrl (String.t): The URL for information for this location. Ex: wikipedia link. Defaults to `nil`.
-  - title (String.t): The display title and localized canonical name to use when searching for this entity on Google search. Defaults to `nil`.
+  *   `lang` (*type:* `String.t`, *default:* `nil`) - The language of the information url and description.
+  *   `previewImageUrl` (*type:* `String.t`, *default:* `nil`) - The URL for the preview image information.
+  *   `snippet` (*type:* `String.t`, *default:* `nil`) - The description for this location.
+  *   `snippetUrl` (*type:* `String.t`, *default:* `nil`) - The URL for information for this location. Ex: wikipedia link.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - The display title and localized canonical name to use when searching for this entity on Google search.
   """
 
   use GoogleApi.Gax.ModelBase

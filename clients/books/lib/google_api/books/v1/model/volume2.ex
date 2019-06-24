@@ -21,9 +21,9 @@ defmodule GoogleApi.Books.V1.Model.Volume2 do
 
   ## Attributes
 
-  - items (list(GoogleApi.Books.V1.Model.Volume.t)): A list of volumes. Defaults to `nil`.
-  - kind (String.t): Resource type. Defaults to `onboarding#volume`.
-  - nextPageToken (String.t):  Defaults to `nil`.
+  *   `items` (*type:* `list(GoogleApi.Books.V1.Model.Volume.t)`, *default:* `nil`) - A list of volumes.
+  *   `kind` (*type:* `String.t`, *default:* `onboarding#volume`) - Resource type.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

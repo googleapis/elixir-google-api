@@ -21,11 +21,11 @@ defmodule GoogleApi.Books.V1.Model.UsersettingsNotification do
 
   ## Attributes
 
-  - matchMyInterests (GoogleApi.Books.V1.Model.UsersettingsNotificationMatchMyInterests.t):  Defaults to `nil`.
-  - moreFromAuthors (GoogleApi.Books.V1.Model.UsersettingsNotificationMoreFromAuthors.t):  Defaults to `nil`.
-  - moreFromSeries (GoogleApi.Books.V1.Model.UsersettingsNotificationMoreFromSeries.t):  Defaults to `nil`.
-  - priceDrop (GoogleApi.Books.V1.Model.UsersettingsNotificationPriceDrop.t):  Defaults to `nil`.
-  - rewardExpirations (GoogleApi.Books.V1.Model.UsersettingsNotificationRewardExpirations.t):  Defaults to `nil`.
+  *   `matchMyInterests` (*type:* `GoogleApi.Books.V1.Model.UsersettingsNotificationMatchMyInterests.t`, *default:* `nil`) - 
+  *   `moreFromAuthors` (*type:* `GoogleApi.Books.V1.Model.UsersettingsNotificationMoreFromAuthors.t`, *default:* `nil`) - 
+  *   `moreFromSeries` (*type:* `GoogleApi.Books.V1.Model.UsersettingsNotificationMoreFromSeries.t`, *default:* `nil`) - 
+  *   `priceDrop` (*type:* `GoogleApi.Books.V1.Model.UsersettingsNotificationPriceDrop.t`, *default:* `nil`) - 
+  *   `rewardExpirations` (*type:* `GoogleApi.Books.V1.Model.UsersettingsNotificationRewardExpirations.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

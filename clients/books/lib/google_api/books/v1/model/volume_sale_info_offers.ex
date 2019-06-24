@@ -21,11 +21,11 @@ defmodule GoogleApi.Books.V1.Model.VolumeSaleInfoOffers do
 
   ## Attributes
 
-  - finskyOfferType (integer()): The finsky offer type (e.g., PURCHASE=0 RENTAL=3) Defaults to `nil`.
-  - giftable (boolean()): Indicates whether the offer is giftable. Defaults to `nil`.
-  - listPrice (GoogleApi.Books.V1.Model.VolumeSaleInfoOffersListPrice.t): Offer list (=undiscounted) price in Micros. Defaults to `nil`.
-  - rentalDuration (GoogleApi.Books.V1.Model.VolumeSaleInfoOffersRentalDuration.t): The rental duration (for rental offers only). Defaults to `nil`.
-  - retailPrice (GoogleApi.Books.V1.Model.VolumeSaleInfoOffersRetailPrice.t): Offer retail (=discounted) price in Micros Defaults to `nil`.
+  *   `finskyOfferType` (*type:* `integer()`, *default:* `nil`) - The finsky offer type (e.g., PURCHASE=0 RENTAL=3)
+  *   `giftable` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the offer is giftable.
+  *   `listPrice` (*type:* `GoogleApi.Books.V1.Model.VolumeSaleInfoOffersListPrice.t`, *default:* `nil`) - Offer list (=undiscounted) price in Micros.
+  *   `rentalDuration` (*type:* `GoogleApi.Books.V1.Model.VolumeSaleInfoOffersRentalDuration.t`, *default:* `nil`) - The rental duration (for rental offers only).
+  *   `retailPrice` (*type:* `GoogleApi.Books.V1.Model.VolumeSaleInfoOffersRetailPrice.t`, *default:* `nil`) - Offer retail (=discounted) price in Micros
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,8 +21,8 @@ defmodule GoogleApi.Books.V1.Model.AnnotationsSummary do
 
   ## Attributes
 
-  - kind (String.t):  Defaults to `books#annotationsSummary`.
-  - layers (list(GoogleApi.Books.V1.Model.AnnotationsSummaryLayers.t)):  Defaults to `nil`.
+  *   `kind` (*type:* `String.t`, *default:* `books#annotationsSummary`) - 
+  *   `layers` (*type:* `list(GoogleApi.Books.V1.Model.AnnotationsSummaryLayers.t)`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase
