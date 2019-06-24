@@ -21,17 +21,17 @@ defmodule GoogleApi.Content.V2.Model.ProductStatus do
 
   ## Attributes
 
-  - creationDate (String.t): Date on which the item has been created, in ISO 8601 format. Defaults to `nil`.
-  - dataQualityIssues (list(GoogleApi.Content.V2.Model.ProductStatusDataQualityIssue.t)): DEPRECATED - never populated Defaults to `nil`.
-  - destinationStatuses (list(GoogleApi.Content.V2.Model.ProductStatusDestinationStatus.t)): The intended destinations for the product. Defaults to `nil`.
-  - googleExpirationDate (String.t): Date on which the item expires in Google Shopping, in ISO 8601 format. Defaults to `nil`.
-  - itemLevelIssues (list(GoogleApi.Content.V2.Model.ProductStatusItemLevelIssue.t)): A list of all issues associated with the product. Defaults to `nil`.
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "content#productStatus". Defaults to `content#productStatus`.
-  - lastUpdateDate (String.t): Date on which the item has been last updated, in ISO 8601 format. Defaults to `nil`.
-  - link (String.t): The link to the product. Defaults to `nil`.
-  - product (GoogleApi.Content.V2.Model.Product.t): Product data after applying all the join inputs. Defaults to `nil`.
-  - productId (String.t): The ID of the product for which status is reported. Defaults to `nil`.
-  - title (String.t): The title of the product. Defaults to `nil`.
+  *   `creationDate` (*type:* `String.t`, *default:* `nil`) - Date on which the item has been created, in ISO 8601 format.
+  *   `dataQualityIssues` (*type:* `list(GoogleApi.Content.V2.Model.ProductStatusDataQualityIssue.t)`, *default:* `nil`) - DEPRECATED - never populated
+  *   `destinationStatuses` (*type:* `list(GoogleApi.Content.V2.Model.ProductStatusDestinationStatus.t)`, *default:* `nil`) - The intended destinations for the product.
+  *   `googleExpirationDate` (*type:* `String.t`, *default:* `nil`) - Date on which the item expires in Google Shopping, in ISO 8601 format.
+  *   `itemLevelIssues` (*type:* `list(GoogleApi.Content.V2.Model.ProductStatusItemLevelIssue.t)`, *default:* `nil`) - A list of all issues associated with the product.
+  *   `kind` (*type:* `String.t`, *default:* `content#productStatus`) - Identifies what kind of resource this is. Value: the fixed string "content#productStatus".
+  *   `lastUpdateDate` (*type:* `String.t`, *default:* `nil`) - Date on which the item has been last updated, in ISO 8601 format.
+  *   `link` (*type:* `String.t`, *default:* `nil`) - The link to the product.
+  *   `product` (*type:* `GoogleApi.Content.V2.Model.Product.t`, *default:* `nil`) - Product data after applying all the join inputs.
+  *   `productId` (*type:* `String.t`, *default:* `nil`) - The ID of the product for which status is reported.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - The title of the product.
   """
 
   use GoogleApi.Gax.ModelBase

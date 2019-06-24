@@ -21,21 +21,21 @@ defmodule GoogleApi.Content.V2.Model.OrderPaymentMethod do
 
   ## Attributes
 
-  - billingAddress (GoogleApi.Content.V2.Model.OrderAddress.t): The billing address. Defaults to `nil`.
-  - expirationMonth (integer()): The card expiration month (January = 1, February = 2 etc.). Defaults to `nil`.
-  - expirationYear (integer()): The card expiration year (4-digit, e.g. 2015). Defaults to `nil`.
-  - lastFourDigits (String.t): The last four digits of the card number. Defaults to `nil`.
-  - phoneNumber (String.t): The billing phone number. Defaults to `nil`.
-  - type (String.t): The type of instrument.
+  *   `billingAddress` (*type:* `GoogleApi.Content.V2.Model.OrderAddress.t`, *default:* `nil`) - The billing address.
+  *   `expirationMonth` (*type:* `integer()`, *default:* `nil`) - The card expiration month (January = 1, February = 2 etc.).
+  *   `expirationYear` (*type:* `integer()`, *default:* `nil`) - The card expiration year (4-digit, e.g. 2015).
+  *   `lastFourDigits` (*type:* `String.t`, *default:* `nil`) - The last four digits of the card number.
+  *   `phoneNumber` (*type:* `String.t`, *default:* `nil`) - The billing phone number.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of instrument.
 
-  Acceptable values are:  
-  - "AMEX" 
-  - "DISCOVER" 
-  - "JCB" 
-  - "MASTERCARD" 
-  - "UNIONPAY" 
-  - "VISA" 
-  - "" Defaults to `nil`.
+      Acceptable values are:  
+      - "AMEX" 
+      - "DISCOVER" 
+      - "JCB" 
+      - "MASTERCARD" 
+      - "UNIONPAY" 
+      - "VISA" 
+      - ""
   """
 
   use GoogleApi.Gax.ModelBase

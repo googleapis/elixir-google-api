@@ -21,11 +21,11 @@ defmodule GoogleApi.Content.V2.Model.HolidayCutoff do
 
   ## Attributes
 
-  - deadlineDate (String.t): Date of the order deadline, in ISO 8601 format. E.g. "2016-11-29" for 29th November 2016. Required. Defaults to `nil`.
-  - deadlineHour (integer()): Hour of the day on the deadline date until which the order has to be placed to qualify for the delivery guarantee. Possible values are: 0 (midnight), 1, ..., 12 (noon), 13, ..., 23. Required. Defaults to `nil`.
-  - deadlineTimezone (String.t): Timezone identifier for the deadline hour. A list of identifiers can be found in  the AdWords API documentation. E.g. "Europe/Zurich". Required. Defaults to `nil`.
-  - holidayId (String.t): Unique identifier for the holiday. Required. Defaults to `nil`.
-  - visibleFromDate (String.t): Date on which the deadline will become visible to consumers in ISO 8601 format. E.g. "2016-10-31" for 31st October 2016. Required. Defaults to `nil`.
+  *   `deadlineDate` (*type:* `String.t`, *default:* `nil`) - Date of the order deadline, in ISO 8601 format. E.g. "2016-11-29" for 29th November 2016. Required.
+  *   `deadlineHour` (*type:* `integer()`, *default:* `nil`) - Hour of the day on the deadline date until which the order has to be placed to qualify for the delivery guarantee. Possible values are: 0 (midnight), 1, ..., 12 (noon), 13, ..., 23. Required.
+  *   `deadlineTimezone` (*type:* `String.t`, *default:* `nil`) - Timezone identifier for the deadline hour. A list of identifiers can be found in  the AdWords API documentation. E.g. "Europe/Zurich". Required.
+  *   `holidayId` (*type:* `String.t`, *default:* `nil`) - Unique identifier for the holiday. Required.
+  *   `visibleFromDate` (*type:* `String.t`, *default:* `nil`) - Date on which the deadline will become visible to consumers in ISO 8601 format. E.g. "2016-10-31" for 31st October 2016. Required.
   """
 
   use GoogleApi.Gax.ModelBase

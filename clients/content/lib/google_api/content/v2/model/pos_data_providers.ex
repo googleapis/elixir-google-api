@@ -21,8 +21,8 @@ defmodule GoogleApi.Content.V2.Model.PosDataProviders do
 
   ## Attributes
 
-  - country (String.t): Country code. Defaults to `nil`.
-  - posDataProviders (list(GoogleApi.Content.V2.Model.PosDataProvidersPosDataProvider.t)): A list of POS data providers. Defaults to `nil`.
+  *   `country` (*type:* `String.t`, *default:* `nil`) - Country code.
+  *   `posDataProviders` (*type:* `list(GoogleApi.Content.V2.Model.PosDataProvidersPosDataProvider.t)`, *default:* `nil`) - A list of POS data providers.
   """
 
   use GoogleApi.Gax.ModelBase

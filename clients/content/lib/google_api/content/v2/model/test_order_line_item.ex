@@ -21,11 +21,11 @@ defmodule GoogleApi.Content.V2.Model.TestOrderLineItem do
 
   ## Attributes
 
-  - product (GoogleApi.Content.V2.Model.TestOrderLineItemProduct.t): Product data from the time of the order placement. Defaults to `nil`.
-  - quantityOrdered (integer()): Number of items ordered. Defaults to `nil`.
-  - returnInfo (GoogleApi.Content.V2.Model.OrderLineItemReturnInfo.t): Details of the return policy for the line item. Defaults to `nil`.
-  - shippingDetails (GoogleApi.Content.V2.Model.OrderLineItemShippingDetails.t): Details of the requested shipping for the line item. Defaults to `nil`.
-  - unitTax (GoogleApi.Content.V2.Model.Price.t): Deprecated. Ignored if provided. Defaults to `nil`.
+  *   `product` (*type:* `GoogleApi.Content.V2.Model.TestOrderLineItemProduct.t`, *default:* `nil`) - Product data from the time of the order placement.
+  *   `quantityOrdered` (*type:* `integer()`, *default:* `nil`) - Number of items ordered.
+  *   `returnInfo` (*type:* `GoogleApi.Content.V2.Model.OrderLineItemReturnInfo.t`, *default:* `nil`) - Details of the return policy for the line item.
+  *   `shippingDetails` (*type:* `GoogleApi.Content.V2.Model.OrderLineItemShippingDetails.t`, *default:* `nil`) - Details of the requested shipping for the line item.
+  *   `unitTax` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - Deprecated. Ignored if provided.
   """
 
   use GoogleApi.Gax.ModelBase

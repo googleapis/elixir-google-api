@@ -21,10 +21,10 @@ defmodule GoogleApi.Content.V2.Model.AccounttaxCustomBatchResponseEntry do
 
   ## Attributes
 
-  - accountTax (GoogleApi.Content.V2.Model.AccountTax.t): The retrieved or updated account tax settings. Defaults to `nil`.
-  - batchId (integer()): The ID of the request entry this entry responds to. Defaults to `nil`.
-  - errors (GoogleApi.Content.V2.Model.Errors.t): A list of errors defined if and only if the request failed. Defaults to `nil`.
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "content#accounttaxCustomBatchResponseEntry". Defaults to `content#accounttaxCustomBatchResponseEntry`.
+  *   `accountTax` (*type:* `GoogleApi.Content.V2.Model.AccountTax.t`, *default:* `nil`) - The retrieved or updated account tax settings.
+  *   `batchId` (*type:* `integer()`, *default:* `nil`) - The ID of the request entry this entry responds to.
+  *   `errors` (*type:* `GoogleApi.Content.V2.Model.Errors.t`, *default:* `nil`) - A list of errors defined if and only if the request failed.
+  *   `kind` (*type:* `String.t`, *default:* `content#accounttaxCustomBatchResponseEntry`) - Identifies what kind of resource this is. Value: the fixed string "content#accounttaxCustomBatchResponseEntry".
   """
 
   use GoogleApi.Gax.ModelBase

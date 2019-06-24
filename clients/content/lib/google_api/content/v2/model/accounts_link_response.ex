@@ -21,7 +21,7 @@ defmodule GoogleApi.Content.V2.Model.AccountsLinkResponse do
 
   ## Attributes
 
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "content#accountsLinkResponse". Defaults to `content#accountsLinkResponse`.
+  *   `kind` (*type:* `String.t`, *default:* `content#accountsLinkResponse`) - Identifies what kind of resource this is. Value: the fixed string "content#accountsLinkResponse".
   """
 
   use GoogleApi.Gax.ModelBase

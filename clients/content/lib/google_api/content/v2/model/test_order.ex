@@ -21,17 +21,17 @@ defmodule GoogleApi.Content.V2.Model.TestOrder do
 
   ## Attributes
 
-  - customer (GoogleApi.Content.V2.Model.TestOrderCustomer.t): The details of the customer who placed the order. Defaults to `nil`.
-  - enableOrderinvoices (boolean()): Whether the orderinvoices service should support this order. Defaults to `nil`.
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "content#testOrder". Defaults to `content#testOrder`.
-  - lineItems (list(GoogleApi.Content.V2.Model.TestOrderLineItem.t)): Line items that are ordered. At least one line item must be provided. Defaults to `nil`.
-  - notificationMode (String.t): Determines if test order must be pulled by merchant or pushed to merchant via push integration. Defaults to `nil`.
-  - paymentMethod (GoogleApi.Content.V2.Model.TestOrderPaymentMethod.t): The details of the payment method. Defaults to `nil`.
-  - predefinedDeliveryAddress (String.t): Identifier of one of the predefined delivery addresses for the delivery. Defaults to `nil`.
-  - promotions (list(GoogleApi.Content.V2.Model.OrderLegacyPromotion.t)): Deprecated. Ignored if provided. Defaults to `nil`.
-  - shippingCost (GoogleApi.Content.V2.Model.Price.t): The price of shipping for all items. Shipping tax is automatically calculated for MFL orders. For non-MFL orders, tax settings from Merchant Center are applied. Note that shipping is not taxed in certain states. Defaults to `nil`.
-  - shippingCostTax (GoogleApi.Content.V2.Model.Price.t): Deprecated. Ignored if provided. Defaults to `nil`.
-  - shippingOption (String.t): The requested shipping option. Defaults to `nil`.
+  *   `customer` (*type:* `GoogleApi.Content.V2.Model.TestOrderCustomer.t`, *default:* `nil`) - The details of the customer who placed the order.
+  *   `enableOrderinvoices` (*type:* `boolean()`, *default:* `nil`) - Whether the orderinvoices service should support this order.
+  *   `kind` (*type:* `String.t`, *default:* `content#testOrder`) - Identifies what kind of resource this is. Value: the fixed string "content#testOrder".
+  *   `lineItems` (*type:* `list(GoogleApi.Content.V2.Model.TestOrderLineItem.t)`, *default:* `nil`) - Line items that are ordered. At least one line item must be provided.
+  *   `notificationMode` (*type:* `String.t`, *default:* `nil`) - Determines if test order must be pulled by merchant or pushed to merchant via push integration.
+  *   `paymentMethod` (*type:* `GoogleApi.Content.V2.Model.TestOrderPaymentMethod.t`, *default:* `nil`) - The details of the payment method.
+  *   `predefinedDeliveryAddress` (*type:* `String.t`, *default:* `nil`) - Identifier of one of the predefined delivery addresses for the delivery.
+  *   `promotions` (*type:* `list(GoogleApi.Content.V2.Model.OrderLegacyPromotion.t)`, *default:* `nil`) - Deprecated. Ignored if provided.
+  *   `shippingCost` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - The price of shipping for all items. Shipping tax is automatically calculated for MFL orders. For non-MFL orders, tax settings from Merchant Center are applied. Note that shipping is not taxed in certain states.
+  *   `shippingCostTax` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - Deprecated. Ignored if provided.
+  *   `shippingOption` (*type:* `String.t`, *default:* `nil`) - The requested shipping option.
   """
 
   use GoogleApi.Gax.ModelBase

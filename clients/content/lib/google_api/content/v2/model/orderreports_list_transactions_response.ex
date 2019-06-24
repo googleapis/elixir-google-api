@@ -21,9 +21,9 @@ defmodule GoogleApi.Content.V2.Model.OrderreportsListTransactionsResponse do
 
   ## Attributes
 
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "content#orderreportsListTransactionsResponse". Defaults to `content#orderreportsListTransactionsResponse`.
-  - nextPageToken (String.t): The token for the retrieval of the next page of transactions. Defaults to `nil`.
-  - transactions (list(GoogleApi.Content.V2.Model.OrderReportTransaction.t)): The list of transactions. Defaults to `nil`.
+  *   `kind` (*type:* `String.t`, *default:* `content#orderreportsListTransactionsResponse`) - Identifies what kind of resource this is. Value: the fixed string "content#orderreportsListTransactionsResponse".
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The token for the retrieval of the next page of transactions.
+  *   `transactions` (*type:* `list(GoogleApi.Content.V2.Model.OrderReportTransaction.t)`, *default:* `nil`) - The list of transactions.
   """
 
   use GoogleApi.Gax.ModelBase

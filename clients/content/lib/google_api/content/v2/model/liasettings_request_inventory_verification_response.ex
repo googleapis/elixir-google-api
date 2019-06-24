@@ -21,7 +21,7 @@ defmodule GoogleApi.Content.V2.Model.LiasettingsRequestInventoryVerificationResp
 
   ## Attributes
 
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "content#liasettingsRequestInventoryVerificationResponse". Defaults to `content#liasettingsRequestInventoryVerificationResponse`.
+  *   `kind` (*type:* `String.t`, *default:* `content#liasettingsRequestInventoryVerificationResponse`) - Identifies what kind of resource this is. Value: the fixed string "content#liasettingsRequestInventoryVerificationResponse".
   """
 
   use GoogleApi.Gax.ModelBase

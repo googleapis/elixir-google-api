@@ -21,9 +21,9 @@ defmodule GoogleApi.Content.V2.Model.OrderreportsListDisbursementsResponse do
 
   ## Attributes
 
-  - disbursements (list(GoogleApi.Content.V2.Model.OrderReportDisbursement.t)): The list of disbursements. Defaults to `nil`.
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "content#orderreportsListDisbursementsResponse". Defaults to `content#orderreportsListDisbursementsResponse`.
-  - nextPageToken (String.t): The token for the retrieval of the next page of disbursements. Defaults to `nil`.
+  *   `disbursements` (*type:* `list(GoogleApi.Content.V2.Model.OrderReportDisbursement.t)`, *default:* `nil`) - The list of disbursements.
+  *   `kind` (*type:* `String.t`, *default:* `content#orderreportsListDisbursementsResponse`) - Identifies what kind of resource this is. Value: the fixed string "content#orderreportsListDisbursementsResponse".
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The token for the retrieval of the next page of disbursements.
   """
 
   use GoogleApi.Gax.ModelBase

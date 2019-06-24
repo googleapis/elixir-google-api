@@ -21,9 +21,9 @@ defmodule GoogleApi.Content.V2.Model.DatafeedFormat do
 
   ## Attributes
 
-  - columnDelimiter (String.t): Delimiter for the separation of values in a delimiter-separated values feed. If not specified, the delimiter will be auto-detected. Ignored for non-DSV data feeds. Defaults to `nil`.
-  - fileEncoding (String.t): Character encoding scheme of the data feed. If not specified, the encoding will be auto-detected. Defaults to `nil`.
-  - quotingMode (String.t): Specifies how double quotes are interpreted. If not specified, the mode will be auto-detected. Ignored for non-DSV data feeds. Defaults to `nil`.
+  *   `columnDelimiter` (*type:* `String.t`, *default:* `nil`) - Delimiter for the separation of values in a delimiter-separated values feed. If not specified, the delimiter will be auto-detected. Ignored for non-DSV data feeds.
+  *   `fileEncoding` (*type:* `String.t`, *default:* `nil`) - Character encoding scheme of the data feed. If not specified, the encoding will be auto-detected.
+  *   `quotingMode` (*type:* `String.t`, *default:* `nil`) - Specifies how double quotes are interpreted. If not specified, the mode will be auto-detected. Ignored for non-DSV data feeds.
   """
 
   use GoogleApi.Gax.ModelBase

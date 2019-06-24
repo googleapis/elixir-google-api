@@ -21,12 +21,12 @@ defmodule GoogleApi.Content.V2.Model.MerchantOrderReturnItem do
 
   ## Attributes
 
-  - customerReturnReason (GoogleApi.Content.V2.Model.CustomerReturnReason.t):  Defaults to `nil`.
-  - itemId (String.t):  Defaults to `nil`.
-  - merchantReturnReason (GoogleApi.Content.V2.Model.RefundReason.t):  Defaults to `nil`.
-  - product (GoogleApi.Content.V2.Model.OrderLineItemProduct.t):  Defaults to `nil`.
-  - returnShipmentIds (list(String.t)):  Defaults to `nil`.
-  - state (String.t):  Defaults to `nil`.
+  *   `customerReturnReason` (*type:* `GoogleApi.Content.V2.Model.CustomerReturnReason.t`, *default:* `nil`) - 
+  *   `itemId` (*type:* `String.t`, *default:* `nil`) - 
+  *   `merchantReturnReason` (*type:* `GoogleApi.Content.V2.Model.RefundReason.t`, *default:* `nil`) - 
+  *   `product` (*type:* `GoogleApi.Content.V2.Model.OrderLineItemProduct.t`, *default:* `nil`) - 
+  *   `returnShipmentIds` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `state` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

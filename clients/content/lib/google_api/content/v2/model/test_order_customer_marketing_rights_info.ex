@@ -21,8 +21,8 @@ defmodule GoogleApi.Content.V2.Model.TestOrderCustomerMarketingRightsInfo do
 
   ## Attributes
 
-  - explicitMarketingPreference (String.t): Last know user use selection regards marketing preferences. In certain cases selection might not be known, so this field would be empty. Defaults to `nil`.
-  - lastUpdatedTimestamp (String.t): Timestamp when last time marketing preference was updated. Could be empty, if user wasn't offered a selection yet. Defaults to `nil`.
+  *   `explicitMarketingPreference` (*type:* `String.t`, *default:* `nil`) - Last know user use selection regards marketing preferences. In certain cases selection might not be known, so this field would be empty.
+  *   `lastUpdatedTimestamp` (*type:* `String.t`, *default:* `nil`) - Timestamp when last time marketing preference was updated. Could be empty, if user wasn't offered a selection yet.
   """
 
   use GoogleApi.Gax.ModelBase

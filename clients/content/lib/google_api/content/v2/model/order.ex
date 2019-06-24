@@ -21,27 +21,27 @@ defmodule GoogleApi.Content.V2.Model.Order do
 
   ## Attributes
 
-  - acknowledged (boolean()): Whether the order was acknowledged. Defaults to `nil`.
-  - channelType (String.t): Deprecated. Defaults to `nil`.
-  - customer (GoogleApi.Content.V2.Model.OrderCustomer.t): The details of the customer who placed the order. Defaults to `nil`.
-  - deliveryDetails (GoogleApi.Content.V2.Model.OrderDeliveryDetails.t): Delivery details for shipments. Defaults to `nil`.
-  - id (String.t): The REST ID of the order. Globally unique. Defaults to `nil`.
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "content#order". Defaults to `content#order`.
-  - lineItems (list(GoogleApi.Content.V2.Model.OrderLineItem.t)): Line items that are ordered. Defaults to `nil`.
-  - merchantId (String.t):  Defaults to `nil`.
-  - merchantOrderId (String.t): Merchant-provided ID of the order. Defaults to `nil`.
-  - netAmount (GoogleApi.Content.V2.Model.Price.t): The net amount for the order. For example, if an order was originally for a grand total of $100 and a refund was issued for $20, the net amount will be $80. Defaults to `nil`.
-  - paymentMethod (GoogleApi.Content.V2.Model.OrderPaymentMethod.t): The details of the payment method. Defaults to `nil`.
-  - paymentStatus (String.t): The status of the payment. Defaults to `nil`.
-  - placedDate (String.t): The date when the order was placed, in ISO 8601 format. Defaults to `nil`.
-  - promotions (list(GoogleApi.Content.V2.Model.OrderLegacyPromotion.t)): The details of the merchant provided promotions applied to the order. More details about the program are here. Defaults to `nil`.
-  - refunds (list(GoogleApi.Content.V2.Model.OrderRefund.t)): Refunds for the order. Defaults to `nil`.
-  - shipments (list(GoogleApi.Content.V2.Model.OrderShipment.t)): Shipments of the order. Defaults to `nil`.
-  - shippingCost (GoogleApi.Content.V2.Model.Price.t): The total cost of shipping for all items. Defaults to `nil`.
-  - shippingCostTax (GoogleApi.Content.V2.Model.Price.t): The tax for the total shipping cost. Defaults to `nil`.
-  - shippingOption (String.t): Deprecated. Shipping details are provided with line items instead. Defaults to `nil`.
-  - status (String.t): The status of the order. Defaults to `nil`.
-  - taxCollector (String.t): The party responsible for collecting and remitting taxes. Defaults to `nil`.
+  *   `acknowledged` (*type:* `boolean()`, *default:* `nil`) - Whether the order was acknowledged.
+  *   `channelType` (*type:* `String.t`, *default:* `nil`) - Deprecated.
+  *   `customer` (*type:* `GoogleApi.Content.V2.Model.OrderCustomer.t`, *default:* `nil`) - The details of the customer who placed the order.
+  *   `deliveryDetails` (*type:* `GoogleApi.Content.V2.Model.OrderDeliveryDetails.t`, *default:* `nil`) - Delivery details for shipments.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The REST ID of the order. Globally unique.
+  *   `kind` (*type:* `String.t`, *default:* `content#order`) - Identifies what kind of resource this is. Value: the fixed string "content#order".
+  *   `lineItems` (*type:* `list(GoogleApi.Content.V2.Model.OrderLineItem.t)`, *default:* `nil`) - Line items that are ordered.
+  *   `merchantId` (*type:* `String.t`, *default:* `nil`) - 
+  *   `merchantOrderId` (*type:* `String.t`, *default:* `nil`) - Merchant-provided ID of the order.
+  *   `netAmount` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - The net amount for the order. For example, if an order was originally for a grand total of $100 and a refund was issued for $20, the net amount will be $80.
+  *   `paymentMethod` (*type:* `GoogleApi.Content.V2.Model.OrderPaymentMethod.t`, *default:* `nil`) - The details of the payment method.
+  *   `paymentStatus` (*type:* `String.t`, *default:* `nil`) - The status of the payment.
+  *   `placedDate` (*type:* `String.t`, *default:* `nil`) - The date when the order was placed, in ISO 8601 format.
+  *   `promotions` (*type:* `list(GoogleApi.Content.V2.Model.OrderLegacyPromotion.t)`, *default:* `nil`) - The details of the merchant provided promotions applied to the order. More details about the program are here.
+  *   `refunds` (*type:* `list(GoogleApi.Content.V2.Model.OrderRefund.t)`, *default:* `nil`) - Refunds for the order.
+  *   `shipments` (*type:* `list(GoogleApi.Content.V2.Model.OrderShipment.t)`, *default:* `nil`) - Shipments of the order.
+  *   `shippingCost` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - The total cost of shipping for all items.
+  *   `shippingCostTax` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - The tax for the total shipping cost.
+  *   `shippingOption` (*type:* `String.t`, *default:* `nil`) - Deprecated. Shipping details are provided with line items instead.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - The status of the order.
+  *   `taxCollector` (*type:* `String.t`, *default:* `nil`) - The party responsible for collecting and remitting taxes.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,7 +21,7 @@ defmodule GoogleApi.Content.V2.Model.Row do
 
   ## Attributes
 
-  - cells (list(GoogleApi.Content.V2.Model.Value.t)): The list of cells that constitute the row. Must have the same length as columnHeaders for two-dimensional tables, a length of 1 for one-dimensional tables. Required. Defaults to `nil`.
+  *   `cells` (*type:* `list(GoogleApi.Content.V2.Model.Value.t)`, *default:* `nil`) - The list of cells that constitute the row. Must have the same length as columnHeaders for two-dimensional tables, a length of 1 for one-dimensional tables. Required.
   """
 
   use GoogleApi.Gax.ModelBase

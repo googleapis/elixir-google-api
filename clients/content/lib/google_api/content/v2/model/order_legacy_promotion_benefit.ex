@@ -21,11 +21,11 @@ defmodule GoogleApi.Content.V2.Model.OrderLegacyPromotionBenefit do
 
   ## Attributes
 
-  - discount (GoogleApi.Content.V2.Model.Price.t): The discount in the order price when the promotion is applied. Defaults to `nil`.
-  - offerIds (list(String.t)): The OfferId(s) that were purchased in this order and map to this specific benefit of the promotion. Defaults to `nil`.
-  - subType (String.t): Further describes the benefit of the promotion. Note that we will expand on this enumeration as we support new promotion sub-types. Defaults to `nil`.
-  - taxImpact (GoogleApi.Content.V2.Model.Price.t): The impact on tax when the promotion is applied. Defaults to `nil`.
-  - type (String.t): Describes whether the promotion applies to products (e.g. 20% off) or to shipping (e.g. Free Shipping). Defaults to `nil`.
+  *   `discount` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - The discount in the order price when the promotion is applied.
+  *   `offerIds` (*type:* `list(String.t)`, *default:* `nil`) - The OfferId(s) that were purchased in this order and map to this specific benefit of the promotion.
+  *   `subType` (*type:* `String.t`, *default:* `nil`) - Further describes the benefit of the promotion. Note that we will expand on this enumeration as we support new promotion sub-types.
+  *   `taxImpact` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - The impact on tax when the promotion is applied.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Describes whether the promotion applies to products (e.g. 20% off) or to shipping (e.g. Free Shipping).
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,12 +21,12 @@ defmodule GoogleApi.Content.V2.Model.ProductTax do
 
   ## Attributes
 
-  - country (String.t): The country within which the item is taxed, specified as a CLDR territory code. Defaults to `nil`.
-  - locationId (String.t): The numeric ID of a location that the tax rate applies to as defined in the AdWords API. Defaults to `nil`.
-  - postalCode (String.t): The postal code range that the tax rate applies to, represented by a ZIP code, a ZIP code prefix using * wildcard, a range between two ZIP codes or two ZIP code prefixes of equal length. Examples: 94114, 94*, 94002-95460, 94*-95*. Defaults to `nil`.
-  - rate (float()): The percentage of tax rate that applies to the item price. Defaults to `nil`.
-  - region (String.t): The geographic region to which the tax rate applies. Defaults to `nil`.
-  - taxShip (boolean()): Set to true if tax is charged on shipping. Defaults to `nil`.
+  *   `country` (*type:* `String.t`, *default:* `nil`) - The country within which the item is taxed, specified as a CLDR territory code.
+  *   `locationId` (*type:* `String.t`, *default:* `nil`) - The numeric ID of a location that the tax rate applies to as defined in the AdWords API.
+  *   `postalCode` (*type:* `String.t`, *default:* `nil`) - The postal code range that the tax rate applies to, represented by a ZIP code, a ZIP code prefix using * wildcard, a range between two ZIP codes or two ZIP code prefixes of equal length. Examples: 94114, 94*, 94002-95460, 94*-95*.
+  *   `rate` (*type:* `float()`, *default:* `nil`) - The percentage of tax rate that applies to the item price.
+  *   `region` (*type:* `String.t`, *default:* `nil`) - The geographic region to which the tax rate applies.
+  *   `taxShip` (*type:* `boolean()`, *default:* `nil`) - Set to true if tax is charged on shipping.
   """
 
   use GoogleApi.Gax.ModelBase

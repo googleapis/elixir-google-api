@@ -21,12 +21,12 @@ defmodule GoogleApi.Content.V2.Model.OrdersRefundRequest do
 
   ## Attributes
 
-  - amount (GoogleApi.Content.V2.Model.Price.t): Deprecated. Please use amountPretax and amountTax instead. Defaults to `nil`.
-  - amountPretax (GoogleApi.Content.V2.Model.Price.t): The amount that is refunded. Either amount or amountPretax should be filled. Defaults to `nil`.
-  - amountTax (GoogleApi.Content.V2.Model.Price.t): Tax amount that corresponds to refund amount in amountPretax. Optional, but if filled, amountPretax must be set. Calculated automatically if not provided. Defaults to `nil`.
-  - operationId (String.t): The ID of the operation. Unique across all operations for a given order. Defaults to `nil`.
-  - reason (String.t): The reason for the refund. Defaults to `nil`.
-  - reasonText (String.t): The explanation of the reason. Defaults to `nil`.
+  *   `amount` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - Deprecated. Please use amountPretax and amountTax instead.
+  *   `amountPretax` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - The amount that is refunded. Either amount or amountPretax should be filled.
+  *   `amountTax` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - Tax amount that corresponds to refund amount in amountPretax. Optional, but if filled, amountPretax must be set. Calculated automatically if not provided.
+  *   `operationId` (*type:* `String.t`, *default:* `nil`) - The ID of the operation. Unique across all operations for a given order.
+  *   `reason` (*type:* `String.t`, *default:* `nil`) - The reason for the refund.
+  *   `reasonText` (*type:* `String.t`, *default:* `nil`) - The explanation of the reason.
   """
 
   use GoogleApi.Gax.ModelBase

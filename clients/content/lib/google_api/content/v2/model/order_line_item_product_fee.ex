@@ -21,8 +21,8 @@ defmodule GoogleApi.Content.V2.Model.OrderLineItemProductFee do
 
   ## Attributes
 
-  - amount (GoogleApi.Content.V2.Model.Price.t): Amount of the fee. Defaults to `nil`.
-  - name (String.t): Name of the fee. Defaults to `nil`.
+  *   `amount` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - Amount of the fee.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the fee.
   """
 
   use GoogleApi.Gax.ModelBase

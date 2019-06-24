@@ -21,9 +21,9 @@ defmodule GoogleApi.Content.V2.Model.CutoffTime do
 
   ## Attributes
 
-  - hour (integer()): Hour of the cutoff time until which an order has to be placed to be processed in the same day. Required. Defaults to `nil`.
-  - minute (integer()): Minute of the cutoff time until which an order has to be placed to be processed in the same day. Required. Defaults to `nil`.
-  - timezone (String.t): Timezone identifier for the cutoff time. A list of identifiers can be found in  the AdWords API documentation. E.g. "Europe/Zurich". Required. Defaults to `nil`.
+  *   `hour` (*type:* `integer()`, *default:* `nil`) - Hour of the cutoff time until which an order has to be placed to be processed in the same day. Required.
+  *   `minute` (*type:* `integer()`, *default:* `nil`) - Minute of the cutoff time until which an order has to be placed to be processed in the same day. Required.
+  *   `timezone` (*type:* `String.t`, *default:* `nil`) - Timezone identifier for the cutoff time. A list of identifiers can be found in  the AdWords API documentation. E.g. "Europe/Zurich". Required.
   """
 
   use GoogleApi.Gax.ModelBase

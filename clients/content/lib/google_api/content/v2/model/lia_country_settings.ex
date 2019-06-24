@@ -21,13 +21,13 @@ defmodule GoogleApi.Content.V2.Model.LiaCountrySettings do
 
   ## Attributes
 
-  - about (GoogleApi.Content.V2.Model.LiaAboutPageSettings.t): The settings for the About page. Defaults to `nil`.
-  - country (String.t): CLDR country code (e.g. "US"). Defaults to `nil`.
-  - hostedLocalStorefrontActive (boolean()): The status of the "Merchant hosted local storefront" feature. Defaults to `nil`.
-  - inventory (GoogleApi.Content.V2.Model.LiaInventorySettings.t): LIA inventory verification settings. Defaults to `nil`.
-  - onDisplayToOrder (GoogleApi.Content.V2.Model.LiaOnDisplayToOrderSettings.t): LIA "On Display To Order" settings. Defaults to `nil`.
-  - posDataProvider (GoogleApi.Content.V2.Model.LiaPosDataProvider.t): The POS data provider linked with this country. Defaults to `nil`.
-  - storePickupActive (boolean()): The status of the "Store pickup" feature. Defaults to `nil`.
+  *   `about` (*type:* `GoogleApi.Content.V2.Model.LiaAboutPageSettings.t`, *default:* `nil`) - The settings for the About page.
+  *   `country` (*type:* `String.t`, *default:* `nil`) - CLDR country code (e.g. "US").
+  *   `hostedLocalStorefrontActive` (*type:* `boolean()`, *default:* `nil`) - The status of the "Merchant hosted local storefront" feature.
+  *   `inventory` (*type:* `GoogleApi.Content.V2.Model.LiaInventorySettings.t`, *default:* `nil`) - LIA inventory verification settings.
+  *   `onDisplayToOrder` (*type:* `GoogleApi.Content.V2.Model.LiaOnDisplayToOrderSettings.t`, *default:* `nil`) - LIA "On Display To Order" settings.
+  *   `posDataProvider` (*type:* `GoogleApi.Content.V2.Model.LiaPosDataProvider.t`, *default:* `nil`) - The POS data provider linked with this country.
+  *   `storePickupActive` (*type:* `boolean()`, *default:* `nil`) - The status of the "Store pickup" feature.
   """
 
   use GoogleApi.Gax.ModelBase

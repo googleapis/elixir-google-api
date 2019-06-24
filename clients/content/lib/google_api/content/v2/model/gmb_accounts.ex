@@ -21,8 +21,8 @@ defmodule GoogleApi.Content.V2.Model.GmbAccounts do
 
   ## Attributes
 
-  - accountId (String.t): The ID of the account. Defaults to `nil`.
-  - gmbAccounts (list(GoogleApi.Content.V2.Model.GmbAccountsGmbAccount.t)): A list of GMB accounts which are available to the merchant. Defaults to `nil`.
+  *   `accountId` (*type:* `String.t`, *default:* `nil`) - The ID of the account.
+  *   `gmbAccounts` (*type:* `list(GoogleApi.Content.V2.Model.GmbAccountsGmbAccount.t)`, *default:* `nil`) - A list of GMB accounts which are available to the merchant.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,9 +21,9 @@ defmodule GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntrySetLineItemMet
 
   ## Attributes
 
-  - annotations (list(GoogleApi.Content.V2.Model.OrderMerchantProvidedAnnotation.t)):  Defaults to `nil`.
-  - lineItemId (String.t): The ID of the line item to set metadata. Either lineItemId or productId is required. Defaults to `nil`.
-  - productId (String.t): The ID of the product to set metadata. This is the REST ID used in the products service. Either lineItemId or productId is required. Defaults to `nil`.
+  *   `annotations` (*type:* `list(GoogleApi.Content.V2.Model.OrderMerchantProvidedAnnotation.t)`, *default:* `nil`) - 
+  *   `lineItemId` (*type:* `String.t`, *default:* `nil`) - The ID of the line item to set metadata. Either lineItemId or productId is required.
+  *   `productId` (*type:* `String.t`, *default:* `nil`) - The ID of the product to set metadata. This is the REST ID used in the products service. Either lineItemId or productId is required.
   """
 
   use GoogleApi.Gax.ModelBase

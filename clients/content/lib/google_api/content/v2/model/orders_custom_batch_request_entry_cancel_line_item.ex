@@ -21,14 +21,14 @@ defmodule GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryCancelLineItem
 
   ## Attributes
 
-  - amount (GoogleApi.Content.V2.Model.Price.t): Deprecated. Please use amountPretax and amountTax instead. Defaults to `nil`.
-  - amountPretax (GoogleApi.Content.V2.Model.Price.t): Amount to refund for the cancelation. Optional. If not set, Google will calculate the default based on the price and tax of the items involved. The amount must not be larger than the net amount left on the order. Defaults to `nil`.
-  - amountTax (GoogleApi.Content.V2.Model.Price.t): Tax amount that corresponds to cancellation amount in amountPretax. Optional, but if filled, then amountPretax must be set. Calculated automatically if not provided. Defaults to `nil`.
-  - lineItemId (String.t): The ID of the line item to cancel. Either lineItemId or productId is required. Defaults to `nil`.
-  - productId (String.t): The ID of the product to cancel. This is the REST ID used in the products service. Either lineItemId or productId is required. Defaults to `nil`.
-  - quantity (integer()): The quantity to cancel. Defaults to `nil`.
-  - reason (String.t): The reason for the cancellation. Defaults to `nil`.
-  - reasonText (String.t): The explanation of the reason. Defaults to `nil`.
+  *   `amount` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - Deprecated. Please use amountPretax and amountTax instead.
+  *   `amountPretax` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - Amount to refund for the cancelation. Optional. If not set, Google will calculate the default based on the price and tax of the items involved. The amount must not be larger than the net amount left on the order.
+  *   `amountTax` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - Tax amount that corresponds to cancellation amount in amountPretax. Optional, but if filled, then amountPretax must be set. Calculated automatically if not provided.
+  *   `lineItemId` (*type:* `String.t`, *default:* `nil`) - The ID of the line item to cancel. Either lineItemId or productId is required.
+  *   `productId` (*type:* `String.t`, *default:* `nil`) - The ID of the product to cancel. This is the REST ID used in the products service. Either lineItemId or productId is required.
+  *   `quantity` (*type:* `integer()`, *default:* `nil`) - The quantity to cancel.
+  *   `reason` (*type:* `String.t`, *default:* `nil`) - The reason for the cancellation.
+  *   `reasonText` (*type:* `String.t`, *default:* `nil`) - The explanation of the reason.
   """
 
   use GoogleApi.Gax.ModelBase

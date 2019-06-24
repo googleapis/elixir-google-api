@@ -21,8 +21,8 @@ defmodule GoogleApi.Content.V2.Model.Weight do
 
   ## Attributes
 
-  - unit (String.t): The weight unit. Defaults to `nil`.
-  - value (String.t): The weight represented as a number. Defaults to `nil`.
+  *   `unit` (*type:* `String.t`, *default:* `nil`) - The weight unit.
+  *   `value` (*type:* `String.t`, *default:* `nil`) - The weight represented as a number.
   """
 
   use GoogleApi.Gax.ModelBase

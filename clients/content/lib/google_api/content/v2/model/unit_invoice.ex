@@ -21,10 +21,10 @@ defmodule GoogleApi.Content.V2.Model.UnitInvoice do
 
   ## Attributes
 
-  - additionalCharges (list(GoogleApi.Content.V2.Model.UnitInvoiceAdditionalCharge.t)): Additional charges for a unit, e.g. shipping costs. Defaults to `nil`.
-  - promotions (list(GoogleApi.Content.V2.Model.Promotion.t)): Deprecated. Defaults to `nil`.
-  - unitPricePretax (GoogleApi.Content.V2.Model.Price.t): [required] Price of the unit, before applying taxes. Defaults to `nil`.
-  - unitPriceTaxes (list(GoogleApi.Content.V2.Model.UnitInvoiceTaxLine.t)): Tax amounts to apply to the unit price. Defaults to `nil`.
+  *   `additionalCharges` (*type:* `list(GoogleApi.Content.V2.Model.UnitInvoiceAdditionalCharge.t)`, *default:* `nil`) - Additional charges for a unit, e.g. shipping costs.
+  *   `promotions` (*type:* `list(GoogleApi.Content.V2.Model.Promotion.t)`, *default:* `nil`) - Deprecated.
+  *   `unitPricePretax` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - [required] Price of the unit, before applying taxes.
+  *   `unitPriceTaxes` (*type:* `list(GoogleApi.Content.V2.Model.UnitInvoiceTaxLine.t)`, *default:* `nil`) - Tax amounts to apply to the unit price.
   """
 
   use GoogleApi.Gax.ModelBase

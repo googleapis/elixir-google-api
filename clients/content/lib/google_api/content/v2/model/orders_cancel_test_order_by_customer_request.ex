@@ -21,7 +21,7 @@ defmodule GoogleApi.Content.V2.Model.OrdersCancelTestOrderByCustomerRequest do
 
   ## Attributes
 
-  - reason (String.t): The reason for the cancellation. Defaults to `nil`.
+  *   `reason` (*type:* `String.t`, *default:* `nil`) - The reason for the cancellation.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,7 +21,7 @@ defmodule GoogleApi.Content.V2.Model.OrdersCreateTestReturnRequest do
 
   ## Attributes
 
-  - items (list(GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryCreateTestReturnReturnItem.t)): Returned items. Defaults to `nil`.
+  *   `items` (*type:* `list(GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryCreateTestReturnReturnItem.t)`, *default:* `nil`) - Returned items.
   """
 
   use GoogleApi.Gax.ModelBase

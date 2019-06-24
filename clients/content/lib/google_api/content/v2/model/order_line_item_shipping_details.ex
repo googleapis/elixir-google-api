@@ -21,9 +21,9 @@ defmodule GoogleApi.Content.V2.Model.OrderLineItemShippingDetails do
 
   ## Attributes
 
-  - deliverByDate (String.t): The delivery by date, in ISO 8601 format. Defaults to `nil`.
-  - method (GoogleApi.Content.V2.Model.OrderLineItemShippingDetailsMethod.t): Details of the shipping method. Defaults to `nil`.
-  - shipByDate (String.t): The ship by date, in ISO 8601 format. Defaults to `nil`.
+  *   `deliverByDate` (*type:* `String.t`, *default:* `nil`) - The delivery by date, in ISO 8601 format.
+  *   `method` (*type:* `GoogleApi.Content.V2.Model.OrderLineItemShippingDetailsMethod.t`, *default:* `nil`) - Details of the shipping method.
+  *   `shipByDate` (*type:* `String.t`, *default:* `nil`) - The ship by date, in ISO 8601 format.
   """
 
   use GoogleApi.Gax.ModelBase

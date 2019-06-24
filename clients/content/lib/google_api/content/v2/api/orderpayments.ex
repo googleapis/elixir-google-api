@@ -28,28 +28,30 @@ defmodule GoogleApi.Content.V2.Api.Orderpayments do
 
   ## Parameters
 
-  - connection (GoogleApi.Content.V2.Connection): Connection to server
-  - merchant_id (String.t): The ID of the account that manages the order. This cannot be a multi-client account.
-  - order_id (String.t): The ID of the order for for which payment authorization is happening.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.Content.V2.Model.OrderpaymentsNotifyAuthApprovedRequest.t): 
+  *   `connection` (*type:* `GoogleApi.Content.V2.Connection.t`) - Connection to server
+  *   `merchant_id` (*type:* `String.t`) - The ID of the account that manages the order. This cannot be a multi-client account.
+  *   `order_id` (*type:* `String.t`) - The ID of the order for for which payment authorization is happening.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.Content.V2.Model.OrderpaymentsNotifyAuthApprovedRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Content.V2.Model.OrderpaymentsNotifyAuthApprovedResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Content.V2.Model.OrderpaymentsNotifyAuthApprovedResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec content_orderpayments_notifyauthapproved(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.Content.V2.Model.OrderpaymentsNotifyAuthApprovedResponse.t()}
@@ -93,28 +95,30 @@ defmodule GoogleApi.Content.V2.Api.Orderpayments do
 
   ## Parameters
 
-  - connection (GoogleApi.Content.V2.Connection): Connection to server
-  - merchant_id (String.t): The ID of the account that manages the order. This cannot be a multi-client account.
-  - order_id (String.t): The ID of the order for which payment authorization was declined.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.Content.V2.Model.OrderpaymentsNotifyAuthDeclinedRequest.t): 
+  *   `connection` (*type:* `GoogleApi.Content.V2.Connection.t`) - Connection to server
+  *   `merchant_id` (*type:* `String.t`) - The ID of the account that manages the order. This cannot be a multi-client account.
+  *   `order_id` (*type:* `String.t`) - The ID of the order for which payment authorization was declined.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.Content.V2.Model.OrderpaymentsNotifyAuthDeclinedRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Content.V2.Model.OrderpaymentsNotifyAuthDeclinedResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Content.V2.Model.OrderpaymentsNotifyAuthDeclinedResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec content_orderpayments_notifyauthdeclined(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.Content.V2.Model.OrderpaymentsNotifyAuthDeclinedResponse.t()}
@@ -158,25 +162,32 @@ defmodule GoogleApi.Content.V2.Api.Orderpayments do
 
   ## Parameters
 
-  - connection (GoogleApi.Content.V2.Connection): Connection to server
-  - merchant_id (String.t): The ID of the account that manages the order. This cannot be a multi-client account.
-  - order_id (String.t): The ID of the order for which charge is happening.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.Content.V2.Model.OrderpaymentsNotifyChargeRequest.t): 
+  *   `connection` (*type:* `GoogleApi.Content.V2.Connection.t`) - Connection to server
+  *   `merchant_id` (*type:* `String.t`) - The ID of the account that manages the order. This cannot be a multi-client account.
+  *   `order_id` (*type:* `String.t`) - The ID of the order for which charge is happening.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.Content.V2.Model.OrderpaymentsNotifyChargeRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Content.V2.Model.OrderpaymentsNotifyChargeResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Content.V2.Model.OrderpaymentsNotifyChargeResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec content_orderpayments_notifycharge(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+  @spec content_orderpayments_notifycharge(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.Content.V2.Model.OrderpaymentsNotifyChargeResponse.t()}
           | {:error, Tesla.Env.t()}
   def content_orderpayments_notifycharge(
@@ -218,25 +229,32 @@ defmodule GoogleApi.Content.V2.Api.Orderpayments do
 
   ## Parameters
 
-  - connection (GoogleApi.Content.V2.Connection): Connection to server
-  - merchant_id (String.t): The ID of the account that manages the order. This cannot be a multi-client account.
-  - order_id (String.t): The ID of the order for which charge is happening.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.Content.V2.Model.OrderpaymentsNotifyRefundRequest.t): 
+  *   `connection` (*type:* `GoogleApi.Content.V2.Connection.t`) - Connection to server
+  *   `merchant_id` (*type:* `String.t`) - The ID of the account that manages the order. This cannot be a multi-client account.
+  *   `order_id` (*type:* `String.t`) - The ID of the order for which charge is happening.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.Content.V2.Model.OrderpaymentsNotifyRefundRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Content.V2.Model.OrderpaymentsNotifyRefundResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Content.V2.Model.OrderpaymentsNotifyRefundResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec content_orderpayments_notifyrefund(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+  @spec content_orderpayments_notifyrefund(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.Content.V2.Model.OrderpaymentsNotifyRefundResponse.t()}
           | {:error, Tesla.Env.t()}
   def content_orderpayments_notifyrefund(

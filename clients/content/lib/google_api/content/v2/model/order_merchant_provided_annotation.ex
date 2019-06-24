@@ -21,8 +21,8 @@ defmodule GoogleApi.Content.V2.Model.OrderMerchantProvidedAnnotation do
 
   ## Attributes
 
-  - key (String.t): Key for additional merchant provided (as key-value pairs) annotation about the line item. Defaults to `nil`.
-  - value (String.t): Value for additional merchant provided (as key-value pairs) annotation about the line item. Defaults to `nil`.
+  *   `key` (*type:* `String.t`, *default:* `nil`) - Key for additional merchant provided (as key-value pairs) annotation about the line item.
+  *   `value` (*type:* `String.t`, *default:* `nil`) - Value for additional merchant provided (as key-value pairs) annotation about the line item.
   """
 
   use GoogleApi.Gax.ModelBase

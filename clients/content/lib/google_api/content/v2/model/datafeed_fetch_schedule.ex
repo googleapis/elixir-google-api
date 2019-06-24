@@ -21,15 +21,15 @@ defmodule GoogleApi.Content.V2.Model.DatafeedFetchSchedule do
 
   ## Attributes
 
-  - dayOfMonth (integer()): The day of the month the feed file should be fetched (1-31). Defaults to `nil`.
-  - fetchUrl (String.t): The URL where the feed file can be fetched. Google Merchant Center will support automatic scheduled uploads using the HTTP, HTTPS, FTP, or SFTP protocols, so the value will need to be a valid link using one of those four protocols. Defaults to `nil`.
-  - hour (integer()): The hour of the day the feed file should be fetched (0-23). Defaults to `nil`.
-  - minuteOfHour (integer()): The minute of the hour the feed file should be fetched (0-59). Read-only. Defaults to `nil`.
-  - password (String.t): An optional password for fetch_url. Defaults to `nil`.
-  - paused (boolean()): Whether the scheduled fetch is paused or not. Defaults to `nil`.
-  - timeZone (String.t): Time zone used for schedule. UTC by default. E.g., "America/Los_Angeles". Defaults to `nil`.
-  - username (String.t): An optional user name for fetch_url. Defaults to `nil`.
-  - weekday (String.t): The day of the week the feed file should be fetched. Defaults to `nil`.
+  *   `dayOfMonth` (*type:* `integer()`, *default:* `nil`) - The day of the month the feed file should be fetched (1-31).
+  *   `fetchUrl` (*type:* `String.t`, *default:* `nil`) - The URL where the feed file can be fetched. Google Merchant Center will support automatic scheduled uploads using the HTTP, HTTPS, FTP, or SFTP protocols, so the value will need to be a valid link using one of those four protocols.
+  *   `hour` (*type:* `integer()`, *default:* `nil`) - The hour of the day the feed file should be fetched (0-23).
+  *   `minuteOfHour` (*type:* `integer()`, *default:* `nil`) - The minute of the hour the feed file should be fetched (0-59). Read-only.
+  *   `password` (*type:* `String.t`, *default:* `nil`) - An optional password for fetch_url.
+  *   `paused` (*type:* `boolean()`, *default:* `nil`) - Whether the scheduled fetch is paused or not.
+  *   `timeZone` (*type:* `String.t`, *default:* `nil`) - Time zone used for schedule. UTC by default. E.g., "America/Los_Angeles".
+  *   `username` (*type:* `String.t`, *default:* `nil`) - An optional user name for fetch_url.
+  *   `weekday` (*type:* `String.t`, *default:* `nil`) - The day of the week the feed file should be fetched.
   """
 
   use GoogleApi.Gax.ModelBase

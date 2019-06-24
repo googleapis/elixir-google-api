@@ -21,13 +21,13 @@ defmodule GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryReturnRefundLi
 
   ## Attributes
 
-  - amountPretax (GoogleApi.Content.V2.Model.Price.t): The amount that is refunded. If omitted, refundless return is assumed (same as calling returnLineItem method). Defaults to `nil`.
-  - amountTax (GoogleApi.Content.V2.Model.Price.t): Tax amount that corresponds to refund amount in amountPretax. Optional, but if filled, then amountPretax must be set. Calculated automatically if not provided. Defaults to `nil`.
-  - lineItemId (String.t): The ID of the line item to return. Either lineItemId or productId is required. Defaults to `nil`.
-  - productId (String.t): The ID of the product to return. This is the REST ID used in the products service. Either lineItemId or productId is required. Defaults to `nil`.
-  - quantity (integer()): The quantity to return and refund. Defaults to `nil`.
-  - reason (String.t): The reason for the return. Defaults to `nil`.
-  - reasonText (String.t): The explanation of the reason. Defaults to `nil`.
+  *   `amountPretax` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - The amount that is refunded. If omitted, refundless return is assumed (same as calling returnLineItem method).
+  *   `amountTax` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - Tax amount that corresponds to refund amount in amountPretax. Optional, but if filled, then amountPretax must be set. Calculated automatically if not provided.
+  *   `lineItemId` (*type:* `String.t`, *default:* `nil`) - The ID of the line item to return. Either lineItemId or productId is required.
+  *   `productId` (*type:* `String.t`, *default:* `nil`) - The ID of the product to return. This is the REST ID used in the products service. Either lineItemId or productId is required.
+  *   `quantity` (*type:* `integer()`, *default:* `nil`) - The quantity to return and refund.
+  *   `reason` (*type:* `String.t`, *default:* `nil`) - The reason for the return.
+  *   `reasonText` (*type:* `String.t`, *default:* `nil`) - The explanation of the reason.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,7 +21,7 @@ defmodule GoogleApi.Content.V2.Model.LiasettingsRequestGmbAccessResponse do
 
   ## Attributes
 
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "content#liasettingsRequestGmbAccessResponse". Defaults to `content#liasettingsRequestGmbAccessResponse`.
+  *   `kind` (*type:* `String.t`, *default:* `content#liasettingsRequestGmbAccessResponse`) - Identifies what kind of resource this is. Value: the fixed string "content#liasettingsRequestGmbAccessResponse".
   """
 
   use GoogleApi.Gax.ModelBase

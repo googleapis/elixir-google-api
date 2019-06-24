@@ -21,8 +21,8 @@ defmodule GoogleApi.Content.V2.Model.AccountGoogleMyBusinessLink do
 
   ## Attributes
 
-  - gmbEmail (String.t): The GMB email address of which a specific account within a GMB account. A sample account within a GMB account could be a business account with set of locations, managed under the GMB account. Defaults to `nil`.
-  - status (String.t): Status of the link between this Merchant Center account and the GMB account. Defaults to `nil`.
+  *   `gmbEmail` (*type:* `String.t`, *default:* `nil`) - The GMB email address of which a specific account within a GMB account. A sample account within a GMB account could be a business account with set of locations, managed under the GMB account.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - Status of the link between this Merchant Center account and the GMB account.
   """
 
   use GoogleApi.Gax.ModelBase

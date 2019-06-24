@@ -21,9 +21,9 @@ defmodule GoogleApi.Content.V2.Model.OrderpaymentsNotifyChargeRequest do
 
   ## Attributes
 
-  - chargeState (String.t): Whether charge was successful. Defaults to `nil`.
-  - invoiceId (String.t): Deprecated. Please use invoiceIds instead. Defaults to `nil`.
-  - invoiceIds (list(String.t)): Invoice IDs from the orderinvoices service that correspond to the charge. Defaults to `nil`.
+  *   `chargeState` (*type:* `String.t`, *default:* `nil`) - Whether charge was successful.
+  *   `invoiceId` (*type:* `String.t`, *default:* `nil`) - Deprecated. Please use invoiceIds instead.
+  *   `invoiceIds` (*type:* `list(String.t)`, *default:* `nil`) - Invoice IDs from the orderinvoices service that correspond to the charge.
   """
 
   use GoogleApi.Gax.ModelBase

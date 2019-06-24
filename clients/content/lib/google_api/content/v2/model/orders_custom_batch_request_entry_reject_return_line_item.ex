@@ -21,11 +21,11 @@ defmodule GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryRejectReturnLi
 
   ## Attributes
 
-  - lineItemId (String.t): The ID of the line item to return. Either lineItemId or productId is required. Defaults to `nil`.
-  - productId (String.t): The ID of the product to return. This is the REST ID used in the products service. Either lineItemId or productId is required. Defaults to `nil`.
-  - quantity (integer()): The quantity to return and refund. Defaults to `nil`.
-  - reason (String.t): The reason for the return. Defaults to `nil`.
-  - reasonText (String.t): The explanation of the reason. Defaults to `nil`.
+  *   `lineItemId` (*type:* `String.t`, *default:* `nil`) - The ID of the line item to return. Either lineItemId or productId is required.
+  *   `productId` (*type:* `String.t`, *default:* `nil`) - The ID of the product to return. This is the REST ID used in the products service. Either lineItemId or productId is required.
+  *   `quantity` (*type:* `integer()`, *default:* `nil`) - The quantity to return and refund.
+  *   `reason` (*type:* `String.t`, *default:* `nil`) - The reason for the return.
+  *   `reasonText` (*type:* `String.t`, *default:* `nil`) - The explanation of the reason.
   """
 
   use GoogleApi.Gax.ModelBase

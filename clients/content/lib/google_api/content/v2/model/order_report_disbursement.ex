@@ -21,11 +21,11 @@ defmodule GoogleApi.Content.V2.Model.OrderReportDisbursement do
 
   ## Attributes
 
-  - disbursementAmount (GoogleApi.Content.V2.Model.Price.t): The disbursement amount. Defaults to `nil`.
-  - disbursementCreationDate (String.t): The disbursement date, in ISO 8601 format. Defaults to `nil`.
-  - disbursementDate (String.t): The date the disbursement was initiated, in ISO 8601 format. Defaults to `nil`.
-  - disbursementId (String.t): The ID of the disbursement. Defaults to `nil`.
-  - merchantId (String.t): The ID of the managing account. Defaults to `nil`.
+  *   `disbursementAmount` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - The disbursement amount.
+  *   `disbursementCreationDate` (*type:* `String.t`, *default:* `nil`) - The disbursement date, in ISO 8601 format.
+  *   `disbursementDate` (*type:* `String.t`, *default:* `nil`) - The date the disbursement was initiated, in ISO 8601 format.
+  *   `disbursementId` (*type:* `String.t`, *default:* `nil`) - The ID of the disbursement.
+  *   `merchantId` (*type:* `String.t`, *default:* `nil`) - The ID of the managing account.
   """
 
   use GoogleApi.Gax.ModelBase

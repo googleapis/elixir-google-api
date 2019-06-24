@@ -21,9 +21,9 @@ defmodule GoogleApi.Content.V2.Model.OrderpaymentsNotifyRefundRequest do
 
   ## Attributes
 
-  - invoiceId (String.t): Deprecated. Please use invoiceIds instead. Defaults to `nil`.
-  - invoiceIds (list(String.t)): Invoice IDs from the orderinvoices service that correspond to the refund. Defaults to `nil`.
-  - refundState (String.t): Whether refund was successful. Defaults to `nil`.
+  *   `invoiceId` (*type:* `String.t`, *default:* `nil`) - Deprecated. Please use invoiceIds instead.
+  *   `invoiceIds` (*type:* `list(String.t)`, *default:* `nil`) - Invoice IDs from the orderinvoices service that correspond to the refund.
+  *   `refundState` (*type:* `String.t`, *default:* `nil`) - Whether refund was successful.
   """
 
   use GoogleApi.Gax.ModelBase

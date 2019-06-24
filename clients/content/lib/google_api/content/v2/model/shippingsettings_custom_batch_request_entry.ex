@@ -21,11 +21,11 @@ defmodule GoogleApi.Content.V2.Model.ShippingsettingsCustomBatchRequestEntry do
 
   ## Attributes
 
-  - accountId (String.t): The ID of the account for which to get/update account shipping settings. Defaults to `nil`.
-  - batchId (integer()): An entry ID, unique within the batch request. Defaults to `nil`.
-  - merchantId (String.t): The ID of the managing account. Defaults to `nil`.
-  - method (String.t):  Defaults to `nil`.
-  - shippingSettings (GoogleApi.Content.V2.Model.ShippingSettings.t): The account shipping settings to update. Only defined if the method is update. Defaults to `nil`.
+  *   `accountId` (*type:* `String.t`, *default:* `nil`) - The ID of the account for which to get/update account shipping settings.
+  *   `batchId` (*type:* `integer()`, *default:* `nil`) - An entry ID, unique within the batch request.
+  *   `merchantId` (*type:* `String.t`, *default:* `nil`) - The ID of the managing account.
+  *   `method` (*type:* `String.t`, *default:* `nil`) - 
+  *   `shippingSettings` (*type:* `GoogleApi.Content.V2.Model.ShippingSettings.t`, *default:* `nil`) - The account shipping settings to update. Only defined if the method is update.
   """
 
   use GoogleApi.Gax.ModelBase

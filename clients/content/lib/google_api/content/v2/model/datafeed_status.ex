@@ -21,16 +21,16 @@ defmodule GoogleApi.Content.V2.Model.DatafeedStatus do
 
   ## Attributes
 
-  - country (String.t): The country for which the status is reported, represented as a  CLDR territory code. Defaults to `nil`.
-  - datafeedId (String.t): The ID of the feed for which the status is reported. Defaults to `nil`.
-  - errors (list(GoogleApi.Content.V2.Model.DatafeedStatusError.t)): The list of errors occurring in the feed. Defaults to `nil`.
-  - itemsTotal (String.t): The number of items in the feed that were processed. Defaults to `nil`.
-  - itemsValid (String.t): The number of items in the feed that were valid. Defaults to `nil`.
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "content#datafeedStatus". Defaults to `content#datafeedStatus`.
-  - language (String.t): The two-letter ISO 639-1 language for which the status is reported. Defaults to `nil`.
-  - lastUploadDate (String.t): The last date at which the feed was uploaded. Defaults to `nil`.
-  - processingStatus (String.t): The processing status of the feed. Defaults to `nil`.
-  - warnings (list(GoogleApi.Content.V2.Model.DatafeedStatusError.t)): The list of errors occurring in the feed. Defaults to `nil`.
+  *   `country` (*type:* `String.t`, *default:* `nil`) - The country for which the status is reported, represented as a  CLDR territory code.
+  *   `datafeedId` (*type:* `String.t`, *default:* `nil`) - The ID of the feed for which the status is reported.
+  *   `errors` (*type:* `list(GoogleApi.Content.V2.Model.DatafeedStatusError.t)`, *default:* `nil`) - The list of errors occurring in the feed.
+  *   `itemsTotal` (*type:* `String.t`, *default:* `nil`) - The number of items in the feed that were processed.
+  *   `itemsValid` (*type:* `String.t`, *default:* `nil`) - The number of items in the feed that were valid.
+  *   `kind` (*type:* `String.t`, *default:* `content#datafeedStatus`) - Identifies what kind of resource this is. Value: the fixed string "content#datafeedStatus".
+  *   `language` (*type:* `String.t`, *default:* `nil`) - The two-letter ISO 639-1 language for which the status is reported.
+  *   `lastUploadDate` (*type:* `String.t`, *default:* `nil`) - The last date at which the feed was uploaded.
+  *   `processingStatus` (*type:* `String.t`, *default:* `nil`) - The processing status of the feed.
+  *   `warnings` (*type:* `list(GoogleApi.Content.V2.Model.DatafeedStatusError.t)`, *default:* `nil`) - The list of errors occurring in the feed.
   """
 
   use GoogleApi.Gax.ModelBase

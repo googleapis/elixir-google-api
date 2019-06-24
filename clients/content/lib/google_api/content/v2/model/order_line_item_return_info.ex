@@ -21,9 +21,9 @@ defmodule GoogleApi.Content.V2.Model.OrderLineItemReturnInfo do
 
   ## Attributes
 
-  - daysToReturn (integer()): How many days later the item can be returned. Defaults to `nil`.
-  - isReturnable (boolean()): Whether the item is returnable. Defaults to `nil`.
-  - policyUrl (String.t): URL of the item return policy. Defaults to `nil`.
+  *   `daysToReturn` (*type:* `integer()`, *default:* `nil`) - How many days later the item can be returned.
+  *   `isReturnable` (*type:* `boolean()`, *default:* `nil`) - Whether the item is returnable.
+  *   `policyUrl` (*type:* `String.t`, *default:* `nil`) - URL of the item return policy.
   """
 
   use GoogleApi.Gax.ModelBase

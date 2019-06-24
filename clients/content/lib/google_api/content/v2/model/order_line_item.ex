@@ -21,21 +21,21 @@ defmodule GoogleApi.Content.V2.Model.OrderLineItem do
 
   ## Attributes
 
-  - annotations (list(GoogleApi.Content.V2.Model.OrderMerchantProvidedAnnotation.t)): Annotations that are attached to the line item. Defaults to `nil`.
-  - cancellations (list(GoogleApi.Content.V2.Model.OrderCancellation.t)): Cancellations of the line item. Defaults to `nil`.
-  - id (String.t): The ID of the line item. Defaults to `nil`.
-  - price (GoogleApi.Content.V2.Model.Price.t): Total price for the line item. For example, if two items for $10 are purchased, the total price will be $20. Defaults to `nil`.
-  - product (GoogleApi.Content.V2.Model.OrderLineItemProduct.t): Product data as seen by customer from the time of the order placement. Note that certain attributes values (e.g. title or gtin) might be reformatted and no longer match values submitted via product feed. Defaults to `nil`.
-  - quantityCanceled (integer()): Number of items canceled. Defaults to `nil`.
-  - quantityDelivered (integer()): Number of items delivered. Defaults to `nil`.
-  - quantityOrdered (integer()): Number of items ordered. Defaults to `nil`.
-  - quantityPending (integer()): Number of items pending. Defaults to `nil`.
-  - quantityReturned (integer()): Number of items returned. Defaults to `nil`.
-  - quantityShipped (integer()): Number of items shipped. Defaults to `nil`.
-  - returnInfo (GoogleApi.Content.V2.Model.OrderLineItemReturnInfo.t): Details of the return policy for the line item. Defaults to `nil`.
-  - returns (list(GoogleApi.Content.V2.Model.OrderReturn.t)): Returns of the line item. Defaults to `nil`.
-  - shippingDetails (GoogleApi.Content.V2.Model.OrderLineItemShippingDetails.t): Details of the requested shipping for the line item. Defaults to `nil`.
-  - tax (GoogleApi.Content.V2.Model.Price.t): Total tax amount for the line item. For example, if two items are purchased, and each have a cost tax of $2, the total tax amount will be $4. Defaults to `nil`.
+  *   `annotations` (*type:* `list(GoogleApi.Content.V2.Model.OrderMerchantProvidedAnnotation.t)`, *default:* `nil`) - Annotations that are attached to the line item.
+  *   `cancellations` (*type:* `list(GoogleApi.Content.V2.Model.OrderCancellation.t)`, *default:* `nil`) - Cancellations of the line item.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The ID of the line item.
+  *   `price` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - Total price for the line item. For example, if two items for $10 are purchased, the total price will be $20.
+  *   `product` (*type:* `GoogleApi.Content.V2.Model.OrderLineItemProduct.t`, *default:* `nil`) - Product data as seen by customer from the time of the order placement. Note that certain attributes values (e.g. title or gtin) might be reformatted and no longer match values submitted via product feed.
+  *   `quantityCanceled` (*type:* `integer()`, *default:* `nil`) - Number of items canceled.
+  *   `quantityDelivered` (*type:* `integer()`, *default:* `nil`) - Number of items delivered.
+  *   `quantityOrdered` (*type:* `integer()`, *default:* `nil`) - Number of items ordered.
+  *   `quantityPending` (*type:* `integer()`, *default:* `nil`) - Number of items pending.
+  *   `quantityReturned` (*type:* `integer()`, *default:* `nil`) - Number of items returned.
+  *   `quantityShipped` (*type:* `integer()`, *default:* `nil`) - Number of items shipped.
+  *   `returnInfo` (*type:* `GoogleApi.Content.V2.Model.OrderLineItemReturnInfo.t`, *default:* `nil`) - Details of the return policy for the line item.
+  *   `returns` (*type:* `list(GoogleApi.Content.V2.Model.OrderReturn.t)`, *default:* `nil`) - Returns of the line item.
+  *   `shippingDetails` (*type:* `GoogleApi.Content.V2.Model.OrderLineItemShippingDetails.t`, *default:* `nil`) - Details of the requested shipping for the line item.
+  *   `tax` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - Total tax amount for the line item. For example, if two items are purchased, and each have a cost tax of $2, the total tax amount will be $4.
   """
 
   use GoogleApi.Gax.ModelBase

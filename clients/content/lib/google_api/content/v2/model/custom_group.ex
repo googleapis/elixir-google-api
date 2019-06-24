@@ -21,8 +21,8 @@ defmodule GoogleApi.Content.V2.Model.CustomGroup do
 
   ## Attributes
 
-  - attributes (list(GoogleApi.Content.V2.Model.CustomAttribute.t)): The sub-attributes. Defaults to `nil`.
-  - name (String.t): The name of the group. Underscores will be replaced by spaces upon insertion. Defaults to `nil`.
+  *   `attributes` (*type:* `list(GoogleApi.Content.V2.Model.CustomAttribute.t)`, *default:* `nil`) - The sub-attributes.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the group. Underscores will be replaced by spaces upon insertion.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,13 +21,13 @@ defmodule GoogleApi.Content.V2.Model.OrdersCreateTestOrderRequest do
 
   ## Attributes
 
-  - country (String.t): The  CLDR territory code of the country of the test order to create. Affects the currency and addresses of orders created via template_name, or the addresses of orders created via test_order.
+  *   `country` (*type:* `String.t`, *default:* `nil`) - The  CLDR territory code of the country of the test order to create. Affects the currency and addresses of orders created via template_name, or the addresses of orders created via test_order.
 
-  Acceptable values are:  
-  - "US" 
-  - "FR"  Defaults to US. Defaults to `nil`.
-  - templateName (String.t): The test order template to use. Specify as an alternative to testOrder as a shortcut for retrieving a template and then creating an order using that template. Defaults to `nil`.
-  - testOrder (GoogleApi.Content.V2.Model.TestOrder.t): The test order to create. Defaults to `nil`.
+      Acceptable values are:  
+      - "US" 
+      - "FR"  Defaults to US.
+  *   `templateName` (*type:* `String.t`, *default:* `nil`) - The test order template to use. Specify as an alternative to testOrder as a shortcut for retrieving a template and then creating an order using that template.
+  *   `testOrder` (*type:* `GoogleApi.Content.V2.Model.TestOrder.t`, *default:* `nil`) - The test order to create.
   """
 
   use GoogleApi.Gax.ModelBase

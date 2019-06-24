@@ -21,8 +21,8 @@ defmodule GoogleApi.Content.V2.Model.PosListResponse do
 
   ## Attributes
 
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "content#posListResponse". Defaults to `content#posListResponse`.
-  - resources (list(GoogleApi.Content.V2.Model.PosStore.t)):  Defaults to `nil`.
+  *   `kind` (*type:* `String.t`, *default:* `content#posListResponse`) - Identifies what kind of resource this is. Value: the fixed string "content#posListResponse".
+  *   `resources` (*type:* `list(GoogleApi.Content.V2.Model.PosStore.t)`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

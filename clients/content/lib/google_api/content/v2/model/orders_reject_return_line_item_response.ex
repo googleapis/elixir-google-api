@@ -21,8 +21,8 @@ defmodule GoogleApi.Content.V2.Model.OrdersRejectReturnLineItemResponse do
 
   ## Attributes
 
-  - executionStatus (String.t): The status of the execution. Defaults to `nil`.
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "content#ordersRejectReturnLineItemResponse". Defaults to `content#ordersRejectReturnLineItemResponse`.
+  *   `executionStatus` (*type:* `String.t`, *default:* `nil`) - The status of the execution.
+  *   `kind` (*type:* `String.t`, *default:* `content#ordersRejectReturnLineItemResponse`) - Identifies what kind of resource this is. Value: the fixed string "content#ordersRejectReturnLineItemResponse".
   """
 
   use GoogleApi.Gax.ModelBase

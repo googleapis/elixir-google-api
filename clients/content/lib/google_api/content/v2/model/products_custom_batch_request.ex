@@ -21,7 +21,7 @@ defmodule GoogleApi.Content.V2.Model.ProductsCustomBatchRequest do
 
   ## Attributes
 
-  - entries (list(GoogleApi.Content.V2.Model.ProductsCustomBatchRequestEntry.t)): The request entries to be processed in the batch. Defaults to `nil`.
+  *   `entries` (*type:* `list(GoogleApi.Content.V2.Model.ProductsCustomBatchRequestEntry.t)`, *default:* `nil`) - The request entries to be processed in the batch.
   """
 
   use GoogleApi.Gax.ModelBase

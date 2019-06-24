@@ -21,12 +21,12 @@ defmodule GoogleApi.Content.V2.Model.PosCustomBatchResponseEntry do
 
   ## Attributes
 
-  - batchId (integer()): The ID of the request entry to which this entry responds. Defaults to `nil`.
-  - errors (GoogleApi.Content.V2.Model.Errors.t): A list of errors defined if, and only if, the request failed. Defaults to `nil`.
-  - inventory (GoogleApi.Content.V2.Model.PosInventory.t): The updated inventory information. Defaults to `nil`.
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "content#posCustomBatchResponseEntry". Defaults to `content#posCustomBatchResponseEntry`.
-  - sale (GoogleApi.Content.V2.Model.PosSale.t): The updated sale information. Defaults to `nil`.
-  - store (GoogleApi.Content.V2.Model.PosStore.t): The retrieved or updated store information. Defaults to `nil`.
+  *   `batchId` (*type:* `integer()`, *default:* `nil`) - The ID of the request entry to which this entry responds.
+  *   `errors` (*type:* `GoogleApi.Content.V2.Model.Errors.t`, *default:* `nil`) - A list of errors defined if, and only if, the request failed.
+  *   `inventory` (*type:* `GoogleApi.Content.V2.Model.PosInventory.t`, *default:* `nil`) - The updated inventory information.
+  *   `kind` (*type:* `String.t`, *default:* `content#posCustomBatchResponseEntry`) - Identifies what kind of resource this is. Value: the fixed string "content#posCustomBatchResponseEntry".
+  *   `sale` (*type:* `GoogleApi.Content.V2.Model.PosSale.t`, *default:* `nil`) - The updated sale information.
+  *   `store` (*type:* `GoogleApi.Content.V2.Model.PosStore.t`, *default:* `nil`) - The retrieved or updated store information.
   """
 
   use GoogleApi.Gax.ModelBase

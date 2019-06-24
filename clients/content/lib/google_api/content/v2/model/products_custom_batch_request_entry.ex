@@ -21,11 +21,11 @@ defmodule GoogleApi.Content.V2.Model.ProductsCustomBatchRequestEntry do
 
   ## Attributes
 
-  - batchId (integer()): An entry ID, unique within the batch request. Defaults to `nil`.
-  - merchantId (String.t): The ID of the managing account. Defaults to `nil`.
-  - method (String.t):  Defaults to `nil`.
-  - product (GoogleApi.Content.V2.Model.Product.t): The product to insert. Only required if the method is insert. Defaults to `nil`.
-  - productId (String.t): The ID of the product to get or delete. Only defined if the method is get or delete. Defaults to `nil`.
+  *   `batchId` (*type:* `integer()`, *default:* `nil`) - An entry ID, unique within the batch request.
+  *   `merchantId` (*type:* `String.t`, *default:* `nil`) - The ID of the managing account.
+  *   `method` (*type:* `String.t`, *default:* `nil`) - 
+  *   `product` (*type:* `GoogleApi.Content.V2.Model.Product.t`, *default:* `nil`) - The product to insert. Only required if the method is insert.
+  *   `productId` (*type:* `String.t`, *default:* `nil`) - The ID of the product to get or delete. Only defined if the method is get or delete.
   """
 
   use GoogleApi.Gax.ModelBase

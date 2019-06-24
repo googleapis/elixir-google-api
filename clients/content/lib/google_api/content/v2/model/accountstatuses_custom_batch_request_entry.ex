@@ -21,11 +21,11 @@ defmodule GoogleApi.Content.V2.Model.AccountstatusesCustomBatchRequestEntry do
 
   ## Attributes
 
-  - accountId (String.t): The ID of the (sub-)account whose status to get. Defaults to `nil`.
-  - batchId (integer()): An entry ID, unique within the batch request. Defaults to `nil`.
-  - destinations (list(String.t)): If set, only issues for the specified destinations are returned, otherwise only issues for the Shopping destination. Defaults to `nil`.
-  - merchantId (String.t): The ID of the managing account. Defaults to `nil`.
-  - method (String.t): The method (get). Defaults to `nil`.
+  *   `accountId` (*type:* `String.t`, *default:* `nil`) - The ID of the (sub-)account whose status to get.
+  *   `batchId` (*type:* `integer()`, *default:* `nil`) - An entry ID, unique within the batch request.
+  *   `destinations` (*type:* `list(String.t)`, *default:* `nil`) - If set, only issues for the specified destinations are returned, otherwise only issues for the Shopping destination.
+  *   `merchantId` (*type:* `String.t`, *default:* `nil`) - The ID of the managing account.
+  *   `method` (*type:* `String.t`, *default:* `nil`) - The method (get).
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,10 +21,10 @@ defmodule GoogleApi.Content.V2.Model.ProductstatusesCustomBatchResponseEntry do
 
   ## Attributes
 
-  - batchId (integer()): The ID of the request entry this entry responds to. Defaults to `nil`.
-  - errors (GoogleApi.Content.V2.Model.Errors.t): A list of errors, if the request failed. Defaults to `nil`.
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "content#productstatusesCustomBatchResponseEntry". Defaults to `content#productstatusesCustomBatchResponseEntry`.
-  - productStatus (GoogleApi.Content.V2.Model.ProductStatus.t): The requested product status. Only defined if the request was successful. Defaults to `nil`.
+  *   `batchId` (*type:* `integer()`, *default:* `nil`) - The ID of the request entry this entry responds to.
+  *   `errors` (*type:* `GoogleApi.Content.V2.Model.Errors.t`, *default:* `nil`) - A list of errors, if the request failed.
+  *   `kind` (*type:* `String.t`, *default:* `content#productstatusesCustomBatchResponseEntry`) - Identifies what kind of resource this is. Value: the fixed string "content#productstatusesCustomBatchResponseEntry".
+  *   `productStatus` (*type:* `GoogleApi.Content.V2.Model.ProductStatus.t`, *default:* `nil`) - The requested product status. Only defined if the request was successful.
   """
 
   use GoogleApi.Gax.ModelBase

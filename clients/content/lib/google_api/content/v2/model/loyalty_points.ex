@@ -21,9 +21,9 @@ defmodule GoogleApi.Content.V2.Model.LoyaltyPoints do
 
   ## Attributes
 
-  - name (String.t): Name of loyalty points program. It is recommended to limit the name to 12 full-width characters or 24 Roman characters. Defaults to `nil`.
-  - pointsValue (String.t): The retailer's loyalty points in absolute value. Defaults to `nil`.
-  - ratio (float()): The ratio of a point when converted to currency. Google assumes currency based on Merchant Center settings. If ratio is left out, it defaults to 1.0. Defaults to `nil`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of loyalty points program. It is recommended to limit the name to 12 full-width characters or 24 Roman characters.
+  *   `pointsValue` (*type:* `String.t`, *default:* `nil`) - The retailer's loyalty points in absolute value.
+  *   `ratio` (*type:* `float()`, *default:* `nil`) - The ratio of a point when converted to currency. Google assumes currency based on Merchant Center settings. If ratio is left out, it defaults to 1.0.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,14 +21,14 @@ defmodule GoogleApi.Content.V2.Model.PosCustomBatchRequestEntry do
 
   ## Attributes
 
-  - batchId (integer()): An entry ID, unique within the batch request. Defaults to `nil`.
-  - inventory (GoogleApi.Content.V2.Model.PosInventory.t): The inventory to submit. Set this only if the method is inventory. Defaults to `nil`.
-  - merchantId (String.t): The ID of the POS data provider. Defaults to `nil`.
-  - method (String.t):  Defaults to `nil`.
-  - sale (GoogleApi.Content.V2.Model.PosSale.t): The sale information to submit. Set this only if the method is sale. Defaults to `nil`.
-  - store (GoogleApi.Content.V2.Model.PosStore.t): The store information to submit. Set this only if the method is insert. Defaults to `nil`.
-  - storeCode (String.t): The store code. Set this only if the method is delete or get. Defaults to `nil`.
-  - targetMerchantId (String.t): The ID of the account for which to get/submit data. Defaults to `nil`.
+  *   `batchId` (*type:* `integer()`, *default:* `nil`) - An entry ID, unique within the batch request.
+  *   `inventory` (*type:* `GoogleApi.Content.V2.Model.PosInventory.t`, *default:* `nil`) - The inventory to submit. Set this only if the method is inventory.
+  *   `merchantId` (*type:* `String.t`, *default:* `nil`) - The ID of the POS data provider.
+  *   `method` (*type:* `String.t`, *default:* `nil`) - 
+  *   `sale` (*type:* `GoogleApi.Content.V2.Model.PosSale.t`, *default:* `nil`) - The sale information to submit. Set this only if the method is sale.
+  *   `store` (*type:* `GoogleApi.Content.V2.Model.PosStore.t`, *default:* `nil`) - The store information to submit. Set this only if the method is insert.
+  *   `storeCode` (*type:* `String.t`, *default:* `nil`) - The store code. Set this only if the method is delete or get.
+  *   `targetMerchantId` (*type:* `String.t`, *default:* `nil`) - The ID of the account for which to get/submit data.
   """
 
   use GoogleApi.Gax.ModelBase

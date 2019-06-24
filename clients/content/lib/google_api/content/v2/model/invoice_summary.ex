@@ -21,12 +21,12 @@ defmodule GoogleApi.Content.V2.Model.InvoiceSummary do
 
   ## Attributes
 
-  - additionalChargeSummaries (list(GoogleApi.Content.V2.Model.InvoiceSummaryAdditionalChargeSummary.t)): Summary of the total amounts of the additional charges. Defaults to `nil`.
-  - customerBalance (GoogleApi.Content.V2.Model.Amount.t): Deprecated. Defaults to `nil`.
-  - googleBalance (GoogleApi.Content.V2.Model.Amount.t): Deprecated. Defaults to `nil`.
-  - merchantBalance (GoogleApi.Content.V2.Model.Amount.t): Deprecated. Defaults to `nil`.
-  - productTotal (GoogleApi.Content.V2.Model.Amount.t): [required] Total price for the product. Defaults to `nil`.
-  - promotionSummaries (list(GoogleApi.Content.V2.Model.Promotion.t)): Deprecated. Defaults to `nil`.
+  *   `additionalChargeSummaries` (*type:* `list(GoogleApi.Content.V2.Model.InvoiceSummaryAdditionalChargeSummary.t)`, *default:* `nil`) - Summary of the total amounts of the additional charges.
+  *   `customerBalance` (*type:* `GoogleApi.Content.V2.Model.Amount.t`, *default:* `nil`) - Deprecated.
+  *   `googleBalance` (*type:* `GoogleApi.Content.V2.Model.Amount.t`, *default:* `nil`) - Deprecated.
+  *   `merchantBalance` (*type:* `GoogleApi.Content.V2.Model.Amount.t`, *default:* `nil`) - Deprecated.
+  *   `productTotal` (*type:* `GoogleApi.Content.V2.Model.Amount.t`, *default:* `nil`) - [required] Total price for the product.
+  *   `promotionSummaries` (*type:* `list(GoogleApi.Content.V2.Model.Promotion.t)`, *default:* `nil`) - Deprecated.
   """
 
   use GoogleApi.Gax.ModelBase

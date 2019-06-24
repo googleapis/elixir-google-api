@@ -28,24 +28,25 @@ defmodule GoogleApi.Content.V2.Api.Productstatuses do
 
   ## Parameters
 
-  - connection (GoogleApi.Content.V2.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :includeAttributes (boolean()): Flag to include full product data in the results of this request. The default value is false.
-    - :body (GoogleApi.Content.V2.Model.ProductstatusesCustomBatchRequest.t): 
+  *   `connection` (*type:* `GoogleApi.Content.V2.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:includeAttributes` (*type:* `boolean()`) - Flag to include full product data in the results of this request. The default value is false.
+      *   `:body` (*type:* `GoogleApi.Content.V2.Model.ProductstatusesCustomBatchRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Content.V2.Model.ProductstatusesCustomBatchResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Content.V2.Model.ProductstatusesCustomBatchResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec content_productstatuses_custombatch(Tesla.Env.client(), keyword()) ::
+  @spec content_productstatuses_custombatch(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.ProductstatusesCustomBatchResponse.t()}
           | {:error, Tesla.Env.t()}
   def content_productstatuses_custombatch(connection, optional_params \\ [], opts \\ []) do
@@ -79,27 +80,33 @@ defmodule GoogleApi.Content.V2.Api.Productstatuses do
 
   ## Parameters
 
-  - connection (GoogleApi.Content.V2.Connection): Connection to server
-  - merchant_id (String.t): The ID of the account that contains the product. This account cannot be a multi-client account.
-  - product_id (String.t): The REST ID of the product.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :destinations (list(String.t)): If set, only issues for the specified destinations are returned, otherwise only issues for the Shopping destination.
-    - :includeAttributes (boolean()): Flag to include full product data in the result of this get request. The default value is false.
+  *   `connection` (*type:* `GoogleApi.Content.V2.Connection.t`) - Connection to server
+  *   `merchant_id` (*type:* `String.t`) - The ID of the account that contains the product. This account cannot be a multi-client account.
+  *   `product_id` (*type:* `String.t`) - The REST ID of the product.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:destinations` (*type:* `list(String.t)`) - If set, only issues for the specified destinations are returned, otherwise only issues for the Shopping destination.
+      *   `:includeAttributes` (*type:* `boolean()`) - Flag to include full product data in the result of this get request. The default value is false.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Content.V2.Model.ProductStatus{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Content.V2.Model.ProductStatus{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec content_productstatuses_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.Content.V2.Model.ProductStatus.t()} | {:error, Tesla.Env.t()}
+  @spec content_productstatuses_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.Content.V2.Model.ProductStatus.t()} | {:error, Tesla.Env.t()}
   def content_productstatuses_get(
         connection,
         merchant_id,
@@ -138,28 +145,29 @@ defmodule GoogleApi.Content.V2.Api.Productstatuses do
 
   ## Parameters
 
-  - connection (GoogleApi.Content.V2.Connection): Connection to server
-  - merchant_id (String.t): The ID of the account that contains the products. This account cannot be a multi-client account.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :destinations (list(String.t)): If set, only issues for the specified destinations are returned, otherwise only issues for the Shopping destination.
-    - :includeAttributes (boolean()): Flag to include full product data in the results of the list request. The default value is false.
-    - :includeInvalidInsertedItems (boolean()): Flag to include the invalid inserted items in the result of the list request. By default the invalid items are not shown (the default value is false).
-    - :maxResults (integer()): The maximum number of product statuses to return in the response, used for paging.
-    - :pageToken (String.t): The token returned by the previous request.
+  *   `connection` (*type:* `GoogleApi.Content.V2.Connection.t`) - Connection to server
+  *   `merchant_id` (*type:* `String.t`) - The ID of the account that contains the products. This account cannot be a multi-client account.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:destinations` (*type:* `list(String.t)`) - If set, only issues for the specified destinations are returned, otherwise only issues for the Shopping destination.
+      *   `:includeAttributes` (*type:* `boolean()`) - Flag to include full product data in the results of the list request. The default value is false.
+      *   `:includeInvalidInsertedItems` (*type:* `boolean()`) - Flag to include the invalid inserted items in the result of the list request. By default the invalid items are not shown (the default value is false).
+      *   `:maxResults` (*type:* `integer()`) - The maximum number of product statuses to return in the response, used for paging.
+      *   `:pageToken` (*type:* `String.t`) - The token returned by the previous request.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Content.V2.Model.ProductstatusesListResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Content.V2.Model.ProductstatusesListResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec content_productstatuses_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec content_productstatuses_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.ProductstatusesListResponse.t()}
           | {:error, Tesla.Env.t()}
   def content_productstatuses_list(connection, merchant_id, optional_params \\ [], opts \\ []) do

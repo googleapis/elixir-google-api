@@ -21,9 +21,9 @@ defmodule GoogleApi.Content.V2.Model.LiasettingsListResponse do
 
   ## Attributes
 
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "content#liasettingsListResponse". Defaults to `content#liasettingsListResponse`.
-  - nextPageToken (String.t): The token for the retrieval of the next page of LIA settings. Defaults to `nil`.
-  - resources (list(GoogleApi.Content.V2.Model.LiaSettings.t)):  Defaults to `nil`.
+  *   `kind` (*type:* `String.t`, *default:* `content#liasettingsListResponse`) - Identifies what kind of resource this is. Value: the fixed string "content#liasettingsListResponse".
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The token for the retrieval of the next page of LIA settings.
+  *   `resources` (*type:* `list(GoogleApi.Content.V2.Model.LiaSettings.t)`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

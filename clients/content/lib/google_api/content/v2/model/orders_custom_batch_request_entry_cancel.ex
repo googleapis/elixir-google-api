@@ -21,8 +21,8 @@ defmodule GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryCancel do
 
   ## Attributes
 
-  - reason (String.t): The reason for the cancellation. Defaults to `nil`.
-  - reasonText (String.t): The explanation of the reason. Defaults to `nil`.
+  *   `reason` (*type:* `String.t`, *default:* `nil`) - The reason for the cancellation.
+  *   `reasonText` (*type:* `String.t`, *default:* `nil`) - The explanation of the reason.
   """
 
   use GoogleApi.Gax.ModelBase

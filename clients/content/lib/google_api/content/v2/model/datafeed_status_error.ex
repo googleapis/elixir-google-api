@@ -21,10 +21,10 @@ defmodule GoogleApi.Content.V2.Model.DatafeedStatusError do
 
   ## Attributes
 
-  - code (String.t): The code of the error, e.g., "validation/invalid_value". Defaults to `nil`.
-  - count (String.t): The number of occurrences of the error in the feed. Defaults to `nil`.
-  - examples (list(GoogleApi.Content.V2.Model.DatafeedStatusExample.t)): A list of example occurrences of the error, grouped by product. Defaults to `nil`.
-  - message (String.t): The error message, e.g., "Invalid price". Defaults to `nil`.
+  *   `code` (*type:* `String.t`, *default:* `nil`) - The code of the error, e.g., "validation/invalid_value".
+  *   `count` (*type:* `String.t`, *default:* `nil`) - The number of occurrences of the error in the feed.
+  *   `examples` (*type:* `list(GoogleApi.Content.V2.Model.DatafeedStatusExample.t)`, *default:* `nil`) - A list of example occurrences of the error, grouped by product.
+  *   `message` (*type:* `String.t`, *default:* `nil`) - The error message, e.g., "Invalid price".
   """
 
   use GoogleApi.Gax.ModelBase

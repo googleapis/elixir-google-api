@@ -21,8 +21,8 @@ defmodule GoogleApi.Content.V2.Model.OrdersUpdateMerchantOrderIdRequest do
 
   ## Attributes
 
-  - merchantOrderId (String.t): The merchant order id to be assigned to the order. Must be unique per merchant. Defaults to `nil`.
-  - operationId (String.t): The ID of the operation. Unique across all operations for a given order. Defaults to `nil`.
+  *   `merchantOrderId` (*type:* `String.t`, *default:* `nil`) - The merchant order id to be assigned to the order. Must be unique per merchant.
+  *   `operationId` (*type:* `String.t`, *default:* `nil`) - The ID of the operation. Unique across all operations for a given order.
   """
 
   use GoogleApi.Gax.ModelBase

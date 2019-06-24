@@ -21,17 +21,17 @@ defmodule GoogleApi.Content.V2.Model.AccountStatusDataQualityIssue do
 
   ## Attributes
 
-  - country (String.t):  Defaults to `nil`.
-  - destination (String.t):  Defaults to `nil`.
-  - detail (String.t):  Defaults to `nil`.
-  - displayedValue (String.t):  Defaults to `nil`.
-  - exampleItems (list(GoogleApi.Content.V2.Model.AccountStatusExampleItem.t)):  Defaults to `nil`.
-  - id (String.t):  Defaults to `nil`.
-  - lastChecked (String.t):  Defaults to `nil`.
-  - location (String.t):  Defaults to `nil`.
-  - numItems (integer()):  Defaults to `nil`.
-  - severity (String.t):  Defaults to `nil`.
-  - submittedValue (String.t):  Defaults to `nil`.
+  *   `country` (*type:* `String.t`, *default:* `nil`) - 
+  *   `destination` (*type:* `String.t`, *default:* `nil`) - 
+  *   `detail` (*type:* `String.t`, *default:* `nil`) - 
+  *   `displayedValue` (*type:* `String.t`, *default:* `nil`) - 
+  *   `exampleItems` (*type:* `list(GoogleApi.Content.V2.Model.AccountStatusExampleItem.t)`, *default:* `nil`) - 
+  *   `id` (*type:* `String.t`, *default:* `nil`) - 
+  *   `lastChecked` (*type:* `String.t`, *default:* `nil`) - 
+  *   `location` (*type:* `String.t`, *default:* `nil`) - 
+  *   `numItems` (*type:* `integer()`, *default:* `nil`) - 
+  *   `severity` (*type:* `String.t`, *default:* `nil`) - 
+  *   `submittedValue` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

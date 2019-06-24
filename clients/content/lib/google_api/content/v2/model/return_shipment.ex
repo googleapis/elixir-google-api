@@ -21,13 +21,13 @@ defmodule GoogleApi.Content.V2.Model.ReturnShipment do
 
   ## Attributes
 
-  - creationDate (String.t):  Defaults to `nil`.
-  - deliveryDate (String.t):  Defaults to `nil`.
-  - returnMethodType (String.t):  Defaults to `nil`.
-  - shipmentId (String.t):  Defaults to `nil`.
-  - shipmentTrackingInfos (list(GoogleApi.Content.V2.Model.ShipmentTrackingInfo.t)):  Defaults to `nil`.
-  - shippingDate (String.t):  Defaults to `nil`.
-  - state (String.t):  Defaults to `nil`.
+  *   `creationDate` (*type:* `String.t`, *default:* `nil`) - 
+  *   `deliveryDate` (*type:* `String.t`, *default:* `nil`) - 
+  *   `returnMethodType` (*type:* `String.t`, *default:* `nil`) - 
+  *   `shipmentId` (*type:* `String.t`, *default:* `nil`) - 
+  *   `shipmentTrackingInfos` (*type:* `list(GoogleApi.Content.V2.Model.ShipmentTrackingInfo.t)`, *default:* `nil`) - 
+  *   `shippingDate` (*type:* `String.t`, *default:* `nil`) - 
+  *   `state` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

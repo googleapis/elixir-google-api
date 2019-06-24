@@ -21,12 +21,12 @@ defmodule GoogleApi.Content.V2.Model.HolidaysHoliday do
 
   ## Attributes
 
-  - countryCode (String.t): The CLDR territory code of the country in which the holiday is available. E.g. "US", "DE", "GB". A holiday cutoff can only be configured in a shipping settings service with matching delivery country. Always present. Defaults to `nil`.
-  - date (String.t): Date of the holiday, in ISO 8601 format. E.g. "2016-12-25" for Christmas 2016. Always present. Defaults to `nil`.
-  - deliveryGuaranteeDate (String.t): Date on which the order has to arrive at the customer's, in ISO 8601 format. E.g. "2016-12-24" for 24th December 2016. Always present. Defaults to `nil`.
-  - deliveryGuaranteeHour (String.t): Hour of the day in the delivery location's timezone on the guaranteed delivery date by which the order has to arrive at the customer's. Possible values are: 0 (midnight), 1, ..., 12 (noon), 13, ..., 23. Always present. Defaults to `nil`.
-  - id (String.t): Unique identifier for the holiday to be used when configuring holiday cutoffs. Always present. Defaults to `nil`.
-  - type (String.t): The holiday type. Always present. Defaults to `nil`.
+  *   `countryCode` (*type:* `String.t`, *default:* `nil`) - The CLDR territory code of the country in which the holiday is available. E.g. "US", "DE", "GB". A holiday cutoff can only be configured in a shipping settings service with matching delivery country. Always present.
+  *   `date` (*type:* `String.t`, *default:* `nil`) - Date of the holiday, in ISO 8601 format. E.g. "2016-12-25" for Christmas 2016. Always present.
+  *   `deliveryGuaranteeDate` (*type:* `String.t`, *default:* `nil`) - Date on which the order has to arrive at the customer's, in ISO 8601 format. E.g. "2016-12-24" for 24th December 2016. Always present.
+  *   `deliveryGuaranteeHour` (*type:* `String.t`, *default:* `nil`) - Hour of the day in the delivery location's timezone on the guaranteed delivery date by which the order has to arrive at the customer's. Possible values are: 0 (midnight), 1, ..., 12 (noon), 13, ..., 23. Always present.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Unique identifier for the holiday to be used when configuring holiday cutoffs. Always present.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The holiday type. Always present.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,8 +21,8 @@ defmodule GoogleApi.Content.V2.Model.OrderDeliveryDetails do
 
   ## Attributes
 
-  - address (GoogleApi.Content.V2.Model.OrderAddress.t): The delivery address Defaults to `nil`.
-  - phoneNumber (String.t): The phone number of the person receiving the delivery. Defaults to `nil`.
+  *   `address` (*type:* `GoogleApi.Content.V2.Model.OrderAddress.t`, *default:* `nil`) - The delivery address
+  *   `phoneNumber` (*type:* `String.t`, *default:* `nil`) - The phone number of the person receiving the delivery.
   """
 
   use GoogleApi.Gax.ModelBase

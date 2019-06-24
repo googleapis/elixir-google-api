@@ -21,10 +21,10 @@ defmodule GoogleApi.Content.V2.Model.DatafeedTarget do
 
   ## Attributes
 
-  - country (String.t): The country where the items in the feed will be included in the search index, represented as a  CLDR territory code. Defaults to `nil`.
-  - excludedDestinations (list(String.t)): The list of destinations to exclude for this target (corresponds to unchecked check boxes in Merchant Center). Defaults to `nil`.
-  - includedDestinations (list(String.t)): The list of destinations to include for this target (corresponds to checked check boxes in Merchant Center). Default destinations are always included unless provided in the excluded_destination field. Defaults to `nil`.
-  - language (String.t): The two-letter ISO 639-1 language of the items in the feed. Must be a valid language for targets[].country. Defaults to `nil`.
+  *   `country` (*type:* `String.t`, *default:* `nil`) - The country where the items in the feed will be included in the search index, represented as a  CLDR territory code.
+  *   `excludedDestinations` (*type:* `list(String.t)`, *default:* `nil`) - The list of destinations to exclude for this target (corresponds to unchecked check boxes in Merchant Center).
+  *   `includedDestinations` (*type:* `list(String.t)`, *default:* `nil`) - The list of destinations to include for this target (corresponds to checked check boxes in Merchant Center). Default destinations are always included unless provided in the excluded_destination field.
+  *   `language` (*type:* `String.t`, *default:* `nil`) - The two-letter ISO 639-1 language of the items in the feed. Must be a valid language for targets[].country.
   """
 
   use GoogleApi.Gax.ModelBase

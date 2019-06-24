@@ -21,11 +21,11 @@ defmodule GoogleApi.Content.V2.Model.AccountUser do
 
   ## Attributes
 
-  - admin (boolean()): Whether user is an admin. Defaults to `nil`.
-  - emailAddress (String.t): User's email address. Defaults to `nil`.
-  - orderManager (boolean()): Whether user is an order manager. Defaults to `nil`.
-  - paymentsAnalyst (boolean()): Whether user can access payment statements. Defaults to `nil`.
-  - paymentsManager (boolean()): Whether user can manage payment settings. Defaults to `nil`.
+  *   `admin` (*type:* `boolean()`, *default:* `nil`) - Whether user is an admin.
+  *   `emailAddress` (*type:* `String.t`, *default:* `nil`) - User's email address.
+  *   `orderManager` (*type:* `boolean()`, *default:* `nil`) - Whether user is an order manager.
+  *   `paymentsAnalyst` (*type:* `boolean()`, *default:* `nil`) - Whether user can access payment statements.
+  *   `paymentsManager` (*type:* `boolean()`, *default:* `nil`) - Whether user can manage payment settings.
   """
 
   use GoogleApi.Gax.ModelBase

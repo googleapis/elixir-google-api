@@ -21,9 +21,9 @@ defmodule GoogleApi.Content.V2.Model.UnitInvoiceAdditionalCharge do
 
   ## Attributes
 
-  - additionalChargeAmount (GoogleApi.Content.V2.Model.Amount.t): [required] Amount of the additional charge. Defaults to `nil`.
-  - additionalChargePromotions (list(GoogleApi.Content.V2.Model.Promotion.t)): Deprecated. Defaults to `nil`.
-  - type (String.t): [required] Type of the additional charge. Defaults to `nil`.
+  *   `additionalChargeAmount` (*type:* `GoogleApi.Content.V2.Model.Amount.t`, *default:* `nil`) - [required] Amount of the additional charge.
+  *   `additionalChargePromotions` (*type:* `list(GoogleApi.Content.V2.Model.Promotion.t)`, *default:* `nil`) - Deprecated.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - [required] Type of the additional charge.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,15 +21,15 @@ defmodule GoogleApi.Content.V2.Model.ProductStatusDataQualityIssue do
 
   ## Attributes
 
-  - destination (String.t):  Defaults to `nil`.
-  - detail (String.t):  Defaults to `nil`.
-  - fetchStatus (String.t):  Defaults to `nil`.
-  - id (String.t):  Defaults to `nil`.
-  - location (String.t):  Defaults to `nil`.
-  - severity (String.t):  Defaults to `nil`.
-  - timestamp (String.t):  Defaults to `nil`.
-  - valueOnLandingPage (String.t):  Defaults to `nil`.
-  - valueProvided (String.t):  Defaults to `nil`.
+  *   `destination` (*type:* `String.t`, *default:* `nil`) - 
+  *   `detail` (*type:* `String.t`, *default:* `nil`) - 
+  *   `fetchStatus` (*type:* `String.t`, *default:* `nil`) - 
+  *   `id` (*type:* `String.t`, *default:* `nil`) - 
+  *   `location` (*type:* `String.t`, *default:* `nil`) - 
+  *   `severity` (*type:* `String.t`, *default:* `nil`) - 
+  *   `timestamp` (*type:* `String.t`, *default:* `nil`) - 
+  *   `valueOnLandingPage` (*type:* `String.t`, *default:* `nil`) - 
+  *   `valueProvided` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

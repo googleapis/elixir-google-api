@@ -21,8 +21,8 @@ defmodule GoogleApi.Content.V2.Model.Installment do
 
   ## Attributes
 
-  - amount (GoogleApi.Content.V2.Model.Price.t): The amount the buyer has to pay per month. Defaults to `nil`.
-  - months (String.t): The number of installments the buyer has to pay. Defaults to `nil`.
+  *   `amount` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - The amount the buyer has to pay per month.
+  *   `months` (*type:* `String.t`, *default:* `nil`) - The number of installments the buyer has to pay.
   """
 
   use GoogleApi.Gax.ModelBase

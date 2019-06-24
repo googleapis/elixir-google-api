@@ -21,9 +21,9 @@ defmodule GoogleApi.Content.V2.Model.CarriersCarrier do
 
   ## Attributes
 
-  - country (String.t): The CLDR country code of the carrier (e.g., "US"). Always present. Defaults to `nil`.
-  - name (String.t): The name of the carrier (e.g., "UPS"). Always present. Defaults to `nil`.
-  - services (list(String.t)): A list of supported services (e.g., "ground") for that carrier. Contains at least one service. Defaults to `nil`.
+  *   `country` (*type:* `String.t`, *default:* `nil`) - The CLDR country code of the carrier (e.g., "US"). Always present.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the carrier (e.g., "UPS"). Always present.
+  *   `services` (*type:* `list(String.t)`, *default:* `nil`) - A list of supported services (e.g., "ground") for that carrier. Contains at least one service.
   """
 
   use GoogleApi.Gax.ModelBase

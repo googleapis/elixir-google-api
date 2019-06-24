@@ -21,12 +21,12 @@ defmodule GoogleApi.Content.V2.Model.RateGroup do
 
   ## Attributes
 
-  - applicableShippingLabels (list(String.t)): A list of shipping labels defining the products to which this rate group applies to. This is a disjunction: only one of the labels has to match for the rate group to apply. May only be empty for the last rate group of a service. Required. Defaults to `nil`.
-  - carrierRates (list(GoogleApi.Content.V2.Model.CarrierRate.t)): A list of carrier rates that can be referred to by mainTable or singleValue. Defaults to `nil`.
-  - mainTable (GoogleApi.Content.V2.Model.Table.t): A table defining the rate group, when singleValue is not expressive enough. Can only be set if singleValue is not set. Defaults to `nil`.
-  - name (String.t): Name of the rate group. Optional. If set has to be unique within shipping service. Defaults to `nil`.
-  - singleValue (GoogleApi.Content.V2.Model.Value.t): The value of the rate group (e.g. flat rate $10). Can only be set if mainTable and subtables are not set. Defaults to `nil`.
-  - subtables (list(GoogleApi.Content.V2.Model.Table.t)): A list of subtables referred to by mainTable. Can only be set if mainTable is set. Defaults to `nil`.
+  *   `applicableShippingLabels` (*type:* `list(String.t)`, *default:* `nil`) - A list of shipping labels defining the products to which this rate group applies to. This is a disjunction: only one of the labels has to match for the rate group to apply. May only be empty for the last rate group of a service. Required.
+  *   `carrierRates` (*type:* `list(GoogleApi.Content.V2.Model.CarrierRate.t)`, *default:* `nil`) - A list of carrier rates that can be referred to by mainTable or singleValue.
+  *   `mainTable` (*type:* `GoogleApi.Content.V2.Model.Table.t`, *default:* `nil`) - A table defining the rate group, when singleValue is not expressive enough. Can only be set if singleValue is not set.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the rate group. Optional. If set has to be unique within shipping service.
+  *   `singleValue` (*type:* `GoogleApi.Content.V2.Model.Value.t`, *default:* `nil`) - The value of the rate group (e.g. flat rate $10). Can only be set if mainTable and subtables are not set.
+  *   `subtables` (*type:* `list(GoogleApi.Content.V2.Model.Table.t)`, *default:* `nil`) - A list of subtables referred to by mainTable. Can only be set if mainTable is set.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,8 +21,8 @@ defmodule GoogleApi.Content.V2.Model.OrderLineItemProductVariantAttribute do
 
   ## Attributes
 
-  - dimension (String.t): The dimension of the variant. Defaults to `nil`.
-  - value (String.t): The value for the dimension. Defaults to `nil`.
+  *   `dimension` (*type:* `String.t`, *default:* `nil`) - The dimension of the variant.
+  *   `value` (*type:* `String.t`, *default:* `nil`) - The value for the dimension.
   """
 
   use GoogleApi.Gax.ModelBase

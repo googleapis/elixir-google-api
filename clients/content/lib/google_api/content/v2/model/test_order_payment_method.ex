@@ -21,11 +21,11 @@ defmodule GoogleApi.Content.V2.Model.TestOrderPaymentMethod do
 
   ## Attributes
 
-  - expirationMonth (integer()): The card expiration month (January = 1, February = 2 etc.). Defaults to `nil`.
-  - expirationYear (integer()): The card expiration year (4-digit, e.g. 2015). Defaults to `nil`.
-  - lastFourDigits (String.t): The last four digits of the card number. Defaults to `nil`.
-  - predefinedBillingAddress (String.t): The billing address. Defaults to `nil`.
-  - type (String.t): The type of instrument. Note that real orders might have different values than the four values accepted by createTestOrder. Defaults to `nil`.
+  *   `expirationMonth` (*type:* `integer()`, *default:* `nil`) - The card expiration month (January = 1, February = 2 etc.).
+  *   `expirationYear` (*type:* `integer()`, *default:* `nil`) - The card expiration year (4-digit, e.g. 2015).
+  *   `lastFourDigits` (*type:* `String.t`, *default:* `nil`) - The last four digits of the card number.
+  *   `predefinedBillingAddress` (*type:* `String.t`, *default:* `nil`) - The billing address.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of instrument. Note that real orders might have different values than the four values accepted by createTestOrder.
   """
 
   use GoogleApi.Gax.ModelBase

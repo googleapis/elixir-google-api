@@ -21,7 +21,7 @@ defmodule GoogleApi.Content.V2.Model.InventorySetResponse do
 
   ## Attributes
 
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "content#inventorySetResponse". Defaults to `content#inventorySetResponse`.
+  *   `kind` (*type:* `String.t`, *default:* `content#inventorySetResponse`) - Identifies what kind of resource this is. Value: the fixed string "content#inventorySetResponse".
   """
 
   use GoogleApi.Gax.ModelBase

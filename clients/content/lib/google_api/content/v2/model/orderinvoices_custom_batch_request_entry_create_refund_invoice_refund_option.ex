@@ -21,8 +21,8 @@ defmodule GoogleApi.Content.V2.Model.OrderinvoicesCustomBatchRequestEntryCreateR
 
   ## Attributes
 
-  - description (String.t): Optional description of the refund reason. Defaults to `nil`.
-  - reason (String.t): [required] Reason for the refund. Defaults to `nil`.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Optional description of the refund reason.
+  *   `reason` (*type:* `String.t`, *default:* `nil`) - [required] Reason for the refund.
   """
 
   use GoogleApi.Gax.ModelBase

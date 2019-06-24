@@ -21,8 +21,8 @@ defmodule GoogleApi.Content.V2.Model.ProductUnitPricingMeasure do
 
   ## Attributes
 
-  - unit (String.t): The unit of the measure. Defaults to `nil`.
-  - value (float()): The measure of an item. Defaults to `nil`.
+  *   `unit` (*type:* `String.t`, *default:* `nil`) - The unit of the measure.
+  *   `value` (*type:* `float()`, *default:* `nil`) - The measure of an item.
   """
 
   use GoogleApi.Gax.ModelBase

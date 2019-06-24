@@ -21,8 +21,8 @@ defmodule GoogleApi.Content.V2.Model.InvoiceSummaryAdditionalChargeSummary do
 
   ## Attributes
 
-  - totalAmount (GoogleApi.Content.V2.Model.Amount.t): [required] Total additional charge for this type. Defaults to `nil`.
-  - type (String.t): [required] Type of the additional charge. Defaults to `nil`.
+  *   `totalAmount` (*type:* `GoogleApi.Content.V2.Model.Amount.t`, *default:* `nil`) - [required] Total additional charge for this type.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - [required] Type of the additional charge.
   """
 
   use GoogleApi.Gax.ModelBase

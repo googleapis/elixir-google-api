@@ -21,10 +21,10 @@ defmodule GoogleApi.Content.V2.Model.Table do
 
   ## Attributes
 
-  - columnHeaders (GoogleApi.Content.V2.Model.Headers.t): Headers of the table's columns. Optional: if not set then the table has only one dimension. Defaults to `nil`.
-  - name (String.t): Name of the table. Required for subtables, ignored for the main table. Defaults to `nil`.
-  - rowHeaders (GoogleApi.Content.V2.Model.Headers.t): Headers of the table's rows. Required. Defaults to `nil`.
-  - rows (list(GoogleApi.Content.V2.Model.Row.t)): The list of rows that constitute the table. Must have the same length as rowHeaders. Required. Defaults to `nil`.
+  *   `columnHeaders` (*type:* `GoogleApi.Content.V2.Model.Headers.t`, *default:* `nil`) - Headers of the table's columns. Optional: if not set then the table has only one dimension.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the table. Required for subtables, ignored for the main table.
+  *   `rowHeaders` (*type:* `GoogleApi.Content.V2.Model.Headers.t`, *default:* `nil`) - Headers of the table's rows. Required.
+  *   `rows` (*type:* `list(GoogleApi.Content.V2.Model.Row.t)`, *default:* `nil`) - The list of rows that constitute the table. Must have the same length as rowHeaders. Required.
   """
 
   use GoogleApi.Gax.ModelBase

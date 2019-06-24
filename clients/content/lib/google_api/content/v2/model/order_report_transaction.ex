@@ -21,16 +21,16 @@ defmodule GoogleApi.Content.V2.Model.OrderReportTransaction do
 
   ## Attributes
 
-  - disbursementAmount (GoogleApi.Content.V2.Model.Price.t): The disbursement amount. Defaults to `nil`.
-  - disbursementCreationDate (String.t): The date the disbursement was created, in ISO 8601 format. Defaults to `nil`.
-  - disbursementDate (String.t): The date the disbursement was initiated, in ISO 8601 format. Defaults to `nil`.
-  - disbursementId (String.t): The ID of the disbursement. Defaults to `nil`.
-  - merchantId (String.t): The ID of the managing account. Defaults to `nil`.
-  - merchantOrderId (String.t): Merchant-provided ID of the order. Defaults to `nil`.
-  - orderId (String.t): The ID of the order. Defaults to `nil`.
-  - productAmount (GoogleApi.Content.V2.Model.Amount.t): Total amount for the items. Defaults to `nil`.
-  - productAmountWithRemittedTax (GoogleApi.Content.V2.Model.ProductAmount.t): Total amount with remitted tax for the items. Defaults to `nil`.
-  - transactionDate (String.t): The date of the transaction, in ISO 8601 format. Defaults to `nil`.
+  *   `disbursementAmount` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - The disbursement amount.
+  *   `disbursementCreationDate` (*type:* `String.t`, *default:* `nil`) - The date the disbursement was created, in ISO 8601 format.
+  *   `disbursementDate` (*type:* `String.t`, *default:* `nil`) - The date the disbursement was initiated, in ISO 8601 format.
+  *   `disbursementId` (*type:* `String.t`, *default:* `nil`) - The ID of the disbursement.
+  *   `merchantId` (*type:* `String.t`, *default:* `nil`) - The ID of the managing account.
+  *   `merchantOrderId` (*type:* `String.t`, *default:* `nil`) - Merchant-provided ID of the order.
+  *   `orderId` (*type:* `String.t`, *default:* `nil`) - The ID of the order.
+  *   `productAmount` (*type:* `GoogleApi.Content.V2.Model.Amount.t`, *default:* `nil`) - Total amount for the items.
+  *   `productAmountWithRemittedTax` (*type:* `GoogleApi.Content.V2.Model.ProductAmount.t`, *default:* `nil`) - Total amount with remitted tax for the items.
+  *   `transactionDate` (*type:* `String.t`, *default:* `nil`) - The date of the transaction, in ISO 8601 format.
   """
 
   use GoogleApi.Gax.ModelBase

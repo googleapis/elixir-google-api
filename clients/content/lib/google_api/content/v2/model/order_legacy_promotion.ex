@@ -21,14 +21,14 @@ defmodule GoogleApi.Content.V2.Model.OrderLegacyPromotion do
 
   ## Attributes
 
-  - benefits (list(GoogleApi.Content.V2.Model.OrderLegacyPromotionBenefit.t)):  Defaults to `nil`.
-  - effectiveDates (String.t): The date and time frame when the promotion is active and ready for validation review. Note that the promotion live time may be delayed for a few hours due to the validation review.
-  Start date and end date are separated by a forward slash (/). The start date is specified by the format (YYYY-MM-DD), followed by the letter ?T?, the time of the day when the sale starts (in Greenwich Mean Time, GMT), followed by an expression of the time zone for the sale. The end date is in the same format. Defaults to `nil`.
-  - genericRedemptionCode (String.t): Optional. The text code that corresponds to the promotion when applied on the retailer?s website. Defaults to `nil`.
-  - id (String.t): The unique ID of the promotion. Defaults to `nil`.
-  - longTitle (String.t): The full title of the promotion. Defaults to `nil`.
-  - productApplicability (String.t): Whether the promotion is applicable to all products or only specific products. Defaults to `nil`.
-  - redemptionChannel (String.t): Indicates that the promotion is valid online. Defaults to `nil`.
+  *   `benefits` (*type:* `list(GoogleApi.Content.V2.Model.OrderLegacyPromotionBenefit.t)`, *default:* `nil`) - 
+  *   `effectiveDates` (*type:* `String.t`, *default:* `nil`) - The date and time frame when the promotion is active and ready for validation review. Note that the promotion live time may be delayed for a few hours due to the validation review.
+      Start date and end date are separated by a forward slash (/). The start date is specified by the format (YYYY-MM-DD), followed by the letter ?T?, the time of the day when the sale starts (in Greenwich Mean Time, GMT), followed by an expression of the time zone for the sale. The end date is in the same format.
+  *   `genericRedemptionCode` (*type:* `String.t`, *default:* `nil`) - Optional. The text code that corresponds to the promotion when applied on the retailer?s website.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The unique ID of the promotion.
+  *   `longTitle` (*type:* `String.t`, *default:* `nil`) - The full title of the promotion.
+  *   `productApplicability` (*type:* `String.t`, *default:* `nil`) - Whether the promotion is applicable to all products or only specific products.
+  *   `redemptionChannel` (*type:* `String.t`, *default:* `nil`) - Indicates that the promotion is valid online.
   """
 
   use GoogleApi.Gax.ModelBase

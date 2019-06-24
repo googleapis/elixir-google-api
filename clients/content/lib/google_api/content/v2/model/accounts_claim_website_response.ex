@@ -21,7 +21,7 @@ defmodule GoogleApi.Content.V2.Model.AccountsClaimWebsiteResponse do
 
   ## Attributes
 
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "content#accountsClaimWebsiteResponse". Defaults to `content#accountsClaimWebsiteResponse`.
+  *   `kind` (*type:* `String.t`, *default:* `content#accountsClaimWebsiteResponse`) - Identifies what kind of resource this is. Value: the fixed string "content#accountsClaimWebsiteResponse".
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,9 +21,9 @@ defmodule GoogleApi.Content.V2.Model.Error do
 
   ## Attributes
 
-  - domain (String.t): The domain of the error. Defaults to `nil`.
-  - message (String.t): A description of the error. Defaults to `nil`.
-  - reason (String.t): The error code. Defaults to `nil`.
+  *   `domain` (*type:* `String.t`, *default:* `nil`) - The domain of the error.
+  *   `message` (*type:* `String.t`, *default:* `nil`) - A description of the error.
+  *   `reason` (*type:* `String.t`, *default:* `nil`) - The error code.
   """
 
   use GoogleApi.Gax.ModelBase

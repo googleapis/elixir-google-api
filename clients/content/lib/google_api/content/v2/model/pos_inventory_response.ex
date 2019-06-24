@@ -21,15 +21,15 @@ defmodule GoogleApi.Content.V2.Model.PosInventoryResponse do
 
   ## Attributes
 
-  - contentLanguage (String.t): The two-letter ISO 639-1 language code for the item. Defaults to `nil`.
-  - gtin (String.t): Global Trade Item Number. Defaults to `nil`.
-  - itemId (String.t): A unique identifier for the item. Defaults to `nil`.
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "content#posInventoryResponse". Defaults to `content#posInventoryResponse`.
-  - price (GoogleApi.Content.V2.Model.Price.t): The current price of the item. Defaults to `nil`.
-  - quantity (String.t): The available quantity of the item. Defaults to `nil`.
-  - storeCode (String.t): The identifier of the merchant's store. Either a storeCode inserted via the API or the code of the store in Google My Business. Defaults to `nil`.
-  - targetCountry (String.t): The CLDR territory code for the item. Defaults to `nil`.
-  - timestamp (String.t): The inventory timestamp, in ISO 8601 format. Defaults to `nil`.
+  *   `contentLanguage` (*type:* `String.t`, *default:* `nil`) - The two-letter ISO 639-1 language code for the item.
+  *   `gtin` (*type:* `String.t`, *default:* `nil`) - Global Trade Item Number.
+  *   `itemId` (*type:* `String.t`, *default:* `nil`) - A unique identifier for the item.
+  *   `kind` (*type:* `String.t`, *default:* `content#posInventoryResponse`) - Identifies what kind of resource this is. Value: the fixed string "content#posInventoryResponse".
+  *   `price` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - The current price of the item.
+  *   `quantity` (*type:* `String.t`, *default:* `nil`) - The available quantity of the item.
+  *   `storeCode` (*type:* `String.t`, *default:* `nil`) - The identifier of the merchant's store. Either a storeCode inserted via the API or the code of the store in Google My Business.
+  *   `targetCountry` (*type:* `String.t`, *default:* `nil`) - The CLDR territory code for the item.
+  *   `timestamp` (*type:* `String.t`, *default:* `nil`) - The inventory timestamp, in ISO 8601 format.
   """
 
   use GoogleApi.Gax.ModelBase

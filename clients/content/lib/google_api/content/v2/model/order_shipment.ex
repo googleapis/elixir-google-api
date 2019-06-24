@@ -21,39 +21,39 @@ defmodule GoogleApi.Content.V2.Model.OrderShipment do
 
   ## Attributes
 
-  - carrier (String.t): The carrier handling the shipment.
+  *   `carrier` (*type:* `String.t`, *default:* `nil`) - The carrier handling the shipment.
 
-  Acceptable values for US are:  
-  - "gsx" 
-  - "ups" 
-  - "usps" 
-  - "fedex" 
-  - "dhl" 
-  - "ecourier" 
-  - "cxt" 
-  - "google" 
-  - "ontrac" 
-  - "emsy" 
-  - "ont" 
-  - "deliv" 
-  - "dynamex" 
-  - "lasership" 
-  - "mpx" 
-  - "uds" 
-  - "efw"  
+      Acceptable values for US are:  
+      - "gsx" 
+      - "ups" 
+      - "usps" 
+      - "fedex" 
+      - "dhl" 
+      - "ecourier" 
+      - "cxt" 
+      - "google" 
+      - "ontrac" 
+      - "emsy" 
+      - "ont" 
+      - "deliv" 
+      - "dynamex" 
+      - "lasership" 
+      - "mpx" 
+      - "uds" 
+      - "efw"  
 
-  Acceptable values for FR are:  
-  - "colissimo" 
-  - "chronopost" 
-  - "gls" 
-  - "dpd" 
-  - "bpost" Defaults to `nil`.
-  - creationDate (String.t): Date on which the shipment has been created, in ISO 8601 format. Defaults to `nil`.
-  - deliveryDate (String.t): Date on which the shipment has been delivered, in ISO 8601 format. Present only if status is delivered Defaults to `nil`.
-  - id (String.t): The ID of the shipment. Defaults to `nil`.
-  - lineItems (list(GoogleApi.Content.V2.Model.OrderShipmentLineItemShipment.t)): The line items that are shipped. Defaults to `nil`.
-  - status (String.t): The status of the shipment. Defaults to `nil`.
-  - trackingId (String.t): The tracking ID for the shipment. Defaults to `nil`.
+      Acceptable values for FR are:  
+      - "colissimo" 
+      - "chronopost" 
+      - "gls" 
+      - "dpd" 
+      - "bpost"
+  *   `creationDate` (*type:* `String.t`, *default:* `nil`) - Date on which the shipment has been created, in ISO 8601 format.
+  *   `deliveryDate` (*type:* `String.t`, *default:* `nil`) - Date on which the shipment has been delivered, in ISO 8601 format. Present only if status is delivered
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The ID of the shipment.
+  *   `lineItems` (*type:* `list(GoogleApi.Content.V2.Model.OrderShipmentLineItemShipment.t)`, *default:* `nil`) - The line items that are shipped.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - The status of the shipment.
+  *   `trackingId` (*type:* `String.t`, *default:* `nil`) - The tracking ID for the shipment.
   """
 
   use GoogleApi.Gax.ModelBase

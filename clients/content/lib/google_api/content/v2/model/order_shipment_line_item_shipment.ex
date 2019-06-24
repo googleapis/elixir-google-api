@@ -21,9 +21,9 @@ defmodule GoogleApi.Content.V2.Model.OrderShipmentLineItemShipment do
 
   ## Attributes
 
-  - lineItemId (String.t): The ID of the line item that is shipped. Either lineItemId or productId is required. Defaults to `nil`.
-  - productId (String.t): The ID of the product to ship. This is the REST ID used in the products service. Either lineItemId or productId is required. Defaults to `nil`.
-  - quantity (integer()): The quantity that is shipped. Defaults to `nil`.
+  *   `lineItemId` (*type:* `String.t`, *default:* `nil`) - The ID of the line item that is shipped. Either lineItemId or productId is required.
+  *   `productId` (*type:* `String.t`, *default:* `nil`) - The ID of the product to ship. This is the REST ID used in the products service. Either lineItemId or productId is required.
+  *   `quantity` (*type:* `integer()`, *default:* `nil`) - The quantity that is shipped.
   """
 
   use GoogleApi.Gax.ModelBase
