@@ -21,12 +21,12 @@ defmodule GoogleApi.YouTubeReporting.V1.Model.ListReportsResponse do
 
   ## Attributes
 
-  - nextPageToken (String.t): A token to retrieve next page of results.
-  Pass this value in the
-  ListReportsRequest.page_token
-  field in the subsequent call to `ListReports` method to retrieve the next
-  page of results. Defaults to `nil`.
-  - reports (list(GoogleApi.YouTubeReporting.V1.Model.Report.t)): The list of report types. Defaults to `nil`.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve next page of results.
+      Pass this value in the
+      ListReportsRequest.page_token
+      field in the subsequent call to `ListReports` method to retrieve the next
+      page of results.
+  *   `reports` (*type:* `list(GoogleApi.YouTubeReporting.V1.Model.Report.t)`, *default:* `nil`) - The list of report types.
   """
 
   use GoogleApi.Gax.ModelBase

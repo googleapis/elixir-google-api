@@ -21,7 +21,7 @@ defmodule GoogleApi.YouTubeReporting.V1.Model.GdataDiffDownloadResponse do
 
   ## Attributes
 
-  - objectLocation (GoogleApi.YouTubeReporting.V1.Model.GdataCompositeMedia.t): gdata Defaults to `nil`.
+  *   `objectLocation` (*type:* `GoogleApi.YouTubeReporting.V1.Model.GdataCompositeMedia.t`, *default:* `nil`) - gdata
   """
 
   use GoogleApi.Gax.ModelBase

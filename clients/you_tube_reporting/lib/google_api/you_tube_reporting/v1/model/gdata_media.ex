@@ -21,36 +21,36 @@ defmodule GoogleApi.YouTubeReporting.V1.Model.GdataMedia do
 
   ## Attributes
 
-  - algorithm (String.t): gdata Defaults to `nil`.
-  - bigstoreObjectRef (String.t): gdata Defaults to `nil`.
-  - blobRef (String.t): gdata Defaults to `nil`.
-  - blobstore2Info (GoogleApi.YouTubeReporting.V1.Model.GdataBlobstore2Info.t): gdata Defaults to `nil`.
-  - compositeMedia (list(GoogleApi.YouTubeReporting.V1.Model.GdataCompositeMedia.t)): gdata Defaults to `nil`.
-  - contentType (String.t): gdata Defaults to `nil`.
-  - contentTypeInfo (GoogleApi.YouTubeReporting.V1.Model.GdataContentTypeInfo.t): gdata Defaults to `nil`.
-  - cosmoBinaryReference (String.t): gdata Defaults to `nil`.
-  - crc32cHash (integer()): gdata Defaults to `nil`.
-  - diffChecksumsResponse (GoogleApi.YouTubeReporting.V1.Model.GdataDiffChecksumsResponse.t): gdata Defaults to `nil`.
-  - diffDownloadResponse (GoogleApi.YouTubeReporting.V1.Model.GdataDiffDownloadResponse.t): gdata Defaults to `nil`.
-  - diffUploadRequest (GoogleApi.YouTubeReporting.V1.Model.GdataDiffUploadRequest.t): gdata Defaults to `nil`.
-  - diffUploadResponse (GoogleApi.YouTubeReporting.V1.Model.GdataDiffUploadResponse.t): gdata Defaults to `nil`.
-  - diffVersionResponse (GoogleApi.YouTubeReporting.V1.Model.GdataDiffVersionResponse.t): gdata Defaults to `nil`.
-  - downloadParameters (GoogleApi.YouTubeReporting.V1.Model.GdataDownloadParameters.t): gdata Defaults to `nil`.
-  - filename (String.t): gdata Defaults to `nil`.
-  - hash (String.t): gdata Defaults to `nil`.
-  - hashVerified (boolean()): gdata Defaults to `nil`.
-  - inline (String.t): gdata Defaults to `nil`.
-  - isPotentialRetry (boolean()): gdata Defaults to `nil`.
-  - length (String.t): gdata Defaults to `nil`.
-  - md5Hash (String.t): gdata Defaults to `nil`.
-  - mediaId (String.t): gdata Defaults to `nil`.
-  - objectId (GoogleApi.YouTubeReporting.V1.Model.GdataObjectId.t): gdata Defaults to `nil`.
-  - path (String.t): gdata Defaults to `nil`.
-  - referenceType (String.t): gdata Defaults to `nil`.
-  - sha1Hash (String.t): gdata Defaults to `nil`.
-  - sha256Hash (String.t): gdata Defaults to `nil`.
-  - timestamp (String.t): gdata Defaults to `nil`.
-  - token (String.t): gdata Defaults to `nil`.
+  *   `algorithm` (*type:* `String.t`, *default:* `nil`) - gdata
+  *   `bigstoreObjectRef` (*type:* `String.t`, *default:* `nil`) - gdata
+  *   `blobRef` (*type:* `String.t`, *default:* `nil`) - gdata
+  *   `blobstore2Info` (*type:* `GoogleApi.YouTubeReporting.V1.Model.GdataBlobstore2Info.t`, *default:* `nil`) - gdata
+  *   `compositeMedia` (*type:* `list(GoogleApi.YouTubeReporting.V1.Model.GdataCompositeMedia.t)`, *default:* `nil`) - gdata
+  *   `contentType` (*type:* `String.t`, *default:* `nil`) - gdata
+  *   `contentTypeInfo` (*type:* `GoogleApi.YouTubeReporting.V1.Model.GdataContentTypeInfo.t`, *default:* `nil`) - gdata
+  *   `cosmoBinaryReference` (*type:* `String.t`, *default:* `nil`) - gdata
+  *   `crc32cHash` (*type:* `integer()`, *default:* `nil`) - gdata
+  *   `diffChecksumsResponse` (*type:* `GoogleApi.YouTubeReporting.V1.Model.GdataDiffChecksumsResponse.t`, *default:* `nil`) - gdata
+  *   `diffDownloadResponse` (*type:* `GoogleApi.YouTubeReporting.V1.Model.GdataDiffDownloadResponse.t`, *default:* `nil`) - gdata
+  *   `diffUploadRequest` (*type:* `GoogleApi.YouTubeReporting.V1.Model.GdataDiffUploadRequest.t`, *default:* `nil`) - gdata
+  *   `diffUploadResponse` (*type:* `GoogleApi.YouTubeReporting.V1.Model.GdataDiffUploadResponse.t`, *default:* `nil`) - gdata
+  *   `diffVersionResponse` (*type:* `GoogleApi.YouTubeReporting.V1.Model.GdataDiffVersionResponse.t`, *default:* `nil`) - gdata
+  *   `downloadParameters` (*type:* `GoogleApi.YouTubeReporting.V1.Model.GdataDownloadParameters.t`, *default:* `nil`) - gdata
+  *   `filename` (*type:* `String.t`, *default:* `nil`) - gdata
+  *   `hash` (*type:* `String.t`, *default:* `nil`) - gdata
+  *   `hashVerified` (*type:* `boolean()`, *default:* `nil`) - gdata
+  *   `inline` (*type:* `String.t`, *default:* `nil`) - gdata
+  *   `isPotentialRetry` (*type:* `boolean()`, *default:* `nil`) - gdata
+  *   `length` (*type:* `String.t`, *default:* `nil`) - gdata
+  *   `md5Hash` (*type:* `String.t`, *default:* `nil`) - gdata
+  *   `mediaId` (*type:* `String.t`, *default:* `nil`) - gdata
+  *   `objectId` (*type:* `GoogleApi.YouTubeReporting.V1.Model.GdataObjectId.t`, *default:* `nil`) - gdata
+  *   `path` (*type:* `String.t`, *default:* `nil`) - gdata
+  *   `referenceType` (*type:* `String.t`, *default:* `nil`) - gdata
+  *   `sha1Hash` (*type:* `String.t`, *default:* `nil`) - gdata
+  *   `sha256Hash` (*type:* `String.t`, *default:* `nil`) - gdata
+  *   `timestamp` (*type:* `String.t`, *default:* `nil`) - gdata
+  *   `token` (*type:* `String.t`, *default:* `nil`) - gdata
   """
 
   use GoogleApi.Gax.ModelBase

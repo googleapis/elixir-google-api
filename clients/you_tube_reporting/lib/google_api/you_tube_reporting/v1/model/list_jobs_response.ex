@@ -21,12 +21,12 @@ defmodule GoogleApi.YouTubeReporting.V1.Model.ListJobsResponse do
 
   ## Attributes
 
-  - jobs (list(GoogleApi.YouTubeReporting.V1.Model.Job.t)): The list of jobs. Defaults to `nil`.
-  - nextPageToken (String.t): A token to retrieve next page of results.
-  Pass this value in the
-  ListJobsRequest.page_token
-  field in the subsequent call to `ListJobs` method to retrieve the next
-  page of results. Defaults to `nil`.
+  *   `jobs` (*type:* `list(GoogleApi.YouTubeReporting.V1.Model.Job.t)`, *default:* `nil`) - The list of jobs.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve next page of results.
+      Pass this value in the
+      ListJobsRequest.page_token
+      field in the subsequent call to `ListJobs` method to retrieve the next
+      page of results.
   """
 
   use GoogleApi.Gax.ModelBase

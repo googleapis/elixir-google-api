@@ -21,8 +21,8 @@ defmodule GoogleApi.YouTubeReporting.V1.Model.GdataDownloadParameters do
 
   ## Attributes
 
-  - allowGzipCompression (boolean()): gdata Defaults to `nil`.
-  - ignoreRange (boolean()): gdata Defaults to `nil`.
+  *   `allowGzipCompression` (*type:* `boolean()`, *default:* `nil`) - gdata
+  *   `ignoreRange` (*type:* `boolean()`, *default:* `nil`) - gdata
   """
 
   use GoogleApi.Gax.ModelBase

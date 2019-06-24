@@ -21,9 +21,9 @@ defmodule GoogleApi.YouTubeReporting.V1.Model.GdataDiffUploadRequest do
 
   ## Attributes
 
-  - checksumsInfo (GoogleApi.YouTubeReporting.V1.Model.GdataCompositeMedia.t): gdata Defaults to `nil`.
-  - objectInfo (GoogleApi.YouTubeReporting.V1.Model.GdataCompositeMedia.t): gdata Defaults to `nil`.
-  - objectVersion (String.t): gdata Defaults to `nil`.
+  *   `checksumsInfo` (*type:* `GoogleApi.YouTubeReporting.V1.Model.GdataCompositeMedia.t`, *default:* `nil`) - gdata
+  *   `objectInfo` (*type:* `GoogleApi.YouTubeReporting.V1.Model.GdataCompositeMedia.t`, *default:* `nil`) - gdata
+  *   `objectVersion` (*type:* `String.t`, *default:* `nil`) - gdata
   """
 
   use GoogleApi.Gax.ModelBase

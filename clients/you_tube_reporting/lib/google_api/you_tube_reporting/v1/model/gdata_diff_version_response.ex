@@ -21,8 +21,8 @@ defmodule GoogleApi.YouTubeReporting.V1.Model.GdataDiffVersionResponse do
 
   ## Attributes
 
-  - objectSizeBytes (String.t): gdata Defaults to `nil`.
-  - objectVersion (String.t): gdata Defaults to `nil`.
+  *   `objectSizeBytes` (*type:* `String.t`, *default:* `nil`) - gdata
+  *   `objectVersion` (*type:* `String.t`, *default:* `nil`) - gdata
   """
 
   use GoogleApi.Gax.ModelBase

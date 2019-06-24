@@ -21,12 +21,12 @@ defmodule GoogleApi.YouTubeReporting.V1.Model.ReportType do
 
   ## Attributes
 
-  - deprecateTime (DateTime.t): The date/time when this report type was/will be deprecated. Defaults to `nil`.
-  - id (String.t): The ID of the report type (max. 100 characters). Defaults to `nil`.
-  - name (String.t): The name of the report type (max. 100 characters). Defaults to `nil`.
-  - systemManaged (boolean()): True if this a system-managed report type; otherwise false. Reporting jobs
-  for system-managed report types are created automatically and can thus not
-  be used in the `CreateJob` method. Defaults to `nil`.
+  *   `deprecateTime` (*type:* `DateTime.t`, *default:* `nil`) - The date/time when this report type was/will be deprecated.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The ID of the report type (max. 100 characters).
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the report type (max. 100 characters).
+  *   `systemManaged` (*type:* `boolean()`, *default:* `nil`) - True if this a system-managed report type; otherwise false. Reporting jobs
+      for system-managed report types are created automatically and can thus not
+      be used in the `CreateJob` method.
   """
 
   use GoogleApi.Gax.ModelBase

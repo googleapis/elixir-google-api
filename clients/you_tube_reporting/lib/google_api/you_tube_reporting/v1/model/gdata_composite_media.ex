@@ -21,17 +21,17 @@ defmodule GoogleApi.YouTubeReporting.V1.Model.GdataCompositeMedia do
 
   ## Attributes
 
-  - blobRef (String.t): gdata Defaults to `nil`.
-  - blobstore2Info (GoogleApi.YouTubeReporting.V1.Model.GdataBlobstore2Info.t): gdata Defaults to `nil`.
-  - cosmoBinaryReference (String.t): gdata Defaults to `nil`.
-  - crc32cHash (integer()): gdata Defaults to `nil`.
-  - inline (String.t): gdata Defaults to `nil`.
-  - length (String.t): gdata Defaults to `nil`.
-  - md5Hash (String.t): gdata Defaults to `nil`.
-  - objectId (GoogleApi.YouTubeReporting.V1.Model.GdataObjectId.t): gdata Defaults to `nil`.
-  - path (String.t): gdata Defaults to `nil`.
-  - referenceType (String.t): gdata Defaults to `nil`.
-  - sha1Hash (String.t): gdata Defaults to `nil`.
+  *   `blobRef` (*type:* `String.t`, *default:* `nil`) - gdata
+  *   `blobstore2Info` (*type:* `GoogleApi.YouTubeReporting.V1.Model.GdataBlobstore2Info.t`, *default:* `nil`) - gdata
+  *   `cosmoBinaryReference` (*type:* `String.t`, *default:* `nil`) - gdata
+  *   `crc32cHash` (*type:* `integer()`, *default:* `nil`) - gdata
+  *   `inline` (*type:* `String.t`, *default:* `nil`) - gdata
+  *   `length` (*type:* `String.t`, *default:* `nil`) - gdata
+  *   `md5Hash` (*type:* `String.t`, *default:* `nil`) - gdata
+  *   `objectId` (*type:* `GoogleApi.YouTubeReporting.V1.Model.GdataObjectId.t`, *default:* `nil`) - gdata
+  *   `path` (*type:* `String.t`, *default:* `nil`) - gdata
+  *   `referenceType` (*type:* `String.t`, *default:* `nil`) - gdata
+  *   `sha1Hash` (*type:* `String.t`, *default:* `nil`) - gdata
   """
 
   use GoogleApi.Gax.ModelBase
