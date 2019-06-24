@@ -21,8 +21,8 @@ defmodule GoogleApi.Analytics.V3.Model.GaDataDataTable do
 
   ## Attributes
 
-  - cols (list(GoogleApi.Analytics.V3.Model.GaDataDataTableCols.t)):  Defaults to `nil`.
-  - rows (list(GoogleApi.Analytics.V3.Model.GaDataDataTableRows.t)):  Defaults to `nil`.
+  *   `cols` (*type:* `list(GoogleApi.Analytics.V3.Model.GaDataDataTableCols.t)`, *default:* `nil`) - 
+  *   `rows` (*type:* `list(GoogleApi.Analytics.V3.Model.GaDataDataTableRows.t)`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

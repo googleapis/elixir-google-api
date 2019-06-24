@@ -21,10 +21,10 @@ defmodule GoogleApi.Analytics.V3.Model.HashClientIdResponse do
 
   ## Attributes
 
-  - clientId (String.t):  Defaults to `nil`.
-  - hashedClientId (String.t):  Defaults to `nil`.
-  - kind (String.t):  Defaults to `analytics#hashClientIdResponse`.
-  - webPropertyId (String.t):  Defaults to `nil`.
+  *   `clientId` (*type:* `String.t`, *default:* `nil`) - 
+  *   `hashedClientId` (*type:* `String.t`, *default:* `nil`) - 
+  *   `kind` (*type:* `String.t`, *default:* `analytics#hashClientIdResponse`) - 
+  *   `webPropertyId` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

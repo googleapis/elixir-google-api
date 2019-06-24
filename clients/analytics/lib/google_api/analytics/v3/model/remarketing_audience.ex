@@ -21,20 +21,20 @@ defmodule GoogleApi.Analytics.V3.Model.RemarketingAudience do
 
   ## Attributes
 
-  - accountId (String.t): Account ID to which this remarketing audience belongs. Defaults to `nil`.
-  - audienceDefinition (GoogleApi.Analytics.V3.Model.RemarketingAudienceAudienceDefinition.t): The simple audience definition that will cause a user to be added to an audience. Defaults to `nil`.
-  - audienceType (String.t): The type of audience, either SIMPLE or STATE_BASED. Defaults to `nil`.
-  - created (DateTime.t): Time this remarketing audience was created. Defaults to `nil`.
-  - description (String.t): The description of this remarketing audience. Defaults to `nil`.
-  - id (String.t): Remarketing Audience ID. Defaults to `nil`.
-  - internalWebPropertyId (String.t): Internal ID for the web property to which this remarketing audience belongs. Defaults to `nil`.
-  - kind (String.t): Collection type. Defaults to `analytics#remarketingAudience`.
-  - linkedAdAccounts (list(GoogleApi.Analytics.V3.Model.LinkedForeignAccount.t)): The linked ad accounts associated with this remarketing audience. A remarketing audience can have only one linkedAdAccount currently. Defaults to `nil`.
-  - linkedViews (list(String.t)): The views (profiles) that this remarketing audience is linked to. Defaults to `nil`.
-  - name (String.t): The name of this remarketing audience. Defaults to `nil`.
-  - stateBasedAudienceDefinition (GoogleApi.Analytics.V3.Model.RemarketingAudienceStateBasedAudienceDefinition.t): A state based audience definition that will cause a user to be added or removed from an audience. Defaults to `nil`.
-  - updated (DateTime.t): Time this remarketing audience was last modified. Defaults to `nil`.
-  - webPropertyId (String.t): Web property ID of the form UA-XXXXX-YY to which this remarketing audience belongs. Defaults to `nil`.
+  *   `accountId` (*type:* `String.t`, *default:* `nil`) - Account ID to which this remarketing audience belongs.
+  *   `audienceDefinition` (*type:* `GoogleApi.Analytics.V3.Model.RemarketingAudienceAudienceDefinition.t`, *default:* `nil`) - The simple audience definition that will cause a user to be added to an audience.
+  *   `audienceType` (*type:* `String.t`, *default:* `nil`) - The type of audience, either SIMPLE or STATE_BASED.
+  *   `created` (*type:* `DateTime.t`, *default:* `nil`) - Time this remarketing audience was created.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - The description of this remarketing audience.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Remarketing Audience ID.
+  *   `internalWebPropertyId` (*type:* `String.t`, *default:* `nil`) - Internal ID for the web property to which this remarketing audience belongs.
+  *   `kind` (*type:* `String.t`, *default:* `analytics#remarketingAudience`) - Collection type.
+  *   `linkedAdAccounts` (*type:* `list(GoogleApi.Analytics.V3.Model.LinkedForeignAccount.t)`, *default:* `nil`) - The linked ad accounts associated with this remarketing audience. A remarketing audience can have only one linkedAdAccount currently.
+  *   `linkedViews` (*type:* `list(String.t)`, *default:* `nil`) - The views (profiles) that this remarketing audience is linked to.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of this remarketing audience.
+  *   `stateBasedAudienceDefinition` (*type:* `GoogleApi.Analytics.V3.Model.RemarketingAudienceStateBasedAudienceDefinition.t`, *default:* `nil`) - A state based audience definition that will cause a user to be added or removed from an audience.
+  *   `updated` (*type:* `DateTime.t`, *default:* `nil`) - Time this remarketing audience was last modified.
+  *   `webPropertyId` (*type:* `String.t`, *default:* `nil`) - Web property ID of the form UA-XXXXX-YY to which this remarketing audience belongs.
   """
 
   use GoogleApi.Gax.ModelBase

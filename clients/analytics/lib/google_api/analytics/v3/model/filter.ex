@@ -21,21 +21,21 @@ defmodule GoogleApi.Analytics.V3.Model.Filter do
 
   ## Attributes
 
-  - accountId (String.t): Account ID to which this filter belongs. Defaults to `nil`.
-  - advancedDetails (GoogleApi.Analytics.V3.Model.FilterAdvancedDetails.t): Details for the filter of the type ADVANCED. Defaults to `nil`.
-  - created (DateTime.t): Time this filter was created. Defaults to `nil`.
-  - excludeDetails (GoogleApi.Analytics.V3.Model.FilterExpression.t): Details for the filter of the type EXCLUDE. Defaults to `nil`.
-  - id (String.t): Filter ID. Defaults to `nil`.
-  - includeDetails (GoogleApi.Analytics.V3.Model.FilterExpression.t): Details for the filter of the type INCLUDE. Defaults to `nil`.
-  - kind (String.t): Resource type for Analytics filter. Defaults to `analytics#filter`.
-  - lowercaseDetails (GoogleApi.Analytics.V3.Model.FilterLowercaseDetails.t): Details for the filter of the type LOWER. Defaults to `nil`.
-  - name (String.t): Name of this filter. Defaults to `nil`.
-  - parentLink (GoogleApi.Analytics.V3.Model.FilterParentLink.t): Parent link for this filter. Points to the account to which this filter belongs. Defaults to `nil`.
-  - searchAndReplaceDetails (GoogleApi.Analytics.V3.Model.FilterSearchAndReplaceDetails.t): Details for the filter of the type SEARCH_AND_REPLACE. Defaults to `nil`.
-  - selfLink (String.t): Link for this filter. Defaults to `nil`.
-  - type (String.t): Type of this filter. Possible values are INCLUDE, EXCLUDE, LOWERCASE, UPPERCASE, SEARCH_AND_REPLACE and ADVANCED. Defaults to `nil`.
-  - updated (DateTime.t): Time this filter was last modified. Defaults to `nil`.
-  - uppercaseDetails (GoogleApi.Analytics.V3.Model.FilterUppercaseDetails.t): Details for the filter of the type UPPER. Defaults to `nil`.
+  *   `accountId` (*type:* `String.t`, *default:* `nil`) - Account ID to which this filter belongs.
+  *   `advancedDetails` (*type:* `GoogleApi.Analytics.V3.Model.FilterAdvancedDetails.t`, *default:* `nil`) - Details for the filter of the type ADVANCED.
+  *   `created` (*type:* `DateTime.t`, *default:* `nil`) - Time this filter was created.
+  *   `excludeDetails` (*type:* `GoogleApi.Analytics.V3.Model.FilterExpression.t`, *default:* `nil`) - Details for the filter of the type EXCLUDE.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Filter ID.
+  *   `includeDetails` (*type:* `GoogleApi.Analytics.V3.Model.FilterExpression.t`, *default:* `nil`) - Details for the filter of the type INCLUDE.
+  *   `kind` (*type:* `String.t`, *default:* `analytics#filter`) - Resource type for Analytics filter.
+  *   `lowercaseDetails` (*type:* `GoogleApi.Analytics.V3.Model.FilterLowercaseDetails.t`, *default:* `nil`) - Details for the filter of the type LOWER.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this filter.
+  *   `parentLink` (*type:* `GoogleApi.Analytics.V3.Model.FilterParentLink.t`, *default:* `nil`) - Parent link for this filter. Points to the account to which this filter belongs.
+  *   `searchAndReplaceDetails` (*type:* `GoogleApi.Analytics.V3.Model.FilterSearchAndReplaceDetails.t`, *default:* `nil`) - Details for the filter of the type SEARCH_AND_REPLACE.
+  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - Link for this filter.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Type of this filter. Possible values are INCLUDE, EXCLUDE, LOWERCASE, UPPERCASE, SEARCH_AND_REPLACE and ADVANCED.
+  *   `updated` (*type:* `DateTime.t`, *default:* `nil`) - Time this filter was last modified.
+  *   `uppercaseDetails` (*type:* `GoogleApi.Analytics.V3.Model.FilterUppercaseDetails.t`, *default:* `nil`) - Details for the filter of the type UPPER.
   """
 
   use GoogleApi.Gax.ModelBase

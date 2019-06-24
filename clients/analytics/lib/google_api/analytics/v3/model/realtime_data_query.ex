@@ -21,12 +21,12 @@ defmodule GoogleApi.Analytics.V3.Model.RealtimeDataQuery do
 
   ## Attributes
 
-  - dimensions (String.t): List of real time dimensions. Defaults to `nil`.
-  - filters (String.t): Comma-separated list of dimension or metric filters. Defaults to `nil`.
-  - ids (String.t): Unique table ID. Defaults to `nil`.
-  - max-results (integer()): Maximum results per page. Defaults to `nil`.
-  - metrics (list(String.t)): List of real time metrics. Defaults to `nil`.
-  - sort (list(String.t)): List of dimensions or metrics based on which real time data is sorted. Defaults to `nil`.
+  *   `dimensions` (*type:* `String.t`, *default:* `nil`) - List of real time dimensions.
+  *   `filters` (*type:* `String.t`, *default:* `nil`) - Comma-separated list of dimension or metric filters.
+  *   `ids` (*type:* `String.t`, *default:* `nil`) - Unique table ID.
+  *   `max-results` (*type:* `integer()`, *default:* `nil`) - Maximum results per page.
+  *   `metrics` (*type:* `list(String.t)`, *default:* `nil`) - List of real time metrics.
+  *   `sort` (*type:* `list(String.t)`, *default:* `nil`) - List of dimensions or metrics based on which real time data is sorted.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,8 +21,8 @@ defmodule GoogleApi.Analytics.V3.Model.FilterUppercaseDetails do
 
   ## Attributes
 
-  - field (String.t): Field to use in the filter. Defaults to `nil`.
-  - fieldIndex (integer()): The Index of the custom dimension. Required if field is a CUSTOM_DIMENSION. Defaults to `nil`.
+  *   `field` (*type:* `String.t`, *default:* `nil`) - Field to use in the filter.
+  *   `fieldIndex` (*type:* `integer()`, *default:* `nil`) - The Index of the custom dimension. Required if field is a CUSTOM_DIMENSION.
   """
 
   use GoogleApi.Gax.ModelBase

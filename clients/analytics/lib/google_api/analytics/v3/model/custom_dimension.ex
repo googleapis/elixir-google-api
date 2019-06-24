@@ -21,18 +21,18 @@ defmodule GoogleApi.Analytics.V3.Model.CustomDimension do
 
   ## Attributes
 
-  - accountId (String.t): Account ID. Defaults to `nil`.
-  - active (boolean()): Boolean indicating whether the custom dimension is active. Defaults to `nil`.
-  - created (DateTime.t): Time the custom dimension was created. Defaults to `nil`.
-  - id (String.t): Custom dimension ID. Defaults to `nil`.
-  - index (integer()): Index of the custom dimension. Defaults to `nil`.
-  - kind (String.t): Kind value for a custom dimension. Set to "analytics#customDimension". It is a read-only field. Defaults to `analytics#customDimension`.
-  - name (String.t): Name of the custom dimension. Defaults to `nil`.
-  - parentLink (GoogleApi.Analytics.V3.Model.CustomDimensionParentLink.t): Parent link for the custom dimension. Points to the property to which the custom dimension belongs. Defaults to `nil`.
-  - scope (String.t): Scope of the custom dimension: HIT, SESSION, USER or PRODUCT. Defaults to `nil`.
-  - selfLink (String.t): Link for the custom dimension Defaults to `nil`.
-  - updated (DateTime.t): Time the custom dimension was last modified. Defaults to `nil`.
-  - webPropertyId (String.t): Property ID. Defaults to `nil`.
+  *   `accountId` (*type:* `String.t`, *default:* `nil`) - Account ID.
+  *   `active` (*type:* `boolean()`, *default:* `nil`) - Boolean indicating whether the custom dimension is active.
+  *   `created` (*type:* `DateTime.t`, *default:* `nil`) - Time the custom dimension was created.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Custom dimension ID.
+  *   `index` (*type:* `integer()`, *default:* `nil`) - Index of the custom dimension.
+  *   `kind` (*type:* `String.t`, *default:* `analytics#customDimension`) - Kind value for a custom dimension. Set to "analytics#customDimension". It is a read-only field.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the custom dimension.
+  *   `parentLink` (*type:* `GoogleApi.Analytics.V3.Model.CustomDimensionParentLink.t`, *default:* `nil`) - Parent link for the custom dimension. Points to the property to which the custom dimension belongs.
+  *   `scope` (*type:* `String.t`, *default:* `nil`) - Scope of the custom dimension: HIT, SESSION, USER or PRODUCT.
+  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - Link for the custom dimension
+  *   `updated` (*type:* `DateTime.t`, *default:* `nil`) - Time the custom dimension was last modified.
+  *   `webPropertyId` (*type:* `String.t`, *default:* `nil`) - Property ID.
   """
 
   use GoogleApi.Gax.ModelBase

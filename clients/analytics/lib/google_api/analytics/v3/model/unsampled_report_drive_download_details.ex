@@ -21,7 +21,7 @@ defmodule GoogleApi.Analytics.V3.Model.UnsampledReportDriveDownloadDetails do
 
   ## Attributes
 
-  - documentId (String.t): Id of the document/file containing the report data. Defaults to `nil`.
+  *   `documentId` (*type:* `String.t`, *default:* `nil`) - Id of the document/file containing the report data.
   """
 
   use GoogleApi.Gax.ModelBase

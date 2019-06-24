@@ -21,11 +21,11 @@ defmodule GoogleApi.Analytics.V3.Model.ProfileSummary do
 
   ## Attributes
 
-  - id (String.t): View (profile) ID. Defaults to `nil`.
-  - kind (String.t): Resource type for Analytics ProfileSummary. Defaults to `analytics#profileSummary`.
-  - name (String.t): View (profile) name. Defaults to `nil`.
-  - starred (boolean()): Indicates whether this view (profile) is starred or not. Defaults to `nil`.
-  - type (String.t): View (Profile) type. Supported types: WEB or APP. Defaults to `nil`.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - View (profile) ID.
+  *   `kind` (*type:* `String.t`, *default:* `analytics#profileSummary`) - Resource type for Analytics ProfileSummary.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - View (profile) name.
+  *   `starred` (*type:* `boolean()`, *default:* `nil`) - Indicates whether this view (profile) is starred or not.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - View (Profile) type. Supported types: WEB or APP.
   """
 
   use GoogleApi.Gax.ModelBase

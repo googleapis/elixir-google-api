@@ -21,24 +21,24 @@ defmodule GoogleApi.Analytics.V3.Model.Goal do
 
   ## Attributes
 
-  - accountId (String.t): Account ID to which this goal belongs. Defaults to `nil`.
-  - active (boolean()): Determines whether this goal is active. Defaults to `nil`.
-  - created (DateTime.t): Time this goal was created. Defaults to `nil`.
-  - eventDetails (GoogleApi.Analytics.V3.Model.GoalEventDetails.t): Details for the goal of the type EVENT. Defaults to `nil`.
-  - id (String.t): Goal ID. Defaults to `nil`.
-  - internalWebPropertyId (String.t): Internal ID for the web property to which this goal belongs. Defaults to `nil`.
-  - kind (String.t): Resource type for an Analytics goal. Defaults to `analytics#goal`.
-  - name (String.t): Goal name. Defaults to `nil`.
-  - parentLink (GoogleApi.Analytics.V3.Model.GoalParentLink.t): Parent link for a goal. Points to the view (profile) to which this goal belongs. Defaults to `nil`.
-  - profileId (String.t): View (Profile) ID to which this goal belongs. Defaults to `nil`.
-  - selfLink (String.t): Link for this goal. Defaults to `nil`.
-  - type (String.t): Goal type. Possible values are URL_DESTINATION, VISIT_TIME_ON_SITE, VISIT_NUM_PAGES, AND EVENT. Defaults to `nil`.
-  - updated (DateTime.t): Time this goal was last modified. Defaults to `nil`.
-  - urlDestinationDetails (GoogleApi.Analytics.V3.Model.GoalUrlDestinationDetails.t): Details for the goal of the type URL_DESTINATION. Defaults to `nil`.
-  - value (number()): Goal value. Defaults to `nil`.
-  - visitNumPagesDetails (GoogleApi.Analytics.V3.Model.GoalVisitNumPagesDetails.t): Details for the goal of the type VISIT_NUM_PAGES. Defaults to `nil`.
-  - visitTimeOnSiteDetails (GoogleApi.Analytics.V3.Model.GoalVisitTimeOnSiteDetails.t): Details for the goal of the type VISIT_TIME_ON_SITE. Defaults to `nil`.
-  - webPropertyId (String.t): Web property ID to which this goal belongs. The web property ID is of the form UA-XXXXX-YY. Defaults to `nil`.
+  *   `accountId` (*type:* `String.t`, *default:* `nil`) - Account ID to which this goal belongs.
+  *   `active` (*type:* `boolean()`, *default:* `nil`) - Determines whether this goal is active.
+  *   `created` (*type:* `DateTime.t`, *default:* `nil`) - Time this goal was created.
+  *   `eventDetails` (*type:* `GoogleApi.Analytics.V3.Model.GoalEventDetails.t`, *default:* `nil`) - Details for the goal of the type EVENT.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Goal ID.
+  *   `internalWebPropertyId` (*type:* `String.t`, *default:* `nil`) - Internal ID for the web property to which this goal belongs.
+  *   `kind` (*type:* `String.t`, *default:* `analytics#goal`) - Resource type for an Analytics goal.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Goal name.
+  *   `parentLink` (*type:* `GoogleApi.Analytics.V3.Model.GoalParentLink.t`, *default:* `nil`) - Parent link for a goal. Points to the view (profile) to which this goal belongs.
+  *   `profileId` (*type:* `String.t`, *default:* `nil`) - View (Profile) ID to which this goal belongs.
+  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - Link for this goal.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Goal type. Possible values are URL_DESTINATION, VISIT_TIME_ON_SITE, VISIT_NUM_PAGES, AND EVENT.
+  *   `updated` (*type:* `DateTime.t`, *default:* `nil`) - Time this goal was last modified.
+  *   `urlDestinationDetails` (*type:* `GoogleApi.Analytics.V3.Model.GoalUrlDestinationDetails.t`, *default:* `nil`) - Details for the goal of the type URL_DESTINATION.
+  *   `value` (*type:* `number()`, *default:* `nil`) - Goal value.
+  *   `visitNumPagesDetails` (*type:* `GoogleApi.Analytics.V3.Model.GoalVisitNumPagesDetails.t`, *default:* `nil`) - Details for the goal of the type VISIT_NUM_PAGES.
+  *   `visitTimeOnSiteDetails` (*type:* `GoogleApi.Analytics.V3.Model.GoalVisitTimeOnSiteDetails.t`, *default:* `nil`) - Details for the goal of the type VISIT_TIME_ON_SITE.
+  *   `webPropertyId` (*type:* `String.t`, *default:* `nil`) - Web property ID to which this goal belongs. The web property ID is of the form UA-XXXXX-YY.
   """
 
   use GoogleApi.Gax.ModelBase

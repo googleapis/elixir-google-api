@@ -21,11 +21,11 @@ defmodule GoogleApi.Analytics.V3.Model.GoalEventDetailsEventConditions do
 
   ## Attributes
 
-  - comparisonType (String.t): Type of comparison. Possible values are LESS_THAN, GREATER_THAN or EQUAL. Defaults to `nil`.
-  - comparisonValue (String.t): Value used for this comparison. Defaults to `nil`.
-  - expression (String.t): Expression used for this match. Defaults to `nil`.
-  - matchType (String.t): Type of the match to be performed. Possible values are REGEXP, BEGINS_WITH, or EXACT. Defaults to `nil`.
-  - type (String.t): Type of this event condition. Possible values are CATEGORY, ACTION, LABEL, or VALUE. Defaults to `nil`.
+  *   `comparisonType` (*type:* `String.t`, *default:* `nil`) - Type of comparison. Possible values are LESS_THAN, GREATER_THAN or EQUAL.
+  *   `comparisonValue` (*type:* `String.t`, *default:* `nil`) - Value used for this comparison.
+  *   `expression` (*type:* `String.t`, *default:* `nil`) - Expression used for this match.
+  *   `matchType` (*type:* `String.t`, *default:* `nil`) - Type of the match to be performed. Possible values are REGEXP, BEGINS_WITH, or EXACT.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Type of this event condition. Possible values are CATEGORY, ACTION, LABEL, or VALUE.
   """
 
   use GoogleApi.Gax.ModelBase

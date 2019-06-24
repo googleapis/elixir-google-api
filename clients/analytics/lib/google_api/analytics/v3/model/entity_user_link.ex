@@ -21,12 +21,12 @@ defmodule GoogleApi.Analytics.V3.Model.EntityUserLink do
 
   ## Attributes
 
-  - entity (GoogleApi.Analytics.V3.Model.EntityUserLinkEntity.t): Entity for this link. It can be an account, a web property, or a view (profile). Defaults to `nil`.
-  - id (String.t): Entity user link ID Defaults to `nil`.
-  - kind (String.t): Resource type for entity user link. Defaults to `analytics#entityUserLink`.
-  - permissions (GoogleApi.Analytics.V3.Model.EntityUserLinkPermissions.t): Permissions the user has for this entity. Defaults to `nil`.
-  - selfLink (String.t): Self link for this resource. Defaults to `nil`.
-  - userRef (GoogleApi.Analytics.V3.Model.UserRef.t): User reference. Defaults to `nil`.
+  *   `entity` (*type:* `GoogleApi.Analytics.V3.Model.EntityUserLinkEntity.t`, *default:* `nil`) - Entity for this link. It can be an account, a web property, or a view (profile).
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Entity user link ID
+  *   `kind` (*type:* `String.t`, *default:* `analytics#entityUserLink`) - Resource type for entity user link.
+  *   `permissions` (*type:* `GoogleApi.Analytics.V3.Model.EntityUserLinkPermissions.t`, *default:* `nil`) - Permissions the user has for this entity.
+  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - Self link for this resource.
+  *   `userRef` (*type:* `GoogleApi.Analytics.V3.Model.UserRef.t`, *default:* `nil`) - User reference.
   """
 
   use GoogleApi.Gax.ModelBase

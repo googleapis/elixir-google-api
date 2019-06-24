@@ -21,33 +21,33 @@ defmodule GoogleApi.Analytics.V3.Model.Profile do
 
   ## Attributes
 
-  - accountId (String.t): Account ID to which this view (profile) belongs. Defaults to `nil`.
-  - botFilteringEnabled (boolean()): Indicates whether bot filtering is enabled for this view (profile). Defaults to `nil`.
-  - childLink (GoogleApi.Analytics.V3.Model.ProfileChildLink.t): Child link for this view (profile). Points to the list of goals for this view (profile). Defaults to `nil`.
-  - created (DateTime.t): Time this view (profile) was created. Defaults to `nil`.
-  - currency (String.t): The currency type associated with this view (profile), defaults to USD. The supported values are:
-  USD, JPY, EUR, GBP, AUD, KRW, BRL, CNY, DKK, RUB, SEK, NOK, PLN, TRY, TWD, HKD, THB, IDR, ARS, MXN, VND, PHP, INR, CHF, CAD, CZK, NZD, HUF, BGN, LTL, ZAR, UAH, AED, BOB, CLP, COP, EGP, HRK, ILS, MAD, MYR, PEN, PKR, RON, RSD, SAR, SGD, VEF, LVL Defaults to `nil`.
-  - defaultPage (String.t): Default page for this view (profile). Defaults to `nil`.
-  - eCommerceTracking (boolean()): Indicates whether ecommerce tracking is enabled for this view (profile). Defaults to `nil`.
-  - enhancedECommerceTracking (boolean()): Indicates whether enhanced ecommerce tracking is enabled for this view (profile). This property can only be enabled if ecommerce tracking is enabled. Defaults to `nil`.
-  - excludeQueryParameters (String.t): The query parameters that are excluded from this view (profile). Defaults to `nil`.
-  - id (String.t): View (Profile) ID. Defaults to `nil`.
-  - internalWebPropertyId (String.t): Internal ID for the web property to which this view (profile) belongs. Defaults to `nil`.
-  - kind (String.t): Resource type for Analytics view (profile). Defaults to `analytics#profile`.
-  - name (String.t): Name of this view (profile). Defaults to `nil`.
-  - parentLink (GoogleApi.Analytics.V3.Model.ProfileParentLink.t): Parent link for this view (profile). Points to the web property to which this view (profile) belongs. Defaults to `nil`.
-  - permissions (GoogleApi.Analytics.V3.Model.ProfilePermissions.t): Permissions the user has for this view (profile). Defaults to `nil`.
-  - selfLink (String.t): Link for this view (profile). Defaults to `nil`.
-  - siteSearchCategoryParameters (String.t): Site search category parameters for this view (profile). Defaults to `nil`.
-  - siteSearchQueryParameters (String.t): The site search query parameters for this view (profile). Defaults to `nil`.
-  - starred (boolean()): Indicates whether this view (profile) is starred or not. Defaults to `nil`.
-  - stripSiteSearchCategoryParameters (boolean()): Whether or not Analytics will strip search category parameters from the URLs in your reports. Defaults to `nil`.
-  - stripSiteSearchQueryParameters (boolean()): Whether or not Analytics will strip search query parameters from the URLs in your reports. Defaults to `nil`.
-  - timezone (String.t): Time zone for which this view (profile) has been configured. Time zones are identified by strings from the TZ database. Defaults to `nil`.
-  - type (String.t): View (Profile) type. Supported types: WEB or APP. Defaults to `nil`.
-  - updated (DateTime.t): Time this view (profile) was last modified. Defaults to `nil`.
-  - webPropertyId (String.t): Web property ID of the form UA-XXXXX-YY to which this view (profile) belongs. Defaults to `nil`.
-  - websiteUrl (String.t): Website URL for this view (profile). Defaults to `nil`.
+  *   `accountId` (*type:* `String.t`, *default:* `nil`) - Account ID to which this view (profile) belongs.
+  *   `botFilteringEnabled` (*type:* `boolean()`, *default:* `nil`) - Indicates whether bot filtering is enabled for this view (profile).
+  *   `childLink` (*type:* `GoogleApi.Analytics.V3.Model.ProfileChildLink.t`, *default:* `nil`) - Child link for this view (profile). Points to the list of goals for this view (profile).
+  *   `created` (*type:* `DateTime.t`, *default:* `nil`) - Time this view (profile) was created.
+  *   `currency` (*type:* `String.t`, *default:* `nil`) - The currency type associated with this view (profile), defaults to USD. The supported values are:
+      USD, JPY, EUR, GBP, AUD, KRW, BRL, CNY, DKK, RUB, SEK, NOK, PLN, TRY, TWD, HKD, THB, IDR, ARS, MXN, VND, PHP, INR, CHF, CAD, CZK, NZD, HUF, BGN, LTL, ZAR, UAH, AED, BOB, CLP, COP, EGP, HRK, ILS, MAD, MYR, PEN, PKR, RON, RSD, SAR, SGD, VEF, LVL
+  *   `defaultPage` (*type:* `String.t`, *default:* `nil`) - Default page for this view (profile).
+  *   `eCommerceTracking` (*type:* `boolean()`, *default:* `nil`) - Indicates whether ecommerce tracking is enabled for this view (profile).
+  *   `enhancedECommerceTracking` (*type:* `boolean()`, *default:* `nil`) - Indicates whether enhanced ecommerce tracking is enabled for this view (profile). This property can only be enabled if ecommerce tracking is enabled.
+  *   `excludeQueryParameters` (*type:* `String.t`, *default:* `nil`) - The query parameters that are excluded from this view (profile).
+  *   `id` (*type:* `String.t`, *default:* `nil`) - View (Profile) ID.
+  *   `internalWebPropertyId` (*type:* `String.t`, *default:* `nil`) - Internal ID for the web property to which this view (profile) belongs.
+  *   `kind` (*type:* `String.t`, *default:* `analytics#profile`) - Resource type for Analytics view (profile).
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this view (profile).
+  *   `parentLink` (*type:* `GoogleApi.Analytics.V3.Model.ProfileParentLink.t`, *default:* `nil`) - Parent link for this view (profile). Points to the web property to which this view (profile) belongs.
+  *   `permissions` (*type:* `GoogleApi.Analytics.V3.Model.ProfilePermissions.t`, *default:* `nil`) - Permissions the user has for this view (profile).
+  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - Link for this view (profile).
+  *   `siteSearchCategoryParameters` (*type:* `String.t`, *default:* `nil`) - Site search category parameters for this view (profile).
+  *   `siteSearchQueryParameters` (*type:* `String.t`, *default:* `nil`) - The site search query parameters for this view (profile).
+  *   `starred` (*type:* `boolean()`, *default:* `nil`) - Indicates whether this view (profile) is starred or not.
+  *   `stripSiteSearchCategoryParameters` (*type:* `boolean()`, *default:* `nil`) - Whether or not Analytics will strip search category parameters from the URLs in your reports.
+  *   `stripSiteSearchQueryParameters` (*type:* `boolean()`, *default:* `nil`) - Whether or not Analytics will strip search query parameters from the URLs in your reports.
+  *   `timezone` (*type:* `String.t`, *default:* `nil`) - Time zone for which this view (profile) has been configured. Time zones are identified by strings from the TZ database.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - View (Profile) type. Supported types: WEB or APP.
+  *   `updated` (*type:* `DateTime.t`, *default:* `nil`) - Time this view (profile) was last modified.
+  *   `webPropertyId` (*type:* `String.t`, *default:* `nil`) - Web property ID of the form UA-XXXXX-YY to which this view (profile) belongs.
+  *   `websiteUrl` (*type:* `String.t`, *default:* `nil`) - Website URL for this view (profile).
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,7 +21,7 @@ defmodule GoogleApi.Analytics.V3.Model.EntityAdWordsLinkEntity do
 
   ## Attributes
 
-  - webPropertyRef (GoogleApi.Analytics.V3.Model.WebPropertyRef.t):  Defaults to `nil`.
+  *   `webPropertyRef` (*type:* `GoogleApi.Analytics.V3.Model.WebPropertyRef.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

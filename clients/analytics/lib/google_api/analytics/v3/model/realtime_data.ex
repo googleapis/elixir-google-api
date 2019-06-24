@@ -21,15 +21,15 @@ defmodule GoogleApi.Analytics.V3.Model.RealtimeData do
 
   ## Attributes
 
-  - columnHeaders (list(GoogleApi.Analytics.V3.Model.RealtimeDataColumnHeaders.t)): Column headers that list dimension names followed by the metric names. The order of dimensions and metrics is same as specified in the request. Defaults to `nil`.
-  - id (String.t): Unique ID for this data response. Defaults to `nil`.
-  - kind (String.t): Resource type. Defaults to `analytics#realtimeData`.
-  - profileInfo (GoogleApi.Analytics.V3.Model.RealtimeDataProfileInfo.t): Information for the view (profile), for which the real time data was requested. Defaults to `nil`.
-  - query (GoogleApi.Analytics.V3.Model.RealtimeDataQuery.t): Real time data request query parameters. Defaults to `nil`.
-  - rows (list(list(String.t))): Real time data rows, where each row contains a list of dimension values followed by the metric values. The order of dimensions and metrics is same as specified in the request. Defaults to `nil`.
-  - selfLink (String.t): Link to this page. Defaults to `nil`.
-  - totalResults (integer()): The total number of rows for the query, regardless of the number of rows in the response. Defaults to `nil`.
-  - totalsForAllResults (map()): Total values for the requested metrics over all the results, not just the results returned in this response. The order of the metric totals is same as the metric order specified in the request. Defaults to `nil`.
+  *   `columnHeaders` (*type:* `list(GoogleApi.Analytics.V3.Model.RealtimeDataColumnHeaders.t)`, *default:* `nil`) - Column headers that list dimension names followed by the metric names. The order of dimensions and metrics is same as specified in the request.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Unique ID for this data response.
+  *   `kind` (*type:* `String.t`, *default:* `analytics#realtimeData`) - Resource type.
+  *   `profileInfo` (*type:* `GoogleApi.Analytics.V3.Model.RealtimeDataProfileInfo.t`, *default:* `nil`) - Information for the view (profile), for which the real time data was requested.
+  *   `query` (*type:* `GoogleApi.Analytics.V3.Model.RealtimeDataQuery.t`, *default:* `nil`) - Real time data request query parameters.
+  *   `rows` (*type:* `list(list(String.t))`, *default:* `nil`) - Real time data rows, where each row contains a list of dimension values followed by the metric values. The order of dimensions and metrics is same as specified in the request.
+  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - Link to this page.
+  *   `totalResults` (*type:* `integer()`, *default:* `nil`) - The total number of rows for the query, regardless of the number of rows in the response.
+  *   `totalsForAllResults` (*type:* `map()`, *default:* `nil`) - Total values for the requested metrics over all the results, not just the results returned in this response. The order of the metric totals is same as the metric order specified in the request.
   """
 
   use GoogleApi.Gax.ModelBase

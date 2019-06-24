@@ -21,11 +21,11 @@ defmodule GoogleApi.Analytics.V3.Model.GoalUrlDestinationDetails do
 
   ## Attributes
 
-  - caseSensitive (boolean()): Determines if the goal URL must exactly match the capitalization of visited URLs. Defaults to `nil`.
-  - firstStepRequired (boolean()): Determines if the first step in this goal is required. Defaults to `nil`.
-  - matchType (String.t): Match type for the goal URL. Possible values are HEAD, EXACT, or REGEX. Defaults to `nil`.
-  - steps (list(GoogleApi.Analytics.V3.Model.GoalUrlDestinationDetailsSteps.t)): List of steps configured for this goal funnel. Defaults to `nil`.
-  - url (String.t): URL for this goal. Defaults to `nil`.
+  *   `caseSensitive` (*type:* `boolean()`, *default:* `nil`) - Determines if the goal URL must exactly match the capitalization of visited URLs.
+  *   `firstStepRequired` (*type:* `boolean()`, *default:* `nil`) - Determines if the first step in this goal is required.
+  *   `matchType` (*type:* `String.t`, *default:* `nil`) - Match type for the goal URL. Possible values are HEAD, EXACT, or REGEX.
+  *   `steps` (*type:* `list(GoogleApi.Analytics.V3.Model.GoalUrlDestinationDetailsSteps.t)`, *default:* `nil`) - List of steps configured for this goal funnel.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - URL for this goal.
   """
 
   use GoogleApi.Gax.ModelBase

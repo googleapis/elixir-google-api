@@ -21,8 +21,8 @@ defmodule GoogleApi.Analytics.V3.Model.RemarketingAudienceStateBasedAudienceDefi
 
   ## Attributes
 
-  - exclusionDuration (String.t): Whether to make the exclusion TEMPORARY or PERMANENT. Defaults to `nil`.
-  - segment (String.t): The segment condition that will cause a user to be removed from an audience. Defaults to `nil`.
+  *   `exclusionDuration` (*type:* `String.t`, *default:* `nil`) - Whether to make the exclusion TEMPORARY or PERMANENT.
+  *   `segment` (*type:* `String.t`, *default:* `nil`) - The segment condition that will cause a user to be removed from an audience.
   """
 
   use GoogleApi.Gax.ModelBase

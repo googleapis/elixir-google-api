@@ -21,10 +21,10 @@ defmodule GoogleApi.Analytics.V3.Model.AccountRef do
 
   ## Attributes
 
-  - href (String.t): Link for this account. Defaults to `nil`.
-  - id (String.t): Account ID. Defaults to `nil`.
-  - kind (String.t): Analytics account reference. Defaults to `analytics#accountRef`.
-  - name (String.t): Account name. Defaults to `nil`.
+  *   `href` (*type:* `String.t`, *default:* `nil`) - Link for this account.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Account ID.
+  *   `kind` (*type:* `String.t`, *default:* `analytics#accountRef`) - Analytics account reference.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Account name.
   """
 
   use GoogleApi.Gax.ModelBase

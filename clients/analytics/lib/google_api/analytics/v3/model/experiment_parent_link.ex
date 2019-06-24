@@ -21,8 +21,8 @@ defmodule GoogleApi.Analytics.V3.Model.ExperimentParentLink do
 
   ## Attributes
 
-  - href (String.t): Link to the view (profile) to which this experiment belongs. This field is read-only. Defaults to `nil`.
-  - type (String.t): Value is "analytics#profile". This field is read-only. Defaults to `analytics#profile`.
+  *   `href` (*type:* `String.t`, *default:* `nil`) - Link to the view (profile) to which this experiment belongs. This field is read-only.
+  *   `type` (*type:* `String.t`, *default:* `analytics#profile`) - Value is "analytics#profile". This field is read-only.
   """
 
   use GoogleApi.Gax.ModelBase

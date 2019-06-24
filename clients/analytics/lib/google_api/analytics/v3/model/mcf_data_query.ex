@@ -21,17 +21,17 @@ defmodule GoogleApi.Analytics.V3.Model.McfDataQuery do
 
   ## Attributes
 
-  - dimensions (String.t): List of analytics dimensions. Defaults to `nil`.
-  - end-date (String.t): End date. Defaults to `nil`.
-  - filters (String.t): Comma-separated list of dimension or metric filters. Defaults to `nil`.
-  - ids (String.t): Unique table ID. Defaults to `nil`.
-  - max-results (integer()): Maximum results per page. Defaults to `nil`.
-  - metrics (list(String.t)): List of analytics metrics. Defaults to `nil`.
-  - samplingLevel (String.t): Desired sampling level Defaults to `nil`.
-  - segment (String.t): Analytics advanced segment. Defaults to `nil`.
-  - sort (list(String.t)): List of dimensions or metrics based on which Analytics data is sorted. Defaults to `nil`.
-  - start-date (String.t): Start date. Defaults to `nil`.
-  - start-index (integer()): Start index. Defaults to `nil`.
+  *   `dimensions` (*type:* `String.t`, *default:* `nil`) - List of analytics dimensions.
+  *   `end-date` (*type:* `String.t`, *default:* `nil`) - End date.
+  *   `filters` (*type:* `String.t`, *default:* `nil`) - Comma-separated list of dimension or metric filters.
+  *   `ids` (*type:* `String.t`, *default:* `nil`) - Unique table ID.
+  *   `max-results` (*type:* `integer()`, *default:* `nil`) - Maximum results per page.
+  *   `metrics` (*type:* `list(String.t)`, *default:* `nil`) - List of analytics metrics.
+  *   `samplingLevel` (*type:* `String.t`, *default:* `nil`) - Desired sampling level
+  *   `segment` (*type:* `String.t`, *default:* `nil`) - Analytics advanced segment.
+  *   `sort` (*type:* `list(String.t)`, *default:* `nil`) - List of dimensions or metrics based on which Analytics data is sorted.
+  *   `start-date` (*type:* `String.t`, *default:* `nil`) - Start date.
+  *   `start-index` (*type:* `integer()`, *default:* `nil`) - Start index.
   """
 
   use GoogleApi.Gax.ModelBase

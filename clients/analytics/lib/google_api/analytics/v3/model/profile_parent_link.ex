@@ -21,8 +21,8 @@ defmodule GoogleApi.Analytics.V3.Model.ProfileParentLink do
 
   ## Attributes
 
-  - href (String.t): Link to the web property to which this view (profile) belongs. Defaults to `nil`.
-  - type (String.t): Value is "analytics#webproperty". Defaults to `analytics#webproperty`.
+  *   `href` (*type:* `String.t`, *default:* `nil`) - Link to the web property to which this view (profile) belongs.
+  *   `type` (*type:* `String.t`, *default:* `analytics#webproperty`) - Value is "analytics#webproperty".
   """
 
   use GoogleApi.Gax.ModelBase

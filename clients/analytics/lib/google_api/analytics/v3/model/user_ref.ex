@@ -21,9 +21,9 @@ defmodule GoogleApi.Analytics.V3.Model.UserRef do
 
   ## Attributes
 
-  - email (String.t): Email ID of this user. Defaults to `nil`.
-  - id (String.t): User ID. Defaults to `nil`.
-  - kind (String.t):  Defaults to `analytics#userRef`.
+  *   `email` (*type:* `String.t`, *default:* `nil`) - Email ID of this user.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - User ID.
+  *   `kind` (*type:* `String.t`, *default:* `analytics#userRef`) - 
   """
 
   use GoogleApi.Gax.ModelBase

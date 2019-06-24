@@ -21,7 +21,7 @@ defmodule GoogleApi.Analytics.V3.Model.AnalyticsDataimportDeleteUploadDataReques
 
   ## Attributes
 
-  - customDataImportUids (list(String.t)): A list of upload UIDs. Defaults to `nil`.
+  *   `customDataImportUids` (*type:* `list(String.t)`, *default:* `nil`) - A list of upload UIDs.
   """
 
   use GoogleApi.Gax.ModelBase

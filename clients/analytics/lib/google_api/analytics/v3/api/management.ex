@@ -28,24 +28,25 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :max-results (integer()): The maximum number of account summaries to include in this response, where the largest acceptable value is 1000.
-    - :start-index (integer()): An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:max-results` (*type:* `integer()`) - The maximum number of account summaries to include in this response, where the largest acceptable value is 1000.
+      *   `:start-index` (*type:* `integer()`) - An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.AccountSummaries{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.AccountSummaries{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec analytics_management_account_summaries_list(Tesla.Env.client(), keyword()) ::
+  @spec analytics_management_account_summaries_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Analytics.V3.Model.AccountSummaries.t()} | {:error, Tesla.Env.t()}
   def analytics_management_account_summaries_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -76,27 +77,29 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID to delete the user link for.
-  - link_id (String.t): Link ID to delete the user link for.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID to delete the user link for.
+  *   `link_id` (*type:* `String.t`) - Link ID to delete the user link for.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %{}} on success
-  {:error, info} on failure
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_account_user_links_delete(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, nil} | {:error, Tesla.Env.t()}
   def analytics_management_account_user_links_delete(
@@ -135,25 +138,30 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID to create the user link for.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.Analytics.V3.Model.EntityUserLink.t): 
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID to create the user link for.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.Analytics.V3.Model.EntityUserLink.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.EntityUserLink{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.EntityUserLink{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec analytics_management_account_user_links_insert(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, GoogleApi.Analytics.V3.Model.EntityUserLink.t()} | {:error, Tesla.Env.t()}
+  @spec analytics_management_account_user_links_insert(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.Analytics.V3.Model.EntityUserLink.t()} | {:error, Tesla.Env.t()}
   def analytics_management_account_user_links_insert(
         connection,
         account_id,
@@ -189,26 +197,31 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID to retrieve the user links for.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :max-results (integer()): The maximum number of account-user links to include in this response.
-    - :start-index (integer()): An index of the first account-user link to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID to retrieve the user links for.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:max-results` (*type:* `integer()`) - The maximum number of account-user links to include in this response.
+      *   `:start-index` (*type:* `integer()`) - An index of the first account-user link to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.EntityUserLinks{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.EntityUserLinks{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec analytics_management_account_user_links_list(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, GoogleApi.Analytics.V3.Model.EntityUserLinks.t()} | {:error, Tesla.Env.t()}
+  @spec analytics_management_account_user_links_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.Analytics.V3.Model.EntityUserLinks.t()} | {:error, Tesla.Env.t()}
   def analytics_management_account_user_links_list(
         connection,
         account_id,
@@ -245,28 +258,30 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID to update the account-user link for.
-  - link_id (String.t): Link ID to update the account-user link for.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.Analytics.V3.Model.EntityUserLink.t): 
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID to update the account-user link for.
+  *   `link_id` (*type:* `String.t`) - Link ID to update the account-user link for.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.Analytics.V3.Model.EntityUserLink.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.EntityUserLink{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.EntityUserLink{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_account_user_links_update(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Analytics.V3.Model.EntityUserLink.t()} | {:error, Tesla.Env.t()}
   def analytics_management_account_user_links_update(
@@ -306,24 +321,25 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :max-results (integer()): The maximum number of accounts to include in this response.
-    - :start-index (integer()): An index of the first account to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:max-results` (*type:* `integer()`) - The maximum number of accounts to include in this response.
+      *   `:start-index` (*type:* `integer()`) - An index of the first account to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.Accounts{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.Accounts{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec analytics_management_accounts_list(Tesla.Env.client(), keyword()) ::
+  @spec analytics_management_accounts_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Analytics.V3.Model.Accounts.t()} | {:error, Tesla.Env.t()}
   def analytics_management_accounts_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -354,23 +370,24 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.Analytics.V3.Model.HashClientIdRequest.t): 
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.Analytics.V3.Model.HashClientIdRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.HashClientIdResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.HashClientIdResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec analytics_management_client_id_hash_client_id(Tesla.Env.client(), keyword()) ::
+  @spec analytics_management_client_id_hash_client_id(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Analytics.V3.Model.HashClientIdResponse.t()} | {:error, Tesla.Env.t()}
   def analytics_management_client_id_hash_client_id(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -400,29 +417,31 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account Id for the custom data sources to retrieve.
-  - web_property_id (String.t): Web property Id for the custom data sources to retrieve.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :max-results (integer()): The maximum number of custom data sources to include in this response.
-    - :start-index (integer()): A 1-based index of the first custom data source to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account Id for the custom data sources to retrieve.
+  *   `web_property_id` (*type:* `String.t`) - Web property Id for the custom data sources to retrieve.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:max-results` (*type:* `integer()`) - The maximum number of custom data sources to include in this response.
+      *   `:start-index` (*type:* `integer()`) - A 1-based index of the first custom data source to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.CustomDataSources{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.CustomDataSources{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_custom_data_sources_list(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Analytics.V3.Model.CustomDataSources.t()} | {:error, Tesla.Env.t()}
   def analytics_management_custom_data_sources_list(
@@ -466,29 +485,31 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID for the custom dimension to retrieve.
-  - web_property_id (String.t): Web property ID for the custom dimension to retrieve.
-  - custom_dimension_id (String.t): The ID of the custom dimension to retrieve.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID for the custom dimension to retrieve.
+  *   `web_property_id` (*type:* `String.t`) - Web property ID for the custom dimension to retrieve.
+  *   `custom_dimension_id` (*type:* `String.t`) - The ID of the custom dimension to retrieve.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.CustomDimension{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.CustomDimension{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_custom_dimensions_get(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Analytics.V3.Model.CustomDimension.t()} | {:error, Tesla.Env.t()}
   def analytics_management_custom_dimensions_get(
@@ -532,28 +553,30 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID for the custom dimension to create.
-  - web_property_id (String.t): Web property ID for the custom dimension to create.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.Analytics.V3.Model.CustomDimension.t): 
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID for the custom dimension to create.
+  *   `web_property_id` (*type:* `String.t`) - Web property ID for the custom dimension to create.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.Analytics.V3.Model.CustomDimension.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.CustomDimension{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.CustomDimension{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_custom_dimensions_insert(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Analytics.V3.Model.CustomDimension.t()} | {:error, Tesla.Env.t()}
   def analytics_management_custom_dimensions_insert(
@@ -596,29 +619,31 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID for the custom dimensions to retrieve.
-  - web_property_id (String.t): Web property ID for the custom dimensions to retrieve.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :max-results (integer()): The maximum number of custom dimensions to include in this response.
-    - :start-index (integer()): An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID for the custom dimensions to retrieve.
+  *   `web_property_id` (*type:* `String.t`) - Web property ID for the custom dimensions to retrieve.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:max-results` (*type:* `integer()`) - The maximum number of custom dimensions to include in this response.
+      *   `:start-index` (*type:* `integer()`) - An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.CustomDimensions{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.CustomDimensions{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_custom_dimensions_list(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Analytics.V3.Model.CustomDimensions.t()} | {:error, Tesla.Env.t()}
   def analytics_management_custom_dimensions_list(
@@ -662,31 +687,33 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID for the custom dimension to update.
-  - web_property_id (String.t): Web property ID for the custom dimension to update.
-  - custom_dimension_id (String.t): Custom dimension ID for the custom dimension to update.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :ignoreCustomDataSourceLinks (boolean()): Force the update and ignore any warnings related to the custom dimension being linked to a custom data source / data set.
-    - :body (GoogleApi.Analytics.V3.Model.CustomDimension.t): 
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID for the custom dimension to update.
+  *   `web_property_id` (*type:* `String.t`) - Web property ID for the custom dimension to update.
+  *   `custom_dimension_id` (*type:* `String.t`) - Custom dimension ID for the custom dimension to update.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:ignoreCustomDataSourceLinks` (*type:* `boolean()`) - Force the update and ignore any warnings related to the custom dimension being linked to a custom data source / data set.
+      *   `:body` (*type:* `GoogleApi.Analytics.V3.Model.CustomDimension.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.CustomDimension{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.CustomDimension{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_custom_dimensions_patch(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Analytics.V3.Model.CustomDimension.t()} | {:error, Tesla.Env.t()}
   def analytics_management_custom_dimensions_patch(
@@ -732,31 +759,33 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID for the custom dimension to update.
-  - web_property_id (String.t): Web property ID for the custom dimension to update.
-  - custom_dimension_id (String.t): Custom dimension ID for the custom dimension to update.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :ignoreCustomDataSourceLinks (boolean()): Force the update and ignore any warnings related to the custom dimension being linked to a custom data source / data set.
-    - :body (GoogleApi.Analytics.V3.Model.CustomDimension.t): 
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID for the custom dimension to update.
+  *   `web_property_id` (*type:* `String.t`) - Web property ID for the custom dimension to update.
+  *   `custom_dimension_id` (*type:* `String.t`) - Custom dimension ID for the custom dimension to update.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:ignoreCustomDataSourceLinks` (*type:* `boolean()`) - Force the update and ignore any warnings related to the custom dimension being linked to a custom data source / data set.
+      *   `:body` (*type:* `GoogleApi.Analytics.V3.Model.CustomDimension.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.CustomDimension{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.CustomDimension{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_custom_dimensions_update(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Analytics.V3.Model.CustomDimension.t()} | {:error, Tesla.Env.t()}
   def analytics_management_custom_dimensions_update(
@@ -802,29 +831,31 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID for the custom metric to retrieve.
-  - web_property_id (String.t): Web property ID for the custom metric to retrieve.
-  - custom_metric_id (String.t): The ID of the custom metric to retrieve.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID for the custom metric to retrieve.
+  *   `web_property_id` (*type:* `String.t`) - Web property ID for the custom metric to retrieve.
+  *   `custom_metric_id` (*type:* `String.t`) - The ID of the custom metric to retrieve.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.CustomMetric{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.CustomMetric{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_custom_metrics_get(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Analytics.V3.Model.CustomMetric.t()} | {:error, Tesla.Env.t()}
   def analytics_management_custom_metrics_get(
@@ -868,28 +899,30 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID for the custom metric to create.
-  - web_property_id (String.t): Web property ID for the custom dimension to create.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.Analytics.V3.Model.CustomMetric.t): 
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID for the custom metric to create.
+  *   `web_property_id` (*type:* `String.t`) - Web property ID for the custom dimension to create.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.Analytics.V3.Model.CustomMetric.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.CustomMetric{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.CustomMetric{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_custom_metrics_insert(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Analytics.V3.Model.CustomMetric.t()} | {:error, Tesla.Env.t()}
   def analytics_management_custom_metrics_insert(
@@ -932,29 +965,31 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID for the custom metrics to retrieve.
-  - web_property_id (String.t): Web property ID for the custom metrics to retrieve.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :max-results (integer()): The maximum number of custom metrics to include in this response.
-    - :start-index (integer()): An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID for the custom metrics to retrieve.
+  *   `web_property_id` (*type:* `String.t`) - Web property ID for the custom metrics to retrieve.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:max-results` (*type:* `integer()`) - The maximum number of custom metrics to include in this response.
+      *   `:start-index` (*type:* `integer()`) - An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.CustomMetrics{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.CustomMetrics{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_custom_metrics_list(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Analytics.V3.Model.CustomMetrics.t()} | {:error, Tesla.Env.t()}
   def analytics_management_custom_metrics_list(
@@ -998,31 +1033,33 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID for the custom metric to update.
-  - web_property_id (String.t): Web property ID for the custom metric to update.
-  - custom_metric_id (String.t): Custom metric ID for the custom metric to update.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :ignoreCustomDataSourceLinks (boolean()): Force the update and ignore any warnings related to the custom metric being linked to a custom data source / data set.
-    - :body (GoogleApi.Analytics.V3.Model.CustomMetric.t): 
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID for the custom metric to update.
+  *   `web_property_id` (*type:* `String.t`) - Web property ID for the custom metric to update.
+  *   `custom_metric_id` (*type:* `String.t`) - Custom metric ID for the custom metric to update.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:ignoreCustomDataSourceLinks` (*type:* `boolean()`) - Force the update and ignore any warnings related to the custom metric being linked to a custom data source / data set.
+      *   `:body` (*type:* `GoogleApi.Analytics.V3.Model.CustomMetric.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.CustomMetric{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.CustomMetric{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_custom_metrics_patch(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Analytics.V3.Model.CustomMetric.t()} | {:error, Tesla.Env.t()}
   def analytics_management_custom_metrics_patch(
@@ -1068,31 +1105,33 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID for the custom metric to update.
-  - web_property_id (String.t): Web property ID for the custom metric to update.
-  - custom_metric_id (String.t): Custom metric ID for the custom metric to update.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :ignoreCustomDataSourceLinks (boolean()): Force the update and ignore any warnings related to the custom metric being linked to a custom data source / data set.
-    - :body (GoogleApi.Analytics.V3.Model.CustomMetric.t): 
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID for the custom metric to update.
+  *   `web_property_id` (*type:* `String.t`) - Web property ID for the custom metric to update.
+  *   `custom_metric_id` (*type:* `String.t`) - Custom metric ID for the custom metric to update.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:ignoreCustomDataSourceLinks` (*type:* `boolean()`) - Force the update and ignore any warnings related to the custom metric being linked to a custom data source / data set.
+      *   `:body` (*type:* `GoogleApi.Analytics.V3.Model.CustomMetric.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.CustomMetric{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.CustomMetric{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_custom_metrics_update(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Analytics.V3.Model.CustomMetric.t()} | {:error, Tesla.Env.t()}
   def analytics_management_custom_metrics_update(
@@ -1138,24 +1177,25 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID to which the experiment belongs
-  - web_property_id (String.t): Web property ID to which the experiment belongs
-  - profile_id (String.t): View (Profile) ID to which the experiment belongs
-  - experiment_id (String.t): ID of the experiment to delete
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID to which the experiment belongs
+  *   `web_property_id` (*type:* `String.t`) - Web property ID to which the experiment belongs
+  *   `profile_id` (*type:* `String.t`) - View (Profile) ID to which the experiment belongs
+  *   `experiment_id` (*type:* `String.t`) - ID of the experiment to delete
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %{}} on success
-  {:error, info} on failure
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_experiments_delete(
           Tesla.Env.client(),
@@ -1163,6 +1203,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, nil} | {:error, Tesla.Env.t()}
   def analytics_management_experiments_delete(
@@ -1208,24 +1249,25 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID to retrieve the experiment for.
-  - web_property_id (String.t): Web property ID to retrieve the experiment for.
-  - profile_id (String.t): View (Profile) ID to retrieve the experiment for.
-  - experiment_id (String.t): Experiment ID to retrieve the experiment for.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID to retrieve the experiment for.
+  *   `web_property_id` (*type:* `String.t`) - Web property ID to retrieve the experiment for.
+  *   `profile_id` (*type:* `String.t`) - View (Profile) ID to retrieve the experiment for.
+  *   `experiment_id` (*type:* `String.t`) - Experiment ID to retrieve the experiment for.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.Experiment{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.Experiment{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_experiments_get(
           Tesla.Env.client(),
@@ -1233,6 +1275,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Analytics.V3.Model.Experiment.t()} | {:error, Tesla.Env.t()}
   def analytics_management_experiments_get(
@@ -1278,30 +1321,32 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID to create the experiment for.
-  - web_property_id (String.t): Web property ID to create the experiment for.
-  - profile_id (String.t): View (Profile) ID to create the experiment for.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.Analytics.V3.Model.Experiment.t): 
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID to create the experiment for.
+  *   `web_property_id` (*type:* `String.t`) - Web property ID to create the experiment for.
+  *   `profile_id` (*type:* `String.t`) - View (Profile) ID to create the experiment for.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.Analytics.V3.Model.Experiment.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.Experiment{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.Experiment{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_experiments_insert(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Analytics.V3.Model.Experiment.t()} | {:error, Tesla.Env.t()}
   def analytics_management_experiments_insert(
@@ -1346,31 +1391,33 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID to retrieve experiments for.
-  - web_property_id (String.t): Web property ID to retrieve experiments for.
-  - profile_id (String.t): View (Profile) ID to retrieve experiments for.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :max-results (integer()): The maximum number of experiments to include in this response.
-    - :start-index (integer()): An index of the first experiment to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID to retrieve experiments for.
+  *   `web_property_id` (*type:* `String.t`) - Web property ID to retrieve experiments for.
+  *   `profile_id` (*type:* `String.t`) - View (Profile) ID to retrieve experiments for.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:max-results` (*type:* `integer()`) - The maximum number of experiments to include in this response.
+      *   `:start-index` (*type:* `integer()`) - An index of the first experiment to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.Experiments{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.Experiments{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_experiments_list(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Analytics.V3.Model.Experiments.t()} | {:error, Tesla.Env.t()}
   def analytics_management_experiments_list(
@@ -1416,25 +1463,26 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID of the experiment to update.
-  - web_property_id (String.t): Web property ID of the experiment to update.
-  - profile_id (String.t): View (Profile) ID of the experiment to update.
-  - experiment_id (String.t): Experiment ID of the experiment to update.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.Analytics.V3.Model.Experiment.t): 
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID of the experiment to update.
+  *   `web_property_id` (*type:* `String.t`) - Web property ID of the experiment to update.
+  *   `profile_id` (*type:* `String.t`) - View (Profile) ID of the experiment to update.
+  *   `experiment_id` (*type:* `String.t`) - Experiment ID of the experiment to update.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.Analytics.V3.Model.Experiment.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.Experiment{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.Experiment{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_experiments_patch(
           Tesla.Env.client(),
@@ -1442,6 +1490,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Analytics.V3.Model.Experiment.t()} | {:error, Tesla.Env.t()}
   def analytics_management_experiments_patch(
@@ -1488,25 +1537,26 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID of the experiment to update.
-  - web_property_id (String.t): Web property ID of the experiment to update.
-  - profile_id (String.t): View (Profile) ID of the experiment to update.
-  - experiment_id (String.t): Experiment ID of the experiment to update.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.Analytics.V3.Model.Experiment.t): 
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID of the experiment to update.
+  *   `web_property_id` (*type:* `String.t`) - Web property ID of the experiment to update.
+  *   `profile_id` (*type:* `String.t`) - View (Profile) ID of the experiment to update.
+  *   `experiment_id` (*type:* `String.t`) - Experiment ID of the experiment to update.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.Analytics.V3.Model.Experiment.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.Experiment{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.Experiment{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_experiments_update(
           Tesla.Env.client(),
@@ -1514,6 +1564,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Analytics.V3.Model.Experiment.t()} | {:error, Tesla.Env.t()}
   def analytics_management_experiments_update(
@@ -1560,25 +1611,31 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID to delete the filter for.
-  - filter_id (String.t): ID of the filter to be deleted.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID to delete the filter for.
+  *   `filter_id` (*type:* `String.t`) - ID of the filter to be deleted.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.Filter{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.Filter{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec analytics_management_filters_delete(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.Analytics.V3.Model.Filter.t()} | {:error, Tesla.Env.t()}
+  @spec analytics_management_filters_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.Analytics.V3.Model.Filter.t()} | {:error, Tesla.Env.t()}
   def analytics_management_filters_delete(
         connection,
         account_id,
@@ -1615,25 +1672,31 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID to retrieve filters for.
-  - filter_id (String.t): Filter ID to retrieve filters for.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID to retrieve filters for.
+  *   `filter_id` (*type:* `String.t`) - Filter ID to retrieve filters for.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.Filter{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.Filter{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec analytics_management_filters_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.Analytics.V3.Model.Filter.t()} | {:error, Tesla.Env.t()}
+  @spec analytics_management_filters_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.Analytics.V3.Model.Filter.t()} | {:error, Tesla.Env.t()}
   def analytics_management_filters_get(
         connection,
         account_id,
@@ -1670,24 +1733,25 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID to create filter for.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.Analytics.V3.Model.Filter.t): 
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID to create filter for.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.Analytics.V3.Model.Filter.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.Filter{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.Filter{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec analytics_management_filters_insert(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec analytics_management_filters_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Analytics.V3.Model.Filter.t()} | {:error, Tesla.Env.t()}
   def analytics_management_filters_insert(
         connection,
@@ -1724,25 +1788,26 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID to retrieve filters for.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :max-results (integer()): The maximum number of filters to include in this response.
-    - :start-index (integer()): An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID to retrieve filters for.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:max-results` (*type:* `integer()`) - The maximum number of filters to include in this response.
+      *   `:start-index` (*type:* `integer()`) - An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.Filters{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.Filters{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec analytics_management_filters_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec analytics_management_filters_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Analytics.V3.Model.Filters.t()} | {:error, Tesla.Env.t()}
   def analytics_management_filters_list(connection, account_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -1775,26 +1840,32 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID to which the filter belongs.
-  - filter_id (String.t): ID of the filter to be updated.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.Analytics.V3.Model.Filter.t): 
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID to which the filter belongs.
+  *   `filter_id` (*type:* `String.t`) - ID of the filter to be updated.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.Analytics.V3.Model.Filter.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.Filter{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.Filter{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec analytics_management_filters_patch(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.Analytics.V3.Model.Filter.t()} | {:error, Tesla.Env.t()}
+  @spec analytics_management_filters_patch(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.Analytics.V3.Model.Filter.t()} | {:error, Tesla.Env.t()}
   def analytics_management_filters_patch(
         connection,
         account_id,
@@ -1832,26 +1903,32 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID to which the filter belongs.
-  - filter_id (String.t): ID of the filter to be updated.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.Analytics.V3.Model.Filter.t): 
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID to which the filter belongs.
+  *   `filter_id` (*type:* `String.t`) - ID of the filter to be updated.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.Analytics.V3.Model.Filter.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.Filter{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.Filter{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec analytics_management_filters_update(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.Analytics.V3.Model.Filter.t()} | {:error, Tesla.Env.t()}
+  @spec analytics_management_filters_update(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.Analytics.V3.Model.Filter.t()} | {:error, Tesla.Env.t()}
   def analytics_management_filters_update(
         connection,
         account_id,
@@ -1889,24 +1966,25 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID to retrieve the goal for.
-  - web_property_id (String.t): Web property ID to retrieve the goal for.
-  - profile_id (String.t): View (Profile) ID to retrieve the goal for.
-  - goal_id (String.t): Goal ID to retrieve the goal for.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID to retrieve the goal for.
+  *   `web_property_id` (*type:* `String.t`) - Web property ID to retrieve the goal for.
+  *   `profile_id` (*type:* `String.t`) - View (Profile) ID to retrieve the goal for.
+  *   `goal_id` (*type:* `String.t`) - Goal ID to retrieve the goal for.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.Goal{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.Goal{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_goals_get(
           Tesla.Env.client(),
@@ -1914,6 +1992,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Analytics.V3.Model.Goal.t()} | {:error, Tesla.Env.t()}
   def analytics_management_goals_get(
@@ -1959,30 +2038,32 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID to create the goal for.
-  - web_property_id (String.t): Web property ID to create the goal for.
-  - profile_id (String.t): View (Profile) ID to create the goal for.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.Analytics.V3.Model.Goal.t): 
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID to create the goal for.
+  *   `web_property_id` (*type:* `String.t`) - Web property ID to create the goal for.
+  *   `profile_id` (*type:* `String.t`) - View (Profile) ID to create the goal for.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.Analytics.V3.Model.Goal.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.Goal{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.Goal{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_goals_insert(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Analytics.V3.Model.Goal.t()} | {:error, Tesla.Env.t()}
   def analytics_management_goals_insert(
@@ -2027,31 +2108,33 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID to retrieve goals for. Can either be a specific account ID or '~all', which refers to all the accounts that user has access to.
-  - web_property_id (String.t): Web property ID to retrieve goals for. Can either be a specific web property ID or '~all', which refers to all the web properties that user has access to.
-  - profile_id (String.t): View (Profile) ID to retrieve goals for. Can either be a specific view (profile) ID or '~all', which refers to all the views (profiles) that user has access to.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :max-results (integer()): The maximum number of goals to include in this response.
-    - :start-index (integer()): An index of the first goal to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID to retrieve goals for. Can either be a specific account ID or '~all', which refers to all the accounts that user has access to.
+  *   `web_property_id` (*type:* `String.t`) - Web property ID to retrieve goals for. Can either be a specific web property ID or '~all', which refers to all the web properties that user has access to.
+  *   `profile_id` (*type:* `String.t`) - View (Profile) ID to retrieve goals for. Can either be a specific view (profile) ID or '~all', which refers to all the views (profiles) that user has access to.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:max-results` (*type:* `integer()`) - The maximum number of goals to include in this response.
+      *   `:start-index` (*type:* `integer()`) - An index of the first goal to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.Goals{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.Goals{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_goals_list(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Analytics.V3.Model.Goals.t()} | {:error, Tesla.Env.t()}
   def analytics_management_goals_list(
@@ -2097,25 +2180,26 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID to update the goal.
-  - web_property_id (String.t): Web property ID to update the goal.
-  - profile_id (String.t): View (Profile) ID to update the goal.
-  - goal_id (String.t): Index of the goal to be updated.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.Analytics.V3.Model.Goal.t): 
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID to update the goal.
+  *   `web_property_id` (*type:* `String.t`) - Web property ID to update the goal.
+  *   `profile_id` (*type:* `String.t`) - View (Profile) ID to update the goal.
+  *   `goal_id` (*type:* `String.t`) - Index of the goal to be updated.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.Analytics.V3.Model.Goal.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.Goal{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.Goal{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_goals_patch(
           Tesla.Env.client(),
@@ -2123,6 +2207,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Analytics.V3.Model.Goal.t()} | {:error, Tesla.Env.t()}
   def analytics_management_goals_patch(
@@ -2169,25 +2254,26 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID to update the goal.
-  - web_property_id (String.t): Web property ID to update the goal.
-  - profile_id (String.t): View (Profile) ID to update the goal.
-  - goal_id (String.t): Index of the goal to be updated.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.Analytics.V3.Model.Goal.t): 
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID to update the goal.
+  *   `web_property_id` (*type:* `String.t`) - Web property ID to update the goal.
+  *   `profile_id` (*type:* `String.t`) - View (Profile) ID to update the goal.
+  *   `goal_id` (*type:* `String.t`) - Index of the goal to be updated.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.Analytics.V3.Model.Goal.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.Goal{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.Goal{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_goals_update(
           Tesla.Env.client(),
@@ -2195,6 +2281,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Analytics.V3.Model.Goal.t()} | {:error, Tesla.Env.t()}
   def analytics_management_goals_update(
@@ -2241,24 +2328,25 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID to which the profile filter link belongs.
-  - web_property_id (String.t): Web property Id to which the profile filter link belongs.
-  - profile_id (String.t): Profile ID to which the filter link belongs.
-  - link_id (String.t): ID of the profile filter link to delete.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID to which the profile filter link belongs.
+  *   `web_property_id` (*type:* `String.t`) - Web property Id to which the profile filter link belongs.
+  *   `profile_id` (*type:* `String.t`) - Profile ID to which the filter link belongs.
+  *   `link_id` (*type:* `String.t`) - ID of the profile filter link to delete.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %{}} on success
-  {:error, info} on failure
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_profile_filter_links_delete(
           Tesla.Env.client(),
@@ -2266,6 +2354,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, nil} | {:error, Tesla.Env.t()}
   def analytics_management_profile_filter_links_delete(
@@ -2311,24 +2400,25 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID to retrieve profile filter link for.
-  - web_property_id (String.t): Web property Id to retrieve profile filter link for.
-  - profile_id (String.t): Profile ID to retrieve filter link for.
-  - link_id (String.t): ID of the profile filter link.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID to retrieve profile filter link for.
+  *   `web_property_id` (*type:* `String.t`) - Web property Id to retrieve profile filter link for.
+  *   `profile_id` (*type:* `String.t`) - Profile ID to retrieve filter link for.
+  *   `link_id` (*type:* `String.t`) - ID of the profile filter link.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.ProfileFilterLink{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.ProfileFilterLink{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_profile_filter_links_get(
           Tesla.Env.client(),
@@ -2336,6 +2426,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Analytics.V3.Model.ProfileFilterLink.t()} | {:error, Tesla.Env.t()}
   def analytics_management_profile_filter_links_get(
@@ -2381,30 +2472,32 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID to create profile filter link for.
-  - web_property_id (String.t): Web property Id to create profile filter link for.
-  - profile_id (String.t): Profile ID to create filter link for.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.Analytics.V3.Model.ProfileFilterLink.t): 
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID to create profile filter link for.
+  *   `web_property_id` (*type:* `String.t`) - Web property Id to create profile filter link for.
+  *   `profile_id` (*type:* `String.t`) - Profile ID to create filter link for.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.Analytics.V3.Model.ProfileFilterLink.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.ProfileFilterLink{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.ProfileFilterLink{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_profile_filter_links_insert(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Analytics.V3.Model.ProfileFilterLink.t()} | {:error, Tesla.Env.t()}
   def analytics_management_profile_filter_links_insert(
@@ -2449,31 +2542,33 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID to retrieve profile filter links for.
-  - web_property_id (String.t): Web property Id for profile filter links for. Can either be a specific web property ID or '~all', which refers to all the web properties that user has access to.
-  - profile_id (String.t): Profile ID to retrieve filter links for. Can either be a specific profile ID or '~all', which refers to all the profiles that user has access to.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :max-results (integer()): The maximum number of profile filter links to include in this response.
-    - :start-index (integer()): An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID to retrieve profile filter links for.
+  *   `web_property_id` (*type:* `String.t`) - Web property Id for profile filter links for. Can either be a specific web property ID or '~all', which refers to all the web properties that user has access to.
+  *   `profile_id` (*type:* `String.t`) - Profile ID to retrieve filter links for. Can either be a specific profile ID or '~all', which refers to all the profiles that user has access to.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:max-results` (*type:* `integer()`) - The maximum number of profile filter links to include in this response.
+      *   `:start-index` (*type:* `integer()`) - An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.ProfileFilterLinks{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.ProfileFilterLinks{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_profile_filter_links_list(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Analytics.V3.Model.ProfileFilterLinks.t()} | {:error, Tesla.Env.t()}
   def analytics_management_profile_filter_links_list(
@@ -2519,25 +2614,26 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID to which profile filter link belongs.
-  - web_property_id (String.t): Web property Id to which profile filter link belongs
-  - profile_id (String.t): Profile ID to which filter link belongs
-  - link_id (String.t): ID of the profile filter link to be updated.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.Analytics.V3.Model.ProfileFilterLink.t): 
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID to which profile filter link belongs.
+  *   `web_property_id` (*type:* `String.t`) - Web property Id to which profile filter link belongs
+  *   `profile_id` (*type:* `String.t`) - Profile ID to which filter link belongs
+  *   `link_id` (*type:* `String.t`) - ID of the profile filter link to be updated.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.Analytics.V3.Model.ProfileFilterLink.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.ProfileFilterLink{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.ProfileFilterLink{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_profile_filter_links_patch(
           Tesla.Env.client(),
@@ -2545,6 +2641,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Analytics.V3.Model.ProfileFilterLink.t()} | {:error, Tesla.Env.t()}
   def analytics_management_profile_filter_links_patch(
@@ -2591,25 +2688,26 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID to which profile filter link belongs.
-  - web_property_id (String.t): Web property Id to which profile filter link belongs
-  - profile_id (String.t): Profile ID to which filter link belongs
-  - link_id (String.t): ID of the profile filter link to be updated.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.Analytics.V3.Model.ProfileFilterLink.t): 
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID to which profile filter link belongs.
+  *   `web_property_id` (*type:* `String.t`) - Web property Id to which profile filter link belongs
+  *   `profile_id` (*type:* `String.t`) - Profile ID to which filter link belongs
+  *   `link_id` (*type:* `String.t`) - ID of the profile filter link to be updated.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.Analytics.V3.Model.ProfileFilterLink.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.ProfileFilterLink{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.ProfileFilterLink{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_profile_filter_links_update(
           Tesla.Env.client(),
@@ -2617,6 +2715,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Analytics.V3.Model.ProfileFilterLink.t()} | {:error, Tesla.Env.t()}
   def analytics_management_profile_filter_links_update(
@@ -2663,24 +2762,25 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID to delete the user link for.
-  - web_property_id (String.t): Web Property ID to delete the user link for.
-  - profile_id (String.t): View (Profile) ID to delete the user link for.
-  - link_id (String.t): Link ID to delete the user link for.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID to delete the user link for.
+  *   `web_property_id` (*type:* `String.t`) - Web Property ID to delete the user link for.
+  *   `profile_id` (*type:* `String.t`) - View (Profile) ID to delete the user link for.
+  *   `link_id` (*type:* `String.t`) - Link ID to delete the user link for.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %{}} on success
-  {:error, info} on failure
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_profile_user_links_delete(
           Tesla.Env.client(),
@@ -2688,6 +2788,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, nil} | {:error, Tesla.Env.t()}
   def analytics_management_profile_user_links_delete(
@@ -2733,30 +2834,32 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID to create the user link for.
-  - web_property_id (String.t): Web Property ID to create the user link for.
-  - profile_id (String.t): View (Profile) ID to create the user link for.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.Analytics.V3.Model.EntityUserLink.t): 
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID to create the user link for.
+  *   `web_property_id` (*type:* `String.t`) - Web Property ID to create the user link for.
+  *   `profile_id` (*type:* `String.t`) - View (Profile) ID to create the user link for.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.Analytics.V3.Model.EntityUserLink.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.EntityUserLink{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.EntityUserLink{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_profile_user_links_insert(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Analytics.V3.Model.EntityUserLink.t()} | {:error, Tesla.Env.t()}
   def analytics_management_profile_user_links_insert(
@@ -2801,31 +2904,33 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID which the given view (profile) belongs to.
-  - web_property_id (String.t): Web Property ID which the given view (profile) belongs to. Can either be a specific web property ID or '~all', which refers to all the web properties that user has access to.
-  - profile_id (String.t): View (Profile) ID to retrieve the profile-user links for. Can either be a specific profile ID or '~all', which refers to all the profiles that user has access to.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :max-results (integer()): The maximum number of profile-user links to include in this response.
-    - :start-index (integer()): An index of the first profile-user link to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID which the given view (profile) belongs to.
+  *   `web_property_id` (*type:* `String.t`) - Web Property ID which the given view (profile) belongs to. Can either be a specific web property ID or '~all', which refers to all the web properties that user has access to.
+  *   `profile_id` (*type:* `String.t`) - View (Profile) ID to retrieve the profile-user links for. Can either be a specific profile ID or '~all', which refers to all the profiles that user has access to.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:max-results` (*type:* `integer()`) - The maximum number of profile-user links to include in this response.
+      *   `:start-index` (*type:* `integer()`) - An index of the first profile-user link to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.EntityUserLinks{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.EntityUserLinks{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_profile_user_links_list(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Analytics.V3.Model.EntityUserLinks.t()} | {:error, Tesla.Env.t()}
   def analytics_management_profile_user_links_list(
@@ -2871,25 +2976,26 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID to update the user link for.
-  - web_property_id (String.t): Web Property ID to update the user link for.
-  - profile_id (String.t): View (Profile ID) to update the user link for.
-  - link_id (String.t): Link ID to update the user link for.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.Analytics.V3.Model.EntityUserLink.t): 
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID to update the user link for.
+  *   `web_property_id` (*type:* `String.t`) - Web Property ID to update the user link for.
+  *   `profile_id` (*type:* `String.t`) - View (Profile ID) to update the user link for.
+  *   `link_id` (*type:* `String.t`) - Link ID to update the user link for.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.Analytics.V3.Model.EntityUserLink.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.EntityUserLink{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.EntityUserLink{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_profile_user_links_update(
           Tesla.Env.client(),
@@ -2897,6 +3003,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Analytics.V3.Model.EntityUserLink.t()} | {:error, Tesla.Env.t()}
   def analytics_management_profile_user_links_update(
@@ -2943,29 +3050,31 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID to delete the view (profile) for.
-  - web_property_id (String.t): Web property ID to delete the view (profile) for.
-  - profile_id (String.t): ID of the view (profile) to be deleted.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID to delete the view (profile) for.
+  *   `web_property_id` (*type:* `String.t`) - Web property ID to delete the view (profile) for.
+  *   `profile_id` (*type:* `String.t`) - ID of the view (profile) to be deleted.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %{}} on success
-  {:error, info} on failure
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_profiles_delete(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, nil} | {:error, Tesla.Env.t()}
   def analytics_management_profiles_delete(
@@ -3009,29 +3118,31 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID to retrieve the view (profile) for.
-  - web_property_id (String.t): Web property ID to retrieve the view (profile) for.
-  - profile_id (String.t): View (Profile) ID to retrieve the view (profile) for.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID to retrieve the view (profile) for.
+  *   `web_property_id` (*type:* `String.t`) - Web property ID to retrieve the view (profile) for.
+  *   `profile_id` (*type:* `String.t`) - View (Profile) ID to retrieve the view (profile) for.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.Profile{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.Profile{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_profiles_get(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Analytics.V3.Model.Profile.t()} | {:error, Tesla.Env.t()}
   def analytics_management_profiles_get(
@@ -3075,28 +3186,30 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID to create the view (profile) for.
-  - web_property_id (String.t): Web property ID to create the view (profile) for.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.Analytics.V3.Model.Profile.t): 
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID to create the view (profile) for.
+  *   `web_property_id` (*type:* `String.t`) - Web property ID to create the view (profile) for.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.Analytics.V3.Model.Profile.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.Profile{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.Profile{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_profiles_insert(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Analytics.V3.Model.Profile.t()} | {:error, Tesla.Env.t()}
   def analytics_management_profiles_insert(
@@ -3139,27 +3252,33 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID for the view (profiles) to retrieve. Can either be a specific account ID or '~all', which refers to all the accounts to which the user has access.
-  - web_property_id (String.t): Web property ID for the views (profiles) to retrieve. Can either be a specific web property ID or '~all', which refers to all the web properties to which the user has access.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :max-results (integer()): The maximum number of views (profiles) to include in this response.
-    - :start-index (integer()): An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID for the view (profiles) to retrieve. Can either be a specific account ID or '~all', which refers to all the accounts to which the user has access.
+  *   `web_property_id` (*type:* `String.t`) - Web property ID for the views (profiles) to retrieve. Can either be a specific web property ID or '~all', which refers to all the web properties to which the user has access.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:max-results` (*type:* `integer()`) - The maximum number of views (profiles) to include in this response.
+      *   `:start-index` (*type:* `integer()`) - An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.Profiles{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.Profiles{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec analytics_management_profiles_list(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.Analytics.V3.Model.Profiles.t()} | {:error, Tesla.Env.t()}
+  @spec analytics_management_profiles_list(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.Analytics.V3.Model.Profiles.t()} | {:error, Tesla.Env.t()}
   def analytics_management_profiles_list(
         connection,
         account_id,
@@ -3201,30 +3320,32 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID to which the view (profile) belongs
-  - web_property_id (String.t): Web property ID to which the view (profile) belongs
-  - profile_id (String.t): ID of the view (profile) to be updated.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.Analytics.V3.Model.Profile.t): 
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID to which the view (profile) belongs
+  *   `web_property_id` (*type:* `String.t`) - Web property ID to which the view (profile) belongs
+  *   `profile_id` (*type:* `String.t`) - ID of the view (profile) to be updated.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.Analytics.V3.Model.Profile.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.Profile{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.Profile{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_profiles_patch(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Analytics.V3.Model.Profile.t()} | {:error, Tesla.Env.t()}
   def analytics_management_profiles_patch(
@@ -3269,30 +3390,32 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID to which the view (profile) belongs
-  - web_property_id (String.t): Web property ID to which the view (profile) belongs
-  - profile_id (String.t): ID of the view (profile) to be updated.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.Analytics.V3.Model.Profile.t): 
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID to which the view (profile) belongs
+  *   `web_property_id` (*type:* `String.t`) - Web property ID to which the view (profile) belongs
+  *   `profile_id` (*type:* `String.t`) - ID of the view (profile) to be updated.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.Analytics.V3.Model.Profile.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.Profile{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.Profile{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_profiles_update(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Analytics.V3.Model.Profile.t()} | {:error, Tesla.Env.t()}
   def analytics_management_profiles_update(
@@ -3337,29 +3460,31 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID to which the remarketing audience belongs.
-  - web_property_id (String.t): Web property ID to which the remarketing audience belongs.
-  - remarketing_audience_id (String.t): The ID of the remarketing audience to delete.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID to which the remarketing audience belongs.
+  *   `web_property_id` (*type:* `String.t`) - Web property ID to which the remarketing audience belongs.
+  *   `remarketing_audience_id` (*type:* `String.t`) - The ID of the remarketing audience to delete.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %{}} on success
-  {:error, info} on failure
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_remarketing_audience_delete(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, nil} | {:error, Tesla.Env.t()}
   def analytics_management_remarketing_audience_delete(
@@ -3403,29 +3528,31 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): The account ID of the remarketing audience to retrieve.
-  - web_property_id (String.t): The web property ID of the remarketing audience to retrieve.
-  - remarketing_audience_id (String.t): The ID of the remarketing audience to retrieve.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - The account ID of the remarketing audience to retrieve.
+  *   `web_property_id` (*type:* `String.t`) - The web property ID of the remarketing audience to retrieve.
+  *   `remarketing_audience_id` (*type:* `String.t`) - The ID of the remarketing audience to retrieve.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.RemarketingAudience{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.RemarketingAudience{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_remarketing_audience_get(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Analytics.V3.Model.RemarketingAudience.t()} | {:error, Tesla.Env.t()}
   def analytics_management_remarketing_audience_get(
@@ -3469,28 +3596,30 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): The account ID for which to create the remarketing audience.
-  - web_property_id (String.t): Web property ID for which to create the remarketing audience.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.Analytics.V3.Model.RemarketingAudience.t): 
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - The account ID for which to create the remarketing audience.
+  *   `web_property_id` (*type:* `String.t`) - Web property ID for which to create the remarketing audience.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.Analytics.V3.Model.RemarketingAudience.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.RemarketingAudience{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.RemarketingAudience{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_remarketing_audience_insert(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Analytics.V3.Model.RemarketingAudience.t()} | {:error, Tesla.Env.t()}
   def analytics_management_remarketing_audience_insert(
@@ -3533,30 +3662,32 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): The account ID of the remarketing audiences to retrieve.
-  - web_property_id (String.t): The web property ID of the remarketing audiences to retrieve.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :max-results (integer()): The maximum number of remarketing audiences to include in this response.
-    - :start-index (integer()): An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
-    - :type (String.t): 
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - The account ID of the remarketing audiences to retrieve.
+  *   `web_property_id` (*type:* `String.t`) - The web property ID of the remarketing audiences to retrieve.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:max-results` (*type:* `integer()`) - The maximum number of remarketing audiences to include in this response.
+      *   `:start-index` (*type:* `integer()`) - An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+      *   `:type` (*type:* `String.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.RemarketingAudiences{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.RemarketingAudiences{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_remarketing_audience_list(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.Analytics.V3.Model.RemarketingAudiences.t()} | {:error, Tesla.Env.t()}
@@ -3602,30 +3733,32 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): The account ID of the remarketing audience to update.
-  - web_property_id (String.t): The web property ID of the remarketing audience to update.
-  - remarketing_audience_id (String.t): The ID of the remarketing audience to update.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.Analytics.V3.Model.RemarketingAudience.t): 
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - The account ID of the remarketing audience to update.
+  *   `web_property_id` (*type:* `String.t`) - The web property ID of the remarketing audience to update.
+  *   `remarketing_audience_id` (*type:* `String.t`) - The ID of the remarketing audience to update.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.Analytics.V3.Model.RemarketingAudience.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.RemarketingAudience{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.RemarketingAudience{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_remarketing_audience_patch(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Analytics.V3.Model.RemarketingAudience.t()} | {:error, Tesla.Env.t()}
   def analytics_management_remarketing_audience_patch(
@@ -3670,30 +3803,32 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): The account ID of the remarketing audience to update.
-  - web_property_id (String.t): The web property ID of the remarketing audience to update.
-  - remarketing_audience_id (String.t): The ID of the remarketing audience to update.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.Analytics.V3.Model.RemarketingAudience.t): 
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - The account ID of the remarketing audience to update.
+  *   `web_property_id` (*type:* `String.t`) - The web property ID of the remarketing audience to update.
+  *   `remarketing_audience_id` (*type:* `String.t`) - The ID of the remarketing audience to update.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.Analytics.V3.Model.RemarketingAudience.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.RemarketingAudience{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.RemarketingAudience{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_remarketing_audience_update(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Analytics.V3.Model.RemarketingAudience.t()} | {:error, Tesla.Env.t()}
   def analytics_management_remarketing_audience_update(
@@ -3738,24 +3873,25 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :max-results (integer()): The maximum number of segments to include in this response.
-    - :start-index (integer()): An index of the first segment to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:max-results` (*type:* `integer()`) - The maximum number of segments to include in this response.
+      *   `:start-index` (*type:* `integer()`) - An index of the first segment to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.Segments{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.Segments{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec analytics_management_segments_list(Tesla.Env.client(), keyword()) ::
+  @spec analytics_management_segments_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Analytics.V3.Model.Segments.t()} | {:error, Tesla.Env.t()}
   def analytics_management_segments_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -3786,24 +3922,25 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID to delete the unsampled report for.
-  - web_property_id (String.t): Web property ID to delete the unsampled reports for.
-  - profile_id (String.t): View (Profile) ID to delete the unsampled report for.
-  - unsampled_report_id (String.t): ID of the unsampled report to be deleted.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID to delete the unsampled report for.
+  *   `web_property_id` (*type:* `String.t`) - Web property ID to delete the unsampled reports for.
+  *   `profile_id` (*type:* `String.t`) - View (Profile) ID to delete the unsampled report for.
+  *   `unsampled_report_id` (*type:* `String.t`) - ID of the unsampled report to be deleted.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %{}} on success
-  {:error, info} on failure
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_unsampled_reports_delete(
           Tesla.Env.client(),
@@ -3811,6 +3948,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, nil} | {:error, Tesla.Env.t()}
   def analytics_management_unsampled_reports_delete(
@@ -3856,24 +3994,25 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID to retrieve unsampled report for.
-  - web_property_id (String.t): Web property ID to retrieve unsampled reports for.
-  - profile_id (String.t): View (Profile) ID to retrieve unsampled report for.
-  - unsampled_report_id (String.t): ID of the unsampled report to retrieve.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID to retrieve unsampled report for.
+  *   `web_property_id` (*type:* `String.t`) - Web property ID to retrieve unsampled reports for.
+  *   `profile_id` (*type:* `String.t`) - View (Profile) ID to retrieve unsampled report for.
+  *   `unsampled_report_id` (*type:* `String.t`) - ID of the unsampled report to retrieve.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.UnsampledReport{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.UnsampledReport{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_unsampled_reports_get(
           Tesla.Env.client(),
@@ -3881,6 +4020,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Analytics.V3.Model.UnsampledReport.t()} | {:error, Tesla.Env.t()}
   def analytics_management_unsampled_reports_get(
@@ -3926,30 +4066,32 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID to create the unsampled report for.
-  - web_property_id (String.t): Web property ID to create the unsampled report for.
-  - profile_id (String.t): View (Profile) ID to create the unsampled report for.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.Analytics.V3.Model.UnsampledReport.t): 
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID to create the unsampled report for.
+  *   `web_property_id` (*type:* `String.t`) - Web property ID to create the unsampled report for.
+  *   `profile_id` (*type:* `String.t`) - View (Profile) ID to create the unsampled report for.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.Analytics.V3.Model.UnsampledReport.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.UnsampledReport{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.UnsampledReport{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_unsampled_reports_insert(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Analytics.V3.Model.UnsampledReport.t()} | {:error, Tesla.Env.t()}
   def analytics_management_unsampled_reports_insert(
@@ -3994,31 +4136,33 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID to retrieve unsampled reports for. Must be a specific account ID, ~all is not supported.
-  - web_property_id (String.t): Web property ID to retrieve unsampled reports for. Must be a specific web property ID, ~all is not supported.
-  - profile_id (String.t): View (Profile) ID to retrieve unsampled reports for. Must be a specific view (profile) ID, ~all is not supported.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :max-results (integer()): The maximum number of unsampled reports to include in this response.
-    - :start-index (integer()): An index of the first unsampled report to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID to retrieve unsampled reports for. Must be a specific account ID, ~all is not supported.
+  *   `web_property_id` (*type:* `String.t`) - Web property ID to retrieve unsampled reports for. Must be a specific web property ID, ~all is not supported.
+  *   `profile_id` (*type:* `String.t`) - View (Profile) ID to retrieve unsampled reports for. Must be a specific view (profile) ID, ~all is not supported.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:max-results` (*type:* `integer()`) - The maximum number of unsampled reports to include in this response.
+      *   `:start-index` (*type:* `integer()`) - An index of the first unsampled report to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.UnsampledReports{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.UnsampledReports{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_unsampled_reports_list(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Analytics.V3.Model.UnsampledReports.t()} | {:error, Tesla.Env.t()}
   def analytics_management_unsampled_reports_list(
@@ -4064,30 +4208,32 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account Id for the uploads to be deleted.
-  - web_property_id (String.t): Web property Id for the uploads to be deleted.
-  - custom_data_source_id (String.t): Custom data source Id for the uploads to be deleted.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.Analytics.V3.Model.AnalyticsDataimportDeleteUploadDataRequest.t): 
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account Id for the uploads to be deleted.
+  *   `web_property_id` (*type:* `String.t`) - Web property Id for the uploads to be deleted.
+  *   `custom_data_source_id` (*type:* `String.t`) - Custom data source Id for the uploads to be deleted.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.Analytics.V3.Model.AnalyticsDataimportDeleteUploadDataRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %{}} on success
-  {:error, info} on failure
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_uploads_delete_upload_data(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, nil} | {:error, Tesla.Env.t()}
   def analytics_management_uploads_delete_upload_data(
@@ -4132,24 +4278,25 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account Id for the upload to retrieve.
-  - web_property_id (String.t): Web property Id for the upload to retrieve.
-  - custom_data_source_id (String.t): Custom data source Id for upload to retrieve.
-  - upload_id (String.t): Upload Id to retrieve.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account Id for the upload to retrieve.
+  *   `web_property_id` (*type:* `String.t`) - Web property Id for the upload to retrieve.
+  *   `custom_data_source_id` (*type:* `String.t`) - Custom data source Id for upload to retrieve.
+  *   `upload_id` (*type:* `String.t`) - Upload Id to retrieve.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.Upload{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.Upload{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_uploads_get(
           Tesla.Env.client(),
@@ -4157,6 +4304,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Analytics.V3.Model.Upload.t()} | {:error, Tesla.Env.t()}
   def analytics_management_uploads_get(
@@ -4202,31 +4350,33 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account Id for the uploads to retrieve.
-  - web_property_id (String.t): Web property Id for the uploads to retrieve.
-  - custom_data_source_id (String.t): Custom data source Id for uploads to retrieve.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :max-results (integer()): The maximum number of uploads to include in this response.
-    - :start-index (integer()): A 1-based index of the first upload to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account Id for the uploads to retrieve.
+  *   `web_property_id` (*type:* `String.t`) - Web property Id for the uploads to retrieve.
+  *   `custom_data_source_id` (*type:* `String.t`) - Custom data source Id for uploads to retrieve.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:max-results` (*type:* `integer()`) - The maximum number of uploads to include in this response.
+      *   `:start-index` (*type:* `integer()`) - A 1-based index of the first upload to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.Uploads{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.Uploads{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_uploads_list(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Analytics.V3.Model.Uploads.t()} | {:error, Tesla.Env.t()}
   def analytics_management_uploads_list(
@@ -4272,29 +4422,31 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account Id associated with the upload.
-  - web_property_id (String.t): Web property UA-string associated with the upload.
-  - custom_data_source_id (String.t): Custom data source Id to which the data being uploaded belongs.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account Id associated with the upload.
+  *   `web_property_id` (*type:* `String.t`) - Web property UA-string associated with the upload.
+  *   `custom_data_source_id` (*type:* `String.t`) - Custom data source Id to which the data being uploaded belongs.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.Upload{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.Upload{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_uploads_upload_data(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Analytics.V3.Model.Upload.t()} | {:error, Tesla.Env.t()}
   def analytics_management_uploads_upload_data(
@@ -4338,24 +4490,25 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account Id associated with the upload.
-  - web_property_id (String.t): Web property UA-string associated with the upload.
-  - custom_data_source_id (String.t): Custom data source Id to which the data being uploaded belongs.
-  - upload_type (String.t): Upload type. Must be "resumable".
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account Id associated with the upload.
+  *   `web_property_id` (*type:* `String.t`) - Web property UA-string associated with the upload.
+  *   `custom_data_source_id` (*type:* `String.t`) - Custom data source Id to which the data being uploaded belongs.
+  *   `upload_type` (*type:* `String.t`) - Upload type. Must be "resumable".
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %{}} on success
-  {:error, info} on failure
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_uploads_upload_data_resumable(
           Tesla.Env.client(),
@@ -4363,6 +4516,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, nil} | {:error, Tesla.Env.t()}
   def analytics_management_uploads_upload_data_resumable(
@@ -4408,26 +4562,27 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account Id associated with the upload.
-  - web_property_id (String.t): Web property UA-string associated with the upload.
-  - custom_data_source_id (String.t): Custom data source Id to which the data being uploaded belongs.
-  - upload_type (String.t): Upload type. Must be "multipart".
-  - metadata (String.t): string metadata
-  - data (String.t): Path to file
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account Id associated with the upload.
+  *   `web_property_id` (*type:* `String.t`) - Web property UA-string associated with the upload.
+  *   `custom_data_source_id` (*type:* `String.t`) - Custom data source Id to which the data being uploaded belongs.
+  *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
+  *   `metadata` (*type:* `String.t`) - string metadata
+  *   `data` (*type:* `String.t`) - Path to file
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.Upload{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.Upload{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_uploads_upload_data_simple(
           Tesla.Env.client(),
@@ -4437,6 +4592,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Analytics.V3.Model.Upload.t()} | {:error, Tesla.Env.t()}
   def analytics_management_uploads_upload_data_simple(
@@ -4486,29 +4642,31 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): ID of the account which the given web property belongs to.
-  - web_property_id (String.t): Web property ID to delete the Google Ads link for.
-  - web_property_ad_words_link_id (String.t): Web property Google Ads link ID.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - ID of the account which the given web property belongs to.
+  *   `web_property_id` (*type:* `String.t`) - Web property ID to delete the Google Ads link for.
+  *   `web_property_ad_words_link_id` (*type:* `String.t`) - Web property Google Ads link ID.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %{}} on success
-  {:error, info} on failure
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_web_property_ad_words_links_delete(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, nil} | {:error, Tesla.Env.t()}
   def analytics_management_web_property_ad_words_links_delete(
@@ -4553,29 +4711,31 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): ID of the account which the given web property belongs to.
-  - web_property_id (String.t): Web property ID to retrieve the Google Ads link for.
-  - web_property_ad_words_link_id (String.t): Web property-Google Ads link ID.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - ID of the account which the given web property belongs to.
+  *   `web_property_id` (*type:* `String.t`) - Web property ID to retrieve the Google Ads link for.
+  *   `web_property_ad_words_link_id` (*type:* `String.t`) - Web property-Google Ads link ID.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.EntityAdWordsLink{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.EntityAdWordsLink{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_web_property_ad_words_links_get(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Analytics.V3.Model.EntityAdWordsLink.t()} | {:error, Tesla.Env.t()}
   def analytics_management_web_property_ad_words_links_get(
@@ -4620,28 +4780,30 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): ID of the Google Analytics account to create the link for.
-  - web_property_id (String.t): Web property ID to create the link for.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.Analytics.V3.Model.EntityAdWordsLink.t): 
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - ID of the Google Analytics account to create the link for.
+  *   `web_property_id` (*type:* `String.t`) - Web property ID to create the link for.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.Analytics.V3.Model.EntityAdWordsLink.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.EntityAdWordsLink{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.EntityAdWordsLink{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_web_property_ad_words_links_insert(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Analytics.V3.Model.EntityAdWordsLink.t()} | {:error, Tesla.Env.t()}
   def analytics_management_web_property_ad_words_links_insert(
@@ -4684,29 +4846,31 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): ID of the account which the given web property belongs to.
-  - web_property_id (String.t): Web property ID to retrieve the Google Ads links for.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :max-results (integer()): The maximum number of webProperty-Google Ads links to include in this response.
-    - :start-index (integer()): An index of the first webProperty-Google Ads link to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - ID of the account which the given web property belongs to.
+  *   `web_property_id` (*type:* `String.t`) - Web property ID to retrieve the Google Ads links for.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:max-results` (*type:* `integer()`) - The maximum number of webProperty-Google Ads links to include in this response.
+      *   `:start-index` (*type:* `integer()`) - An index of the first webProperty-Google Ads link to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.EntityAdWordsLinks{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.EntityAdWordsLinks{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_web_property_ad_words_links_list(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Analytics.V3.Model.EntityAdWordsLinks.t()} | {:error, Tesla.Env.t()}
   def analytics_management_web_property_ad_words_links_list(
@@ -4750,30 +4914,32 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): ID of the account which the given web property belongs to.
-  - web_property_id (String.t): Web property ID to retrieve the Google Ads link for.
-  - web_property_ad_words_link_id (String.t): Web property-Google Ads link ID.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.Analytics.V3.Model.EntityAdWordsLink.t): 
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - ID of the account which the given web property belongs to.
+  *   `web_property_id` (*type:* `String.t`) - Web property ID to retrieve the Google Ads link for.
+  *   `web_property_ad_words_link_id` (*type:* `String.t`) - Web property-Google Ads link ID.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.Analytics.V3.Model.EntityAdWordsLink.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.EntityAdWordsLink{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.EntityAdWordsLink{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_web_property_ad_words_links_patch(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Analytics.V3.Model.EntityAdWordsLink.t()} | {:error, Tesla.Env.t()}
   def analytics_management_web_property_ad_words_links_patch(
@@ -4819,30 +4985,32 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): ID of the account which the given web property belongs to.
-  - web_property_id (String.t): Web property ID to retrieve the Google Ads link for.
-  - web_property_ad_words_link_id (String.t): Web property-Google Ads link ID.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.Analytics.V3.Model.EntityAdWordsLink.t): 
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - ID of the account which the given web property belongs to.
+  *   `web_property_id` (*type:* `String.t`) - Web property ID to retrieve the Google Ads link for.
+  *   `web_property_ad_words_link_id` (*type:* `String.t`) - Web property-Google Ads link ID.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.Analytics.V3.Model.EntityAdWordsLink.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.EntityAdWordsLink{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.EntityAdWordsLink{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_web_property_ad_words_links_update(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Analytics.V3.Model.EntityAdWordsLink.t()} | {:error, Tesla.Env.t()}
   def analytics_management_web_property_ad_words_links_update(
@@ -4888,27 +5056,29 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID to retrieve the web property for.
-  - web_property_id (String.t): ID to retrieve the web property for.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID to retrieve the web property for.
+  *   `web_property_id` (*type:* `String.t`) - ID to retrieve the web property for.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.Webproperty{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.Webproperty{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_webproperties_get(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Analytics.V3.Model.Webproperty.t()} | {:error, Tesla.Env.t()}
   def analytics_management_webproperties_get(
@@ -4950,25 +5120,30 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID to create the web property for.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.Analytics.V3.Model.Webproperty.t): 
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID to create the web property for.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.Analytics.V3.Model.Webproperty.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.Webproperty{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.Webproperty{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec analytics_management_webproperties_insert(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, GoogleApi.Analytics.V3.Model.Webproperty.t()} | {:error, Tesla.Env.t()}
+  @spec analytics_management_webproperties_insert(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.Analytics.V3.Model.Webproperty.t()} | {:error, Tesla.Env.t()}
   def analytics_management_webproperties_insert(
         connection,
         account_id,
@@ -5004,26 +5179,31 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID to retrieve web properties for. Can either be a specific account ID or '~all', which refers to all the accounts that user has access to.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :max-results (integer()): The maximum number of web properties to include in this response.
-    - :start-index (integer()): An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID to retrieve web properties for. Can either be a specific account ID or '~all', which refers to all the accounts that user has access to.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:max-results` (*type:* `integer()`) - The maximum number of web properties to include in this response.
+      *   `:start-index` (*type:* `integer()`) - An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.Webproperties{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.Webproperties{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec analytics_management_webproperties_list(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, GoogleApi.Analytics.V3.Model.Webproperties.t()} | {:error, Tesla.Env.t()}
+  @spec analytics_management_webproperties_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.Analytics.V3.Model.Webproperties.t()} | {:error, Tesla.Env.t()}
   def analytics_management_webproperties_list(
         connection,
         account_id,
@@ -5060,28 +5240,30 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID to which the web property belongs
-  - web_property_id (String.t): Web property ID
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.Analytics.V3.Model.Webproperty.t): 
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID to which the web property belongs
+  *   `web_property_id` (*type:* `String.t`) - Web property ID
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.Analytics.V3.Model.Webproperty.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.Webproperty{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.Webproperty{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_webproperties_patch(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Analytics.V3.Model.Webproperty.t()} | {:error, Tesla.Env.t()}
   def analytics_management_webproperties_patch(
@@ -5124,28 +5306,30 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID to which the web property belongs
-  - web_property_id (String.t): Web property ID
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.Analytics.V3.Model.Webproperty.t): 
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID to which the web property belongs
+  *   `web_property_id` (*type:* `String.t`) - Web property ID
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.Analytics.V3.Model.Webproperty.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.Webproperty{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.Webproperty{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_webproperties_update(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Analytics.V3.Model.Webproperty.t()} | {:error, Tesla.Env.t()}
   def analytics_management_webproperties_update(
@@ -5188,29 +5372,31 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID to delete the user link for.
-  - web_property_id (String.t): Web Property ID to delete the user link for.
-  - link_id (String.t): Link ID to delete the user link for.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID to delete the user link for.
+  *   `web_property_id` (*type:* `String.t`) - Web Property ID to delete the user link for.
+  *   `link_id` (*type:* `String.t`) - Link ID to delete the user link for.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %{}} on success
-  {:error, info} on failure
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_webproperty_user_links_delete(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, nil} | {:error, Tesla.Env.t()}
   def analytics_management_webproperty_user_links_delete(
@@ -5254,28 +5440,30 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID to create the user link for.
-  - web_property_id (String.t): Web Property ID to create the user link for.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.Analytics.V3.Model.EntityUserLink.t): 
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID to create the user link for.
+  *   `web_property_id` (*type:* `String.t`) - Web Property ID to create the user link for.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.Analytics.V3.Model.EntityUserLink.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.EntityUserLink{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.EntityUserLink{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_webproperty_user_links_insert(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Analytics.V3.Model.EntityUserLink.t()} | {:error, Tesla.Env.t()}
   def analytics_management_webproperty_user_links_insert(
@@ -5318,29 +5506,31 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID which the given web property belongs to.
-  - web_property_id (String.t): Web Property ID for the webProperty-user links to retrieve. Can either be a specific web property ID or '~all', which refers to all the web properties that user has access to.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :max-results (integer()): The maximum number of webProperty-user Links to include in this response.
-    - :start-index (integer()): An index of the first webProperty-user link to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID which the given web property belongs to.
+  *   `web_property_id` (*type:* `String.t`) - Web Property ID for the webProperty-user links to retrieve. Can either be a specific web property ID or '~all', which refers to all the web properties that user has access to.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:max-results` (*type:* `integer()`) - The maximum number of webProperty-user Links to include in this response.
+      *   `:start-index` (*type:* `integer()`) - An index of the first webProperty-user link to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.EntityUserLinks{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.EntityUserLinks{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_webproperty_user_links_list(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Analytics.V3.Model.EntityUserLinks.t()} | {:error, Tesla.Env.t()}
   def analytics_management_webproperty_user_links_list(
@@ -5384,30 +5574,32 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - account_id (String.t): Account ID to update the account-user link for.
-  - web_property_id (String.t): Web property ID to update the account-user link for.
-  - link_id (String.t): Link ID to update the account-user link for.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.Analytics.V3.Model.EntityUserLink.t): 
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account ID to update the account-user link for.
+  *   `web_property_id` (*type:* `String.t`) - Web property ID to update the account-user link for.
+  *   `link_id` (*type:* `String.t`) - Link ID to update the account-user link for.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.Analytics.V3.Model.EntityUserLink.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.EntityUserLink{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.EntityUserLink{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_management_webproperty_user_links_update(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Analytics.V3.Model.EntityUserLink.t()} | {:error, Tesla.Env.t()}
   def analytics_management_webproperty_user_links_update(

@@ -21,28 +21,28 @@ defmodule GoogleApi.Analytics.V3.Model.Webproperty do
 
   ## Attributes
 
-  - accountId (String.t): Account ID to which this web property belongs. Defaults to `nil`.
-  - childLink (GoogleApi.Analytics.V3.Model.WebpropertyChildLink.t): Child link for this web property. Points to the list of views (profiles) for this web property. Defaults to `nil`.
-  - created (DateTime.t): Time this web property was created. Defaults to `nil`.
-  - dataRetentionResetOnNewActivity (boolean()): Set to true to reset the retention period of the user identifier with each new event from that user (thus setting the expiration date to current time plus retention period).
-  Set to false to delete data associated with the user identifier automatically after the rentention period.
-  This property cannot be set on insert. Defaults to `nil`.
-  - dataRetentionTtl (String.t): The length of time for which user and event data is retained.
-  This property cannot be set on insert. Defaults to `nil`.
-  - defaultProfileId (String.t): Default view (profile) ID. Defaults to `nil`.
-  - id (String.t): Web property ID of the form UA-XXXXX-YY. Defaults to `nil`.
-  - industryVertical (String.t): The industry vertical/category selected for this web property. Defaults to `nil`.
-  - internalWebPropertyId (String.t): Internal ID for this web property. Defaults to `nil`.
-  - kind (String.t): Resource type for Analytics WebProperty. Defaults to `analytics#webproperty`.
-  - level (String.t): Level for this web property. Possible values are STANDARD or PREMIUM. Defaults to `nil`.
-  - name (String.t): Name of this web property. Defaults to `nil`.
-  - parentLink (GoogleApi.Analytics.V3.Model.WebpropertyParentLink.t): Parent link for this web property. Points to the account to which this web property belongs. Defaults to `nil`.
-  - permissions (GoogleApi.Analytics.V3.Model.WebpropertyPermissions.t): Permissions the user has for this web property. Defaults to `nil`.
-  - profileCount (integer()): View (Profile) count for this web property. Defaults to `nil`.
-  - selfLink (String.t): Link for this web property. Defaults to `nil`.
-  - starred (boolean()): Indicates whether this web property is starred or not. Defaults to `nil`.
-  - updated (DateTime.t): Time this web property was last modified. Defaults to `nil`.
-  - websiteUrl (String.t): Website url for this web property. Defaults to `nil`.
+  *   `accountId` (*type:* `String.t`, *default:* `nil`) - Account ID to which this web property belongs.
+  *   `childLink` (*type:* `GoogleApi.Analytics.V3.Model.WebpropertyChildLink.t`, *default:* `nil`) - Child link for this web property. Points to the list of views (profiles) for this web property.
+  *   `created` (*type:* `DateTime.t`, *default:* `nil`) - Time this web property was created.
+  *   `dataRetentionResetOnNewActivity` (*type:* `boolean()`, *default:* `nil`) - Set to true to reset the retention period of the user identifier with each new event from that user (thus setting the expiration date to current time plus retention period).
+      Set to false to delete data associated with the user identifier automatically after the rentention period.
+      This property cannot be set on insert.
+  *   `dataRetentionTtl` (*type:* `String.t`, *default:* `nil`) - The length of time for which user and event data is retained.
+      This property cannot be set on insert.
+  *   `defaultProfileId` (*type:* `String.t`, *default:* `nil`) - Default view (profile) ID.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Web property ID of the form UA-XXXXX-YY.
+  *   `industryVertical` (*type:* `String.t`, *default:* `nil`) - The industry vertical/category selected for this web property.
+  *   `internalWebPropertyId` (*type:* `String.t`, *default:* `nil`) - Internal ID for this web property.
+  *   `kind` (*type:* `String.t`, *default:* `analytics#webproperty`) - Resource type for Analytics WebProperty.
+  *   `level` (*type:* `String.t`, *default:* `nil`) - Level for this web property. Possible values are STANDARD or PREMIUM.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this web property.
+  *   `parentLink` (*type:* `GoogleApi.Analytics.V3.Model.WebpropertyParentLink.t`, *default:* `nil`) - Parent link for this web property. Points to the account to which this web property belongs.
+  *   `permissions` (*type:* `GoogleApi.Analytics.V3.Model.WebpropertyPermissions.t`, *default:* `nil`) - Permissions the user has for this web property.
+  *   `profileCount` (*type:* `integer()`, *default:* `nil`) - View (Profile) count for this web property.
+  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - Link for this web property.
+  *   `starred` (*type:* `boolean()`, *default:* `nil`) - Indicates whether this web property is starred or not.
+  *   `updated` (*type:* `DateTime.t`, *default:* `nil`) - Time this web property was last modified.
+  *   `websiteUrl` (*type:* `String.t`, *default:* `nil`) - Website url for this web property.
   """
 
   use GoogleApi.Gax.ModelBase

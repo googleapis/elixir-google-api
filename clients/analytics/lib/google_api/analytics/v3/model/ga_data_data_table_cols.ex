@@ -21,9 +21,9 @@ defmodule GoogleApi.Analytics.V3.Model.GaDataDataTableCols do
 
   ## Attributes
 
-  - id (String.t):  Defaults to `nil`.
-  - label (String.t):  Defaults to `nil`.
-  - type (String.t):  Defaults to `nil`.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - 
+  *   `label` (*type:* `String.t`, *default:* `nil`) - 
+  *   `type` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

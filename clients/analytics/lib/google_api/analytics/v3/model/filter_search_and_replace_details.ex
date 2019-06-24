@@ -21,11 +21,11 @@ defmodule GoogleApi.Analytics.V3.Model.FilterSearchAndReplaceDetails do
 
   ## Attributes
 
-  - caseSensitive (boolean()): Determines if the filter is case sensitive. Defaults to `nil`.
-  - field (String.t): Field to use in the filter. Defaults to `nil`.
-  - fieldIndex (integer()): The Index of the custom dimension. Required if field is a CUSTOM_DIMENSION. Defaults to `nil`.
-  - replaceString (String.t): Term to replace the search term with. Defaults to `nil`.
-  - searchString (String.t): Term to search. Defaults to `nil`.
+  *   `caseSensitive` (*type:* `boolean()`, *default:* `nil`) - Determines if the filter is case sensitive.
+  *   `field` (*type:* `String.t`, *default:* `nil`) - Field to use in the filter.
+  *   `fieldIndex` (*type:* `integer()`, *default:* `nil`) - The Index of the custom dimension. Required if field is a CUSTOM_DIMENSION.
+  *   `replaceString` (*type:* `String.t`, *default:* `nil`) - Term to replace the search term with.
+  *   `searchString` (*type:* `String.t`, *default:* `nil`) - Term to search.
   """
 
   use GoogleApi.Gax.ModelBase

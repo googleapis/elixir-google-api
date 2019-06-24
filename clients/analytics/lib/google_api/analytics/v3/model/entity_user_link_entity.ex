@@ -21,9 +21,9 @@ defmodule GoogleApi.Analytics.V3.Model.EntityUserLinkEntity do
 
   ## Attributes
 
-  - accountRef (GoogleApi.Analytics.V3.Model.AccountRef.t): Account for this link. Defaults to `nil`.
-  - profileRef (GoogleApi.Analytics.V3.Model.ProfileRef.t): View (Profile) for this link. Defaults to `nil`.
-  - webPropertyRef (GoogleApi.Analytics.V3.Model.WebPropertyRef.t): Web property for this link. Defaults to `nil`.
+  *   `accountRef` (*type:* `GoogleApi.Analytics.V3.Model.AccountRef.t`, *default:* `nil`) - Account for this link.
+  *   `profileRef` (*type:* `GoogleApi.Analytics.V3.Model.ProfileRef.t`, *default:* `nil`) - View (Profile) for this link.
+  *   `webPropertyRef` (*type:* `GoogleApi.Analytics.V3.Model.WebPropertyRef.t`, *default:* `nil`) - Web property for this link.
   """
 
   use GoogleApi.Gax.ModelBase

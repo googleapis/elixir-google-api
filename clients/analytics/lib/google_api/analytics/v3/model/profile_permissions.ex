@@ -21,7 +21,7 @@ defmodule GoogleApi.Analytics.V3.Model.ProfilePermissions do
 
   ## Attributes
 
-  - effective (list(String.t)): All the permissions that the user has for this view (profile). These include any implied permissions (e.g., EDIT implies VIEW) or inherited permissions from the parent web property. Defaults to `nil`.
+  *   `effective` (*type:* `list(String.t)`, *default:* `nil`) - All the permissions that the user has for this view (profile). These include any implied permissions (e.g., EDIT implies VIEW) or inherited permissions from the parent web property.
   """
 
   use GoogleApi.Gax.ModelBase

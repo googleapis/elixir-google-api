@@ -21,8 +21,8 @@ defmodule GoogleApi.Analytics.V3.Model.FilterParentLink do
 
   ## Attributes
 
-  - href (String.t): Link to the account to which this filter belongs. Defaults to `nil`.
-  - type (String.t): Value is "analytics#account". Defaults to `analytics#account`.
+  *   `href` (*type:* `String.t`, *default:* `nil`) - Link to the account to which this filter belongs.
+  *   `type` (*type:* `String.t`, *default:* `analytics#account`) - Value is "analytics#account".
   """
 
   use GoogleApi.Gax.ModelBase

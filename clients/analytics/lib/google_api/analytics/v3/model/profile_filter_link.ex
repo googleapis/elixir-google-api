@@ -21,14 +21,14 @@ defmodule GoogleApi.Analytics.V3.Model.ProfileFilterLink do
 
   ## Attributes
 
-  - filterRef (GoogleApi.Analytics.V3.Model.FilterRef.t): Filter for this link. Defaults to `nil`.
-  - id (String.t): Profile filter link ID. Defaults to `nil`.
-  - kind (String.t): Resource type for Analytics filter. Defaults to `analytics#profileFilterLink`.
-  - profileRef (GoogleApi.Analytics.V3.Model.ProfileRef.t): View (Profile) for this link. Defaults to `nil`.
-  - rank (integer()): The rank of this profile filter link relative to the other filters linked to the same profile.
-  For readonly (i.e., list and get) operations, the rank always starts at 1.
-  For write (i.e., create, update, or delete) operations, you may specify a value between 0 and 255 inclusively, [0, 255]. In order to insert a link at the end of the list, either don't specify a rank or set a rank to a number greater than the largest rank in the list. In order to insert a link to the beginning of the list specify a rank that is less than or equal to 1. The new link will move all existing filters with the same or lower rank down the list. After the link is inserted/updated/deleted all profile filter links will be renumbered starting at 1. Defaults to `nil`.
-  - selfLink (String.t): Link for this profile filter link. Defaults to `nil`.
+  *   `filterRef` (*type:* `GoogleApi.Analytics.V3.Model.FilterRef.t`, *default:* `nil`) - Filter for this link.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Profile filter link ID.
+  *   `kind` (*type:* `String.t`, *default:* `analytics#profileFilterLink`) - Resource type for Analytics filter.
+  *   `profileRef` (*type:* `GoogleApi.Analytics.V3.Model.ProfileRef.t`, *default:* `nil`) - View (Profile) for this link.
+  *   `rank` (*type:* `integer()`, *default:* `nil`) - The rank of this profile filter link relative to the other filters linked to the same profile.
+      For readonly (i.e., list and get) operations, the rank always starts at 1.
+      For write (i.e., create, update, or delete) operations, you may specify a value between 0 and 255 inclusively, [0, 255]. In order to insert a link at the end of the list, either don't specify a rank or set a rank to a number greater than the largest rank in the list. In order to insert a link to the beginning of the list specify a rank that is less than or equal to 1. The new link will move all existing filters with the same or lower rank down the list. After the link is inserted/updated/deleted all profile filter links will be renumbered starting at 1.
+  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - Link for this profile filter link.
   """
 
   use GoogleApi.Gax.ModelBase

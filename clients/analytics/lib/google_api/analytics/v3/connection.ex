@@ -20,6 +20,8 @@ defmodule GoogleApi.Analytics.V3.Connection do
   Handle Tesla connections for GoogleApi.Analytics.V3.
   """
 
+  @type t :: Tesla.Env.client()
+
   use GoogleApi.Gax.Connection,
     scopes: [
       # View and manage your Google Analytics data

@@ -21,8 +21,8 @@ defmodule GoogleApi.Analytics.V3.Model.GoalVisitNumPagesDetails do
 
   ## Attributes
 
-  - comparisonType (String.t): Type of comparison. Possible values are LESS_THAN, GREATER_THAN, or EQUAL. Defaults to `nil`.
-  - comparisonValue (String.t): Value used for this comparison. Defaults to `nil`.
+  *   `comparisonType` (*type:* `String.t`, *default:* `nil`) - Type of comparison. Possible values are LESS_THAN, GREATER_THAN, or EQUAL.
+  *   `comparisonValue` (*type:* `String.t`, *default:* `nil`) - Value used for this comparison.
   """
 
   use GoogleApi.Gax.ModelBase

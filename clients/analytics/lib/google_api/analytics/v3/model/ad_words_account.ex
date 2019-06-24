@@ -21,9 +21,9 @@ defmodule GoogleApi.Analytics.V3.Model.AdWordsAccount do
 
   ## Attributes
 
-  - autoTaggingEnabled (boolean()): True if auto-tagging is enabled on the Google Ads account. Read-only after the insert operation. Defaults to `nil`.
-  - customerId (String.t): Customer ID. This field is required when creating a Google Ads link. Defaults to `nil`.
-  - kind (String.t): Resource type for Google Ads account. Defaults to `analytics#adWordsAccount`.
+  *   `autoTaggingEnabled` (*type:* `boolean()`, *default:* `nil`) - True if auto-tagging is enabled on the Google Ads account. Read-only after the insert operation.
+  *   `customerId` (*type:* `String.t`, *default:* `nil`) - Customer ID. This field is required when creating a Google Ads link.
+  *   `kind` (*type:* `String.t`, *default:* `analytics#adWordsAccount`) - Resource type for Google Ads account.
   """
 
   use GoogleApi.Gax.ModelBase

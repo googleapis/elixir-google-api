@@ -21,12 +21,12 @@ defmodule GoogleApi.Analytics.V3.Model.AccountTicket do
 
   ## Attributes
 
-  - account (GoogleApi.Analytics.V3.Model.Account.t): Account for this ticket. Defaults to `nil`.
-  - id (String.t): Account ticket ID used to access the account ticket. Defaults to `nil`.
-  - kind (String.t): Resource type for account ticket. Defaults to `analytics#accountTicket`.
-  - profile (GoogleApi.Analytics.V3.Model.Profile.t): View (Profile) for the account. Defaults to `nil`.
-  - redirectUri (String.t): Redirect URI where the user will be sent after accepting Terms of Service. Must be configured in APIs console as a callback URL. Defaults to `nil`.
-  - webproperty (GoogleApi.Analytics.V3.Model.Webproperty.t): Web property for the account. Defaults to `nil`.
+  *   `account` (*type:* `GoogleApi.Analytics.V3.Model.Account.t`, *default:* `nil`) - Account for this ticket.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Account ticket ID used to access the account ticket.
+  *   `kind` (*type:* `String.t`, *default:* `analytics#accountTicket`) - Resource type for account ticket.
+  *   `profile` (*type:* `GoogleApi.Analytics.V3.Model.Profile.t`, *default:* `nil`) - View (Profile) for the account.
+  *   `redirectUri` (*type:* `String.t`, *default:* `nil`) - Redirect URI where the user will be sent after accepting Terms of Service. Must be configured in APIs console as a callback URL.
+  *   `webproperty` (*type:* `GoogleApi.Analytics.V3.Model.Webproperty.t`, *default:* `nil`) - Web property for the account.
   """
 
   use GoogleApi.Gax.ModelBase

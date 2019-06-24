@@ -21,11 +21,11 @@ defmodule GoogleApi.Analytics.V3.Model.FilterRef do
 
   ## Attributes
 
-  - accountId (String.t): Account ID to which this filter belongs. Defaults to `nil`.
-  - href (String.t): Link for this filter. Defaults to `nil`.
-  - id (String.t): Filter ID. Defaults to `nil`.
-  - kind (String.t): Kind value for filter reference. Defaults to `analytics#filterRef`.
-  - name (String.t): Name of this filter. Defaults to `nil`.
+  *   `accountId` (*type:* `String.t`, *default:* `nil`) - Account ID to which this filter belongs.
+  *   `href` (*type:* `String.t`, *default:* `nil`) - Link for this filter.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Filter ID.
+  *   `kind` (*type:* `String.t`, *default:* `analytics#filterRef`) - Kind value for filter reference.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this filter.
   """
 
   use GoogleApi.Gax.ModelBase

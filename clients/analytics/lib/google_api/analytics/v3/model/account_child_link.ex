@@ -21,8 +21,8 @@ defmodule GoogleApi.Analytics.V3.Model.AccountChildLink do
 
   ## Attributes
 
-  - href (String.t): Link to the list of web properties for this account. Defaults to `nil`.
-  - type (String.t): Type of the child link. Its value is "analytics#webproperties". Defaults to `analytics#webproperties`.
+  *   `href` (*type:* `String.t`, *default:* `nil`) - Link to the list of web properties for this account.
+  *   `type` (*type:* `String.t`, *default:* `analytics#webproperties`) - Type of the child link. Its value is "analytics#webproperties".
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,12 +21,12 @@ defmodule GoogleApi.Analytics.V3.Model.WebPropertyRef do
 
   ## Attributes
 
-  - accountId (String.t): Account ID to which this web property belongs. Defaults to `nil`.
-  - href (String.t): Link for this web property. Defaults to `nil`.
-  - id (String.t): Web property ID of the form UA-XXXXX-YY. Defaults to `nil`.
-  - internalWebPropertyId (String.t): Internal ID for this web property. Defaults to `nil`.
-  - kind (String.t): Analytics web property reference. Defaults to `analytics#webPropertyRef`.
-  - name (String.t): Name of this web property. Defaults to `nil`.
+  *   `accountId` (*type:* `String.t`, *default:* `nil`) - Account ID to which this web property belongs.
+  *   `href` (*type:* `String.t`, *default:* `nil`) - Link for this web property.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Web property ID of the form UA-XXXXX-YY.
+  *   `internalWebPropertyId` (*type:* `String.t`, *default:* `nil`) - Internal ID for this web property.
+  *   `kind` (*type:* `String.t`, *default:* `analytics#webPropertyRef`) - Analytics web property reference.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this web property.
   """
 
   use GoogleApi.Gax.ModelBase

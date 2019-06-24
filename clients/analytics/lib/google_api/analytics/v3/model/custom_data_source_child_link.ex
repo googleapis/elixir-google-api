@@ -21,8 +21,8 @@ defmodule GoogleApi.Analytics.V3.Model.CustomDataSourceChildLink do
 
   ## Attributes
 
-  - href (String.t): Link to the list of daily uploads for this custom data source. Link to the list of uploads for this custom data source. Defaults to `nil`.
-  - type (String.t): Value is "analytics#dailyUploads". Value is "analytics#uploads". Defaults to `nil`.
+  *   `href` (*type:* `String.t`, *default:* `nil`) - Link to the list of daily uploads for this custom data source. Link to the list of uploads for this custom data source.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Value is "analytics#dailyUploads". Value is "analytics#uploads".
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,8 +21,8 @@ defmodule GoogleApi.Analytics.V3.Model.UnsampledReportCloudStorageDownloadDetail
 
   ## Attributes
 
-  - bucketId (String.t): Id of the bucket the file object is stored in. Defaults to `nil`.
-  - objectId (String.t): Id of the file object containing the report data. Defaults to `nil`.
+  *   `bucketId` (*type:* `String.t`, *default:* `nil`) - Id of the bucket the file object is stored in.
+  *   `objectId` (*type:* `String.t`, *default:* `nil`) - Id of the file object containing the report data.
   """
 
   use GoogleApi.Gax.ModelBase

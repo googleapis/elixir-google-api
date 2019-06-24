@@ -21,9 +21,9 @@ defmodule GoogleApi.Analytics.V3.Model.GaDataColumnHeaders do
 
   ## Attributes
 
-  - columnType (String.t): Column Type. Either DIMENSION or METRIC. Defaults to `nil`.
-  - dataType (String.t): Data type. Dimension column headers have only STRING as the data type. Metric column headers have data types for metric values such as INTEGER, DOUBLE, CURRENCY etc. Defaults to `nil`.
-  - name (String.t): Column name. Defaults to `nil`.
+  *   `columnType` (*type:* `String.t`, *default:* `nil`) - Column Type. Either DIMENSION or METRIC.
+  *   `dataType` (*type:* `String.t`, *default:* `nil`) - Data type. Dimension column headers have only STRING as the data type. Metric column headers have data types for metric values such as INTEGER, DOUBLE, CURRENCY etc.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Column name.
   """
 
   use GoogleApi.Gax.ModelBase

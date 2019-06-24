@@ -21,9 +21,9 @@ defmodule GoogleApi.Analytics.V3.Model.GoalUrlDestinationDetailsSteps do
 
   ## Attributes
 
-  - name (String.t): Step name. Defaults to `nil`.
-  - number (integer()): Step number. Defaults to `nil`.
-  - url (String.t): URL for this step. Defaults to `nil`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Step name.
+  *   `number` (*type:* `integer()`, *default:* `nil`) - Step number.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - URL for this step.
   """
 
   use GoogleApi.Gax.ModelBase

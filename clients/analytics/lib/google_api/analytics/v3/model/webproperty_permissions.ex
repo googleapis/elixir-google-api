@@ -21,7 +21,7 @@ defmodule GoogleApi.Analytics.V3.Model.WebpropertyPermissions do
 
   ## Attributes
 
-  - effective (list(String.t)): All the permissions that the user has for this web property. These include any implied permissions (e.g., EDIT implies VIEW) or inherited permissions from the parent account. Defaults to `nil`.
+  *   `effective` (*type:* `list(String.t)`, *default:* `nil`) - All the permissions that the user has for this web property. These include any implied permissions (e.g., EDIT implies VIEW) or inherited permissions from the parent account.
   """
 
   use GoogleApi.Gax.ModelBase

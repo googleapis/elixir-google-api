@@ -21,14 +21,14 @@ defmodule GoogleApi.Analytics.V3.Model.WebPropertySummary do
 
   ## Attributes
 
-  - id (String.t): Web property ID of the form UA-XXXXX-YY. Defaults to `nil`.
-  - internalWebPropertyId (String.t): Internal ID for this web property. Defaults to `nil`.
-  - kind (String.t): Resource type for Analytics WebPropertySummary. Defaults to `analytics#webPropertySummary`.
-  - level (String.t): Level for this web property. Possible values are STANDARD or PREMIUM. Defaults to `nil`.
-  - name (String.t): Web property name. Defaults to `nil`.
-  - profiles (list(GoogleApi.Analytics.V3.Model.ProfileSummary.t)): List of profiles under this web property. Defaults to `nil`.
-  - starred (boolean()): Indicates whether this web property is starred or not. Defaults to `nil`.
-  - websiteUrl (String.t): Website url for this web property. Defaults to `nil`.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Web property ID of the form UA-XXXXX-YY.
+  *   `internalWebPropertyId` (*type:* `String.t`, *default:* `nil`) - Internal ID for this web property.
+  *   `kind` (*type:* `String.t`, *default:* `analytics#webPropertySummary`) - Resource type for Analytics WebPropertySummary.
+  *   `level` (*type:* `String.t`, *default:* `nil`) - Level for this web property. Possible values are STANDARD or PREMIUM.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Web property name.
+  *   `profiles` (*type:* `list(GoogleApi.Analytics.V3.Model.ProfileSummary.t)`, *default:* `nil`) - List of profiles under this web property.
+  *   `starred` (*type:* `boolean()`, *default:* `nil`) - Indicates whether this web property is starred or not.
+  *   `websiteUrl` (*type:* `String.t`, *default:* `nil`) - Website url for this web property.
   """
 
   use GoogleApi.Gax.ModelBase

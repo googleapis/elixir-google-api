@@ -21,8 +21,8 @@ defmodule GoogleApi.Analytics.V3.Model.GoalParentLink do
 
   ## Attributes
 
-  - href (String.t): Link to the view (profile) to which this goal belongs. Defaults to `nil`.
-  - type (String.t): Value is "analytics#profile". Defaults to `analytics#profile`.
+  *   `href` (*type:* `String.t`, *default:* `nil`) - Link to the view (profile) to which this goal belongs.
+  *   `type` (*type:* `String.t`, *default:* `analytics#profile`) - Value is "analytics#profile".
   """
 
   use GoogleApi.Gax.ModelBase

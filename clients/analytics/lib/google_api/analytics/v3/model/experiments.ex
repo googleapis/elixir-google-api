@@ -21,14 +21,14 @@ defmodule GoogleApi.Analytics.V3.Model.Experiments do
 
   ## Attributes
 
-  - items (list(GoogleApi.Analytics.V3.Model.Experiment.t)): A list of experiments. Defaults to `nil`.
-  - itemsPerPage (integer()): The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. Defaults to `nil`.
-  - kind (String.t): Collection type. Defaults to `analytics#experiments`.
-  - nextLink (String.t): Link to next page for this experiment collection. Defaults to `nil`.
-  - previousLink (String.t): Link to previous page for this experiment collection. Defaults to `nil`.
-  - startIndex (integer()): The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter. Defaults to `nil`.
-  - totalResults (integer()): The total number of results for the query, regardless of the number of resources in the result. Defaults to `nil`.
-  - username (String.t): Email ID of the authenticated user Defaults to `nil`.
+  *   `items` (*type:* `list(GoogleApi.Analytics.V3.Model.Experiment.t)`, *default:* `nil`) - A list of experiments.
+  *   `itemsPerPage` (*type:* `integer()`, *default:* `nil`) - The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.
+  *   `kind` (*type:* `String.t`, *default:* `analytics#experiments`) - Collection type.
+  *   `nextLink` (*type:* `String.t`, *default:* `nil`) - Link to next page for this experiment collection.
+  *   `previousLink` (*type:* `String.t`, *default:* `nil`) - Link to previous page for this experiment collection.
+  *   `startIndex` (*type:* `integer()`, *default:* `nil`) - The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter.
+  *   `totalResults` (*type:* `integer()`, *default:* `nil`) - The total number of results for the query, regardless of the number of resources in the result.
+  *   `username` (*type:* `String.t`, *default:* `nil`) - Email ID of the authenticated user
   """
 
   use GoogleApi.Gax.ModelBase
