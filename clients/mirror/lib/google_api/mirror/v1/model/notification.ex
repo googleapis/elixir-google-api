@@ -21,12 +21,12 @@ defmodule GoogleApi.Mirror.V1.Model.Notification do
 
   ## Attributes
 
-  - collection (String.t): The collection that generated the notification. Defaults to `nil`.
-  - itemId (String.t): The ID of the item that generated the notification. Defaults to `nil`.
-  - operation (String.t): The type of operation that generated the notification. Defaults to `nil`.
-  - userActions (list(GoogleApi.Mirror.V1.Model.UserAction.t)): A list of actions taken by the user that triggered the notification. Defaults to `nil`.
-  - userToken (String.t): The user token provided by the service when it subscribed for notifications. Defaults to `nil`.
-  - verifyToken (String.t): The secret verify token provided by the service when it subscribed for notifications. Defaults to `nil`.
+  *   `collection` (*type:* `String.t`, *default:* `nil`) - The collection that generated the notification.
+  *   `itemId` (*type:* `String.t`, *default:* `nil`) - The ID of the item that generated the notification.
+  *   `operation` (*type:* `String.t`, *default:* `nil`) - The type of operation that generated the notification.
+  *   `userActions` (*type:* `list(GoogleApi.Mirror.V1.Model.UserAction.t)`, *default:* `nil`) - A list of actions taken by the user that triggered the notification.
+  *   `userToken` (*type:* `String.t`, *default:* `nil`) - The user token provided by the service when it subscribed for notifications.
+  *   `verifyToken` (*type:* `String.t`, *default:* `nil`) - The secret verify token provided by the service when it subscribed for notifications.
   """
 
   use GoogleApi.Gax.ModelBase

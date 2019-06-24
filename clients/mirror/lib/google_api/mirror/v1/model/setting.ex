@@ -21,11 +21,11 @@ defmodule GoogleApi.Mirror.V1.Model.Setting do
 
   ## Attributes
 
-  - id (String.t): The setting's ID. The following IDs are valid:  
-  - locale - The key to the user’s language/locale (BCP 47 identifier) that Glassware should use to render localized content.  
-  - timezone - The key to the user’s current time zone region as defined in the tz database. Example: America/Los_Angeles. Defaults to `nil`.
-  - kind (String.t): The type of resource. This is always mirror#setting. Defaults to `mirror#setting`.
-  - value (String.t): The setting value, as a string. Defaults to `nil`.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The setting's ID. The following IDs are valid:  
+      - locale - The key to the user’s language/locale (BCP 47 identifier) that Glassware should use to render localized content.  
+      - timezone - The key to the user’s current time zone region as defined in the tz database. Example: America/Los_Angeles.
+  *   `kind` (*type:* `String.t`, *default:* `mirror#setting`) - The type of resource. This is always mirror#setting.
+  *   `value` (*type:* `String.t`, *default:* `nil`) - The setting value, as a string.
   """
 
   use GoogleApi.Gax.ModelBase

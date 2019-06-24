@@ -21,8 +21,8 @@ defmodule GoogleApi.Mirror.V1.Model.AuthToken do
 
   ## Attributes
 
-  - authToken (String.t):  Defaults to `nil`.
-  - type (String.t):  Defaults to `nil`.
+  *   `authToken` (*type:* `String.t`, *default:* `nil`) - 
+  *   `type` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

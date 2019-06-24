@@ -21,8 +21,8 @@ defmodule GoogleApi.Mirror.V1.Model.UserData do
 
   ## Attributes
 
-  - key (String.t):  Defaults to `nil`.
-  - value (String.t):  Defaults to `nil`.
+  *   `key` (*type:* `String.t`, *default:* `nil`) - 
+  *   `value` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,18 +21,18 @@ defmodule GoogleApi.Mirror.V1.Model.UserAction do
 
   ## Attributes
 
-  - payload (String.t): An optional payload for the action.
+  *   `payload` (*type:* `String.t`, *default:* `nil`) - An optional payload for the action.
 
-  For actions of type CUSTOM, this is the ID of the custom menu item that was selected. Defaults to `nil`.
-  - type (String.t): The type of action. The value of this can be:  
-  - SHARE - the user shared an item. 
-  - REPLY - the user replied to an item. 
-  - REPLY_ALL - the user replied to all recipients of an item. 
-  - CUSTOM - the user selected a custom menu item on the timeline item. 
-  - DELETE - the user deleted the item. 
-  - PIN - the user pinned the item. 
-  - UNPIN - the user unpinned the item. 
-  - LAUNCH - the user initiated a voice command.  In the future, additional types may be added. UserActions with unrecognized types should be ignored. Defaults to `nil`.
+      For actions of type CUSTOM, this is the ID of the custom menu item that was selected.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of action. The value of this can be:  
+      - SHARE - the user shared an item. 
+      - REPLY - the user replied to an item. 
+      - REPLY_ALL - the user replied to all recipients of an item. 
+      - CUSTOM - the user selected a custom menu item on the timeline item. 
+      - DELETE - the user deleted the item. 
+      - PIN - the user pinned the item. 
+      - UNPIN - the user unpinned the item. 
+      - LAUNCH - the user initiated a voice command.  In the future, additional types may be added. UserActions with unrecognized types should be ignored.
   """
 
   use GoogleApi.Gax.ModelBase
