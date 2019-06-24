@@ -21,7 +21,7 @@ defmodule GoogleApi.Chat.V1.Model.OpenLink do
 
   ## Attributes
 
-  - url (String.t): The URL to open. Defaults to `nil`.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - The URL to open.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,11 +21,11 @@ defmodule GoogleApi.Chat.V1.Model.WidgetMarkup do
 
   ## Attributes
 
-  - buttons (list(GoogleApi.Chat.V1.Model.Button.t)): A list of buttons. Buttons is also oneof data and only one of these
-  fields should be set. Defaults to `nil`.
-  - image (GoogleApi.Chat.V1.Model.Image.t): Display an image in this widget. Defaults to `nil`.
-  - keyValue (GoogleApi.Chat.V1.Model.KeyValue.t): Display a key value item in this widget. Defaults to `nil`.
-  - textParagraph (GoogleApi.Chat.V1.Model.TextParagraph.t): Display a text paragraph in this widget. Defaults to `nil`.
+  *   `buttons` (*type:* `list(GoogleApi.Chat.V1.Model.Button.t)`, *default:* `nil`) - A list of buttons. Buttons is also oneof data and only one of these
+      fields should be set.
+  *   `image` (*type:* `GoogleApi.Chat.V1.Model.Image.t`, *default:* `nil`) - Display an image in this widget.
+  *   `keyValue` (*type:* `GoogleApi.Chat.V1.Model.KeyValue.t`, *default:* `nil`) - Display a key value item in this widget.
+  *   `textParagraph` (*type:* `GoogleApi.Chat.V1.Model.TextParagraph.t`, *default:* `nil`) - Display a text paragraph in this widget.
   """
 
   use GoogleApi.Gax.ModelBase

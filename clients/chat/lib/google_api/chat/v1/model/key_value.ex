@@ -22,16 +22,16 @@ defmodule GoogleApi.Chat.V1.Model.KeyValue do
 
   ## Attributes
 
-  - bottomLabel (String.t): The text of the bottom label. Formatted text supported. Defaults to `nil`.
-  - button (GoogleApi.Chat.V1.Model.Button.t): A button that can be clicked to trigger an action. Defaults to `nil`.
-  - content (String.t): The text of the content. Formatted text supported and always required. Defaults to `nil`.
-  - contentMultiline (boolean()): If the content should be multiline. Defaults to `nil`.
-  - icon (String.t): An enum value that will be replaced by the Chat API with the
-  corresponding icon image. Defaults to `nil`.
-  - iconUrl (String.t): The icon specified by a URL. Defaults to `nil`.
-  - onClick (GoogleApi.Chat.V1.Model.OnClick.t): The onclick action. Only the top label, bottom label and content region
-  are clickable. Defaults to `nil`.
-  - topLabel (String.t): The text of the top label. Formatted text supported. Defaults to `nil`.
+  *   `bottomLabel` (*type:* `String.t`, *default:* `nil`) - The text of the bottom label. Formatted text supported.
+  *   `button` (*type:* `GoogleApi.Chat.V1.Model.Button.t`, *default:* `nil`) - A button that can be clicked to trigger an action.
+  *   `content` (*type:* `String.t`, *default:* `nil`) - The text of the content. Formatted text supported and always required.
+  *   `contentMultiline` (*type:* `boolean()`, *default:* `nil`) - If the content should be multiline.
+  *   `icon` (*type:* `String.t`, *default:* `nil`) - An enum value that will be replaced by the Chat API with the
+      corresponding icon image.
+  *   `iconUrl` (*type:* `String.t`, *default:* `nil`) - The icon specified by a URL.
+  *   `onClick` (*type:* `GoogleApi.Chat.V1.Model.OnClick.t`, *default:* `nil`) - The onclick action. Only the top label, bottom label and content region
+      are clickable.
+  *   `topLabel` (*type:* `String.t`, *default:* `nil`) - The text of the top label. Formatted text supported.
   """
 
   use GoogleApi.Gax.ModelBase

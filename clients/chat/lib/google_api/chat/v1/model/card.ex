@@ -21,10 +21,10 @@ defmodule GoogleApi.Chat.V1.Model.Card do
 
   ## Attributes
 
-  - cardActions (list(GoogleApi.Chat.V1.Model.CardAction.t)): The actions of this card. Defaults to `nil`.
-  - header (GoogleApi.Chat.V1.Model.CardHeader.t): The header of the card. A header usually contains a title and an image. Defaults to `nil`.
-  - name (String.t): Name of the card. Defaults to `nil`.
-  - sections (list(GoogleApi.Chat.V1.Model.Section.t)): Sections are separated by a line divider. Defaults to `nil`.
+  *   `cardActions` (*type:* `list(GoogleApi.Chat.V1.Model.CardAction.t)`, *default:* `nil`) - The actions of this card.
+  *   `header` (*type:* `GoogleApi.Chat.V1.Model.CardHeader.t`, *default:* `nil`) - The header of the card. A header usually contains a title and an image.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the card.
+  *   `sections` (*type:* `list(GoogleApi.Chat.V1.Model.Section.t)`, *default:* `nil`) - Sections are separated by a line divider.
   """
 
   use GoogleApi.Gax.ModelBase

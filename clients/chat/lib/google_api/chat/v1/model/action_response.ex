@@ -21,8 +21,8 @@ defmodule GoogleApi.Chat.V1.Model.ActionResponse do
 
   ## Attributes
 
-  - type (String.t): The type of bot response. Defaults to `nil`.
-  - url (String.t): URL for users to auth or config. (Only for REQUEST_CONFIG response types.) Defaults to `nil`.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of bot response.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - URL for users to auth or config. (Only for REQUEST_CONFIG response types.)
   """
 
   use GoogleApi.Gax.ModelBase

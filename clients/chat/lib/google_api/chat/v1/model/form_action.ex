@@ -22,9 +22,9 @@ defmodule GoogleApi.Chat.V1.Model.FormAction do
 
   ## Attributes
 
-  - actionMethodName (String.t): Apps Script function to invoke when the containing element is
-  clicked/activated. Defaults to `nil`.
-  - parameters (list(GoogleApi.Chat.V1.Model.ActionParameter.t)): List of action parameters. Defaults to `nil`.
+  *   `actionMethodName` (*type:* `String.t`, *default:* `nil`) - Apps Script function to invoke when the containing element is
+      clicked/activated.
+  *   `parameters` (*type:* `list(GoogleApi.Chat.V1.Model.ActionParameter.t)`, *default:* `nil`) - List of action parameters.
   """
 
   use GoogleApi.Gax.ModelBase

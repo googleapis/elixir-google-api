@@ -21,9 +21,9 @@ defmodule GoogleApi.Chat.V1.Model.Thread do
 
   ## Attributes
 
-  - name (String.t): Resource name, in the form "spaces/*/threads/*".
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name, in the form "spaces/*/threads/*".
 
-  Example: spaces/AAAAMpdlehY/threads/UMxbHmzDlr4 Defaults to `nil`.
+      Example: spaces/AAAAMpdlehY/threads/UMxbHmzDlr4
   """
 
   use GoogleApi.Gax.ModelBase
