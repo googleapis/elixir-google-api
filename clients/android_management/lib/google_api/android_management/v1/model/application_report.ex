@@ -21,17 +21,17 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ApplicationReport do
 
   ## Attributes
 
-  - applicationSource (String.t): The source of the package. Defaults to `nil`.
-  - displayName (String.t): The display name of the app. Defaults to `nil`.
-  - events (list(GoogleApi.AndroidManagement.V1.Model.ApplicationEvent.t)): List of app events. The most recent 20 events are stored in the list. Defaults to `nil`.
-  - installerPackageName (String.t): The package name of the app that installed this app. Defaults to `nil`.
-  - keyedAppStates (list(GoogleApi.AndroidManagement.V1.Model.KeyedAppState.t)): List of keyed app states reported by the app. Defaults to `nil`.
-  - packageName (String.t): Package name of the app. Defaults to `nil`.
-  - packageSha256Hash (String.t): The SHA-256 hash of the app's APK file, which can be used to verify the app hasn't been modified. Each byte of the hash value is represented as a two-digit hexadecimal number. Defaults to `nil`.
-  - signingKeyCertFingerprints (list(String.t)): The SHA-1 hash of each android.content.pm.Signature (https://developer.android.com/reference/android/content/pm/Signature.html) associated with the app package. Each byte of each hash value is represented as a two-digit hexadecimal number. Defaults to `nil`.
-  - state (String.t): Application state. Defaults to `nil`.
-  - versionCode (integer()): The app version code, which can be used to determine whether one version is more recent than another. Defaults to `nil`.
-  - versionName (String.t): The app version as displayed to the user. Defaults to `nil`.
+  *   `applicationSource` (*type:* `String.t`, *default:* `nil`) - The source of the package.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name of the app.
+  *   `events` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.ApplicationEvent.t)`, *default:* `nil`) - List of app events. The most recent 20 events are stored in the list.
+  *   `installerPackageName` (*type:* `String.t`, *default:* `nil`) - The package name of the app that installed this app.
+  *   `keyedAppStates` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.KeyedAppState.t)`, *default:* `nil`) - List of keyed app states reported by the app.
+  *   `packageName` (*type:* `String.t`, *default:* `nil`) - Package name of the app.
+  *   `packageSha256Hash` (*type:* `String.t`, *default:* `nil`) - The SHA-256 hash of the app's APK file, which can be used to verify the app hasn't been modified. Each byte of the hash value is represented as a two-digit hexadecimal number.
+  *   `signingKeyCertFingerprints` (*type:* `list(String.t)`, *default:* `nil`) - The SHA-1 hash of each android.content.pm.Signature (https://developer.android.com/reference/android/content/pm/Signature.html) associated with the app package. Each byte of each hash value is represented as a two-digit hexadecimal number.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - Application state.
+  *   `versionCode` (*type:* `integer()`, *default:* `nil`) - The app version code, which can be used to determine whether one version is more recent than another.
+  *   `versionName` (*type:* `String.t`, *default:* `nil`) - The app version as displayed to the user.
   """
 
   use GoogleApi.Gax.ModelBase

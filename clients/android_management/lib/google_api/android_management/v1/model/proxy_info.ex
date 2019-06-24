@@ -21,10 +21,10 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ProxyInfo do
 
   ## Attributes
 
-  - excludedHosts (list(String.t)): For a direct proxy, the hosts for which the proxy is bypassed. The host names may contain wildcards such as *.example.com. Defaults to `nil`.
-  - host (String.t): The host of the direct proxy. Defaults to `nil`.
-  - pacUri (String.t): The URI of the PAC script used to configure the proxy. Defaults to `nil`.
-  - port (integer()): The port of the direct proxy. Defaults to `nil`.
+  *   `excludedHosts` (*type:* `list(String.t)`, *default:* `nil`) - For a direct proxy, the hosts for which the proxy is bypassed. The host names may contain wildcards such as *.example.com.
+  *   `host` (*type:* `String.t`, *default:* `nil`) - The host of the direct proxy.
+  *   `pacUri` (*type:* `String.t`, *default:* `nil`) - The URI of the PAC script used to configure the proxy.
+  *   `port` (*type:* `integer()`, *default:* `nil`) - The port of the direct proxy.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,8 +21,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.AlwaysOnVpnPackage do
 
   ## Attributes
 
-  - lockdownEnabled (boolean()): Disallows networking when the VPN is not connected. Defaults to `nil`.
-  - packageName (String.t): The package name of the VPN app. Defaults to `nil`.
+  *   `lockdownEnabled` (*type:* `boolean()`, *default:* `nil`) - Disallows networking when the VPN is not connected.
+  *   `packageName` (*type:* `String.t`, *default:* `nil`) - The package name of the VPN app.
   """
 
   use GoogleApi.Gax.ModelBase

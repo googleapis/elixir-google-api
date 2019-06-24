@@ -21,7 +21,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.BlockAction do
 
   ## Attributes
 
-  - blockAfterDays (integer()): Number of days the policy is non-compliant before the device or work profile is blocked. To block access immediately, set to 0. blockAfterDays must be less than wipeAfterDays. Defaults to `nil`.
+  *   `blockAfterDays` (*type:* `integer()`, *default:* `nil`) - Number of days the policy is non-compliant before the device or work profile is blocked. To block access immediately, set to 0. blockAfterDays must be less than wipeAfterDays.
   """
 
   use GoogleApi.Gax.ModelBase

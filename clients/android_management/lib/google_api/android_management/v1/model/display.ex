@@ -21,13 +21,13 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Display do
 
   ## Attributes
 
-  - density (integer()): Display density expressed as dots-per-inch. Defaults to `nil`.
-  - displayId (integer()): Unique display id. Defaults to `nil`.
-  - height (integer()): Display height in pixels. Defaults to `nil`.
-  - name (String.t): Name of the display. Defaults to `nil`.
-  - refreshRate (integer()): Refresh rate of the display in frames per second. Defaults to `nil`.
-  - state (String.t): State of the display. Defaults to `nil`.
-  - width (integer()): Display width in pixels. Defaults to `nil`.
+  *   `density` (*type:* `integer()`, *default:* `nil`) - Display density expressed as dots-per-inch.
+  *   `displayId` (*type:* `integer()`, *default:* `nil`) - Unique display id.
+  *   `height` (*type:* `integer()`, *default:* `nil`) - Display height in pixels.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the display.
+  *   `refreshRate` (*type:* `integer()`, *default:* `nil`) - Refresh rate of the display in frames per second.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - State of the display.
+  *   `width` (*type:* `integer()`, *default:* `nil`) - Display width in pixels.
   """
 
   use GoogleApi.Gax.ModelBase

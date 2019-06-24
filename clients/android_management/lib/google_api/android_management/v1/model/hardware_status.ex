@@ -21,13 +21,13 @@ defmodule GoogleApi.AndroidManagement.V1.Model.HardwareStatus do
 
   ## Attributes
 
-  - batteryTemperatures (list(number())): Current battery temperatures in Celsius for each battery on the device. Defaults to `nil`.
-  - cpuTemperatures (list(number())): Current CPU temperatures in Celsius for each CPU on the device. Defaults to `nil`.
-  - cpuUsages (list(number())): CPU usages in percentage for each core available on the device. Usage is 0 for each unplugged core. Empty array implies that CPU usage is not supported in the system. Defaults to `nil`.
-  - createTime (DateTime.t): The time the measurements were taken. Defaults to `nil`.
-  - fanSpeeds (list(number())): Fan speeds in RPM for each fan on the device. Empty array means that there are no fans or fan speed is not supported on the system. Defaults to `nil`.
-  - gpuTemperatures (list(number())): Current GPU temperatures in Celsius for each GPU on the device. Defaults to `nil`.
-  - skinTemperatures (list(number())): Current device skin temperatures in Celsius. Defaults to `nil`.
+  *   `batteryTemperatures` (*type:* `list(number())`, *default:* `nil`) - Current battery temperatures in Celsius for each battery on the device.
+  *   `cpuTemperatures` (*type:* `list(number())`, *default:* `nil`) - Current CPU temperatures in Celsius for each CPU on the device.
+  *   `cpuUsages` (*type:* `list(number())`, *default:* `nil`) - CPU usages in percentage for each core available on the device. Usage is 0 for each unplugged core. Empty array implies that CPU usage is not supported in the system.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the measurements were taken.
+  *   `fanSpeeds` (*type:* `list(number())`, *default:* `nil`) - Fan speeds in RPM for each fan on the device. Empty array means that there are no fans or fan speed is not supported on the system.
+  *   `gpuTemperatures` (*type:* `list(number())`, *default:* `nil`) - Current GPU temperatures in Celsius for each GPU on the device.
+  *   `skinTemperatures` (*type:* `list(number())`, *default:* `nil`) - Current device skin temperatures in Celsius.
   """
 
   use GoogleApi.Gax.ModelBase

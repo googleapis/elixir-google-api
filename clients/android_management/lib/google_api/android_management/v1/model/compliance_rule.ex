@@ -21,10 +21,10 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ComplianceRule do
 
   ## Attributes
 
-  - apiLevelCondition (GoogleApi.AndroidManagement.V1.Model.ApiLevelCondition.t): A condition which is satisfied if the Android Framework API level on the device doesn't meet a minimum requirement. Defaults to `nil`.
-  - disableApps (boolean()): If set to true, the rule includes a mitigating action to disable apps so that the device is effectively disabled, but app data is preserved. If the device is running an app in locked task mode, the app will be closed and a UI showing the reason for non-compliance will be displayed. Defaults to `nil`.
-  - nonComplianceDetailCondition (GoogleApi.AndroidManagement.V1.Model.NonComplianceDetailCondition.t): A condition which is satisfied if there exists any matching NonComplianceDetail for the device. Defaults to `nil`.
-  - packageNamesToDisable (list(String.t)): If set, the rule includes a mitigating action to disable apps specified in the list, but app data is preserved. Defaults to `nil`.
+  *   `apiLevelCondition` (*type:* `GoogleApi.AndroidManagement.V1.Model.ApiLevelCondition.t`, *default:* `nil`) - A condition which is satisfied if the Android Framework API level on the device doesn't meet a minimum requirement.
+  *   `disableApps` (*type:* `boolean()`, *default:* `nil`) - If set to true, the rule includes a mitigating action to disable apps so that the device is effectively disabled, but app data is preserved. If the device is running an app in locked task mode, the app will be closed and a UI showing the reason for non-compliance will be displayed.
+  *   `nonComplianceDetailCondition` (*type:* `GoogleApi.AndroidManagement.V1.Model.NonComplianceDetailCondition.t`, *default:* `nil`) - A condition which is satisfied if there exists any matching NonComplianceDetail for the device.
+  *   `packageNamesToDisable` (*type:* `list(String.t)`, *default:* `nil`) - If set, the rule includes a mitigating action to disable apps specified in the list, but app data is preserved.
   """
 
   use GoogleApi.Gax.ModelBase

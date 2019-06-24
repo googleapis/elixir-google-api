@@ -21,8 +21,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ExternalData do
 
   ## Attributes
 
-  - sha256Hash (String.t): The base-64 encoded SHA-256 hash of the content hosted at url. If the content doesn't match this hash, Android Device Policy won't use the data. Defaults to `nil`.
-  - url (String.t): The absolute URL to the data, which must use either the http or https scheme. Android Device Policy doesn't provide any credentials in the GET request, so the URL must be publicly accessible. Including a long, random component in the URL may be used to prevent attackers from discovering the URL. Defaults to `nil`.
+  *   `sha256Hash` (*type:* `String.t`, *default:* `nil`) - The base-64 encoded SHA-256 hash of the content hosted at url. If the content doesn't match this hash, Android Device Policy won't use the data.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - The absolute URL to the data, which must use either the http or https scheme. Android Device Policy doesn't provide any credentials in the GET request, so the URL must be publicly accessible. Including a long, random component in the URL may be used to prevent attackers from discovering the URL.
   """
 
   use GoogleApi.Gax.ModelBase

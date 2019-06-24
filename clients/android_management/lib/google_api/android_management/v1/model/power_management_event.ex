@@ -21,9 +21,9 @@ defmodule GoogleApi.AndroidManagement.V1.Model.PowerManagementEvent do
 
   ## Attributes
 
-  - batteryLevel (number()): For BATTERY_LEVEL_COLLECTED events, the battery level as a percentage. Defaults to `nil`.
-  - createTime (DateTime.t): The creation time of the event. Defaults to `nil`.
-  - eventType (String.t): Event type. Defaults to `nil`.
+  *   `batteryLevel` (*type:* `number()`, *default:* `nil`) - For BATTERY_LEVEL_COLLECTED events, the battery level as a percentage.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The creation time of the event.
+  *   `eventType` (*type:* `String.t`, *default:* `nil`) - Event type.
   """
 
   use GoogleApi.Gax.ModelBase

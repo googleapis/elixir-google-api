@@ -21,8 +21,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.PermissionGrant do
 
   ## Attributes
 
-  - permission (String.t): The Android permission or group, e.g. android.permission.READ_CALENDAR or android.permission_group.CALENDAR. Defaults to `nil`.
-  - policy (String.t): The policy for granting the permission. Defaults to `nil`.
+  *   `permission` (*type:* `String.t`, *default:* `nil`) - The Android permission or group, e.g. android.permission.READ_CALENDAR or android.permission_group.CALENDAR.
+  *   `policy` (*type:* `String.t`, *default:* `nil`) - The policy for granting the permission.
   """
 
   use GoogleApi.Gax.ModelBase

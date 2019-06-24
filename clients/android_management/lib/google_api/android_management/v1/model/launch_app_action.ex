@@ -21,7 +21,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.LaunchAppAction do
 
   ## Attributes
 
-  - packageName (String.t): Package name of app to be launched Defaults to `nil`.
+  *   `packageName` (*type:* `String.t`, *default:* `nil`) - Package name of app to be launched
   """
 
   use GoogleApi.Gax.ModelBase

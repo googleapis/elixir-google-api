@@ -28,30 +28,31 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidManagement.V1.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :enterpriseToken (String.t): The enterprise token appended to the callback URL.
-    - :projectId (String.t): The ID of the Google Cloud Platform project which will own the enterprise.
-    - :signupUrlName (String.t): The name of the SignupUrl used to sign up for the enterprise.
-    - :body (GoogleApi.AndroidManagement.V1.Model.Enterprise.t): 
+  *   `connection` (*type:* `GoogleApi.AndroidManagement.V1.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:enterpriseToken` (*type:* `String.t`) - The enterprise token appended to the callback URL.
+      *   `:projectId` (*type:* `String.t`) - The ID of the Google Cloud Platform project which will own the enterprise.
+      *   `:signupUrlName` (*type:* `String.t`) - The name of the SignupUrl used to sign up for the enterprise.
+      *   `:body` (*type:* `GoogleApi.AndroidManagement.V1.Model.Enterprise.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidManagement.V1.Model.Enterprise{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidManagement.V1.Model.Enterprise{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec androidmanagement_enterprises_create(Tesla.Env.client(), keyword()) ::
+  @spec androidmanagement_enterprises_create(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.AndroidManagement.V1.Model.Enterprise.t()} | {:error, Tesla.Env.t()}
   def androidmanagement_enterprises_create(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -88,27 +89,28 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidManagement.V1.Connection): Connection to server
-  - name (String.t): The name of the enterprise in the form enterprises/{enterpriseId}.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.AndroidManagement.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - The name of the enterprise in the form enterprises/{enterpriseId}.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidManagement.V1.Model.Enterprise{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidManagement.V1.Model.Enterprise{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec androidmanagement_enterprises_get(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec androidmanagement_enterprises_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AndroidManagement.V1.Model.Enterprise.t()} | {:error, Tesla.Env.t()}
   def androidmanagement_enterprises_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -143,29 +145,30 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidManagement.V1.Connection): Connection to server
-  - name (String.t): The name of the enterprise in the form enterprises/{enterpriseId}.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :updateMask (String.t): The field mask indicating the fields to update. If not set, all modifiable fields will be modified.
-    - :body (GoogleApi.AndroidManagement.V1.Model.Enterprise.t): 
+  *   `connection` (*type:* `GoogleApi.AndroidManagement.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - The name of the enterprise in the form enterprises/{enterpriseId}.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:updateMask` (*type:* `String.t`) - The field mask indicating the fields to update. If not set, all modifiable fields will be modified.
+      *   `:body` (*type:* `GoogleApi.AndroidManagement.V1.Model.Enterprise.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidManagement.V1.Model.Enterprise{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidManagement.V1.Model.Enterprise{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec androidmanagement_enterprises_patch(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec androidmanagement_enterprises_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AndroidManagement.V1.Model.Enterprise.t()} | {:error, Tesla.Env.t()}
   def androidmanagement_enterprises_patch(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -202,29 +205,34 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidManagement.V1.Connection): Connection to server
-  - name (String.t): The name of the application in the form enterprises/{enterpriseId}/applications/{package_name}.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :languageCode (String.t): The preferred language for localized application info, as a BCP47 tag (e.g. "en-US", "de"). If not specified the default language of the application will be used.
+  *   `connection` (*type:* `GoogleApi.AndroidManagement.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - The name of the application in the form enterprises/{enterpriseId}/applications/{package_name}.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:languageCode` (*type:* `String.t`) - The preferred language for localized application info, as a BCP47 tag (e.g. "en-US", "de"). If not specified the default language of the application will be used.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidManagement.V1.Model.Application{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidManagement.V1.Model.Application{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec androidmanagement_enterprises_applications_get(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, GoogleApi.AndroidManagement.V1.Model.Application.t()} | {:error, Tesla.Env.t()}
+  @spec androidmanagement_enterprises_applications_get(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.AndroidManagement.V1.Model.Application.t()} | {:error, Tesla.Env.t()}
   def androidmanagement_enterprises_applications_get(
         connection,
         name,
@@ -264,29 +272,34 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidManagement.V1.Connection): Connection to server
-  - name (String.t): The name of the device in the form enterprises/{enterpriseId}/devices/{deviceId}.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :wipeDataFlags (list(String.t)): Optional flags that control the device wiping behavior.
+  *   `connection` (*type:* `GoogleApi.AndroidManagement.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - The name of the device in the form enterprises/{enterpriseId}/devices/{deviceId}.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:wipeDataFlags` (*type:* `list(String.t)`) - Optional flags that control the device wiping behavior.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidManagement.V1.Model.Empty{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidManagement.V1.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec androidmanagement_enterprises_devices_delete(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, GoogleApi.AndroidManagement.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+  @spec androidmanagement_enterprises_devices_delete(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.AndroidManagement.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
   def androidmanagement_enterprises_devices_delete(
         connection,
         name,
@@ -326,28 +339,33 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidManagement.V1.Connection): Connection to server
-  - name (String.t): The name of the device in the form enterprises/{enterpriseId}/devices/{deviceId}.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.AndroidManagement.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - The name of the device in the form enterprises/{enterpriseId}/devices/{deviceId}.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidManagement.V1.Model.Device{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidManagement.V1.Model.Device{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec androidmanagement_enterprises_devices_get(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, GoogleApi.AndroidManagement.V1.Model.Device.t()} | {:error, Tesla.Env.t()}
+  @spec androidmanagement_enterprises_devices_get(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.AndroidManagement.V1.Model.Device.t()} | {:error, Tesla.Env.t()}
   def androidmanagement_enterprises_devices_get(
         connection,
         name,
@@ -386,30 +404,32 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidManagement.V1.Connection): Connection to server
-  - name (String.t): The name of the device in the form enterprises/{enterpriseId}/devices/{deviceId}.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.AndroidManagement.V1.Model.Command.t): 
+  *   `connection` (*type:* `GoogleApi.AndroidManagement.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - The name of the device in the form enterprises/{enterpriseId}/devices/{deviceId}.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.AndroidManagement.V1.Model.Command.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidManagement.V1.Model.Operation{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidManagement.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec androidmanagement_enterprises_devices_issue_command(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.AndroidManagement.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def androidmanagement_enterprises_devices_issue_command(
@@ -451,29 +471,35 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidManagement.V1.Connection): Connection to server
-  - parent (String.t): The name of the enterprise in the form enterprises/{enterpriseId}.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :pageSize (integer()): The requested page size. The actual page size may be fixed to a min or max value.
-    - :pageToken (String.t): A token identifying a page of results returned by the server.
+  *   `connection` (*type:* `GoogleApi.AndroidManagement.V1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - The name of the enterprise in the form enterprises/{enterpriseId}.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - The requested page size. The actual page size may be fixed to a min or max value.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results returned by the server.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidManagement.V1.Model.ListDevicesResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidManagement.V1.Model.ListDevicesResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec androidmanagement_enterprises_devices_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec androidmanagement_enterprises_devices_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.AndroidManagement.V1.Model.ListDevicesResponse.t()}
           | {:error, Tesla.Env.t()}
   def androidmanagement_enterprises_devices_list(
@@ -518,30 +544,35 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidManagement.V1.Connection): Connection to server
-  - name (String.t): The name of the device in the form enterprises/{enterpriseId}/devices/{deviceId}.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :updateMask (String.t): The field mask indicating the fields to update. If not set, all modifiable fields will be modified.
-    - :body (GoogleApi.AndroidManagement.V1.Model.Device.t): 
+  *   `connection` (*type:* `GoogleApi.AndroidManagement.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - The name of the device in the form enterprises/{enterpriseId}/devices/{deviceId}.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:updateMask` (*type:* `String.t`) - The field mask indicating the fields to update. If not set, all modifiable fields will be modified.
+      *   `:body` (*type:* `GoogleApi.AndroidManagement.V1.Model.Device.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidManagement.V1.Model.Device{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidManagement.V1.Model.Device{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec androidmanagement_enterprises_devices_patch(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, GoogleApi.AndroidManagement.V1.Model.Device.t()} | {:error, Tesla.Env.t()}
+  @spec androidmanagement_enterprises_devices_patch(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.AndroidManagement.V1.Model.Device.t()} | {:error, Tesla.Env.t()}
   def androidmanagement_enterprises_devices_patch(
         connection,
         name,
@@ -582,29 +613,31 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidManagement.V1.Connection): Connection to server
-  - name (String.t): The name of the operation resource to be cancelled.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.AndroidManagement.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - The name of the operation resource to be cancelled.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidManagement.V1.Model.Empty{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidManagement.V1.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec androidmanagement_enterprises_devices_operations_cancel(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.AndroidManagement.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
   def androidmanagement_enterprises_devices_operations_cancel(
@@ -645,29 +678,31 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidManagement.V1.Connection): Connection to server
-  - name (String.t): The name of the operation resource to be deleted.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.AndroidManagement.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - The name of the operation resource to be deleted.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidManagement.V1.Model.Empty{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidManagement.V1.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec androidmanagement_enterprises_devices_operations_delete(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.AndroidManagement.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
   def androidmanagement_enterprises_devices_operations_delete(
@@ -708,29 +743,31 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidManagement.V1.Connection): Connection to server
-  - name (String.t): The name of the operation resource.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.AndroidManagement.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - The name of the operation resource.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidManagement.V1.Model.Operation{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidManagement.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec androidmanagement_enterprises_devices_operations_get(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.AndroidManagement.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def androidmanagement_enterprises_devices_operations_get(
@@ -771,32 +808,34 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidManagement.V1.Connection): Connection to server
-  - name (String.t): The name of the operation's parent resource.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :filter (String.t): The standard list filter.
-    - :pageSize (integer()): The standard list page size.
-    - :pageToken (String.t): The standard list page token.
+  *   `connection` (*type:* `GoogleApi.AndroidManagement.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - The name of the operation's parent resource.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:filter` (*type:* `String.t`) - The standard list filter.
+      *   `:pageSize` (*type:* `integer()`) - The standard list page size.
+      *   `:pageToken` (*type:* `String.t`) - The standard list page token.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidManagement.V1.Model.ListOperationsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidManagement.V1.Model.ListOperationsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec androidmanagement_enterprises_devices_operations_list(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidManagement.V1.Model.ListOperationsResponse.t()}
@@ -844,30 +883,32 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidManagement.V1.Connection): Connection to server
-  - parent (String.t): The name of the enterprise in the form enterprises/{enterpriseId}.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.AndroidManagement.V1.Model.EnrollmentToken.t): 
+  *   `connection` (*type:* `GoogleApi.AndroidManagement.V1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - The name of the enterprise in the form enterprises/{enterpriseId}.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.AndroidManagement.V1.Model.EnrollmentToken.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidManagement.V1.Model.EnrollmentToken{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidManagement.V1.Model.EnrollmentToken{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec androidmanagement_enterprises_enrollment_tokens_create(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidManagement.V1.Model.EnrollmentToken.t()}
@@ -911,29 +952,31 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidManagement.V1.Connection): Connection to server
-  - name (String.t): The name of the enrollment token in the form enterprises/{enterpriseId}/enrollmentTokens/{enrollmentTokenId}.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.AndroidManagement.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - The name of the enrollment token in the form enterprises/{enterpriseId}/enrollmentTokens/{enrollmentTokenId}.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidManagement.V1.Model.Empty{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidManagement.V1.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec androidmanagement_enterprises_enrollment_tokens_delete(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.AndroidManagement.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
   def androidmanagement_enterprises_enrollment_tokens_delete(
@@ -974,28 +1017,33 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidManagement.V1.Connection): Connection to server
-  - name (String.t): The name of the policy in the form enterprises/{enterpriseId}/policies/{policyId}.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.AndroidManagement.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - The name of the policy in the form enterprises/{enterpriseId}/policies/{policyId}.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidManagement.V1.Model.Empty{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidManagement.V1.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec androidmanagement_enterprises_policies_delete(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, GoogleApi.AndroidManagement.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+  @spec androidmanagement_enterprises_policies_delete(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.AndroidManagement.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
   def androidmanagement_enterprises_policies_delete(
         connection,
         name,
@@ -1034,28 +1082,33 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidManagement.V1.Connection): Connection to server
-  - name (String.t): The name of the policy in the form enterprises/{enterpriseId}/policies/{policyId}.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.AndroidManagement.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - The name of the policy in the form enterprises/{enterpriseId}/policies/{policyId}.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidManagement.V1.Model.Policy{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidManagement.V1.Model.Policy{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec androidmanagement_enterprises_policies_get(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, GoogleApi.AndroidManagement.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+  @spec androidmanagement_enterprises_policies_get(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.AndroidManagement.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
   def androidmanagement_enterprises_policies_get(
         connection,
         name,
@@ -1094,29 +1147,35 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidManagement.V1.Connection): Connection to server
-  - parent (String.t): The name of the enterprise in the form enterprises/{enterpriseId}.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :pageSize (integer()): The requested page size. The actual page size may be fixed to a min or max value.
-    - :pageToken (String.t): A token identifying a page of results returned by the server.
+  *   `connection` (*type:* `GoogleApi.AndroidManagement.V1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - The name of the enterprise in the form enterprises/{enterpriseId}.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - The requested page size. The actual page size may be fixed to a min or max value.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results returned by the server.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidManagement.V1.Model.ListPoliciesResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidManagement.V1.Model.ListPoliciesResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec androidmanagement_enterprises_policies_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec androidmanagement_enterprises_policies_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.AndroidManagement.V1.Model.ListPoliciesResponse.t()}
           | {:error, Tesla.Env.t()}
   def androidmanagement_enterprises_policies_list(
@@ -1161,30 +1220,35 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidManagement.V1.Connection): Connection to server
-  - name (String.t): The name of the policy in the form enterprises/{enterpriseId}/policies/{policyId}.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :updateMask (String.t): The field mask indicating the fields to update. If not set, all modifiable fields will be modified.
-    - :body (GoogleApi.AndroidManagement.V1.Model.Policy.t): 
+  *   `connection` (*type:* `GoogleApi.AndroidManagement.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - The name of the policy in the form enterprises/{enterpriseId}/policies/{policyId}.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:updateMask` (*type:* `String.t`) - The field mask indicating the fields to update. If not set, all modifiable fields will be modified.
+      *   `:body` (*type:* `GoogleApi.AndroidManagement.V1.Model.Policy.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidManagement.V1.Model.Policy{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidManagement.V1.Model.Policy{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec androidmanagement_enterprises_policies_patch(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, GoogleApi.AndroidManagement.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+  @spec androidmanagement_enterprises_policies_patch(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.AndroidManagement.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
   def androidmanagement_enterprises_policies_patch(
         connection,
         name,
@@ -1225,29 +1289,34 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidManagement.V1.Connection): Connection to server
-  - parent (String.t): The name of the enterprise in the form enterprises/{enterpriseId}.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.AndroidManagement.V1.Model.WebApp.t): 
+  *   `connection` (*type:* `GoogleApi.AndroidManagement.V1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - The name of the enterprise in the form enterprises/{enterpriseId}.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.AndroidManagement.V1.Model.WebApp.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidManagement.V1.Model.WebApp{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidManagement.V1.Model.WebApp{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec androidmanagement_enterprises_web_apps_create(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, GoogleApi.AndroidManagement.V1.Model.WebApp.t()} | {:error, Tesla.Env.t()}
+  @spec androidmanagement_enterprises_web_apps_create(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.AndroidManagement.V1.Model.WebApp.t()} | {:error, Tesla.Env.t()}
   def androidmanagement_enterprises_web_apps_create(
         connection,
         parent,
@@ -1287,28 +1356,33 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidManagement.V1.Connection): Connection to server
-  - name (String.t): The name of the web app in the form enterprises/{enterpriseId}/webApps/{packageName}.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.AndroidManagement.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - The name of the web app in the form enterprises/{enterpriseId}/webApps/{packageName}.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidManagement.V1.Model.Empty{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidManagement.V1.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec androidmanagement_enterprises_web_apps_delete(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, GoogleApi.AndroidManagement.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+  @spec androidmanagement_enterprises_web_apps_delete(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.AndroidManagement.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
   def androidmanagement_enterprises_web_apps_delete(
         connection,
         name,
@@ -1347,28 +1421,33 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidManagement.V1.Connection): Connection to server
-  - name (String.t): The name of the web app in the form enterprises/{enterpriseId}/webApp/{packageName}.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.AndroidManagement.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - The name of the web app in the form enterprises/{enterpriseId}/webApp/{packageName}.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidManagement.V1.Model.WebApp{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidManagement.V1.Model.WebApp{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec androidmanagement_enterprises_web_apps_get(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, GoogleApi.AndroidManagement.V1.Model.WebApp.t()} | {:error, Tesla.Env.t()}
+  @spec androidmanagement_enterprises_web_apps_get(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.AndroidManagement.V1.Model.WebApp.t()} | {:error, Tesla.Env.t()}
   def androidmanagement_enterprises_web_apps_get(
         connection,
         name,
@@ -1407,29 +1486,35 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidManagement.V1.Connection): Connection to server
-  - parent (String.t): The name of the enterprise in the form enterprises/{enterpriseId}.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :pageSize (integer()): The requested page size. The actual page size may be fixed to a min or max value.
-    - :pageToken (String.t): A token identifying a page of results returned by the server.
+  *   `connection` (*type:* `GoogleApi.AndroidManagement.V1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - The name of the enterprise in the form enterprises/{enterpriseId}.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - The requested page size. The actual page size may be fixed to a min or max value.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results returned by the server.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidManagement.V1.Model.ListWebAppsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidManagement.V1.Model.ListWebAppsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec androidmanagement_enterprises_web_apps_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec androidmanagement_enterprises_web_apps_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.AndroidManagement.V1.Model.ListWebAppsResponse.t()}
           | {:error, Tesla.Env.t()}
   def androidmanagement_enterprises_web_apps_list(
@@ -1474,30 +1559,35 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidManagement.V1.Connection): Connection to server
-  - name (String.t): The name of the web app in the form enterprises/{enterpriseId}/webApps/{packageName}.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :updateMask (String.t): The field mask indicating the fields to update. If not set, all modifiable fields will be modified.
-    - :body (GoogleApi.AndroidManagement.V1.Model.WebApp.t): 
+  *   `connection` (*type:* `GoogleApi.AndroidManagement.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - The name of the web app in the form enterprises/{enterpriseId}/webApps/{packageName}.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:updateMask` (*type:* `String.t`) - The field mask indicating the fields to update. If not set, all modifiable fields will be modified.
+      *   `:body` (*type:* `GoogleApi.AndroidManagement.V1.Model.WebApp.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidManagement.V1.Model.WebApp{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidManagement.V1.Model.WebApp{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec androidmanagement_enterprises_web_apps_patch(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, GoogleApi.AndroidManagement.V1.Model.WebApp.t()} | {:error, Tesla.Env.t()}
+  @spec androidmanagement_enterprises_web_apps_patch(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.AndroidManagement.V1.Model.WebApp.t()} | {:error, Tesla.Env.t()}
   def androidmanagement_enterprises_web_apps_patch(
         connection,
         name,
@@ -1538,29 +1628,34 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidManagement.V1.Connection): Connection to server
-  - parent (String.t): The name of the enterprise in the form enterprises/{enterpriseId}.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.AndroidManagement.V1.Model.WebToken.t): 
+  *   `connection` (*type:* `GoogleApi.AndroidManagement.V1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - The name of the enterprise in the form enterprises/{enterpriseId}.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.AndroidManagement.V1.Model.WebToken.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidManagement.V1.Model.WebToken{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidManagement.V1.Model.WebToken{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec androidmanagement_enterprises_web_tokens_create(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, GoogleApi.AndroidManagement.V1.Model.WebToken.t()} | {:error, Tesla.Env.t()}
+  @spec androidmanagement_enterprises_web_tokens_create(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.AndroidManagement.V1.Model.WebToken.t()} | {:error, Tesla.Env.t()}
   def androidmanagement_enterprises_web_tokens_create(
         connection,
         parent,

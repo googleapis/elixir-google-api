@@ -21,8 +21,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.MemoryInfo do
 
   ## Attributes
 
-  - totalInternalStorage (String.t): Total internal storage on device in bytes. Defaults to `nil`.
-  - totalRam (String.t): Total RAM on device in bytes. Defaults to `nil`.
+  *   `totalInternalStorage` (*type:* `String.t`, *default:* `nil`) - Total internal storage on device in bytes.
+  *   `totalRam` (*type:* `String.t`, *default:* `nil`) - Total RAM on device in bytes.
   """
 
   use GoogleApi.Gax.ModelBase

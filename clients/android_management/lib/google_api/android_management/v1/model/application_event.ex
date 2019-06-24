@@ -21,8 +21,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ApplicationEvent do
 
   ## Attributes
 
-  - createTime (DateTime.t): The creation time of the event. Defaults to `nil`.
-  - eventType (String.t): App event type. Defaults to `nil`.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The creation time of the event.
+  *   `eventType` (*type:* `String.t`, *default:* `nil`) - App event type.
   """
 
   use GoogleApi.Gax.ModelBase

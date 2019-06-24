@@ -21,13 +21,13 @@ defmodule GoogleApi.AndroidManagement.V1.Model.DeviceSettings do
 
   ## Attributes
 
-  - adbEnabled (boolean()): Whether ADB (https://developer.android.com/studio/command-line/adb.html) is enabled on the device. Defaults to `nil`.
-  - developmentSettingsEnabled (boolean()): Whether developer mode is enabled on the device. Defaults to `nil`.
-  - encryptionStatus (String.t): Encryption status from DevicePolicyManager. Defaults to `nil`.
-  - isDeviceSecure (boolean()): Whether the device is secured with PIN/password. Defaults to `nil`.
-  - isEncrypted (boolean()): Whether the storage encryption is enabled. Defaults to `nil`.
-  - unknownSourcesEnabled (boolean()): Whether installing apps from unknown sources is enabled. Defaults to `nil`.
-  - verifyAppsEnabled (boolean()): Whether Verify Apps (Google Play Protect (https://support.google.com/googleplay/answer/2812853)) is enabled on the device. Defaults to `nil`.
+  *   `adbEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether ADB (https://developer.android.com/studio/command-line/adb.html) is enabled on the device.
+  *   `developmentSettingsEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether developer mode is enabled on the device.
+  *   `encryptionStatus` (*type:* `String.t`, *default:* `nil`) - Encryption status from DevicePolicyManager.
+  *   `isDeviceSecure` (*type:* `boolean()`, *default:* `nil`) - Whether the device is secured with PIN/password.
+  *   `isEncrypted` (*type:* `boolean()`, *default:* `nil`) - Whether the storage encryption is enabled.
+  *   `unknownSourcesEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether installing apps from unknown sources is enabled.
+  *   `verifyAppsEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether Verify Apps (Google Play Protect (https://support.google.com/googleplay/answer/2812853)) is enabled on the device.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,20 +21,20 @@ defmodule GoogleApi.AndroidManagement.V1.Model.HardwareInfo do
 
   ## Attributes
 
-  - batteryShutdownTemperatures (list(number())): Battery shutdown temperature thresholds in Celsius for each battery on the device. Defaults to `nil`.
-  - batteryThrottlingTemperatures (list(number())): Battery throttling temperature thresholds in Celsius for each battery on the device. Defaults to `nil`.
-  - brand (String.t): Brand of the device. For example, Google. Defaults to `nil`.
-  - cpuShutdownTemperatures (list(number())): CPU shutdown temperature thresholds in Celsius for each CPU on the device. Defaults to `nil`.
-  - cpuThrottlingTemperatures (list(number())): CPU throttling temperature thresholds in Celsius for each CPU on the device. Defaults to `nil`.
-  - deviceBasebandVersion (String.t): Baseband version. For example, MDM9625_104662.22.05.34p. Defaults to `nil`.
-  - gpuShutdownTemperatures (list(number())): GPU shutdown temperature thresholds in Celsius for each GPU on the device. Defaults to `nil`.
-  - gpuThrottlingTemperatures (list(number())): GPU throttling temperature thresholds in Celsius for each GPU on the device. Defaults to `nil`.
-  - hardware (String.t): Name of the hardware. For example, Angler. Defaults to `nil`.
-  - manufacturer (String.t): Manufacturer. For example, Motorola. Defaults to `nil`.
-  - model (String.t): The model of the device. For example, Asus Nexus 7. Defaults to `nil`.
-  - serialNumber (String.t): The device serial number. Defaults to `nil`.
-  - skinShutdownTemperatures (list(number())): Device skin shutdown temperature thresholds in Celsius. Defaults to `nil`.
-  - skinThrottlingTemperatures (list(number())): Device skin throttling temperature thresholds in Celsius. Defaults to `nil`.
+  *   `batteryShutdownTemperatures` (*type:* `list(number())`, *default:* `nil`) - Battery shutdown temperature thresholds in Celsius for each battery on the device.
+  *   `batteryThrottlingTemperatures` (*type:* `list(number())`, *default:* `nil`) - Battery throttling temperature thresholds in Celsius for each battery on the device.
+  *   `brand` (*type:* `String.t`, *default:* `nil`) - Brand of the device. For example, Google.
+  *   `cpuShutdownTemperatures` (*type:* `list(number())`, *default:* `nil`) - CPU shutdown temperature thresholds in Celsius for each CPU on the device.
+  *   `cpuThrottlingTemperatures` (*type:* `list(number())`, *default:* `nil`) - CPU throttling temperature thresholds in Celsius for each CPU on the device.
+  *   `deviceBasebandVersion` (*type:* `String.t`, *default:* `nil`) - Baseband version. For example, MDM9625_104662.22.05.34p.
+  *   `gpuShutdownTemperatures` (*type:* `list(number())`, *default:* `nil`) - GPU shutdown temperature thresholds in Celsius for each GPU on the device.
+  *   `gpuThrottlingTemperatures` (*type:* `list(number())`, *default:* `nil`) - GPU throttling temperature thresholds in Celsius for each GPU on the device.
+  *   `hardware` (*type:* `String.t`, *default:* `nil`) - Name of the hardware. For example, Angler.
+  *   `manufacturer` (*type:* `String.t`, *default:* `nil`) - Manufacturer. For example, Motorola.
+  *   `model` (*type:* `String.t`, *default:* `nil`) - The model of the device. For example, Asus Nexus 7.
+  *   `serialNumber` (*type:* `String.t`, *default:* `nil`) - The device serial number.
+  *   `skinShutdownTemperatures` (*type:* `list(number())`, *default:* `nil`) - Device skin shutdown temperature thresholds in Celsius.
+  *   `skinThrottlingTemperatures` (*type:* `list(number())`, *default:* `nil`) - Device skin throttling temperature thresholds in Celsius.
   """
 
   use GoogleApi.Gax.ModelBase

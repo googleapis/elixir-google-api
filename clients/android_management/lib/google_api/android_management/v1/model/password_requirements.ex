@@ -21,18 +21,18 @@ defmodule GoogleApi.AndroidManagement.V1.Model.PasswordRequirements do
 
   ## Attributes
 
-  - maximumFailedPasswordsForWipe (integer()): Number of incorrect device-unlock passwords that can be entered before a device is wiped. A value of 0 means there is no restriction. Defaults to `nil`.
-  - passwordExpirationTimeout (String.t): Password expiration timeout. Defaults to `nil`.
-  - passwordHistoryLength (integer()): The length of the password history. After setting this field, the user won't be able to enter a new password that is the same as any password in the history. A value of 0 means there is no restriction. Defaults to `nil`.
-  - passwordMinimumLength (integer()): The minimum allowed password length. A value of 0 means there is no restriction. Only enforced when password_quality is NUMERIC, NUMERIC_COMPLEX, ALPHABETIC, ALPHANUMERIC, or COMPLEX. Defaults to `nil`.
-  - passwordMinimumLetters (integer()): Minimum number of letters required in the password. Only enforced when password_quality is COMPLEX. Defaults to `nil`.
-  - passwordMinimumLowerCase (integer()): Minimum number of lower case letters required in the password. Only enforced when password_quality is COMPLEX. Defaults to `nil`.
-  - passwordMinimumNonLetter (integer()): Minimum number of non-letter characters (numerical digits or symbols) required in the password. Only enforced when password_quality is COMPLEX. Defaults to `nil`.
-  - passwordMinimumNumeric (integer()): Minimum number of numerical digits required in the password. Only enforced when password_quality is COMPLEX. Defaults to `nil`.
-  - passwordMinimumSymbols (integer()): Minimum number of symbols required in the password. Only enforced when password_quality is COMPLEX. Defaults to `nil`.
-  - passwordMinimumUpperCase (integer()): Minimum number of upper case letters required in the password. Only enforced when password_quality is COMPLEX. Defaults to `nil`.
-  - passwordQuality (String.t): The required password quality. Defaults to `nil`.
-  - passwordScope (String.t): The scope that the password requirement applies to. Defaults to `nil`.
+  *   `maximumFailedPasswordsForWipe` (*type:* `integer()`, *default:* `nil`) - Number of incorrect device-unlock passwords that can be entered before a device is wiped. A value of 0 means there is no restriction.
+  *   `passwordExpirationTimeout` (*type:* `String.t`, *default:* `nil`) - Password expiration timeout.
+  *   `passwordHistoryLength` (*type:* `integer()`, *default:* `nil`) - The length of the password history. After setting this field, the user won't be able to enter a new password that is the same as any password in the history. A value of 0 means there is no restriction.
+  *   `passwordMinimumLength` (*type:* `integer()`, *default:* `nil`) - The minimum allowed password length. A value of 0 means there is no restriction. Only enforced when password_quality is NUMERIC, NUMERIC_COMPLEX, ALPHABETIC, ALPHANUMERIC, or COMPLEX.
+  *   `passwordMinimumLetters` (*type:* `integer()`, *default:* `nil`) - Minimum number of letters required in the password. Only enforced when password_quality is COMPLEX.
+  *   `passwordMinimumLowerCase` (*type:* `integer()`, *default:* `nil`) - Minimum number of lower case letters required in the password. Only enforced when password_quality is COMPLEX.
+  *   `passwordMinimumNonLetter` (*type:* `integer()`, *default:* `nil`) - Minimum number of non-letter characters (numerical digits or symbols) required in the password. Only enforced when password_quality is COMPLEX.
+  *   `passwordMinimumNumeric` (*type:* `integer()`, *default:* `nil`) - Minimum number of numerical digits required in the password. Only enforced when password_quality is COMPLEX.
+  *   `passwordMinimumSymbols` (*type:* `integer()`, *default:* `nil`) - Minimum number of symbols required in the password. Only enforced when password_quality is COMPLEX.
+  *   `passwordMinimumUpperCase` (*type:* `integer()`, *default:* `nil`) - Minimum number of upper case letters required in the password. Only enforced when password_quality is COMPLEX.
+  *   `passwordQuality` (*type:* `String.t`, *default:* `nil`) - The required password quality.
+  *   `passwordScope` (*type:* `String.t`, *default:* `nil`) - The scope that the password requirement applies to.
   """
 
   use GoogleApi.Gax.ModelBase

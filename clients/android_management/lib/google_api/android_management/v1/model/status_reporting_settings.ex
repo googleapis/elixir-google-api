@@ -21,15 +21,15 @@ defmodule GoogleApi.AndroidManagement.V1.Model.StatusReportingSettings do
 
   ## Attributes
 
-  - applicationReportingSettings (GoogleApi.AndroidManagement.V1.Model.ApplicationReportingSettings.t): Application reporting settings. Only applicable if application_reports_enabled is true. Defaults to `nil`.
-  - applicationReportsEnabled (boolean()): Whether app reports are enabled. Defaults to `nil`.
-  - deviceSettingsEnabled (boolean()): Whether device settings reporting is enabled. Defaults to `nil`.
-  - displayInfoEnabled (boolean()): Whether displays reporting is enabled. Defaults to `nil`.
-  - hardwareStatusEnabled (boolean()): Whether hardware status reporting is enabled. Defaults to `nil`.
-  - memoryInfoEnabled (boolean()): Whether memory reporting is enabled. Defaults to `nil`.
-  - networkInfoEnabled (boolean()): Whether network info reporting is enabled. Defaults to `nil`.
-  - powerManagementEventsEnabled (boolean()): Whether power management event reporting is enabled. Defaults to `nil`.
-  - softwareInfoEnabled (boolean()): Whether software info reporting is enabled. Defaults to `nil`.
+  *   `applicationReportingSettings` (*type:* `GoogleApi.AndroidManagement.V1.Model.ApplicationReportingSettings.t`, *default:* `nil`) - Application reporting settings. Only applicable if application_reports_enabled is true.
+  *   `applicationReportsEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether app reports are enabled.
+  *   `deviceSettingsEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether device settings reporting is enabled.
+  *   `displayInfoEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether displays reporting is enabled.
+  *   `hardwareStatusEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether hardware status reporting is enabled.
+  *   `memoryInfoEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether memory reporting is enabled.
+  *   `networkInfoEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether network info reporting is enabled.
+  *   `powerManagementEventsEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether power management event reporting is enabled.
+  *   `softwareInfoEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether software info reporting is enabled.
   """
 
   use GoogleApi.Gax.ModelBase

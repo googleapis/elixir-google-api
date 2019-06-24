@@ -21,13 +21,13 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ManagedProperty do
 
   ## Attributes
 
-  - defaultValue (any()): The default value of the property. BUNDLE_ARRAY properties don't have a default value. Defaults to `nil`.
-  - description (String.t): A longer description of the property, providing more detail of what it affects. Localized. Defaults to `nil`.
-  - entries (list(GoogleApi.AndroidManagement.V1.Model.ManagedPropertyEntry.t)): For CHOICE or MULTISELECT properties, the list of possible entries. Defaults to `nil`.
-  - key (String.t): The unique key that the app uses to identify the property, e.g. "com.google.android.gm.fieldname". Defaults to `nil`.
-  - nestedProperties (list(GoogleApi.AndroidManagement.V1.Model.ManagedProperty.t)): For BUNDLE_ARRAY properties, the list of nested properties. A BUNDLE_ARRAY property is at most two levels deep. Defaults to `nil`.
-  - title (String.t): The name of the property. Localized. Defaults to `nil`.
-  - type (String.t): The type of the property. Defaults to `nil`.
+  *   `defaultValue` (*type:* `any()`, *default:* `nil`) - The default value of the property. BUNDLE_ARRAY properties don't have a default value.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - A longer description of the property, providing more detail of what it affects. Localized.
+  *   `entries` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.ManagedPropertyEntry.t)`, *default:* `nil`) - For CHOICE or MULTISELECT properties, the list of possible entries.
+  *   `key` (*type:* `String.t`, *default:* `nil`) - The unique key that the app uses to identify the property, e.g. "com.google.android.gm.fieldname".
+  *   `nestedProperties` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.ManagedProperty.t)`, *default:* `nil`) - For BUNDLE_ARRAY properties, the list of nested properties. A BUNDLE_ARRAY property is at most two levels deep.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - The name of the property. Localized.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the property.
   """
 
   use GoogleApi.Gax.ModelBase

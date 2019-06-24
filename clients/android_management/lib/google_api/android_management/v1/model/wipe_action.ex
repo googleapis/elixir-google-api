@@ -21,8 +21,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.WipeAction do
 
   ## Attributes
 
-  - preserveFrp (boolean()): Whether the factory-reset protection data is preserved on the device. This setting doesn’t apply to work profiles. Defaults to `nil`.
-  - wipeAfterDays (integer()): Number of days the policy is non-compliant before the device or work profile is wiped. wipeAfterDays must be greater than blockAfterDays. Defaults to `nil`.
+  *   `preserveFrp` (*type:* `boolean()`, *default:* `nil`) - Whether the factory-reset protection data is preserved on the device. This setting doesn’t apply to work profiles.
+  *   `wipeAfterDays` (*type:* `integer()`, *default:* `nil`) - Number of days the policy is non-compliant before the device or work profile is wiped. wipeAfterDays must be greater than blockAfterDays.
   """
 
   use GoogleApi.Gax.ModelBase

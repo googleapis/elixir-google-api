@@ -21,7 +21,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ApplicationReportingSettings do
 
   ## Attributes
 
-  - includeRemovedApps (boolean()): Whether removed apps are included in application reports. Defaults to `nil`.
+  *   `includeRemovedApps` (*type:* `boolean()`, *default:* `nil`) - Whether removed apps are included in application reports.
   """
 
   use GoogleApi.Gax.ModelBase

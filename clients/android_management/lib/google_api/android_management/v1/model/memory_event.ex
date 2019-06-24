@@ -21,9 +21,9 @@ defmodule GoogleApi.AndroidManagement.V1.Model.MemoryEvent do
 
   ## Attributes
 
-  - byteCount (String.t): The number of free bytes in the medium, or for EXTERNAL_STORAGE_DETECTED, the total capacity in bytes of the storage medium. Defaults to `nil`.
-  - createTime (DateTime.t): The creation time of the event. Defaults to `nil`.
-  - eventType (String.t): Event type. Defaults to `nil`.
+  *   `byteCount` (*type:* `String.t`, *default:* `nil`) - The number of free bytes in the medium, or for EXTERNAL_STORAGE_DETECTED, the total capacity in bytes of the storage medium.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The creation time of the event.
+  *   `eventType` (*type:* `String.t`, *default:* `nil`) - Event type.
   """
 
   use GoogleApi.Gax.ModelBase

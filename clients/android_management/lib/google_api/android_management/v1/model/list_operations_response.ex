@@ -21,8 +21,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ListOperationsResponse do
 
   ## Attributes
 
-  - nextPageToken (String.t): The standard List next-page token. Defaults to `nil`.
-  - operations (list(GoogleApi.AndroidManagement.V1.Model.Operation.t)): A list of operations that matches the specified filter in the request. Defaults to `nil`.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The standard List next-page token.
+  *   `operations` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.Operation.t)`, *default:* `nil`) - A list of operations that matches the specified filter in the request.
   """
 
   use GoogleApi.Gax.ModelBase

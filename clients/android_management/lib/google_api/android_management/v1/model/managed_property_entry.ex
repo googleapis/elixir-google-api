@@ -21,8 +21,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ManagedPropertyEntry do
 
   ## Attributes
 
-  - name (String.t): The human-readable name of the value. Localized. Defaults to `nil`.
-  - value (String.t): The machine-readable value of the entry, which should be used in the configuration. Not localized. Defaults to `nil`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The human-readable name of the value. Localized.
+  *   `value` (*type:* `String.t`, *default:* `nil`) - The machine-readable value of the entry, which should be used in the configuration. Not localized.
   """
 
   use GoogleApi.Gax.ModelBase
