@@ -21,9 +21,9 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.AutoInstallConstraint do
 
   ## Attributes
 
-  - chargingStateConstraint (String.t): Charging state constraint. Defaults to `nil`.
-  - deviceIdleStateConstraint (String.t): Device idle state constraint. Defaults to `nil`.
-  - networkTypeConstraint (String.t): Network type constraint. Defaults to `nil`.
+  *   `chargingStateConstraint` (*type:* `String.t`, *default:* `nil`) - Charging state constraint.
+  *   `deviceIdleStateConstraint` (*type:* `String.t`, *default:* `nil`) - Device idle state constraint.
+  *   `networkTypeConstraint` (*type:* `String.t`, *default:* `nil`) - Network type constraint.
   """
 
   use GoogleApi.Gax.ModelBase

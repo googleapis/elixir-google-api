@@ -21,8 +21,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.WebAppsListResponse do
 
   ## Attributes
 
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "androidenterprise#webAppsListResponse". Defaults to `androidenterprise#webAppsListResponse`.
-  - webApp (list(GoogleApi.AndroidEnterprise.V1.Model.WebApp.t)): The manifest describing a web app. Defaults to `nil`.
+  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#webAppsListResponse`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#webAppsListResponse".
+  *   `webApp` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.WebApp.t)`, *default:* `nil`) - The manifest describing a web app.
   """
 
   use GoogleApi.Gax.ModelBase

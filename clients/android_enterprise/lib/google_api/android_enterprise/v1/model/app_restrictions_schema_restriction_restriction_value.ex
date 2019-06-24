@@ -21,11 +21,11 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.AppRestrictionsSchemaRestrictionR
 
   ## Attributes
 
-  - type (String.t): The type of the value being provided. Defaults to `nil`.
-  - valueBool (boolean()): The boolean value - this will only be present if type is bool. Defaults to `nil`.
-  - valueInteger (integer()): The integer value - this will only be present if type is integer. Defaults to `nil`.
-  - valueMultiselect (list(String.t)): The list of string values - this will only be present if type is multiselect. Defaults to `nil`.
-  - valueString (String.t): The string value - this will be present for types string, choice and hidden. Defaults to `nil`.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the value being provided.
+  *   `valueBool` (*type:* `boolean()`, *default:* `nil`) - The boolean value - this will only be present if type is bool.
+  *   `valueInteger` (*type:* `integer()`, *default:* `nil`) - The integer value - this will only be present if type is integer.
+  *   `valueMultiselect` (*type:* `list(String.t)`, *default:* `nil`) - The list of string values - this will only be present if type is multiselect.
+  *   `valueString` (*type:* `String.t`, *default:* `nil`) - The string value - this will be present for types string, choice and hidden.
   """
 
   use GoogleApi.Gax.ModelBase

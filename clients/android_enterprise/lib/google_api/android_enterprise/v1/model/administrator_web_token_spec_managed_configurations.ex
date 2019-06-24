@@ -21,7 +21,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecManagedC
 
   ## Attributes
 
-  - enabled (boolean()): Whether the Managed Configuration page is displayed. Default is true. Defaults to `nil`.
+  *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Whether the Managed Configuration page is displayed. Default is true.
   """
 
   use GoogleApi.Gax.ModelBase

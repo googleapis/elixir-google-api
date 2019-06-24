@@ -21,14 +21,14 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.AppRestrictionsSchemaRestriction 
 
   ## Attributes
 
-  - defaultValue (GoogleApi.AndroidEnterprise.V1.Model.AppRestrictionsSchemaRestrictionRestrictionValue.t): The default value of the restriction. bundle and bundleArray restrictions never have a default value. Defaults to `nil`.
-  - description (String.t): A longer description of the restriction, giving more detail of what it affects. Defaults to `nil`.
-  - entry (list(String.t)): For choice or multiselect restrictions, the list of possible entries' human-readable names. Defaults to `nil`.
-  - entryValue (list(String.t)): For choice or multiselect restrictions, the list of possible entries' machine-readable values. These values should be used in the configuration, either as a single string value for a choice restriction or in a stringArray for a multiselect restriction. Defaults to `nil`.
-  - key (String.t): The unique key that the product uses to identify the restriction, e.g. "com.google.android.gm.fieldname". Defaults to `nil`.
-  - nestedRestriction (list(GoogleApi.AndroidEnterprise.V1.Model.AppRestrictionsSchemaRestriction.t)): For bundle or bundleArray restrictions, the list of nested restrictions. A bundle restriction is always nested within a bundleArray restriction, and a bundleArray restriction is at most two levels deep. Defaults to `nil`.
-  - restrictionType (String.t): The type of the restriction. Defaults to `nil`.
-  - title (String.t): The name of the restriction. Defaults to `nil`.
+  *   `defaultValue` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.AppRestrictionsSchemaRestrictionRestrictionValue.t`, *default:* `nil`) - The default value of the restriction. bundle and bundleArray restrictions never have a default value.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - A longer description of the restriction, giving more detail of what it affects.
+  *   `entry` (*type:* `list(String.t)`, *default:* `nil`) - For choice or multiselect restrictions, the list of possible entries' human-readable names.
+  *   `entryValue` (*type:* `list(String.t)`, *default:* `nil`) - For choice or multiselect restrictions, the list of possible entries' machine-readable values. These values should be used in the configuration, either as a single string value for a choice restriction or in a stringArray for a multiselect restriction.
+  *   `key` (*type:* `String.t`, *default:* `nil`) - The unique key that the product uses to identify the restriction, e.g. "com.google.android.gm.fieldname".
+  *   `nestedRestriction` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.AppRestrictionsSchemaRestriction.t)`, *default:* `nil`) - For bundle or bundleArray restrictions, the list of nested restrictions. A bundle restriction is always nested within a bundleArray restriction, and a bundleArray restriction is at most two levels deep.
+  *   `restrictionType` (*type:* `String.t`, *default:* `nil`) - The type of the restriction.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - The name of the restriction.
   """
 
   use GoogleApi.Gax.ModelBase

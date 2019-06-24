@@ -21,10 +21,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ProductsListResponse do
 
   ## Attributes
 
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "androidenterprise#productsListResponse". Defaults to `androidenterprise#productsListResponse`.
-  - pageInfo (GoogleApi.AndroidEnterprise.V1.Model.PageInfo.t): General pagination information. Defaults to `nil`.
-  - product (list(GoogleApi.AndroidEnterprise.V1.Model.Product.t)): Information about a product (e.g. an app) in the Google Play store, for display to an enterprise admin. Defaults to `nil`.
-  - tokenPagination (GoogleApi.AndroidEnterprise.V1.Model.TokenPagination.t): Pagination information for token pagination. Defaults to `nil`.
+  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#productsListResponse`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#productsListResponse".
+  *   `pageInfo` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.PageInfo.t`, *default:* `nil`) - General pagination information.
+  *   `product` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.Product.t)`, *default:* `nil`) - Information about a product (e.g. an app) in the Google Play store, for display to an enterprise admin.
+  *   `tokenPagination` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.TokenPagination.t`, *default:* `nil`) - Pagination information for token pagination.
   """
 
   use GoogleApi.Gax.ModelBase

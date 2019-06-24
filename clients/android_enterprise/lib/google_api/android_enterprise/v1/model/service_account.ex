@@ -21,9 +21,9 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ServiceAccount do
 
   ## Attributes
 
-  - key (GoogleApi.AndroidEnterprise.V1.Model.ServiceAccountKey.t): Credentials that can be used to authenticate as this ServiceAccount. Defaults to `nil`.
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "androidenterprise#serviceAccount". Defaults to `androidenterprise#serviceAccount`.
-  - name (String.t): The account name of the service account, in the form of an email address. Assigned by the server. Defaults to `nil`.
+  *   `key` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.ServiceAccountKey.t`, *default:* `nil`) - Credentials that can be used to authenticate as this ServiceAccount.
+  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#serviceAccount`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#serviceAccount".
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The account name of the service account, in the form of an email address. Assigned by the server.
   """
 
   use GoogleApi.Gax.ModelBase

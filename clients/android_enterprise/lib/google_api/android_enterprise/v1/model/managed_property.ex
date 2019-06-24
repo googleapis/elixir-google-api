@@ -21,13 +21,13 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ManagedProperty do
 
   ## Attributes
 
-  - key (String.t): The unique key that identifies the property. Defaults to `nil`.
-  - valueBool (boolean()): The boolean value - this will only be present if type of the property is bool. Defaults to `nil`.
-  - valueBundle (GoogleApi.AndroidEnterprise.V1.Model.ManagedPropertyBundle.t): The bundle of managed properties - this will only be present if type of the property is bundle. Defaults to `nil`.
-  - valueBundleArray (list(GoogleApi.AndroidEnterprise.V1.Model.ManagedPropertyBundle.t)): The list of bundles of properties - this will only be present if type of the property is bundle_array. Defaults to `nil`.
-  - valueInteger (integer()): The integer value - this will only be present if type of the property is integer. Defaults to `nil`.
-  - valueString (String.t): The string value - this will only be present if type of the property is string, choice or hidden. Defaults to `nil`.
-  - valueStringArray (list(String.t)): The list of string values - this will only be present if type of the property is multiselect. Defaults to `nil`.
+  *   `key` (*type:* `String.t`, *default:* `nil`) - The unique key that identifies the property.
+  *   `valueBool` (*type:* `boolean()`, *default:* `nil`) - The boolean value - this will only be present if type of the property is bool.
+  *   `valueBundle` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.ManagedPropertyBundle.t`, *default:* `nil`) - The bundle of managed properties - this will only be present if type of the property is bundle.
+  *   `valueBundleArray` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.ManagedPropertyBundle.t)`, *default:* `nil`) - The list of bundles of properties - this will only be present if type of the property is bundle_array.
+  *   `valueInteger` (*type:* `integer()`, *default:* `nil`) - The integer value - this will only be present if type of the property is integer.
+  *   `valueString` (*type:* `String.t`, *default:* `nil`) - The string value - this will only be present if type of the property is string, choice or hidden.
+  *   `valueStringArray` (*type:* `list(String.t)`, *default:* `nil`) - The list of string values - this will only be present if type of the property is multiselect.
   """
 
   use GoogleApi.Gax.ModelBase

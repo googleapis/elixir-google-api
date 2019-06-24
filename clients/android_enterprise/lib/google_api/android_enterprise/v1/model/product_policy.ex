@@ -21,11 +21,11 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ProductPolicy do
 
   ## Attributes
 
-  - autoInstallPolicy (GoogleApi.AndroidEnterprise.V1.Model.AutoInstallPolicy.t): The auto-install policy for the product. Defaults to `nil`.
-  - managedConfiguration (GoogleApi.AndroidEnterprise.V1.Model.ManagedConfiguration.t): The managed configuration for the product. Defaults to `nil`.
-  - productId (String.t): The ID of the product. For example, "app:com.google.android.gm". Defaults to `nil`.
-  - trackIds (list(String.t)): Grants the device visibility to the specified product release track(s), identified by trackIds. The list of release tracks of a product can be obtained by calling Products.Get. Defaults to `nil`.
-  - tracks (list(String.t)): Deprecated. Use trackIds instead. Defaults to `nil`.
+  *   `autoInstallPolicy` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.AutoInstallPolicy.t`, *default:* `nil`) - The auto-install policy for the product.
+  *   `managedConfiguration` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.ManagedConfiguration.t`, *default:* `nil`) - The managed configuration for the product.
+  *   `productId` (*type:* `String.t`, *default:* `nil`) - The ID of the product. For example, "app:com.google.android.gm".
+  *   `trackIds` (*type:* `list(String.t)`, *default:* `nil`) - Grants the device visibility to the specified product release track(s), identified by trackIds. The list of release tracks of a product can be obtained by calling Products.Get.
+  *   `tracks` (*type:* `list(String.t)`, *default:* `nil`) - Deprecated. Use trackIds instead.
   """
 
   use GoogleApi.Gax.ModelBase

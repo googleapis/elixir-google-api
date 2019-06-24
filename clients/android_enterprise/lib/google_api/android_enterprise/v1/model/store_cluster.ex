@@ -21,13 +21,13 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.StoreCluster do
 
   ## Attributes
 
-  - id (String.t): Unique ID of this cluster. Assigned by the server. Immutable once assigned. Defaults to `nil`.
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "androidenterprise#storeCluster". Defaults to `androidenterprise#storeCluster`.
-  - name (list(GoogleApi.AndroidEnterprise.V1.Model.LocalizedText.t)): Ordered list of localized strings giving the name of this page. The text displayed is the one that best matches the user locale, or the first entry if there is no good match. There needs to be at least one entry. Defaults to `nil`.
-  - orderInPage (String.t): String (US-ASCII only) used to determine order of this cluster within the parent page's elements. Page elements are sorted in lexicographic order of this field. Duplicated values are allowed, but ordering between elements with duplicate order is undefined.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Unique ID of this cluster. Assigned by the server. Immutable once assigned.
+  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#storeCluster`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#storeCluster".
+  *   `name` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.LocalizedText.t)`, *default:* `nil`) - Ordered list of localized strings giving the name of this page. The text displayed is the one that best matches the user locale, or the first entry if there is no good match. There needs to be at least one entry.
+  *   `orderInPage` (*type:* `String.t`, *default:* `nil`) - String (US-ASCII only) used to determine order of this cluster within the parent page's elements. Page elements are sorted in lexicographic order of this field. Duplicated values are allowed, but ordering between elements with duplicate order is undefined.
 
-  The value of this field is never visible to a user, it is used solely for the purpose of defining an ordering. Maximum length is 256 characters. Defaults to `nil`.
-  - productId (list(String.t)): List of products in the order they are displayed in the cluster. There should not be duplicates within a cluster. Defaults to `nil`.
+      The value of this field is never visible to a user, it is used solely for the purpose of defining an ordering. Maximum length is 256 characters.
+  *   `productId` (*type:* `list(String.t)`, *default:* `nil`) - List of products in the order they are displayed in the cluster. There should not be duplicates within a cluster.
   """
 
   use GoogleApi.Gax.ModelBase

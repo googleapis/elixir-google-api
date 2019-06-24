@@ -21,11 +21,11 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ManagedConfigurationsSettings do
 
   ## Attributes
 
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "androidenterprise#managedConfigurationsSettings". Defaults to `androidenterprise#managedConfigurationsSettings`.
-  - lastUpdatedTimestampMillis (String.t): The last updated time of the managed configuration settings in milliseconds since 1970-01-01T00:00:00Z. Defaults to `nil`.
-  - managedProperty (list(GoogleApi.AndroidEnterprise.V1.Model.ManagedProperty.t)): The set of managed properties for this configuration. Defaults to `nil`.
-  - mcmId (String.t): The ID of the managed configurations settings. Defaults to `nil`.
-  - name (String.t): The name of the managed configurations settings. Defaults to `nil`.
+  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#managedConfigurationsSettings`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#managedConfigurationsSettings".
+  *   `lastUpdatedTimestampMillis` (*type:* `String.t`, *default:* `nil`) - The last updated time of the managed configuration settings in milliseconds since 1970-01-01T00:00:00Z.
+  *   `managedProperty` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.ManagedProperty.t)`, *default:* `nil`) - The set of managed properties for this configuration.
+  *   `mcmId` (*type:* `String.t`, *default:* `nil`) - The ID of the managed configurations settings.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the managed configurations settings.
   """
 
   use GoogleApi.Gax.ModelBase

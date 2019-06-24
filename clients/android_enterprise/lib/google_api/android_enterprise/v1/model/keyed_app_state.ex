@@ -21,11 +21,11 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.KeyedAppState do
 
   ## Attributes
 
-  - data (String.t): Additional field intended for machine-readable data. For example, a number or JSON object. To prevent XSS, we recommend removing any HTML from the data before displaying it. Defaults to `nil`.
-  - key (String.t): Key indicating what the app is providing a state for. The content of the key is set by the app's developer. To prevent XSS, we recommend removing any HTML from the key before displaying it. This field will always be present. Defaults to `nil`.
-  - message (String.t): Free-form, human-readable message describing the app state. For example, an error message. To prevent XSS, we recommend removing any HTML from the message before displaying it. Defaults to `nil`.
-  - severity (String.t): Severity of the app state. This field will always be present. Defaults to `nil`.
-  - stateTimestampMillis (String.t): Timestamp of when the app set the state in milliseconds since epoch. This field will always be present. Defaults to `nil`.
+  *   `data` (*type:* `String.t`, *default:* `nil`) - Additional field intended for machine-readable data. For example, a number or JSON object. To prevent XSS, we recommend removing any HTML from the data before displaying it.
+  *   `key` (*type:* `String.t`, *default:* `nil`) - Key indicating what the app is providing a state for. The content of the key is set by the app's developer. To prevent XSS, we recommend removing any HTML from the key before displaying it. This field will always be present.
+  *   `message` (*type:* `String.t`, *default:* `nil`) - Free-form, human-readable message describing the app state. For example, an error message. To prevent XSS, we recommend removing any HTML from the message before displaying it.
+  *   `severity` (*type:* `String.t`, *default:* `nil`) - Severity of the app state. This field will always be present.
+  *   `stateTimestampMillis` (*type:* `String.t`, *default:* `nil`) - Timestamp of when the app set the state in milliseconds since epoch. This field will always be present.
   """
 
   use GoogleApi.Gax.ModelBase

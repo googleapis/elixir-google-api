@@ -28,27 +28,29 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Serviceaccountkeys do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidEnterprise.V1.Connection): Connection to server
-  - enterprise_id (String.t): The ID of the enterprise.
-  - key_id (String.t): The ID of the key.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AndroidEnterprise.V1.Connection.t`) - Connection to server
+  *   `enterprise_id` (*type:* `String.t`) - The ID of the enterprise.
+  *   `key_id` (*type:* `String.t`) - The ID of the key.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %{}} on success
-  {:error, info} on failure
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec androidenterprise_serviceaccountkeys_delete(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, nil} | {:error, Tesla.Env.t()}
   def androidenterprise_serviceaccountkeys_delete(
@@ -89,24 +91,30 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Serviceaccountkeys do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidEnterprise.V1.Connection): Connection to server
-  - enterprise_id (String.t): The ID of the enterprise.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.AndroidEnterprise.V1.Model.ServiceAccountKey.t): 
+  *   `connection` (*type:* `GoogleApi.AndroidEnterprise.V1.Connection.t`) - Connection to server
+  *   `enterprise_id` (*type:* `String.t`) - The ID of the enterprise.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.ServiceAccountKey.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidEnterprise.V1.Model.ServiceAccountKey{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidEnterprise.V1.Model.ServiceAccountKey{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec androidenterprise_serviceaccountkeys_insert(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec androidenterprise_serviceaccountkeys_insert(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.ServiceAccountKey.t()}
           | {:error, Tesla.Env.t()}
   def androidenterprise_serviceaccountkeys_insert(
@@ -146,23 +154,29 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Serviceaccountkeys do
 
   ## Parameters
 
-  - connection (GoogleApi.AndroidEnterprise.V1.Connection): Connection to server
-  - enterprise_id (String.t): The ID of the enterprise.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AndroidEnterprise.V1.Connection.t`) - Connection to server
+  *   `enterprise_id` (*type:* `String.t`) - The ID of the enterprise.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AndroidEnterprise.V1.Model.ServiceAccountKeysListResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AndroidEnterprise.V1.Model.ServiceAccountKeysListResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec androidenterprise_serviceaccountkeys_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec androidenterprise_serviceaccountkeys_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.ServiceAccountKeysListResponse.t()}
           | {:error, Tesla.Env.t()}
   def androidenterprise_serviceaccountkeys_list(

@@ -21,21 +21,21 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.WebApp do
 
   ## Attributes
 
-  - displayMode (String.t): The display mode of the web app.
+  *   `displayMode` (*type:* `String.t`, *default:* `nil`) - The display mode of the web app.
 
-  Possible values include: 
-  - "minimalUi", the device's status bar, navigation bar, the app's URL, and a refresh button are visible when the app is open. For HTTP URLs, you can only select this option.
-  - "standalone", the device's status bar and navigation bar are visible when the app is open.
-  - "fullScreen", the app opens in full screen mode, hiding the device's status and navigation bars. All browser UI elements, page URL, system status bar and back button are not visible, and the web app takes up the entirety of the available display area. Defaults to `nil`.
-  - icons (list(GoogleApi.AndroidEnterprise.V1.Model.WebAppIcon.t)): A list of icons representing this website. If absent, a default icon (for create) or the current icon (for update) will be used. Defaults to `nil`.
-  - isPublished (boolean()): A flag whether the app has been published to the Play store yet. Defaults to `nil`.
-  - startUrl (String.t): The start URL, i.e. the URL that should load when the user opens the application. Defaults to `nil`.
-  - title (String.t): The title of the web app as displayed to the user (e.g., amongst a list of other applications, or as a label for an icon). Defaults to `nil`.
-  - versionCode (String.t): The current version of the app.
+      Possible values include: 
+      - "minimalUi", the device's status bar, navigation bar, the app's URL, and a refresh button are visible when the app is open. For HTTP URLs, you can only select this option.
+      - "standalone", the device's status bar and navigation bar are visible when the app is open.
+      - "fullScreen", the app opens in full screen mode, hiding the device's status and navigation bars. All browser UI elements, page URL, system status bar and back button are not visible, and the web app takes up the entirety of the available display area.
+  *   `icons` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.WebAppIcon.t)`, *default:* `nil`) - A list of icons representing this website. If absent, a default icon (for create) or the current icon (for update) will be used.
+  *   `isPublished` (*type:* `boolean()`, *default:* `nil`) - A flag whether the app has been published to the Play store yet.
+  *   `startUrl` (*type:* `String.t`, *default:* `nil`) - The start URL, i.e. the URL that should load when the user opens the application.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - The title of the web app as displayed to the user (e.g., amongst a list of other applications, or as a label for an icon).
+  *   `versionCode` (*type:* `String.t`, *default:* `nil`) - The current version of the app.
 
 
-  Note that the version can automatically increase during the lifetime of the web app, while Google does internal housekeeping to keep the web app up-to-date. Defaults to `nil`.
-  - webAppId (String.t): The ID of the application. A string of the form "app:<package name>" where the package name always starts with the prefix "com.google.enterprise.webapp." followed by a random id. Defaults to `nil`.
+      Note that the version can automatically increase during the lifetime of the web app, while Google does internal housekeeping to keep the web app up-to-date.
+  *   `webAppId` (*type:* `String.t`, *default:* `nil`) - The ID of the application. A string of the form "app:<package name>" where the package name always starts with the prefix "com.google.enterprise.webapp." followed by a random id.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,8 +21,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.UsersListResponse do
 
   ## Attributes
 
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "androidenterprise#usersListResponse". Defaults to `androidenterprise#usersListResponse`.
-  - user (list(GoogleApi.AndroidEnterprise.V1.Model.User.t)): A user of an enterprise. Defaults to `nil`.
+  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#usersListResponse`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#usersListResponse".
+  *   `user` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.User.t)`, *default:* `nil`) - A user of an enterprise.
   """
 
   use GoogleApi.Gax.ModelBase

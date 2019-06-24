@@ -23,10 +23,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.Permission do
 
   ## Attributes
 
-  - description (String.t): A longer description of the Permissions resource, giving more details of what it affects. Defaults to `nil`.
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "androidenterprise#permission". Defaults to `androidenterprise#permission`.
-  - name (String.t): The name of the permission. Defaults to `nil`.
-  - permissionId (String.t): An opaque string uniquely identifying the permission. Defaults to `nil`.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - A longer description of the Permissions resource, giving more details of what it affects.
+  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#permission`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#permission".
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the permission.
+  *   `permissionId` (*type:* `String.t`, *default:* `nil`) - An opaque string uniquely identifying the permission.
   """
 
   use GoogleApi.Gax.ModelBase

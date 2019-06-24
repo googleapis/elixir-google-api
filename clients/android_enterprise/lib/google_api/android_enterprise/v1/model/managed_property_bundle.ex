@@ -21,7 +21,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ManagedPropertyBundle do
 
   ## Attributes
 
-  - managedProperty (list(GoogleApi.AndroidEnterprise.V1.Model.ManagedProperty.t)): The list of managed properties. Defaults to `nil`.
+  *   `managedProperty` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.ManagedProperty.t)`, *default:* `nil`) - The list of managed properties.
   """
 
   use GoogleApi.Gax.ModelBase

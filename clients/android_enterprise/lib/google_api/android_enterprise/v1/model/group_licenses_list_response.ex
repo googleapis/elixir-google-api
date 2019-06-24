@@ -21,8 +21,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.GroupLicensesListResponse do
 
   ## Attributes
 
-  - groupLicense (list(GoogleApi.AndroidEnterprise.V1.Model.GroupLicense.t)): A group license for a product approved for use in the enterprise. Defaults to `nil`.
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "androidenterprise#groupLicensesListResponse". Defaults to `androidenterprise#groupLicensesListResponse`.
+  *   `groupLicense` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.GroupLicense.t)`, *default:* `nil`) - A group license for a product approved for use in the enterprise.
+  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#groupLicensesListResponse`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#groupLicensesListResponse".
   """
 
   use GoogleApi.Gax.ModelBase

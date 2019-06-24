@@ -21,8 +21,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.StoreLayoutPagesListResponse do
 
   ## Attributes
 
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "androidenterprise#storeLayoutPagesListResponse". Defaults to `androidenterprise#storeLayoutPagesListResponse`.
-  - page (list(GoogleApi.AndroidEnterprise.V1.Model.StorePage.t)): A store page of an enterprise. Defaults to `nil`.
+  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#storeLayoutPagesListResponse`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#storeLayoutPagesListResponse".
+  *   `page` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.StorePage.t)`, *default:* `nil`) - A store page of an enterprise.
   """
 
   use GoogleApi.Gax.ModelBase

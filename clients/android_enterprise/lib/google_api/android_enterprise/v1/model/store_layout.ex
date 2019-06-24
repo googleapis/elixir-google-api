@@ -21,11 +21,11 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.StoreLayout do
 
   ## Attributes
 
-  - homepageId (String.t): The ID of the store page to be used as the homepage. The homepage is the first page shown in the managed Google Play Store.
+  *   `homepageId` (*type:* `String.t`, *default:* `nil`) - The ID of the store page to be used as the homepage. The homepage is the first page shown in the managed Google Play Store.
 
-  Not specifying a homepage is equivalent to setting the store layout type to "basic". Defaults to `nil`.
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "androidenterprise#storeLayout". Defaults to `androidenterprise#storeLayout`.
-  - storeLayoutType (String.t): The store layout type. By default, this value is set to "basic" if the homepageId field is not set, and to "custom" otherwise. If set to "basic", the layout will consist of all approved apps that have been whitelisted for the user. Defaults to `nil`.
+      Not specifying a homepage is equivalent to setting the store layout type to "basic".
+  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#storeLayout`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#storeLayout".
+  *   `storeLayoutType` (*type:* `String.t`, *default:* `nil`) - The store layout type. By default, this value is set to "basic" if the homepageId field is not set, and to "custom" otherwise. If set to "basic", the layout will consist of all approved apps that have been whitelisted for the user.
   """
 
   use GoogleApi.Gax.ModelBase

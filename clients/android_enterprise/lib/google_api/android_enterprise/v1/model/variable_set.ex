@@ -21,9 +21,9 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.VariableSet do
 
   ## Attributes
 
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "androidenterprise#variableSet". Defaults to `androidenterprise#variableSet`.
-  - placeholder (String.t): The placeholder string; defined by EMM. Defaults to `nil`.
-  - userValue (String.t): The value of the placeholder, specific to the user. Defaults to `nil`.
+  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#variableSet`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#variableSet".
+  *   `placeholder` (*type:* `String.t`, *default:* `nil`) - The placeholder string; defined by EMM.
+  *   `userValue` (*type:* `String.t`, *default:* `nil`) - The value of the placeholder, specific to the user.
   """
 
   use GoogleApi.Gax.ModelBase

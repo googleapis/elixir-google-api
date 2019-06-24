@@ -21,8 +21,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.MaintenanceWindow do
 
   ## Attributes
 
-  - durationMs (String.t): Duration of the maintenance window, in milliseconds. The duration must be between 30 minutes and 24 hours (inclusive). Defaults to `nil`.
-  - startTimeAfterMidnightMs (String.t): Start time of the maintenance window, in milliseconds after midnight on the device. Windows can span midnight. Defaults to `nil`.
+  *   `durationMs` (*type:* `String.t`, *default:* `nil`) - Duration of the maintenance window, in milliseconds. The duration must be between 30 minutes and 24 hours (inclusive).
+  *   `startTimeAfterMidnightMs` (*type:* `String.t`, *default:* `nil`) - Start time of the maintenance window, in milliseconds after midnight on the device. Windows can span midnight.
   """
 
   use GoogleApi.Gax.ModelBase

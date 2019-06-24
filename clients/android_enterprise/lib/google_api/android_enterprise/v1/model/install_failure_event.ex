@@ -21,11 +21,11 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.InstallFailureEvent do
 
   ## Attributes
 
-  - deviceId (String.t): The Android ID of the device. This field will always be present. Defaults to `nil`.
-  - failureDetails (String.t): Additional details on the failure if applicable. Defaults to `nil`.
-  - failureReason (String.t): The reason for the installation failure. This field will always be present. Defaults to `nil`.
-  - productId (String.t): The id of the product (e.g. "app:com.google.android.gm") for which the install failure event occured. This field will always be present. Defaults to `nil`.
-  - userId (String.t): The ID of the user. This field will always be present. Defaults to `nil`.
+  *   `deviceId` (*type:* `String.t`, *default:* `nil`) - The Android ID of the device. This field will always be present.
+  *   `failureDetails` (*type:* `String.t`, *default:* `nil`) - Additional details on the failure if applicable.
+  *   `failureReason` (*type:* `String.t`, *default:* `nil`) - The reason for the installation failure. This field will always be present.
+  *   `productId` (*type:* `String.t`, *default:* `nil`) - The id of the product (e.g. "app:com.google.android.gm") for which the install failure event occured. This field will always be present.
+  *   `userId` (*type:* `String.t`, *default:* `nil`) - The ID of the user. This field will always be present.
   """
 
   use GoogleApi.Gax.ModelBase

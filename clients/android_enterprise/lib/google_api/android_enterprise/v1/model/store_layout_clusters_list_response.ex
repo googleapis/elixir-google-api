@@ -21,8 +21,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.StoreLayoutClustersListResponse d
 
   ## Attributes
 
-  - cluster (list(GoogleApi.AndroidEnterprise.V1.Model.StoreCluster.t)): A store cluster of an enterprise. Defaults to `nil`.
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "androidenterprise#storeLayoutClustersListResponse". Defaults to `androidenterprise#storeLayoutClustersListResponse`.
+  *   `cluster` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.StoreCluster.t)`, *default:* `nil`) - A store cluster of an enterprise.
+  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#storeLayoutClustersListResponse`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#storeLayoutClustersListResponse".
   """
 
   use GoogleApi.Gax.ModelBase

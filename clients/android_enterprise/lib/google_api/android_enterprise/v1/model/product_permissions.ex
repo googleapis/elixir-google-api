@@ -21,9 +21,9 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ProductPermissions do
 
   ## Attributes
 
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "androidenterprise#productPermissions". Defaults to `androidenterprise#productPermissions`.
-  - permission (list(GoogleApi.AndroidEnterprise.V1.Model.ProductPermission.t)): The permissions required by the app. Defaults to `nil`.
-  - productId (String.t): The ID of the app that the permissions relate to, e.g. "app:com.google.android.gm". Defaults to `nil`.
+  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#productPermissions`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#productPermissions".
+  *   `permission` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.ProductPermission.t)`, *default:* `nil`) - The permissions required by the app.
+  *   `productId` (*type:* `String.t`, *default:* `nil`) - The ID of the app that the permissions relate to, e.g. "app:com.google.android.gm".
   """
 
   use GoogleApi.Gax.ModelBase

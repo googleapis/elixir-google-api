@@ -23,8 +23,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ProductPermission do
 
   ## Attributes
 
-  - permissionId (String.t): An opaque string uniquely identifying the permission. Defaults to `nil`.
-  - state (String.t): Whether the permission has been accepted or not. Defaults to `nil`.
+  *   `permissionId` (*type:* `String.t`, *default:* `nil`) - An opaque string uniquely identifying the permission.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - Whether the permission has been accepted or not.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,9 +21,9 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.SignupInfo do
 
   ## Attributes
 
-  - completionToken (String.t): An opaque token that will be required, along with the Enterprise Token, for obtaining the enterprise resource from CompleteSignup. Defaults to `nil`.
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "androidenterprise#signupInfo". Defaults to `androidenterprise#signupInfo`.
-  - url (String.t): A URL under which the Admin can sign up for an enterprise. The page pointed to cannot be rendered in an iframe. Defaults to `nil`.
+  *   `completionToken` (*type:* `String.t`, *default:* `nil`) - An opaque token that will be required, along with the Enterprise Token, for obtaining the enterprise resource from CompleteSignup.
+  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#signupInfo`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#signupInfo".
+  *   `url` (*type:* `String.t`, *default:* `nil`) - A URL under which the Admin can sign up for an enterprise. The page pointed to cannot be rendered in an iframe.
   """
 
   use GoogleApi.Gax.ModelBase

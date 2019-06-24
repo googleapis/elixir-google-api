@@ -29,9 +29,9 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.Entitlement do
 
   ## Attributes
 
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "androidenterprise#entitlement". Defaults to `androidenterprise#entitlement`.
-  - productId (String.t): The ID of the product that the entitlement is for. For example, "app:com.google.android.gm". Defaults to `nil`.
-  - reason (String.t): The reason for the entitlement. For example, "free" for free apps. This property is temporary: it will be replaced by the acquisition kind field of group licenses. Defaults to `nil`.
+  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#entitlement`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#entitlement".
+  *   `productId` (*type:* `String.t`, *default:* `nil`) - The ID of the product that the entitlement is for. For example, "app:com.google.android.gm".
+  *   `reason` (*type:* `String.t`, *default:* `nil`) - The reason for the entitlement. For example, "free" for free apps. This property is temporary: it will be replaced by the acquisition kind field of group licenses.
   """
 
   use GoogleApi.Gax.ModelBase

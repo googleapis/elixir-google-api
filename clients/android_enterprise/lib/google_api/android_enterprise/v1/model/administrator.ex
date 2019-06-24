@@ -21,7 +21,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.Administrator do
 
   ## Attributes
 
-  - email (String.t): The admin's email address. Defaults to `nil`.
+  *   `email` (*type:* `String.t`, *default:* `nil`) - The admin's email address.
   """
 
   use GoogleApi.Gax.ModelBase

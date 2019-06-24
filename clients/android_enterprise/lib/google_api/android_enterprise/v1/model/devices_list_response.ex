@@ -21,8 +21,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.DevicesListResponse do
 
   ## Attributes
 
-  - device (list(GoogleApi.AndroidEnterprise.V1.Model.Device.t)): A managed device. Defaults to `nil`.
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "androidenterprise#devicesListResponse". Defaults to `androidenterprise#devicesListResponse`.
+  *   `device` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.Device.t)`, *default:* `nil`) - A managed device.
+  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#devicesListResponse`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#devicesListResponse".
   """
 
   use GoogleApi.Gax.ModelBase

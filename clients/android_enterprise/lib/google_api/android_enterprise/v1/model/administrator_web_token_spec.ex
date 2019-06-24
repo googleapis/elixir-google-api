@@ -21,14 +21,14 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpec do
 
   ## Attributes
 
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "androidenterprise#administratorWebTokenSpec". Defaults to `androidenterprise#administratorWebTokenSpec`.
-  - managedConfigurations (GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecManagedConfigurations.t): Options for displaying the Managed Configuration page. Defaults to `nil`.
-  - parent (String.t): The URI of the parent frame hosting the iframe. To prevent XSS, the iframe may not be hosted at other URIs. This URI must be https. Defaults to `nil`.
-  - permission (list(String.t)): Deprecated. Use PlaySearch.approveApps. Defaults to `nil`.
-  - playSearch (GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecPlaySearch.t): Options for displaying the managed Play Search apps page. Defaults to `nil`.
-  - privateApps (GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecPrivateApps.t): Options for displaying the Private Apps page. Defaults to `nil`.
-  - storeBuilder (GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecStoreBuilder.t): Options for displaying the Organize apps page. Defaults to `nil`.
-  - webApps (GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecWebApps.t): Options for displaying the Web Apps page. Defaults to `nil`.
+  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#administratorWebTokenSpec`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#administratorWebTokenSpec".
+  *   `managedConfigurations` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecManagedConfigurations.t`, *default:* `nil`) - Options for displaying the Managed Configuration page.
+  *   `parent` (*type:* `String.t`, *default:* `nil`) - The URI of the parent frame hosting the iframe. To prevent XSS, the iframe may not be hosted at other URIs. This URI must be https.
+  *   `permission` (*type:* `list(String.t)`, *default:* `nil`) - Deprecated. Use PlaySearch.approveApps.
+  *   `playSearch` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecPlaySearch.t`, *default:* `nil`) - Options for displaying the managed Play Search apps page.
+  *   `privateApps` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecPrivateApps.t`, *default:* `nil`) - Options for displaying the Private Apps page.
+  *   `storeBuilder` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecStoreBuilder.t`, *default:* `nil`) - Options for displaying the Organize apps page.
+  *   `webApps` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecWebApps.t`, *default:* `nil`) - Options for displaying the Web Apps page.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,8 +21,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.LocalizedText do
 
   ## Attributes
 
-  - locale (String.t): The BCP47 tag for a locale. (e.g. "en-US", "de"). Defaults to `nil`.
-  - text (String.t): The text localized in the associated locale. Defaults to `nil`.
+  *   `locale` (*type:* `String.t`, *default:* `nil`) - The BCP47 tag for a locale. (e.g. "en-US", "de").
+  *   `text` (*type:* `String.t`, *default:* `nil`) - The text localized in the associated locale.
   """
 
   use GoogleApi.Gax.ModelBase
