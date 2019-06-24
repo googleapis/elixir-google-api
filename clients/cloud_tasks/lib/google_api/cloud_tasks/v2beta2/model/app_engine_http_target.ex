@@ -33,12 +33,12 @@ defmodule GoogleApi.CloudTasks.V2beta2.Model.AppEngineHttpTarget do
 
   ## Attributes
 
-  - appEngineRoutingOverride (GoogleApi.CloudTasks.V2beta2.Model.AppEngineRouting.t): Overrides for the
-  task-level app_engine_routing.
+  *   `appEngineRoutingOverride` (*type:* `GoogleApi.CloudTasks.V2beta2.Model.AppEngineRouting.t`, *default:* `nil`) - Overrides for the
+      task-level app_engine_routing.
 
-  If set, `app_engine_routing_override` is used for all tasks in
-  the queue, no matter what the setting is for the
-  task-level app_engine_routing. Defaults to `nil`.
+      If set, `app_engine_routing_override` is used for all tasks in
+      the queue, no matter what the setting is for the
+      task-level app_engine_routing.
   """
 
   use GoogleApi.Gax.ModelBase

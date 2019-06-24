@@ -28,27 +28,28 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudTasks.V2beta2.Connection): Connection to server
-  - name (String.t): Resource name for the location.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.CloudTasks.V2beta2.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Resource name for the location.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudTasks.V2beta2.Model.Location{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudTasks.V2beta2.Model.Location{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec cloudtasks_projects_locations_get(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec cloudtasks_projects_locations_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudTasks.V2beta2.Model.Location.t()} | {:error, Tesla.Env.t()}
   def cloudtasks_projects_locations_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -83,30 +84,31 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudTasks.V2beta2.Connection): Connection to server
-  - name (String.t): The resource that owns the locations collection, if applicable.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :filter (String.t): The standard list filter.
-    - :pageSize (integer()): The standard list page size.
-    - :pageToken (String.t): The standard list page token.
+  *   `connection` (*type:* `GoogleApi.CloudTasks.V2beta2.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - The resource that owns the locations collection, if applicable.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:filter` (*type:* `String.t`) - The standard list filter.
+      *   `:pageSize` (*type:* `integer()`) - The standard list page size.
+      *   `:pageToken` (*type:* `String.t`) - The standard list page token.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudTasks.V2beta2.Model.ListLocationsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudTasks.V2beta2.Model.ListLocationsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec cloudtasks_projects_locations_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec cloudtasks_projects_locations_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudTasks.V2beta2.Model.ListLocationsResponse.t()}
           | {:error, Tesla.Env.t()}
   def cloudtasks_projects_locations_list(connection, name, optional_params \\ [], opts \\ []) do
@@ -158,36 +160,41 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudTasks.V2beta2.Connection): Connection to server
-  - parent (String.t): Required.
+  *   `connection` (*type:* `GoogleApi.CloudTasks.V2beta2.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required.
 
-  The location name in which the queue will be created.
-  For example: `projects/PROJECT_ID/locations/LOCATION_ID`
+      The location name in which the queue will be created.
+      For example: `projects/PROJECT_ID/locations/LOCATION_ID`
 
-  The list of allowed locations can be obtained by calling Cloud
-  Tasks' implementation of
-  ListLocations.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.CloudTasks.V2beta2.Model.Queue.t): 
+      The list of allowed locations can be obtained by calling Cloud
+      Tasks' implementation of
+      ListLocations.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.CloudTasks.V2beta2.Model.Queue.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudTasks.V2beta2.Model.Queue{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudTasks.V2beta2.Model.Queue{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec cloudtasks_projects_locations_queues_create(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, GoogleApi.CloudTasks.V2beta2.Model.Queue.t()} | {:error, Tesla.Env.t()}
+  @spec cloudtasks_projects_locations_queues_create(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.CloudTasks.V2beta2.Model.Queue.t()} | {:error, Tesla.Env.t()}
   def cloudtasks_projects_locations_queues_create(
         connection,
         parent,
@@ -239,31 +246,36 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudTasks.V2beta2.Connection): Connection to server
-  - name (String.t): Required.
+  *   `connection` (*type:* `GoogleApi.CloudTasks.V2beta2.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required.
 
-  The queue name. For example:
-  `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+      The queue name. For example:
+      `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudTasks.V2beta2.Model.Empty{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudTasks.V2beta2.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec cloudtasks_projects_locations_queues_delete(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, GoogleApi.CloudTasks.V2beta2.Model.Empty.t()} | {:error, Tesla.Env.t()}
+  @spec cloudtasks_projects_locations_queues_delete(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.CloudTasks.V2beta2.Model.Empty.t()} | {:error, Tesla.Env.t()}
   def cloudtasks_projects_locations_queues_delete(
         connection,
         name,
@@ -302,31 +314,36 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudTasks.V2beta2.Connection): Connection to server
-  - name (String.t): Required.
+  *   `connection` (*type:* `GoogleApi.CloudTasks.V2beta2.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required.
 
-  The resource name of the queue. For example:
-  `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+      The resource name of the queue. For example:
+      `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudTasks.V2beta2.Model.Queue{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudTasks.V2beta2.Model.Queue{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec cloudtasks_projects_locations_queues_get(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, GoogleApi.CloudTasks.V2beta2.Model.Queue.t()} | {:error, Tesla.Env.t()}
+  @spec cloudtasks_projects_locations_queues_get(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.CloudTasks.V2beta2.Model.Queue.t()} | {:error, Tesla.Env.t()}
   def cloudtasks_projects_locations_queues_get(
         connection,
         name,
@@ -373,31 +390,33 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudTasks.V2beta2.Connection): Connection to server
-  - resource (String.t): REQUIRED: The resource for which the policy is being requested.
-  See the operation documentation for the appropriate value for this field.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.CloudTasks.V2beta2.Model.GetIamPolicyRequest.t): 
+  *   `connection` (*type:* `GoogleApi.CloudTasks.V2beta2.Connection.t`) - Connection to server
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested.
+      See the operation documentation for the appropriate value for this field.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.CloudTasks.V2beta2.Model.GetIamPolicyRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudTasks.V2beta2.Model.Policy{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudTasks.V2beta2.Model.Policy{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec cloudtasks_projects_locations_queues_get_iam_policy(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.CloudTasks.V2beta2.Model.Policy.t()} | {:error, Tesla.Env.t()}
   def cloudtasks_projects_locations_queues_get_iam_policy(
@@ -441,56 +460,62 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudTasks.V2beta2.Connection): Connection to server
-  - parent (String.t): Required.
+  *   `connection` (*type:* `GoogleApi.CloudTasks.V2beta2.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required.
 
-  The location name.
-  For example: `projects/PROJECT_ID/locations/LOCATION_ID`
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :filter (String.t): `filter` can be used to specify a subset of queues. Any Queue
-  field can be used as a filter and several operators as supported.
-  For example: `<=, <, >=, >, !=, =, :`. The filter syntax is the same as
-  described in
-  [Stackdriver's Advanced Logs
-  Filters](https://cloud.google.com/logging/docs/view/advanced_filters).
+      The location name.
+      For example: `projects/PROJECT_ID/locations/LOCATION_ID`
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:filter` (*type:* `String.t`) - `filter` can be used to specify a subset of queues. Any Queue
+          field can be used as a filter and several operators as supported.
+          For example: `<=, <, >=, >, !=, =, :`. The filter syntax is the same as
+          described in
+          [Stackdriver's Advanced Logs
+          Filters](https://cloud.google.com/logging/docs/view/advanced_filters).
 
-  Sample filter "app_engine_http_target: *".
+          Sample filter "app_engine_http_target: *".
 
-  Note that using filters might cause fewer queues than the
-  requested_page size to be returned.
-    - :pageSize (integer()): Requested page size.
+          Note that using filters might cause fewer queues than the
+          requested_page size to be returned.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size.
 
-  The maximum page size is 9800. If unspecified, the page size will
-  be the maximum. Fewer queues than requested might be returned,
-  even if more queues exist; use the
-  next_page_token in the
-  response to determine if more queues exist.
-    - :pageToken (String.t): A token identifying the page of results to return.
+          The maximum page size is 9800. If unspecified, the page size will
+          be the maximum. Fewer queues than requested might be returned,
+          even if more queues exist; use the
+          next_page_token in the
+          response to determine if more queues exist.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying the page of results to return.
 
-  To request the first page results, page_token must be empty. To
-  request the next page of results, page_token must be the value of
-  next_page_token returned
-  from the previous call to ListQueues
-  method. It is an error to switch the value of the
-  filter while iterating through pages.
+          To request the first page results, page_token must be empty. To
+          request the next page of results, page_token must be the value of
+          next_page_token returned
+          from the previous call to ListQueues
+          method. It is an error to switch the value of the
+          filter while iterating through pages.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudTasks.V2beta2.Model.ListQueuesResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudTasks.V2beta2.Model.ListQueuesResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec cloudtasks_projects_locations_queues_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec cloudtasks_projects_locations_queues_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.CloudTasks.V2beta2.Model.ListQueuesResponse.t()}
           | {:error, Tesla.Env.t()}
   def cloudtasks_projects_locations_queues_list(
@@ -548,50 +573,55 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudTasks.V2beta2.Connection): Connection to server
-  - name (String.t): Caller-specified and required in CreateQueue,
-  after which it becomes output only.
+  *   `connection` (*type:* `GoogleApi.CloudTasks.V2beta2.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Caller-specified and required in CreateQueue,
+      after which it becomes output only.
 
-  The queue name.
+      The queue name.
 
-  The queue name must have the following format:
-  `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
+      The queue name must have the following format:
+      `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
 
-  * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
-   hyphens (-), colons (:), or periods (.).
-   For more information, see
-   [Identifying
-   projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
-  * `LOCATION_ID` is the canonical ID for the queue's location.
-   The list of available locations can be obtained by calling
-   ListLocations.
-   For more information, see https://cloud.google.com/about/locations/.
-  * `QUEUE_ID` can contain letters ([A-Za-z]), numbers ([0-9]), or
-  hyphens (-). The maximum length is 100 characters.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :updateMask (String.t): A mask used to specify which fields of the queue are being updated.
+      * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
+         hyphens (-), colons (:), or periods (.).
+         For more information, see
+         [Identifying
+         projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
+      * `LOCATION_ID` is the canonical ID for the queue's location.
+         The list of available locations can be obtained by calling
+         ListLocations.
+         For more information, see https://cloud.google.com/about/locations/.
+      * `QUEUE_ID` can contain letters ([A-Za-z]), numbers ([0-9]), or
+        hyphens (-). The maximum length is 100 characters.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:updateMask` (*type:* `String.t`) - A mask used to specify which fields of the queue are being updated.
 
-  If empty, then all fields will be updated.
-    - :body (GoogleApi.CloudTasks.V2beta2.Model.Queue.t): 
+          If empty, then all fields will be updated.
+      *   `:body` (*type:* `GoogleApi.CloudTasks.V2beta2.Model.Queue.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudTasks.V2beta2.Model.Queue{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudTasks.V2beta2.Model.Queue{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec cloudtasks_projects_locations_queues_patch(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, GoogleApi.CloudTasks.V2beta2.Model.Queue.t()} | {:error, Tesla.Env.t()}
+  @spec cloudtasks_projects_locations_queues_patch(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.CloudTasks.V2beta2.Model.Queue.t()} | {:error, Tesla.Env.t()}
   def cloudtasks_projects_locations_queues_patch(
         connection,
         name,
@@ -638,32 +668,37 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudTasks.V2beta2.Connection): Connection to server
-  - name (String.t): Required.
+  *   `connection` (*type:* `GoogleApi.CloudTasks.V2beta2.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required.
 
-  The queue name. For example:
-  `projects/PROJECT_ID/location/LOCATION_ID/queues/QUEUE_ID`
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.CloudTasks.V2beta2.Model.PauseQueueRequest.t): 
+      The queue name. For example:
+      `projects/PROJECT_ID/location/LOCATION_ID/queues/QUEUE_ID`
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.CloudTasks.V2beta2.Model.PauseQueueRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudTasks.V2beta2.Model.Queue{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudTasks.V2beta2.Model.Queue{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec cloudtasks_projects_locations_queues_pause(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, GoogleApi.CloudTasks.V2beta2.Model.Queue.t()} | {:error, Tesla.Env.t()}
+  @spec cloudtasks_projects_locations_queues_pause(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.CloudTasks.V2beta2.Model.Queue.t()} | {:error, Tesla.Env.t()}
   def cloudtasks_projects_locations_queues_pause(
         connection,
         name,
@@ -708,32 +743,37 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudTasks.V2beta2.Connection): Connection to server
-  - name (String.t): Required.
+  *   `connection` (*type:* `GoogleApi.CloudTasks.V2beta2.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required.
 
-  The queue name. For example:
-  `projects/PROJECT_ID/location/LOCATION_ID/queues/QUEUE_ID`
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.CloudTasks.V2beta2.Model.PurgeQueueRequest.t): 
+      The queue name. For example:
+      `projects/PROJECT_ID/location/LOCATION_ID/queues/QUEUE_ID`
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.CloudTasks.V2beta2.Model.PurgeQueueRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudTasks.V2beta2.Model.Queue{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudTasks.V2beta2.Model.Queue{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec cloudtasks_projects_locations_queues_purge(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, GoogleApi.CloudTasks.V2beta2.Model.Queue.t()} | {:error, Tesla.Env.t()}
+  @spec cloudtasks_projects_locations_queues_purge(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.CloudTasks.V2beta2.Model.Queue.t()} | {:error, Tesla.Env.t()}
   def cloudtasks_projects_locations_queues_purge(
         connection,
         name,
@@ -785,32 +825,37 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudTasks.V2beta2.Connection): Connection to server
-  - name (String.t): Required.
+  *   `connection` (*type:* `GoogleApi.CloudTasks.V2beta2.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required.
 
-  The queue name. For example:
-  `projects/PROJECT_ID/location/LOCATION_ID/queues/QUEUE_ID`
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.CloudTasks.V2beta2.Model.ResumeQueueRequest.t): 
+      The queue name. For example:
+      `projects/PROJECT_ID/location/LOCATION_ID/queues/QUEUE_ID`
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.CloudTasks.V2beta2.Model.ResumeQueueRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudTasks.V2beta2.Model.Queue{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudTasks.V2beta2.Model.Queue{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec cloudtasks_projects_locations_queues_resume(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, GoogleApi.CloudTasks.V2beta2.Model.Queue.t()} | {:error, Tesla.Env.t()}
+  @spec cloudtasks_projects_locations_queues_resume(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.CloudTasks.V2beta2.Model.Queue.t()} | {:error, Tesla.Env.t()}
   def cloudtasks_projects_locations_queues_resume(
         connection,
         name,
@@ -860,31 +905,33 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudTasks.V2beta2.Connection): Connection to server
-  - resource (String.t): REQUIRED: The resource for which the policy is being specified.
-  See the operation documentation for the appropriate value for this field.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.CloudTasks.V2beta2.Model.SetIamPolicyRequest.t): 
+  *   `connection` (*type:* `GoogleApi.CloudTasks.V2beta2.Connection.t`) - Connection to server
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified.
+      See the operation documentation for the appropriate value for this field.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.CloudTasks.V2beta2.Model.SetIamPolicyRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudTasks.V2beta2.Model.Policy{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudTasks.V2beta2.Model.Policy{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec cloudtasks_projects_locations_queues_set_iam_policy(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.CloudTasks.V2beta2.Model.Policy.t()} | {:error, Tesla.Env.t()}
   def cloudtasks_projects_locations_queues_set_iam_policy(
@@ -932,31 +979,33 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudTasks.V2beta2.Connection): Connection to server
-  - resource (String.t): REQUIRED: The resource for which the policy detail is being requested.
-  See the operation documentation for the appropriate value for this field.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.CloudTasks.V2beta2.Model.TestIamPermissionsRequest.t): 
+  *   `connection` (*type:* `GoogleApi.CloudTasks.V2beta2.Connection.t`) - Connection to server
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested.
+      See the operation documentation for the appropriate value for this field.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.CloudTasks.V2beta2.Model.TestIamPermissionsRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudTasks.V2beta2.Model.TestIamPermissionsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudTasks.V2beta2.Model.TestIamPermissionsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec cloudtasks_projects_locations_queues_test_iam_permissions(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.CloudTasks.V2beta2.Model.TestIamPermissionsResponse.t()}
@@ -1014,33 +1063,35 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudTasks.V2beta2.Connection): Connection to server
-  - name (String.t): Required.
+  *   `connection` (*type:* `GoogleApi.CloudTasks.V2beta2.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required.
 
-  The task name. For example:
-  `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.CloudTasks.V2beta2.Model.AcknowledgeTaskRequest.t): 
+      The task name. For example:
+      `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.CloudTasks.V2beta2.Model.AcknowledgeTaskRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudTasks.V2beta2.Model.Empty{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudTasks.V2beta2.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec cloudtasks_projects_locations_queues_tasks_acknowledge(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.CloudTasks.V2beta2.Model.Empty.t()} | {:error, Tesla.Env.t()}
   def cloudtasks_projects_locations_queues_tasks_acknowledge(
@@ -1087,33 +1138,35 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudTasks.V2beta2.Connection): Connection to server
-  - name (String.t): Required.
+  *   `connection` (*type:* `GoogleApi.CloudTasks.V2beta2.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required.
 
-  The task name. For example:
-  `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.CloudTasks.V2beta2.Model.CancelLeaseRequest.t): 
+      The task name. For example:
+      `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.CloudTasks.V2beta2.Model.CancelLeaseRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudTasks.V2beta2.Model.Task{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudTasks.V2beta2.Model.Task{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec cloudtasks_projects_locations_queues_tasks_cancel_lease(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.CloudTasks.V2beta2.Model.Task.t()} | {:error, Tesla.Env.t()}
   def cloudtasks_projects_locations_queues_tasks_cancel_lease(
@@ -1156,40 +1209,42 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
   Tasks cannot be updated after creation; there is no UpdateTask command.
 
   * For App Engine queues, the maximum task size is
-  100KB.
+    100KB.
   * For pull queues, the maximum task size is 1MB.
 
   ## Parameters
 
-  - connection (GoogleApi.CloudTasks.V2beta2.Connection): Connection to server
-  - parent (String.t): Required.
+  *   `connection` (*type:* `GoogleApi.CloudTasks.V2beta2.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required.
 
-  The queue name. For example:
-  `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
+      The queue name. For example:
+      `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
 
-  The queue must already exist.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.CloudTasks.V2beta2.Model.CreateTaskRequest.t): 
+      The queue must already exist.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.CloudTasks.V2beta2.Model.CreateTaskRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudTasks.V2beta2.Model.Task{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudTasks.V2beta2.Model.Task{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec cloudtasks_projects_locations_queues_tasks_create(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.CloudTasks.V2beta2.Model.Task.t()} | {:error, Tesla.Env.t()}
   def cloudtasks_projects_locations_queues_tasks_create(
@@ -1235,32 +1290,34 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudTasks.V2beta2.Connection): Connection to server
-  - name (String.t): Required.
+  *   `connection` (*type:* `GoogleApi.CloudTasks.V2beta2.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required.
 
-  The task name. For example:
-  `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+      The task name. For example:
+      `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudTasks.V2beta2.Model.Empty{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudTasks.V2beta2.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec cloudtasks_projects_locations_queues_tasks_delete(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.CloudTasks.V2beta2.Model.Empty.t()} | {:error, Tesla.Env.t()}
   def cloudtasks_projects_locations_queues_tasks_delete(
@@ -1301,43 +1358,48 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudTasks.V2beta2.Connection): Connection to server
-  - name (String.t): Required.
+  *   `connection` (*type:* `GoogleApi.CloudTasks.V2beta2.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required.
 
-  The task name. For example:
-  `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :responseView (String.t): The response_view specifies which subset of the Task will be
-  returned.
+      The task name. For example:
+      `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:responseView` (*type:* `String.t`) - The response_view specifies which subset of the Task will be
+          returned.
 
-  By default response_view is BASIC; not all
-  information is retrieved by default because some data, such as
-  payloads, might be desirable to return only when needed because
-  of its large size or because of the sensitivity of data that it
-  contains.
+          By default response_view is BASIC; not all
+          information is retrieved by default because some data, such as
+          payloads, might be desirable to return only when needed because
+          of its large size or because of the sensitivity of data that it
+          contains.
 
-  Authorization for FULL requires
-  `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/)
-  permission on the Task resource.
+          Authorization for FULL requires
+          `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/)
+          permission on the Task resource.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudTasks.V2beta2.Model.Task{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudTasks.V2beta2.Model.Task{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec cloudtasks_projects_locations_queues_tasks_get(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, GoogleApi.CloudTasks.V2beta2.Model.Task.t()} | {:error, Tesla.Env.t()}
+  @spec cloudtasks_projects_locations_queues_tasks_get(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.CloudTasks.V2beta2.Model.Task.t()} | {:error, Tesla.Env.t()}
   def cloudtasks_projects_locations_queues_tasks_get(
         connection,
         name,
@@ -1398,33 +1460,35 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudTasks.V2beta2.Connection): Connection to server
-  - parent (String.t): Required.
+  *   `connection` (*type:* `GoogleApi.CloudTasks.V2beta2.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required.
 
-  The queue name. For example:
-  `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.CloudTasks.V2beta2.Model.LeaseTasksRequest.t): 
+      The queue name. For example:
+      `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.CloudTasks.V2beta2.Model.LeaseTasksRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudTasks.V2beta2.Model.LeaseTasksResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudTasks.V2beta2.Model.LeaseTasksResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec cloudtasks_projects_locations_queues_tasks_lease(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.CloudTasks.V2beta2.Model.LeaseTasksResponse.t()}
@@ -1476,59 +1540,65 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudTasks.V2beta2.Connection): Connection to server
-  - parent (String.t): Required.
+  *   `connection` (*type:* `GoogleApi.CloudTasks.V2beta2.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required.
 
-  The queue name. For example:
-  `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :pageSize (integer()): Maximum page size.
+      The queue name. For example:
+      `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - Maximum page size.
 
-  Fewer tasks than requested might be returned, even if more tasks exist; use
-  next_page_token in the response to
-  determine if more tasks exist.
+          Fewer tasks than requested might be returned, even if more tasks exist; use
+          next_page_token in the response to
+          determine if more tasks exist.
 
-  The maximum page size is 1000. If unspecified, the page size will be the
-  maximum.
-    - :pageToken (String.t): A token identifying the page of results to return.
+          The maximum page size is 1000. If unspecified, the page size will be the
+          maximum.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying the page of results to return.
 
-  To request the first page results, page_token must be empty. To
-  request the next page of results, page_token must be the value of
-  next_page_token returned
-  from the previous call to ListTasks
-  method.
+          To request the first page results, page_token must be empty. To
+          request the next page of results, page_token must be the value of
+          next_page_token returned
+          from the previous call to ListTasks
+          method.
 
-  The page token is valid for only 2 hours.
-    - :responseView (String.t): The response_view specifies which subset of the Task will be
-  returned.
+          The page token is valid for only 2 hours.
+      *   `:responseView` (*type:* `String.t`) - The response_view specifies which subset of the Task will be
+          returned.
 
-  By default response_view is BASIC; not all
-  information is retrieved by default because some data, such as
-  payloads, might be desirable to return only when needed because
-  of its large size or because of the sensitivity of data that it
-  contains.
+          By default response_view is BASIC; not all
+          information is retrieved by default because some data, such as
+          payloads, might be desirable to return only when needed because
+          of its large size or because of the sensitivity of data that it
+          contains.
 
-  Authorization for FULL requires
-  `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/)
-  permission on the Task resource.
+          Authorization for FULL requires
+          `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/)
+          permission on the Task resource.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudTasks.V2beta2.Model.ListTasksResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudTasks.V2beta2.Model.ListTasksResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec cloudtasks_projects_locations_queues_tasks_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec cloudtasks_projects_locations_queues_tasks_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.CloudTasks.V2beta2.Model.ListTasksResponse.t()}
           | {:error, Tesla.Env.t()}
   def cloudtasks_projects_locations_queues_tasks_list(
@@ -1576,33 +1646,35 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudTasks.V2beta2.Connection): Connection to server
-  - name (String.t): Required.
+  *   `connection` (*type:* `GoogleApi.CloudTasks.V2beta2.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required.
 
-  The task name. For example:
-  `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.CloudTasks.V2beta2.Model.RenewLeaseRequest.t): 
+      The task name. For example:
+      `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.CloudTasks.V2beta2.Model.RenewLeaseRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudTasks.V2beta2.Model.Task{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudTasks.V2beta2.Model.Task{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec cloudtasks_projects_locations_queues_tasks_renew_lease(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.CloudTasks.V2beta2.Model.Task.t()} | {:error, Tesla.Env.t()}
   def cloudtasks_projects_locations_queues_tasks_renew_lease(
@@ -1670,32 +1742,37 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudTasks.V2beta2.Connection): Connection to server
-  - name (String.t): Required.
+  *   `connection` (*type:* `GoogleApi.CloudTasks.V2beta2.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required.
 
-  The task name. For example:
-  `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.CloudTasks.V2beta2.Model.RunTaskRequest.t): 
+      The task name. For example:
+      `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.CloudTasks.V2beta2.Model.RunTaskRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudTasks.V2beta2.Model.Task{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudTasks.V2beta2.Model.Task{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec cloudtasks_projects_locations_queues_tasks_run(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, GoogleApi.CloudTasks.V2beta2.Model.Task.t()} | {:error, Tesla.Env.t()}
+  @spec cloudtasks_projects_locations_queues_tasks_run(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.CloudTasks.V2beta2.Model.Task.t()} | {:error, Tesla.Env.t()}
   def cloudtasks_projects_locations_queues_tasks_run(
         connection,
         name,

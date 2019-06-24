@@ -25,26 +25,26 @@ defmodule GoogleApi.CloudTasks.V2beta2.Model.PullMessage do
 
   ## Attributes
 
-  - payload (String.t): A data payload consumed by the worker to execute the task. Defaults to `nil`.
-  - tag (String.t): The task's tag.
+  *   `payload` (*type:* `String.t`, *default:* `nil`) - A data payload consumed by the worker to execute the task.
+  *   `tag` (*type:* `String.t`, *default:* `nil`) - The task's tag.
 
-  Tags allow similar tasks to be processed in a batch. If you label
-  tasks with a tag, your worker can
-  lease tasks with the same tag using
-  filter. For example, if you want to
-  aggregate the events associated with a specific user once a day,
-  you could tag tasks with the user ID.
+      Tags allow similar tasks to be processed in a batch. If you label
+      tasks with a tag, your worker can
+      lease tasks with the same tag using
+      filter. For example, if you want to
+      aggregate the events associated with a specific user once a day,
+      you could tag tasks with the user ID.
 
-  The task's tag can only be set when the
-  task is created.
+      The task's tag can only be set when the
+      task is created.
 
-  The tag must be less than 500 characters.
+      The tag must be less than 500 characters.
 
-  SDK compatibility: Although the SDK allows tags to be either
-  string or
-  [bytes](https://cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
-  only UTF-8 encoded tags can be used in Cloud Tasks. If a tag isn't UTF-8
-  encoded, the tag will be empty when the task is returned by Cloud Tasks. Defaults to `nil`.
+      SDK compatibility: Although the SDK allows tags to be either
+      string or
+      [bytes](https://cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
+      only UTF-8 encoded tags can be used in Cloud Tasks. If a tag isn't UTF-8
+      encoded, the tag will be empty when the task is returned by Cloud Tasks.
   """
 
   use GoogleApi.Gax.ModelBase

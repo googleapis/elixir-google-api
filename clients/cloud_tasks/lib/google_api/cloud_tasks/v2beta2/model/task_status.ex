@@ -21,22 +21,22 @@ defmodule GoogleApi.CloudTasks.V2beta2.Model.TaskStatus do
 
   ## Attributes
 
-  - attemptDispatchCount (integer()): Output only. The number of attempts dispatched.
+  *   `attemptDispatchCount` (*type:* `integer()`, *default:* `nil`) - Output only. The number of attempts dispatched.
 
-  This count includes attempts which have been dispatched but haven't
-  received a response. Defaults to `nil`.
-  - attemptResponseCount (integer()): Output only. The number of attempts which have received a response.
+      This count includes attempts which have been dispatched but haven't
+      received a response.
+  *   `attemptResponseCount` (*type:* `integer()`, *default:* `nil`) - Output only. The number of attempts which have received a response.
 
-  This field is not calculated for pull tasks. Defaults to `nil`.
-  - firstAttemptStatus (GoogleApi.CloudTasks.V2beta2.Model.AttemptStatus.t): Output only. The status of the task's first attempt.
+      This field is not calculated for pull tasks.
+  *   `firstAttemptStatus` (*type:* `GoogleApi.CloudTasks.V2beta2.Model.AttemptStatus.t`, *default:* `nil`) - Output only. The status of the task's first attempt.
 
-  Only dispatch_time will be set.
-  The other AttemptStatus information is not retained by Cloud Tasks.
+      Only dispatch_time will be set.
+      The other AttemptStatus information is not retained by Cloud Tasks.
 
-  This field is not calculated for pull tasks. Defaults to `nil`.
-  - lastAttemptStatus (GoogleApi.CloudTasks.V2beta2.Model.AttemptStatus.t): Output only. The status of the task's last attempt.
+      This field is not calculated for pull tasks.
+  *   `lastAttemptStatus` (*type:* `GoogleApi.CloudTasks.V2beta2.Model.AttemptStatus.t`, *default:* `nil`) - Output only. The status of the task's last attempt.
 
-  This field is not calculated for pull tasks. Defaults to `nil`.
+      This field is not calculated for pull tasks.
   """
 
   use GoogleApi.Gax.ModelBase

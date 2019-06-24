@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Model.LeaseTasksResponse do
 
   ## Attributes
 
-  - tasks (list(GoogleApi.CloudTasks.V2beta2.Model.Task.t)): The leased tasks. Defaults to `nil`.
+  *   `tasks` (*type:* `list(GoogleApi.CloudTasks.V2beta2.Model.Task.t)`, *default:* `nil`) - The leased tasks.
   """
 
   use GoogleApi.Gax.ModelBase
