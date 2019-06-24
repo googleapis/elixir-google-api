@@ -21,22 +21,22 @@ defmodule GoogleApi.CloudBilling.V1.Model.PricingInfo do
 
   ## Attributes
 
-  - aggregationInfo (GoogleApi.CloudBilling.V1.Model.AggregationInfo.t): Aggregation Info. This can be left unspecified if the pricing expression
-  doesn't require aggregation. Defaults to `nil`.
-  - currencyConversionRate (float()): Conversion rate used for currency conversion, from USD to the currency
-  specified in the request. This includes any surcharge collected for billing
-  in non USD currency. If a currency is not specified in the request this
-  defaults to 1.0.
-  Example: USD * currency_conversion_rate = JPY Defaults to `nil`.
-  - effectiveTime (DateTime.t): The timestamp from which this pricing was effective within the requested
-  time range. This is guaranteed to be greater than or equal to the
-  start_time field in the request and less than the end_time field in the
-  request. If a time range was not specified in the request this field will
-  be equivalent to a time within the last 12 hours, indicating the latest
-  pricing info. Defaults to `nil`.
-  - pricingExpression (GoogleApi.CloudBilling.V1.Model.PricingExpression.t): Expresses the pricing formula. See `PricingExpression` for an example. Defaults to `nil`.
-  - summary (String.t): An optional human readable summary of the pricing information, has a
-  maximum length of 256 characters. Defaults to `nil`.
+  *   `aggregationInfo` (*type:* `GoogleApi.CloudBilling.V1.Model.AggregationInfo.t`, *default:* `nil`) - Aggregation Info. This can be left unspecified if the pricing expression
+      doesn't require aggregation.
+  *   `currencyConversionRate` (*type:* `float()`, *default:* `nil`) - Conversion rate used for currency conversion, from USD to the currency
+      specified in the request. This includes any surcharge collected for billing
+      in non USD currency. If a currency is not specified in the request this
+      defaults to 1.0.
+      Example: USD * currency_conversion_rate = JPY
+  *   `effectiveTime` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp from which this pricing was effective within the requested
+      time range. This is guaranteed to be greater than or equal to the
+      start_time field in the request and less than the end_time field in the
+      request. If a time range was not specified in the request this field will
+      be equivalent to a time within the last 12 hours, indicating the latest
+      pricing info.
+  *   `pricingExpression` (*type:* `GoogleApi.CloudBilling.V1.Model.PricingExpression.t`, *default:* `nil`) - Expresses the pricing formula. See `PricingExpression` for an example.
+  *   `summary` (*type:* `String.t`, *default:* `nil`) - An optional human readable summary of the pricing information, has a
+      maximum length of 256 characters.
   """
 
   use GoogleApi.Gax.ModelBase

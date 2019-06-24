@@ -21,11 +21,11 @@ defmodule GoogleApi.CloudBilling.V1.Model.AggregationInfo do
 
   ## Attributes
 
-  - aggregationCount (integer()): The number of intervals to aggregate over.
-  Example: If aggregation_level is "DAILY" and aggregation_count is 14,
-  aggregation will be over 14 days. Defaults to `nil`.
-  - aggregationInterval (String.t):  Defaults to `nil`.
-  - aggregationLevel (String.t):  Defaults to `nil`.
+  *   `aggregationCount` (*type:* `integer()`, *default:* `nil`) - The number of intervals to aggregate over.
+      Example: If aggregation_level is "DAILY" and aggregation_count is 14,
+      aggregation will be over 14 days.
+  *   `aggregationInterval` (*type:* `String.t`, *default:* `nil`) - 
+  *   `aggregationLevel` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

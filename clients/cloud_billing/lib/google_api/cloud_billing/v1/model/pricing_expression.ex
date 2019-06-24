@@ -21,8 +21,8 @@ defmodule GoogleApi.CloudBilling.V1.Model.PricingExpression do
 
   `usage_unit: GBy`
   `tiered_rates:`
-   `[start_usage_amount: 20, unit_price: $10]`
-   `[start_usage_amount: 100, unit_price: $5]`
+     `[start_usage_amount: 20, unit_price: $10]`
+     `[start_usage_amount: 100, unit_price: $5]`
 
   The above expresses a pricing formula where the first 20GB is free, the
   next 80GB is priced at $10 per GB followed by $5 per GB for additional
@@ -30,30 +30,30 @@ defmodule GoogleApi.CloudBilling.V1.Model.PricingExpression do
 
   ## Attributes
 
-  - baseUnit (String.t): The base unit for the SKU which is the unit used in usage exports.
-  Example: "By" Defaults to `nil`.
-  - baseUnitConversionFactor (float()): Conversion factor for converting from price per usage_unit to price per
-  base_unit, and start_usage_amount to start_usage_amount in base_unit.
-  unit_price / base_unit_conversion_factor = price per base_unit.
-  start_usage_amount * base_unit_conversion_factor = start_usage_amount in
-  base_unit. Defaults to `nil`.
-  - baseUnitDescription (String.t): The base unit in human readable form.
-  Example: "byte". Defaults to `nil`.
-  - displayQuantity (float()): The recommended quantity of units for displaying pricing info. When
-  displaying pricing info it is recommended to display:
-  (unit_price * display_quantity) per display_quantity usage_unit.
-  This field does not affect the pricing formula and is for display purposes
-  only.
-  Example: If the unit_price is "0.0001 USD", the usage_unit is "GB" and
-  the display_quantity is "1000" then the recommended way of displaying the
-  pricing info is "0.10 USD per 1000 GB" Defaults to `nil`.
-  - tieredRates (list(GoogleApi.CloudBilling.V1.Model.TierRate.t)): The list of tiered rates for this pricing. The total cost is computed by
-  applying each of the tiered rates on usage. This repeated list is sorted
-  by ascending order of start_usage_amount. Defaults to `nil`.
-  - usageUnit (String.t): The short hand for unit of usage this pricing is specified in.
-  Example: usage_unit of "GiBy" means that usage is specified in "Gibi Byte". Defaults to `nil`.
-  - usageUnitDescription (String.t): The unit of usage in human readable form.
-  Example: "gibi byte". Defaults to `nil`.
+  *   `baseUnit` (*type:* `String.t`, *default:* `nil`) - The base unit for the SKU which is the unit used in usage exports.
+      Example: "By"
+  *   `baseUnitConversionFactor` (*type:* `float()`, *default:* `nil`) - Conversion factor for converting from price per usage_unit to price per
+      base_unit, and start_usage_amount to start_usage_amount in base_unit.
+      unit_price / base_unit_conversion_factor = price per base_unit.
+      start_usage_amount * base_unit_conversion_factor = start_usage_amount in
+      base_unit.
+  *   `baseUnitDescription` (*type:* `String.t`, *default:* `nil`) - The base unit in human readable form.
+      Example: "byte".
+  *   `displayQuantity` (*type:* `float()`, *default:* `nil`) - The recommended quantity of units for displaying pricing info. When
+      displaying pricing info it is recommended to display:
+      (unit_price * display_quantity) per display_quantity usage_unit.
+      This field does not affect the pricing formula and is for display purposes
+      only.
+      Example: If the unit_price is "0.0001 USD", the usage_unit is "GB" and
+      the display_quantity is "1000" then the recommended way of displaying the
+      pricing info is "0.10 USD per 1000 GB"
+  *   `tieredRates` (*type:* `list(GoogleApi.CloudBilling.V1.Model.TierRate.t)`, *default:* `nil`) - The list of tiered rates for this pricing. The total cost is computed by
+      applying each of the tiered rates on usage. This repeated list is sorted
+      by ascending order of start_usage_amount.
+  *   `usageUnit` (*type:* `String.t`, *default:* `nil`) - The short hand for unit of usage this pricing is specified in.
+      Example: usage_unit of "GiBy" means that usage is specified in "Gibi Byte".
+  *   `usageUnitDescription` (*type:* `String.t`, *default:* `nil`) - The unit of usage in human readable form.
+      Example: "gibi byte".
   """
 
   use GoogleApi.Gax.ModelBase

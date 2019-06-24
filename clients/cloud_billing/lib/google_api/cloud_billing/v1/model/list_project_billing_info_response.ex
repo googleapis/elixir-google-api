@@ -21,11 +21,11 @@ defmodule GoogleApi.CloudBilling.V1.Model.ListProjectBillingInfoResponse do
 
   ## Attributes
 
-  - nextPageToken (String.t): A token to retrieve the next page of results. To retrieve the next page,
-  call `ListProjectBillingInfo` again with the `page_token` field set to this
-  value. This field is empty if there are no more results to retrieve. Defaults to `nil`.
-  - projectBillingInfo (list(GoogleApi.CloudBilling.V1.Model.ProjectBillingInfo.t)): A list of `ProjectBillingInfo` resources representing the projects
-  associated with the billing account. Defaults to `nil`.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results. To retrieve the next page,
+      call `ListProjectBillingInfo` again with the `page_token` field set to this
+      value. This field is empty if there are no more results to retrieve.
+  *   `projectBillingInfo` (*type:* `list(GoogleApi.CloudBilling.V1.Model.ProjectBillingInfo.t)`, *default:* `nil`) - A list of `ProjectBillingInfo` resources representing the projects
+      associated with the billing account.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,10 +21,10 @@ defmodule GoogleApi.CloudBilling.V1.Model.ListBillingAccountsResponse do
 
   ## Attributes
 
-  - billingAccounts (list(GoogleApi.CloudBilling.V1.Model.BillingAccount.t)): A list of billing accounts. Defaults to `nil`.
-  - nextPageToken (String.t): A token to retrieve the next page of results. To retrieve the next page,
-  call `ListBillingAccounts` again with the `page_token` field set to this
-  value. This field is empty if there are no more results to retrieve. Defaults to `nil`.
+  *   `billingAccounts` (*type:* `list(GoogleApi.CloudBilling.V1.Model.BillingAccount.t)`, *default:* `nil`) - A list of billing accounts.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results. To retrieve the next page,
+      call `ListBillingAccounts` again with the `page_token` field set to this
+      value. This field is empty if there are no more results to retrieve.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,10 +21,10 @@ defmodule GoogleApi.CloudBilling.V1.Model.ListSkusResponse do
 
   ## Attributes
 
-  - nextPageToken (String.t): A token to retrieve the next page of results. To retrieve the next page,
-  call `ListSkus` again with the `page_token` field set to this
-  value. This field is empty if there are no more results to retrieve. Defaults to `nil`.
-  - skus (list(GoogleApi.CloudBilling.V1.Model.Sku.t)): The list of public SKUs of the given service. Defaults to `nil`.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results. To retrieve the next page,
+      call `ListSkus` again with the `page_token` field set to this
+      value. This field is empty if there are no more results to retrieve.
+  *   `skus` (*type:* `list(GoogleApi.CloudBilling.V1.Model.Sku.t)`, *default:* `nil`) - The list of public SKUs of the given service.
   """
 
   use GoogleApi.Gax.ModelBase
