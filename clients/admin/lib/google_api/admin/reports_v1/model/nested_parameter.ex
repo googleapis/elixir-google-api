@@ -21,13 +21,13 @@ defmodule GoogleApi.Admin.Reports_v1.Model.NestedParameter do
 
   ## Attributes
 
-  - boolValue (boolean()): Boolean value of the parameter. Defaults to `nil`.
-  - intValue (String.t): Integral value of the parameter. Defaults to `nil`.
-  - multiBoolValue (list(boolean())): Multiple boolean values of the parameter. Defaults to `nil`.
-  - multiIntValue (list(String.t)): Multiple integral values of the parameter. Defaults to `nil`.
-  - multiValue (list(String.t)): Multiple string values of the parameter. Defaults to `nil`.
-  - name (String.t): The name of the parameter. Defaults to `nil`.
-  - value (String.t): String value of the parameter. Defaults to `nil`.
+  *   `boolValue` (*type:* `boolean()`, *default:* `nil`) - Boolean value of the parameter.
+  *   `intValue` (*type:* `String.t`, *default:* `nil`) - Integral value of the parameter.
+  *   `multiBoolValue` (*type:* `list(boolean())`, *default:* `nil`) - Multiple boolean values of the parameter.
+  *   `multiIntValue` (*type:* `list(String.t)`, *default:* `nil`) - Multiple integral values of the parameter.
+  *   `multiValue` (*type:* `list(String.t)`, *default:* `nil`) - Multiple string values of the parameter.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the parameter.
+  *   `value` (*type:* `String.t`, *default:* `nil`) - String value of the parameter.
   """
 
   use GoogleApi.Gax.ModelBase

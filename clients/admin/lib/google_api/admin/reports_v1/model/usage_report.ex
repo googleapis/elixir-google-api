@@ -21,11 +21,11 @@ defmodule GoogleApi.Admin.Reports_v1.Model.UsageReport do
 
   ## Attributes
 
-  - date (String.t): The date to which the record belongs. Defaults to `nil`.
-  - entity (GoogleApi.Admin.Reports_v1.Model.UsageReportEntity.t): Information about the type of the item. Defaults to `nil`.
-  - etag (String.t): ETag of the resource. Defaults to `nil`.
-  - kind (String.t): The kind of object. Defaults to `admin#reports#usageReport`.
-  - parameters (list(GoogleApi.Admin.Reports_v1.Model.UsageReportParameters.t)): Parameter value pairs for various applications. Defaults to `nil`.
+  *   `date` (*type:* `String.t`, *default:* `nil`) - The date to which the record belongs.
+  *   `entity` (*type:* `GoogleApi.Admin.Reports_v1.Model.UsageReportEntity.t`, *default:* `nil`) - Information about the type of the item.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
+  *   `kind` (*type:* `String.t`, *default:* `admin#reports#usageReport`) - The kind of object.
+  *   `parameters` (*type:* `list(GoogleApi.Admin.Reports_v1.Model.UsageReportParameters.t)`, *default:* `nil`) - Parameter value pairs for various applications.
   """
 
   use GoogleApi.Gax.ModelBase

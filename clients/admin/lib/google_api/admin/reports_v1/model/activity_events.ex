@@ -21,9 +21,9 @@ defmodule GoogleApi.Admin.Reports_v1.Model.ActivityEvents do
 
   ## Attributes
 
-  - name (String.t): Name of event. Defaults to `nil`.
-  - parameters (list(GoogleApi.Admin.Reports_v1.Model.ActivityEventsParameters.t)): Parameter value pairs for various applications. Defaults to `nil`.
-  - type (String.t): Type of event. Defaults to `nil`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of event.
+  *   `parameters` (*type:* `list(GoogleApi.Admin.Reports_v1.Model.ActivityEventsParameters.t)`, *default:* `nil`) - Parameter value pairs for various applications.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Type of event.
   """
 
   use GoogleApi.Gax.ModelBase

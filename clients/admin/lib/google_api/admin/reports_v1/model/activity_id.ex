@@ -21,10 +21,10 @@ defmodule GoogleApi.Admin.Reports_v1.Model.ActivityId do
 
   ## Attributes
 
-  - applicationName (String.t): Application name to which the event belongs. Defaults to `nil`.
-  - customerId (String.t): Obfuscated customer ID of the source customer. Defaults to `nil`.
-  - time (DateTime.t): Time of occurrence of the activity. Defaults to `nil`.
-  - uniqueQualifier (String.t): Unique qualifier if multiple events have the same time. Defaults to `nil`.
+  *   `applicationName` (*type:* `String.t`, *default:* `nil`) - Application name to which the event belongs.
+  *   `customerId` (*type:* `String.t`, *default:* `nil`) - Obfuscated customer ID of the source customer.
+  *   `time` (*type:* `DateTime.t`, *default:* `nil`) - Time of occurrence of the activity.
+  *   `uniqueQualifier` (*type:* `String.t`, *default:* `nil`) - Unique qualifier if multiple events have the same time.
   """
 
   use GoogleApi.Gax.ModelBase

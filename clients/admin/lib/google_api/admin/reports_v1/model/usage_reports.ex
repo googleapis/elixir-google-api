@@ -21,11 +21,11 @@ defmodule GoogleApi.Admin.Reports_v1.Model.UsageReports do
 
   ## Attributes
 
-  - etag (String.t): ETag of the resource. Defaults to `nil`.
-  - kind (String.t): The kind of object. Defaults to `admin#reports#usageReports`.
-  - nextPageToken (String.t): Token for retrieving the next page Defaults to `nil`.
-  - usageReports (list(GoogleApi.Admin.Reports_v1.Model.UsageReport.t)): Various application parameter records. Defaults to `nil`.
-  - warnings (list(GoogleApi.Admin.Reports_v1.Model.UsageReportsWarnings.t)): Warnings if any. Defaults to `nil`.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
+  *   `kind` (*type:* `String.t`, *default:* `admin#reports#usageReports`) - The kind of object.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token for retrieving the next page
+  *   `usageReports` (*type:* `list(GoogleApi.Admin.Reports_v1.Model.UsageReport.t)`, *default:* `nil`) - Various application parameter records.
+  *   `warnings` (*type:* `list(GoogleApi.Admin.Reports_v1.Model.UsageReportsWarnings.t)`, *default:* `nil`) - Warnings if any.
   """
 
   use GoogleApi.Gax.ModelBase

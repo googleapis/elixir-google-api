@@ -21,10 +21,10 @@ defmodule GoogleApi.Admin.Reports_v1.Model.Activities do
 
   ## Attributes
 
-  - etag (String.t): ETag of the resource. Defaults to `nil`.
-  - items (list(GoogleApi.Admin.Reports_v1.Model.Activity.t)): Each record in read response. Defaults to `nil`.
-  - kind (String.t): Kind of list response this is. Defaults to `admin#reports#activities`.
-  - nextPageToken (String.t): Token for retrieving the next page Defaults to `nil`.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
+  *   `items` (*type:* `list(GoogleApi.Admin.Reports_v1.Model.Activity.t)`, *default:* `nil`) - Each record in read response.
+  *   `kind` (*type:* `String.t`, *default:* `admin#reports#activities`) - Kind of list response this is.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token for retrieving the next page
   """
 
   use GoogleApi.Gax.ModelBase

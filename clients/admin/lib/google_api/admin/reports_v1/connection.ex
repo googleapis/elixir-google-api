@@ -20,6 +20,8 @@ defmodule GoogleApi.Admin.Reports_v1.Connection do
   Handle Tesla connections for GoogleApi.Admin.Reports_v1.
   """
 
+  @type t :: Tesla.Env.client()
+
   use GoogleApi.Gax.Connection,
     scopes: [
       # View audit reports for your G Suite domain

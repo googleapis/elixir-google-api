@@ -21,7 +21,7 @@ defmodule GoogleApi.Admin.Reports_v1.Model.ActivityEventsParametersMultiMessageV
 
   ## Attributes
 
-  - parameter (list(GoogleApi.Admin.Reports_v1.Model.NestedParameter.t)): Parameter value. Defaults to `nil`.
+  *   `parameter` (*type:* `list(GoogleApi.Admin.Reports_v1.Model.NestedParameter.t)`, *default:* `nil`) - Parameter value.
   """
 
   use GoogleApi.Gax.ModelBase

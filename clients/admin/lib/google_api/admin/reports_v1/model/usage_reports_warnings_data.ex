@@ -21,8 +21,8 @@ defmodule GoogleApi.Admin.Reports_v1.Model.UsageReportsWarningsData do
 
   ## Attributes
 
-  - key (String.t): Key associated with a key-value pair to give detailed information on the warning. Defaults to `nil`.
-  - value (String.t): Value associated with a key-value pair to give detailed information on the warning. Defaults to `nil`.
+  *   `key` (*type:* `String.t`, *default:* `nil`) - Key associated with a key-value pair to give detailed information on the warning.
+  *   `value` (*type:* `String.t`, *default:* `nil`) - Value associated with a key-value pair to give detailed information on the warning.
   """
 
   use GoogleApi.Gax.ModelBase

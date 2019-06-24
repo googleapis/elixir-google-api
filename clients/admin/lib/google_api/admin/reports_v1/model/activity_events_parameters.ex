@@ -21,14 +21,14 @@ defmodule GoogleApi.Admin.Reports_v1.Model.ActivityEventsParameters do
 
   ## Attributes
 
-  - boolValue (boolean()): Boolean value of the parameter. Defaults to `nil`.
-  - intValue (String.t): Integral value of the parameter. Defaults to `nil`.
-  - messageValue (GoogleApi.Admin.Reports_v1.Model.ActivityEventsParametersMessageValue.t): Nested value of the parameter. Defaults to `nil`.
-  - multiIntValue (list(String.t)): Multi-int value of the parameter. Defaults to `nil`.
-  - multiMessageValue (list(GoogleApi.Admin.Reports_v1.Model.ActivityEventsParametersMultiMessageValue.t)): Nested values of the parameter. Defaults to `nil`.
-  - multiValue (list(String.t)): Multi-string value of the parameter. Defaults to `nil`.
-  - name (String.t): The name of the parameter. Defaults to `nil`.
-  - value (String.t): String value of the parameter. Defaults to `nil`.
+  *   `boolValue` (*type:* `boolean()`, *default:* `nil`) - Boolean value of the parameter.
+  *   `intValue` (*type:* `String.t`, *default:* `nil`) - Integral value of the parameter.
+  *   `messageValue` (*type:* `GoogleApi.Admin.Reports_v1.Model.ActivityEventsParametersMessageValue.t`, *default:* `nil`) - Nested value of the parameter.
+  *   `multiIntValue` (*type:* `list(String.t)`, *default:* `nil`) - Multi-int value of the parameter.
+  *   `multiMessageValue` (*type:* `list(GoogleApi.Admin.Reports_v1.Model.ActivityEventsParametersMultiMessageValue.t)`, *default:* `nil`) - Nested values of the parameter.
+  *   `multiValue` (*type:* `list(String.t)`, *default:* `nil`) - Multi-string value of the parameter.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the parameter.
+  *   `value` (*type:* `String.t`, *default:* `nil`) - String value of the parameter.
   """
 
   use GoogleApi.Gax.ModelBase

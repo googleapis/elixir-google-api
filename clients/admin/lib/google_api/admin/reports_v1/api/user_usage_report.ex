@@ -28,31 +28,37 @@ defmodule GoogleApi.Admin.Reports_v1.Api.UserUsageReport do
 
   ## Parameters
 
-  - connection (GoogleApi.Admin.Reports_v1.Connection): Connection to server
-  - user_key (String.t): Represents the profile id or the user email for which the data should be filtered.
-  - date (String.t): Represents the date in yyyy-mm-dd format for which the data is to be fetched.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :customerId (String.t): Represents the customer for which the data is to be fetched.
-    - :filters (String.t): Represents the set of filters including parameter operator value.
-    - :maxResults (integer()): Maximum number of results to return. Maximum allowed is 1000
-    - :orgUnitID (String.t): the organizational unit's ID to filter usage parameters from users belonging to a specific OU or one of its sub-OU(s).
-    - :pageToken (String.t): Token to specify next page.
-    - :parameters (String.t): Represents the application name, parameter name pairs to fetch in csv as app_name1:param_name1, app_name2:param_name2.
+  *   `connection` (*type:* `GoogleApi.Admin.Reports_v1.Connection.t`) - Connection to server
+  *   `user_key` (*type:* `String.t`) - Represents the profile id or the user email for which the data should be filtered.
+  *   `date` (*type:* `String.t`) - Represents the date in yyyy-mm-dd format for which the data is to be fetched.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:customerId` (*type:* `String.t`) - Represents the customer for which the data is to be fetched.
+      *   `:filters` (*type:* `String.t`) - Represents the set of filters including parameter operator value.
+      *   `:maxResults` (*type:* `integer()`) - Maximum number of results to return. Maximum allowed is 1000
+      *   `:orgUnitID` (*type:* `String.t`) - the organizational unit's ID to filter usage parameters from users belonging to a specific OU or one of its sub-OU(s).
+      *   `:pageToken` (*type:* `String.t`) - Token to specify next page.
+      *   `:parameters` (*type:* `String.t`) - Represents the application name, parameter name pairs to fetch in csv as app_name1:param_name1, app_name2:param_name2.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Admin.Reports_v1.Model.UsageReports{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Admin.Reports_v1.Model.UsageReports{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec reports_user_usage_report_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.Admin.Reports_v1.Model.UsageReports.t()} | {:error, Tesla.Env.t()}
+  @spec reports_user_usage_report_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.Admin.Reports_v1.Model.UsageReports.t()} | {:error, Tesla.Env.t()}
   def reports_user_usage_report_get(connection, user_key, date, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
