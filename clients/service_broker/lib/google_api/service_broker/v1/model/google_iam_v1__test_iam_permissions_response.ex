@@ -21,8 +21,8 @@ defmodule GoogleApi.ServiceBroker.V1.Model.GoogleIamV1_TestIamPermissionsRespons
 
   ## Attributes
 
-  - permissions (list(String.t)): A subset of `TestPermissionsRequest.permissions` that the caller is
-  allowed. Defaults to `nil`.
+  *   `permissions` (*type:* `list(String.t)`, *default:* `nil`) - A subset of `TestPermissionsRequest.permissions` that the caller is
+      allowed.
   """
 
   use GoogleApi.Gax.ModelBase
