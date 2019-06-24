@@ -21,12 +21,12 @@ defmodule GoogleApi.CloudDebugger.V2.Model.ListBreakpointsResponse do
 
   ## Attributes
 
-  - breakpoints (list(GoogleApi.CloudDebugger.V2.Model.Breakpoint.t)): List of breakpoints matching the request.
-  The fields `id` and `location` are guaranteed to be set on each breakpoint.
-  The fields: `stack_frames`, `evaluated_expressions` and `variable_table`
-  are cleared on each breakpoint regardless of its status. Defaults to `nil`.
-  - nextWaitToken (String.t): A wait token that can be used in the next call to `list` (REST) or
-  `ListBreakpoints` (RPC) to block until the list of breakpoints has changes. Defaults to `nil`.
+  *   `breakpoints` (*type:* `list(GoogleApi.CloudDebugger.V2.Model.Breakpoint.t)`, *default:* `nil`) - List of breakpoints matching the request.
+      The fields `id` and `location` are guaranteed to be set on each breakpoint.
+      The fields: `stack_frames`, `evaluated_expressions` and `variable_table`
+      are cleared on each breakpoint regardless of its status.
+  *   `nextWaitToken` (*type:* `String.t`, *default:* `nil`) - A wait token that can be used in the next call to `list` (REST) or
+      `ListBreakpoints` (RPC) to block until the list of breakpoints has changes.
   """
 
   use GoogleApi.Gax.ModelBase

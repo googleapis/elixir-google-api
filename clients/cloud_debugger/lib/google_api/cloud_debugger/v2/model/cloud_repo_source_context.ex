@@ -22,10 +22,10 @@ defmodule GoogleApi.CloudDebugger.V2.Model.CloudRepoSourceContext do
 
   ## Attributes
 
-  - aliasContext (GoogleApi.CloudDebugger.V2.Model.AliasContext.t): An alias, which may be a branch or tag. Defaults to `nil`.
-  - aliasName (String.t): The name of an alias (branch, tag, etc.). Defaults to `nil`.
-  - repoId (GoogleApi.CloudDebugger.V2.Model.RepoId.t): The ID of the repo. Defaults to `nil`.
-  - revisionId (String.t): A revision ID. Defaults to `nil`.
+  *   `aliasContext` (*type:* `GoogleApi.CloudDebugger.V2.Model.AliasContext.t`, *default:* `nil`) - An alias, which may be a branch or tag.
+  *   `aliasName` (*type:* `String.t`, *default:* `nil`) - The name of an alias (branch, tag, etc.).
+  *   `repoId` (*type:* `GoogleApi.CloudDebugger.V2.Model.RepoId.t`, *default:* `nil`) - The ID of the repo.
+  *   `revisionId` (*type:* `String.t`, *default:* `nil`) - A revision ID.
   """
 
   use GoogleApi.Gax.ModelBase

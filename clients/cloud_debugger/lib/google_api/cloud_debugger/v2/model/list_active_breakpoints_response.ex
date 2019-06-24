@@ -21,13 +21,13 @@ defmodule GoogleApi.CloudDebugger.V2.Model.ListActiveBreakpointsResponse do
 
   ## Attributes
 
-  - breakpoints (list(GoogleApi.CloudDebugger.V2.Model.Breakpoint.t)): List of all active breakpoints.
-  The fields `id` and `location` are guaranteed to be set on each breakpoint. Defaults to `nil`.
-  - nextWaitToken (String.t): A token that can be used in the next method call to block until
-  the list of breakpoints changes. Defaults to `nil`.
-  - waitExpired (boolean()): If set to `true`, indicates that there is no change to the
-  list of active breakpoints and the server-selected timeout has expired.
-  The `breakpoints` field would be empty and should be ignored. Defaults to `nil`.
+  *   `breakpoints` (*type:* `list(GoogleApi.CloudDebugger.V2.Model.Breakpoint.t)`, *default:* `nil`) - List of all active breakpoints.
+      The fields `id` and `location` are guaranteed to be set on each breakpoint.
+  *   `nextWaitToken` (*type:* `String.t`, *default:* `nil`) - A token that can be used in the next method call to block until
+      the list of breakpoints changes.
+  *   `waitExpired` (*type:* `boolean()`, *default:* `nil`) - If set to `true`, indicates that there is no change to the
+      list of active breakpoints and the server-selected timeout has expired.
+      The `breakpoints` field would be empty and should be ignored.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -25,9 +25,9 @@ defmodule GoogleApi.CloudDebugger.V2.Model.StatusMessage do
 
   ## Attributes
 
-  - description (GoogleApi.CloudDebugger.V2.Model.FormatMessage.t): Status message text. Defaults to `nil`.
-  - isError (boolean()): Distinguishes errors from informational messages. Defaults to `nil`.
-  - refersTo (String.t): Reference to which the message applies. Defaults to `nil`.
+  *   `description` (*type:* `GoogleApi.CloudDebugger.V2.Model.FormatMessage.t`, *default:* `nil`) - Status message text.
+  *   `isError` (*type:* `boolean()`, *default:* `nil`) - Distinguishes errors from informational messages.
+  *   `refersTo` (*type:* `String.t`, *default:* `nil`) - Reference to which the message applies.
   """
 
   use GoogleApi.Gax.ModelBase

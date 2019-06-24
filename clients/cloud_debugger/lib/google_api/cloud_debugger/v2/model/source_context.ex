@@ -22,10 +22,10 @@ defmodule GoogleApi.CloudDebugger.V2.Model.SourceContext do
 
   ## Attributes
 
-  - cloudRepo (GoogleApi.CloudDebugger.V2.Model.CloudRepoSourceContext.t): A SourceContext referring to a revision in a cloud repo. Defaults to `nil`.
-  - cloudWorkspace (GoogleApi.CloudDebugger.V2.Model.CloudWorkspaceSourceContext.t): A SourceContext referring to a snapshot in a cloud workspace. Defaults to `nil`.
-  - gerrit (GoogleApi.CloudDebugger.V2.Model.GerritSourceContext.t): A SourceContext referring to a Gerrit project. Defaults to `nil`.
-  - git (GoogleApi.CloudDebugger.V2.Model.GitSourceContext.t): A SourceContext referring to any third party Git repo (e.g. GitHub). Defaults to `nil`.
+  *   `cloudRepo` (*type:* `GoogleApi.CloudDebugger.V2.Model.CloudRepoSourceContext.t`, *default:* `nil`) - A SourceContext referring to a revision in a cloud repo.
+  *   `cloudWorkspace` (*type:* `GoogleApi.CloudDebugger.V2.Model.CloudWorkspaceSourceContext.t`, *default:* `nil`) - A SourceContext referring to a snapshot in a cloud workspace.
+  *   `gerrit` (*type:* `GoogleApi.CloudDebugger.V2.Model.GerritSourceContext.t`, *default:* `nil`) - A SourceContext referring to a Gerrit project.
+  *   `git` (*type:* `GoogleApi.CloudDebugger.V2.Model.GitSourceContext.t`, *default:* `nil`) - A SourceContext referring to any third party Git repo (e.g. GitHub).
   """
 
   use GoogleApi.Gax.ModelBase

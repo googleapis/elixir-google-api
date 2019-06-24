@@ -22,8 +22,8 @@ defmodule GoogleApi.CloudDebugger.V2.Model.ProjectRepoId do
 
   ## Attributes
 
-  - projectId (String.t): The ID of the project. Defaults to `nil`.
-  - repoName (String.t): The name of the repo. Leave empty for the default repo. Defaults to `nil`.
+  *   `projectId` (*type:* `String.t`, *default:* `nil`) - The ID of the project.
+  *   `repoName` (*type:* `String.t`, *default:* `nil`) - The name of the repo. Leave empty for the default repo.
   """
 
   use GoogleApi.Gax.ModelBase

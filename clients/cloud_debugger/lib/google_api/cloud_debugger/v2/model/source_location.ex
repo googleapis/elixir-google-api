@@ -21,11 +21,11 @@ defmodule GoogleApi.CloudDebugger.V2.Model.SourceLocation do
 
   ## Attributes
 
-  - column (integer()): Column within a line. The first column in a line as the value `1`.
-  Agents that do not support setting breakpoints on specific columns ignore
-  this field. Defaults to `nil`.
-  - line (integer()): Line inside the file. The first line in the file has the value `1`. Defaults to `nil`.
-  - path (String.t): Path to the source file within the source context of the target binary. Defaults to `nil`.
+  *   `column` (*type:* `integer()`, *default:* `nil`) - Column within a line. The first column in a line as the value `1`.
+      Agents that do not support setting breakpoints on specific columns ignore
+      this field.
+  *   `line` (*type:* `integer()`, *default:* `nil`) - Line inside the file. The first line in the file has the value `1`.
+  *   `path` (*type:* `String.t`, *default:* `nil`) - Path to the source file within the source context of the target binary.
   """
 
   use GoogleApi.Gax.ModelBase

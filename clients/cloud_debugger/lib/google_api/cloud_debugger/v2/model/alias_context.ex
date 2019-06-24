@@ -21,8 +21,8 @@ defmodule GoogleApi.CloudDebugger.V2.Model.AliasContext do
 
   ## Attributes
 
-  - kind (String.t): The alias kind. Defaults to `nil`.
-  - name (String.t): The alias name. Defaults to `nil`.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The alias kind.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The alias name.
   """
 
   use GoogleApi.Gax.ModelBase
