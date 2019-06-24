@@ -21,10 +21,10 @@ defmodule GoogleApi.CloudBuild.V1.Model.BuiltImage do
 
   ## Attributes
 
-  - digest (String.t): Docker Registry 2.0 digest. Defaults to `nil`.
-  - name (String.t): Name used to push the container image to Google Container Registry, as
-  presented to `docker push`. Defaults to `nil`.
-  - pushTiming (GoogleApi.CloudBuild.V1.Model.TimeSpan.t): Output only. Stores timing information for pushing the specified image. Defaults to `nil`.
+  *   `digest` (*type:* `String.t`, *default:* `nil`) - Docker Registry 2.0 digest.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name used to push the container image to Google Container Registry, as
+      presented to `docker push`.
+  *   `pushTiming` (*type:* `GoogleApi.CloudBuild.V1.Model.TimeSpan.t`, *default:* `nil`) - Output only. Stores timing information for pushing the specified image.
   """
 
   use GoogleApi.Gax.ModelBase

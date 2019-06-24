@@ -22,25 +22,25 @@ defmodule GoogleApi.CloudBuild.V1.Model.Operation do
 
   ## Attributes
 
-  - done (boolean()): If the value is `false`, it means the operation is still in progress.
-  If `true`, the operation is completed, and either `error` or `response` is
-  available. Defaults to `nil`.
-  - error (GoogleApi.CloudBuild.V1.Model.Status.t): The error result of the operation in case of failure or cancellation. Defaults to `nil`.
-  - metadata (map()): Service-specific metadata associated with the operation.  It typically
-  contains progress information and common metadata such as create time.
-  Some services might not provide such metadata.  Any method that returns a
-  long-running operation should document the metadata type, if any. Defaults to `nil`.
-  - name (String.t): The server-assigned name, which is only unique within the same service that
-  originally returns it. If you use the default HTTP mapping, the
-  `name` should be a resource name ending with `operations/{unique_id}`. Defaults to `nil`.
-  - response (map()): The normal response of the operation in case of success.  If the original
-  method returns no data on success, such as `Delete`, the response is
-  `google.protobuf.Empty`.  If the original method is standard
-  `Get`/`Create`/`Update`, the response should be the resource.  For other
-  methods, the response should have the type `XxxResponse`, where `Xxx`
-  is the original method name.  For example, if the original method name
-  is `TakeSnapshot()`, the inferred response type is
-  `TakeSnapshotResponse`. Defaults to `nil`.
+  *   `done` (*type:* `boolean()`, *default:* `nil`) - If the value is `false`, it means the operation is still in progress.
+      If `true`, the operation is completed, and either `error` or `response` is
+      available.
+  *   `error` (*type:* `GoogleApi.CloudBuild.V1.Model.Status.t`, *default:* `nil`) - The error result of the operation in case of failure or cancellation.
+  *   `metadata` (*type:* `map()`, *default:* `nil`) - Service-specific metadata associated with the operation.  It typically
+      contains progress information and common metadata such as create time.
+      Some services might not provide such metadata.  Any method that returns a
+      long-running operation should document the metadata type, if any.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The server-assigned name, which is only unique within the same service that
+      originally returns it. If you use the default HTTP mapping, the
+      `name` should be a resource name ending with `operations/{unique_id}`.
+  *   `response` (*type:* `map()`, *default:* `nil`) - The normal response of the operation in case of success.  If the original
+      method returns no data on success, such as `Delete`, the response is
+      `google.protobuf.Empty`.  If the original method is standard
+      `Get`/`Create`/`Update`, the response should be the resource.  For other
+      methods, the response should have the type `XxxResponse`, where `Xxx`
+      is the original method name.  For example, if the original method name
+      is `TakeSnapshot()`, the inferred response type is
+      `TakeSnapshotResponse`.
   """
 
   use GoogleApi.Gax.ModelBase

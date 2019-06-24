@@ -22,10 +22,10 @@ defmodule GoogleApi.CloudBuild.V1.Model.ArtifactResult do
 
   ## Attributes
 
-  - fileHash (list(GoogleApi.CloudBuild.V1.Model.FileHashes.t)): The file hash of the artifact. Defaults to `nil`.
-  - location (String.t): The path of an artifact in a Google Cloud Storage bucket, with the
-  generation number. For example,
-  `gs://mybucket/path/to/output.jar#generation`. Defaults to `nil`.
+  *   `fileHash` (*type:* `list(GoogleApi.CloudBuild.V1.Model.FileHashes.t)`, *default:* `nil`) - The file hash of the artifact.
+  *   `location` (*type:* `String.t`, *default:* `nil`) - The path of an artifact in a Google Cloud Storage bucket, with the
+      generation number. For example,
+      `gs://mybucket/path/to/output.jar#generation`.
   """
 
   use GoogleApi.Gax.ModelBase

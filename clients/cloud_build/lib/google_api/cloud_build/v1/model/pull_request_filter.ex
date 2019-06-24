@@ -22,12 +22,12 @@ defmodule GoogleApi.CloudBuild.V1.Model.PullRequestFilter do
 
   ## Attributes
 
-  - branch (String.t): Regex of branches to match.
+  *   `branch` (*type:* `String.t`, *default:* `nil`) - Regex of branches to match.
 
-  The syntax of the regular expressions accepted is the syntax accepted by
-  RE2 and described at https://github.com/google/re2/wiki/Syntax Defaults to `nil`.
-  - commentControl (String.t): Whether to block builds on a "/gcbrun" comment from a repository owner or
-  collaborator. Defaults to `nil`.
+      The syntax of the regular expressions accepted is the syntax accepted by
+      RE2 and described at https://github.com/google/re2/wiki/Syntax
+  *   `commentControl` (*type:* `String.t`, *default:* `nil`) - Whether to block builds on a "/gcbrun" comment from a repository owner or
+      collaborator.
   """
 
   use GoogleApi.Gax.ModelBase

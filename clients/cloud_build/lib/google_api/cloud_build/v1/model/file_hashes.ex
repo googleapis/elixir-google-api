@@ -22,7 +22,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.FileHashes do
 
   ## Attributes
 
-  - fileHash (list(GoogleApi.CloudBuild.V1.Model.Hash.t)): Collection of file hashes. Defaults to `nil`.
+  *   `fileHash` (*type:* `list(GoogleApi.CloudBuild.V1.Model.Hash.t)`, *default:* `nil`) - Collection of file hashes.
   """
 
   use GoogleApi.Gax.ModelBase

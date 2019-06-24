@@ -22,14 +22,14 @@ defmodule GoogleApi.CloudBuild.V1.Model.Volume do
 
   ## Attributes
 
-  - name (String.t): Name of the volume to mount.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the volume to mount.
 
-  Volume names must be unique per build step and must be valid names for
-  Docker volumes. Each named volume must be used by at least two build steps. Defaults to `nil`.
-  - path (String.t): Path at which to mount the volume.
+      Volume names must be unique per build step and must be valid names for
+      Docker volumes. Each named volume must be used by at least two build steps.
+  *   `path` (*type:* `String.t`, *default:* `nil`) - Path at which to mount the volume.
 
-  Paths must be absolute and cannot conflict with other volume paths on the
-  same build step or with certain reserved volume paths. Defaults to `nil`.
+      Paths must be absolute and cannot conflict with other volume paths on the
+      same build step or with certain reserved volume paths.
   """
 
   use GoogleApi.Gax.ModelBase

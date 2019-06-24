@@ -21,18 +21,18 @@ defmodule GoogleApi.CloudBuild.V1.Model.Results do
 
   ## Attributes
 
-  - artifactManifest (String.t): Path to the artifact manifest. Only populated when artifacts are uploaded. Defaults to `nil`.
-  - artifactTiming (GoogleApi.CloudBuild.V1.Model.TimeSpan.t): Time to push all non-container artifacts. Defaults to `nil`.
-  - buildStepImages (list(String.t)): List of build step digests, in the order corresponding to build step
-  indices. Defaults to `nil`.
-  - buildStepOutputs (list(String.t)): List of build step outputs, produced by builder images, in the order
-  corresponding to build step indices.
+  *   `artifactManifest` (*type:* `String.t`, *default:* `nil`) - Path to the artifact manifest. Only populated when artifacts are uploaded.
+  *   `artifactTiming` (*type:* `GoogleApi.CloudBuild.V1.Model.TimeSpan.t`, *default:* `nil`) - Time to push all non-container artifacts.
+  *   `buildStepImages` (*type:* `list(String.t)`, *default:* `nil`) - List of build step digests, in the order corresponding to build step
+      indices.
+  *   `buildStepOutputs` (*type:* `list(String.t)`, *default:* `nil`) - List of build step outputs, produced by builder images, in the order
+      corresponding to build step indices.
 
-  [Cloud Builders](https://cloud.google.com/cloud-build/docs/cloud-builders)
-  can produce this output by writing to `$BUILDER_OUTPUT/output`.
-  Only the first 4KB of data is stored. Defaults to `nil`.
-  - images (list(GoogleApi.CloudBuild.V1.Model.BuiltImage.t)): Container images that were built as a part of the build. Defaults to `nil`.
-  - numArtifacts (String.t): Number of artifacts uploaded. Only populated when artifacts are uploaded. Defaults to `nil`.
+      [Cloud Builders](https://cloud.google.com/cloud-build/docs/cloud-builders)
+      can produce this output by writing to `$BUILDER_OUTPUT/output`.
+      Only the first 4KB of data is stored.
+  *   `images` (*type:* `list(GoogleApi.CloudBuild.V1.Model.BuiltImage.t)`, *default:* `nil`) - Container images that were built as a part of the build.
+  *   `numArtifacts` (*type:* `String.t`, *default:* `nil`) - Number of artifacts uploaded. Only populated when artifacts are uploaded.
   """
 
   use GoogleApi.Gax.ModelBase

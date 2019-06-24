@@ -21,8 +21,8 @@ defmodule GoogleApi.CloudBuild.V1.Model.TimeSpan do
 
   ## Attributes
 
-  - endTime (DateTime.t): End of time span. Defaults to `nil`.
-  - startTime (DateTime.t): Start of time span. Defaults to `nil`.
+  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - End of time span.
+  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Start of time span.
   """
 
   use GoogleApi.Gax.ModelBase

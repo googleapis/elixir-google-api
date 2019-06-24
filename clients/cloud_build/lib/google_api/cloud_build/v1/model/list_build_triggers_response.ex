@@ -21,8 +21,8 @@ defmodule GoogleApi.CloudBuild.V1.Model.ListBuildTriggersResponse do
 
   ## Attributes
 
-  - nextPageToken (String.t): Token to receive the next page of results. Defaults to `nil`.
-  - triggers (list(GoogleApi.CloudBuild.V1.Model.BuildTrigger.t)): `BuildTriggers` for the project, sorted by `create_time` descending. Defaults to `nil`.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to receive the next page of results.
+  *   `triggers` (*type:* `list(GoogleApi.CloudBuild.V1.Model.BuildTrigger.t)`, *default:* `nil`) - `BuildTriggers` for the project, sorted by `create_time` descending.
   """
 
   use GoogleApi.Gax.ModelBase

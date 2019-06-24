@@ -21,43 +21,43 @@ defmodule GoogleApi.CloudBuild.V1.Model.BuildOptions do
 
   ## Attributes
 
-  - diskSizeGb (String.t): Requested disk size for the VM that runs the build. Note that this is *NOT*
-  "disk free"; some of the space will be used by the operating system and
-  build utilities. Also note that this is the minimum disk size that will be
-  allocated for the build -- the build may run with a larger disk than
-  requested. At present, the maximum disk size is 1000GB; builds that request
-  more than the maximum are rejected with an error. Defaults to `nil`.
-  - env (list(String.t)): A list of global environment variable definitions that will exist for all
-  build steps in this build. If a variable is defined in both globally and in
-  a build step, the variable will use the build step value.
+  *   `diskSizeGb` (*type:* `String.t`, *default:* `nil`) - Requested disk size for the VM that runs the build. Note that this is *NOT*
+      "disk free"; some of the space will be used by the operating system and
+      build utilities. Also note that this is the minimum disk size that will be
+      allocated for the build -- the build may run with a larger disk than
+      requested. At present, the maximum disk size is 1000GB; builds that request
+      more than the maximum are rejected with an error.
+  *   `env` (*type:* `list(String.t)`, *default:* `nil`) - A list of global environment variable definitions that will exist for all
+      build steps in this build. If a variable is defined in both globally and in
+      a build step, the variable will use the build step value.
 
-  The elements are of the form "KEY=VALUE" for the environment variable "KEY"
-  being given the value "VALUE". Defaults to `nil`.
-  - logStreamingOption (String.t): Option to define build log streaming behavior to Google Cloud
-  Storage. Defaults to `nil`.
-  - logging (String.t): Option to specify the logging mode, which determines where the logs are
-  stored. Defaults to `nil`.
-  - machineType (String.t): Compute Engine machine type on which to run the build. Defaults to `nil`.
-  - requestedVerifyOption (String.t): Requested verifiability options. Defaults to `nil`.
-  - secretEnv (list(String.t)): A list of global environment variables, which are encrypted using a Cloud
-  Key Management Service crypto key. These values must be specified in the
-  build's `Secret`. These variables will be available to all build steps
-  in this build. Defaults to `nil`.
-  - sourceProvenanceHash (list(String.t)): Requested hash for SourceProvenance. Defaults to `nil`.
-  - substitutionOption (String.t): Option to specify behavior when there is an error in the substitution
-  checks. Defaults to `nil`.
-  - volumes (list(GoogleApi.CloudBuild.V1.Model.Volume.t)): Global list of volumes to mount for ALL build steps
+      The elements are of the form "KEY=VALUE" for the environment variable "KEY"
+      being given the value "VALUE".
+  *   `logStreamingOption` (*type:* `String.t`, *default:* `nil`) - Option to define build log streaming behavior to Google Cloud
+      Storage.
+  *   `logging` (*type:* `String.t`, *default:* `nil`) - Option to specify the logging mode, which determines where the logs are
+      stored.
+  *   `machineType` (*type:* `String.t`, *default:* `nil`) - Compute Engine machine type on which to run the build.
+  *   `requestedVerifyOption` (*type:* `String.t`, *default:* `nil`) - Requested verifiability options.
+  *   `secretEnv` (*type:* `list(String.t)`, *default:* `nil`) - A list of global environment variables, which are encrypted using a Cloud
+      Key Management Service crypto key. These values must be specified in the
+      build's `Secret`. These variables will be available to all build steps
+      in this build.
+  *   `sourceProvenanceHash` (*type:* `list(String.t)`, *default:* `nil`) - Requested hash for SourceProvenance.
+  *   `substitutionOption` (*type:* `String.t`, *default:* `nil`) - Option to specify behavior when there is an error in the substitution
+      checks.
+  *   `volumes` (*type:* `list(GoogleApi.CloudBuild.V1.Model.Volume.t)`, *default:* `nil`) - Global list of volumes to mount for ALL build steps
 
-  Each volume is created as an empty volume prior to starting the build
-  process. Upon completion of the build, volumes and their contents are
-  discarded. Global volume names and paths cannot conflict with the volumes
-  defined a build step.
+      Each volume is created as an empty volume prior to starting the build
+      process. Upon completion of the build, volumes and their contents are
+      discarded. Global volume names and paths cannot conflict with the volumes
+      defined a build step.
 
-  Using a global volume in a build with only one step is not valid as
-  it is indicative of a build request with an incorrect configuration. Defaults to `nil`.
-  - workerPool (String.t): Option to specify a `WorkerPool` for the build. User specifies the pool
-  with the format "[WORKERPOOL_PROJECT_ID]/[WORKERPOOL_NAME]".
-  This is an experimental field. Defaults to `nil`.
+      Using a global volume in a build with only one step is not valid as
+      it is indicative of a build request with an incorrect configuration.
+  *   `workerPool` (*type:* `String.t`, *default:* `nil`) - Option to specify a `WorkerPool` for the build. User specifies the pool
+      with the format "[WORKERPOOL_PROJECT_ID]/[WORKERPOOL_NAME]".
+      This is an experimental field.
   """
 
   use GoogleApi.Gax.ModelBase
