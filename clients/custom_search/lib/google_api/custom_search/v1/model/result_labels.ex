@@ -21,9 +21,9 @@ defmodule GoogleApi.CustomSearch.V1.Model.ResultLabels do
 
   ## Attributes
 
-  - displayName (String.t):  Defaults to `nil`.
-  - label_with_op (String.t):  Defaults to `nil`.
-  - name (String.t):  Defaults to `nil`.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - 
+  *   `label_with_op` (*type:* `String.t`, *default:* `nil`) - 
+  *   `name` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

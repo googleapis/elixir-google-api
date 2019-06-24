@@ -21,13 +21,13 @@ defmodule GoogleApi.CustomSearch.V1.Model.ResultImage do
 
   ## Attributes
 
-  - byteSize (integer()):  Defaults to `nil`.
-  - contextLink (String.t):  Defaults to `nil`.
-  - height (integer()):  Defaults to `nil`.
-  - thumbnailHeight (integer()):  Defaults to `nil`.
-  - thumbnailLink (String.t):  Defaults to `nil`.
-  - thumbnailWidth (integer()):  Defaults to `nil`.
-  - width (integer()):  Defaults to `nil`.
+  *   `byteSize` (*type:* `integer()`, *default:* `nil`) - 
+  *   `contextLink` (*type:* `String.t`, *default:* `nil`) - 
+  *   `height` (*type:* `integer()`, *default:* `nil`) - 
+  *   `thumbnailHeight` (*type:* `integer()`, *default:* `nil`) - 
+  *   `thumbnailLink` (*type:* `String.t`, *default:* `nil`) - 
+  *   `thumbnailWidth` (*type:* `integer()`, *default:* `nil`) - 
+  *   `width` (*type:* `integer()`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

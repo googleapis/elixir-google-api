@@ -21,8 +21,8 @@ defmodule GoogleApi.CustomSearch.V1.Model.SearchSpelling do
 
   ## Attributes
 
-  - correctedQuery (String.t):  Defaults to `nil`.
-  - htmlCorrectedQuery (String.t):  Defaults to `nil`.
+  *   `correctedQuery` (*type:* `String.t`, *default:* `nil`) - 
+  *   `htmlCorrectedQuery` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

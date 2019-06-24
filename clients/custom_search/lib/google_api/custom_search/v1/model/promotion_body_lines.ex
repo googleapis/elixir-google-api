@@ -21,10 +21,10 @@ defmodule GoogleApi.CustomSearch.V1.Model.PromotionBodyLines do
 
   ## Attributes
 
-  - htmlTitle (String.t):  Defaults to `nil`.
-  - link (String.t):  Defaults to `nil`.
-  - title (String.t):  Defaults to `nil`.
-  - url (String.t):  Defaults to `nil`.
+  *   `htmlTitle` (*type:* `String.t`, *default:* `nil`) - 
+  *   `link` (*type:* `String.t`, *default:* `nil`) - 
+  *   `title` (*type:* `String.t`, *default:* `nil`) - 
+  *   `url` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,8 +21,8 @@ defmodule GoogleApi.CustomSearch.V1.Model.Context do
 
   ## Attributes
 
-  - facets (list(list(GoogleApi.CustomSearch.V1.Model.ContextFacets.t))):  Defaults to `nil`.
-  - title (String.t):  Defaults to `nil`.
+  *   `facets` (*type:* `list(list(GoogleApi.CustomSearch.V1.Model.ContextFacets.t))`, *default:* `nil`) - 
+  *   `title` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

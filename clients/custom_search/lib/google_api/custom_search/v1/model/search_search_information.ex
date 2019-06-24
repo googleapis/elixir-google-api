@@ -21,10 +21,10 @@ defmodule GoogleApi.CustomSearch.V1.Model.SearchSearchInformation do
 
   ## Attributes
 
-  - formattedSearchTime (String.t):  Defaults to `nil`.
-  - formattedTotalResults (String.t):  Defaults to `nil`.
-  - searchTime (float()):  Defaults to `nil`.
-  - totalResults (String.t):  Defaults to `nil`.
+  *   `formattedSearchTime` (*type:* `String.t`, *default:* `nil`) - 
+  *   `formattedTotalResults` (*type:* `String.t`, *default:* `nil`) - 
+  *   `searchTime` (*type:* `float()`, *default:* `nil`) - 
+  *   `totalResults` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,42 +21,42 @@ defmodule GoogleApi.CustomSearch.V1.Model.Query do
 
   ## Attributes
 
-  - highRange (String.t):  Defaults to `nil`.
-  - searchType (String.t):  Defaults to `nil`.
-  - cr (String.t):  Defaults to `nil`.
-  - dateRestrict (String.t):  Defaults to `nil`.
-  - title (String.t):  Defaults to `nil`.
-  - cx (String.t):  Defaults to `nil`.
-  - exactTerms (String.t):  Defaults to `nil`.
-  - searchTerms (String.t):  Defaults to `nil`.
-  - count (integer()):  Defaults to `nil`.
-  - startPage (integer()):  Defaults to `nil`.
-  - imgDominantColor (String.t):  Defaults to `nil`.
-  - hl (String.t):  Defaults to `nil`.
-  - imgColorType (String.t):  Defaults to `nil`.
-  - excludeTerms (String.t):  Defaults to `nil`.
-  - lowRange (String.t):  Defaults to `nil`.
-  - disableCnTwTranslation (String.t):  Defaults to `nil`.
-  - rights (String.t):  Defaults to `nil`.
-  - imgType (String.t):  Defaults to `nil`.
-  - fileType (String.t):  Defaults to `nil`.
-  - imgSize (String.t):  Defaults to `nil`.
-  - siteSearchFilter (String.t):  Defaults to `nil`.
-  - siteSearch (String.t):  Defaults to `nil`.
-  - gl (String.t):  Defaults to `nil`.
-  - orTerms (String.t):  Defaults to `nil`.
-  - sort (String.t):  Defaults to `nil`.
-  - linkSite (String.t):  Defaults to `nil`.
-  - filter (String.t):  Defaults to `nil`.
-  - totalResults (String.t):  Defaults to `nil`.
-  - outputEncoding (String.t):  Defaults to `nil`.
-  - language (String.t):  Defaults to `nil`.
-  - inputEncoding (String.t):  Defaults to `nil`.
-  - relatedSite (String.t):  Defaults to `nil`.
-  - safe (String.t):  Defaults to `nil`.
-  - startIndex (integer()):  Defaults to `nil`.
-  - hq (String.t):  Defaults to `nil`.
-  - googleHost (String.t):  Defaults to `nil`.
+  *   `highRange` (*type:* `String.t`, *default:* `nil`) - 
+  *   `searchType` (*type:* `String.t`, *default:* `nil`) - 
+  *   `cr` (*type:* `String.t`, *default:* `nil`) - 
+  *   `dateRestrict` (*type:* `String.t`, *default:* `nil`) - 
+  *   `title` (*type:* `String.t`, *default:* `nil`) - 
+  *   `cx` (*type:* `String.t`, *default:* `nil`) - 
+  *   `exactTerms` (*type:* `String.t`, *default:* `nil`) - 
+  *   `searchTerms` (*type:* `String.t`, *default:* `nil`) - 
+  *   `count` (*type:* `integer()`, *default:* `nil`) - 
+  *   `startPage` (*type:* `integer()`, *default:* `nil`) - 
+  *   `imgDominantColor` (*type:* `String.t`, *default:* `nil`) - 
+  *   `hl` (*type:* `String.t`, *default:* `nil`) - 
+  *   `imgColorType` (*type:* `String.t`, *default:* `nil`) - 
+  *   `excludeTerms` (*type:* `String.t`, *default:* `nil`) - 
+  *   `lowRange` (*type:* `String.t`, *default:* `nil`) - 
+  *   `disableCnTwTranslation` (*type:* `String.t`, *default:* `nil`) - 
+  *   `rights` (*type:* `String.t`, *default:* `nil`) - 
+  *   `imgType` (*type:* `String.t`, *default:* `nil`) - 
+  *   `fileType` (*type:* `String.t`, *default:* `nil`) - 
+  *   `imgSize` (*type:* `String.t`, *default:* `nil`) - 
+  *   `siteSearchFilter` (*type:* `String.t`, *default:* `nil`) - 
+  *   `siteSearch` (*type:* `String.t`, *default:* `nil`) - 
+  *   `gl` (*type:* `String.t`, *default:* `nil`) - 
+  *   `orTerms` (*type:* `String.t`, *default:* `nil`) - 
+  *   `sort` (*type:* `String.t`, *default:* `nil`) - 
+  *   `linkSite` (*type:* `String.t`, *default:* `nil`) - 
+  *   `filter` (*type:* `String.t`, *default:* `nil`) - 
+  *   `totalResults` (*type:* `String.t`, *default:* `nil`) - 
+  *   `outputEncoding` (*type:* `String.t`, *default:* `nil`) - 
+  *   `language` (*type:* `String.t`, *default:* `nil`) - 
+  *   `inputEncoding` (*type:* `String.t`, *default:* `nil`) - 
+  *   `relatedSite` (*type:* `String.t`, *default:* `nil`) - 
+  *   `safe` (*type:* `String.t`, *default:* `nil`) - 
+  *   `startIndex` (*type:* `integer()`, *default:* `nil`) - 
+  *   `hq` (*type:* `String.t`, *default:* `nil`) - 
+  *   `googleHost` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

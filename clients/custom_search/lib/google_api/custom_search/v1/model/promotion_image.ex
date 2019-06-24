@@ -21,9 +21,9 @@ defmodule GoogleApi.CustomSearch.V1.Model.PromotionImage do
 
   ## Attributes
 
-  - height (integer()):  Defaults to `nil`.
-  - source (String.t):  Defaults to `nil`.
-  - width (integer()):  Defaults to `nil`.
+  *   `height` (*type:* `integer()`, *default:* `nil`) - 
+  *   `source` (*type:* `String.t`, *default:* `nil`) - 
+  *   `width` (*type:* `integer()`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase
