@@ -21,15 +21,15 @@ defmodule GoogleApi.AdSenseHost.V41.Model.AssociationSession do
 
   ## Attributes
 
-  - accountId (String.t): Hosted account id of the associated publisher after association. Present if status is ACCEPTED. Defaults to `nil`.
-  - id (String.t): Unique identifier of this association session. Defaults to `nil`.
-  - kind (String.t): Kind of resource this is, in this case adsensehost#associationSession. Defaults to `adsensehost#associationSession`.
-  - productCodes (list(String.t)): The products to associate with the user. Options: AFC, AFG, AFV, AFS (deprecated), AFMC (deprecated) Defaults to `nil`.
-  - redirectUrl (String.t): Redirect URL of this association session. Used to redirect users into the AdSense association flow. Defaults to `nil`.
-  - status (String.t): Status of the completed association, available once the association callback token has been verified. One of ACCEPTED, REJECTED, or ERROR. Defaults to `nil`.
-  - userLocale (String.t): The preferred locale of the user themselves when going through the AdSense association flow. Defaults to `nil`.
-  - websiteLocale (String.t): The locale of the user's hosted website. Defaults to `nil`.
-  - websiteUrl (String.t): The URL of the user's hosted website. Defaults to `nil`.
+  *   `accountId` (*type:* `String.t`, *default:* `nil`) - Hosted account id of the associated publisher after association. Present if status is ACCEPTED.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Unique identifier of this association session.
+  *   `kind` (*type:* `String.t`, *default:* `adsensehost#associationSession`) - Kind of resource this is, in this case adsensehost#associationSession.
+  *   `productCodes` (*type:* `list(String.t)`, *default:* `nil`) - The products to associate with the user. Options: AFC, AFG, AFV, AFS (deprecated), AFMC (deprecated)
+  *   `redirectUrl` (*type:* `String.t`, *default:* `nil`) - Redirect URL of this association session. Used to redirect users into the AdSense association flow.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - Status of the completed association, available once the association callback token has been verified. One of ACCEPTED, REJECTED, or ERROR.
+  *   `userLocale` (*type:* `String.t`, *default:* `nil`) - The preferred locale of the user themselves when going through the AdSense association flow.
+  *   `websiteLocale` (*type:* `String.t`, *default:* `nil`) - The locale of the user's hosted website.
+  *   `websiteUrl` (*type:* `String.t`, *default:* `nil`) - The URL of the user's hosted website.
   """
 
   use GoogleApi.Gax.ModelBase

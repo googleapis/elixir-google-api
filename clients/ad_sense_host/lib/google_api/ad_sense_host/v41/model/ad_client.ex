@@ -21,11 +21,11 @@ defmodule GoogleApi.AdSenseHost.V41.Model.AdClient do
 
   ## Attributes
 
-  - arcOptIn (boolean()): Whether this ad client is opted in to ARC. Defaults to `nil`.
-  - id (String.t): Unique identifier of this ad client. Defaults to `nil`.
-  - kind (String.t): Kind of resource this is, in this case adsensehost#adClient. Defaults to `adsensehost#adClient`.
-  - productCode (String.t): This ad client's product code, which corresponds to the PRODUCT_CODE report dimension. Defaults to `nil`.
-  - supportsReporting (boolean()): Whether this ad client supports being reported on. Defaults to `nil`.
+  *   `arcOptIn` (*type:* `boolean()`, *default:* `nil`) - Whether this ad client is opted in to ARC.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Unique identifier of this ad client.
+  *   `kind` (*type:* `String.t`, *default:* `adsensehost#adClient`) - Kind of resource this is, in this case adsensehost#adClient.
+  *   `productCode` (*type:* `String.t`, *default:* `nil`) - This ad client's product code, which corresponds to the PRODUCT_CODE report dimension.
+  *   `supportsReporting` (*type:* `boolean()`, *default:* `nil`) - Whether this ad client supports being reported on.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,13 +21,13 @@ defmodule GoogleApi.AdSenseHost.V41.Model.Report do
 
   ## Attributes
 
-  - averages (list(String.t)): The averages of the report. This is the same length as any other row in the report; cells corresponding to dimension columns are empty. Defaults to `nil`.
-  - headers (list(GoogleApi.AdSenseHost.V41.Model.ReportHeaders.t)): The header information of the columns requested in the report. This is a list of headers; one for each dimension in the request, followed by one for each metric in the request. Defaults to `nil`.
-  - kind (String.t): Kind this is, in this case adsensehost#report. Defaults to `adsensehost#report`.
-  - rows (list(list(String.t))): The output rows of the report. Each row is a list of cells; one for each dimension in the request, followed by one for each metric in the request. The dimension cells contain strings, and the metric cells contain numbers. Defaults to `nil`.
-  - totalMatchedRows (String.t): The total number of rows matched by the report request. Fewer rows may be returned in the response due to being limited by the row count requested or the report row limit. Defaults to `nil`.
-  - totals (list(String.t)): The totals of the report. This is the same length as any other row in the report; cells corresponding to dimension columns are empty. Defaults to `nil`.
-  - warnings (list(String.t)): Any warnings associated with generation of the report. Defaults to `nil`.
+  *   `averages` (*type:* `list(String.t)`, *default:* `nil`) - The averages of the report. This is the same length as any other row in the report; cells corresponding to dimension columns are empty.
+  *   `headers` (*type:* `list(GoogleApi.AdSenseHost.V41.Model.ReportHeaders.t)`, *default:* `nil`) - The header information of the columns requested in the report. This is a list of headers; one for each dimension in the request, followed by one for each metric in the request.
+  *   `kind` (*type:* `String.t`, *default:* `adsensehost#report`) - Kind this is, in this case adsensehost#report.
+  *   `rows` (*type:* `list(list(String.t))`, *default:* `nil`) - The output rows of the report. Each row is a list of cells; one for each dimension in the request, followed by one for each metric in the request. The dimension cells contain strings, and the metric cells contain numbers.
+  *   `totalMatchedRows` (*type:* `String.t`, *default:* `nil`) - The total number of rows matched by the report request. Fewer rows may be returned in the response due to being limited by the row count requested or the report row limit.
+  *   `totals` (*type:* `list(String.t)`, *default:* `nil`) - The totals of the report. This is the same length as any other row in the report; cells corresponding to dimension columns are empty.
+  *   `warnings` (*type:* `list(String.t)`, *default:* `nil`) - Any warnings associated with generation of the report.
   """
 
   use GoogleApi.Gax.ModelBase

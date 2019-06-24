@@ -21,10 +21,10 @@ defmodule GoogleApi.AdSenseHost.V41.Model.CustomChannels do
 
   ## Attributes
 
-  - etag (String.t): ETag of this response for caching purposes. Defaults to `nil`.
-  - items (list(GoogleApi.AdSenseHost.V41.Model.CustomChannel.t)): The custom channels returned in this list response. Defaults to `nil`.
-  - kind (String.t): Kind of list this is, in this case adsensehost#customChannels. Defaults to `adsensehost#customChannels`.
-  - nextPageToken (String.t): Continuation token used to page through custom channels. To retrieve the next page of results, set the next request's "pageToken" value to this. Defaults to `nil`.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of this response for caching purposes.
+  *   `items` (*type:* `list(GoogleApi.AdSenseHost.V41.Model.CustomChannel.t)`, *default:* `nil`) - The custom channels returned in this list response.
+  *   `kind` (*type:* `String.t`, *default:* `adsensehost#customChannels`) - Kind of list this is, in this case adsensehost#customChannels.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Continuation token used to page through custom channels. To retrieve the next page of results, set the next request's "pageToken" value to this.
   """
 
   use GoogleApi.Gax.ModelBase

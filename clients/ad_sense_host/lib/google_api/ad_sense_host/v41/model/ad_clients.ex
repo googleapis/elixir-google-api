@@ -21,10 +21,10 @@ defmodule GoogleApi.AdSenseHost.V41.Model.AdClients do
 
   ## Attributes
 
-  - etag (String.t): ETag of this response for caching purposes. Defaults to `nil`.
-  - items (list(GoogleApi.AdSenseHost.V41.Model.AdClient.t)): The ad clients returned in this list response. Defaults to `nil`.
-  - kind (String.t): Kind of list this is, in this case adsensehost#adClients. Defaults to `adsensehost#adClients`.
-  - nextPageToken (String.t): Continuation token used to page through ad clients. To retrieve the next page of results, set the next request's "pageToken" value to this. Defaults to `nil`.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of this response for caching purposes.
+  *   `items` (*type:* `list(GoogleApi.AdSenseHost.V41.Model.AdClient.t)`, *default:* `nil`) - The ad clients returned in this list response.
+  *   `kind` (*type:* `String.t`, *default:* `adsensehost#adClients`) - Kind of list this is, in this case adsensehost#adClients.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Continuation token used to page through ad clients. To retrieve the next page of results, set the next request's "pageToken" value to this.
   """
 
   use GoogleApi.Gax.ModelBase

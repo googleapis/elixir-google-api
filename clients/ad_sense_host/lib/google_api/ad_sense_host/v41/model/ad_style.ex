@@ -21,10 +21,10 @@ defmodule GoogleApi.AdSenseHost.V41.Model.AdStyle do
 
   ## Attributes
 
-  - colors (GoogleApi.AdSenseHost.V41.Model.AdStyleColors.t): The colors included in the style. These are represented as six hexadecimal characters, similar to HTML color codes, but without the leading hash. Defaults to `nil`.
-  - corners (String.t): The style of the corners in the ad (deprecated: never populated, ignored). Defaults to `nil`.
-  - font (GoogleApi.AdSenseHost.V41.Model.AdStyleFont.t): The font which is included in the style. Defaults to `nil`.
-  - kind (String.t): Kind this is, in this case adsensehost#adStyle. Defaults to `adsensehost#adStyle`.
+  *   `colors` (*type:* `GoogleApi.AdSenseHost.V41.Model.AdStyleColors.t`, *default:* `nil`) - The colors included in the style. These are represented as six hexadecimal characters, similar to HTML color codes, but without the leading hash.
+  *   `corners` (*type:* `String.t`, *default:* `nil`) - The style of the corners in the ad (deprecated: never populated, ignored).
+  *   `font` (*type:* `GoogleApi.AdSenseHost.V41.Model.AdStyleFont.t`, *default:* `nil`) - The font which is included in the style.
+  *   `kind` (*type:* `String.t`, *default:* `adsensehost#adStyle`) - Kind this is, in this case adsensehost#adStyle.
   """
 
   use GoogleApi.Gax.ModelBase

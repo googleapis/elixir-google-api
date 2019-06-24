@@ -21,8 +21,8 @@ defmodule GoogleApi.AdSenseHost.V41.Model.AdCode do
 
   ## Attributes
 
-  - adCode (String.t): The ad code snippet. Defaults to `nil`.
-  - kind (String.t): Kind this is, in this case adsensehost#adCode. Defaults to `adsensehost#adCode`.
+  *   `adCode` (*type:* `String.t`, *default:* `nil`) - The ad code snippet.
+  *   `kind` (*type:* `String.t`, *default:* `adsensehost#adCode`) - Kind this is, in this case adsensehost#adCode.
   """
 
   use GoogleApi.Gax.ModelBase

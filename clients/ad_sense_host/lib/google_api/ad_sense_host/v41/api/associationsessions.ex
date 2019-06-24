@@ -28,29 +28,31 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Associationsessions do
 
   ## Parameters
 
-  - connection (GoogleApi.AdSenseHost.V41.Connection): Connection to server
-  - product_code (list(String.t)): Products to associate with the user.
-  - website_url (String.t): The URL of the user's hosted website.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :userLocale (String.t): The preferred locale of the user.
-    - :websiteLocale (String.t): The locale of the user's hosted website.
+  *   `connection` (*type:* `GoogleApi.AdSenseHost.V41.Connection.t`) - Connection to server
+  *   `product_code` (*type:* `list(String.t)`) - Products to associate with the user.
+  *   `website_url` (*type:* `String.t`) - The URL of the user's hosted website.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:userLocale` (*type:* `String.t`) - The preferred locale of the user.
+      *   `:websiteLocale` (*type:* `String.t`) - The locale of the user's hosted website.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdSenseHost.V41.Model.AssociationSession{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdSenseHost.V41.Model.AssociationSession{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec adsensehost_associationsessions_start(
           Tesla.Env.client(),
           list(String.t()),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.AdSenseHost.V41.Model.AssociationSession.t()} | {:error, Tesla.Env.t()}
@@ -91,23 +93,29 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Associationsessions do
 
   ## Parameters
 
-  - connection (GoogleApi.AdSenseHost.V41.Connection): Connection to server
-  - token (String.t): The token returned to the association callback URL.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AdSenseHost.V41.Connection.t`) - Connection to server
+  *   `token` (*type:* `String.t`) - The token returned to the association callback URL.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdSenseHost.V41.Model.AssociationSession{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdSenseHost.V41.Model.AssociationSession{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec adsensehost_associationsessions_verify(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec adsensehost_associationsessions_verify(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.AdSenseHost.V41.Model.AssociationSession.t()} | {:error, Tesla.Env.t()}
   def adsensehost_associationsessions_verify(connection, token, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

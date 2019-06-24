@@ -20,6 +20,8 @@ defmodule GoogleApi.AdSenseHost.V41.Connection do
   Handle Tesla connections for GoogleApi.AdSenseHost.V41.
   """
 
+  @type t :: Tesla.Env.client()
+
   use GoogleApi.Gax.Connection,
     scopes: [
       # View and manage your AdSense host data and associated accounts
