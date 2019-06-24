@@ -28,33 +28,34 @@ defmodule GoogleApi.AdExperienceReport.V1.Api.Sites do
 
   ## Parameters
 
-  - connection (GoogleApi.AdExperienceReport.V1.Connection): Connection to server
-  - sites_id (String.t): Part of `name`. The required site name. It should be the site property whose ad experiences
-  may have been reviewed, and it should be URL-encoded. For example,
-  sites/https%3A%2F%2Fwww.google.com. The server will return an error of
-  BAD_REQUEST if this field is not filled in. Note that if the site property
-  is not yet verified in Search Console, the reportUrl field returned by the
-  API will lead to the verification page, prompting the user to go through
-  that process before they can gain access to the Ad Experience Report.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.AdExperienceReport.V1.Connection.t`) - Connection to server
+  *   `sites_id` (*type:* `String.t`) - Part of `name`. The required site name. It should be the site property whose ad experiences
+      may have been reviewed, and it should be URL-encoded. For example,
+      sites/https%3A%2F%2Fwww.google.com. The server will return an error of
+      BAD_REQUEST if this field is not filled in. Note that if the site property
+      is not yet verified in Search Console, the reportUrl field returned by the
+      API will lead to the verification page, prompting the user to go through
+      that process before they can gain access to the Ad Experience Report.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdExperienceReport.V1.Model.SiteSummaryResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdExperienceReport.V1.Model.SiteSummaryResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec adexperiencereport_sites_get(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec adexperiencereport_sites_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AdExperienceReport.V1.Model.SiteSummaryResponse.t()}
           | {:error, Tesla.Env.t()}
   def adexperiencereport_sites_get(connection, sites_id, optional_params \\ [], opts \\ []) do
