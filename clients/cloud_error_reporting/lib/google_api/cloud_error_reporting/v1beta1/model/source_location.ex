@@ -24,12 +24,12 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Model.SourceLocation do
 
   ## Attributes
 
-  - filePath (String.t): The source code filename, which can include a truncated relative
-  path, or a full path from a production machine. Defaults to `nil`.
-  - functionName (String.t): Human-readable name of a function or method.
-  The value can include optional context like the class or package name.
-  For example, `my.package.MyClass.method` in case of Java. Defaults to `nil`.
-  - lineNumber (integer()): 1-based. 0 indicates that the line number is unknown. Defaults to `nil`.
+  *   `filePath` (*type:* `String.t`, *default:* `nil`) - The source code filename, which can include a truncated relative
+      path, or a full path from a production machine.
+  *   `functionName` (*type:* `String.t`, *default:* `nil`) - Human-readable name of a function or method.
+      The value can include optional context like the class or package name.
+      For example, `my.package.MyClass.method` in case of Java.
+  *   `lineNumber` (*type:* `integer()`, *default:* `nil`) - 1-based. 0 indicates that the line number is unknown.
   """
 
   use GoogleApi.Gax.ModelBase

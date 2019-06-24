@@ -23,9 +23,9 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Model.TimedCount do
 
   ## Attributes
 
-  - count (String.t): Approximate number of occurrences in the given time period. Defaults to `nil`.
-  - endTime (DateTime.t): End of the time period to which `count` refers (excluded). Defaults to `nil`.
-  - startTime (DateTime.t): Start of the time period to which `count` refers (included). Defaults to `nil`.
+  *   `count` (*type:* `String.t`, *default:* `nil`) - Approximate number of occurrences in the given time period.
+  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - End of the time period to which `count` refers (excluded).
+  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Start of the time period to which `count` refers (included).
   """
 
   use GoogleApi.Gax.ModelBase

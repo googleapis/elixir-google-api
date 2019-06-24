@@ -24,15 +24,15 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Model.HttpRequestContext do
 
   ## Attributes
 
-  - method (String.t): The type of HTTP request, such as `GET`, `POST`, etc. Defaults to `nil`.
-  - referrer (String.t): The referrer information that is provided with the request. Defaults to `nil`.
-  - remoteIp (String.t): The IP address from which the request originated.
-  This can be IPv4, IPv6, or a token which is derived from the
-  IP address, depending on the data that has been provided
-  in the error report. Defaults to `nil`.
-  - responseStatusCode (integer()): The HTTP response status code for the request. Defaults to `nil`.
-  - url (String.t): The URL of the request. Defaults to `nil`.
-  - userAgent (String.t): The user agent information that is provided with the request. Defaults to `nil`.
+  *   `method` (*type:* `String.t`, *default:* `nil`) - The type of HTTP request, such as `GET`, `POST`, etc.
+  *   `referrer` (*type:* `String.t`, *default:* `nil`) - The referrer information that is provided with the request.
+  *   `remoteIp` (*type:* `String.t`, *default:* `nil`) - The IP address from which the request originated.
+      This can be IPv4, IPv6, or a token which is derived from the
+      IP address, depending on the data that has been provided
+      in the error report.
+  *   `responseStatusCode` (*type:* `integer()`, *default:* `nil`) - The HTTP response status code for the request.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - The URL of the request.
+  *   `userAgent` (*type:* `String.t`, *default:* `nil`) - The user agent information that is provided with the request.
   """
 
   use GoogleApi.Gax.ModelBase
