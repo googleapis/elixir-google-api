@@ -21,7 +21,7 @@ defmodule GoogleApi.Blogger.V3.Model.CommentAuthorImage do
 
   ## Attributes
 
-  - url (String.t): The comment creator's avatar URL. Defaults to `nil`.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - The comment creator's avatar URL.
   """
 
   use GoogleApi.Gax.ModelBase

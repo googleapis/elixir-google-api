@@ -28,24 +28,25 @@ defmodule GoogleApi.Blogger.V3.Api.Pages do
 
   ## Parameters
 
-  - connection (GoogleApi.Blogger.V3.Connection): Connection to server
-  - blog_id (String.t): The ID of the Blog.
-  - page_id (String.t): The ID of the Page.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.Blogger.V3.Connection.t`) - Connection to server
+  *   `blog_id` (*type:* `String.t`) - The ID of the Blog.
+  *   `page_id` (*type:* `String.t`) - The ID of the Page.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %{}} on success
-  {:error, info} on failure
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec blogger_pages_delete(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+  @spec blogger_pages_delete(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
   def blogger_pages_delete(connection, blog_id, page_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -77,25 +78,26 @@ defmodule GoogleApi.Blogger.V3.Api.Pages do
 
   ## Parameters
 
-  - connection (GoogleApi.Blogger.V3.Connection): Connection to server
-  - blog_id (String.t): ID of the blog containing the page.
-  - page_id (String.t): The ID of the page to get.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :view (String.t): 
+  *   `connection` (*type:* `GoogleApi.Blogger.V3.Connection.t`) - Connection to server
+  *   `blog_id` (*type:* `String.t`) - ID of the blog containing the page.
+  *   `page_id` (*type:* `String.t`) - The ID of the page to get.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:view` (*type:* `String.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Blogger.V3.Model.Page{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Blogger.V3.Model.Page{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec blogger_pages_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+  @spec blogger_pages_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Blogger.V3.Model.Page.t()} | {:error, Tesla.Env.t()}
   def blogger_pages_get(connection, blog_id, page_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -128,25 +130,26 @@ defmodule GoogleApi.Blogger.V3.Api.Pages do
 
   ## Parameters
 
-  - connection (GoogleApi.Blogger.V3.Connection): Connection to server
-  - blog_id (String.t): ID of the blog to add the page to.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :isDraft (boolean()): Whether to create the page as a draft (default: false).
-    - :body (GoogleApi.Blogger.V3.Model.Page.t): 
+  *   `connection` (*type:* `GoogleApi.Blogger.V3.Connection.t`) - Connection to server
+  *   `blog_id` (*type:* `String.t`) - ID of the blog to add the page to.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:isDraft` (*type:* `boolean()`) - Whether to create the page as a draft (default: false).
+      *   `:body` (*type:* `GoogleApi.Blogger.V3.Model.Page.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Blogger.V3.Model.Page{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Blogger.V3.Model.Page{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec blogger_pages_insert(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec blogger_pages_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Blogger.V3.Model.Page.t()} | {:error, Tesla.Env.t()}
   def blogger_pages_insert(connection, blog_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -179,28 +182,29 @@ defmodule GoogleApi.Blogger.V3.Api.Pages do
 
   ## Parameters
 
-  - connection (GoogleApi.Blogger.V3.Connection): Connection to server
-  - blog_id (String.t): ID of the blog to fetch Pages from.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :fetchBodies (boolean()): Whether to retrieve the Page bodies.
-    - :maxResults (integer()): Maximum number of Pages to fetch.
-    - :pageToken (String.t): Continuation token if the request is paged.
-    - :status (list(String.t)): 
-    - :view (String.t): Access level with which to view the returned result. Note that some fields require elevated access.
+  *   `connection` (*type:* `GoogleApi.Blogger.V3.Connection.t`) - Connection to server
+  *   `blog_id` (*type:* `String.t`) - ID of the blog to fetch Pages from.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:fetchBodies` (*type:* `boolean()`) - Whether to retrieve the Page bodies.
+      *   `:maxResults` (*type:* `integer()`) - Maximum number of Pages to fetch.
+      *   `:pageToken` (*type:* `String.t`) - Continuation token if the request is paged.
+      *   `:status` (*type:* `list(String.t)`) - 
+      *   `:view` (*type:* `String.t`) - Access level with which to view the returned result. Note that some fields require elevated access.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Blogger.V3.Model.PageList{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Blogger.V3.Model.PageList{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec blogger_pages_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec blogger_pages_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Blogger.V3.Model.PageList.t()} | {:error, Tesla.Env.t()}
   def blogger_pages_list(connection, blog_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -236,27 +240,28 @@ defmodule GoogleApi.Blogger.V3.Api.Pages do
 
   ## Parameters
 
-  - connection (GoogleApi.Blogger.V3.Connection): Connection to server
-  - blog_id (String.t): The ID of the Blog.
-  - page_id (String.t): The ID of the Page.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :publish (boolean()): Whether a publish action should be performed when the page is updated (default: false).
-    - :revert (boolean()): Whether a revert action should be performed when the page is updated (default: false).
-    - :body (GoogleApi.Blogger.V3.Model.Page.t): 
+  *   `connection` (*type:* `GoogleApi.Blogger.V3.Connection.t`) - Connection to server
+  *   `blog_id` (*type:* `String.t`) - The ID of the Blog.
+  *   `page_id` (*type:* `String.t`) - The ID of the Page.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:publish` (*type:* `boolean()`) - Whether a publish action should be performed when the page is updated (default: false).
+      *   `:revert` (*type:* `boolean()`) - Whether a revert action should be performed when the page is updated (default: false).
+      *   `:body` (*type:* `GoogleApi.Blogger.V3.Model.Page.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Blogger.V3.Model.Page{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Blogger.V3.Model.Page{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec blogger_pages_patch(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+  @spec blogger_pages_patch(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Blogger.V3.Model.Page.t()} | {:error, Tesla.Env.t()}
   def blogger_pages_patch(connection, blog_id, page_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -291,24 +296,25 @@ defmodule GoogleApi.Blogger.V3.Api.Pages do
 
   ## Parameters
 
-  - connection (GoogleApi.Blogger.V3.Connection): Connection to server
-  - blog_id (String.t): The ID of the blog.
-  - page_id (String.t): The ID of the page.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.Blogger.V3.Connection.t`) - Connection to server
+  *   `blog_id` (*type:* `String.t`) - The ID of the blog.
+  *   `page_id` (*type:* `String.t`) - The ID of the page.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Blogger.V3.Model.Page{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Blogger.V3.Model.Page{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec blogger_pages_publish(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+  @spec blogger_pages_publish(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Blogger.V3.Model.Page.t()} | {:error, Tesla.Env.t()}
   def blogger_pages_publish(connection, blog_id, page_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -340,24 +346,25 @@ defmodule GoogleApi.Blogger.V3.Api.Pages do
 
   ## Parameters
 
-  - connection (GoogleApi.Blogger.V3.Connection): Connection to server
-  - blog_id (String.t): The ID of the blog.
-  - page_id (String.t): The ID of the page.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.Blogger.V3.Connection.t`) - Connection to server
+  *   `blog_id` (*type:* `String.t`) - The ID of the blog.
+  *   `page_id` (*type:* `String.t`) - The ID of the page.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Blogger.V3.Model.Page{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Blogger.V3.Model.Page{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec blogger_pages_revert(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+  @spec blogger_pages_revert(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Blogger.V3.Model.Page.t()} | {:error, Tesla.Env.t()}
   def blogger_pages_revert(connection, blog_id, page_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -389,27 +396,28 @@ defmodule GoogleApi.Blogger.V3.Api.Pages do
 
   ## Parameters
 
-  - connection (GoogleApi.Blogger.V3.Connection): Connection to server
-  - blog_id (String.t): The ID of the Blog.
-  - page_id (String.t): The ID of the Page.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :publish (boolean()): Whether a publish action should be performed when the page is updated (default: false).
-    - :revert (boolean()): Whether a revert action should be performed when the page is updated (default: false).
-    - :body (GoogleApi.Blogger.V3.Model.Page.t): 
+  *   `connection` (*type:* `GoogleApi.Blogger.V3.Connection.t`) - Connection to server
+  *   `blog_id` (*type:* `String.t`) - The ID of the Blog.
+  *   `page_id` (*type:* `String.t`) - The ID of the Page.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:publish` (*type:* `boolean()`) - Whether a publish action should be performed when the page is updated (default: false).
+      *   `:revert` (*type:* `boolean()`) - Whether a revert action should be performed when the page is updated (default: false).
+      *   `:body` (*type:* `GoogleApi.Blogger.V3.Model.Page.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Blogger.V3.Model.Page{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Blogger.V3.Model.Page{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec blogger_pages_update(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+  @spec blogger_pages_update(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Blogger.V3.Model.Page.t()} | {:error, Tesla.Env.t()}
   def blogger_pages_update(connection, blog_id, page_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

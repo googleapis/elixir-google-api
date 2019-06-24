@@ -21,7 +21,7 @@ defmodule GoogleApi.Blogger.V3.Model.CommentBlog do
 
   ## Attributes
 
-  - id (String.t): The identifier of the blog containing this comment. Defaults to `nil`.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The identifier of the blog containing this comment.
   """
 
   use GoogleApi.Gax.ModelBase

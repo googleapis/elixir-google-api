@@ -21,10 +21,10 @@ defmodule GoogleApi.Blogger.V3.Model.PostLocation do
 
   ## Attributes
 
-  - lat (float()): Location's latitude. Defaults to `nil`.
-  - lng (float()): Location's longitude. Defaults to `nil`.
-  - name (String.t): Location name. Defaults to `nil`.
-  - span (String.t): Location's viewport span. Can be used when rendering a map preview. Defaults to `nil`.
+  *   `lat` (*type:* `float()`, *default:* `nil`) - Location's latitude.
+  *   `lng` (*type:* `float()`, *default:* `nil`) - Location's longitude.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Location name.
+  *   `span` (*type:* `String.t`, *default:* `nil`) - Location's viewport span. Can be used when rendering a map preview.
   """
 
   use GoogleApi.Gax.ModelBase

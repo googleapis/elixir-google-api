@@ -21,15 +21,15 @@ defmodule GoogleApi.Blogger.V3.Model.User do
 
   ## Attributes
 
-  - about (String.t): Profile summary information. Defaults to `nil`.
-  - blogs (GoogleApi.Blogger.V3.Model.UserBlogs.t): The container of blogs for this user. Defaults to `nil`.
-  - created (DateTime.t): The timestamp of when this profile was created, in seconds since epoch. Defaults to `nil`.
-  - displayName (String.t): The display name. Defaults to `nil`.
-  - id (String.t): The identifier for this User. Defaults to `nil`.
-  - kind (String.t): The kind of this entity. Always blogger#user Defaults to `blogger#user`.
-  - locale (GoogleApi.Blogger.V3.Model.UserLocale.t): This user's locale Defaults to `nil`.
-  - selfLink (String.t): The API REST URL to fetch this resource from. Defaults to `nil`.
-  - url (String.t): The user's profile page. Defaults to `nil`.
+  *   `about` (*type:* `String.t`, *default:* `nil`) - Profile summary information.
+  *   `blogs` (*type:* `GoogleApi.Blogger.V3.Model.UserBlogs.t`, *default:* `nil`) - The container of blogs for this user.
+  *   `created` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp of when this profile was created, in seconds since epoch.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The identifier for this User.
+  *   `kind` (*type:* `String.t`, *default:* `blogger#user`) - The kind of this entity. Always blogger#user
+  *   `locale` (*type:* `GoogleApi.Blogger.V3.Model.UserLocale.t`, *default:* `nil`) - This user's locale
+  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - The API REST URL to fetch this resource from.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - The user's profile page.
   """
 
   use GoogleApi.Gax.ModelBase

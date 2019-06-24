@@ -21,7 +21,7 @@ defmodule GoogleApi.Blogger.V3.Model.PageBlog do
 
   ## Attributes
 
-  - id (String.t): The identifier of the blog containing this page. Defaults to `nil`.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The identifier of the blog containing this page.
   """
 
   use GoogleApi.Gax.ModelBase

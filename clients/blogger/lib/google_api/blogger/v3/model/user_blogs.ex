@@ -21,7 +21,7 @@ defmodule GoogleApi.Blogger.V3.Model.UserBlogs do
 
   ## Attributes
 
-  - selfLink (String.t): The URL of the Blogs for this user. Defaults to `nil`.
+  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - The URL of the Blogs for this user.
   """
 
   use GoogleApi.Gax.ModelBase

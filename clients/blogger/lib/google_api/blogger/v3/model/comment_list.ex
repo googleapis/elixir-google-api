@@ -21,11 +21,11 @@ defmodule GoogleApi.Blogger.V3.Model.CommentList do
 
   ## Attributes
 
-  - etag (String.t): Etag of the response. Defaults to `nil`.
-  - items (list(GoogleApi.Blogger.V3.Model.Comment.t)): The List of Comments for a Post. Defaults to `nil`.
-  - kind (String.t): The kind of this entry. Always blogger#commentList Defaults to `blogger#commentList`.
-  - nextPageToken (String.t): Pagination token to fetch the next page, if one exists. Defaults to `nil`.
-  - prevPageToken (String.t): Pagination token to fetch the previous page, if one exists. Defaults to `nil`.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of the response.
+  *   `items` (*type:* `list(GoogleApi.Blogger.V3.Model.Comment.t)`, *default:* `nil`) - The List of Comments for a Post.
+  *   `kind` (*type:* `String.t`, *default:* `blogger#commentList`) - The kind of this entry. Always blogger#commentList
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Pagination token to fetch the next page, if one exists.
+  *   `prevPageToken` (*type:* `String.t`, *default:* `nil`) - Pagination token to fetch the previous page, if one exists.
   """
 
   use GoogleApi.Gax.ModelBase

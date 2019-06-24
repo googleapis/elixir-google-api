@@ -21,7 +21,7 @@ defmodule GoogleApi.Blogger.V3.Model.CommentInReplyTo do
 
   ## Attributes
 
-  - id (String.t): The identified of the parent of this comment. Defaults to `nil`.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The identified of the parent of this comment.
   """
 
   use GoogleApi.Gax.ModelBase

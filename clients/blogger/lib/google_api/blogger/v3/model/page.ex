@@ -21,18 +21,18 @@ defmodule GoogleApi.Blogger.V3.Model.Page do
 
   ## Attributes
 
-  - author (GoogleApi.Blogger.V3.Model.PageAuthor.t): The author of this Page. Defaults to `nil`.
-  - blog (GoogleApi.Blogger.V3.Model.PageBlog.t): Data about the blog containing this Page. Defaults to `nil`.
-  - content (String.t): The body content of this Page, in HTML. Defaults to `nil`.
-  - etag (String.t): Etag of the resource. Defaults to `nil`.
-  - id (String.t): The identifier for this resource. Defaults to `nil`.
-  - kind (String.t): The kind of this entity. Always blogger#page Defaults to `blogger#page`.
-  - published (DateTime.t): RFC 3339 date-time when this Page was published. Defaults to `nil`.
-  - selfLink (String.t): The API REST URL to fetch this resource from. Defaults to `nil`.
-  - status (String.t): The status of the page for admin resources (either LIVE or DRAFT). Defaults to `nil`.
-  - title (String.t): The title of this entity. This is the name displayed in the Admin user interface. Defaults to `nil`.
-  - updated (DateTime.t): RFC 3339 date-time when this Page was last updated. Defaults to `nil`.
-  - url (String.t): The URL that this Page is displayed at. Defaults to `nil`.
+  *   `author` (*type:* `GoogleApi.Blogger.V3.Model.PageAuthor.t`, *default:* `nil`) - The author of this Page.
+  *   `blog` (*type:* `GoogleApi.Blogger.V3.Model.PageBlog.t`, *default:* `nil`) - Data about the blog containing this Page.
+  *   `content` (*type:* `String.t`, *default:* `nil`) - The body content of this Page, in HTML.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of the resource.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The identifier for this resource.
+  *   `kind` (*type:* `String.t`, *default:* `blogger#page`) - The kind of this entity. Always blogger#page
+  *   `published` (*type:* `DateTime.t`, *default:* `nil`) - RFC 3339 date-time when this Page was published.
+  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - The API REST URL to fetch this resource from.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - The status of the page for admin resources (either LIVE or DRAFT).
+  *   `title` (*type:* `String.t`, *default:* `nil`) - The title of this entity. This is the name displayed in the Admin user interface.
+  *   `updated` (*type:* `DateTime.t`, *default:* `nil`) - RFC 3339 date-time when this Page was last updated.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - The URL that this Page is displayed at.
   """
 
   use GoogleApi.Gax.ModelBase

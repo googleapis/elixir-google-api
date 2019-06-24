@@ -21,9 +21,9 @@ defmodule GoogleApi.Blogger.V3.Model.BlogLocale do
 
   ## Attributes
 
-  - country (String.t): The country this blog's locale is set to. Defaults to `nil`.
-  - language (String.t): The language this blog is authored in. Defaults to `nil`.
-  - variant (String.t): The language variant this blog is authored in. Defaults to `nil`.
+  *   `country` (*type:* `String.t`, *default:* `nil`) - The country this blog's locale is set to.
+  *   `language` (*type:* `String.t`, *default:* `nil`) - The language this blog is authored in.
+  *   `variant` (*type:* `String.t`, *default:* `nil`) - The language variant this blog is authored in.
   """
 
   use GoogleApi.Gax.ModelBase

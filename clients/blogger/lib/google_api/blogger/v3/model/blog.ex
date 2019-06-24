@@ -21,19 +21,19 @@ defmodule GoogleApi.Blogger.V3.Model.Blog do
 
   ## Attributes
 
-  - customMetaData (String.t): The JSON custom meta-data for the Blog Defaults to `nil`.
-  - description (String.t): The description of this blog. This is displayed underneath the title. Defaults to `nil`.
-  - id (String.t): The identifier for this resource. Defaults to `nil`.
-  - kind (String.t): The kind of this entry. Always blogger#blog Defaults to `blogger#blog`.
-  - locale (GoogleApi.Blogger.V3.Model.BlogLocale.t): The locale this Blog is set to. Defaults to `nil`.
-  - name (String.t): The name of this blog. This is displayed as the title. Defaults to `nil`.
-  - pages (GoogleApi.Blogger.V3.Model.BlogPages.t): The container of pages in this blog. Defaults to `nil`.
-  - posts (GoogleApi.Blogger.V3.Model.BlogPosts.t): The container of posts in this blog. Defaults to `nil`.
-  - published (DateTime.t): RFC 3339 date-time when this blog was published. Defaults to `nil`.
-  - selfLink (String.t): The API REST URL to fetch this resource from. Defaults to `nil`.
-  - status (String.t): The status of the blog. Defaults to `nil`.
-  - updated (DateTime.t): RFC 3339 date-time when this blog was last updated. Defaults to `nil`.
-  - url (String.t): The URL where this blog is published. Defaults to `nil`.
+  *   `customMetaData` (*type:* `String.t`, *default:* `nil`) - The JSON custom meta-data for the Blog
+  *   `description` (*type:* `String.t`, *default:* `nil`) - The description of this blog. This is displayed underneath the title.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The identifier for this resource.
+  *   `kind` (*type:* `String.t`, *default:* `blogger#blog`) - The kind of this entry. Always blogger#blog
+  *   `locale` (*type:* `GoogleApi.Blogger.V3.Model.BlogLocale.t`, *default:* `nil`) - The locale this Blog is set to.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of this blog. This is displayed as the title.
+  *   `pages` (*type:* `GoogleApi.Blogger.V3.Model.BlogPages.t`, *default:* `nil`) - The container of pages in this blog.
+  *   `posts` (*type:* `GoogleApi.Blogger.V3.Model.BlogPosts.t`, *default:* `nil`) - The container of posts in this blog.
+  *   `published` (*type:* `DateTime.t`, *default:* `nil`) - RFC 3339 date-time when this blog was published.
+  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - The API REST URL to fetch this resource from.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - The status of the blog.
+  *   `updated` (*type:* `DateTime.t`, *default:* `nil`) - RFC 3339 date-time when this blog was last updated.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - The URL where this blog is published.
   """
 
   use GoogleApi.Gax.ModelBase

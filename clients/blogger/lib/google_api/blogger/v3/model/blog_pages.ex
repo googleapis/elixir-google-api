@@ -21,8 +21,8 @@ defmodule GoogleApi.Blogger.V3.Model.BlogPages do
 
   ## Attributes
 
-  - selfLink (String.t): The URL of the container for pages in this blog. Defaults to `nil`.
-  - totalItems (integer()): The count of pages in this blog. Defaults to `nil`.
+  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - The URL of the container for pages in this blog.
+  *   `totalItems` (*type:* `integer()`, *default:* `nil`) - The count of pages in this blog.
   """
 
   use GoogleApi.Gax.ModelBase

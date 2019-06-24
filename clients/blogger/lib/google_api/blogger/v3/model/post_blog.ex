@@ -21,7 +21,7 @@ defmodule GoogleApi.Blogger.V3.Model.PostBlog do
 
   ## Attributes
 
-  - id (String.t): The identifier of the Blog that contains this Post. Defaults to `nil`.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The identifier of the Blog that contains this Post.
   """
 
   use GoogleApi.Gax.ModelBase

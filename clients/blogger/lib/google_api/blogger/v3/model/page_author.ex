@@ -21,10 +21,10 @@ defmodule GoogleApi.Blogger.V3.Model.PageAuthor do
 
   ## Attributes
 
-  - displayName (String.t): The display name. Defaults to `nil`.
-  - id (String.t): The identifier of the Page creator. Defaults to `nil`.
-  - image (GoogleApi.Blogger.V3.Model.PageAuthorImage.t): The page author's avatar. Defaults to `nil`.
-  - url (String.t): The URL of the Page creator's Profile page. Defaults to `nil`.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The identifier of the Page creator.
+  *   `image` (*type:* `GoogleApi.Blogger.V3.Model.PageAuthorImage.t`, *default:* `nil`) - The page author's avatar.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - The URL of the Page creator's Profile page.
   """
 
   use GoogleApi.Gax.ModelBase

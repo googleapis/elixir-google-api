@@ -21,9 +21,9 @@ defmodule GoogleApi.Blogger.V3.Model.PostReplies do
 
   ## Attributes
 
-  - items (list(GoogleApi.Blogger.V3.Model.Comment.t)): The List of Comments for this Post. Defaults to `nil`.
-  - selfLink (String.t): The URL of the comments on this post. Defaults to `nil`.
-  - totalItems (String.t): The count of comments on this post. Defaults to `nil`.
+  *   `items` (*type:* `list(GoogleApi.Blogger.V3.Model.Comment.t)`, *default:* `nil`) - The List of Comments for this Post.
+  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - The URL of the comments on this post.
+  *   `totalItems` (*type:* `String.t`, *default:* `nil`) - The count of comments on this post.
   """
 
   use GoogleApi.Gax.ModelBase
