@@ -21,13 +21,13 @@ defmodule GoogleApi.AdSense.V14.Model.Account do
 
   ## Attributes
 
-  - creation_time (String.t):  Defaults to `nil`.
-  - id (String.t): Unique identifier of this account. Defaults to `nil`.
-  - kind (String.t): Kind of resource this is, in this case adsense#account. Defaults to `adsense#account`.
-  - name (String.t): Name of this account. Defaults to `nil`.
-  - premium (boolean()): Whether this account is premium. Defaults to `nil`.
-  - subAccounts (list(GoogleApi.AdSense.V14.Model.Account.t)): Sub accounts of the this account. Defaults to `nil`.
-  - timezone (String.t): AdSense timezone of this account. Defaults to `nil`.
+  *   `creation_time` (*type:* `String.t`, *default:* `nil`) - 
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Unique identifier of this account.
+  *   `kind` (*type:* `String.t`, *default:* `adsense#account`) - Kind of resource this is, in this case adsense#account.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this account.
+  *   `premium` (*type:* `boolean()`, *default:* `nil`) - Whether this account is premium.
+  *   `subAccounts` (*type:* `list(GoogleApi.AdSense.V14.Model.Account.t)`, *default:* `nil`) - Sub accounts of the this account.
+  *   `timezone` (*type:* `String.t`, *default:* `nil`) - AdSense timezone of this account.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,8 +21,8 @@ defmodule GoogleApi.AdSense.V14.Model.Payments do
 
   ## Attributes
 
-  - items (list(GoogleApi.AdSense.V14.Model.Payment.t)): The list of Payments for the account. One or both of a) the account's most recent payment; and b) the account's upcoming payment. Defaults to `nil`.
-  - kind (String.t): Kind of list this is, in this case adsense#payments. Defaults to `adsense#payments`.
+  *   `items` (*type:* `list(GoogleApi.AdSense.V14.Model.Payment.t)`, *default:* `nil`) - The list of Payments for the account. One or both of a) the account's most recent payment; and b) the account's upcoming payment.
+  *   `kind` (*type:* `String.t`, *default:* `adsense#payments`) - Kind of list this is, in this case adsense#payments.
   """
 
   use GoogleApi.Gax.ModelBase

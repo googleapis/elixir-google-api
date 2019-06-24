@@ -21,8 +21,8 @@ defmodule GoogleApi.AdSense.V14.Model.Metadata do
 
   ## Attributes
 
-  - items (list(GoogleApi.AdSense.V14.Model.ReportingMetadataEntry.t)):  Defaults to `nil`.
-  - kind (String.t): Kind of list this is, in this case adsense#metadata. Defaults to `adsense#metadata`.
+  *   `items` (*type:* `list(GoogleApi.AdSense.V14.Model.ReportingMetadataEntry.t)`, *default:* `nil`) - 
+  *   `kind` (*type:* `String.t`, *default:* `adsense#metadata`) - Kind of list this is, in this case adsense#metadata.
   """
 
   use GoogleApi.Gax.ModelBase

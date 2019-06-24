@@ -28,22 +28,23 @@ defmodule GoogleApi.AdSense.V14.Api.Metadata do
 
   ## Parameters
 
-  - connection (GoogleApi.AdSense.V14.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AdSense.V14.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdSense.V14.Model.Metadata{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdSense.V14.Model.Metadata{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec adsense_metadata_dimensions_list(Tesla.Env.client(), keyword()) ::
+  @spec adsense_metadata_dimensions_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.AdSense.V14.Model.Metadata.t()} | {:error, Tesla.Env.t()}
   def adsense_metadata_dimensions_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -72,22 +73,23 @@ defmodule GoogleApi.AdSense.V14.Api.Metadata do
 
   ## Parameters
 
-  - connection (GoogleApi.AdSense.V14.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AdSense.V14.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdSense.V14.Model.Metadata{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdSense.V14.Model.Metadata{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec adsense_metadata_metrics_list(Tesla.Env.client(), keyword()) ::
+  @spec adsense_metadata_metrics_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.AdSense.V14.Model.Metadata.t()} | {:error, Tesla.Env.t()}
   def adsense_metadata_metrics_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

@@ -21,9 +21,9 @@ defmodule GoogleApi.AdSense.V14.Model.AdUnitContentAdsSettings do
 
   ## Attributes
 
-  - backupOption (GoogleApi.AdSense.V14.Model.AdUnitContentAdsSettingsBackupOption.t): The backup option to be used in instances where no ad is available. Defaults to `nil`.
-  - size (String.t): Size of this ad unit. Defaults to `nil`.
-  - type (String.t): Type of this ad unit. Defaults to `nil`.
+  *   `backupOption` (*type:* `GoogleApi.AdSense.V14.Model.AdUnitContentAdsSettingsBackupOption.t`, *default:* `nil`) - The backup option to be used in instances where no ad is available.
+  *   `size` (*type:* `String.t`, *default:* `nil`) - Size of this ad unit.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Type of this ad unit.
   """
 
   use GoogleApi.Gax.ModelBase

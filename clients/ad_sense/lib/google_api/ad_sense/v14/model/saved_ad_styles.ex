@@ -21,10 +21,10 @@ defmodule GoogleApi.AdSense.V14.Model.SavedAdStyles do
 
   ## Attributes
 
-  - etag (String.t): ETag of this response for caching purposes. Defaults to `nil`.
-  - items (list(GoogleApi.AdSense.V14.Model.SavedAdStyle.t)): The saved ad styles returned in this list response. Defaults to `nil`.
-  - kind (String.t): Kind of list this is, in this case adsense#savedAdStyles. Defaults to `adsense#savedAdStyles`.
-  - nextPageToken (String.t): Continuation token used to page through ad units. To retrieve the next page of results, set the next request's "pageToken" value to this. Defaults to `nil`.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of this response for caching purposes.
+  *   `items` (*type:* `list(GoogleApi.AdSense.V14.Model.SavedAdStyle.t)`, *default:* `nil`) - The saved ad styles returned in this list response.
+  *   `kind` (*type:* `String.t`, *default:* `adsense#savedAdStyles`) - Kind of list this is, in this case adsense#savedAdStyles.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Continuation token used to page through ad units. To retrieve the next page of results, set the next request's "pageToken" value to this.
   """
 
   use GoogleApi.Gax.ModelBase

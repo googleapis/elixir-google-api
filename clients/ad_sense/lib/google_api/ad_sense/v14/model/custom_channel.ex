@@ -21,11 +21,11 @@ defmodule GoogleApi.AdSense.V14.Model.CustomChannel do
 
   ## Attributes
 
-  - code (String.t): Code of this custom channel, not necessarily unique across ad clients. Defaults to `nil`.
-  - id (String.t): Unique identifier of this custom channel. This should be considered an opaque identifier; it is not safe to rely on it being in any particular format. Defaults to `nil`.
-  - kind (String.t): Kind of resource this is, in this case adsense#customChannel. Defaults to `adsense#customChannel`.
-  - name (String.t): Name of this custom channel. Defaults to `nil`.
-  - targetingInfo (GoogleApi.AdSense.V14.Model.CustomChannelTargetingInfo.t): The targeting information of this custom channel, if activated. Defaults to `nil`.
+  *   `code` (*type:* `String.t`, *default:* `nil`) - Code of this custom channel, not necessarily unique across ad clients.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Unique identifier of this custom channel. This should be considered an opaque identifier; it is not safe to rely on it being in any particular format.
+  *   `kind` (*type:* `String.t`, *default:* `adsense#customChannel`) - Kind of resource this is, in this case adsense#customChannel.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this custom channel.
+  *   `targetingInfo` (*type:* `GoogleApi.AdSense.V14.Model.CustomChannelTargetingInfo.t`, *default:* `nil`) - The targeting information of this custom channel, if activated.
   """
 
   use GoogleApi.Gax.ModelBase

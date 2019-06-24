@@ -21,9 +21,9 @@ defmodule GoogleApi.AdSense.V14.Model.SavedReport do
 
   ## Attributes
 
-  - id (String.t): Unique identifier of this saved report. Defaults to `nil`.
-  - kind (String.t): Kind of resource this is, in this case adsense#savedReport. Defaults to `adsense#savedReport`.
-  - name (String.t): This saved report's name. Defaults to `nil`.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Unique identifier of this saved report.
+  *   `kind` (*type:* `String.t`, *default:* `adsense#savedReport`) - Kind of resource this is, in this case adsense#savedReport.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - This saved report's name.
   """
 
   use GoogleApi.Gax.ModelBase

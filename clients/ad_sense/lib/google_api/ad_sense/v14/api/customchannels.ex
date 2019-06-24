@@ -28,25 +28,31 @@ defmodule GoogleApi.AdSense.V14.Api.Customchannels do
 
   ## Parameters
 
-  - connection (GoogleApi.AdSense.V14.Connection): Connection to server
-  - ad_client_id (String.t): Ad client which contains the custom channel.
-  - custom_channel_id (String.t): Custom channel to retrieve.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AdSense.V14.Connection.t`) - Connection to server
+  *   `ad_client_id` (*type:* `String.t`) - Ad client which contains the custom channel.
+  *   `custom_channel_id` (*type:* `String.t`) - Custom channel to retrieve.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdSense.V14.Model.CustomChannel{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdSense.V14.Model.CustomChannel{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec adsense_customchannels_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.AdSense.V14.Model.CustomChannel.t()} | {:error, Tesla.Env.t()}
+  @spec adsense_customchannels_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.AdSense.V14.Model.CustomChannel.t()} | {:error, Tesla.Env.t()}
   def adsense_customchannels_get(
         connection,
         ad_client_id,
@@ -83,25 +89,26 @@ defmodule GoogleApi.AdSense.V14.Api.Customchannels do
 
   ## Parameters
 
-  - connection (GoogleApi.AdSense.V14.Connection): Connection to server
-  - ad_client_id (String.t): Ad client for which to list custom channels.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :maxResults (integer()): The maximum number of custom channels to include in the response, used for paging.
-    - :pageToken (String.t): A continuation token, used to page through custom channels. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
+  *   `connection` (*type:* `GoogleApi.AdSense.V14.Connection.t`) - Connection to server
+  *   `ad_client_id` (*type:* `String.t`) - Ad client for which to list custom channels.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:maxResults` (*type:* `integer()`) - The maximum number of custom channels to include in the response, used for paging.
+      *   `:pageToken` (*type:* `String.t`) - A continuation token, used to page through custom channels. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdSense.V14.Model.CustomChannels{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdSense.V14.Model.CustomChannels{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec adsense_customchannels_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec adsense_customchannels_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AdSense.V14.Model.CustomChannels.t()} | {:error, Tesla.Env.t()}
   def adsense_customchannels_list(connection, ad_client_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -134,28 +141,34 @@ defmodule GoogleApi.AdSense.V14.Api.Customchannels do
 
   ## Parameters
 
-  - connection (GoogleApi.AdSense.V14.Connection): Connection to server
-  - ad_client_id (String.t): Ad client which contains the custom channel.
-  - custom_channel_id (String.t): Custom channel for which to list ad units.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :includeInactive (boolean()): Whether to include inactive ad units. Default: true.
-    - :maxResults (integer()): The maximum number of ad units to include in the response, used for paging.
-    - :pageToken (String.t): A continuation token, used to page through ad units. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
+  *   `connection` (*type:* `GoogleApi.AdSense.V14.Connection.t`) - Connection to server
+  *   `ad_client_id` (*type:* `String.t`) - Ad client which contains the custom channel.
+  *   `custom_channel_id` (*type:* `String.t`) - Custom channel for which to list ad units.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:includeInactive` (*type:* `boolean()`) - Whether to include inactive ad units. Default: true.
+      *   `:maxResults` (*type:* `integer()`) - The maximum number of ad units to include in the response, used for paging.
+      *   `:pageToken` (*type:* `String.t`) - A continuation token, used to page through ad units. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdSense.V14.Model.AdUnits{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdSense.V14.Model.AdUnits{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec adsense_customchannels_adunits_list(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.AdSense.V14.Model.AdUnits.t()} | {:error, Tesla.Env.t()}
+  @spec adsense_customchannels_adunits_list(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.AdSense.V14.Model.AdUnits.t()} | {:error, Tesla.Env.t()}
   def adsense_customchannels_adunits_list(
         connection,
         ad_client_id,

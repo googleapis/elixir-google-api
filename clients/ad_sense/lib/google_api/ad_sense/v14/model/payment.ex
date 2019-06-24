@@ -21,11 +21,11 @@ defmodule GoogleApi.AdSense.V14.Model.Payment do
 
   ## Attributes
 
-  - id (String.t): Unique identifier of this Payment. Defaults to `nil`.
-  - kind (String.t): Kind of resource this is, in this case adsense#payment. Defaults to `adsense#payment`.
-  - paymentAmount (String.t): The amount to be paid. Defaults to `nil`.
-  - paymentAmountCurrencyCode (String.t): The currency code for the amount to be paid. Defaults to `nil`.
-  - paymentDate (String.t): The date this payment was/will be credited to the user, or none if the payment threshold has not been met. Defaults to `nil`.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Unique identifier of this Payment.
+  *   `kind` (*type:* `String.t`, *default:* `adsense#payment`) - Kind of resource this is, in this case adsense#payment.
+  *   `paymentAmount` (*type:* `String.t`, *default:* `nil`) - The amount to be paid.
+  *   `paymentAmountCurrencyCode` (*type:* `String.t`, *default:* `nil`) - The currency code for the amount to be paid.
+  *   `paymentDate` (*type:* `String.t`, *default:* `nil`) - The date this payment was/will be credited to the user, or none if the payment threshold has not been met.
   """
 
   use GoogleApi.Gax.ModelBase

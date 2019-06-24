@@ -21,9 +21,9 @@ defmodule GoogleApi.AdSense.V14.Model.UrlChannel do
 
   ## Attributes
 
-  - id (String.t): Unique identifier of this URL channel. This should be considered an opaque identifier; it is not safe to rely on it being in any particular format. Defaults to `nil`.
-  - kind (String.t): Kind of resource this is, in this case adsense#urlChannel. Defaults to `adsense#urlChannel`.
-  - urlPattern (String.t): URL Pattern of this URL channel. Does not include "http://" or "https://". Example: www.example.com/home Defaults to `nil`.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Unique identifier of this URL channel. This should be considered an opaque identifier; it is not safe to rely on it being in any particular format.
+  *   `kind` (*type:* `String.t`, *default:* `adsense#urlChannel`) - Kind of resource this is, in this case adsense#urlChannel.
+  *   `urlPattern` (*type:* `String.t`, *default:* `nil`) - URL Pattern of this URL channel. Does not include "http://" or "https://". Example: www.example.com/home
   """
 
   use GoogleApi.Gax.ModelBase
