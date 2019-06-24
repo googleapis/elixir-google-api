@@ -21,8 +21,8 @@ defmodule GoogleApi.SafeBrowsing.V4.Model.UserInfo do
 
   ## Attributes
 
-  - regionCode (String.t): The UN M.49 region code associated with the user's location. Defaults to `nil`.
-  - userId (String.t): Unique user identifier defined by the client. Defaults to `nil`.
+  *   `regionCode` (*type:* `String.t`, *default:* `nil`) - The UN M.49 region code associated with the user's location.
+  *   `userId` (*type:* `String.t`, *default:* `nil`) - Unique user identifier defined by the client.
   """
 
   use GoogleApi.Gax.ModelBase

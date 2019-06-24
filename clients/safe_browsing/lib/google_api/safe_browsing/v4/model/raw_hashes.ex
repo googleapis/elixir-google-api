@@ -27,11 +27,11 @@ defmodule GoogleApi.SafeBrowsing.V4.Model.RawHashes do
 
   ## Attributes
 
-  - prefixSize (integer()): The number of bytes for each prefix encoded below.  This field can be
-  anywhere from 4 (shortest prefix) to 32 (full SHA256 hash). Defaults to `nil`.
-  - rawHashes (String.t): The hashes, in binary format, concatenated into one long string. Hashes are
-  sorted in lexicographic order. For JSON API users, hashes are
-  base64-encoded. Defaults to `nil`.
+  *   `prefixSize` (*type:* `integer()`, *default:* `nil`) - The number of bytes for each prefix encoded below.  This field can be
+      anywhere from 4 (shortest prefix) to 32 (full SHA256 hash).
+  *   `rawHashes` (*type:* `String.t`, *default:* `nil`) - The hashes, in binary format, concatenated into one long string. Hashes are
+      sorted in lexicographic order. For JSON API users, hashes are
+      base64-encoded.
   """
 
   use GoogleApi.Gax.ModelBase

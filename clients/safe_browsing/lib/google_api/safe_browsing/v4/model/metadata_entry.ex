@@ -21,8 +21,8 @@ defmodule GoogleApi.SafeBrowsing.V4.Model.MetadataEntry do
 
   ## Attributes
 
-  - key (String.t): The metadata entry key. For JSON requests, the key is base64-encoded. Defaults to `nil`.
-  - value (String.t): The metadata entry value. For JSON requests, the value is base64-encoded. Defaults to `nil`.
+  *   `key` (*type:* `String.t`, *default:* `nil`) - The metadata entry key. For JSON requests, the key is base64-encoded.
+  *   `value` (*type:* `String.t`, *default:* `nil`) - The metadata entry value. For JSON requests, the value is base64-encoded.
   """
 
   use GoogleApi.Gax.ModelBase

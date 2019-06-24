@@ -21,10 +21,10 @@ defmodule GoogleApi.SafeBrowsing.V4.Model.ThreatSource do
 
   ## Attributes
 
-  - referrer (String.t): Referrer of the resource. Only set if the referrer is available. Defaults to `nil`.
-  - remoteIp (String.t): The remote IP of the resource in ASCII format. Either IPv4 or IPv6. Defaults to `nil`.
-  - type (String.t): The type of source reported. Defaults to `nil`.
-  - url (String.t): The URL of the resource. Defaults to `nil`.
+  *   `referrer` (*type:* `String.t`, *default:* `nil`) - Referrer of the resource. Only set if the referrer is available.
+  *   `remoteIp` (*type:* `String.t`, *default:* `nil`) - The remote IP of the resource in ASCII format. Either IPv4 or IPv6.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of source reported.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - The URL of the resource.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -22,10 +22,10 @@ defmodule GoogleApi.SafeBrowsing.V4.Model.ThreatInfo do
 
   ## Attributes
 
-  - platformTypes (list(String.t)): The platform types to be checked. Defaults to `nil`.
-  - threatEntries (list(GoogleApi.SafeBrowsing.V4.Model.ThreatEntry.t)): The threat entries to be checked. Defaults to `nil`.
-  - threatEntryTypes (list(String.t)): The entry types to be checked. Defaults to `nil`.
-  - threatTypes (list(String.t)): The threat types to be checked. Defaults to `nil`.
+  *   `platformTypes` (*type:* `list(String.t)`, *default:* `nil`) - The platform types to be checked.
+  *   `threatEntries` (*type:* `list(GoogleApi.SafeBrowsing.V4.Model.ThreatEntry.t)`, *default:* `nil`) - The threat entries to be checked.
+  *   `threatEntryTypes` (*type:* `list(String.t)`, *default:* `nil`) - The entry types to be checked.
+  *   `threatTypes` (*type:* `list(String.t)`, *default:* `nil`) - The threat types to be checked.
   """
 
   use GoogleApi.Gax.ModelBase

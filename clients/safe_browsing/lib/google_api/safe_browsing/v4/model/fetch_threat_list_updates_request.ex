@@ -24,8 +24,8 @@ defmodule GoogleApi.SafeBrowsing.V4.Model.FetchThreatListUpdatesRequest do
 
   ## Attributes
 
-  - client (GoogleApi.SafeBrowsing.V4.Model.ClientInfo.t): The client metadata. Defaults to `nil`.
-  - listUpdateRequests (list(GoogleApi.SafeBrowsing.V4.Model.ListUpdateRequest.t)): The requested threat list updates. Defaults to `nil`.
+  *   `client` (*type:* `GoogleApi.SafeBrowsing.V4.Model.ClientInfo.t`, *default:* `nil`) - The client metadata.
+  *   `listUpdateRequests` (*type:* `list(GoogleApi.SafeBrowsing.V4.Model.ListUpdateRequest.t)`, *default:* `nil`) - The requested threat list updates.
   """
 
   use GoogleApi.Gax.ModelBase

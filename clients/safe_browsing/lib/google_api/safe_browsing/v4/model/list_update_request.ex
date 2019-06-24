@@ -21,12 +21,12 @@ defmodule GoogleApi.SafeBrowsing.V4.Model.ListUpdateRequest do
 
   ## Attributes
 
-  - constraints (GoogleApi.SafeBrowsing.V4.Model.Constraints.t): The constraints associated with this request. Defaults to `nil`.
-  - platformType (String.t): The type of platform at risk by entries present in the list. Defaults to `nil`.
-  - state (String.t): The current state of the client for the requested list (the encrypted
-  client state that was received from the last successful list update). Defaults to `nil`.
-  - threatEntryType (String.t): The types of entries present in the list. Defaults to `nil`.
-  - threatType (String.t): The type of threat posed by entries present in the list. Defaults to `nil`.
+  *   `constraints` (*type:* `GoogleApi.SafeBrowsing.V4.Model.Constraints.t`, *default:* `nil`) - The constraints associated with this request.
+  *   `platformType` (*type:* `String.t`, *default:* `nil`) - The type of platform at risk by entries present in the list.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - The current state of the client for the requested list (the encrypted
+      client state that was received from the last successful list update).
+  *   `threatEntryType` (*type:* `String.t`, *default:* `nil`) - The types of entries present in the list.
+  *   `threatType` (*type:* `String.t`, *default:* `nil`) - The type of threat posed by entries present in the list.
   """
 
   use GoogleApi.Gax.ModelBase

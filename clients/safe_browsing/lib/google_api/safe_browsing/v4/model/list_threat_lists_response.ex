@@ -21,7 +21,7 @@ defmodule GoogleApi.SafeBrowsing.V4.Model.ListThreatListsResponse do
 
   ## Attributes
 
-  - threatLists (list(GoogleApi.SafeBrowsing.V4.Model.ThreatListDescriptor.t)): The lists available for download by the client. Defaults to `nil`.
+  *   `threatLists` (*type:* `list(GoogleApi.SafeBrowsing.V4.Model.ThreatListDescriptor.t)`, *default:* `nil`) - The lists available for download by the client.
   """
 
   use GoogleApi.Gax.ModelBase

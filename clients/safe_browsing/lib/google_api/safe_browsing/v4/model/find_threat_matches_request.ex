@@ -21,8 +21,8 @@ defmodule GoogleApi.SafeBrowsing.V4.Model.FindThreatMatchesRequest do
 
   ## Attributes
 
-  - client (GoogleApi.SafeBrowsing.V4.Model.ClientInfo.t): The client metadata. Defaults to `nil`.
-  - threatInfo (GoogleApi.SafeBrowsing.V4.Model.ThreatInfo.t): The lists and entries to be checked for matches. Defaults to `nil`.
+  *   `client` (*type:* `GoogleApi.SafeBrowsing.V4.Model.ClientInfo.t`, *default:* `nil`) - The client metadata.
+  *   `threatInfo` (*type:* `GoogleApi.SafeBrowsing.V4.Model.ThreatInfo.t`, *default:* `nil`) - The lists and entries to be checked for matches.
   """
 
   use GoogleApi.Gax.ModelBase

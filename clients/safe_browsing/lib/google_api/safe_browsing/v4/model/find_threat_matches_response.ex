@@ -21,7 +21,7 @@ defmodule GoogleApi.SafeBrowsing.V4.Model.FindThreatMatchesResponse do
 
   ## Attributes
 
-  - matches (list(GoogleApi.SafeBrowsing.V4.Model.ThreatMatch.t)): The threat list matches. Defaults to `nil`.
+  *   `matches` (*type:* `list(GoogleApi.SafeBrowsing.V4.Model.ThreatMatch.t)`, *default:* `nil`) - The threat list matches.
   """
 
   use GoogleApi.Gax.ModelBase
