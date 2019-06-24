@@ -22,10 +22,10 @@ defmodule GoogleApi.KnowledgeGraphSearch.V1.Model.SearchResponse do
 
   ## Attributes
 
-  - @context (any()): The local context applicable for the response. See more details at
-  http://www.w3.org/TR/json-ld/#context-definitions. Defaults to `nil`.
-  - @type (any()): The schema type of top-level JSON-LD object, e.g. ItemList. Defaults to `nil`.
-  - itemListElement (list(any())): The item list of search results. Defaults to `nil`.
+  *   `@context` (*type:* `any()`, *default:* `nil`) - The local context applicable for the response. See more details at
+      http://www.w3.org/TR/json-ld/#context-definitions.
+  *   `@type` (*type:* `any()`, *default:* `nil`) - The schema type of top-level JSON-LD object, e.g. ItemList.
+  *   `itemListElement` (*type:* `list(any())`, *default:* `nil`) - The item list of search results.
   """
 
   use GoogleApi.Gax.ModelBase

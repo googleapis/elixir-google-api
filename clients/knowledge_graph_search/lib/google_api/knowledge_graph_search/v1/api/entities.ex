@@ -30,38 +30,39 @@ defmodule GoogleApi.KnowledgeGraphSearch.V1.Api.Entities do
 
   ## Parameters
 
-  - connection (GoogleApi.KnowledgeGraphSearch.V1.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :ids (list(String.t)): The list of entity id to be used for search instead of query string.
-  To specify multiple ids in the HTTP request, repeat the parameter in the
-  URL as in ...?ids=A&ids=B
-    - :indent (boolean()): Enables indenting of json results.
-    - :languages (list(String.t)): The list of language codes (defined in ISO 693) to run the query with,
-  e.g. 'en'.
-    - :limit (integer()): Limits the number of entities to be returned.
-    - :prefix (boolean()): Enables prefix match against names and aliases of entities
-    - :query (String.t): The literal query string for search.
-    - :types (list(String.t)): Restricts returned entities with these types, e.g. Person
-  (as defined in http://schema.org/Person). If multiple types are specified,
-  returned entities will contain one or more of these types.
+  *   `connection` (*type:* `GoogleApi.KnowledgeGraphSearch.V1.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:ids` (*type:* `list(String.t)`) - The list of entity id to be used for search instead of query string.
+          To specify multiple ids in the HTTP request, repeat the parameter in the
+          URL as in ...?ids=A&ids=B
+      *   `:indent` (*type:* `boolean()`) - Enables indenting of json results.
+      *   `:languages` (*type:* `list(String.t)`) - The list of language codes (defined in ISO 693) to run the query with,
+          e.g. 'en'.
+      *   `:limit` (*type:* `integer()`) - Limits the number of entities to be returned.
+      *   `:prefix` (*type:* `boolean()`) - Enables prefix match against names and aliases of entities
+      *   `:query` (*type:* `String.t`) - The literal query string for search.
+      *   `:types` (*type:* `list(String.t)`) - Restricts returned entities with these types, e.g. Person
+          (as defined in http://schema.org/Person). If multiple types are specified,
+          returned entities will contain one or more of these types.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.KnowledgeGraphSearch.V1.Model.SearchResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.KnowledgeGraphSearch.V1.Model.SearchResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec kgsearch_entities_search(Tesla.Env.client(), keyword()) ::
+  @spec kgsearch_entities_search(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.KnowledgeGraphSearch.V1.Model.SearchResponse.t()}
           | {:error, Tesla.Env.t()}
   def kgsearch_entities_search(connection, optional_params \\ [], opts \\ []) do
