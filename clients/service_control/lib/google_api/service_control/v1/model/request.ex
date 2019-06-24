@@ -23,30 +23,30 @@ defmodule GoogleApi.ServiceControl.V1.Model.Request do
 
   ## Attributes
 
-  - auth (GoogleApi.ServiceControl.V1.Model.Auth.t): The request authentication. May be absent for unauthenticated requests.
-  Derived from the HTTP request `Authorization` header or equivalent. Defaults to `nil`.
-  - fragment (String.t): The HTTP URL fragment. No URL decoding is performed. Defaults to `nil`.
-  - headers (map()): The HTTP request headers. If multiple headers share the same key, they
-  must be merged according to the HTTP spec. All header keys must be
-  lowercased, because HTTP header keys are case-insensitive. Defaults to `nil`.
-  - host (String.t): The HTTP request `Host` header value. Defaults to `nil`.
-  - id (String.t): The unique ID for a request, which can be propagated to downstream
-  systems. The ID should have low probability of collision
-  within a single day for a specific service. Defaults to `nil`.
-  - method (String.t): The HTTP request method, such as `GET`, `POST`. Defaults to `nil`.
-  - path (String.t): The HTTP URL path. Defaults to `nil`.
-  - protocol (String.t): The network protocol used with the request, such as "http/1.1",
-  "spdy/3", "h2", "h2c", "webrtc", "tcp", "udp", "quic". See
-  https://www.iana.org/assignments/tls-extensiontype-values/tls-extensiontype-values.xhtml#alpn-protocol-ids
-  for details. Defaults to `nil`.
-  - query (String.t): The HTTP URL query in the format of `name1=value`&name2=value2`, as it
-  appears in the first line of the HTTP request. No decoding is performed. Defaults to `nil`.
-  - reason (String.t): A special parameter for request reason. It is used by security systems
-  to associate auditing information with a request. Defaults to `nil`.
-  - scheme (String.t): The HTTP URL scheme, such as `http` and `https`. Defaults to `nil`.
-  - size (String.t): The HTTP request size in bytes. If unknown, it must be -1. Defaults to `nil`.
-  - time (DateTime.t): The timestamp when the `destination` service receives the first byte of
-  the request. Defaults to `nil`.
+  *   `auth` (*type:* `GoogleApi.ServiceControl.V1.Model.Auth.t`, *default:* `nil`) - The request authentication. May be absent for unauthenticated requests.
+      Derived from the HTTP request `Authorization` header or equivalent.
+  *   `fragment` (*type:* `String.t`, *default:* `nil`) - The HTTP URL fragment. No URL decoding is performed.
+  *   `headers` (*type:* `map()`, *default:* `nil`) - The HTTP request headers. If multiple headers share the same key, they
+      must be merged according to the HTTP spec. All header keys must be
+      lowercased, because HTTP header keys are case-insensitive.
+  *   `host` (*type:* `String.t`, *default:* `nil`) - The HTTP request `Host` header value.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The unique ID for a request, which can be propagated to downstream
+      systems. The ID should have low probability of collision
+      within a single day for a specific service.
+  *   `method` (*type:* `String.t`, *default:* `nil`) - The HTTP request method, such as `GET`, `POST`.
+  *   `path` (*type:* `String.t`, *default:* `nil`) - The HTTP URL path.
+  *   `protocol` (*type:* `String.t`, *default:* `nil`) - The network protocol used with the request, such as "http/1.1",
+      "spdy/3", "h2", "h2c", "webrtc", "tcp", "udp", "quic". See
+      https://www.iana.org/assignments/tls-extensiontype-values/tls-extensiontype-values.xhtml#alpn-protocol-ids
+      for details.
+  *   `query` (*type:* `String.t`, *default:* `nil`) - The HTTP URL query in the format of `name1=value`&name2=value2`, as it
+      appears in the first line of the HTTP request. No decoding is performed.
+  *   `reason` (*type:* `String.t`, *default:* `nil`) - A special parameter for request reason. It is used by security systems
+      to associate auditing information with a request.
+  *   `scheme` (*type:* `String.t`, *default:* `nil`) - The HTTP URL scheme, such as `http` and `https`.
+  *   `size` (*type:* `String.t`, *default:* `nil`) - The HTTP request size in bytes. If unknown, it must be -1.
+  *   `time` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp when the `destination` service receives the first byte of
+      the request.
   """
 
   use GoogleApi.Gax.ModelBase

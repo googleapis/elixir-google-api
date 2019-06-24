@@ -24,18 +24,18 @@ defmodule GoogleApi.ServiceControl.V1.Model.Peer do
 
   ## Attributes
 
-  - ip (String.t): The IP address of the peer. Defaults to `nil`.
-  - labels (map()): The labels associated with the peer. Defaults to `nil`.
-  - port (String.t): The network port of the peer. Defaults to `nil`.
-  - principal (String.t): The identity of this peer. Similar to `Request.auth.principal`, but
-  relative to the peer instead of the request. For example, the
-  idenity associated with a load balancer that forwared the request. Defaults to `nil`.
-  - regionCode (String.t): The CLDR country/region code associated with the above IP address.
-  If the IP address is private, the `region_code` should reflect the
-  physical location where this peer is running. Defaults to `nil`.
-  - service (String.t): The canonical service name of the peer.
+  *   `ip` (*type:* `String.t`, *default:* `nil`) - The IP address of the peer.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - The labels associated with the peer.
+  *   `port` (*type:* `String.t`, *default:* `nil`) - The network port of the peer.
+  *   `principal` (*type:* `String.t`, *default:* `nil`) - The identity of this peer. Similar to `Request.auth.principal`, but
+      relative to the peer instead of the request. For example, the
+      idenity associated with a load balancer that forwared the request.
+  *   `regionCode` (*type:* `String.t`, *default:* `nil`) - The CLDR country/region code associated with the above IP address.
+      If the IP address is private, the `region_code` should reflect the
+      physical location where this peer is running.
+  *   `service` (*type:* `String.t`, *default:* `nil`) - The canonical service name of the peer.
 
-  NOTE: different systems may have different service naming schemes. Defaults to `nil`.
+      NOTE: different systems may have different service naming schemes.
   """
 
   use GoogleApi.Gax.ModelBase

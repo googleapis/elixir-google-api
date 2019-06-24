@@ -21,21 +21,21 @@ defmodule GoogleApi.ServiceControl.V1.Model.MetricValue do
 
   ## Attributes
 
-  - boolValue (boolean()): A boolean value. Defaults to `nil`.
-  - distributionValue (GoogleApi.ServiceControl.V1.Model.Distribution.t): A distribution value. Defaults to `nil`.
-  - doubleValue (float()): A double precision floating point value. Defaults to `nil`.
-  - endTime (DateTime.t): The end of the time period over which this metric value's measurement
-  applies. Defaults to `nil`.
-  - int64Value (String.t): A signed 64-bit integer value. Defaults to `nil`.
-  - labels (map()): The labels describing the metric value.
-  See comments on google.api.servicecontrol.v1.Operation.labels for
-  the overriding relationship. Defaults to `nil`.
-  - moneyValue (GoogleApi.ServiceControl.V1.Model.Money.t): A money value. Defaults to `nil`.
-  - startTime (DateTime.t): The start of the time period over which this metric value's measurement
-  applies. The time period has different semantics for different metric
-  types (cumulative, delta, and gauge). See the metric definition
-  documentation in the service configuration for details. Defaults to `nil`.
-  - stringValue (String.t): A text string value. Defaults to `nil`.
+  *   `boolValue` (*type:* `boolean()`, *default:* `nil`) - A boolean value.
+  *   `distributionValue` (*type:* `GoogleApi.ServiceControl.V1.Model.Distribution.t`, *default:* `nil`) - A distribution value.
+  *   `doubleValue` (*type:* `float()`, *default:* `nil`) - A double precision floating point value.
+  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The end of the time period over which this metric value's measurement
+      applies.
+  *   `int64Value` (*type:* `String.t`, *default:* `nil`) - A signed 64-bit integer value.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - The labels describing the metric value.
+      See comments on google.api.servicecontrol.v1.Operation.labels for
+      the overriding relationship.
+  *   `moneyValue` (*type:* `GoogleApi.ServiceControl.V1.Model.Money.t`, *default:* `nil`) - A money value.
+  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The start of the time period over which this metric value's measurement
+      applies. The time period has different semantics for different metric
+      types (cumulative, delta, and gauge). See the metric definition
+      documentation in the service configuration for details.
+  *   `stringValue` (*type:* `String.t`, *default:* `nil`) - A text string value.
   """
 
   use GoogleApi.Gax.ModelBase

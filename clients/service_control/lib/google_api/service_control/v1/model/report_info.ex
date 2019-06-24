@@ -21,8 +21,8 @@ defmodule GoogleApi.ServiceControl.V1.Model.ReportInfo do
 
   ## Attributes
 
-  - operationId (String.t): The Operation.operation_id value from the request. Defaults to `nil`.
-  - quotaInfo (GoogleApi.ServiceControl.V1.Model.QuotaInfo.t): Quota usage info when processing the `Operation`. Defaults to `nil`.
+  *   `operationId` (*type:* `String.t`, *default:* `nil`) - The Operation.operation_id value from the request.
+  *   `quotaInfo` (*type:* `GoogleApi.ServiceControl.V1.Model.QuotaInfo.t`, *default:* `nil`) - Quota usage info when processing the `Operation`.
   """
 
   use GoogleApi.Gax.ModelBase

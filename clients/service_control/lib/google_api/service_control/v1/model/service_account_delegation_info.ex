@@ -21,8 +21,8 @@ defmodule GoogleApi.ServiceControl.V1.Model.ServiceAccountDelegationInfo do
 
   ## Attributes
 
-  - firstPartyPrincipal (GoogleApi.ServiceControl.V1.Model.FirstPartyPrincipal.t): First party (Google) identity as the real authority. Defaults to `nil`.
-  - thirdPartyPrincipal (GoogleApi.ServiceControl.V1.Model.ThirdPartyPrincipal.t): Third party identity as the real authority. Defaults to `nil`.
+  *   `firstPartyPrincipal` (*type:* `GoogleApi.ServiceControl.V1.Model.FirstPartyPrincipal.t`, *default:* `nil`) - First party (Google) identity as the real authority.
+  *   `thirdPartyPrincipal` (*type:* `GoogleApi.ServiceControl.V1.Model.ThirdPartyPrincipal.t`, *default:* `nil`) - Third party identity as the real authority.
   """
 
   use GoogleApi.Gax.ModelBase

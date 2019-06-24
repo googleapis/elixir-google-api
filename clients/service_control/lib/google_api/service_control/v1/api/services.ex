@@ -38,31 +38,37 @@ defmodule GoogleApi.ServiceControl.V1.Api.Services do
 
   ## Parameters
 
-  - connection (GoogleApi.ServiceControl.V1.Connection): Connection to server
-  - service_name (String.t): Name of the service as specified in the service configuration. For example,
-  `"pubsub.googleapis.com"`.
+  *   `connection` (*type:* `GoogleApi.ServiceControl.V1.Connection.t`) - Connection to server
+  *   `service_name` (*type:* `String.t`) - Name of the service as specified in the service configuration. For example,
+      `"pubsub.googleapis.com"`.
 
-  See google.api.Service for the definition of a service name.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.ServiceControl.V1.Model.AllocateQuotaRequest.t): 
+      See google.api.Service for the definition of a service name.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.ServiceControl.V1.Model.AllocateQuotaRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.ServiceControl.V1.Model.AllocateQuotaResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.ServiceControl.V1.Model.AllocateQuotaResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec servicecontrol_services_allocate_quota(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec servicecontrol_services_allocate_quota(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.ServiceControl.V1.Model.AllocateQuotaResponse.t()}
           | {:error, Tesla.Env.t()}
   def servicecontrol_services_allocate_quota(
@@ -121,33 +127,34 @@ defmodule GoogleApi.ServiceControl.V1.Api.Services do
 
   ## Parameters
 
-  - connection (GoogleApi.ServiceControl.V1.Connection): Connection to server
-  - service_name (String.t): The service name as specified in its service configuration. For example,
-  `"pubsub.googleapis.com"`.
+  *   `connection` (*type:* `GoogleApi.ServiceControl.V1.Connection.t`) - Connection to server
+  *   `service_name` (*type:* `String.t`) - The service name as specified in its service configuration. For example,
+      `"pubsub.googleapis.com"`.
 
-  See
-  [google.api.Service](https://cloud.google.com/service-management/reference/rpc/google.api#google.api.Service)
-  for the definition of a service name.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.ServiceControl.V1.Model.CheckRequest.t): 
+      See
+      [google.api.Service](https://cloud.google.com/service-management/reference/rpc/google.api#google.api.Service)
+      for the definition of a service name.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.ServiceControl.V1.Model.CheckRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.ServiceControl.V1.Model.CheckResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.ServiceControl.V1.Model.CheckResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec servicecontrol_services_check(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec servicecontrol_services_check(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.ServiceControl.V1.Model.CheckResponse.t()} | {:error, Tesla.Env.t()}
   def servicecontrol_services_check(connection, service_name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -196,33 +203,34 @@ defmodule GoogleApi.ServiceControl.V1.Api.Services do
 
   ## Parameters
 
-  - connection (GoogleApi.ServiceControl.V1.Connection): Connection to server
-  - service_name (String.t): The service name as specified in its service configuration. For example,
-  `"pubsub.googleapis.com"`.
+  *   `connection` (*type:* `GoogleApi.ServiceControl.V1.Connection.t`) - Connection to server
+  *   `service_name` (*type:* `String.t`) - The service name as specified in its service configuration. For example,
+      `"pubsub.googleapis.com"`.
 
-  See
-  [google.api.Service](https://cloud.google.com/service-management/reference/rpc/google.api#google.api.Service)
-  for the definition of a service name.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.ServiceControl.V1.Model.ReportRequest.t): 
+      See
+      [google.api.Service](https://cloud.google.com/service-management/reference/rpc/google.api#google.api.Service)
+      for the definition of a service name.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.ServiceControl.V1.Model.ReportRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.ServiceControl.V1.Model.ReportResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.ServiceControl.V1.Model.ReportResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec servicecontrol_services_report(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec servicecontrol_services_report(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.ServiceControl.V1.Model.ReportResponse.t()} | {:error, Tesla.Env.t()}
   def servicecontrol_services_report(connection, service_name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

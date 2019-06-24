@@ -21,21 +21,21 @@ defmodule GoogleApi.ServiceControl.V1.Model.ReportRequest do
 
   ## Attributes
 
-  - operations (list(GoogleApi.ServiceControl.V1.Model.Operation.t)): Operations to be reported.
+  *   `operations` (*type:* `list(GoogleApi.ServiceControl.V1.Model.Operation.t)`, *default:* `nil`) - Operations to be reported.
 
-  Typically the service should report one operation per request.
-  Putting multiple operations into a single request is allowed, but should
-  be used only when multiple operations are natually available at the time
-  of the report.
+      Typically the service should report one operation per request.
+      Putting multiple operations into a single request is allowed, but should
+      be used only when multiple operations are natually available at the time
+      of the report.
 
-  If multiple operations are in a single request, the total request size
-  should be no larger than 1MB. See ReportResponse.report_errors for
-  partial failure behavior. Defaults to `nil`.
-  - serviceConfigId (String.t): Specifies which version of service config should be used to process the
-  request.
+      If multiple operations are in a single request, the total request size
+      should be no larger than 1MB. See ReportResponse.report_errors for
+      partial failure behavior.
+  *   `serviceConfigId` (*type:* `String.t`, *default:* `nil`) - Specifies which version of service config should be used to process the
+      request.
 
-  If unspecified or no matching version can be found, the
-  latest one will be used. Defaults to `nil`.
+      If unspecified or no matching version can be found, the
+      latest one will be used.
   """
 
   use GoogleApi.Gax.ModelBase

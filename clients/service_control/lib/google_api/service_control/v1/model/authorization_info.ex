@@ -21,18 +21,18 @@ defmodule GoogleApi.ServiceControl.V1.Model.AuthorizationInfo do
 
   ## Attributes
 
-  - granted (boolean()): Whether or not authorization for `resource` and `permission`
-  was granted. Defaults to `nil`.
-  - permission (String.t): The required IAM permission. Defaults to `nil`.
-  - resource (String.t): The resource being accessed, as a REST-style string. For example:
+  *   `granted` (*type:* `boolean()`, *default:* `nil`) - Whether or not authorization for `resource` and `permission`
+      was granted.
+  *   `permission` (*type:* `String.t`, *default:* `nil`) - The required IAM permission.
+  *   `resource` (*type:* `String.t`, *default:* `nil`) - The resource being accessed, as a REST-style string. For example:
 
-    bigquery.googleapis.com/projects/PROJECTID/datasets/DATASETID Defaults to `nil`.
-  - resourceAttributes (GoogleApi.ServiceControl.V1.Model.Resource.t): Resource attributes used in IAM condition evaluation. This field contains
-  resource attributes like resource type and resource name.
+          bigquery.googleapis.com/projects/PROJECTID/datasets/DATASETID
+  *   `resourceAttributes` (*type:* `GoogleApi.ServiceControl.V1.Model.Resource.t`, *default:* `nil`) - Resource attributes used in IAM condition evaluation. This field contains
+      resource attributes like resource type and resource name.
 
-  To get the whole view of the attributes used in IAM
-  condition evaluation, the user must also look into
-  `AuditLog.request_metadata.request_attributes`. Defaults to `nil`.
+      To get the whole view of the attributes used in IAM
+      condition evaluation, the user must also look into
+      `AuditLog.request_metadata.request_attributes`.
   """
 
   use GoogleApi.Gax.ModelBase

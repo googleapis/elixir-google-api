@@ -21,16 +21,16 @@ defmodule GoogleApi.ServiceControl.V1.Model.ConsumerInfo do
 
   ## Attributes
 
-  - consumerNumber (String.t): The consumer identity number, can be Google cloud project number, folder
-  number or organization number e.g. 1234567890. A value of 0 indicates no
-  consumer number is found. Defaults to `nil`.
-  - projectNumber (String.t): The Google cloud project number, e.g. 1234567890. A value of 0 indicates
-  no project number is found.
+  *   `consumerNumber` (*type:* `String.t`, *default:* `nil`) - The consumer identity number, can be Google cloud project number, folder
+      number or organization number e.g. 1234567890. A value of 0 indicates no
+      consumer number is found.
+  *   `projectNumber` (*type:* `String.t`, *default:* `nil`) - The Google cloud project number, e.g. 1234567890. A value of 0 indicates
+      no project number is found.
 
-  NOTE: This field is deprecated after Chemist support flexible consumer
-  id. New code should not depend on this field anymore. Defaults to `nil`.
-  - type (String.t): The type of the consumer which should have been defined in
-  [Google Resource Manager](https://cloud.google.com/resource-manager/). Defaults to `nil`.
+      NOTE: This field is deprecated after Chemist support flexible consumer
+      id. New code should not depend on this field anymore.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the consumer which should have been defined in
+      [Google Resource Manager](https://cloud.google.com/resource-manager/).
   """
 
   use GoogleApi.Gax.ModelBase

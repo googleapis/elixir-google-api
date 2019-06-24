@@ -21,16 +21,16 @@ defmodule GoogleApi.ServiceControl.V1.Model.CheckRequest do
 
   ## Attributes
 
-  - operation (GoogleApi.ServiceControl.V1.Model.Operation.t): The operation to be checked. Defaults to `nil`.
-  - requestProjectSettings (boolean()): Requests the project settings to be returned as part of the check response. Defaults to `nil`.
-  - serviceConfigId (String.t): Specifies which version of service configuration should be used to process
-  the request.
+  *   `operation` (*type:* `GoogleApi.ServiceControl.V1.Model.Operation.t`, *default:* `nil`) - The operation to be checked.
+  *   `requestProjectSettings` (*type:* `boolean()`, *default:* `nil`) - Requests the project settings to be returned as part of the check response.
+  *   `serviceConfigId` (*type:* `String.t`, *default:* `nil`) - Specifies which version of service configuration should be used to process
+      the request.
 
-  If unspecified or no matching version can be found, the
-  latest one will be used. Defaults to `nil`.
-  - skipActivationCheck (boolean()): Indicates if service activation check should be skipped for this request.
-  Default behavior is to perform the check and apply relevant quota.
-  WARNING: Setting this flag to "true" will disable quota enforcement. Defaults to `nil`.
+      If unspecified or no matching version can be found, the
+      latest one will be used.
+  *   `skipActivationCheck` (*type:* `boolean()`, *default:* `nil`) - Indicates if service activation check should be skipped for this request.
+      Default behavior is to perform the check and apply relevant quota.
+      WARNING: Setting this flag to "true" will disable quota enforcement.
   """
 
   use GoogleApi.Gax.ModelBase

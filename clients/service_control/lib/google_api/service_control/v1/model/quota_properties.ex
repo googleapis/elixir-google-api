@@ -21,7 +21,7 @@ defmodule GoogleApi.ServiceControl.V1.Model.QuotaProperties do
 
   ## Attributes
 
-  - quotaMode (String.t): Quota mode for this operation. Defaults to `nil`.
+  *   `quotaMode` (*type:* `String.t`, *default:* `nil`) - Quota mode for this operation.
   """
 
   use GoogleApi.Gax.ModelBase
