@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudKMS.V1.Model.AsymmetricDecryptResponse do
 
   ## Attributes
 
-  - plaintext (String.t): The decrypted data originally encrypted with the matching public key. Defaults to `nil`.
+  *   `plaintext` (*type:* `String.t`, *default:* `nil`) - The decrypted data originally encrypted with the matching public key.
   """
 
   use GoogleApi.Gax.ModelBase

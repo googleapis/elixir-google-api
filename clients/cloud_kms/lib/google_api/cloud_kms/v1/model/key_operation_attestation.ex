@@ -23,9 +23,9 @@ defmodule GoogleApi.CloudKMS.V1.Model.KeyOperationAttestation do
 
   ## Attributes
 
-  - content (String.t): Output only. The attestation data provided by the HSM when the key
-  operation was performed. Defaults to `nil`.
-  - format (String.t): Output only. The format of the attestation data. Defaults to `nil`.
+  *   `content` (*type:* `String.t`, *default:* `nil`) - Output only. The attestation data provided by the HSM when the key
+      operation was performed.
+  *   `format` (*type:* `String.t`, *default:* `nil`) - Output only. The format of the attestation data.
   """
 
   use GoogleApi.Gax.ModelBase

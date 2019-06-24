@@ -21,23 +21,23 @@ defmodule GoogleApi.CloudKMS.V1.Model.EncryptRequest do
 
   ## Attributes
 
-  - additionalAuthenticatedData (String.t): Optional data that, if specified, must also be provided during decryption
-  through DecryptRequest.additional_authenticated_data.
+  *   `additionalAuthenticatedData` (*type:* `String.t`, *default:* `nil`) - Optional data that, if specified, must also be provided during decryption
+      through DecryptRequest.additional_authenticated_data.
 
-  The maximum size depends on the key version's
-  protection_level. For
-  SOFTWARE keys, the AAD must be no larger than
-  64KiB. For HSM keys, the combined length of the
-  plaintext and additional_authenticated_data fields must be no larger than
-  8KiB. Defaults to `nil`.
-  - plaintext (String.t): Required. The data to encrypt. Must be no larger than 64KiB.
+      The maximum size depends on the key version's
+      protection_level. For
+      SOFTWARE keys, the AAD must be no larger than
+      64KiB. For HSM keys, the combined length of the
+      plaintext and additional_authenticated_data fields must be no larger than
+      8KiB.
+  *   `plaintext` (*type:* `String.t`, *default:* `nil`) - Required. The data to encrypt. Must be no larger than 64KiB.
 
-  The maximum size depends on the key version's
-  protection_level. For
-  SOFTWARE keys, the plaintext must be no larger
-  than 64KiB. For HSM keys, the combined length of the
-  plaintext and additional_authenticated_data fields must be no larger than
-  8KiB. Defaults to `nil`.
+      The maximum size depends on the key version's
+      protection_level. For
+      SOFTWARE keys, the plaintext must be no larger
+      than 64KiB. For HSM keys, the combined length of the
+      plaintext and additional_authenticated_data fields must be no larger than
+      8KiB.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,10 +21,10 @@ defmodule GoogleApi.CloudKMS.V1.Model.ListKeyRingsResponse do
 
   ## Attributes
 
-  - keyRings (list(GoogleApi.CloudKMS.V1.Model.KeyRing.t)): The list of KeyRings. Defaults to `nil`.
-  - nextPageToken (String.t): A token to retrieve next page of results. Pass this value in
-  ListKeyRingsRequest.page_token to retrieve the next page of results. Defaults to `nil`.
-  - totalSize (integer()): The total number of KeyRings that matched the query. Defaults to `nil`.
+  *   `keyRings` (*type:* `list(GoogleApi.CloudKMS.V1.Model.KeyRing.t)`, *default:* `nil`) - The list of KeyRings.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve next page of results. Pass this value in
+      ListKeyRingsRequest.page_token to retrieve the next page of results.
+  *   `totalSize` (*type:* `integer()`, *default:* `nil`) - The total number of KeyRings that matched the query.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -28,29 +28,35 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudKMS.V1.Connection): Connection to server
-  - projects_id (String.t): Part of `name`. Resource name for the location.
-  - locations_id (String.t): Part of `name`. See documentation of `projectsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Resource name for the location.
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudKMS.V1.Model.Location{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudKMS.V1.Model.Location{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec cloudkms_projects_locations_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.CloudKMS.V1.Model.Location.t()} | {:error, Tesla.Env.t()}
+  @spec cloudkms_projects_locations_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.CloudKMS.V1.Model.Location.t()} | {:error, Tesla.Env.t()}
   def cloudkms_projects_locations_get(
         connection,
         projects_id,
@@ -91,30 +97,31 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudKMS.V1.Connection): Connection to server
-  - projects_id (String.t): Part of `name`. The resource that owns the locations collection, if applicable.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :filter (String.t): The standard list filter.
-    - :pageSize (integer()): The standard list page size.
-    - :pageToken (String.t): The standard list page token.
+  *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The resource that owns the locations collection, if applicable.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:filter` (*type:* `String.t`) - The standard list filter.
+      *   `:pageSize` (*type:* `integer()`) - The standard list page size.
+      *   `:pageToken` (*type:* `String.t`) - The standard list page token.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudKMS.V1.Model.ListLocationsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudKMS.V1.Model.ListLocationsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec cloudkms_projects_locations_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec cloudkms_projects_locations_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudKMS.V1.Model.ListLocationsResponse.t()} | {:error, Tesla.Env.t()}
   def cloudkms_projects_locations_list(connection, projects_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -152,35 +159,37 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudKMS.V1.Connection): Connection to server
-  - projects_id (String.t): Part of `parent`. Required. The resource name of the location associated with the
-  KeyRings, in the format `projects/*/locations/*`.
-  - locations_id (String.t): Part of `parent`. See documentation of `projectsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :keyRingId (String.t): Required. It must be unique within a location and match the regular
-  expression `[a-zA-Z0-9_-]{1,63}`
-    - :body (GoogleApi.CloudKMS.V1.Model.KeyRing.t): 
+  *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name of the location associated with the
+      KeyRings, in the format `projects/*/locations/*`.
+  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:keyRingId` (*type:* `String.t`) - Required. It must be unique within a location and match the regular
+          expression `[a-zA-Z0-9_-]{1,63}`
+      *   `:body` (*type:* `GoogleApi.CloudKMS.V1.Model.KeyRing.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudKMS.V1.Model.KeyRing{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudKMS.V1.Model.KeyRing{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec cloudkms_projects_locations_key_rings_create(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.CloudKMS.V1.Model.KeyRing.t()} | {:error, Tesla.Env.t()}
   def cloudkms_projects_locations_key_rings_create(
@@ -225,33 +234,35 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudKMS.V1.Connection): Connection to server
-  - projects_id (String.t): Part of `name`. The name of the KeyRing to get.
-  - locations_id (String.t): Part of `name`. See documentation of `projectsId`.
-  - key_rings_id (String.t): Part of `name`. See documentation of `projectsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the KeyRing to get.
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `key_rings_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudKMS.V1.Model.KeyRing{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudKMS.V1.Model.KeyRing{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec cloudkms_projects_locations_key_rings_get(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.CloudKMS.V1.Model.KeyRing.t()} | {:error, Tesla.Env.t()}
   def cloudkms_projects_locations_key_rings_get(
@@ -298,34 +309,36 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudKMS.V1.Connection): Connection to server
-  - projects_id (String.t): Part of `resource`. REQUIRED: The resource for which the policy is being requested.
-  See the operation documentation for the appropriate value for this field.
-  - locations_id (String.t): Part of `resource`. See documentation of `projectsId`.
-  - key_rings_id (String.t): Part of `resource`. See documentation of `projectsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested.
+      See the operation documentation for the appropriate value for this field.
+  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `key_rings_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudKMS.V1.Model.Policy{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudKMS.V1.Model.Policy{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec cloudkms_projects_locations_key_rings_get_iam_policy(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.CloudKMS.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
   def cloudkms_projects_locations_key_rings_get_iam_policy(
@@ -373,38 +386,40 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudKMS.V1.Connection): Connection to server
-  - projects_id (String.t): Part of `parent`. Required. The resource name of the location associated with the
-  KeyRings, in the format `projects/*/locations/*`.
-  - locations_id (String.t): Part of `parent`. See documentation of `projectsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :pageSize (integer()): Optional limit on the number of KeyRings to include in the
-  response.  Further KeyRings can subsequently be obtained by
-  including the ListKeyRingsResponse.next_page_token in a subsequent
-  request.  If unspecified, the server will pick an appropriate default.
-    - :pageToken (String.t): Optional pagination token, returned earlier via
-  ListKeyRingsResponse.next_page_token.
+  *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name of the location associated with the
+      KeyRings, in the format `projects/*/locations/*`.
+  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - Optional limit on the number of KeyRings to include in the
+          response.  Further KeyRings can subsequently be obtained by
+          including the ListKeyRingsResponse.next_page_token in a subsequent
+          request.  If unspecified, the server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - Optional pagination token, returned earlier via
+          ListKeyRingsResponse.next_page_token.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudKMS.V1.Model.ListKeyRingsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudKMS.V1.Model.ListKeyRingsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec cloudkms_projects_locations_key_rings_list(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.CloudKMS.V1.Model.ListKeyRingsResponse.t()} | {:error, Tesla.Env.t()}
   def cloudkms_projects_locations_key_rings_list(
@@ -450,35 +465,37 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudKMS.V1.Connection): Connection to server
-  - projects_id (String.t): Part of `resource`. REQUIRED: The resource for which the policy is being specified.
-  See the operation documentation for the appropriate value for this field.
-  - locations_id (String.t): Part of `resource`. See documentation of `projectsId`.
-  - key_rings_id (String.t): Part of `resource`. See documentation of `projectsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.CloudKMS.V1.Model.SetIamPolicyRequest.t): 
+  *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified.
+      See the operation documentation for the appropriate value for this field.
+  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `key_rings_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.CloudKMS.V1.Model.SetIamPolicyRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudKMS.V1.Model.Policy{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudKMS.V1.Model.Policy{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec cloudkms_projects_locations_key_rings_set_iam_policy(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.CloudKMS.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
   def cloudkms_projects_locations_key_rings_set_iam_policy(
@@ -533,35 +550,37 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudKMS.V1.Connection): Connection to server
-  - projects_id (String.t): Part of `resource`. REQUIRED: The resource for which the policy detail is being requested.
-  See the operation documentation for the appropriate value for this field.
-  - locations_id (String.t): Part of `resource`. See documentation of `projectsId`.
-  - key_rings_id (String.t): Part of `resource`. See documentation of `projectsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.CloudKMS.V1.Model.TestIamPermissionsRequest.t): 
+  *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested.
+      See the operation documentation for the appropriate value for this field.
+  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `key_rings_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.CloudKMS.V1.Model.TestIamPermissionsRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudKMS.V1.Model.TestIamPermissionsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudKMS.V1.Model.TestIamPermissionsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec cloudkms_projects_locations_key_rings_test_iam_permissions(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.CloudKMS.V1.Model.TestIamPermissionsResponse.t()}
@@ -618,37 +637,39 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudKMS.V1.Connection): Connection to server
-  - projects_id (String.t): Part of `parent`. Required. The name of the KeyRing associated with the
-  CryptoKeys.
-  - locations_id (String.t): Part of `parent`. See documentation of `projectsId`.
-  - key_rings_id (String.t): Part of `parent`. See documentation of `projectsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :cryptoKeyId (String.t): Required. It must be unique within a KeyRing and match the regular
-  expression `[a-zA-Z0-9_-]{1,63}`
-    - :body (GoogleApi.CloudKMS.V1.Model.CryptoKey.t): 
+  *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the KeyRing associated with the
+      CryptoKeys.
+  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `key_rings_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:cryptoKeyId` (*type:* `String.t`) - Required. It must be unique within a KeyRing and match the regular
+          expression `[a-zA-Z0-9_-]{1,63}`
+      *   `:body` (*type:* `GoogleApi.CloudKMS.V1.Model.CryptoKey.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudKMS.V1.Model.CryptoKey{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudKMS.V1.Model.CryptoKey{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec cloudkms_projects_locations_key_rings_crypto_keys_create(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.CloudKMS.V1.Model.CryptoKey.t()} | {:error, Tesla.Env.t()}
   def cloudkms_projects_locations_key_rings_crypto_keys_create(
@@ -699,30 +720,31 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudKMS.V1.Connection): Connection to server
-  - projects_id (String.t): Part of `name`. Required. The resource name of the CryptoKey to use for decryption.
-  The server will choose the appropriate version.
-  - locations_id (String.t): Part of `name`. See documentation of `projectsId`.
-  - key_rings_id (String.t): Part of `name`. See documentation of `projectsId`.
-  - crypto_keys_id (String.t): Part of `name`. See documentation of `projectsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.CloudKMS.V1.Model.DecryptRequest.t): 
+  *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the CryptoKey to use for decryption.
+      The server will choose the appropriate version.
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `key_rings_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `crypto_keys_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.CloudKMS.V1.Model.DecryptRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudKMS.V1.Model.DecryptResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudKMS.V1.Model.DecryptResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec cloudkms_projects_locations_key_rings_crypto_keys_decrypt(
           Tesla.Env.client(),
@@ -730,6 +752,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.CloudKMS.V1.Model.DecryptResponse.t()} | {:error, Tesla.Env.t()}
   def cloudkms_projects_locations_key_rings_crypto_keys_decrypt(
@@ -782,33 +805,34 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudKMS.V1.Connection): Connection to server
-  - projects_id (String.t): Part of `name`. Required. The resource name of the CryptoKey or CryptoKeyVersion
-  to use for encryption.
+  *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the CryptoKey or CryptoKeyVersion
+      to use for encryption.
 
-  If a CryptoKey is specified, the server will use its
-  primary version.
-  - locations_id (String.t): Part of `name`. See documentation of `projectsId`.
-  - key_rings_id (String.t): Part of `name`. See documentation of `projectsId`.
-  - crypto_keys_id (String.t): Part of `name`. See documentation of `projectsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.CloudKMS.V1.Model.EncryptRequest.t): 
+      If a CryptoKey is specified, the server will use its
+      primary version.
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `key_rings_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `crypto_keys_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.CloudKMS.V1.Model.EncryptRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudKMS.V1.Model.EncryptResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudKMS.V1.Model.EncryptResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec cloudkms_projects_locations_key_rings_crypto_keys_encrypt(
           Tesla.Env.client(),
@@ -816,6 +840,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.CloudKMS.V1.Model.EncryptResponse.t()} | {:error, Tesla.Env.t()}
   def cloudkms_projects_locations_key_rings_crypto_keys_encrypt(
@@ -867,28 +892,29 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudKMS.V1.Connection): Connection to server
-  - projects_id (String.t): Part of `name`. The name of the CryptoKey to get.
-  - locations_id (String.t): Part of `name`. See documentation of `projectsId`.
-  - key_rings_id (String.t): Part of `name`. See documentation of `projectsId`.
-  - crypto_keys_id (String.t): Part of `name`. See documentation of `projectsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the CryptoKey to get.
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `key_rings_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `crypto_keys_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudKMS.V1.Model.CryptoKey{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudKMS.V1.Model.CryptoKey{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec cloudkms_projects_locations_key_rings_crypto_keys_get(
           Tesla.Env.client(),
@@ -896,6 +922,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.CloudKMS.V1.Model.CryptoKey.t()} | {:error, Tesla.Env.t()}
   def cloudkms_projects_locations_key_rings_crypto_keys_get(
@@ -947,29 +974,30 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudKMS.V1.Connection): Connection to server
-  - projects_id (String.t): Part of `resource`. REQUIRED: The resource for which the policy is being requested.
-  See the operation documentation for the appropriate value for this field.
-  - locations_id (String.t): Part of `resource`. See documentation of `projectsId`.
-  - key_rings_id (String.t): Part of `resource`. See documentation of `projectsId`.
-  - crypto_keys_id (String.t): Part of `resource`. See documentation of `projectsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested.
+      See the operation documentation for the appropriate value for this field.
+  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `key_rings_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `crypto_keys_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudKMS.V1.Model.Policy{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudKMS.V1.Model.Policy{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec cloudkms_projects_locations_key_rings_crypto_keys_get_iam_policy(
           Tesla.Env.client(),
@@ -977,6 +1005,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.CloudKMS.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
   def cloudkms_projects_locations_key_rings_crypto_keys_get_iam_policy(
@@ -1026,41 +1055,43 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudKMS.V1.Connection): Connection to server
-  - projects_id (String.t): Part of `parent`. Required. The resource name of the KeyRing to list, in the format
-  `projects/*/locations/*/keyRings/*`.
-  - locations_id (String.t): Part of `parent`. See documentation of `projectsId`.
-  - key_rings_id (String.t): Part of `parent`. See documentation of `projectsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :pageSize (integer()): Optional limit on the number of CryptoKeys to include in the
-  response.  Further CryptoKeys can subsequently be obtained by
-  including the ListCryptoKeysResponse.next_page_token in a subsequent
-  request.  If unspecified, the server will pick an appropriate default.
-    - :pageToken (String.t): Optional pagination token, returned earlier via
-  ListCryptoKeysResponse.next_page_token.
-    - :versionView (String.t): The fields of the primary version to include in the response.
+  *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name of the KeyRing to list, in the format
+      `projects/*/locations/*/keyRings/*`.
+  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `key_rings_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - Optional limit on the number of CryptoKeys to include in the
+          response.  Further CryptoKeys can subsequently be obtained by
+          including the ListCryptoKeysResponse.next_page_token in a subsequent
+          request.  If unspecified, the server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - Optional pagination token, returned earlier via
+          ListCryptoKeysResponse.next_page_token.
+      *   `:versionView` (*type:* `String.t`) - The fields of the primary version to include in the response.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudKMS.V1.Model.ListCryptoKeysResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudKMS.V1.Model.ListCryptoKeysResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec cloudkms_projects_locations_key_rings_crypto_keys_list(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.CloudKMS.V1.Model.ListCryptoKeysResponse.t()} | {:error, Tesla.Env.t()}
@@ -1112,31 +1143,32 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudKMS.V1.Connection): Connection to server
-  - projects_id (String.t): Part of `cryptoKey.name`. Output only. The resource name for this CryptoKey in the format
-  `projects/*/locations/*/keyRings/*/cryptoKeys/*`.
-  - locations_id (String.t): Part of `cryptoKey.name`. See documentation of `projectsId`.
-  - key_rings_id (String.t): Part of `cryptoKey.name`. See documentation of `projectsId`.
-  - crypto_keys_id (String.t): Part of `cryptoKey.name`. See documentation of `projectsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :updateMask (String.t): Required list of fields to be updated in this request.
-    - :body (GoogleApi.CloudKMS.V1.Model.CryptoKey.t): 
+  *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `cryptoKey.name`. Output only. The resource name for this CryptoKey in the format
+      `projects/*/locations/*/keyRings/*/cryptoKeys/*`.
+  *   `locations_id` (*type:* `String.t`) - Part of `cryptoKey.name`. See documentation of `projectsId`.
+  *   `key_rings_id` (*type:* `String.t`) - Part of `cryptoKey.name`. See documentation of `projectsId`.
+  *   `crypto_keys_id` (*type:* `String.t`) - Part of `cryptoKey.name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:updateMask` (*type:* `String.t`) - Required list of fields to be updated in this request.
+      *   `:body` (*type:* `GoogleApi.CloudKMS.V1.Model.CryptoKey.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudKMS.V1.Model.CryptoKey{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudKMS.V1.Model.CryptoKey{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec cloudkms_projects_locations_key_rings_crypto_keys_patch(
           Tesla.Env.client(),
@@ -1144,6 +1176,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.CloudKMS.V1.Model.CryptoKey.t()} | {:error, Tesla.Env.t()}
   def cloudkms_projects_locations_key_rings_crypto_keys_patch(
@@ -1196,30 +1229,31 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudKMS.V1.Connection): Connection to server
-  - projects_id (String.t): Part of `resource`. REQUIRED: The resource for which the policy is being specified.
-  See the operation documentation for the appropriate value for this field.
-  - locations_id (String.t): Part of `resource`. See documentation of `projectsId`.
-  - key_rings_id (String.t): Part of `resource`. See documentation of `projectsId`.
-  - crypto_keys_id (String.t): Part of `resource`. See documentation of `projectsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.CloudKMS.V1.Model.SetIamPolicyRequest.t): 
+  *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified.
+      See the operation documentation for the appropriate value for this field.
+  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `key_rings_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `crypto_keys_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.CloudKMS.V1.Model.SetIamPolicyRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudKMS.V1.Model.Policy{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudKMS.V1.Model.Policy{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec cloudkms_projects_locations_key_rings_crypto_keys_set_iam_policy(
           Tesla.Env.client(),
@@ -1227,6 +1261,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.CloudKMS.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
   def cloudkms_projects_locations_key_rings_crypto_keys_set_iam_policy(
@@ -1283,30 +1318,31 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudKMS.V1.Connection): Connection to server
-  - projects_id (String.t): Part of `resource`. REQUIRED: The resource for which the policy detail is being requested.
-  See the operation documentation for the appropriate value for this field.
-  - locations_id (String.t): Part of `resource`. See documentation of `projectsId`.
-  - key_rings_id (String.t): Part of `resource`. See documentation of `projectsId`.
-  - crypto_keys_id (String.t): Part of `resource`. See documentation of `projectsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.CloudKMS.V1.Model.TestIamPermissionsRequest.t): 
+  *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested.
+      See the operation documentation for the appropriate value for this field.
+  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `key_rings_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `crypto_keys_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.CloudKMS.V1.Model.TestIamPermissionsRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudKMS.V1.Model.TestIamPermissionsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudKMS.V1.Model.TestIamPermissionsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec cloudkms_projects_locations_key_rings_crypto_keys_test_iam_permissions(
           Tesla.Env.client(),
@@ -1314,6 +1350,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.CloudKMS.V1.Model.TestIamPermissionsResponse.t()}
@@ -1370,29 +1407,30 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudKMS.V1.Connection): Connection to server
-  - projects_id (String.t): Part of `name`. The resource name of the CryptoKey to update.
-  - locations_id (String.t): Part of `name`. See documentation of `projectsId`.
-  - key_rings_id (String.t): Part of `name`. See documentation of `projectsId`.
-  - crypto_keys_id (String.t): Part of `name`. See documentation of `projectsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.CloudKMS.V1.Model.UpdateCryptoKeyPrimaryVersionRequest.t): 
+  *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The resource name of the CryptoKey to update.
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `key_rings_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `crypto_keys_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.CloudKMS.V1.Model.UpdateCryptoKeyPrimaryVersionRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudKMS.V1.Model.CryptoKey{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudKMS.V1.Model.CryptoKey{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec cloudkms_projects_locations_key_rings_crypto_keys_update_primary_version(
           Tesla.Env.client(),
@@ -1400,6 +1438,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.CloudKMS.V1.Model.CryptoKey.t()} | {:error, Tesla.Env.t()}
   def cloudkms_projects_locations_key_rings_crypto_keys_update_primary_version(
@@ -1452,31 +1491,32 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudKMS.V1.Connection): Connection to server
-  - projects_id (String.t): Part of `name`. Required. The resource name of the CryptoKeyVersion to use for
-  decryption.
-  - locations_id (String.t): Part of `name`. See documentation of `projectsId`.
-  - key_rings_id (String.t): Part of `name`. See documentation of `projectsId`.
-  - crypto_keys_id (String.t): Part of `name`. See documentation of `projectsId`.
-  - crypto_key_versions_id (String.t): Part of `name`. See documentation of `projectsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.CloudKMS.V1.Model.AsymmetricDecryptRequest.t): 
+  *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the CryptoKeyVersion to use for
+      decryption.
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `key_rings_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `crypto_keys_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `crypto_key_versions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.CloudKMS.V1.Model.AsymmetricDecryptRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudKMS.V1.Model.AsymmetricDecryptResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudKMS.V1.Model.AsymmetricDecryptResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_asymmetric_decrypt(
           Tesla.Env.client(),
@@ -1485,6 +1525,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.CloudKMS.V1.Model.AsymmetricDecryptResponse.t()}
@@ -1541,30 +1582,31 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudKMS.V1.Connection): Connection to server
-  - projects_id (String.t): Part of `name`. Required. The resource name of the CryptoKeyVersion to use for signing.
-  - locations_id (String.t): Part of `name`. See documentation of `projectsId`.
-  - key_rings_id (String.t): Part of `name`. See documentation of `projectsId`.
-  - crypto_keys_id (String.t): Part of `name`. See documentation of `projectsId`.
-  - crypto_key_versions_id (String.t): Part of `name`. See documentation of `projectsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.CloudKMS.V1.Model.AsymmetricSignRequest.t): 
+  *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the CryptoKeyVersion to use for signing.
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `key_rings_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `crypto_keys_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `crypto_key_versions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.CloudKMS.V1.Model.AsymmetricSignRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudKMS.V1.Model.AsymmetricSignResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudKMS.V1.Model.AsymmetricSignResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_asymmetric_sign(
           Tesla.Env.client(),
@@ -1573,6 +1615,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.CloudKMS.V1.Model.AsymmetricSignResponse.t()} | {:error, Tesla.Env.t()}
@@ -1630,30 +1673,31 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudKMS.V1.Connection): Connection to server
-  - projects_id (String.t): Part of `parent`. Required. The name of the CryptoKey associated with
-  the CryptoKeyVersions.
-  - locations_id (String.t): Part of `parent`. See documentation of `projectsId`.
-  - key_rings_id (String.t): Part of `parent`. See documentation of `projectsId`.
-  - crypto_keys_id (String.t): Part of `parent`. See documentation of `projectsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion.t): 
+  *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the CryptoKey associated with
+      the CryptoKeyVersions.
+  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `key_rings_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `crypto_keys_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_create(
           Tesla.Env.client(),
@@ -1661,6 +1705,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion.t()} | {:error, Tesla.Env.t()}
   def cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_create(
@@ -1722,30 +1767,31 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudKMS.V1.Connection): Connection to server
-  - projects_id (String.t): Part of `name`. The resource name of the CryptoKeyVersion to destroy.
-  - locations_id (String.t): Part of `name`. See documentation of `projectsId`.
-  - key_rings_id (String.t): Part of `name`. See documentation of `projectsId`.
-  - crypto_keys_id (String.t): Part of `name`. See documentation of `projectsId`.
-  - crypto_key_versions_id (String.t): Part of `name`. See documentation of `projectsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.CloudKMS.V1.Model.DestroyCryptoKeyVersionRequest.t): 
+  *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The resource name of the CryptoKeyVersion to destroy.
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `key_rings_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `crypto_keys_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `crypto_key_versions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.CloudKMS.V1.Model.DestroyCryptoKeyVersionRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_destroy(
           Tesla.Env.client(),
@@ -1754,6 +1800,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion.t()} | {:error, Tesla.Env.t()}
   def cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_destroy(
@@ -1806,29 +1853,30 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudKMS.V1.Connection): Connection to server
-  - projects_id (String.t): Part of `name`. The name of the CryptoKeyVersion to get.
-  - locations_id (String.t): Part of `name`. See documentation of `projectsId`.
-  - key_rings_id (String.t): Part of `name`. See documentation of `projectsId`.
-  - crypto_keys_id (String.t): Part of `name`. See documentation of `projectsId`.
-  - crypto_key_versions_id (String.t): Part of `name`. See documentation of `projectsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the CryptoKeyVersion to get.
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `key_rings_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `crypto_keys_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `crypto_key_versions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_get(
           Tesla.Env.client(),
@@ -1837,6 +1885,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion.t()} | {:error, Tesla.Env.t()}
   def cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_get(
@@ -1891,30 +1940,31 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudKMS.V1.Connection): Connection to server
-  - projects_id (String.t): Part of `name`. The name of the CryptoKeyVersion public key to
-  get.
-  - locations_id (String.t): Part of `name`. See documentation of `projectsId`.
-  - key_rings_id (String.t): Part of `name`. See documentation of `projectsId`.
-  - crypto_keys_id (String.t): Part of `name`. See documentation of `projectsId`.
-  - crypto_key_versions_id (String.t): Part of `name`. See documentation of `projectsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the CryptoKeyVersion public key to
+      get.
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `key_rings_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `crypto_keys_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `crypto_key_versions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudKMS.V1.Model.PublicKey{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudKMS.V1.Model.PublicKey{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_get_public_key(
           Tesla.Env.client(),
@@ -1923,6 +1973,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.CloudKMS.V1.Model.PublicKey.t()} | {:error, Tesla.Env.t()}
   def cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_get_public_key(
@@ -1974,37 +2025,38 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudKMS.V1.Connection): Connection to server
-  - projects_id (String.t): Part of `parent`. Required. The resource name of the CryptoKey to list, in the format
-  `projects/*/locations/*/keyRings/*/cryptoKeys/*`.
-  - locations_id (String.t): Part of `parent`. See documentation of `projectsId`.
-  - key_rings_id (String.t): Part of `parent`. See documentation of `projectsId`.
-  - crypto_keys_id (String.t): Part of `parent`. See documentation of `projectsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :pageSize (integer()): Optional limit on the number of CryptoKeyVersions to
-  include in the response. Further CryptoKeyVersions can
-  subsequently be obtained by including the
-  ListCryptoKeyVersionsResponse.next_page_token in a subsequent request.
-  If unspecified, the server will pick an appropriate default.
-    - :pageToken (String.t): Optional pagination token, returned earlier via
-  ListCryptoKeyVersionsResponse.next_page_token.
-    - :view (String.t): The fields to include in the response.
+  *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name of the CryptoKey to list, in the format
+      `projects/*/locations/*/keyRings/*/cryptoKeys/*`.
+  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `key_rings_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `crypto_keys_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - Optional limit on the number of CryptoKeyVersions to
+          include in the response. Further CryptoKeyVersions can
+          subsequently be obtained by including the
+          ListCryptoKeyVersionsResponse.next_page_token in a subsequent request.
+          If unspecified, the server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - Optional pagination token, returned earlier via
+          ListCryptoKeyVersionsResponse.next_page_token.
+      *   `:view` (*type:* `String.t`) - The fields to include in the response.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudKMS.V1.Model.ListCryptoKeyVersionsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudKMS.V1.Model.ListCryptoKeyVersionsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_list(
           Tesla.Env.client(),
@@ -2012,6 +2064,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.CloudKMS.V1.Model.ListCryptoKeyVersionsResponse.t()}
@@ -2074,32 +2127,33 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudKMS.V1.Connection): Connection to server
-  - projects_id (String.t): Part of `cryptoKeyVersion.name`. Output only. The resource name for this CryptoKeyVersion in the format
-  `projects/*/locations/*/keyRings/*/cryptoKeys/*/cryptoKeyVersions/*`.
-  - locations_id (String.t): Part of `cryptoKeyVersion.name`. See documentation of `projectsId`.
-  - key_rings_id (String.t): Part of `cryptoKeyVersion.name`. See documentation of `projectsId`.
-  - crypto_keys_id (String.t): Part of `cryptoKeyVersion.name`. See documentation of `projectsId`.
-  - crypto_key_versions_id (String.t): Part of `cryptoKeyVersion.name`. See documentation of `projectsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :updateMask (String.t): Required list of fields to be updated in this request.
-    - :body (GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion.t): 
+  *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `cryptoKeyVersion.name`. Output only. The resource name for this CryptoKeyVersion in the format
+      `projects/*/locations/*/keyRings/*/cryptoKeys/*/cryptoKeyVersions/*`.
+  *   `locations_id` (*type:* `String.t`) - Part of `cryptoKeyVersion.name`. See documentation of `projectsId`.
+  *   `key_rings_id` (*type:* `String.t`) - Part of `cryptoKeyVersion.name`. See documentation of `projectsId`.
+  *   `crypto_keys_id` (*type:* `String.t`) - Part of `cryptoKeyVersion.name`. See documentation of `projectsId`.
+  *   `crypto_key_versions_id` (*type:* `String.t`) - Part of `cryptoKeyVersion.name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:updateMask` (*type:* `String.t`) - Required list of fields to be updated in this request.
+      *   `:body` (*type:* `GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_patch(
           Tesla.Env.client(),
@@ -2108,6 +2162,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion.t()} | {:error, Tesla.Env.t()}
   def cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_patch(
@@ -2167,30 +2222,31 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudKMS.V1.Connection): Connection to server
-  - projects_id (String.t): Part of `name`. The resource name of the CryptoKeyVersion to restore.
-  - locations_id (String.t): Part of `name`. See documentation of `projectsId`.
-  - key_rings_id (String.t): Part of `name`. See documentation of `projectsId`.
-  - crypto_keys_id (String.t): Part of `name`. See documentation of `projectsId`.
-  - crypto_key_versions_id (String.t): Part of `name`. See documentation of `projectsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.CloudKMS.V1.Model.RestoreCryptoKeyVersionRequest.t): 
+  *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The resource name of the CryptoKeyVersion to restore.
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `key_rings_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `crypto_keys_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `crypto_key_versions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.CloudKMS.V1.Model.RestoreCryptoKeyVersionRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_restore(
           Tesla.Env.client(),
@@ -2199,6 +2255,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion.t()} | {:error, Tesla.Env.t()}
   def cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_restore(
@@ -2253,29 +2310,30 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudKMS.V1.Connection): Connection to server
-  - projects_id (String.t): Part of `resource`. REQUIRED: The resource for which the policy is being requested.
-  See the operation documentation for the appropriate value for this field.
-  - locations_id (String.t): Part of `resource`. See documentation of `projectsId`.
-  - key_rings_id (String.t): Part of `resource`. See documentation of `projectsId`.
-  - import_jobs_id (String.t): Part of `resource`. See documentation of `projectsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested.
+      See the operation documentation for the appropriate value for this field.
+  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `key_rings_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `import_jobs_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudKMS.V1.Model.Policy{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudKMS.V1.Model.Policy{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec cloudkms_projects_locations_key_rings_import_jobs_get_iam_policy(
           Tesla.Env.client(),
@@ -2283,6 +2341,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.CloudKMS.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
   def cloudkms_projects_locations_key_rings_import_jobs_get_iam_policy(
@@ -2333,30 +2392,31 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudKMS.V1.Connection): Connection to server
-  - projects_id (String.t): Part of `resource`. REQUIRED: The resource for which the policy is being specified.
-  See the operation documentation for the appropriate value for this field.
-  - locations_id (String.t): Part of `resource`. See documentation of `projectsId`.
-  - key_rings_id (String.t): Part of `resource`. See documentation of `projectsId`.
-  - import_jobs_id (String.t): Part of `resource`. See documentation of `projectsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.CloudKMS.V1.Model.SetIamPolicyRequest.t): 
+  *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified.
+      See the operation documentation for the appropriate value for this field.
+  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `key_rings_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `import_jobs_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.CloudKMS.V1.Model.SetIamPolicyRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudKMS.V1.Model.Policy{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudKMS.V1.Model.Policy{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec cloudkms_projects_locations_key_rings_import_jobs_set_iam_policy(
           Tesla.Env.client(),
@@ -2364,6 +2424,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.CloudKMS.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
   def cloudkms_projects_locations_key_rings_import_jobs_set_iam_policy(
@@ -2420,30 +2481,31 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudKMS.V1.Connection): Connection to server
-  - projects_id (String.t): Part of `resource`. REQUIRED: The resource for which the policy detail is being requested.
-  See the operation documentation for the appropriate value for this field.
-  - locations_id (String.t): Part of `resource`. See documentation of `projectsId`.
-  - key_rings_id (String.t): Part of `resource`. See documentation of `projectsId`.
-  - import_jobs_id (String.t): Part of `resource`. See documentation of `projectsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.CloudKMS.V1.Model.TestIamPermissionsRequest.t): 
+  *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested.
+      See the operation documentation for the appropriate value for this field.
+  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `key_rings_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `import_jobs_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.CloudKMS.V1.Model.TestIamPermissionsRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudKMS.V1.Model.TestIamPermissionsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudKMS.V1.Model.TestIamPermissionsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec cloudkms_projects_locations_key_rings_import_jobs_test_iam_permissions(
           Tesla.Env.client(),
@@ -2451,6 +2513,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.CloudKMS.V1.Model.TestIamPermissionsResponse.t()}

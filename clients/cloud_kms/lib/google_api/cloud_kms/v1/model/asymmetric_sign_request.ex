@@ -21,9 +21,9 @@ defmodule GoogleApi.CloudKMS.V1.Model.AsymmetricSignRequest do
 
   ## Attributes
 
-  - digest (GoogleApi.CloudKMS.V1.Model.Digest.t): Required. The digest of the data to sign. The digest must be produced with
-  the same digest algorithm as specified by the key version's
-  algorithm. Defaults to `nil`.
+  *   `digest` (*type:* `GoogleApi.CloudKMS.V1.Model.Digest.t`, *default:* `nil`) - Required. The digest of the data to sign. The digest must be produced with
+      the same digest algorithm as specified by the key version's
+      algorithm.
   """
 
   use GoogleApi.Gax.ModelBase

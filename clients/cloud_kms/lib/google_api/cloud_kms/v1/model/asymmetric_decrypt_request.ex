@@ -21,8 +21,8 @@ defmodule GoogleApi.CloudKMS.V1.Model.AsymmetricDecryptRequest do
 
   ## Attributes
 
-  - ciphertext (String.t): Required. The data encrypted with the named CryptoKeyVersion's public
-  key using OAEP. Defaults to `nil`.
+  *   `ciphertext` (*type:* `String.t`, *default:* `nil`) - Required. The data encrypted with the named CryptoKeyVersion's public
+      key using OAEP.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,9 +21,9 @@ defmodule GoogleApi.CloudKMS.V1.Model.LocationMetadata do
 
   ## Attributes
 
-  - hsmAvailable (boolean()): Indicates whether CryptoKeys with
-  protection_level
-  HSM can be created in this location. Defaults to `nil`.
+  *   `hsmAvailable` (*type:* `boolean()`, *default:* `nil`) - Indicates whether CryptoKeys with
+      protection_level
+      HSM can be created in this location.
   """
 
   use GoogleApi.Gax.ModelBase

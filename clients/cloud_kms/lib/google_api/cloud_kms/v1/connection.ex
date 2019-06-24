@@ -20,6 +20,8 @@ defmodule GoogleApi.CloudKMS.V1.Connection do
   Handle Tesla connections for GoogleApi.CloudKMS.V1.
   """
 
+  @type t :: Tesla.Env.client()
+
   use GoogleApi.Gax.Connection,
     scopes: [
       # View and manage your data across Google Cloud Platform services

@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudKMS.V1.Model.AsymmetricSignResponse do
 
   ## Attributes
 
-  - signature (String.t): The created signature. Defaults to `nil`.
+  *   `signature` (*type:* `String.t`, *default:* `nil`) - The created signature.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudKMS.V1.Model.UpdateCryptoKeyPrimaryVersionRequest do
 
   ## Attributes
 
-  - cryptoKeyVersionId (String.t): The id of the child CryptoKeyVersion to use as primary. Defaults to `nil`.
+  *   `cryptoKeyVersionId` (*type:* `String.t`, *default:* `nil`) - The id of the child CryptoKeyVersion to use as primary.
   """
 
   use GoogleApi.Gax.ModelBase
