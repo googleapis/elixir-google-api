@@ -21,10 +21,10 @@ defmodule GoogleApi.AcceleratedMobilePageUrl.V1.Model.AmpUrl do
 
   ## Attributes
 
-  - ampUrl (String.t): The AMP URL pointing to the publisher's web server. Defaults to `nil`.
-  - cdnAmpUrl (String.t): The [AMP Cache URL](/amp/cache/overview#amp-cache-url-format) pointing to
-  the cached document in the Google AMP Cache. Defaults to `nil`.
-  - originalUrl (String.t): The original non-AMP URL. Defaults to `nil`.
+  *   `ampUrl` (*type:* `String.t`, *default:* `nil`) - The AMP URL pointing to the publisher's web server.
+  *   `cdnAmpUrl` (*type:* `String.t`, *default:* `nil`) - The [AMP Cache URL](/amp/cache/overview#amp-cache-url-format) pointing to
+      the cached document in the Google AMP Cache.
+  *   `originalUrl` (*type:* `String.t`, *default:* `nil`) - The original non-AMP URL.
   """
 
   use GoogleApi.Gax.ModelBase
