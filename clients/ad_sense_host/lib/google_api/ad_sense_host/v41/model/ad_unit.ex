@@ -21,19 +21,19 @@ defmodule GoogleApi.AdSenseHost.V41.Model.AdUnit do
 
   ## Attributes
 
-  - code (String.t): Identity code of this ad unit, not necessarily unique across ad clients. Defaults to `nil`.
-  - contentAdsSettings (GoogleApi.AdSenseHost.V41.Model.AdUnitContentAdsSettings.t): Settings specific to content ads (AFC) and highend mobile content ads (AFMC - deprecated). Defaults to `nil`.
-  - customStyle (GoogleApi.AdSenseHost.V41.Model.AdStyle.t): Custom style information specific to this ad unit. Defaults to `nil`.
-  - id (String.t): Unique identifier of this ad unit. This should be considered an opaque identifier; it is not safe to rely on it being in any particular format. Defaults to `nil`.
-  - kind (String.t): Kind of resource this is, in this case adsensehost#adUnit. Defaults to `adsensehost#adUnit`.
-  - mobileContentAdsSettings (GoogleApi.AdSenseHost.V41.Model.AdUnitMobileContentAdsSettings.t): Settings specific to WAP mobile content ads (AFMC - deprecated). Defaults to `nil`.
-  - name (String.t): Name of this ad unit. Defaults to `nil`.
-  - status (String.t): Status of this ad unit. Possible values are:
-  NEW: Indicates that the ad unit was created within the last seven days and does not yet have any activity associated with it.
+  *   `code` (*type:* `String.t`, *default:* `nil`) - Identity code of this ad unit, not necessarily unique across ad clients.
+  *   `contentAdsSettings` (*type:* `GoogleApi.AdSenseHost.V41.Model.AdUnitContentAdsSettings.t`, *default:* `nil`) - Settings specific to content ads (AFC) and highend mobile content ads (AFMC - deprecated).
+  *   `customStyle` (*type:* `GoogleApi.AdSenseHost.V41.Model.AdStyle.t`, *default:* `nil`) - Custom style information specific to this ad unit.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Unique identifier of this ad unit. This should be considered an opaque identifier; it is not safe to rely on it being in any particular format.
+  *   `kind` (*type:* `String.t`, *default:* `adsensehost#adUnit`) - Kind of resource this is, in this case adsensehost#adUnit.
+  *   `mobileContentAdsSettings` (*type:* `GoogleApi.AdSenseHost.V41.Model.AdUnitMobileContentAdsSettings.t`, *default:* `nil`) - Settings specific to WAP mobile content ads (AFMC - deprecated).
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this ad unit.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - Status of this ad unit. Possible values are:
+      NEW: Indicates that the ad unit was created within the last seven days and does not yet have any activity associated with it.
 
-  ACTIVE: Indicates that there has been activity on this ad unit in the last seven days.
+      ACTIVE: Indicates that there has been activity on this ad unit in the last seven days.
 
-  INACTIVE: Indicates that there has been no activity on this ad unit in the last seven days. Defaults to `nil`.
+      INACTIVE: Indicates that there has been no activity on this ad unit in the last seven days.
   """
 
   use GoogleApi.Gax.ModelBase

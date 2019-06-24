@@ -28,32 +28,38 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Reports do
 
   ## Parameters
 
-  - connection (GoogleApi.AdSenseHost.V41.Connection): Connection to server
-  - start_date (String.t): Start of the date range to report on in "YYYY-MM-DD" format, inclusive.
-  - end_date (String.t): End of the date range to report on in "YYYY-MM-DD" format, inclusive.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :dimension (list(String.t)): Dimensions to base the report on.
-    - :filter (list(String.t)): Filters to be run on the report.
-    - :locale (String.t): Optional locale to use for translating report output to a local language. Defaults to "en_US" if not specified.
-    - :maxResults (integer()): The maximum number of rows of report data to return.
-    - :metric (list(String.t)): Numeric columns to include in the report.
-    - :sort (list(String.t)): The name of a dimension or metric to sort the resulting report on, optionally prefixed with "+" to sort ascending or "-" to sort descending. If no prefix is specified, the column is sorted ascending.
-    - :startIndex (integer()): Index of the first row of report data to return.
+  *   `connection` (*type:* `GoogleApi.AdSenseHost.V41.Connection.t`) - Connection to server
+  *   `start_date` (*type:* `String.t`) - Start of the date range to report on in "YYYY-MM-DD" format, inclusive.
+  *   `end_date` (*type:* `String.t`) - End of the date range to report on in "YYYY-MM-DD" format, inclusive.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:dimension` (*type:* `list(String.t)`) - Dimensions to base the report on.
+      *   `:filter` (*type:* `list(String.t)`) - Filters to be run on the report.
+      *   `:locale` (*type:* `String.t`) - Optional locale to use for translating report output to a local language. Defaults to "en_US" if not specified.
+      *   `:maxResults` (*type:* `integer()`) - The maximum number of rows of report data to return.
+      *   `:metric` (*type:* `list(String.t)`) - Numeric columns to include in the report.
+      *   `:sort` (*type:* `list(String.t)`) - The name of a dimension or metric to sort the resulting report on, optionally prefixed with "+" to sort ascending or "-" to sort descending. If no prefix is specified, the column is sorted ascending.
+      *   `:startIndex` (*type:* `integer()`) - Index of the first row of report data to return.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdSenseHost.V41.Model.Report{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdSenseHost.V41.Model.Report{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec adsensehost_reports_generate(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.AdSenseHost.V41.Model.Report.t()} | {:error, Tesla.Env.t()}
+  @spec adsensehost_reports_generate(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.AdSenseHost.V41.Model.Report.t()} | {:error, Tesla.Env.t()}
   def adsensehost_reports_generate(
         connection,
         start_date,

@@ -21,10 +21,10 @@ defmodule GoogleApi.AdSenseHost.V41.Model.AdUnitMobileContentAdsSettings do
 
   ## Attributes
 
-  - markupLanguage (String.t): The markup language to use for this ad unit. Defaults to `nil`.
-  - scriptingLanguage (String.t): The scripting language to use for this ad unit. Defaults to `nil`.
-  - size (String.t): Size of this ad unit. Defaults to `nil`.
-  - type (String.t): Type of this ad unit. Defaults to `nil`.
+  *   `markupLanguage` (*type:* `String.t`, *default:* `nil`) - The markup language to use for this ad unit.
+  *   `scriptingLanguage` (*type:* `String.t`, *default:* `nil`) - The scripting language to use for this ad unit.
+  *   `size` (*type:* `String.t`, *default:* `nil`) - Size of this ad unit.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Type of this ad unit.
   """
 
   use GoogleApi.Gax.ModelBase

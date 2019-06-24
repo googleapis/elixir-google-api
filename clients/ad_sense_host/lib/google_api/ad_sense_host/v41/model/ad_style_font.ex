@@ -21,8 +21,8 @@ defmodule GoogleApi.AdSenseHost.V41.Model.AdStyleFont do
 
   ## Attributes
 
-  - family (String.t): The family of the font. Possible values are: ACCOUNT_DEFAULT_FAMILY, ADSENSE_DEFAULT_FAMILY, ARIAL, TIMES and VERDANA. Defaults to `nil`.
-  - size (String.t): The size of the font. Possible values are: ACCOUNT_DEFAULT_SIZE, ADSENSE_DEFAULT_SIZE, SMALL, MEDIUM and LARGE. Defaults to `nil`.
+  *   `family` (*type:* `String.t`, *default:* `nil`) - The family of the font. Possible values are: ACCOUNT_DEFAULT_FAMILY, ADSENSE_DEFAULT_FAMILY, ARIAL, TIMES and VERDANA.
+  *   `size` (*type:* `String.t`, *default:* `nil`) - The size of the font. Possible values are: ACCOUNT_DEFAULT_SIZE, ADSENSE_DEFAULT_SIZE, SMALL, MEDIUM and LARGE.
   """
 
   use GoogleApi.Gax.ModelBase

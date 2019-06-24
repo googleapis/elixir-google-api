@@ -21,9 +21,9 @@ defmodule GoogleApi.AdSenseHost.V41.Model.AdUnitContentAdsSettingsBackupOption d
 
   ## Attributes
 
-  - color (String.t): Color to use when type is set to COLOR. These are represented as six hexadecimal characters, similar to HTML color codes, but without the leading hash. Defaults to `nil`.
-  - type (String.t): Type of the backup option. Possible values are BLANK, COLOR and URL. Defaults to `nil`.
-  - url (String.t): URL to use when type is set to URL. Defaults to `nil`.
+  *   `color` (*type:* `String.t`, *default:* `nil`) - Color to use when type is set to COLOR. These are represented as six hexadecimal characters, similar to HTML color codes, but without the leading hash.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Type of the backup option. Possible values are BLANK, COLOR and URL.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - URL to use when type is set to URL.
   """
 
   use GoogleApi.Gax.ModelBase

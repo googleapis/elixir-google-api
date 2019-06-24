@@ -21,10 +21,10 @@ defmodule GoogleApi.AdSenseHost.V41.Model.Account do
 
   ## Attributes
 
-  - id (String.t): Unique identifier of this account. Defaults to `nil`.
-  - kind (String.t): Kind of resource this is, in this case adsensehost#account. Defaults to `adsensehost#account`.
-  - name (String.t): Name of this account. Defaults to `nil`.
-  - status (String.t): Approval status of this account. One of: PENDING, APPROVED, DISABLED. Defaults to `nil`.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Unique identifier of this account.
+  *   `kind` (*type:* `String.t`, *default:* `adsensehost#account`) - Kind of resource this is, in this case adsensehost#account.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this account.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - Approval status of this account. One of: PENDING, APPROVED, DISABLED.
   """
 
   use GoogleApi.Gax.ModelBase
