@@ -21,10 +21,10 @@ defmodule GoogleApi.CivicInfo.V2.Model.ElectoralDistrict do
 
   ## Attributes
 
-  - id (String.t): An identifier for this district, relative to its scope. For example, the 34th State Senate district would have id "34" and a scope of stateUpper. Defaults to `nil`.
-  - kgForeignKey (String.t):  Defaults to `nil`.
-  - name (String.t): The name of the district. Defaults to `nil`.
-  - scope (String.t): The geographic scope of this district. If unspecified the district's geography is not known. One of: national, statewide, congressional, stateUpper, stateLower, countywide, judicial, schoolBoard, cityWide, township, countyCouncil, cityCouncil, ward, special Defaults to `nil`.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - An identifier for this district, relative to its scope. For example, the 34th State Senate district would have id "34" and a scope of stateUpper.
+  *   `kgForeignKey` (*type:* `String.t`, *default:* `nil`) - 
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the district.
+  *   `scope` (*type:* `String.t`, *default:* `nil`) - The geographic scope of this district. If unspecified the district's geography is not known. One of: national, statewide, congressional, stateUpper, stateLower, countywide, judicial, schoolBoard, cityWide, township, countyCouncil, cityCouncil, ward, special
   """
 
   use GoogleApi.Gax.ModelBase

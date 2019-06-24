@@ -28,27 +28,32 @@ defmodule GoogleApi.CivicInfo.V2.Api.Representatives do
 
   ## Parameters
 
-  - connection (GoogleApi.CivicInfo.V2.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :address (String.t): The address to look up. May only be specified if the field ocdId is not given in the URL.
-    - :includeOffices (boolean()): Whether to return information about offices and officials. If false, only the top-level district information will be returned.
-    - :levels (list(String.t)): A list of office levels to filter by. Only offices that serve at least one of these levels will be returned. Divisions that don't contain a matching office will not be returned.
-    - :roles (list(String.t)): A list of office roles to filter by. Only offices fulfilling one of these roles will be returned. Divisions that don't contain a matching office will not be returned.
-    - :body (GoogleApi.CivicInfo.V2.Model.RepresentativeInfoRequest.t): 
+  *   `connection` (*type:* `GoogleApi.CivicInfo.V2.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:address` (*type:* `String.t`) - The address to look up. May only be specified if the field ocdId is not given in the URL.
+      *   `:includeOffices` (*type:* `boolean()`) - Whether to return information about offices and officials. If false, only the top-level district information will be returned.
+      *   `:levels` (*type:* `list(String.t)`) - A list of office levels to filter by. Only offices that serve at least one of these levels will be returned. Divisions that don't contain a matching office will not be returned.
+      *   `:roles` (*type:* `list(String.t)`) - A list of office roles to filter by. Only offices fulfilling one of these roles will be returned. Divisions that don't contain a matching office will not be returned.
+      *   `:body` (*type:* `GoogleApi.CivicInfo.V2.Model.RepresentativeInfoRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CivicInfo.V2.Model.RepresentativeInfoResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CivicInfo.V2.Model.RepresentativeInfoResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec civicinfo_representatives_representative_info_by_address(Tesla.Env.client(), keyword()) ::
+  @spec civicinfo_representatives_representative_info_by_address(
+          Tesla.Env.client(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.CivicInfo.V2.Model.RepresentativeInfoResponse.t()}
           | {:error, Tesla.Env.t()}
   def civicinfo_representatives_representative_info_by_address(
@@ -89,29 +94,31 @@ defmodule GoogleApi.CivicInfo.V2.Api.Representatives do
 
   ## Parameters
 
-  - connection (GoogleApi.CivicInfo.V2.Connection): Connection to server
-  - ocd_id (String.t): The Open Civic Data division identifier of the division to look up.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :levels (list(String.t)): A list of office levels to filter by. Only offices that serve at least one of these levels will be returned. Divisions that don't contain a matching office will not be returned.
-    - :recursive (boolean()): If true, information about all divisions contained in the division requested will be included as well. For example, if querying ocd-division/country:us/district:dc, this would also return all DC's wards and ANCs.
-    - :roles (list(String.t)): A list of office roles to filter by. Only offices fulfilling one of these roles will be returned. Divisions that don't contain a matching office will not be returned.
-    - :body (GoogleApi.CivicInfo.V2.Model.DivisionRepresentativeInfoRequest.t): 
+  *   `connection` (*type:* `GoogleApi.CivicInfo.V2.Connection.t`) - Connection to server
+  *   `ocd_id` (*type:* `String.t`) - The Open Civic Data division identifier of the division to look up.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:levels` (*type:* `list(String.t)`) - A list of office levels to filter by. Only offices that serve at least one of these levels will be returned. Divisions that don't contain a matching office will not be returned.
+      *   `:recursive` (*type:* `boolean()`) - If true, information about all divisions contained in the division requested will be included as well. For example, if querying ocd-division/country:us/district:dc, this would also return all DC's wards and ANCs.
+      *   `:roles` (*type:* `list(String.t)`) - A list of office roles to filter by. Only offices fulfilling one of these roles will be returned. Divisions that don't contain a matching office will not be returned.
+      *   `:body` (*type:* `GoogleApi.CivicInfo.V2.Model.DivisionRepresentativeInfoRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CivicInfo.V2.Model.RepresentativeInfoData{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CivicInfo.V2.Model.RepresentativeInfoData{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec civicinfo_representatives_representative_info_by_division(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.CivicInfo.V2.Model.RepresentativeInfoData.t()} | {:error, Tesla.Env.t()}

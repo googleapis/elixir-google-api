@@ -21,17 +21,17 @@ defmodule GoogleApi.CivicInfo.V2.Model.PollingLocation do
 
   ## Attributes
 
-  - address (GoogleApi.CivicInfo.V2.Model.SimpleAddressType.t): The address of the location. Defaults to `nil`.
-  - endDate (String.t): The last date that this early vote site or drop off location may be used. This field is not populated for polling locations. Defaults to `nil`.
-  - id (String.t): An ID for this object. IDs may change in future requests and should not be cached. Access to this field requires special access that can be requested from the Request more link on the Quotas page. Defaults to `nil`.
-  - latitude (float()): Latitude of the location, in degrees north of the equator. Only some locations -- generally, ballot drop boxes for vote-by-mail elections -- will have this set; for others, use a geocoding service like the Google Maps API to resolve the address to a geographic point. Defaults to `nil`.
-  - longitude (float()): Longitude of the location, in degrees east of the Prime Meridian. Only some locations -- generally, ballot drop boxes for vote-by-mail elections -- will have this set; for others, use a geocoding service like the Google Maps API to resolve the address to a geographic point. Defaults to `nil`.
-  - name (String.t): The name of the early vote site or drop off location. This field is not populated for polling locations. Defaults to `nil`.
-  - notes (String.t): Notes about this location (e.g. accessibility ramp or entrance to use). Defaults to `nil`.
-  - pollingHours (String.t): A description of when this location is open. Defaults to `nil`.
-  - sources (list(GoogleApi.CivicInfo.V2.Model.Source.t)): A list of sources for this location. If multiple sources are listed the data has been aggregated from those sources. Defaults to `nil`.
-  - startDate (String.t): The first date that this early vote site or drop off location may be used. This field is not populated for polling locations. Defaults to `nil`.
-  - voterServices (String.t): The services provided by this early vote site or drop off location. This field is not populated for polling locations. Defaults to `nil`.
+  *   `address` (*type:* `GoogleApi.CivicInfo.V2.Model.SimpleAddressType.t`, *default:* `nil`) - The address of the location.
+  *   `endDate` (*type:* `String.t`, *default:* `nil`) - The last date that this early vote site or drop off location may be used. This field is not populated for polling locations.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - An ID for this object. IDs may change in future requests and should not be cached. Access to this field requires special access that can be requested from the Request more link on the Quotas page.
+  *   `latitude` (*type:* `float()`, *default:* `nil`) - Latitude of the location, in degrees north of the equator. Only some locations -- generally, ballot drop boxes for vote-by-mail elections -- will have this set; for others, use a geocoding service like the Google Maps API to resolve the address to a geographic point.
+  *   `longitude` (*type:* `float()`, *default:* `nil`) - Longitude of the location, in degrees east of the Prime Meridian. Only some locations -- generally, ballot drop boxes for vote-by-mail elections -- will have this set; for others, use a geocoding service like the Google Maps API to resolve the address to a geographic point.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the early vote site or drop off location. This field is not populated for polling locations.
+  *   `notes` (*type:* `String.t`, *default:* `nil`) - Notes about this location (e.g. accessibility ramp or entrance to use).
+  *   `pollingHours` (*type:* `String.t`, *default:* `nil`) - A description of when this location is open.
+  *   `sources` (*type:* `list(GoogleApi.CivicInfo.V2.Model.Source.t)`, *default:* `nil`) - A list of sources for this location. If multiple sources are listed the data has been aggregated from those sources.
+  *   `startDate` (*type:* `String.t`, *default:* `nil`) - The first date that this early vote site or drop off location may be used. This field is not populated for polling locations.
+  *   `voterServices` (*type:* `String.t`, *default:* `nil`) - The services provided by this early vote site or drop off location. This field is not populated for polling locations.
   """
 
   use GoogleApi.Gax.ModelBase

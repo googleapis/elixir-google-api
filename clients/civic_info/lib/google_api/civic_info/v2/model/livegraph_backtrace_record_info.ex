@@ -21,22 +21,22 @@ defmodule GoogleApi.CivicInfo.V2.Model.LivegraphBacktraceRecordInfo do
 
   ## Attributes
 
-  - dataSourcePublishMsec (String.t):  Defaults to `nil`.
-  - expId (String.t):  Defaults to `nil`.
-  - expInfo (GoogleApi.CivicInfo.V2.Model.LivegraphBacktraceRecordInfoExpInfo.t):  Defaults to `nil`.
-  - isRecon (boolean()):  Defaults to `nil`.
-  - isWlmThrottled (boolean()):  Defaults to `nil`.
-  - numberOfTriples (String.t):  Defaults to `nil`.
-  - priority (String.t):  Defaults to `nil`.
-  - process (String.t):  Defaults to `nil`.
-  - proxyReceiveMsec (String.t):  Defaults to `nil`.
-  - proxySentMsec (String.t):  Defaults to `nil`.
-  - recordId (String.t):  Defaults to `nil`.
-  - shouldMonitorLatency (boolean()):  Defaults to `nil`.
-  - subscriberReceiveMsec (String.t):  Defaults to `nil`.
-  - topicBuildFinishMsec (String.t):  Defaults to `nil`.
-  - topicBuildStartMsec (String.t):  Defaults to `nil`.
-  - version (String.t):  Defaults to `nil`.
+  *   `dataSourcePublishMsec` (*type:* `String.t`, *default:* `nil`) - 
+  *   `expId` (*type:* `String.t`, *default:* `nil`) - 
+  *   `expInfo` (*type:* `GoogleApi.CivicInfo.V2.Model.LivegraphBacktraceRecordInfoExpInfo.t`, *default:* `nil`) - 
+  *   `isRecon` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `isWlmThrottled` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `numberOfTriples` (*type:* `String.t`, *default:* `nil`) - 
+  *   `priority` (*type:* `String.t`, *default:* `nil`) - 
+  *   `process` (*type:* `String.t`, *default:* `nil`) - 
+  *   `proxyReceiveMsec` (*type:* `String.t`, *default:* `nil`) - 
+  *   `proxySentMsec` (*type:* `String.t`, *default:* `nil`) - 
+  *   `recordId` (*type:* `String.t`, *default:* `nil`) - 
+  *   `shouldMonitorLatency` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `subscriberReceiveMsec` (*type:* `String.t`, *default:* `nil`) - 
+  *   `topicBuildFinishMsec` (*type:* `String.t`, *default:* `nil`) - 
+  *   `topicBuildStartMsec` (*type:* `String.t`, *default:* `nil`) - 
+  *   `version` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,8 +21,8 @@ defmodule GoogleApi.CivicInfo.V2.Model.Source do
 
   ## Attributes
 
-  - name (String.t): The name of the data source. Defaults to `nil`.
-  - official (boolean()): Whether this data comes from an official government source. Defaults to `nil`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the data source.
+  *   `official` (*type:* `boolean()`, *default:* `nil`) - Whether this data comes from an official government source.
   """
 
   use GoogleApi.Gax.ModelBase

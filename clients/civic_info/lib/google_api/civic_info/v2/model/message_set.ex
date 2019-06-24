@@ -21,7 +21,7 @@ defmodule GoogleApi.CivicInfo.V2.Model.MessageSet do
 
   ## Attributes
 
-  - recordMessageSetExt (GoogleApi.CivicInfo.V2.Model.LivegraphBacktraceRecordInfo.t):  Defaults to `nil`.
+  *   `recordMessageSetExt` (*type:* `GoogleApi.CivicInfo.V2.Model.LivegraphBacktraceRecordInfo.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

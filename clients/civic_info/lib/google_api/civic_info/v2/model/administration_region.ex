@@ -21,11 +21,11 @@ defmodule GoogleApi.CivicInfo.V2.Model.AdministrationRegion do
 
   ## Attributes
 
-  - electionAdministrationBody (GoogleApi.CivicInfo.V2.Model.AdministrativeBody.t): The election administration body for this area. Defaults to `nil`.
-  - id (String.t): An ID for this object. IDs may change in future requests and should not be cached. Access to this field requires special access that can be requested from the Request more link on the Quotas page. Defaults to `nil`.
-  - local_jurisdiction (GoogleApi.CivicInfo.V2.Model.AdministrationRegion.t): The city or county that provides election information for this voter. This object can have the same elements as state. Defaults to `nil`.
-  - name (String.t): The name of the jurisdiction. Defaults to `nil`.
-  - sources (list(GoogleApi.CivicInfo.V2.Model.Source.t)): A list of sources for this area. If multiple sources are listed the data has been aggregated from those sources. Defaults to `nil`.
+  *   `electionAdministrationBody` (*type:* `GoogleApi.CivicInfo.V2.Model.AdministrativeBody.t`, *default:* `nil`) - The election administration body for this area.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - An ID for this object. IDs may change in future requests and should not be cached. Access to this field requires special access that can be requested from the Request more link on the Quotas page.
+  *   `local_jurisdiction` (*type:* `GoogleApi.CivicInfo.V2.Model.AdministrationRegion.t`, *default:* `nil`) - The city or county that provides election information for this voter. This object can have the same elements as state.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the jurisdiction.
+  *   `sources` (*type:* `list(GoogleApi.CivicInfo.V2.Model.Source.t)`, *default:* `nil`) - A list of sources for this area. If multiple sources are listed the data has been aggregated from those sources.
   """
 
   use GoogleApi.Gax.ModelBase

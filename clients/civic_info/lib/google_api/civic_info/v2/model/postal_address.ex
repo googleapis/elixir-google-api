@@ -21,26 +21,26 @@ defmodule GoogleApi.CivicInfo.V2.Model.PostalAddress do
 
   ## Attributes
 
-  - addressLines (list(String.t)):  Defaults to `nil`.
-  - administrativeAreaName (String.t):  Defaults to `nil`.
-  - countryName (String.t):  Defaults to `nil`.
-  - countryNameCode (String.t):  Defaults to `nil`.
-  - dependentLocalityName (String.t):  Defaults to `nil`.
-  - dependentThoroughfareName (String.t):  Defaults to `nil`.
-  - firmName (String.t):  Defaults to `nil`.
-  - isDisputed (boolean()):  Defaults to `nil`.
-  - languageCode (String.t):  Defaults to `nil`.
-  - localityName (String.t):  Defaults to `nil`.
-  - postBoxNumber (String.t):  Defaults to `nil`.
-  - postalCodeNumber (String.t):  Defaults to `nil`.
-  - postalCodeNumberExtension (String.t):  Defaults to `nil`.
-  - premiseName (String.t):  Defaults to `nil`.
-  - recipientName (String.t):  Defaults to `nil`.
-  - sortingCode (String.t):  Defaults to `nil`.
-  - subAdministrativeAreaName (String.t):  Defaults to `nil`.
-  - subPremiseName (String.t):  Defaults to `nil`.
-  - thoroughfareName (String.t):  Defaults to `nil`.
-  - thoroughfareNumber (String.t):  Defaults to `nil`.
+  *   `addressLines` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `administrativeAreaName` (*type:* `String.t`, *default:* `nil`) - 
+  *   `countryName` (*type:* `String.t`, *default:* `nil`) - 
+  *   `countryNameCode` (*type:* `String.t`, *default:* `nil`) - 
+  *   `dependentLocalityName` (*type:* `String.t`, *default:* `nil`) - 
+  *   `dependentThoroughfareName` (*type:* `String.t`, *default:* `nil`) - 
+  *   `firmName` (*type:* `String.t`, *default:* `nil`) - 
+  *   `isDisputed` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `languageCode` (*type:* `String.t`, *default:* `nil`) - 
+  *   `localityName` (*type:* `String.t`, *default:* `nil`) - 
+  *   `postBoxNumber` (*type:* `String.t`, *default:* `nil`) - 
+  *   `postalCodeNumber` (*type:* `String.t`, *default:* `nil`) - 
+  *   `postalCodeNumberExtension` (*type:* `String.t`, *default:* `nil`) - 
+  *   `premiseName` (*type:* `String.t`, *default:* `nil`) - 
+  *   `recipientName` (*type:* `String.t`, *default:* `nil`) - 
+  *   `sortingCode` (*type:* `String.t`, *default:* `nil`) - 
+  *   `subAdministrativeAreaName` (*type:* `String.t`, *default:* `nil`) - 
+  *   `subPremiseName` (*type:* `String.t`, *default:* `nil`) - 
+  *   `thoroughfareName` (*type:* `String.t`, *default:* `nil`) - 
+  *   `thoroughfareNumber` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

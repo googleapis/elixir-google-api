@@ -21,51 +21,51 @@ defmodule GoogleApi.CivicInfo.V2.Model.StreetSegment do
 
   ## Attributes
 
-  - ncoaAddress (String.t):  Defaults to `nil`.
-  - unitType (String.t):  Defaults to `nil`.
-  - unitNumber (String.t):  Defaults to `nil`.
-  - congressionalDistrict (String.t):  Defaults to `nil`.
-  - stateHouseDistrict (String.t):  Defaults to `nil`.
-  - precinctName (String.t):  Defaults to `nil`.
-  - geographicDivisionOcdIds (list(String.t)):  Defaults to `nil`.
-  - vanPrecinctCode (String.t):  Defaults to `nil`.
-  - startLatE7 (String.t):  Defaults to `nil`.
-  - published (boolean()):  Defaults to `nil`.
-  - contestIds (list(String.t)):  Defaults to `nil`.
-  - geocodedPoint (GoogleApi.CivicInfo.V2.Model.PointProto.t):  Defaults to `nil`.
-  - startLngE7 (String.t):  Defaults to `nil`.
-  - municipalDistrict (String.t):  Defaults to `nil`.
-  - id (String.t):  Defaults to `nil`.
-  - streetName (String.t):  Defaults to `nil`.
-  - subAdministrativeAreaName (String.t):  Defaults to `nil`.
-  - surrogateId (String.t):  Defaults to `nil`.
-  - pollinglocationByIds (list(String.t)):  Defaults to `nil`.
-  - countyCouncilDistrict (String.t):  Defaults to `nil`.
-  - oddOrEvens (list(String.t)):  Defaults to `nil`.
-  - datasetId (String.t):  Defaults to `nil`.
-  - originalId (String.t):  Defaults to `nil`.
-  - state (String.t):  Defaults to `nil`.
-  - countyFips (String.t):  Defaults to `nil`.
-  - targetsmartUniquePrecinctCode (String.t):  Defaults to `nil`.
-  - precinctOcdId (String.t):  Defaults to `nil`.
-  - earlyVoteSiteByIds (list(String.t)):  Defaults to `nil`.
-  - wildcard (boolean()):  Defaults to `nil`.
-  - city (String.t):  Defaults to `nil`.
-  - beforeGeocodeId (String.t):  Defaults to `nil`.
-  - cityCouncilDistrict (String.t):  Defaults to `nil`.
-  - wardDistrict (String.t):  Defaults to `nil`.
-  - provenances (list(GoogleApi.CivicInfo.V2.Model.Provenance.t)):  Defaults to `nil`.
-  - administrationRegionIds (list(String.t)):  Defaults to `nil`.
-  - schoolDistrict (String.t):  Defaults to `nil`.
-  - zip (String.t):  Defaults to `nil`.
-  - judicialDistrict (String.t):  Defaults to `nil`.
-  - mailOnly (boolean()):  Defaults to `nil`.
-  - townshipDistrict (String.t):  Defaults to `nil`.
-  - endHouseNumber (String.t):  Defaults to `nil`.
-  - catalistUniquePrecinctCode (String.t):  Defaults to `nil`.
-  - startHouseNumber (String.t):  Defaults to `nil`.
-  - stateSenateDistrict (String.t):  Defaults to `nil`.
-  - voterGeographicDivisionOcdIds (list(String.t)):  Defaults to `nil`.
+  *   `ncoaAddress` (*type:* `String.t`, *default:* `nil`) - 
+  *   `unitType` (*type:* `String.t`, *default:* `nil`) - 
+  *   `unitNumber` (*type:* `String.t`, *default:* `nil`) - 
+  *   `congressionalDistrict` (*type:* `String.t`, *default:* `nil`) - 
+  *   `stateHouseDistrict` (*type:* `String.t`, *default:* `nil`) - 
+  *   `precinctName` (*type:* `String.t`, *default:* `nil`) - 
+  *   `geographicDivisionOcdIds` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `vanPrecinctCode` (*type:* `String.t`, *default:* `nil`) - 
+  *   `startLatE7` (*type:* `String.t`, *default:* `nil`) - 
+  *   `published` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `contestIds` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `geocodedPoint` (*type:* `GoogleApi.CivicInfo.V2.Model.PointProto.t`, *default:* `nil`) - 
+  *   `startLngE7` (*type:* `String.t`, *default:* `nil`) - 
+  *   `municipalDistrict` (*type:* `String.t`, *default:* `nil`) - 
+  *   `id` (*type:* `String.t`, *default:* `nil`) - 
+  *   `streetName` (*type:* `String.t`, *default:* `nil`) - 
+  *   `subAdministrativeAreaName` (*type:* `String.t`, *default:* `nil`) - 
+  *   `surrogateId` (*type:* `String.t`, *default:* `nil`) - 
+  *   `pollinglocationByIds` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `countyCouncilDistrict` (*type:* `String.t`, *default:* `nil`) - 
+  *   `oddOrEvens` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `datasetId` (*type:* `String.t`, *default:* `nil`) - 
+  *   `originalId` (*type:* `String.t`, *default:* `nil`) - 
+  *   `state` (*type:* `String.t`, *default:* `nil`) - 
+  *   `countyFips` (*type:* `String.t`, *default:* `nil`) - 
+  *   `targetsmartUniquePrecinctCode` (*type:* `String.t`, *default:* `nil`) - 
+  *   `precinctOcdId` (*type:* `String.t`, *default:* `nil`) - 
+  *   `earlyVoteSiteByIds` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `wildcard` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `city` (*type:* `String.t`, *default:* `nil`) - 
+  *   `beforeGeocodeId` (*type:* `String.t`, *default:* `nil`) - 
+  *   `cityCouncilDistrict` (*type:* `String.t`, *default:* `nil`) - 
+  *   `wardDistrict` (*type:* `String.t`, *default:* `nil`) - 
+  *   `provenances` (*type:* `list(GoogleApi.CivicInfo.V2.Model.Provenance.t)`, *default:* `nil`) - 
+  *   `administrationRegionIds` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `schoolDistrict` (*type:* `String.t`, *default:* `nil`) - 
+  *   `zip` (*type:* `String.t`, *default:* `nil`) - 
+  *   `judicialDistrict` (*type:* `String.t`, *default:* `nil`) - 
+  *   `mailOnly` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `townshipDistrict` (*type:* `String.t`, *default:* `nil`) - 
+  *   `endHouseNumber` (*type:* `String.t`, *default:* `nil`) - 
+  *   `catalistUniquePrecinctCode` (*type:* `String.t`, *default:* `nil`) - 
+  *   `startHouseNumber` (*type:* `String.t`, *default:* `nil`) - 
+  *   `stateSenateDistrict` (*type:* `String.t`, *default:* `nil`) - 
+  *   `voterGeographicDivisionOcdIds` (*type:* `list(String.t)`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

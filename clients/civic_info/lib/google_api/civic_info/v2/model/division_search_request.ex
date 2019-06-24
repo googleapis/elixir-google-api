@@ -21,7 +21,7 @@ defmodule GoogleApi.CivicInfo.V2.Model.DivisionSearchRequest do
 
   ## Attributes
 
-  - contextParams (GoogleApi.CivicInfo.V2.Model.ContextParams.t):  Defaults to `nil`.
+  *   `contextParams` (*type:* `GoogleApi.CivicInfo.V2.Model.ContextParams.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

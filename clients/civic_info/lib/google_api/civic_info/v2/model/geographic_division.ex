@@ -21,13 +21,13 @@ defmodule GoogleApi.CivicInfo.V2.Model.GeographicDivision do
 
   ## Attributes
 
-  - alsoKnownAs (list(String.t)): Any other valid OCD IDs that refer to the same division.
+  *   `alsoKnownAs` (*type:* `list(String.t)`, *default:* `nil`) - Any other valid OCD IDs that refer to the same division.
 
-  Because OCD IDs are meant to be human-readable and at least somewhat predictable, there are occasionally several identifiers for a single division. These identifiers are defined to be equivalent to one another, and one is always indicated as the primary identifier. The primary identifier will be returned in ocd_id above, and any other equivalent valid identifiers will be returned in this list.
+      Because OCD IDs are meant to be human-readable and at least somewhat predictable, there are occasionally several identifiers for a single division. These identifiers are defined to be equivalent to one another, and one is always indicated as the primary identifier. The primary identifier will be returned in ocd_id above, and any other equivalent valid identifiers will be returned in this list.
 
-  For example, if this division's OCD ID is ocd-division/country:us/district:dc, this will contain ocd-division/country:us/state:dc. Defaults to `nil`.
-  - name (String.t): The name of the division. Defaults to `nil`.
-  - officeIndices (list(integer())): List of indices in the offices array, one for each office elected from this division. Will only be present if includeOffices was true (or absent) in the request. Defaults to `nil`.
+      For example, if this division's OCD ID is ocd-division/country:us/district:dc, this will contain ocd-division/country:us/state:dc.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the division.
+  *   `officeIndices` (*type:* `list(integer())`, *default:* `nil`) - List of indices in the offices array, one for each office elected from this division. Will only be present if includeOffices was true (or absent) in the request.
   """
 
   use GoogleApi.Gax.ModelBase

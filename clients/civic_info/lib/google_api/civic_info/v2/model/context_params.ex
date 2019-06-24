@@ -21,7 +21,7 @@ defmodule GoogleApi.CivicInfo.V2.Model.ContextParams do
 
   ## Attributes
 
-  - clientProfile (String.t):  Defaults to `nil`.
+  *   `clientProfile` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

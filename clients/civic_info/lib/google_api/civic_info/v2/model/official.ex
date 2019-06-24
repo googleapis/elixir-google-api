@@ -21,14 +21,14 @@ defmodule GoogleApi.CivicInfo.V2.Model.Official do
 
   ## Attributes
 
-  - address (list(GoogleApi.CivicInfo.V2.Model.SimpleAddressType.t)): Addresses at which to contact the official. Defaults to `nil`.
-  - channels (list(GoogleApi.CivicInfo.V2.Model.Channel.t)): A list of known (social) media channels for this official. Defaults to `nil`.
-  - emails (list(String.t)): The direct email addresses for the official. Defaults to `nil`.
-  - name (String.t): The official's name. Defaults to `nil`.
-  - party (String.t): The full name of the party the official belongs to. Defaults to `nil`.
-  - phones (list(String.t)): The official's public contact phone numbers. Defaults to `nil`.
-  - photoUrl (String.t): A URL for a photo of the official. Defaults to `nil`.
-  - urls (list(String.t)): The official's public website URLs. Defaults to `nil`.
+  *   `address` (*type:* `list(GoogleApi.CivicInfo.V2.Model.SimpleAddressType.t)`, *default:* `nil`) - Addresses at which to contact the official.
+  *   `channels` (*type:* `list(GoogleApi.CivicInfo.V2.Model.Channel.t)`, *default:* `nil`) - A list of known (social) media channels for this official.
+  *   `emails` (*type:* `list(String.t)`, *default:* `nil`) - The direct email addresses for the official.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The official's name.
+  *   `party` (*type:* `String.t`, *default:* `nil`) - The full name of the party the official belongs to.
+  *   `phones` (*type:* `list(String.t)`, *default:* `nil`) - The official's public contact phone numbers.
+  *   `photoUrl` (*type:* `String.t`, *default:* `nil`) - A URL for a photo of the official.
+  *   `urls` (*type:* `list(String.t)`, *default:* `nil`) - The official's public website URLs.
   """
 
   use GoogleApi.Gax.ModelBase

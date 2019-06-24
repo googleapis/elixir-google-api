@@ -21,10 +21,10 @@ defmodule GoogleApi.CivicInfo.V2.Model.Election do
 
   ## Attributes
 
-  - electionDay (String.t): Day of the election in YYYY-MM-DD format. Defaults to `nil`.
-  - id (String.t): The unique ID of this election. Defaults to `nil`.
-  - name (String.t): A displayable name for the election. Defaults to `nil`.
-  - ocdDivisionId (String.t): The political division of the election. Represented as an OCD Division ID. Voters within these political jurisdictions are covered by this election. This is typically a state such as ocd-division/country:us/state:ca or for the midterms or general election the entire US (i.e. ocd-division/country:us). Defaults to `nil`.
+  *   `electionDay` (*type:* `String.t`, *default:* `nil`) - Day of the election in YYYY-MM-DD format.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The unique ID of this election.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - A displayable name for the election.
+  *   `ocdDivisionId` (*type:* `String.t`, *default:* `nil`) - The political division of the election. Represented as an OCD Division ID. Voters within these political jurisdictions are covered by this election. This is typically a state such as ocd-division/country:us/state:ca or for the midterms or general election the entire US (i.e. ocd-division/country:us).
   """
 
   use GoogleApi.Gax.ModelBase

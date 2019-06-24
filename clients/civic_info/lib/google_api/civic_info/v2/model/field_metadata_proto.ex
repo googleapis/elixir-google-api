@@ -21,7 +21,7 @@ defmodule GoogleApi.CivicInfo.V2.Model.FieldMetadataProto do
 
   ## Attributes
 
-  - internal (GoogleApi.CivicInfo.V2.Model.InternalFieldMetadataProto.t):  Defaults to `nil`.
+  *   `internal` (*type:* `GoogleApi.CivicInfo.V2.Model.InternalFieldMetadataProto.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

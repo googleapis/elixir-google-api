@@ -21,7 +21,7 @@ defmodule GoogleApi.CivicInfo.V2.Model.StreetSegmentList do
 
   ## Attributes
 
-  - segments (list(GoogleApi.CivicInfo.V2.Model.StreetSegment.t)):  Defaults to `nil`.
+  *   `segments` (*type:* `list(GoogleApi.CivicInfo.V2.Model.StreetSegment.t)`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

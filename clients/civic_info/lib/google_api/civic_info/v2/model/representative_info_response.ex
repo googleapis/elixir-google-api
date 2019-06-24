@@ -21,11 +21,11 @@ defmodule GoogleApi.CivicInfo.V2.Model.RepresentativeInfoResponse do
 
   ## Attributes
 
-  - divisions (%{optional(String.t) => GoogleApi.CivicInfo.V2.Model.GeographicDivision.t}): Political geographic divisions that contain the requested address. Defaults to `nil`.
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "civicinfo#representativeInfoResponse". Defaults to `civicinfo#representativeInfoResponse`.
-  - normalizedInput (GoogleApi.CivicInfo.V2.Model.SimpleAddressType.t): The normalized version of the requested address Defaults to `nil`.
-  - offices (list(GoogleApi.CivicInfo.V2.Model.Office.t)): Elected offices referenced by the divisions listed above. Will only be present if includeOffices was true in the request. Defaults to `nil`.
-  - officials (list(GoogleApi.CivicInfo.V2.Model.Official.t)): Officials holding the offices listed above. Will only be present if includeOffices was true in the request. Defaults to `nil`.
+  *   `divisions` (*type:* `%{optional(String.t) => GoogleApi.CivicInfo.V2.Model.GeographicDivision.t}`, *default:* `nil`) - Political geographic divisions that contain the requested address.
+  *   `kind` (*type:* `String.t`, *default:* `civicinfo#representativeInfoResponse`) - Identifies what kind of resource this is. Value: the fixed string "civicinfo#representativeInfoResponse".
+  *   `normalizedInput` (*type:* `GoogleApi.CivicInfo.V2.Model.SimpleAddressType.t`, *default:* `nil`) - The normalized version of the requested address
+  *   `offices` (*type:* `list(GoogleApi.CivicInfo.V2.Model.Office.t)`, *default:* `nil`) - Elected offices referenced by the divisions listed above. Will only be present if includeOffices was true in the request.
+  *   `officials` (*type:* `list(GoogleApi.CivicInfo.V2.Model.Official.t)`, *default:* `nil`) - Officials holding the offices listed above. Will only be present if includeOffices was true in the request.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,14 +21,14 @@ defmodule GoogleApi.CivicInfo.V2.Model.Candidate do
 
   ## Attributes
 
-  - candidateUrl (String.t): The URL for the candidate's campaign web site. Defaults to `nil`.
-  - channels (list(GoogleApi.CivicInfo.V2.Model.Channel.t)): A list of known (social) media channels for this candidate. Defaults to `nil`.
-  - email (String.t): The email address for the candidate's campaign. Defaults to `nil`.
-  - name (String.t): The candidate's name. If this is a joint ticket it will indicate the name of the candidate at the top of a ticket followed by a / and that name of candidate at the bottom of the ticket. e.g. "Mitt Romney / Paul Ryan" Defaults to `nil`.
-  - orderOnBallot (String.t): The order the candidate appears on the ballot for this contest. Defaults to `nil`.
-  - party (String.t): The full name of the party the candidate is a member of. Defaults to `nil`.
-  - phone (String.t): The voice phone number for the candidate's campaign office. Defaults to `nil`.
-  - photoUrl (String.t): A URL for a photo of the candidate. Defaults to `nil`.
+  *   `candidateUrl` (*type:* `String.t`, *default:* `nil`) - The URL for the candidate's campaign web site.
+  *   `channels` (*type:* `list(GoogleApi.CivicInfo.V2.Model.Channel.t)`, *default:* `nil`) - A list of known (social) media channels for this candidate.
+  *   `email` (*type:* `String.t`, *default:* `nil`) - The email address for the candidate's campaign.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The candidate's name. If this is a joint ticket it will indicate the name of the candidate at the top of a ticket followed by a / and that name of candidate at the bottom of the ticket. e.g. "Mitt Romney / Paul Ryan"
+  *   `orderOnBallot` (*type:* `String.t`, *default:* `nil`) - The order the candidate appears on the ballot for this contest.
+  *   `party` (*type:* `String.t`, *default:* `nil`) - The full name of the party the candidate is a member of.
+  *   `phone` (*type:* `String.t`, *default:* `nil`) - The voice phone number for the candidate's campaign office.
+  *   `photoUrl` (*type:* `String.t`, *default:* `nil`) - A URL for a photo of the candidate.
   """
 
   use GoogleApi.Gax.ModelBase

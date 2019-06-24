@@ -21,10 +21,10 @@ defmodule GoogleApi.CivicInfo.V2.Model.VoterInfoSegmentResult do
 
   ## Attributes
 
-  - generatedMillis (String.t):  Defaults to `nil`.
-  - postalAddress (GoogleApi.CivicInfo.V2.Model.PostalAddress.t):  Defaults to `nil`.
-  - request (GoogleApi.CivicInfo.V2.Model.VoterInfoRequest.t):  Defaults to `nil`.
-  - response (GoogleApi.CivicInfo.V2.Model.VoterInfoResponse.t):  Defaults to `nil`.
+  *   `generatedMillis` (*type:* `String.t`, *default:* `nil`) - 
+  *   `postalAddress` (*type:* `GoogleApi.CivicInfo.V2.Model.PostalAddress.t`, *default:* `nil`) - 
+  *   `request` (*type:* `GoogleApi.CivicInfo.V2.Model.VoterInfoRequest.t`, *default:* `nil`) - 
+  *   `response` (*type:* `GoogleApi.CivicInfo.V2.Model.VoterInfoResponse.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

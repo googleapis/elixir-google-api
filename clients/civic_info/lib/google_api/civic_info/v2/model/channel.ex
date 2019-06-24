@@ -21,8 +21,8 @@ defmodule GoogleApi.CivicInfo.V2.Model.Channel do
 
   ## Attributes
 
-  - id (String.t): The unique public identifier for the candidate's channel. Defaults to `nil`.
-  - type (String.t): The type of channel. The following is a list of types of channels, but is not exhaustive. More channel types may be added at a later time. One of: GooglePlus, YouTube, Facebook, Twitter Defaults to `nil`.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The unique public identifier for the candidate's channel.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of channel. The following is a list of types of channels, but is not exhaustive. More channel types may be added at a later time. One of: GooglePlus, YouTube, Facebook, Twitter
   """
 
   use GoogleApi.Gax.ModelBase
