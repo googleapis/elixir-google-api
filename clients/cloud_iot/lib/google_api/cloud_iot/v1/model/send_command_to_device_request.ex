@@ -21,12 +21,12 @@ defmodule GoogleApi.CloudIot.V1.Model.SendCommandToDeviceRequest do
 
   ## Attributes
 
-  - binaryData (String.t): The command data to send to the device. Defaults to `nil`.
-  - subfolder (String.t): Optional subfolder for the command. If empty, the command will be delivered
-  to the /devices/{device-id}/commands topic, otherwise it will be delivered
-  to the /devices/{device-id}/commands/{subfolder} topic. Multi-level
-  subfolders are allowed. This field must not have more than 256 characters,
-  and must not contain any MQTT wildcards ("+" or "#") or null characters. Defaults to `nil`.
+  *   `binaryData` (*type:* `String.t`, *default:* `nil`) - The command data to send to the device.
+  *   `subfolder` (*type:* `String.t`, *default:* `nil`) - Optional subfolder for the command. If empty, the command will be delivered
+      to the /devices/{device-id}/commands topic, otherwise it will be delivered
+      to the /devices/{device-id}/commands/{subfolder} topic. Multi-level
+      subfolders are allowed. This field must not have more than 256 characters,
+      and must not contain any MQTT wildcards ("+" or "#") or null characters.
   """
 
   use GoogleApi.Gax.ModelBase

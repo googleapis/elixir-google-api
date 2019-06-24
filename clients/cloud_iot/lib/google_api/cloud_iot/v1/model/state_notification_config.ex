@@ -21,8 +21,8 @@ defmodule GoogleApi.CloudIot.V1.Model.StateNotificationConfig do
 
   ## Attributes
 
-  - pubsubTopicName (String.t): A Cloud Pub/Sub topic name. For example,
-  `projects/myProject/topics/deviceEvents`. Defaults to `nil`.
+  *   `pubsubTopicName` (*type:* `String.t`, *default:* `nil`) - A Cloud Pub/Sub topic name. For example,
+      `projects/myProject/topics/deviceEvents`.
   """
 
   use GoogleApi.Gax.ModelBase

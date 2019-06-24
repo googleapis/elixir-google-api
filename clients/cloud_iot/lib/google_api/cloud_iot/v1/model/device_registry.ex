@@ -21,41 +21,41 @@ defmodule GoogleApi.CloudIot.V1.Model.DeviceRegistry do
 
   ## Attributes
 
-  - credentials (list(GoogleApi.CloudIot.V1.Model.RegistryCredential.t)): The credentials used to verify the device credentials. No more than 10
-  credentials can be bound to a single registry at a time. The verification
-  process occurs at the time of device creation or update. If this field is
-  empty, no verification is performed. Otherwise, the credentials of a newly
-  created device or added credentials of an updated device should be signed
-  with one of these registry credentials.
+  *   `credentials` (*type:* `list(GoogleApi.CloudIot.V1.Model.RegistryCredential.t)`, *default:* `nil`) - The credentials used to verify the device credentials. No more than 10
+      credentials can be bound to a single registry at a time. The verification
+      process occurs at the time of device creation or update. If this field is
+      empty, no verification is performed. Otherwise, the credentials of a newly
+      created device or added credentials of an updated device should be signed
+      with one of these registry credentials.
 
-  Note, however, that existing devices will never be affected by
-  modifications to this list of credentials: after a device has been
-  successfully created in a registry, it should be able to connect even if
-  its registry credentials are revoked, deleted, or modified. Defaults to `nil`.
-  - eventNotificationConfigs (list(GoogleApi.CloudIot.V1.Model.EventNotificationConfig.t)): The configuration for notification of telemetry events received from the
-  device. All telemetry events that were successfully published by the
-  device and acknowledged by Cloud IoT Core are guaranteed to be
-  delivered to Cloud Pub/Sub. If multiple configurations match a message,
-  only the first matching configuration is used. If you try to publish a
-  device telemetry event using MQTT without specifying a Cloud Pub/Sub topic
-  for the device's registry, the connection closes automatically. If you try
-  to do so using an HTTP connection, an error is returned. Up to 10
-  configurations may be provided. Defaults to `nil`.
-  - httpConfig (GoogleApi.CloudIot.V1.Model.HttpConfig.t): The DeviceService (HTTP) configuration for this device registry. Defaults to `nil`.
-  - id (String.t): The identifier of this device registry. For example, `myRegistry`. Defaults to `nil`.
-  - logLevel (String.t): **Beta Feature**
+      Note, however, that existing devices will never be affected by
+      modifications to this list of credentials: after a device has been
+      successfully created in a registry, it should be able to connect even if
+      its registry credentials are revoked, deleted, or modified.
+  *   `eventNotificationConfigs` (*type:* `list(GoogleApi.CloudIot.V1.Model.EventNotificationConfig.t)`, *default:* `nil`) - The configuration for notification of telemetry events received from the
+      device. All telemetry events that were successfully published by the
+      device and acknowledged by Cloud IoT Core are guaranteed to be
+      delivered to Cloud Pub/Sub. If multiple configurations match a message,
+      only the first matching configuration is used. If you try to publish a
+      device telemetry event using MQTT without specifying a Cloud Pub/Sub topic
+      for the device's registry, the connection closes automatically. If you try
+      to do so using an HTTP connection, an error is returned. Up to 10
+      configurations may be provided.
+  *   `httpConfig` (*type:* `GoogleApi.CloudIot.V1.Model.HttpConfig.t`, *default:* `nil`) - The DeviceService (HTTP) configuration for this device registry.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The identifier of this device registry. For example, `myRegistry`.
+  *   `logLevel` (*type:* `String.t`, *default:* `nil`) - **Beta Feature**
 
-  The default logging verbosity for activity from devices in this registry.
-  The verbosity level can be overridden by Device.log_level. Defaults to `nil`.
-  - mqttConfig (GoogleApi.CloudIot.V1.Model.MqttConfig.t): The MQTT configuration for this device registry. Defaults to `nil`.
-  - name (String.t): The resource path name. For example,
-  `projects/example-project/locations/us-central1/registries/my-registry`. Defaults to `nil`.
-  - stateNotificationConfig (GoogleApi.CloudIot.V1.Model.StateNotificationConfig.t): The configuration for notification of new states received from the device.
-  State updates are guaranteed to be stored in the state history, but
-  notifications to Cloud Pub/Sub are not guaranteed. For example, if
-  permissions are misconfigured or the specified topic doesn't exist, no
-  notification will be published but the state will still be stored in Cloud
-  IoT Core. Defaults to `nil`.
+      The default logging verbosity for activity from devices in this registry.
+      The verbosity level can be overridden by Device.log_level.
+  *   `mqttConfig` (*type:* `GoogleApi.CloudIot.V1.Model.MqttConfig.t`, *default:* `nil`) - The MQTT configuration for this device registry.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource path name. For example,
+      `projects/example-project/locations/us-central1/registries/my-registry`.
+  *   `stateNotificationConfig` (*type:* `GoogleApi.CloudIot.V1.Model.StateNotificationConfig.t`, *default:* `nil`) - The configuration for notification of new states received from the device.
+      State updates are guaranteed to be stored in the state history, but
+      notifications to Cloud Pub/Sub are not guaranteed. For example, if
+      permissions are misconfigured or the specified topic doesn't exist, no
+      notification will be published but the state will still be stored in Cloud
+      IoT Core.
   """
 
   use GoogleApi.Gax.ModelBase

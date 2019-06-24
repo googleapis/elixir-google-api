@@ -21,9 +21,9 @@ defmodule GoogleApi.CloudIot.V1.Model.PublicKeyCertificate do
 
   ## Attributes
 
-  - certificate (String.t): The certificate data. Defaults to `nil`.
-  - format (String.t): The certificate format. Defaults to `nil`.
-  - x509Details (GoogleApi.CloudIot.V1.Model.X509CertificateDetails.t): [Output only] The certificate details. Used only for X.509 certificates. Defaults to `nil`.
+  *   `certificate` (*type:* `String.t`, *default:* `nil`) - The certificate data.
+  *   `format` (*type:* `String.t`, *default:* `nil`) - The certificate format.
+  *   `x509Details` (*type:* `GoogleApi.CloudIot.V1.Model.X509CertificateDetails.t`, *default:* `nil`) - [Output only] The certificate details. Used only for X.509 certificates.
   """
 
   use GoogleApi.Gax.ModelBase

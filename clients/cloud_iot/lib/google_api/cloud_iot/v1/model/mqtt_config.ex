@@ -21,8 +21,8 @@ defmodule GoogleApi.CloudIot.V1.Model.MqttConfig do
 
   ## Attributes
 
-  - mqttEnabledState (String.t): If enabled, allows connections using the MQTT protocol. Otherwise, MQTT
-  connections to this registry will fail. Defaults to `nil`.
+  *   `mqttEnabledState` (*type:* `String.t`, *default:* `nil`) - If enabled, allows connections using the MQTT protocol. Otherwise, MQTT
+      connections to this registry will fail.
   """
 
   use GoogleApi.Gax.ModelBase

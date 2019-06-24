@@ -21,8 +21,8 @@ defmodule GoogleApi.CloudIot.V1.Model.HttpConfig do
 
   ## Attributes
 
-  - httpEnabledState (String.t): If enabled, allows devices to use DeviceService via the HTTP protocol.
-  Otherwise, any requests to DeviceService will fail for this registry. Defaults to `nil`.
+  *   `httpEnabledState` (*type:* `String.t`, *default:* `nil`) - If enabled, allows devices to use DeviceService via the HTTP protocol.
+      Otherwise, any requests to DeviceService will fail for this registry.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,12 +21,12 @@ defmodule GoogleApi.CloudIot.V1.Model.GatewayConfig do
 
   ## Attributes
 
-  - gatewayAuthMethod (String.t): Indicates how to authorize and/or authenticate devices to access the
-  gateway. Defaults to `nil`.
-  - gatewayType (String.t): Indicates whether the device is a gateway. Defaults to `nil`.
-  - lastAccessedGatewayId (String.t): [Output only] The ID of the gateway the device accessed most recently. Defaults to `nil`.
-  - lastAccessedGatewayTime (DateTime.t): [Output only] The most recent time at which the device accessed the gateway
-  specified in `last_accessed_gateway`. Defaults to `nil`.
+  *   `gatewayAuthMethod` (*type:* `String.t`, *default:* `nil`) - Indicates how to authorize and/or authenticate devices to access the
+      gateway.
+  *   `gatewayType` (*type:* `String.t`, *default:* `nil`) - Indicates whether the device is a gateway.
+  *   `lastAccessedGatewayId` (*type:* `String.t`, *default:* `nil`) - [Output only] The ID of the gateway the device accessed most recently.
+  *   `lastAccessedGatewayTime` (*type:* `DateTime.t`, *default:* `nil`) - [Output only] The most recent time at which the device accessed the gateway
+      specified in `last_accessed_gateway`.
   """
 
   use GoogleApi.Gax.ModelBase
