@@ -21,11 +21,11 @@ defmodule GoogleApi.CloudFunctions.V1.Model.ListFunctionsResponse do
 
   ## Attributes
 
-  - functions (list(GoogleApi.CloudFunctions.V1.Model.CloudFunction.t)): The functions that match the request. Defaults to `nil`.
-  - nextPageToken (String.t): If not empty, indicates that there may be more functions that match
-  the request; this value should be passed in a new
-  google.cloud.functions.v1.ListFunctionsRequest
-  to get more functions. Defaults to `nil`.
+  *   `functions` (*type:* `list(GoogleApi.CloudFunctions.V1.Model.CloudFunction.t)`, *default:* `nil`) - The functions that match the request.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If not empty, indicates that there may be more functions that match
+      the request; this value should be passed in a new
+      google.cloud.functions.v1.ListFunctionsRequest
+      to get more functions.
   """
 
   use GoogleApi.Gax.ModelBase

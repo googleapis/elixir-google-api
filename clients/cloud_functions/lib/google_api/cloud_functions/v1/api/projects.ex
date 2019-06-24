@@ -28,30 +28,36 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudFunctions.V1.Connection): Connection to server
-  - projects_id (String.t): Part of `name`. The resource that owns the locations collection, if applicable.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :filter (String.t): The standard list filter.
-    - :pageSize (integer()): The standard list page size.
-    - :pageToken (String.t): The standard list page token.
+  *   `connection` (*type:* `GoogleApi.CloudFunctions.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The resource that owns the locations collection, if applicable.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:filter` (*type:* `String.t`) - The standard list filter.
+      *   `:pageSize` (*type:* `integer()`) - The standard list page size.
+      *   `:pageToken` (*type:* `String.t`) - The standard list page token.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudFunctions.V1.Model.ListLocationsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudFunctions.V1.Model.ListLocationsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec cloudfunctions_projects_locations_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec cloudfunctions_projects_locations_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.CloudFunctions.V1.Model.ListLocationsResponse.t()}
           | {:error, Tesla.Env.t()}
   def cloudfunctions_projects_locations_list(
@@ -100,34 +106,36 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudFunctions.V1.Connection): Connection to server
-  - projects_id (String.t): Part of `name`. The name of the function to be called.
-  - locations_id (String.t): Part of `name`. See documentation of `projectsId`.
-  - functions_id (String.t): Part of `name`. See documentation of `projectsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.CloudFunctions.V1.Model.CallFunctionRequest.t): 
+  *   `connection` (*type:* `GoogleApi.CloudFunctions.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the function to be called.
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `functions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.CloudFunctions.V1.Model.CallFunctionRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudFunctions.V1.Model.CallFunctionResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudFunctions.V1.Model.CallFunctionResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec cloudfunctions_projects_locations_functions_call(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.CloudFunctions.V1.Model.CallFunctionResponse.t()}
@@ -182,33 +190,35 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudFunctions.V1.Connection): Connection to server
-  - projects_id (String.t): Part of `location`. The project and location in which the function should be created, specified
-  in the format `projects/*/locations/*`
-  - locations_id (String.t): Part of `location`. See documentation of `projectsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.CloudFunctions.V1.Model.CloudFunction.t): 
+  *   `connection` (*type:* `GoogleApi.CloudFunctions.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `location`. The project and location in which the function should be created, specified
+      in the format `projects/*/locations/*`
+  *   `locations_id` (*type:* `String.t`) - Part of `location`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.CloudFunctions.V1.Model.CloudFunction.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudFunctions.V1.Model.Operation{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudFunctions.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec cloudfunctions_projects_locations_functions_create(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.CloudFunctions.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def cloudfunctions_projects_locations_functions_create(
@@ -254,33 +264,35 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudFunctions.V1.Connection): Connection to server
-  - projects_id (String.t): Part of `name`. The name of the function which should be deleted.
-  - locations_id (String.t): Part of `name`. See documentation of `projectsId`.
-  - functions_id (String.t): Part of `name`. See documentation of `projectsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.CloudFunctions.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the function which should be deleted.
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `functions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudFunctions.V1.Model.Operation{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudFunctions.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec cloudfunctions_projects_locations_functions_delete(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.CloudFunctions.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def cloudfunctions_projects_locations_functions_delete(
@@ -332,35 +344,37 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudFunctions.V1.Connection): Connection to server
-  - projects_id (String.t): Part of `name`. The name of function for which source code Google Cloud Storage signed
-  URL should be generated.
-  - locations_id (String.t): Part of `name`. See documentation of `projectsId`.
-  - functions_id (String.t): Part of `name`. See documentation of `projectsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.CloudFunctions.V1.Model.GenerateDownloadUrlRequest.t): 
+  *   `connection` (*type:* `GoogleApi.CloudFunctions.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of function for which source code Google Cloud Storage signed
+      URL should be generated.
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `functions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.CloudFunctions.V1.Model.GenerateDownloadUrlRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudFunctions.V1.Model.GenerateDownloadUrlResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudFunctions.V1.Model.GenerateDownloadUrlResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec cloudfunctions_projects_locations_functions_generate_download_url(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.CloudFunctions.V1.Model.GenerateDownloadUrlResponse.t()}
@@ -422,9 +436,9 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
   * Source file type should be a zip file.
   * Source file size should not exceed 100MB limit.
   * No credentials should be attached - the signed URLs provide access to the
-  target bucket using internal service identity; if credentials were
-  attached, the identity from the credentials would be used, but that
-  identity does not have permissions to upload files to the URL.
+    target bucket using internal service identity; if credentials were
+    attached, the identity from the credentials would be used, but that
+    identity does not have permissions to upload files to the URL.
 
   When making a HTTP PUT request, these two headers need to be specified:
 
@@ -437,33 +451,35 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudFunctions.V1.Connection): Connection to server
-  - projects_id (String.t): Part of `parent`. The project and location in which the Google Cloud Storage signed URL
-  should be generated, specified in the format `projects/*/locations/*`.
-  - locations_id (String.t): Part of `parent`. See documentation of `projectsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.CloudFunctions.V1.Model.GenerateUploadUrlRequest.t): 
+  *   `connection` (*type:* `GoogleApi.CloudFunctions.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The project and location in which the Google Cloud Storage signed URL
+      should be generated, specified in the format `projects/*/locations/*`.
+  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.CloudFunctions.V1.Model.GenerateUploadUrlRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudFunctions.V1.Model.GenerateUploadUrlResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudFunctions.V1.Model.GenerateUploadUrlResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec cloudfunctions_projects_locations_functions_generate_upload_url(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.CloudFunctions.V1.Model.GenerateUploadUrlResponse.t()}
@@ -514,33 +530,35 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudFunctions.V1.Connection): Connection to server
-  - projects_id (String.t): Part of `name`. The name of the function which details should be obtained.
-  - locations_id (String.t): Part of `name`. See documentation of `projectsId`.
-  - functions_id (String.t): Part of `name`. See documentation of `projectsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.CloudFunctions.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the function which details should be obtained.
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `functions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudFunctions.V1.Model.CloudFunction{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudFunctions.V1.Model.CloudFunction{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec cloudfunctions_projects_locations_functions_get(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.CloudFunctions.V1.Model.CloudFunction.t()} | {:error, Tesla.Env.t()}
   def cloudfunctions_projects_locations_functions_get(
@@ -590,34 +608,36 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudFunctions.V1.Connection): Connection to server
-  - projects_id (String.t): Part of `resource`. REQUIRED: The resource for which the policy is being requested.
-  See the operation documentation for the appropriate value for this field.
-  - locations_id (String.t): Part of `resource`. See documentation of `projectsId`.
-  - functions_id (String.t): Part of `resource`. See documentation of `projectsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.CloudFunctions.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested.
+      See the operation documentation for the appropriate value for this field.
+  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `functions_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudFunctions.V1.Model.Policy{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudFunctions.V1.Model.Policy{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec cloudfunctions_projects_locations_functions_get_iam_policy(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.CloudFunctions.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
   def cloudfunctions_projects_locations_functions_get_iam_policy(
@@ -665,39 +685,41 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudFunctions.V1.Connection): Connection to server
-  - projects_id (String.t): Part of `parent`. The project and location from which the function should be listed,
-  specified in the format `projects/*/locations/*`
-  If you want to list functions in all locations, use "-" in place of a
-  location.
-  - locations_id (String.t): Part of `parent`. See documentation of `projectsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :pageSize (integer()): Maximum number of functions to return per call.
-    - :pageToken (String.t): The value returned by the last
-  `ListFunctionsResponse`; indicates that
-  this is a continuation of a prior `ListFunctions` call, and that the
-  system should return the next page of data.
+  *   `connection` (*type:* `GoogleApi.CloudFunctions.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The project and location from which the function should be listed,
+      specified in the format `projects/*/locations/*`
+      If you want to list functions in all locations, use "-" in place of a
+      location.
+  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - Maximum number of functions to return per call.
+      *   `:pageToken` (*type:* `String.t`) - The value returned by the last
+          `ListFunctionsResponse`; indicates that
+          this is a continuation of a prior `ListFunctions` call, and that the
+          system should return the next page of data.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudFunctions.V1.Model.ListFunctionsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudFunctions.V1.Model.ListFunctionsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec cloudfunctions_projects_locations_functions_list(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.CloudFunctions.V1.Model.ListFunctionsResponse.t()}
@@ -746,36 +768,38 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudFunctions.V1.Connection): Connection to server
-  - projects_id (String.t): Part of `function.name`. A user-defined name of the function. Function names must be unique
-  globally and match pattern `projects/*/locations/*/functions/*`
-  - locations_id (String.t): Part of `function.name`. See documentation of `projectsId`.
-  - functions_id (String.t): Part of `function.name`. See documentation of `projectsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :updateMask (String.t): Required list of fields to be updated in this request.
-    - :body (GoogleApi.CloudFunctions.V1.Model.CloudFunction.t): 
+  *   `connection` (*type:* `GoogleApi.CloudFunctions.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `function.name`. A user-defined name of the function. Function names must be unique
+      globally and match pattern `projects/*/locations/*/functions/*`
+  *   `locations_id` (*type:* `String.t`) - Part of `function.name`. See documentation of `projectsId`.
+  *   `functions_id` (*type:* `String.t`) - Part of `function.name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:updateMask` (*type:* `String.t`) - Required list of fields to be updated in this request.
+      *   `:body` (*type:* `GoogleApi.CloudFunctions.V1.Model.CloudFunction.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudFunctions.V1.Model.Operation{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudFunctions.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec cloudfunctions_projects_locations_functions_patch(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.CloudFunctions.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def cloudfunctions_projects_locations_functions_patch(
@@ -826,35 +850,37 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudFunctions.V1.Connection): Connection to server
-  - projects_id (String.t): Part of `resource`. REQUIRED: The resource for which the policy is being specified.
-  See the operation documentation for the appropriate value for this field.
-  - locations_id (String.t): Part of `resource`. See documentation of `projectsId`.
-  - functions_id (String.t): Part of `resource`. See documentation of `projectsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.CloudFunctions.V1.Model.SetIamPolicyRequest.t): 
+  *   `connection` (*type:* `GoogleApi.CloudFunctions.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified.
+      See the operation documentation for the appropriate value for this field.
+  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `functions_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.CloudFunctions.V1.Model.SetIamPolicyRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudFunctions.V1.Model.Policy{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudFunctions.V1.Model.Policy{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec cloudfunctions_projects_locations_functions_set_iam_policy(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.CloudFunctions.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
   def cloudfunctions_projects_locations_functions_set_iam_policy(
@@ -906,35 +932,37 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudFunctions.V1.Connection): Connection to server
-  - projects_id (String.t): Part of `resource`. REQUIRED: The resource for which the policy detail is being requested.
-  See the operation documentation for the appropriate value for this field.
-  - locations_id (String.t): Part of `resource`. See documentation of `projectsId`.
-  - functions_id (String.t): Part of `resource`. See documentation of `projectsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.CloudFunctions.V1.Model.TestIamPermissionsRequest.t): 
+  *   `connection` (*type:* `GoogleApi.CloudFunctions.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested.
+      See the operation documentation for the appropriate value for this field.
+  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `functions_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.CloudFunctions.V1.Model.TestIamPermissionsRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudFunctions.V1.Model.TestIamPermissionsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudFunctions.V1.Model.TestIamPermissionsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec cloudfunctions_projects_locations_functions_test_iam_permissions(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.CloudFunctions.V1.Model.TestIamPermissionsResponse.t()}

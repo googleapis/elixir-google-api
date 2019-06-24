@@ -21,8 +21,8 @@ defmodule GoogleApi.CloudFunctions.V1.Model.ListLocationsResponse do
 
   ## Attributes
 
-  - locations (list(GoogleApi.CloudFunctions.V1.Model.Location.t)): A list of locations that matches the specified filter in the request. Defaults to `nil`.
-  - nextPageToken (String.t): The standard List next-page token. Defaults to `nil`.
+  *   `locations` (*type:* `list(GoogleApi.CloudFunctions.V1.Model.Location.t)`, *default:* `nil`) - A list of locations that matches the specified filter in the request.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The standard List next-page token.
   """
 
   use GoogleApi.Gax.ModelBase
