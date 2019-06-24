@@ -21,10 +21,10 @@ defmodule GoogleApi.Licensing.V1.Model.LicenseAssignmentList do
 
   ## Attributes
 
-  - etag (String.t): ETag of the resource. Defaults to `nil`.
-  - items (list(GoogleApi.Licensing.V1.Model.LicenseAssignment.t)): The LicenseAssignments in this page of results. Defaults to `nil`.
-  - kind (String.t): Identifies the resource as a collection of LicenseAssignments. Defaults to `licensing#licenseAssignmentList`.
-  - nextPageToken (String.t): The continuation token, used to page through large result sets. Provide this value in a subsequent request to return the next page of results. Defaults to `nil`.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
+  *   `items` (*type:* `list(GoogleApi.Licensing.V1.Model.LicenseAssignment.t)`, *default:* `nil`) - The LicenseAssignments in this page of results.
+  *   `kind` (*type:* `String.t`, *default:* `licensing#licenseAssignmentList`) - Identifies the resource as a collection of LicenseAssignments.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The continuation token, used to page through large result sets. Provide this value in a subsequent request to return the next page of results.
   """
 
   use GoogleApi.Gax.ModelBase

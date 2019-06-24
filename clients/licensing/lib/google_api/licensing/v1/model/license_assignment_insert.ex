@@ -21,7 +21,7 @@ defmodule GoogleApi.Licensing.V1.Model.LicenseAssignmentInsert do
 
   ## Attributes
 
-  - userId (String.t): Email id of the user Defaults to `nil`.
+  *   `userId` (*type:* `String.t`, *default:* `nil`) - Email id of the user
   """
 
   use GoogleApi.Gax.ModelBase

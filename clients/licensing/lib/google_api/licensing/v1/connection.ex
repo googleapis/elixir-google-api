@@ -20,6 +20,8 @@ defmodule GoogleApi.Licensing.V1.Connection do
   Handle Tesla connections for GoogleApi.Licensing.V1.
   """
 
+  @type t :: Tesla.Env.client()
+
   use GoogleApi.Gax.Connection,
     scopes: [
       # View and manage G Suite licenses for your domain
