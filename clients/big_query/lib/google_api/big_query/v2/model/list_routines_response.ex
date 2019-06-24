@@ -21,10 +21,10 @@ defmodule GoogleApi.BigQuery.V2.Model.ListRoutinesResponse do
 
   ## Attributes
 
-  - nextPageToken (String.t): A token to request the next page of results. Defaults to `nil`.
-  - routines (list(GoogleApi.BigQuery.V2.Model.Routine.t)): Routines in the requested dataset. Only the following fields are populated:
-  etag, project_id, dataset_id, routine_id, routine_type, creation_time,
-  last_modified_time, language. Defaults to `nil`.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to request the next page of results.
+  *   `routines` (*type:* `list(GoogleApi.BigQuery.V2.Model.Routine.t)`, *default:* `nil`) - Routines in the requested dataset. Only the following fields are populated:
+      etag, project_id, dataset_id, routine_id, routine_type, creation_time,
+      last_modified_time, language.
   """
 
   use GoogleApi.Gax.ModelBase

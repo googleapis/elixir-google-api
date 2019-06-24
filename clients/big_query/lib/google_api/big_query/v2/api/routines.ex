@@ -28,29 +28,31 @@ defmodule GoogleApi.BigQuery.V2.Api.Routines do
 
   ## Parameters
 
-  - connection (GoogleApi.BigQuery.V2.Connection): Connection to server
-  - project_id (String.t): Project ID of the routine to delete
-  - dataset_id (String.t): Dataset ID of the routine to delete
-  - routine_id (String.t): Routine ID of the routine to delete
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.BigQuery.V2.Connection.t`) - Connection to server
+  *   `project_id` (*type:* `String.t`) - Project ID of the routine to delete
+  *   `dataset_id` (*type:* `String.t`) - Dataset ID of the routine to delete
+  *   `routine_id` (*type:* `String.t`) - Routine ID of the routine to delete
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %{}} on success
-  {:error, info} on failure
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec bigquery_routines_delete(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, nil} | {:error, Tesla.Env.t()}
   def bigquery_routines_delete(
@@ -94,28 +96,35 @@ defmodule GoogleApi.BigQuery.V2.Api.Routines do
 
   ## Parameters
 
-  - connection (GoogleApi.BigQuery.V2.Connection): Connection to server
-  - project_id (String.t): Project ID of the requested routine
-  - dataset_id (String.t): Dataset ID of the requested routine
-  - routine_id (String.t): Routine ID of the requested routine
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :fieldMask (String.t): If set, only the Routine fields in the field mask are returned in the
-  response. If unset, all Routine fields are returned.
+  *   `connection` (*type:* `GoogleApi.BigQuery.V2.Connection.t`) - Connection to server
+  *   `project_id` (*type:* `String.t`) - Project ID of the requested routine
+  *   `dataset_id` (*type:* `String.t`) - Dataset ID of the requested routine
+  *   `routine_id` (*type:* `String.t`) - Routine ID of the requested routine
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:fieldMask` (*type:* `String.t`) - If set, only the Routine fields in the field mask are returned in the
+          response. If unset, all Routine fields are returned.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.BigQuery.V2.Model.Routine{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.BigQuery.V2.Model.Routine{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec bigquery_routines_get(Tesla.Env.client(), String.t(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.BigQuery.V2.Model.Routine.t()} | {:error, Tesla.Env.t()}
+  @spec bigquery_routines_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.BigQuery.V2.Model.Routine.t()} | {:error, Tesla.Env.t()}
   def bigquery_routines_get(
         connection,
         project_id,
@@ -158,25 +167,26 @@ defmodule GoogleApi.BigQuery.V2.Api.Routines do
 
   ## Parameters
 
-  - connection (GoogleApi.BigQuery.V2.Connection): Connection to server
-  - project_id (String.t): Project ID of the new routine
-  - dataset_id (String.t): Dataset ID of the new routine
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.BigQuery.V2.Model.Routine.t): 
+  *   `connection` (*type:* `GoogleApi.BigQuery.V2.Connection.t`) - Connection to server
+  *   `project_id` (*type:* `String.t`) - Project ID of the new routine
+  *   `dataset_id` (*type:* `String.t`) - Dataset ID of the new routine
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.BigQuery.V2.Model.Routine.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.BigQuery.V2.Model.Routine{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.BigQuery.V2.Model.Routine{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec bigquery_routines_insert(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+  @spec bigquery_routines_insert(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.BigQuery.V2.Model.Routine.t()} | {:error, Tesla.Env.t()}
   def bigquery_routines_insert(
         connection,
@@ -216,27 +226,28 @@ defmodule GoogleApi.BigQuery.V2.Api.Routines do
 
   ## Parameters
 
-  - connection (GoogleApi.BigQuery.V2.Connection): Connection to server
-  - project_id (String.t): Project ID of the routines to list
-  - dataset_id (String.t): Dataset ID of the routines to list
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :maxResults (integer()): The maximum number of results per page.
-    - :pageToken (String.t): Page token, returned by a previous call, to request the next page of
-  results
+  *   `connection` (*type:* `GoogleApi.BigQuery.V2.Connection.t`) - Connection to server
+  *   `project_id` (*type:* `String.t`) - Project ID of the routines to list
+  *   `dataset_id` (*type:* `String.t`) - Dataset ID of the routines to list
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:maxResults` (*type:* `integer()`) - The maximum number of results per page.
+      *   `:pageToken` (*type:* `String.t`) - Page token, returned by a previous call, to request the next page of
+          results
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.BigQuery.V2.Model.ListRoutinesResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.BigQuery.V2.Model.ListRoutinesResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec bigquery_routines_list(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+  @spec bigquery_routines_list(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.BigQuery.V2.Model.ListRoutinesResponse.t()} | {:error, Tesla.Env.t()}
   def bigquery_routines_list(
         connection,
@@ -277,30 +288,32 @@ defmodule GoogleApi.BigQuery.V2.Api.Routines do
 
   ## Parameters
 
-  - connection (GoogleApi.BigQuery.V2.Connection): Connection to server
-  - project_id (String.t): Project ID of the routine to update
-  - dataset_id (String.t): Dataset ID of the routine to update
-  - routine_id (String.t): Routine ID of the routine to update
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.BigQuery.V2.Model.Routine.t): 
+  *   `connection` (*type:* `GoogleApi.BigQuery.V2.Connection.t`) - Connection to server
+  *   `project_id` (*type:* `String.t`) - Project ID of the routine to update
+  *   `dataset_id` (*type:* `String.t`) - Dataset ID of the routine to update
+  *   `routine_id` (*type:* `String.t`) - Routine ID of the routine to update
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.BigQuery.V2.Model.Routine.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.BigQuery.V2.Model.Routine{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.BigQuery.V2.Model.Routine{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec bigquery_routines_update(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.BigQuery.V2.Model.Routine.t()} | {:error, Tesla.Env.t()}
   def bigquery_routines_update(

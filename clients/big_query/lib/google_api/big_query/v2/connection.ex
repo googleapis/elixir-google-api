@@ -20,6 +20,8 @@ defmodule GoogleApi.BigQuery.V2.Connection do
   Handle Tesla connections for GoogleApi.BigQuery.V2.
   """
 
+  @type t :: Tesla.Env.client()
+
   use GoogleApi.Gax.Connection,
     scopes: [
       # View and manage your data in Google BigQuery

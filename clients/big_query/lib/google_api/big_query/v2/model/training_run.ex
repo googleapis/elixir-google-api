@@ -21,12 +21,12 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingRun do
 
   ## Attributes
 
-  - evaluationMetrics (GoogleApi.BigQuery.V2.Model.EvaluationMetrics.t): The evaluation metrics over training/eval data that were computed at the
-  end of training. Defaults to `nil`.
-  - results (list(GoogleApi.BigQuery.V2.Model.IterationResult.t)): Output of each iteration run, results.size() <= max_iterations. Defaults to `nil`.
-  - startTime (DateTime.t): The start time of this training run. Defaults to `nil`.
-  - trainingOptions (GoogleApi.BigQuery.V2.Model.TrainingOptions.t): Options that were used for this training run, includes
-  user specified and default options that were used. Defaults to `nil`.
+  *   `evaluationMetrics` (*type:* `GoogleApi.BigQuery.V2.Model.EvaluationMetrics.t`, *default:* `nil`) - The evaluation metrics over training/eval data that were computed at the
+      end of training.
+  *   `results` (*type:* `list(GoogleApi.BigQuery.V2.Model.IterationResult.t)`, *default:* `nil`) - Output of each iteration run, results.size() <= max_iterations.
+  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The start time of this training run.
+  *   `trainingOptions` (*type:* `GoogleApi.BigQuery.V2.Model.TrainingOptions.t`, *default:* `nil`) - Options that were used for this training run, includes
+      user specified and default options that were used.
   """
 
   use GoogleApi.Gax.ModelBase

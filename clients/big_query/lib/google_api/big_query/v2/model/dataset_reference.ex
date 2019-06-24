@@ -21,8 +21,8 @@ defmodule GoogleApi.BigQuery.V2.Model.DatasetReference do
 
   ## Attributes
 
-  - datasetId (String.t): [Required] A unique ID for this dataset, without the project name. The ID must contain only letters (a-z, A-Z), numbers (0-9), or underscores (_). The maximum length is 1,024 characters. Defaults to `nil`.
-  - projectId (String.t): [Optional] The ID of the project containing this dataset. Defaults to `nil`.
+  *   `datasetId` (*type:* `String.t`, *default:* `nil`) - [Required] A unique ID for this dataset, without the project name. The ID must contain only letters (a-z, A-Z), numbers (0-9), or underscores (_). The maximum length is 1,024 characters.
+  *   `projectId` (*type:* `String.t`, *default:* `nil`) - [Optional] The ID of the project containing this dataset.
   """
 
   use GoogleApi.Gax.ModelBase

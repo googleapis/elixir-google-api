@@ -21,9 +21,9 @@ defmodule GoogleApi.BigQuery.V2.Model.JobReference do
 
   ## Attributes
 
-  - jobId (String.t): [Required] The ID of the job. The ID must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-). The maximum length is 1,024 characters. Defaults to `nil`.
-  - location (String.t): The geographic location of the job. See details at https://cloud.google.com/bigquery/docs/locations#specifying_your_location. Defaults to `nil`.
-  - projectId (String.t): [Required] The ID of the project containing this job. Defaults to `nil`.
+  *   `jobId` (*type:* `String.t`, *default:* `nil`) - [Required] The ID of the job. The ID must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-). The maximum length is 1,024 characters.
+  *   `location` (*type:* `String.t`, *default:* `nil`) - The geographic location of the job. See details at https://cloud.google.com/bigquery/docs/locations#specifying_your_location.
+  *   `projectId` (*type:* `String.t`, *default:* `nil`) - [Required] The ID of the project containing this job.
   """
 
   use GoogleApi.Gax.ModelBase

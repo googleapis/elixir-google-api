@@ -28,30 +28,32 @@ defmodule GoogleApi.BigQuery.V2.Api.Tabledata do
 
   ## Parameters
 
-  - connection (GoogleApi.BigQuery.V2.Connection): Connection to server
-  - project_id (String.t): Project ID of the destination table.
-  - dataset_id (String.t): Dataset ID of the destination table.
-  - table_id (String.t): Table ID of the destination table.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.BigQuery.V2.Model.TableDataInsertAllRequest.t): 
+  *   `connection` (*type:* `GoogleApi.BigQuery.V2.Connection.t`) - Connection to server
+  *   `project_id` (*type:* `String.t`) - Project ID of the destination table.
+  *   `dataset_id` (*type:* `String.t`) - Dataset ID of the destination table.
+  *   `table_id` (*type:* `String.t`) - Table ID of the destination table.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.BigQuery.V2.Model.TableDataInsertAllRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.BigQuery.V2.Model.TableDataInsertAllResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.BigQuery.V2.Model.TableDataInsertAllResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec bigquery_tabledata_insert_all(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.BigQuery.V2.Model.TableDataInsertAllResponse.t()}
@@ -100,30 +102,37 @@ defmodule GoogleApi.BigQuery.V2.Api.Tabledata do
 
   ## Parameters
 
-  - connection (GoogleApi.BigQuery.V2.Connection): Connection to server
-  - project_id (String.t): Project ID of the table to read
-  - dataset_id (String.t): Dataset ID of the table to read
-  - table_id (String.t): Table ID of the table to read
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :maxResults (integer()): Maximum number of results to return
-    - :pageToken (String.t): Page token, returned by a previous call, identifying the result set
-    - :selectedFields (String.t): List of fields to return (comma-separated). If unspecified, all fields are returned
-    - :startIndex (String.t): Zero-based index of the starting row to read
+  *   `connection` (*type:* `GoogleApi.BigQuery.V2.Connection.t`) - Connection to server
+  *   `project_id` (*type:* `String.t`) - Project ID of the table to read
+  *   `dataset_id` (*type:* `String.t`) - Dataset ID of the table to read
+  *   `table_id` (*type:* `String.t`) - Table ID of the table to read
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:maxResults` (*type:* `integer()`) - Maximum number of results to return
+      *   `:pageToken` (*type:* `String.t`) - Page token, returned by a previous call, identifying the result set
+      *   `:selectedFields` (*type:* `String.t`) - List of fields to return (comma-separated). If unspecified, all fields are returned
+      *   `:startIndex` (*type:* `String.t`) - Zero-based index of the starting row to read
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.BigQuery.V2.Model.TableDataList{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.BigQuery.V2.Model.TableDataList{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec bigquery_tabledata_list(Tesla.Env.client(), String.t(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.BigQuery.V2.Model.TableDataList.t()} | {:error, Tesla.Env.t()}
+  @spec bigquery_tabledata_list(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.BigQuery.V2.Model.TableDataList.t()} | {:error, Tesla.Env.t()}
   def bigquery_tabledata_list(
         connection,
         project_id,

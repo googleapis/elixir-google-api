@@ -21,9 +21,9 @@ defmodule GoogleApi.BigQuery.V2.Model.ViewDefinition do
 
   ## Attributes
 
-  - query (String.t): [Required] A query that BigQuery executes when the view is referenced. Defaults to `nil`.
-  - useLegacySql (boolean()): Specifies whether to use BigQuery's legacy SQL for this view. The default value is true. If set to false, the view will use BigQuery's standard SQL: https://cloud.google.com/bigquery/sql-reference/ Queries and views that reference this view must use the same flag value. Defaults to `nil`.
-  - userDefinedFunctionResources (list(GoogleApi.BigQuery.V2.Model.UserDefinedFunctionResource.t)): Describes user-defined function resources used in the query. Defaults to `nil`.
+  *   `query` (*type:* `String.t`, *default:* `nil`) - [Required] A query that BigQuery executes when the view is referenced.
+  *   `useLegacySql` (*type:* `boolean()`, *default:* `nil`) - Specifies whether to use BigQuery's legacy SQL for this view. The default value is true. If set to false, the view will use BigQuery's standard SQL: https://cloud.google.com/bigquery/sql-reference/ Queries and views that reference this view must use the same flag value.
+  *   `userDefinedFunctionResources` (*type:* `list(GoogleApi.BigQuery.V2.Model.UserDefinedFunctionResource.t)`, *default:* `nil`) - Describes user-defined function resources used in the query.
   """
 
   use GoogleApi.Gax.ModelBase

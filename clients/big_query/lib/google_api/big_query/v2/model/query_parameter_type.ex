@@ -21,9 +21,9 @@ defmodule GoogleApi.BigQuery.V2.Model.QueryParameterType do
 
   ## Attributes
 
-  - arrayType (GoogleApi.BigQuery.V2.Model.QueryParameterType.t): [Optional] The type of the array's elements, if this is an array. Defaults to `nil`.
-  - structTypes (list(GoogleApi.BigQuery.V2.Model.QueryParameterTypeStructTypes.t)): [Optional] The types of the fields of this struct, in order, if this is a struct. Defaults to `nil`.
-  - type (String.t): [Required] The top level type of this field. Defaults to `nil`.
+  *   `arrayType` (*type:* `GoogleApi.BigQuery.V2.Model.QueryParameterType.t`, *default:* `nil`) - [Optional] The type of the array's elements, if this is an array.
+  *   `structTypes` (*type:* `list(GoogleApi.BigQuery.V2.Model.QueryParameterTypeStructTypes.t)`, *default:* `nil`) - [Optional] The types of the fields of this struct, in order, if this is a struct.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - [Required] The top level type of this field.
   """
 
   use GoogleApi.Gax.ModelBase

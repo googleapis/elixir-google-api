@@ -21,8 +21,8 @@ defmodule GoogleApi.BigQuery.V2.Model.RangePartitioning do
 
   ## Attributes
 
-  - field (String.t): [TrustedTester] [Required] The table is partitioned by this field. The field must be a top-level NULLABLE/REQUIRED field. The only supported type is INTEGER/INT64. Defaults to `nil`.
-  - range (GoogleApi.BigQuery.V2.Model.RangePartitioningRange.t): [TrustedTester] [Required] Defines the ranges for range partitioning. Defaults to `nil`.
+  *   `field` (*type:* `String.t`, *default:* `nil`) - [TrustedTester] [Required] The table is partitioned by this field. The field must be a top-level NULLABLE/REQUIRED field. The only supported type is INTEGER/INT64.
+  *   `range` (*type:* `GoogleApi.BigQuery.V2.Model.RangePartitioningRange.t`, *default:* `nil`) - [TrustedTester] [Required] Defines the ranges for range partitioning.
   """
 
   use GoogleApi.Gax.ModelBase

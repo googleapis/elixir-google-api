@@ -21,8 +21,8 @@ defmodule GoogleApi.BigQuery.V2.Model.MaterializedViewDefinition do
 
   ## Attributes
 
-  - lastRefreshTime (String.t): [Output-only] [TrustedTester] The time when this materialized view was last modified, in milliseconds since the epoch. Defaults to `nil`.
-  - query (String.t): [Required] A query whose result is persisted. Defaults to `nil`.
+  *   `lastRefreshTime` (*type:* `String.t`, *default:* `nil`) - [Output-only] [TrustedTester] The time when this materialized view was last modified, in milliseconds since the epoch.
+  *   `query` (*type:* `String.t`, *default:* `nil`) - [Required] A query whose result is persisted.
   """
 
   use GoogleApi.Gax.ModelBase

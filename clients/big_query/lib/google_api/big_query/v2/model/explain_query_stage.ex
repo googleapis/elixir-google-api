@@ -21,35 +21,35 @@ defmodule GoogleApi.BigQuery.V2.Model.ExplainQueryStage do
 
   ## Attributes
 
-  - completedParallelInputs (String.t): Number of parallel input segments completed. Defaults to `nil`.
-  - computeMsAvg (String.t): Milliseconds the average shard spent on CPU-bound tasks. Defaults to `nil`.
-  - computeMsMax (String.t): Milliseconds the slowest shard spent on CPU-bound tasks. Defaults to `nil`.
-  - computeRatioAvg (float()): Relative amount of time the average shard spent on CPU-bound tasks. Defaults to `nil`.
-  - computeRatioMax (float()): Relative amount of time the slowest shard spent on CPU-bound tasks. Defaults to `nil`.
-  - endMs (String.t): Stage end time represented as milliseconds since epoch. Defaults to `nil`.
-  - id (String.t): Unique ID for stage within plan. Defaults to `nil`.
-  - inputStages (list(String.t)): IDs for stages that are inputs to this stage. Defaults to `nil`.
-  - name (String.t): Human-readable name for stage. Defaults to `nil`.
-  - parallelInputs (String.t): Number of parallel input segments to be processed. Defaults to `nil`.
-  - readMsAvg (String.t): Milliseconds the average shard spent reading input. Defaults to `nil`.
-  - readMsMax (String.t): Milliseconds the slowest shard spent reading input. Defaults to `nil`.
-  - readRatioAvg (float()): Relative amount of time the average shard spent reading input. Defaults to `nil`.
-  - readRatioMax (float()): Relative amount of time the slowest shard spent reading input. Defaults to `nil`.
-  - recordsRead (String.t): Number of records read into the stage. Defaults to `nil`.
-  - recordsWritten (String.t): Number of records written by the stage. Defaults to `nil`.
-  - shuffleOutputBytes (String.t): Total number of bytes written to shuffle. Defaults to `nil`.
-  - shuffleOutputBytesSpilled (String.t): Total number of bytes written to shuffle and spilled to disk. Defaults to `nil`.
-  - startMs (String.t): Stage start time represented as milliseconds since epoch. Defaults to `nil`.
-  - status (String.t): Current status for the stage. Defaults to `nil`.
-  - steps (list(GoogleApi.BigQuery.V2.Model.ExplainQueryStep.t)): List of operations within the stage in dependency order (approximately chronological). Defaults to `nil`.
-  - waitMsAvg (String.t): Milliseconds the average shard spent waiting to be scheduled. Defaults to `nil`.
-  - waitMsMax (String.t): Milliseconds the slowest shard spent waiting to be scheduled. Defaults to `nil`.
-  - waitRatioAvg (float()): Relative amount of time the average shard spent waiting to be scheduled. Defaults to `nil`.
-  - waitRatioMax (float()): Relative amount of time the slowest shard spent waiting to be scheduled. Defaults to `nil`.
-  - writeMsAvg (String.t): Milliseconds the average shard spent on writing output. Defaults to `nil`.
-  - writeMsMax (String.t): Milliseconds the slowest shard spent on writing output. Defaults to `nil`.
-  - writeRatioAvg (float()): Relative amount of time the average shard spent on writing output. Defaults to `nil`.
-  - writeRatioMax (float()): Relative amount of time the slowest shard spent on writing output. Defaults to `nil`.
+  *   `completedParallelInputs` (*type:* `String.t`, *default:* `nil`) - Number of parallel input segments completed.
+  *   `computeMsAvg` (*type:* `String.t`, *default:* `nil`) - Milliseconds the average shard spent on CPU-bound tasks.
+  *   `computeMsMax` (*type:* `String.t`, *default:* `nil`) - Milliseconds the slowest shard spent on CPU-bound tasks.
+  *   `computeRatioAvg` (*type:* `float()`, *default:* `nil`) - Relative amount of time the average shard spent on CPU-bound tasks.
+  *   `computeRatioMax` (*type:* `float()`, *default:* `nil`) - Relative amount of time the slowest shard spent on CPU-bound tasks.
+  *   `endMs` (*type:* `String.t`, *default:* `nil`) - Stage end time represented as milliseconds since epoch.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Unique ID for stage within plan.
+  *   `inputStages` (*type:* `list(String.t)`, *default:* `nil`) - IDs for stages that are inputs to this stage.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Human-readable name for stage.
+  *   `parallelInputs` (*type:* `String.t`, *default:* `nil`) - Number of parallel input segments to be processed.
+  *   `readMsAvg` (*type:* `String.t`, *default:* `nil`) - Milliseconds the average shard spent reading input.
+  *   `readMsMax` (*type:* `String.t`, *default:* `nil`) - Milliseconds the slowest shard spent reading input.
+  *   `readRatioAvg` (*type:* `float()`, *default:* `nil`) - Relative amount of time the average shard spent reading input.
+  *   `readRatioMax` (*type:* `float()`, *default:* `nil`) - Relative amount of time the slowest shard spent reading input.
+  *   `recordsRead` (*type:* `String.t`, *default:* `nil`) - Number of records read into the stage.
+  *   `recordsWritten` (*type:* `String.t`, *default:* `nil`) - Number of records written by the stage.
+  *   `shuffleOutputBytes` (*type:* `String.t`, *default:* `nil`) - Total number of bytes written to shuffle.
+  *   `shuffleOutputBytesSpilled` (*type:* `String.t`, *default:* `nil`) - Total number of bytes written to shuffle and spilled to disk.
+  *   `startMs` (*type:* `String.t`, *default:* `nil`) - Stage start time represented as milliseconds since epoch.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - Current status for the stage.
+  *   `steps` (*type:* `list(GoogleApi.BigQuery.V2.Model.ExplainQueryStep.t)`, *default:* `nil`) - List of operations within the stage in dependency order (approximately chronological).
+  *   `waitMsAvg` (*type:* `String.t`, *default:* `nil`) - Milliseconds the average shard spent waiting to be scheduled.
+  *   `waitMsMax` (*type:* `String.t`, *default:* `nil`) - Milliseconds the slowest shard spent waiting to be scheduled.
+  *   `waitRatioAvg` (*type:* `float()`, *default:* `nil`) - Relative amount of time the average shard spent waiting to be scheduled.
+  *   `waitRatioMax` (*type:* `float()`, *default:* `nil`) - Relative amount of time the slowest shard spent waiting to be scheduled.
+  *   `writeMsAvg` (*type:* `String.t`, *default:* `nil`) - Milliseconds the average shard spent on writing output.
+  *   `writeMsMax` (*type:* `String.t`, *default:* `nil`) - Milliseconds the slowest shard spent on writing output.
+  *   `writeRatioAvg` (*type:* `float()`, *default:* `nil`) - Relative amount of time the average shard spent on writing output.
+  *   `writeRatioMax` (*type:* `float()`, *default:* `nil`) - Relative amount of time the slowest shard spent on writing output.
   """
 
   use GoogleApi.Gax.ModelBase

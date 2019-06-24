@@ -21,8 +21,8 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatisticsReservationUsage do
 
   ## Attributes
 
-  - name (String.t): [Output-only] Reservation name or "unreserved" for on-demand resources usage. Defaults to `nil`.
-  - slotMs (String.t): [Output-only] Slot-milliseconds the job spent in the given reservation. Defaults to `nil`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - [Output-only] Reservation name or "unreserved" for on-demand resources usage.
+  *   `slotMs` (*type:* `String.t`, *default:* `nil`) - [Output-only] Slot-milliseconds the job spent in the given reservation.
   """
 
   use GoogleApi.Gax.ModelBase

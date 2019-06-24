@@ -21,9 +21,9 @@ defmodule GoogleApi.BigQuery.V2.Model.RoutineReference do
 
   ## Attributes
 
-  - datasetId (String.t): [Required] The ID of the dataset containing this routine. Defaults to `nil`.
-  - projectId (String.t): [Required] The ID of the project containing this routine. Defaults to `nil`.
-  - routineId (String.t): [Required] The ID of the routine. The ID must contain only letters (a-z, A-Z), numbers (0-9), or underscores (_). The maximum length is 256 characters. Defaults to `nil`.
+  *   `datasetId` (*type:* `String.t`, *default:* `nil`) - [Required] The ID of the dataset containing this routine.
+  *   `projectId` (*type:* `String.t`, *default:* `nil`) - [Required] The ID of the project containing this routine.
+  *   `routineId` (*type:* `String.t`, *default:* `nil`) - [Required] The ID of the routine. The ID must contain only letters (a-z, A-Z), numbers (0-9), or underscores (_). The maximum length is 256 characters.
   """
 
   use GoogleApi.Gax.ModelBase

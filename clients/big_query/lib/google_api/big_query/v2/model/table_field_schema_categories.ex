@@ -21,7 +21,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TableFieldSchemaCategories do
 
   ## Attributes
 
-  - names (list(String.t)): A list of category resource names. For example, "projects/1/taxonomies/2/categories/3". At most 5 categories are allowed. Defaults to `nil`.
+  *   `names` (*type:* `list(String.t)`, *default:* `nil`) - A list of category resource names. For example, "projects/1/taxonomies/2/categories/3". At most 5 categories are allowed.
   """
 
   use GoogleApi.Gax.ModelBase

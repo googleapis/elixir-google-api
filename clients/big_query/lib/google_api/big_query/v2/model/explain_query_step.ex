@@ -21,8 +21,8 @@ defmodule GoogleApi.BigQuery.V2.Model.ExplainQueryStep do
 
   ## Attributes
 
-  - kind (String.t): Machine-readable operation type. Defaults to `nil`.
-  - substeps (list(String.t)): Human-readable stage descriptions. Defaults to `nil`.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Machine-readable operation type.
+  *   `substeps` (*type:* `list(String.t)`, *default:* `nil`) - Human-readable stage descriptions.
   """
 
   use GoogleApi.Gax.ModelBase

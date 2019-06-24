@@ -21,8 +21,8 @@ defmodule GoogleApi.BigQuery.V2.Model.JobCancelResponse do
 
   ## Attributes
 
-  - job (GoogleApi.BigQuery.V2.Model.Job.t): The final state of the job. Defaults to `nil`.
-  - kind (String.t): The resource type of the response. Defaults to `bigquery#jobCancelResponse`.
+  *   `job` (*type:* `GoogleApi.BigQuery.V2.Model.Job.t`, *default:* `nil`) - The final state of the job.
+  *   `kind` (*type:* `String.t`, *default:* `bigquery#jobCancelResponse`) - The resource type of the response.
   """
 
   use GoogleApi.Gax.ModelBase

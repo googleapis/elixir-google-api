@@ -21,17 +21,17 @@ defmodule GoogleApi.BigQuery.V2.Model.QueryResponse do
 
   ## Attributes
 
-  - cacheHit (boolean()): Whether the query result was fetched from the query cache. Defaults to `nil`.
-  - errors (list(GoogleApi.BigQuery.V2.Model.ErrorProto.t)): [Output-only] The first errors or warnings encountered during the running of the job. The final message includes the number of errors that caused the process to stop. Errors here do not necessarily mean that the job has completed or was unsuccessful. Defaults to `nil`.
-  - jobComplete (boolean()): Whether the query has completed or not. If rows or totalRows are present, this will always be true. If this is false, totalRows will not be available. Defaults to `nil`.
-  - jobReference (GoogleApi.BigQuery.V2.Model.JobReference.t): Reference to the Job that was created to run the query. This field will be present even if the original request timed out, in which case GetQueryResults can be used to read the results once the query has completed. Since this API only returns the first page of results, subsequent pages can be fetched via the same mechanism (GetQueryResults). Defaults to `nil`.
-  - kind (String.t): The resource type. Defaults to `bigquery#queryResponse`.
-  - numDmlAffectedRows (String.t): [Output-only] The number of rows affected by a DML statement. Present only for DML statements INSERT, UPDATE or DELETE. Defaults to `nil`.
-  - pageToken (String.t): A token used for paging results. Defaults to `nil`.
-  - rows (list(GoogleApi.BigQuery.V2.Model.TableRow.t)): An object with as many results as can be contained within the maximum permitted reply size. To get any additional rows, you can call GetQueryResults and specify the jobReference returned above. Defaults to `nil`.
-  - schema (GoogleApi.BigQuery.V2.Model.TableSchema.t): The schema of the results. Present only when the query completes successfully. Defaults to `nil`.
-  - totalBytesProcessed (String.t): The total number of bytes processed for this query. If this query was a dry run, this is the number of bytes that would be processed if the query were run. Defaults to `nil`.
-  - totalRows (String.t): The total number of rows in the complete query result set, which can be more than the number of rows in this single page of results. Defaults to `nil`.
+  *   `cacheHit` (*type:* `boolean()`, *default:* `nil`) - Whether the query result was fetched from the query cache.
+  *   `errors` (*type:* `list(GoogleApi.BigQuery.V2.Model.ErrorProto.t)`, *default:* `nil`) - [Output-only] The first errors or warnings encountered during the running of the job. The final message includes the number of errors that caused the process to stop. Errors here do not necessarily mean that the job has completed or was unsuccessful.
+  *   `jobComplete` (*type:* `boolean()`, *default:* `nil`) - Whether the query has completed or not. If rows or totalRows are present, this will always be true. If this is false, totalRows will not be available.
+  *   `jobReference` (*type:* `GoogleApi.BigQuery.V2.Model.JobReference.t`, *default:* `nil`) - Reference to the Job that was created to run the query. This field will be present even if the original request timed out, in which case GetQueryResults can be used to read the results once the query has completed. Since this API only returns the first page of results, subsequent pages can be fetched via the same mechanism (GetQueryResults).
+  *   `kind` (*type:* `String.t`, *default:* `bigquery#queryResponse`) - The resource type.
+  *   `numDmlAffectedRows` (*type:* `String.t`, *default:* `nil`) - [Output-only] The number of rows affected by a DML statement. Present only for DML statements INSERT, UPDATE or DELETE.
+  *   `pageToken` (*type:* `String.t`, *default:* `nil`) - A token used for paging results.
+  *   `rows` (*type:* `list(GoogleApi.BigQuery.V2.Model.TableRow.t)`, *default:* `nil`) - An object with as many results as can be contained within the maximum permitted reply size. To get any additional rows, you can call GetQueryResults and specify the jobReference returned above.
+  *   `schema` (*type:* `GoogleApi.BigQuery.V2.Model.TableSchema.t`, *default:* `nil`) - The schema of the results. Present only when the query completes successfully.
+  *   `totalBytesProcessed` (*type:* `String.t`, *default:* `nil`) - The total number of bytes processed for this query. If this query was a dry run, this is the number of bytes that would be processed if the query were run.
+  *   `totalRows` (*type:* `String.t`, *default:* `nil`) - The total number of rows in the complete query result set, which can be more than the number of rows in this single page of results.
   """
 
   use GoogleApi.Gax.ModelBase

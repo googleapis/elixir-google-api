@@ -21,7 +21,7 @@ defmodule GoogleApi.BigQuery.V2.Model.StandardSqlStructType do
 
   ## Attributes
 
-  - fields (list(GoogleApi.BigQuery.V2.Model.StandardSqlField.t)):  Defaults to `nil`.
+  *   `fields` (*type:* `list(GoogleApi.BigQuery.V2.Model.StandardSqlField.t)`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

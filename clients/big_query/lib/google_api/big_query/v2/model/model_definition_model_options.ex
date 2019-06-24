@@ -21,9 +21,9 @@ defmodule GoogleApi.BigQuery.V2.Model.ModelDefinitionModelOptions do
 
   ## Attributes
 
-  - labels (list(String.t)):  Defaults to `nil`.
-  - lossType (String.t):  Defaults to `nil`.
-  - modelType (String.t):  Defaults to `nil`.
+  *   `labels` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `lossType` (*type:* `String.t`, *default:* `nil`) - 
+  *   `modelType` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

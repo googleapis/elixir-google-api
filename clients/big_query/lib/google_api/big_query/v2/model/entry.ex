@@ -21,10 +21,10 @@ defmodule GoogleApi.BigQuery.V2.Model.Entry do
 
   ## Attributes
 
-  - itemCount (String.t): Number of items being predicted as this label. Defaults to `nil`.
-  - predictedLabel (String.t): The predicted label. For confidence_threshold > 0, we will
-  also add an entry indicating the number of items under the
-  confidence threshold. Defaults to `nil`.
+  *   `itemCount` (*type:* `String.t`, *default:* `nil`) - Number of items being predicted as this label.
+  *   `predictedLabel` (*type:* `String.t`, *default:* `nil`) - The predicted label. For confidence_threshold > 0, we will
+      also add an entry indicating the number of items under the
+      confidence threshold.
   """
 
   use GoogleApi.Gax.ModelBase

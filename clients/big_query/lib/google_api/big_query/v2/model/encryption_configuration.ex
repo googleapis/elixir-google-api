@@ -21,7 +21,7 @@ defmodule GoogleApi.BigQuery.V2.Model.EncryptionConfiguration do
 
   ## Attributes
 
-  - kmsKeyName (String.t): [Optional] Describes the Cloud KMS encryption key that will be used to protect destination BigQuery table. The BigQuery Service Account associated with your project requires access to this encryption key. Defaults to `nil`.
+  *   `kmsKeyName` (*type:* `String.t`, *default:* `nil`) - [Optional] Describes the Cloud KMS encryption key that will be used to protect destination BigQuery table. The BigQuery Service Account associated with your project requires access to this encryption key.
   """
 
   use GoogleApi.Gax.ModelBase

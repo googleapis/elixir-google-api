@@ -21,17 +21,17 @@ defmodule GoogleApi.BigQuery.V2.Model.TableListTables do
 
   ## Attributes
 
-  - clustering (GoogleApi.BigQuery.V2.Model.Clustering.t): [Beta] Clustering specification for this table, if configured. Defaults to `nil`.
-  - creationTime (String.t): The time when this table was created, in milliseconds since the epoch. Defaults to `nil`.
-  - expirationTime (String.t): [Optional] The time when this table expires, in milliseconds since the epoch. If not present, the table will persist indefinitely. Expired tables will be deleted and their storage reclaimed. Defaults to `nil`.
-  - friendlyName (String.t): The user-friendly name for this table. Defaults to `nil`.
-  - id (String.t): An opaque ID of the table Defaults to `nil`.
-  - kind (String.t): The resource type. Defaults to `bigquery#table`.
-  - labels (map()): The labels associated with this table. You can use these to organize and group your tables. Defaults to `nil`.
-  - tableReference (GoogleApi.BigQuery.V2.Model.TableReference.t): A reference uniquely identifying the table. Defaults to `nil`.
-  - timePartitioning (GoogleApi.BigQuery.V2.Model.TimePartitioning.t): The time-based partitioning specification for this table, if configured. Defaults to `nil`.
-  - type (String.t): The type of table. Possible values are: TABLE, VIEW. Defaults to `nil`.
-  - view (GoogleApi.BigQuery.V2.Model.TableListTablesView.t): Additional details for a view. Defaults to `nil`.
+  *   `clustering` (*type:* `GoogleApi.BigQuery.V2.Model.Clustering.t`, *default:* `nil`) - [Beta] Clustering specification for this table, if configured.
+  *   `creationTime` (*type:* `String.t`, *default:* `nil`) - The time when this table was created, in milliseconds since the epoch.
+  *   `expirationTime` (*type:* `String.t`, *default:* `nil`) - [Optional] The time when this table expires, in milliseconds since the epoch. If not present, the table will persist indefinitely. Expired tables will be deleted and their storage reclaimed.
+  *   `friendlyName` (*type:* `String.t`, *default:* `nil`) - The user-friendly name for this table.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - An opaque ID of the table
+  *   `kind` (*type:* `String.t`, *default:* `bigquery#table`) - The resource type.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - The labels associated with this table. You can use these to organize and group your tables.
+  *   `tableReference` (*type:* `GoogleApi.BigQuery.V2.Model.TableReference.t`, *default:* `nil`) - A reference uniquely identifying the table.
+  *   `timePartitioning` (*type:* `GoogleApi.BigQuery.V2.Model.TimePartitioning.t`, *default:* `nil`) - The time-based partitioning specification for this table, if configured.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of table. Possible values are: TABLE, VIEW.
+  *   `view` (*type:* `GoogleApi.BigQuery.V2.Model.TableListTablesView.t`, *default:* `nil`) - Additional details for a view.
   """
 
   use GoogleApi.Gax.ModelBase

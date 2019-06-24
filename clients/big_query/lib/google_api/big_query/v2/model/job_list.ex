@@ -21,10 +21,10 @@ defmodule GoogleApi.BigQuery.V2.Model.JobList do
 
   ## Attributes
 
-  - etag (String.t): A hash of this page of results. Defaults to `nil`.
-  - jobs (list(GoogleApi.BigQuery.V2.Model.JobListJobs.t)): List of jobs that were requested. Defaults to `nil`.
-  - kind (String.t): The resource type of the response. Defaults to `bigquery#jobList`.
-  - nextPageToken (String.t): A token to request the next page of results. Defaults to `nil`.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - A hash of this page of results.
+  *   `jobs` (*type:* `list(GoogleApi.BigQuery.V2.Model.JobListJobs.t)`, *default:* `nil`) - List of jobs that were requested.
+  *   `kind` (*type:* `String.t`, *default:* `bigquery#jobList`) - The resource type of the response.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to request the next page of results.
   """
 
   use GoogleApi.Gax.ModelBase

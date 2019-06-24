@@ -21,9 +21,9 @@ defmodule GoogleApi.BigQuery.V2.Model.ConfusionMatrix do
 
   ## Attributes
 
-  - confidenceThreshold (float()): Confidence threshold used when computing the entries of the
-  confusion matrix. Defaults to `nil`.
-  - rows (list(GoogleApi.BigQuery.V2.Model.Row.t)): One row per actual label. Defaults to `nil`.
+  *   `confidenceThreshold` (*type:* `float()`, *default:* `nil`) - Confidence threshold used when computing the entries of the
+      confusion matrix.
+  *   `rows` (*type:* `list(GoogleApi.BigQuery.V2.Model.Row.t)`, *default:* `nil`) - One row per actual label.
   """
 
   use GoogleApi.Gax.ModelBase

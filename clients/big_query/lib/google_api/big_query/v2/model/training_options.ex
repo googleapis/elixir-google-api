@@ -21,45 +21,45 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
 
   ## Attributes
 
-  - dataSplitColumn (String.t): The column to split data with. This column won't be used as a
-  feature.
-  1. When data_split_method is CUSTOM, the corresponding column should
-  be boolean. The rows with true value tag are eval data, and the false
-  are training data.
-  2. When data_split_method is SEQ, the first DATA_SPLIT_EVAL_FRACTION
-  rows (from smallest to largest) in the corresponding column are used
-  as training data, and the rest are eval data. It respects the order
-  in Orderable data types:
-  https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types#data-type-properties Defaults to `nil`.
-  - dataSplitEvalFraction (float()): The fraction of evaluation data over the whole input data. The rest
-  of data will be used as training data. The format should be double.
-  Accurate to two decimal places.
-  Default value is 0.2. Defaults to `nil`.
-  - dataSplitMethod (String.t): The data split type for training and evaluation, e.g. RANDOM. Defaults to `nil`.
-  - distanceType (String.t): [Beta] Distance type for clustering models. Defaults to `nil`.
-  - earlyStop (boolean()): Whether to stop early when the loss doesn't improve significantly
-  any more (compared to min_relative_progress). Used only for iterative
-  training algorithms. Defaults to `nil`.
-  - initialLearnRate (float()): Specifies the initial learning rate for the line search learn rate
-  strategy. Defaults to `nil`.
-  - inputLabelColumns (list(String.t)): Name of input label columns in training data. Defaults to `nil`.
-  - l1Regularization (float()): L1 regularization coefficient. Defaults to `nil`.
-  - l2Regularization (float()): L2 regularization coefficient. Defaults to `nil`.
-  - labelClassWeights (map()): Weights associated with each label class, for rebalancing the
-  training data. Only applicable for classification models. Defaults to `nil`.
-  - learnRate (float()): Learning rate in training. Used only for iterative training algorithms. Defaults to `nil`.
-  - learnRateStrategy (String.t): The strategy to determine learn rate for the current iteration. Defaults to `nil`.
-  - lossType (String.t): Type of loss function used during training run. Defaults to `nil`.
-  - maxIterations (String.t): The maximum number of iterations in training. Used only for iterative
-  training algorithms. Defaults to `nil`.
-  - minRelativeProgress (float()): When early_stop is true, stops training when accuracy improvement is
-  less than 'min_relative_progress'. Used only for iterative training
-  algorithms. Defaults to `nil`.
-  - modelUri (String.t): [Beta] Google Cloud Storage URI from which the model was imported. Only
-  applicable for imported models. Defaults to `nil`.
-  - numClusters (String.t): [Beta] Number of clusters for clustering models. Defaults to `nil`.
-  - optimizationStrategy (String.t): Optimization strategy for training linear regression models. Defaults to `nil`.
-  - warmStart (boolean()): Whether to train a model from the last checkpoint. Defaults to `nil`.
+  *   `dataSplitColumn` (*type:* `String.t`, *default:* `nil`) - The column to split data with. This column won't be used as a
+      feature.
+      1. When data_split_method is CUSTOM, the corresponding column should
+      be boolean. The rows with true value tag are eval data, and the false
+      are training data.
+      2. When data_split_method is SEQ, the first DATA_SPLIT_EVAL_FRACTION
+      rows (from smallest to largest) in the corresponding column are used
+      as training data, and the rest are eval data. It respects the order
+      in Orderable data types:
+      https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types#data-type-properties
+  *   `dataSplitEvalFraction` (*type:* `float()`, *default:* `nil`) - The fraction of evaluation data over the whole input data. The rest
+      of data will be used as training data. The format should be double.
+      Accurate to two decimal places.
+      Default value is 0.2.
+  *   `dataSplitMethod` (*type:* `String.t`, *default:* `nil`) - The data split type for training and evaluation, e.g. RANDOM.
+  *   `distanceType` (*type:* `String.t`, *default:* `nil`) - [Beta] Distance type for clustering models.
+  *   `earlyStop` (*type:* `boolean()`, *default:* `nil`) - Whether to stop early when the loss doesn't improve significantly
+      any more (compared to min_relative_progress). Used only for iterative
+      training algorithms.
+  *   `initialLearnRate` (*type:* `float()`, *default:* `nil`) - Specifies the initial learning rate for the line search learn rate
+      strategy.
+  *   `inputLabelColumns` (*type:* `list(String.t)`, *default:* `nil`) - Name of input label columns in training data.
+  *   `l1Regularization` (*type:* `float()`, *default:* `nil`) - L1 regularization coefficient.
+  *   `l2Regularization` (*type:* `float()`, *default:* `nil`) - L2 regularization coefficient.
+  *   `labelClassWeights` (*type:* `map()`, *default:* `nil`) - Weights associated with each label class, for rebalancing the
+      training data. Only applicable for classification models.
+  *   `learnRate` (*type:* `float()`, *default:* `nil`) - Learning rate in training. Used only for iterative training algorithms.
+  *   `learnRateStrategy` (*type:* `String.t`, *default:* `nil`) - The strategy to determine learn rate for the current iteration.
+  *   `lossType` (*type:* `String.t`, *default:* `nil`) - Type of loss function used during training run.
+  *   `maxIterations` (*type:* `String.t`, *default:* `nil`) - The maximum number of iterations in training. Used only for iterative
+      training algorithms.
+  *   `minRelativeProgress` (*type:* `float()`, *default:* `nil`) - When early_stop is true, stops training when accuracy improvement is
+      less than 'min_relative_progress'. Used only for iterative training
+      algorithms.
+  *   `modelUri` (*type:* `String.t`, *default:* `nil`) - [Beta] Google Cloud Storage URI from which the model was imported. Only
+      applicable for imported models.
+  *   `numClusters` (*type:* `String.t`, *default:* `nil`) - [Beta] Number of clusters for clustering models.
+  *   `optimizationStrategy` (*type:* `String.t`, *default:* `nil`) - Optimization strategy for training linear regression models.
+  *   `warmStart` (*type:* `boolean()`, *default:* `nil`) - Whether to train a model from the last checkpoint.
   """
 
   use GoogleApi.Gax.ModelBase

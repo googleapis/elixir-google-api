@@ -21,7 +21,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TableRow do
 
   ## Attributes
 
-  - f (list(GoogleApi.BigQuery.V2.Model.TableCell.t)): Represents a single row in the result set, consisting of one or more fields. Defaults to `nil`.
+  *   `f` (*type:* `list(GoogleApi.BigQuery.V2.Model.TableCell.t)`, *default:* `nil`) - Represents a single row in the result set, consisting of one or more fields.
   """
 
   use GoogleApi.Gax.ModelBase

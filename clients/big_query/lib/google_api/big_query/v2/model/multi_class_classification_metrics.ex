@@ -21,8 +21,8 @@ defmodule GoogleApi.BigQuery.V2.Model.MultiClassClassificationMetrics do
 
   ## Attributes
 
-  - aggregateClassificationMetrics (GoogleApi.BigQuery.V2.Model.AggregateClassificationMetrics.t): Aggregate classification metrics. Defaults to `nil`.
-  - confusionMatrixList (list(GoogleApi.BigQuery.V2.Model.ConfusionMatrix.t)): Confusion matrix at different thresholds. Defaults to `nil`.
+  *   `aggregateClassificationMetrics` (*type:* `GoogleApi.BigQuery.V2.Model.AggregateClassificationMetrics.t`, *default:* `nil`) - Aggregate classification metrics.
+  *   `confusionMatrixList` (*type:* `list(GoogleApi.BigQuery.V2.Model.ConfusionMatrix.t)`, *default:* `nil`) - Confusion matrix at different thresholds.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,10 +21,10 @@ defmodule GoogleApi.BigQuery.V2.Model.BinaryClassificationMetrics do
 
   ## Attributes
 
-  - aggregateClassificationMetrics (GoogleApi.BigQuery.V2.Model.AggregateClassificationMetrics.t): Aggregate classification metrics. Defaults to `nil`.
-  - binaryConfusionMatrixList (list(GoogleApi.BigQuery.V2.Model.BinaryConfusionMatrix.t)): Binary confusion matrix at multiple thresholds. Defaults to `nil`.
-  - negativeLabel (String.t): Label representing the negative class. Defaults to `nil`.
-  - positiveLabel (String.t): Label representing the positive class. Defaults to `nil`.
+  *   `aggregateClassificationMetrics` (*type:* `GoogleApi.BigQuery.V2.Model.AggregateClassificationMetrics.t`, *default:* `nil`) - Aggregate classification metrics.
+  *   `binaryConfusionMatrixList` (*type:* `list(GoogleApi.BigQuery.V2.Model.BinaryConfusionMatrix.t)`, *default:* `nil`) - Binary confusion matrix at multiple thresholds.
+  *   `negativeLabel` (*type:* `String.t`, *default:* `nil`) - Label representing the negative class.
+  *   `positiveLabel` (*type:* `String.t`, *default:* `nil`) - Label representing the positive class.
   """
 
   use GoogleApi.Gax.ModelBase

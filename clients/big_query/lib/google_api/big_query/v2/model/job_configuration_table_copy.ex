@@ -21,12 +21,12 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfigurationTableCopy do
 
   ## Attributes
 
-  - createDisposition (String.t): [Optional] Specifies whether the job is allowed to create new tables. The following values are supported: CREATE_IF_NEEDED: If the table does not exist, BigQuery creates the table. CREATE_NEVER: The table must already exist. If it does not, a 'notFound' error is returned in the job result. The default value is CREATE_IF_NEEDED. Creation, truncation and append actions occur as one atomic update upon job completion. Defaults to `nil`.
-  - destinationEncryptionConfiguration (GoogleApi.BigQuery.V2.Model.EncryptionConfiguration.t): Custom encryption configuration (e.g., Cloud KMS keys). Defaults to `nil`.
-  - destinationTable (GoogleApi.BigQuery.V2.Model.TableReference.t): [Required] The destination table Defaults to `nil`.
-  - sourceTable (GoogleApi.BigQuery.V2.Model.TableReference.t): [Pick one] Source table to copy. Defaults to `nil`.
-  - sourceTables (list(GoogleApi.BigQuery.V2.Model.TableReference.t)): [Pick one] Source tables to copy. Defaults to `nil`.
-  - writeDisposition (String.t): [Optional] Specifies the action that occurs if the destination table already exists. The following values are supported: WRITE_TRUNCATE: If the table already exists, BigQuery overwrites the table data. WRITE_APPEND: If the table already exists, BigQuery appends the data to the table. WRITE_EMPTY: If the table already exists and contains data, a 'duplicate' error is returned in the job result. The default value is WRITE_EMPTY. Each action is atomic and only occurs if BigQuery is able to complete the job successfully. Creation, truncation and append actions occur as one atomic update upon job completion. Defaults to `nil`.
+  *   `createDisposition` (*type:* `String.t`, *default:* `nil`) - [Optional] Specifies whether the job is allowed to create new tables. The following values are supported: CREATE_IF_NEEDED: If the table does not exist, BigQuery creates the table. CREATE_NEVER: The table must already exist. If it does not, a 'notFound' error is returned in the job result. The default value is CREATE_IF_NEEDED. Creation, truncation and append actions occur as one atomic update upon job completion.
+  *   `destinationEncryptionConfiguration` (*type:* `GoogleApi.BigQuery.V2.Model.EncryptionConfiguration.t`, *default:* `nil`) - Custom encryption configuration (e.g., Cloud KMS keys).
+  *   `destinationTable` (*type:* `GoogleApi.BigQuery.V2.Model.TableReference.t`, *default:* `nil`) - [Required] The destination table
+  *   `sourceTable` (*type:* `GoogleApi.BigQuery.V2.Model.TableReference.t`, *default:* `nil`) - [Pick one] Source table to copy.
+  *   `sourceTables` (*type:* `list(GoogleApi.BigQuery.V2.Model.TableReference.t)`, *default:* `nil`) - [Pick one] Source tables to copy.
+  *   `writeDisposition` (*type:* `String.t`, *default:* `nil`) - [Optional] Specifies the action that occurs if the destination table already exists. The following values are supported: WRITE_TRUNCATE: If the table already exists, BigQuery overwrites the table data. WRITE_APPEND: If the table already exists, BigQuery appends the data to the table. WRITE_EMPTY: If the table already exists and contains data, a 'duplicate' error is returned in the job result. The default value is WRITE_EMPTY. Each action is atomic and only occurs if BigQuery is able to complete the job successfully. Creation, truncation and append actions occur as one atomic update upon job completion.
   """
 
   use GoogleApi.Gax.ModelBase

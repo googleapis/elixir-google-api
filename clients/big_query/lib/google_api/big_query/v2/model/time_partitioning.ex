@@ -21,10 +21,10 @@ defmodule GoogleApi.BigQuery.V2.Model.TimePartitioning do
 
   ## Attributes
 
-  - expirationMs (String.t): [Optional] Number of milliseconds for which to keep the storage for partitions in the table. The storage in a partition will have an expiration time of its partition time plus this value. Defaults to `nil`.
-  - field (String.t): [Beta] [Optional] If not set, the table is partitioned by pseudo column, referenced via either '_PARTITIONTIME' as TIMESTAMP type, or '_PARTITIONDATE' as DATE type. If field is specified, the table is instead partitioned by this field. The field must be a top-level TIMESTAMP or DATE field. Its mode must be NULLABLE or REQUIRED. Defaults to `nil`.
-  - requirePartitionFilter (boolean()):  Defaults to `nil`.
-  - type (String.t): [Required] The only type supported is DAY, which will generate one partition per day. Defaults to `nil`.
+  *   `expirationMs` (*type:* `String.t`, *default:* `nil`) - [Optional] Number of milliseconds for which to keep the storage for partitions in the table. The storage in a partition will have an expiration time of its partition time plus this value.
+  *   `field` (*type:* `String.t`, *default:* `nil`) - [Beta] [Optional] If not set, the table is partitioned by pseudo column, referenced via either '_PARTITIONTIME' as TIMESTAMP type, or '_PARTITIONDATE' as DATE type. If field is specified, the table is instead partitioned by this field. The field must be a top-level TIMESTAMP or DATE field. Its mode must be NULLABLE or REQUIRED.
+  *   `requirePartitionFilter` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `type` (*type:* `String.t`, *default:* `nil`) - [Required] The only type supported is DAY, which will generate one partition per day.
   """
 
   use GoogleApi.Gax.ModelBase

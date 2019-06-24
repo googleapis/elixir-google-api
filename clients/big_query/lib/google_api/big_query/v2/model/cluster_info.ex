@@ -21,10 +21,10 @@ defmodule GoogleApi.BigQuery.V2.Model.ClusterInfo do
 
   ## Attributes
 
-  - centroidId (String.t): Centroid id. Defaults to `nil`.
-  - clusterRadius (float()): Cluster radius, the average distance from centroid
-  to each point assigned to the cluster. Defaults to `nil`.
-  - clusterSize (String.t): Cluster size, the total number of points assigned to the cluster. Defaults to `nil`.
+  *   `centroidId` (*type:* `String.t`, *default:* `nil`) - Centroid id.
+  *   `clusterRadius` (*type:* `float()`, *default:* `nil`) - Cluster radius, the average distance from centroid
+      to each point assigned to the cluster.
+  *   `clusterSize` (*type:* `String.t`, *default:* `nil`) - Cluster size, the total number of points assigned to the cluster.
   """
 
   use GoogleApi.Gax.ModelBase

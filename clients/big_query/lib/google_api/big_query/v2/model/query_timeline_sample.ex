@@ -21,11 +21,11 @@ defmodule GoogleApi.BigQuery.V2.Model.QueryTimelineSample do
 
   ## Attributes
 
-  - activeUnits (String.t): Total number of units currently being processed by workers. This does not correspond directly to slot usage. This is the largest value observed since the last sample. Defaults to `nil`.
-  - completedUnits (String.t): Total parallel units of work completed by this query. Defaults to `nil`.
-  - elapsedMs (String.t): Milliseconds elapsed since the start of query execution. Defaults to `nil`.
-  - pendingUnits (String.t): Total parallel units of work remaining for the active stages. Defaults to `nil`.
-  - totalSlotMs (String.t): Cumulative slot-ms consumed by the query. Defaults to `nil`.
+  *   `activeUnits` (*type:* `String.t`, *default:* `nil`) - Total number of units currently being processed by workers. This does not correspond directly to slot usage. This is the largest value observed since the last sample.
+  *   `completedUnits` (*type:* `String.t`, *default:* `nil`) - Total parallel units of work completed by this query.
+  *   `elapsedMs` (*type:* `String.t`, *default:* `nil`) - Milliseconds elapsed since the start of query execution.
+  *   `pendingUnits` (*type:* `String.t`, *default:* `nil`) - Total parallel units of work remaining for the active stages.
+  *   `totalSlotMs` (*type:* `String.t`, *default:* `nil`) - Cumulative slot-ms consumed by the query.
   """
 
   use GoogleApi.Gax.ModelBase

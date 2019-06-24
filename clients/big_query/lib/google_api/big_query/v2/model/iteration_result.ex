@@ -21,12 +21,12 @@ defmodule GoogleApi.BigQuery.V2.Model.IterationResult do
 
   ## Attributes
 
-  - clusterInfos (list(GoogleApi.BigQuery.V2.Model.ClusterInfo.t)): [Beta] Information about top clusters for clustering models. Defaults to `nil`.
-  - durationMs (String.t): Time taken to run the iteration in milliseconds. Defaults to `nil`.
-  - evalLoss (float()): Loss computed on the eval data at the end of iteration. Defaults to `nil`.
-  - index (integer()): Index of the iteration, 0 based. Defaults to `nil`.
-  - learnRate (float()): Learn rate used for this iteration. Defaults to `nil`.
-  - trainingLoss (float()): Loss computed on the training data at the end of iteration. Defaults to `nil`.
+  *   `clusterInfos` (*type:* `list(GoogleApi.BigQuery.V2.Model.ClusterInfo.t)`, *default:* `nil`) - [Beta] Information about top clusters for clustering models.
+  *   `durationMs` (*type:* `String.t`, *default:* `nil`) - Time taken to run the iteration in milliseconds.
+  *   `evalLoss` (*type:* `float()`, *default:* `nil`) - Loss computed on the eval data at the end of iteration.
+  *   `index` (*type:* `integer()`, *default:* `nil`) - Index of the iteration, 0 based.
+  *   `learnRate` (*type:* `float()`, *default:* `nil`) - Learn rate used for this iteration.
+  *   `trainingLoss` (*type:* `float()`, *default:* `nil`) - Loss computed on the training data at the end of iteration.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,11 +21,11 @@ defmodule GoogleApi.BigQuery.V2.Model.TableDataInsertAllRequest do
 
   ## Attributes
 
-  - ignoreUnknownValues (boolean()): [Optional] Accept rows that contain values that do not match the schema. The unknown values are ignored. Default is false, which treats unknown values as errors. Defaults to `nil`.
-  - kind (String.t): The resource type of the response. Defaults to `bigquery#tableDataInsertAllRequest`.
-  - rows (list(GoogleApi.BigQuery.V2.Model.TableDataInsertAllRequestRows.t)): The rows to insert. Defaults to `nil`.
-  - skipInvalidRows (boolean()): [Optional] Insert all valid rows of a request, even if invalid rows exist. The default value is false, which causes the entire request to fail if any invalid rows exist. Defaults to `nil`.
-  - templateSuffix (String.t): If specified, treats the destination table as a base template, and inserts the rows into an instance table named "{destination}{templateSuffix}". BigQuery will manage creation of the instance table, using the schema of the base template table. See https://cloud.google.com/bigquery/streaming-data-into-bigquery#template-tables for considerations when working with templates tables. Defaults to `nil`.
+  *   `ignoreUnknownValues` (*type:* `boolean()`, *default:* `nil`) - [Optional] Accept rows that contain values that do not match the schema. The unknown values are ignored. Default is false, which treats unknown values as errors.
+  *   `kind` (*type:* `String.t`, *default:* `bigquery#tableDataInsertAllRequest`) - The resource type of the response.
+  *   `rows` (*type:* `list(GoogleApi.BigQuery.V2.Model.TableDataInsertAllRequestRows.t)`, *default:* `nil`) - The rows to insert.
+  *   `skipInvalidRows` (*type:* `boolean()`, *default:* `nil`) - [Optional] Insert all valid rows of a request, even if invalid rows exist. The default value is false, which causes the entire request to fail if any invalid rows exist.
+  *   `templateSuffix` (*type:* `String.t`, *default:* `nil`) - If specified, treats the destination table as a base template, and inserts the rows into an instance table named "{destination}{templateSuffix}". BigQuery will manage creation of the instance table, using the schema of the base template table. See https://cloud.google.com/bigquery/streaming-data-into-bigquery#template-tables for considerations when working with templates tables.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,14 +21,14 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfiguration do
 
   ## Attributes
 
-  - copy (GoogleApi.BigQuery.V2.Model.JobConfigurationTableCopy.t): [Pick one] Copies a table. Defaults to `nil`.
-  - dryRun (boolean()): [Optional] If set, don't actually run this job. A valid query will return a mostly empty response with some processing statistics, while an invalid query will return the same error it would if it wasn't a dry run. Behavior of non-query jobs is undefined. Defaults to `nil`.
-  - extract (GoogleApi.BigQuery.V2.Model.JobConfigurationExtract.t): [Pick one] Configures an extract job. Defaults to `nil`.
-  - jobTimeoutMs (String.t): [Optional] Job timeout in milliseconds. If this time limit is exceeded, BigQuery may attempt to terminate the job. Defaults to `nil`.
-  - jobType (String.t): [Output-only] The type of the job. Can be QUERY, LOAD, EXTRACT, COPY or UNKNOWN. Defaults to `nil`.
-  - labels (map()): The labels associated with this job. You can use these to organize and group your jobs. Label keys and values can be no longer than 63 characters, can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. Label values are optional. Label keys must start with a letter and each label in the list must have a different key. Defaults to `nil`.
-  - load (GoogleApi.BigQuery.V2.Model.JobConfigurationLoad.t): [Pick one] Configures a load job. Defaults to `nil`.
-  - query (GoogleApi.BigQuery.V2.Model.JobConfigurationQuery.t): [Pick one] Configures a query job. Defaults to `nil`.
+  *   `copy` (*type:* `GoogleApi.BigQuery.V2.Model.JobConfigurationTableCopy.t`, *default:* `nil`) - [Pick one] Copies a table.
+  *   `dryRun` (*type:* `boolean()`, *default:* `nil`) - [Optional] If set, don't actually run this job. A valid query will return a mostly empty response with some processing statistics, while an invalid query will return the same error it would if it wasn't a dry run. Behavior of non-query jobs is undefined.
+  *   `extract` (*type:* `GoogleApi.BigQuery.V2.Model.JobConfigurationExtract.t`, *default:* `nil`) - [Pick one] Configures an extract job.
+  *   `jobTimeoutMs` (*type:* `String.t`, *default:* `nil`) - [Optional] Job timeout in milliseconds. If this time limit is exceeded, BigQuery may attempt to terminate the job.
+  *   `jobType` (*type:* `String.t`, *default:* `nil`) - [Output-only] The type of the job. Can be QUERY, LOAD, EXTRACT, COPY or UNKNOWN.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - The labels associated with this job. You can use these to organize and group your jobs. Label keys and values can be no longer than 63 characters, can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. Label values are optional. Label keys must start with a letter and each label in the list must have a different key.
+  *   `load` (*type:* `GoogleApi.BigQuery.V2.Model.JobConfigurationLoad.t`, *default:* `nil`) - [Pick one] Configures a load job.
+  *   `query` (*type:* `GoogleApi.BigQuery.V2.Model.JobConfigurationQuery.t`, *default:* `nil`) - [Pick one] Configures a query job.
   """
 
   use GoogleApi.Gax.ModelBase

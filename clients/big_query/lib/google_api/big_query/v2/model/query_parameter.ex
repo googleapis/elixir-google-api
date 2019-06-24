@@ -21,9 +21,9 @@ defmodule GoogleApi.BigQuery.V2.Model.QueryParameter do
 
   ## Attributes
 
-  - name (String.t): [Optional] If unset, this is a positional parameter. Otherwise, should be unique within a query. Defaults to `nil`.
-  - parameterType (GoogleApi.BigQuery.V2.Model.QueryParameterType.t): [Required] The type of this parameter. Defaults to `nil`.
-  - parameterValue (GoogleApi.BigQuery.V2.Model.QueryParameterValue.t): [Required] The value of this parameter. Defaults to `nil`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - [Optional] If unset, this is a positional parameter. Otherwise, should be unique within a query.
+  *   `parameterType` (*type:* `GoogleApi.BigQuery.V2.Model.QueryParameterType.t`, *default:* `nil`) - [Required] The type of this parameter.
+  *   `parameterValue` (*type:* `GoogleApi.BigQuery.V2.Model.QueryParameterValue.t`, *default:* `nil`) - [Required] The value of this parameter.
   """
 
   use GoogleApi.Gax.ModelBase

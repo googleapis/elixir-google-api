@@ -26,22 +26,22 @@ defmodule GoogleApi.BigQuery.V2.Model.AggregateClassificationMetrics do
 
   ## Attributes
 
-  - accuracy (float()): Accuracy is the fraction of predictions given the correct label. For
-  multiclass this is a micro-averaged metric. Defaults to `nil`.
-  - f1Score (float()): The F1 score is an average of recall and precision. For multiclass
-  this is a macro-averaged metric. Defaults to `nil`.
-  - logLoss (float()): Logarithmic Loss. For multiclass this is a macro-averaged metric. Defaults to `nil`.
-  - precision (float()): Precision is the fraction of actual positive predictions that had
-  positive actual labels. For multiclass this is a macro-averaged
-  metric treating each class as a binary classifier. Defaults to `nil`.
-  - recall (float()): Recall is the fraction of actual positive labels that were given a
-  positive prediction. For multiclass this is a macro-averaged metric. Defaults to `nil`.
-  - rocAuc (float()): Area Under a ROC Curve. For multiclass this is a macro-averaged
-  metric. Defaults to `nil`.
-  - threshold (float()): Threshold at which the metrics are computed. For binary
-  classification models this is the positive class threshold.
-  For multi-class classfication models this is the confidence
-  threshold. Defaults to `nil`.
+  *   `accuracy` (*type:* `float()`, *default:* `nil`) - Accuracy is the fraction of predictions given the correct label. For
+      multiclass this is a micro-averaged metric.
+  *   `f1Score` (*type:* `float()`, *default:* `nil`) - The F1 score is an average of recall and precision. For multiclass
+      this is a macro-averaged metric.
+  *   `logLoss` (*type:* `float()`, *default:* `nil`) - Logarithmic Loss. For multiclass this is a macro-averaged metric.
+  *   `precision` (*type:* `float()`, *default:* `nil`) - Precision is the fraction of actual positive predictions that had
+      positive actual labels. For multiclass this is a macro-averaged
+      metric treating each class as a binary classifier.
+  *   `recall` (*type:* `float()`, *default:* `nil`) - Recall is the fraction of actual positive labels that were given a
+      positive prediction. For multiclass this is a macro-averaged metric.
+  *   `rocAuc` (*type:* `float()`, *default:* `nil`) - Area Under a ROC Curve. For multiclass this is a macro-averaged
+      metric.
+  *   `threshold` (*type:* `float()`, *default:* `nil`) - Threshold at which the metrics are computed. For binary
+      classification models this is the positive class threshold.
+      For multi-class classfication models this is the confidence
+      threshold.
   """
 
   use GoogleApi.Gax.ModelBase

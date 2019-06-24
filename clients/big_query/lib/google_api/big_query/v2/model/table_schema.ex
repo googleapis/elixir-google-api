@@ -21,7 +21,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TableSchema do
 
   ## Attributes
 
-  - fields (list(GoogleApi.BigQuery.V2.Model.TableFieldSchema.t)): Describes the fields in a table. Defaults to `nil`.
+  *   `fields` (*type:* `list(GoogleApi.BigQuery.V2.Model.TableFieldSchema.t)`, *default:* `nil`) - Describes the fields in a table.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,15 +21,15 @@ defmodule GoogleApi.BigQuery.V2.Model.BqmlTrainingRunTrainingOptions do
 
   ## Attributes
 
-  - earlyStop (boolean()):  Defaults to `nil`.
-  - l1Reg (float()):  Defaults to `nil`.
-  - l2Reg (float()):  Defaults to `nil`.
-  - learnRate (float()):  Defaults to `nil`.
-  - learnRateStrategy (String.t):  Defaults to `nil`.
-  - lineSearchInitLearnRate (float()):  Defaults to `nil`.
-  - maxIteration (String.t):  Defaults to `nil`.
-  - minRelProgress (float()):  Defaults to `nil`.
-  - warmStart (boolean()):  Defaults to `nil`.
+  *   `earlyStop` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `l1Reg` (*type:* `float()`, *default:* `nil`) - 
+  *   `l2Reg` (*type:* `float()`, *default:* `nil`) - 
+  *   `learnRate` (*type:* `float()`, *default:* `nil`) - 
+  *   `learnRateStrategy` (*type:* `String.t`, *default:* `nil`) - 
+  *   `lineSearchInitLearnRate` (*type:* `float()`, *default:* `nil`) - 
+  *   `maxIteration` (*type:* `String.t`, *default:* `nil`) - 
+  *   `minRelProgress` (*type:* `float()`, *default:* `nil`) - 
+  *   `warmStart` (*type:* `boolean()`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase
