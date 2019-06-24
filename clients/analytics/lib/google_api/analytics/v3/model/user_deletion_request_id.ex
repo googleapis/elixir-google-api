@@ -21,8 +21,8 @@ defmodule GoogleApi.Analytics.V3.Model.UserDeletionRequestId do
 
   ## Attributes
 
-  - type (String.t): Type of user Defaults to `nil`.
-  - userId (String.t): The User's id Defaults to `nil`.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Type of user
+  *   `userId` (*type:* `String.t`, *default:* `nil`) - The User's id
   """
 
   use GoogleApi.Gax.ModelBase

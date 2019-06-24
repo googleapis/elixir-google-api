@@ -21,13 +21,13 @@ defmodule GoogleApi.Analytics.V3.Model.EntityAdWordsLink do
 
   ## Attributes
 
-  - adWordsAccounts (list(GoogleApi.Analytics.V3.Model.AdWordsAccount.t)): A list of Google Ads client accounts. These cannot be MCC accounts. This field is required when creating a Google Ads link. It cannot be empty. Defaults to `nil`.
-  - entity (GoogleApi.Analytics.V3.Model.EntityAdWordsLinkEntity.t): Web property being linked. Defaults to `nil`.
-  - id (String.t): Entity Google Ads link ID Defaults to `nil`.
-  - kind (String.t): Resource type for entity Google Ads link. Defaults to `analytics#entityAdWordsLink`.
-  - name (String.t): Name of the link. This field is required when creating a Google Ads link. Defaults to `nil`.
-  - profileIds (list(String.t)): IDs of linked Views (Profiles) represented as strings. Defaults to `nil`.
-  - selfLink (String.t): URL link for this Google Analytics - Google Ads link. Defaults to `nil`.
+  *   `adWordsAccounts` (*type:* `list(GoogleApi.Analytics.V3.Model.AdWordsAccount.t)`, *default:* `nil`) - A list of Google Ads client accounts. These cannot be MCC accounts. This field is required when creating a Google Ads link. It cannot be empty.
+  *   `entity` (*type:* `GoogleApi.Analytics.V3.Model.EntityAdWordsLinkEntity.t`, *default:* `nil`) - Web property being linked.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Entity Google Ads link ID
+  *   `kind` (*type:* `String.t`, *default:* `analytics#entityAdWordsLink`) - Resource type for entity Google Ads link.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the link. This field is required when creating a Google Ads link.
+  *   `profileIds` (*type:* `list(String.t)`, *default:* `nil`) - IDs of linked Views (Profiles) represented as strings.
+  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - URL link for this Google Analytics - Google Ads link.
   """
 
   use GoogleApi.Gax.ModelBase

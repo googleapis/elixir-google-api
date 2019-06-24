@@ -21,10 +21,10 @@ defmodule GoogleApi.Analytics.V3.Model.AccountTreeResponse do
 
   ## Attributes
 
-  - account (GoogleApi.Analytics.V3.Model.Account.t): The account created. Defaults to `nil`.
-  - kind (String.t): Resource type for account ticket. Defaults to `analytics#accountTreeResponse`.
-  - profile (GoogleApi.Analytics.V3.Model.Profile.t): View (Profile) for the account. Defaults to `nil`.
-  - webproperty (GoogleApi.Analytics.V3.Model.Webproperty.t): Web property for the account. Defaults to `nil`.
+  *   `account` (*type:* `GoogleApi.Analytics.V3.Model.Account.t`, *default:* `nil`) - The account created.
+  *   `kind` (*type:* `String.t`, *default:* `analytics#accountTreeResponse`) - Resource type for account ticket.
+  *   `profile` (*type:* `GoogleApi.Analytics.V3.Model.Profile.t`, *default:* `nil`) - View (Profile) for the account.
+  *   `webproperty` (*type:* `GoogleApi.Analytics.V3.Model.Webproperty.t`, *default:* `nil`) - Web property for the account.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,8 +21,8 @@ defmodule GoogleApi.Analytics.V3.Model.EntityUserLinkPermissions do
 
   ## Attributes
 
-  - effective (list(String.t)): Effective permissions represent all the permissions that a user has for this entity. These include any implied permissions (e.g., EDIT implies VIEW) or inherited permissions from the parent entity. Effective permissions are read-only. Defaults to `nil`.
-  - local (list(String.t)): Permissions that a user has been assigned at this very level. Does not include any implied or inherited permissions. Local permissions are modifiable. Defaults to `nil`.
+  *   `effective` (*type:* `list(String.t)`, *default:* `nil`) - Effective permissions represent all the permissions that a user has for this entity. These include any implied permissions (e.g., EDIT implies VIEW) or inherited permissions from the parent entity. Effective permissions are read-only.
+  *   `local` (*type:* `list(String.t)`, *default:* `nil`) - Permissions that a user has been assigned at this very level. Does not include any implied or inherited permissions. Local permissions are modifiable.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,13 +21,13 @@ defmodule GoogleApi.Analytics.V3.Model.Upload do
 
   ## Attributes
 
-  - accountId (String.t): Account Id to which this upload belongs. Defaults to `nil`.
-  - customDataSourceId (String.t): Custom data source Id to which this data import belongs. Defaults to `nil`.
-  - errors (list(String.t)): Data import errors collection. Defaults to `nil`.
-  - id (String.t): A unique ID for this upload. Defaults to `nil`.
-  - kind (String.t): Resource type for Analytics upload. Defaults to `analytics#upload`.
-  - status (String.t): Upload status. Possible values: PENDING, COMPLETED, FAILED, DELETING, DELETED. Defaults to `nil`.
-  - uploadTime (DateTime.t): Time this file is uploaded. Defaults to `nil`.
+  *   `accountId` (*type:* `String.t`, *default:* `nil`) - Account Id to which this upload belongs.
+  *   `customDataSourceId` (*type:* `String.t`, *default:* `nil`) - Custom data source Id to which this data import belongs.
+  *   `errors` (*type:* `list(String.t)`, *default:* `nil`) - Data import errors collection.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - A unique ID for this upload.
+  *   `kind` (*type:* `String.t`, *default:* `analytics#upload`) - Resource type for Analytics upload.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - Upload status. Possible values: PENDING, COMPLETED, FAILED, DELETING, DELETED.
+  *   `uploadTime` (*type:* `DateTime.t`, *default:* `nil`) - Time this file is uploaded.
   """
 
   use GoogleApi.Gax.ModelBase

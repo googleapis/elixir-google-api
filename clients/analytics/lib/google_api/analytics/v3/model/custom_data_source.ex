@@ -21,22 +21,22 @@ defmodule GoogleApi.Analytics.V3.Model.CustomDataSource do
 
   ## Attributes
 
-  - accountId (String.t): Account ID to which this custom data source belongs. Defaults to `nil`.
-  - childLink (GoogleApi.Analytics.V3.Model.CustomDataSourceChildLink.t):  Defaults to `nil`.
-  - created (DateTime.t): Time this custom data source was created. Defaults to `nil`.
-  - description (String.t): Description of custom data source. Defaults to `nil`.
-  - id (String.t): Custom data source ID. Defaults to `nil`.
-  - importBehavior (String.t):  Defaults to `nil`.
-  - kind (String.t): Resource type for Analytics custom data source. Defaults to `analytics#customDataSource`.
-  - name (String.t): Name of this custom data source. Defaults to `nil`.
-  - parentLink (GoogleApi.Analytics.V3.Model.CustomDataSourceParentLink.t): Parent link for this custom data source. Points to the web property to which this custom data source belongs. Defaults to `nil`.
-  - profilesLinked (list(String.t)): IDs of views (profiles) linked to the custom data source. Defaults to `nil`.
-  - schema (list(String.t)): Collection of schema headers of the custom data source. Defaults to `nil`.
-  - selfLink (String.t): Link for this Analytics custom data source. Defaults to `nil`.
-  - type (String.t): Type of the custom data source. Defaults to `nil`.
-  - updated (DateTime.t): Time this custom data source was last modified. Defaults to `nil`.
-  - uploadType (String.t): Upload type of the custom data source. Defaults to `nil`.
-  - webPropertyId (String.t): Web property ID of the form UA-XXXXX-YY to which this custom data source belongs. Defaults to `nil`.
+  *   `accountId` (*type:* `String.t`, *default:* `nil`) - Account ID to which this custom data source belongs.
+  *   `childLink` (*type:* `GoogleApi.Analytics.V3.Model.CustomDataSourceChildLink.t`, *default:* `nil`) - 
+  *   `created` (*type:* `DateTime.t`, *default:* `nil`) - Time this custom data source was created.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Description of custom data source.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Custom data source ID.
+  *   `importBehavior` (*type:* `String.t`, *default:* `nil`) - 
+  *   `kind` (*type:* `String.t`, *default:* `analytics#customDataSource`) - Resource type for Analytics custom data source.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this custom data source.
+  *   `parentLink` (*type:* `GoogleApi.Analytics.V3.Model.CustomDataSourceParentLink.t`, *default:* `nil`) - Parent link for this custom data source. Points to the web property to which this custom data source belongs.
+  *   `profilesLinked` (*type:* `list(String.t)`, *default:* `nil`) - IDs of views (profiles) linked to the custom data source.
+  *   `schema` (*type:* `list(String.t)`, *default:* `nil`) - Collection of schema headers of the custom data source.
+  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - Link for this Analytics custom data source.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Type of the custom data source.
+  *   `updated` (*type:* `DateTime.t`, *default:* `nil`) - Time this custom data source was last modified.
+  *   `uploadType` (*type:* `String.t`, *default:* `nil`) - Upload type of the custom data source.
+  *   `webPropertyId` (*type:* `String.t`, *default:* `nil`) - Web property ID of the form UA-XXXXX-YY to which this custom data source belongs.
   """
 
   use GoogleApi.Gax.ModelBase

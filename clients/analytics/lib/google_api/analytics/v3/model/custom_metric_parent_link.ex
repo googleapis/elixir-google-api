@@ -21,8 +21,8 @@ defmodule GoogleApi.Analytics.V3.Model.CustomMetricParentLink do
 
   ## Attributes
 
-  - href (String.t): Link to the property to which the custom metric belongs. Defaults to `nil`.
-  - type (String.t): Type of the parent link. Set to "analytics#webproperty". Defaults to `analytics#webproperty`.
+  *   `href` (*type:* `String.t`, *default:* `nil`) - Link to the property to which the custom metric belongs.
+  *   `type` (*type:* `String.t`, *default:* `analytics#webproperty`) - Type of the parent link. Set to "analytics#webproperty".
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,15 +21,15 @@ defmodule GoogleApi.Analytics.V3.Model.Account do
 
   ## Attributes
 
-  - childLink (GoogleApi.Analytics.V3.Model.AccountChildLink.t): Child link for an account entry. Points to the list of web properties for this account. Defaults to `nil`.
-  - created (DateTime.t): Time the account was created. Defaults to `nil`.
-  - id (String.t): Account ID. Defaults to `nil`.
-  - kind (String.t): Resource type for Analytics account. Defaults to `analytics#account`.
-  - name (String.t): Account name. Defaults to `nil`.
-  - permissions (GoogleApi.Analytics.V3.Model.AccountPermissions.t): Permissions the user has for this account. Defaults to `nil`.
-  - selfLink (String.t): Link for this account. Defaults to `nil`.
-  - starred (boolean()): Indicates whether this account is starred or not. Defaults to `nil`.
-  - updated (DateTime.t): Time the account was last modified. Defaults to `nil`.
+  *   `childLink` (*type:* `GoogleApi.Analytics.V3.Model.AccountChildLink.t`, *default:* `nil`) - Child link for an account entry. Points to the list of web properties for this account.
+  *   `created` (*type:* `DateTime.t`, *default:* `nil`) - Time the account was created.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Account ID.
+  *   `kind` (*type:* `String.t`, *default:* `analytics#account`) - Resource type for Analytics account.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Account name.
+  *   `permissions` (*type:* `GoogleApi.Analytics.V3.Model.AccountPermissions.t`, *default:* `nil`) - Permissions the user has for this account.
+  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - Link for this account.
+  *   `starred` (*type:* `boolean()`, *default:* `nil`) - Indicates whether this account is starred or not.
+  *   `updated` (*type:* `DateTime.t`, *default:* `nil`) - Time the account was last modified.
   """
 
   use GoogleApi.Gax.ModelBase

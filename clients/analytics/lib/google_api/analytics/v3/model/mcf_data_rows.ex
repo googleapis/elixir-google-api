@@ -21,8 +21,8 @@ defmodule GoogleApi.Analytics.V3.Model.McfDataRows do
 
   ## Attributes
 
-  - conversionPathValue (list(GoogleApi.Analytics.V3.Model.McfDataRowsConversionPathValue.t)): A conversion path dimension value, containing a list of interactions with their attributes. Defaults to `nil`.
-  - primitiveValue (String.t): A primitive dimension value. A primitive metric value. Defaults to `nil`.
+  *   `conversionPathValue` (*type:* `list(GoogleApi.Analytics.V3.Model.McfDataRowsConversionPathValue.t)`, *default:* `nil`) - A conversion path dimension value, containing a list of interactions with their attributes.
+  *   `primitiveValue` (*type:* `String.t`, *default:* `nil`) - A primitive dimension value. A primitive metric value.
   """
 
   use GoogleApi.Gax.ModelBase

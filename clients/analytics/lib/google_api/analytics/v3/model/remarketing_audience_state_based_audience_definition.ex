@@ -21,8 +21,8 @@ defmodule GoogleApi.Analytics.V3.Model.RemarketingAudienceStateBasedAudienceDefi
 
   ## Attributes
 
-  - excludeConditions (GoogleApi.Analytics.V3.Model.RemarketingAudienceStateBasedAudienceDefinitionExcludeConditions.t): Defines the conditions to exclude users from the audience. Defaults to `nil`.
-  - includeConditions (GoogleApi.Analytics.V3.Model.IncludeConditions.t): Defines the conditions to include users to the audience. Defaults to `nil`.
+  *   `excludeConditions` (*type:* `GoogleApi.Analytics.V3.Model.RemarketingAudienceStateBasedAudienceDefinitionExcludeConditions.t`, *default:* `nil`) - Defines the conditions to exclude users from the audience.
+  *   `includeConditions` (*type:* `GoogleApi.Analytics.V3.Model.IncludeConditions.t`, *default:* `nil`) - Defines the conditions to include users to the audience.
   """
 
   use GoogleApi.Gax.ModelBase

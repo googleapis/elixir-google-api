@@ -21,16 +21,16 @@ defmodule GoogleApi.Analytics.V3.Model.LinkedForeignAccount do
 
   ## Attributes
 
-  - accountId (String.t): Account ID to which this linked foreign account belongs. Defaults to `nil`.
-  - eligibleForSearch (boolean()): Boolean indicating whether this is eligible for search. Defaults to `nil`.
-  - id (String.t): Entity ad account link ID. Defaults to `nil`.
-  - internalWebPropertyId (String.t): Internal ID for the web property to which this linked foreign account belongs. Defaults to `nil`.
-  - kind (String.t): Resource type for linked foreign account. Defaults to `analytics#linkedForeignAccount`.
-  - linkedAccountId (String.t): The foreign account ID. For example the an Google Ads `linkedAccountId` has the following format XXX-XXX-XXXX. Defaults to `nil`.
-  - remarketingAudienceId (String.t): Remarketing audience ID to which this linked foreign account belongs. Defaults to `nil`.
-  - status (String.t): The status of this foreign account link. Defaults to `nil`.
-  - type (String.t): The type of the foreign account. For example, `ADWORDS_LINKS`, `DBM_LINKS`, `MCC_LINKS` or `OPTIMIZE`. Defaults to `nil`.
-  - webPropertyId (String.t): Web property ID of the form UA-XXXXX-YY to which this linked foreign account belongs. Defaults to `nil`.
+  *   `accountId` (*type:* `String.t`, *default:* `nil`) - Account ID to which this linked foreign account belongs.
+  *   `eligibleForSearch` (*type:* `boolean()`, *default:* `nil`) - Boolean indicating whether this is eligible for search.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Entity ad account link ID.
+  *   `internalWebPropertyId` (*type:* `String.t`, *default:* `nil`) - Internal ID for the web property to which this linked foreign account belongs.
+  *   `kind` (*type:* `String.t`, *default:* `analytics#linkedForeignAccount`) - Resource type for linked foreign account.
+  *   `linkedAccountId` (*type:* `String.t`, *default:* `nil`) - The foreign account ID. For example the an Google Ads `linkedAccountId` has the following format XXX-XXX-XXXX.
+  *   `remarketingAudienceId` (*type:* `String.t`, *default:* `nil`) - Remarketing audience ID to which this linked foreign account belongs.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - The status of this foreign account link.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the foreign account. For example, `ADWORDS_LINKS`, `DBM_LINKS`, `MCC_LINKS` or `OPTIMIZE`.
+  *   `webPropertyId` (*type:* `String.t`, *default:* `nil`) - Web property ID of the form UA-XXXXX-YY to which this linked foreign account belongs.
   """
 
   use GoogleApi.Gax.ModelBase

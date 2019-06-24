@@ -21,13 +21,13 @@ defmodule GoogleApi.Analytics.V3.Model.ProfileRef do
 
   ## Attributes
 
-  - accountId (String.t): Account ID to which this view (profile) belongs. Defaults to `nil`.
-  - href (String.t): Link for this view (profile). Defaults to `nil`.
-  - id (String.t): View (Profile) ID. Defaults to `nil`.
-  - internalWebPropertyId (String.t): Internal ID for the web property to which this view (profile) belongs. Defaults to `nil`.
-  - kind (String.t): Analytics view (profile) reference. Defaults to `analytics#profileRef`.
-  - name (String.t): Name of this view (profile). Defaults to `nil`.
-  - webPropertyId (String.t): Web property ID of the form UA-XXXXX-YY to which this view (profile) belongs. Defaults to `nil`.
+  *   `accountId` (*type:* `String.t`, *default:* `nil`) - Account ID to which this view (profile) belongs.
+  *   `href` (*type:* `String.t`, *default:* `nil`) - Link for this view (profile).
+  *   `id` (*type:* `String.t`, *default:* `nil`) - View (Profile) ID.
+  *   `internalWebPropertyId` (*type:* `String.t`, *default:* `nil`) - Internal ID for the web property to which this view (profile) belongs.
+  *   `kind` (*type:* `String.t`, *default:* `analytics#profileRef`) - Analytics view (profile) reference.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this view (profile).
+  *   `webPropertyId` (*type:* `String.t`, *default:* `nil`) - Web property ID of the form UA-XXXXX-YY to which this view (profile) belongs.
   """
 
   use GoogleApi.Gax.ModelBase

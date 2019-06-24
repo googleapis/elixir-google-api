@@ -21,15 +21,15 @@ defmodule GoogleApi.Analytics.V3.Model.Segment do
 
   ## Attributes
 
-  - created (DateTime.t): Time the segment was created. Defaults to `nil`.
-  - definition (String.t): Segment definition. Defaults to `nil`.
-  - id (String.t): Segment ID. Defaults to `nil`.
-  - kind (String.t): Resource type for Analytics segment. Defaults to `analytics#segment`.
-  - name (String.t): Segment name. Defaults to `nil`.
-  - segmentId (String.t): Segment ID. Can be used with the 'segment' parameter in Core Reporting API. Defaults to `nil`.
-  - selfLink (String.t): Link for this segment. Defaults to `nil`.
-  - type (String.t): Type for a segment. Possible values are "BUILT_IN" or "CUSTOM". Defaults to `nil`.
-  - updated (DateTime.t): Time the segment was last modified. Defaults to `nil`.
+  *   `created` (*type:* `DateTime.t`, *default:* `nil`) - Time the segment was created.
+  *   `definition` (*type:* `String.t`, *default:* `nil`) - Segment definition.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Segment ID.
+  *   `kind` (*type:* `String.t`, *default:* `analytics#segment`) - Resource type for Analytics segment.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Segment name.
+  *   `segmentId` (*type:* `String.t`, *default:* `nil`) - Segment ID. Can be used with the 'segment' parameter in Core Reporting API.
+  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - Link for this segment.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Type for a segment. Possible values are "BUILT_IN" or "CUSTOM".
+  *   `updated` (*type:* `DateTime.t`, *default:* `nil`) - Time the segment was last modified.
   """
 
   use GoogleApi.Gax.ModelBase

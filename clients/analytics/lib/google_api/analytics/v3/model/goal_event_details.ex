@@ -21,8 +21,8 @@ defmodule GoogleApi.Analytics.V3.Model.GoalEventDetails do
 
   ## Attributes
 
-  - eventConditions (list(GoogleApi.Analytics.V3.Model.GoalEventDetailsEventConditions.t)): List of event conditions. Defaults to `nil`.
-  - useEventValue (boolean()): Determines if the event value should be used as the value for this goal. Defaults to `nil`.
+  *   `eventConditions` (*type:* `list(GoogleApi.Analytics.V3.Model.GoalEventDetailsEventConditions.t)`, *default:* `nil`) - List of event conditions.
+  *   `useEventValue` (*type:* `boolean()`, *default:* `nil`) - Determines if the event value should be used as the value for this goal.
   """
 
   use GoogleApi.Gax.ModelBase

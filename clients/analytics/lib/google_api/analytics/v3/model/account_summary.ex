@@ -21,11 +21,11 @@ defmodule GoogleApi.Analytics.V3.Model.AccountSummary do
 
   ## Attributes
 
-  - id (String.t): Account ID. Defaults to `nil`.
-  - kind (String.t): Resource type for Analytics AccountSummary. Defaults to `analytics#accountSummary`.
-  - name (String.t): Account name. Defaults to `nil`.
-  - starred (boolean()): Indicates whether this account is starred or not. Defaults to `nil`.
-  - webProperties (list(GoogleApi.Analytics.V3.Model.WebPropertySummary.t)): List of web properties under this account. Defaults to `nil`.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Account ID.
+  *   `kind` (*type:* `String.t`, *default:* `analytics#accountSummary`) - Resource type for Analytics AccountSummary.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Account name.
+  *   `starred` (*type:* `boolean()`, *default:* `nil`) - Indicates whether this account is starred or not.
+  *   `webProperties` (*type:* `list(GoogleApi.Analytics.V3.Model.WebPropertySummary.t)`, *default:* `nil`) - List of web properties under this account.
   """
 
   use GoogleApi.Gax.ModelBase

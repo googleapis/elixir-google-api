@@ -21,11 +21,11 @@ defmodule GoogleApi.Analytics.V3.Model.Columns do
 
   ## Attributes
 
-  - attributeNames (list(String.t)): List of attributes names returned by columns. Defaults to `nil`.
-  - etag (String.t): Etag of collection. This etag can be compared with the last response etag to check if response has changed. Defaults to `nil`.
-  - items (list(GoogleApi.Analytics.V3.Model.Column.t)): List of columns for a report type. Defaults to `nil`.
-  - kind (String.t): Collection type. Defaults to `analytics#columns`.
-  - totalResults (integer()): Total number of columns returned in the response. Defaults to `nil`.
+  *   `attributeNames` (*type:* `list(String.t)`, *default:* `nil`) - List of attributes names returned by columns.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of collection. This etag can be compared with the last response etag to check if response has changed.
+  *   `items` (*type:* `list(GoogleApi.Analytics.V3.Model.Column.t)`, *default:* `nil`) - List of columns for a report type.
+  *   `kind` (*type:* `String.t`, *default:* `analytics#columns`) - Collection type.
+  *   `totalResults` (*type:* `integer()`, *default:* `nil`) - Total number of columns returned in the response.
   """
 
   use GoogleApi.Gax.ModelBase

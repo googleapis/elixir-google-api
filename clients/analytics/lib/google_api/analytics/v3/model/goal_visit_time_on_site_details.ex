@@ -21,8 +21,8 @@ defmodule GoogleApi.Analytics.V3.Model.GoalVisitTimeOnSiteDetails do
 
   ## Attributes
 
-  - comparisonType (String.t): Type of comparison. Possible values are LESS_THAN or GREATER_THAN. Defaults to `nil`.
-  - comparisonValue (String.t): Value used for this comparison. Defaults to `nil`.
+  *   `comparisonType` (*type:* `String.t`, *default:* `nil`) - Type of comparison. Possible values are LESS_THAN or GREATER_THAN.
+  *   `comparisonValue` (*type:* `String.t`, *default:* `nil`) - Value used for this comparison.
   """
 
   use GoogleApi.Gax.ModelBase

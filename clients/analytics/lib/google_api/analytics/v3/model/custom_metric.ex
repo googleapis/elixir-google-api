@@ -21,21 +21,21 @@ defmodule GoogleApi.Analytics.V3.Model.CustomMetric do
 
   ## Attributes
 
-  - accountId (String.t): Account ID. Defaults to `nil`.
-  - active (boolean()): Boolean indicating whether the custom metric is active. Defaults to `nil`.
-  - created (DateTime.t): Time the custom metric was created. Defaults to `nil`.
-  - id (String.t): Custom metric ID. Defaults to `nil`.
-  - index (integer()): Index of the custom metric. Defaults to `nil`.
-  - kind (String.t): Kind value for a custom metric. Set to "analytics#customMetric". It is a read-only field. Defaults to `analytics#customMetric`.
-  - max_value (String.t): Max value of custom metric. Defaults to `nil`.
-  - min_value (String.t): Min value of custom metric. Defaults to `nil`.
-  - name (String.t): Name of the custom metric. Defaults to `nil`.
-  - parentLink (GoogleApi.Analytics.V3.Model.CustomMetricParentLink.t): Parent link for the custom metric. Points to the property to which the custom metric belongs. Defaults to `nil`.
-  - scope (String.t): Scope of the custom metric: HIT or PRODUCT. Defaults to `nil`.
-  - selfLink (String.t): Link for the custom metric Defaults to `nil`.
-  - type (String.t): Data type of custom metric. Defaults to `nil`.
-  - updated (DateTime.t): Time the custom metric was last modified. Defaults to `nil`.
-  - webPropertyId (String.t): Property ID. Defaults to `nil`.
+  *   `accountId` (*type:* `String.t`, *default:* `nil`) - Account ID.
+  *   `active` (*type:* `boolean()`, *default:* `nil`) - Boolean indicating whether the custom metric is active.
+  *   `created` (*type:* `DateTime.t`, *default:* `nil`) - Time the custom metric was created.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Custom metric ID.
+  *   `index` (*type:* `integer()`, *default:* `nil`) - Index of the custom metric.
+  *   `kind` (*type:* `String.t`, *default:* `analytics#customMetric`) - Kind value for a custom metric. Set to "analytics#customMetric". It is a read-only field.
+  *   `max_value` (*type:* `String.t`, *default:* `nil`) - Max value of custom metric.
+  *   `min_value` (*type:* `String.t`, *default:* `nil`) - Min value of custom metric.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the custom metric.
+  *   `parentLink` (*type:* `GoogleApi.Analytics.V3.Model.CustomMetricParentLink.t`, *default:* `nil`) - Parent link for the custom metric. Points to the property to which the custom metric belongs.
+  *   `scope` (*type:* `String.t`, *default:* `nil`) - Scope of the custom metric: HIT or PRODUCT.
+  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - Link for the custom metric
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Data type of custom metric.
+  *   `updated` (*type:* `DateTime.t`, *default:* `nil`) - Time the custom metric was last modified.
+  *   `webPropertyId` (*type:* `String.t`, *default:* `nil`) - Property ID.
   """
 
   use GoogleApi.Gax.ModelBase

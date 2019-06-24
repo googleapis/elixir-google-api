@@ -21,7 +21,7 @@ defmodule GoogleApi.Analytics.V3.Model.RemarketingAudienceAudienceDefinition do
 
   ## Attributes
 
-  - includeConditions (GoogleApi.Analytics.V3.Model.IncludeConditions.t): Defines the conditions to include users to the audience. Defaults to `nil`.
+  *   `includeConditions` (*type:* `GoogleApi.Analytics.V3.Model.IncludeConditions.t`, *default:* `nil`) - Defines the conditions to include users to the audience.
   """
 
   use GoogleApi.Gax.ModelBase

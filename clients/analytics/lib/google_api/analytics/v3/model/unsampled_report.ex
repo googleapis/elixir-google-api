@@ -21,25 +21,25 @@ defmodule GoogleApi.Analytics.V3.Model.UnsampledReport do
 
   ## Attributes
 
-  - accountId (String.t): Account ID to which this unsampled report belongs. Defaults to `nil`.
-  - cloudStorageDownloadDetails (GoogleApi.Analytics.V3.Model.UnsampledReportCloudStorageDownloadDetails.t): Download details for a file stored in Google Cloud Storage. Defaults to `nil`.
-  - created (DateTime.t): Time this unsampled report was created. Defaults to `nil`.
-  - dimensions (String.t): The dimensions for the unsampled report. Defaults to `nil`.
-  - downloadType (String.t): The type of download you need to use for the report data file. Possible values include `GOOGLE_DRIVE` and `GOOGLE_CLOUD_STORAGE`. If the value is `GOOGLE_DRIVE`, see the `driveDownloadDetails` field. If the value is `GOOGLE_CLOUD_STORAGE`, see the `cloudStorageDownloadDetails` field. Defaults to `nil`.
-  - driveDownloadDetails (GoogleApi.Analytics.V3.Model.UnsampledReportDriveDownloadDetails.t): Download details for a file stored in Google Drive. Defaults to `nil`.
-  - end-date (String.t): The end date for the unsampled report. Defaults to `nil`.
-  - filters (String.t): The filters for the unsampled report. Defaults to `nil`.
-  - id (String.t): Unsampled report ID. Defaults to `nil`.
-  - kind (String.t): Resource type for an Analytics unsampled report. Defaults to `analytics#unsampledReport`.
-  - metrics (String.t): The metrics for the unsampled report. Defaults to `nil`.
-  - profileId (String.t): View (Profile) ID to which this unsampled report belongs. Defaults to `nil`.
-  - segment (String.t): The segment for the unsampled report. Defaults to `nil`.
-  - selfLink (String.t): Link for this unsampled report. Defaults to `nil`.
-  - start-date (String.t): The start date for the unsampled report. Defaults to `nil`.
-  - status (String.t): Status of this unsampled report. Possible values are PENDING, COMPLETED, or FAILED. Defaults to `nil`.
-  - title (String.t): Title of the unsampled report. Defaults to `nil`.
-  - updated (DateTime.t): Time this unsampled report was last modified. Defaults to `nil`.
-  - webPropertyId (String.t): Web property ID to which this unsampled report belongs. The web property ID is of the form UA-XXXXX-YY. Defaults to `nil`.
+  *   `accountId` (*type:* `String.t`, *default:* `nil`) - Account ID to which this unsampled report belongs.
+  *   `cloudStorageDownloadDetails` (*type:* `GoogleApi.Analytics.V3.Model.UnsampledReportCloudStorageDownloadDetails.t`, *default:* `nil`) - Download details for a file stored in Google Cloud Storage.
+  *   `created` (*type:* `DateTime.t`, *default:* `nil`) - Time this unsampled report was created.
+  *   `dimensions` (*type:* `String.t`, *default:* `nil`) - The dimensions for the unsampled report.
+  *   `downloadType` (*type:* `String.t`, *default:* `nil`) - The type of download you need to use for the report data file. Possible values include `GOOGLE_DRIVE` and `GOOGLE_CLOUD_STORAGE`. If the value is `GOOGLE_DRIVE`, see the `driveDownloadDetails` field. If the value is `GOOGLE_CLOUD_STORAGE`, see the `cloudStorageDownloadDetails` field.
+  *   `driveDownloadDetails` (*type:* `GoogleApi.Analytics.V3.Model.UnsampledReportDriveDownloadDetails.t`, *default:* `nil`) - Download details for a file stored in Google Drive.
+  *   `end-date` (*type:* `String.t`, *default:* `nil`) - The end date for the unsampled report.
+  *   `filters` (*type:* `String.t`, *default:* `nil`) - The filters for the unsampled report.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Unsampled report ID.
+  *   `kind` (*type:* `String.t`, *default:* `analytics#unsampledReport`) - Resource type for an Analytics unsampled report.
+  *   `metrics` (*type:* `String.t`, *default:* `nil`) - The metrics for the unsampled report.
+  *   `profileId` (*type:* `String.t`, *default:* `nil`) - View (Profile) ID to which this unsampled report belongs.
+  *   `segment` (*type:* `String.t`, *default:* `nil`) - The segment for the unsampled report.
+  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - Link for this unsampled report.
+  *   `start-date` (*type:* `String.t`, *default:* `nil`) - The start date for the unsampled report.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - Status of this unsampled report. Possible values are PENDING, COMPLETED, or FAILED.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - Title of the unsampled report.
+  *   `updated` (*type:* `DateTime.t`, *default:* `nil`) - Time this unsampled report was last modified.
+  *   `webPropertyId` (*type:* `String.t`, *default:* `nil`) - Web property ID to which this unsampled report belongs. The web property ID is of the form UA-XXXXX-YY.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,19 +21,19 @@ defmodule GoogleApi.Analytics.V3.Model.FilterAdvancedDetails do
 
   ## Attributes
 
-  - caseSensitive (boolean()): Indicates if the filter expressions are case sensitive. Defaults to `nil`.
-  - extractA (String.t): Expression to extract from field A. Defaults to `nil`.
-  - extractB (String.t): Expression to extract from field B. Defaults to `nil`.
-  - fieldA (String.t): Field A. Defaults to `nil`.
-  - fieldAIndex (integer()): The Index of the custom dimension. Required if field is a CUSTOM_DIMENSION. Defaults to `nil`.
-  - fieldARequired (boolean()): Indicates if field A is required to match. Defaults to `nil`.
-  - fieldB (String.t): Field B. Defaults to `nil`.
-  - fieldBIndex (integer()): The Index of the custom dimension. Required if field is a CUSTOM_DIMENSION. Defaults to `nil`.
-  - fieldBRequired (boolean()): Indicates if field B is required to match. Defaults to `nil`.
-  - outputConstructor (String.t): Expression used to construct the output value. Defaults to `nil`.
-  - outputToField (String.t): Output field. Defaults to `nil`.
-  - outputToFieldIndex (integer()): The Index of the custom dimension. Required if field is a CUSTOM_DIMENSION. Defaults to `nil`.
-  - overrideOutputField (boolean()): Indicates if the existing value of the output field, if any, should be overridden by the output expression. Defaults to `nil`.
+  *   `caseSensitive` (*type:* `boolean()`, *default:* `nil`) - Indicates if the filter expressions are case sensitive.
+  *   `extractA` (*type:* `String.t`, *default:* `nil`) - Expression to extract from field A.
+  *   `extractB` (*type:* `String.t`, *default:* `nil`) - Expression to extract from field B.
+  *   `fieldA` (*type:* `String.t`, *default:* `nil`) - Field A.
+  *   `fieldAIndex` (*type:* `integer()`, *default:* `nil`) - The Index of the custom dimension. Required if field is a CUSTOM_DIMENSION.
+  *   `fieldARequired` (*type:* `boolean()`, *default:* `nil`) - Indicates if field A is required to match.
+  *   `fieldB` (*type:* `String.t`, *default:* `nil`) - Field B.
+  *   `fieldBIndex` (*type:* `integer()`, *default:* `nil`) - The Index of the custom dimension. Required if field is a CUSTOM_DIMENSION.
+  *   `fieldBRequired` (*type:* `boolean()`, *default:* `nil`) - Indicates if field B is required to match.
+  *   `outputConstructor` (*type:* `String.t`, *default:* `nil`) - Expression used to construct the output value.
+  *   `outputToField` (*type:* `String.t`, *default:* `nil`) - Output field.
+  *   `outputToFieldIndex` (*type:* `integer()`, *default:* `nil`) - The Index of the custom dimension. Required if field is a CUSTOM_DIMENSION.
+  *   `overrideOutputField` (*type:* `boolean()`, *default:* `nil`) - Indicates if the existing value of the output field, if any, should be overridden by the output expression.
   """
 
   use GoogleApi.Gax.ModelBase

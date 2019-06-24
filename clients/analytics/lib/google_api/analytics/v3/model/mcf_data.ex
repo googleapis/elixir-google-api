@@ -21,21 +21,21 @@ defmodule GoogleApi.Analytics.V3.Model.McfData do
 
   ## Attributes
 
-  - columnHeaders (list(GoogleApi.Analytics.V3.Model.McfDataColumnHeaders.t)): Column headers that list dimension names followed by the metric names. The order of dimensions and metrics is same as specified in the request. Defaults to `nil`.
-  - containsSampledData (boolean()): Determines if the Analytics data contains sampled data. Defaults to `nil`.
-  - id (String.t): Unique ID for this data response. Defaults to `nil`.
-  - itemsPerPage (integer()): The maximum number of rows the response can contain, regardless of the actual number of rows returned. Its value ranges from 1 to 10,000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. Defaults to `nil`.
-  - kind (String.t): Resource type. Defaults to `analytics#mcfData`.
-  - nextLink (String.t): Link to next page for this Analytics data query. Defaults to `nil`.
-  - previousLink (String.t): Link to previous page for this Analytics data query. Defaults to `nil`.
-  - profileInfo (GoogleApi.Analytics.V3.Model.McfDataProfileInfo.t): Information for the view (profile), for which the Analytics data was requested. Defaults to `nil`.
-  - query (GoogleApi.Analytics.V3.Model.McfDataQuery.t): Analytics data request query parameters. Defaults to `nil`.
-  - rows (list(list(GoogleApi.Analytics.V3.Model.McfDataRows.t))): Analytics data rows, where each row contains a list of dimension values followed by the metric values. The order of dimensions and metrics is same as specified in the request. Defaults to `nil`.
-  - sampleSize (String.t): The number of samples used to calculate the result. Defaults to `nil`.
-  - sampleSpace (String.t): Total size of the sample space from which the samples were selected. Defaults to `nil`.
-  - selfLink (String.t): Link to this page. Defaults to `nil`.
-  - totalResults (integer()): The total number of rows for the query, regardless of the number of rows in the response. Defaults to `nil`.
-  - totalsForAllResults (map()): Total values for the requested metrics over all the results, not just the results returned in this response. The order of the metric totals is same as the metric order specified in the request. Defaults to `nil`.
+  *   `columnHeaders` (*type:* `list(GoogleApi.Analytics.V3.Model.McfDataColumnHeaders.t)`, *default:* `nil`) - Column headers that list dimension names followed by the metric names. The order of dimensions and metrics is same as specified in the request.
+  *   `containsSampledData` (*type:* `boolean()`, *default:* `nil`) - Determines if the Analytics data contains sampled data.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Unique ID for this data response.
+  *   `itemsPerPage` (*type:* `integer()`, *default:* `nil`) - The maximum number of rows the response can contain, regardless of the actual number of rows returned. Its value ranges from 1 to 10,000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.
+  *   `kind` (*type:* `String.t`, *default:* `analytics#mcfData`) - Resource type.
+  *   `nextLink` (*type:* `String.t`, *default:* `nil`) - Link to next page for this Analytics data query.
+  *   `previousLink` (*type:* `String.t`, *default:* `nil`) - Link to previous page for this Analytics data query.
+  *   `profileInfo` (*type:* `GoogleApi.Analytics.V3.Model.McfDataProfileInfo.t`, *default:* `nil`) - Information for the view (profile), for which the Analytics data was requested.
+  *   `query` (*type:* `GoogleApi.Analytics.V3.Model.McfDataQuery.t`, *default:* `nil`) - Analytics data request query parameters.
+  *   `rows` (*type:* `list(list(GoogleApi.Analytics.V3.Model.McfDataRows.t))`, *default:* `nil`) - Analytics data rows, where each row contains a list of dimension values followed by the metric values. The order of dimensions and metrics is same as specified in the request.
+  *   `sampleSize` (*type:* `String.t`, *default:* `nil`) - The number of samples used to calculate the result.
+  *   `sampleSpace` (*type:* `String.t`, *default:* `nil`) - Total size of the sample space from which the samples were selected.
+  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - Link to this page.
+  *   `totalResults` (*type:* `integer()`, *default:* `nil`) - The total number of rows for the query, regardless of the number of rows in the response.
+  *   `totalsForAllResults` (*type:* `map()`, *default:* `nil`) - Total values for the requested metrics over all the results, not just the results returned in this response. The order of the metric totals is same as the metric order specified in the request.
   """
 
   use GoogleApi.Gax.ModelBase

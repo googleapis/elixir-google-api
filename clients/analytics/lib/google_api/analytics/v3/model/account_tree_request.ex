@@ -21,12 +21,12 @@ defmodule GoogleApi.Analytics.V3.Model.AccountTreeRequest do
 
   ## Attributes
 
-  - accountName (String.t):  Defaults to `nil`.
-  - kind (String.t): Resource type for account ticket. Defaults to `analytics#accountTreeRequest`.
-  - profileName (String.t):  Defaults to `nil`.
-  - timezone (String.t):  Defaults to `nil`.
-  - webpropertyName (String.t):  Defaults to `nil`.
-  - websiteUrl (String.t):  Defaults to `nil`.
+  *   `accountName` (*type:* `String.t`, *default:* `nil`) - 
+  *   `kind` (*type:* `String.t`, *default:* `analytics#accountTreeRequest`) - Resource type for account ticket.
+  *   `profileName` (*type:* `String.t`, *default:* `nil`) - 
+  *   `timezone` (*type:* `String.t`, *default:* `nil`) - 
+  *   `webpropertyName` (*type:* `String.t`, *default:* `nil`) - 
+  *   `websiteUrl` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

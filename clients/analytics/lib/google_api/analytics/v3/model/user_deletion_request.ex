@@ -21,11 +21,11 @@ defmodule GoogleApi.Analytics.V3.Model.UserDeletionRequest do
 
   ## Attributes
 
-  - deletionRequestTime (DateTime.t): This marks the point in time for which all user data before should be deleted Defaults to `nil`.
-  - firebaseProjectId (String.t): Firebase Project Id Defaults to `nil`.
-  - id (GoogleApi.Analytics.V3.Model.UserDeletionRequestId.t): User ID. Defaults to `nil`.
-  - kind (String.t): Value is "analytics#userDeletionRequest". Defaults to `analytics#userDeletionRequest`.
-  - webPropertyId (String.t): Web property ID of the form UA-XXXXX-YY. Defaults to `nil`.
+  *   `deletionRequestTime` (*type:* `DateTime.t`, *default:* `nil`) - This marks the point in time for which all user data before should be deleted
+  *   `firebaseProjectId` (*type:* `String.t`, *default:* `nil`) - Firebase Project Id
+  *   `id` (*type:* `GoogleApi.Analytics.V3.Model.UserDeletionRequestId.t`, *default:* `nil`) - User ID.
+  *   `kind` (*type:* `String.t`, *default:* `analytics#userDeletionRequest`) - Value is "analytics#userDeletionRequest".
+  *   `webPropertyId` (*type:* `String.t`, *default:* `nil`) - Web property ID of the form UA-XXXXX-YY.
   """
 
   use GoogleApi.Gax.ModelBase

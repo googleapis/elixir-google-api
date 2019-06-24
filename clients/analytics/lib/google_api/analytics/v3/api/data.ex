@@ -28,33 +28,34 @@ defmodule GoogleApi.Analytics.V3.Api.Data do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - ids (String.t): Unique table ID for retrieving Analytics data. Table ID is of the form ga:XXXX, where XXXX is the Analytics view (profile) ID.
-  - start_date (String.t): Start date for fetching Analytics data. Requests can specify a start date formatted as YYYY-MM-DD, or as a relative date (e.g., today, yesterday, or 7daysAgo). The default value is 7daysAgo.
-  - end_date (String.t): End date for fetching Analytics data. Request can should specify an end date formatted as YYYY-MM-DD, or as a relative date (e.g., today, yesterday, or 7daysAgo). The default value is yesterday.
-  - metrics (String.t): A comma-separated list of Analytics metrics. E.g., 'ga:sessions,ga:pageviews'. At least one metric must be specified.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :dimensions (String.t): A comma-separated list of Analytics dimensions. E.g., 'ga:browser,ga:city'.
-    - :filters (String.t): A comma-separated list of dimension or metric filters to be applied to Analytics data.
-    - :include-empty-rows (boolean()): The response will include empty rows if this parameter is set to true, the default is true
-    - :max-results (integer()): The maximum number of entries to include in this feed.
-    - :output (String.t): The selected format for the response. Default format is JSON.
-    - :samplingLevel (String.t): The desired sampling level.
-    - :segment (String.t): An Analytics segment to be applied to data.
-    - :sort (String.t): A comma-separated list of dimensions or metrics that determine the sort order for Analytics data.
-    - :start-index (integer()): An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `ids` (*type:* `String.t`) - Unique table ID for retrieving Analytics data. Table ID is of the form ga:XXXX, where XXXX is the Analytics view (profile) ID.
+  *   `start_date` (*type:* `String.t`) - Start date for fetching Analytics data. Requests can specify a start date formatted as YYYY-MM-DD, or as a relative date (e.g., today, yesterday, or 7daysAgo). The default value is 7daysAgo.
+  *   `end_date` (*type:* `String.t`) - End date for fetching Analytics data. Request can should specify an end date formatted as YYYY-MM-DD, or as a relative date (e.g., today, yesterday, or 7daysAgo). The default value is yesterday.
+  *   `metrics` (*type:* `String.t`) - A comma-separated list of Analytics metrics. E.g., 'ga:sessions,ga:pageviews'. At least one metric must be specified.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:dimensions` (*type:* `String.t`) - A comma-separated list of Analytics dimensions. E.g., 'ga:browser,ga:city'.
+      *   `:filters` (*type:* `String.t`) - A comma-separated list of dimension or metric filters to be applied to Analytics data.
+      *   `:include-empty-rows` (*type:* `boolean()`) - The response will include empty rows if this parameter is set to true, the default is true
+      *   `:max-results` (*type:* `integer()`) - The maximum number of entries to include in this feed.
+      *   `:output` (*type:* `String.t`) - The selected format for the response. Default format is JSON.
+      *   `:samplingLevel` (*type:* `String.t`) - The desired sampling level.
+      *   `:segment` (*type:* `String.t`) - An Analytics segment to be applied to data.
+      *   `:sort` (*type:* `String.t`) - A comma-separated list of dimensions or metrics that determine the sort order for Analytics data.
+      *   `:start-index` (*type:* `integer()`) - An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.GaData{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.GaData{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_data_ga_get(
           Tesla.Env.client(),
@@ -62,6 +63,7 @@ defmodule GoogleApi.Analytics.V3.Api.Data do
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Analytics.V3.Model.GaData.t()} | {:error, Tesla.Env.t()}
   def analytics_data_ga_get(
@@ -112,30 +114,31 @@ defmodule GoogleApi.Analytics.V3.Api.Data do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - ids (String.t): Unique table ID for retrieving Analytics data. Table ID is of the form ga:XXXX, where XXXX is the Analytics view (profile) ID.
-  - start_date (String.t): Start date for fetching Analytics data. Requests can specify a start date formatted as YYYY-MM-DD, or as a relative date (e.g., today, yesterday, or 7daysAgo). The default value is 7daysAgo.
-  - end_date (String.t): End date for fetching Analytics data. Requests can specify a start date formatted as YYYY-MM-DD, or as a relative date (e.g., today, yesterday, or 7daysAgo). The default value is 7daysAgo.
-  - metrics (String.t): A comma-separated list of Multi-Channel Funnels metrics. E.g., 'mcf:totalConversions,mcf:totalConversionValue'. At least one metric must be specified.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :dimensions (String.t): A comma-separated list of Multi-Channel Funnels dimensions. E.g., 'mcf:source,mcf:medium'.
-    - :filters (String.t): A comma-separated list of dimension or metric filters to be applied to the Analytics data.
-    - :max-results (integer()): The maximum number of entries to include in this feed.
-    - :samplingLevel (String.t): The desired sampling level.
-    - :sort (String.t): A comma-separated list of dimensions or metrics that determine the sort order for the Analytics data.
-    - :start-index (integer()): An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `ids` (*type:* `String.t`) - Unique table ID for retrieving Analytics data. Table ID is of the form ga:XXXX, where XXXX is the Analytics view (profile) ID.
+  *   `start_date` (*type:* `String.t`) - Start date for fetching Analytics data. Requests can specify a start date formatted as YYYY-MM-DD, or as a relative date (e.g., today, yesterday, or 7daysAgo). The default value is 7daysAgo.
+  *   `end_date` (*type:* `String.t`) - End date for fetching Analytics data. Requests can specify a start date formatted as YYYY-MM-DD, or as a relative date (e.g., today, yesterday, or 7daysAgo). The default value is 7daysAgo.
+  *   `metrics` (*type:* `String.t`) - A comma-separated list of Multi-Channel Funnels metrics. E.g., 'mcf:totalConversions,mcf:totalConversionValue'. At least one metric must be specified.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:dimensions` (*type:* `String.t`) - A comma-separated list of Multi-Channel Funnels dimensions. E.g., 'mcf:source,mcf:medium'.
+      *   `:filters` (*type:* `String.t`) - A comma-separated list of dimension or metric filters to be applied to the Analytics data.
+      *   `:max-results` (*type:* `integer()`) - The maximum number of entries to include in this feed.
+      *   `:samplingLevel` (*type:* `String.t`) - The desired sampling level.
+      *   `:sort` (*type:* `String.t`) - A comma-separated list of dimensions or metrics that determine the sort order for the Analytics data.
+      *   `:start-index` (*type:* `integer()`) - An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.McfData{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.McfData{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec analytics_data_mcf_get(
           Tesla.Env.client(),
@@ -143,6 +146,7 @@ defmodule GoogleApi.Analytics.V3.Api.Data do
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Analytics.V3.Model.McfData.t()} | {:error, Tesla.Env.t()}
   def analytics_data_mcf_get(
@@ -190,29 +194,35 @@ defmodule GoogleApi.Analytics.V3.Api.Data do
 
   ## Parameters
 
-  - connection (GoogleApi.Analytics.V3.Connection): Connection to server
-  - ids (String.t): Unique table ID for retrieving real time data. Table ID is of the form ga:XXXX, where XXXX is the Analytics view (profile) ID.
-  - metrics (String.t): A comma-separated list of real time metrics. E.g., 'rt:activeUsers'. At least one metric must be specified.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :dimensions (String.t): A comma-separated list of real time dimensions. E.g., 'rt:medium,rt:city'.
-    - :filters (String.t): A comma-separated list of dimension or metric filters to be applied to real time data.
-    - :max-results (integer()): The maximum number of entries to include in this feed.
-    - :sort (String.t): A comma-separated list of dimensions or metrics that determine the sort order for real time data.
+  *   `connection` (*type:* `GoogleApi.Analytics.V3.Connection.t`) - Connection to server
+  *   `ids` (*type:* `String.t`) - Unique table ID for retrieving real time data. Table ID is of the form ga:XXXX, where XXXX is the Analytics view (profile) ID.
+  *   `metrics` (*type:* `String.t`) - A comma-separated list of real time metrics. E.g., 'rt:activeUsers'. At least one metric must be specified.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:dimensions` (*type:* `String.t`) - A comma-separated list of real time dimensions. E.g., 'rt:medium,rt:city'.
+      *   `:filters` (*type:* `String.t`) - A comma-separated list of dimension or metric filters to be applied to real time data.
+      *   `:max-results` (*type:* `integer()`) - The maximum number of entries to include in this feed.
+      *   `:sort` (*type:* `String.t`) - A comma-separated list of dimensions or metrics that determine the sort order for real time data.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Analytics.V3.Model.RealtimeData{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Analytics.V3.Model.RealtimeData{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec analytics_data_realtime_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.Analytics.V3.Model.RealtimeData.t()} | {:error, Tesla.Env.t()}
+  @spec analytics_data_realtime_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.Analytics.V3.Model.RealtimeData.t()} | {:error, Tesla.Env.t()}
   def analytics_data_realtime_get(connection, ids, metrics, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

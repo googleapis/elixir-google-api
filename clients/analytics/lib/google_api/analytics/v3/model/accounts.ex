@@ -21,14 +21,14 @@ defmodule GoogleApi.Analytics.V3.Model.Accounts do
 
   ## Attributes
 
-  - items (list(GoogleApi.Analytics.V3.Model.Account.t)): A list of accounts. Defaults to `nil`.
-  - itemsPerPage (integer()): The maximum number of entries the response can contain, regardless of the actual number of entries returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. Defaults to `nil`.
-  - kind (String.t): Collection type. Defaults to `analytics#accounts`.
-  - nextLink (String.t): Next link for this account collection. Defaults to `nil`.
-  - previousLink (String.t): Previous link for this account collection. Defaults to `nil`.
-  - startIndex (integer()): The starting index of the entries, which is 1 by default or otherwise specified by the start-index query parameter. Defaults to `nil`.
-  - totalResults (integer()): The total number of results for the query, regardless of the number of results in the response. Defaults to `nil`.
-  - username (String.t): Email ID of the authenticated user Defaults to `nil`.
+  *   `items` (*type:* `list(GoogleApi.Analytics.V3.Model.Account.t)`, *default:* `nil`) - A list of accounts.
+  *   `itemsPerPage` (*type:* `integer()`, *default:* `nil`) - The maximum number of entries the response can contain, regardless of the actual number of entries returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.
+  *   `kind` (*type:* `String.t`, *default:* `analytics#accounts`) - Collection type.
+  *   `nextLink` (*type:* `String.t`, *default:* `nil`) - Next link for this account collection.
+  *   `previousLink` (*type:* `String.t`, *default:* `nil`) - Previous link for this account collection.
+  *   `startIndex` (*type:* `integer()`, *default:* `nil`) - The starting index of the entries, which is 1 by default or otherwise specified by the start-index query parameter.
+  *   `totalResults` (*type:* `integer()`, *default:* `nil`) - The total number of results for the query, regardless of the number of results in the response.
+  *   `username` (*type:* `String.t`, *default:* `nil`) - Email ID of the authenticated user
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,11 +21,11 @@ defmodule GoogleApi.Analytics.V3.Model.ExperimentVariations do
 
   ## Attributes
 
-  - name (String.t): The name of the variation. This field is required when creating an experiment. This field may not be changed for an experiment whose status is ENDED. Defaults to `nil`.
-  - status (String.t): Status of the variation. Possible values: "ACTIVE", "INACTIVE". INACTIVE variations are not served. This field may not be changed for an experiment whose status is ENDED. Defaults to `nil`.
-  - url (String.t): The URL of the variation. This field may not be changed for an experiment whose status is RUNNING or ENDED. Defaults to `nil`.
-  - weight (float()): Weight that this variation should receive. Only present if the experiment is running. This field is read-only. Defaults to `nil`.
-  - won (boolean()): True if the experiment has ended and this variation performed (statistically) significantly better than the original. This field is read-only. Defaults to `nil`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the variation. This field is required when creating an experiment. This field may not be changed for an experiment whose status is ENDED.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - Status of the variation. Possible values: "ACTIVE", "INACTIVE". INACTIVE variations are not served. This field may not be changed for an experiment whose status is ENDED.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - The URL of the variation. This field may not be changed for an experiment whose status is RUNNING or ENDED.
+  *   `weight` (*type:* `float()`, *default:* `nil`) - Weight that this variation should receive. Only present if the experiment is running. This field is read-only.
+  *   `won` (*type:* `boolean()`, *default:* `nil`) - True if the experiment has ended and this variation performed (statistically) significantly better than the original. This field is read-only.
   """
 
   use GoogleApi.Gax.ModelBase

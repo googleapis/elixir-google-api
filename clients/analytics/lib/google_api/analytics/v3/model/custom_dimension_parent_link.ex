@@ -21,8 +21,8 @@ defmodule GoogleApi.Analytics.V3.Model.CustomDimensionParentLink do
 
   ## Attributes
 
-  - href (String.t): Link to the property to which the custom dimension belongs. Defaults to `nil`.
-  - type (String.t): Type of the parent link. Set to "analytics#webproperty". Defaults to `analytics#webproperty`.
+  *   `href` (*type:* `String.t`, *default:* `nil`) - Link to the property to which the custom dimension belongs.
+  *   `type` (*type:* `String.t`, *default:* `analytics#webproperty`) - Type of the parent link. Set to "analytics#webproperty".
   """
 
   use GoogleApi.Gax.ModelBase

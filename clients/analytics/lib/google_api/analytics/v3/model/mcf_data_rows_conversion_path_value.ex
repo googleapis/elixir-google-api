@@ -21,8 +21,8 @@ defmodule GoogleApi.Analytics.V3.Model.McfDataRowsConversionPathValue do
 
   ## Attributes
 
-  - interactionType (String.t): Type of an interaction on conversion path. Such as CLICK, IMPRESSION etc. Defaults to `nil`.
-  - nodeValue (String.t): Node value of an interaction on conversion path. Such as source, medium etc. Defaults to `nil`.
+  *   `interactionType` (*type:* `String.t`, *default:* `nil`) - Type of an interaction on conversion path. Such as CLICK, IMPRESSION etc.
+  *   `nodeValue` (*type:* `String.t`, *default:* `nil`) - Node value of an interaction on conversion path. Such as source, medium etc.
   """
 
   use GoogleApi.Gax.ModelBase

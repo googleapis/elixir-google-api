@@ -21,9 +21,9 @@ defmodule GoogleApi.Analytics.V3.Model.Column do
 
   ## Attributes
 
-  - attributes (map()): Map of attribute name and value for this column. Defaults to `nil`.
-  - id (String.t): Column id. Defaults to `nil`.
-  - kind (String.t): Resource type for Analytics column. Defaults to `analytics#column`.
+  *   `attributes` (*type:* `map()`, *default:* `nil`) - Map of attribute name and value for this column.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Column id.
+  *   `kind` (*type:* `String.t`, *default:* `analytics#column`) - Resource type for Analytics column.
   """
 
   use GoogleApi.Gax.ModelBase

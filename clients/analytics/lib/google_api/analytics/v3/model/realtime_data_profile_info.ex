@@ -21,12 +21,12 @@ defmodule GoogleApi.Analytics.V3.Model.RealtimeDataProfileInfo do
 
   ## Attributes
 
-  - accountId (String.t): Account ID to which this view (profile) belongs. Defaults to `nil`.
-  - internalWebPropertyId (String.t): Internal ID for the web property to which this view (profile) belongs. Defaults to `nil`.
-  - profileId (String.t): View (Profile) ID. Defaults to `nil`.
-  - profileName (String.t): View (Profile) name. Defaults to `nil`.
-  - tableId (String.t): Table ID for view (profile). Defaults to `nil`.
-  - webPropertyId (String.t): Web Property ID to which this view (profile) belongs. Defaults to `nil`.
+  *   `accountId` (*type:* `String.t`, *default:* `nil`) - Account ID to which this view (profile) belongs.
+  *   `internalWebPropertyId` (*type:* `String.t`, *default:* `nil`) - Internal ID for the web property to which this view (profile) belongs.
+  *   `profileId` (*type:* `String.t`, *default:* `nil`) - View (Profile) ID.
+  *   `profileName` (*type:* `String.t`, *default:* `nil`) - View (Profile) name.
+  *   `tableId` (*type:* `String.t`, *default:* `nil`) - Table ID for view (profile).
+  *   `webPropertyId` (*type:* `String.t`, *default:* `nil`) - Web Property ID to which this view (profile) belongs.
   """
 
   use GoogleApi.Gax.ModelBase
