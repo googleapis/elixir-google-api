@@ -21,7 +21,7 @@ defmodule GoogleApi.Classroom.V1.Model.CourseRosterChangesInfo do
 
   ## Attributes
 
-  - courseId (String.t): The `course_id` of the course to subscribe to roster changes for. Defaults to `nil`.
+  *   `courseId` (*type:* `String.t`, *default:* `nil`) - The `course_id` of the course to subscribe to roster changes for.
   """
 
   use GoogleApi.Gax.ModelBase

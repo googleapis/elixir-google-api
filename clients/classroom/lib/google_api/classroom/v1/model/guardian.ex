@@ -22,11 +22,11 @@ defmodule GoogleApi.Classroom.V1.Model.Guardian do
 
   ## Attributes
 
-  - guardianId (String.t): Identifier for the guardian. Defaults to `nil`.
-  - guardianProfile (GoogleApi.Classroom.V1.Model.UserProfile.t): User profile for the guardian. Defaults to `nil`.
-  - invitedEmailAddress (String.t): The email address to which the initial guardian invitation was sent.
-  This field is only visible to domain administrators. Defaults to `nil`.
-  - studentId (String.t): Identifier for the student to whom the guardian relationship applies. Defaults to `nil`.
+  *   `guardianId` (*type:* `String.t`, *default:* `nil`) - Identifier for the guardian.
+  *   `guardianProfile` (*type:* `GoogleApi.Classroom.V1.Model.UserProfile.t`, *default:* `nil`) - User profile for the guardian.
+  *   `invitedEmailAddress` (*type:* `String.t`, *default:* `nil`) - The email address to which the initial guardian invitation was sent.
+      This field is only visible to domain administrators.
+  *   `studentId` (*type:* `String.t`, *default:* `nil`) - Identifier for the student to whom the guardian relationship applies.
   """
 
   use GoogleApi.Gax.ModelBase

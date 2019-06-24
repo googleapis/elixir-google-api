@@ -21,9 +21,9 @@ defmodule GoogleApi.Classroom.V1.Model.ListAnnouncementsResponse do
 
   ## Attributes
 
-  - announcements (list(GoogleApi.Classroom.V1.Model.Announcement.t)): Announcement items that match the request. Defaults to `nil`.
-  - nextPageToken (String.t): Token identifying the next page of results to return. If empty, no further
-  results are available. Defaults to `nil`.
+  *   `announcements` (*type:* `list(GoogleApi.Classroom.V1.Model.Announcement.t)`, *default:* `nil`) - Announcement items that match the request.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token identifying the next page of results to return. If empty, no further
+      results are available.
   """
 
   use GoogleApi.Gax.ModelBase

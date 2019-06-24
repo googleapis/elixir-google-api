@@ -21,10 +21,10 @@ defmodule GoogleApi.Classroom.V1.Model.ModifyCourseWorkAssigneesRequest do
 
   ## Attributes
 
-  - assigneeMode (String.t): Mode of the coursework describing whether it will be assigned to all
-  students or specified individual students. Defaults to `nil`.
-  - modifyIndividualStudentsOptions (GoogleApi.Classroom.V1.Model.ModifyIndividualStudentsOptions.t): Set which students are assigned or not assigned to the coursework.
-  Must be specified only when `assigneeMode` is `INDIVIDUAL_STUDENTS`. Defaults to `nil`.
+  *   `assigneeMode` (*type:* `String.t`, *default:* `nil`) - Mode of the coursework describing whether it will be assigned to all
+      students or specified individual students.
+  *   `modifyIndividualStudentsOptions` (*type:* `GoogleApi.Classroom.V1.Model.ModifyIndividualStudentsOptions.t`, *default:* `nil`) - Set which students are assigned or not assigned to the coursework.
+      Must be specified only when `assigneeMode` is `INDIVIDUAL_STUDENTS`.
   """
 
   use GoogleApi.Gax.ModelBase

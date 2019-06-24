@@ -22,10 +22,10 @@ defmodule GoogleApi.Classroom.V1.Model.ModifyIndividualStudentsOptions do
 
   ## Attributes
 
-  - addStudentIds (list(String.t)): Ids of students to be added as having access to this
-  coursework/announcement. Defaults to `nil`.
-  - removeStudentIds (list(String.t)): Ids of students to be removed from having access to this
-  coursework/announcement. Defaults to `nil`.
+  *   `addStudentIds` (*type:* `list(String.t)`, *default:* `nil`) - Ids of students to be added as having access to this
+      coursework/announcement.
+  *   `removeStudentIds` (*type:* `list(String.t)`, *default:* `nil`) - Ids of students to be removed from having access to this
+      coursework/announcement.
   """
 
   use GoogleApi.Gax.ModelBase

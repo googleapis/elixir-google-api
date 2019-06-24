@@ -21,40 +21,40 @@ defmodule GoogleApi.Classroom.V1.Model.Announcement do
 
   ## Attributes
 
-  - alternateLink (String.t): Absolute link to this announcement in the Classroom web UI.
-  This is only populated if `state` is `PUBLISHED`.
+  *   `alternateLink` (*type:* `String.t`, *default:* `nil`) - Absolute link to this announcement in the Classroom web UI.
+      This is only populated if `state` is `PUBLISHED`.
 
-  Read-only. Defaults to `nil`.
-  - assigneeMode (String.t): Assignee mode of the announcement.
-  If unspecified, the default value is `ALL_STUDENTS`. Defaults to `nil`.
-  - courseId (String.t): Identifier of the course.
+      Read-only.
+  *   `assigneeMode` (*type:* `String.t`, *default:* `nil`) - Assignee mode of the announcement.
+      If unspecified, the default value is `ALL_STUDENTS`.
+  *   `courseId` (*type:* `String.t`, *default:* `nil`) - Identifier of the course.
 
-  Read-only. Defaults to `nil`.
-  - creationTime (DateTime.t): Timestamp when this announcement was created.
+      Read-only.
+  *   `creationTime` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp when this announcement was created.
 
-  Read-only. Defaults to `nil`.
-  - creatorUserId (String.t): Identifier for the user that created the announcement.
+      Read-only.
+  *   `creatorUserId` (*type:* `String.t`, *default:* `nil`) - Identifier for the user that created the announcement.
 
-  Read-only. Defaults to `nil`.
-  - id (String.t): Classroom-assigned identifier of this announcement, unique per course.
+      Read-only.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Classroom-assigned identifier of this announcement, unique per course.
 
-  Read-only. Defaults to `nil`.
-  - individualStudentsOptions (GoogleApi.Classroom.V1.Model.IndividualStudentsOptions.t): Identifiers of students with access to the announcement.
-  This field is set only if `assigneeMode` is `INDIVIDUAL_STUDENTS`.
-  If the `assigneeMode` is `INDIVIDUAL_STUDENTS`, then only students
-  specified in this field will be able to see the announcement. Defaults to `nil`.
-  - materials (list(GoogleApi.Classroom.V1.Model.Material.t)): Additional materials.
+      Read-only.
+  *   `individualStudentsOptions` (*type:* `GoogleApi.Classroom.V1.Model.IndividualStudentsOptions.t`, *default:* `nil`) - Identifiers of students with access to the announcement.
+      This field is set only if `assigneeMode` is `INDIVIDUAL_STUDENTS`.
+      If the `assigneeMode` is `INDIVIDUAL_STUDENTS`, then only students
+      specified in this field will be able to see the announcement.
+  *   `materials` (*type:* `list(GoogleApi.Classroom.V1.Model.Material.t)`, *default:* `nil`) - Additional materials.
 
-  Announcements must have no more than 20 material items. Defaults to `nil`.
-  - scheduledTime (DateTime.t): Optional timestamp when this announcement is scheduled to be published. Defaults to `nil`.
-  - state (String.t): Status of this announcement.
-  If unspecified, the default state is `DRAFT`. Defaults to `nil`.
-  - text (String.t): Description of this announcement.
-  The text must be a valid UTF-8 string containing no more
-  than 30,000 characters. Defaults to `nil`.
-  - updateTime (DateTime.t): Timestamp of the most recent change to this announcement.
+      Announcements must have no more than 20 material items.
+  *   `scheduledTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional timestamp when this announcement is scheduled to be published.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - Status of this announcement.
+      If unspecified, the default state is `DRAFT`.
+  *   `text` (*type:* `String.t`, *default:* `nil`) - Description of this announcement.
+      The text must be a valid UTF-8 string containing no more
+      than 30,000 characters.
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp of the most recent change to this announcement.
 
-  Read-only. Defaults to `nil`.
+      Read-only.
   """
 
   use GoogleApi.Gax.ModelBase

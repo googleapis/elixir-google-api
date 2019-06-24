@@ -20,6 +20,8 @@ defmodule GoogleApi.Classroom.V1.Connection do
   Handle Tesla connections for GoogleApi.Classroom.V1.
   """
 
+  @type t :: Tesla.Env.client()
+
   use GoogleApi.Gax.Connection,
     scopes: [
       # View and manage announcements in Google Classroom

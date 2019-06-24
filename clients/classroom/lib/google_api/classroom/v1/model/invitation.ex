@@ -21,20 +21,20 @@ defmodule GoogleApi.Classroom.V1.Model.Invitation do
 
   ## Attributes
 
-  - courseId (String.t): Identifier of the course to invite the user to. Defaults to `nil`.
-  - id (String.t): Identifier assigned by Classroom.
+  *   `courseId` (*type:* `String.t`, *default:* `nil`) - Identifier of the course to invite the user to.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Identifier assigned by Classroom.
 
-  Read-only. Defaults to `nil`.
-  - role (String.t): Role to invite the user to have.
-  Must not be `COURSE_ROLE_UNSPECIFIED`. Defaults to `nil`.
-  - userId (String.t): Identifier of the invited user.
+      Read-only.
+  *   `role` (*type:* `String.t`, *default:* `nil`) - Role to invite the user to have.
+      Must not be `COURSE_ROLE_UNSPECIFIED`.
+  *   `userId` (*type:* `String.t`, *default:* `nil`) - Identifier of the invited user.
 
-  When specified as a parameter of a request, this identifier can be set to
-  one of the following:
+      When specified as a parameter of a request, this identifier can be set to
+      one of the following:
 
-  * the numeric identifier for the user
-  * the email address of the user
-  * the string literal `"me"`, indicating the requesting user Defaults to `nil`.
+      * the numeric identifier for the user
+      * the email address of the user
+      * the string literal `"me"`, indicating the requesting user
   """
 
   use GoogleApi.Gax.ModelBase

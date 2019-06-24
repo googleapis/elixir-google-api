@@ -21,7 +21,7 @@ defmodule GoogleApi.Classroom.V1.Model.MultipleChoiceQuestion do
 
   ## Attributes
 
-  - choices (list(String.t)): Possible choices. Defaults to `nil`.
+  *   `choices` (*type:* `list(String.t)`, *default:* `nil`) - Possible choices.
   """
 
   use GoogleApi.Gax.ModelBase

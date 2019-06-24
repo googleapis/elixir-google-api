@@ -36,33 +36,34 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   * `NOT_FOUND` if the primary teacher is not a valid user.
   * `FAILED_PRECONDITION` if the course owner's account is disabled or for
   the following request errors:
-    * UserGroupsMembershipLimitReached
+      * UserGroupsMembershipLimitReached
   * `ALREADY_EXISTS` if an alias was specified in the `id` and
   already exists.
 
   ## Parameters
 
-  - connection (GoogleApi.Classroom.V1.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.Classroom.V1.Model.Course.t): 
+  *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Classroom.V1.Model.Course.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Classroom.V1.Model.Course{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Classroom.V1.Model.Course{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec classroom_courses_create(Tesla.Env.client(), keyword()) ::
+  @spec classroom_courses_create(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Classroom.V1.Model.Course.t()} | {:error, Tesla.Env.t()}
   def classroom_courses_create(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -102,29 +103,30 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
 
   ## Parameters
 
-  - connection (GoogleApi.Classroom.V1.Connection): Connection to server
-  - id (String.t): Identifier of the course to delete.
-  This identifier can be either the Classroom-assigned identifier or an
-  alias.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
+  *   `id` (*type:* `String.t`) - Identifier of the course to delete.
+      This identifier can be either the Classroom-assigned identifier or an
+      alias.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Classroom.V1.Model.Empty{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Classroom.V1.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec classroom_courses_delete(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec classroom_courses_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Classroom.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
   def classroom_courses_delete(connection, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -165,29 +167,30 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
 
   ## Parameters
 
-  - connection (GoogleApi.Classroom.V1.Connection): Connection to server
-  - id (String.t): Identifier of the course to return.
-  This identifier can be either the Classroom-assigned identifier or an
-  alias.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
+  *   `id` (*type:* `String.t`) - Identifier of the course to return.
+      This identifier can be either the Classroom-assigned identifier or an
+      alias.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Classroom.V1.Model.Course{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Classroom.V1.Model.Course{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec classroom_courses_get(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec classroom_courses_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Classroom.V1.Model.Course.t()} | {:error, Tesla.Env.t()}
   def classroom_courses_get(connection, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -230,51 +233,52 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
 
   ## Parameters
 
-  - connection (GoogleApi.Classroom.V1.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :courseStates (list(String.t)): Restricts returned courses to those in one of the specified states
-  The default value is ACTIVE, ARCHIVED, PROVISIONED, DECLINED.
-    - :pageSize (integer()): Maximum number of items to return. Zero or unspecified indicates that the
-  server may assign a maximum.
+  *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:courseStates` (*type:* `list(String.t)`) - Restricts returned courses to those in one of the specified states
+          The default value is ACTIVE, ARCHIVED, PROVISIONED, DECLINED.
+      *   `:pageSize` (*type:* `integer()`) - Maximum number of items to return. Zero or unspecified indicates that the
+          server may assign a maximum.
 
-  The server may return fewer than the specified number of results.
-    - :pageToken (String.t): nextPageToken
-  value returned from a previous
-  list call,
-  indicating that the subsequent page of results should be returned.
+          The server may return fewer than the specified number of results.
+      *   `:pageToken` (*type:* `String.t`) - nextPageToken
+          value returned from a previous
+          list call,
+          indicating that the subsequent page of results should be returned.
 
-  The list request must be
-  otherwise identical to the one that resulted in this token.
-    - :studentId (String.t): Restricts returned courses to those having a student with the specified
-  identifier. The identifier can be one of the following:
+          The list request must be
+          otherwise identical to the one that resulted in this token.
+      *   `:studentId` (*type:* `String.t`) - Restricts returned courses to those having a student with the specified
+          identifier. The identifier can be one of the following:
 
-  * the numeric identifier for the user
-  * the email address of the user
-  * the string literal `"me"`, indicating the requesting user
-    - :teacherId (String.t): Restricts returned courses to those having a teacher with the specified
-  identifier. The identifier can be one of the following:
+          * the numeric identifier for the user
+          * the email address of the user
+          * the string literal `"me"`, indicating the requesting user
+      *   `:teacherId` (*type:* `String.t`) - Restricts returned courses to those having a teacher with the specified
+          identifier. The identifier can be one of the following:
 
-  * the numeric identifier for the user
-  * the email address of the user
-  * the string literal `"me"`, indicating the requesting user
+          * the numeric identifier for the user
+          * the email address of the user
+          * the string literal `"me"`, indicating the requesting user
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Classroom.V1.Model.ListCoursesResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Classroom.V1.Model.ListCoursesResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec classroom_courses_list(Tesla.Env.client(), keyword()) ::
+  @spec classroom_courses_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Classroom.V1.Model.ListCoursesResponse.t()} | {:error, Tesla.Env.t()}
   def classroom_courses_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -318,53 +322,54 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   * `INVALID_ARGUMENT` if invalid fields are specified in the update mask or
   if no update mask is supplied.
   * `FAILED_PRECONDITION` for the following request errors:
-    * CourseNotModifiable
+      * CourseNotModifiable
 
   ## Parameters
 
-  - connection (GoogleApi.Classroom.V1.Connection): Connection to server
-  - id (String.t): Identifier of the course to update.
-  This identifier can be either the Classroom-assigned identifier or an
-  alias.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :updateMask (String.t): Mask that identifies which fields on the course to update.
-  This field is required to do an update. The update will fail if invalid
-  fields are specified. The following fields are valid:
+  *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
+  *   `id` (*type:* `String.t`) - Identifier of the course to update.
+      This identifier can be either the Classroom-assigned identifier or an
+      alias.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:updateMask` (*type:* `String.t`) - Mask that identifies which fields on the course to update.
+          This field is required to do an update. The update will fail if invalid
+          fields are specified. The following fields are valid:
 
-  * `name`
-  * `section`
-  * `descriptionHeading`
-  * `description`
-  * `room`
-  * `courseState`
-  * `ownerId`
+          * `name`
+          * `section`
+          * `descriptionHeading`
+          * `description`
+          * `room`
+          * `courseState`
+          * `ownerId`
 
-  Note: patches to ownerId are treated as being effective immediately, but in
-  practice it may take some time for the ownership transfer of all affected
-  resources to complete.
+          Note: patches to ownerId are treated as being effective immediately, but in
+          practice it may take some time for the ownership transfer of all affected
+          resources to complete.
 
-  When set in a query parameter, this field should be specified as
+          When set in a query parameter, this field should be specified as
 
-  `updateMask=<field1>,<field2>,...`
-    - :body (GoogleApi.Classroom.V1.Model.Course.t): 
+          `updateMask=<field1>,<field2>,...`
+      *   `:body` (*type:* `GoogleApi.Classroom.V1.Model.Course.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Classroom.V1.Model.Course{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Classroom.V1.Model.Course{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec classroom_courses_patch(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec classroom_courses_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Classroom.V1.Model.Course.t()} | {:error, Tesla.Env.t()}
   def classroom_courses_patch(connection, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -405,34 +410,35 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   requested course or for access errors.
   * `NOT_FOUND` if no course exists with the requested ID.
   * `FAILED_PRECONDITION` for the following request errors:
-    * CourseNotModifiable
+      * CourseNotModifiable
 
   ## Parameters
 
-  - connection (GoogleApi.Classroom.V1.Connection): Connection to server
-  - id (String.t): Identifier of the course to update.
-  This identifier can be either the Classroom-assigned identifier or an
-  alias.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.Classroom.V1.Model.Course.t): 
+  *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
+  *   `id` (*type:* `String.t`) - Identifier of the course to update.
+      This identifier can be either the Classroom-assigned identifier or an
+      alias.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Classroom.V1.Model.Course.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Classroom.V1.Model.Course{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Classroom.V1.Model.Course{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec classroom_courses_update(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec classroom_courses_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Classroom.V1.Model.Course.t()} | {:error, Tesla.Env.t()}
   def classroom_courses_update(connection, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -473,35 +479,36 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   * `NOT_FOUND` if the course does not exist.
   * `ALREADY_EXISTS` if the alias already exists.
   * `FAILED_PRECONDITION` if the alias requested does not make sense for the
-  requesting user or course (for example, if a user not in a domain
-  attempts to access a domain-scoped alias).
+    requesting user or course (for example, if a user not in a domain
+    attempts to access a domain-scoped alias).
 
   ## Parameters
 
-  - connection (GoogleApi.Classroom.V1.Connection): Connection to server
-  - course_id (String.t): Identifier of the course to alias.
-  This identifier can be either the Classroom-assigned identifier or an
-  alias.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.Classroom.V1.Model.CourseAlias.t): 
+  *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
+  *   `course_id` (*type:* `String.t`) - Identifier of the course to alias.
+      This identifier can be either the Classroom-assigned identifier or an
+      alias.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Classroom.V1.Model.CourseAlias.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Classroom.V1.Model.CourseAlias{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Classroom.V1.Model.CourseAlias{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec classroom_courses_aliases_create(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec classroom_courses_aliases_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Classroom.V1.Model.CourseAlias.t()} | {:error, Tesla.Env.t()}
   def classroom_courses_aliases_create(connection, course_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -541,37 +548,43 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   alias or for access errors.
   * `NOT_FOUND` if the alias does not exist.
   * `FAILED_PRECONDITION` if the alias requested does not make sense for the
-  requesting user or course (for example, if a user not in a domain
-  attempts to delete a domain-scoped alias).
+    requesting user or course (for example, if a user not in a domain
+    attempts to delete a domain-scoped alias).
 
   ## Parameters
 
-  - connection (GoogleApi.Classroom.V1.Connection): Connection to server
-  - course_id (String.t): Identifier of the course whose alias should be deleted.
-  This identifier can be either the Classroom-assigned identifier or an
-  alias.
-  - alias (String.t): Alias to delete.
-  This may not be the Classroom-assigned identifier.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
+  *   `course_id` (*type:* `String.t`) - Identifier of the course whose alias should be deleted.
+      This identifier can be either the Classroom-assigned identifier or an
+      alias.
+  *   `alias` (*type:* `String.t`) - Alias to delete.
+      This may not be the Classroom-assigned identifier.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Classroom.V1.Model.Empty{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Classroom.V1.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec classroom_courses_aliases_delete(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.Classroom.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+  @spec classroom_courses_aliases_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.Classroom.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
   def classroom_courses_aliases_delete(
         connection,
         course_id,
@@ -618,40 +631,41 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
 
   ## Parameters
 
-  - connection (GoogleApi.Classroom.V1.Connection): Connection to server
-  - course_id (String.t): The identifier of the course.
-  This identifier can be either the Classroom-assigned identifier or an
-  alias.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :pageSize (integer()): Maximum number of items to return. Zero or unspecified indicates that the
-  server may assign a maximum.
+  *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
+  *   `course_id` (*type:* `String.t`) - The identifier of the course.
+      This identifier can be either the Classroom-assigned identifier or an
+      alias.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - Maximum number of items to return. Zero or unspecified indicates that the
+          server may assign a maximum.
 
-  The server may return fewer than the specified number of results.
-    - :pageToken (String.t): nextPageToken
-  value returned from a previous
-  list call,
-  indicating that the subsequent page of results should be returned.
+          The server may return fewer than the specified number of results.
+      *   `:pageToken` (*type:* `String.t`) - nextPageToken
+          value returned from a previous
+          list call,
+          indicating that the subsequent page of results should be returned.
 
-  The list request
-  must be otherwise identical to the one that resulted in this token.
+          The list request
+          must be otherwise identical to the one that resulted in this token.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Classroom.V1.Model.ListCourseAliasesResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Classroom.V1.Model.ListCourseAliasesResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec classroom_courses_aliases_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec classroom_courses_aliases_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Classroom.V1.Model.ListCourseAliasesResponse.t()}
           | {:error, Tesla.Env.t()}
   def classroom_courses_aliases_list(connection, course_id, optional_params \\ [], opts \\ []) do
@@ -697,35 +711,40 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   * `INVALID_ARGUMENT` if the request is malformed.
   * `NOT_FOUND` if the requested course does not exist.
   * `FAILED_PRECONDITION` for the following request error:
-    * AttachmentNotVisible
+      * AttachmentNotVisible
 
   ## Parameters
 
-  - connection (GoogleApi.Classroom.V1.Connection): Connection to server
-  - course_id (String.t): Identifier of the course.
-  This identifier can be either the Classroom-assigned identifier or an
-  alias.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.Classroom.V1.Model.Announcement.t): 
+  *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
+  *   `course_id` (*type:* `String.t`) - Identifier of the course.
+      This identifier can be either the Classroom-assigned identifier or an
+      alias.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Classroom.V1.Model.Announcement.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Classroom.V1.Model.Announcement{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Classroom.V1.Model.Announcement{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec classroom_courses_announcements_create(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, GoogleApi.Classroom.V1.Model.Announcement.t()} | {:error, Tesla.Env.t()}
+  @spec classroom_courses_announcements_create(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.Classroom.V1.Model.Announcement.t()} | {:error, Tesla.Env.t()}
   def classroom_courses_announcements_create(
         connection,
         course_id,
@@ -778,34 +797,36 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
 
   ## Parameters
 
-  - connection (GoogleApi.Classroom.V1.Connection): Connection to server
-  - course_id (String.t): Identifier of the course.
-  This identifier can be either the Classroom-assigned identifier or an
-  alias.
-  - id (String.t): Identifier of the announcement to delete.
-  This identifier is a Classroom-assigned identifier.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
+  *   `course_id` (*type:* `String.t`) - Identifier of the course.
+      This identifier can be either the Classroom-assigned identifier or an
+      alias.
+  *   `id` (*type:* `String.t`) - Identifier of the announcement to delete.
+      This identifier is a Classroom-assigned identifier.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Classroom.V1.Model.Empty{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Classroom.V1.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec classroom_courses_announcements_delete(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Classroom.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
   def classroom_courses_announcements_delete(
@@ -855,31 +876,37 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
 
   ## Parameters
 
-  - connection (GoogleApi.Classroom.V1.Connection): Connection to server
-  - course_id (String.t): Identifier of the course.
-  This identifier can be either the Classroom-assigned identifier or an
-  alias.
-  - id (String.t): Identifier of the announcement.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
+  *   `course_id` (*type:* `String.t`) - Identifier of the course.
+      This identifier can be either the Classroom-assigned identifier or an
+      alias.
+  *   `id` (*type:* `String.t`) - Identifier of the announcement.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Classroom.V1.Model.Announcement{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Classroom.V1.Model.Announcement{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec classroom_courses_announcements_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.Classroom.V1.Model.Announcement.t()} | {:error, Tesla.Env.t()}
+  @spec classroom_courses_announcements_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.Classroom.V1.Model.Announcement.t()} | {:error, Tesla.Env.t()}
   def classroom_courses_announcements_get(
         connection,
         course_id,
@@ -930,47 +957,48 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
 
   ## Parameters
 
-  - connection (GoogleApi.Classroom.V1.Connection): Connection to server
-  - course_id (String.t): Identifier of the course.
-  This identifier can be either the Classroom-assigned identifier or an
-  alias.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :announcementStates (list(String.t)): Restriction on the `state` of announcements returned.
-  If this argument is left unspecified, the default value is `PUBLISHED`.
-    - :orderBy (String.t): Optional sort ordering for results. A comma-separated list of fields with
-  an optional sort direction keyword. Supported field is `updateTime`.
-  Supported direction keywords are `asc` and `desc`.
-  If not specified, `updateTime desc` is the default behavior.
-  Examples: `updateTime asc`, `updateTime`
-    - :pageSize (integer()): Maximum number of items to return. Zero or unspecified indicates that the
-  server may assign a maximum.
+  *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
+  *   `course_id` (*type:* `String.t`) - Identifier of the course.
+      This identifier can be either the Classroom-assigned identifier or an
+      alias.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:announcementStates` (*type:* `list(String.t)`) - Restriction on the `state` of announcements returned.
+          If this argument is left unspecified, the default value is `PUBLISHED`.
+      *   `:orderBy` (*type:* `String.t`) - Optional sort ordering for results. A comma-separated list of fields with
+          an optional sort direction keyword. Supported field is `updateTime`.
+          Supported direction keywords are `asc` and `desc`.
+          If not specified, `updateTime desc` is the default behavior.
+          Examples: `updateTime asc`, `updateTime`
+      *   `:pageSize` (*type:* `integer()`) - Maximum number of items to return. Zero or unspecified indicates that the
+          server may assign a maximum.
 
-  The server may return fewer than the specified number of results.
-    - :pageToken (String.t): nextPageToken
-  value returned from a previous
-  list call,
-  indicating that the subsequent page of results should be returned.
+          The server may return fewer than the specified number of results.
+      *   `:pageToken` (*type:* `String.t`) - nextPageToken
+          value returned from a previous
+          list call,
+          indicating that the subsequent page of results should be returned.
 
-  The list request
-  must be otherwise identical to the one that resulted in this token.
+          The list request
+          must be otherwise identical to the one that resulted in this token.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Classroom.V1.Model.ListAnnouncementsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Classroom.V1.Model.ListAnnouncementsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec classroom_courses_announcements_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec classroom_courses_announcements_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Classroom.V1.Model.ListAnnouncementsResponse.t()}
           | {:error, Tesla.Env.t()}
   def classroom_courses_announcements_list(
@@ -1027,34 +1055,36 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
 
   ## Parameters
 
-  - connection (GoogleApi.Classroom.V1.Connection): Connection to server
-  - course_id (String.t): Identifier of the course.
-  This identifier can be either the Classroom-assigned identifier or an
-  alias.
-  - id (String.t): Identifier of the announcement.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.Classroom.V1.Model.ModifyAnnouncementAssigneesRequest.t): 
+  *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
+  *   `course_id` (*type:* `String.t`) - Identifier of the course.
+      This identifier can be either the Classroom-assigned identifier or an
+      alias.
+  *   `id` (*type:* `String.t`) - Identifier of the announcement.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Classroom.V1.Model.ModifyAnnouncementAssigneesRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Classroom.V1.Model.Announcement{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Classroom.V1.Model.Announcement{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec classroom_courses_announcements_modify_assignees(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Classroom.V1.Model.Announcement.t()} | {:error, Tesla.Env.t()}
   def classroom_courses_announcements_modify_assignees(
@@ -1107,47 +1137,49 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
 
   ## Parameters
 
-  - connection (GoogleApi.Classroom.V1.Connection): Connection to server
-  - course_id (String.t): Identifier of the course.
-  This identifier can be either the Classroom-assigned identifier or an
-  alias.
-  - id (String.t): Identifier of the announcement.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :updateMask (String.t): Mask that identifies which fields on the announcement to update.
-  This field is required to do an update. The update fails if invalid
-  fields are specified. If a field supports empty values, it can be cleared
-  by specifying it in the update mask and not in the Announcement object. If
-  a field that does not support empty values is included in the update mask
-  and not set in the Announcement object, an `INVALID_ARGUMENT` error will be
-  returned.
+  *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
+  *   `course_id` (*type:* `String.t`) - Identifier of the course.
+      This identifier can be either the Classroom-assigned identifier or an
+      alias.
+  *   `id` (*type:* `String.t`) - Identifier of the announcement.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:updateMask` (*type:* `String.t`) - Mask that identifies which fields on the announcement to update.
+          This field is required to do an update. The update fails if invalid
+          fields are specified. If a field supports empty values, it can be cleared
+          by specifying it in the update mask and not in the Announcement object. If
+          a field that does not support empty values is included in the update mask
+          and not set in the Announcement object, an `INVALID_ARGUMENT` error will be
+          returned.
 
-  The following fields may be specified by teachers:
+          The following fields may be specified by teachers:
 
-  * `text`
-  * `state`
-  * `scheduled_time`
-    - :body (GoogleApi.Classroom.V1.Model.Announcement.t): 
+          * `text`
+          * `state`
+          * `scheduled_time`
+      *   `:body` (*type:* `GoogleApi.Classroom.V1.Model.Announcement.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Classroom.V1.Model.Announcement{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Classroom.V1.Model.Announcement{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec classroom_courses_announcements_patch(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Classroom.V1.Model.Announcement.t()} | {:error, Tesla.Env.t()}
   def classroom_courses_announcements_patch(
@@ -1205,34 +1237,35 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   * `INVALID_ARGUMENT` if the request is malformed.
   * `NOT_FOUND` if the requested course does not exist.
   * `FAILED_PRECONDITION` for the following request error:
-    * AttachmentNotVisible
+      * AttachmentNotVisible
 
   ## Parameters
 
-  - connection (GoogleApi.Classroom.V1.Connection): Connection to server
-  - course_id (String.t): Identifier of the course.
-  This identifier can be either the Classroom-assigned identifier or an
-  alias.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.Classroom.V1.Model.CourseWork.t): 
+  *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
+  *   `course_id` (*type:* `String.t`) - Identifier of the course.
+      This identifier can be either the Classroom-assigned identifier or an
+      alias.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Classroom.V1.Model.CourseWork.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Classroom.V1.Model.CourseWork{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Classroom.V1.Model.CourseWork{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec classroom_courses_course_work_create(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec classroom_courses_course_work_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Classroom.V1.Model.CourseWork.t()} | {:error, Tesla.Env.t()}
   def classroom_courses_course_work_create(
         connection,
@@ -1286,34 +1319,36 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
 
   ## Parameters
 
-  - connection (GoogleApi.Classroom.V1.Connection): Connection to server
-  - course_id (String.t): Identifier of the course.
-  This identifier can be either the Classroom-assigned identifier or an
-  alias.
-  - id (String.t): Identifier of the course work to delete.
-  This identifier is a Classroom-assigned identifier.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
+  *   `course_id` (*type:* `String.t`) - Identifier of the course.
+      This identifier can be either the Classroom-assigned identifier or an
+      alias.
+  *   `id` (*type:* `String.t`) - Identifier of the course work to delete.
+      This identifier is a Classroom-assigned identifier.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Classroom.V1.Model.Empty{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Classroom.V1.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec classroom_courses_course_work_delete(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Classroom.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
   def classroom_courses_course_work_delete(
@@ -1363,31 +1398,37 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
 
   ## Parameters
 
-  - connection (GoogleApi.Classroom.V1.Connection): Connection to server
-  - course_id (String.t): Identifier of the course.
-  This identifier can be either the Classroom-assigned identifier or an
-  alias.
-  - id (String.t): Identifier of the course work.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
+  *   `course_id` (*type:* `String.t`) - Identifier of the course.
+      This identifier can be either the Classroom-assigned identifier or an
+      alias.
+  *   `id` (*type:* `String.t`) - Identifier of the course work.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Classroom.V1.Model.CourseWork{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Classroom.V1.Model.CourseWork{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec classroom_courses_course_work_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.Classroom.V1.Model.CourseWork.t()} | {:error, Tesla.Env.t()}
+  @spec classroom_courses_course_work_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.Classroom.V1.Model.CourseWork.t()} | {:error, Tesla.Env.t()}
   def classroom_courses_course_work_get(
         connection,
         course_id,
@@ -1438,48 +1479,49 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
 
   ## Parameters
 
-  - connection (GoogleApi.Classroom.V1.Connection): Connection to server
-  - course_id (String.t): Identifier of the course.
-  This identifier can be either the Classroom-assigned identifier or an
-  alias.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :courseWorkStates (list(String.t)): Restriction on the work status to return. Only courseWork that matches
-  is returned. If unspecified, items with a work status of `PUBLISHED`
-  is returned.
-    - :orderBy (String.t): Optional sort ordering for results. A comma-separated list of fields with
-  an optional sort direction keyword. Supported fields are `updateTime`
-  and `dueDate`. Supported direction keywords are `asc` and `desc`.
-  If not specified, `updateTime desc` is the default behavior.
-  Examples: `dueDate asc,updateTime desc`, `updateTime,dueDate desc`
-    - :pageSize (integer()): Maximum number of items to return. Zero or unspecified indicates that the
-  server may assign a maximum.
+  *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
+  *   `course_id` (*type:* `String.t`) - Identifier of the course.
+      This identifier can be either the Classroom-assigned identifier or an
+      alias.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:courseWorkStates` (*type:* `list(String.t)`) - Restriction on the work status to return. Only courseWork that matches
+          is returned. If unspecified, items with a work status of `PUBLISHED`
+          is returned.
+      *   `:orderBy` (*type:* `String.t`) - Optional sort ordering for results. A comma-separated list of fields with
+          an optional sort direction keyword. Supported fields are `updateTime`
+          and `dueDate`. Supported direction keywords are `asc` and `desc`.
+          If not specified, `updateTime desc` is the default behavior.
+          Examples: `dueDate asc,updateTime desc`, `updateTime,dueDate desc`
+      *   `:pageSize` (*type:* `integer()`) - Maximum number of items to return. Zero or unspecified indicates that the
+          server may assign a maximum.
 
-  The server may return fewer than the specified number of results.
-    - :pageToken (String.t): nextPageToken
-  value returned from a previous
-  list call,
-  indicating that the subsequent page of results should be returned.
+          The server may return fewer than the specified number of results.
+      *   `:pageToken` (*type:* `String.t`) - nextPageToken
+          value returned from a previous
+          list call,
+          indicating that the subsequent page of results should be returned.
 
-  The list request
-  must be otherwise identical to the one that resulted in this token.
+          The list request
+          must be otherwise identical to the one that resulted in this token.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Classroom.V1.Model.ListCourseWorkResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Classroom.V1.Model.ListCourseWorkResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec classroom_courses_course_work_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec classroom_courses_course_work_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Classroom.V1.Model.ListCourseWorkResponse.t()} | {:error, Tesla.Env.t()}
   def classroom_courses_course_work_list(connection, course_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -1528,34 +1570,36 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
 
   ## Parameters
 
-  - connection (GoogleApi.Classroom.V1.Connection): Connection to server
-  - course_id (String.t): Identifier of the course.
-  This identifier can be either the Classroom-assigned identifier or an
-  alias.
-  - id (String.t): Identifier of the coursework.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.Classroom.V1.Model.ModifyCourseWorkAssigneesRequest.t): 
+  *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
+  *   `course_id` (*type:* `String.t`) - Identifier of the course.
+      This identifier can be either the Classroom-assigned identifier or an
+      alias.
+  *   `id` (*type:* `String.t`) - Identifier of the coursework.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Classroom.V1.Model.ModifyCourseWorkAssigneesRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Classroom.V1.Model.CourseWork{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Classroom.V1.Model.CourseWork{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec classroom_courses_course_work_modify_assignees(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Classroom.V1.Model.CourseWork.t()} | {:error, Tesla.Env.t()}
   def classroom_courses_course_work_modify_assignees(
@@ -1618,51 +1662,57 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
 
   ## Parameters
 
-  - connection (GoogleApi.Classroom.V1.Connection): Connection to server
-  - course_id (String.t): Identifier of the course.
-  This identifier can be either the Classroom-assigned identifier or an
-  alias.
-  - id (String.t): Identifier of the course work.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :updateMask (String.t): Mask that identifies which fields on the course work to update.
-  This field is required to do an update. The update fails if invalid
-  fields are specified. If a field supports empty values, it can be cleared
-  by specifying it in the update mask and not in the CourseWork object. If a
-  field that does not support empty values is included in the update mask and
-  not set in the CourseWork object, an `INVALID_ARGUMENT` error will be
-  returned.
+  *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
+  *   `course_id` (*type:* `String.t`) - Identifier of the course.
+      This identifier can be either the Classroom-assigned identifier or an
+      alias.
+  *   `id` (*type:* `String.t`) - Identifier of the course work.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:updateMask` (*type:* `String.t`) - Mask that identifies which fields on the course work to update.
+          This field is required to do an update. The update fails if invalid
+          fields are specified. If a field supports empty values, it can be cleared
+          by specifying it in the update mask and not in the CourseWork object. If a
+          field that does not support empty values is included in the update mask and
+          not set in the CourseWork object, an `INVALID_ARGUMENT` error will be
+          returned.
 
-  The following fields may be specified by teachers:
+          The following fields may be specified by teachers:
 
-  * `title`
-  * `description`
-  * `state`
-  * `due_date`
-  * `due_time`
-  * `max_points`
-  * `scheduled_time`
-  * `submission_modification_mode`
-  * `topic_id`
-    - :body (GoogleApi.Classroom.V1.Model.CourseWork.t): 
+          * `title`
+          * `description`
+          * `state`
+          * `due_date`
+          * `due_time`
+          * `max_points`
+          * `scheduled_time`
+          * `submission_modification_mode`
+          * `topic_id`
+      *   `:body` (*type:* `GoogleApi.Classroom.V1.Model.CourseWork.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Classroom.V1.Model.CourseWork{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Classroom.V1.Model.CourseWork{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec classroom_courses_course_work_patch(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.Classroom.V1.Model.CourseWork.t()} | {:error, Tesla.Env.t()}
+  @spec classroom_courses_course_work_patch(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.Classroom.V1.Model.CourseWork.t()} | {:error, Tesla.Env.t()}
   def classroom_courses_course_work_patch(
         connection,
         course_id,
@@ -1712,35 +1762,37 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
 
   ## Parameters
 
-  - connection (GoogleApi.Classroom.V1.Connection): Connection to server
-  - course_id (String.t): Identifier of the course.
-  This identifier can be either the Classroom-assigned identifier or an
-  alias.
-  - course_work_id (String.t): Identifier of the course work.
-  - id (String.t): Identifier of the student submission.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
+  *   `course_id` (*type:* `String.t`) - Identifier of the course.
+      This identifier can be either the Classroom-assigned identifier or an
+      alias.
+  *   `course_work_id` (*type:* `String.t`) - Identifier of the course work.
+  *   `id` (*type:* `String.t`) - Identifier of the student submission.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Classroom.V1.Model.StudentSubmission{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Classroom.V1.Model.StudentSubmission{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec classroom_courses_course_work_student_submissions_get(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Classroom.V1.Model.StudentSubmission.t()} | {:error, Tesla.Env.t()}
   def classroom_courses_course_work_student_submissions_get(
@@ -1801,58 +1853,60 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
 
   ## Parameters
 
-  - connection (GoogleApi.Classroom.V1.Connection): Connection to server
-  - course_id (String.t): Identifier of the course.
-  This identifier can be either the Classroom-assigned identifier or an
-  alias.
-  - course_work_id (String.t): Identifier of the student work to request.
-  This may be set to the string literal `"-"` to request student work for
-  all course work in the specified course.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :late (String.t): Requested lateness value. If specified, returned student submissions are
-  restricted by the requested value.
-  If unspecified, submissions are returned regardless of `late` value.
-    - :pageSize (integer()): Maximum number of items to return. Zero or unspecified indicates that the
-  server may assign a maximum.
+  *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
+  *   `course_id` (*type:* `String.t`) - Identifier of the course.
+      This identifier can be either the Classroom-assigned identifier or an
+      alias.
+  *   `course_work_id` (*type:* `String.t`) - Identifier of the student work to request.
+      This may be set to the string literal `"-"` to request student work for
+      all course work in the specified course.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:late` (*type:* `String.t`) - Requested lateness value. If specified, returned student submissions are
+          restricted by the requested value.
+          If unspecified, submissions are returned regardless of `late` value.
+      *   `:pageSize` (*type:* `integer()`) - Maximum number of items to return. Zero or unspecified indicates that the
+          server may assign a maximum.
 
-  The server may return fewer than the specified number of results.
-    - :pageToken (String.t): nextPageToken
-  value returned from a previous
-  list call,
-  indicating that the subsequent page of results should be returned.
+          The server may return fewer than the specified number of results.
+      *   `:pageToken` (*type:* `String.t`) - nextPageToken
+          value returned from a previous
+          list call,
+          indicating that the subsequent page of results should be returned.
 
-  The list request
-  must be otherwise identical to the one that resulted in this token.
-    - :states (list(String.t)): Requested submission states. If specified, returned student submissions
-  match one of the specified submission states.
-    - :userId (String.t): Optional argument to restrict returned student work to those owned by the
-  student with the specified identifier. The identifier can be one of the
-  following:
+          The list request
+          must be otherwise identical to the one that resulted in this token.
+      *   `:states` (*type:* `list(String.t)`) - Requested submission states. If specified, returned student submissions
+          match one of the specified submission states.
+      *   `:userId` (*type:* `String.t`) - Optional argument to restrict returned student work to those owned by the
+          student with the specified identifier. The identifier can be one of the
+          following:
 
-  * the numeric identifier for the user
-  * the email address of the user
-  * the string literal `"me"`, indicating the requesting user
+          * the numeric identifier for the user
+          * the email address of the user
+          * the string literal `"me"`, indicating the requesting user
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Classroom.V1.Model.ListStudentSubmissionsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Classroom.V1.Model.ListStudentSubmissionsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec classroom_courses_course_work_student_submissions_list(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.Classroom.V1.Model.ListStudentSubmissionsResponse.t()}
@@ -1921,36 +1975,38 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
 
   ## Parameters
 
-  - connection (GoogleApi.Classroom.V1.Connection): Connection to server
-  - course_id (String.t): Identifier of the course.
-  This identifier can be either the Classroom-assigned identifier or an
-  alias.
-  - course_work_id (String.t): Identifier of the course work.
-  - id (String.t): Identifier of the student submission.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.Classroom.V1.Model.ModifyAttachmentsRequest.t): 
+  *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
+  *   `course_id` (*type:* `String.t`) - Identifier of the course.
+      This identifier can be either the Classroom-assigned identifier or an
+      alias.
+  *   `course_work_id` (*type:* `String.t`) - Identifier of the course work.
+  *   `id` (*type:* `String.t`) - Identifier of the student submission.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Classroom.V1.Model.ModifyAttachmentsRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Classroom.V1.Model.StudentSubmission{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Classroom.V1.Model.StudentSubmission{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec classroom_courses_course_work_student_submissions_modify_attachments(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Classroom.V1.Model.StudentSubmission.t()} | {:error, Tesla.Env.t()}
   def classroom_courses_course_work_student_submissions_modify_attachments(
@@ -2016,44 +2072,46 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
 
   ## Parameters
 
-  - connection (GoogleApi.Classroom.V1.Connection): Connection to server
-  - course_id (String.t): Identifier of the course.
-  This identifier can be either the Classroom-assigned identifier or an
-  alias.
-  - course_work_id (String.t): Identifier of the course work.
-  - id (String.t): Identifier of the student submission.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :updateMask (String.t): Mask that identifies which fields on the student submission to update.
-  This field is required to do an update. The update fails if invalid
-  fields are specified.
+  *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
+  *   `course_id` (*type:* `String.t`) - Identifier of the course.
+      This identifier can be either the Classroom-assigned identifier or an
+      alias.
+  *   `course_work_id` (*type:* `String.t`) - Identifier of the course work.
+  *   `id` (*type:* `String.t`) - Identifier of the student submission.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:updateMask` (*type:* `String.t`) - Mask that identifies which fields on the student submission to update.
+          This field is required to do an update. The update fails if invalid
+          fields are specified.
 
-  The following fields may be specified by teachers:
+          The following fields may be specified by teachers:
 
-  * `draft_grade`
-  * `assigned_grade`
-    - :body (GoogleApi.Classroom.V1.Model.StudentSubmission.t): 
+          * `draft_grade`
+          * `assigned_grade`
+      *   `:body` (*type:* `GoogleApi.Classroom.V1.Model.StudentSubmission.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Classroom.V1.Model.StudentSubmission{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Classroom.V1.Model.StudentSubmission{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec classroom_courses_course_work_student_submissions_patch(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Classroom.V1.Model.StudentSubmission.t()} | {:error, Tesla.Env.t()}
   def classroom_courses_course_work_student_submissions_patch(
@@ -2123,36 +2181,38 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
 
   ## Parameters
 
-  - connection (GoogleApi.Classroom.V1.Connection): Connection to server
-  - course_id (String.t): Identifier of the course.
-  This identifier can be either the Classroom-assigned identifier or an
-  alias.
-  - course_work_id (String.t): Identifier of the course work.
-  - id (String.t): Identifier of the student submission.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.Classroom.V1.Model.ReclaimStudentSubmissionRequest.t): 
+  *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
+  *   `course_id` (*type:* `String.t`) - Identifier of the course.
+      This identifier can be either the Classroom-assigned identifier or an
+      alias.
+  *   `course_work_id` (*type:* `String.t`) - Identifier of the course work.
+  *   `id` (*type:* `String.t`) - Identifier of the student submission.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Classroom.V1.Model.ReclaimStudentSubmissionRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Classroom.V1.Model.Empty{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Classroom.V1.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec classroom_courses_course_work_student_submissions_reclaim(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Classroom.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
   def classroom_courses_course_work_student_submissions_reclaim(
@@ -2222,36 +2282,38 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
 
   ## Parameters
 
-  - connection (GoogleApi.Classroom.V1.Connection): Connection to server
-  - course_id (String.t): Identifier of the course.
-  This identifier can be either the Classroom-assigned identifier or an
-  alias.
-  - course_work_id (String.t): Identifier of the course work.
-  - id (String.t): Identifier of the student submission.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.Classroom.V1.Model.ReturnStudentSubmissionRequest.t): 
+  *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
+  *   `course_id` (*type:* `String.t`) - Identifier of the course.
+      This identifier can be either the Classroom-assigned identifier or an
+      alias.
+  *   `course_work_id` (*type:* `String.t`) - Identifier of the course work.
+  *   `id` (*type:* `String.t`) - Identifier of the student submission.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Classroom.V1.Model.ReturnStudentSubmissionRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Classroom.V1.Model.Empty{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Classroom.V1.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec classroom_courses_course_work_student_submissions_return(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Classroom.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
   def classroom_courses_course_work_student_submissions_return(
@@ -2319,36 +2381,38 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
 
   ## Parameters
 
-  - connection (GoogleApi.Classroom.V1.Connection): Connection to server
-  - course_id (String.t): Identifier of the course.
-  This identifier can be either the Classroom-assigned identifier or an
-  alias.
-  - course_work_id (String.t): Identifier of the course work.
-  - id (String.t): Identifier of the student submission.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.Classroom.V1.Model.TurnInStudentSubmissionRequest.t): 
+  *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
+  *   `course_id` (*type:* `String.t`) - Identifier of the course.
+      This identifier can be either the Classroom-assigned identifier or an
+      alias.
+  *   `course_work_id` (*type:* `String.t`) - Identifier of the course work.
+  *   `id` (*type:* `String.t`) - Identifier of the student submission.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Classroom.V1.Model.TurnInStudentSubmissionRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Classroom.V1.Model.Empty{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Classroom.V1.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec classroom_courses_course_work_student_submissions_turn_in(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Classroom.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
   def classroom_courses_course_work_student_submissions_turn_in(
@@ -2402,42 +2466,43 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   * `NOT_FOUND` if the requested course ID does not exist.
   * `FAILED_PRECONDITION` if the requested user's account is disabled,
   for the following request errors:
-    * CourseMemberLimitReached
-    * CourseNotModifiable
-    * UserGroupsMembershipLimitReached
+      * CourseMemberLimitReached
+      * CourseNotModifiable
+      * UserGroupsMembershipLimitReached
   * `ALREADY_EXISTS` if the user is already a student or teacher in the
   course.
 
   ## Parameters
 
-  - connection (GoogleApi.Classroom.V1.Connection): Connection to server
-  - course_id (String.t): Identifier of the course to create the student in.
-  This identifier can be either the Classroom-assigned identifier or an
-  alias.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :enrollmentCode (String.t): Enrollment code of the course to create the student in.
-  This code is required if userId
-  corresponds to the requesting user; it may be omitted if the requesting
-  user has administrative permissions to create students for any user.
-    - :body (GoogleApi.Classroom.V1.Model.Student.t): 
+  *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
+  *   `course_id` (*type:* `String.t`) - Identifier of the course to create the student in.
+      This identifier can be either the Classroom-assigned identifier or an
+      alias.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:enrollmentCode` (*type:* `String.t`) - Enrollment code of the course to create the student in.
+          This code is required if userId
+          corresponds to the requesting user; it may be omitted if the requesting
+          user has administrative permissions to create students for any user.
+      *   `:body` (*type:* `GoogleApi.Classroom.V1.Model.Student.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Classroom.V1.Model.Student{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Classroom.V1.Model.Student{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec classroom_courses_students_create(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec classroom_courses_students_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Classroom.V1.Model.Student.t()} | {:error, Tesla.Env.t()}
   def classroom_courses_students_create(connection, course_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -2481,36 +2546,42 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
 
   ## Parameters
 
-  - connection (GoogleApi.Classroom.V1.Connection): Connection to server
-  - course_id (String.t): Identifier of the course.
-  This identifier can be either the Classroom-assigned identifier or an
-  alias.
-  - user_id (String.t): Identifier of the student to delete. The identifier can be one of the
-  following:
+  *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
+  *   `course_id` (*type:* `String.t`) - Identifier of the course.
+      This identifier can be either the Classroom-assigned identifier or an
+      alias.
+  *   `user_id` (*type:* `String.t`) - Identifier of the student to delete. The identifier can be one of the
+      following:
 
-  * the numeric identifier for the user
-  * the email address of the user
-  * the string literal `"me"`, indicating the requesting user
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+      * the numeric identifier for the user
+      * the email address of the user
+      * the string literal `"me"`, indicating the requesting user
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Classroom.V1.Model.Empty{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Classroom.V1.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec classroom_courses_students_delete(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.Classroom.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+  @spec classroom_courses_students_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.Classroom.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
   def classroom_courses_students_delete(
         connection,
         course_id,
@@ -2558,36 +2629,42 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
 
   ## Parameters
 
-  - connection (GoogleApi.Classroom.V1.Connection): Connection to server
-  - course_id (String.t): Identifier of the course.
-  This identifier can be either the Classroom-assigned identifier or an
-  alias.
-  - user_id (String.t): Identifier of the student to return. The identifier can be one of the
-  following:
+  *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
+  *   `course_id` (*type:* `String.t`) - Identifier of the course.
+      This identifier can be either the Classroom-assigned identifier or an
+      alias.
+  *   `user_id` (*type:* `String.t`) - Identifier of the student to return. The identifier can be one of the
+      following:
 
-  * the numeric identifier for the user
-  * the email address of the user
-  * the string literal `"me"`, indicating the requesting user
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+      * the numeric identifier for the user
+      * the email address of the user
+      * the string literal `"me"`, indicating the requesting user
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Classroom.V1.Model.Student{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Classroom.V1.Model.Student{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec classroom_courses_students_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.Classroom.V1.Model.Student.t()} | {:error, Tesla.Env.t()}
+  @spec classroom_courses_students_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.Classroom.V1.Model.Student.t()} | {:error, Tesla.Env.t()}
   def classroom_courses_students_get(
         connection,
         course_id,
@@ -2634,39 +2711,40 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
 
   ## Parameters
 
-  - connection (GoogleApi.Classroom.V1.Connection): Connection to server
-  - course_id (String.t): Identifier of the course.
-  This identifier can be either the Classroom-assigned identifier or an
-  alias.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :pageSize (integer()): Maximum number of items to return. Zero means no maximum.
+  *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
+  *   `course_id` (*type:* `String.t`) - Identifier of the course.
+      This identifier can be either the Classroom-assigned identifier or an
+      alias.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - Maximum number of items to return. Zero means no maximum.
 
-  The server may return fewer than the specified number of results.
-    - :pageToken (String.t): nextPageToken
-  value returned from a previous
-  list call, indicating that
-  the subsequent page of results should be returned.
+          The server may return fewer than the specified number of results.
+      *   `:pageToken` (*type:* `String.t`) - nextPageToken
+          value returned from a previous
+          list call, indicating that
+          the subsequent page of results should be returned.
 
-  The list request must be
-  otherwise identical to the one that resulted in this token.
+          The list request must be
+          otherwise identical to the one that resulted in this token.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Classroom.V1.Model.ListStudentsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Classroom.V1.Model.ListStudentsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec classroom_courses_students_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec classroom_courses_students_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Classroom.V1.Model.ListStudentsResponse.t()} | {:error, Tesla.Env.t()}
   def classroom_courses_students_list(connection, course_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -2708,39 +2786,40 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   * `NOT_FOUND` if the requested course ID does not exist.
   * `FAILED_PRECONDITION` if the requested user's account is disabled,
   for the following request errors:
-    * CourseMemberLimitReached
-    * CourseNotModifiable
-    * CourseTeacherLimitReached
-    * UserGroupsMembershipLimitReached
+      * CourseMemberLimitReached
+      * CourseNotModifiable
+      * CourseTeacherLimitReached
+      * UserGroupsMembershipLimitReached
   * `ALREADY_EXISTS` if the user is already a teacher or student in the
   course.
 
   ## Parameters
 
-  - connection (GoogleApi.Classroom.V1.Connection): Connection to server
-  - course_id (String.t): Identifier of the course.
-  This identifier can be either the Classroom-assigned identifier or an
-  alias.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.Classroom.V1.Model.Teacher.t): 
+  *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
+  *   `course_id` (*type:* `String.t`) - Identifier of the course.
+      This identifier can be either the Classroom-assigned identifier or an
+      alias.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Classroom.V1.Model.Teacher.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Classroom.V1.Model.Teacher{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Classroom.V1.Model.Teacher{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec classroom_courses_teachers_create(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec classroom_courses_teachers_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Classroom.V1.Model.Teacher.t()} | {:error, Tesla.Env.t()}
   def classroom_courses_teachers_create(connection, course_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -2785,36 +2864,42 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
 
   ## Parameters
 
-  - connection (GoogleApi.Classroom.V1.Connection): Connection to server
-  - course_id (String.t): Identifier of the course.
-  This identifier can be either the Classroom-assigned identifier or an
-  alias.
-  - user_id (String.t): Identifier of the teacher to delete. The identifier can be one of the
-  following:
+  *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
+  *   `course_id` (*type:* `String.t`) - Identifier of the course.
+      This identifier can be either the Classroom-assigned identifier or an
+      alias.
+  *   `user_id` (*type:* `String.t`) - Identifier of the teacher to delete. The identifier can be one of the
+      following:
 
-  * the numeric identifier for the user
-  * the email address of the user
-  * the string literal `"me"`, indicating the requesting user
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+      * the numeric identifier for the user
+      * the email address of the user
+      * the string literal `"me"`, indicating the requesting user
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Classroom.V1.Model.Empty{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Classroom.V1.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec classroom_courses_teachers_delete(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.Classroom.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+  @spec classroom_courses_teachers_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.Classroom.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
   def classroom_courses_teachers_delete(
         connection,
         course_id,
@@ -2862,36 +2947,42 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
 
   ## Parameters
 
-  - connection (GoogleApi.Classroom.V1.Connection): Connection to server
-  - course_id (String.t): Identifier of the course.
-  This identifier can be either the Classroom-assigned identifier or an
-  alias.
-  - user_id (String.t): Identifier of the teacher to return. The identifier can be one of the
-  following:
+  *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
+  *   `course_id` (*type:* `String.t`) - Identifier of the course.
+      This identifier can be either the Classroom-assigned identifier or an
+      alias.
+  *   `user_id` (*type:* `String.t`) - Identifier of the teacher to return. The identifier can be one of the
+      following:
 
-  * the numeric identifier for the user
-  * the email address of the user
-  * the string literal `"me"`, indicating the requesting user
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+      * the numeric identifier for the user
+      * the email address of the user
+      * the string literal `"me"`, indicating the requesting user
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Classroom.V1.Model.Teacher{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Classroom.V1.Model.Teacher{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec classroom_courses_teachers_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.Classroom.V1.Model.Teacher.t()} | {:error, Tesla.Env.t()}
+  @spec classroom_courses_teachers_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.Classroom.V1.Model.Teacher.t()} | {:error, Tesla.Env.t()}
   def classroom_courses_teachers_get(
         connection,
         course_id,
@@ -2938,39 +3029,40 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
 
   ## Parameters
 
-  - connection (GoogleApi.Classroom.V1.Connection): Connection to server
-  - course_id (String.t): Identifier of the course.
-  This identifier can be either the Classroom-assigned identifier or an
-  alias.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :pageSize (integer()): Maximum number of items to return. Zero means no maximum.
+  *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
+  *   `course_id` (*type:* `String.t`) - Identifier of the course.
+      This identifier can be either the Classroom-assigned identifier or an
+      alias.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - Maximum number of items to return. Zero means no maximum.
 
-  The server may return fewer than the specified number of results.
-    - :pageToken (String.t): nextPageToken
-  value returned from a previous
-  list call, indicating that
-  the subsequent page of results should be returned.
+          The server may return fewer than the specified number of results.
+      *   `:pageToken` (*type:* `String.t`) - nextPageToken
+          value returned from a previous
+          list call, indicating that
+          the subsequent page of results should be returned.
 
-  The list request must be
-  otherwise identical to the one that resulted in this token.
+          The list request must be
+          otherwise identical to the one that resulted in this token.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Classroom.V1.Model.ListTeachersResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Classroom.V1.Model.ListTeachersResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec classroom_courses_teachers_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec classroom_courses_teachers_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Classroom.V1.Model.ListTeachersResponse.t()} | {:error, Tesla.Env.t()}
   def classroom_courses_teachers_list(connection, course_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -3015,30 +3107,31 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
 
   ## Parameters
 
-  - connection (GoogleApi.Classroom.V1.Connection): Connection to server
-  - course_id (String.t): Identifier of the course.
-  This identifier can be either the Classroom-assigned identifier or an
-  alias.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.Classroom.V1.Model.Topic.t): 
+  *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
+  *   `course_id` (*type:* `String.t`) - Identifier of the course.
+      This identifier can be either the Classroom-assigned identifier or an
+      alias.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Classroom.V1.Model.Topic.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Classroom.V1.Model.Topic{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Classroom.V1.Model.Topic{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec classroom_courses_topics_create(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec classroom_courses_topics_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Classroom.V1.Model.Topic.t()} | {:error, Tesla.Env.t()}
   def classroom_courses_topics_create(connection, course_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -3082,31 +3175,37 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
 
   ## Parameters
 
-  - connection (GoogleApi.Classroom.V1.Connection): Connection to server
-  - course_id (String.t): Identifier of the course.
-  This identifier can be either the Classroom-assigned identifier or an
-  alias.
-  - id (String.t): Identifier of the topic to delete.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
+  *   `course_id` (*type:* `String.t`) - Identifier of the course.
+      This identifier can be either the Classroom-assigned identifier or an
+      alias.
+  *   `id` (*type:* `String.t`) - Identifier of the topic to delete.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Classroom.V1.Model.Empty{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Classroom.V1.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec classroom_courses_topics_delete(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.Classroom.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+  @spec classroom_courses_topics_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.Classroom.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
   def classroom_courses_topics_delete(
         connection,
         course_id,
@@ -3154,29 +3253,35 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
 
   ## Parameters
 
-  - connection (GoogleApi.Classroom.V1.Connection): Connection to server
-  - course_id (String.t): Identifier of the course.
-  - id (String.t): Identifier of the topic.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
+  *   `course_id` (*type:* `String.t`) - Identifier of the course.
+  *   `id` (*type:* `String.t`) - Identifier of the topic.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Classroom.V1.Model.Topic{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Classroom.V1.Model.Topic{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec classroom_courses_topics_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.Classroom.V1.Model.Topic.t()} | {:error, Tesla.Env.t()}
+  @spec classroom_courses_topics_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.Classroom.V1.Model.Topic.t()} | {:error, Tesla.Env.t()}
   def classroom_courses_topics_get(connection, course_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -3218,40 +3323,41 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
 
   ## Parameters
 
-  - connection (GoogleApi.Classroom.V1.Connection): Connection to server
-  - course_id (String.t): Identifier of the course.
-  This identifier can be either the Classroom-assigned identifier or an
-  alias.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :pageSize (integer()): Maximum number of items to return. Zero or unspecified indicates that the
-  server may assign a maximum.
+  *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
+  *   `course_id` (*type:* `String.t`) - Identifier of the course.
+      This identifier can be either the Classroom-assigned identifier or an
+      alias.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - Maximum number of items to return. Zero or unspecified indicates that the
+          server may assign a maximum.
 
-  The server may return fewer than the specified number of results.
-    - :pageToken (String.t): nextPageToken
-  value returned from a previous
-  list call,
-  indicating that the subsequent page of results should be returned.
+          The server may return fewer than the specified number of results.
+      *   `:pageToken` (*type:* `String.t`) - nextPageToken
+          value returned from a previous
+          list call,
+          indicating that the subsequent page of results should be returned.
 
-  The list request
-  must be otherwise identical to the one that resulted in this token.
+          The list request
+          must be otherwise identical to the one that resulted in this token.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Classroom.V1.Model.ListTopicResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Classroom.V1.Model.ListTopicResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec classroom_courses_topics_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec classroom_courses_topics_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Classroom.V1.Model.ListTopicResponse.t()} | {:error, Tesla.Env.t()}
   def classroom_courses_topics_list(connection, course_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -3295,43 +3401,49 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
 
   ## Parameters
 
-  - connection (GoogleApi.Classroom.V1.Connection): Connection to server
-  - course_id (String.t): Identifier of the course.
-  This identifier can be either the Classroom-assigned identifier or an
-  alias.
-  - id (String.t): Identifier of the topic.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :updateMask (String.t): Mask that identifies which fields on the topic to update.
-  This field is required to do an update. The update fails if invalid
-  fields are specified. If a field supports empty values, it can be cleared
-  by specifying it in the update mask and not in the Topic object. If a
-  field that does not support empty values is included in the update mask and
-  not set in the Topic object, an `INVALID_ARGUMENT` error will be
-  returned.
+  *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
+  *   `course_id` (*type:* `String.t`) - Identifier of the course.
+      This identifier can be either the Classroom-assigned identifier or an
+      alias.
+  *   `id` (*type:* `String.t`) - Identifier of the topic.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:updateMask` (*type:* `String.t`) - Mask that identifies which fields on the topic to update.
+          This field is required to do an update. The update fails if invalid
+          fields are specified. If a field supports empty values, it can be cleared
+          by specifying it in the update mask and not in the Topic object. If a
+          field that does not support empty values is included in the update mask and
+          not set in the Topic object, an `INVALID_ARGUMENT` error will be
+          returned.
 
-  The following fields may be specified:
+          The following fields may be specified:
 
-  * `name`
-    - :body (GoogleApi.Classroom.V1.Model.Topic.t): 
+          * `name`
+      *   `:body` (*type:* `GoogleApi.Classroom.V1.Model.Topic.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Classroom.V1.Model.Topic{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Classroom.V1.Model.Topic{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec classroom_courses_topics_patch(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.Classroom.V1.Model.Topic.t()} | {:error, Tesla.Env.t()}
+  @spec classroom_courses_topics_patch(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.Classroom.V1.Model.Topic.t()} | {:error, Tesla.Env.t()}
   def classroom_courses_topics_patch(connection, course_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,

@@ -21,10 +21,10 @@ defmodule GoogleApi.Classroom.V1.Model.ModifyAttachmentsRequest do
 
   ## Attributes
 
-  - addAttachments (list(GoogleApi.Classroom.V1.Model.Attachment.t)): Attachments to add.
-  A student submission may not have more than 20 attachments.
+  *   `addAttachments` (*type:* `list(GoogleApi.Classroom.V1.Model.Attachment.t)`, *default:* `nil`) - Attachments to add.
+      A student submission may not have more than 20 attachments.
 
-  Form attachments are not supported. Defaults to `nil`.
+      Form attachments are not supported.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -23,8 +23,8 @@ defmodule GoogleApi.Classroom.V1.Model.CourseMaterialSet do
 
   ## Attributes
 
-  - materials (list(GoogleApi.Classroom.V1.Model.CourseMaterial.t)): Materials attached to this set. Defaults to `nil`.
-  - title (String.t): Title for this set. Defaults to `nil`.
+  *   `materials` (*type:* `list(GoogleApi.Classroom.V1.Model.CourseMaterial.t)`, *default:* `nil`) - Materials attached to this set.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - Title for this set.
   """
 
   use GoogleApi.Gax.ModelBase

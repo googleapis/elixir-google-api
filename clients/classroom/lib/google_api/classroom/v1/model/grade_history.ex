@@ -21,12 +21,12 @@ defmodule GoogleApi.Classroom.V1.Model.GradeHistory do
 
   ## Attributes
 
-  - actorUserId (String.t): The teacher who made the grade change. Defaults to `nil`.
-  - gradeChangeType (String.t): The type of grade change at this time in the submission grade history. Defaults to `nil`.
-  - gradeTimestamp (DateTime.t): When the grade of the submission was changed. Defaults to `nil`.
-  - maxPoints (float()): The denominator of the grade at this time in the submission grade
-  history. Defaults to `nil`.
-  - pointsEarned (float()): The numerator of the grade at this time in the submission grade history. Defaults to `nil`.
+  *   `actorUserId` (*type:* `String.t`, *default:* `nil`) - The teacher who made the grade change.
+  *   `gradeChangeType` (*type:* `String.t`, *default:* `nil`) - The type of grade change at this time in the submission grade history.
+  *   `gradeTimestamp` (*type:* `DateTime.t`, *default:* `nil`) - When the grade of the submission was changed.
+  *   `maxPoints` (*type:* `float()`, *default:* `nil`) - The denominator of the grade at this time in the submission grade
+      history.
+  *   `pointsEarned` (*type:* `float()`, *default:* `nil`) - The numerator of the grade at this time in the submission grade history.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,9 +21,9 @@ defmodule GoogleApi.Classroom.V1.Model.ListCoursesResponse do
 
   ## Attributes
 
-  - courses (list(GoogleApi.Classroom.V1.Model.Course.t)): Courses that match the list request. Defaults to `nil`.
-  - nextPageToken (String.t): Token identifying the next page of results to return. If empty, no further
-  results are available. Defaults to `nil`.
+  *   `courses` (*type:* `list(GoogleApi.Classroom.V1.Model.Course.t)`, *default:* `nil`) - Courses that match the list request.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token identifying the next page of results to return. If empty, no further
+      results are available.
   """
 
   use GoogleApi.Gax.ModelBase
