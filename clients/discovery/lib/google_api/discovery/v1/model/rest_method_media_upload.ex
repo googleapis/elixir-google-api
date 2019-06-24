@@ -21,9 +21,9 @@ defmodule GoogleApi.Discovery.V1.Model.RestMethodMediaUpload do
 
   ## Attributes
 
-  - accept (list(String.t)): MIME Media Ranges for acceptable media uploads to this method. Defaults to `nil`.
-  - maxSize (String.t): Maximum size of a media upload, such as "1MB", "2GB" or "3TB". Defaults to `nil`.
-  - protocols (GoogleApi.Discovery.V1.Model.RestMethodMediaUploadProtocols.t): Supported upload protocols. Defaults to `nil`.
+  *   `accept` (*type:* `list(String.t)`, *default:* `nil`) - MIME Media Ranges for acceptable media uploads to this method.
+  *   `maxSize` (*type:* `String.t`, *default:* `nil`) - Maximum size of a media upload, such as "1MB", "2GB" or "3TB".
+  *   `protocols` (*type:* `GoogleApi.Discovery.V1.Model.RestMethodMediaUploadProtocols.t`, *default:* `nil`) - Supported upload protocols.
   """
 
   use GoogleApi.Gax.ModelBase

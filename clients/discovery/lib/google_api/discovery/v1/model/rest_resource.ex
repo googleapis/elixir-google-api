@@ -21,8 +21,8 @@ defmodule GoogleApi.Discovery.V1.Model.RestResource do
 
   ## Attributes
 
-  - methods (%{optional(String.t) => GoogleApi.Discovery.V1.Model.RestMethod.t}): Methods on this resource. Defaults to `nil`.
-  - resources (%{optional(String.t) => GoogleApi.Discovery.V1.Model.RestResource.t}): Sub-resources on this resource. Defaults to `nil`.
+  *   `methods` (*type:* `%{optional(String.t) => GoogleApi.Discovery.V1.Model.RestMethod.t}`, *default:* `nil`) - Methods on this resource.
+  *   `resources` (*type:* `%{optional(String.t) => GoogleApi.Discovery.V1.Model.RestResource.t}`, *default:* `nil`) - Sub-resources on this resource.
   """
 
   use GoogleApi.Gax.ModelBase

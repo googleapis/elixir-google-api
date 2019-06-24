@@ -21,8 +21,8 @@ defmodule GoogleApi.Discovery.V1.Model.DirectoryListItemsIcons do
 
   ## Attributes
 
-  - x16 (String.t): The URL of the 16x16 icon. Defaults to `nil`.
-  - x32 (String.t): The URL of the 32x32 icon. Defaults to `nil`.
+  *   `x16` (*type:* `String.t`, *default:* `nil`) - The URL of the 16x16 icon.
+  *   `x32` (*type:* `String.t`, *default:* `nil`) - The URL of the 32x32 icon.
   """
 
   use GoogleApi.Gax.ModelBase

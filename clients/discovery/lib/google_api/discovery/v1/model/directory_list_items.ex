@@ -21,18 +21,18 @@ defmodule GoogleApi.Discovery.V1.Model.DirectoryListItems do
 
   ## Attributes
 
-  - description (String.t): The description of this API. Defaults to `nil`.
-  - discoveryLink (String.t): A link to the discovery document. Defaults to `nil`.
-  - discoveryRestUrl (String.t): The URL for the discovery REST document. Defaults to `nil`.
-  - documentationLink (String.t): A link to human readable documentation for the API. Defaults to `nil`.
-  - icons (GoogleApi.Discovery.V1.Model.DirectoryListItemsIcons.t): Links to 16x16 and 32x32 icons representing the API. Defaults to `nil`.
-  - id (String.t): The id of this API. Defaults to `nil`.
-  - kind (String.t): The kind for this response. Defaults to `discovery#directoryItem`.
-  - labels (list(String.t)): Labels for the status of this API, such as labs or deprecated. Defaults to `nil`.
-  - name (String.t): The name of the API. Defaults to `nil`.
-  - preferred (boolean()): True if this version is the preferred version to use. Defaults to `nil`.
-  - title (String.t): The title of this API. Defaults to `nil`.
-  - version (String.t): The version of the API. Defaults to `nil`.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - The description of this API.
+  *   `discoveryLink` (*type:* `String.t`, *default:* `nil`) - A link to the discovery document.
+  *   `discoveryRestUrl` (*type:* `String.t`, *default:* `nil`) - The URL for the discovery REST document.
+  *   `documentationLink` (*type:* `String.t`, *default:* `nil`) - A link to human readable documentation for the API.
+  *   `icons` (*type:* `GoogleApi.Discovery.V1.Model.DirectoryListItemsIcons.t`, *default:* `nil`) - Links to 16x16 and 32x32 icons representing the API.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The id of this API.
+  *   `kind` (*type:* `String.t`, *default:* `discovery#directoryItem`) - The kind for this response.
+  *   `labels` (*type:* `list(String.t)`, *default:* `nil`) - Labels for the status of this API, such as labs or deprecated.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the API.
+  *   `preferred` (*type:* `boolean()`, *default:* `nil`) - True if this version is the preferred version to use.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - The title of this API.
+  *   `version` (*type:* `String.t`, *default:* `nil`) - The version of the API.
   """
 
   use GoogleApi.Gax.ModelBase

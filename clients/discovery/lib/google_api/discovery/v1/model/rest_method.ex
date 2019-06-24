@@ -21,21 +21,21 @@ defmodule GoogleApi.Discovery.V1.Model.RestMethod do
 
   ## Attributes
 
-  - description (String.t): Description of this method. Defaults to `nil`.
-  - etagRequired (boolean()): Whether this method requires an ETag to be specified. The ETag is sent as an HTTP If-Match or If-None-Match header. Defaults to `nil`.
-  - httpMethod (String.t): HTTP method used by this method. Defaults to `nil`.
-  - id (String.t): A unique ID for this method. This property can be used to match methods between different versions of Discovery. Defaults to `nil`.
-  - mediaUpload (GoogleApi.Discovery.V1.Model.RestMethodMediaUpload.t): Media upload parameters. Defaults to `nil`.
-  - parameterOrder (list(String.t)): Ordered list of required parameters, serves as a hint to clients on how to structure their method signatures. The array is ordered such that the "most-significant" parameter appears first. Defaults to `nil`.
-  - parameters (%{optional(String.t) => GoogleApi.Discovery.V1.Model.JsonSchema.t}): Details for all parameters in this method. Defaults to `nil`.
-  - path (String.t): The URI path of this REST method. Should be used in conjunction with the basePath property at the api-level. Defaults to `nil`.
-  - request (GoogleApi.Discovery.V1.Model.RestMethodRequest.t): The schema for the request. Defaults to `nil`.
-  - response (GoogleApi.Discovery.V1.Model.RestMethodResponse.t): The schema for the response. Defaults to `nil`.
-  - scopes (list(String.t)): OAuth 2.0 scopes applicable to this method. Defaults to `nil`.
-  - supportsMediaDownload (boolean()): Whether this method supports media downloads. Defaults to `nil`.
-  - supportsMediaUpload (boolean()): Whether this method supports media uploads. Defaults to `nil`.
-  - supportsSubscription (boolean()): Whether this method supports subscriptions. Defaults to `nil`.
-  - useMediaDownloadService (boolean()): Indicates that downloads from this method should use the download service URL (i.e. "/download"). Only applies if the method supports media download. Defaults to `nil`.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Description of this method.
+  *   `etagRequired` (*type:* `boolean()`, *default:* `nil`) - Whether this method requires an ETag to be specified. The ETag is sent as an HTTP If-Match or If-None-Match header.
+  *   `httpMethod` (*type:* `String.t`, *default:* `nil`) - HTTP method used by this method.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - A unique ID for this method. This property can be used to match methods between different versions of Discovery.
+  *   `mediaUpload` (*type:* `GoogleApi.Discovery.V1.Model.RestMethodMediaUpload.t`, *default:* `nil`) - Media upload parameters.
+  *   `parameterOrder` (*type:* `list(String.t)`, *default:* `nil`) - Ordered list of required parameters, serves as a hint to clients on how to structure their method signatures. The array is ordered such that the "most-significant" parameter appears first.
+  *   `parameters` (*type:* `%{optional(String.t) => GoogleApi.Discovery.V1.Model.JsonSchema.t}`, *default:* `nil`) - Details for all parameters in this method.
+  *   `path` (*type:* `String.t`, *default:* `nil`) - The URI path of this REST method. Should be used in conjunction with the basePath property at the api-level.
+  *   `request` (*type:* `GoogleApi.Discovery.V1.Model.RestMethodRequest.t`, *default:* `nil`) - The schema for the request.
+  *   `response` (*type:* `GoogleApi.Discovery.V1.Model.RestMethodResponse.t`, *default:* `nil`) - The schema for the response.
+  *   `scopes` (*type:* `list(String.t)`, *default:* `nil`) - OAuth 2.0 scopes applicable to this method.
+  *   `supportsMediaDownload` (*type:* `boolean()`, *default:* `nil`) - Whether this method supports media downloads.
+  *   `supportsMediaUpload` (*type:* `boolean()`, *default:* `nil`) - Whether this method supports media uploads.
+  *   `supportsSubscription` (*type:* `boolean()`, *default:* `nil`) - Whether this method supports subscriptions.
+  *   `useMediaDownloadService` (*type:* `boolean()`, *default:* `nil`) - Indicates that downloads from this method should use the download service URL (i.e. "/download"). Only applies if the method supports media download.
   """
 
   use GoogleApi.Gax.ModelBase

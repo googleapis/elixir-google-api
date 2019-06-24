@@ -21,36 +21,36 @@ defmodule GoogleApi.Discovery.V1.Model.RestDescription do
 
   ## Attributes
 
-  - auth (GoogleApi.Discovery.V1.Model.RestDescriptionAuth.t): Authentication information. Defaults to `nil`.
-  - basePath (String.t): [DEPRECATED] The base path for REST requests. Defaults to `nil`.
-  - baseUrl (String.t): [DEPRECATED] The base URL for REST requests. Defaults to `nil`.
-  - batchPath (String.t): The path for REST batch requests. Defaults to `nil`.
-  - canonicalName (String.t): Indicates how the API name should be capitalized and split into various parts. Useful for generating pretty class names. Defaults to `nil`.
-  - description (String.t): The description of this API. Defaults to `nil`.
-  - discoveryVersion (String.t): Indicate the version of the Discovery API used to generate this doc. Defaults to `v1`.
-  - documentationLink (String.t): A link to human readable documentation for the API. Defaults to `nil`.
-  - etag (String.t): The ETag for this response. Defaults to `nil`.
-  - exponentialBackoffDefault (boolean()): Enable exponential backoff for suitable methods in the generated clients. Defaults to `nil`.
-  - features (list(String.t)): A list of supported features for this API. Defaults to `nil`.
-  - icons (GoogleApi.Discovery.V1.Model.RestDescriptionIcons.t): Links to 16x16 and 32x32 icons representing the API. Defaults to `nil`.
-  - id (String.t): The ID of this API. Defaults to `nil`.
-  - kind (String.t): The kind for this response. Defaults to `discovery#restDescription`.
-  - labels (list(String.t)): Labels for the status of this API, such as labs or deprecated. Defaults to `nil`.
-  - methods (%{optional(String.t) => GoogleApi.Discovery.V1.Model.RestMethod.t}): API-level methods for this API. Defaults to `nil`.
-  - name (String.t): The name of this API. Defaults to `nil`.
-  - ownerDomain (String.t): The domain of the owner of this API. Together with the ownerName and a packagePath values, this can be used to generate a library for this API which would have a unique fully qualified name. Defaults to `nil`.
-  - ownerName (String.t): The name of the owner of this API. See ownerDomain. Defaults to `nil`.
-  - packagePath (String.t): The package of the owner of this API. See ownerDomain. Defaults to `nil`.
-  - parameters (%{optional(String.t) => GoogleApi.Discovery.V1.Model.JsonSchema.t}): Common parameters that apply across all apis. Defaults to `nil`.
-  - protocol (String.t): The protocol described by this document. Defaults to `rest`.
-  - resources (%{optional(String.t) => GoogleApi.Discovery.V1.Model.RestResource.t}): The resources in this API. Defaults to `nil`.
-  - revision (String.t): The version of this API. Defaults to `nil`.
-  - rootUrl (String.t): The root URL under which all API services live. Defaults to `nil`.
-  - schemas (%{optional(String.t) => GoogleApi.Discovery.V1.Model.JsonSchema.t}): The schemas for this API. Defaults to `nil`.
-  - servicePath (String.t): The base path for all REST requests. Defaults to `nil`.
-  - title (String.t): The title of this API. Defaults to `nil`.
-  - version (String.t): The version of this API. Defaults to `nil`.
-  - version_module (boolean()):  Defaults to `nil`.
+  *   `auth` (*type:* `GoogleApi.Discovery.V1.Model.RestDescriptionAuth.t`, *default:* `nil`) - Authentication information.
+  *   `basePath` (*type:* `String.t`, *default:* `nil`) - [DEPRECATED] The base path for REST requests.
+  *   `baseUrl` (*type:* `String.t`, *default:* `nil`) - [DEPRECATED] The base URL for REST requests.
+  *   `batchPath` (*type:* `String.t`, *default:* `nil`) - The path for REST batch requests.
+  *   `canonicalName` (*type:* `String.t`, *default:* `nil`) - Indicates how the API name should be capitalized and split into various parts. Useful for generating pretty class names.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - The description of this API.
+  *   `discoveryVersion` (*type:* `String.t`, *default:* `v1`) - Indicate the version of the Discovery API used to generate this doc.
+  *   `documentationLink` (*type:* `String.t`, *default:* `nil`) - A link to human readable documentation for the API.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - The ETag for this response.
+  *   `exponentialBackoffDefault` (*type:* `boolean()`, *default:* `nil`) - Enable exponential backoff for suitable methods in the generated clients.
+  *   `features` (*type:* `list(String.t)`, *default:* `nil`) - A list of supported features for this API.
+  *   `icons` (*type:* `GoogleApi.Discovery.V1.Model.RestDescriptionIcons.t`, *default:* `nil`) - Links to 16x16 and 32x32 icons representing the API.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The ID of this API.
+  *   `kind` (*type:* `String.t`, *default:* `discovery#restDescription`) - The kind for this response.
+  *   `labels` (*type:* `list(String.t)`, *default:* `nil`) - Labels for the status of this API, such as labs or deprecated.
+  *   `methods` (*type:* `%{optional(String.t) => GoogleApi.Discovery.V1.Model.RestMethod.t}`, *default:* `nil`) - API-level methods for this API.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of this API.
+  *   `ownerDomain` (*type:* `String.t`, *default:* `nil`) - The domain of the owner of this API. Together with the ownerName and a packagePath values, this can be used to generate a library for this API which would have a unique fully qualified name.
+  *   `ownerName` (*type:* `String.t`, *default:* `nil`) - The name of the owner of this API. See ownerDomain.
+  *   `packagePath` (*type:* `String.t`, *default:* `nil`) - The package of the owner of this API. See ownerDomain.
+  *   `parameters` (*type:* `%{optional(String.t) => GoogleApi.Discovery.V1.Model.JsonSchema.t}`, *default:* `nil`) - Common parameters that apply across all apis.
+  *   `protocol` (*type:* `String.t`, *default:* `rest`) - The protocol described by this document.
+  *   `resources` (*type:* `%{optional(String.t) => GoogleApi.Discovery.V1.Model.RestResource.t}`, *default:* `nil`) - The resources in this API.
+  *   `revision` (*type:* `String.t`, *default:* `nil`) - The version of this API.
+  *   `rootUrl` (*type:* `String.t`, *default:* `nil`) - The root URL under which all API services live.
+  *   `schemas` (*type:* `%{optional(String.t) => GoogleApi.Discovery.V1.Model.JsonSchema.t}`, *default:* `nil`) - The schemas for this API.
+  *   `servicePath` (*type:* `String.t`, *default:* `nil`) - The base path for all REST requests.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - The title of this API.
+  *   `version` (*type:* `String.t`, *default:* `nil`) - The version of this API.
+  *   `version_module` (*type:* `boolean()`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

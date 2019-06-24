@@ -21,9 +21,9 @@ defmodule GoogleApi.Discovery.V1.Model.DirectoryList do
 
   ## Attributes
 
-  - discoveryVersion (String.t): Indicate the version of the Discovery API used to generate this doc. Defaults to `v1`.
-  - items (list(GoogleApi.Discovery.V1.Model.DirectoryListItems.t)): The individual directory entries. One entry per api/version pair. Defaults to `nil`.
-  - kind (String.t): The kind for this response. Defaults to `discovery#directoryList`.
+  *   `discoveryVersion` (*type:* `String.t`, *default:* `v1`) - Indicate the version of the Discovery API used to generate this doc.
+  *   `items` (*type:* `list(GoogleApi.Discovery.V1.Model.DirectoryListItems.t)`, *default:* `nil`) - The individual directory entries. One entry per api/version pair.
+  *   `kind` (*type:* `String.t`, *default:* `discovery#directoryList`) - The kind for this response.
   """
 
   use GoogleApi.Gax.ModelBase

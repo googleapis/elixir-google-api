@@ -28,24 +28,25 @@ defmodule GoogleApi.Discovery.V1.Api.Apis do
 
   ## Parameters
 
-  - connection (GoogleApi.Discovery.V1.Connection): Connection to server
-  - api (String.t): The name of the API.
-  - version (String.t): The version of the API.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.Discovery.V1.Connection.t`) - Connection to server
+  *   `api` (*type:* `String.t`) - The name of the API.
+  *   `version` (*type:* `String.t`) - The version of the API.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Discovery.V1.Model.RestDescription{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Discovery.V1.Model.RestDescription{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec discovery_apis_get_rest(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+  @spec discovery_apis_get_rest(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Discovery.V1.Model.RestDescription.t()} | {:error, Tesla.Env.t()}
   def discovery_apis_get_rest(connection, api, version, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -77,24 +78,25 @@ defmodule GoogleApi.Discovery.V1.Api.Apis do
 
   ## Parameters
 
-  - connection (GoogleApi.Discovery.V1.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :name (String.t): Only include APIs with the given name.
-    - :preferred (boolean()): Return only the preferred version of an API.
+  *   `connection` (*type:* `GoogleApi.Discovery.V1.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:name` (*type:* `String.t`) - Only include APIs with the given name.
+      *   `:preferred` (*type:* `boolean()`) - Return only the preferred version of an API.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Discovery.V1.Model.DirectoryList{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Discovery.V1.Model.DirectoryList{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec discovery_apis_list(Tesla.Env.client(), keyword()) ::
+  @spec discovery_apis_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Discovery.V1.Model.DirectoryList.t()} | {:error, Tesla.Env.t()}
   def discovery_apis_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

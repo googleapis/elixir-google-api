@@ -21,7 +21,7 @@ defmodule GoogleApi.Discovery.V1.Model.RestDescriptionAuth do
 
   ## Attributes
 
-  - oauth2 (GoogleApi.Discovery.V1.Model.RestDescriptionAuthOauth2.t): OAuth 2.0 authentication information. Defaults to `nil`.
+  *   `oauth2` (*type:* `GoogleApi.Discovery.V1.Model.RestDescriptionAuthOauth2.t`, *default:* `nil`) - OAuth 2.0 authentication information.
   """
 
   use GoogleApi.Gax.ModelBase

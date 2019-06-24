@@ -21,8 +21,8 @@ defmodule GoogleApi.Discovery.V1.Model.JsonSchemaVariantMap do
 
   ## Attributes
 
-  - $ref (String.t):  Defaults to `nil`.
-  - type_value (String.t):  Defaults to `nil`.
+  *   `$ref` (*type:* `String.t`, *default:* `nil`) - 
+  *   `type_value` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase
