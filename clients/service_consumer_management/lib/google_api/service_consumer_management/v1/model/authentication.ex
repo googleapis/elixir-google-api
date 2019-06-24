@@ -21,23 +21,23 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.Authentication do
 
   Example for an API targeted for external use:
 
-    name: calendar.googleapis.com
-    authentication:
-      providers:
-      - id: google_calendar_auth
-        jwks_uri: https://www.googleapis.com/oauth2/v1/certs
-        issuer: https://securetoken.google.com
-      rules:
-      - selector: "*"
-        requirements:
-          provider_id: google_calendar_auth
+      name: calendar.googleapis.com
+      authentication:
+        providers:
+        - id: google_calendar_auth
+          jwks_uri: https://www.googleapis.com/oauth2/v1/certs
+          issuer: https://securetoken.google.com
+        rules:
+        - selector: "*"
+          requirements:
+            provider_id: google_calendar_auth
 
   ## Attributes
 
-  - providers (list(GoogleApi.ServiceConsumerManagement.V1.Model.AuthProvider.t)): Defines a set of authentication providers that a service supports. Defaults to `nil`.
-  - rules (list(GoogleApi.ServiceConsumerManagement.V1.Model.AuthenticationRule.t)): A list of authentication rules that apply to individual API methods.
+  *   `providers` (*type:* `list(GoogleApi.ServiceConsumerManagement.V1.Model.AuthProvider.t)`, *default:* `nil`) - Defines a set of authentication providers that a service supports.
+  *   `rules` (*type:* `list(GoogleApi.ServiceConsumerManagement.V1.Model.AuthenticationRule.t)`, *default:* `nil`) - A list of authentication rules that apply to individual API methods.
 
-  **NOTE:** All service configuration rules follow "last one wins" order. Defaults to `nil`.
+      **NOTE:** All service configuration rules follow "last one wins" order.
   """
 
   use GoogleApi.Gax.ModelBase

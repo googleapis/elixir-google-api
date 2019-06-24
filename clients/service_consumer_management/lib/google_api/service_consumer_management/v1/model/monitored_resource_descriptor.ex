@@ -29,25 +29,25 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.MonitoredResourceDescript
 
   ## Attributes
 
-  - description (String.t): Optional. A detailed description of the monitored resource type that might
-  be used in documentation. Defaults to `nil`.
-  - displayName (String.t): Optional. A concise name for the monitored resource type that might be
-  displayed in user interfaces. It should be a Title Cased Noun Phrase,
-  without any article or other determiners. For example,
-  `"Google Cloud SQL Database"`. Defaults to `nil`.
-  - labels (list(GoogleApi.ServiceConsumerManagement.V1.Model.LabelDescriptor.t)): Required. A set of labels used to describe instances of this monitored
-  resource type. For example, an individual Google Cloud SQL database is
-  identified by values for the labels `"database_id"` and `"zone"`. Defaults to `nil`.
-  - launchStage (String.t): Optional. The launch stage of the monitored resource definition. Defaults to `nil`.
-  - name (String.t): Optional. The resource name of the monitored resource descriptor:
-  `"projects/{project_id}/monitoredResourceDescriptors/{type}"` where
-  {type} is the value of the `type` field in this object and
-  {project_id} is a project ID that provides API-specific context for
-  accessing the type.  APIs that do not use project information can use the
-  resource name format `"monitoredResourceDescriptors/{type}"`. Defaults to `nil`.
-  - type (String.t): Required. The monitored resource type. For example, the type
-  `"cloudsql_database"` represents databases in Google Cloud SQL.
-  The maximum length of this value is 256 characters. Defaults to `nil`.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. A detailed description of the monitored resource type that might
+      be used in documentation.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Optional. A concise name for the monitored resource type that might be
+      displayed in user interfaces. It should be a Title Cased Noun Phrase,
+      without any article or other determiners. For example,
+      `"Google Cloud SQL Database"`.
+  *   `labels` (*type:* `list(GoogleApi.ServiceConsumerManagement.V1.Model.LabelDescriptor.t)`, *default:* `nil`) - Required. A set of labels used to describe instances of this monitored
+      resource type. For example, an individual Google Cloud SQL database is
+      identified by values for the labels `"database_id"` and `"zone"`.
+  *   `launchStage` (*type:* `String.t`, *default:* `nil`) - Optional. The launch stage of the monitored resource definition.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. The resource name of the monitored resource descriptor:
+      `"projects/{project_id}/monitoredResourceDescriptors/{type}"` where
+      {type} is the value of the `type` field in this object and
+      {project_id} is a project ID that provides API-specific context for
+      accessing the type.  APIs that do not use project information can use the
+      resource name format `"monitoredResourceDescriptors/{type}"`.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Required. The monitored resource type. For example, the type
+      `"cloudsql_database"` represents databases in Google Cloud SQL.
+      The maximum length of this value is 256 characters.
   """
 
   use GoogleApi.Gax.ModelBase

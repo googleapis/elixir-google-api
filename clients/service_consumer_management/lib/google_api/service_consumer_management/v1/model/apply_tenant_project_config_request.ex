@@ -21,8 +21,8 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.ApplyTenantProjectConfigR
 
   ## Attributes
 
-  - projectConfig (GoogleApi.ServiceConsumerManagement.V1.Model.TenantProjectConfig.t): Configuration that should be applied to the existing tenant project. Defaults to `nil`.
-  - tag (String.t): Tag of the project. Must be less than 128 characters. Required. Defaults to `nil`.
+  *   `projectConfig` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Model.TenantProjectConfig.t`, *default:* `nil`) - Configuration that should be applied to the existing tenant project.
+  *   `tag` (*type:* `String.t`, *default:* `nil`) - Tag of the project. Must be less than 128 characters. Required.
   """
 
   use GoogleApi.Gax.ModelBase

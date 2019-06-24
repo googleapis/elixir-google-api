@@ -21,18 +21,18 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.BackendRule do
 
   ## Attributes
 
-  - address (String.t): The address of the API backend. Defaults to `nil`.
-  - deadline (float()): The number of seconds to wait for a response from a request.  The default
-  deadline for gRPC is infinite (no deadline) and HTTP requests is 5 seconds. Defaults to `nil`.
-  - jwtAudience (String.t): The JWT audience is used when generating a JWT id token for the backend. Defaults to `nil`.
-  - minDeadline (float()): Minimum deadline in seconds needed for this method. Calls having deadline
-  value lower than this will be rejected. Defaults to `nil`.
-  - operationDeadline (float()): The number of seconds to wait for the completion of a long running
-  operation. The default is no deadline. Defaults to `nil`.
-  - pathTranslation (String.t):  Defaults to `nil`.
-  - selector (String.t): Selects the methods to which this rule applies.
+  *   `address` (*type:* `String.t`, *default:* `nil`) - The address of the API backend.
+  *   `deadline` (*type:* `float()`, *default:* `nil`) - The number of seconds to wait for a response from a request.  The default
+      deadline for gRPC is infinite (no deadline) and HTTP requests is 5 seconds.
+  *   `jwtAudience` (*type:* `String.t`, *default:* `nil`) - The JWT audience is used when generating a JWT id token for the backend.
+  *   `minDeadline` (*type:* `float()`, *default:* `nil`) - Minimum deadline in seconds needed for this method. Calls having deadline
+      value lower than this will be rejected.
+  *   `operationDeadline` (*type:* `float()`, *default:* `nil`) - The number of seconds to wait for the completion of a long running
+      operation. The default is no deadline.
+  *   `pathTranslation` (*type:* `String.t`, *default:* `nil`) - 
+  *   `selector` (*type:* `String.t`, *default:* `nil`) - Selects the methods to which this rule applies.
 
-  Refer to selector for syntax details. Defaults to `nil`.
+      Refer to selector for syntax details.
   """
 
   use GoogleApi.Gax.ModelBase

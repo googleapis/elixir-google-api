@@ -21,7 +21,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.RemoveTenantProjectReques
 
   ## Attributes
 
-  - tag (String.t): Tag of the resource within the tenancy unit. Defaults to `nil`.
+  *   `tag` (*type:* `String.t`, *default:* `nil`) - Tag of the resource within the tenancy unit.
   """
 
   use GoogleApi.Gax.ModelBase

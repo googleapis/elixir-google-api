@@ -22,12 +22,12 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.LoggingDestination do
 
   ## Attributes
 
-  - logs (list(String.t)): Names of the logs to be sent to this destination. Each name must
-  be defined in the Service.logs section. If the log name is
-  not a domain scoped name, it will be automatically prefixed with
-  the service name followed by "/". Defaults to `nil`.
-  - monitoredResource (String.t): The monitored resource type. The type must be defined in the
-  Service.monitored_resources section. Defaults to `nil`.
+  *   `logs` (*type:* `list(String.t)`, *default:* `nil`) - Names of the logs to be sent to this destination. Each name must
+      be defined in the Service.logs section. If the log name is
+      not a domain scoped name, it will be automatically prefixed with
+      the service name followed by "/".
+  *   `monitoredResource` (*type:* `String.t`, *default:* `nil`) - The monitored resource type. The type must be defined in the
+      Service.monitored_resources section.
   """
 
   use GoogleApi.Gax.ModelBase

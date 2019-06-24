@@ -21,11 +21,11 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.Enum do
 
   ## Attributes
 
-  - enumvalue (list(GoogleApi.ServiceConsumerManagement.V1.Model.EnumValue.t)): Enum value definitions. Defaults to `nil`.
-  - name (String.t): Enum type name. Defaults to `nil`.
-  - options (list(GoogleApi.ServiceConsumerManagement.V1.Model.Option.t)): Protocol buffer options. Defaults to `nil`.
-  - sourceContext (GoogleApi.ServiceConsumerManagement.V1.Model.SourceContext.t): The source context. Defaults to `nil`.
-  - syntax (String.t): The source syntax. Defaults to `nil`.
+  *   `enumvalue` (*type:* `list(GoogleApi.ServiceConsumerManagement.V1.Model.EnumValue.t)`, *default:* `nil`) - Enum value definitions.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Enum type name.
+  *   `options` (*type:* `list(GoogleApi.ServiceConsumerManagement.V1.Model.Option.t)`, *default:* `nil`) - Protocol buffer options.
+  *   `sourceContext` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Model.SourceContext.t`, *default:* `nil`) - The source context.
+  *   `syntax` (*type:* `String.t`, *default:* `nil`) - The source syntax.
   """
 
   use GoogleApi.Gax.ModelBase

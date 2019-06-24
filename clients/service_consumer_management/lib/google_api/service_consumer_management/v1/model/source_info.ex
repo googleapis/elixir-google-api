@@ -21,7 +21,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.SourceInfo do
 
   ## Attributes
 
-  - sourceFiles (list(map())): All files used during config generation. Defaults to `nil`.
+  *   `sourceFiles` (*type:* `list(map())`, *default:* `nil`) - All files used during config generation.
   """
 
   use GoogleApi.Gax.ModelBase

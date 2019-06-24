@@ -21,20 +21,20 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.Usage do
 
   ## Attributes
 
-  - producerNotificationChannel (String.t): The full resource name of a channel used for sending notifications to the
-  service producer.
+  *   `producerNotificationChannel` (*type:* `String.t`, *default:* `nil`) - The full resource name of a channel used for sending notifications to the
+      service producer.
 
-  Google Service Management currently only supports
-  [Google Cloud Pub/Sub](https://cloud.google.com/pubsub) as a notification
-  channel. To use Google Cloud Pub/Sub as the channel, this must be the name
-  of a Cloud Pub/Sub topic that uses the Cloud Pub/Sub topic name format
-  documented in https://cloud.google.com/pubsub/docs/overview. Defaults to `nil`.
-  - requirements (list(String.t)): Requirements that must be satisfied before a consumer project can use the
-  service. Each requirement is of the form <service.name>/<requirement-id>;
-  for example 'serviceusage.googleapis.com/billing-enabled'. Defaults to `nil`.
-  - rules (list(GoogleApi.ServiceConsumerManagement.V1.Model.UsageRule.t)): A list of usage rules that apply to individual API methods.
+      Google Service Management currently only supports
+      [Google Cloud Pub/Sub](https://cloud.google.com/pubsub) as a notification
+      channel. To use Google Cloud Pub/Sub as the channel, this must be the name
+      of a Cloud Pub/Sub topic that uses the Cloud Pub/Sub topic name format
+      documented in https://cloud.google.com/pubsub/docs/overview.
+  *   `requirements` (*type:* `list(String.t)`, *default:* `nil`) - Requirements that must be satisfied before a consumer project can use the
+      service. Each requirement is of the form <service.name>/<requirement-id>;
+      for example 'serviceusage.googleapis.com/billing-enabled'.
+  *   `rules` (*type:* `list(GoogleApi.ServiceConsumerManagement.V1.Model.UsageRule.t)`, *default:* `nil`) - A list of usage rules that apply to individual API methods.
 
-  **NOTE:** All service configuration rules follow "last one wins" order. Defaults to `nil`.
+      **NOTE:** All service configuration rules follow "last one wins" order.
   """
 
   use GoogleApi.Gax.ModelBase

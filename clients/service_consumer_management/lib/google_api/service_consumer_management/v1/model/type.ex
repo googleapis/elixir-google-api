@@ -21,12 +21,12 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.Type do
 
   ## Attributes
 
-  - fields (list(GoogleApi.ServiceConsumerManagement.V1.Model.Field.t)): The list of fields. Defaults to `nil`.
-  - name (String.t): The fully qualified message name. Defaults to `nil`.
-  - oneofs (list(String.t)): The list of types appearing in `oneof` definitions in this type. Defaults to `nil`.
-  - options (list(GoogleApi.ServiceConsumerManagement.V1.Model.Option.t)): The protocol buffer options. Defaults to `nil`.
-  - sourceContext (GoogleApi.ServiceConsumerManagement.V1.Model.SourceContext.t): The source context. Defaults to `nil`.
-  - syntax (String.t): The source syntax. Defaults to `nil`.
+  *   `fields` (*type:* `list(GoogleApi.ServiceConsumerManagement.V1.Model.Field.t)`, *default:* `nil`) - The list of fields.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The fully qualified message name.
+  *   `oneofs` (*type:* `list(String.t)`, *default:* `nil`) - The list of types appearing in `oneof` definitions in this type.
+  *   `options` (*type:* `list(GoogleApi.ServiceConsumerManagement.V1.Model.Option.t)`, *default:* `nil`) - The protocol buffer options.
+  *   `sourceContext` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Model.SourceContext.t`, *default:* `nil`) - The source context.
+  *   `syntax` (*type:* `String.t`, *default:* `nil`) - The source syntax.
   """
 
   use GoogleApi.Gax.ModelBase

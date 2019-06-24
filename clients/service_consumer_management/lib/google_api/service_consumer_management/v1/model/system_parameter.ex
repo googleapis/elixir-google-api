@@ -23,11 +23,11 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.SystemParameter do
 
   ## Attributes
 
-  - httpHeader (String.t): Define the HTTP header name to use for the parameter. It is case
-  insensitive. Defaults to `nil`.
-  - name (String.t): Define the name of the parameter, such as "api_key" . It is case sensitive. Defaults to `nil`.
-  - urlQueryParameter (String.t): Define the URL query parameter name to use for the parameter. It is case
-  sensitive. Defaults to `nil`.
+  *   `httpHeader` (*type:* `String.t`, *default:* `nil`) - Define the HTTP header name to use for the parameter. It is case
+      insensitive.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Define the name of the parameter, such as "api_key" . It is case sensitive.
+  *   `urlQueryParameter` (*type:* `String.t`, *default:* `nil`) - Define the URL query parameter name to use for the parameter. It is case
+      sensitive.
   """
 
   use GoogleApi.Gax.ModelBase

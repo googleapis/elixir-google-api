@@ -21,8 +21,8 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.ListTenancyUnitsResponse 
 
   ## Attributes
 
-  - nextPageToken (String.t): Pagination token for large results. Defaults to `nil`.
-  - tenancyUnits (list(GoogleApi.ServiceConsumerManagement.V1.Model.TenancyUnit.t)): Tenancy units matching the request. Defaults to `nil`.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Pagination token for large results.
+  *   `tenancyUnits` (*type:* `list(GoogleApi.ServiceConsumerManagement.V1.Model.TenancyUnit.t)`, *default:* `nil`) - Tenancy units matching the request.
   """
 
   use GoogleApi.Gax.ModelBase

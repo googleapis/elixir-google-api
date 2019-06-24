@@ -21,13 +21,13 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.Method do
 
   ## Attributes
 
-  - name (String.t): The simple name of this method. Defaults to `nil`.
-  - options (list(GoogleApi.ServiceConsumerManagement.V1.Model.Option.t)): Any metadata attached to the method. Defaults to `nil`.
-  - requestStreaming (boolean()): If true, the request is streamed. Defaults to `nil`.
-  - requestTypeUrl (String.t): A URL of the input message type. Defaults to `nil`.
-  - responseStreaming (boolean()): If true, the response is streamed. Defaults to `nil`.
-  - responseTypeUrl (String.t): The URL of the output message type. Defaults to `nil`.
-  - syntax (String.t): The source syntax of this method. Defaults to `nil`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The simple name of this method.
+  *   `options` (*type:* `list(GoogleApi.ServiceConsumerManagement.V1.Model.Option.t)`, *default:* `nil`) - Any metadata attached to the method.
+  *   `requestStreaming` (*type:* `boolean()`, *default:* `nil`) - If true, the request is streamed.
+  *   `requestTypeUrl` (*type:* `String.t`, *default:* `nil`) - A URL of the input message type.
+  *   `responseStreaming` (*type:* `boolean()`, *default:* `nil`) - If true, the response is streamed.
+  *   `responseTypeUrl` (*type:* `String.t`, *default:* `nil`) - The URL of the output message type.
+  *   `syntax` (*type:* `String.t`, *default:* `nil`) - The source syntax of this method.
   """
 
   use GoogleApi.Gax.ModelBase

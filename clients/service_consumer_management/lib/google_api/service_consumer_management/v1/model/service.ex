@@ -25,83 +25,83 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.Service do
 
   Example:
 
-    type: google.api.Service
-    config_version: 3
-    name: calendar.googleapis.com
-    title: Google Calendar API
-    apis:
-    - name: google.calendar.v3.Calendar
-    authentication:
-      providers:
-      - id: google_calendar_auth
-        jwks_uri: https://www.googleapis.com/oauth2/v1/certs
-        issuer: https://securetoken.google.com
-      rules:
-      - selector: "*"
-        requirements:
-          provider_id: google_calendar_auth
+      type: google.api.Service
+      config_version: 3
+      name: calendar.googleapis.com
+      title: Google Calendar API
+      apis:
+      - name: google.calendar.v3.Calendar
+      authentication:
+        providers:
+        - id: google_calendar_auth
+          jwks_uri: https://www.googleapis.com/oauth2/v1/certs
+          issuer: https://securetoken.google.com
+        rules:
+        - selector: "*"
+          requirements:
+            provider_id: google_calendar_auth
 
   ## Attributes
 
-  - apis (list(GoogleApi.ServiceConsumerManagement.V1.Model.Api.t)): A list of API interfaces exported by this service. Only the `name` field
-  of the google.protobuf.Api needs to be provided by the configuration
-  author, as the remaining fields will be derived from the IDL during the
-  normalization process. It is an error to specify an API interface here
-  which cannot be resolved against the associated IDL files. Defaults to `nil`.
-  - authentication (GoogleApi.ServiceConsumerManagement.V1.Model.Authentication.t): Auth configuration. Defaults to `nil`.
-  - backend (GoogleApi.ServiceConsumerManagement.V1.Model.Backend.t): API backend configuration. Defaults to `nil`.
-  - billing (GoogleApi.ServiceConsumerManagement.V1.Model.Billing.t): Billing configuration. Defaults to `nil`.
-  - configVersion (integer()): The semantic version of the service configuration. The config version
-  affects the interpretation of the service configuration. For example,
-  certain features are enabled by default for certain config versions.
-  The latest config version is `3`. Defaults to `nil`.
-  - context (GoogleApi.ServiceConsumerManagement.V1.Model.Context.t): Context configuration. Defaults to `nil`.
-  - control (GoogleApi.ServiceConsumerManagement.V1.Model.Control.t): Configuration for the service control plane. Defaults to `nil`.
-  - customError (GoogleApi.ServiceConsumerManagement.V1.Model.CustomError.t): Custom error configuration. Defaults to `nil`.
-  - documentation (GoogleApi.ServiceConsumerManagement.V1.Model.Documentation.t): Additional API documentation. Defaults to `nil`.
-  - endpoints (list(GoogleApi.ServiceConsumerManagement.V1.Model.Endpoint.t)): Configuration for network endpoints.  If this is empty, then an endpoint
-  with the same name as the service is automatically generated to service all
-  defined APIs. Defaults to `nil`.
-  - enums (list(GoogleApi.ServiceConsumerManagement.V1.Model.Enum.t)): A list of all enum types included in this API service.  Enums
-  referenced directly or indirectly by the `apis` are automatically
-  included.  Enums which are not referenced but shall be included
-  should be listed here by name. Example:
+  *   `apis` (*type:* `list(GoogleApi.ServiceConsumerManagement.V1.Model.Api.t)`, *default:* `nil`) - A list of API interfaces exported by this service. Only the `name` field
+      of the google.protobuf.Api needs to be provided by the configuration
+      author, as the remaining fields will be derived from the IDL during the
+      normalization process. It is an error to specify an API interface here
+      which cannot be resolved against the associated IDL files.
+  *   `authentication` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Model.Authentication.t`, *default:* `nil`) - Auth configuration.
+  *   `backend` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Model.Backend.t`, *default:* `nil`) - API backend configuration.
+  *   `billing` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Model.Billing.t`, *default:* `nil`) - Billing configuration.
+  *   `configVersion` (*type:* `integer()`, *default:* `nil`) - The semantic version of the service configuration. The config version
+      affects the interpretation of the service configuration. For example,
+      certain features are enabled by default for certain config versions.
+      The latest config version is `3`.
+  *   `context` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Model.Context.t`, *default:* `nil`) - Context configuration.
+  *   `control` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Model.Control.t`, *default:* `nil`) - Configuration for the service control plane.
+  *   `customError` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Model.CustomError.t`, *default:* `nil`) - Custom error configuration.
+  *   `documentation` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Model.Documentation.t`, *default:* `nil`) - Additional API documentation.
+  *   `endpoints` (*type:* `list(GoogleApi.ServiceConsumerManagement.V1.Model.Endpoint.t)`, *default:* `nil`) - Configuration for network endpoints.  If this is empty, then an endpoint
+      with the same name as the service is automatically generated to service all
+      defined APIs.
+  *   `enums` (*type:* `list(GoogleApi.ServiceConsumerManagement.V1.Model.Enum.t)`, *default:* `nil`) - A list of all enum types included in this API service.  Enums
+      referenced directly or indirectly by the `apis` are automatically
+      included.  Enums which are not referenced but shall be included
+      should be listed here by name. Example:
 
-    enums:
-    - name: google.someapi.v1.SomeEnum Defaults to `nil`.
-  - http (GoogleApi.ServiceConsumerManagement.V1.Model.Http.t): HTTP configuration. Defaults to `nil`.
-  - id (String.t): A unique ID for a specific instance of this message, typically assigned
-  by the client for tracking purpose. If empty, the server may choose to
-  generate one instead. Must be no longer than 60 characters. Defaults to `nil`.
-  - logging (GoogleApi.ServiceConsumerManagement.V1.Model.Logging.t): Logging configuration. Defaults to `nil`.
-  - logs (list(GoogleApi.ServiceConsumerManagement.V1.Model.LogDescriptor.t)): Defines the logs used by this service. Defaults to `nil`.
-  - metrics (list(GoogleApi.ServiceConsumerManagement.V1.Model.MetricDescriptor.t)): Defines the metrics used by this service. Defaults to `nil`.
-  - monitoredResources (list(GoogleApi.ServiceConsumerManagement.V1.Model.MonitoredResourceDescriptor.t)): Defines the monitored resources used by this service. This is required
-  by the Service.monitoring and Service.logging configurations. Defaults to `nil`.
-  - monitoring (GoogleApi.ServiceConsumerManagement.V1.Model.Monitoring.t): Monitoring configuration. Defaults to `nil`.
-  - name (String.t): The service name, which is a DNS-like logical identifier for the
-  service, such as `calendar.googleapis.com`. The service name
-  typically goes through DNS verification to make sure the owner
-  of the service also owns the DNS name. Defaults to `nil`.
-  - producerProjectId (String.t): The Google project that owns this service. Defaults to `nil`.
-  - quota (GoogleApi.ServiceConsumerManagement.V1.Model.Quota.t): Quota configuration. Defaults to `nil`.
-  - sourceInfo (GoogleApi.ServiceConsumerManagement.V1.Model.SourceInfo.t): Output only. The source information for this configuration if available. Defaults to `nil`.
-  - systemParameters (GoogleApi.ServiceConsumerManagement.V1.Model.SystemParameters.t): System parameter configuration. Defaults to `nil`.
-  - systemTypes (list(GoogleApi.ServiceConsumerManagement.V1.Model.Type.t)): A list of all proto message types included in this API service.
-  It serves similar purpose as [google.api.Service.types], except that
-  these types are not needed by user-defined APIs. Therefore, they will not
-  show up in the generated discovery doc. This field should only be used
-  to define system APIs in ESF. Defaults to `nil`.
-  - title (String.t): The product title for this service. Defaults to `nil`.
-  - types (list(GoogleApi.ServiceConsumerManagement.V1.Model.Type.t)): A list of all proto message types included in this API service.
-  Types referenced directly or indirectly by the `apis` are
-  automatically included.  Messages which are not referenced but
-  shall be included, such as types used by the `google.protobuf.Any` type,
-  should be listed here by name. Example:
+          enums:
+          - name: google.someapi.v1.SomeEnum
+  *   `http` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Model.Http.t`, *default:* `nil`) - HTTP configuration.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - A unique ID for a specific instance of this message, typically assigned
+      by the client for tracking purpose. If empty, the server may choose to
+      generate one instead. Must be no longer than 60 characters.
+  *   `logging` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Model.Logging.t`, *default:* `nil`) - Logging configuration.
+  *   `logs` (*type:* `list(GoogleApi.ServiceConsumerManagement.V1.Model.LogDescriptor.t)`, *default:* `nil`) - Defines the logs used by this service.
+  *   `metrics` (*type:* `list(GoogleApi.ServiceConsumerManagement.V1.Model.MetricDescriptor.t)`, *default:* `nil`) - Defines the metrics used by this service.
+  *   `monitoredResources` (*type:* `list(GoogleApi.ServiceConsumerManagement.V1.Model.MonitoredResourceDescriptor.t)`, *default:* `nil`) - Defines the monitored resources used by this service. This is required
+      by the Service.monitoring and Service.logging configurations.
+  *   `monitoring` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Model.Monitoring.t`, *default:* `nil`) - Monitoring configuration.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The service name, which is a DNS-like logical identifier for the
+      service, such as `calendar.googleapis.com`. The service name
+      typically goes through DNS verification to make sure the owner
+      of the service also owns the DNS name.
+  *   `producerProjectId` (*type:* `String.t`, *default:* `nil`) - The Google project that owns this service.
+  *   `quota` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Model.Quota.t`, *default:* `nil`) - Quota configuration.
+  *   `sourceInfo` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Model.SourceInfo.t`, *default:* `nil`) - Output only. The source information for this configuration if available.
+  *   `systemParameters` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Model.SystemParameters.t`, *default:* `nil`) - System parameter configuration.
+  *   `systemTypes` (*type:* `list(GoogleApi.ServiceConsumerManagement.V1.Model.Type.t)`, *default:* `nil`) - A list of all proto message types included in this API service.
+      It serves similar purpose as [google.api.Service.types], except that
+      these types are not needed by user-defined APIs. Therefore, they will not
+      show up in the generated discovery doc. This field should only be used
+      to define system APIs in ESF.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - The product title for this service.
+  *   `types` (*type:* `list(GoogleApi.ServiceConsumerManagement.V1.Model.Type.t)`, *default:* `nil`) - A list of all proto message types included in this API service.
+      Types referenced directly or indirectly by the `apis` are
+      automatically included.  Messages which are not referenced but
+      shall be included, such as types used by the `google.protobuf.Any` type,
+      should be listed here by name. Example:
 
-    types:
-    - name: google.protobuf.Int32 Defaults to `nil`.
-  - usage (GoogleApi.ServiceConsumerManagement.V1.Model.Usage.t): Configuration controlling usage of this service. Defaults to `nil`.
+          types:
+          - name: google.protobuf.Int32
+  *   `usage` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Model.Usage.t`, *default:* `nil`) - Configuration controlling usage of this service.
   """
 
   use GoogleApi.Gax.ModelBase

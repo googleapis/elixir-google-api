@@ -29,12 +29,12 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.AuthenticationRule do
 
   ## Attributes
 
-  - allowWithoutCredential (boolean()): If true, the service accepts API keys without any other credential. Defaults to `nil`.
-  - oauth (GoogleApi.ServiceConsumerManagement.V1.Model.OAuthRequirements.t): The requirements for OAuth credentials. Defaults to `nil`.
-  - requirements (list(GoogleApi.ServiceConsumerManagement.V1.Model.AuthRequirement.t)): Requirements for additional authentication providers. Defaults to `nil`.
-  - selector (String.t): Selects the methods to which this rule applies.
+  *   `allowWithoutCredential` (*type:* `boolean()`, *default:* `nil`) - If true, the service accepts API keys without any other credential.
+  *   `oauth` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Model.OAuthRequirements.t`, *default:* `nil`) - The requirements for OAuth credentials.
+  *   `requirements` (*type:* `list(GoogleApi.ServiceConsumerManagement.V1.Model.AuthRequirement.t)`, *default:* `nil`) - Requirements for additional authentication providers.
+  *   `selector` (*type:* `String.t`, *default:* `nil`) - Selects the methods to which this rule applies.
 
-  Refer to selector for syntax details. Defaults to `nil`.
+      Refer to selector for syntax details.
   """
 
   use GoogleApi.Gax.ModelBase

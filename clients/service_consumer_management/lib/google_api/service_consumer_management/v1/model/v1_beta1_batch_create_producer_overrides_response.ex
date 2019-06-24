@@ -21,7 +21,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.V1Beta1BatchCreateProduce
 
   ## Attributes
 
-  - overrides (list(GoogleApi.ServiceConsumerManagement.V1.Model.V1Beta1QuotaOverride.t)): The overrides that were created. Defaults to `nil`.
+  *   `overrides` (*type:* `list(GoogleApi.ServiceConsumerManagement.V1.Model.V1Beta1QuotaOverride.t)`, *default:* `nil`) - The overrides that were created.
   """
 
   use GoogleApi.Gax.ModelBase

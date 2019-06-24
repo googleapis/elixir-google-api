@@ -23,17 +23,17 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.CustomError do
 
   Example:
 
-    custom_error:
-      types:
-      - google.foo.v1.CustomError
-      - google.foo.v1.AnotherError
+      custom_error:
+        types:
+        - google.foo.v1.CustomError
+        - google.foo.v1.AnotherError
 
   ## Attributes
 
-  - rules (list(GoogleApi.ServiceConsumerManagement.V1.Model.CustomErrorRule.t)): The list of custom error rules that apply to individual API messages.
+  *   `rules` (*type:* `list(GoogleApi.ServiceConsumerManagement.V1.Model.CustomErrorRule.t)`, *default:* `nil`) - The list of custom error rules that apply to individual API messages.
 
-  **NOTE:** All service configuration rules follow "last one wins" order. Defaults to `nil`.
-  - types (list(String.t)): The list of custom error detail types, e.g. 'google.foo.v1.CustomError'. Defaults to `nil`.
+      **NOTE:** All service configuration rules follow "last one wins" order.
+  *   `types` (*type:* `list(String.t)`, *default:* `nil`) - The list of custom error detail types, e.g. 'google.foo.v1.CustomError'.
   """
 
   use GoogleApi.Gax.ModelBase

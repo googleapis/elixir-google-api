@@ -42,19 +42,19 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.HttpRule do
 
   Example:
 
-    service Messaging {
-      rpc GetMessage(GetMessageRequest) returns (Message) {
-        option (google.api.http) = {
-            get: "/v1/{name=messages/*}"
-        };
+      service Messaging {
+        rpc GetMessage(GetMessageRequest) returns (Message) {
+          option (google.api.http) = {
+              get: "/v1/{name=messages/*}"
+          };
+        }
       }
-    }
-    message GetMessageRequest {
-      string name = 1; // Mapped to URL path.
-    }
-    message Message {
-      string text = 1; // The resource content.
-    }
+      message GetMessageRequest {
+        string name = 1; // Mapped to URL path.
+      }
+      message Message {
+        string text = 1; // The resource content.
+      }
 
   This enables an HTTP REST to gRPC mapping as below:
 
@@ -66,21 +66,21 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.HttpRule do
   automatically become HTTP query parameters if there is no HTTP request body.
   For example:
 
-    service Messaging {
-      rpc GetMessage(GetMessageRequest) returns (Message) {
-        option (google.api.http) = {
-            get:"/v1/messages/{message_id}"
-        };
+      service Messaging {
+        rpc GetMessage(GetMessageRequest) returns (Message) {
+          option (google.api.http) = {
+              get:"/v1/messages/{message_id}"
+          };
+        }
       }
-    }
-    message GetMessageRequest {
-      message SubMessage {
-        string subfield = 1;
+      message GetMessageRequest {
+        message SubMessage {
+          string subfield = 1;
+        }
+        string message_id = 1; // Mapped to URL path.
+        int64 revision = 2;    // Mapped to URL query parameter `revision`.
+        SubMessage sub = 3;    // Mapped to URL query parameter `sub.subfield`.
       }
-      string message_id = 1; // Mapped to URL path.
-      int64 revision = 2;    // Mapped to URL query parameter `revision`.
-      SubMessage sub = 3;    // Mapped to URL query parameter `sub.subfield`.
-    }
 
   This enables a HTTP JSON to RPC mapping as below:
 
@@ -101,18 +101,18 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.HttpRule do
   specifies the mapping. Consider a REST update method on the
   message resource collection:
 
-    service Messaging {
-      rpc UpdateMessage(UpdateMessageRequest) returns (Message) {
-        option (google.api.http) = {
-          patch: "/v1/messages/{message_id}"
-          body: "message"
-        };
+      service Messaging {
+        rpc UpdateMessage(UpdateMessageRequest) returns (Message) {
+          option (google.api.http) = {
+            patch: "/v1/messages/{message_id}"
+            body: "message"
+          };
+        }
       }
-    }
-    message UpdateMessageRequest {
-      string message_id = 1; // mapped to the URL
-      Message message = 2;   // mapped to the body
-    }
+      message UpdateMessageRequest {
+        string message_id = 1; // mapped to the URL
+        Message message = 2;   // mapped to the body
+      }
 
   The following HTTP JSON to RPC mapping is enabled, where the
   representation of the JSON in the request body is determined by
@@ -128,18 +128,18 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.HttpRule do
   request body.  This enables the following alternative definition of
   the update method:
 
-    service Messaging {
-      rpc UpdateMessage(Message) returns (Message) {
-        option (google.api.http) = {
-          patch: "/v1/messages/{message_id}"
-          body: "*"
-        };
+      service Messaging {
+        rpc UpdateMessage(Message) returns (Message) {
+          option (google.api.http) = {
+            patch: "/v1/messages/{message_id}"
+            body: "*"
+          };
+        }
       }
-    }
-    message Message {
-      string message_id = 1;
-      string text = 2;
-    }
+      message Message {
+        string message_id = 1;
+        string text = 2;
+      }
 
 
   The following HTTP JSON to RPC mapping is enabled:
@@ -158,20 +158,20 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.HttpRule do
   It is possible to define multiple HTTP methods for one RPC by using
   the `additional_bindings` option. Example:
 
-    service Messaging {
-      rpc GetMessage(GetMessageRequest) returns (Message) {
-        option (google.api.http) = {
-          get: "/v1/messages/{message_id}"
-          additional_bindings {
-            get: "/v1/users/{user_id}/messages/{message_id}"
-          }
-        };
+      service Messaging {
+        rpc GetMessage(GetMessageRequest) returns (Message) {
+          option (google.api.http) = {
+            get: "/v1/messages/{message_id}"
+            additional_bindings {
+              get: "/v1/users/{user_id}/messages/{message_id}"
+            }
+          };
+        }
       }
-    }
-    message GetMessageRequest {
-      string message_id = 1;
-      string user_id = 2;
-    }
+      message GetMessageRequest {
+        string message_id = 1;
+        string user_id = 2;
+      }
 
   This enables the following two alternative HTTP JSON to RPC mappings:
 
@@ -184,27 +184,27 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.HttpRule do
   ## Rules for HTTP mapping
 
   1. Leaf request fields (recursive expansion nested messages in the request
-   message) are classified into three categories:
-   - Fields referred by the path template. They are passed via the URL path.
-   - Fields referred by the HttpRule.body. They are passed via the HTTP
-     request body.
-   - All other fields are passed via the URL query parameters, and the
-     parameter name is the field path in the request message. A repeated
-     field can be represented as multiple query parameters under the same
-     name.
-  2. If HttpRule.body is "*", there is no URL query parameter, all fields
-    are passed via URL path and HTTP request body.
-  3. If HttpRule.body is omitted, there is no HTTP request body, all
-    fields are passed via URL path and URL query parameters.
+     message) are classified into three categories:
+     - Fields referred by the path template. They are passed via the URL path.
+     - Fields referred by the HttpRule.body. They are passed via the HTTP
+       request body.
+     - All other fields are passed via the URL query parameters, and the
+       parameter name is the field path in the request message. A repeated
+       field can be represented as multiple query parameters under the same
+       name.
+   2. If HttpRule.body is "*", there is no URL query parameter, all fields
+      are passed via URL path and HTTP request body.
+   3. If HttpRule.body is omitted, there is no HTTP request body, all
+      fields are passed via URL path and URL query parameters.
 
   ### Path template syntax
 
-    Template = "/" Segments [ Verb ] ;
-    Segments = Segment { "/" Segment } ;
-    Segment  = "*" | "**" | LITERAL | Variable ;
-    Variable = "{" FieldPath [ "=" Segments ] "}" ;
-    FieldPath = IDENT { "." IDENT } ;
-    Verb     = ":" LITERAL ;
+      Template = "/" Segments [ Verb ] ;
+      Segments = Segment { "/" Segment } ;
+      Segment  = "*" | "**" | LITERAL | Variable ;
+      Variable = "{" FieldPath [ "=" Segments ] "}" ;
+      FieldPath = IDENT { "." IDENT } ;
+      Verb     = ":" LITERAL ;
 
   The syntax `*` matches a single URL path segment. The syntax `**` matches
   zero or more URL path segments, which must be the last part of the URL path
@@ -253,11 +253,11 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.HttpRule do
 
   Example:
 
-    http:
-      rules:
-        # Selects a gRPC method and applies HttpRule to it.
-        - selector: example.v1.Messaging.GetMessage
-          get: /v1/messages/{message_id}/{sub.subfield}
+      http:
+        rules:
+          # Selects a gRPC method and applies HttpRule to it.
+          - selector: example.v1.Messaging.GetMessage
+            get: /v1/messages/{message_id}/{sub.subfield}
 
   ## Special notes
 
@@ -289,34 +289,34 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.HttpRule do
 
   ## Attributes
 
-  - additionalBindings (list(GoogleApi.ServiceConsumerManagement.V1.Model.HttpRule.t)): Additional HTTP bindings for the selector. Nested bindings must
-  not contain an `additional_bindings` field themselves (that is,
-  the nesting may only be one level deep). Defaults to `nil`.
-  - body (String.t): The name of the request field whose value is mapped to the HTTP request
-  body, or `*` for mapping all request fields not captured by the path
-  pattern to the HTTP body, or omitted for not having any HTTP request body.
+  *   `additionalBindings` (*type:* `list(GoogleApi.ServiceConsumerManagement.V1.Model.HttpRule.t)`, *default:* `nil`) - Additional HTTP bindings for the selector. Nested bindings must
+      not contain an `additional_bindings` field themselves (that is,
+      the nesting may only be one level deep).
+  *   `body` (*type:* `String.t`, *default:* `nil`) - The name of the request field whose value is mapped to the HTTP request
+      body, or `*` for mapping all request fields not captured by the path
+      pattern to the HTTP body, or omitted for not having any HTTP request body.
 
-  NOTE: the referred field must be present at the top-level of the request
-  message type. Defaults to `nil`.
-  - custom (GoogleApi.ServiceConsumerManagement.V1.Model.CustomHttpPattern.t): The custom pattern is used for specifying an HTTP method that is not
-  included in the `pattern` field, such as HEAD, or "*" to leave the
-  HTTP method unspecified for this rule. The wild-card rule is useful
-  for services that provide content to Web (HTML) clients. Defaults to `nil`.
-  - delete (String.t): Maps to HTTP DELETE. Used for deleting a resource. Defaults to `nil`.
-  - get (String.t): Maps to HTTP GET. Used for listing and getting information about
-  resources. Defaults to `nil`.
-  - patch (String.t): Maps to HTTP PATCH. Used for updating a resource. Defaults to `nil`.
-  - post (String.t): Maps to HTTP POST. Used for creating a resource or performing an action. Defaults to `nil`.
-  - put (String.t): Maps to HTTP PUT. Used for replacing a resource. Defaults to `nil`.
-  - responseBody (String.t): Optional. The name of the response field whose value is mapped to the HTTP
-  response body. When omitted, the entire response message will be used
-  as the HTTP response body.
+      NOTE: the referred field must be present at the top-level of the request
+      message type.
+  *   `custom` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Model.CustomHttpPattern.t`, *default:* `nil`) - The custom pattern is used for specifying an HTTP method that is not
+      included in the `pattern` field, such as HEAD, or "*" to leave the
+      HTTP method unspecified for this rule. The wild-card rule is useful
+      for services that provide content to Web (HTML) clients.
+  *   `delete` (*type:* `String.t`, *default:* `nil`) - Maps to HTTP DELETE. Used for deleting a resource.
+  *   `get` (*type:* `String.t`, *default:* `nil`) - Maps to HTTP GET. Used for listing and getting information about
+      resources.
+  *   `patch` (*type:* `String.t`, *default:* `nil`) - Maps to HTTP PATCH. Used for updating a resource.
+  *   `post` (*type:* `String.t`, *default:* `nil`) - Maps to HTTP POST. Used for creating a resource or performing an action.
+  *   `put` (*type:* `String.t`, *default:* `nil`) - Maps to HTTP PUT. Used for replacing a resource.
+  *   `responseBody` (*type:* `String.t`, *default:* `nil`) - Optional. The name of the response field whose value is mapped to the HTTP
+      response body. When omitted, the entire response message will be used
+      as the HTTP response body.
 
-  NOTE: The referred field must be present at the top-level of the response
-  message type. Defaults to `nil`.
-  - selector (String.t): Selects a method to which this rule applies.
+      NOTE: The referred field must be present at the top-level of the response
+      message type.
+  *   `selector` (*type:* `String.t`, *default:* `nil`) - Selects a method to which this rule applies.
 
-  Refer to selector for syntax details. Defaults to `nil`.
+      Refer to selector for syntax details.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -22,9 +22,9 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.AddTenantProjectRequest d
 
   ## Attributes
 
-  - projectConfig (GoogleApi.ServiceConsumerManagement.V1.Model.TenantProjectConfig.t): Configuration of the new tenant project to be added to tenancy unit
-  resources. Defaults to `nil`.
-  - tag (String.t): Tag of the added project. Must be less than 128 characters. Required. Defaults to `nil`.
+  *   `projectConfig` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Model.TenantProjectConfig.t`, *default:* `nil`) - Configuration of the new tenant project to be added to tenancy unit
+      resources.
+  *   `tag` (*type:* `String.t`, *default:* `nil`) - Tag of the added project. Must be less than 128 characters. Required.
   """
 
   use GoogleApi.Gax.ModelBase

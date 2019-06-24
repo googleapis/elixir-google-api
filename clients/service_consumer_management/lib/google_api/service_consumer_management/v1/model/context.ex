@@ -21,12 +21,12 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.Context do
 
   Example:
 
-    context:
-      rules:
-      - selector: "*"
-        requested:
-        - google.rpc.context.ProjectContext
-        - google.rpc.context.OriginContext
+      context:
+        rules:
+        - selector: "*"
+          requested:
+          - google.rpc.context.ProjectContext
+          - google.rpc.context.OriginContext
 
   The above specifies that all methods in the API request
   `google.rpc.context.ProjectContext` and
@@ -43,22 +43,22 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.Context do
 
   Example:
 
-    context:
-      rules:
-       - selector: "google.example.library.v1.LibraryService.CreateBook"
-         allowed_request_extensions:
-         - google.foo.v1.NewExtension
-         allowed_response_extensions:
-         - google.foo.v1.NewExtension
+      context:
+        rules:
+         - selector: "google.example.library.v1.LibraryService.CreateBook"
+           allowed_request_extensions:
+           - google.foo.v1.NewExtension
+           allowed_response_extensions:
+           - google.foo.v1.NewExtension
 
   You can also specify extension ID instead of fully qualified extension name
   here.
 
   ## Attributes
 
-  - rules (list(GoogleApi.ServiceConsumerManagement.V1.Model.ContextRule.t)): A list of RPC context rules that apply to individual API methods.
+  *   `rules` (*type:* `list(GoogleApi.ServiceConsumerManagement.V1.Model.ContextRule.t)`, *default:* `nil`) - A list of RPC context rules that apply to individual API methods.
 
-  **NOTE:** All service configuration rules follow "last one wins" order. Defaults to `nil`.
+      **NOTE:** All service configuration rules follow "last one wins" order.
   """
 
   use GoogleApi.Gax.ModelBase

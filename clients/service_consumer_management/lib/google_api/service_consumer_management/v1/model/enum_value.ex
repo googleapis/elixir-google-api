@@ -21,9 +21,9 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.EnumValue do
 
   ## Attributes
 
-  - name (String.t): Enum value name. Defaults to `nil`.
-  - number (integer()): Enum value number. Defaults to `nil`.
-  - options (list(GoogleApi.ServiceConsumerManagement.V1.Model.Option.t)): Protocol buffer options. Defaults to `nil`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Enum value name.
+  *   `number` (*type:* `integer()`, *default:* `nil`) - Enum value number.
+  *   `options` (*type:* `list(GoogleApi.ServiceConsumerManagement.V1.Model.Option.t)`, *default:* `nil`) - Protocol buffer options.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,9 +21,9 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.LabelDescriptor do
 
   ## Attributes
 
-  - description (String.t): A human-readable description for the label. Defaults to `nil`.
-  - key (String.t): The label key. Defaults to `nil`.
-  - valueType (String.t): The type of data that can be assigned to the label. Defaults to `nil`.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - A human-readable description for the label.
+  *   `key` (*type:* `String.t`, *default:* `nil`) - The label key.
+  *   `valueType` (*type:* `String.t`, *default:* `nil`) - The type of data that can be assigned to the label.
   """
 
   use GoogleApi.Gax.ModelBase
