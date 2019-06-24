@@ -21,8 +21,8 @@ defmodule GoogleApi.AdSense.V14.Model.AdStyleFont do
 
   ## Attributes
 
-  - family (String.t): The family of the font. Defaults to `nil`.
-  - size (String.t): The size of the font. Defaults to `nil`.
+  *   `family` (*type:* `String.t`, *default:* `nil`) - The family of the font.
+  *   `size` (*type:* `String.t`, *default:* `nil`) - The size of the font.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -28,25 +28,26 @@ defmodule GoogleApi.AdSense.V14.Api.Urlchannels do
 
   ## Parameters
 
-  - connection (GoogleApi.AdSense.V14.Connection): Connection to server
-  - ad_client_id (String.t): Ad client for which to list URL channels.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :maxResults (integer()): The maximum number of URL channels to include in the response, used for paging.
-    - :pageToken (String.t): A continuation token, used to page through URL channels. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
+  *   `connection` (*type:* `GoogleApi.AdSense.V14.Connection.t`) - Connection to server
+  *   `ad_client_id` (*type:* `String.t`) - Ad client for which to list URL channels.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:maxResults` (*type:* `integer()`) - The maximum number of URL channels to include in the response, used for paging.
+      *   `:pageToken` (*type:* `String.t`) - A continuation token, used to page through URL channels. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdSense.V14.Model.UrlChannels{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdSense.V14.Model.UrlChannels{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec adsense_urlchannels_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec adsense_urlchannels_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AdSense.V14.Model.UrlChannels.t()} | {:error, Tesla.Env.t()}
   def adsense_urlchannels_list(connection, ad_client_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

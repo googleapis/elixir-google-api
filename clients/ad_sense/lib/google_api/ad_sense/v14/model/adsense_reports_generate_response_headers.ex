@@ -21,9 +21,9 @@ defmodule GoogleApi.AdSense.V14.Model.AdsenseReportsGenerateResponseHeaders do
 
   ## Attributes
 
-  - currency (String.t): The currency of this column. Only present if the header type is METRIC_CURRENCY. Defaults to `nil`.
-  - name (String.t): The name of the header. Defaults to `nil`.
-  - type (String.t): The type of the header; one of DIMENSION, METRIC_TALLY, METRIC_RATIO, or METRIC_CURRENCY. Defaults to `nil`.
+  *   `currency` (*type:* `String.t`, *default:* `nil`) - The currency of this column. Only present if the header type is METRIC_CURRENCY.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the header.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the header; one of DIMENSION, METRIC_TALLY, METRIC_RATIO, or METRIC_CURRENCY.
   """
 
   use GoogleApi.Gax.ModelBase

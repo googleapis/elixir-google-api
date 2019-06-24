@@ -21,12 +21,12 @@ defmodule GoogleApi.AdSense.V14.Model.Alert do
 
   ## Attributes
 
-  - id (String.t): Unique identifier of this alert. This should be considered an opaque identifier; it is not safe to rely on it being in any particular format. Defaults to `nil`.
-  - isDismissible (boolean()): Whether this alert can be dismissed. Defaults to `nil`.
-  - kind (String.t): Kind of resource this is, in this case adsense#alert. Defaults to `adsense#alert`.
-  - message (String.t): The localized alert message. Defaults to `nil`.
-  - severity (String.t): Severity of this alert. Possible values: INFO, WARNING, SEVERE. Defaults to `nil`.
-  - type (String.t): Type of this alert. Possible values: SELF_HOLD, MIGRATED_TO_BILLING3, ADDRESS_PIN_VERIFICATION, PHONE_PIN_VERIFICATION, CORPORATE_ENTITY, GRAYLISTED_PUBLISHER, API_HOLD. Defaults to `nil`.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Unique identifier of this alert. This should be considered an opaque identifier; it is not safe to rely on it being in any particular format.
+  *   `isDismissible` (*type:* `boolean()`, *default:* `nil`) - Whether this alert can be dismissed.
+  *   `kind` (*type:* `String.t`, *default:* `adsense#alert`) - Kind of resource this is, in this case adsense#alert.
+  *   `message` (*type:* `String.t`, *default:* `nil`) - The localized alert message.
+  *   `severity` (*type:* `String.t`, *default:* `nil`) - Severity of this alert. Possible values: INFO, WARNING, SEVERE.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Type of this alert. Possible values: SELF_HOLD, MIGRATED_TO_BILLING3, ADDRESS_PIN_VERIFICATION, PHONE_PIN_VERIFICATION, CORPORATE_ENTITY, GRAYLISTED_PUBLISHER, API_HOLD.
   """
 
   use GoogleApi.Gax.ModelBase

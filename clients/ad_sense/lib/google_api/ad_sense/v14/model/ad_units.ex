@@ -21,10 +21,10 @@ defmodule GoogleApi.AdSense.V14.Model.AdUnits do
 
   ## Attributes
 
-  - etag (String.t): ETag of this response for caching purposes. Defaults to `nil`.
-  - items (list(GoogleApi.AdSense.V14.Model.AdUnit.t)): The ad units returned in this list response. Defaults to `nil`.
-  - kind (String.t): Kind of list this is, in this case adsense#adUnits. Defaults to `adsense#adUnits`.
-  - nextPageToken (String.t): Continuation token used to page through ad units. To retrieve the next page of results, set the next request's "pageToken" value to this. Defaults to `nil`.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of this response for caching purposes.
+  *   `items` (*type:* `list(GoogleApi.AdSense.V14.Model.AdUnit.t)`, *default:* `nil`) - The ad units returned in this list response.
+  *   `kind` (*type:* `String.t`, *default:* `adsense#adUnits`) - Kind of list this is, in this case adsense#adUnits.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Continuation token used to page through ad units. To retrieve the next page of results, set the next request's "pageToken" value to this.
   """
 
   use GoogleApi.Gax.ModelBase

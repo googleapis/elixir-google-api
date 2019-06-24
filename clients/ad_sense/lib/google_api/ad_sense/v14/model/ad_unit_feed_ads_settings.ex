@@ -21,10 +21,10 @@ defmodule GoogleApi.AdSense.V14.Model.AdUnitFeedAdsSettings do
 
   ## Attributes
 
-  - adPosition (String.t): The position of the ads relative to the feed entries. Defaults to `nil`.
-  - frequency (integer()): The frequency at which ads should appear in the feed (i.e. every N entries). Defaults to `nil`.
-  - minimumWordCount (integer()): The minimum length an entry should be in order to have attached ads. Defaults to `nil`.
-  - type (String.t): The type of ads which should appear. Defaults to `nil`.
+  *   `adPosition` (*type:* `String.t`, *default:* `nil`) - The position of the ads relative to the feed entries.
+  *   `frequency` (*type:* `integer()`, *default:* `nil`) - The frequency at which ads should appear in the feed (i.e. every N entries).
+  *   `minimumWordCount` (*type:* `integer()`, *default:* `nil`) - The minimum length an entry should be in order to have attached ads.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of ads which should appear.
   """
 
   use GoogleApi.Gax.ModelBase

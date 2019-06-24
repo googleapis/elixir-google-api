@@ -21,11 +21,11 @@ defmodule GoogleApi.AdSense.V14.Model.AdStyleColors do
 
   ## Attributes
 
-  - background (String.t): The color of the ad background. Defaults to `nil`.
-  - border (String.t): The color of the ad border. Defaults to `nil`.
-  - text (String.t): The color of the ad text. Defaults to `nil`.
-  - title (String.t): The color of the ad title. Defaults to `nil`.
-  - url (String.t): The color of the ad url. Defaults to `nil`.
+  *   `background` (*type:* `String.t`, *default:* `nil`) - The color of the ad background.
+  *   `border` (*type:* `String.t`, *default:* `nil`) - The color of the ad border.
+  *   `text` (*type:* `String.t`, *default:* `nil`) - The color of the ad text.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - The color of the ad title.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - The color of the ad url.
   """
 
   use GoogleApi.Gax.ModelBase

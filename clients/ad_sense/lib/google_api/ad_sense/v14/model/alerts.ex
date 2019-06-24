@@ -21,8 +21,8 @@ defmodule GoogleApi.AdSense.V14.Model.Alerts do
 
   ## Attributes
 
-  - items (list(GoogleApi.AdSense.V14.Model.Alert.t)): The alerts returned in this list response. Defaults to `nil`.
-  - kind (String.t): Kind of list this is, in this case adsense#alerts. Defaults to `adsense#alerts`.
+  *   `items` (*type:* `list(GoogleApi.AdSense.V14.Model.Alert.t)`, *default:* `nil`) - The alerts returned in this list response.
+  *   `kind` (*type:* `String.t`, *default:* `adsense#alerts`) - Kind of list this is, in this case adsense#alerts.
   """
 
   use GoogleApi.Gax.ModelBase

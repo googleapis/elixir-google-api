@@ -21,10 +21,10 @@ defmodule GoogleApi.AdSense.V14.Model.CustomChannelTargetingInfo do
 
   ## Attributes
 
-  - adsAppearOn (String.t): The name used to describe this channel externally. Defaults to `nil`.
-  - description (String.t): The external description of the channel. Defaults to `nil`.
-  - location (String.t): The locations in which ads appear. (Only valid for content and mobile content ads (deprecated)). Acceptable values for content ads are: TOP_LEFT, TOP_CENTER, TOP_RIGHT, MIDDLE_LEFT, MIDDLE_CENTER, MIDDLE_RIGHT, BOTTOM_LEFT, BOTTOM_CENTER, BOTTOM_RIGHT, MULTIPLE_LOCATIONS. Acceptable values for mobile content ads (deprecated) are: TOP, MIDDLE, BOTTOM, MULTIPLE_LOCATIONS. Defaults to `nil`.
-  - siteLanguage (String.t): The language of the sites ads will be displayed on. Defaults to `nil`.
+  *   `adsAppearOn` (*type:* `String.t`, *default:* `nil`) - The name used to describe this channel externally.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - The external description of the channel.
+  *   `location` (*type:* `String.t`, *default:* `nil`) - The locations in which ads appear. (Only valid for content and mobile content ads (deprecated)). Acceptable values for content ads are: TOP_LEFT, TOP_CENTER, TOP_RIGHT, MIDDLE_LEFT, MIDDLE_CENTER, MIDDLE_RIGHT, BOTTOM_LEFT, BOTTOM_CENTER, BOTTOM_RIGHT, MULTIPLE_LOCATIONS. Acceptable values for mobile content ads (deprecated) are: TOP, MIDDLE, BOTTOM, MULTIPLE_LOCATIONS.
+  *   `siteLanguage` (*type:* `String.t`, *default:* `nil`) - The language of the sites ads will be displayed on.
   """
 
   use GoogleApi.Gax.ModelBase

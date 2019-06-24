@@ -21,10 +21,10 @@ defmodule GoogleApi.AdSense.V14.Model.AdCode do
 
   ## Attributes
 
-  - adCode (String.t): The Auto ad code snippet. The ad code snippet. Defaults to `nil`.
-  - ampBody (String.t): The AMP Auto ad code snippet that goes in the body of an AMP page. Defaults to `nil`.
-  - ampHead (String.t): The AMP Auto ad code snippet that goes in the head of an AMP page. Defaults to `nil`.
-  - kind (String.t): Kind this is, in this case adsense#adCode. Defaults to `adsense#adCode`.
+  *   `adCode` (*type:* `String.t`, *default:* `nil`) - The Auto ad code snippet. The ad code snippet.
+  *   `ampBody` (*type:* `String.t`, *default:* `nil`) - The AMP Auto ad code snippet that goes in the body of an AMP page.
+  *   `ampHead` (*type:* `String.t`, *default:* `nil`) - The AMP Auto ad code snippet that goes in the head of an AMP page.
+  *   `kind` (*type:* `String.t`, *default:* `adsense#adCode`) - Kind this is, in this case adsense#adCode.
   """
 
   use GoogleApi.Gax.ModelBase

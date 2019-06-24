@@ -21,13 +21,13 @@ defmodule GoogleApi.AdSense.V14.Model.ReportingMetadataEntry do
 
   ## Attributes
 
-  - compatibleDimensions (list(String.t)): For metrics this is a list of dimension IDs which the metric is compatible with, for dimensions it is a list of compatibility groups the dimension belongs to. Defaults to `nil`.
-  - compatibleMetrics (list(String.t)): The names of the metrics the dimension or metric this reporting metadata entry describes is compatible with. Defaults to `nil`.
-  - id (String.t): Unique identifier of this reporting metadata entry, corresponding to the name of the appropriate dimension or metric. Defaults to `nil`.
-  - kind (String.t): Kind of resource this is, in this case adsense#reportingMetadataEntry. Defaults to `adsense#reportingMetadataEntry`.
-  - requiredDimensions (list(String.t)): The names of the dimensions which the dimension or metric this reporting metadata entry describes requires to also be present in order for the report to be valid. Omitting these will not cause an error or warning, but may result in data which cannot be correctly interpreted. Defaults to `nil`.
-  - requiredMetrics (list(String.t)): The names of the metrics which the dimension or metric this reporting metadata entry describes requires to also be present in order for the report to be valid. Omitting these will not cause an error or warning, but may result in data which cannot be correctly interpreted. Defaults to `nil`.
-  - supportedProducts (list(String.t)): The codes of the projects supported by the dimension or metric this reporting metadata entry describes. Defaults to `nil`.
+  *   `compatibleDimensions` (*type:* `list(String.t)`, *default:* `nil`) - For metrics this is a list of dimension IDs which the metric is compatible with, for dimensions it is a list of compatibility groups the dimension belongs to.
+  *   `compatibleMetrics` (*type:* `list(String.t)`, *default:* `nil`) - The names of the metrics the dimension or metric this reporting metadata entry describes is compatible with.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Unique identifier of this reporting metadata entry, corresponding to the name of the appropriate dimension or metric.
+  *   `kind` (*type:* `String.t`, *default:* `adsense#reportingMetadataEntry`) - Kind of resource this is, in this case adsense#reportingMetadataEntry.
+  *   `requiredDimensions` (*type:* `list(String.t)`, *default:* `nil`) - The names of the dimensions which the dimension or metric this reporting metadata entry describes requires to also be present in order for the report to be valid. Omitting these will not cause an error or warning, but may result in data which cannot be correctly interpreted.
+  *   `requiredMetrics` (*type:* `list(String.t)`, *default:* `nil`) - The names of the metrics which the dimension or metric this reporting metadata entry describes requires to also be present in order for the report to be valid. Omitting these will not cause an error or warning, but may result in data which cannot be correctly interpreted.
+  *   `supportedProducts` (*type:* `list(String.t)`, *default:* `nil`) - The codes of the projects supported by the dimension or metric this reporting metadata entry describes.
   """
 
   use GoogleApi.Gax.ModelBase

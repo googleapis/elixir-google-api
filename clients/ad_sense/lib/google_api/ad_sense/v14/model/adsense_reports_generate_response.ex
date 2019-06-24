@@ -21,15 +21,15 @@ defmodule GoogleApi.AdSense.V14.Model.AdsenseReportsGenerateResponse do
 
   ## Attributes
 
-  - averages (list(String.t)): The averages of the report. This is the same length as any other row in the report; cells corresponding to dimension columns are empty. Defaults to `nil`.
-  - endDate (String.t): The requested end date in yyyy-mm-dd format. Defaults to `nil`.
-  - headers (list(GoogleApi.AdSense.V14.Model.AdsenseReportsGenerateResponseHeaders.t)): The header information of the columns requested in the report. This is a list of headers; one for each dimension in the request, followed by one for each metric in the request. Defaults to `nil`.
-  - kind (String.t): Kind this is, in this case adsense#report. Defaults to `adsense#report`.
-  - rows (list(list(String.t))): The output rows of the report. Each row is a list of cells; one for each dimension in the request, followed by one for each metric in the request. The dimension cells contain strings, and the metric cells contain numbers. Defaults to `nil`.
-  - startDate (String.t): The requested start date in yyyy-mm-dd format. Defaults to `nil`.
-  - totalMatchedRows (String.t): The total number of rows matched by the report request. Fewer rows may be returned in the response due to being limited by the row count requested or the report row limit. Defaults to `nil`.
-  - totals (list(String.t)): The totals of the report. This is the same length as any other row in the report; cells corresponding to dimension columns are empty. Defaults to `nil`.
-  - warnings (list(String.t)): Any warnings associated with generation of the report. Defaults to `nil`.
+  *   `averages` (*type:* `list(String.t)`, *default:* `nil`) - The averages of the report. This is the same length as any other row in the report; cells corresponding to dimension columns are empty.
+  *   `endDate` (*type:* `String.t`, *default:* `nil`) - The requested end date in yyyy-mm-dd format.
+  *   `headers` (*type:* `list(GoogleApi.AdSense.V14.Model.AdsenseReportsGenerateResponseHeaders.t)`, *default:* `nil`) - The header information of the columns requested in the report. This is a list of headers; one for each dimension in the request, followed by one for each metric in the request.
+  *   `kind` (*type:* `String.t`, *default:* `adsense#report`) - Kind this is, in this case adsense#report.
+  *   `rows` (*type:* `list(list(String.t))`, *default:* `nil`) - The output rows of the report. Each row is a list of cells; one for each dimension in the request, followed by one for each metric in the request. The dimension cells contain strings, and the metric cells contain numbers.
+  *   `startDate` (*type:* `String.t`, *default:* `nil`) - The requested start date in yyyy-mm-dd format.
+  *   `totalMatchedRows` (*type:* `String.t`, *default:* `nil`) - The total number of rows matched by the report request. Fewer rows may be returned in the response due to being limited by the row count requested or the report row limit.
+  *   `totals` (*type:* `list(String.t)`, *default:* `nil`) - The totals of the report. This is the same length as any other row in the report; cells corresponding to dimension columns are empty.
+  *   `warnings` (*type:* `list(String.t)`, *default:* `nil`) - Any warnings associated with generation of the report.
   """
 
   use GoogleApi.Gax.ModelBase

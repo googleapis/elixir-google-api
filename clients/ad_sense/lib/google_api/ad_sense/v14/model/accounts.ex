@@ -21,10 +21,10 @@ defmodule GoogleApi.AdSense.V14.Model.Accounts do
 
   ## Attributes
 
-  - etag (String.t): ETag of this response for caching purposes. Defaults to `nil`.
-  - items (list(GoogleApi.AdSense.V14.Model.Account.t)): The accounts returned in this list response. Defaults to `nil`.
-  - kind (String.t): Kind of list this is, in this case adsense#accounts. Defaults to `adsense#accounts`.
-  - nextPageToken (String.t): Continuation token used to page through accounts. To retrieve the next page of results, set the next request's "pageToken" value to this. Defaults to `nil`.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of this response for caching purposes.
+  *   `items` (*type:* `list(GoogleApi.AdSense.V14.Model.Account.t)`, *default:* `nil`) - The accounts returned in this list response.
+  *   `kind` (*type:* `String.t`, *default:* `adsense#accounts`) - Kind of list this is, in this case adsense#accounts.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Continuation token used to page through accounts. To retrieve the next page of results, set the next request's "pageToken" value to this.
   """
 
   use GoogleApi.Gax.ModelBase

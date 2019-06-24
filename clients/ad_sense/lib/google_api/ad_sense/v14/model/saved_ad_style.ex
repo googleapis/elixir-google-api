@@ -21,10 +21,10 @@ defmodule GoogleApi.AdSense.V14.Model.SavedAdStyle do
 
   ## Attributes
 
-  - adStyle (GoogleApi.AdSense.V14.Model.AdStyle.t): The AdStyle itself. Defaults to `nil`.
-  - id (String.t): Unique identifier of this saved ad style. This should be considered an opaque identifier; it is not safe to rely on it being in any particular format. Defaults to `nil`.
-  - kind (String.t): Kind of resource this is, in this case adsense#savedAdStyle. Defaults to `adsense#savedAdStyle`.
-  - name (String.t): The user selected name of this SavedAdStyle. Defaults to `nil`.
+  *   `adStyle` (*type:* `GoogleApi.AdSense.V14.Model.AdStyle.t`, *default:* `nil`) - The AdStyle itself.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Unique identifier of this saved ad style. This should be considered an opaque identifier; it is not safe to rely on it being in any particular format.
+  *   `kind` (*type:* `String.t`, *default:* `adsense#savedAdStyle`) - Kind of resource this is, in this case adsense#savedAdStyle.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The user selected name of this SavedAdStyle.
   """
 
   use GoogleApi.Gax.ModelBase

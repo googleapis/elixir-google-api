@@ -28,24 +28,25 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
 
   ## Parameters
 
-  - connection (GoogleApi.AdSense.V14.Connection): Connection to server
-  - account_id (String.t): Account to get information about.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :tree (boolean()): Whether the tree of sub accounts should be returned.
+  *   `connection` (*type:* `GoogleApi.AdSense.V14.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account to get information about.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:tree` (*type:* `boolean()`) - Whether the tree of sub accounts should be returned.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdSense.V14.Model.Account{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdSense.V14.Model.Account{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec adsense_accounts_get(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec adsense_accounts_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AdSense.V14.Model.Account.t()} | {:error, Tesla.Env.t()}
   def adsense_accounts_get(connection, account_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -77,24 +78,25 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
 
   ## Parameters
 
-  - connection (GoogleApi.AdSense.V14.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :maxResults (integer()): The maximum number of accounts to include in the response, used for paging.
-    - :pageToken (String.t): A continuation token, used to page through accounts. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
+  *   `connection` (*type:* `GoogleApi.AdSense.V14.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:maxResults` (*type:* `integer()`) - The maximum number of accounts to include in the response, used for paging.
+      *   `:pageToken` (*type:* `String.t`) - A continuation token, used to page through accounts. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdSense.V14.Model.Accounts{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdSense.V14.Model.Accounts{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec adsense_accounts_list(Tesla.Env.client(), keyword()) ::
+  @spec adsense_accounts_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.AdSense.V14.Model.Accounts.t()} | {:error, Tesla.Env.t()}
   def adsense_accounts_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -125,27 +127,29 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
 
   ## Parameters
 
-  - connection (GoogleApi.AdSense.V14.Connection): Connection to server
-  - account_id (String.t): Account which contains the ad client.
-  - ad_client_id (String.t): Ad client to get the code for.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AdSense.V14.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account which contains the ad client.
+  *   `ad_client_id` (*type:* `String.t`) - Ad client to get the code for.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdSense.V14.Model.AdCode{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdSense.V14.Model.AdCode{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec adsense_accounts_adclients_get_ad_code(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.AdSense.V14.Model.AdCode.t()} | {:error, Tesla.Env.t()}
   def adsense_accounts_adclients_get_ad_code(
@@ -184,25 +188,26 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
 
   ## Parameters
 
-  - connection (GoogleApi.AdSense.V14.Connection): Connection to server
-  - account_id (String.t): Account for which to list ad clients.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :maxResults (integer()): The maximum number of ad clients to include in the response, used for paging.
-    - :pageToken (String.t): A continuation token, used to page through ad clients. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
+  *   `connection` (*type:* `GoogleApi.AdSense.V14.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account for which to list ad clients.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:maxResults` (*type:* `integer()`) - The maximum number of ad clients to include in the response, used for paging.
+      *   `:pageToken` (*type:* `String.t`) - A continuation token, used to page through ad clients. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdSense.V14.Model.AdClients{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdSense.V14.Model.AdClients{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec adsense_accounts_adclients_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec adsense_accounts_adclients_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AdSense.V14.Model.AdClients.t()} | {:error, Tesla.Env.t()}
   def adsense_accounts_adclients_list(connection, account_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -235,29 +240,31 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
 
   ## Parameters
 
-  - connection (GoogleApi.AdSense.V14.Connection): Connection to server
-  - account_id (String.t): Account to which the ad client belongs.
-  - ad_client_id (String.t): Ad client for which to get the ad unit.
-  - ad_unit_id (String.t): Ad unit to retrieve.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AdSense.V14.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account to which the ad client belongs.
+  *   `ad_client_id` (*type:* `String.t`) - Ad client for which to get the ad unit.
+  *   `ad_unit_id` (*type:* `String.t`) - Ad unit to retrieve.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdSense.V14.Model.AdUnit{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdSense.V14.Model.AdUnit{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec adsense_accounts_adunits_get(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.AdSense.V14.Model.AdUnit.t()} | {:error, Tesla.Env.t()}
   def adsense_accounts_adunits_get(
@@ -298,29 +305,31 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
 
   ## Parameters
 
-  - connection (GoogleApi.AdSense.V14.Connection): Connection to server
-  - account_id (String.t): Account which contains the ad client.
-  - ad_client_id (String.t): Ad client with contains the ad unit.
-  - ad_unit_id (String.t): Ad unit to get the code for.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AdSense.V14.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account which contains the ad client.
+  *   `ad_client_id` (*type:* `String.t`) - Ad client with contains the ad unit.
+  *   `ad_unit_id` (*type:* `String.t`) - Ad unit to get the code for.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdSense.V14.Model.AdCode{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdSense.V14.Model.AdCode{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec adsense_accounts_adunits_get_ad_code(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.AdSense.V14.Model.AdCode.t()} | {:error, Tesla.Env.t()}
   def adsense_accounts_adunits_get_ad_code(
@@ -361,28 +370,34 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
 
   ## Parameters
 
-  - connection (GoogleApi.AdSense.V14.Connection): Connection to server
-  - account_id (String.t): Account to which the ad client belongs.
-  - ad_client_id (String.t): Ad client for which to list ad units.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :includeInactive (boolean()): Whether to include inactive ad units. Default: true.
-    - :maxResults (integer()): The maximum number of ad units to include in the response, used for paging.
-    - :pageToken (String.t): A continuation token, used to page through ad units. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
+  *   `connection` (*type:* `GoogleApi.AdSense.V14.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account to which the ad client belongs.
+  *   `ad_client_id` (*type:* `String.t`) - Ad client for which to list ad units.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:includeInactive` (*type:* `boolean()`) - Whether to include inactive ad units. Default: true.
+      *   `:maxResults` (*type:* `integer()`) - The maximum number of ad units to include in the response, used for paging.
+      *   `:pageToken` (*type:* `String.t`) - A continuation token, used to page through ad units. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdSense.V14.Model.AdUnits{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdSense.V14.Model.AdUnits{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec adsense_accounts_adunits_list(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.AdSense.V14.Model.AdUnits.t()} | {:error, Tesla.Env.t()}
+  @spec adsense_accounts_adunits_list(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.AdSense.V14.Model.AdUnits.t()} | {:error, Tesla.Env.t()}
   def adsense_accounts_adunits_list(
         connection,
         account_id,
@@ -422,31 +437,33 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
 
   ## Parameters
 
-  - connection (GoogleApi.AdSense.V14.Connection): Connection to server
-  - account_id (String.t): Account to which the ad client belongs.
-  - ad_client_id (String.t): Ad client which contains the ad unit.
-  - ad_unit_id (String.t): Ad unit for which to list custom channels.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :maxResults (integer()): The maximum number of custom channels to include in the response, used for paging.
-    - :pageToken (String.t): A continuation token, used to page through custom channels. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
+  *   `connection` (*type:* `GoogleApi.AdSense.V14.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account to which the ad client belongs.
+  *   `ad_client_id` (*type:* `String.t`) - Ad client which contains the ad unit.
+  *   `ad_unit_id` (*type:* `String.t`) - Ad unit for which to list custom channels.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:maxResults` (*type:* `integer()`) - The maximum number of custom channels to include in the response, used for paging.
+      *   `:pageToken` (*type:* `String.t`) - A continuation token, used to page through custom channels. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdSense.V14.Model.CustomChannels{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdSense.V14.Model.CustomChannels{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec adsense_accounts_adunits_customchannels_list(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.AdSense.V14.Model.CustomChannels.t()} | {:error, Tesla.Env.t()}
   def adsense_accounts_adunits_customchannels_list(
@@ -492,25 +509,31 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
 
   ## Parameters
 
-  - connection (GoogleApi.AdSense.V14.Connection): Connection to server
-  - account_id (String.t): Account which contains the ad unit.
-  - alert_id (String.t): Alert to delete.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AdSense.V14.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account which contains the ad unit.
+  *   `alert_id` (*type:* `String.t`) - Alert to delete.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %{}} on success
-  {:error, info} on failure
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec adsense_accounts_alerts_delete(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, nil} | {:error, Tesla.Env.t()}
+  @spec adsense_accounts_alerts_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
   def adsense_accounts_alerts_delete(
         connection,
         account_id,
@@ -547,24 +570,25 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
 
   ## Parameters
 
-  - connection (GoogleApi.AdSense.V14.Connection): Connection to server
-  - account_id (String.t): Account for which to retrieve the alerts.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :locale (String.t): The locale to use for translating alert messages. The account locale will be used if this is not supplied. The AdSense default (English) will be used if the supplied locale is invalid or unsupported.
+  *   `connection` (*type:* `GoogleApi.AdSense.V14.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account for which to retrieve the alerts.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:locale` (*type:* `String.t`) - The locale to use for translating alert messages. The account locale will be used if this is not supplied. The AdSense default (English) will be used if the supplied locale is invalid or unsupported.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdSense.V14.Model.Alerts{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdSense.V14.Model.Alerts{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec adsense_accounts_alerts_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec adsense_accounts_alerts_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AdSense.V14.Model.Alerts.t()} | {:error, Tesla.Env.t()}
   def adsense_accounts_alerts_list(connection, account_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -596,29 +620,31 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
 
   ## Parameters
 
-  - connection (GoogleApi.AdSense.V14.Connection): Connection to server
-  - account_id (String.t): Account to which the ad client belongs.
-  - ad_client_id (String.t): Ad client which contains the custom channel.
-  - custom_channel_id (String.t): Custom channel to retrieve.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AdSense.V14.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account to which the ad client belongs.
+  *   `ad_client_id` (*type:* `String.t`) - Ad client which contains the custom channel.
+  *   `custom_channel_id` (*type:* `String.t`) - Custom channel to retrieve.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdSense.V14.Model.CustomChannel{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdSense.V14.Model.CustomChannel{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec adsense_accounts_customchannels_get(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.AdSense.V14.Model.CustomChannel.t()} | {:error, Tesla.Env.t()}
   def adsense_accounts_customchannels_get(
@@ -662,29 +688,31 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
 
   ## Parameters
 
-  - connection (GoogleApi.AdSense.V14.Connection): Connection to server
-  - account_id (String.t): Account to which the ad client belongs.
-  - ad_client_id (String.t): Ad client for which to list custom channels.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :maxResults (integer()): The maximum number of custom channels to include in the response, used for paging.
-    - :pageToken (String.t): A continuation token, used to page through custom channels. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
+  *   `connection` (*type:* `GoogleApi.AdSense.V14.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account to which the ad client belongs.
+  *   `ad_client_id` (*type:* `String.t`) - Ad client for which to list custom channels.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:maxResults` (*type:* `integer()`) - The maximum number of custom channels to include in the response, used for paging.
+      *   `:pageToken` (*type:* `String.t`) - A continuation token, used to page through custom channels. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdSense.V14.Model.CustomChannels{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdSense.V14.Model.CustomChannels{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec adsense_accounts_customchannels_list(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.AdSense.V14.Model.CustomChannels.t()} | {:error, Tesla.Env.t()}
   def adsense_accounts_customchannels_list(
@@ -725,32 +753,34 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
 
   ## Parameters
 
-  - connection (GoogleApi.AdSense.V14.Connection): Connection to server
-  - account_id (String.t): Account to which the ad client belongs.
-  - ad_client_id (String.t): Ad client which contains the custom channel.
-  - custom_channel_id (String.t): Custom channel for which to list ad units.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :includeInactive (boolean()): Whether to include inactive ad units. Default: true.
-    - :maxResults (integer()): The maximum number of ad units to include in the response, used for paging.
-    - :pageToken (String.t): A continuation token, used to page through ad units. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
+  *   `connection` (*type:* `GoogleApi.AdSense.V14.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account to which the ad client belongs.
+  *   `ad_client_id` (*type:* `String.t`) - Ad client which contains the custom channel.
+  *   `custom_channel_id` (*type:* `String.t`) - Custom channel for which to list ad units.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:includeInactive` (*type:* `boolean()`) - Whether to include inactive ad units. Default: true.
+      *   `:maxResults` (*type:* `integer()`) - The maximum number of ad units to include in the response, used for paging.
+      *   `:pageToken` (*type:* `String.t`) - A continuation token, used to page through ad units. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdSense.V14.Model.AdUnits{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdSense.V14.Model.AdUnits{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec adsense_accounts_customchannels_adunits_list(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.AdSense.V14.Model.AdUnits.t()} | {:error, Tesla.Env.t()}
   def adsense_accounts_customchannels_adunits_list(
@@ -797,23 +827,24 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
 
   ## Parameters
 
-  - connection (GoogleApi.AdSense.V14.Connection): Connection to server
-  - account_id (String.t): Account for which to retrieve the payments.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AdSense.V14.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account for which to retrieve the payments.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdSense.V14.Model.Payments{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdSense.V14.Model.Payments{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec adsense_accounts_payments_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec adsense_accounts_payments_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AdSense.V14.Model.Payments.t()} | {:error, Tesla.Env.t()}
   def adsense_accounts_payments_list(connection, account_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -844,38 +875,40 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
 
   ## Parameters
 
-  - connection (GoogleApi.AdSense.V14.Connection): Connection to server
-  - account_id (String.t): Account upon which to report.
-  - start_date (String.t): Start of the date range to report on in "YYYY-MM-DD" format, inclusive.
-  - end_date (String.t): End of the date range to report on in "YYYY-MM-DD" format, inclusive.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :currency (String.t): Optional currency to use when reporting on monetary metrics. Defaults to the account's currency if not set.
-    - :dimension (list(String.t)): Dimensions to base the report on.
-    - :filter (list(String.t)): Filters to be run on the report.
-    - :locale (String.t): Optional locale to use for translating report output to a local language. Defaults to "en_US" if not specified.
-    - :maxResults (integer()): The maximum number of rows of report data to return.
-    - :metric (list(String.t)): Numeric columns to include in the report.
-    - :sort (list(String.t)): The name of a dimension or metric to sort the resulting report on, optionally prefixed with "+" to sort ascending or "-" to sort descending. If no prefix is specified, the column is sorted ascending.
-    - :startIndex (integer()): Index of the first row of report data to return.
-    - :useTimezoneReporting (boolean()): Whether the report should be generated in the AdSense account's local timezone. If false default PST/PDT timezone will be used.
+  *   `connection` (*type:* `GoogleApi.AdSense.V14.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account upon which to report.
+  *   `start_date` (*type:* `String.t`) - Start of the date range to report on in "YYYY-MM-DD" format, inclusive.
+  *   `end_date` (*type:* `String.t`) - End of the date range to report on in "YYYY-MM-DD" format, inclusive.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:currency` (*type:* `String.t`) - Optional currency to use when reporting on monetary metrics. Defaults to the account's currency if not set.
+      *   `:dimension` (*type:* `list(String.t)`) - Dimensions to base the report on.
+      *   `:filter` (*type:* `list(String.t)`) - Filters to be run on the report.
+      *   `:locale` (*type:* `String.t`) - Optional locale to use for translating report output to a local language. Defaults to "en_US" if not specified.
+      *   `:maxResults` (*type:* `integer()`) - The maximum number of rows of report data to return.
+      *   `:metric` (*type:* `list(String.t)`) - Numeric columns to include in the report.
+      *   `:sort` (*type:* `list(String.t)`) - The name of a dimension or metric to sort the resulting report on, optionally prefixed with "+" to sort ascending or "-" to sort descending. If no prefix is specified, the column is sorted ascending.
+      *   `:startIndex` (*type:* `integer()`) - Index of the first row of report data to return.
+      *   `:useTimezoneReporting` (*type:* `boolean()`) - Whether the report should be generated in the AdSense account's local timezone. If false default PST/PDT timezone will be used.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdSense.V14.Model.AdsenseReportsGenerateResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdSense.V14.Model.AdsenseReportsGenerateResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec adsense_accounts_reports_generate(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.AdSense.V14.Model.AdsenseReportsGenerateResponse.t()}
@@ -929,30 +962,32 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
 
   ## Parameters
 
-  - connection (GoogleApi.AdSense.V14.Connection): Connection to server
-  - account_id (String.t): Account to which the saved reports belong.
-  - saved_report_id (String.t): The saved report to retrieve.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :locale (String.t): Optional locale to use for translating report output to a local language. Defaults to "en_US" if not specified.
-    - :maxResults (integer()): The maximum number of rows of report data to return.
-    - :startIndex (integer()): Index of the first row of report data to return.
+  *   `connection` (*type:* `GoogleApi.AdSense.V14.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account to which the saved reports belong.
+  *   `saved_report_id` (*type:* `String.t`) - The saved report to retrieve.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:locale` (*type:* `String.t`) - Optional locale to use for translating report output to a local language. Defaults to "en_US" if not specified.
+      *   `:maxResults` (*type:* `integer()`) - The maximum number of rows of report data to return.
+      *   `:startIndex` (*type:* `integer()`) - Index of the first row of report data to return.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdSense.V14.Model.AdsenseReportsGenerateResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdSense.V14.Model.AdsenseReportsGenerateResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec adsense_accounts_reports_saved_generate(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.AdSense.V14.Model.AdsenseReportsGenerateResponse.t()}
@@ -998,25 +1033,26 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
 
   ## Parameters
 
-  - connection (GoogleApi.AdSense.V14.Connection): Connection to server
-  - account_id (String.t): Account to which the saved reports belong.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :maxResults (integer()): The maximum number of saved reports to include in the response, used for paging.
-    - :pageToken (String.t): A continuation token, used to page through saved reports. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
+  *   `connection` (*type:* `GoogleApi.AdSense.V14.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account to which the saved reports belong.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:maxResults` (*type:* `integer()`) - The maximum number of saved reports to include in the response, used for paging.
+      *   `:pageToken` (*type:* `String.t`) - A continuation token, used to page through saved reports. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdSense.V14.Model.SavedReports{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdSense.V14.Model.SavedReports{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec adsense_accounts_reports_saved_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec adsense_accounts_reports_saved_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AdSense.V14.Model.SavedReports.t()} | {:error, Tesla.Env.t()}
   def adsense_accounts_reports_saved_list(
         connection,
@@ -1054,25 +1090,31 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
 
   ## Parameters
 
-  - connection (GoogleApi.AdSense.V14.Connection): Connection to server
-  - account_id (String.t): Account for which to get the saved ad style.
-  - saved_ad_style_id (String.t): Saved ad style to retrieve.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.AdSense.V14.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account for which to get the saved ad style.
+  *   `saved_ad_style_id` (*type:* `String.t`) - Saved ad style to retrieve.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdSense.V14.Model.SavedAdStyle{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdSense.V14.Model.SavedAdStyle{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec adsense_accounts_savedadstyles_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.AdSense.V14.Model.SavedAdStyle.t()} | {:error, Tesla.Env.t()}
+  @spec adsense_accounts_savedadstyles_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.AdSense.V14.Model.SavedAdStyle.t()} | {:error, Tesla.Env.t()}
   def adsense_accounts_savedadstyles_get(
         connection,
         account_id,
@@ -1109,25 +1151,26 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
 
   ## Parameters
 
-  - connection (GoogleApi.AdSense.V14.Connection): Connection to server
-  - account_id (String.t): Account for which to list saved ad styles.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :maxResults (integer()): The maximum number of saved ad styles to include in the response, used for paging.
-    - :pageToken (String.t): A continuation token, used to page through saved ad styles. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
+  *   `connection` (*type:* `GoogleApi.AdSense.V14.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account for which to list saved ad styles.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:maxResults` (*type:* `integer()`) - The maximum number of saved ad styles to include in the response, used for paging.
+      *   `:pageToken` (*type:* `String.t`) - A continuation token, used to page through saved ad styles. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdSense.V14.Model.SavedAdStyles{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdSense.V14.Model.SavedAdStyles{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec adsense_accounts_savedadstyles_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec adsense_accounts_savedadstyles_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AdSense.V14.Model.SavedAdStyles.t()} | {:error, Tesla.Env.t()}
   def adsense_accounts_savedadstyles_list(
         connection,
@@ -1165,27 +1208,33 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
 
   ## Parameters
 
-  - connection (GoogleApi.AdSense.V14.Connection): Connection to server
-  - account_id (String.t): Account to which the ad client belongs.
-  - ad_client_id (String.t): Ad client for which to list URL channels.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :maxResults (integer()): The maximum number of URL channels to include in the response, used for paging.
-    - :pageToken (String.t): A continuation token, used to page through URL channels. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
+  *   `connection` (*type:* `GoogleApi.AdSense.V14.Connection.t`) - Connection to server
+  *   `account_id` (*type:* `String.t`) - Account to which the ad client belongs.
+  *   `ad_client_id` (*type:* `String.t`) - Ad client for which to list URL channels.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:maxResults` (*type:* `integer()`) - The maximum number of URL channels to include in the response, used for paging.
+      *   `:pageToken` (*type:* `String.t`) - A continuation token, used to page through URL channels. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.AdSense.V14.Model.UrlChannels{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.AdSense.V14.Model.UrlChannels{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec adsense_accounts_urlchannels_list(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.AdSense.V14.Model.UrlChannels.t()} | {:error, Tesla.Env.t()}
+  @spec adsense_accounts_urlchannels_list(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.AdSense.V14.Model.UrlChannels.t()} | {:error, Tesla.Env.t()}
   def adsense_accounts_urlchannels_list(
         connection,
         account_id,
