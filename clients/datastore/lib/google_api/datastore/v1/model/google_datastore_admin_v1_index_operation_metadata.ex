@@ -21,9 +21,9 @@ defmodule GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1IndexOperationMetad
 
   ## Attributes
 
-  - common (GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1CommonMetadata.t): Metadata common to all Datastore Admin operations. Defaults to `nil`.
-  - indexId (String.t): The index resource ID that this operation is acting on. Defaults to `nil`.
-  - progressEntities (GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1Progress.t): An estimate of the number of entities processed. Defaults to `nil`.
+  *   `common` (*type:* `GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1CommonMetadata.t`, *default:* `nil`) - Metadata common to all Datastore Admin operations.
+  *   `indexId` (*type:* `String.t`, *default:* `nil`) - The index resource ID that this operation is acting on.
+  *   `progressEntities` (*type:* `GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1Progress.t`, *default:* `nil`) - An estimate of the number of entities processed.
   """
 
   use GoogleApi.Gax.ModelBase

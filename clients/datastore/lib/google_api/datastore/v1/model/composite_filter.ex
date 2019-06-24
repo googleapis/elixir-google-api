@@ -21,9 +21,9 @@ defmodule GoogleApi.Datastore.V1.Model.CompositeFilter do
 
   ## Attributes
 
-  - filters (list(GoogleApi.Datastore.V1.Model.Filter.t)): The list of filters to combine.
-  Must contain at least one filter. Defaults to `nil`.
-  - op (String.t): The operator for combining multiple filters. Defaults to `nil`.
+  *   `filters` (*type:* `list(GoogleApi.Datastore.V1.Model.Filter.t)`, *default:* `nil`) - The list of filters to combine.
+      Must contain at least one filter.
+  *   `op` (*type:* `String.t`, *default:* `nil`) - The operator for combining multiple filters.
   """
 
   use GoogleApi.Gax.ModelBase

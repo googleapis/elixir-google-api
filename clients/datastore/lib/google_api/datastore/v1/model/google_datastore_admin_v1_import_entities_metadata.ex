@@ -21,12 +21,12 @@ defmodule GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1ImportEntitiesMetad
 
   ## Attributes
 
-  - common (GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1CommonMetadata.t): Metadata common to all Datastore Admin operations. Defaults to `nil`.
-  - entityFilter (GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1EntityFilter.t): Description of which entities are being imported. Defaults to `nil`.
-  - inputUrl (String.t): The location of the import metadata file. This will be the same value as
-  the google.datastore.admin.v1.ExportEntitiesResponse.output_url field. Defaults to `nil`.
-  - progressBytes (GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1Progress.t): An estimate of the number of bytes processed. Defaults to `nil`.
-  - progressEntities (GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1Progress.t): An estimate of the number of entities processed. Defaults to `nil`.
+  *   `common` (*type:* `GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1CommonMetadata.t`, *default:* `nil`) - Metadata common to all Datastore Admin operations.
+  *   `entityFilter` (*type:* `GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1EntityFilter.t`, *default:* `nil`) - Description of which entities are being imported.
+  *   `inputUrl` (*type:* `String.t`, *default:* `nil`) - The location of the import metadata file. This will be the same value as
+      the google.datastore.admin.v1.ExportEntitiesResponse.output_url field.
+  *   `progressBytes` (*type:* `GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1Progress.t`, *default:* `nil`) - An estimate of the number of bytes processed.
+  *   `progressEntities` (*type:* `GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1Progress.t`, *default:* `nil`) - An estimate of the number of entities processed.
   """
 
   use GoogleApi.Gax.ModelBase

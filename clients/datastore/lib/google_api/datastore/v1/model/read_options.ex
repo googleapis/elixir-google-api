@@ -21,11 +21,11 @@ defmodule GoogleApi.Datastore.V1.Model.ReadOptions do
 
   ## Attributes
 
-  - readConsistency (String.t): The non-transactional read consistency to use.
-  Cannot be set to `STRONG` for global queries. Defaults to `nil`.
-  - transaction (String.t): The identifier of the transaction in which to read. A
-  transaction identifier is returned by a call to
-  Datastore.BeginTransaction. Defaults to `nil`.
+  *   `readConsistency` (*type:* `String.t`, *default:* `nil`) - The non-transactional read consistency to use.
+      Cannot be set to `STRONG` for global queries.
+  *   `transaction` (*type:* `String.t`, *default:* `nil`) - The identifier of the transaction in which to read. A
+      transaction identifier is returned by a call to
+      Datastore.BeginTransaction.
   """
 
   use GoogleApi.Gax.ModelBase

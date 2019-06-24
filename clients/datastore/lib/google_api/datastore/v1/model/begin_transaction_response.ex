@@ -21,7 +21,7 @@ defmodule GoogleApi.Datastore.V1.Model.BeginTransactionResponse do
 
   ## Attributes
 
-  - transaction (String.t): The transaction identifier (always present). Defaults to `nil`.
+  *   `transaction` (*type:* `String.t`, *default:* `nil`) - The transaction identifier (always present).
   """
 
   use GoogleApi.Gax.ModelBase

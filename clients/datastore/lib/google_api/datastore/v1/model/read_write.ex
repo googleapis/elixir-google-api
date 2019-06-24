@@ -21,7 +21,7 @@ defmodule GoogleApi.Datastore.V1.Model.ReadWrite do
 
   ## Attributes
 
-  - previousTransaction (String.t): The transaction identifier of the transaction being retried. Defaults to `nil`.
+  *   `previousTransaction` (*type:* `String.t`, *default:* `nil`) - The transaction identifier of the transaction being retried.
   """
 
   use GoogleApi.Gax.ModelBase

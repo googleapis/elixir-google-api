@@ -21,9 +21,9 @@ defmodule GoogleApi.Datastore.V1.Model.GqlQueryParameter do
 
   ## Attributes
 
-  - cursor (String.t): A query cursor. Query cursors are returned in query
-  result batches. Defaults to `nil`.
-  - value (GoogleApi.Datastore.V1.Model.Value.t): A value parameter. Defaults to `nil`.
+  *   `cursor` (*type:* `String.t`, *default:* `nil`) - A query cursor. Query cursors are returned in query
+      result batches.
+  *   `value` (*type:* `GoogleApi.Datastore.V1.Model.Value.t`, *default:* `nil`) - A value parameter.
   """
 
   use GoogleApi.Gax.ModelBase

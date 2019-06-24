@@ -21,9 +21,9 @@ defmodule GoogleApi.Datastore.V1.Model.PropertyFilter do
 
   ## Attributes
 
-  - op (String.t): The operator to filter by. Defaults to `nil`.
-  - property (GoogleApi.Datastore.V1.Model.PropertyReference.t): The property to filter by. Defaults to `nil`.
-  - value (GoogleApi.Datastore.V1.Model.Value.t): The value to compare the property to. Defaults to `nil`.
+  *   `op` (*type:* `String.t`, *default:* `nil`) - The operator to filter by.
+  *   `property` (*type:* `GoogleApi.Datastore.V1.Model.PropertyReference.t`, *default:* `nil`) - The property to filter by.
+  *   `value` (*type:* `GoogleApi.Datastore.V1.Model.Value.t`, *default:* `nil`) - The value to compare the property to.
   """
 
   use GoogleApi.Gax.ModelBase

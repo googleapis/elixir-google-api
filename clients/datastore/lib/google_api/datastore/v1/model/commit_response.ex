@@ -21,10 +21,10 @@ defmodule GoogleApi.Datastore.V1.Model.CommitResponse do
 
   ## Attributes
 
-  - indexUpdates (integer()): The number of index entries updated during the commit, or zero if none were
-  updated. Defaults to `nil`.
-  - mutationResults (list(GoogleApi.Datastore.V1.Model.MutationResult.t)): The result of performing the mutations.
-  The i-th mutation result corresponds to the i-th mutation in the request. Defaults to `nil`.
+  *   `indexUpdates` (*type:* `integer()`, *default:* `nil`) - The number of index entries updated during the commit, or zero if none were
+      updated.
+  *   `mutationResults` (*type:* `list(GoogleApi.Datastore.V1.Model.MutationResult.t)`, *default:* `nil`) - The result of performing the mutations.
+      The i-th mutation result corresponds to the i-th mutation in the request.
   """
 
   use GoogleApi.Gax.ModelBase

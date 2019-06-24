@@ -21,16 +21,16 @@ defmodule GoogleApi.Datastore.V1.Model.Mutation do
 
   ## Attributes
 
-  - baseVersion (String.t): The version of the entity that this mutation is being applied to. If this
-  does not match the current version on the server, the mutation conflicts. Defaults to `nil`.
-  - delete (GoogleApi.Datastore.V1.Model.Key.t): The key of the entity to delete. The entity may or may not already exist.
-  Must have a complete key path and must not be reserved/read-only. Defaults to `nil`.
-  - insert (GoogleApi.Datastore.V1.Model.Entity.t): The entity to insert. The entity must not already exist.
-  The entity key's final path element may be incomplete. Defaults to `nil`.
-  - update (GoogleApi.Datastore.V1.Model.Entity.t): The entity to update. The entity must already exist.
-  Must have a complete key path. Defaults to `nil`.
-  - upsert (GoogleApi.Datastore.V1.Model.Entity.t): The entity to upsert. The entity may or may not already exist.
-  The entity key's final path element may be incomplete. Defaults to `nil`.
+  *   `baseVersion` (*type:* `String.t`, *default:* `nil`) - The version of the entity that this mutation is being applied to. If this
+      does not match the current version on the server, the mutation conflicts.
+  *   `delete` (*type:* `GoogleApi.Datastore.V1.Model.Key.t`, *default:* `nil`) - The key of the entity to delete. The entity may or may not already exist.
+      Must have a complete key path and must not be reserved/read-only.
+  *   `insert` (*type:* `GoogleApi.Datastore.V1.Model.Entity.t`, *default:* `nil`) - The entity to insert. The entity must not already exist.
+      The entity key's final path element may be incomplete.
+  *   `update` (*type:* `GoogleApi.Datastore.V1.Model.Entity.t`, *default:* `nil`) - The entity to update. The entity must already exist.
+      Must have a complete key path.
+  *   `upsert` (*type:* `GoogleApi.Datastore.V1.Model.Entity.t`, *default:* `nil`) - The entity to upsert. The entity may or may not already exist.
+      The entity key's final path element may be incomplete.
   """
 
   use GoogleApi.Gax.ModelBase

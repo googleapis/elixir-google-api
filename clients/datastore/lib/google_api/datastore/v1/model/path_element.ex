@@ -24,17 +24,17 @@ defmodule GoogleApi.Datastore.V1.Model.PathElement do
 
   ## Attributes
 
-  - id (String.t): The auto-allocated ID of the entity.
-  Never equal to zero. Values less than zero are discouraged and may not
-  be supported in the future. Defaults to `nil`.
-  - kind (String.t): The kind of the entity.
-  A kind matching regex `__.*__` is reserved/read-only.
-  A kind must not contain more than 1500 bytes when UTF-8 encoded.
-  Cannot be `""`. Defaults to `nil`.
-  - name (String.t): The name of the entity.
-  A name matching regex `__.*__` is reserved/read-only.
-  A name must not be more than 1500 bytes when UTF-8 encoded.
-  Cannot be `""`. Defaults to `nil`.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The auto-allocated ID of the entity.
+      Never equal to zero. Values less than zero are discouraged and may not
+      be supported in the future.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of the entity.
+      A kind matching regex `__.*__` is reserved/read-only.
+      A kind must not contain more than 1500 bytes when UTF-8 encoded.
+      Cannot be `""`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the entity.
+      A name matching regex `__.*__` is reserved/read-only.
+      A name must not be more than 1500 bytes when UTF-8 encoded.
+      Cannot be `""`.
   """
 
   use GoogleApi.Gax.ModelBase

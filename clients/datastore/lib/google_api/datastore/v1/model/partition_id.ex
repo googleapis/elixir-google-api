@@ -39,8 +39,8 @@ defmodule GoogleApi.Datastore.V1.Model.PartitionId do
 
   ## Attributes
 
-  - namespaceId (String.t): If not empty, the ID of the namespace to which the entities belong. Defaults to `nil`.
-  - projectId (String.t): The ID of the project to which the entities belong. Defaults to `nil`.
+  *   `namespaceId` (*type:* `String.t`, *default:* `nil`) - If not empty, the ID of the namespace to which the entities belong.
+  *   `projectId` (*type:* `String.t`, *default:* `nil`) - The ID of the project to which the entities belong.
   """
 
   use GoogleApi.Gax.ModelBase

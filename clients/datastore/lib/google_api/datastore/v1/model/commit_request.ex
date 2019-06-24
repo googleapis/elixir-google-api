@@ -21,23 +21,23 @@ defmodule GoogleApi.Datastore.V1.Model.CommitRequest do
 
   ## Attributes
 
-  - mode (String.t): The type of commit to perform. Defaults to `TRANSACTIONAL`. Defaults to `nil`.
-  - mutations (list(GoogleApi.Datastore.V1.Model.Mutation.t)): The mutations to perform.
+  *   `mode` (*type:* `String.t`, *default:* `nil`) - The type of commit to perform. Defaults to `TRANSACTIONAL`.
+  *   `mutations` (*type:* `list(GoogleApi.Datastore.V1.Model.Mutation.t)`, *default:* `nil`) - The mutations to perform.
 
-  When mode is `TRANSACTIONAL`, mutations affecting a single entity are
-  applied in order. The following sequences of mutations affecting a single
-  entity are not permitted in a single `Commit` request:
+      When mode is `TRANSACTIONAL`, mutations affecting a single entity are
+      applied in order. The following sequences of mutations affecting a single
+      entity are not permitted in a single `Commit` request:
 
-  - `insert` followed by `insert`
-  - `update` followed by `insert`
-  - `upsert` followed by `insert`
-  - `delete` followed by `update`
+      - `insert` followed by `insert`
+      - `update` followed by `insert`
+      - `upsert` followed by `insert`
+      - `delete` followed by `update`
 
-  When mode is `NON_TRANSACTIONAL`, no two mutations may affect a single
-  entity. Defaults to `nil`.
-  - transaction (String.t): The identifier of the transaction associated with the commit. A
-  transaction identifier is returned by a call to
-  Datastore.BeginTransaction. Defaults to `nil`.
+      When mode is `NON_TRANSACTIONAL`, no two mutations may affect a single
+      entity.
+  *   `transaction` (*type:* `String.t`, *default:* `nil`) - The identifier of the transaction associated with the commit. A
+      transaction identifier is returned by a call to
+      Datastore.BeginTransaction.
   """
 
   use GoogleApi.Gax.ModelBase

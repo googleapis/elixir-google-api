@@ -21,9 +21,9 @@ defmodule GoogleApi.Datastore.V1.Model.ReserveIdsRequest do
 
   ## Attributes
 
-  - databaseId (String.t): If not empty, the ID of the database against which to make the request. Defaults to `nil`.
-  - keys (list(GoogleApi.Datastore.V1.Model.Key.t)): A list of keys with complete key paths whose numeric IDs should not be
-  auto-allocated. Defaults to `nil`.
+  *   `databaseId` (*type:* `String.t`, *default:* `nil`) - If not empty, the ID of the database against which to make the request.
+  *   `keys` (*type:* `list(GoogleApi.Datastore.V1.Model.Key.t)`, *default:* `nil`) - A list of keys with complete key paths whose numeric IDs should not be
+      auto-allocated.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -22,8 +22,8 @@ defmodule GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1ListIndexesResponse
 
   ## Attributes
 
-  - indexes (list(GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1Index.t)): The indexes. Defaults to `nil`.
-  - nextPageToken (String.t): The standard List next-page token. Defaults to `nil`.
+  *   `indexes` (*type:* `list(GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1Index.t)`, *default:* `nil`) - The indexes.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The standard List next-page token.
   """
 
   use GoogleApi.Gax.ModelBase

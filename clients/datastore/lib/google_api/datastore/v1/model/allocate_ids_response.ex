@@ -21,8 +21,8 @@ defmodule GoogleApi.Datastore.V1.Model.AllocateIdsResponse do
 
   ## Attributes
 
-  - keys (list(GoogleApi.Datastore.V1.Model.Key.t)): The keys specified in the request (in the same order), each with
-  its key path completed with a newly allocated ID. Defaults to `nil`.
+  *   `keys` (*type:* `list(GoogleApi.Datastore.V1.Model.Key.t)`, *default:* `nil`) - The keys specified in the request (in the same order), each with
+      its key path completed with a newly allocated ID.
   """
 
   use GoogleApi.Gax.ModelBase

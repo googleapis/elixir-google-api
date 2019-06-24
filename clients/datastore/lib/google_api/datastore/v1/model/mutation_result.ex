@@ -21,15 +21,15 @@ defmodule GoogleApi.Datastore.V1.Model.MutationResult do
 
   ## Attributes
 
-  - conflictDetected (boolean()): Whether a conflict was detected for this mutation. Always false when a
-  conflict detection strategy field is not set in the mutation. Defaults to `nil`.
-  - key (GoogleApi.Datastore.V1.Model.Key.t): The automatically allocated key.
-  Set only when the mutation allocated a key. Defaults to `nil`.
-  - version (String.t): The version of the entity on the server after processing the mutation. If
-  the mutation doesn't change anything on the server, then the version will
-  be the version of the current entity or, if no entity is present, a version
-  that is strictly greater than the version of any previous entity and less
-  than the version of any possible future entity. Defaults to `nil`.
+  *   `conflictDetected` (*type:* `boolean()`, *default:* `nil`) - Whether a conflict was detected for this mutation. Always false when a
+      conflict detection strategy field is not set in the mutation.
+  *   `key` (*type:* `GoogleApi.Datastore.V1.Model.Key.t`, *default:* `nil`) - The automatically allocated key.
+      Set only when the mutation allocated a key.
+  *   `version` (*type:* `String.t`, *default:* `nil`) - The version of the entity on the server after processing the mutation. If
+      the mutation doesn't change anything on the server, then the version will
+      be the version of the current entity or, if no entity is present, a version
+      that is strictly greater than the version of any previous entity and less
+      than the version of any possible future entity.
   """
 
   use GoogleApi.Gax.ModelBase

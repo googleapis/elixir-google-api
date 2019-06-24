@@ -25,18 +25,18 @@ defmodule GoogleApi.Datastore.V1.Model.Entity do
 
   ## Attributes
 
-  - key (GoogleApi.Datastore.V1.Model.Key.t): The entity's key.
+  *   `key` (*type:* `GoogleApi.Datastore.V1.Model.Key.t`, *default:* `nil`) - The entity's key.
 
-  An entity must have a key, unless otherwise documented (for example,
-  an entity in `Value.entity_value` may have no key).
-  An entity's kind is its key path's last element's kind,
-  or null if it has no key. Defaults to `nil`.
-  - properties (%{optional(String.t) => GoogleApi.Datastore.V1.Model.Value.t}): The entity's properties.
-  The map's keys are property names.
-  A property name matching regex `__.*__` is reserved.
-  A reserved property name is forbidden in certain documented contexts.
-  The name must not contain more than 500 characters.
-  The name cannot be `""`. Defaults to `nil`.
+      An entity must have a key, unless otherwise documented (for example,
+      an entity in `Value.entity_value` may have no key).
+      An entity's kind is its key path's last element's kind,
+      or null if it has no key.
+  *   `properties` (*type:* `%{optional(String.t) => GoogleApi.Datastore.V1.Model.Value.t}`, *default:* `nil`) - The entity's properties.
+      The map's keys are property names.
+      A property name matching regex `__.*__` is reserved.
+      A reserved property name is forbidden in certain documented contexts.
+      The name must not contain more than 500 characters.
+      The name cannot be `""`.
   """
 
   use GoogleApi.Gax.ModelBase
