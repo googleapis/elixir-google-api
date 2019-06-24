@@ -21,7 +21,7 @@ defmodule GoogleApi.SearchConsole.V1.Model.BlockedResource do
 
   ## Attributes
 
-  - url (String.t): URL of the blocked resource. Defaults to `nil`.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - URL of the blocked resource.
   """
 
   use GoogleApi.Gax.ModelBase

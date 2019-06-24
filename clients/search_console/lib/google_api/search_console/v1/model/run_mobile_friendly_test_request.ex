@@ -21,8 +21,8 @@ defmodule GoogleApi.SearchConsole.V1.Model.RunMobileFriendlyTestRequest do
 
   ## Attributes
 
-  - requestScreenshot (boolean()): Whether or not screenshot is requested. Default is false. Defaults to `nil`.
-  - url (String.t): URL for inspection. Defaults to `nil`.
+  *   `requestScreenshot` (*type:* `boolean()`, *default:* `nil`) - Whether or not screenshot is requested. Default is false.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - URL for inspection.
   """
 
   use GoogleApi.Gax.ModelBase

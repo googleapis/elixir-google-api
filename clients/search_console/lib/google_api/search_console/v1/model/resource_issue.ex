@@ -21,7 +21,7 @@ defmodule GoogleApi.SearchConsole.V1.Model.ResourceIssue do
 
   ## Attributes
 
-  - blockedResource (GoogleApi.SearchConsole.V1.Model.BlockedResource.t): Describes a blocked resource issue. Defaults to `nil`.
+  *   `blockedResource` (*type:* `GoogleApi.SearchConsole.V1.Model.BlockedResource.t`, *default:* `nil`) - Describes a blocked resource issue.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -22,11 +22,11 @@ defmodule GoogleApi.SearchConsole.V1.Model.RunMobileFriendlyTestResponse do
 
   ## Attributes
 
-  - mobileFriendliness (String.t): Test verdict, whether the page is mobile friendly or not. Defaults to `nil`.
-  - mobileFriendlyIssues (list(GoogleApi.SearchConsole.V1.Model.MobileFriendlyIssue.t)): List of mobile-usability issues. Defaults to `nil`.
-  - resourceIssues (list(GoogleApi.SearchConsole.V1.Model.ResourceIssue.t)): Information about embedded resources issues. Defaults to `nil`.
-  - screenshot (GoogleApi.SearchConsole.V1.Model.Image.t): Screenshot of the requested URL. Defaults to `nil`.
-  - testStatus (GoogleApi.SearchConsole.V1.Model.TestStatus.t): Final state of the test, can be either complete or an error. Defaults to `nil`.
+  *   `mobileFriendliness` (*type:* `String.t`, *default:* `nil`) - Test verdict, whether the page is mobile friendly or not.
+  *   `mobileFriendlyIssues` (*type:* `list(GoogleApi.SearchConsole.V1.Model.MobileFriendlyIssue.t)`, *default:* `nil`) - List of mobile-usability issues.
+  *   `resourceIssues` (*type:* `list(GoogleApi.SearchConsole.V1.Model.ResourceIssue.t)`, *default:* `nil`) - Information about embedded resources issues.
+  *   `screenshot` (*type:* `GoogleApi.SearchConsole.V1.Model.Image.t`, *default:* `nil`) - Screenshot of the requested URL.
+  *   `testStatus` (*type:* `GoogleApi.SearchConsole.V1.Model.TestStatus.t`, *default:* `nil`) - Final state of the test, can be either complete or an error.
   """
 
   use GoogleApi.Gax.ModelBase
