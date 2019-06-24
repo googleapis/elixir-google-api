@@ -21,9 +21,9 @@ defmodule GoogleApi.AppState.V1.Model.WriteResult do
 
   ## Attributes
 
-  - currentStateVersion (String.t): The version of the data for this key on the server. Defaults to `nil`.
-  - kind (String.t): Uniquely identifies the type of this resource. Value is always the fixed string appstate#writeResult. Defaults to `appstate#writeResult`.
-  - stateKey (integer()): The written key. Defaults to `nil`.
+  *   `currentStateVersion` (*type:* `String.t`, *default:* `nil`) - The version of the data for this key on the server.
+  *   `kind` (*type:* `String.t`, *default:* `appstate#writeResult`) - Uniquely identifies the type of this resource. Value is always the fixed string appstate#writeResult.
+  *   `stateKey` (*type:* `integer()`, *default:* `nil`) - The written key.
   """
 
   use GoogleApi.Gax.ModelBase

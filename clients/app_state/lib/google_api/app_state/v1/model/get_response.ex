@@ -21,10 +21,10 @@ defmodule GoogleApi.AppState.V1.Model.GetResponse do
 
   ## Attributes
 
-  - currentStateVersion (String.t): The current app state version. Defaults to `nil`.
-  - data (String.t): The requested data. Defaults to `nil`.
-  - kind (String.t): Uniquely identifies the type of this resource. Value is always the fixed string appstate#getResponse. Defaults to `appstate#getResponse`.
-  - stateKey (integer()): The key for the data. Defaults to `nil`.
+  *   `currentStateVersion` (*type:* `String.t`, *default:* `nil`) - The current app state version.
+  *   `data` (*type:* `String.t`, *default:* `nil`) - The requested data.
+  *   `kind` (*type:* `String.t`, *default:* `appstate#getResponse`) - Uniquely identifies the type of this resource. Value is always the fixed string appstate#getResponse.
+  *   `stateKey` (*type:* `integer()`, *default:* `nil`) - The key for the data.
   """
 
   use GoogleApi.Gax.ModelBase

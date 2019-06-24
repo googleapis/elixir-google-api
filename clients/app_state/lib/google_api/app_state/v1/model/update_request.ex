@@ -21,8 +21,8 @@ defmodule GoogleApi.AppState.V1.Model.UpdateRequest do
 
   ## Attributes
 
-  - data (String.t): The new app state data that your application is trying to update with. Defaults to `nil`.
-  - kind (String.t): Uniquely identifies the type of this resource. Value is always the fixed string appstate#updateRequest. Defaults to `appstate#updateRequest`.
+  *   `data` (*type:* `String.t`, *default:* `nil`) - The new app state data that your application is trying to update with.
+  *   `kind` (*type:* `String.t`, *default:* `appstate#updateRequest`) - Uniquely identifies the type of this resource. Value is always the fixed string appstate#updateRequest.
   """
 
   use GoogleApi.Gax.ModelBase

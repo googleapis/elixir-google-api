@@ -21,9 +21,9 @@ defmodule GoogleApi.AppState.V1.Model.ListResponse do
 
   ## Attributes
 
-  - items (list(GoogleApi.AppState.V1.Model.GetResponse.t)): The app state data. Defaults to `nil`.
-  - kind (String.t): Uniquely identifies the type of this resource. Value is always the fixed string appstate#listResponse. Defaults to `appstate#listResponse`.
-  - maximumKeyCount (integer()): The maximum number of keys allowed for this user. Defaults to `nil`.
+  *   `items` (*type:* `list(GoogleApi.AppState.V1.Model.GetResponse.t)`, *default:* `nil`) - The app state data.
+  *   `kind` (*type:* `String.t`, *default:* `appstate#listResponse`) - Uniquely identifies the type of this resource. Value is always the fixed string appstate#listResponse.
+  *   `maximumKeyCount` (*type:* `integer()`, *default:* `nil`) - The maximum number of keys allowed for this user.
   """
 
   use GoogleApi.Gax.ModelBase
