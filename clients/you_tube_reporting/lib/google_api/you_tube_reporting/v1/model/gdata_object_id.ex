@@ -21,9 +21,9 @@ defmodule GoogleApi.YouTubeReporting.V1.Model.GdataObjectId do
 
   ## Attributes
 
-  - bucketName (String.t): gdata Defaults to `nil`.
-  - generation (String.t): gdata Defaults to `nil`.
-  - objectName (String.t): gdata Defaults to `nil`.
+  *   `bucketName` (*type:* `String.t`, *default:* `nil`) - gdata
+  *   `generation` (*type:* `String.t`, *default:* `nil`) - gdata
+  *   `objectName` (*type:* `String.t`, *default:* `nil`) - gdata
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,15 +21,15 @@ defmodule GoogleApi.YouTubeReporting.V1.Model.Job do
 
   ## Attributes
 
-  - createTime (DateTime.t): The creation date/time of the job. Defaults to `nil`.
-  - expireTime (DateTime.t): The date/time when this job will expire/expired. After a job expired, no
-  new reports are generated. Defaults to `nil`.
-  - id (String.t): The server-generated ID of the job (max. 40 characters). Defaults to `nil`.
-  - name (String.t): The name of the job (max. 100 characters). Defaults to `nil`.
-  - reportTypeId (String.t): The type of reports this job creates. Corresponds to the ID of a
-  ReportType. Defaults to `nil`.
-  - systemManaged (boolean()): True if this a system-managed job that cannot be modified by the user;
-  otherwise false. Defaults to `nil`.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The creation date/time of the job.
+  *   `expireTime` (*type:* `DateTime.t`, *default:* `nil`) - The date/time when this job will expire/expired. After a job expired, no
+      new reports are generated.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The server-generated ID of the job (max. 40 characters).
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the job (max. 100 characters).
+  *   `reportTypeId` (*type:* `String.t`, *default:* `nil`) - The type of reports this job creates. Corresponds to the ID of a
+      ReportType.
+  *   `systemManaged` (*type:* `boolean()`, *default:* `nil`) - True if this a system-managed job that cannot be modified by the user;
+      otherwise false.
   """
 
   use GoogleApi.Gax.ModelBase

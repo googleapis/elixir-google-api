@@ -21,11 +21,11 @@ defmodule GoogleApi.YouTubeReporting.V1.Model.GdataBlobstore2Info do
 
   ## Attributes
 
-  - blobGeneration (String.t): gdata Defaults to `nil`.
-  - blobId (String.t): gdata Defaults to `nil`.
-  - downloadReadHandle (String.t): gdata Defaults to `nil`.
-  - readToken (String.t): gdata Defaults to `nil`.
-  - uploadMetadataContainer (String.t): gdata Defaults to `nil`.
+  *   `blobGeneration` (*type:* `String.t`, *default:* `nil`) - gdata
+  *   `blobId` (*type:* `String.t`, *default:* `nil`) - gdata
+  *   `downloadReadHandle` (*type:* `String.t`, *default:* `nil`) - gdata
+  *   `readToken` (*type:* `String.t`, *default:* `nil`) - gdata
+  *   `uploadMetadataContainer` (*type:* `String.t`, *default:* `nil`) - gdata
   """
 
   use GoogleApi.Gax.ModelBase

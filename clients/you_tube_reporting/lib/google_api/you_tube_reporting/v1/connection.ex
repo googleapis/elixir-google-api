@@ -20,6 +20,8 @@ defmodule GoogleApi.YouTubeReporting.V1.Connection do
   Handle Tesla connections for GoogleApi.YouTubeReporting.V1.
   """
 
+  @type t :: Tesla.Env.client()
+
   use GoogleApi.Gax.Connection,
     scopes: [
       # View monetary and non-monetary YouTube Analytics reports for your YouTube content

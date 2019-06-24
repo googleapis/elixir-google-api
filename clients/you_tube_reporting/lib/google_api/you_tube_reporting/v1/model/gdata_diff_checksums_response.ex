@@ -21,11 +21,11 @@ defmodule GoogleApi.YouTubeReporting.V1.Model.GdataDiffChecksumsResponse do
 
   ## Attributes
 
-  - checksumsLocation (GoogleApi.YouTubeReporting.V1.Model.GdataCompositeMedia.t): gdata Defaults to `nil`.
-  - chunkSizeBytes (String.t): gdata Defaults to `nil`.
-  - objectLocation (GoogleApi.YouTubeReporting.V1.Model.GdataCompositeMedia.t): gdata Defaults to `nil`.
-  - objectSizeBytes (String.t): gdata Defaults to `nil`.
-  - objectVersion (String.t): gdata Defaults to `nil`.
+  *   `checksumsLocation` (*type:* `GoogleApi.YouTubeReporting.V1.Model.GdataCompositeMedia.t`, *default:* `nil`) - gdata
+  *   `chunkSizeBytes` (*type:* `String.t`, *default:* `nil`) - gdata
+  *   `objectLocation` (*type:* `GoogleApi.YouTubeReporting.V1.Model.GdataCompositeMedia.t`, *default:* `nil`) - gdata
+  *   `objectSizeBytes` (*type:* `String.t`, *default:* `nil`) - gdata
+  *   `objectVersion` (*type:* `String.t`, *default:* `nil`) - gdata
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,11 +21,11 @@ defmodule GoogleApi.YouTubeReporting.V1.Model.GdataContentTypeInfo do
 
   ## Attributes
 
-  - bestGuess (String.t): gdata Defaults to `nil`.
-  - fromBytes (String.t): gdata Defaults to `nil`.
-  - fromFileName (String.t): gdata Defaults to `nil`.
-  - fromHeader (String.t): gdata Defaults to `nil`.
-  - fromUrlPath (String.t): gdata Defaults to `nil`.
+  *   `bestGuess` (*type:* `String.t`, *default:* `nil`) - gdata
+  *   `fromBytes` (*type:* `String.t`, *default:* `nil`) - gdata
+  *   `fromFileName` (*type:* `String.t`, *default:* `nil`) - gdata
+  *   `fromHeader` (*type:* `String.t`, *default:* `nil`) - gdata
+  *   `fromUrlPath` (*type:* `String.t`, *default:* `nil`) - gdata
   """
 
   use GoogleApi.Gax.ModelBase

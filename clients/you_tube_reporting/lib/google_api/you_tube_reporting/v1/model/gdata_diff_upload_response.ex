@@ -21,8 +21,8 @@ defmodule GoogleApi.YouTubeReporting.V1.Model.GdataDiffUploadResponse do
 
   ## Attributes
 
-  - objectVersion (String.t): gdata Defaults to `nil`.
-  - originalObject (GoogleApi.YouTubeReporting.V1.Model.GdataCompositeMedia.t): gdata Defaults to `nil`.
+  *   `objectVersion` (*type:* `String.t`, *default:* `nil`) - gdata
+  *   `originalObject` (*type:* `GoogleApi.YouTubeReporting.V1.Model.GdataCompositeMedia.t`, *default:* `nil`) - gdata
   """
 
   use GoogleApi.Gax.ModelBase
