@@ -78,7 +78,7 @@ defmodule GoogleApis.Generator.ElixirGenerator do
 
   defp write_connection(token) do
     scopes = scopes_for(token.rest_description)
-    otp_app = "google_api_#{Macro.underscore(token.rest_description.name)}"
+    otp_app = "google_api_#{token.library_name}"
 
     path = Path.join(token.base_dir, "connection.ex")
     IO.puts("Writing connection.ex.")
