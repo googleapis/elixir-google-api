@@ -25,6 +25,7 @@ defmodule TestClient.Api.Pets do
     request =
       Request.new()
       |> Request.method(:get)
+      |> Request.library_version("1.2.3")
       |> Request.url("/v1/stores/{store}/pets", %{
         "store" => URI.encode_www_form(store)
       })

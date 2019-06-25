@@ -19,7 +19,7 @@ defmodule GoogleApi.Gax.Request do
 
   @path_template_regex ~r/{(\+?[^}]+)}/i
 
-  defstruct method: :get, url: "", body: [], query: [], file: [], header: []
+  defstruct method: :get, url: "", body: [], query: [], file: [], header: [], library_version: ""
 
   @type param_location :: :body | :query | :header | :file
   @type method :: :head | :get | :delete | :trace | :options | :post | :put | :patch
@@ -29,12 +29,33 @@ defmodule GoogleApi.Gax.Request do
           body: keyword(),
           query: keyword(),
           file: keyword(),
-          header: keyword()
+          header: keyword(),
+          library_version: String.t()
         }
 
   @spec new() :: GoogleApi.Gax.Request.t()
   def new do
     %__MODULE__{}
+  end
+
+  @spec library_version(GoogleApi.Gax.Request.t()) :: {:ok, String.t()} | :error
+  def library_version(request), do: Map.fetch(request, :library_version)
+
+  @doc """
+  Specify the library version when building a request
+
+  ## Parameters
+
+  *   `request` (*type:* `GoogleApi.Gax.Request.t`) - Collected request options
+  *   `version` (*type:* `String`) - Library version
+
+  ## Returns
+
+  *   `GoogleApi.Gax.Request.t`
+  """
+  @spec library_version(GoogleApi.Gax.Request.t(), String.t()) :: GoogleApi.Gax.Request.t()
+  def library_version(request, version) do
+    %{request | library_version: version}
   end
 
   @spec method(GoogleApi.Gax.Request.t()) :: {:ok, atom()} | :error
@@ -45,12 +66,12 @@ defmodule GoogleApi.Gax.Request do
 
   ## Parameters
 
-  - request (Map) - Collected request options
-  - m (String) - Request method
+  *   `request` (*type:* `GoogleApi.Gax.Request.t`) - Collected request options
+  *   `m` (*type:* `String`) - Request method
 
   ## Returns
 
-  Map
+  *   `GoogleApi.Gax.Request.t`
   """
   @spec method(GoogleApi.Gax.Request.t(), atom()) :: GoogleApi.Gax.Request.t()
   def method(request, m) do
@@ -61,16 +82,16 @@ defmodule GoogleApi.Gax.Request do
   def url(request), do: Map.fetch(request, :url)
 
   @doc """
-  Specify the request method when building a request
+  Specify the request URL when building a request
 
   ## Parameters
 
-  - request (Map) - Collected request options
-  - u (String) - Request URL
+  *   `request` (*type:* `GoogleApi.Gax.Request.t`) - Collected request options
+  *   `u` (*type:* `String`) - Request URL
 
   ## Returns
 
-  Map
+  *   `GoogleApi.Gax.Request.t`
   """
   @spec url(GoogleApi.Gax.Request.t(), String.t(), map()) :: GoogleApi.Gax.Request.t()
   def url(request, u, replacements) do
@@ -100,13 +121,13 @@ defmodule GoogleApi.Gax.Request do
 
   ## Parameters
 
-  - request (Map) - Collected request options
-  - definitions (Map) - Map of parameter name to parameter location.
-  - options (KeywordList) - The provided optional parameters
+  *   `request` (*type:* `GoogleApi.Gax.Request.t`) - Collected request options
+  *   `definitions` (*type:* `Map`) - Map of parameter name to parameter location
+  *   `options` (*type:* `keyword()`) - The provided optional parameters
 
   ## Returns
 
-  Map
+  *   `GoogleApi.Gax.Request.t`
   """
   @spec add_optional_params(
           GoogleApi.Gax.Request.t(),
@@ -132,14 +153,14 @@ defmodule GoogleApi.Gax.Request do
 
   ## Parameters
 
-  - request (Map) - Collected request options
-  - location (atom) - Where to put the parameter
-  - key (atom) - The name of the parameter
-  - value (any) - The value of the parameter
+  *   `request` (*type:* `GoogleApi.Gax.Request.t`) - Collected request options
+  *   `location` (*type:* `atom()`) - Where to put the parameter
+  *   `key` (*type:* `atom()`) - The name of the parameter
+  *   `value` (*type:* `any()`) - The value of the parameter
 
   ## Returns
 
-  Map
+  *   `GoogleApi.Gax.Request.t`
   """
   @spec add_param(GoogleApi.Gax.Request.t(), param_location(), atom(), any()) ::
           GoogleApi.Gax.Request.t()

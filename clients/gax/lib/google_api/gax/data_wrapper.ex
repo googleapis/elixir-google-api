@@ -19,12 +19,12 @@ defmodule GoogleApi.Gax.DataWrapper do
   An endpoint response may be declared as type "Pet" and "data-wrapped" which
   means the response would have an outer object with a single "data" key:
 
-  {
-    "data": { // real pet data
-      "id": 123,
-      "name": "Fido"
-    }
-  }
+      {
+        "data": { // real pet data
+          "id": 123,
+          "name": "Fido"
+        }
+      }
   """
 
   defstruct [:data]

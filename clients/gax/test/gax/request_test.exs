@@ -30,6 +30,14 @@ defmodule Gax.RequestTest do
     assert :post == request.method
   end
 
+  test "sets library version" do
+    request =
+      Request.new()
+      |> Request.library_version("1.2.3")
+
+    assert "1.2.3" == request.library_version
+  end
+
   test "sets url" do
     request =
       Request.new()
