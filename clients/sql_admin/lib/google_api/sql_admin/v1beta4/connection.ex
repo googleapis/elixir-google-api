@@ -30,6 +30,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Connection do
       # Manage your Google SQL Service instances
       "https://www.googleapis.com/auth/sqlservice.admin"
     ],
-    otp_app: :google_api_sqladmin,
+    otp_app: :google_api_sql_admin,
     base_url: "https://www.googleapis.com/sql/v1beta4/"
 end
