@@ -21,7 +21,7 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySignOutU
 
   ## Attributes
 
-  - localId (String.t): The local ID of the user. Defaults to `nil`.
+  *   `localId` (*type:* `String.t`, *default:* `nil`) - The local ID of the user.
   """
 
   use GoogleApi.Gax.ModelBase

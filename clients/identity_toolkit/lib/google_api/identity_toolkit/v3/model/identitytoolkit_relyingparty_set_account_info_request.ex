@@ -21,29 +21,29 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySetAccou
 
   ## Attributes
 
-  - captchaChallenge (String.t): The captcha challenge. Defaults to `nil`.
-  - captchaResponse (String.t): Response to the captcha. Defaults to `nil`.
-  - createdAt (String.t): The timestamp when the account is created. Defaults to `nil`.
-  - customAttributes (String.t): The custom attributes to be set in the user's id token. Defaults to `nil`.
-  - delegatedProjectNumber (String.t): GCP project number of the requesting delegated app. Currently only intended for Firebase V1 migration. Defaults to `nil`.
-  - deleteAttribute (list(String.t)): The attributes users request to delete. Defaults to `nil`.
-  - deleteProvider (list(String.t)): The IDPs the user request to delete. Defaults to `nil`.
-  - disableUser (boolean()): Whether to disable the user. Defaults to `nil`.
-  - displayName (String.t): The name of the user. Defaults to `nil`.
-  - email (String.t): The email of the user. Defaults to `nil`.
-  - emailVerified (boolean()): Mark the email as verified or not. Defaults to `nil`.
-  - idToken (String.t): The GITKit token of the authenticated user. Defaults to `nil`.
-  - instanceId (String.t): Instance id token of the app. Defaults to `nil`.
-  - lastLoginAt (String.t): Last login timestamp. Defaults to `nil`.
-  - localId (String.t): The local ID of the user. Defaults to `nil`.
-  - oobCode (String.t): The out-of-band code of the change email request. Defaults to `nil`.
-  - password (String.t): The new password of the user. Defaults to `nil`.
-  - phoneNumber (String.t): Privileged caller can update user with specified phone number. Defaults to `nil`.
-  - photoUrl (String.t): The photo url of the user. Defaults to `nil`.
-  - provider (list(String.t)): The associated IDPs of the user. Defaults to `nil`.
-  - returnSecureToken (boolean()): Whether return sts id token and refresh token instead of gitkit token. Defaults to `nil`.
-  - upgradeToFederatedLogin (boolean()): Mark the user to upgrade to federated login. Defaults to `nil`.
-  - validSince (String.t): Timestamp in seconds for valid login token. Defaults to `nil`.
+  *   `captchaChallenge` (*type:* `String.t`, *default:* `nil`) - The captcha challenge.
+  *   `captchaResponse` (*type:* `String.t`, *default:* `nil`) - Response to the captcha.
+  *   `createdAt` (*type:* `String.t`, *default:* `nil`) - The timestamp when the account is created.
+  *   `customAttributes` (*type:* `String.t`, *default:* `nil`) - The custom attributes to be set in the user's id token.
+  *   `delegatedProjectNumber` (*type:* `String.t`, *default:* `nil`) - GCP project number of the requesting delegated app. Currently only intended for Firebase V1 migration.
+  *   `deleteAttribute` (*type:* `list(String.t)`, *default:* `nil`) - The attributes users request to delete.
+  *   `deleteProvider` (*type:* `list(String.t)`, *default:* `nil`) - The IDPs the user request to delete.
+  *   `disableUser` (*type:* `boolean()`, *default:* `nil`) - Whether to disable the user.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The name of the user.
+  *   `email` (*type:* `String.t`, *default:* `nil`) - The email of the user.
+  *   `emailVerified` (*type:* `boolean()`, *default:* `nil`) - Mark the email as verified or not.
+  *   `idToken` (*type:* `String.t`, *default:* `nil`) - The GITKit token of the authenticated user.
+  *   `instanceId` (*type:* `String.t`, *default:* `nil`) - Instance id token of the app.
+  *   `lastLoginAt` (*type:* `String.t`, *default:* `nil`) - Last login timestamp.
+  *   `localId` (*type:* `String.t`, *default:* `nil`) - The local ID of the user.
+  *   `oobCode` (*type:* `String.t`, *default:* `nil`) - The out-of-band code of the change email request.
+  *   `password` (*type:* `String.t`, *default:* `nil`) - The new password of the user.
+  *   `phoneNumber` (*type:* `String.t`, *default:* `nil`) - Privileged caller can update user with specified phone number.
+  *   `photoUrl` (*type:* `String.t`, *default:* `nil`) - The photo url of the user.
+  *   `provider` (*type:* `list(String.t)`, *default:* `nil`) - The associated IDPs of the user.
+  *   `returnSecureToken` (*type:* `boolean()`, *default:* `nil`) - Whether return sts id token and refresh token instead of gitkit token.
+  *   `upgradeToFederatedLogin` (*type:* `boolean()`, *default:* `nil`) - Mark the user to upgrade to federated login.
+  *   `validSince` (*type:* `String.t`, *default:* `nil`) - Timestamp in seconds for valid login token.
   """
 
   use GoogleApi.Gax.ModelBase

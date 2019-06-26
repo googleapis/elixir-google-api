@@ -21,18 +21,18 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.SetAccountInfoResponse do
 
   ## Attributes
 
-  - displayName (String.t): The name of the user. Defaults to `nil`.
-  - email (String.t): The email of the user. Defaults to `nil`.
-  - emailVerified (boolean()): If email has been verified. Defaults to `nil`.
-  - expiresIn (String.t): If idToken is STS id token, then this field will be expiration time of STS id token in seconds. Defaults to `nil`.
-  - idToken (String.t): The Gitkit id token to login the newly sign up user. Defaults to `nil`.
-  - kind (String.t): The fixed string "identitytoolkit#SetAccountInfoResponse". Defaults to `identitytoolkit#SetAccountInfoResponse`.
-  - localId (String.t): The local ID of the user. Defaults to `nil`.
-  - newEmail (String.t): The new email the user attempts to change to. Defaults to `nil`.
-  - passwordHash (String.t): The user's hashed password. Defaults to `nil`.
-  - photoUrl (String.t): The photo url of the user. Defaults to `nil`.
-  - providerUserInfo (list(GoogleApi.IdentityToolkit.V3.Model.SetAccountInfoResponseProviderUserInfo.t)): The user's profiles at the associated IdPs. Defaults to `nil`.
-  - refreshToken (String.t): If idToken is STS id token, then this field will be refresh token. Defaults to `nil`.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The name of the user.
+  *   `email` (*type:* `String.t`, *default:* `nil`) - The email of the user.
+  *   `emailVerified` (*type:* `boolean()`, *default:* `nil`) - If email has been verified.
+  *   `expiresIn` (*type:* `String.t`, *default:* `nil`) - If idToken is STS id token, then this field will be expiration time of STS id token in seconds.
+  *   `idToken` (*type:* `String.t`, *default:* `nil`) - The Gitkit id token to login the newly sign up user.
+  *   `kind` (*type:* `String.t`, *default:* `identitytoolkit#SetAccountInfoResponse`) - The fixed string "identitytoolkit#SetAccountInfoResponse".
+  *   `localId` (*type:* `String.t`, *default:* `nil`) - The local ID of the user.
+  *   `newEmail` (*type:* `String.t`, *default:* `nil`) - The new email the user attempts to change to.
+  *   `passwordHash` (*type:* `String.t`, *default:* `nil`) - The user's hashed password.
+  *   `photoUrl` (*type:* `String.t`, *default:* `nil`) - The photo url of the user.
+  *   `providerUserInfo` (*type:* `list(GoogleApi.IdentityToolkit.V3.Model.SetAccountInfoResponseProviderUserInfo.t)`, *default:* `nil`) - The user's profiles at the associated IdPs.
+  *   `refreshToken` (*type:* `String.t`, *default:* `nil`) - If idToken is STS id token, then this field will be refresh token.
   """
 
   use GoogleApi.Gax.ModelBase

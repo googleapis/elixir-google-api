@@ -21,8 +21,8 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.UploadAccountResponse do
 
   ## Attributes
 
-  - error (list(GoogleApi.IdentityToolkit.V3.Model.UploadAccountResponseError.t)): The error encountered while processing the account info. Defaults to `nil`.
-  - kind (String.t): The fixed string "identitytoolkit#UploadAccountResponse". Defaults to `identitytoolkit#UploadAccountResponse`.
+  *   `error` (*type:* `list(GoogleApi.IdentityToolkit.V3.Model.UploadAccountResponseError.t)`, *default:* `nil`) - The error encountered while processing the account info.
+  *   `kind` (*type:* `String.t`, *default:* `identitytoolkit#UploadAccountResponse`) - The fixed string "identitytoolkit#UploadAccountResponse".
   """
 
   use GoogleApi.Gax.ModelBase

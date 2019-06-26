@@ -21,7 +21,7 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySetProje
 
   ## Attributes
 
-  - projectId (String.t): Project ID of the relying party. Defaults to `nil`.
+  *   `projectId` (*type:* `String.t`, *default:* `nil`) - Project ID of the relying party.
   """
 
   use GoogleApi.Gax.ModelBase

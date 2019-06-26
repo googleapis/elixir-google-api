@@ -21,8 +21,8 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.GetAccountInfoResponse do
 
   ## Attributes
 
-  - kind (String.t): The fixed string "identitytoolkit#GetAccountInfoResponse". Defaults to `identitytoolkit#GetAccountInfoResponse`.
-  - users (list(GoogleApi.IdentityToolkit.V3.Model.UserInfo.t)): The info of the users. Defaults to `nil`.
+  *   `kind` (*type:* `String.t`, *default:* `identitytoolkit#GetAccountInfoResponse`) - The fixed string "identitytoolkit#GetAccountInfoResponse".
+  *   `users` (*type:* `list(GoogleApi.IdentityToolkit.V3.Model.UserInfo.t)`, *default:* `nil`) - The info of the users.
   """
 
   use GoogleApi.Gax.ModelBase

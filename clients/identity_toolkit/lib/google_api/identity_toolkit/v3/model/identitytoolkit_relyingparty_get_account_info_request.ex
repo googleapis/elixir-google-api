@@ -21,11 +21,11 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyGetAccou
 
   ## Attributes
 
-  - delegatedProjectNumber (String.t): GCP project number of the requesting delegated app. Currently only intended for Firebase V1 migration. Defaults to `nil`.
-  - email (list(String.t)): The list of emails of the users to inquiry. Defaults to `nil`.
-  - idToken (String.t): The GITKit token of the authenticated user. Defaults to `nil`.
-  - localId (list(String.t)): The list of local ID's of the users to inquiry. Defaults to `nil`.
-  - phoneNumber (list(String.t)): Privileged caller can query users by specified phone number. Defaults to `nil`.
+  *   `delegatedProjectNumber` (*type:* `String.t`, *default:* `nil`) - GCP project number of the requesting delegated app. Currently only intended for Firebase V1 migration.
+  *   `email` (*type:* `list(String.t)`, *default:* `nil`) - The list of emails of the users to inquiry.
+  *   `idToken` (*type:* `String.t`, *default:* `nil`) - The GITKit token of the authenticated user.
+  *   `localId` (*type:* `list(String.t)`, *default:* `nil`) - The list of local ID's of the users to inquiry.
+  *   `phoneNumber` (*type:* `list(String.t)`, *default:* `nil`) - Privileged caller can query users by specified phone number.
   """
 
   use GoogleApi.Gax.ModelBase

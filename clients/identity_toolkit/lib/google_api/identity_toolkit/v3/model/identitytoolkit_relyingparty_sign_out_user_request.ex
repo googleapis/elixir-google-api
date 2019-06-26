@@ -21,8 +21,8 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySignOutU
 
   ## Attributes
 
-  - instanceId (String.t): Instance id token of the app. Defaults to `nil`.
-  - localId (String.t): The local ID of the user. Defaults to `nil`.
+  *   `instanceId` (*type:* `String.t`, *default:* `nil`) - Instance id token of the app.
+  *   `localId` (*type:* `String.t`, *default:* `nil`) - The local ID of the user.
   """
 
   use GoogleApi.Gax.ModelBase

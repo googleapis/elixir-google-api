@@ -21,8 +21,8 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.UploadAccountResponseError do
 
   ## Attributes
 
-  - index (integer()): The index of the malformed account, starting from 0. Defaults to `nil`.
-  - message (String.t): Detailed error message for the account info. Defaults to `nil`.
+  *   `index` (*type:* `integer()`, *default:* `nil`) - The index of the malformed account, starting from 0.
+  *   `message` (*type:* `String.t`, *default:* `nil`) - Detailed error message for the account info.
   """
 
   use GoogleApi.Gax.ModelBase

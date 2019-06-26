@@ -21,19 +21,19 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyVerifyAs
 
   ## Attributes
 
-  - autoCreate (boolean()): When it's true, automatically creates a new account if the user doesn't exist. When it's false, allows existing user to sign in normally and throws exception if the user doesn't exist. Defaults to `nil`.
-  - delegatedProjectNumber (String.t): GCP project number of the requesting delegated app. Currently only intended for Firebase V1 migration. Defaults to `nil`.
-  - idToken (String.t): The GITKit token of the authenticated user. Defaults to `nil`.
-  - instanceId (String.t): Instance id token of the app. Defaults to `nil`.
-  - pendingIdToken (String.t): The GITKit token for the non-trusted IDP pending to be confirmed by the user. Defaults to `nil`.
-  - postBody (String.t): The post body if the request is a HTTP POST. Defaults to `nil`.
-  - requestUri (String.t): The URI to which the IDP redirects the user back. It may contain federated login result params added by the IDP. Defaults to `nil`.
-  - returnIdpCredential (boolean()): Whether return 200 and IDP credential rather than throw exception when federated id is already linked. Defaults to `nil`.
-  - returnRefreshToken (boolean()): Whether to return refresh tokens. Defaults to `nil`.
-  - returnSecureToken (boolean()): Whether return sts id token and refresh token instead of gitkit token. Defaults to `nil`.
-  - sessionId (String.t): Session ID, which should match the one in previous createAuthUri request. Defaults to `nil`.
-  - tenantId (String.t): For multi-tenant use cases, in order to construct sign-in URL with the correct IDP parameters, Firebear needs to know which Tenant to retrieve IDP configs from. Defaults to `nil`.
-  - tenantProjectNumber (String.t): Tenant project number to be used for idp discovery. Defaults to `nil`.
+  *   `autoCreate` (*type:* `boolean()`, *default:* `nil`) - When it's true, automatically creates a new account if the user doesn't exist. When it's false, allows existing user to sign in normally and throws exception if the user doesn't exist.
+  *   `delegatedProjectNumber` (*type:* `String.t`, *default:* `nil`) - GCP project number of the requesting delegated app. Currently only intended for Firebase V1 migration.
+  *   `idToken` (*type:* `String.t`, *default:* `nil`) - The GITKit token of the authenticated user.
+  *   `instanceId` (*type:* `String.t`, *default:* `nil`) - Instance id token of the app.
+  *   `pendingIdToken` (*type:* `String.t`, *default:* `nil`) - The GITKit token for the non-trusted IDP pending to be confirmed by the user.
+  *   `postBody` (*type:* `String.t`, *default:* `nil`) - The post body if the request is a HTTP POST.
+  *   `requestUri` (*type:* `String.t`, *default:* `nil`) - The URI to which the IDP redirects the user back. It may contain federated login result params added by the IDP.
+  *   `returnIdpCredential` (*type:* `boolean()`, *default:* `nil`) - Whether return 200 and IDP credential rather than throw exception when federated id is already linked.
+  *   `returnRefreshToken` (*type:* `boolean()`, *default:* `nil`) - Whether to return refresh tokens.
+  *   `returnSecureToken` (*type:* `boolean()`, *default:* `nil`) - Whether return sts id token and refresh token instead of gitkit token.
+  *   `sessionId` (*type:* `String.t`, *default:* `nil`) - Session ID, which should match the one in previous createAuthUri request.
+  *   `tenantId` (*type:* `String.t`, *default:* `nil`) - For multi-tenant use cases, in order to construct sign-in URL with the correct IDP parameters, Firebear needs to know which Tenant to retrieve IDP configs from.
+  *   `tenantProjectNumber` (*type:* `String.t`, *default:* `nil`) - Tenant project number to be used for idp discovery.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,25 +21,25 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.UserInfo do
 
   ## Attributes
 
-  - createdAt (String.t): User creation timestamp. Defaults to `nil`.
-  - customAttributes (String.t): The custom attributes to be set in the user's id token. Defaults to `nil`.
-  - customAuth (boolean()): Whether the user is authenticated by the developer. Defaults to `nil`.
-  - disabled (boolean()): Whether the user is disabled. Defaults to `nil`.
-  - displayName (String.t): The name of the user. Defaults to `nil`.
-  - email (String.t): The email of the user. Defaults to `nil`.
-  - emailVerified (boolean()): Whether the email has been verified. Defaults to `nil`.
-  - lastLoginAt (String.t): last login timestamp. Defaults to `nil`.
-  - localId (String.t): The local ID of the user. Defaults to `nil`.
-  - passwordHash (String.t): The user's hashed password. Defaults to `nil`.
-  - passwordUpdatedAt (float()): The timestamp when the password was last updated. Defaults to `nil`.
-  - phoneNumber (String.t): User's phone number. Defaults to `nil`.
-  - photoUrl (String.t): The URL of the user profile photo. Defaults to `nil`.
-  - providerUserInfo (list(GoogleApi.IdentityToolkit.V3.Model.UserInfoProviderUserInfo.t)): The IDP of the user. Defaults to `nil`.
-  - rawPassword (String.t): The user's plain text password. Defaults to `nil`.
-  - salt (String.t): The user's password salt. Defaults to `nil`.
-  - screenName (String.t): User's screen name at Twitter or login name at Github. Defaults to `nil`.
-  - validSince (String.t): Timestamp in seconds for valid login token. Defaults to `nil`.
-  - version (integer()): Version of the user's password. Defaults to `nil`.
+  *   `createdAt` (*type:* `String.t`, *default:* `nil`) - User creation timestamp.
+  *   `customAttributes` (*type:* `String.t`, *default:* `nil`) - The custom attributes to be set in the user's id token.
+  *   `customAuth` (*type:* `boolean()`, *default:* `nil`) - Whether the user is authenticated by the developer.
+  *   `disabled` (*type:* `boolean()`, *default:* `nil`) - Whether the user is disabled.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The name of the user.
+  *   `email` (*type:* `String.t`, *default:* `nil`) - The email of the user.
+  *   `emailVerified` (*type:* `boolean()`, *default:* `nil`) - Whether the email has been verified.
+  *   `lastLoginAt` (*type:* `String.t`, *default:* `nil`) - last login timestamp.
+  *   `localId` (*type:* `String.t`, *default:* `nil`) - The local ID of the user.
+  *   `passwordHash` (*type:* `String.t`, *default:* `nil`) - The user's hashed password.
+  *   `passwordUpdatedAt` (*type:* `float()`, *default:* `nil`) - The timestamp when the password was last updated.
+  *   `phoneNumber` (*type:* `String.t`, *default:* `nil`) - User's phone number.
+  *   `photoUrl` (*type:* `String.t`, *default:* `nil`) - The URL of the user profile photo.
+  *   `providerUserInfo` (*type:* `list(GoogleApi.IdentityToolkit.V3.Model.UserInfoProviderUserInfo.t)`, *default:* `nil`) - The IDP of the user.
+  *   `rawPassword` (*type:* `String.t`, *default:* `nil`) - The user's plain text password.
+  *   `salt` (*type:* `String.t`, *default:* `nil`) - The user's password salt.
+  *   `screenName` (*type:* `String.t`, *default:* `nil`) - User's screen name at Twitter or login name at Github.
+  *   `validSince` (*type:* `String.t`, *default:* `nil`) - Timestamp in seconds for valid login token.
+  *   `version` (*type:* `integer()`, *default:* `nil`) - Version of the user's password.
   """
 
   use GoogleApi.Gax.ModelBase

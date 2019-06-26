@@ -28,23 +28,24 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
 
   ## Parameters
 
-  - connection (GoogleApi.IdentityToolkit.V3.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyCreateAuthUriRequest.t): 
+  *   `connection` (*type:* `GoogleApi.IdentityToolkit.V3.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyCreateAuthUriRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.IdentityToolkit.V3.Model.CreateAuthUriResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.IdentityToolkit.V3.Model.CreateAuthUriResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec identitytoolkit_relyingparty_create_auth_uri(Tesla.Env.client(), keyword()) ::
+  @spec identitytoolkit_relyingparty_create_auth_uri(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.IdentityToolkit.V3.Model.CreateAuthUriResponse.t()}
           | {:error, Tesla.Env.t()}
   def identitytoolkit_relyingparty_create_auth_uri(connection, optional_params \\ [], opts \\ []) do
@@ -77,23 +78,24 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
 
   ## Parameters
 
-  - connection (GoogleApi.IdentityToolkit.V3.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyDeleteAccountRequest.t): 
+  *   `connection` (*type:* `GoogleApi.IdentityToolkit.V3.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyDeleteAccountRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.IdentityToolkit.V3.Model.DeleteAccountResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.IdentityToolkit.V3.Model.DeleteAccountResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec identitytoolkit_relyingparty_delete_account(Tesla.Env.client(), keyword()) ::
+  @spec identitytoolkit_relyingparty_delete_account(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.IdentityToolkit.V3.Model.DeleteAccountResponse.t()}
           | {:error, Tesla.Env.t()}
   def identitytoolkit_relyingparty_delete_account(connection, optional_params \\ [], opts \\ []) do
@@ -126,23 +128,24 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
 
   ## Parameters
 
-  - connection (GoogleApi.IdentityToolkit.V3.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyDownloadAccountRequest.t): 
+  *   `connection` (*type:* `GoogleApi.IdentityToolkit.V3.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyDownloadAccountRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.IdentityToolkit.V3.Model.DownloadAccountResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.IdentityToolkit.V3.Model.DownloadAccountResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec identitytoolkit_relyingparty_download_account(Tesla.Env.client(), keyword()) ::
+  @spec identitytoolkit_relyingparty_download_account(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.IdentityToolkit.V3.Model.DownloadAccountResponse.t()}
           | {:error, Tesla.Env.t()}
   def identitytoolkit_relyingparty_download_account(connection, optional_params \\ [], opts \\ []) do
@@ -175,23 +178,24 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
 
   ## Parameters
 
-  - connection (GoogleApi.IdentityToolkit.V3.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyEmailLinkSigninRequest.t): 
+  *   `connection` (*type:* `GoogleApi.IdentityToolkit.V3.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyEmailLinkSigninRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.IdentityToolkit.V3.Model.EmailLinkSigninResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.IdentityToolkit.V3.Model.EmailLinkSigninResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec identitytoolkit_relyingparty_email_link_signin(Tesla.Env.client(), keyword()) ::
+  @spec identitytoolkit_relyingparty_email_link_signin(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.IdentityToolkit.V3.Model.EmailLinkSigninResponse.t()}
           | {:error, Tesla.Env.t()}
   def identitytoolkit_relyingparty_email_link_signin(
@@ -228,23 +232,24 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
 
   ## Parameters
 
-  - connection (GoogleApi.IdentityToolkit.V3.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyGetAccountInfoRequest.t): 
+  *   `connection` (*type:* `GoogleApi.IdentityToolkit.V3.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyGetAccountInfoRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.IdentityToolkit.V3.Model.GetAccountInfoResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.IdentityToolkit.V3.Model.GetAccountInfoResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec identitytoolkit_relyingparty_get_account_info(Tesla.Env.client(), keyword()) ::
+  @spec identitytoolkit_relyingparty_get_account_info(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.IdentityToolkit.V3.Model.GetAccountInfoResponse.t()}
           | {:error, Tesla.Env.t()}
   def identitytoolkit_relyingparty_get_account_info(connection, optional_params \\ [], opts \\ []) do
@@ -277,23 +282,28 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
 
   ## Parameters
 
-  - connection (GoogleApi.IdentityToolkit.V3.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.IdentityToolkit.V3.Model.Relyingparty.t): 
+  *   `connection` (*type:* `GoogleApi.IdentityToolkit.V3.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.IdentityToolkit.V3.Model.Relyingparty.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.IdentityToolkit.V3.Model.GetOobConfirmationCodeResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.IdentityToolkit.V3.Model.GetOobConfirmationCodeResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec identitytoolkit_relyingparty_get_oob_confirmation_code(Tesla.Env.client(), keyword()) ::
+  @spec identitytoolkit_relyingparty_get_oob_confirmation_code(
+          Tesla.Env.client(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.IdentityToolkit.V3.Model.GetOobConfirmationCodeResponse.t()}
           | {:error, Tesla.Env.t()}
   def identitytoolkit_relyingparty_get_oob_confirmation_code(
@@ -330,24 +340,25 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
 
   ## Parameters
 
-  - connection (GoogleApi.IdentityToolkit.V3.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :delegatedProjectNumber (String.t): Delegated GCP project number of the request.
-    - :projectNumber (String.t): GCP project number of the request.
+  *   `connection` (*type:* `GoogleApi.IdentityToolkit.V3.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:delegatedProjectNumber` (*type:* `String.t`) - Delegated GCP project number of the request.
+      *   `:projectNumber` (*type:* `String.t`) - GCP project number of the request.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyGetProjectConfigResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyGetProjectConfigResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec identitytoolkit_relyingparty_get_project_config(Tesla.Env.client(), keyword()) ::
+  @spec identitytoolkit_relyingparty_get_project_config(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok,
            GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyGetProjectConfigResponse.t()}
           | {:error, Tesla.Env.t()}
@@ -390,22 +401,23 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
 
   ## Parameters
 
-  - connection (GoogleApi.IdentityToolkit.V3.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.IdentityToolkit.V3.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyGetPublicKeysResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyGetPublicKeysResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec identitytoolkit_relyingparty_get_public_keys(Tesla.Env.client(), keyword()) ::
+  @spec identitytoolkit_relyingparty_get_public_keys(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok,
            GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyGetPublicKeysResponse.t()}
           | {:error, Tesla.Env.t()}
@@ -442,22 +454,23 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
 
   ## Parameters
 
-  - connection (GoogleApi.IdentityToolkit.V3.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.IdentityToolkit.V3.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.IdentityToolkit.V3.Model.GetRecaptchaParamResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.IdentityToolkit.V3.Model.GetRecaptchaParamResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec identitytoolkit_relyingparty_get_recaptcha_param(Tesla.Env.client(), keyword()) ::
+  @spec identitytoolkit_relyingparty_get_recaptcha_param(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.IdentityToolkit.V3.Model.GetRecaptchaParamResponse.t()}
           | {:error, Tesla.Env.t()}
   def identitytoolkit_relyingparty_get_recaptcha_param(
@@ -493,23 +506,24 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
 
   ## Parameters
 
-  - connection (GoogleApi.IdentityToolkit.V3.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyResetPasswordRequest.t): 
+  *   `connection` (*type:* `GoogleApi.IdentityToolkit.V3.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyResetPasswordRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.IdentityToolkit.V3.Model.ResetPasswordResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.IdentityToolkit.V3.Model.ResetPasswordResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec identitytoolkit_relyingparty_reset_password(Tesla.Env.client(), keyword()) ::
+  @spec identitytoolkit_relyingparty_reset_password(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.IdentityToolkit.V3.Model.ResetPasswordResponse.t()}
           | {:error, Tesla.Env.t()}
   def identitytoolkit_relyingparty_reset_password(connection, optional_params \\ [], opts \\ []) do
@@ -542,23 +556,28 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
 
   ## Parameters
 
-  - connection (GoogleApi.IdentityToolkit.V3.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySendVerificationCodeRequest.t): 
+  *   `connection` (*type:* `GoogleApi.IdentityToolkit.V3.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySendVerificationCodeRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySendVerificationCodeResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySendVerificationCodeResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec identitytoolkit_relyingparty_send_verification_code(Tesla.Env.client(), keyword()) ::
+  @spec identitytoolkit_relyingparty_send_verification_code(
+          Tesla.Env.client(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok,
            GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySendVerificationCodeResponse.t()}
           | {:error, Tesla.Env.t()}
@@ -600,23 +619,24 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
 
   ## Parameters
 
-  - connection (GoogleApi.IdentityToolkit.V3.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySetAccountInfoRequest.t): 
+  *   `connection` (*type:* `GoogleApi.IdentityToolkit.V3.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySetAccountInfoRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.IdentityToolkit.V3.Model.SetAccountInfoResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.IdentityToolkit.V3.Model.SetAccountInfoResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec identitytoolkit_relyingparty_set_account_info(Tesla.Env.client(), keyword()) ::
+  @spec identitytoolkit_relyingparty_set_account_info(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.IdentityToolkit.V3.Model.SetAccountInfoResponse.t()}
           | {:error, Tesla.Env.t()}
   def identitytoolkit_relyingparty_set_account_info(connection, optional_params \\ [], opts \\ []) do
@@ -649,23 +669,24 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
 
   ## Parameters
 
-  - connection (GoogleApi.IdentityToolkit.V3.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySetProjectConfigRequest.t): 
+  *   `connection` (*type:* `GoogleApi.IdentityToolkit.V3.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySetProjectConfigRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySetProjectConfigResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySetProjectConfigResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec identitytoolkit_relyingparty_set_project_config(Tesla.Env.client(), keyword()) ::
+  @spec identitytoolkit_relyingparty_set_project_config(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok,
            GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySetProjectConfigResponse.t()}
           | {:error, Tesla.Env.t()}
@@ -707,23 +728,24 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
 
   ## Parameters
 
-  - connection (GoogleApi.IdentityToolkit.V3.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySignOutUserRequest.t): 
+  *   `connection` (*type:* `GoogleApi.IdentityToolkit.V3.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySignOutUserRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySignOutUserResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySignOutUserResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec identitytoolkit_relyingparty_sign_out_user(Tesla.Env.client(), keyword()) ::
+  @spec identitytoolkit_relyingparty_sign_out_user(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok,
            GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySignOutUserResponse.t()}
           | {:error, Tesla.Env.t()}
@@ -761,23 +783,24 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
 
   ## Parameters
 
-  - connection (GoogleApi.IdentityToolkit.V3.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySignupNewUserRequest.t): 
+  *   `connection` (*type:* `GoogleApi.IdentityToolkit.V3.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySignupNewUserRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.IdentityToolkit.V3.Model.SignupNewUserResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.IdentityToolkit.V3.Model.SignupNewUserResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec identitytoolkit_relyingparty_signup_new_user(Tesla.Env.client(), keyword()) ::
+  @spec identitytoolkit_relyingparty_signup_new_user(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.IdentityToolkit.V3.Model.SignupNewUserResponse.t()}
           | {:error, Tesla.Env.t()}
   def identitytoolkit_relyingparty_signup_new_user(connection, optional_params \\ [], opts \\ []) do
@@ -810,23 +833,24 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
 
   ## Parameters
 
-  - connection (GoogleApi.IdentityToolkit.V3.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyUploadAccountRequest.t): 
+  *   `connection` (*type:* `GoogleApi.IdentityToolkit.V3.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyUploadAccountRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.IdentityToolkit.V3.Model.UploadAccountResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.IdentityToolkit.V3.Model.UploadAccountResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec identitytoolkit_relyingparty_upload_account(Tesla.Env.client(), keyword()) ::
+  @spec identitytoolkit_relyingparty_upload_account(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.IdentityToolkit.V3.Model.UploadAccountResponse.t()}
           | {:error, Tesla.Env.t()}
   def identitytoolkit_relyingparty_upload_account(connection, optional_params \\ [], opts \\ []) do
@@ -859,23 +883,24 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
 
   ## Parameters
 
-  - connection (GoogleApi.IdentityToolkit.V3.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyVerifyAssertionRequest.t): 
+  *   `connection` (*type:* `GoogleApi.IdentityToolkit.V3.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyVerifyAssertionRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.IdentityToolkit.V3.Model.VerifyAssertionResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.IdentityToolkit.V3.Model.VerifyAssertionResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec identitytoolkit_relyingparty_verify_assertion(Tesla.Env.client(), keyword()) ::
+  @spec identitytoolkit_relyingparty_verify_assertion(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.IdentityToolkit.V3.Model.VerifyAssertionResponse.t()}
           | {:error, Tesla.Env.t()}
   def identitytoolkit_relyingparty_verify_assertion(connection, optional_params \\ [], opts \\ []) do
@@ -908,23 +933,24 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
 
   ## Parameters
 
-  - connection (GoogleApi.IdentityToolkit.V3.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyVerifyCustomTokenRequest.t): 
+  *   `connection` (*type:* `GoogleApi.IdentityToolkit.V3.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyVerifyCustomTokenRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.IdentityToolkit.V3.Model.VerifyCustomTokenResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.IdentityToolkit.V3.Model.VerifyCustomTokenResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec identitytoolkit_relyingparty_verify_custom_token(Tesla.Env.client(), keyword()) ::
+  @spec identitytoolkit_relyingparty_verify_custom_token(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.IdentityToolkit.V3.Model.VerifyCustomTokenResponse.t()}
           | {:error, Tesla.Env.t()}
   def identitytoolkit_relyingparty_verify_custom_token(
@@ -961,23 +987,24 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
 
   ## Parameters
 
-  - connection (GoogleApi.IdentityToolkit.V3.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyVerifyPasswordRequest.t): 
+  *   `connection` (*type:* `GoogleApi.IdentityToolkit.V3.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyVerifyPasswordRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.IdentityToolkit.V3.Model.VerifyPasswordResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.IdentityToolkit.V3.Model.VerifyPasswordResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec identitytoolkit_relyingparty_verify_password(Tesla.Env.client(), keyword()) ::
+  @spec identitytoolkit_relyingparty_verify_password(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.IdentityToolkit.V3.Model.VerifyPasswordResponse.t()}
           | {:error, Tesla.Env.t()}
   def identitytoolkit_relyingparty_verify_password(connection, optional_params \\ [], opts \\ []) do
@@ -1010,23 +1037,24 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
 
   ## Parameters
 
-  - connection (GoogleApi.IdentityToolkit.V3.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyVerifyPhoneNumberRequest.t): 
+  *   `connection` (*type:* `GoogleApi.IdentityToolkit.V3.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyVerifyPhoneNumberRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyVerifyPhoneNumberResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyVerifyPhoneNumberResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec identitytoolkit_relyingparty_verify_phone_number(Tesla.Env.client(), keyword()) ::
+  @spec identitytoolkit_relyingparty_verify_phone_number(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok,
            GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyVerifyPhoneNumberResponse.t()}
           | {:error, Tesla.Env.t()}

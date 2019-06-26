@@ -21,16 +21,16 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyVerifyPh
 
   ## Attributes
 
-  - expiresIn (String.t):  Defaults to `nil`.
-  - idToken (String.t):  Defaults to `nil`.
-  - isNewUser (boolean()):  Defaults to `nil`.
-  - localId (String.t):  Defaults to `nil`.
-  - phoneNumber (String.t):  Defaults to `nil`.
-  - refreshToken (String.t):  Defaults to `nil`.
-  - temporaryProof (String.t):  Defaults to `nil`.
-  - temporaryProofExpiresIn (String.t):  Defaults to `nil`.
-  - verificationProof (String.t):  Defaults to `nil`.
-  - verificationProofExpiresIn (String.t):  Defaults to `nil`.
+  *   `expiresIn` (*type:* `String.t`, *default:* `nil`) - 
+  *   `idToken` (*type:* `String.t`, *default:* `nil`) - 
+  *   `isNewUser` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `localId` (*type:* `String.t`, *default:* `nil`) - 
+  *   `phoneNumber` (*type:* `String.t`, *default:* `nil`) - 
+  *   `refreshToken` (*type:* `String.t`, *default:* `nil`) - 
+  *   `temporaryProof` (*type:* `String.t`, *default:* `nil`) - 
+  *   `temporaryProofExpiresIn` (*type:* `String.t`, *default:* `nil`) - 
+  *   `verificationProof` (*type:* `String.t`, *default:* `nil`) - 
+  *   `verificationProofExpiresIn` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

@@ -20,6 +20,8 @@ defmodule GoogleApi.IdentityToolkit.V3.Connection do
   Handle Tesla connections for GoogleApi.IdentityToolkit.V3.
   """
 
+  @type t :: Tesla.Env.client()
+
   use GoogleApi.Gax.Connection,
     scopes: [
       # View and manage your data across Google Cloud Platform services

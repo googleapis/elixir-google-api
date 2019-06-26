@@ -21,20 +21,20 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySignupNe
 
   ## Attributes
 
-  - captchaChallenge (String.t): The captcha challenge. Defaults to `nil`.
-  - captchaResponse (String.t): Response to the captcha. Defaults to `nil`.
-  - disabled (boolean()): Whether to disable the user. Only can be used by service account. Defaults to `nil`.
-  - displayName (String.t): The name of the user. Defaults to `nil`.
-  - email (String.t): The email of the user. Defaults to `nil`.
-  - emailVerified (boolean()): Mark the email as verified or not. Only can be used by service account. Defaults to `nil`.
-  - idToken (String.t): The GITKit token of the authenticated user. Defaults to `nil`.
-  - instanceId (String.t): Instance id token of the app. Defaults to `nil`.
-  - localId (String.t): Privileged caller can create user with specified user id. Defaults to `nil`.
-  - password (String.t): The new password of the user. Defaults to `nil`.
-  - phoneNumber (String.t): Privileged caller can create user with specified phone number. Defaults to `nil`.
-  - photoUrl (String.t): The photo url of the user. Defaults to `nil`.
-  - tenantId (String.t): For multi-tenant use cases, in order to construct sign-in URL with the correct IDP parameters, Firebear needs to know which Tenant to retrieve IDP configs from. Defaults to `nil`.
-  - tenantProjectNumber (String.t): Tenant project number to be used for idp discovery. Defaults to `nil`.
+  *   `captchaChallenge` (*type:* `String.t`, *default:* `nil`) - The captcha challenge.
+  *   `captchaResponse` (*type:* `String.t`, *default:* `nil`) - Response to the captcha.
+  *   `disabled` (*type:* `boolean()`, *default:* `nil`) - Whether to disable the user. Only can be used by service account.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The name of the user.
+  *   `email` (*type:* `String.t`, *default:* `nil`) - The email of the user.
+  *   `emailVerified` (*type:* `boolean()`, *default:* `nil`) - Mark the email as verified or not. Only can be used by service account.
+  *   `idToken` (*type:* `String.t`, *default:* `nil`) - The GITKit token of the authenticated user.
+  *   `instanceId` (*type:* `String.t`, *default:* `nil`) - Instance id token of the app.
+  *   `localId` (*type:* `String.t`, *default:* `nil`) - Privileged caller can create user with specified user id.
+  *   `password` (*type:* `String.t`, *default:* `nil`) - The new password of the user.
+  *   `phoneNumber` (*type:* `String.t`, *default:* `nil`) - Privileged caller can create user with specified phone number.
+  *   `photoUrl` (*type:* `String.t`, *default:* `nil`) - The photo url of the user.
+  *   `tenantId` (*type:* `String.t`, *default:* `nil`) - For multi-tenant use cases, in order to construct sign-in URL with the correct IDP parameters, Firebear needs to know which Tenant to retrieve IDP configs from.
+  *   `tenantProjectNumber` (*type:* `String.t`, *default:* `nil`) - Tenant project number to be used for idp discovery.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,18 +21,18 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.VerifyPasswordResponse do
 
   ## Attributes
 
-  - displayName (String.t): The name of the user. Defaults to `nil`.
-  - email (String.t): The email returned by the IdP. NOTE: The federated login user may not own the email. Defaults to `nil`.
-  - expiresIn (String.t): If idToken is STS id token, then this field will be expiration time of STS id token in seconds. Defaults to `nil`.
-  - idToken (String.t): The GITKit token for authenticated user. Defaults to `nil`.
-  - kind (String.t): The fixed string "identitytoolkit#VerifyPasswordResponse". Defaults to `identitytoolkit#VerifyPasswordResponse`.
-  - localId (String.t): The RP local ID if it's already been mapped to the IdP account identified by the federated ID. Defaults to `nil`.
-  - oauthAccessToken (String.t): The OAuth2 access token. Defaults to `nil`.
-  - oauthAuthorizationCode (String.t): The OAuth2 authorization code. Defaults to `nil`.
-  - oauthExpireIn (integer()): The lifetime in seconds of the OAuth2 access token. Defaults to `nil`.
-  - photoUrl (String.t): The URI of the user's photo at IdP Defaults to `nil`.
-  - refreshToken (String.t): If idToken is STS id token, then this field will be refresh token. Defaults to `nil`.
-  - registered (boolean()): Whether the email is registered. Defaults to `nil`.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The name of the user.
+  *   `email` (*type:* `String.t`, *default:* `nil`) - The email returned by the IdP. NOTE: The federated login user may not own the email.
+  *   `expiresIn` (*type:* `String.t`, *default:* `nil`) - If idToken is STS id token, then this field will be expiration time of STS id token in seconds.
+  *   `idToken` (*type:* `String.t`, *default:* `nil`) - The GITKit token for authenticated user.
+  *   `kind` (*type:* `String.t`, *default:* `identitytoolkit#VerifyPasswordResponse`) - The fixed string "identitytoolkit#VerifyPasswordResponse".
+  *   `localId` (*type:* `String.t`, *default:* `nil`) - The RP local ID if it's already been mapped to the IdP account identified by the federated ID.
+  *   `oauthAccessToken` (*type:* `String.t`, *default:* `nil`) - The OAuth2 access token.
+  *   `oauthAuthorizationCode` (*type:* `String.t`, *default:* `nil`) - The OAuth2 authorization code.
+  *   `oauthExpireIn` (*type:* `integer()`, *default:* `nil`) - The lifetime in seconds of the OAuth2 access token.
+  *   `photoUrl` (*type:* `String.t`, *default:* `nil`) - The URI of the user's photo at IdP
+  *   `refreshToken` (*type:* `String.t`, *default:* `nil`) - If idToken is STS id token, then this field will be refresh token.
+  *   `registered` (*type:* `boolean()`, *default:* `nil`) - Whether the email is registered.
   """
 
   use GoogleApi.Gax.ModelBase

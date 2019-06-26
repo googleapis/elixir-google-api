@@ -21,10 +21,10 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyVerifyCu
 
   ## Attributes
 
-  - delegatedProjectNumber (String.t): GCP project number of the requesting delegated app. Currently only intended for Firebase V1 migration. Defaults to `nil`.
-  - instanceId (String.t): Instance id token of the app. Defaults to `nil`.
-  - returnSecureToken (boolean()): Whether return sts id token and refresh token instead of gitkit token. Defaults to `nil`.
-  - token (String.t): The custom token to verify Defaults to `nil`.
+  *   `delegatedProjectNumber` (*type:* `String.t`, *default:* `nil`) - GCP project number of the requesting delegated app. Currently only intended for Firebase V1 migration.
+  *   `instanceId` (*type:* `String.t`, *default:* `nil`) - Instance id token of the app.
+  *   `returnSecureToken` (*type:* `boolean()`, *default:* `nil`) - Whether return sts id token and refresh token instead of gitkit token.
+  *   `token` (*type:* `String.t`, *default:* `nil`) - The custom token to verify
   """
 
   use GoogleApi.Gax.ModelBase

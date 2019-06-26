@@ -21,17 +21,17 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyVerifyPa
 
   ## Attributes
 
-  - captchaChallenge (String.t): The captcha challenge. Defaults to `nil`.
-  - captchaResponse (String.t): Response to the captcha. Defaults to `nil`.
-  - delegatedProjectNumber (String.t): GCP project number of the requesting delegated app. Currently only intended for Firebase V1 migration. Defaults to `nil`.
-  - email (String.t): The email of the user. Defaults to `nil`.
-  - idToken (String.t): The GITKit token of the authenticated user. Defaults to `nil`.
-  - instanceId (String.t): Instance id token of the app. Defaults to `nil`.
-  - password (String.t): The password inputed by the user. Defaults to `nil`.
-  - pendingIdToken (String.t): The GITKit token for the non-trusted IDP, which is to be confirmed by the user. Defaults to `nil`.
-  - returnSecureToken (boolean()): Whether return sts id token and refresh token instead of gitkit token. Defaults to `nil`.
-  - tenantId (String.t): For multi-tenant use cases, in order to construct sign-in URL with the correct IDP parameters, Firebear needs to know which Tenant to retrieve IDP configs from. Defaults to `nil`.
-  - tenantProjectNumber (String.t): Tenant project number to be used for idp discovery. Defaults to `nil`.
+  *   `captchaChallenge` (*type:* `String.t`, *default:* `nil`) - The captcha challenge.
+  *   `captchaResponse` (*type:* `String.t`, *default:* `nil`) - Response to the captcha.
+  *   `delegatedProjectNumber` (*type:* `String.t`, *default:* `nil`) - GCP project number of the requesting delegated app. Currently only intended for Firebase V1 migration.
+  *   `email` (*type:* `String.t`, *default:* `nil`) - The email of the user.
+  *   `idToken` (*type:* `String.t`, *default:* `nil`) - The GITKit token of the authenticated user.
+  *   `instanceId` (*type:* `String.t`, *default:* `nil`) - Instance id token of the app.
+  *   `password` (*type:* `String.t`, *default:* `nil`) - The password inputed by the user.
+  *   `pendingIdToken` (*type:* `String.t`, *default:* `nil`) - The GITKit token for the non-trusted IDP, which is to be confirmed by the user.
+  *   `returnSecureToken` (*type:* `boolean()`, *default:* `nil`) - Whether return sts id token and refresh token instead of gitkit token.
+  *   `tenantId` (*type:* `String.t`, *default:* `nil`) - For multi-tenant use cases, in order to construct sign-in URL with the correct IDP parameters, Firebear needs to know which Tenant to retrieve IDP configs from.
+  *   `tenantProjectNumber` (*type:* `String.t`, *default:* `nil`) - Tenant project number to be used for idp discovery.
   """
 
   use GoogleApi.Gax.ModelBase

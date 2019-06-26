@@ -21,10 +21,10 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyDownload
 
   ## Attributes
 
-  - delegatedProjectNumber (String.t): GCP project number of the requesting delegated app. Currently only intended for Firebase V1 migration. Defaults to `nil`.
-  - maxResults (integer()): The max number of results to return in the response. Defaults to `nil`.
-  - nextPageToken (String.t): The token for the next page. This should be taken from the previous response. Defaults to `nil`.
-  - targetProjectId (String.t): Specify which project (field value is actually project id) to operate. Only used when provided credential. Defaults to `nil`.
+  *   `delegatedProjectNumber` (*type:* `String.t`, *default:* `nil`) - GCP project number of the requesting delegated app. Currently only intended for Firebase V1 migration.
+  *   `maxResults` (*type:* `integer()`, *default:* `nil`) - The max number of results to return in the response.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The token for the next page. This should be taken from the previous response.
+  *   `targetProjectId` (*type:* `String.t`, *default:* `nil`) - Specify which project (field value is actually project id) to operate. Only used when provided credential.
   """
 
   use GoogleApi.Gax.ModelBase

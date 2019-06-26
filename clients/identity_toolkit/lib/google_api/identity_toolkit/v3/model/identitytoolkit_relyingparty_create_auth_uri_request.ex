@@ -21,22 +21,22 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyCreateAu
 
   ## Attributes
 
-  - appId (String.t): The app ID of the mobile app, base64(CERT_SHA1):PACKAGE_NAME for Android, BUNDLE_ID for iOS. Defaults to `nil`.
-  - authFlowType (String.t): Explicitly specify the auth flow type. Currently only support "CODE_FLOW" type. The field is only used for Google provider. Defaults to `nil`.
-  - clientId (String.t): The relying party OAuth client ID. Defaults to `nil`.
-  - context (String.t): The opaque value used by the client to maintain context info between the authentication request and the IDP callback. Defaults to `nil`.
-  - continueUri (String.t): The URI to which the IDP redirects the user after the federated login flow. Defaults to `nil`.
-  - customParameter (map()): The query parameter that client can customize by themselves in auth url. The following parameters are reserved for server so that they cannot be customized by clients: client_id, response_type, scope, redirect_uri, state, oauth_token. Defaults to `nil`.
-  - hostedDomain (String.t): The hosted domain to restrict sign-in to accounts at that domain for Google Apps hosted accounts. Defaults to `nil`.
-  - identifier (String.t): The email or federated ID of the user. Defaults to `nil`.
-  - oauthConsumerKey (String.t): The developer's consumer key for OpenId OAuth Extension Defaults to `nil`.
-  - oauthScope (String.t): Additional oauth scopes, beyond the basid user profile, that the user would be prompted to grant Defaults to `nil`.
-  - openidRealm (String.t): Optional realm for OpenID protocol. The sub string "scheme://domain:port" of the param "continueUri" is used if this is not set. Defaults to `nil`.
-  - otaApp (String.t): The native app package for OTA installation. Defaults to `nil`.
-  - providerId (String.t): The IdP ID. For white listed IdPs it's a short domain name e.g. google.com, aol.com, live.net and yahoo.com. For other OpenID IdPs it's the OP identifier. Defaults to `nil`.
-  - sessionId (String.t): The session_id passed by client. Defaults to `nil`.
-  - tenantId (String.t): For multi-tenant use cases, in order to construct sign-in URL with the correct IDP parameters, Firebear needs to know which Tenant to retrieve IDP configs from. Defaults to `nil`.
-  - tenantProjectNumber (String.t): Tenant project number to be used for idp discovery. Defaults to `nil`.
+  *   `appId` (*type:* `String.t`, *default:* `nil`) - The app ID of the mobile app, base64(CERT_SHA1):PACKAGE_NAME for Android, BUNDLE_ID for iOS.
+  *   `authFlowType` (*type:* `String.t`, *default:* `nil`) - Explicitly specify the auth flow type. Currently only support "CODE_FLOW" type. The field is only used for Google provider.
+  *   `clientId` (*type:* `String.t`, *default:* `nil`) - The relying party OAuth client ID.
+  *   `context` (*type:* `String.t`, *default:* `nil`) - The opaque value used by the client to maintain context info between the authentication request and the IDP callback.
+  *   `continueUri` (*type:* `String.t`, *default:* `nil`) - The URI to which the IDP redirects the user after the federated login flow.
+  *   `customParameter` (*type:* `map()`, *default:* `nil`) - The query parameter that client can customize by themselves in auth url. The following parameters are reserved for server so that they cannot be customized by clients: client_id, response_type, scope, redirect_uri, state, oauth_token.
+  *   `hostedDomain` (*type:* `String.t`, *default:* `nil`) - The hosted domain to restrict sign-in to accounts at that domain for Google Apps hosted accounts.
+  *   `identifier` (*type:* `String.t`, *default:* `nil`) - The email or federated ID of the user.
+  *   `oauthConsumerKey` (*type:* `String.t`, *default:* `nil`) - The developer's consumer key for OpenId OAuth Extension
+  *   `oauthScope` (*type:* `String.t`, *default:* `nil`) - Additional oauth scopes, beyond the basid user profile, that the user would be prompted to grant
+  *   `openidRealm` (*type:* `String.t`, *default:* `nil`) - Optional realm for OpenID protocol. The sub string "scheme://domain:port" of the param "continueUri" is used if this is not set.
+  *   `otaApp` (*type:* `String.t`, *default:* `nil`) - The native app package for OTA installation.
+  *   `providerId` (*type:* `String.t`, *default:* `nil`) - The IdP ID. For white listed IdPs it's a short domain name e.g. google.com, aol.com, live.net and yahoo.com. For other OpenID IdPs it's the OP identifier.
+  *   `sessionId` (*type:* `String.t`, *default:* `nil`) - The session_id passed by client.
+  *   `tenantId` (*type:* `String.t`, *default:* `nil`) - For multi-tenant use cases, in order to construct sign-in URL with the correct IDP parameters, Firebear needs to know which Tenant to retrieve IDP configs from.
+  *   `tenantProjectNumber` (*type:* `String.t`, *default:* `nil`) - Tenant project number to be used for idp discovery.
   """
 
   use GoogleApi.Gax.ModelBase
