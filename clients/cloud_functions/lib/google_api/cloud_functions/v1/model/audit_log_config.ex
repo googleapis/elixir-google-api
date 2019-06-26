@@ -20,29 +20,29 @@ defmodule GoogleApi.CloudFunctions.V1.Model.AuditLogConfig do
   Provides the configuration for logging a type of permissions.
   Example:
 
-    {
-      "audit_log_configs": [
-        {
-          "log_type": "DATA_READ",
-          "exempted_members": [
-            "user:foo@gmail.com"
-          ]
-        },
-        {
-          "log_type": "DATA_WRITE",
-        }
-      ]
-    }
+      {
+        "audit_log_configs": [
+          {
+            "log_type": "DATA_READ",
+            "exempted_members": [
+              "user:foo@gmail.com"
+            ]
+          },
+          {
+            "log_type": "DATA_WRITE",
+          }
+        ]
+      }
 
   This enables 'DATA_READ' and 'DATA_WRITE' logging, while exempting
   foo@gmail.com from DATA_READ logging.
 
   ## Attributes
 
-  - exemptedMembers (list(String.t)): Specifies the identities that do not cause logging for this type of
-  permission.
-  Follows the same format of Binding.members. Defaults to `nil`.
-  - logType (String.t): The log type that this config enables. Defaults to `nil`.
+  *   `exemptedMembers` (*type:* `list(String.t)`, *default:* `nil`) - Specifies the identities that do not cause logging for this type of
+      permission.
+      Follows the same format of Binding.members.
+  *   `logType` (*type:* `String.t`, *default:* `nil`) - The log type that this config enables.
   """
 
   use GoogleApi.Gax.ModelBase

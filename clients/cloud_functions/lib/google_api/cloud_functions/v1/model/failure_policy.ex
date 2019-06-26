@@ -22,7 +22,7 @@ defmodule GoogleApi.CloudFunctions.V1.Model.FailurePolicy do
 
   ## Attributes
 
-  - retry (GoogleApi.CloudFunctions.V1.Model.Retry.t): If specified, then the function will be retried in case of a failure. Defaults to `nil`.
+  *   `retry` (*type:* `GoogleApi.CloudFunctions.V1.Model.Retry.t`, *default:* `nil`) - If specified, then the function will be retried in case of a failure.
   """
 
   use GoogleApi.Gax.ModelBase

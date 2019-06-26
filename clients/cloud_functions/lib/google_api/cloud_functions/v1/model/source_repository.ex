@@ -22,22 +22,22 @@ defmodule GoogleApi.CloudFunctions.V1.Model.SourceRepository do
 
   ## Attributes
 
-  - deployedUrl (String.t): Output only. The URL pointing to the hosted repository where the function
-  were defined at the time of deployment. It always points to a specific
-  commit in the format described above. Defaults to `nil`.
-  - url (String.t): The URL pointing to the hosted repository where the function is defined.
-  There are supported Cloud Source Repository URLs in the following
-  formats:
+  *   `deployedUrl` (*type:* `String.t`, *default:* `nil`) - Output only. The URL pointing to the hosted repository where the function
+      were defined at the time of deployment. It always points to a specific
+      commit in the format described above.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - The URL pointing to the hosted repository where the function is defined.
+      There are supported Cloud Source Repository URLs in the following
+      formats:
 
-  To refer to a specific commit:
-  `https://source.developers.google.com/projects/*/repos/*/revisions/*/paths/*`
-  To refer to a moveable alias (branch):
-  `https://source.developers.google.com/projects/*/repos/*/moveable-aliases/*/paths/*`
-  In particular, to refer to HEAD use `master` moveable alias.
-  To refer to a specific fixed alias (tag):
-  `https://source.developers.google.com/projects/*/repos/*/fixed-aliases/*/paths/*`
+      To refer to a specific commit:
+      `https://source.developers.google.com/projects/*/repos/*/revisions/*/paths/*`
+      To refer to a moveable alias (branch):
+      `https://source.developers.google.com/projects/*/repos/*/moveable-aliases/*/paths/*`
+      In particular, to refer to HEAD use `master` moveable alias.
+      To refer to a specific fixed alias (tag):
+      `https://source.developers.google.com/projects/*/repos/*/fixed-aliases/*/paths/*`
 
-  You may omit `paths/*` if you want to use the main directory. Defaults to `nil`.
+      You may omit `paths/*` if you want to use the main directory.
   """
 
   use GoogleApi.Gax.ModelBase

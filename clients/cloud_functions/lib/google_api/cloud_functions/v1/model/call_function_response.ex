@@ -21,11 +21,11 @@ defmodule GoogleApi.CloudFunctions.V1.Model.CallFunctionResponse do
 
   ## Attributes
 
-  - error (String.t): Either system or user-function generated error. Set if execution
-  was not successful. Defaults to `nil`.
-  - executionId (String.t): Execution id of function invocation. Defaults to `nil`.
-  - result (String.t): Result populated for successful execution of synchronous function. Will
-  not be populated if function does not return a result through context. Defaults to `nil`.
+  *   `error` (*type:* `String.t`, *default:* `nil`) - Either system or user-function generated error. Set if execution
+      was not successful.
+  *   `executionId` (*type:* `String.t`, *default:* `nil`) - Execution id of function invocation.
+  *   `result` (*type:* `String.t`, *default:* `nil`) - Result populated for successful execution of synchronous function. Will
+      not be populated if function does not return a result through context.
   """
 
   use GoogleApi.Gax.ModelBase

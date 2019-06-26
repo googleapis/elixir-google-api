@@ -21,13 +21,13 @@ defmodule GoogleApi.CloudFunctions.V1.Model.OperationMetadataV1Beta2 do
 
   ## Attributes
 
-  - request (map()): The original request that started the operation. Defaults to `nil`.
-  - target (String.t): Target of the operation - for example
-  projects/project-1/locations/region-1/functions/function-1 Defaults to `nil`.
-  - type (String.t): Type of operation. Defaults to `nil`.
-  - updateTime (DateTime.t): The last update timestamp of the operation. Defaults to `nil`.
-  - versionId (String.t): Version id of the function created or updated by an API call.
-  This field is only populated for Create and Update operations. Defaults to `nil`.
+  *   `request` (*type:* `map()`, *default:* `nil`) - The original request that started the operation.
+  *   `target` (*type:* `String.t`, *default:* `nil`) - Target of the operation - for example
+      projects/project-1/locations/region-1/functions/function-1
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Type of operation.
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - The last update timestamp of the operation.
+  *   `versionId` (*type:* `String.t`, *default:* `nil`) - Version id of the function created or updated by an API call.
+      This field is only populated for Create and Update operations.
   """
 
   use GoogleApi.Gax.ModelBase

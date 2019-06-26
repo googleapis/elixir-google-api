@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudFunctions.V1.Model.HttpsTrigger do
 
   ## Attributes
 
-  - url (String.t): Output only. The deployed url for the function. Defaults to `nil`.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - Output only. The deployed url for the function.
   """
 
   use GoogleApi.Gax.ModelBase
