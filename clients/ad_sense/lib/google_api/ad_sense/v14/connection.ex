@@ -30,6 +30,6 @@ defmodule GoogleApi.AdSense.V14.Connection do
       # View your AdSense data
       "https://www.googleapis.com/auth/adsense.readonly"
     ],
-    otp_app: :google_api_adsense,
+    otp_app: :google_api_ad_sense,
     base_url: "https://www.googleapis.com/adsense/v1.4/"
 end
