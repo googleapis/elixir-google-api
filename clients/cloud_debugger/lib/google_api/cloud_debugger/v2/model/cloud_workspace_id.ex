@@ -23,9 +23,9 @@ defmodule GoogleApi.CloudDebugger.V2.Model.CloudWorkspaceId do
 
   ## Attributes
 
-  - name (String.t): The unique name of the workspace within the repo.  This is the name
-  chosen by the client in the Source API's CreateWorkspace method. Defaults to `nil`.
-  - repoId (GoogleApi.CloudDebugger.V2.Model.RepoId.t): The ID of the repo containing the workspace. Defaults to `nil`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The unique name of the workspace within the repo.  This is the name
+      chosen by the client in the Source API's CreateWorkspace method.
+  *   `repoId` (*type:* `GoogleApi.CloudDebugger.V2.Model.RepoId.t`, *default:* `nil`) - The ID of the repo containing the workspace.
   """
 
   use GoogleApi.Gax.ModelBase

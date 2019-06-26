@@ -22,9 +22,9 @@ defmodule GoogleApi.CloudDebugger.V2.Model.GitSourceContext do
 
   ## Attributes
 
-  - revisionId (String.t): Git commit hash.
-  required. Defaults to `nil`.
-  - url (String.t): Git repository URL. Defaults to `nil`.
+  *   `revisionId` (*type:* `String.t`, *default:* `nil`) - Git commit hash.
+      required.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - Git repository URL.
   """
 
   use GoogleApi.Gax.ModelBase

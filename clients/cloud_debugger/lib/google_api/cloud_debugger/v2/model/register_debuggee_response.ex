@@ -21,11 +21,11 @@ defmodule GoogleApi.CloudDebugger.V2.Model.RegisterDebuggeeResponse do
 
   ## Attributes
 
-  - debuggee (GoogleApi.CloudDebugger.V2.Model.Debuggee.t): Debuggee resource.
-  The field `id` is guaranteed to be set (in addition to the echoed fields).
-  If the field `is_disabled` is set to `true`, the agent should disable
-  itself by removing all breakpoints and detaching from the application.
-  It should however continue to poll `RegisterDebuggee` until reenabled. Defaults to `nil`.
+  *   `debuggee` (*type:* `GoogleApi.CloudDebugger.V2.Model.Debuggee.t`, *default:* `nil`) - Debuggee resource.
+      The field `id` is guaranteed to be set (in addition to the echoed fields).
+      If the field `is_disabled` is set to `true`, the agent should disable
+      itself by removing all breakpoints and detaching from the application.
+      It should however continue to poll `RegisterDebuggee` until reenabled.
   """
 
   use GoogleApi.Gax.ModelBase

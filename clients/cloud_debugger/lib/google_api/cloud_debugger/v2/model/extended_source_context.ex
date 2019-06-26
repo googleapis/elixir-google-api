@@ -22,8 +22,8 @@ defmodule GoogleApi.CloudDebugger.V2.Model.ExtendedSourceContext do
 
   ## Attributes
 
-  - context (GoogleApi.CloudDebugger.V2.Model.SourceContext.t): Any source context. Defaults to `nil`.
-  - labels (map()): Labels with user defined metadata. Defaults to `nil`.
+  *   `context` (*type:* `GoogleApi.CloudDebugger.V2.Model.SourceContext.t`, *default:* `nil`) - Any source context.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - Labels with user defined metadata.
   """
 
   use GoogleApi.Gax.ModelBase

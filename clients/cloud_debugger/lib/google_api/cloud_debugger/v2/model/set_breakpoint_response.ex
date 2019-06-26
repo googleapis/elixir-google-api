@@ -21,8 +21,8 @@ defmodule GoogleApi.CloudDebugger.V2.Model.SetBreakpointResponse do
 
   ## Attributes
 
-  - breakpoint (GoogleApi.CloudDebugger.V2.Model.Breakpoint.t): Breakpoint resource.
-  The field `id` is guaranteed to be set (in addition to the echoed fileds). Defaults to `nil`.
+  *   `breakpoint` (*type:* `GoogleApi.CloudDebugger.V2.Model.Breakpoint.t`, *default:* `nil`) - Breakpoint resource.
+      The field `id` is guaranteed to be set (in addition to the echoed fileds).
   """
 
   use GoogleApi.Gax.ModelBase

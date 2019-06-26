@@ -21,9 +21,9 @@ defmodule GoogleApi.CloudDebugger.V2.Model.UpdateActiveBreakpointRequest do
 
   ## Attributes
 
-  - breakpoint (GoogleApi.CloudDebugger.V2.Model.Breakpoint.t): Updated breakpoint information.
-  The field `id` must be set.
-  The agent must echo all Breakpoint specification fields in the update. Defaults to `nil`.
+  *   `breakpoint` (*type:* `GoogleApi.CloudDebugger.V2.Model.Breakpoint.t`, *default:* `nil`) - Updated breakpoint information.
+      The field `id` must be set.
+      The agent must echo all Breakpoint specification fields in the update.
   """
 
   use GoogleApi.Gax.ModelBase

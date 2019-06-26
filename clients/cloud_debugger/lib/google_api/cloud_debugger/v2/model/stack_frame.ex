@@ -21,12 +21,12 @@ defmodule GoogleApi.CloudDebugger.V2.Model.StackFrame do
 
   ## Attributes
 
-  - arguments (list(GoogleApi.CloudDebugger.V2.Model.Variable.t)): Set of arguments passed to this function.
-  Note that this might not be populated for all stack frames. Defaults to `nil`.
-  - function (String.t): Demangled function name at the call site. Defaults to `nil`.
-  - locals (list(GoogleApi.CloudDebugger.V2.Model.Variable.t)): Set of local variables at the stack frame location.
-  Note that this might not be populated for all stack frames. Defaults to `nil`.
-  - location (GoogleApi.CloudDebugger.V2.Model.SourceLocation.t): Source location of the call site. Defaults to `nil`.
+  *   `arguments` (*type:* `list(GoogleApi.CloudDebugger.V2.Model.Variable.t)`, *default:* `nil`) - Set of arguments passed to this function.
+      Note that this might not be populated for all stack frames.
+  *   `function` (*type:* `String.t`, *default:* `nil`) - Demangled function name at the call site.
+  *   `locals` (*type:* `list(GoogleApi.CloudDebugger.V2.Model.Variable.t)`, *default:* `nil`) - Set of local variables at the stack frame location.
+      Note that this might not be populated for all stack frames.
+  *   `location` (*type:* `GoogleApi.CloudDebugger.V2.Model.SourceLocation.t`, *default:* `nil`) - Source location of the call site.
   """
 
   use GoogleApi.Gax.ModelBase

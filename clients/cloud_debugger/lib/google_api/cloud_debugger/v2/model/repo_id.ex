@@ -21,8 +21,8 @@ defmodule GoogleApi.CloudDebugger.V2.Model.RepoId do
 
   ## Attributes
 
-  - projectRepoId (GoogleApi.CloudDebugger.V2.Model.ProjectRepoId.t): A combination of a project ID and a repo name. Defaults to `nil`.
-  - uid (String.t): A server-assigned, globally unique identifier. Defaults to `nil`.
+  *   `projectRepoId` (*type:* `GoogleApi.CloudDebugger.V2.Model.ProjectRepoId.t`, *default:* `nil`) - A combination of a project ID and a repo name.
+  *   `uid` (*type:* `String.t`, *default:* `nil`) - A server-assigned, globally unique identifier.
   """
 
   use GoogleApi.Gax.ModelBase

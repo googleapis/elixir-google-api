@@ -28,31 +28,32 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Debugger do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudDebugger.V2.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :clientVersion (String.t): The client version making the call.
-  Schema: `domain/type/version` (e.g., `google.com/intellij/v1`).
-    - :includeInactive (boolean()): When set to `true`, the result includes all debuggees. Otherwise, the
-  result includes only debuggees that are active.
-    - :project (String.t): Project number of a Google Cloud project whose debuggees to list.
+  *   `connection` (*type:* `GoogleApi.CloudDebugger.V2.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:clientVersion` (*type:* `String.t`) - The client version making the call.
+          Schema: `domain/type/version` (e.g., `google.com/intellij/v1`).
+      *   `:includeInactive` (*type:* `boolean()`) - When set to `true`, the result includes all debuggees. Otherwise, the
+          result includes only debuggees that are active.
+      *   `:project` (*type:* `String.t`) - Project number of a Google Cloud project whose debuggees to list.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudDebugger.V2.Model.ListDebuggeesResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudDebugger.V2.Model.ListDebuggeesResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec clouddebugger_debugger_debuggees_list(Tesla.Env.client(), keyword()) ::
+  @spec clouddebugger_debugger_debuggees_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudDebugger.V2.Model.ListDebuggeesResponse.t()}
           | {:error, Tesla.Env.t()}
   def clouddebugger_debugger_debuggees_list(connection, optional_params \\ [], opts \\ []) do
@@ -91,33 +92,35 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Debugger do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudDebugger.V2.Connection): Connection to server
-  - debuggee_id (String.t): ID of the debuggee whose breakpoint to delete.
-  - breakpoint_id (String.t): ID of the breakpoint to delete.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :clientVersion (String.t): The client version making the call.
-  Schema: `domain/type/version` (e.g., `google.com/intellij/v1`).
+  *   `connection` (*type:* `GoogleApi.CloudDebugger.V2.Connection.t`) - Connection to server
+  *   `debuggee_id` (*type:* `String.t`) - ID of the debuggee whose breakpoint to delete.
+  *   `breakpoint_id` (*type:* `String.t`) - ID of the breakpoint to delete.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:clientVersion` (*type:* `String.t`) - The client version making the call.
+          Schema: `domain/type/version` (e.g., `google.com/intellij/v1`).
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudDebugger.V2.Model.Empty{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudDebugger.V2.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec clouddebugger_debugger_debuggees_breakpoints_delete(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.CloudDebugger.V2.Model.Empty.t()} | {:error, Tesla.Env.t()}
   def clouddebugger_debugger_debuggees_breakpoints_delete(
@@ -161,33 +164,35 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Debugger do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudDebugger.V2.Connection): Connection to server
-  - debuggee_id (String.t): ID of the debuggee whose breakpoint to get.
-  - breakpoint_id (String.t): ID of the breakpoint to get.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :clientVersion (String.t): The client version making the call.
-  Schema: `domain/type/version` (e.g., `google.com/intellij/v1`).
+  *   `connection` (*type:* `GoogleApi.CloudDebugger.V2.Connection.t`) - Connection to server
+  *   `debuggee_id` (*type:* `String.t`) - ID of the debuggee whose breakpoint to get.
+  *   `breakpoint_id` (*type:* `String.t`) - ID of the breakpoint to get.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:clientVersion` (*type:* `String.t`) - The client version making the call.
+          Schema: `domain/type/version` (e.g., `google.com/intellij/v1`).
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudDebugger.V2.Model.GetBreakpointResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudDebugger.V2.Model.GetBreakpointResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec clouddebugger_debugger_debuggees_breakpoints_get(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.CloudDebugger.V2.Model.GetBreakpointResponse.t()}
@@ -235,43 +240,45 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Debugger do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudDebugger.V2.Connection): Connection to server
-  - debuggee_id (String.t): ID of the debuggee whose breakpoints to list.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :action.value (String.t): Only breakpoints with the specified action will pass the filter.
-    - :clientVersion (String.t): The client version making the call.
-  Schema: `domain/type/version` (e.g., `google.com/intellij/v1`).
-    - :includeAllUsers (boolean()): When set to `true`, the response includes the list of breakpoints set by
-  any user. Otherwise, it includes only breakpoints set by the caller.
-    - :includeInactive (boolean()): When set to `true`, the response includes active and inactive
-  breakpoints. Otherwise, it includes only active breakpoints.
-    - :stripResults (boolean()): This field is deprecated. The following fields are always stripped out of
-  the result: `stack_frames`, `evaluated_expressions` and `variable_table`.
-    - :waitToken (String.t): A wait token that, if specified, blocks the call until the breakpoints
-  list has changed, or a server selected timeout has expired.  The value
-  should be set from the last response. The error code
-  `google.rpc.Code.ABORTED` (RPC) is returned on wait timeout, which
-  should be called again with the same `wait_token`.
+  *   `connection` (*type:* `GoogleApi.CloudDebugger.V2.Connection.t`) - Connection to server
+  *   `debuggee_id` (*type:* `String.t`) - ID of the debuggee whose breakpoints to list.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:action.value` (*type:* `String.t`) - Only breakpoints with the specified action will pass the filter.
+      *   `:clientVersion` (*type:* `String.t`) - The client version making the call.
+          Schema: `domain/type/version` (e.g., `google.com/intellij/v1`).
+      *   `:includeAllUsers` (*type:* `boolean()`) - When set to `true`, the response includes the list of breakpoints set by
+          any user. Otherwise, it includes only breakpoints set by the caller.
+      *   `:includeInactive` (*type:* `boolean()`) - When set to `true`, the response includes active and inactive
+          breakpoints. Otherwise, it includes only active breakpoints.
+      *   `:stripResults` (*type:* `boolean()`) - This field is deprecated. The following fields are always stripped out of
+          the result: `stack_frames`, `evaluated_expressions` and `variable_table`.
+      *   `:waitToken` (*type:* `String.t`) - A wait token that, if specified, blocks the call until the breakpoints
+          list has changed, or a server selected timeout has expired.  The value
+          should be set from the last response. The error code
+          `google.rpc.Code.ABORTED` (RPC) is returned on wait timeout, which
+          should be called again with the same `wait_token`.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudDebugger.V2.Model.ListBreakpointsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudDebugger.V2.Model.ListBreakpointsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec clouddebugger_debugger_debuggees_breakpoints_list(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.CloudDebugger.V2.Model.ListBreakpointsResponse.t()}
@@ -322,32 +329,34 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Debugger do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudDebugger.V2.Connection): Connection to server
-  - debuggee_id (String.t): ID of the debuggee where the breakpoint is to be set.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :clientVersion (String.t): The client version making the call.
-  Schema: `domain/type/version` (e.g., `google.com/intellij/v1`).
-    - :body (GoogleApi.CloudDebugger.V2.Model.Breakpoint.t): 
+  *   `connection` (*type:* `GoogleApi.CloudDebugger.V2.Connection.t`) - Connection to server
+  *   `debuggee_id` (*type:* `String.t`) - ID of the debuggee where the breakpoint is to be set.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:clientVersion` (*type:* `String.t`) - The client version making the call.
+          Schema: `domain/type/version` (e.g., `google.com/intellij/v1`).
+      *   `:body` (*type:* `GoogleApi.CloudDebugger.V2.Model.Breakpoint.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudDebugger.V2.Model.SetBreakpointResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudDebugger.V2.Model.SetBreakpointResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec clouddebugger_debugger_debuggees_breakpoints_set(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.CloudDebugger.V2.Model.SetBreakpointResponse.t()}
