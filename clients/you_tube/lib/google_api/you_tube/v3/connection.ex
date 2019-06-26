@@ -42,6 +42,6 @@ defmodule GoogleApi.YouTube.V3.Connection do
       # View private information of your YouTube channel relevant during the audit process with a YouTube partner
       "https://www.googleapis.com/auth/youtubepartner-channel-audit"
     ],
-    otp_app: :google_api_youtube,
+    otp_app: :google_api_you_tube,
     base_url: "https://www.googleapis.com/"
 end
