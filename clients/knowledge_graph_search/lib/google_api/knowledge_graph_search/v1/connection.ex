@@ -20,6 +20,8 @@ defmodule GoogleApi.KnowledgeGraphSearch.V1.Connection do
   Handle Tesla connections for GoogleApi.KnowledgeGraphSearch.V1.
   """
 
+  @type t :: Tesla.Env.client()
+
   use GoogleApi.Gax.Connection,
     scopes: [],
     otp_app: :google_api_kgsearch,
