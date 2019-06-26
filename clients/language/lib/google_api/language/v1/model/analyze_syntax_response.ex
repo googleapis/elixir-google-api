@@ -21,11 +21,11 @@ defmodule GoogleApi.Language.V1.Model.AnalyzeSyntaxResponse do
 
   ## Attributes
 
-  - language (String.t): The language of the text, which will be the same as the language specified
-  in the request or, if not specified, the automatically-detected language.
-  See Document.language field for more details. Defaults to `nil`.
-  - sentences (list(GoogleApi.Language.V1.Model.Sentence.t)): Sentences in the input document. Defaults to `nil`.
-  - tokens (list(GoogleApi.Language.V1.Model.Token.t)): Tokens, along with their syntactic information, in the input document. Defaults to `nil`.
+  *   `language` (*type:* `String.t`, *default:* `nil`) - The language of the text, which will be the same as the language specified
+      in the request or, if not specified, the automatically-detected language.
+      See Document.language field for more details.
+  *   `sentences` (*type:* `list(GoogleApi.Language.V1.Model.Sentence.t)`, *default:* `nil`) - Sentences in the input document.
+  *   `tokens` (*type:* `list(GoogleApi.Language.V1.Model.Token.t)`, *default:* `nil`) - Tokens, along with their syntactic information, in the input document.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,10 +21,10 @@ defmodule GoogleApi.Language.V1.Model.AnalyzeEntitySentimentResponse do
 
   ## Attributes
 
-  - entities (list(GoogleApi.Language.V1.Model.Entity.t)): The recognized entities in the input document with associated sentiments. Defaults to `nil`.
-  - language (String.t): The language of the text, which will be the same as the language specified
-  in the request or, if not specified, the automatically-detected language.
-  See Document.language field for more details. Defaults to `nil`.
+  *   `entities` (*type:* `list(GoogleApi.Language.V1.Model.Entity.t)`, *default:* `nil`) - The recognized entities in the input document with associated sentiments.
+  *   `language` (*type:* `String.t`, *default:* `nil`) - The language of the text, which will be the same as the language specified
+      in the request or, if not specified, the automatically-detected language.
+      See Document.language field for more details.
   """
 
   use GoogleApi.Gax.ModelBase

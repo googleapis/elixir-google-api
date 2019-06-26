@@ -23,12 +23,12 @@ defmodule GoogleApi.Language.V1.Model.DependencyEdge do
 
   ## Attributes
 
-  - headTokenIndex (integer()): Represents the head of this token in the dependency tree.
-  This is the index of the token which has an arc going to this token.
-  The index is the position of the token in the array of tokens returned
-  by the API method. If this token is a root token, then the
-  `head_token_index` is its own index. Defaults to `nil`.
-  - label (String.t): The parse label for the token. Defaults to `nil`.
+  *   `headTokenIndex` (*type:* `integer()`, *default:* `nil`) - Represents the head of this token in the dependency tree.
+      This is the index of the token which has an arc going to this token.
+      The index is the position of the token in the array of tokens returned
+      by the API method. If this token is a root token, then the
+      `head_token_index` is its own index.
+  *   `label` (*type:* `String.t`, *default:* `nil`) - The parse label for the token.
   """
 
   use GoogleApi.Gax.ModelBase

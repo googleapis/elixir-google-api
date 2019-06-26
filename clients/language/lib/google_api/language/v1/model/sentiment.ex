@@ -22,11 +22,11 @@ defmodule GoogleApi.Language.V1.Model.Sentiment do
 
   ## Attributes
 
-  - magnitude (number()): A non-negative number in the [0, +inf) range, which represents
-  the absolute magnitude of sentiment regardless of score (positive or
-  negative). Defaults to `nil`.
-  - score (number()): Sentiment score between -1.0 (negative sentiment) and 1.0
-  (positive sentiment). Defaults to `nil`.
+  *   `magnitude` (*type:* `number()`, *default:* `nil`) - A non-negative number in the [0, +inf) range, which represents
+      the absolute magnitude of sentiment regardless of score (positive or
+      negative).
+  *   `score` (*type:* `number()`, *default:* `nil`) - Sentiment score between -1.0 (negative sentiment) and 1.0
+      (positive sentiment).
   """
 
   use GoogleApi.Gax.ModelBase

@@ -22,9 +22,9 @@ defmodule GoogleApi.Language.V1.Model.AnnotateTextRequest do
 
   ## Attributes
 
-  - document (GoogleApi.Language.V1.Model.Document.t): Input document. Defaults to `nil`.
-  - encodingType (String.t): The encoding type used by the API to calculate offsets. Defaults to `nil`.
-  - features (GoogleApi.Language.V1.Model.Features.t): The enabled features. Defaults to `nil`.
+  *   `document` (*type:* `GoogleApi.Language.V1.Model.Document.t`, *default:* `nil`) - Input document.
+  *   `encodingType` (*type:* `String.t`, *default:* `nil`) - The encoding type used by the API to calculate offsets.
+  *   `features` (*type:* `GoogleApi.Language.V1.Model.Features.t`, *default:* `nil`) - The enabled features.
   """
 
   use GoogleApi.Gax.ModelBase

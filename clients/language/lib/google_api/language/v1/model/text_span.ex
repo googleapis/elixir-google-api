@@ -21,9 +21,9 @@ defmodule GoogleApi.Language.V1.Model.TextSpan do
 
   ## Attributes
 
-  - beginOffset (integer()): The API calculates the beginning offset of the content in the original
-  document according to the EncodingType specified in the API request. Defaults to `nil`.
-  - content (String.t): The content of the output text. Defaults to `nil`.
+  *   `beginOffset` (*type:* `integer()`, *default:* `nil`) - The API calculates the beginning offset of the content in the original
+      document according to the EncodingType specified in the API request.
+  *   `content` (*type:* `String.t`, *default:* `nil`) - The content of the output text.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -23,25 +23,25 @@ defmodule GoogleApi.Language.V1.Model.Entity do
 
   ## Attributes
 
-  - mentions (list(GoogleApi.Language.V1.Model.EntityMention.t)): The mentions of this entity in the input document. The API currently
-  supports proper noun mentions. Defaults to `nil`.
-  - metadata (map()): Metadata associated with the entity.
+  *   `mentions` (*type:* `list(GoogleApi.Language.V1.Model.EntityMention.t)`, *default:* `nil`) - The mentions of this entity in the input document. The API currently
+      supports proper noun mentions.
+  *   `metadata` (*type:* `map()`, *default:* `nil`) - Metadata associated with the entity.
 
-  For most entity types, the metadata is a Wikipedia URL (`wikipedia_url`)
-  and Knowledge Graph MID (`mid`), if they are available. For the metadata
-  associated with other entity types, see the Type table below. Defaults to `nil`.
-  - name (String.t): The representative name for the entity. Defaults to `nil`.
-  - salience (number()): The salience score associated with the entity in the [0, 1.0] range.
+      For most entity types, the metadata is a Wikipedia URL (`wikipedia_url`)
+      and Knowledge Graph MID (`mid`), if they are available. For the metadata
+      associated with other entity types, see the Type table below.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The representative name for the entity.
+  *   `salience` (*type:* `number()`, *default:* `nil`) - The salience score associated with the entity in the [0, 1.0] range.
 
-  The salience score for an entity provides information about the
-  importance or centrality of that entity to the entire document text.
-  Scores closer to 0 are less salient, while scores closer to 1.0 are highly
-  salient. Defaults to `nil`.
-  - sentiment (GoogleApi.Language.V1.Model.Sentiment.t): For calls to AnalyzeEntitySentiment or if
-  AnnotateTextRequest.Features.extract_entity_sentiment is set to
-  true, this field will contain the aggregate sentiment expressed for this
-  entity in the provided document. Defaults to `nil`.
-  - type (String.t): The entity type. Defaults to `nil`.
+      The salience score for an entity provides information about the
+      importance or centrality of that entity to the entire document text.
+      Scores closer to 0 are less salient, while scores closer to 1.0 are highly
+      salient.
+  *   `sentiment` (*type:* `GoogleApi.Language.V1.Model.Sentiment.t`, *default:* `nil`) - For calls to AnalyzeEntitySentiment or if
+      AnnotateTextRequest.Features.extract_entity_sentiment is set to
+      true, this field will contain the aggregate sentiment expressed for this
+      entity in the provided document.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The entity type.
   """
 
   use GoogleApi.Gax.ModelBase

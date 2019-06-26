@@ -20,6 +20,8 @@ defmodule GoogleApi.Language.V1.Connection do
   Handle Tesla connections for GoogleApi.Language.V1.
   """
 
+  @type t :: Tesla.Env.client()
+
   use GoogleApi.Gax.Connection,
     scopes: [
       # Apply machine learning models to reveal the structure and meaning of text
