@@ -21,8 +21,8 @@ defmodule GoogleApi.CloudBuild.V1.Model.Hash do
 
   ## Attributes
 
-  - type (String.t): The type of hash that was performed. Defaults to `nil`.
-  - value (String.t): The hash value. Defaults to `nil`.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of hash that was performed.
+  *   `value` (*type:* `String.t`, *default:* `nil`) - The hash value.
   """
 
   use GoogleApi.Gax.ModelBase

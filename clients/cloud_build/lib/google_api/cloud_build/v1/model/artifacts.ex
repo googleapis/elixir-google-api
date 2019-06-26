@@ -22,26 +22,26 @@ defmodule GoogleApi.CloudBuild.V1.Model.Artifacts do
 
   ## Attributes
 
-  - images (list(String.t)): A list of images to be pushed upon the successful completion of all build
-  steps.
+  *   `images` (*type:* `list(String.t)`, *default:* `nil`) - A list of images to be pushed upon the successful completion of all build
+      steps.
 
-  The images will be pushed using the builder service account's credentials.
+      The images will be pushed using the builder service account's credentials.
 
-  The digests of the pushed images will be stored in the Build resource's
-  results field.
+      The digests of the pushed images will be stored in the Build resource's
+      results field.
 
-  If any of the images fail to be pushed, the build is marked FAILURE. Defaults to `nil`.
-  - objects (GoogleApi.CloudBuild.V1.Model.ArtifactObjects.t): A list of objects to be uploaded to Cloud Storage upon successful
-  completion of all build steps.
+      If any of the images fail to be pushed, the build is marked FAILURE.
+  *   `objects` (*type:* `GoogleApi.CloudBuild.V1.Model.ArtifactObjects.t`, *default:* `nil`) - A list of objects to be uploaded to Cloud Storage upon successful
+      completion of all build steps.
 
-  Files in the workspace matching specified paths globs will be uploaded to
-  the specified Cloud Storage location using the builder service account's
-  credentials.
+      Files in the workspace matching specified paths globs will be uploaded to
+      the specified Cloud Storage location using the builder service account's
+      credentials.
 
-  The location and generation of the uploaded objects will be stored in the
-  Build resource's results field.
+      The location and generation of the uploaded objects will be stored in the
+      Build resource's results field.
 
-  If any objects fail to be pushed, the build is marked FAILURE. Defaults to `nil`.
+      If any objects fail to be pushed, the build is marked FAILURE.
   """
 
   use GoogleApi.Gax.ModelBase

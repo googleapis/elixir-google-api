@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.BuildOperationMetadata do
 
   ## Attributes
 
-  - build (GoogleApi.CloudBuild.V1.Model.Build.t): The build that the operation is tracking. Defaults to `nil`.
+  *   `build` (*type:* `GoogleApi.CloudBuild.V1.Model.Build.t`, *default:* `nil`) - The build that the operation is tracking.
   """
 
   use GoogleApi.Gax.ModelBase

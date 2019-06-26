@@ -21,17 +21,17 @@ defmodule GoogleApi.CloudBuild.V1.Model.RepoSource do
 
   ## Attributes
 
-  - branchName (String.t): Name of the branch to build. Defaults to `nil`.
-  - commitSha (String.t): Explicit commit SHA to build. Defaults to `nil`.
-  - dir (String.t): Directory, relative to the source root, in which to run the build.
+  *   `branchName` (*type:* `String.t`, *default:* `nil`) - Name of the branch to build.
+  *   `commitSha` (*type:* `String.t`, *default:* `nil`) - Explicit commit SHA to build.
+  *   `dir` (*type:* `String.t`, *default:* `nil`) - Directory, relative to the source root, in which to run the build.
 
-  This must be a relative path. If a step's `dir` is specified and is an
-  absolute path, this value is ignored for that step's execution. Defaults to `nil`.
-  - projectId (String.t): ID of the project that owns the Cloud Source Repository. If omitted, the
-  project ID requesting the build is assumed. Defaults to `nil`.
-  - repoName (String.t): Name of the Cloud Source Repository. If omitted, the name "default" is
-  assumed. Defaults to `nil`.
-  - tagName (String.t): Name of the tag to build. Defaults to `nil`.
+      This must be a relative path. If a step's `dir` is specified and is an
+      absolute path, this value is ignored for that step's execution.
+  *   `projectId` (*type:* `String.t`, *default:* `nil`) - ID of the project that owns the Cloud Source Repository. If omitted, the
+      project ID requesting the build is assumed.
+  *   `repoName` (*type:* `String.t`, *default:* `nil`) - Name of the Cloud Source Repository. If omitted, the name "default" is
+      assumed.
+  *   `tagName` (*type:* `String.t`, *default:* `nil`) - Name of the tag to build.
   """
 
   use GoogleApi.Gax.ModelBase

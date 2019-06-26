@@ -24,13 +24,13 @@ defmodule GoogleApi.CloudBuild.V1.Model.GitHubEventsConfig do
 
   ## Attributes
 
-  - checkSuite (GoogleApi.CloudBuild.V1.Model.CheckSuiteFilter.t): Output only. Indicates that a build was generated from a check suite
-  event. Defaults to `nil`.
-  - installationId (String.t): The installationID that emmits the GitHub event. Defaults to `nil`.
-  - name (String.t): Name of the repository. Defaults to `nil`.
-  - owner (String.t): Owner of the repository. Defaults to `nil`.
-  - pullRequest (GoogleApi.CloudBuild.V1.Model.PullRequestFilter.t): filter to match changes in pull requests. Defaults to `nil`.
-  - push (GoogleApi.CloudBuild.V1.Model.PushFilter.t): filter to match changes in refs like branches, tags. Defaults to `nil`.
+  *   `checkSuite` (*type:* `GoogleApi.CloudBuild.V1.Model.CheckSuiteFilter.t`, *default:* `nil`) - Output only. Indicates that a build was generated from a check suite
+      event.
+  *   `installationId` (*type:* `String.t`, *default:* `nil`) - The installationID that emmits the GitHub event.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the repository.
+  *   `owner` (*type:* `String.t`, *default:* `nil`) - Owner of the repository.
+  *   `pullRequest` (*type:* `GoogleApi.CloudBuild.V1.Model.PullRequestFilter.t`, *default:* `nil`) - filter to match changes in pull requests.
+  *   `push` (*type:* `GoogleApi.CloudBuild.V1.Model.PushFilter.t`, *default:* `nil`) - filter to match changes in refs like branches, tags.
   """
 
   use GoogleApi.Gax.ModelBase

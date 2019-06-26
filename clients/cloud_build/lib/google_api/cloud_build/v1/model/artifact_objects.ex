@@ -22,14 +22,14 @@ defmodule GoogleApi.CloudBuild.V1.Model.ArtifactObjects do
 
   ## Attributes
 
-  - location (String.t): Cloud Storage bucket and optional object path, in the form
-  "gs://bucket/path/to/somewhere/". (see [Bucket Name
-  Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)).
+  *   `location` (*type:* `String.t`, *default:* `nil`) - Cloud Storage bucket and optional object path, in the form
+      "gs://bucket/path/to/somewhere/". (see [Bucket Name
+      Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)).
 
-  Files in the workspace matching any path pattern will be uploaded to
-  Cloud Storage with this location as a prefix. Defaults to `nil`.
-  - paths (list(String.t)): Path globs used to match files in the build's workspace. Defaults to `nil`.
-  - timing (GoogleApi.CloudBuild.V1.Model.TimeSpan.t): Output only. Stores timing information for pushing all artifact objects. Defaults to `nil`.
+      Files in the workspace matching any path pattern will be uploaded to
+      Cloud Storage with this location as a prefix.
+  *   `paths` (*type:* `list(String.t)`, *default:* `nil`) - Path globs used to match files in the build's workspace.
+  *   `timing` (*type:* `GoogleApi.CloudBuild.V1.Model.TimeSpan.t`, *default:* `nil`) - Output only. Stores timing information for pushing all artifact objects.
   """
 
   use GoogleApi.Gax.ModelBase

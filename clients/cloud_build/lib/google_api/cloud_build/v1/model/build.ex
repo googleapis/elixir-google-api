@@ -32,62 +32,62 @@ defmodule GoogleApi.CloudBuild.V1.Model.Build do
   - $BRANCH_NAME: the branch name specified by RepoSource.
   - $TAG_NAME: the tag name specified by RepoSource.
   - $REVISION_ID or $COMMIT_SHA: the commit SHA specified by RepoSource or
-  resolved from the specified branch or tag.
+    resolved from the specified branch or tag.
   - $SHORT_SHA: first 7 characters of $REVISION_ID or $COMMIT_SHA.
 
   ## Attributes
 
-  - artifacts (GoogleApi.CloudBuild.V1.Model.Artifacts.t): Artifacts produced by the build that should be uploaded upon
-  successful completion of all build steps. Defaults to `nil`.
-  - buildTriggerId (String.t): Output only. The ID of the `BuildTrigger` that triggered this build, if it
-  was triggered automatically. Defaults to `nil`.
-  - createTime (DateTime.t): Output only. Time at which the request to create the build was received. Defaults to `nil`.
-  - finishTime (DateTime.t): Output only. Time at which execution of the build was finished.
+  *   `artifacts` (*type:* `GoogleApi.CloudBuild.V1.Model.Artifacts.t`, *default:* `nil`) - Artifacts produced by the build that should be uploaded upon
+      successful completion of all build steps.
+  *   `buildTriggerId` (*type:* `String.t`, *default:* `nil`) - Output only. The ID of the `BuildTrigger` that triggered this build, if it
+      was triggered automatically.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time at which the request to create the build was received.
+  *   `finishTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time at which execution of the build was finished.
 
-  The difference between finish_time and start_time is the duration of the
-  build's execution. Defaults to `nil`.
-  - id (String.t): Output only. Unique identifier of the build. Defaults to `nil`.
-  - images (list(String.t)): A list of images to be pushed upon the successful completion of all build
-  steps.
+      The difference between finish_time and start_time is the duration of the
+      build's execution.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Output only. Unique identifier of the build.
+  *   `images` (*type:* `list(String.t)`, *default:* `nil`) - A list of images to be pushed upon the successful completion of all build
+      steps.
 
-  The images are pushed using the builder service account's credentials.
+      The images are pushed using the builder service account's credentials.
 
-  The digests of the pushed images will be stored in the `Build` resource's
-  results field.
+      The digests of the pushed images will be stored in the `Build` resource's
+      results field.
 
-  If any of the images fail to be pushed, the build status is marked
-  `FAILURE`. Defaults to `nil`.
-  - logUrl (String.t): Output only. URL to logs for this build in Google Cloud Console. Defaults to `nil`.
-  - logsBucket (String.t): Google Cloud Storage bucket where logs should be written (see
-  [Bucket Name
-  Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)).
-  Logs file names will be of the format `${logs_bucket}/log-${build_id}.txt`. Defaults to `nil`.
-  - options (GoogleApi.CloudBuild.V1.Model.BuildOptions.t): Special options for this build. Defaults to `nil`.
-  - projectId (String.t): Output only. ID of the project. Defaults to `nil`.
-  - results (GoogleApi.CloudBuild.V1.Model.Results.t): Output only. Results of the build. Defaults to `nil`.
-  - secrets (list(GoogleApi.CloudBuild.V1.Model.Secret.t)): Secrets to decrypt using Cloud Key Management Service. Defaults to `nil`.
-  - source (GoogleApi.CloudBuild.V1.Model.Source.t): The location of the source files to build. Defaults to `nil`.
-  - sourceProvenance (GoogleApi.CloudBuild.V1.Model.SourceProvenance.t): Output only. A permanent fixed identifier for source. Defaults to `nil`.
-  - startTime (DateTime.t): Output only. Time at which execution of the build was started. Defaults to `nil`.
-  - status (String.t): Output only. Status of the build. Defaults to `nil`.
-  - statusDetail (String.t): Output only. Customer-readable message about the current status. Defaults to `nil`.
-  - steps (list(GoogleApi.CloudBuild.V1.Model.BuildStep.t)): Required. The operations to be performed on the workspace. Defaults to `nil`.
-  - substitutions (map()): Substitutions data for `Build` resource. Defaults to `nil`.
-  - tags (list(String.t)): Tags for annotation of a `Build`. These are not docker tags. Defaults to `nil`.
-  - timeout (String.t): Amount of time that this build should be allowed to run, to second
-  granularity. If this amount of time elapses, work on the build will cease
-  and the build status will be `TIMEOUT`.
+      If any of the images fail to be pushed, the build status is marked
+      `FAILURE`.
+  *   `logUrl` (*type:* `String.t`, *default:* `nil`) - Output only. URL to logs for this build in Google Cloud Console.
+  *   `logsBucket` (*type:* `String.t`, *default:* `nil`) - Google Cloud Storage bucket where logs should be written (see
+      [Bucket Name
+      Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)).
+      Logs file names will be of the format `${logs_bucket}/log-${build_id}.txt`.
+  *   `options` (*type:* `GoogleApi.CloudBuild.V1.Model.BuildOptions.t`, *default:* `nil`) - Special options for this build.
+  *   `projectId` (*type:* `String.t`, *default:* `nil`) - Output only. ID of the project.
+  *   `results` (*type:* `GoogleApi.CloudBuild.V1.Model.Results.t`, *default:* `nil`) - Output only. Results of the build.
+  *   `secrets` (*type:* `list(GoogleApi.CloudBuild.V1.Model.Secret.t)`, *default:* `nil`) - Secrets to decrypt using Cloud Key Management Service.
+  *   `source` (*type:* `GoogleApi.CloudBuild.V1.Model.Source.t`, *default:* `nil`) - The location of the source files to build.
+  *   `sourceProvenance` (*type:* `GoogleApi.CloudBuild.V1.Model.SourceProvenance.t`, *default:* `nil`) - Output only. A permanent fixed identifier for source.
+  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time at which execution of the build was started.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - Output only. Status of the build.
+  *   `statusDetail` (*type:* `String.t`, *default:* `nil`) - Output only. Customer-readable message about the current status.
+  *   `steps` (*type:* `list(GoogleApi.CloudBuild.V1.Model.BuildStep.t)`, *default:* `nil`) - Required. The operations to be performed on the workspace.
+  *   `substitutions` (*type:* `map()`, *default:* `nil`) - Substitutions data for `Build` resource.
+  *   `tags` (*type:* `list(String.t)`, *default:* `nil`) - Tags for annotation of a `Build`. These are not docker tags.
+  *   `timeout` (*type:* `String.t`, *default:* `nil`) - Amount of time that this build should be allowed to run, to second
+      granularity. If this amount of time elapses, work on the build will cease
+      and the build status will be `TIMEOUT`.
 
-  Default time is ten minutes. Defaults to `nil`.
-  - timing (%{optional(String.t) => GoogleApi.CloudBuild.V1.Model.TimeSpan.t}): Output only. Stores timing information for phases of the build. Valid keys
-  are:
+      Default time is ten minutes.
+  *   `timing` (*type:* `%{optional(String.t) => GoogleApi.CloudBuild.V1.Model.TimeSpan.t}`, *default:* `nil`) - Output only. Stores timing information for phases of the build. Valid keys
+      are:
 
-  * BUILD: time to execute all build steps
-  * PUSH: time to push all specified images.
-  * FETCHSOURCE: time to fetch source.
+      * BUILD: time to execute all build steps
+      * PUSH: time to push all specified images.
+      * FETCHSOURCE: time to fetch source.
 
-  If the build does not specify source or images,
-  these keys will not be included. Defaults to `nil`.
+      If the build does not specify source or images,
+      these keys will not be included.
   """
 
   use GoogleApi.Gax.ModelBase
