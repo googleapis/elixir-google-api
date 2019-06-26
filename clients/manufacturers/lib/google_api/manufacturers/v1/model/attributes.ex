@@ -22,75 +22,75 @@ defmodule GoogleApi.Manufacturers.V1.Model.Attributes do
 
   ## Attributes
 
-  - excludedDestination (list(String.t)): A list of excluded destinations. Defaults to `nil`.
-  - title (String.t): The title of the product. For more information, see
-  https://support.google.com/manufacturers/answer/6124116#title. Defaults to `nil`.
-  - disclosureDate (String.t): The disclosure date of the product. For more information, see
-  https://support.google.com/manufacturers/answer/6124116#disclosure. Defaults to `nil`.
-  - count (GoogleApi.Manufacturers.V1.Model.Count.t): The count of the product. For more information, see
-  https://support.google.com/manufacturers/answer/6124116#count. Defaults to `nil`.
-  - format (String.t): The format of the product. For more information, see
-  https://support.google.com/manufacturers/answer/6124116#format. Defaults to `nil`.
-  - featureDescription (list(GoogleApi.Manufacturers.V1.Model.FeatureDescription.t)): The rich format description of the product. For more information, see
-  https://support.google.com/manufacturers/answer/6124116#featuredesc. Defaults to `nil`.
-  - capacity (GoogleApi.Manufacturers.V1.Model.Capacity.t): The capacity of the product. For more information, see
-  https://support.google.com/manufacturers/answer/6124116#capacity. Defaults to `nil`.
-  - ageGroup (String.t): The target age group of the product. For more information, see
-  https://support.google.com/manufacturers/answer/6124116#agegroup. Defaults to `nil`.
-  - imageLink (GoogleApi.Manufacturers.V1.Model.Image.t): The image of the product. For more information, see
-  https://support.google.com/manufacturers/answer/6124116#image. Defaults to `nil`.
-  - suggestedRetailPrice (GoogleApi.Manufacturers.V1.Model.Price.t): The suggested retail price (MSRP) of the product. For more information,
-  see https://support.google.com/manufacturers/answer/6124116#price. Defaults to `nil`.
-  - scent (String.t): The scent of the product. For more information, see
-  https://support.google.com/manufacturers/answer/6124116#scent. Defaults to `nil`.
-  - videoLink (list(String.t)): The videos of the product. For more information, see
-  https://support.google.com/manufacturers/answer/6124116#video. Defaults to `nil`.
-  - productName (String.t): The canonical name of the product. For more information, see
-  https://support.google.com/manufacturers/answer/6124116#productname. Defaults to `nil`.
-  - flavor (String.t): The flavor of the product. For more information, see
-  https://support.google.com/manufacturers/answer/6124116#flavor. Defaults to `nil`.
-  - brand (String.t): The brand name of the product. For more information, see
-  https://support.google.com/manufacturers/answer/6124116#brand. Defaults to `nil`.
-  - material (String.t): The material of the product. For more information, see
-  https://support.google.com/manufacturers/answer/6124116#material. Defaults to `nil`.
-  - targetClientId (String.t): The target client id. Should only be used in the accounts of the data
-  partners. Defaults to `nil`.
-  - productDetail (list(GoogleApi.Manufacturers.V1.Model.ProductDetail.t)): The details of the product. For more information, see
-  https://support.google.com/manufacturers/answer/6124116#productdetail. Defaults to `nil`.
-  - sizeType (String.t): The size type of the product. For more information, see
-  https://support.google.com/manufacturers/answer/6124116#sizetype. Defaults to `nil`.
-  - productLine (String.t): The name of the group of products related to the product. For more
-  information, see
-  https://support.google.com/manufacturers/answer/6124116#productline. Defaults to `nil`.
-  - productPageUrl (String.t): The URL of the detail page of the product. For more information, see
-  https://support.google.com/manufacturers/answer/6124116#productpage. Defaults to `nil`.
-  - theme (String.t): The theme of the product. For more information, see
-  https://support.google.com/manufacturers/answer/6124116#theme. Defaults to `nil`.
-  - releaseDate (String.t): The release date of the product. For more information, see
-  https://support.google.com/manufacturers/answer/6124116#release. Defaults to `nil`.
-  - sizeSystem (String.t): The size system of the product. For more information, see
-  https://support.google.com/manufacturers/answer/6124116#sizesystem. Defaults to `nil`.
-  - gtin (list(String.t)): The Global Trade Item Number (GTIN) of the product. For more information,
-  see https://support.google.com/manufacturers/answer/6124116#gtin. Defaults to `nil`.
-  - description (String.t): The description of the product. For more information, see
-  https://support.google.com/manufacturers/answer/6124116#description. Defaults to `nil`.
-  - additionalImageLink (list(GoogleApi.Manufacturers.V1.Model.Image.t)): The additional images of the product. For more information, see
-  https://support.google.com/manufacturers/answer/6124116#addlimage. Defaults to `nil`.
-  - gender (String.t): The target gender of the product. For more information, see
-  https://support.google.com/manufacturers/answer/6124116#gender. Defaults to `nil`.
-  - mpn (String.t): The Manufacturer Part Number (MPN) of the product. For more information,
-  see https://support.google.com/manufacturers/answer/6124116#mpn. Defaults to `nil`.
-  - pattern (String.t): The pattern of the product. For more information, see
-  https://support.google.com/manufacturers/answer/6124116#pattern. Defaults to `nil`.
-  - size (String.t): The size of the product. For more information, see
-  https://support.google.com/manufacturers/answer/6124116#size. Defaults to `nil`.
-  - itemGroupId (String.t): The item group id of the product. For more information, see
-  https://support.google.com/manufacturers/answer/6124116#itemgroupid. Defaults to `nil`.
-  - color (String.t): The color of the product. For more information, see
-  https://support.google.com/manufacturers/answer/6124116#color. Defaults to `nil`.
-  - includedDestination (list(String.t)): A list of included destinations. Defaults to `nil`.
-  - productType (list(String.t)): The type or category of the product. For more information, see
-  https://support.google.com/manufacturers/answer/6124116#producttype. Defaults to `nil`.
+  *   `excludedDestination` (*type:* `list(String.t)`, *default:* `nil`) - A list of excluded destinations.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - The title of the product. For more information, see
+      https://support.google.com/manufacturers/answer/6124116#title.
+  *   `disclosureDate` (*type:* `String.t`, *default:* `nil`) - The disclosure date of the product. For more information, see
+      https://support.google.com/manufacturers/answer/6124116#disclosure.
+  *   `count` (*type:* `GoogleApi.Manufacturers.V1.Model.Count.t`, *default:* `nil`) - The count of the product. For more information, see
+      https://support.google.com/manufacturers/answer/6124116#count.
+  *   `format` (*type:* `String.t`, *default:* `nil`) - The format of the product. For more information, see
+      https://support.google.com/manufacturers/answer/6124116#format.
+  *   `featureDescription` (*type:* `list(GoogleApi.Manufacturers.V1.Model.FeatureDescription.t)`, *default:* `nil`) - The rich format description of the product. For more information, see
+      https://support.google.com/manufacturers/answer/6124116#featuredesc.
+  *   `capacity` (*type:* `GoogleApi.Manufacturers.V1.Model.Capacity.t`, *default:* `nil`) - The capacity of the product. For more information, see
+      https://support.google.com/manufacturers/answer/6124116#capacity.
+  *   `ageGroup` (*type:* `String.t`, *default:* `nil`) - The target age group of the product. For more information, see
+      https://support.google.com/manufacturers/answer/6124116#agegroup.
+  *   `imageLink` (*type:* `GoogleApi.Manufacturers.V1.Model.Image.t`, *default:* `nil`) - The image of the product. For more information, see
+      https://support.google.com/manufacturers/answer/6124116#image.
+  *   `suggestedRetailPrice` (*type:* `GoogleApi.Manufacturers.V1.Model.Price.t`, *default:* `nil`) - The suggested retail price (MSRP) of the product. For more information,
+      see https://support.google.com/manufacturers/answer/6124116#price.
+  *   `scent` (*type:* `String.t`, *default:* `nil`) - The scent of the product. For more information, see
+       https://support.google.com/manufacturers/answer/6124116#scent.
+  *   `videoLink` (*type:* `list(String.t)`, *default:* `nil`) - The videos of the product. For more information, see
+      https://support.google.com/manufacturers/answer/6124116#video.
+  *   `productName` (*type:* `String.t`, *default:* `nil`) - The canonical name of the product. For more information, see
+      https://support.google.com/manufacturers/answer/6124116#productname.
+  *   `flavor` (*type:* `String.t`, *default:* `nil`) - The flavor of the product. For more information, see
+      https://support.google.com/manufacturers/answer/6124116#flavor.
+  *   `brand` (*type:* `String.t`, *default:* `nil`) - The brand name of the product. For more information, see
+      https://support.google.com/manufacturers/answer/6124116#brand.
+  *   `material` (*type:* `String.t`, *default:* `nil`) - The material of the product. For more information, see
+      https://support.google.com/manufacturers/answer/6124116#material.
+  *   `targetClientId` (*type:* `String.t`, *default:* `nil`) - The target client id. Should only be used in the accounts of the data
+      partners.
+  *   `productDetail` (*type:* `list(GoogleApi.Manufacturers.V1.Model.ProductDetail.t)`, *default:* `nil`) - The details of the product. For more information, see
+      https://support.google.com/manufacturers/answer/6124116#productdetail.
+  *   `sizeType` (*type:* `String.t`, *default:* `nil`) - The size type of the product. For more information, see
+      https://support.google.com/manufacturers/answer/6124116#sizetype.
+  *   `productLine` (*type:* `String.t`, *default:* `nil`) - The name of the group of products related to the product. For more
+      information, see
+      https://support.google.com/manufacturers/answer/6124116#productline.
+  *   `productPageUrl` (*type:* `String.t`, *default:* `nil`) - The URL of the detail page of the product. For more information, see
+      https://support.google.com/manufacturers/answer/6124116#productpage.
+  *   `theme` (*type:* `String.t`, *default:* `nil`) - The theme of the product. For more information, see
+      https://support.google.com/manufacturers/answer/6124116#theme.
+  *   `releaseDate` (*type:* `String.t`, *default:* `nil`) - The release date of the product. For more information, see
+      https://support.google.com/manufacturers/answer/6124116#release.
+  *   `sizeSystem` (*type:* `String.t`, *default:* `nil`) - The size system of the product. For more information, see
+      https://support.google.com/manufacturers/answer/6124116#sizesystem.
+  *   `gtin` (*type:* `list(String.t)`, *default:* `nil`) - The Global Trade Item Number (GTIN) of the product. For more information,
+      see https://support.google.com/manufacturers/answer/6124116#gtin.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - The description of the product. For more information, see
+      https://support.google.com/manufacturers/answer/6124116#description.
+  *   `additionalImageLink` (*type:* `list(GoogleApi.Manufacturers.V1.Model.Image.t)`, *default:* `nil`) - The additional images of the product. For more information, see
+      https://support.google.com/manufacturers/answer/6124116#addlimage.
+  *   `gender` (*type:* `String.t`, *default:* `nil`) - The target gender of the product. For more information, see
+      https://support.google.com/manufacturers/answer/6124116#gender.
+  *   `mpn` (*type:* `String.t`, *default:* `nil`) - The Manufacturer Part Number (MPN) of the product. For more information,
+      see https://support.google.com/manufacturers/answer/6124116#mpn.
+  *   `pattern` (*type:* `String.t`, *default:* `nil`) - The pattern of the product. For more information, see
+      https://support.google.com/manufacturers/answer/6124116#pattern.
+  *   `size` (*type:* `String.t`, *default:* `nil`) - The size of the product. For more information, see
+      https://support.google.com/manufacturers/answer/6124116#size.
+  *   `itemGroupId` (*type:* `String.t`, *default:* `nil`) - The item group id of the product. For more information, see
+      https://support.google.com/manufacturers/answer/6124116#itemgroupid.
+  *   `color` (*type:* `String.t`, *default:* `nil`) - The color of the product. For more information, see
+      https://support.google.com/manufacturers/answer/6124116#color.
+  *   `includedDestination` (*type:* `list(String.t)`, *default:* `nil`) - A list of included destinations.
+  *   `productType` (*type:* `list(String.t)`, *default:* `nil`) - The type or category of the product. For more information, see
+      https://support.google.com/manufacturers/answer/6124116#producttype.
   """
 
   use GoogleApi.Gax.ModelBase

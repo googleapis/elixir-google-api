@@ -20,6 +20,8 @@ defmodule GoogleApi.Manufacturers.V1.Connection do
   Handle Tesla connections for GoogleApi.Manufacturers.V1.
   """
 
+  @type t :: Tesla.Env.client()
+
   use GoogleApi.Gax.Connection,
     scopes: [
       # Manage your product listings for Google Manufacturer Center

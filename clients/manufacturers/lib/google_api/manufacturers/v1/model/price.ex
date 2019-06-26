@@ -21,8 +21,8 @@ defmodule GoogleApi.Manufacturers.V1.Model.Price do
 
   ## Attributes
 
-  - amount (String.t): The numeric value of the price. Defaults to `nil`.
-  - currency (String.t): The currency in which the price is denoted. Defaults to `nil`.
+  *   `amount` (*type:* `String.t`, *default:* `nil`) - The numeric value of the price.
+  *   `currency` (*type:* `String.t`, *default:* `nil`) - The currency in which the price is denoted.
   """
 
   use GoogleApi.Gax.ModelBase

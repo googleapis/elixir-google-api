@@ -21,13 +21,13 @@ defmodule GoogleApi.Manufacturers.V1.Model.Image do
 
   ## Attributes
 
-  - imageUrl (String.t): The URL of the image. For crawled images, this is the provided URL. For
-  uploaded images, this is a serving URL from Google if the image has been
-  processed successfully. Defaults to `nil`.
-  - status (String.t): The status of the image.
-  @OutputOnly Defaults to `nil`.
-  - type (String.t): The type of the image, i.e., crawled or uploaded.
-  @OutputOnly Defaults to `nil`.
+  *   `imageUrl` (*type:* `String.t`, *default:* `nil`) - The URL of the image. For crawled images, this is the provided URL. For
+      uploaded images, this is a serving URL from Google if the image has been
+      processed successfully.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - The status of the image.
+      @OutputOnly
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the image, i.e., crawled or uploaded.
+      @OutputOnly
   """
 
   use GoogleApi.Gax.ModelBase

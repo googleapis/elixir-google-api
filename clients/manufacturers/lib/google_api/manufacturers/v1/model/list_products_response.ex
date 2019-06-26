@@ -21,8 +21,8 @@ defmodule GoogleApi.Manufacturers.V1.Model.ListProductsResponse do
 
   ## Attributes
 
-  - nextPageToken (String.t): The token for the retrieval of the next page of product statuses. Defaults to `nil`.
-  - products (list(GoogleApi.Manufacturers.V1.Model.Product.t)): List of the products. Defaults to `nil`.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The token for the retrieval of the next page of product statuses.
+  *   `products` (*type:* `list(GoogleApi.Manufacturers.V1.Model.Product.t)`, *default:* `nil`) - List of the products.
   """
 
   use GoogleApi.Gax.ModelBase

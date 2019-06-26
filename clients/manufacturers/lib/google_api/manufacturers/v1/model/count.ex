@@ -22,8 +22,8 @@ defmodule GoogleApi.Manufacturers.V1.Model.Count do
 
   ## Attributes
 
-  - unit (String.t): The unit in which these products are counted. Defaults to `nil`.
-  - value (String.t): The numeric value of the number of products in a package. Defaults to `nil`.
+  *   `unit` (*type:* `String.t`, *default:* `nil`) - The unit in which these products are counted.
+  *   `value` (*type:* `String.t`, *default:* `nil`) - The numeric value of the number of products in a package.
   """
 
   use GoogleApi.Gax.ModelBase

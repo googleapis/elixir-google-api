@@ -22,9 +22,9 @@ defmodule GoogleApi.Manufacturers.V1.Model.FeatureDescription do
 
   ## Attributes
 
-  - headline (String.t): A short description of the feature. Defaults to `nil`.
-  - image (GoogleApi.Manufacturers.V1.Model.Image.t): An optional image describing the feature. Defaults to `nil`.
-  - text (String.t): A detailed description of the feature. Defaults to `nil`.
+  *   `headline` (*type:* `String.t`, *default:* `nil`) - A short description of the feature.
+  *   `image` (*type:* `GoogleApi.Manufacturers.V1.Model.Image.t`, *default:* `nil`) - An optional image describing the feature.
+  *   `text` (*type:* `String.t`, *default:* `nil`) - A detailed description of the feature.
   """
 
   use GoogleApi.Gax.ModelBase
