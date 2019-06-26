@@ -30,6 +30,6 @@ defmodule GoogleApi.AnalyticsReporting.V4.Connection do
       # View your Google Analytics data
       "https://www.googleapis.com/auth/analytics.readonly"
     ],
-    otp_app: :google_api_analyticsreporting,
+    otp_app: :google_api_analytics_reporting,
     base_url: "https://analyticsreporting.googleapis.com/"
 end
