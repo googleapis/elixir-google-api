@@ -24,6 +24,6 @@ defmodule GoogleApi.CustomSearch.V1.Connection do
 
   use GoogleApi.Gax.Connection,
     scopes: [],
-    otp_app: :google_api_customsearch,
+    otp_app: :google_api_custom_search,
     base_url: "https://www.googleapis.com/customsearch/"
 end
