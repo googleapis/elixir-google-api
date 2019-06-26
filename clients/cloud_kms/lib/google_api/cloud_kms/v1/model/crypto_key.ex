@@ -25,47 +25,47 @@ defmodule GoogleApi.CloudKMS.V1.Model.CryptoKey do
 
   ## Attributes
 
-  - createTime (DateTime.t): Output only. The time at which this CryptoKey was created. Defaults to `nil`.
-  - labels (map()): Labels with user-defined metadata. For more information, see
-  [Labeling Keys](/kms/docs/labeling-keys). Defaults to `nil`.
-  - name (String.t): Output only. The resource name for this CryptoKey in the format
-  `projects/*/locations/*/keyRings/*/cryptoKeys/*`. Defaults to `nil`.
-  - nextRotationTime (DateTime.t): At next_rotation_time, the Key Management Service will automatically:
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which this CryptoKey was created.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - Labels with user-defined metadata. For more information, see
+      [Labeling Keys](/kms/docs/labeling-keys).
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name for this CryptoKey in the format
+      `projects/*/locations/*/keyRings/*/cryptoKeys/*`.
+  *   `nextRotationTime` (*type:* `DateTime.t`, *default:* `nil`) - At next_rotation_time, the Key Management Service will automatically:
 
-  1. Create a new version of this CryptoKey.
-  2. Mark the new version as primary.
+      1. Create a new version of this CryptoKey.
+      2. Mark the new version as primary.
 
-  Key rotations performed manually via
-  CreateCryptoKeyVersion and
-  UpdateCryptoKeyPrimaryVersion
-  do not affect next_rotation_time.
+      Key rotations performed manually via
+      CreateCryptoKeyVersion and
+      UpdateCryptoKeyPrimaryVersion
+      do not affect next_rotation_time.
 
-  Keys with purpose
-  ENCRYPT_DECRYPT support
-  automatic rotation. For other keys, this field must be omitted. Defaults to `nil`.
-  - primary (GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion.t): Output only. A copy of the "primary" CryptoKeyVersion that will be used
-  by Encrypt when this CryptoKey is given
-  in EncryptRequest.name.
+      Keys with purpose
+      ENCRYPT_DECRYPT support
+      automatic rotation. For other keys, this field must be omitted.
+  *   `primary` (*type:* `GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion.t`, *default:* `nil`) - Output only. A copy of the "primary" CryptoKeyVersion that will be used
+      by Encrypt when this CryptoKey is given
+      in EncryptRequest.name.
 
-  The CryptoKey's primary version can be updated via
-  UpdateCryptoKeyPrimaryVersion.
+      The CryptoKey's primary version can be updated via
+      UpdateCryptoKeyPrimaryVersion.
 
-  All keys with purpose
-  ENCRYPT_DECRYPT have a
-  primary. For other keys, this field will be omitted. Defaults to `nil`.
-  - purpose (String.t): The immutable purpose of this CryptoKey. Defaults to `nil`.
-  - rotationPeriod (String.t): next_rotation_time will be advanced by this period when the service
-  automatically rotates a key. Must be at least one day.
+      All keys with purpose
+      ENCRYPT_DECRYPT have a
+      primary. For other keys, this field will be omitted.
+  *   `purpose` (*type:* `String.t`, *default:* `nil`) - The immutable purpose of this CryptoKey.
+  *   `rotationPeriod` (*type:* `String.t`, *default:* `nil`) - next_rotation_time will be advanced by this period when the service
+      automatically rotates a key. Must be at least one day.
 
-  If rotation_period is set, next_rotation_time must also be set.
+      If rotation_period is set, next_rotation_time must also be set.
 
-  Keys with purpose
-  ENCRYPT_DECRYPT support
-  automatic rotation. For other keys, this field must be omitted. Defaults to `nil`.
-  - versionTemplate (GoogleApi.CloudKMS.V1.Model.CryptoKeyVersionTemplate.t): A template describing settings for new CryptoKeyVersion instances.
-  The properties of new CryptoKeyVersion instances created by either
-  CreateCryptoKeyVersion or
-  auto-rotation are controlled by this template. Defaults to `nil`.
+      Keys with purpose
+      ENCRYPT_DECRYPT support
+      automatic rotation. For other keys, this field must be omitted.
+  *   `versionTemplate` (*type:* `GoogleApi.CloudKMS.V1.Model.CryptoKeyVersionTemplate.t`, *default:* `nil`) - A template describing settings for new CryptoKeyVersion instances.
+      The properties of new CryptoKeyVersion instances created by either
+      CreateCryptoKeyVersion or
+      auto-rotation are controlled by this template.
   """
 
   use GoogleApi.Gax.ModelBase

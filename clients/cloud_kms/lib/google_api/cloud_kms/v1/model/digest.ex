@@ -21,9 +21,9 @@ defmodule GoogleApi.CloudKMS.V1.Model.Digest do
 
   ## Attributes
 
-  - sha256 (String.t): A message digest produced with the SHA-256 algorithm. Defaults to `nil`.
-  - sha384 (String.t): A message digest produced with the SHA-384 algorithm. Defaults to `nil`.
-  - sha512 (String.t): A message digest produced with the SHA-512 algorithm. Defaults to `nil`.
+  *   `sha256` (*type:* `String.t`, *default:* `nil`) - A message digest produced with the SHA-256 algorithm.
+  *   `sha384` (*type:* `String.t`, *default:* `nil`) - A message digest produced with the SHA-384 algorithm.
+  *   `sha512` (*type:* `String.t`, *default:* `nil`) - A message digest produced with the SHA-512 algorithm.
   """
 
   use GoogleApi.Gax.ModelBase

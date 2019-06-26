@@ -21,8 +21,8 @@ defmodule GoogleApi.CloudKMS.V1.Model.EncryptResponse do
 
   ## Attributes
 
-  - ciphertext (String.t): The encrypted data. Defaults to `nil`.
-  - name (String.t): The resource name of the CryptoKeyVersion used in encryption. Defaults to `nil`.
+  *   `ciphertext` (*type:* `String.t`, *default:* `nil`) - The encrypted data.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the CryptoKeyVersion used in encryption.
   """
 
   use GoogleApi.Gax.ModelBase

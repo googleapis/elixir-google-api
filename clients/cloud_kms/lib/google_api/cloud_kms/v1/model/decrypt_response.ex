@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudKMS.V1.Model.DecryptResponse do
 
   ## Attributes
 
-  - plaintext (String.t): The decrypted data originally supplied in EncryptRequest.plaintext. Defaults to `nil`.
+  *   `plaintext` (*type:* `String.t`, *default:* `nil`) - The decrypted data originally supplied in EncryptRequest.plaintext.
   """
 
   use GoogleApi.Gax.ModelBase

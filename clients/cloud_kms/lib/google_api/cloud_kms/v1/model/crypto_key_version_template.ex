@@ -24,14 +24,14 @@ defmodule GoogleApi.CloudKMS.V1.Model.CryptoKeyVersionTemplate do
 
   ## Attributes
 
-  - algorithm (String.t): Required. Algorithm to use
-  when creating a CryptoKeyVersion based on this template.
+  *   `algorithm` (*type:* `String.t`, *default:* `nil`) - Required. Algorithm to use
+      when creating a CryptoKeyVersion based on this template.
 
-  For backwards compatibility, GOOGLE_SYMMETRIC_ENCRYPTION is implied if both
-  this field is omitted and CryptoKey.purpose is
-  ENCRYPT_DECRYPT. Defaults to `nil`.
-  - protectionLevel (String.t): ProtectionLevel to use when creating a CryptoKeyVersion based on
-  this template. Immutable. Defaults to SOFTWARE. Defaults to `nil`.
+      For backwards compatibility, GOOGLE_SYMMETRIC_ENCRYPTION is implied if both
+      this field is omitted and CryptoKey.purpose is
+      ENCRYPT_DECRYPT.
+  *   `protectionLevel` (*type:* `String.t`, *default:* `nil`) - ProtectionLevel to use when creating a CryptoKeyVersion based on
+      this template. Immutable. Defaults to SOFTWARE.
   """
 
   use GoogleApi.Gax.ModelBase

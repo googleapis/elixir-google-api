@@ -30,26 +30,26 @@ defmodule GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion do
 
   ## Attributes
 
-  - algorithm (String.t): Output only. The CryptoKeyVersionAlgorithm that this
-  CryptoKeyVersion supports. Defaults to `nil`.
-  - attestation (GoogleApi.CloudKMS.V1.Model.KeyOperationAttestation.t): Output only. Statement that was generated and signed by the HSM at key
-  creation time. Use this statement to verify attributes of the key as stored
-  on the HSM, independently of Google. Only provided for key versions with
-  protection_level HSM. Defaults to `nil`.
-  - createTime (DateTime.t): Output only. The time at which this CryptoKeyVersion was created. Defaults to `nil`.
-  - destroyEventTime (DateTime.t): Output only. The time this CryptoKeyVersion's key material was
-  destroyed. Only present if state is
-  DESTROYED. Defaults to `nil`.
-  - destroyTime (DateTime.t): Output only. The time this CryptoKeyVersion's key material is scheduled
-  for destruction. Only present if state is
-  DESTROY_SCHEDULED. Defaults to `nil`.
-  - generateTime (DateTime.t): Output only. The time this CryptoKeyVersion's key material was
-  generated. Defaults to `nil`.
-  - name (String.t): Output only. The resource name for this CryptoKeyVersion in the format
-  `projects/*/locations/*/keyRings/*/cryptoKeys/*/cryptoKeyVersions/*`. Defaults to `nil`.
-  - protectionLevel (String.t): Output only. The ProtectionLevel describing how crypto operations are
-  performed with this CryptoKeyVersion. Defaults to `nil`.
-  - state (String.t): The current state of the CryptoKeyVersion. Defaults to `nil`.
+  *   `algorithm` (*type:* `String.t`, *default:* `nil`) - Output only. The CryptoKeyVersionAlgorithm that this
+      CryptoKeyVersion supports.
+  *   `attestation` (*type:* `GoogleApi.CloudKMS.V1.Model.KeyOperationAttestation.t`, *default:* `nil`) - Output only. Statement that was generated and signed by the HSM at key
+      creation time. Use this statement to verify attributes of the key as stored
+      on the HSM, independently of Google. Only provided for key versions with
+      protection_level HSM.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which this CryptoKeyVersion was created.
+  *   `destroyEventTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time this CryptoKeyVersion's key material was
+      destroyed. Only present if state is
+      DESTROYED.
+  *   `destroyTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time this CryptoKeyVersion's key material is scheduled
+      for destruction. Only present if state is
+      DESTROY_SCHEDULED.
+  *   `generateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time this CryptoKeyVersion's key material was
+      generated.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name for this CryptoKeyVersion in the format
+      `projects/*/locations/*/keyRings/*/cryptoKeys/*/cryptoKeyVersions/*`.
+  *   `protectionLevel` (*type:* `String.t`, *default:* `nil`) - Output only. The ProtectionLevel describing how crypto operations are
+      performed with this CryptoKeyVersion.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - The current state of the CryptoKeyVersion.
   """
 
   use GoogleApi.Gax.ModelBase

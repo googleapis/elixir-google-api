@@ -22,13 +22,13 @@ defmodule GoogleApi.CloudKMS.V1.Model.PublicKey do
 
   ## Attributes
 
-  - algorithm (String.t): The Algorithm associated
-  with this key. Defaults to `nil`.
-  - pem (String.t): The public key, encoded in PEM format. For more information, see the
-  [RFC 7468](https://tools.ietf.org/html/rfc7468) sections for
-  [General Considerations](https://tools.ietf.org/html/rfc7468#section-2) and
-  [Textual Encoding of Subject Public Key Info]
-  (https://tools.ietf.org/html/rfc7468#section-13). Defaults to `nil`.
+  *   `algorithm` (*type:* `String.t`, *default:* `nil`) - The Algorithm associated
+      with this key.
+  *   `pem` (*type:* `String.t`, *default:* `nil`) - The public key, encoded in PEM format. For more information, see the
+      [RFC 7468](https://tools.ietf.org/html/rfc7468) sections for
+      [General Considerations](https://tools.ietf.org/html/rfc7468#section-2) and
+      [Textual Encoding of Subject Public Key Info]
+      (https://tools.ietf.org/html/rfc7468#section-13).
   """
 
   use GoogleApi.Gax.ModelBase

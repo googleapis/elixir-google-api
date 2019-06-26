@@ -21,12 +21,12 @@ defmodule GoogleApi.CloudKMS.V1.Model.ListCryptoKeyVersionsResponse do
 
   ## Attributes
 
-  - cryptoKeyVersions (list(GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion.t)): The list of CryptoKeyVersions. Defaults to `nil`.
-  - nextPageToken (String.t): A token to retrieve next page of results. Pass this value in
-  ListCryptoKeyVersionsRequest.page_token to retrieve the next page of
-  results. Defaults to `nil`.
-  - totalSize (integer()): The total number of CryptoKeyVersions that matched the
-  query. Defaults to `nil`.
+  *   `cryptoKeyVersions` (*type:* `list(GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion.t)`, *default:* `nil`) - The list of CryptoKeyVersions.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve next page of results. Pass this value in
+      ListCryptoKeyVersionsRequest.page_token to retrieve the next page of
+      results.
+  *   `totalSize` (*type:* `integer()`, *default:* `nil`) - The total number of CryptoKeyVersions that matched the
+      query.
   """
 
   use GoogleApi.Gax.ModelBase
