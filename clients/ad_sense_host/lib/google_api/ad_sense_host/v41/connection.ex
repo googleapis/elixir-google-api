@@ -27,6 +27,6 @@ defmodule GoogleApi.AdSenseHost.V41.Connection do
       # View and manage your AdSense host data and associated accounts
       "https://www.googleapis.com/auth/adsensehost"
     ],
-    otp_app: :google_api_adsensehost,
+    otp_app: :google_api_ad_sense_host,
     base_url: "https://www.googleapis.com/adsensehost/v4.1/"
 end
