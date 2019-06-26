@@ -30,6 +30,6 @@ defmodule GoogleApi.CloudDebugger.V2.Connection do
       # Use Stackdriver Debugger
       "https://www.googleapis.com/auth/cloud_debugger"
     ],
-    otp_app: :google_api_clouddebugger,
+    otp_app: :google_api_cloud_debugger,
     base_url: "https://clouddebugger.googleapis.com/"
 end
