@@ -27,6 +27,6 @@ defmodule GoogleApi.ServiceBroker.V1.Connection do
       # View and manage your data across Google Cloud Platform services
       "https://www.googleapis.com/auth/cloud-platform"
     ],
-    otp_app: :google_api_servicebroker,
+    otp_app: :google_api_service_broker,
     base_url: "https://servicebroker.googleapis.com/"
 end
