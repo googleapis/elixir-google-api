@@ -21,9 +21,9 @@ defmodule GoogleApi.Books.V1.Model.Dictlayerdata do
 
   ## Attributes
 
-  - common (GoogleApi.Books.V1.Model.DictlayerdataCommon.t):  Defaults to `nil`.
-  - dict (GoogleApi.Books.V1.Model.DictlayerdataDict.t):  Defaults to `nil`.
-  - kind (String.t):  Defaults to `books#dictlayerdata`.
+  *   `common` (*type:* `GoogleApi.Books.V1.Model.DictlayerdataCommon.t`, *default:* `nil`) - 
+  *   `dict` (*type:* `GoogleApi.Books.V1.Model.DictlayerdataDict.t`, *default:* `nil`) - 
+  *   `kind` (*type:* `String.t`, *default:* `books#dictlayerdata`) - 
   """
 
   use GoogleApi.Gax.ModelBase

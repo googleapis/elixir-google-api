@@ -21,17 +21,17 @@ defmodule GoogleApi.Books.V1.Model.ConcurrentAccessRestriction do
 
   ## Attributes
 
-  - deviceAllowed (boolean()): Whether access is granted for this (user, device, volume). Defaults to `nil`.
-  - kind (String.t): Resource type. Defaults to `books#concurrentAccessRestriction`.
-  - maxConcurrentDevices (integer()): The maximum number of concurrent access licenses for this volume. Defaults to `nil`.
-  - message (String.t): Error/warning message. Defaults to `nil`.
-  - nonce (String.t): Client nonce for verification. Download access and client-validation only. Defaults to `nil`.
-  - reasonCode (String.t): Error/warning reason code. Defaults to `nil`.
-  - restricted (boolean()): Whether this volume has any concurrent access restrictions. Defaults to `nil`.
-  - signature (String.t): Response signature. Defaults to `nil`.
-  - source (String.t): Client app identifier for verification. Download access and client-validation only. Defaults to `nil`.
-  - timeWindowSeconds (integer()): Time in seconds for license auto-expiration. Defaults to `nil`.
-  - volumeId (String.t): Identifies the volume for which this entry applies. Defaults to `nil`.
+  *   `deviceAllowed` (*type:* `boolean()`, *default:* `nil`) - Whether access is granted for this (user, device, volume).
+  *   `kind` (*type:* `String.t`, *default:* `books#concurrentAccessRestriction`) - Resource type.
+  *   `maxConcurrentDevices` (*type:* `integer()`, *default:* `nil`) - The maximum number of concurrent access licenses for this volume.
+  *   `message` (*type:* `String.t`, *default:* `nil`) - Error/warning message.
+  *   `nonce` (*type:* `String.t`, *default:* `nil`) - Client nonce for verification. Download access and client-validation only.
+  *   `reasonCode` (*type:* `String.t`, *default:* `nil`) - Error/warning reason code.
+  *   `restricted` (*type:* `boolean()`, *default:* `nil`) - Whether this volume has any concurrent access restrictions.
+  *   `signature` (*type:* `String.t`, *default:* `nil`) - Response signature.
+  *   `source` (*type:* `String.t`, *default:* `nil`) - Client app identifier for verification. Download access and client-validation only.
+  *   `timeWindowSeconds` (*type:* `integer()`, *default:* `nil`) - Time in seconds for license auto-expiration.
+  *   `volumeId` (*type:* `String.t`, *default:* `nil`) - Identifies the volume for which this entry applies.
   """
 
   use GoogleApi.Gax.ModelBase

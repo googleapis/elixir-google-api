@@ -21,7 +21,7 @@ defmodule GoogleApi.Books.V1.Model.UsersettingsNotificationPriceDrop do
 
   ## Attributes
 
-  - opted_state (String.t):  Defaults to `nil`.
+  *   `opted_state` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

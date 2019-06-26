@@ -21,8 +21,8 @@ defmodule GoogleApi.Books.V1.Model.VolumeseriesinfoVolumeSeriesIssue do
 
   ## Attributes
 
-  - issueDisplayNumber (String.t):  Defaults to `nil`.
-  - issueOrderNumber (integer()):  Defaults to `nil`.
+  *   `issueDisplayNumber` (*type:* `String.t`, *default:* `nil`) - 
+  *   `issueOrderNumber` (*type:* `integer()`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

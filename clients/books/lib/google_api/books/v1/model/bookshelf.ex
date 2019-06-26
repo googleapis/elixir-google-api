@@ -21,16 +21,16 @@ defmodule GoogleApi.Books.V1.Model.Bookshelf do
 
   ## Attributes
 
-  - access (String.t): Whether this bookshelf is PUBLIC or PRIVATE. Defaults to `nil`.
-  - created (DateTime.t): Created time for this bookshelf (formatted UTC timestamp with millisecond resolution). Defaults to `nil`.
-  - description (String.t): Description of this bookshelf. Defaults to `nil`.
-  - id (integer()): Id of this bookshelf, only unique by user. Defaults to `nil`.
-  - kind (String.t): Resource type for bookshelf metadata. Defaults to `books#bookshelf`.
-  - selfLink (String.t): URL to this resource. Defaults to `nil`.
-  - title (String.t): Title of this bookshelf. Defaults to `nil`.
-  - updated (DateTime.t): Last modified time of this bookshelf (formatted UTC timestamp with millisecond resolution). Defaults to `nil`.
-  - volumeCount (integer()): Number of volumes in this bookshelf. Defaults to `nil`.
-  - volumesLastUpdated (DateTime.t): Last time a volume was added or removed from this bookshelf (formatted UTC timestamp with millisecond resolution). Defaults to `nil`.
+  *   `access` (*type:* `String.t`, *default:* `nil`) - Whether this bookshelf is PUBLIC or PRIVATE.
+  *   `created` (*type:* `DateTime.t`, *default:* `nil`) - Created time for this bookshelf (formatted UTC timestamp with millisecond resolution).
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Description of this bookshelf.
+  *   `id` (*type:* `integer()`, *default:* `nil`) - Id of this bookshelf, only unique by user.
+  *   `kind` (*type:* `String.t`, *default:* `books#bookshelf`) - Resource type for bookshelf metadata.
+  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - URL to this resource.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - Title of this bookshelf.
+  *   `updated` (*type:* `DateTime.t`, *default:* `nil`) - Last modified time of this bookshelf (formatted UTC timestamp with millisecond resolution).
+  *   `volumeCount` (*type:* `integer()`, *default:* `nil`) - Number of volumes in this bookshelf.
+  *   `volumesLastUpdated` (*type:* `DateTime.t`, *default:* `nil`) - Last time a volume was added or removed from this bookshelf (formatted UTC timestamp with millisecond resolution).
   """
 
   use GoogleApi.Gax.ModelBase

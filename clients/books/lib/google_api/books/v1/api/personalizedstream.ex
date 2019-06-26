@@ -28,25 +28,26 @@ defmodule GoogleApi.Books.V1.Api.Personalizedstream do
 
   ## Parameters
 
-  - connection (GoogleApi.Books.V1.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :locale (String.t): ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'. Used for generating recommendations.
-    - :maxAllowedMaturityRating (String.t): The maximum allowed maturity rating of returned recommendations. Books with a higher maturity rating are filtered out.
-    - :source (String.t): String to identify the originator of this request.
+  *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:locale` (*type:* `String.t`) - ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'. Used for generating recommendations.
+      *   `:maxAllowedMaturityRating` (*type:* `String.t`) - The maximum allowed maturity rating of returned recommendations. Books with a higher maturity rating are filtered out.
+      *   `:source` (*type:* `String.t`) - String to identify the originator of this request.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Books.V1.Model.Discoveryclusters{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Books.V1.Model.Discoveryclusters{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec books_personalizedstream_get(Tesla.Env.client(), keyword()) ::
+  @spec books_personalizedstream_get(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Books.V1.Model.Discoveryclusters.t()} | {:error, Tesla.Env.t()}
   def books_personalizedstream_get(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

@@ -28,24 +28,29 @@ defmodule GoogleApi.Books.V1.Api.Dictionary do
 
   ## Parameters
 
-  - connection (GoogleApi.Books.V1.Connection): Connection to server
-  - cpksver (String.t): The device/version ID from which to request the data.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
+  *   `cpksver` (*type:* `String.t`) - The device/version ID from which to request the data.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Books.V1.Model.Metadata{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Books.V1.Model.Metadata{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec books_dictionary_list_offline_metadata(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, GoogleApi.Books.V1.Model.Metadata.t()} | {:error, Tesla.Env.t()}
+  @spec books_dictionary_list_offline_metadata(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.Books.V1.Model.Metadata.t()} | {:error, Tesla.Env.t()}
   def books_dictionary_list_offline_metadata(
         connection,
         cpksver,

@@ -21,8 +21,8 @@ defmodule GoogleApi.Books.V1.Model.DictlayerdataDictWordsDerivatives do
 
   ## Attributes
 
-  - source (GoogleApi.Books.V1.Model.DictlayerdataDictWordsDerivativesSource.t):  Defaults to `nil`.
-  - text (String.t):  Defaults to `nil`.
+  *   `source` (*type:* `GoogleApi.Books.V1.Model.DictlayerdataDictWordsDerivativesSource.t`, *default:* `nil`) - 
+  *   `text` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

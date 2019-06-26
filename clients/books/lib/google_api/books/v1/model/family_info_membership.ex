@@ -21,11 +21,11 @@ defmodule GoogleApi.Books.V1.Model.FamilyInfoMembership do
 
   ## Attributes
 
-  - acquirePermission (String.t): Restrictions on user buying and acquiring content. Defaults to `nil`.
-  - ageGroup (String.t): The age group of the user. Defaults to `nil`.
-  - allowedMaturityRating (String.t): The maximum allowed maturity rating for the user. Defaults to `nil`.
-  - isInFamily (boolean()):  Defaults to `nil`.
-  - role (String.t): The role of the user in the family. Defaults to `nil`.
+  *   `acquirePermission` (*type:* `String.t`, *default:* `nil`) - Restrictions on user buying and acquiring content.
+  *   `ageGroup` (*type:* `String.t`, *default:* `nil`) - The age group of the user.
+  *   `allowedMaturityRating` (*type:* `String.t`, *default:* `nil`) - The maximum allowed maturity rating for the user.
+  *   `isInFamily` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `role` (*type:* `String.t`, *default:* `nil`) - The role of the user in the family.
   """
 
   use GoogleApi.Gax.ModelBase

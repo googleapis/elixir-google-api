@@ -21,10 +21,10 @@ defmodule GoogleApi.Books.V1.Model.VolumeUserInfoCopy do
 
   ## Attributes
 
-  - allowedCharacterCount (integer()):  Defaults to `nil`.
-  - limitType (String.t):  Defaults to `nil`.
-  - remainingCharacterCount (integer()):  Defaults to `nil`.
-  - updated (DateTime.t):  Defaults to `nil`.
+  *   `allowedCharacterCount` (*type:* `integer()`, *default:* `nil`) - 
+  *   `limitType` (*type:* `String.t`, *default:* `nil`) - 
+  *   `remainingCharacterCount` (*type:* `integer()`, *default:* `nil`) - 
+  *   `updated` (*type:* `DateTime.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

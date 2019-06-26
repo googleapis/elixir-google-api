@@ -21,8 +21,8 @@ defmodule GoogleApi.Books.V1.Model.VolumeSaleInfoOffersRetailPrice do
 
   ## Attributes
 
-  - amountInMicros (float()):  Defaults to `nil`.
-  - currencyCode (String.t):  Defaults to `nil`.
+  *   `amountInMicros` (*type:* `float()`, *default:* `nil`) - 
+  *   `currencyCode` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

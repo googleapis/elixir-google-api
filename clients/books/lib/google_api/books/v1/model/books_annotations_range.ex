@@ -21,10 +21,10 @@ defmodule GoogleApi.Books.V1.Model.BooksAnnotationsRange do
 
   ## Attributes
 
-  - endOffset (String.t): The offset from the ending position. Defaults to `nil`.
-  - endPosition (String.t): The ending position for the range. Defaults to `nil`.
-  - startOffset (String.t): The offset from the starting position. Defaults to `nil`.
-  - startPosition (String.t): The starting position for the range. Defaults to `nil`.
+  *   `endOffset` (*type:* `String.t`, *default:* `nil`) - The offset from the ending position.
+  *   `endPosition` (*type:* `String.t`, *default:* `nil`) - The ending position for the range.
+  *   `startOffset` (*type:* `String.t`, *default:* `nil`) - The offset from the starting position.
+  *   `startPosition` (*type:* `String.t`, *default:* `nil`) - The starting position for the range.
   """
 
   use GoogleApi.Gax.ModelBase

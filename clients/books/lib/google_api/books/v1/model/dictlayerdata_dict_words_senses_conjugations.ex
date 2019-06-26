@@ -21,8 +21,8 @@ defmodule GoogleApi.Books.V1.Model.DictlayerdataDictWordsSensesConjugations do
 
   ## Attributes
 
-  - type (String.t):  Defaults to `nil`.
-  - value (String.t):  Defaults to `nil`.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - 
+  *   `value` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,7 +21,7 @@ defmodule GoogleApi.Books.V1.Model.DictlayerdataCommon do
 
   ## Attributes
 
-  - title (String.t): The display title and localized canonical name to use when searching for this entity on Google search. Defaults to `nil`.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - The display title and localized canonical name to use when searching for this entity on Google search.
   """
 
   use GoogleApi.Gax.ModelBase

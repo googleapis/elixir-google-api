@@ -21,8 +21,8 @@ defmodule GoogleApi.Books.V1.Model.VolumeVolumeInfoIndustryIdentifiers do
 
   ## Attributes
 
-  - identifier (String.t): Industry specific volume identifier. Defaults to `nil`.
-  - type (String.t): Identifier type. Possible values are ISBN_10, ISBN_13, ISSN and OTHER. Defaults to `nil`.
+  *   `identifier` (*type:* `String.t`, *default:* `nil`) - Industry specific volume identifier.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Identifier type. Possible values are ISBN_10, ISBN_13, ISSN and OTHER.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,9 +21,9 @@ defmodule GoogleApi.Books.V1.Model.VolumeVolumeInfoDimensions do
 
   ## Attributes
 
-  - height (String.t): Height or length of this volume (in cm). Defaults to `nil`.
-  - thickness (String.t): Thickness of this volume (in cm). Defaults to `nil`.
-  - width (String.t): Width of this volume (in cm). Defaults to `nil`.
+  *   `height` (*type:* `String.t`, *default:* `nil`) - Height or length of this volume (in cm).
+  *   `thickness` (*type:* `String.t`, *default:* `nil`) - Thickness of this volume (in cm).
+  *   `width` (*type:* `String.t`, *default:* `nil`) - Width of this volume (in cm).
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,8 +21,8 @@ defmodule GoogleApi.Books.V1.Model.DictlayerdataDictWordsSensesDefinitions do
 
   ## Attributes
 
-  - definition (String.t):  Defaults to `nil`.
-  - examples (list(GoogleApi.Books.V1.Model.DictlayerdataDictWordsSensesDefinitionsExamples.t)):  Defaults to `nil`.
+  *   `definition` (*type:* `String.t`, *default:* `nil`) - 
+  *   `examples` (*type:* `list(GoogleApi.Books.V1.Model.DictlayerdataDictWordsSensesDefinitionsExamples.t)`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

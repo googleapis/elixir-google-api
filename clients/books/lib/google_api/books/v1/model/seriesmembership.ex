@@ -21,9 +21,9 @@ defmodule GoogleApi.Books.V1.Model.Seriesmembership do
 
   ## Attributes
 
-  - kind (String.t): Resorce type. Defaults to `books#series#membership`.
-  - member (list(GoogleApi.Books.V1.Model.Volume.t)):  Defaults to `nil`.
-  - nextPageToken (String.t):  Defaults to `nil`.
+  *   `kind` (*type:* `String.t`, *default:* `books#series#membership`) - Resorce type.
+  *   `member` (*type:* `list(GoogleApi.Books.V1.Model.Volume.t)`, *default:* `nil`) - 
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

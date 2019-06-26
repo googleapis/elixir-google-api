@@ -21,8 +21,8 @@ defmodule GoogleApi.Books.V1.Model.VolumeSaleInfoOffersRentalDuration do
 
   ## Attributes
 
-  - count (float()):  Defaults to `nil`.
-  - unit (String.t):  Defaults to `nil`.
+  *   `count` (*type:* `float()`, *default:* `nil`) - 
+  *   `unit` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

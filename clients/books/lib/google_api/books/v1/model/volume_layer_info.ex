@@ -21,7 +21,7 @@ defmodule GoogleApi.Books.V1.Model.VolumeLayerInfo do
 
   ## Attributes
 
-  - layers (list(GoogleApi.Books.V1.Model.VolumeLayerInfoLayers.t)): A layer should appear here if and only if the layer exists for this book. Defaults to `nil`.
+  *   `layers` (*type:* `list(GoogleApi.Books.V1.Model.VolumeLayerInfoLayers.t)`, *default:* `nil`) - A layer should appear here if and only if the layer exists for this book.
   """
 
   use GoogleApi.Gax.ModelBase

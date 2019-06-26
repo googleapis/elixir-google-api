@@ -21,7 +21,7 @@ defmodule GoogleApi.Books.V1.Model.VolumeRecommendedInfo do
 
   ## Attributes
 
-  - explanation (String.t): A text explaining why this volume is recommended. Defaults to `nil`.
+  *   `explanation` (*type:* `String.t`, *default:* `nil`) - A text explaining why this volume is recommended.
   """
 
   use GoogleApi.Gax.ModelBase

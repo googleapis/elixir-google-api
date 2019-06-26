@@ -21,9 +21,9 @@ defmodule GoogleApi.Books.V1.Model.AnnotationLayerSummary do
 
   ## Attributes
 
-  - allowedCharacterCount (integer()): Maximum allowed characters on this layer, especially for the "copy" layer. Defaults to `nil`.
-  - limitType (String.t): Type of limitation on this layer. "limited" or "unlimited" for the "copy" layer. Defaults to `nil`.
-  - remainingCharacterCount (integer()): Remaining allowed characters on this layer, especially for the "copy" layer. Defaults to `nil`.
+  *   `allowedCharacterCount` (*type:* `integer()`, *default:* `nil`) - Maximum allowed characters on this layer, especially for the "copy" layer.
+  *   `limitType` (*type:* `String.t`, *default:* `nil`) - Type of limitation on this layer. "limited" or "unlimited" for the "copy" layer.
+  *   `remainingCharacterCount` (*type:* `integer()`, *default:* `nil`) - Remaining allowed characters on this layer, especially for the "copy" layer.
   """
 
   use GoogleApi.Gax.ModelBase

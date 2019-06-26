@@ -28,26 +28,27 @@ defmodule GoogleApi.Books.V1.Api.Cloudloading do
 
   ## Parameters
 
-  - connection (GoogleApi.Books.V1.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :drive_document_id (String.t): A drive document id. The upload_client_token must not be set.
-    - :mime_type (String.t): The document MIME type. It can be set only if the drive_document_id is set.
-    - :name (String.t): The document name. It can be set only if the drive_document_id is set.
-    - :upload_client_token (String.t): 
+  *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:drive_document_id` (*type:* `String.t`) - A drive document id. The upload_client_token must not be set.
+      *   `:mime_type` (*type:* `String.t`) - The document MIME type. It can be set only if the drive_document_id is set.
+      *   `:name` (*type:* `String.t`) - The document name. It can be set only if the drive_document_id is set.
+      *   `:upload_client_token` (*type:* `String.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Books.V1.Model.BooksCloudloadingResource{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Books.V1.Model.BooksCloudloadingResource{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec books_cloudloading_add_book(Tesla.Env.client(), keyword()) ::
+  @spec books_cloudloading_add_book(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Books.V1.Model.BooksCloudloadingResource.t()} | {:error, Tesla.Env.t()}
   def books_cloudloading_add_book(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -80,23 +81,24 @@ defmodule GoogleApi.Books.V1.Api.Cloudloading do
 
   ## Parameters
 
-  - connection (GoogleApi.Books.V1.Connection): Connection to server
-  - volume_id (String.t): The id of the book to be removed.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
+  *   `volume_id` (*type:* `String.t`) - The id of the book to be removed.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %{}} on success
-  {:error, info} on failure
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec books_cloudloading_delete_book(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec books_cloudloading_delete_book(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
   def books_cloudloading_delete_book(connection, volume_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -126,23 +128,24 @@ defmodule GoogleApi.Books.V1.Api.Cloudloading do
 
   ## Parameters
 
-  - connection (GoogleApi.Books.V1.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.Books.V1.Model.BooksCloudloadingResource.t): 
+  *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.Books.V1.Model.BooksCloudloadingResource.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Books.V1.Model.BooksCloudloadingResource{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Books.V1.Model.BooksCloudloadingResource{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec books_cloudloading_update_book(Tesla.Env.client(), keyword()) ::
+  @spec books_cloudloading_update_book(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Books.V1.Model.BooksCloudloadingResource.t()} | {:error, Tesla.Env.t()}
   def books_cloudloading_update_book(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

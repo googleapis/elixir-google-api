@@ -21,9 +21,9 @@ defmodule GoogleApi.Books.V1.Model.Volumes do
 
   ## Attributes
 
-  - items (list(GoogleApi.Books.V1.Model.Volume.t)): A list of volumes. Defaults to `nil`.
-  - kind (String.t): Resource type. Defaults to `books#volumes`.
-  - totalItems (integer()): Total number of volumes found. This might be greater than the number of volumes returned in this response if results have been paginated. Defaults to `nil`.
+  *   `items` (*type:* `list(GoogleApi.Books.V1.Model.Volume.t)`, *default:* `nil`) - A list of volumes.
+  *   `kind` (*type:* `String.t`, *default:* `books#volumes`) - Resource type.
+  *   `totalItems` (*type:* `integer()`, *default:* `nil`) - Total number of volumes found. This might be greater than the number of volumes returned in this response if results have been paginated.
   """
 
   use GoogleApi.Gax.ModelBase

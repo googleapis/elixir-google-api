@@ -21,14 +21,14 @@ defmodule GoogleApi.Books.V1.Model.DictlayerdataDictWordsSenses do
 
   ## Attributes
 
-  - conjugations (list(GoogleApi.Books.V1.Model.DictlayerdataDictWordsSensesConjugations.t)):  Defaults to `nil`.
-  - definitions (list(GoogleApi.Books.V1.Model.DictlayerdataDictWordsSensesDefinitions.t)):  Defaults to `nil`.
-  - partOfSpeech (String.t):  Defaults to `nil`.
-  - pronunciation (String.t):  Defaults to `nil`.
-  - pronunciationUrl (String.t):  Defaults to `nil`.
-  - source (GoogleApi.Books.V1.Model.DictlayerdataDictWordsSensesSource.t):  Defaults to `nil`.
-  - syllabification (String.t):  Defaults to `nil`.
-  - synonyms (list(GoogleApi.Books.V1.Model.DictlayerdataDictWordsSensesSynonyms.t)):  Defaults to `nil`.
+  *   `conjugations` (*type:* `list(GoogleApi.Books.V1.Model.DictlayerdataDictWordsSensesConjugations.t)`, *default:* `nil`) - 
+  *   `definitions` (*type:* `list(GoogleApi.Books.V1.Model.DictlayerdataDictWordsSensesDefinitions.t)`, *default:* `nil`) - 
+  *   `partOfSpeech` (*type:* `String.t`, *default:* `nil`) - 
+  *   `pronunciation` (*type:* `String.t`, *default:* `nil`) - 
+  *   `pronunciationUrl` (*type:* `String.t`, *default:* `nil`) - 
+  *   `source` (*type:* `GoogleApi.Books.V1.Model.DictlayerdataDictWordsSensesSource.t`, *default:* `nil`) - 
+  *   `syllabification` (*type:* `String.t`, *default:* `nil`) - 
+  *   `synonyms` (*type:* `list(GoogleApi.Books.V1.Model.DictlayerdataDictWordsSensesSynonyms.t)`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

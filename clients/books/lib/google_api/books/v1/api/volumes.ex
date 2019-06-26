@@ -28,29 +28,30 @@ defmodule GoogleApi.Books.V1.Api.Volumes do
 
   ## Parameters
 
-  - connection (GoogleApi.Books.V1.Connection): Connection to server
-  - volume_id (String.t): ID of volume to retrieve.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :country (String.t): ISO-3166-1 code to override the IP-based location.
-    - :includeNonComicsSeries (boolean()): Set to true to include non-comics series. Defaults to false.
-    - :partner (String.t): Brand results for partner ID.
-    - :projection (String.t): Restrict information returned to a set of selected fields.
-    - :source (String.t): String to identify the originator of this request.
-    - :user_library_consistent_read (boolean()): 
+  *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
+  *   `volume_id` (*type:* `String.t`) - ID of volume to retrieve.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:country` (*type:* `String.t`) - ISO-3166-1 code to override the IP-based location.
+      *   `:includeNonComicsSeries` (*type:* `boolean()`) - Set to true to include non-comics series. Defaults to false.
+      *   `:partner` (*type:* `String.t`) - Brand results for partner ID.
+      *   `:projection` (*type:* `String.t`) - Restrict information returned to a set of selected fields.
+      *   `:source` (*type:* `String.t`) - String to identify the originator of this request.
+      *   `:user_library_consistent_read` (*type:* `boolean()`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Books.V1.Model.Volume{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Books.V1.Model.Volume{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec books_volumes_get(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec books_volumes_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Books.V1.Model.Volume.t()} | {:error, Tesla.Env.t()}
   def books_volumes_get(connection, volume_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -87,36 +88,37 @@ defmodule GoogleApi.Books.V1.Api.Volumes do
 
   ## Parameters
 
-  - connection (GoogleApi.Books.V1.Connection): Connection to server
-  - q (String.t): Full-text search query string.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :download (String.t): Restrict to volumes by download availability.
-    - :filter (String.t): Filter search results.
-    - :langRestrict (String.t): Restrict results to books with this language code.
-    - :libraryRestrict (String.t): Restrict search to this user's library.
-    - :maxAllowedMaturityRating (String.t): The maximum allowed maturity rating of returned recommendations. Books with a higher maturity rating are filtered out.
-    - :maxResults (integer()): Maximum number of results to return.
-    - :orderBy (String.t): Sort search results.
-    - :partner (String.t): Restrict and brand results for partner ID.
-    - :printType (String.t): Restrict to books or magazines.
-    - :projection (String.t): Restrict information returned to a set of selected fields.
-    - :showPreorders (boolean()): Set to true to show books available for preorder. Defaults to false.
-    - :source (String.t): String to identify the originator of this request.
-    - :startIndex (integer()): Index of the first result to return (starts at 0)
+  *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
+  *   `q` (*type:* `String.t`) - Full-text search query string.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:download` (*type:* `String.t`) - Restrict to volumes by download availability.
+      *   `:filter` (*type:* `String.t`) - Filter search results.
+      *   `:langRestrict` (*type:* `String.t`) - Restrict results to books with this language code.
+      *   `:libraryRestrict` (*type:* `String.t`) - Restrict search to this user's library.
+      *   `:maxAllowedMaturityRating` (*type:* `String.t`) - The maximum allowed maturity rating of returned recommendations. Books with a higher maturity rating are filtered out.
+      *   `:maxResults` (*type:* `integer()`) - Maximum number of results to return.
+      *   `:orderBy` (*type:* `String.t`) - Sort search results.
+      *   `:partner` (*type:* `String.t`) - Restrict and brand results for partner ID.
+      *   `:printType` (*type:* `String.t`) - Restrict to books or magazines.
+      *   `:projection` (*type:* `String.t`) - Restrict information returned to a set of selected fields.
+      *   `:showPreorders` (*type:* `boolean()`) - Set to true to show books available for preorder. Defaults to false.
+      *   `:source` (*type:* `String.t`) - String to identify the originator of this request.
+      *   `:startIndex` (*type:* `integer()`) - Index of the first result to return (starts at 0)
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Books.V1.Model.Volumes{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Books.V1.Model.Volumes{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec books_volumes_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec books_volumes_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Books.V1.Model.Volumes.t()} | {:error, Tesla.Env.t()}
   def books_volumes_list(connection, q, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -159,27 +161,28 @@ defmodule GoogleApi.Books.V1.Api.Volumes do
 
   ## Parameters
 
-  - connection (GoogleApi.Books.V1.Connection): Connection to server
-  - volume_id (String.t): ID of the source volume.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :association (String.t): Association type.
-    - :locale (String.t): ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'. Used for generating recommendations.
-    - :maxAllowedMaturityRating (String.t): The maximum allowed maturity rating of returned recommendations. Books with a higher maturity rating are filtered out.
-    - :source (String.t): String to identify the originator of this request.
+  *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
+  *   `volume_id` (*type:* `String.t`) - ID of the source volume.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:association` (*type:* `String.t`) - Association type.
+      *   `:locale` (*type:* `String.t`) - ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'. Used for generating recommendations.
+      *   `:maxAllowedMaturityRating` (*type:* `String.t`) - The maximum allowed maturity rating of returned recommendations. Books with a higher maturity rating are filtered out.
+      *   `:source` (*type:* `String.t`) - String to identify the originator of this request.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Books.V1.Model.Volumes{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Books.V1.Model.Volumes{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec books_volumes_associated_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec books_volumes_associated_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Books.V1.Model.Volumes.t()} | {:error, Tesla.Env.t()}
   def books_volumes_associated_list(connection, volume_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -214,29 +217,30 @@ defmodule GoogleApi.Books.V1.Api.Volumes do
 
   ## Parameters
 
-  - connection (GoogleApi.Books.V1.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :acquireMethod (list(String.t)): How the book was acquired
-    - :country (String.t): ISO-3166-1 code to override the IP-based location.
-    - :locale (String.t): ISO-639-1 language and ISO-3166-1 country code. Ex:'en_US'. Used for generating recommendations.
-    - :maxResults (integer()): Maximum number of results to return.
-    - :processingState (list(String.t)): The processing state of the user uploaded volumes to be returned. Applicable only if the UPLOADED is specified in the acquireMethod.
-    - :source (String.t): String to identify the originator of this request.
-    - :startIndex (integer()): Index of the first result to return (starts at 0)
+  *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:acquireMethod` (*type:* `list(String.t)`) - How the book was acquired
+      *   `:country` (*type:* `String.t`) - ISO-3166-1 code to override the IP-based location.
+      *   `:locale` (*type:* `String.t`) - ISO-639-1 language and ISO-3166-1 country code. Ex:'en_US'. Used for generating recommendations.
+      *   `:maxResults` (*type:* `integer()`) - Maximum number of results to return.
+      *   `:processingState` (*type:* `list(String.t)`) - The processing state of the user uploaded volumes to be returned. Applicable only if the UPLOADED is specified in the acquireMethod.
+      *   `:source` (*type:* `String.t`) - String to identify the originator of this request.
+      *   `:startIndex` (*type:* `integer()`) - Index of the first result to return (starts at 0)
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Books.V1.Model.Volumes{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Books.V1.Model.Volumes{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec books_volumes_mybooks_list(Tesla.Env.client(), keyword()) ::
+  @spec books_volumes_mybooks_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Books.V1.Model.Volumes.t()} | {:error, Tesla.Env.t()}
   def books_volumes_mybooks_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -272,25 +276,26 @@ defmodule GoogleApi.Books.V1.Api.Volumes do
 
   ## Parameters
 
-  - connection (GoogleApi.Books.V1.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :locale (String.t): ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'. Used for generating recommendations.
-    - :maxAllowedMaturityRating (String.t): The maximum allowed maturity rating of returned recommendations. Books with a higher maturity rating are filtered out.
-    - :source (String.t): String to identify the originator of this request.
+  *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:locale` (*type:* `String.t`) - ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'. Used for generating recommendations.
+      *   `:maxAllowedMaturityRating` (*type:* `String.t`) - The maximum allowed maturity rating of returned recommendations. Books with a higher maturity rating are filtered out.
+      *   `:source` (*type:* `String.t`) - String to identify the originator of this request.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Books.V1.Model.Volumes{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Books.V1.Model.Volumes{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec books_volumes_recommended_list(Tesla.Env.client(), keyword()) ::
+  @spec books_volumes_recommended_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Books.V1.Model.Volumes.t()} | {:error, Tesla.Env.t()}
   def books_volumes_recommended_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -322,26 +327,33 @@ defmodule GoogleApi.Books.V1.Api.Volumes do
 
   ## Parameters
 
-  - connection (GoogleApi.Books.V1.Connection): Connection to server
-  - rating (String.t): Rating to be given to the volume.
-  - volume_id (String.t): ID of the source volume.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :locale (String.t): ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'. Used for generating recommendations.
-    - :source (String.t): String to identify the originator of this request.
+  *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
+  *   `rating` (*type:* `String.t`) - Rating to be given to the volume.
+  *   `volume_id` (*type:* `String.t`) - ID of the source volume.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:locale` (*type:* `String.t`) - ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'. Used for generating recommendations.
+      *   `:source` (*type:* `String.t`) - String to identify the originator of this request.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Books.V1.Model.BooksVolumesRecommendedRateResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Books.V1.Model.BooksVolumesRecommendedRateResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec books_volumes_recommended_rate(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+  @spec books_volumes_recommended_rate(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.Books.V1.Model.BooksVolumesRecommendedRateResponse.t()}
           | {:error, Tesla.Env.t()}
   def books_volumes_recommended_rate(
@@ -383,28 +395,29 @@ defmodule GoogleApi.Books.V1.Api.Volumes do
 
   ## Parameters
 
-  - connection (GoogleApi.Books.V1.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :locale (String.t): ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'. Used for generating recommendations.
-    - :maxResults (integer()): Maximum number of results to return.
-    - :processingState (list(String.t)): The processing state of the user uploaded volumes to be returned.
-    - :source (String.t): String to identify the originator of this request.
-    - :startIndex (integer()): Index of the first result to return (starts at 0)
-    - :volumeId (list(String.t)): The ids of the volumes to be returned. If not specified all that match the processingState are returned.
+  *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:locale` (*type:* `String.t`) - ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'. Used for generating recommendations.
+      *   `:maxResults` (*type:* `integer()`) - Maximum number of results to return.
+      *   `:processingState` (*type:* `list(String.t)`) - The processing state of the user uploaded volumes to be returned.
+      *   `:source` (*type:* `String.t`) - String to identify the originator of this request.
+      *   `:startIndex` (*type:* `integer()`) - Index of the first result to return (starts at 0)
+      *   `:volumeId` (*type:* `list(String.t)`) - The ids of the volumes to be returned. If not specified all that match the processingState are returned.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Books.V1.Model.Volumes{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Books.V1.Model.Volumes{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec books_volumes_useruploaded_list(Tesla.Env.client(), keyword()) ::
+  @spec books_volumes_useruploaded_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Books.V1.Model.Volumes.t()} | {:error, Tesla.Env.t()}
   def books_volumes_useruploaded_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

@@ -21,10 +21,10 @@ defmodule GoogleApi.Books.V1.Model.OffersItems do
 
   ## Attributes
 
-  - artUrl (String.t):  Defaults to `nil`.
-  - gservicesKey (String.t):  Defaults to `nil`.
-  - id (String.t):  Defaults to `nil`.
-  - items (list(GoogleApi.Books.V1.Model.OffersItemsItems.t)):  Defaults to `nil`.
+  *   `artUrl` (*type:* `String.t`, *default:* `nil`) - 
+  *   `gservicesKey` (*type:* `String.t`, *default:* `nil`) - 
+  *   `id` (*type:* `String.t`, *default:* `nil`) - 
+  *   `items` (*type:* `list(GoogleApi.Books.V1.Model.OffersItemsItems.t)`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

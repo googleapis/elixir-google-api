@@ -21,8 +21,8 @@ defmodule GoogleApi.Books.V1.Model.DictlayerdataDictSource do
 
   ## Attributes
 
-  - attribution (String.t):  Defaults to `nil`.
-  - url (String.t):  Defaults to `nil`.
+  *   `attribution` (*type:* `String.t`, *default:* `nil`) - 
+  *   `url` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

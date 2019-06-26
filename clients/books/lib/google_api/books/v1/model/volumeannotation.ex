@@ -21,20 +21,20 @@ defmodule GoogleApi.Books.V1.Model.Volumeannotation do
 
   ## Attributes
 
-  - annotationDataId (String.t): The annotation data id for this volume annotation. Defaults to `nil`.
-  - annotationDataLink (String.t): Link to get data for this annotation. Defaults to `nil`.
-  - annotationType (String.t): The type of annotation this is. Defaults to `nil`.
-  - contentRanges (GoogleApi.Books.V1.Model.VolumeannotationContentRanges.t): The content ranges to identify the selected text. Defaults to `nil`.
-  - data (String.t): Data for this annotation. Defaults to `nil`.
-  - deleted (boolean()): Indicates that this annotation is deleted. Defaults to `nil`.
-  - id (String.t): Unique id of this volume annotation. Defaults to `nil`.
-  - kind (String.t): Resource Type Defaults to `books#volumeannotation`.
-  - layerId (String.t): The Layer this annotation is for. Defaults to `nil`.
-  - pageIds (list(String.t)): Pages the annotation spans. Defaults to `nil`.
-  - selectedText (String.t): Excerpt from the volume. Defaults to `nil`.
-  - selfLink (String.t): URL to this resource. Defaults to `nil`.
-  - updated (DateTime.t): Timestamp for the last time this anntoation was updated. (RFC 3339 UTC date-time format). Defaults to `nil`.
-  - volumeId (String.t): The Volume this annotation is for. Defaults to `nil`.
+  *   `annotationDataId` (*type:* `String.t`, *default:* `nil`) - The annotation data id for this volume annotation.
+  *   `annotationDataLink` (*type:* `String.t`, *default:* `nil`) - Link to get data for this annotation.
+  *   `annotationType` (*type:* `String.t`, *default:* `nil`) - The type of annotation this is.
+  *   `contentRanges` (*type:* `GoogleApi.Books.V1.Model.VolumeannotationContentRanges.t`, *default:* `nil`) - The content ranges to identify the selected text.
+  *   `data` (*type:* `String.t`, *default:* `nil`) - Data for this annotation.
+  *   `deleted` (*type:* `boolean()`, *default:* `nil`) - Indicates that this annotation is deleted.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Unique id of this volume annotation.
+  *   `kind` (*type:* `String.t`, *default:* `books#volumeannotation`) - Resource Type
+  *   `layerId` (*type:* `String.t`, *default:* `nil`) - The Layer this annotation is for.
+  *   `pageIds` (*type:* `list(String.t)`, *default:* `nil`) - Pages the annotation spans.
+  *   `selectedText` (*type:* `String.t`, *default:* `nil`) - Excerpt from the volume.
+  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - URL to this resource.
+  *   `updated` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp for the last time this anntoation was updated. (RFC 3339 UTC date-time format).
+  *   `volumeId` (*type:* `String.t`, *default:* `nil`) - The Volume this annotation is for.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,7 +21,7 @@ defmodule GoogleApi.Books.V1.Model.ReviewAuthor do
 
   ## Attributes
 
-  - displayName (String.t): Name of this person. Defaults to `nil`.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Name of this person.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,10 +21,10 @@ defmodule GoogleApi.Books.V1.Model.DictlayerdataDictWords do
 
   ## Attributes
 
-  - derivatives (list(GoogleApi.Books.V1.Model.DictlayerdataDictWordsDerivatives.t)):  Defaults to `nil`.
-  - examples (list(GoogleApi.Books.V1.Model.DictlayerdataDictWordsExamples.t)):  Defaults to `nil`.
-  - senses (list(GoogleApi.Books.V1.Model.DictlayerdataDictWordsSenses.t)):  Defaults to `nil`.
-  - source (GoogleApi.Books.V1.Model.DictlayerdataDictWordsSource.t): The words with different meanings but not related words, e.g. "go" (game) and "go" (verb). Defaults to `nil`.
+  *   `derivatives` (*type:* `list(GoogleApi.Books.V1.Model.DictlayerdataDictWordsDerivatives.t)`, *default:* `nil`) - 
+  *   `examples` (*type:* `list(GoogleApi.Books.V1.Model.DictlayerdataDictWordsExamples.t)`, *default:* `nil`) - 
+  *   `senses` (*type:* `list(GoogleApi.Books.V1.Model.DictlayerdataDictWordsSenses.t)`, *default:* `nil`) - 
+  *   `source` (*type:* `GoogleApi.Books.V1.Model.DictlayerdataDictWordsSource.t`, *default:* `nil`) - The words with different meanings but not related words, e.g. "go" (game) and "go" (verb).
   """
 
   use GoogleApi.Gax.ModelBase

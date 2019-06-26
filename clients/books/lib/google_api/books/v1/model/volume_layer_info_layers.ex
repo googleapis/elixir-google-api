@@ -21,8 +21,8 @@ defmodule GoogleApi.Books.V1.Model.VolumeLayerInfoLayers do
 
   ## Attributes
 
-  - layerId (String.t): The layer id of this layer (e.g. "geo"). Defaults to `nil`.
-  - volumeAnnotationsVersion (String.t): The current version of this layer's volume annotations. Note that this version applies only to the data in the books.layers.volumeAnnotations.* responses. The actual annotation data is versioned separately. Defaults to `nil`.
+  *   `layerId` (*type:* `String.t`, *default:* `nil`) - The layer id of this layer (e.g. "geo").
+  *   `volumeAnnotationsVersion` (*type:* `String.t`, *default:* `nil`) - The current version of this layer's volume annotations. Note that this version applies only to the data in the books.layers.volumeAnnotations.* responses. The actual annotation data is versioned separately.
   """
 
   use GoogleApi.Gax.ModelBase

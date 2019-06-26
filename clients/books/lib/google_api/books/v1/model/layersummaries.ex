@@ -21,9 +21,9 @@ defmodule GoogleApi.Books.V1.Model.Layersummaries do
 
   ## Attributes
 
-  - items (list(GoogleApi.Books.V1.Model.Layersummary.t)): A list of layer summary items. Defaults to `nil`.
-  - kind (String.t): Resource type. Defaults to `books#layersummaries`.
-  - totalItems (integer()): The total number of layer summaries found. Defaults to `nil`.
+  *   `items` (*type:* `list(GoogleApi.Books.V1.Model.Layersummary.t)`, *default:* `nil`) - A list of layer summary items.
+  *   `kind` (*type:* `String.t`, *default:* `books#layersummaries`) - Resource type.
+  *   `totalItems` (*type:* `integer()`, *default:* `nil`) - The total number of layer summaries found.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,11 +21,11 @@ defmodule GoogleApi.Books.V1.Model.MetadataItems do
 
   ## Attributes
 
-  - download_url (String.t):  Defaults to `nil`.
-  - encrypted_key (String.t):  Defaults to `nil`.
-  - language (String.t):  Defaults to `nil`.
-  - size (String.t):  Defaults to `nil`.
-  - version (String.t):  Defaults to `nil`.
+  *   `download_url` (*type:* `String.t`, *default:* `nil`) - 
+  *   `encrypted_key` (*type:* `String.t`, *default:* `nil`) - 
+  *   `language` (*type:* `String.t`, *default:* `nil`) - 
+  *   `size` (*type:* `String.t`, *default:* `nil`) - 
+  *   `version` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,23 +21,23 @@ defmodule GoogleApi.Books.V1.Model.Annotation do
 
   ## Attributes
 
-  - afterSelectedText (String.t): Anchor text after excerpt. For requests, if the user bookmarked a screen that has no flowing text on it, then this field should be empty. Defaults to `nil`.
-  - beforeSelectedText (String.t): Anchor text before excerpt. For requests, if the user bookmarked a screen that has no flowing text on it, then this field should be empty. Defaults to `nil`.
-  - clientVersionRanges (GoogleApi.Books.V1.Model.AnnotationClientVersionRanges.t): Selection ranges sent from the client. Defaults to `nil`.
-  - created (DateTime.t): Timestamp for the created time of this annotation. Defaults to `nil`.
-  - currentVersionRanges (GoogleApi.Books.V1.Model.AnnotationCurrentVersionRanges.t): Selection ranges for the most recent content version. Defaults to `nil`.
-  - data (String.t): User-created data for this annotation. Defaults to `nil`.
-  - deleted (boolean()): Indicates that this annotation is deleted. Defaults to `nil`.
-  - highlightStyle (String.t): The highlight style for this annotation. Defaults to `nil`.
-  - id (String.t): Id of this annotation, in the form of a GUID. Defaults to `nil`.
-  - kind (String.t): Resource type. Defaults to `books#annotation`.
-  - layerId (String.t): The layer this annotation is for. Defaults to `nil`.
-  - layerSummary (GoogleApi.Books.V1.Model.AnnotationLayerSummary.t):  Defaults to `nil`.
-  - pageIds (list(String.t)): Pages that this annotation spans. Defaults to `nil`.
-  - selectedText (String.t): Excerpt from the volume. Defaults to `nil`.
-  - selfLink (String.t): URL to this resource. Defaults to `nil`.
-  - updated (DateTime.t): Timestamp for the last time this annotation was modified. Defaults to `nil`.
-  - volumeId (String.t): The volume that this annotation belongs to. Defaults to `nil`.
+  *   `afterSelectedText` (*type:* `String.t`, *default:* `nil`) - Anchor text after excerpt. For requests, if the user bookmarked a screen that has no flowing text on it, then this field should be empty.
+  *   `beforeSelectedText` (*type:* `String.t`, *default:* `nil`) - Anchor text before excerpt. For requests, if the user bookmarked a screen that has no flowing text on it, then this field should be empty.
+  *   `clientVersionRanges` (*type:* `GoogleApi.Books.V1.Model.AnnotationClientVersionRanges.t`, *default:* `nil`) - Selection ranges sent from the client.
+  *   `created` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp for the created time of this annotation.
+  *   `currentVersionRanges` (*type:* `GoogleApi.Books.V1.Model.AnnotationCurrentVersionRanges.t`, *default:* `nil`) - Selection ranges for the most recent content version.
+  *   `data` (*type:* `String.t`, *default:* `nil`) - User-created data for this annotation.
+  *   `deleted` (*type:* `boolean()`, *default:* `nil`) - Indicates that this annotation is deleted.
+  *   `highlightStyle` (*type:* `String.t`, *default:* `nil`) - The highlight style for this annotation.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Id of this annotation, in the form of a GUID.
+  *   `kind` (*type:* `String.t`, *default:* `books#annotation`) - Resource type.
+  *   `layerId` (*type:* `String.t`, *default:* `nil`) - The layer this annotation is for.
+  *   `layerSummary` (*type:* `GoogleApi.Books.V1.Model.AnnotationLayerSummary.t`, *default:* `nil`) - 
+  *   `pageIds` (*type:* `list(String.t)`, *default:* `nil`) - Pages that this annotation spans.
+  *   `selectedText` (*type:* `String.t`, *default:* `nil`) - Excerpt from the volume.
+  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - URL to this resource.
+  *   `updated` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp for the last time this annotation was modified.
+  *   `volumeId` (*type:* `String.t`, *default:* `nil`) - The volume that this annotation belongs to.
   """
 
   use GoogleApi.Gax.ModelBase

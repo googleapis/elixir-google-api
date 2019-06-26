@@ -21,20 +21,20 @@ defmodule GoogleApi.Books.V1.Model.VolumeAccessInfo do
 
   ## Attributes
 
-  - accessViewStatus (String.t): Combines the access and viewability of this volume into a single status field for this user. Values can be FULL_PURCHASED, FULL_PUBLIC_DOMAIN, SAMPLE or NONE. (In LITE projection.) Defaults to `nil`.
-  - country (String.t): The two-letter ISO_3166-1 country code for which this access information is valid. (In LITE projection.) Defaults to `nil`.
-  - downloadAccess (GoogleApi.Books.V1.Model.DownloadAccessRestriction.t): Information about a volume's download license access restrictions. Defaults to `nil`.
-  - driveImportedContentLink (String.t): URL to the Google Drive viewer if this volume is uploaded by the user by selecting the file from Google Drive. Defaults to `nil`.
-  - embeddable (boolean()): Whether this volume can be embedded in a viewport using the Embedded Viewer API. Defaults to `nil`.
-  - epub (GoogleApi.Books.V1.Model.VolumeAccessInfoEpub.t): Information about epub content. (In LITE projection.) Defaults to `nil`.
-  - explicitOfflineLicenseManagement (boolean()): Whether this volume requires that the client explicitly request offline download license rather than have it done automatically when loading the content, if the client supports it. Defaults to `nil`.
-  - pdf (GoogleApi.Books.V1.Model.VolumeAccessInfoPdf.t): Information about pdf content. (In LITE projection.) Defaults to `nil`.
-  - publicDomain (boolean()): Whether or not this book is public domain in the country listed above. Defaults to `nil`.
-  - quoteSharingAllowed (boolean()): Whether quote sharing is allowed for this volume. Defaults to `nil`.
-  - textToSpeechPermission (String.t): Whether text-to-speech is permitted for this volume. Values can be ALLOWED, ALLOWED_FOR_ACCESSIBILITY, or NOT_ALLOWED. Defaults to `nil`.
-  - viewOrderUrl (String.t): For ordered but not yet processed orders, we give a URL that can be used to go to the appropriate Google Wallet page. Defaults to `nil`.
-  - viewability (String.t): The read access of a volume. Possible values are PARTIAL, ALL_PAGES, NO_PAGES or UNKNOWN. This value depends on the country listed above. A value of PARTIAL means that the publisher has allowed some portion of the volume to be viewed publicly, without purchase. This can apply to eBooks as well as non-eBooks. Public domain books will always have a value of ALL_PAGES. Defaults to `nil`.
-  - webReaderLink (String.t): URL to read this volume on the Google Books site. Link will not allow users to read non-viewable volumes. Defaults to `nil`.
+  *   `accessViewStatus` (*type:* `String.t`, *default:* `nil`) - Combines the access and viewability of this volume into a single status field for this user. Values can be FULL_PURCHASED, FULL_PUBLIC_DOMAIN, SAMPLE or NONE. (In LITE projection.)
+  *   `country` (*type:* `String.t`, *default:* `nil`) - The two-letter ISO_3166-1 country code for which this access information is valid. (In LITE projection.)
+  *   `downloadAccess` (*type:* `GoogleApi.Books.V1.Model.DownloadAccessRestriction.t`, *default:* `nil`) - Information about a volume's download license access restrictions.
+  *   `driveImportedContentLink` (*type:* `String.t`, *default:* `nil`) - URL to the Google Drive viewer if this volume is uploaded by the user by selecting the file from Google Drive.
+  *   `embeddable` (*type:* `boolean()`, *default:* `nil`) - Whether this volume can be embedded in a viewport using the Embedded Viewer API.
+  *   `epub` (*type:* `GoogleApi.Books.V1.Model.VolumeAccessInfoEpub.t`, *default:* `nil`) - Information about epub content. (In LITE projection.)
+  *   `explicitOfflineLicenseManagement` (*type:* `boolean()`, *default:* `nil`) - Whether this volume requires that the client explicitly request offline download license rather than have it done automatically when loading the content, if the client supports it.
+  *   `pdf` (*type:* `GoogleApi.Books.V1.Model.VolumeAccessInfoPdf.t`, *default:* `nil`) - Information about pdf content. (In LITE projection.)
+  *   `publicDomain` (*type:* `boolean()`, *default:* `nil`) - Whether or not this book is public domain in the country listed above.
+  *   `quoteSharingAllowed` (*type:* `boolean()`, *default:* `nil`) - Whether quote sharing is allowed for this volume.
+  *   `textToSpeechPermission` (*type:* `String.t`, *default:* `nil`) - Whether text-to-speech is permitted for this volume. Values can be ALLOWED, ALLOWED_FOR_ACCESSIBILITY, or NOT_ALLOWED.
+  *   `viewOrderUrl` (*type:* `String.t`, *default:* `nil`) - For ordered but not yet processed orders, we give a URL that can be used to go to the appropriate Google Wallet page.
+  *   `viewability` (*type:* `String.t`, *default:* `nil`) - The read access of a volume. Possible values are PARTIAL, ALL_PAGES, NO_PAGES or UNKNOWN. This value depends on the country listed above. A value of PARTIAL means that the publisher has allowed some portion of the volume to be viewed publicly, without purchase. This can apply to eBooks as well as non-eBooks. Public domain books will always have a value of ALL_PAGES.
+  *   `webReaderLink` (*type:* `String.t`, *default:* `nil`) - URL to read this volume on the Google Books site. Link will not allow users to read non-viewable volumes.
   """
 
   use GoogleApi.Gax.ModelBase

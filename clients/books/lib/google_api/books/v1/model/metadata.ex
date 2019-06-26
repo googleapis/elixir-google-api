@@ -21,8 +21,8 @@ defmodule GoogleApi.Books.V1.Model.Metadata do
 
   ## Attributes
 
-  - items (list(GoogleApi.Books.V1.Model.MetadataItems.t)): A list of offline dictionary metadata. Defaults to `nil`.
-  - kind (String.t): Resource type. Defaults to `dictionary#metadata`.
+  *   `items` (*type:* `list(GoogleApi.Books.V1.Model.MetadataItems.t)`, *default:* `nil`) - A list of offline dictionary metadata.
+  *   `kind` (*type:* `String.t`, *default:* `dictionary#metadata`) - Resource type.
   """
 
   use GoogleApi.Gax.ModelBase

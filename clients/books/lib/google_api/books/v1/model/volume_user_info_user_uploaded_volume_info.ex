@@ -21,7 +21,7 @@ defmodule GoogleApi.Books.V1.Model.VolumeUserInfoUserUploadedVolumeInfo do
 
   ## Attributes
 
-  - processingState (String.t):  Defaults to `nil`.
+  *   `processingState` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase
