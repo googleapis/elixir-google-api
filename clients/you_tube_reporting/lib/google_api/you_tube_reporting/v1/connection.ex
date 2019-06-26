@@ -30,6 +30,6 @@ defmodule GoogleApi.YouTubeReporting.V1.Connection do
       # View YouTube Analytics reports for your YouTube content
       "https://www.googleapis.com/auth/yt-analytics.readonly"
     ],
-    otp_app: :google_api_youtubereporting,
+    otp_app: :google_api_you_tube_reporting,
     base_url: "https://youtubereporting.googleapis.com/"
 end
