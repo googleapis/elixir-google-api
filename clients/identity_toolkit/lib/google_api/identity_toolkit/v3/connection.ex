@@ -30,6 +30,6 @@ defmodule GoogleApi.IdentityToolkit.V3.Connection do
       # View and administer all your Firebase data and settings
       "https://www.googleapis.com/auth/firebase"
     ],
-    otp_app: :google_api_identitytoolkit,
+    otp_app: :google_api_identity_toolkit,
     base_url: "https://www.googleapis.com/identitytoolkit/v3/relyingparty/"
 end
