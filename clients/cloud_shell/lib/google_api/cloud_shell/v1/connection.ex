@@ -27,6 +27,6 @@ defmodule GoogleApi.CloudShell.V1.Connection do
       # View and manage your data across Google Cloud Platform services
       "https://www.googleapis.com/auth/cloud-platform"
     ],
-    otp_app: :google_api_cloudshell,
+    otp_app: :google_api_cloud_shell,
     base_url: "https://cloudshell.googleapis.com/"
 end
