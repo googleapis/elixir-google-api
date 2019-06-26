@@ -28,30 +28,31 @@ defmodule GoogleApi.CloudBilling.V1.Api.Services do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudBilling.V1.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :pageSize (integer()): Requested page size. Defaults to 5000.
-    - :pageToken (String.t): A token identifying a page of results to return. This should be a
-  `next_page_token` value returned from a previous `ListServices`
-  call. If unspecified, the first page of results is returned.
+  *   `connection` (*type:* `GoogleApi.CloudBilling.V1.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. Defaults to 5000.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results to return. This should be a
+          `next_page_token` value returned from a previous `ListServices`
+          call. If unspecified, the first page of results is returned.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudBilling.V1.Model.ListServicesResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudBilling.V1.Model.ListServicesResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec cloudbilling_services_list(Tesla.Env.client(), keyword()) ::
+  @spec cloudbilling_services_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudBilling.V1.Model.ListServicesResponse.t()}
           | {:error, Tesla.Env.t()}
   def cloudbilling_services_list(connection, optional_params \\ [], opts \\ []) do
@@ -87,47 +88,48 @@ defmodule GoogleApi.CloudBilling.V1.Api.Services do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudBilling.V1.Connection): Connection to server
-  - parent (String.t): The name of the service.
-  Example: "services/DA34-426B-A397"
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :currencyCode (String.t): The ISO 4217 currency code for the pricing info in the response proto.
-  Will use the conversion rate as of start_time.
-  Optional. If not specified USD will be used.
-    - :endTime (DateTime.t): Optional exclusive end time of the time range for which the pricing
-  versions will be returned. Timestamps in the future are not allowed.
-  The time range has to be within a single calendar month in
-  America/Los_Angeles timezone. Time range as a whole is optional. If not
-  specified, the latest pricing will be returned (up to 12 hours old at
-  most).
-    - :pageSize (integer()): Requested page size. Defaults to 5000.
-    - :pageToken (String.t): A token identifying a page of results to return. This should be a
-  `next_page_token` value returned from a previous `ListSkus`
-  call. If unspecified, the first page of results is returned.
-    - :startTime (DateTime.t): Optional inclusive start time of the time range for which the pricing
-  versions will be returned. Timestamps in the future are not allowed.
-  The time range has to be within a single calendar month in
-  America/Los_Angeles timezone. Time range as a whole is optional. If not
-  specified, the latest pricing will be returned (up to 12 hours old at
-  most).
+  *   `connection` (*type:* `GoogleApi.CloudBilling.V1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - The name of the service.
+      Example: "services/DA34-426B-A397"
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:currencyCode` (*type:* `String.t`) - The ISO 4217 currency code for the pricing info in the response proto.
+          Will use the conversion rate as of start_time.
+          Optional. If not specified USD will be used.
+      *   `:endTime` (*type:* `DateTime.t`) - Optional exclusive end time of the time range for which the pricing
+          versions will be returned. Timestamps in the future are not allowed.
+          The time range has to be within a single calendar month in
+          America/Los_Angeles timezone. Time range as a whole is optional. If not
+          specified, the latest pricing will be returned (up to 12 hours old at
+          most).
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. Defaults to 5000.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results to return. This should be a
+          `next_page_token` value returned from a previous `ListSkus`
+          call. If unspecified, the first page of results is returned.
+      *   `:startTime` (*type:* `DateTime.t`) - Optional inclusive start time of the time range for which the pricing
+          versions will be returned. Timestamps in the future are not allowed.
+          The time range has to be within a single calendar month in
+          America/Los_Angeles timezone. Time range as a whole is optional. If not
+          specified, the latest pricing will be returned (up to 12 hours old at
+          most).
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudBilling.V1.Model.ListSkusResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudBilling.V1.Model.ListSkusResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec cloudbilling_services_skus_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec cloudbilling_services_skus_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudBilling.V1.Model.ListSkusResponse.t()} | {:error, Tesla.Env.t()}
   def cloudbilling_services_skus_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

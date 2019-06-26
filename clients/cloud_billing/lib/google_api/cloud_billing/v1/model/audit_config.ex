@@ -29,41 +29,41 @@ defmodule GoogleApi.CloudBilling.V1.Model.AuditConfig do
 
   Example Policy with multiple AuditConfigs:
 
-    {
-      "audit_configs": [
-        {
-          "service": "allServices"
-          "audit_log_configs": [
-            {
-              "log_type": "DATA_READ",
-              "exempted_members": [
-                "user:foo@gmail.com"
-              ]
-            },
-            {
-              "log_type": "DATA_WRITE",
-            },
-            {
-              "log_type": "ADMIN_READ",
-            }
-          ]
-        },
-        {
-          "service": "fooservice.googleapis.com"
-          "audit_log_configs": [
-            {
-              "log_type": "DATA_READ",
-            },
-            {
-              "log_type": "DATA_WRITE",
-              "exempted_members": [
-                "user:bar@gmail.com"
-              ]
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "audit_configs": [
+          {
+            "service": "allServices"
+            "audit_log_configs": [
+              {
+                "log_type": "DATA_READ",
+                "exempted_members": [
+                  "user:foo@gmail.com"
+                ]
+              },
+              {
+                "log_type": "DATA_WRITE",
+              },
+              {
+                "log_type": "ADMIN_READ",
+              }
+            ]
+          },
+          {
+            "service": "fooservice.googleapis.com"
+            "audit_log_configs": [
+              {
+                "log_type": "DATA_READ",
+              },
+              {
+                "log_type": "DATA_WRITE",
+                "exempted_members": [
+                  "user:bar@gmail.com"
+                ]
+              }
+            ]
+          }
+        ]
+      }
 
   For fooservice, this policy enables DATA_READ, DATA_WRITE and ADMIN_READ
   logging. It also exempts foo@gmail.com from DATA_READ logging, and
@@ -71,10 +71,10 @@ defmodule GoogleApi.CloudBilling.V1.Model.AuditConfig do
 
   ## Attributes
 
-  - auditLogConfigs (list(GoogleApi.CloudBilling.V1.Model.AuditLogConfig.t)): The configuration for logging of each type of permission. Defaults to `nil`.
-  - service (String.t): Specifies a service that will be enabled for audit logging.
-  For example, `storage.googleapis.com`, `cloudsql.googleapis.com`.
-  `allServices` is a special value that covers all services. Defaults to `nil`.
+  *   `auditLogConfigs` (*type:* `list(GoogleApi.CloudBilling.V1.Model.AuditLogConfig.t)`, *default:* `nil`) - The configuration for logging of each type of permission.
+  *   `service` (*type:* `String.t`, *default:* `nil`) - Specifies a service that will be enabled for audit logging.
+      For example, `storage.googleapis.com`, `cloudsql.googleapis.com`.
+      `allServices` is a special value that covers all services.
   """
 
   use GoogleApi.Gax.ModelBase

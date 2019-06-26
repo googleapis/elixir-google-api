@@ -21,13 +21,13 @@ defmodule GoogleApi.CloudBilling.V1.Model.Service do
 
   ## Attributes
 
-  - businessEntityName (String.t): The business under which the service is offered.
-  Ex. "businessEntities/GCP", "businessEntities/Maps" Defaults to `nil`.
-  - displayName (String.t): A human readable display name for this service. Defaults to `nil`.
-  - name (String.t): The resource name for the service.
-  Example: "services/DA34-426B-A397" Defaults to `nil`.
-  - serviceId (String.t): The identifier for the service.
-  Example: "DA34-426B-A397" Defaults to `nil`.
+  *   `businessEntityName` (*type:* `String.t`, *default:* `nil`) - The business under which the service is offered.
+      Ex. "businessEntities/GCP", "businessEntities/Maps"
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - A human readable display name for this service.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name for the service.
+      Example: "services/DA34-426B-A397"
+  *   `serviceId` (*type:* `String.t`, *default:* `nil`) - The identifier for the service.
+      Example: "DA34-426B-A397"
   """
 
   use GoogleApi.Gax.ModelBase

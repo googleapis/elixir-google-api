@@ -21,19 +21,19 @@ defmodule GoogleApi.CloudBilling.V1.Model.Sku do
 
   ## Attributes
 
-  - category (GoogleApi.CloudBilling.V1.Model.Category.t): The category hierarchy of this SKU, purely for organizational purpose. Defaults to `nil`.
-  - description (String.t): A human readable description of the SKU, has a maximum length of 256
-  characters. Defaults to `nil`.
-  - name (String.t): The resource name for the SKU.
-  Example: "services/DA34-426B-A397/skus/AA95-CD31-42FE" Defaults to `nil`.
-  - pricingInfo (list(GoogleApi.CloudBilling.V1.Model.PricingInfo.t)): A timeline of pricing info for this SKU in chronological order. Defaults to `nil`.
-  - serviceProviderName (String.t): Identifies the service provider.
-  This is 'Google' for first party services in Google Cloud Platform. Defaults to `nil`.
-  - serviceRegions (list(String.t)): List of service regions this SKU is offered at.
-  Example: "asia-east1"
-  Service regions can be found at https://cloud.google.com/about/locations/ Defaults to `nil`.
-  - skuId (String.t): The identifier for the SKU.
-  Example: "AA95-CD31-42FE" Defaults to `nil`.
+  *   `category` (*type:* `GoogleApi.CloudBilling.V1.Model.Category.t`, *default:* `nil`) - The category hierarchy of this SKU, purely for organizational purpose.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - A human readable description of the SKU, has a maximum length of 256
+      characters.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name for the SKU.
+      Example: "services/DA34-426B-A397/skus/AA95-CD31-42FE"
+  *   `pricingInfo` (*type:* `list(GoogleApi.CloudBilling.V1.Model.PricingInfo.t)`, *default:* `nil`) - A timeline of pricing info for this SKU in chronological order.
+  *   `serviceProviderName` (*type:* `String.t`, *default:* `nil`) - Identifies the service provider.
+      This is 'Google' for first party services in Google Cloud Platform.
+  *   `serviceRegions` (*type:* `list(String.t)`, *default:* `nil`) - List of service regions this SKU is offered at.
+      Example: "asia-east1"
+      Service regions can be found at https://cloud.google.com/about/locations/
+  *   `skuId` (*type:* `String.t`, *default:* `nil`) - The identifier for the SKU.
+      Example: "AA95-CD31-42FE"
   """
 
   use GoogleApi.Gax.ModelBase

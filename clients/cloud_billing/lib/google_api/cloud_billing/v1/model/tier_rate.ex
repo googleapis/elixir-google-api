@@ -21,11 +21,11 @@ defmodule GoogleApi.CloudBilling.V1.Model.TierRate do
 
   ## Attributes
 
-  - startUsageAmount (float()): Usage is priced at this rate only after this amount.
-  Example: start_usage_amount of 10 indicates that the usage will be priced
-  at the unit_price after the first 10 usage_units. Defaults to `nil`.
-  - unitPrice (GoogleApi.CloudBilling.V1.Model.Money.t): The price per unit of usage.
-  Example: unit_price of amount $10 indicates that each unit will cost $10. Defaults to `nil`.
+  *   `startUsageAmount` (*type:* `float()`, *default:* `nil`) - Usage is priced at this rate only after this amount.
+      Example: start_usage_amount of 10 indicates that the usage will be priced
+      at the unit_price after the first 10 usage_units.
+  *   `unitPrice` (*type:* `GoogleApi.CloudBilling.V1.Model.Money.t`, *default:* `nil`) - The price per unit of usage.
+      Example: unit_price of amount $10 indicates that each unit will cost $10.
   """
 
   use GoogleApi.Gax.ModelBase
