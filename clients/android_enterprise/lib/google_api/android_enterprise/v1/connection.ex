@@ -27,6 +27,6 @@ defmodule GoogleApi.AndroidEnterprise.V1.Connection do
       # Manage corporate Android devices
       "https://www.googleapis.com/auth/androidenterprise"
     ],
-    otp_app: :google_api_androidenterprise,
+    otp_app: :google_api_android_enterprise,
     base_url: "https://www.googleapis.com/androidenterprise/v1/"
 end
