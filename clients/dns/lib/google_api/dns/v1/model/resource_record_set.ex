@@ -21,12 +21,12 @@ defmodule GoogleApi.DNS.V1.Model.ResourceRecordSet do
 
   ## Attributes
 
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "dns#resourceRecordSet". Defaults to `dns#resourceRecordSet`.
-  - name (String.t): For example, www.example.com. Defaults to `nil`.
-  - rrdatas (list(String.t)): As defined in RFC 1035 (section 5) and RFC 1034 (section 3.6.1) -- see examples. Defaults to `nil`.
-  - signatureRrdatas (list(String.t)): As defined in RFC 4034 (section 3.2). Defaults to `nil`.
-  - ttl (integer()): Number of seconds that this ResourceRecordSet can be cached by resolvers. Defaults to `nil`.
-  - type (String.t): The identifier of a supported record type. See the list of Supported DNS record types. Defaults to `nil`.
+  *   `kind` (*type:* `String.t`, *default:* `dns#resourceRecordSet`) - Identifies what kind of resource this is. Value: the fixed string "dns#resourceRecordSet".
+  *   `name` (*type:* `String.t`, *default:* `nil`) - For example, www.example.com.
+  *   `rrdatas` (*type:* `list(String.t)`, *default:* `nil`) - As defined in RFC 1035 (section 5) and RFC 1034 (section 3.6.1) -- see examples.
+  *   `signatureRrdatas` (*type:* `list(String.t)`, *default:* `nil`) - As defined in RFC 4034 (section 3.2).
+  *   `ttl` (*type:* `integer()`, *default:* `nil`) - Number of seconds that this ResourceRecordSet can be cached by resolvers.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The identifier of a supported record type. See the list of Supported DNS record types.
   """
 
   use GoogleApi.Gax.ModelBase

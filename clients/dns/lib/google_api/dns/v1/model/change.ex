@@ -21,13 +21,13 @@ defmodule GoogleApi.DNS.V1.Model.Change do
 
   ## Attributes
 
-  - additions (list(GoogleApi.DNS.V1.Model.ResourceRecordSet.t)): Which ResourceRecordSets to add? Defaults to `nil`.
-  - deletions (list(GoogleApi.DNS.V1.Model.ResourceRecordSet.t)): Which ResourceRecordSets to remove? Must match existing data exactly. Defaults to `nil`.
-  - id (String.t): Unique identifier for the resource; defined by the server (output only). Defaults to `nil`.
-  - isServing (boolean()): If the DNS queries for the zone will be served. Defaults to `nil`.
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "dns#change". Defaults to `dns#change`.
-  - startTime (String.t): The time that this operation was started by the server (output only). This is in RFC3339 text format. Defaults to `nil`.
-  - status (String.t): Status of the operation (output only). A status of "done" means that the request to update the authoritative servers has been sent, but the servers might not be updated yet. Defaults to `nil`.
+  *   `additions` (*type:* `list(GoogleApi.DNS.V1.Model.ResourceRecordSet.t)`, *default:* `nil`) - Which ResourceRecordSets to add?
+  *   `deletions` (*type:* `list(GoogleApi.DNS.V1.Model.ResourceRecordSet.t)`, *default:* `nil`) - Which ResourceRecordSets to remove? Must match existing data exactly.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Unique identifier for the resource; defined by the server (output only).
+  *   `isServing` (*type:* `boolean()`, *default:* `nil`) - If the DNS queries for the zone will be served.
+  *   `kind` (*type:* `String.t`, *default:* `dns#change`) - Identifies what kind of resource this is. Value: the fixed string "dns#change".
+  *   `startTime` (*type:* `String.t`, *default:* `nil`) - The time that this operation was started by the server (output only). This is in RFC3339 text format.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - Status of the operation (output only). A status of "done" means that the request to update the authoritative servers has been sent, but the servers might not be updated yet.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,10 +21,10 @@ defmodule GoogleApi.DNS.V1.Model.Project do
 
   ## Attributes
 
-  - id (String.t): User assigned unique identifier for the resource (output only). Defaults to `nil`.
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "dns#project". Defaults to `dns#project`.
-  - number (String.t): Unique numeric identifier for the resource; defined by the server (output only). Defaults to `nil`.
-  - quota (GoogleApi.DNS.V1.Model.Quota.t): Quotas assigned to this project (output only). Defaults to `nil`.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - User assigned unique identifier for the resource (output only).
+  *   `kind` (*type:* `String.t`, *default:* `dns#project`) - Identifies what kind of resource this is. Value: the fixed string "dns#project".
+  *   `number` (*type:* `String.t`, *default:* `nil`) - Unique numeric identifier for the resource; defined by the server (output only).
+  *   `quota` (*type:* `GoogleApi.DNS.V1.Model.Quota.t`, *default:* `nil`) - Quotas assigned to this project (output only).
   """
 
   use GoogleApi.Gax.ModelBase
