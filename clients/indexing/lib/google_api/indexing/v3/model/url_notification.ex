@@ -22,12 +22,12 @@ defmodule GoogleApi.Indexing.V3.Model.UrlNotification do
 
   ## Attributes
 
-  - notifyTime (DateTime.t): Creation timestamp for this notification.
-  Users should _not_ specify it, the field is ignored at the request time. Defaults to `nil`.
-  - type (String.t): The URL life cycle event that Google is being notified about. Defaults to `nil`.
-  - url (String.t): The object of this notification. The URL must be owned by the publisher
-  of this notification and, in case of `URL_UPDATED` notifications, it _must_
-  be crawlable by Google. Defaults to `nil`.
+  *   `notifyTime` (*type:* `DateTime.t`, *default:* `nil`) - Creation timestamp for this notification.
+      Users should _not_ specify it, the field is ignored at the request time.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The URL life cycle event that Google is being notified about.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - The object of this notification. The URL must be owned by the publisher
+      of this notification and, in case of `URL_UPDATED` notifications, it _must_
+      be crawlable by Google.
   """
 
   use GoogleApi.Gax.ModelBase

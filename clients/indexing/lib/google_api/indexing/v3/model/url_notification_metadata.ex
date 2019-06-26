@@ -22,9 +22,9 @@ defmodule GoogleApi.Indexing.V3.Model.UrlNotificationMetadata do
 
   ## Attributes
 
-  - latestRemove (GoogleApi.Indexing.V3.Model.UrlNotification.t): Latest notification received with type `URL_REMOVED`. Defaults to `nil`.
-  - latestUpdate (GoogleApi.Indexing.V3.Model.UrlNotification.t): Latest notification received with type `URL_UPDATED`. Defaults to `nil`.
-  - url (String.t): URL to which this metadata refers. Defaults to `nil`.
+  *   `latestRemove` (*type:* `GoogleApi.Indexing.V3.Model.UrlNotification.t`, *default:* `nil`) - Latest notification received with type `URL_REMOVED`.
+  *   `latestUpdate` (*type:* `GoogleApi.Indexing.V3.Model.UrlNotification.t`, *default:* `nil`) - Latest notification received with type `URL_UPDATED`.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - URL to which this metadata refers.
   """
 
   use GoogleApi.Gax.ModelBase
