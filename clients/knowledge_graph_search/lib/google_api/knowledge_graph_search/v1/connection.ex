@@ -24,6 +24,6 @@ defmodule GoogleApi.KnowledgeGraphSearch.V1.Connection do
 
   use GoogleApi.Gax.Connection,
     scopes: [],
-    otp_app: :google_api_kgsearch,
+    otp_app: :google_api_knowledge_graph_search,
     base_url: "https://kgsearch.googleapis.com/"
 end
