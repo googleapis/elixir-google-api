@@ -23,23 +23,23 @@ defmodule GoogleApi.Jobs.V2.Model.JobProcessingOptions do
 
   ## Attributes
 
-  - disableStreetAddressResolution (boolean()): Optional.
+  *   `disableStreetAddressResolution` (*type:* `boolean()`, *default:* `nil`) - Optional.
 
-  If set to `true`, the service does not attempt to resolve a
-  more precise address for the job. Defaults to `nil`.
-  - htmlSanitization (String.t): Optional.
+      If set to `true`, the service does not attempt to resolve a
+      more precise address for the job.
+  *   `htmlSanitization` (*type:* `String.t`, *default:* `nil`) - Optional.
 
-  Option for job HTML content sanitization. Applied fields are:
+      Option for job HTML content sanitization. Applied fields are:
 
-  * description
-  * applicationInstruction
-  * incentives
-  * qualifications
-  * responsibilities
+      * description
+      * applicationInstruction
+      * incentives
+      * qualifications
+      * responsibilities
 
-  HTML tags in these fields may be stripped if sanitiazation is not disabled.
+      HTML tags in these fields may be stripped if sanitiazation is not disabled.
 
-  Defaults to HtmlSanitization.SIMPLE_FORMATTING_ONLY. Defaults to `nil`.
+      Defaults to HtmlSanitization.SIMPLE_FORMATTING_ONLY.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,52 +21,52 @@ defmodule GoogleApi.Jobs.V2.Model.CompensationInfo do
 
   ## Attributes
 
-  - amount (GoogleApi.Jobs.V2.Model.Money.t): Deprecated. Use entries instead.
+  *   `amount` (*type:* `GoogleApi.Jobs.V2.Model.Money.t`, *default:* `nil`) - Deprecated. Use entries instead.
 
-  Optional.
+      Optional.
 
-  The amount of compensation or pay for the job.
-  As an alternative, compensation_amount_min and
-  compensation_amount_max may be used to define a range of
-  compensation. Defaults to `nil`.
-  - annualizedBaseCompensationRange (GoogleApi.Jobs.V2.Model.CompensationRange.t): Output only.
+      The amount of compensation or pay for the job.
+      As an alternative, compensation_amount_min and
+      compensation_amount_max may be used to define a range of
+      compensation.
+  *   `annualizedBaseCompensationRange` (*type:* `GoogleApi.Jobs.V2.Model.CompensationRange.t`, *default:* `nil`) - Output only.
 
-  Annualized base compensation range. Computed as
-  base compensation entry's CompensationEntry.compensation times
-  CompensationEntry.expected_units_per_year.
+      Annualized base compensation range. Computed as
+      base compensation entry's CompensationEntry.compensation times
+      CompensationEntry.expected_units_per_year.
 
-  See CompensationEntry for explanation on compensation annualization. Defaults to `nil`.
-  - annualizedTotalCompensationRange (GoogleApi.Jobs.V2.Model.CompensationRange.t): Output only.
+      See CompensationEntry for explanation on compensation annualization.
+  *   `annualizedTotalCompensationRange` (*type:* `GoogleApi.Jobs.V2.Model.CompensationRange.t`, *default:* `nil`) - Output only.
 
-  Annualized total compensation range. Computed as
-  all compensation entries' CompensationEntry.compensation times
-  CompensationEntry.expected_units_per_year.
+      Annualized total compensation range. Computed as
+      all compensation entries' CompensationEntry.compensation times
+      CompensationEntry.expected_units_per_year.
 
-  See CompensationEntry for explanation on compensation annualization. Defaults to `nil`.
-  - entries (list(GoogleApi.Jobs.V2.Model.CompensationEntry.t)): Optional.
+      See CompensationEntry for explanation on compensation annualization.
+  *   `entries` (*type:* `list(GoogleApi.Jobs.V2.Model.CompensationEntry.t)`, *default:* `nil`) - Optional.
 
-  Job compensation information.
+      Job compensation information.
 
-  At most one entry can be of type
-  CompensationInfo.CompensationType.BASE, which is
-  referred as ** base compensation entry ** for the job. Defaults to `nil`.
-  - max (GoogleApi.Jobs.V2.Model.Money.t): Deprecated. Use entries instead.
+      At most one entry can be of type
+      CompensationInfo.CompensationType.BASE, which is
+      referred as ** base compensation entry ** for the job.
+  *   `max` (*type:* `GoogleApi.Jobs.V2.Model.Money.t`, *default:* `nil`) - Deprecated. Use entries instead.
 
-  Optional.
+      Optional.
 
-  An upper bound on a range for compensation or pay for the job.
-  The currency type is specified in compensation_amount. Defaults to `nil`.
-  - min (GoogleApi.Jobs.V2.Model.Money.t): Deprecated. Use entries instead.
+      An upper bound on a range for compensation or pay for the job.
+      The currency type is specified in compensation_amount.
+  *   `min` (*type:* `GoogleApi.Jobs.V2.Model.Money.t`, *default:* `nil`) - Deprecated. Use entries instead.
 
-  Optional.
+      Optional.
 
-  A lower bound on a range for compensation or pay for the job.
-  The currency type is specified in compensation_amount. Defaults to `nil`.
-  - type (String.t): Deprecated. Use entries instead.
+      A lower bound on a range for compensation or pay for the job.
+      The currency type is specified in compensation_amount.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Deprecated. Use entries instead.
 
-  Optional.
+      Optional.
 
-  Type of job compensation. Defaults to `nil`.
+      Type of job compensation.
   """
 
   use GoogleApi.Gax.ModelBase

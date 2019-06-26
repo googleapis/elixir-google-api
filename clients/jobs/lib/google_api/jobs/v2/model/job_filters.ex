@@ -25,158 +25,158 @@ defmodule GoogleApi.Jobs.V2.Model.JobFilters do
 
   ## Attributes
 
-  - categories (list(String.t)): Optional.
+  *   `categories` (*type:* `list(String.t)`, *default:* `nil`) - Optional.
 
-  The category filter specifies the categories of jobs to search against.
-  See Category for more information.
+      The category filter specifies the categories of jobs to search against.
+      See Category for more information.
 
-  If a value is not specified, jobs from any category are searched against.
+      If a value is not specified, jobs from any category are searched against.
 
-  If multiple values are specified, jobs from any of the specified
-  categories are searched against. Defaults to `nil`.
-  - commuteFilter (GoogleApi.Jobs.V2.Model.CommutePreference.t): Optional.
+      If multiple values are specified, jobs from any of the specified
+      categories are searched against.
+  *   `commuteFilter` (*type:* `GoogleApi.Jobs.V2.Model.CommutePreference.t`, *default:* `nil`) - Optional.
 
-  Allows filtering jobs by commute time with different travel methods (e.g.
-  driving or public transit). Note: this only works with COMMUTE
-  MODE. When specified, [JobFilters.location_filters] will be
-  ignored.
+       Allows filtering jobs by commute time with different travel methods (e.g.
+       driving or public transit). Note: this only works with COMMUTE
+       MODE. When specified, [JobFilters.location_filters] will be
+       ignored.
 
-  Currently we do not support sorting by commute time. Defaults to `nil`.
-  - companyNames (list(String.t)): Optional.
+       Currently we do not support sorting by commute time.
+  *   `companyNames` (*type:* `list(String.t)`, *default:* `nil`) - Optional.
 
-  The company names filter specifies the company entities to search
-  against.
+      The company names filter specifies the company entities to search
+      against.
 
-  If a value is not specified, jobs are searched for against all companies.
+      If a value is not specified, jobs are searched for against all companies.
 
-  If multiple values are specified, jobs are searched against the
-  specified companies.
+      If multiple values are specified, jobs are searched against the
+      specified companies.
 
-  At most 20 company filters are allowed. Defaults to `nil`.
-  - companyTitles (list(String.t)): Optional.
+      At most 20 company filters are allowed.
+  *   `companyTitles` (*type:* `list(String.t)`, *default:* `nil`) - Optional.
 
-  This filter specifies the exact company titles
-  of jobs to search against.
+      This filter specifies the exact company titles
+      of jobs to search against.
 
-  If a value is not specified, jobs within the search results can be
-  associated with any company.
+      If a value is not specified, jobs within the search results can be
+      associated with any company.
 
-  If multiple values are specified, jobs within the search results may be
-  associated with any of the specified companies.
+      If multiple values are specified, jobs within the search results may be
+      associated with any of the specified companies.
 
-  At most 20 company title filters are allowed. Defaults to `nil`.
-  - compensationFilter (GoogleApi.Jobs.V2.Model.CompensationFilter.t): Optional.
+      At most 20 company title filters are allowed.
+  *   `compensationFilter` (*type:* `GoogleApi.Jobs.V2.Model.CompensationFilter.t`, *default:* `nil`) - Optional.
 
-  This search filter is applied only to
-  Job.compensation_info. For example, if the filter is specified
-  as "Hourly job with per-hour compensation > $15", only jobs that meet
-  this criteria are searched. If a filter is not defined, all open jobs
-  are searched. Defaults to `nil`.
-  - customAttributeFilter (String.t): Optional.
+      This search filter is applied only to
+      Job.compensation_info. For example, if the filter is specified
+      as "Hourly job with per-hour compensation > $15", only jobs that meet
+      this criteria are searched. If a filter is not defined, all open jobs
+      are searched.
+  *   `customAttributeFilter` (*type:* `String.t`, *default:* `nil`) - Optional.
 
-  This filter specifies a structured syntax to match against the
-  Job.custom_attributes that are marked as `filterable`.
+      This filter specifies a structured syntax to match against the
+      Job.custom_attributes that are marked as `filterable`.
 
-  The syntax for this expression is a subset of Google SQL syntax.
+      The syntax for this expression is a subset of Google SQL syntax.
 
-  Supported operators are: =, !=, <, <=, >, >= where the left of the operator
-  is a custom field key and the right of the operator is a number or string
-  (surrounded by quotes) value.
+      Supported operators are: =, !=, <, <=, >, >= where the left of the operator
+      is a custom field key and the right of the operator is a number or string
+      (surrounded by quotes) value.
 
-  Supported functions are LOWER(<field_name>) to
-  perform case insensitive match and EMPTY(<field_name>) to filter on the
-  existence of a key.
+      Supported functions are LOWER(<field_name>) to
+      perform case insensitive match and EMPTY(<field_name>) to filter on the
+      existence of a key.
 
-  Boolean expressions (AND/OR/NOT) are supported up to 3 levels of
-  nesting (For example, "((A AND B AND C) OR NOT D) AND E"), and there can
-  be a maximum of 100 comparisons/functions in the expression. The expression
-  must be < 3000 bytes in length.
+      Boolean expressions (AND/OR/NOT) are supported up to 3 levels of
+      nesting (For example, "((A AND B AND C) OR NOT D) AND E"), and there can
+      be a maximum of 100 comparisons/functions in the expression. The expression
+      must be < 3000 bytes in length.
 
-  Sample Query:
-  (key1 = "TEST" OR LOWER(key1)="test" OR NOT EMPTY(key1)) AND key2 > 100 Defaults to `nil`.
-  - customFieldFilters (%{optional(String.t) => GoogleApi.Jobs.V2.Model.CustomFieldFilter.t}): Deprecated. Use custom_attribute_filter instead.
+      Sample Query:
+      (key1 = "TEST" OR LOWER(key1)="test" OR NOT EMPTY(key1)) AND key2 > 100
+  *   `customFieldFilters` (*type:* `%{optional(String.t) => GoogleApi.Jobs.V2.Model.CustomFieldFilter.t}`, *default:* `nil`) - Deprecated. Use custom_attribute_filter instead.
 
-  Optional.
+      Optional.
 
-  This filter specifies searching against
-  custom field values. See Job.filterable_custom_fields for information.
-  The key value specifies a number between 1-20 (the service
-  supports 20 custom fields) corresponding to the desired custom field map
-  value. If an invalid key is provided or specified together with
-  custom_attribute_filter, an error is thrown. Defaults to `nil`.
-  - disableSpellCheck (boolean()): Optional.
+      This filter specifies searching against
+      custom field values. See Job.filterable_custom_fields for information.
+      The key value specifies a number between 1-20 (the service
+      supports 20 custom fields) corresponding to the desired custom field map
+      value. If an invalid key is provided or specified together with
+      custom_attribute_filter, an error is thrown.
+  *   `disableSpellCheck` (*type:* `boolean()`, *default:* `nil`) - Optional.
 
-  This flag controls the spell-check feature. If false, the
-  service attempts to correct a misspelled query,
-  for example, "enginee" is corrected to "engineer".
+      This flag controls the spell-check feature. If false, the
+      service attempts to correct a misspelled query,
+      for example, "enginee" is corrected to "engineer".
 
-  Defaults to false: a spell check is performed. Defaults to `nil`.
-  - employmentTypes (list(String.t)): Optional.
+      Defaults to false: a spell check is performed.
+  *   `employmentTypes` (*type:* `list(String.t)`, *default:* `nil`) - Optional.
 
-  The employment type filter specifies the employment type of jobs to
-  search against, such as EmploymentType.FULL_TIME.
+      The employment type filter specifies the employment type of jobs to
+      search against, such as EmploymentType.FULL_TIME.
 
-  If a value is not specified, jobs in the search results include any
-  employment type.
+      If a value is not specified, jobs in the search results include any
+      employment type.
 
-  If multiple values are specified, jobs in the search results include any
-  of the specified employment types. Defaults to `nil`.
-  - extendedCompensationFilter (GoogleApi.Jobs.V2.Model.ExtendedCompensationFilter.t): Deprecated. Always use compensation_filter.
+      If multiple values are specified, jobs in the search results include any
+      of the specified employment types.
+  *   `extendedCompensationFilter` (*type:* `GoogleApi.Jobs.V2.Model.ExtendedCompensationFilter.t`, *default:* `nil`) - Deprecated. Always use compensation_filter.
 
-  Optional.
+      Optional.
 
-  This search filter is applied only to
-  Job.extended_compensation_info. For example, if the filter is specified
-  as "Hourly job with per-hour compensation > $15", only jobs that meet
-  these criteria are searched. If a filter is not defined, all open jobs
-  are searched. Defaults to `nil`.
-  - languageCodes (list(String.t)): Optional.
+      This search filter is applied only to
+      Job.extended_compensation_info. For example, if the filter is specified
+      as "Hourly job with per-hour compensation > $15", only jobs that meet
+      these criteria are searched. If a filter is not defined, all open jobs
+      are searched.
+  *   `languageCodes` (*type:* `list(String.t)`, *default:* `nil`) - Optional.
 
-  This filter specifies the locale of jobs to search against,
-  for example, "en-US".
+      This filter specifies the locale of jobs to search against,
+      for example, "en-US".
 
-  If a value is not specified, the search results may contain jobs in any
-  locale.
+      If a value is not specified, the search results may contain jobs in any
+      locale.
 
 
-  Language codes should be in BCP-47 format, for example, "en-US" or
-  "sr-Latn". For more information, see [Tags for Identifying
-  Languages](https://tools.ietf.org/html/bcp47).
+      Language codes should be in BCP-47 format, for example, "en-US" or
+      "sr-Latn". For more information, see [Tags for Identifying
+      Languages](https://tools.ietf.org/html/bcp47).
 
-  At most 10 language code filters are allowed. Defaults to `nil`.
-  - locationFilters (list(GoogleApi.Jobs.V2.Model.LocationFilter.t)): Optional.
+      At most 10 language code filters are allowed.
+  *   `locationFilters` (*type:* `list(GoogleApi.Jobs.V2.Model.LocationFilter.t)`, *default:* `nil`) - Optional.
 
-  The location filter specifies geo-regions containing the jobs to
-  search against. See LocationFilter for more information.
+      The location filter specifies geo-regions containing the jobs to
+      search against. See LocationFilter for more information.
 
-  If a location value is not specified, jobs are retrieved
-  from all locations.
+      If a location value is not specified, jobs are retrieved
+      from all locations.
 
-  If multiple values are specified, jobs are retrieved from any of the
-  specified locations. If different values are specified for the
-  LocationFilter.distance_in_miles parameter, the maximum provided
-  distance is used for all locations.
+      If multiple values are specified, jobs are retrieved from any of the
+      specified locations. If different values are specified for the
+      LocationFilter.distance_in_miles parameter, the maximum provided
+      distance is used for all locations.
 
-  At most 5 location filters are allowed. Defaults to `nil`.
-  - publishDateRange (String.t): Optional.
+      At most 5 location filters are allowed.
+  *   `publishDateRange` (*type:* `String.t`, *default:* `nil`) - Optional.
 
-  Jobs published within a range specified by this filter are searched
-  against, for example, DateRange.PAST_MONTH. If a value is not
-  specified, all open jobs are searched against regardless of the
-  date they were published. Defaults to `nil`.
-  - query (String.t): Optional.
+      Jobs published within a range specified by this filter are searched
+      against, for example, DateRange.PAST_MONTH. If a value is not
+      specified, all open jobs are searched against regardless of the
+      date they were published.
+  *   `query` (*type:* `String.t`, *default:* `nil`) - Optional.
 
-  The query filter contains the keywords that match against the job
-  title, description, and location fields.
+      The query filter contains the keywords that match against the job
+      title, description, and location fields.
 
-  The maximum query size is 255 bytes/characters. Defaults to `nil`.
-  - tenantJobOnly (boolean()): Deprecated. Do not use this field.
+      The maximum query size is 255 bytes/characters.
+  *   `tenantJobOnly` (*type:* `boolean()`, *default:* `nil`) - Deprecated. Do not use this field.
 
-  This flag controls whether the job search should be restricted to jobs
-  owned by the current user.
+      This flag controls whether the job search should be restricted to jobs
+      owned by the current user.
 
-  Defaults to false where all jobs accessible to the
-  user are searched against. Defaults to `nil`.
+      Defaults to false where all jobs accessible to the
+      user are searched against.
   """
 
   use GoogleApi.Gax.ModelBase

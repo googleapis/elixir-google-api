@@ -24,13 +24,13 @@ defmodule GoogleApi.Jobs.V2.Model.ResponseMetadata do
 
   ## Attributes
 
-  - experimentIdList (list(integer())): Identifiers for the versions of the search algorithm used during
-  this API invocation if multiple algorithms are used.
-  The default value is empty.
-  For search response only. Defaults to `nil`.
-  - mode (String.t): For search response only. Indicates the mode of a performed search. Defaults to `nil`.
-  - requestId (String.t): A unique id associated with this call.
-  This id is logged for tracking purposes. Defaults to `nil`.
+  *   `experimentIdList` (*type:* `list(integer())`, *default:* `nil`) - Identifiers for the versions of the search algorithm used during
+      this API invocation if multiple algorithms are used.
+      The default value is empty.
+      For search response only.
+  *   `mode` (*type:* `String.t`, *default:* `nil`) - For search response only. Indicates the mode of a performed search.
+  *   `requestId` (*type:* `String.t`, *default:* `nil`) - A unique id associated with this call.
+      This id is logged for tracking purposes.
   """
 
   use GoogleApi.Gax.ModelBase

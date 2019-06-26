@@ -23,8 +23,8 @@ defmodule GoogleApi.Jobs.V2.Model.SpellingCorrection do
 
   ## Attributes
 
-  - corrected (boolean()): Indicates if the query was corrected by the spell checker. Defaults to `nil`.
-  - correctedText (String.t): Correction output consisting of the corrected keyword string. Defaults to `nil`.
+  *   `corrected` (*type:* `boolean()`, *default:* `nil`) - Indicates if the query was corrected by the spell checker.
+  *   `correctedText` (*type:* `String.t`, *default:* `nil`) - Correction output consisting of the corrected keyword string.
   """
 
   use GoogleApi.Gax.ModelBase

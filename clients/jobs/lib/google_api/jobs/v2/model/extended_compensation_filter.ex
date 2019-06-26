@@ -25,24 +25,24 @@ defmodule GoogleApi.Jobs.V2.Model.ExtendedCompensationFilter do
 
   ## Attributes
 
-  - compensationRange (GoogleApi.Jobs.V2.Model.ExtendedCompensationInfoCompensationRange.t): Optional.
+  *   `compensationRange` (*type:* `GoogleApi.Jobs.V2.Model.ExtendedCompensationInfoCompensationRange.t`, *default:* `nil`) - Optional.
 
-  Compensation range. Defaults to `nil`.
-  - compensationUnits (list(String.t)): Required.
+      Compensation range.
+  *   `compensationUnits` (*type:* `list(String.t)`, *default:* `nil`) - Required.
 
-  Specify desired `base compensation entry's`
-  ExtendedCompensationInfo.CompensationUnit. Defaults to `nil`.
-  - currency (String.t): Optional.
+      Specify desired `base compensation entry's`
+      ExtendedCompensationInfo.CompensationUnit.
+  *   `currency` (*type:* `String.t`, *default:* `nil`) - Optional.
 
-  Specify currency in 3-letter
-  [ISO 4217](https://www.iso.org/iso-4217-currency-codes.html) format. If
-  unspecified, jobs are returned regardless of currency. Defaults to `nil`.
-  - includeJobWithUnspecifiedCompensationRange (boolean()): Optional.
+      Specify currency in 3-letter
+      [ISO 4217](https://www.iso.org/iso-4217-currency-codes.html) format. If
+      unspecified, jobs are returned regardless of currency.
+  *   `includeJobWithUnspecifiedCompensationRange` (*type:* `boolean()`, *default:* `nil`) - Optional.
 
-  Whether to include jobs whose compensation range is unspecified. Defaults to `nil`.
-  - type (String.t): Required.
+      Whether to include jobs whose compensation range is unspecified.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Required.
 
-  Type of filter. Defaults to `nil`.
+      Type of filter.
   """
 
   use GoogleApi.Gax.ModelBase

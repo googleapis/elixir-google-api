@@ -26,13 +26,13 @@ defmodule GoogleApi.Jobs.V2.Model.HistogramResult do
 
   ## Attributes
 
-  - searchType (String.t): The Histogram search filters. Defaults to `nil`.
-  - values (map()): A map from the values of field to the number of jobs with that value
-  in this search result.
+  *   `searchType` (*type:* `String.t`, *default:* `nil`) - The Histogram search filters.
+  *   `values` (*type:* `map()`, *default:* `nil`) - A map from the values of field to the number of jobs with that value
+      in this search result.
 
-  Key: search type (filter names, such as the companyName).
+      Key: search type (filter names, such as the companyName).
 
-  Values: the count of jobs that match the filter for this search. Defaults to `nil`.
+      Values: the count of jobs that match the filter for this search.
   """
 
   use GoogleApi.Gax.ModelBase

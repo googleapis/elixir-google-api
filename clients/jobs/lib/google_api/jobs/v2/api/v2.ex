@@ -29,59 +29,60 @@ defmodule GoogleApi.Jobs.V2.Api.V2 do
 
   ## Parameters
 
-  - connection (GoogleApi.Jobs.V2.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :companyName (String.t): Optional.
+  *   `connection` (*type:* `GoogleApi.Jobs.V2.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:companyName` (*type:* `String.t`) - Optional.
 
-  If provided, restricts completion to the specified company.
-    - :languageCode (String.t): Required.
+          If provided, restricts completion to the specified company.
+      *   `:languageCode` (*type:* `String.t`) - Required.
 
-  The language of the query. This is
-  the BCP-47 language code, such as "en-US" or "sr-Latn".
-  For more information, see
-  [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47).
+          The language of the query. This is
+          the BCP-47 language code, such as "en-US" or "sr-Latn".
+          For more information, see
+          [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47).
 
-  For CompletionType.JOB_TITLE type, only open jobs with same
-  language_code are returned.
+          For CompletionType.JOB_TITLE type, only open jobs with same
+          language_code are returned.
 
-  For CompletionType.COMPANY_NAME type,
-  only companies having open jobs with same language_code are
-  returned.
+          For CompletionType.COMPANY_NAME type,
+          only companies having open jobs with same language_code are
+          returned.
 
-  For CompletionType.COMBINED type, only open jobs with same
-  language_code or companies having open jobs with same
-  language_code are returned.
-    - :pageSize (integer()): Required.
+          For CompletionType.COMBINED type, only open jobs with same
+          language_code or companies having open jobs with same
+          language_code are returned.
+      *   `:pageSize` (*type:* `integer()`) - Required.
 
-  Completion result count.
-  The maximum allowed page size is 10.
-    - :query (String.t): Required.
+          Completion result count.
+          The maximum allowed page size is 10.
+      *   `:query` (*type:* `String.t`) - Required.
 
-  The query used to generate suggestions.
-    - :scope (String.t): Optional.
+          The query used to generate suggestions.
+      *   `:scope` (*type:* `String.t`) - Optional.
 
-  The scope of the completion. The defaults is CompletionScope.PUBLIC.
-    - :type (String.t): Optional.
+          The scope of the completion. The defaults is CompletionScope.PUBLIC.
+      *   `:type` (*type:* `String.t`) - Optional.
 
-  The completion topic. The default is CompletionType.COMBINED.
+          The completion topic. The default is CompletionType.COMBINED.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Jobs.V2.Model.CompleteQueryResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Jobs.V2.Model.CompleteQueryResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec jobs_complete(Tesla.Env.client(), keyword()) ::
+  @spec jobs_complete(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Jobs.V2.Model.CompleteQueryResponse.t()} | {:error, Tesla.Env.t()}
   def jobs_complete(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

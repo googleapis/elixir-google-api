@@ -24,12 +24,12 @@ defmodule GoogleApi.Jobs.V2.Model.HistogramResults do
 
   ## Attributes
 
-  - compensationHistogramResults (list(GoogleApi.Jobs.V2.Model.CompensationHistogramResult.t)): Specifies compensation field-based histogram results that matches
-  HistogramFacets.compensation_histogram_requests. Defaults to `nil`.
-  - customAttributeHistogramResults (list(GoogleApi.Jobs.V2.Model.CustomAttributeHistogramResult.t)): Specifies histogram results for custom attributes that
-  matches HistogramFacets.custom_attribute_histogram_facets. Defaults to `nil`.
-  - simpleHistogramResults (list(GoogleApi.Jobs.V2.Model.HistogramResult.t)): Specifies histogram results that matches
-  HistogramFacets.simple_histogram_facets. Defaults to `nil`.
+  *   `compensationHistogramResults` (*type:* `list(GoogleApi.Jobs.V2.Model.CompensationHistogramResult.t)`, *default:* `nil`) - Specifies compensation field-based histogram results that matches
+      HistogramFacets.compensation_histogram_requests.
+  *   `customAttributeHistogramResults` (*type:* `list(GoogleApi.Jobs.V2.Model.CustomAttributeHistogramResult.t)`, *default:* `nil`) - Specifies histogram results for custom attributes that
+      matches HistogramFacets.custom_attribute_histogram_facets.
+  *   `simpleHistogramResults` (*type:* `list(GoogleApi.Jobs.V2.Model.HistogramResult.t)`, *default:* `nil`) - Specifies histogram results that matches
+      HistogramFacets.simple_histogram_facets.
   """
 
   use GoogleApi.Gax.ModelBase

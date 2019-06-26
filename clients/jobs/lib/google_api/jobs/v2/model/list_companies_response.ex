@@ -23,10 +23,10 @@ defmodule GoogleApi.Jobs.V2.Model.ListCompaniesResponse do
 
   ## Attributes
 
-  - companies (list(GoogleApi.Jobs.V2.Model.Company.t)): Companies for the current client. Defaults to `nil`.
-  - metadata (GoogleApi.Jobs.V2.Model.ResponseMetadata.t): Additional information for the API invocation, such as the request
-  tracking id. Defaults to `nil`.
-  - nextPageToken (String.t): A token to retrieve the next page of results. Defaults to `nil`.
+  *   `companies` (*type:* `list(GoogleApi.Jobs.V2.Model.Company.t)`, *default:* `nil`) - Companies for the current client.
+  *   `metadata` (*type:* `GoogleApi.Jobs.V2.Model.ResponseMetadata.t`, *default:* `nil`) - Additional information for the API invocation, such as the request
+      tracking id.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results.
   """
 
   use GoogleApi.Gax.ModelBase

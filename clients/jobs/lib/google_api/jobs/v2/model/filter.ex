@@ -25,13 +25,13 @@ defmodule GoogleApi.Jobs.V2.Model.Filter do
 
   ## Attributes
 
-  - requisitionId (String.t): Required.
+  *   `requisitionId` (*type:* `String.t`, *default:* `nil`) - Required.
 
-  The requisition ID (or posting ID) assigned by the client to identify a
-  job. This is intended for client identification and tracking of
-  listings.
-  name takes precedence over this field
-  The maximum number of allowed characters is 225. Defaults to `nil`.
+      The requisition ID (or posting ID) assigned by the client to identify a
+      job. This is intended for client identification and tracking of
+      listings.
+      name takes precedence over this field
+      The maximum number of allowed characters is 225.
   """
 
   use GoogleApi.Gax.ModelBase

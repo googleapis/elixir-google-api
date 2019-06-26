@@ -25,8 +25,8 @@ defmodule GoogleApi.Jobs.V2.Model.LatLng do
 
   ## Attributes
 
-  - latitude (float()): The latitude in degrees. It must be in the range [-90.0, +90.0]. Defaults to `nil`.
-  - longitude (float()): The longitude in degrees. It must be in the range [-180.0, +180.0]. Defaults to `nil`.
+  *   `latitude` (*type:* `float()`, *default:* `nil`) - The latitude in degrees. It must be in the range [-90.0, +90.0].
+  *   `longitude` (*type:* `float()`, *default:* `nil`) - The longitude in degrees. It must be in the range [-180.0, +180.0].
   """
 
   use GoogleApi.Gax.ModelBase

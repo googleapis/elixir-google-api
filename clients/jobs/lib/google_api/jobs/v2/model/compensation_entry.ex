@@ -28,35 +28,35 @@ defmodule GoogleApi.Jobs.V2.Model.CompensationEntry do
 
   ## Attributes
 
-  - amount (GoogleApi.Jobs.V2.Model.Money.t): Optional.
+  *   `amount` (*type:* `GoogleApi.Jobs.V2.Model.Money.t`, *default:* `nil`) - Optional.
 
-  Compensation amount. Defaults to `nil`.
-  - description (String.t): Optional.
+      Compensation amount.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Optional.
 
-  Compensation description.  For example, could
-  indicate equity terms or provide additional context to an estimated
-  bonus. Defaults to `nil`.
-  - expectedUnitsPerYear (float()): Optional.
+      Compensation description.  For example, could
+      indicate equity terms or provide additional context to an estimated
+      bonus.
+  *   `expectedUnitsPerYear` (*type:* `float()`, *default:* `nil`) - Optional.
 
-  Expected number of units paid each year. If not specified, when
-  Job.employment_types is FULLTIME, a default value is inferred
-  based on unit. Default values:
-  - HOURLY: 2080
-  - DAILY: 260
-  - WEEKLY: 52
-  - MONTHLY: 12
-  - ANNUAL: 1 Defaults to `nil`.
-  - range (GoogleApi.Jobs.V2.Model.CompensationRange.t): Optional.
+      Expected number of units paid each year. If not specified, when
+      Job.employment_types is FULLTIME, a default value is inferred
+      based on unit. Default values:
+      - HOURLY: 2080
+      - DAILY: 260
+      - WEEKLY: 52
+      - MONTHLY: 12
+      - ANNUAL: 1
+  *   `range` (*type:* `GoogleApi.Jobs.V2.Model.CompensationRange.t`, *default:* `nil`) - Optional.
 
-  Compensation range. Defaults to `nil`.
-  - type (String.t): Required.
+      Compensation range.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Required.
 
-  Compensation type. Defaults to `nil`.
-  - unit (String.t): Optional.
+      Compensation type.
+  *   `unit` (*type:* `String.t`, *default:* `nil`) - Optional.
 
-  Frequency of the specified amount.
+      Frequency of the specified amount.
 
-  Default is CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED. Defaults to `nil`.
+      Default is CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED.
   """
 
   use GoogleApi.Gax.ModelBase

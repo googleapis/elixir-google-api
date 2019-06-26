@@ -23,34 +23,34 @@ defmodule GoogleApi.Jobs.V2.Model.SearchJobsResponse do
 
   ## Attributes
 
-  - appliedCommuteFilter (GoogleApi.Jobs.V2.Model.CommutePreference.t): The commute filter the service applied to the specified query. This
-  information is only available when query has a valid CommutePreference. Defaults to `nil`.
-  - appliedJobLocationFilters (list(GoogleApi.Jobs.V2.Model.JobLocation.t)): The location filters that the service applied to the specified query. If
-  any filters are lat-lng based, the JobLocation.location_type is
-  JobLocation.LocationType#LOCATION_TYPE_UNSPECIFIED. Defaults to `nil`.
-  - estimatedTotalSize (String.t): An estimation of the number of jobs that match the specified query.
+  *   `appliedCommuteFilter` (*type:* `GoogleApi.Jobs.V2.Model.CommutePreference.t`, *default:* `nil`) - The commute filter the service applied to the specified query. This
+      information is only available when query has a valid CommutePreference.
+  *   `appliedJobLocationFilters` (*type:* `list(GoogleApi.Jobs.V2.Model.JobLocation.t)`, *default:* `nil`) - The location filters that the service applied to the specified query. If
+      any filters are lat-lng based, the JobLocation.location_type is
+      JobLocation.LocationType#LOCATION_TYPE_UNSPECIFIED.
+  *   `estimatedTotalSize` (*type:* `String.t`, *default:* `nil`) - An estimation of the number of jobs that match the specified query.
 
-  This number is not guaranteed to be accurate. For accurate results,
-  seenenable_precise_result_size. Defaults to `nil`.
-  - histogramResults (GoogleApi.Jobs.V2.Model.HistogramResults.t): The histogram results that match specified
-  SearchJobsRequest.HistogramFacets. Defaults to `nil`.
-  - jobView (String.t): Corresponds to SearchJobsRequest.job_view. Defaults to `nil`.
-  - matchingJobs (list(GoogleApi.Jobs.V2.Model.MatchingJob.t)): The Job entities that match the specified SearchJobsRequest. Defaults to `nil`.
-  - metadata (GoogleApi.Jobs.V2.Model.ResponseMetadata.t): Additional information for the API invocation, such as the request
-  tracking id. Defaults to `nil`.
-  - nextPageToken (String.t): The token that specifies the starting position of the next page of results.
-  This field is empty if there are no more results. Defaults to `nil`.
-  - numJobsFromBroadenedQuery (integer()): If query broadening is enabled, we may append additional results from the
-  broadened query. This number indicates how many of the jobs returned in the
-  jobs field are from the broadened query. These results are always at the
-  end of the jobs list. In particular, a value of 0 means all the jobs in the
-  jobs list are from the original (without broadening) query. If this
-  field is non-zero, subsequent requests with offset after this result set
-  should contain all broadened results. Defaults to `nil`.
-  - spellResult (GoogleApi.Jobs.V2.Model.SpellingCorrection.t): The spell checking result, and correction. Defaults to `nil`.
-  - totalSize (String.t): The precise result count, which is available only if the client set
-  enable_precise_result_size to `true` or if the response
-  is the last page of results. Otherwise, the value will be `-1`. Defaults to `nil`.
+      This number is not guaranteed to be accurate. For accurate results,
+      seenenable_precise_result_size.
+  *   `histogramResults` (*type:* `GoogleApi.Jobs.V2.Model.HistogramResults.t`, *default:* `nil`) - The histogram results that match specified
+      SearchJobsRequest.HistogramFacets.
+  *   `jobView` (*type:* `String.t`, *default:* `nil`) - Corresponds to SearchJobsRequest.job_view.
+  *   `matchingJobs` (*type:* `list(GoogleApi.Jobs.V2.Model.MatchingJob.t)`, *default:* `nil`) - The Job entities that match the specified SearchJobsRequest.
+  *   `metadata` (*type:* `GoogleApi.Jobs.V2.Model.ResponseMetadata.t`, *default:* `nil`) - Additional information for the API invocation, such as the request
+      tracking id.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The token that specifies the starting position of the next page of results.
+      This field is empty if there are no more results.
+  *   `numJobsFromBroadenedQuery` (*type:* `integer()`, *default:* `nil`) - If query broadening is enabled, we may append additional results from the
+      broadened query. This number indicates how many of the jobs returned in the
+      jobs field are from the broadened query. These results are always at the
+      end of the jobs list. In particular, a value of 0 means all the jobs in the
+      jobs list are from the original (without broadening) query. If this
+      field is non-zero, subsequent requests with offset after this result set
+      should contain all broadened results.
+  *   `spellResult` (*type:* `GoogleApi.Jobs.V2.Model.SpellingCorrection.t`, *default:* `nil`) - The spell checking result, and correction.
+  *   `totalSize` (*type:* `String.t`, *default:* `nil`) - The precise result count, which is available only if the client set
+      enable_precise_result_size to `true` or if the response
+      is the last page of results. Otherwise, the value will be `-1`.
   """
 
   use GoogleApi.Gax.ModelBase
