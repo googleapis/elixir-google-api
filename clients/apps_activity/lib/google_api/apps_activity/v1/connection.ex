@@ -27,6 +27,6 @@ defmodule GoogleApi.AppsActivity.V1.Connection do
       # View the activity history of your Google apps
       "https://www.googleapis.com/auth/activity"
     ],
-    otp_app: :google_api_appsactivity,
+    otp_app: :google_api_apps_activity,
     base_url: "https://www.googleapis.com/appsactivity/v1/"
 end
