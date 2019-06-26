@@ -24,6 +24,6 @@ defmodule GoogleApi.CivicInfo.V2.Connection do
 
   use GoogleApi.Gax.Connection,
     scopes: [],
-    otp_app: :google_api_civicinfo,
+    otp_app: :google_api_civic_info,
     base_url: "https://www.googleapis.com/civicinfo/v2/"
 end
