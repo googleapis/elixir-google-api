@@ -21,21 +21,21 @@ defmodule GoogleApi.CustomSearch.V1.Model.Result do
 
   ## Attributes
 
-  - cacheId (String.t):  Defaults to `nil`.
-  - displayLink (String.t):  Defaults to `nil`.
-  - fileFormat (String.t):  Defaults to `nil`.
-  - formattedUrl (String.t):  Defaults to `nil`.
-  - htmlFormattedUrl (String.t):  Defaults to `nil`.
-  - htmlSnippet (String.t):  Defaults to `nil`.
-  - htmlTitle (String.t):  Defaults to `nil`.
-  - image (GoogleApi.CustomSearch.V1.Model.ResultImage.t):  Defaults to `nil`.
-  - kind (String.t):  Defaults to `customsearch#result`.
-  - labels (list(GoogleApi.CustomSearch.V1.Model.ResultLabels.t)):  Defaults to `nil`.
-  - link (String.t):  Defaults to `nil`.
-  - mime (String.t):  Defaults to `nil`.
-  - pagemap (map()):  Defaults to `nil`.
-  - snippet (String.t):  Defaults to `nil`.
-  - title (String.t):  Defaults to `nil`.
+  *   `cacheId` (*type:* `String.t`, *default:* `nil`) - 
+  *   `displayLink` (*type:* `String.t`, *default:* `nil`) - 
+  *   `fileFormat` (*type:* `String.t`, *default:* `nil`) - 
+  *   `formattedUrl` (*type:* `String.t`, *default:* `nil`) - 
+  *   `htmlFormattedUrl` (*type:* `String.t`, *default:* `nil`) - 
+  *   `htmlSnippet` (*type:* `String.t`, *default:* `nil`) - 
+  *   `htmlTitle` (*type:* `String.t`, *default:* `nil`) - 
+  *   `image` (*type:* `GoogleApi.CustomSearch.V1.Model.ResultImage.t`, *default:* `nil`) - 
+  *   `kind` (*type:* `String.t`, *default:* `customsearch#result`) - 
+  *   `labels` (*type:* `list(GoogleApi.CustomSearch.V1.Model.ResultLabels.t)`, *default:* `nil`) - 
+  *   `link` (*type:* `String.t`, *default:* `nil`) - 
+  *   `mime` (*type:* `String.t`, *default:* `nil`) - 
+  *   `pagemap` (*type:* `map()`, *default:* `nil`) - 
+  *   `snippet` (*type:* `String.t`, *default:* `nil`) - 
+  *   `title` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

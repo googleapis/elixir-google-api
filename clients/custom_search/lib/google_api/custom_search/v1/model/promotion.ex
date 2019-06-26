@@ -21,12 +21,12 @@ defmodule GoogleApi.CustomSearch.V1.Model.Promotion do
 
   ## Attributes
 
-  - bodyLines (list(GoogleApi.CustomSearch.V1.Model.PromotionBodyLines.t)):  Defaults to `nil`.
-  - displayLink (String.t):  Defaults to `nil`.
-  - htmlTitle (String.t):  Defaults to `nil`.
-  - image (GoogleApi.CustomSearch.V1.Model.PromotionImage.t):  Defaults to `nil`.
-  - link (String.t):  Defaults to `nil`.
-  - title (String.t):  Defaults to `nil`.
+  *   `bodyLines` (*type:* `list(GoogleApi.CustomSearch.V1.Model.PromotionBodyLines.t)`, *default:* `nil`) - 
+  *   `displayLink` (*type:* `String.t`, *default:* `nil`) - 
+  *   `htmlTitle` (*type:* `String.t`, *default:* `nil`) - 
+  *   `image` (*type:* `GoogleApi.CustomSearch.V1.Model.PromotionImage.t`, *default:* `nil`) - 
+  *   `link` (*type:* `String.t`, *default:* `nil`) - 
+  *   `title` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

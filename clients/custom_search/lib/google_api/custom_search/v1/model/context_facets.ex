@@ -21,9 +21,9 @@ defmodule GoogleApi.CustomSearch.V1.Model.ContextFacets do
 
   ## Attributes
 
-  - anchor (String.t):  Defaults to `nil`.
-  - label (String.t):  Defaults to `nil`.
-  - label_with_op (String.t):  Defaults to `nil`.
+  *   `anchor` (*type:* `String.t`, *default:* `nil`) - 
+  *   `label` (*type:* `String.t`, *default:* `nil`) - 
+  *   `label_with_op` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

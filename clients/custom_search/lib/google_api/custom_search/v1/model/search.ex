@@ -21,14 +21,14 @@ defmodule GoogleApi.CustomSearch.V1.Model.Search do
 
   ## Attributes
 
-  - context (GoogleApi.CustomSearch.V1.Model.Context.t):  Defaults to `nil`.
-  - items (list(GoogleApi.CustomSearch.V1.Model.Result.t)):  Defaults to `nil`.
-  - kind (String.t):  Defaults to `customsearch#search`.
-  - promotions (list(GoogleApi.CustomSearch.V1.Model.Promotion.t)):  Defaults to `nil`.
-  - queries (map()):  Defaults to `nil`.
-  - searchInformation (GoogleApi.CustomSearch.V1.Model.SearchSearchInformation.t):  Defaults to `nil`.
-  - spelling (GoogleApi.CustomSearch.V1.Model.SearchSpelling.t):  Defaults to `nil`.
-  - url (GoogleApi.CustomSearch.V1.Model.SearchUrl.t):  Defaults to `nil`.
+  *   `context` (*type:* `GoogleApi.CustomSearch.V1.Model.Context.t`, *default:* `nil`) - 
+  *   `items` (*type:* `list(GoogleApi.CustomSearch.V1.Model.Result.t)`, *default:* `nil`) - 
+  *   `kind` (*type:* `String.t`, *default:* `customsearch#search`) - 
+  *   `promotions` (*type:* `list(GoogleApi.CustomSearch.V1.Model.Promotion.t)`, *default:* `nil`) - 
+  *   `queries` (*type:* `map()`, *default:* `nil`) - 
+  *   `searchInformation` (*type:* `GoogleApi.CustomSearch.V1.Model.SearchSearchInformation.t`, *default:* `nil`) - 
+  *   `spelling` (*type:* `GoogleApi.CustomSearch.V1.Model.SearchSpelling.t`, *default:* `nil`) - 
+  *   `url` (*type:* `GoogleApi.CustomSearch.V1.Model.SearchUrl.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase
