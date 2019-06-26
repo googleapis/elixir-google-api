@@ -23,7 +23,7 @@ defmodule GoogleApi.CloudShell.V1.Model.StartEnvironmentResponse do
 
   ## Attributes
 
-  - environment (GoogleApi.CloudShell.V1.Model.Environment.t): Environment that was started. Defaults to `nil`.
+  *   `environment` (*type:* `GoogleApi.CloudShell.V1.Model.Environment.t`, *default:* `nil`) - Environment that was started.
   """
 
   use GoogleApi.Gax.ModelBase

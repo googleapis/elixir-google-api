@@ -22,7 +22,7 @@ defmodule GoogleApi.CloudShell.V1.Model.StartEnvironmentMetadata do
 
   ## Attributes
 
-  - state (String.t): Current state of the environment being started. Defaults to `nil`.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - Current state of the environment being started.
   """
 
   use GoogleApi.Gax.ModelBase

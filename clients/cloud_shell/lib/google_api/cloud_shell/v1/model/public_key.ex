@@ -21,14 +21,14 @@ defmodule GoogleApi.CloudShell.V1.Model.PublicKey do
 
   ## Attributes
 
-  - format (String.t): Required. Format of this key's content. Defaults to `nil`.
-  - key (String.t): Required. Content of this key. Defaults to `nil`.
-  - name (String.t): Output only. Full name of this resource, in the format
-  `users/{owner_email}/environments/{environment_id}/publicKeys/{key_id}`.
-  `{owner_email}` is the email address of the user to whom the key belongs.
-  `{environment_id}` is the identifier of the environment to which the key
-  grants access. `{key_id}` is the unique identifier of the key. For example,
-  `users/someone@example.com/environments/default/publicKeys/myKey`. Defaults to `nil`.
+  *   `format` (*type:* `String.t`, *default:* `nil`) - Required. Format of this key's content.
+  *   `key` (*type:* `String.t`, *default:* `nil`) - Required. Content of this key.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Full name of this resource, in the format
+      `users/{owner_email}/environments/{environment_id}/publicKeys/{key_id}`.
+      `{owner_email}` is the email address of the user to whom the key belongs.
+      `{environment_id}` is the identifier of the environment to which the key
+      grants access. `{key_id}` is the unique identifier of the key. For example,
+      `users/someone@example.com/environments/default/publicKeys/myKey`.
   """
 
   use GoogleApi.Gax.ModelBase

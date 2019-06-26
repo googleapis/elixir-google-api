@@ -24,26 +24,26 @@ defmodule GoogleApi.CloudShell.V1.Model.Environment do
 
   ## Attributes
 
-  - dockerImage (String.t): Required. Full path to the Docker image used to run this environment, e.g.
-  "gcr.io/dev-con/cloud-devshell:latest". Defaults to `nil`.
-  - id (String.t): Output only. The environment's identifier, which is always "default". Defaults to `nil`.
-  - name (String.t): Output only. Full name of this resource, in the format
-  `users/{owner_email}/environments/{environment_id}`. `{owner_email}` is the
-  email address of the user to whom this environment belongs, and
-  `{environment_id}` is the identifier of this environment. For example,
-  `users/someone@example.com/environments/default`. Defaults to `nil`.
-  - publicKeys (list(GoogleApi.CloudShell.V1.Model.PublicKey.t)): Output only. Public keys associated with the environment. Clients can
-  connect to this environment via SSH only if they possess a private key
-  corresponding to at least one of these public keys. Keys can be added to or
-  removed from the environment using the CreatePublicKey and DeletePublicKey
-  methods. Defaults to `nil`.
-  - sshHost (String.t): Output only. Host to which clients can connect to initiate SSH sessions
-  with the environment. Defaults to `nil`.
-  - sshPort (integer()): Output only. Port to which clients can connect to initiate SSH sessions
-  with the environment. Defaults to `nil`.
-  - sshUsername (String.t): Output only. Username that clients should use when initiating SSH sessions
-  with the environment. Defaults to `nil`.
-  - state (String.t): Output only. Current execution state of this environment. Defaults to `nil`.
+  *   `dockerImage` (*type:* `String.t`, *default:* `nil`) - Required. Full path to the Docker image used to run this environment, e.g.
+      "gcr.io/dev-con/cloud-devshell:latest".
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Output only. The environment's identifier, which is always "default".
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Full name of this resource, in the format
+      `users/{owner_email}/environments/{environment_id}`. `{owner_email}` is the
+      email address of the user to whom this environment belongs, and
+      `{environment_id}` is the identifier of this environment. For example,
+      `users/someone@example.com/environments/default`.
+  *   `publicKeys` (*type:* `list(GoogleApi.CloudShell.V1.Model.PublicKey.t)`, *default:* `nil`) - Output only. Public keys associated with the environment. Clients can
+      connect to this environment via SSH only if they possess a private key
+      corresponding to at least one of these public keys. Keys can be added to or
+      removed from the environment using the CreatePublicKey and DeletePublicKey
+      methods.
+  *   `sshHost` (*type:* `String.t`, *default:* `nil`) - Output only. Host to which clients can connect to initiate SSH sessions
+      with the environment.
+  *   `sshPort` (*type:* `integer()`, *default:* `nil`) - Output only. Port to which clients can connect to initiate SSH sessions
+      with the environment.
+  *   `sshUsername` (*type:* `String.t`, *default:* `nil`) - Output only. Username that clients should use when initiating SSH sessions
+      with the environment.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. Current execution state of this environment.
   """
 
   use GoogleApi.Gax.ModelBase
