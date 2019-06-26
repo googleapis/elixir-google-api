@@ -24,9 +24,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.GitHubEventsConfig do
 
   ## Attributes
 
-  *   `checkSuite` (*type:* `GoogleApi.CloudBuild.V1.Model.CheckSuiteFilter.t`, *default:* `nil`) - Output only. Indicates that a build was generated from a check suite
-      event.
-  *   `installationId` (*type:* `String.t`, *default:* `nil`) - The installationID that emmits the GitHub event.
+  *   `installationId` (*type:* `String.t`, *default:* `nil`) - The installationID that emits the GitHub event.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the repository.
   *   `owner` (*type:* `String.t`, *default:* `nil`) - Owner of the repository.
   *   `pullRequest` (*type:* `GoogleApi.CloudBuild.V1.Model.PullRequestFilter.t`, *default:* `nil`) - filter to match changes in pull requests.
@@ -36,7 +34,6 @@ defmodule GoogleApi.CloudBuild.V1.Model.GitHubEventsConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :checkSuite => GoogleApi.CloudBuild.V1.Model.CheckSuiteFilter.t(),
           :installationId => String.t(),
           :name => String.t(),
           :owner => String.t(),
@@ -44,7 +41,6 @@ defmodule GoogleApi.CloudBuild.V1.Model.GitHubEventsConfig do
           :push => GoogleApi.CloudBuild.V1.Model.PushFilter.t()
         }
 
-  field(:checkSuite, as: GoogleApi.CloudBuild.V1.Model.CheckSuiteFilter)
   field(:installationId)
   field(:name)
   field(:owner)

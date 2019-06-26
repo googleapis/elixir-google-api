@@ -27,6 +27,6 @@ defmodule GoogleApi.CloudBuild.V1.Connection do
       # View and manage your data across Google Cloud Platform services
       "https://www.googleapis.com/auth/cloud-platform"
     ],
-    otp_app: :google_api_cloudbuild,
+    otp_app: :google_api_cloud_build,
     base_url: "https://cloudbuild.googleapis.com/"
 end
