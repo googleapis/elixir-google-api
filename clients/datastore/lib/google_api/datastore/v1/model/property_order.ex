@@ -21,8 +21,8 @@ defmodule GoogleApi.Datastore.V1.Model.PropertyOrder do
 
   ## Attributes
 
-  - direction (String.t): The direction to order by. Defaults to `ASCENDING`. Defaults to `nil`.
-  - property (GoogleApi.Datastore.V1.Model.PropertyReference.t): The property to order by. Defaults to `nil`.
+  *   `direction` (*type:* `String.t`, *default:* `nil`) - The direction to order by. Defaults to `ASCENDING`.
+  *   `property` (*type:* `GoogleApi.Datastore.V1.Model.PropertyReference.t`, *default:* `nil`) - The property to order by.
   """
 
   use GoogleApi.Gax.ModelBase

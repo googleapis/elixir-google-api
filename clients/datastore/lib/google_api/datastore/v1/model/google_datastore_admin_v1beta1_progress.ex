@@ -21,10 +21,10 @@ defmodule GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1beta1Progress do
 
   ## Attributes
 
-  - workCompleted (String.t): The amount of work that has been completed. Note that this may be greater
-  than work_estimated. Defaults to `nil`.
-  - workEstimated (String.t): An estimate of how much work needs to be performed. May be zero if the
-  work estimate is unavailable. Defaults to `nil`.
+  *   `workCompleted` (*type:* `String.t`, *default:* `nil`) - The amount of work that has been completed. Note that this may be greater
+      than work_estimated.
+  *   `workEstimated` (*type:* `String.t`, *default:* `nil`) - An estimate of how much work needs to be performed. May be zero if the
+      work estimate is unavailable.
   """
 
   use GoogleApi.Gax.ModelBase

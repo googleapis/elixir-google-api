@@ -21,8 +21,8 @@ defmodule GoogleApi.Datastore.V1.Model.LookupRequest do
 
   ## Attributes
 
-  - keys (list(GoogleApi.Datastore.V1.Model.Key.t)): Keys of entities to look up. Defaults to `nil`.
-  - readOptions (GoogleApi.Datastore.V1.Model.ReadOptions.t): The options for this lookup request. Defaults to `nil`.
+  *   `keys` (*type:* `list(GoogleApi.Datastore.V1.Model.Key.t)`, *default:* `nil`) - Keys of entities to look up.
+  *   `readOptions` (*type:* `GoogleApi.Datastore.V1.Model.ReadOptions.t`, *default:* `nil`) - The options for this lookup request.
   """
 
   use GoogleApi.Gax.ModelBase

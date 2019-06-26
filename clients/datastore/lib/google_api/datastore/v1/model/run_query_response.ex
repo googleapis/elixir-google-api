@@ -21,8 +21,8 @@ defmodule GoogleApi.Datastore.V1.Model.RunQueryResponse do
 
   ## Attributes
 
-  - batch (GoogleApi.Datastore.V1.Model.QueryResultBatch.t): A batch of query results (always present). Defaults to `nil`.
-  - query (GoogleApi.Datastore.V1.Model.Query.t): The parsed form of the `GqlQuery` from the request, if it was set. Defaults to `nil`.
+  *   `batch` (*type:* `GoogleApi.Datastore.V1.Model.QueryResultBatch.t`, *default:* `nil`) - A batch of query results (always present).
+  *   `query` (*type:* `GoogleApi.Datastore.V1.Model.Query.t`, *default:* `nil`) - The parsed form of the `GqlQuery` from the request, if it was set.
   """
 
   use GoogleApi.Gax.ModelBase

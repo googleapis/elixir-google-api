@@ -21,9 +21,9 @@ defmodule GoogleApi.Datastore.V1.Model.Empty do
   empty messages in your APIs. A typical example is to use it as the request
   or the response type of an API method. For instance:
 
-    service Foo {
-      rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty);
-    }
+      service Foo {
+        rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty);
+      }
 
   The JSON representation for `Empty` is empty JSON object `{}`.
 

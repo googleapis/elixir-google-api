@@ -21,18 +21,18 @@ defmodule GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1Index do
 
   ## Attributes
 
-  - ancestor (String.t): The index's ancestor mode.  Must not be ANCESTOR_MODE_UNSPECIFIED.
-  Required. Defaults to `nil`.
-  - indexId (String.t): The resource ID of the index.
-  Output only. Defaults to `nil`.
-  - kind (String.t): The entity kind to which this index applies.
-  Required. Defaults to `nil`.
-  - projectId (String.t): Project ID.
-  Output only. Defaults to `nil`.
-  - properties (list(GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1IndexedProperty.t)): An ordered sequence of property names and their index attributes.
-  Required. Defaults to `nil`.
-  - state (String.t): The state of the index.
-  Output only. Defaults to `nil`.
+  *   `ancestor` (*type:* `String.t`, *default:* `nil`) - The index's ancestor mode.  Must not be ANCESTOR_MODE_UNSPECIFIED.
+      Required.
+  *   `indexId` (*type:* `String.t`, *default:* `nil`) - The resource ID of the index.
+      Output only.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The entity kind to which this index applies.
+      Required.
+  *   `projectId` (*type:* `String.t`, *default:* `nil`) - Project ID.
+      Output only.
+  *   `properties` (*type:* `list(GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1IndexedProperty.t)`, *default:* `nil`) - An ordered sequence of property names and their index attributes.
+      Required.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - The state of the index.
+      Output only.
   """
 
   use GoogleApi.Gax.ModelBase

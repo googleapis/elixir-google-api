@@ -21,7 +21,7 @@ defmodule GoogleApi.Datastore.V1.Model.Projection do
 
   ## Attributes
 
-  - property (GoogleApi.Datastore.V1.Model.PropertyReference.t): The property to project. Defaults to `nil`.
+  *   `property` (*type:* `GoogleApi.Datastore.V1.Model.PropertyReference.t`, *default:* `nil`) - The property to project.
   """
 
   use GoogleApi.Gax.ModelBase

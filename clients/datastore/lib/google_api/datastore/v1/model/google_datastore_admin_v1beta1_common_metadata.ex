@@ -21,13 +21,13 @@ defmodule GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1beta1CommonMetadata
 
   ## Attributes
 
-  - endTime (DateTime.t): The time the operation ended, either successfully or otherwise. Defaults to `nil`.
-  - labels (map()): The client-assigned labels which were provided when the operation was
-  created. May also include additional labels. Defaults to `nil`.
-  - operationType (String.t): The type of the operation. Can be used as a filter in
-  ListOperationsRequest. Defaults to `nil`.
-  - startTime (DateTime.t): The time that work began on the operation. Defaults to `nil`.
-  - state (String.t): The current state of the Operation. Defaults to `nil`.
+  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the operation ended, either successfully or otherwise.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - The client-assigned labels which were provided when the operation was
+      created. May also include additional labels.
+  *   `operationType` (*type:* `String.t`, *default:* `nil`) - The type of the operation. Can be used as a filter in
+      ListOperationsRequest.
+  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The time that work began on the operation.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - The current state of the Operation.
   """
 
   use GoogleApi.Gax.ModelBase

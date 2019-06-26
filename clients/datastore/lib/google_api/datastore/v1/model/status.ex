@@ -53,31 +53,31 @@ defmodule GoogleApi.Datastore.V1.Model.Status do
   Example uses of this error model include:
 
   - Partial errors. If a service needs to return partial errors to the client,
-    it may embed the `Status` in the normal response to indicate the partial
-    errors.
+      it may embed the `Status` in the normal response to indicate the partial
+      errors.
 
   - Workflow errors. A typical workflow has multiple steps. Each step may
-    have a `Status` message for error reporting.
+      have a `Status` message for error reporting.
 
   - Batch operations. If a client uses batch request and batch response, the
-    `Status` message should be used directly inside batch response, one for
-    each error sub-response.
+      `Status` message should be used directly inside batch response, one for
+      each error sub-response.
 
   - Asynchronous operations. If an API call embeds asynchronous operation
-    results in its response, the status of those operations should be
-    represented directly using the `Status` message.
+      results in its response, the status of those operations should be
+      represented directly using the `Status` message.
 
   - Logging. If some API errors are stored in logs, the message `Status` could
-    be used directly after any stripping needed for security/privacy reasons.
+      be used directly after any stripping needed for security/privacy reasons.
 
   ## Attributes
 
-  - code (integer()): The status code, which should be an enum value of google.rpc.Code. Defaults to `nil`.
-  - details (list(map())): A list of messages that carry the error details.  There is a common set of
-  message types for APIs to use. Defaults to `nil`.
-  - message (String.t): A developer-facing error message, which should be in English. Any
-  user-facing error message should be localized and sent in the
-  google.rpc.Status.details field, or localized by the client. Defaults to `nil`.
+  *   `code` (*type:* `integer()`, *default:* `nil`) - The status code, which should be an enum value of google.rpc.Code.
+  *   `details` (*type:* `list(map())`, *default:* `nil`) - A list of messages that carry the error details.  There is a common set of
+      message types for APIs to use.
+  *   `message` (*type:* `String.t`, *default:* `nil`) - A developer-facing error message, which should be in English. Any
+      user-facing error message should be localized and sent in the
+      google.rpc.Status.details field, or localized by the client.
   """
 
   use GoogleApi.Gax.ModelBase

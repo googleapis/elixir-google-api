@@ -25,8 +25,8 @@ defmodule GoogleApi.Datastore.V1.Model.TransactionOptions do
 
   ## Attributes
 
-  - readOnly (GoogleApi.Datastore.V1.Model.ReadOnly.t): The transaction should only allow reads. Defaults to `nil`.
-  - readWrite (GoogleApi.Datastore.V1.Model.ReadWrite.t): The transaction should allow both reads and writes. Defaults to `nil`.
+  *   `readOnly` (*type:* `GoogleApi.Datastore.V1.Model.ReadOnly.t`, *default:* `nil`) - The transaction should only allow reads.
+  *   `readWrite` (*type:* `GoogleApi.Datastore.V1.Model.ReadWrite.t`, *default:* `nil`) - The transaction should allow both reads and writes.
   """
 
   use GoogleApi.Gax.ModelBase

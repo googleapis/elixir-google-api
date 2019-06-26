@@ -29,28 +29,29 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.Datastore.V1.Connection): Connection to server
-  - project_id (String.t): The ID of the project against which to make the request.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.Datastore.V1.Model.AllocateIdsRequest.t): 
+  *   `connection` (*type:* `GoogleApi.Datastore.V1.Connection.t`) - Connection to server
+  *   `project_id` (*type:* `String.t`) - The ID of the project against which to make the request.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Datastore.V1.Model.AllocateIdsRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Datastore.V1.Model.AllocateIdsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Datastore.V1.Model.AllocateIdsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec datastore_projects_allocate_ids(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec datastore_projects_allocate_ids(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Datastore.V1.Model.AllocateIdsResponse.t()} | {:error, Tesla.Env.t()}
   def datastore_projects_allocate_ids(connection, project_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -86,28 +87,29 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.Datastore.V1.Connection): Connection to server
-  - project_id (String.t): The ID of the project against which to make the request.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.Datastore.V1.Model.BeginTransactionRequest.t): 
+  *   `connection` (*type:* `GoogleApi.Datastore.V1.Connection.t`) - Connection to server
+  *   `project_id` (*type:* `String.t`) - The ID of the project against which to make the request.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Datastore.V1.Model.BeginTransactionRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Datastore.V1.Model.BeginTransactionResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Datastore.V1.Model.BeginTransactionResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec datastore_projects_begin_transaction(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec datastore_projects_begin_transaction(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Datastore.V1.Model.BeginTransactionResponse.t()}
           | {:error, Tesla.Env.t()}
   def datastore_projects_begin_transaction(
@@ -150,28 +152,29 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.Datastore.V1.Connection): Connection to server
-  - project_id (String.t): The ID of the project against which to make the request.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.Datastore.V1.Model.CommitRequest.t): 
+  *   `connection` (*type:* `GoogleApi.Datastore.V1.Connection.t`) - Connection to server
+  *   `project_id` (*type:* `String.t`) - The ID of the project against which to make the request.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Datastore.V1.Model.CommitRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Datastore.V1.Model.CommitResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Datastore.V1.Model.CommitResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec datastore_projects_commit(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec datastore_projects_commit(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Datastore.V1.Model.CommitResponse.t()} | {:error, Tesla.Env.t()}
   def datastore_projects_commit(connection, project_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -214,28 +217,29 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.Datastore.V1.Connection): Connection to server
-  - project_id (String.t): Project ID against which to make the request.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1ExportEntitiesRequest.t): 
+  *   `connection` (*type:* `GoogleApi.Datastore.V1.Connection.t`) - Connection to server
+  *   `project_id` (*type:* `String.t`) - Project ID against which to make the request.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1ExportEntitiesRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Datastore.V1.Model.GoogleLongrunningOperation{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Datastore.V1.Model.GoogleLongrunningOperation{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec datastore_projects_export(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec datastore_projects_export(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Datastore.V1.Model.GoogleLongrunningOperation.t()}
           | {:error, Tesla.Env.t()}
   def datastore_projects_export(connection, project_id, optional_params \\ [], opts \\ []) do
@@ -278,28 +282,29 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.Datastore.V1.Connection): Connection to server
-  - project_id (String.t): Project ID against which to make the request.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1ImportEntitiesRequest.t): 
+  *   `connection` (*type:* `GoogleApi.Datastore.V1.Connection.t`) - Connection to server
+  *   `project_id` (*type:* `String.t`) - Project ID against which to make the request.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1ImportEntitiesRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Datastore.V1.Model.GoogleLongrunningOperation{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Datastore.V1.Model.GoogleLongrunningOperation{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec datastore_projects_import(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec datastore_projects_import(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Datastore.V1.Model.GoogleLongrunningOperation.t()}
           | {:error, Tesla.Env.t()}
   def datastore_projects_import(connection, project_id, optional_params \\ [], opts \\ []) do
@@ -338,28 +343,29 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.Datastore.V1.Connection): Connection to server
-  - project_id (String.t): The ID of the project against which to make the request.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.Datastore.V1.Model.LookupRequest.t): 
+  *   `connection` (*type:* `GoogleApi.Datastore.V1.Connection.t`) - Connection to server
+  *   `project_id` (*type:* `String.t`) - The ID of the project against which to make the request.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Datastore.V1.Model.LookupRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Datastore.V1.Model.LookupResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Datastore.V1.Model.LookupResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec datastore_projects_lookup(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec datastore_projects_lookup(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Datastore.V1.Model.LookupResponse.t()} | {:error, Tesla.Env.t()}
   def datastore_projects_lookup(connection, project_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -396,28 +402,29 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.Datastore.V1.Connection): Connection to server
-  - project_id (String.t): The ID of the project against which to make the request.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.Datastore.V1.Model.ReserveIdsRequest.t): 
+  *   `connection` (*type:* `GoogleApi.Datastore.V1.Connection.t`) - Connection to server
+  *   `project_id` (*type:* `String.t`) - The ID of the project against which to make the request.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Datastore.V1.Model.ReserveIdsRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Datastore.V1.Model.ReserveIdsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Datastore.V1.Model.ReserveIdsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec datastore_projects_reserve_ids(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec datastore_projects_reserve_ids(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Datastore.V1.Model.ReserveIdsResponse.t()} | {:error, Tesla.Env.t()}
   def datastore_projects_reserve_ids(connection, project_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -453,28 +460,29 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.Datastore.V1.Connection): Connection to server
-  - project_id (String.t): The ID of the project against which to make the request.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.Datastore.V1.Model.RollbackRequest.t): 
+  *   `connection` (*type:* `GoogleApi.Datastore.V1.Connection.t`) - Connection to server
+  *   `project_id` (*type:* `String.t`) - The ID of the project against which to make the request.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Datastore.V1.Model.RollbackRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Datastore.V1.Model.RollbackResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Datastore.V1.Model.RollbackResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec datastore_projects_rollback(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec datastore_projects_rollback(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Datastore.V1.Model.RollbackResponse.t()} | {:error, Tesla.Env.t()}
   def datastore_projects_rollback(connection, project_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -510,28 +518,29 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.Datastore.V1.Connection): Connection to server
-  - project_id (String.t): The ID of the project against which to make the request.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.Datastore.V1.Model.RunQueryRequest.t): 
+  *   `connection` (*type:* `GoogleApi.Datastore.V1.Connection.t`) - Connection to server
+  *   `project_id` (*type:* `String.t`) - The ID of the project against which to make the request.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Datastore.V1.Model.RunQueryRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Datastore.V1.Model.RunQueryResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Datastore.V1.Model.RunQueryResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec datastore_projects_run_query(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec datastore_projects_run_query(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Datastore.V1.Model.RunQueryResponse.t()} | {:error, Tesla.Env.t()}
   def datastore_projects_run_query(connection, project_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -567,28 +576,35 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.Datastore.V1.Connection): Connection to server
-  - project_id (String.t): Project ID against which to make the request.
-  - index_id (String.t): The resource ID of the index to get.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.Datastore.V1.Connection.t`) - Connection to server
+  *   `project_id` (*type:* `String.t`) - Project ID against which to make the request.
+  *   `index_id` (*type:* `String.t`) - The resource ID of the index to get.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1Index{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1Index{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec datastore_projects_indexes_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+  @spec datastore_projects_indexes_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1Index.t()}
           | {:error, Tesla.Env.t()}
   def datastore_projects_indexes_get(
@@ -635,31 +651,32 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.Datastore.V1.Connection): Connection to server
-  - project_id (String.t): Project ID against which to make the request.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :filter (String.t): 
-    - :pageSize (integer()): The maximum number of items to return.  If zero, then all results will be
-  returned.
-    - :pageToken (String.t): The next_page_token value returned from a previous List request, if any.
+  *   `connection` (*type:* `GoogleApi.Datastore.V1.Connection.t`) - Connection to server
+  *   `project_id` (*type:* `String.t`) - Project ID against which to make the request.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:filter` (*type:* `String.t`) - 
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of items to return.  If zero, then all results will be
+          returned.
+      *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from a previous List request, if any.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1ListIndexesResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1ListIndexesResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec datastore_projects_indexes_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec datastore_projects_indexes_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1ListIndexesResponse.t()}
           | {:error, Tesla.Env.t()}
   def datastore_projects_indexes_list(connection, project_id, optional_params \\ [], opts \\ []) do
@@ -709,27 +726,28 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.Datastore.V1.Connection): Connection to server
-  - name (String.t): The name of the operation resource to be cancelled.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.Datastore.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - The name of the operation resource to be cancelled.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Datastore.V1.Model.Empty{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Datastore.V1.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec datastore_projects_operations_cancel(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec datastore_projects_operations_cancel(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Datastore.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
   def datastore_projects_operations_cancel(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -767,27 +785,28 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.Datastore.V1.Connection): Connection to server
-  - name (String.t): The name of the operation resource to be deleted.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.Datastore.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - The name of the operation resource to be deleted.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Datastore.V1.Model.Empty{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Datastore.V1.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec datastore_projects_operations_delete(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec datastore_projects_operations_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Datastore.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
   def datastore_projects_operations_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -824,27 +843,28 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.Datastore.V1.Connection): Connection to server
-  - name (String.t): The name of the operation resource.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.Datastore.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - The name of the operation resource.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Datastore.V1.Model.GoogleLongrunningOperation{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Datastore.V1.Model.GoogleLongrunningOperation{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec datastore_projects_operations_get(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec datastore_projects_operations_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Datastore.V1.Model.GoogleLongrunningOperation.t()}
           | {:error, Tesla.Env.t()}
   def datastore_projects_operations_get(connection, name, optional_params \\ [], opts \\ []) do
@@ -891,30 +911,31 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.Datastore.V1.Connection): Connection to server
-  - name (String.t): The name of the operation's parent resource.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :filter (String.t): The standard list filter.
-    - :pageSize (integer()): The standard list page size.
-    - :pageToken (String.t): The standard list page token.
+  *   `connection` (*type:* `GoogleApi.Datastore.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - The name of the operation's parent resource.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:filter` (*type:* `String.t`) - The standard list filter.
+      *   `:pageSize` (*type:* `integer()`) - The standard list page size.
+      *   `:pageToken` (*type:* `String.t`) - The standard list page token.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Datastore.V1.Model.GoogleLongrunningListOperationsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Datastore.V1.Model.GoogleLongrunningListOperationsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec datastore_projects_operations_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec datastore_projects_operations_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Datastore.V1.Model.GoogleLongrunningListOperationsResponse.t()}
           | {:error, Tesla.Env.t()}
   def datastore_projects_operations_list(connection, name, optional_params \\ [], opts \\ []) do

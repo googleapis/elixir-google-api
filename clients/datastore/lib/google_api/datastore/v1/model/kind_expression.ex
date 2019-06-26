@@ -21,7 +21,7 @@ defmodule GoogleApi.Datastore.V1.Model.KindExpression do
 
   ## Attributes
 
-  - name (String.t): The name of the kind. Defaults to `nil`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the kind.
   """
 
   use GoogleApi.Gax.ModelBase

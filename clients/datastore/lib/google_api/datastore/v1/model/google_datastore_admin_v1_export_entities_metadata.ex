@@ -21,15 +21,15 @@ defmodule GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1ExportEntitiesMetad
 
   ## Attributes
 
-  - common (GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1CommonMetadata.t): Metadata common to all Datastore Admin operations. Defaults to `nil`.
-  - entityFilter (GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1EntityFilter.t): Description of which entities are being exported. Defaults to `nil`.
-  - outputUrlPrefix (String.t): Location for the export metadata and data files. This will be the same
-  value as the
-  google.datastore.admin.v1.ExportEntitiesRequest.output_url_prefix
-  field. The final output location is provided in
-  google.datastore.admin.v1.ExportEntitiesResponse.output_url. Defaults to `nil`.
-  - progressBytes (GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1Progress.t): An estimate of the number of bytes processed. Defaults to `nil`.
-  - progressEntities (GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1Progress.t): An estimate of the number of entities processed. Defaults to `nil`.
+  *   `common` (*type:* `GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1CommonMetadata.t`, *default:* `nil`) - Metadata common to all Datastore Admin operations.
+  *   `entityFilter` (*type:* `GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1EntityFilter.t`, *default:* `nil`) - Description of which entities are being exported.
+  *   `outputUrlPrefix` (*type:* `String.t`, *default:* `nil`) - Location for the export metadata and data files. This will be the same
+      value as the
+      google.datastore.admin.v1.ExportEntitiesRequest.output_url_prefix
+      field. The final output location is provided in
+      google.datastore.admin.v1.ExportEntitiesResponse.output_url.
+  *   `progressBytes` (*type:* `GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1Progress.t`, *default:* `nil`) - An estimate of the number of bytes processed.
+  *   `progressEntities` (*type:* `GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1Progress.t`, *default:* `nil`) - An estimate of the number of entities processed.
   """
 
   use GoogleApi.Gax.ModelBase

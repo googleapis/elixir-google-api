@@ -22,10 +22,10 @@ defmodule GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1ExportEntitiesRespo
 
   ## Attributes
 
-  - outputUrl (String.t): Location of the output metadata file. This can be used to begin an import
-  into Cloud Datastore (this project or another project). See
-  google.datastore.admin.v1.ImportEntitiesRequest.input_url.
-  Only present if the operation completed successfully. Defaults to `nil`.
+  *   `outputUrl` (*type:* `String.t`, *default:* `nil`) - Location of the output metadata file. This can be used to begin an import
+      into Cloud Datastore (this project or another project). See
+      google.datastore.admin.v1.ImportEntitiesRequest.input_url.
+      Only present if the operation completed successfully.
   """
 
   use GoogleApi.Gax.ModelBase

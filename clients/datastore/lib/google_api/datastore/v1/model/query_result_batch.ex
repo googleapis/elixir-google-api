@@ -21,22 +21,22 @@ defmodule GoogleApi.Datastore.V1.Model.QueryResultBatch do
 
   ## Attributes
 
-  - endCursor (String.t): A cursor that points to the position after the last result in the batch. Defaults to `nil`.
-  - entityResultType (String.t): The result type for every entity in `entity_results`. Defaults to `nil`.
-  - entityResults (list(GoogleApi.Datastore.V1.Model.EntityResult.t)): The results for this batch. Defaults to `nil`.
-  - moreResults (String.t): The state of the query after the current batch. Defaults to `nil`.
-  - skippedCursor (String.t): A cursor that points to the position after the last skipped result.
-  Will be set when `skipped_results` != 0. Defaults to `nil`.
-  - skippedResults (integer()): The number of results skipped, typically because of an offset. Defaults to `nil`.
-  - snapshotVersion (String.t): The version number of the snapshot this batch was returned from.
-  This applies to the range of results from the query's `start_cursor` (or
-  the beginning of the query if no cursor was given) to this batch's
-  `end_cursor` (not the query's `end_cursor`).
+  *   `endCursor` (*type:* `String.t`, *default:* `nil`) - A cursor that points to the position after the last result in the batch.
+  *   `entityResultType` (*type:* `String.t`, *default:* `nil`) - The result type for every entity in `entity_results`.
+  *   `entityResults` (*type:* `list(GoogleApi.Datastore.V1.Model.EntityResult.t)`, *default:* `nil`) - The results for this batch.
+  *   `moreResults` (*type:* `String.t`, *default:* `nil`) - The state of the query after the current batch.
+  *   `skippedCursor` (*type:* `String.t`, *default:* `nil`) - A cursor that points to the position after the last skipped result.
+      Will be set when `skipped_results` != 0.
+  *   `skippedResults` (*type:* `integer()`, *default:* `nil`) - The number of results skipped, typically because of an offset.
+  *   `snapshotVersion` (*type:* `String.t`, *default:* `nil`) - The version number of the snapshot this batch was returned from.
+      This applies to the range of results from the query's `start_cursor` (or
+      the beginning of the query if no cursor was given) to this batch's
+      `end_cursor` (not the query's `end_cursor`).
 
-  In a single transaction, subsequent query result batches for the same query
-  can have a greater snapshot version number. Each batch's snapshot version
-  is valid for all preceding batches.
-  The value will be zero for eventually consistent queries. Defaults to `nil`.
+      In a single transaction, subsequent query result batches for the same query
+      can have a greater snapshot version number. Each batch's snapshot version
+      is valid for all preceding batches.
+      The value will be zero for eventually consistent queries.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -23,30 +23,30 @@ defmodule GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1EntityFilter do
   Example usage:
 
   Entire project:
-  kinds=[], namespace_ids=[]
+    kinds=[], namespace_ids=[]
 
   Kinds Foo and Bar in all namespaces:
-  kinds=['Foo', 'Bar'], namespace_ids=[]
+    kinds=['Foo', 'Bar'], namespace_ids=[]
 
   Kinds Foo and Bar only in the default namespace:
-  kinds=['Foo', 'Bar'], namespace_ids=['']
+    kinds=['Foo', 'Bar'], namespace_ids=['']
 
   Kinds Foo and Bar in both the default and Baz namespaces:
-  kinds=['Foo', 'Bar'], namespace_ids=['', 'Baz']
+    kinds=['Foo', 'Bar'], namespace_ids=['', 'Baz']
 
   The entire Baz namespace:
-  kinds=[], namespace_ids=['Baz']
+    kinds=[], namespace_ids=['Baz']
 
   ## Attributes
 
-  - kinds (list(String.t)): If empty, then this represents all kinds. Defaults to `nil`.
-  - namespaceIds (list(String.t)): An empty list represents all namespaces. This is the preferred
-  usage for projects that don't use namespaces.
+  *   `kinds` (*type:* `list(String.t)`, *default:* `nil`) - If empty, then this represents all kinds.
+  *   `namespaceIds` (*type:* `list(String.t)`, *default:* `nil`) - An empty list represents all namespaces. This is the preferred
+      usage for projects that don't use namespaces.
 
-  An empty string element represents the default namespace. This should be
-  used if the project has data in non-default namespaces, but doesn't want to
-  include them.
-  Each namespace in this list must be unique. Defaults to `nil`.
+      An empty string element represents the default namespace. This should be
+      used if the project has data in non-default namespaces, but doesn't want to
+      include them.
+      Each namespace in this list must be unique.
   """
 
   use GoogleApi.Gax.ModelBase

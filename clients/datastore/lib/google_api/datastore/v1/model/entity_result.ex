@@ -21,18 +21,18 @@ defmodule GoogleApi.Datastore.V1.Model.EntityResult do
 
   ## Attributes
 
-  - cursor (String.t): A cursor that points to the position after the result entity.
-  Set only when the `EntityResult` is part of a `QueryResultBatch` message. Defaults to `nil`.
-  - entity (GoogleApi.Datastore.V1.Model.Entity.t): The resulting entity. Defaults to `nil`.
-  - version (String.t): The version of the entity, a strictly positive number that monotonically
-  increases with changes to the entity.
+  *   `cursor` (*type:* `String.t`, *default:* `nil`) - A cursor that points to the position after the result entity.
+      Set only when the `EntityResult` is part of a `QueryResultBatch` message.
+  *   `entity` (*type:* `GoogleApi.Datastore.V1.Model.Entity.t`, *default:* `nil`) - The resulting entity.
+  *   `version` (*type:* `String.t`, *default:* `nil`) - The version of the entity, a strictly positive number that monotonically
+      increases with changes to the entity.
 
-  This field is set for `FULL` entity
-  results.
+      This field is set for `FULL` entity
+      results.
 
-  For missing entities in `LookupResponse`, this
-  is the version of the snapshot that was used to look up the entity, and it
-  is always set except for eventually consistent reads. Defaults to `nil`.
+      For missing entities in `LookupResponse`, this
+      is the version of the snapshot that was used to look up the entity, and it
+      is always set except for eventually consistent reads.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,7 +21,7 @@ defmodule GoogleApi.Datastore.V1.Model.BeginTransactionRequest do
 
   ## Attributes
 
-  - transactionOptions (GoogleApi.Datastore.V1.Model.TransactionOptions.t): Options for a new transaction. Defaults to `nil`.
+  *   `transactionOptions` (*type:* `GoogleApi.Datastore.V1.Model.TransactionOptions.t`, *default:* `nil`) - Options for a new transaction.
   """
 
   use GoogleApi.Gax.ModelBase

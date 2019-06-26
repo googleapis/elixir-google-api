@@ -21,8 +21,8 @@ defmodule GoogleApi.Datastore.V1.Model.Filter do
 
   ## Attributes
 
-  - compositeFilter (GoogleApi.Datastore.V1.Model.CompositeFilter.t): A composite filter. Defaults to `nil`.
-  - propertyFilter (GoogleApi.Datastore.V1.Model.PropertyFilter.t): A filter on a property. Defaults to `nil`.
+  *   `compositeFilter` (*type:* `GoogleApi.Datastore.V1.Model.CompositeFilter.t`, *default:* `nil`) - A composite filter.
+  *   `propertyFilter` (*type:* `GoogleApi.Datastore.V1.Model.PropertyFilter.t`, *default:* `nil`) - A filter on a property.
   """
 
   use GoogleApi.Gax.ModelBase

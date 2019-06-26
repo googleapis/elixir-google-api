@@ -21,28 +21,28 @@ defmodule GoogleApi.Datastore.V1.Model.Query do
 
   ## Attributes
 
-  - distinctOn (list(GoogleApi.Datastore.V1.Model.PropertyReference.t)): The properties to make distinct. The query results will contain the first
-  result for each distinct combination of values for the given properties
-  (if empty, all results are returned). Defaults to `nil`.
-  - endCursor (String.t): An ending point for the query results. Query cursors are
-  returned in query result batches and
-  [can only be used to limit the same
-  query](https://cloud.google.com/datastore/docs/concepts/queries#cursors_limits_and_offsets). Defaults to `nil`.
-  - filter (GoogleApi.Datastore.V1.Model.Filter.t): The filter to apply. Defaults to `nil`.
-  - kind (list(GoogleApi.Datastore.V1.Model.KindExpression.t)): The kinds to query (if empty, returns entities of all kinds).
-  Currently at most 1 kind may be specified. Defaults to `nil`.
-  - limit (integer()): The maximum number of results to return. Applies after all other
-  constraints. Optional.
-  Unspecified is interpreted as no limit.
-  Must be >= 0 if specified. Defaults to `nil`.
-  - offset (integer()): The number of results to skip. Applies before limit, but after all other
-  constraints. Optional. Must be >= 0 if specified. Defaults to `nil`.
-  - order (list(GoogleApi.Datastore.V1.Model.PropertyOrder.t)): The order to apply to the query results (if empty, order is unspecified). Defaults to `nil`.
-  - projection (list(GoogleApi.Datastore.V1.Model.Projection.t)): The projection to return. Defaults to returning all properties. Defaults to `nil`.
-  - startCursor (String.t): A starting point for the query results. Query cursors are
-  returned in query result batches and
-  [can only be used to continue the same
-  query](https://cloud.google.com/datastore/docs/concepts/queries#cursors_limits_and_offsets). Defaults to `nil`.
+  *   `distinctOn` (*type:* `list(GoogleApi.Datastore.V1.Model.PropertyReference.t)`, *default:* `nil`) - The properties to make distinct. The query results will contain the first
+      result for each distinct combination of values for the given properties
+      (if empty, all results are returned).
+  *   `endCursor` (*type:* `String.t`, *default:* `nil`) - An ending point for the query results. Query cursors are
+      returned in query result batches and
+      [can only be used to limit the same
+      query](https://cloud.google.com/datastore/docs/concepts/queries#cursors_limits_and_offsets).
+  *   `filter` (*type:* `GoogleApi.Datastore.V1.Model.Filter.t`, *default:* `nil`) - The filter to apply.
+  *   `kind` (*type:* `list(GoogleApi.Datastore.V1.Model.KindExpression.t)`, *default:* `nil`) - The kinds to query (if empty, returns entities of all kinds).
+      Currently at most 1 kind may be specified.
+  *   `limit` (*type:* `integer()`, *default:* `nil`) - The maximum number of results to return. Applies after all other
+      constraints. Optional.
+      Unspecified is interpreted as no limit.
+      Must be >= 0 if specified.
+  *   `offset` (*type:* `integer()`, *default:* `nil`) - The number of results to skip. Applies before limit, but after all other
+      constraints. Optional. Must be >= 0 if specified.
+  *   `order` (*type:* `list(GoogleApi.Datastore.V1.Model.PropertyOrder.t)`, *default:* `nil`) - The order to apply to the query results (if empty, order is unspecified).
+  *   `projection` (*type:* `list(GoogleApi.Datastore.V1.Model.Projection.t)`, *default:* `nil`) - The projection to return. Defaults to returning all properties.
+  *   `startCursor` (*type:* `String.t`, *default:* `nil`) - A starting point for the query results. Query cursors are
+      returned in query result batches and
+      [can only be used to continue the same
+      query](https://cloud.google.com/datastore/docs/concepts/queries#cursors_limits_and_offsets).
   """
 
   use GoogleApi.Gax.ModelBase
