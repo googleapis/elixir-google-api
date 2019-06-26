@@ -21,12 +21,12 @@ defmodule GoogleApi.CivicInfo.V2.Model.Office do
 
   ## Attributes
 
-  - divisionId (String.t): The OCD ID of the division with which this office is associated. Defaults to `nil`.
-  - levels (list(String.t)): The levels of government of which this office is part. There may be more than one in cases where a jurisdiction effectively acts at two different levels of government; for example, the mayor of the District of Columbia acts at "locality" level, but also effectively at both "administrative-area-2" and "administrative-area-1". Defaults to `nil`.
-  - name (String.t): The human-readable name of the office. Defaults to `nil`.
-  - officialIndices (list(integer())): List of indices in the officials array of people who presently hold this office. Defaults to `nil`.
-  - roles (list(String.t)): The roles which this office fulfills. Roles are not meant to be exhaustive, or to exactly specify the entire set of responsibilities of a given office, but are meant to be rough categories that are useful for general selection from or sorting of a list of offices. Defaults to `nil`.
-  - sources (list(GoogleApi.CivicInfo.V2.Model.Source.t)): A list of sources for this office. If multiple sources are listed, the data has been aggregated from those sources. Defaults to `nil`.
+  *   `divisionId` (*type:* `String.t`, *default:* `nil`) - The OCD ID of the division with which this office is associated.
+  *   `levels` (*type:* `list(String.t)`, *default:* `nil`) - The levels of government of which this office is part. There may be more than one in cases where a jurisdiction effectively acts at two different levels of government; for example, the mayor of the District of Columbia acts at "locality" level, but also effectively at both "administrative-area-2" and "administrative-area-1".
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The human-readable name of the office.
+  *   `officialIndices` (*type:* `list(integer())`, *default:* `nil`) - List of indices in the officials array of people who presently hold this office.
+  *   `roles` (*type:* `list(String.t)`, *default:* `nil`) - The roles which this office fulfills. Roles are not meant to be exhaustive, or to exactly specify the entire set of responsibilities of a given office, but are meant to be rough categories that are useful for general selection from or sorting of a list of offices.
+  *   `sources` (*type:* `list(GoogleApi.CivicInfo.V2.Model.Source.t)`, *default:* `nil`) - A list of sources for this office. If multiple sources are listed, the data has been aggregated from those sources.
   """
 
   use GoogleApi.Gax.ModelBase

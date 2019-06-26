@@ -21,18 +21,18 @@ defmodule GoogleApi.CivicInfo.V2.Model.VoterInfoResponse do
 
   ## Attributes
 
-  - contests (list(GoogleApi.CivicInfo.V2.Model.Contest.t)): Contests that will appear on the voter's ballot. Defaults to `nil`.
-  - dropOffLocations (list(GoogleApi.CivicInfo.V2.Model.PollingLocation.t)): Locations where a voter is eligible to drop off a completed ballot. The voter must have received and completed a ballot prior to arriving at the location. The location may not have ballots available on the premises. These locations could be open on or before election day as indicated in the pollingHours field. Defaults to `nil`.
-  - earlyVoteSites (list(GoogleApi.CivicInfo.V2.Model.PollingLocation.t)): Locations where the voter is eligible to vote early, prior to election day. Defaults to `nil`.
-  - election (GoogleApi.CivicInfo.V2.Model.Election.t): The election that was queried. Defaults to `nil`.
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "civicinfo#voterInfoResponse". Defaults to `civicinfo#voterInfoResponse`.
-  - mailOnly (boolean()): Specifies whether voters in the precinct vote only by mailing their ballots (with the possible option of dropping off their ballots as well). Defaults to `nil`.
-  - normalizedInput (GoogleApi.CivicInfo.V2.Model.SimpleAddressType.t): The normalized version of the requested address Defaults to `nil`.
-  - otherElections (list(GoogleApi.CivicInfo.V2.Model.Election.t)): When there are multiple elections for a voter address, the otherElections field is populated in the API response and there are two possibilities: 1. If the earliest election is not the intended election, specify the election ID of the desired election in a second API request using the electionId field. 2. If these elections occur on the same day, the API doesn?t return any polling location, contest, or election official information to ensure that an additional query is made. For user-facing applications, we recommend displaying these elections to the user to disambiguate. A second API request using the electionId field should be made for the election that is relevant to the user. Defaults to `nil`.
-  - pollingLocations (list(GoogleApi.CivicInfo.V2.Model.PollingLocation.t)): Locations where the voter is eligible to vote on election day. Defaults to `nil`.
-  - precinctId (String.t):  Defaults to `nil`.
-  - segments (list(GoogleApi.CivicInfo.V2.Model.StreetSegment.t)):  Defaults to `nil`.
-  - state (list(GoogleApi.CivicInfo.V2.Model.AdministrationRegion.t)): Local Election Information for the state that the voter votes in. For the US, there will only be one element in this array. Defaults to `nil`.
+  *   `contests` (*type:* `list(GoogleApi.CivicInfo.V2.Model.Contest.t)`, *default:* `nil`) - Contests that will appear on the voter's ballot.
+  *   `dropOffLocations` (*type:* `list(GoogleApi.CivicInfo.V2.Model.PollingLocation.t)`, *default:* `nil`) - Locations where a voter is eligible to drop off a completed ballot. The voter must have received and completed a ballot prior to arriving at the location. The location may not have ballots available on the premises. These locations could be open on or before election day as indicated in the pollingHours field.
+  *   `earlyVoteSites` (*type:* `list(GoogleApi.CivicInfo.V2.Model.PollingLocation.t)`, *default:* `nil`) - Locations where the voter is eligible to vote early, prior to election day.
+  *   `election` (*type:* `GoogleApi.CivicInfo.V2.Model.Election.t`, *default:* `nil`) - The election that was queried.
+  *   `kind` (*type:* `String.t`, *default:* `civicinfo#voterInfoResponse`) - Identifies what kind of resource this is. Value: the fixed string "civicinfo#voterInfoResponse".
+  *   `mailOnly` (*type:* `boolean()`, *default:* `nil`) - Specifies whether voters in the precinct vote only by mailing their ballots (with the possible option of dropping off their ballots as well).
+  *   `normalizedInput` (*type:* `GoogleApi.CivicInfo.V2.Model.SimpleAddressType.t`, *default:* `nil`) - The normalized version of the requested address
+  *   `otherElections` (*type:* `list(GoogleApi.CivicInfo.V2.Model.Election.t)`, *default:* `nil`) - When there are multiple elections for a voter address, the otherElections field is populated in the API response and there are two possibilities: 1. If the earliest election is not the intended election, specify the election ID of the desired election in a second API request using the electionId field. 2. If these elections occur on the same day, the API doesn?t return any polling location, contest, or election official information to ensure that an additional query is made. For user-facing applications, we recommend displaying these elections to the user to disambiguate. A second API request using the electionId field should be made for the election that is relevant to the user.
+  *   `pollingLocations` (*type:* `list(GoogleApi.CivicInfo.V2.Model.PollingLocation.t)`, *default:* `nil`) - Locations where the voter is eligible to vote on election day.
+  *   `precinctId` (*type:* `String.t`, *default:* `nil`) - 
+  *   `segments` (*type:* `list(GoogleApi.CivicInfo.V2.Model.StreetSegment.t)`, *default:* `nil`) - 
+  *   `state` (*type:* `list(GoogleApi.CivicInfo.V2.Model.AdministrationRegion.t)`, *default:* `nil`) - Local Election Information for the state that the voter votes in. For the US, there will only be one element in this array.
   """
 
   use GoogleApi.Gax.ModelBase

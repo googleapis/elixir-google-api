@@ -20,6 +20,8 @@ defmodule GoogleApi.CivicInfo.V2.Connection do
   Handle Tesla connections for GoogleApi.CivicInfo.V2.
   """
 
+  @type t :: Tesla.Env.client()
+
   use GoogleApi.Gax.Connection,
     scopes: [],
     otp_app: :google_api_civicinfo,

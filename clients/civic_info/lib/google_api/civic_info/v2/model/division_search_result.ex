@@ -21,9 +21,9 @@ defmodule GoogleApi.CivicInfo.V2.Model.DivisionSearchResult do
 
   ## Attributes
 
-  - aliases (list(String.t)): Other Open Civic Data identifiers that refer to the same division -- for example, those that refer to other political divisions whose boundaries are defined to be coterminous with this one. For example, ocd-division/country:us/state:wy will include an alias of ocd-division/country:us/state:wy/cd:1, since Wyoming has only one Congressional district. Defaults to `nil`.
-  - name (String.t): The name of the division. Defaults to `nil`.
-  - ocdId (String.t): The unique Open Civic Data identifier for this division. Defaults to `nil`.
+  *   `aliases` (*type:* `list(String.t)`, *default:* `nil`) - Other Open Civic Data identifiers that refer to the same division -- for example, those that refer to other political divisions whose boundaries are defined to be coterminous with this one. For example, ocd-division/country:us/state:wy will include an alias of ocd-division/country:us/state:wy/cd:1, since Wyoming has only one Congressional district.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the division.
+  *   `ocdId` (*type:* `String.t`, *default:* `nil`) - The unique Open Civic Data identifier for this division.
   """
 
   use GoogleApi.Gax.ModelBase

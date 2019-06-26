@@ -21,11 +21,11 @@ defmodule GoogleApi.CivicInfo.V2.Model.ElectionOfficial do
 
   ## Attributes
 
-  - emailAddress (String.t): The email address of the election official. Defaults to `nil`.
-  - faxNumber (String.t): The fax number of the election official. Defaults to `nil`.
-  - name (String.t): The full name of the election official. Defaults to `nil`.
-  - officePhoneNumber (String.t): The office phone number of the election official. Defaults to `nil`.
-  - title (String.t): The title of the election official. Defaults to `nil`.
+  *   `emailAddress` (*type:* `String.t`, *default:* `nil`) - The email address of the election official.
+  *   `faxNumber` (*type:* `String.t`, *default:* `nil`) - The fax number of the election official.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The full name of the election official.
+  *   `officePhoneNumber` (*type:* `String.t`, *default:* `nil`) - The office phone number of the election official.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - The title of the election official.
   """
 
   use GoogleApi.Gax.ModelBase

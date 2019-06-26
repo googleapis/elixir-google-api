@@ -21,13 +21,13 @@ defmodule GoogleApi.CivicInfo.V2.Model.SimpleAddressType do
 
   ## Attributes
 
-  - city (String.t): The city or town for the address. Defaults to `nil`.
-  - line1 (String.t): The street name and number of this address. Defaults to `nil`.
-  - line2 (String.t): The second line the address, if needed. Defaults to `nil`.
-  - line3 (String.t): The third line of the address, if needed. Defaults to `nil`.
-  - locationName (String.t): The name of the location. Defaults to `nil`.
-  - state (String.t): The US two letter state abbreviation of the address. Defaults to `nil`.
-  - zip (String.t): The US Postal Zip Code of the address. Defaults to `nil`.
+  *   `city` (*type:* `String.t`, *default:* `nil`) - The city or town for the address.
+  *   `line1` (*type:* `String.t`, *default:* `nil`) - The street name and number of this address.
+  *   `line2` (*type:* `String.t`, *default:* `nil`) - The second line the address, if needed.
+  *   `line3` (*type:* `String.t`, *default:* `nil`) - The third line of the address, if needed.
+  *   `locationName` (*type:* `String.t`, *default:* `nil`) - The name of the location.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - The US two letter state abbreviation of the address.
+  *   `zip` (*type:* `String.t`, *default:* `nil`) - The US Postal Zip Code of the address.
   """
 
   use GoogleApi.Gax.ModelBase

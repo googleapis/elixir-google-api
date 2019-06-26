@@ -21,20 +21,20 @@ defmodule GoogleApi.CivicInfo.V2.Model.AdministrativeBody do
 
   ## Attributes
 
-  - absenteeVotingInfoUrl (String.t): A URL provided by this administrative body for information on absentee voting. Defaults to `nil`.
-  - addressLines (list(String.t)):  Defaults to `nil`.
-  - ballotInfoUrl (String.t): A URL provided by this administrative body to give contest information to the voter. Defaults to `nil`.
-  - correspondenceAddress (GoogleApi.CivicInfo.V2.Model.SimpleAddressType.t): The mailing address of this administrative body. Defaults to `nil`.
-  - electionInfoUrl (String.t): A URL provided by this administrative body for looking up general election information. Defaults to `nil`.
-  - electionOfficials (list(GoogleApi.CivicInfo.V2.Model.ElectionOfficial.t)): The election officials for this election administrative body. Defaults to `nil`.
-  - electionRegistrationConfirmationUrl (String.t): A URL provided by this administrative body for confirming that the voter is registered to vote. Defaults to `nil`.
-  - electionRegistrationUrl (String.t): A URL provided by this administrative body for looking up how to register to vote. Defaults to `nil`.
-  - electionRulesUrl (String.t): A URL provided by this administrative body describing election rules to the voter. Defaults to `nil`.
-  - hoursOfOperation (String.t): A description of the hours of operation for this administrative body. Defaults to `nil`.
-  - name (String.t): The name of this election administrative body. Defaults to `nil`.
-  - physicalAddress (GoogleApi.CivicInfo.V2.Model.SimpleAddressType.t): The physical address of this administrative body. Defaults to `nil`.
-  - voter_services (list(String.t)): A description of the services this administrative body may provide. Defaults to `nil`.
-  - votingLocationFinderUrl (String.t): A URL provided by this administrative body for looking up where to vote. Defaults to `nil`.
+  *   `absenteeVotingInfoUrl` (*type:* `String.t`, *default:* `nil`) - A URL provided by this administrative body for information on absentee voting.
+  *   `addressLines` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `ballotInfoUrl` (*type:* `String.t`, *default:* `nil`) - A URL provided by this administrative body to give contest information to the voter.
+  *   `correspondenceAddress` (*type:* `GoogleApi.CivicInfo.V2.Model.SimpleAddressType.t`, *default:* `nil`) - The mailing address of this administrative body.
+  *   `electionInfoUrl` (*type:* `String.t`, *default:* `nil`) - A URL provided by this administrative body for looking up general election information.
+  *   `electionOfficials` (*type:* `list(GoogleApi.CivicInfo.V2.Model.ElectionOfficial.t)`, *default:* `nil`) - The election officials for this election administrative body.
+  *   `electionRegistrationConfirmationUrl` (*type:* `String.t`, *default:* `nil`) - A URL provided by this administrative body for confirming that the voter is registered to vote.
+  *   `electionRegistrationUrl` (*type:* `String.t`, *default:* `nil`) - A URL provided by this administrative body for looking up how to register to vote.
+  *   `electionRulesUrl` (*type:* `String.t`, *default:* `nil`) - A URL provided by this administrative body describing election rules to the voter.
+  *   `hoursOfOperation` (*type:* `String.t`, *default:* `nil`) - A description of the hours of operation for this administrative body.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of this election administrative body.
+  *   `physicalAddress` (*type:* `GoogleApi.CivicInfo.V2.Model.SimpleAddressType.t`, *default:* `nil`) - The physical address of this administrative body.
+  *   `voter_services` (*type:* `list(String.t)`, *default:* `nil`) - A description of the services this administrative body may provide.
+  *   `votingLocationFinderUrl` (*type:* `String.t`, *default:* `nil`) - A URL provided by this administrative body for looking up where to vote.
   """
 
   use GoogleApi.Gax.ModelBase

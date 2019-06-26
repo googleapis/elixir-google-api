@@ -21,16 +21,16 @@ defmodule GoogleApi.CivicInfo.V2.Model.Provenance do
 
   ## Attributes
 
-  - collidedSegmentSource (GoogleApi.CivicInfo.V2.Model.StreetSegmentList.t):  Defaults to `nil`.
-  - ctclContestUuid (String.t):  Defaults to `nil`.
-  - ctclOfficeUuid (String.t):  Defaults to `nil`.
-  - datasetId (String.t):  Defaults to `nil`.
-  - precinctId (String.t):  Defaults to `nil`.
-  - precinctSplitId (String.t):  Defaults to `nil`.
-  - tsStreetSegmentId (String.t):  Defaults to `nil`.
-  - vip5PrecinctId (String.t):  Defaults to `nil`.
-  - vip5StreetSegmentId (String.t):  Defaults to `nil`.
-  - vipStreetSegmentId (String.t):  Defaults to `nil`.
+  *   `collidedSegmentSource` (*type:* `GoogleApi.CivicInfo.V2.Model.StreetSegmentList.t`, *default:* `nil`) - 
+  *   `ctclContestUuid` (*type:* `String.t`, *default:* `nil`) - 
+  *   `ctclOfficeUuid` (*type:* `String.t`, *default:* `nil`) - 
+  *   `datasetId` (*type:* `String.t`, *default:* `nil`) - 
+  *   `precinctId` (*type:* `String.t`, *default:* `nil`) - 
+  *   `precinctSplitId` (*type:* `String.t`, *default:* `nil`) - 
+  *   `tsStreetSegmentId` (*type:* `String.t`, *default:* `nil`) - 
+  *   `vip5PrecinctId` (*type:* `String.t`, *default:* `nil`) - 
+  *   `vip5StreetSegmentId` (*type:* `String.t`, *default:* `nil`) - 
+  *   `vipStreetSegmentId` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

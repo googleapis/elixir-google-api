@@ -21,8 +21,8 @@ defmodule GoogleApi.CivicInfo.V2.Model.DivisionSearchResponse do
 
   ## Attributes
 
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "civicinfo#divisionSearchResponse". Defaults to `civicinfo#divisionSearchResponse`.
-  - results (list(GoogleApi.CivicInfo.V2.Model.DivisionSearchResult.t)):  Defaults to `nil`.
+  *   `kind` (*type:* `String.t`, *default:* `civicinfo#divisionSearchResponse`) - Identifies what kind of resource this is. Value: the fixed string "civicinfo#divisionSearchResponse".
+  *   `results` (*type:* `list(GoogleApi.CivicInfo.V2.Model.DivisionSearchResult.t)`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,8 +21,8 @@ defmodule GoogleApi.CivicInfo.V2.Model.InternalFieldMetadataProto do
 
   ## Attributes
 
-  - isAuto (boolean()):  Defaults to `nil`.
-  - sourceSummary (GoogleApi.CivicInfo.V2.Model.InternalSourceSummaryProto.t):  Defaults to `nil`.
+  *   `isAuto` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `sourceSummary` (*type:* `GoogleApi.CivicInfo.V2.Model.InternalSourceSummaryProto.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

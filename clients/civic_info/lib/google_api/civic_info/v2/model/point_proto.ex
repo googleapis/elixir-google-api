@@ -21,10 +21,10 @@ defmodule GoogleApi.CivicInfo.V2.Model.PointProto do
 
   ## Attributes
 
-  - latE7 (integer()):  Defaults to `nil`.
-  - lngE7 (integer()):  Defaults to `nil`.
-  - metadata (GoogleApi.CivicInfo.V2.Model.FieldMetadataProto.t):  Defaults to `nil`.
-  - temporaryData (GoogleApi.CivicInfo.V2.Model.MessageSet.t):  Defaults to `nil`.
+  *   `latE7` (*type:* `integer()`, *default:* `nil`) - 
+  *   `lngE7` (*type:* `integer()`, *default:* `nil`) - 
+  *   `metadata` (*type:* `GoogleApi.CivicInfo.V2.Model.FieldMetadataProto.t`, *default:* `nil`) - 
+  *   `temporaryData` (*type:* `GoogleApi.CivicInfo.V2.Model.MessageSet.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

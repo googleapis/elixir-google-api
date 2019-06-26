@@ -21,7 +21,7 @@ defmodule GoogleApi.CivicInfo.V2.Model.LivegraphBacktraceRecordInfoExpInfo do
 
   ## Attributes
 
-  - deletedIns (list(String.t)):  Defaults to `nil`.
+  *   `deletedIns` (*type:* `list(String.t)`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

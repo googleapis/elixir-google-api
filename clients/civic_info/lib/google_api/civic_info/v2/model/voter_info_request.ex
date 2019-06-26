@@ -21,8 +21,8 @@ defmodule GoogleApi.CivicInfo.V2.Model.VoterInfoRequest do
 
   ## Attributes
 
-  - contextParams (GoogleApi.CivicInfo.V2.Model.ContextParams.t):  Defaults to `nil`.
-  - voterInfoSegmentResult (GoogleApi.CivicInfo.V2.Model.VoterInfoSegmentResult.t):  Defaults to `nil`.
+  *   `contextParams` (*type:* `GoogleApi.CivicInfo.V2.Model.ContextParams.t`, *default:* `nil`) - 
+  *   `voterInfoSegmentResult` (*type:* `GoogleApi.CivicInfo.V2.Model.VoterInfoSegmentResult.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

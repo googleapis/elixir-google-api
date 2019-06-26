@@ -21,8 +21,8 @@ defmodule GoogleApi.CivicInfo.V2.Model.ElectionsQueryResponse do
 
   ## Attributes
 
-  - elections (list(GoogleApi.CivicInfo.V2.Model.Election.t)): A list of available elections Defaults to `nil`.
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "civicinfo#electionsQueryResponse". Defaults to `civicinfo#electionsQueryResponse`.
+  *   `elections` (*type:* `list(GoogleApi.CivicInfo.V2.Model.Election.t)`, *default:* `nil`) - A list of available elections
+  *   `kind` (*type:* `String.t`, *default:* `civicinfo#electionsQueryResponse`) - Identifies what kind of resource this is. Value: the fixed string "civicinfo#electionsQueryResponse".
   """
 
   use GoogleApi.Gax.ModelBase

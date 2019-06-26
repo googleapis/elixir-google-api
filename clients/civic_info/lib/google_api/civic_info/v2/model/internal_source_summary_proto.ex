@@ -21,8 +21,8 @@ defmodule GoogleApi.CivicInfo.V2.Model.InternalSourceSummaryProto do
 
   ## Attributes
 
-  - dataset (String.t):  Defaults to `nil`.
-  - provider (String.t):  Defaults to `nil`.
+  *   `dataset` (*type:* `String.t`, *default:* `nil`) - 
+  *   `provider` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

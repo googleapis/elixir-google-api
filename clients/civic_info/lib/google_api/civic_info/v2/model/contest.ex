@@ -21,31 +21,31 @@ defmodule GoogleApi.CivicInfo.V2.Model.Contest do
 
   ## Attributes
 
-  - ballotPlacement (String.t): A number specifying the position of this contest on the voter's ballot. Defaults to `nil`.
-  - ballotTitle (String.t): The official title on the ballot for this contest, only where available. Defaults to `nil`.
-  - candidates (list(GoogleApi.CivicInfo.V2.Model.Candidate.t)): The candidate choices for this contest. Defaults to `nil`.
-  - district (GoogleApi.CivicInfo.V2.Model.ElectoralDistrict.t): Information about the electoral district that this contest is in. Defaults to `nil`.
-  - electorateSpecifications (String.t): A description of any additional eligibility requirements for voting in this contest. Defaults to `nil`.
-  - id (String.t): An ID for this object. IDs may change in future requests and should not be cached. Access to this field requires special access that can be requested from the Request more link on the Quotas page. Defaults to `nil`.
-  - level (list(String.t)): The levels of government of the office for this contest. There may be more than one in cases where a jurisdiction effectively acts at two different levels of government; for example, the mayor of the District of Columbia acts at "locality" level, but also effectively at both "administrative-area-2" and "administrative-area-1". Defaults to `nil`.
-  - numberElected (String.t): The number of candidates that will be elected to office in this contest. Defaults to `nil`.
-  - numberVotingFor (String.t): The number of candidates that a voter may vote for in this contest. Defaults to `nil`.
-  - office (String.t): The name of the office for this contest. Defaults to `nil`.
-  - primaryParty (String.t): If this is a partisan election, the name of the party it is for. Defaults to `nil`.
-  - referendumBallotResponses (list(String.t)): The set of ballot responses for the referendum. A ballot response represents a line on the ballot. Common examples might include "yes" or "no" for referenda. This field is only populated for contests of type 'Referendum'. Defaults to `nil`.
-  - referendumBrief (String.t): Specifies a short summary of the referendum that is typically on the ballot below the title but above the text. This field is only populated for contests of type 'Referendum'. Defaults to `nil`.
-  - referendumConStatement (String.t): A statement in opposition to the referendum. It does not necessarily appear on the ballot. This field is only populated for contests of type 'Referendum'. Defaults to `nil`.
-  - referendumEffectOfAbstain (String.t): Specifies what effect abstaining (not voting) on the proposition will have (i.e. whether abstaining is considered a vote against it). This field is only populated for contests of type 'Referendum'. Defaults to `nil`.
-  - referendumPassageThreshold (String.t): The threshold of votes that the referendum needs in order to pass, e.g. "two-thirds". This field is only populated for contests of type 'Referendum'. Defaults to `nil`.
-  - referendumProStatement (String.t): A statement in favor of the referendum. It does not necessarily appear on the ballot. This field is only populated for contests of type 'Referendum'. Defaults to `nil`.
-  - referendumSubtitle (String.t): A brief description of the referendum. This field is only populated for contests of type 'Referendum'. Defaults to `nil`.
-  - referendumText (String.t): The full text of the referendum. This field is only populated for contests of type 'Referendum'. Defaults to `nil`.
-  - referendumTitle (String.t): The title of the referendum (e.g. 'Proposition 42'). This field is only populated for contests of type 'Referendum'. Defaults to `nil`.
-  - referendumUrl (String.t): A link to the referendum. This field is only populated for contests of type 'Referendum'. Defaults to `nil`.
-  - roles (list(String.t)): The roles which this office fulfills. Defaults to `nil`.
-  - sources (list(GoogleApi.CivicInfo.V2.Model.Source.t)): A list of sources for this contest. If multiple sources are listed, the data has been aggregated from those sources. Defaults to `nil`.
-  - special (String.t): "Yes" or "No" depending on whether this a contest being held outside the normal election cycle. Defaults to `nil`.
-  - type (String.t): The type of contest. Usually this will be 'General', 'Primary', or 'Run-off' for contests with candidates. For referenda this will be 'Referendum'. For Retention contests this will typically be 'Retention'. Defaults to `nil`.
+  *   `ballotPlacement` (*type:* `String.t`, *default:* `nil`) - A number specifying the position of this contest on the voter's ballot.
+  *   `ballotTitle` (*type:* `String.t`, *default:* `nil`) - The official title on the ballot for this contest, only where available.
+  *   `candidates` (*type:* `list(GoogleApi.CivicInfo.V2.Model.Candidate.t)`, *default:* `nil`) - The candidate choices for this contest.
+  *   `district` (*type:* `GoogleApi.CivicInfo.V2.Model.ElectoralDistrict.t`, *default:* `nil`) - Information about the electoral district that this contest is in.
+  *   `electorateSpecifications` (*type:* `String.t`, *default:* `nil`) - A description of any additional eligibility requirements for voting in this contest.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - An ID for this object. IDs may change in future requests and should not be cached. Access to this field requires special access that can be requested from the Request more link on the Quotas page.
+  *   `level` (*type:* `list(String.t)`, *default:* `nil`) - The levels of government of the office for this contest. There may be more than one in cases where a jurisdiction effectively acts at two different levels of government; for example, the mayor of the District of Columbia acts at "locality" level, but also effectively at both "administrative-area-2" and "administrative-area-1".
+  *   `numberElected` (*type:* `String.t`, *default:* `nil`) - The number of candidates that will be elected to office in this contest.
+  *   `numberVotingFor` (*type:* `String.t`, *default:* `nil`) - The number of candidates that a voter may vote for in this contest.
+  *   `office` (*type:* `String.t`, *default:* `nil`) - The name of the office for this contest.
+  *   `primaryParty` (*type:* `String.t`, *default:* `nil`) - If this is a partisan election, the name of the party it is for.
+  *   `referendumBallotResponses` (*type:* `list(String.t)`, *default:* `nil`) - The set of ballot responses for the referendum. A ballot response represents a line on the ballot. Common examples might include "yes" or "no" for referenda. This field is only populated for contests of type 'Referendum'.
+  *   `referendumBrief` (*type:* `String.t`, *default:* `nil`) - Specifies a short summary of the referendum that is typically on the ballot below the title but above the text. This field is only populated for contests of type 'Referendum'.
+  *   `referendumConStatement` (*type:* `String.t`, *default:* `nil`) - A statement in opposition to the referendum. It does not necessarily appear on the ballot. This field is only populated for contests of type 'Referendum'.
+  *   `referendumEffectOfAbstain` (*type:* `String.t`, *default:* `nil`) - Specifies what effect abstaining (not voting) on the proposition will have (i.e. whether abstaining is considered a vote against it). This field is only populated for contests of type 'Referendum'.
+  *   `referendumPassageThreshold` (*type:* `String.t`, *default:* `nil`) - The threshold of votes that the referendum needs in order to pass, e.g. "two-thirds". This field is only populated for contests of type 'Referendum'.
+  *   `referendumProStatement` (*type:* `String.t`, *default:* `nil`) - A statement in favor of the referendum. It does not necessarily appear on the ballot. This field is only populated for contests of type 'Referendum'.
+  *   `referendumSubtitle` (*type:* `String.t`, *default:* `nil`) - A brief description of the referendum. This field is only populated for contests of type 'Referendum'.
+  *   `referendumText` (*type:* `String.t`, *default:* `nil`) - The full text of the referendum. This field is only populated for contests of type 'Referendum'.
+  *   `referendumTitle` (*type:* `String.t`, *default:* `nil`) - The title of the referendum (e.g. 'Proposition 42'). This field is only populated for contests of type 'Referendum'.
+  *   `referendumUrl` (*type:* `String.t`, *default:* `nil`) - A link to the referendum. This field is only populated for contests of type 'Referendum'.
+  *   `roles` (*type:* `list(String.t)`, *default:* `nil`) - The roles which this office fulfills.
+  *   `sources` (*type:* `list(GoogleApi.CivicInfo.V2.Model.Source.t)`, *default:* `nil`) - A list of sources for this contest. If multiple sources are listed, the data has been aggregated from those sources.
+  *   `special` (*type:* `String.t`, *default:* `nil`) - "Yes" or "No" depending on whether this a contest being held outside the normal election cycle.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of contest. Usually this will be 'General', 'Primary', or 'Run-off' for contests with candidates. For referenda this will be 'Referendum'. For Retention contests this will typically be 'Retention'.
   """
 
   use GoogleApi.Gax.ModelBase
