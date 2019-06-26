@@ -21,12 +21,12 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.Initializers do
 
   ## Attributes
 
-  - pending (list(GoogleApi.CloudRun.V1alpha1.Model.Initializer.t)): Pending is a list of initializers that must execute in order before this
-  object is visible. When the last pending initializer is removed, and no
-  failing result is set, the initializers struct will be set to nil and the
-  object is considered as initialized and visible to all clients.
-  +patchMergeKey=name
-  +patchStrategy=merge Defaults to `nil`.
+  *   `pending` (*type:* `list(GoogleApi.CloudRun.V1alpha1.Model.Initializer.t)`, *default:* `nil`) - Pending is a list of initializers that must execute in order before this
+      object is visible. When the last pending initializer is removed, and no
+      failing result is set, the initializers struct will be set to nil and the
+      object is considered as initialized and visible to all clients.
+      +patchMergeKey=name
+      +patchStrategy=merge
   """
 
   use GoogleApi.Gax.ModelBase

@@ -33,13 +33,13 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.Service do
 
   ## Attributes
 
-  - apiVersion (String.t): The API version for this call such as "v1alpha1". Defaults to `nil`.
-  - kind (String.t): The kind of resource, in this case "Service". Defaults to `nil`.
-  - metadata (GoogleApi.CloudRun.V1alpha1.Model.ObjectMeta.t): Metadata associated with this Service, including name, namespace, labels,
-  and annotations. Defaults to `nil`.
-  - spec (GoogleApi.CloudRun.V1alpha1.Model.ServiceSpec.t): Spec holds the desired state of the Service (from the client). Defaults to `nil`.
-  - status (GoogleApi.CloudRun.V1alpha1.Model.ServiceStatus.t): Status communicates the observed state of the Service (from the
-  controller). Defaults to `nil`.
+  *   `apiVersion` (*type:* `String.t`, *default:* `nil`) - The API version for this call such as "v1alpha1".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of resource, in this case "Service".
+  *   `metadata` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.ObjectMeta.t`, *default:* `nil`) - Metadata associated with this Service, including name, namespace, labels,
+      and annotations.
+  *   `spec` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.ServiceSpec.t`, *default:* `nil`) - Spec holds the desired state of the Service (from the client).
+  *   `status` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.ServiceStatus.t`, *default:* `nil`) - Status communicates the observed state of the Service (from the
+      controller).
   """
 
   use GoogleApi.Gax.ModelBase

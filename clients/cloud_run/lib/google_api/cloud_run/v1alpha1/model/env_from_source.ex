@@ -21,12 +21,12 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.EnvFromSource do
 
   ## Attributes
 
-  - configMapRef (GoogleApi.CloudRun.V1alpha1.Model.ConfigMapEnvSource.t): The ConfigMap to select from
-  +optional Defaults to `nil`.
-  - prefix (String.t): An optional identifier to prepend to each key in the ConfigMap. Must be a
-  C_IDENTIFIER. +optional Defaults to `nil`.
-  - secretRef (GoogleApi.CloudRun.V1alpha1.Model.SecretEnvSource.t): The Secret to select from
-  +optional Defaults to `nil`.
+  *   `configMapRef` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.ConfigMapEnvSource.t`, *default:* `nil`) - The ConfigMap to select from
+      +optional
+  *   `prefix` (*type:* `String.t`, *default:* `nil`) - An optional identifier to prepend to each key in the ConfigMap. Must be a
+      C_IDENTIFIER. +optional
+  *   `secretRef` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.SecretEnvSource.t`, *default:* `nil`) - The Secret to select from
+      +optional
   """
 
   use GoogleApi.Gax.ModelBase

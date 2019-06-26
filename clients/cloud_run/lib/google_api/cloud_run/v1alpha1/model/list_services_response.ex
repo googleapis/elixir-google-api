@@ -21,11 +21,11 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ListServicesResponse do
 
   ## Attributes
 
-  - apiVersion (String.t): The API version for this call such as "v1alpha1". Defaults to `nil`.
-  - items (list(GoogleApi.CloudRun.V1alpha1.Model.Service.t)): List of Services. Defaults to `nil`.
-  - kind (String.t): The kind of this resource, in this case "ServiceList". Defaults to `nil`.
-  - metadata (GoogleApi.CloudRun.V1alpha1.Model.ListMeta.t): Metadata associated with this Service list. Defaults to `nil`.
-  - unreachable (list(String.t)): Locations that could not be reached. Defaults to `nil`.
+  *   `apiVersion` (*type:* `String.t`, *default:* `nil`) - The API version for this call such as "v1alpha1".
+  *   `items` (*type:* `list(GoogleApi.CloudRun.V1alpha1.Model.Service.t)`, *default:* `nil`) - List of Services.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of this resource, in this case "ServiceList".
+  *   `metadata` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.ListMeta.t`, *default:* `nil`) - Metadata associated with this Service list.
+  *   `unreachable` (*type:* `list(String.t)`, *default:* `nil`) - Locations that could not be reached.
   """
 
   use GoogleApi.Gax.ModelBase

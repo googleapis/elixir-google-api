@@ -25,9 +25,9 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.SecretEnvSource do
 
   ## Attributes
 
-  - localObjectReference (GoogleApi.CloudRun.V1alpha1.Model.LocalObjectReference.t): The Secret to select from. Defaults to `nil`.
-  - optional (boolean()): Specify whether the Secret must be defined
-  +optional Defaults to `nil`.
+  *   `localObjectReference` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.LocalObjectReference.t`, *default:* `nil`) - The Secret to select from.
+  *   `optional` (*type:* `boolean()`, *default:* `nil`) - Specify whether the Secret must be defined
+      +optional
   """
 
   use GoogleApi.Gax.ModelBase

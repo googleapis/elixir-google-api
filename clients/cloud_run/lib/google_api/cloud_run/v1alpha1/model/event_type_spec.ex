@@ -21,16 +21,16 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.EventTypeSpec do
 
   ## Attributes
 
-  - broker (String.t): Refers to the Broker that can provide the EventType. Defaults to `nil`.
-  - description (String.t): Description is a string describing what the EventType is about.
-  +optional Defaults to `nil`.
-  - schema (String.t): Schema is a URI with the EventType schema. It may be a JSON schema, a
-  protobuf schema, etc.
-  +optional Defaults to `nil`.
-  - source (String.t): Source is a valid URI. Refers to the CloudEvent source as it enters into
-  the eventing mesh. Defaults to `nil`.
-  - type (String.t): Type is authoritative. This refers to the CloudEvent type as it enters
-  into the eventing mesh. Defaults to `nil`.
+  *   `broker` (*type:* `String.t`, *default:* `nil`) - Refers to the Broker that can provide the EventType.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Description is a string describing what the EventType is about.
+      +optional
+  *   `schema` (*type:* `String.t`, *default:* `nil`) - Schema is a URI with the EventType schema. It may be a JSON schema, a
+      protobuf schema, etc.
+      +optional
+  *   `source` (*type:* `String.t`, *default:* `nil`) - Source is a valid URI. Refers to the CloudEvent source as it enters into
+      the eventing mesh.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Type is authoritative. This refers to the CloudEvent type as it enters
+      into the eventing mesh.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,13 +21,13 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.Trigger do
 
   ## Attributes
 
-  - apiVersion (String.t): The API version for this call such as "v1alpha1". Defaults to `nil`.
-  - kind (String.t): The kind of resource, in this case "Trigger". Defaults to `nil`.
-  - metadata (GoogleApi.CloudRun.V1alpha1.Model.ObjectMeta.t): Metadata associated with this Trigger. Defaults to `nil`.
-  - spec (GoogleApi.CloudRun.V1alpha1.Model.TriggerSpec.t): Spec defines the desired state of the Trigger. Defaults to `nil`.
-  - status (GoogleApi.CloudRun.V1alpha1.Model.TriggerStatus.t): Status represents the current state of the Trigger. This data may be out of
-  date.
-  +optional Defaults to `nil`.
+  *   `apiVersion` (*type:* `String.t`, *default:* `nil`) - The API version for this call such as "v1alpha1".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of resource, in this case "Trigger".
+  *   `metadata` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.ObjectMeta.t`, *default:* `nil`) - Metadata associated with this Trigger.
+  *   `spec` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.TriggerSpec.t`, *default:* `nil`) - Spec defines the desired state of the Trigger.
+  *   `status` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.TriggerStatus.t`, *default:* `nil`) - Status represents the current state of the Trigger. This data may be out of
+      date.
+      +optional
   """
 
   use GoogleApi.Gax.ModelBase

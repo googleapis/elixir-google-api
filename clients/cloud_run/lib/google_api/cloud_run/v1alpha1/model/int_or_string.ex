@@ -24,9 +24,9 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.IntOrString do
 
   ## Attributes
 
-  - intVal (integer()): The int value. Defaults to `nil`.
-  - strVal (String.t): The string value. Defaults to `nil`.
-  - type (String.t): The type of the value. Defaults to `nil`.
+  *   `intVal` (*type:* `integer()`, *default:* `nil`) - The int value.
+  *   `strVal` (*type:* `String.t`, *default:* `nil`) - The string value.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the value.
   """
 
   use GoogleApi.Gax.ModelBase

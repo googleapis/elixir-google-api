@@ -22,21 +22,21 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ConfigurationStatus do
 
   ## Attributes
 
-  - conditions (list(GoogleApi.CloudRun.V1alpha1.Model.ConfigurationCondition.t)): Conditions communicates information about ongoing/complete
-  reconciliation processes that bring the "spec" inline with the observed
-  state of the world. Defaults to `nil`.
-  - latestCreatedRevisionName (String.t): LatestCreatedRevisionName is the last revision that was created from this
-  Configuration. It might not be ready yet, for that use
-  LatestReadyRevisionName. Defaults to `nil`.
-  - latestReadyRevisionName (String.t): LatestReadyRevisionName holds the name of the latest Revision stamped out
-  from this Configuration that has had its "Ready" condition become "True". Defaults to `nil`.
-  - observedGeneration (integer()): ObservedGeneration is the 'Generation' of the Configuration that
-  was last processed by the controller. The observed generation is updated
-  even if the controller failed to process the spec and create the Revision.
+  *   `conditions` (*type:* `list(GoogleApi.CloudRun.V1alpha1.Model.ConfigurationCondition.t)`, *default:* `nil`) - Conditions communicates information about ongoing/complete
+      reconciliation processes that bring the "spec" inline with the observed
+      state of the world.
+  *   `latestCreatedRevisionName` (*type:* `String.t`, *default:* `nil`) - LatestCreatedRevisionName is the last revision that was created from this
+      Configuration. It might not be ready yet, for that use
+      LatestReadyRevisionName.
+  *   `latestReadyRevisionName` (*type:* `String.t`, *default:* `nil`) - LatestReadyRevisionName holds the name of the latest Revision stamped out
+      from this Configuration that has had its "Ready" condition become "True".
+  *   `observedGeneration` (*type:* `integer()`, *default:* `nil`) - ObservedGeneration is the 'Generation' of the Configuration that
+      was last processed by the controller. The observed generation is updated
+      even if the controller failed to process the spec and create the Revision.
 
-  Clients polling for completed reconciliation should poll until
-  observedGeneration = metadata.generation, and the Ready condition's status
-  is True or False. Defaults to `nil`.
+      Clients polling for completed reconciliation should poll until
+      observedGeneration = metadata.generation, and the Ready condition's status
+      is True or False.
   """
 
   use GoogleApi.Gax.ModelBase

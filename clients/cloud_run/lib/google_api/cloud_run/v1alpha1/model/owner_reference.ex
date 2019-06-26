@@ -23,23 +23,23 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.OwnerReference do
 
   ## Attributes
 
-  - apiVersion (String.t): API version of the referent. Defaults to `nil`.
-  - blockOwnerDeletion (boolean()): If true, AND if the owner has the "foregroundDeletion" finalizer, then
-  the owner cannot be deleted from the key-value store until this
-  reference is removed.
-  Defaults to false.
-  To set this field, a user needs "delete" permission of the owner,
-  otherwise 422 (Unprocessable Entity) will be returned.
-  +optional Defaults to `nil`.
-  - controller (boolean()): If true, this reference points to the managing controller.
-  +optional Defaults to `nil`.
-  - kind (String.t): Kind of the referent.
-  More info:
-  https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds Defaults to `nil`.
-  - name (String.t): Name of the referent.
-  More info: http://kubernetes.io/docs/user-guide/identifiers#names Defaults to `nil`.
-  - uid (String.t): UID of the referent.
-  More info: http://kubernetes.io/docs/user-guide/identifiers#uids Defaults to `nil`.
+  *   `apiVersion` (*type:* `String.t`, *default:* `nil`) - API version of the referent.
+  *   `blockOwnerDeletion` (*type:* `boolean()`, *default:* `nil`) - If true, AND if the owner has the "foregroundDeletion" finalizer, then
+      the owner cannot be deleted from the key-value store until this
+      reference is removed.
+      Defaults to false.
+      To set this field, a user needs "delete" permission of the owner,
+      otherwise 422 (Unprocessable Entity) will be returned.
+      +optional
+  *   `controller` (*type:* `boolean()`, *default:* `nil`) - If true, this reference points to the managing controller.
+      +optional
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Kind of the referent.
+      More info:
+      https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the referent.
+      More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  *   `uid` (*type:* `String.t`, *default:* `nil`) - UID of the referent.
+      More info: http://kubernetes.io/docs/user-guide/identifiers#uids
   """
 
   use GoogleApi.Gax.ModelBase

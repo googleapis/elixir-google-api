@@ -21,13 +21,13 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.DomainMappingSpec do
 
   ## Attributes
 
-  - certificateMode (String.t): The mode of the certificate. Defaults to `nil`.
-  - forceOverride (boolean()): If set, the mapping will override any mapping set before this spec was set.
-  It is recommended that the user leaves this empty to receive an error
-  warning about a potential conflict and only set it once the respective UI
-  has given such a warning. Defaults to `nil`.
-  - routeName (String.t): The name of the Knative Route that this DomainMapping applies to.
-  The route must exist. Defaults to `nil`.
+  *   `certificateMode` (*type:* `String.t`, *default:* `nil`) - The mode of the certificate.
+  *   `forceOverride` (*type:* `boolean()`, *default:* `nil`) - If set, the mapping will override any mapping set before this spec was set.
+      It is recommended that the user leaves this empty to receive an error
+      warning about a potential conflict and only set it once the respective UI
+      has given such a warning.
+  *   `routeName` (*type:* `String.t`, *default:* `nil`) - The name of the Knative Route that this DomainMapping applies to.
+      The route must exist.
   """
 
   use GoogleApi.Gax.ModelBase

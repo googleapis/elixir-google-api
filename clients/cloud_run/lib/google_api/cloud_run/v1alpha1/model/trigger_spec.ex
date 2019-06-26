@@ -21,20 +21,20 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.TriggerSpec do
 
   ## Attributes
 
-  - broker (String.t): Broker is the broker that this trigger receives events from. If not
-  specified, will default to 'default'.
+  *   `broker` (*type:* `String.t`, *default:* `nil`) - Broker is the broker that this trigger receives events from. If not
+      specified, will default to 'default'.
 
-  Not currently supported by Cloud Run. Defaults to `nil`.
-  - filter (GoogleApi.CloudRun.V1alpha1.Model.TriggerFilter.t): Filter is the filter to apply against all events from the Broker. Only
-  events that pass this filter will be sent to the Subscriber. If not
-  specified, will default to allowing all events.
+      Not currently supported by Cloud Run.
+  *   `filter` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.TriggerFilter.t`, *default:* `nil`) - Filter is the filter to apply against all events from the Broker. Only
+      events that pass this filter will be sent to the Subscriber. If not
+      specified, will default to allowing all events.
 
-  This must be specified in Cloud Run. Defaults to `nil`.
-  - subscriber (GoogleApi.CloudRun.V1alpha1.Model.SubscriberSpec.t): Subscriber is the addressable that receives events from the Broker that
-  pass the Filter. It is required.
+      This must be specified in Cloud Run.
+  *   `subscriber` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.SubscriberSpec.t`, *default:* `nil`) - Subscriber is the addressable that receives events from the Broker that
+      pass the Filter. It is required.
 
-  E.g. https://us-central1-myproject.cloudfunctions.net/myfunction or
-  /namespaces/my-project/services/my-service. Defaults to `nil`.
+      E.g. https://us-central1-myproject.cloudfunctions.net/myfunction or
+      /namespaces/my-project/services/my-service.
   """
 
   use GoogleApi.Gax.ModelBase

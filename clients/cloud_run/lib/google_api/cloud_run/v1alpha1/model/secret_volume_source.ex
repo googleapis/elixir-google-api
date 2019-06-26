@@ -22,18 +22,18 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.SecretVolumeSource do
 
   ## Attributes
 
-  - defaultMode (integer()): Mode bits to use on created files by default. Must be a value between 0 and
-  0777. Defaults to 0644. Directories within the path are not affected by
-  this setting. This might be in conflict with other options that affect the
-  file mode, like fsGroup, and the result can be other mode bits set. Defaults to `nil`.
-  - items (list(GoogleApi.CloudRun.V1alpha1.Model.KeyToPath.t)): If unspecified, each key-value pair in the Data field of the referenced
-  Secret will be projected into the volume as a file whose name is the
-  key and content is the value. If specified, the listed keys will be
-  projected into the specified paths, and unlisted keys will not be
-  present. If a key is specified which is not present in the Secret,
-  the volume setup will error unless it is marked optional. Defaults to `nil`.
-  - optional (boolean()): Specify whether the Secret or its keys must be defined. Defaults to `nil`.
-  - secretName (String.t): Name of the secret in the container's namespace to use. Defaults to `nil`.
+  *   `defaultMode` (*type:* `integer()`, *default:* `nil`) - Mode bits to use on created files by default. Must be a value between 0 and
+      0777. Defaults to 0644. Directories within the path are not affected by
+      this setting. This might be in conflict with other options that affect the
+      file mode, like fsGroup, and the result can be other mode bits set.
+  *   `items` (*type:* `list(GoogleApi.CloudRun.V1alpha1.Model.KeyToPath.t)`, *default:* `nil`) - If unspecified, each key-value pair in the Data field of the referenced
+      Secret will be projected into the volume as a file whose name is the
+      key and content is the value. If specified, the listed keys will be
+      projected into the specified paths, and unlisted keys will not be
+      present. If a key is specified which is not present in the Secret,
+      the volume setup will error unless it is marked optional.
+  *   `optional` (*type:* `boolean()`, *default:* `nil`) - Specify whether the Secret or its keys must be defined.
+  *   `secretName` (*type:* `String.t`, *default:* `nil`) - Name of the secret in the container's namespace to use.
   """
 
   use GoogleApi.Gax.ModelBase

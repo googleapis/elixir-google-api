@@ -21,10 +21,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.EventType do
 
   ## Attributes
 
-  - apiVersion (String.t): The API version for this call such as "v1alpha1". Defaults to `nil`.
-  - kind (String.t): The kind of resource, in this case "EventType". Defaults to `nil`.
-  - metadata (GoogleApi.CloudRun.V1alpha1.Model.ObjectMeta.t): Metadata associated with this EventType. Defaults to `nil`.
-  - spec (GoogleApi.CloudRun.V1alpha1.Model.EventTypeSpec.t): Spec defines the desired state of the EventType. Defaults to `nil`.
+  *   `apiVersion` (*type:* `String.t`, *default:* `nil`) - The API version for this call such as "v1alpha1".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of resource, in this case "EventType".
+  *   `metadata` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.ObjectMeta.t`, *default:* `nil`) - Metadata associated with this EventType.
+  *   `spec` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.EventTypeSpec.t`, *default:* `nil`) - Spec defines the desired state of the EventType.
   """
 
   use GoogleApi.Gax.ModelBase

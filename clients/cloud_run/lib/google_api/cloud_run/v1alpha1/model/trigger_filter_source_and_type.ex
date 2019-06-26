@@ -22,8 +22,8 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.TriggerFilterSourceAndType do
 
   ## Attributes
 
-  - source (String.t):  Defaults to `nil`.
-  - type (String.t):  Defaults to `nil`.
+  *   `source` (*type:* `String.t`, *default:* `nil`) - 
+  *   `type` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase
