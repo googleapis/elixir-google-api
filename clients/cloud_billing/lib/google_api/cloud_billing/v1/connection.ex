@@ -27,6 +27,6 @@ defmodule GoogleApi.CloudBilling.V1.Connection do
       # View and manage your data across Google Cloud Platform services
       "https://www.googleapis.com/auth/cloud-platform"
     ],
-    otp_app: :google_api_cloudbilling,
+    otp_app: :google_api_cloud_billing,
     base_url: "https://cloudbilling.googleapis.com/"
 end
