@@ -21,11 +21,11 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.CustomErrorRule do
 
   ## Attributes
 
-  - isErrorType (boolean()): Mark this message as possible payload in error response.  Otherwise,
-  objects of this type will be filtered when they appear in error payload. Defaults to `nil`.
-  - selector (String.t): Selects messages to which this rule applies.
+  *   `isErrorType` (*type:* `boolean()`, *default:* `nil`) - Mark this message as possible payload in error response.  Otherwise,
+      objects of this type will be filtered when they appear in error payload.
+  *   `selector` (*type:* `String.t`, *default:* `nil`) - Selects messages to which this rule applies.
 
-  Refer to selector for syntax details. Defaults to `nil`.
+      Refer to selector for syntax details.
   """
 
   use GoogleApi.Gax.ModelBase

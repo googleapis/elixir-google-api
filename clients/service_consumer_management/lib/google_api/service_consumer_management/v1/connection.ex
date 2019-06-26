@@ -20,6 +20,8 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Connection do
   Handle Tesla connections for GoogleApi.ServiceConsumerManagement.V1.
   """
 
+  @type t :: Tesla.Env.client()
+
   use GoogleApi.Gax.Connection,
     scopes: [
       # View and manage your data across Google Cloud Platform services

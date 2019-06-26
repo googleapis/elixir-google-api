@@ -22,8 +22,8 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.SourceContext do
 
   ## Attributes
 
-  - fileName (String.t): The path-qualified name of the .proto file that contained the associated
-  protobuf element.  For example: `"google/protobuf/source_context.proto"`. Defaults to `nil`.
+  *   `fileName` (*type:* `String.t`, *default:* `nil`) - The path-qualified name of the .proto file that contained the associated
+      protobuf element.  For example: `"google/protobuf/source_context.proto"`.
   """
 
   use GoogleApi.Gax.ModelBase

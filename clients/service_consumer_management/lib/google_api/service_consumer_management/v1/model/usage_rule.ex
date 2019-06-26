@@ -31,30 +31,30 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.UsageRule do
 
   Example of an API that wants to allow unregistered calls for entire service.
 
-    usage:
-      rules:
-      - selector: "*"
-        allow_unregistered_calls: true
+      usage:
+        rules:
+        - selector: "*"
+          allow_unregistered_calls: true
 
   Example of a method that wants to allow unregistered calls.
 
-    usage:
-      rules:
-      - selector: "google.example.library.v1.LibraryService.CreateBook"
-        allow_unregistered_calls: true
+      usage:
+        rules:
+        - selector: "google.example.library.v1.LibraryService.CreateBook"
+          allow_unregistered_calls: true
 
   ## Attributes
 
-  - allowUnregisteredCalls (boolean()): If true, the selected method allows unregistered calls, e.g. calls
-  that don't identify any user or application. Defaults to `nil`.
-  - selector (String.t): Selects the methods to which this rule applies. Use '*' to indicate all
-  methods in all APIs.
+  *   `allowUnregisteredCalls` (*type:* `boolean()`, *default:* `nil`) - If true, the selected method allows unregistered calls, e.g. calls
+      that don't identify any user or application.
+  *   `selector` (*type:* `String.t`, *default:* `nil`) - Selects the methods to which this rule applies. Use '*' to indicate all
+      methods in all APIs.
 
-  Refer to selector for syntax details. Defaults to `nil`.
-  - skipServiceControl (boolean()): If true, the selected method should skip service control and the control
-  plane features, such as quota and billing, will not be available.
-  This flag is used by Google Cloud Endpoints to bypass checks for internal
-  methods, such as service health check methods. Defaults to `nil`.
+      Refer to selector for syntax details.
+  *   `skipServiceControl` (*type:* `boolean()`, *default:* `nil`) - If true, the selected method should skip service control and the control
+      plane features, such as quota and billing, will not be available.
+      This flag is used by Google Cloud Endpoints to bypass checks for internal
+      methods, such as service health check methods.
   """
 
   use GoogleApi.Gax.ModelBase

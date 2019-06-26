@@ -21,7 +21,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.V1Beta1ImportProducerOver
 
   ## Attributes
 
-  - overrides (list(GoogleApi.ServiceConsumerManagement.V1.Model.V1Beta1QuotaOverride.t)): The overrides that were created from the imported data. Defaults to `nil`.
+  *   `overrides` (*type:* `list(GoogleApi.ServiceConsumerManagement.V1.Model.V1Beta1QuotaOverride.t)`, *default:* `nil`) - The overrides that were created from the imported data.
   """
 
   use GoogleApi.Gax.ModelBase

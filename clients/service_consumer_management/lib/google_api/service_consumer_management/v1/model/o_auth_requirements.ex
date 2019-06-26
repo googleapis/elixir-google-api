@@ -38,13 +38,13 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.OAuthRequirements do
 
   ## Attributes
 
-  - canonicalScopes (String.t): The list of publicly documented OAuth scopes that are allowed access. An
-  OAuth token containing any of these scopes will be accepted.
+  *   `canonicalScopes` (*type:* `String.t`, *default:* `nil`) - The list of publicly documented OAuth scopes that are allowed access. An
+      OAuth token containing any of these scopes will be accepted.
 
-  Example:
+      Example:
 
-     canonical_scopes: https://www.googleapis.com/auth/calendar,
-                       https://www.googleapis.com/auth/calendar.read Defaults to `nil`.
+           canonical_scopes: https://www.googleapis.com/auth/calendar,
+                             https://www.googleapis.com/auth/calendar.read
   """
 
   use GoogleApi.Gax.ModelBase

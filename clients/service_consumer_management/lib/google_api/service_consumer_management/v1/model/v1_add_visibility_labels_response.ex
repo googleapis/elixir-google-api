@@ -23,7 +23,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.V1AddVisibilityLabelsResp
 
   ## Attributes
 
-  - labels (list(String.t)): The updated set of visibility labels for this consumer on this service. Defaults to `nil`.
+  *   `labels` (*type:* `list(String.t)`, *default:* `nil`) - The updated set of visibility labels for this consumer on this service.
   """
 
   use GoogleApi.Gax.ModelBase

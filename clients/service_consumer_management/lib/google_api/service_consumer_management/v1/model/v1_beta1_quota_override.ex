@@ -21,40 +21,40 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.V1Beta1QuotaOverride do
 
   ## Attributes
 
-  - dimensions (map()): If this map is nonempty, then this override applies only to specific values
-  for dimensions defined in the limit unit.
+  *   `dimensions` (*type:* `map()`, *default:* `nil`) - If this map is nonempty, then this override applies only to specific values
+      for dimensions defined in the limit unit.
 
-  For example, an override on a limit with the unit 1/{project}/{region}
-  could contain an entry with the key "region" and the value "us-east-1";
-  the override is only applied to quota consumed in that region.
+      For example, an override on a limit with the unit 1/{project}/{region}
+      could contain an entry with the key "region" and the value "us-east-1";
+      the override is only applied to quota consumed in that region.
 
-  This map has the following restrictions:
-  - Keys that are not defined in the limit's unit are not valid keys.
-  Any string appearing in {brackets} in the unit (besides {project} or
-  {user}) is a defined key.
-  - "project" is not a valid key; the project is already specified in
-  the parent resource name.
-  - "user" is not a valid key; the API does not support quota overrides
-  that apply only to a specific user.
-  - If "region" appears as a key, its value must be a valid Cloud region.
-  - If "zone" appears as a key, its value must be a valid Cloud zone.
-  - If any valid key other than "region" or "zone" appears in the map, then
-  all valid keys other than "region" or "zone" must also appear in the map. Defaults to `nil`.
-  - metric (String.t): The name of the metric to which this override applies.
+      This map has the following restrictions:
+      - Keys that are not defined in the limit's unit are not valid keys.
+        Any string appearing in {brackets} in the unit (besides {project} or
+        {user}) is a defined key.
+      - "project" is not a valid key; the project is already specified in
+        the parent resource name.
+      - "user" is not a valid key; the API does not support quota overrides
+        that apply only to a specific user.
+      - If "region" appears as a key, its value must be a valid Cloud region.
+      - If "zone" appears as a key, its value must be a valid Cloud zone.
+      - If any valid key other than "region" or "zone" appears in the map, then
+        all valid keys other than "region" or "zone" must also appear in the map.
+  *   `metric` (*type:* `String.t`, *default:* `nil`) - The name of the metric to which this override applies.
 
-  An example name would be:
-  `compute.googleapis.com/cpus` Defaults to `nil`.
-  - name (String.t): The resource name of the producer override.
-  An example name would be:
-  `services/compute.googleapis.com/projects/123/consumerQuotaMetrics/compute.googleapis.com%2Fcpus/limits/%2Fproject%2Fregion/producerOverrides/4a3f2c1d` Defaults to `nil`.
-  - overrideValue (String.t): The overriding quota limit value.
-  Can be any nonnegative integer, or -1 (unlimited quota). Defaults to `nil`.
-  - unit (String.t): The limit unit of the limit to which this override applies.
+      An example name would be:
+      `compute.googleapis.com/cpus`
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the producer override.
+      An example name would be:
+      `services/compute.googleapis.com/projects/123/consumerQuotaMetrics/compute.googleapis.com%2Fcpus/limits/%2Fproject%2Fregion/producerOverrides/4a3f2c1d`
+  *   `overrideValue` (*type:* `String.t`, *default:* `nil`) - The overriding quota limit value.
+      Can be any nonnegative integer, or -1 (unlimited quota).
+  *   `unit` (*type:* `String.t`, *default:* `nil`) - The limit unit of the limit to which this override applies.
 
-  An example unit would be:
-  `1/{project}/{region}`
-  Note that `{project}` and `{region}` are not placeholders in this example;
-  the literal characters `{` and `}` occur in the string. Defaults to `nil`.
+      An example unit would be:
+      `1/{project}/{region}`
+      Note that `{project}` and `{region}` are not placeholders in this example;
+      the literal characters `{` and `}` occur in the string.
   """
 
   use GoogleApi.Gax.ModelBase

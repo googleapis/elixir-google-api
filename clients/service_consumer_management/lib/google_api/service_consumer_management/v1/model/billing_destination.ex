@@ -22,10 +22,10 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.BillingDestination do
 
   ## Attributes
 
-  - metrics (list(String.t)): Names of the metrics to report to this billing destination.
-  Each name must be defined in Service.metrics section. Defaults to `nil`.
-  - monitoredResource (String.t): The monitored resource type. The type must be defined in
-  Service.monitored_resources section. Defaults to `nil`.
+  *   `metrics` (*type:* `list(String.t)`, *default:* `nil`) - Names of the metrics to report to this billing destination.
+      Each name must be defined in Service.metrics section.
+  *   `monitoredResource` (*type:* `String.t`, *default:* `nil`) - The monitored resource type. The type must be defined in
+      Service.monitored_resources section.
   """
 
   use GoogleApi.Gax.ModelBase

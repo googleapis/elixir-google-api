@@ -22,15 +22,15 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.ContextRule do
 
   ## Attributes
 
-  - allowedRequestExtensions (list(String.t)): A list of full type names or extension IDs of extensions allowed in grpc
-  side channel from client to backend. Defaults to `nil`.
-  - allowedResponseExtensions (list(String.t)): A list of full type names or extension IDs of extensions allowed in grpc
-  side channel from backend to client. Defaults to `nil`.
-  - provided (list(String.t)): A list of full type names of provided contexts. Defaults to `nil`.
-  - requested (list(String.t)): A list of full type names of requested contexts. Defaults to `nil`.
-  - selector (String.t): Selects the methods to which this rule applies.
+  *   `allowedRequestExtensions` (*type:* `list(String.t)`, *default:* `nil`) - A list of full type names or extension IDs of extensions allowed in grpc
+      side channel from client to backend.
+  *   `allowedResponseExtensions` (*type:* `list(String.t)`, *default:* `nil`) - A list of full type names or extension IDs of extensions allowed in grpc
+      side channel from backend to client.
+  *   `provided` (*type:* `list(String.t)`, *default:* `nil`) - A list of full type names of provided contexts.
+  *   `requested` (*type:* `list(String.t)`, *default:* `nil`) - A list of full type names of requested contexts.
+  *   `selector` (*type:* `String.t`, *default:* `nil`) - Selects the methods to which this rule applies.
 
-  Refer to selector for syntax details. Defaults to `nil`.
+      Refer to selector for syntax details.
   """
 
   use GoogleApi.Gax.ModelBase

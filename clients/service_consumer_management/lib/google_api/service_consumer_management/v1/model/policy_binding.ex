@@ -21,11 +21,11 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.PolicyBinding do
 
   ## Attributes
 
-  - members (list(String.t)): Uses the same format as in IAM policy.
-  `member` must include both a prefix and ID. For example, `user:{emailId}`,
-  `serviceAccount:{emailId}`, `group:{emailId}`. Defaults to `nil`.
-  - role (String.t): Role. (https://cloud.google.com/iam/docs/understanding-roles)
-  For example, `roles/viewer`, `roles/editor`, or `roles/owner`. Defaults to `nil`.
+  *   `members` (*type:* `list(String.t)`, *default:* `nil`) - Uses the same format as in IAM policy.
+      `member` must include both a prefix and ID. For example, `user:{emailId}`,
+      `serviceAccount:{emailId}`, `group:{emailId}`.
+  *   `role` (*type:* `String.t`, *default:* `nil`) - Role. (https://cloud.google.com/iam/docs/understanding-roles)
+      For example, `roles/viewer`, `roles/editor`, or `roles/owner`.
   """
 
   use GoogleApi.Gax.ModelBase

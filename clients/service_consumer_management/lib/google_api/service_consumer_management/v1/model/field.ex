@@ -21,18 +21,18 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.Field do
 
   ## Attributes
 
-  - cardinality (String.t): The field cardinality. Defaults to `nil`.
-  - defaultValue (String.t): The string value of the default value of this field. Proto2 syntax only. Defaults to `nil`.
-  - jsonName (String.t): The field JSON name. Defaults to `nil`.
-  - kind (String.t): The field type. Defaults to `nil`.
-  - name (String.t): The field name. Defaults to `nil`.
-  - number (integer()): The field number. Defaults to `nil`.
-  - oneofIndex (integer()): The index of the field type in `Type.oneofs`, for message or enumeration
-  types. The first type has index 1; zero means the type is not in the list. Defaults to `nil`.
-  - options (list(GoogleApi.ServiceConsumerManagement.V1.Model.Option.t)): The protocol buffer options. Defaults to `nil`.
-  - packed (boolean()): Whether to use alternative packed wire representation. Defaults to `nil`.
-  - typeUrl (String.t): The field type URL, without the scheme, for message or enumeration
-  types. Example: `"type.googleapis.com/google.protobuf.Timestamp"`. Defaults to `nil`.
+  *   `cardinality` (*type:* `String.t`, *default:* `nil`) - The field cardinality.
+  *   `defaultValue` (*type:* `String.t`, *default:* `nil`) - The string value of the default value of this field. Proto2 syntax only.
+  *   `jsonName` (*type:* `String.t`, *default:* `nil`) - The field JSON name.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The field type.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The field name.
+  *   `number` (*type:* `integer()`, *default:* `nil`) - The field number.
+  *   `oneofIndex` (*type:* `integer()`, *default:* `nil`) - The index of the field type in `Type.oneofs`, for message or enumeration
+      types. The first type has index 1; zero means the type is not in the list.
+  *   `options` (*type:* `list(GoogleApi.ServiceConsumerManagement.V1.Model.Option.t)`, *default:* `nil`) - The protocol buffer options.
+  *   `packed` (*type:* `boolean()`, *default:* `nil`) - Whether to use alternative packed wire representation.
+  *   `typeUrl` (*type:* `String.t`, *default:* `nil`) - The field type URL, without the scheme, for message or enumeration
+      types. Example: `"type.googleapis.com/google.protobuf.Timestamp"`.
   """
 
   use GoogleApi.Gax.ModelBase

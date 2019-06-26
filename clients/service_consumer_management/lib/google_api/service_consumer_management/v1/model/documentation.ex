@@ -21,24 +21,24 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.Documentation do
 
   Example:
   <pre><code>documentation:
-  summary: >
-    The Google Calendar API gives access
-    to most calendar features.
-  pages:
-  - name: Overview
-    content: &#40;== include google/foo/overview.md ==&#41;
-  - name: Tutorial
-    content: &#40;== include google/foo/tutorial.md ==&#41;
-    subpages;
-    - name: Java
-      content: &#40;== include google/foo/tutorial_java.md ==&#41;
-  rules:
-  - selector: google.calendar.Calendar.Get
-    description: >
-      ...
-  - selector: google.calendar.Calendar.Put
-    description: >
-      ...
+    summary: >
+      The Google Calendar API gives access
+      to most calendar features.
+    pages:
+    - name: Overview
+      content: &#40;== include google/foo/overview.md ==&#41;
+    - name: Tutorial
+      content: &#40;== include google/foo/tutorial.md ==&#41;
+      subpages;
+      - name: Java
+        content: &#40;== include google/foo/tutorial_java.md ==&#41;
+    rules:
+    - selector: google.calendar.Calendar.Get
+      description: >
+        ...
+    - selector: google.calendar.Calendar.Put
+      description: >
+        ...
   </code></pre>
   Documentation is provided in markdown syntax. In addition to
   standard markdown features, definition lists, tables and fenced
@@ -75,26 +75,26 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.Documentation do
 
   ## Attributes
 
-  - documentationRootUrl (String.t): The URL to the root of documentation. Defaults to `nil`.
-  - overview (String.t): Declares a single overview page. For example:
-  <pre><code>documentation:
-  summary: ...
-  overview: &#40;== include overview.md ==&#41;
-  </code></pre>
-  This is a shortcut for the following declaration (using pages style):
-  <pre><code>documentation:
-  summary: ...
-  pages:
-  - name: Overview
-    content: &#40;== include overview.md ==&#41;
-  </code></pre>
-  Note: you cannot specify both `overview` field and `pages` field. Defaults to `nil`.
-  - pages (list(GoogleApi.ServiceConsumerManagement.V1.Model.Page.t)): The top level pages for the documentation set. Defaults to `nil`.
-  - rules (list(GoogleApi.ServiceConsumerManagement.V1.Model.DocumentationRule.t)): A list of documentation rules that apply to individual API elements.
+  *   `documentationRootUrl` (*type:* `String.t`, *default:* `nil`) - The URL to the root of documentation.
+  *   `overview` (*type:* `String.t`, *default:* `nil`) - Declares a single overview page. For example:
+      <pre><code>documentation:
+        summary: ...
+        overview: &#40;== include overview.md ==&#41;
+      </code></pre>
+      This is a shortcut for the following declaration (using pages style):
+      <pre><code>documentation:
+        summary: ...
+        pages:
+        - name: Overview
+          content: &#40;== include overview.md ==&#41;
+      </code></pre>
+      Note: you cannot specify both `overview` field and `pages` field.
+  *   `pages` (*type:* `list(GoogleApi.ServiceConsumerManagement.V1.Model.Page.t)`, *default:* `nil`) - The top level pages for the documentation set.
+  *   `rules` (*type:* `list(GoogleApi.ServiceConsumerManagement.V1.Model.DocumentationRule.t)`, *default:* `nil`) - A list of documentation rules that apply to individual API elements.
 
-  **NOTE:** All service configuration rules follow "last one wins" order. Defaults to `nil`.
-  - summary (String.t): A short summary of what the service does. Can only be provided by
-  plain text. Defaults to `nil`.
+      **NOTE:** All service configuration rules follow "last one wins" order.
+  *   `summary` (*type:* `String.t`, *default:* `nil`) - A short summary of what the service does. Can only be provided by
+      plain text.
   """
 
   use GoogleApi.Gax.ModelBase

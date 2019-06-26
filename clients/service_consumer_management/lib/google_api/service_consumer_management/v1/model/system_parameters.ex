@@ -26,35 +26,35 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.SystemParameters do
 
   ## Attributes
 
-  - rules (list(GoogleApi.ServiceConsumerManagement.V1.Model.SystemParameterRule.t)): Define system parameters.
+  *   `rules` (*type:* `list(GoogleApi.ServiceConsumerManagement.V1.Model.SystemParameterRule.t)`, *default:* `nil`) - Define system parameters.
 
-  The parameters defined here will override the default parameters
-  implemented by the system. If this field is missing from the service
-  config, default system parameters will be used. Default system parameters
-  and names is implementation-dependent.
+      The parameters defined here will override the default parameters
+      implemented by the system. If this field is missing from the service
+      config, default system parameters will be used. Default system parameters
+      and names is implementation-dependent.
 
-  Example: define api key for all methods
+      Example: define api key for all methods
 
-    system_parameters
-      rules:
-        - selector: "*"
-          parameters:
-            - name: api_key
-              url_query_parameter: api_key
+          system_parameters
+            rules:
+              - selector: "*"
+                parameters:
+                  - name: api_key
+                    url_query_parameter: api_key
 
 
-  Example: define 2 api key names for a specific method.
+      Example: define 2 api key names for a specific method.
 
-    system_parameters
-      rules:
-        - selector: "/ListShelves"
-          parameters:
-            - name: api_key
-              http_header: Api-Key1
-            - name: api_key
-              http_header: Api-Key2
+          system_parameters
+            rules:
+              - selector: "/ListShelves"
+                parameters:
+                  - name: api_key
+                    http_header: Api-Key1
+                  - name: api_key
+                    http_header: Api-Key2
 
-  **NOTE:** All service configuration rules follow "last one wins" order. Defaults to `nil`.
+      **NOTE:** All service configuration rules follow "last one wins" order.
   """
 
   use GoogleApi.Gax.ModelBase

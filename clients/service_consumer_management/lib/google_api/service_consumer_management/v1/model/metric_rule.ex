@@ -22,15 +22,15 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.MetricRule do
 
   ## Attributes
 
-  - metricCosts (map()): Metrics to update when the selected methods are called, and the associated
-  cost applied to each metric.
+  *   `metricCosts` (*type:* `map()`, *default:* `nil`) - Metrics to update when the selected methods are called, and the associated
+      cost applied to each metric.
 
-  The key of the map is the metric name, and the values are the amount
-  increased for the metric against which the quota limits are defined.
-  The value must not be negative. Defaults to `nil`.
-  - selector (String.t): Selects the methods to which this rule applies.
+      The key of the map is the metric name, and the values are the amount
+      increased for the metric against which the quota limits are defined.
+      The value must not be negative.
+  *   `selector` (*type:* `String.t`, *default:* `nil`) - Selects the methods to which this rule applies.
 
-  Refer to selector for syntax details. Defaults to `nil`.
+      Refer to selector for syntax details.
   """
 
   use GoogleApi.Gax.ModelBase

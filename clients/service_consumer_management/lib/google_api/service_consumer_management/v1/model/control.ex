@@ -23,8 +23,8 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.Control do
 
   ## Attributes
 
-  - environment (String.t): The service control environment to use. If empty, no control plane
-  feature (like quota and billing) will be enabled. Defaults to `nil`.
+  *   `environment` (*type:* `String.t`, *default:* `nil`) - The service control environment to use. If empty, no control plane
+      feature (like quota and billing) will be enabled.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -24,7 +24,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.V1GenerateServiceAccountR
 
   ## Attributes
 
-  - account (GoogleApi.ServiceConsumerManagement.V1.Model.V1ServiceAccount.t): ServiceAccount that was created or retrieved. Defaults to `nil`.
+  *   `account` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Model.V1ServiceAccount.t`, *default:* `nil`) - ServiceAccount that was created or retrieved.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,16 +21,16 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.TenancyUnit do
 
   ## Attributes
 
-  - consumer (String.t): @OutputOnly Cloud resource name of the consumer of this service.
-  For example 'projects/123456'. Defaults to `nil`.
-  - createTime (DateTime.t): @OutputOnly The time this tenancy unit was created. Defaults to `nil`.
-  - name (String.t): Globally unique identifier of this tenancy unit
-  "services/{service}/{collection id}/{resource id}/tenancyUnits/{unit}" Defaults to `nil`.
-  - service (String.t): Output only. Google Cloud API name of the managed service owning this
-  tenancy unit.
-  For example 'serviceconsumermanagement.googleapis.com'. Defaults to `nil`.
-  - tenantResources (list(GoogleApi.ServiceConsumerManagement.V1.Model.TenantResource.t)): Resources constituting the tenancy unit.
-  There can be at most 512 tenant resources in a tenancy unit. Defaults to `nil`.
+  *   `consumer` (*type:* `String.t`, *default:* `nil`) - @OutputOnly Cloud resource name of the consumer of this service.
+      For example 'projects/123456'.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - @OutputOnly The time this tenancy unit was created.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Globally unique identifier of this tenancy unit
+      "services/{service}/{collection id}/{resource id}/tenancyUnits/{unit}"
+  *   `service` (*type:* `String.t`, *default:* `nil`) - Output only. Google Cloud API name of the managed service owning this
+      tenancy unit.
+      For example 'serviceconsumermanagement.googleapis.com'.
+  *   `tenantResources` (*type:* `list(GoogleApi.ServiceConsumerManagement.V1.Model.TenantResource.t)`, *default:* `nil`) - Resources constituting the tenancy unit.
+      There can be at most 512 tenant resources in a tenancy unit.
   """
 
   use GoogleApi.Gax.ModelBase

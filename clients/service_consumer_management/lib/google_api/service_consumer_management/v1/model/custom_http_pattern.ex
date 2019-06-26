@@ -21,8 +21,8 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.CustomHttpPattern do
 
   ## Attributes
 
-  - kind (String.t): The name of this custom HTTP verb. Defaults to `nil`.
-  - path (String.t): The path matched by this custom verb. Defaults to `nil`.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The name of this custom HTTP verb.
+  *   `path` (*type:* `String.t`, *default:* `nil`) - The path matched by this custom verb.
   """
 
   use GoogleApi.Gax.ModelBase

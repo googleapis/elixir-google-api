@@ -28,55 +28,61 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
 
   ## Parameters
 
-  - connection (GoogleApi.ServiceConsumerManagement.V1.Connection): Connection to server
-  - parent (String.t): Service for which search is performed.
-  services/{service}
-  {service} the name of a service, for example 'service.googleapis.com'.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :pageSize (integer()): The maximum number of results returned by this request. Currently, the
-  default maximum is set to 1000. If `page_size` isn't provided or the size
-  provided is a number larger than 1000, it's automatically set to 1000.
+  *   `connection` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Service for which search is performed.
+      services/{service}
+      {service} the name of a service, for example 'service.googleapis.com'.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of results returned by this request. Currently, the
+          default maximum is set to 1000. If `page_size` isn't provided or the size
+          provided is a number larger than 1000, it's automatically set to 1000.
 
-  Optional.
-    - :pageToken (String.t): The continuation token, which is used to page through large result sets.
-  To get the next page of results, set this parameter to the value of
-  `nextPageToken` from the previous response.
+          Optional.
+      *   `:pageToken` (*type:* `String.t`) - The continuation token, which is used to page through large result sets.
+          To get the next page of results, set this parameter to the value of
+          `nextPageToken` from the previous response.
 
-  Optional.
-    - :query (String.t): Set a query `{expression}` for querying tenancy units. Your `{expression}`
-  must be in the format: `field_name=literal_string`. The `field_name` is the
-  name of the field you want to compare. Supported fields are
-  `tenant_resources.tag` and `tenant_resources.resource`.
+          Optional.
+      *   `:query` (*type:* `String.t`) - Set a query `{expression}` for querying tenancy units. Your `{expression}`
+          must be in the format: `field_name=literal_string`. The `field_name` is the
+          name of the field you want to compare. Supported fields are
+          `tenant_resources.tag` and `tenant_resources.resource`.
 
-  For example, to search tenancy units that contain at least one tenant
-  resource with a given tag 'xyz', use the query `tenant_resources.tag=xyz`.
-  To search tenancy units that contain at least one tenant resource with
-  a given resource name 'projects/123456', use the query
-  `tenant_resources.resource=projects/123456`.
+          For example, to search tenancy units that contain at least one tenant
+          resource with a given tag 'xyz', use the query `tenant_resources.tag=xyz`.
+          To search tenancy units that contain at least one tenant resource with
+          a given resource name 'projects/123456', use the query
+          `tenant_resources.resource=projects/123456`.
 
-  Multiple expressions can be joined with `AND`s. Tenancy units must match
-  all expressions to be included in the result set. For example,
-  `tenant_resources.tag=xyz AND tenant_resources.resource=projects/123456`
+          Multiple expressions can be joined with `AND`s. Tenancy units must match
+          all expressions to be included in the result set. For example,
+          `tenant_resources.tag=xyz AND tenant_resources.resource=projects/123456`
 
-  Optional.
+          Optional.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.ServiceConsumerManagement.V1.Model.SearchTenancyUnitsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.ServiceConsumerManagement.V1.Model.SearchTenancyUnitsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec serviceconsumermanagement_services_search(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec serviceconsumermanagement_services_search(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.ServiceConsumerManagement.V1.Model.SearchTenancyUnitsResponse.t()}
           | {:error, Tesla.Env.t()}
   def serviceconsumermanagement_services_search(
@@ -127,31 +133,33 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
 
   ## Parameters
 
-  - connection (GoogleApi.ServiceConsumerManagement.V1.Connection): Connection to server
-  - parent (String.t): Name of the tenancy unit.
-  Such as 'services/service.googleapis.com/projects/12345/tenancyUnits/abcd'.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.ServiceConsumerManagement.V1.Model.AddTenantProjectRequest.t): 
+  *   `connection` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Name of the tenancy unit.
+      Such as 'services/service.googleapis.com/projects/12345/tenancyUnits/abcd'.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Model.AddTenantProjectRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.ServiceConsumerManagement.V1.Model.Operation{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.ServiceConsumerManagement.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec serviceconsumermanagement_services_tenancy_units_add_project(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.ServiceConsumerManagement.V1.Model.Operation.t()}
@@ -213,31 +221,33 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
 
   ## Parameters
 
-  - connection (GoogleApi.ServiceConsumerManagement.V1.Connection): Connection to server
-  - name (String.t): Name of the tenancy unit.
-  Such as 'services/service.googleapis.com/projects/12345/tenancyUnits/abcd'.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.ServiceConsumerManagement.V1.Model.ApplyTenantProjectConfigRequest.t): 
+  *   `connection` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Name of the tenancy unit.
+      Such as 'services/service.googleapis.com/projects/12345/tenancyUnits/abcd'.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Model.ApplyTenantProjectConfigRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.ServiceConsumerManagement.V1.Model.Operation{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.ServiceConsumerManagement.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec serviceconsumermanagement_services_tenancy_units_apply_project_config(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.ServiceConsumerManagement.V1.Model.Operation.t()}
@@ -293,31 +303,33 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
 
   ## Parameters
 
-  - connection (GoogleApi.ServiceConsumerManagement.V1.Connection): Connection to server
-  - name (String.t): Name of the tenancy unit that the project will be attached to.
-  Such as 'services/service.googleapis.com/projects/12345/tenancyUnits/abcd'.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.ServiceConsumerManagement.V1.Model.AttachTenantProjectRequest.t): 
+  *   `connection` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Name of the tenancy unit that the project will be attached to.
+      Such as 'services/service.googleapis.com/projects/12345/tenancyUnits/abcd'.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Model.AttachTenantProjectRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.ServiceConsumerManagement.V1.Model.Operation{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.ServiceConsumerManagement.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec serviceconsumermanagement_services_tenancy_units_attach_project(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.ServiceConsumerManagement.V1.Model.Operation.t()}
@@ -363,35 +375,37 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
 
   ## Parameters
 
-  - connection (GoogleApi.ServiceConsumerManagement.V1.Connection): Connection to server
-  - parent (String.t): services/{service}/{collection id}/{resource id}
-  {collection id} is the cloud resource collection type representing the
-  service consumer, for example 'projects', or 'organizations'.
-  {resource id} is the consumer numeric id, such as project number: '123456'.
-  {service} the name of a managed service, such as 'service.googleapis.com'.
-  Enables service binding using the new tenancy unit.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.ServiceConsumerManagement.V1.Model.CreateTenancyUnitRequest.t): 
+  *   `connection` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - services/{service}/{collection id}/{resource id}
+      {collection id} is the cloud resource collection type representing the
+      service consumer, for example 'projects', or 'organizations'.
+      {resource id} is the consumer numeric id, such as project number: '123456'.
+      {service} the name of a managed service, such as 'service.googleapis.com'.
+      Enables service binding using the new tenancy unit.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Model.CreateTenancyUnitRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.ServiceConsumerManagement.V1.Model.TenancyUnit{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.ServiceConsumerManagement.V1.Model.TenancyUnit{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec serviceconsumermanagement_services_tenancy_units_create(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.ServiceConsumerManagement.V1.Model.TenancyUnit.t()}
@@ -439,29 +453,31 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
 
   ## Parameters
 
-  - connection (GoogleApi.ServiceConsumerManagement.V1.Connection): Connection to server
-  - name (String.t): Name of the tenancy unit to be deleted.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Name of the tenancy unit to be deleted.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.ServiceConsumerManagement.V1.Model.Operation{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.ServiceConsumerManagement.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec serviceconsumermanagement_services_tenancy_units_delete(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.ServiceConsumerManagement.V1.Model.Operation.t()}
@@ -515,31 +531,33 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
 
   ## Parameters
 
-  - connection (GoogleApi.ServiceConsumerManagement.V1.Connection): Connection to server
-  - name (String.t): Name of the tenancy unit.
-  Such as 'services/service.googleapis.com/projects/12345/tenancyUnits/abcd'.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.ServiceConsumerManagement.V1.Model.DeleteTenantProjectRequest.t): 
+  *   `connection` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Name of the tenancy unit.
+      Such as 'services/service.googleapis.com/projects/12345/tenancyUnits/abcd'.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Model.DeleteTenantProjectRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.ServiceConsumerManagement.V1.Model.Operation{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.ServiceConsumerManagement.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec serviceconsumermanagement_services_tenancy_units_delete_project(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.ServiceConsumerManagement.V1.Model.Operation.t()}
@@ -589,39 +607,41 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
 
   ## Parameters
 
-  - connection (GoogleApi.ServiceConsumerManagement.V1.Connection): Connection to server
-  - parent (String.t): Managed service and service consumer. Required.
-  services/{service}/{collection id}/{resource id}
-  {collection id} is the cloud resource collection type representing the
-  service consumer, for example 'projects', or 'organizations'.
-  {resource id} is the consumer numeric id, such as project number: '123456'.
-  {service} the name of a service, such as 'service.googleapis.com'.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :filter (String.t): Filter expression over tenancy resources field. Optional.
-    - :pageSize (integer()): The maximum number of results returned by this request.
-    - :pageToken (String.t): The continuation token, which is used to page through large result sets.
-  To get the next page of results, set this parameter to the value of
-  `nextPageToken` from the previous response.
+  *   `connection` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Managed service and service consumer. Required.
+      services/{service}/{collection id}/{resource id}
+      {collection id} is the cloud resource collection type representing the
+      service consumer, for example 'projects', or 'organizations'.
+      {resource id} is the consumer numeric id, such as project number: '123456'.
+      {service} the name of a service, such as 'service.googleapis.com'.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:filter` (*type:* `String.t`) - Filter expression over tenancy resources field. Optional.
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of results returned by this request.
+      *   `:pageToken` (*type:* `String.t`) - The continuation token, which is used to page through large result sets.
+          To get the next page of results, set this parameter to the value of
+          `nextPageToken` from the previous response.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.ServiceConsumerManagement.V1.Model.ListTenancyUnitsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.ServiceConsumerManagement.V1.Model.ListTenancyUnitsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec serviceconsumermanagement_services_tenancy_units_list(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.ServiceConsumerManagement.V1.Model.ListTenancyUnitsResponse.t()}
@@ -676,31 +696,33 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
 
   ## Parameters
 
-  - connection (GoogleApi.ServiceConsumerManagement.V1.Connection): Connection to server
-  - name (String.t): Name of the tenancy unit.
-  Such as 'services/service.googleapis.com/projects/12345/tenancyUnits/abcd'.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.ServiceConsumerManagement.V1.Model.RemoveTenantProjectRequest.t): 
+  *   `connection` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Name of the tenancy unit.
+      Such as 'services/service.googleapis.com/projects/12345/tenancyUnits/abcd'.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Model.RemoveTenantProjectRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.ServiceConsumerManagement.V1.Model.Operation{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.ServiceConsumerManagement.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec serviceconsumermanagement_services_tenancy_units_remove_project(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.ServiceConsumerManagement.V1.Model.Operation.t()}
@@ -752,31 +774,33 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
 
   ## Parameters
 
-  - connection (GoogleApi.ServiceConsumerManagement.V1.Connection): Connection to server
-  - name (String.t): Name of the tenancy unit.
-  Such as 'services/service.googleapis.com/projects/12345/tenancyUnits/abcd'.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.ServiceConsumerManagement.V1.Model.UndeleteTenantProjectRequest.t): 
+  *   `connection` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Name of the tenancy unit.
+      Such as 'services/service.googleapis.com/projects/12345/tenancyUnits/abcd'.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Model.UndeleteTenantProjectRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.ServiceConsumerManagement.V1.Model.Operation{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.ServiceConsumerManagement.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec serviceconsumermanagement_services_tenancy_units_undelete_project(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.ServiceConsumerManagement.V1.Model.Operation.t()}

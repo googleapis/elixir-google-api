@@ -21,11 +21,11 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.TenantResource do
 
   ## Attributes
 
-  - resource (String.t): @OutputOnly Identifier of the tenant resource.
-  For cloud projects, it is in the form 'projects/{number}'.
-  For example 'projects/123456'. Defaults to `nil`.
-  - status (String.t): Status of tenant resource. Defaults to `nil`.
-  - tag (String.t): Unique per single tenancy unit. Defaults to `nil`.
+  *   `resource` (*type:* `String.t`, *default:* `nil`) - @OutputOnly Identifier of the tenant resource.
+      For cloud projects, it is in the form 'projects/{number}'.
+      For example 'projects/123456'.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - Status of tenant resource.
+  *   `tag` (*type:* `String.t`, *default:* `nil`) - Unique per single tenancy unit.
   """
 
   use GoogleApi.Gax.ModelBase
