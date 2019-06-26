@@ -21,7 +21,7 @@ defmodule GoogleApi.SearchConsole.V1.Model.MobileFriendlyIssue do
 
   ## Attributes
 
-  - rule (String.t): Rule violated. Defaults to `nil`.
+  *   `rule` (*type:* `String.t`, *default:* `nil`) - Rule violated.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,9 +21,9 @@ defmodule GoogleApi.SearchConsole.V1.Model.Image do
 
   ## Attributes
 
-  - data (String.t): Image data in format determined by the mime type. Currently, the format
-  will always be "image/png", but this might change in the future. Defaults to `nil`.
-  - mimeType (String.t): The mime-type of the image data. Defaults to `nil`.
+  *   `data` (*type:* `String.t`, *default:* `nil`) - Image data in format determined by the mime type. Currently, the format
+      will always be "image/png", but this might change in the future.
+  *   `mimeType` (*type:* `String.t`, *default:* `nil`) - The mime-type of the image data.
   """
 
   use GoogleApi.Gax.ModelBase

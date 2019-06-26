@@ -21,8 +21,8 @@ defmodule GoogleApi.SearchConsole.V1.Model.TestStatus do
 
   ## Attributes
 
-  - details (String.t): Error details if applicable. Defaults to `nil`.
-  - status (String.t): Status of the test. Defaults to `nil`.
+  *   `details` (*type:* `String.t`, *default:* `nil`) - Error details if applicable.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - Status of the test.
   """
 
   use GoogleApi.Gax.ModelBase
