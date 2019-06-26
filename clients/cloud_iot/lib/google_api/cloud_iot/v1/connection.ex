@@ -30,6 +30,6 @@ defmodule GoogleApi.CloudIot.V1.Connection do
       # Register and manage devices in the Google Cloud IoT service
       "https://www.googleapis.com/auth/cloudiot"
     ],
-    otp_app: :google_api_cloudiot,
+    otp_app: :google_api_cloud_iot,
     base_url: "https://cloudiot.googleapis.com/"
 end
