@@ -27,6 +27,6 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Connection do
       # View and manage your data across Google Cloud Platform services
       "https://www.googleapis.com/auth/cloud-platform"
     ],
-    otp_app: :google_api_clouderrorreporting,
+    otp_app: :google_api_cloud_error_reporting,
     base_url: "https://clouderrorreporting.googleapis.com/"
 end
