@@ -21,9 +21,9 @@ defmodule GoogleApi.CloudIot.V1.Model.ListDevicesResponse do
 
   ## Attributes
 
-  - devices (list(GoogleApi.CloudIot.V1.Model.Device.t)): The devices that match the request. Defaults to `nil`.
-  - nextPageToken (String.t): If not empty, indicates that there may be more devices that match the
-  request; this value should be passed in a new `ListDevicesRequest`. Defaults to `nil`.
+  *   `devices` (*type:* `list(GoogleApi.CloudIot.V1.Model.Device.t)`, *default:* `nil`) - The devices that match the request.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If not empty, indicates that there may be more devices that match the
+      request; this value should be passed in a new `ListDevicesRequest`.
   """
 
   use GoogleApi.Gax.ModelBase

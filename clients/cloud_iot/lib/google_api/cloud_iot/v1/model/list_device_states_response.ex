@@ -21,8 +21,8 @@ defmodule GoogleApi.CloudIot.V1.Model.ListDeviceStatesResponse do
 
   ## Attributes
 
-  - deviceStates (list(GoogleApi.CloudIot.V1.Model.DeviceState.t)): The last few device states. States are listed in descending order of server
-  update time, starting from the most recent one. Defaults to `nil`.
+  *   `deviceStates` (*type:* `list(GoogleApi.CloudIot.V1.Model.DeviceState.t)`, *default:* `nil`) - The last few device states. States are listed in descending order of server
+      update time, starting from the most recent one.
   """
 
   use GoogleApi.Gax.ModelBase

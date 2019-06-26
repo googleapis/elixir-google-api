@@ -21,11 +21,11 @@ defmodule GoogleApi.CloudIot.V1.Model.BindDeviceToGatewayRequest do
 
   ## Attributes
 
-  - deviceId (String.t): The device to associate with the specified gateway. The value of
-  `device_id` can be either the device numeric ID or the user-defined device
-  identifier. Defaults to `nil`.
-  - gatewayId (String.t): The value of `gateway_id` can be either the device numeric ID or the
-  user-defined device identifier. Defaults to `nil`.
+  *   `deviceId` (*type:* `String.t`, *default:* `nil`) - The device to associate with the specified gateway. The value of
+      `device_id` can be either the device numeric ID or the user-defined device
+      identifier.
+  *   `gatewayId` (*type:* `String.t`, *default:* `nil`) - The value of `gateway_id` can be either the device numeric ID or the
+      user-defined device identifier.
   """
 
   use GoogleApi.Gax.ModelBase

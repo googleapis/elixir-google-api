@@ -21,10 +21,10 @@ defmodule GoogleApi.CloudIot.V1.Model.ListDeviceRegistriesResponse do
 
   ## Attributes
 
-  - deviceRegistries (list(GoogleApi.CloudIot.V1.Model.DeviceRegistry.t)): The registries that matched the query. Defaults to `nil`.
-  - nextPageToken (String.t): If not empty, indicates that there may be more registries that match the
-  request; this value should be passed in a new
-  `ListDeviceRegistriesRequest`. Defaults to `nil`.
+  *   `deviceRegistries` (*type:* `list(GoogleApi.CloudIot.V1.Model.DeviceRegistry.t)`, *default:* `nil`) - The registries that matched the query.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If not empty, indicates that there may be more registries that match the
+      request; this value should be passed in a new
+      `ListDeviceRegistriesRequest`.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,8 +21,8 @@ defmodule GoogleApi.CloudIot.V1.Model.PublicKeyCredential do
 
   ## Attributes
 
-  - format (String.t): The format of the key. Defaults to `nil`.
-  - key (String.t): The key data. Defaults to `nil`.
+  *   `format` (*type:* `String.t`, *default:* `nil`) - The format of the key.
+  *   `key` (*type:* `String.t`, *default:* `nil`) - The key data.
   """
 
   use GoogleApi.Gax.ModelBase

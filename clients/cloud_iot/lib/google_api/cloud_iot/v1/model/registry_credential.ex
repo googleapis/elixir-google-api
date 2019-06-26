@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudIot.V1.Model.RegistryCredential do
 
   ## Attributes
 
-  - publicKeyCertificate (GoogleApi.CloudIot.V1.Model.PublicKeyCertificate.t): A public key certificate used to verify the device credentials. Defaults to `nil`.
+  *   `publicKeyCertificate` (*type:* `GoogleApi.CloudIot.V1.Model.PublicKeyCertificate.t`, *default:* `nil`) - A public key certificate used to verify the device credentials.
   """
 
   use GoogleApi.Gax.ModelBase

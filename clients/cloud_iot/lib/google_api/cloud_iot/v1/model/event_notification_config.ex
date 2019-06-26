@@ -21,12 +21,12 @@ defmodule GoogleApi.CloudIot.V1.Model.EventNotificationConfig do
 
   ## Attributes
 
-  - pubsubTopicName (String.t): A Cloud Pub/Sub topic name. For example,
-  `projects/myProject/topics/deviceEvents`. Defaults to `nil`.
-  - subfolderMatches (String.t): If the subfolder name matches this string exactly, this configuration will
-  be used. The string must not include the leading '/' character. If empty,
-  all strings are matched. This field is used only for telemetry events;
-  subfolders are not supported for state changes. Defaults to `nil`.
+  *   `pubsubTopicName` (*type:* `String.t`, *default:* `nil`) - A Cloud Pub/Sub topic name. For example,
+      `projects/myProject/topics/deviceEvents`.
+  *   `subfolderMatches` (*type:* `String.t`, *default:* `nil`) - If the subfolder name matches this string exactly, this configuration will
+      be used. The string must not include the leading '/' character. If empty,
+      all strings are matched. This field is used only for telemetry events;
+      subfolders are not supported for state changes.
   """
 
   use GoogleApi.Gax.ModelBase

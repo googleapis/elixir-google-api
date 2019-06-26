@@ -21,10 +21,10 @@ defmodule GoogleApi.CloudIot.V1.Model.SetIamPolicyRequest do
 
   ## Attributes
 
-  - policy (GoogleApi.CloudIot.V1.Model.Policy.t): REQUIRED: The complete policy to be applied to the `resource`. The size of
-  the policy is limited to a few 10s of KB. An empty policy is a
-  valid policy but certain Cloud Platform services (such as Projects)
-  might reject them. Defaults to `nil`.
+  *   `policy` (*type:* `GoogleApi.CloudIot.V1.Model.Policy.t`, *default:* `nil`) - REQUIRED: The complete policy to be applied to the `resource`. The size of
+      the policy is limited to a few 10s of KB. An empty policy is a
+      valid policy but certain Cloud Platform services (such as Projects)
+      might reject them.
   """
 
   use GoogleApi.Gax.ModelBase

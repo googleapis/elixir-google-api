@@ -21,12 +21,12 @@ defmodule GoogleApi.CloudIot.V1.Model.X509CertificateDetails do
 
   ## Attributes
 
-  - expiryTime (DateTime.t): The time the certificate becomes invalid. Defaults to `nil`.
-  - issuer (String.t): The entity that signed the certificate. Defaults to `nil`.
-  - publicKeyType (String.t): The type of public key in the certificate. Defaults to `nil`.
-  - signatureAlgorithm (String.t): The algorithm used to sign the certificate. Defaults to `nil`.
-  - startTime (DateTime.t): The time the certificate becomes valid. Defaults to `nil`.
-  - subject (String.t): The entity the certificate and public key belong to. Defaults to `nil`.
+  *   `expiryTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the certificate becomes invalid.
+  *   `issuer` (*type:* `String.t`, *default:* `nil`) - The entity that signed the certificate.
+  *   `publicKeyType` (*type:* `String.t`, *default:* `nil`) - The type of public key in the certificate.
+  *   `signatureAlgorithm` (*type:* `String.t`, *default:* `nil`) - The algorithm used to sign the certificate.
+  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the certificate becomes valid.
+  *   `subject` (*type:* `String.t`, *default:* `nil`) - The entity the certificate and public key belong to.
   """
 
   use GoogleApi.Gax.ModelBase

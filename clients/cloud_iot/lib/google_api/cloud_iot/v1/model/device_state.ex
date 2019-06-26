@@ -21,9 +21,9 @@ defmodule GoogleApi.CloudIot.V1.Model.DeviceState do
 
   ## Attributes
 
-  - binaryData (String.t): The device state data. Defaults to `nil`.
-  - updateTime (DateTime.t): [Output only] The time at which this state version was updated in Cloud
-  IoT Core. Defaults to `nil`.
+  *   `binaryData` (*type:* `String.t`, *default:* `nil`) - The device state data.
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - [Output only] The time at which this state version was updated in Cloud
+      IoT Core.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,8 +21,8 @@ defmodule GoogleApi.CloudIot.V1.Model.ListDeviceConfigVersionsResponse do
 
   ## Attributes
 
-  - deviceConfigs (list(GoogleApi.CloudIot.V1.Model.DeviceConfig.t)): The device configuration for the last few versions. Versions are listed
-  in decreasing order, starting from the most recent one. Defaults to `nil`.
+  *   `deviceConfigs` (*type:* `list(GoogleApi.CloudIot.V1.Model.DeviceConfig.t)`, *default:* `nil`) - The device configuration for the last few versions. Versions are listed
+      in decreasing order, starting from the most recent one.
   """
 
   use GoogleApi.Gax.ModelBase
