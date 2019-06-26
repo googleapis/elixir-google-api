@@ -27,6 +27,6 @@ defmodule GoogleApi.AndroidPublisher.V2.Connection do
       # View and manage your Google Play Developer account
       "https://www.googleapis.com/auth/androidpublisher"
     ],
-    otp_app: :google_api_androidpublisher,
+    otp_app: :google_api_android_publisher,
     base_url: "https://www.googleapis.com/"
 end
