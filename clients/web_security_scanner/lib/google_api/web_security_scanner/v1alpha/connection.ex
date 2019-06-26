@@ -27,6 +27,6 @@ defmodule GoogleApi.WebSecurityScanner.V1alpha.Connection do
       # View and manage your data across Google Cloud Platform services
       "https://www.googleapis.com/auth/cloud-platform"
     ],
-    otp_app: :google_api_websecurityscanner,
+    otp_app: :google_api_web_security_scanner,
     base_url: "https://websecurityscanner.googleapis.com/"
 end
