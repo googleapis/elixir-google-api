@@ -30,6 +30,6 @@ defmodule GoogleApi.CloudKMS.V1.Connection do
       # View and manage your keys and secrets stored in Cloud Key Management Service
       "https://www.googleapis.com/auth/cloudkms"
     ],
-    otp_app: :google_api_cloudkms,
+    otp_app: :google_api_cloud_kms,
     base_url: "https://cloudkms.googleapis.com/"
 end
