@@ -24,6 +24,6 @@ defmodule GoogleApi.SearchConsole.V1.Connection do
 
   use GoogleApi.Gax.Connection,
     scopes: [],
-    otp_app: :google_api_searchconsole,
+    otp_app: :google_api_search_console,
     base_url: "https://searchconsole.googleapis.com/"
 end
