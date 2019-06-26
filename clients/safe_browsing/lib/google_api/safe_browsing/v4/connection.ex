@@ -24,6 +24,6 @@ defmodule GoogleApi.SafeBrowsing.V4.Connection do
 
   use GoogleApi.Gax.Connection,
     scopes: [],
-    otp_app: :google_api_safebrowsing,
+    otp_app: :google_api_safe_browsing,
     base_url: "https://safebrowsing.googleapis.com/"
 end
