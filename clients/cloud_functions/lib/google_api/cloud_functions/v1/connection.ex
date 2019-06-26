@@ -27,6 +27,6 @@ defmodule GoogleApi.CloudFunctions.V1.Connection do
       # View and manage your data across Google Cloud Platform services
       "https://www.googleapis.com/auth/cloud-platform"
     ],
-    otp_app: :google_api_cloudfunctions,
+    otp_app: :google_api_cloud_functions,
     base_url: "https://cloudfunctions.googleapis.com/"
 end
