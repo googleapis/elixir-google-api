@@ -33,6 +33,6 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Connection do
       # View your data across Google Cloud Platform services
       "https://www.googleapis.com/auth/cloud-platform.read-only"
     ],
-    otp_app: :google_api_bigquerydatatransfer,
+    otp_app: :google_api_big_query_data_transfer,
     base_url: "https://bigquerydatatransfer.googleapis.com/"
 end
