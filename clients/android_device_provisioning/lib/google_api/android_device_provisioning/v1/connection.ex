@@ -24,6 +24,6 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Connection do
 
   use GoogleApi.Gax.Connection,
     scopes: [],
-    otp_app: :google_api_androiddeviceprovisioning,
+    otp_app: :google_api_android_device_provisioning,
     base_url: "https://androiddeviceprovisioning.googleapis.com/"
 end
