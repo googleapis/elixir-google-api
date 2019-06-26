@@ -27,6 +27,6 @@ defmodule GoogleApi.UrlShortener.V1.Connection do
       # Manage your goo.gl short URLs
       "https://www.googleapis.com/auth/urlshortener"
     ],
-    otp_app: :google_api_urlshortener,
+    otp_app: :google_api_url_shortener,
     base_url: "https://www.googleapis.com/urlshortener/v1/"
 end
