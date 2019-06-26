@@ -22,15 +22,18 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.Addressable do
   ## Attributes
 
   *   `hostname` (*type:* `String.t`, *default:* `nil`) - 
+  *   `url` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :hostname => String.t()
+          :hostname => String.t(),
+          :url => String.t()
         }
 
   field(:hostname)
+  field(:url)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudRun.V1alpha1.Model.Addressable do
