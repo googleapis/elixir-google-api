@@ -23,8 +23,8 @@ defmodule GoogleApi.ServiceControl.V1.Model.MetricValueSet do
 
   ## Attributes
 
-  - metricName (String.t): The metric name defined in the service configuration. Defaults to `nil`.
-  - metricValues (list(GoogleApi.ServiceControl.V1.Model.MetricValue.t)): The values in this metric. Defaults to `nil`.
+  *   `metricName` (*type:* `String.t`, *default:* `nil`) - The metric name defined in the service configuration.
+  *   `metricValues` (*type:* `list(GoogleApi.ServiceControl.V1.Model.MetricValue.t)`, *default:* `nil`) - The values in this metric.
   """
 
   use GoogleApi.Gax.ModelBase

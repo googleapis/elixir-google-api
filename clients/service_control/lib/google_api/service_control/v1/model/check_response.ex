@@ -21,18 +21,18 @@ defmodule GoogleApi.ServiceControl.V1.Model.CheckResponse do
 
   ## Attributes
 
-  - checkErrors (list(GoogleApi.ServiceControl.V1.Model.CheckError.t)): Indicate the decision of the check.
+  *   `checkErrors` (*type:* `list(GoogleApi.ServiceControl.V1.Model.CheckError.t)`, *default:* `nil`) - Indicate the decision of the check.
 
-  If no check errors are present, the service should process the operation.
-  Otherwise the service should use the list of errors to determine the
-  appropriate action. Defaults to `nil`.
-  - checkInfo (GoogleApi.ServiceControl.V1.Model.CheckInfo.t): Feedback data returned from the server during processing a Check request. Defaults to `nil`.
-  - operationId (String.t): The same operation_id value used in the CheckRequest.
-  Used for logging and diagnostics purposes. Defaults to `nil`.
-  - quotaInfo (GoogleApi.ServiceControl.V1.Model.QuotaInfo.t): Quota information for the check request associated with this response.
-  Defaults to `nil`.
-  - serviceConfigId (String.t): The actual config id used to process the request. Defaults to `nil`.
-  - serviceRolloutId (String.t): Unimplemented. The current service rollout id used to process the request. Defaults to `nil`.
+      If no check errors are present, the service should process the operation.
+      Otherwise the service should use the list of errors to determine the
+      appropriate action.
+  *   `checkInfo` (*type:* `GoogleApi.ServiceControl.V1.Model.CheckInfo.t`, *default:* `nil`) - Feedback data returned from the server during processing a Check request.
+  *   `operationId` (*type:* `String.t`, *default:* `nil`) - The same operation_id value used in the CheckRequest.
+      Used for logging and diagnostics purposes.
+  *   `quotaInfo` (*type:* `GoogleApi.ServiceControl.V1.Model.QuotaInfo.t`, *default:* `nil`) - Quota information for the check request associated with this response.
+
+  *   `serviceConfigId` (*type:* `String.t`, *default:* `nil`) - The actual config id used to process the request.
+  *   `serviceRolloutId` (*type:* `String.t`, *default:* `nil`) - Unimplemented. The current service rollout id used to process the request.
   """
 
   use GoogleApi.Gax.ModelBase

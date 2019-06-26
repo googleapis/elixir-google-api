@@ -21,21 +21,21 @@ defmodule GoogleApi.ServiceControl.V1.Model.AllocateQuotaResponse do
 
   ## Attributes
 
-  - allocateErrors (list(GoogleApi.ServiceControl.V1.Model.QuotaError.t)): Indicates the decision of the allocate. Defaults to `nil`.
-  - allocateInfo (GoogleApi.ServiceControl.V1.Model.AllocateInfo.t): WARNING: DO NOT use this field until this warning message is removed. Defaults to `nil`.
-  - operationId (String.t): The same operation_id value used in the AllocateQuotaRequest. Used for
-  logging and diagnostics purposes. Defaults to `nil`.
-  - quotaMetrics (list(GoogleApi.ServiceControl.V1.Model.MetricValueSet.t)): Quota metrics to indicate the result of allocation. Depending on the
-  request, one or more of the following metrics will be included:
+  *   `allocateErrors` (*type:* `list(GoogleApi.ServiceControl.V1.Model.QuotaError.t)`, *default:* `nil`) - Indicates the decision of the allocate.
+  *   `allocateInfo` (*type:* `GoogleApi.ServiceControl.V1.Model.AllocateInfo.t`, *default:* `nil`) - WARNING: DO NOT use this field until this warning message is removed.
+  *   `operationId` (*type:* `String.t`, *default:* `nil`) - The same operation_id value used in the AllocateQuotaRequest. Used for
+      logging and diagnostics purposes.
+  *   `quotaMetrics` (*type:* `list(GoogleApi.ServiceControl.V1.Model.MetricValueSet.t)`, *default:* `nil`) - Quota metrics to indicate the result of allocation. Depending on the
+      request, one or more of the following metrics will be included:
 
-  1. Per quota group or per quota metric incremental usage will be specified
-  using the following delta metric :
-  "serviceruntime.googleapis.com/api/consumer/quota_used_count"
+      1. Per quota group or per quota metric incremental usage will be specified
+      using the following delta metric :
+        "serviceruntime.googleapis.com/api/consumer/quota_used_count"
 
-  2. The quota limit reached condition will be specified using the following
-  boolean metric :
-  "serviceruntime.googleapis.com/quota/exceeded" Defaults to `nil`.
-  - serviceConfigId (String.t): ID of the actual config used to process the request. Defaults to `nil`.
+      2. The quota limit reached condition will be specified using the following
+      boolean metric :
+        "serviceruntime.googleapis.com/quota/exceeded"
+  *   `serviceConfigId` (*type:* `String.t`, *default:* `nil`) - ID of the actual config used to process the request.
   """
 
   use GoogleApi.Gax.ModelBase

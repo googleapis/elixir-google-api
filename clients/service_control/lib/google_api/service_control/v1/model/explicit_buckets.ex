@@ -21,21 +21,21 @@ defmodule GoogleApi.ServiceControl.V1.Model.ExplicitBuckets do
 
   ## Attributes
 
-  - bounds (list(float())): 'bound' is a list of strictly increasing boundaries between
-  buckets. Note that a list of length N-1 defines N buckets because
-  of fenceposting. See comments on `bucket_options` for details.
+  *   `bounds` (*type:* `list(float())`, *default:* `nil`) - 'bound' is a list of strictly increasing boundaries between
+      buckets. Note that a list of length N-1 defines N buckets because
+      of fenceposting. See comments on `bucket_options` for details.
 
-  The i'th finite bucket covers the interval
-  [bound[i-1], bound[i])
-  where i ranges from 1 to bound_size() - 1. Note that there are no
-  finite buckets at all if 'bound' only contains a single element; in
-  that special case the single bound defines the boundary between the
-  underflow and overflow buckets.
+      The i'th finite bucket covers the interval
+        [bound[i-1], bound[i])
+      where i ranges from 1 to bound_size() - 1. Note that there are no
+      finite buckets at all if 'bound' only contains a single element; in
+      that special case the single bound defines the boundary between the
+      underflow and overflow buckets.
 
-  bucket number                   lower bound    upper bound
-  i == 0 (underflow)              -inf           bound[i]
-  0 < i < bound_size()            bound[i-1]     bound[i]
-  i == bound_size() (overflow)    bound[i-1]     +inf Defaults to `nil`.
+      bucket number                   lower bound    upper bound
+       i == 0 (underflow)              -inf           bound[i]
+       0 < i < bound_size()            bound[i-1]     bound[i]
+       i == bound_size() (overflow)    bound[i-1]     +inf
   """
 
   use GoogleApi.Gax.ModelBase

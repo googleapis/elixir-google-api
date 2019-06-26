@@ -21,8 +21,8 @@ defmodule GoogleApi.ServiceControl.V1.Model.ReportError do
 
   ## Attributes
 
-  - operationId (String.t): The Operation.operation_id value from the request. Defaults to `nil`.
-  - status (GoogleApi.ServiceControl.V1.Model.Status.t): Details of the error when processing the Operation. Defaults to `nil`.
+  *   `operationId` (*type:* `String.t`, *default:* `nil`) - The Operation.operation_id value from the request.
+  *   `status` (*type:* `GoogleApi.ServiceControl.V1.Model.Status.t`, *default:* `nil`) - Details of the error when processing the Operation.
   """
 
   use GoogleApi.Gax.ModelBase

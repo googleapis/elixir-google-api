@@ -21,16 +21,16 @@ defmodule GoogleApi.ServiceControl.V1.Model.LinearBuckets do
 
   ## Attributes
 
-  - numFiniteBuckets (integer()): The number of finite buckets. With the underflow and overflow buckets,
-  the total number of buckets is `num_finite_buckets` + 2.
-  See comments on `bucket_options` for details. Defaults to `nil`.
-  - offset (float()): The i'th linear bucket covers the interval
-  [offset + (i-1) * width, offset + i * width)
-  where i ranges from 1 to num_finite_buckets, inclusive. Defaults to `nil`.
-  - width (float()): The i'th linear bucket covers the interval
-  [offset + (i-1) * width, offset + i * width)
-  where i ranges from 1 to num_finite_buckets, inclusive.
-  Must be strictly positive. Defaults to `nil`.
+  *   `numFiniteBuckets` (*type:* `integer()`, *default:* `nil`) - The number of finite buckets. With the underflow and overflow buckets,
+      the total number of buckets is `num_finite_buckets` + 2.
+      See comments on `bucket_options` for details.
+  *   `offset` (*type:* `float()`, *default:* `nil`) - The i'th linear bucket covers the interval
+        [offset + (i-1) * width, offset + i * width)
+      where i ranges from 1 to num_finite_buckets, inclusive.
+  *   `width` (*type:* `float()`, *default:* `nil`) - The i'th linear bucket covers the interval
+        [offset + (i-1) * width, offset + i * width)
+      where i ranges from 1 to num_finite_buckets, inclusive.
+      Must be strictly positive.
   """
 
   use GoogleApi.Gax.ModelBase

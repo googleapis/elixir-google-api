@@ -21,7 +21,7 @@ defmodule GoogleApi.ServiceControl.V1.Model.ThirdPartyPrincipal do
 
   ## Attributes
 
-  - thirdPartyClaims (map()): Metadata about third party identity. Defaults to `nil`.
+  *   `thirdPartyClaims` (*type:* `map()`, *default:* `nil`) - Metadata about third party identity.
   """
 
   use GoogleApi.Gax.ModelBase

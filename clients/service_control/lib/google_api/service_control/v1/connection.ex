@@ -20,6 +20,8 @@ defmodule GoogleApi.ServiceControl.V1.Connection do
   Handle Tesla connections for GoogleApi.ServiceControl.V1.
   """
 
+  @type t :: Tesla.Env.client()
+
   use GoogleApi.Gax.Connection,
     scopes: [
       # View and manage your data across Google Cloud Platform services
@@ -28,6 +30,6 @@ defmodule GoogleApi.ServiceControl.V1.Connection do
       # Manage your Google Service Control data
       "https://www.googleapis.com/auth/servicecontrol"
     ],
-    otp_app: :google_api_servicecontrol,
+    otp_app: :google_api_service_control,
     base_url: "https://servicecontrol.googleapis.com/"
 end

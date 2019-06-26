@@ -21,10 +21,10 @@ defmodule GoogleApi.ServiceControl.V1.Model.FirstPartyPrincipal do
 
   ## Attributes
 
-  - principalEmail (String.t): The email address of a Google account.
-  . Defaults to `nil`.
-  - serviceMetadata (map()): Metadata about the service that uses the service account.
-  . Defaults to `nil`.
+  *   `principalEmail` (*type:* `String.t`, *default:* `nil`) - The email address of a Google account.
+      .
+  *   `serviceMetadata` (*type:* `map()`, *default:* `nil`) - Metadata about the service that uses the service account.
+      .
   """
 
   use GoogleApi.Gax.ModelBase

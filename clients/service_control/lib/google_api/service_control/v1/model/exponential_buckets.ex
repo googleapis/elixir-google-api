@@ -21,17 +21,17 @@ defmodule GoogleApi.ServiceControl.V1.Model.ExponentialBuckets do
 
   ## Attributes
 
-  - growthFactor (float()): The i'th exponential bucket covers the interval
-  [scale * growth_factor^(i-1), scale * growth_factor^i)
-  where i ranges from 1 to num_finite_buckets inclusive.
-  Must be larger than 1.0. Defaults to `nil`.
-  - numFiniteBuckets (integer()): The number of finite buckets. With the underflow and overflow buckets,
-  the total number of buckets is `num_finite_buckets` + 2.
-  See comments on `bucket_options` for details. Defaults to `nil`.
-  - scale (float()): The i'th exponential bucket covers the interval
-  [scale * growth_factor^(i-1), scale * growth_factor^i)
-  where i ranges from 1 to num_finite_buckets inclusive.
-  Must be > 0. Defaults to `nil`.
+  *   `growthFactor` (*type:* `float()`, *default:* `nil`) - The i'th exponential bucket covers the interval
+        [scale * growth_factor^(i-1), scale * growth_factor^i)
+      where i ranges from 1 to num_finite_buckets inclusive.
+      Must be larger than 1.0.
+  *   `numFiniteBuckets` (*type:* `integer()`, *default:* `nil`) - The number of finite buckets. With the underflow and overflow buckets,
+      the total number of buckets is `num_finite_buckets` + 2.
+      See comments on `bucket_options` for details.
+  *   `scale` (*type:* `float()`, *default:* `nil`) - The i'th exponential bucket covers the interval
+        [scale * growth_factor^(i-1), scale * growth_factor^i)
+      where i ranges from 1 to num_finite_buckets inclusive.
+      Must be > 0.
   """
 
   use GoogleApi.Gax.ModelBase

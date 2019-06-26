@@ -21,10 +21,10 @@ defmodule GoogleApi.ServiceControl.V1.Model.AllocateQuotaRequest do
 
   ## Attributes
 
-  - allocateOperation (GoogleApi.ServiceControl.V1.Model.QuotaOperation.t): Operation that describes the quota allocation. Defaults to `nil`.
-  - serviceConfigId (String.t): Specifies which version of service configuration should be used to process
-  the request. If unspecified or no matching version can be found, the latest
-  one will be used. Defaults to `nil`.
+  *   `allocateOperation` (*type:* `GoogleApi.ServiceControl.V1.Model.QuotaOperation.t`, *default:* `nil`) - Operation that describes the quota allocation.
+  *   `serviceConfigId` (*type:* `String.t`, *default:* `nil`) - Specifies which version of service configuration should be used to process
+      the request. If unspecified or no matching version can be found, the latest
+      one will be used.
   """
 
   use GoogleApi.Gax.ModelBase

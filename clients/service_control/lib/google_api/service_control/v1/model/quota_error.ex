@@ -21,11 +21,11 @@ defmodule GoogleApi.ServiceControl.V1.Model.QuotaError do
 
   ## Attributes
 
-  - code (String.t): Error code. Defaults to `nil`.
-  - description (String.t): Free-form text that provides details on the cause of the error. Defaults to `nil`.
-  - subject (String.t): Subject to whom this error applies. See the specific enum for more details
-  on this field. For example, "clientip:<ip address of client>" or
-  "project:<Google developer project id>". Defaults to `nil`.
+  *   `code` (*type:* `String.t`, *default:* `nil`) - Error code.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Free-form text that provides details on the cause of the error.
+  *   `subject` (*type:* `String.t`, *default:* `nil`) - Subject to whom this error applies. See the specific enum for more details
+      on this field. For example, "clientip:<ip address of client>" or
+      "project:<Google developer project id>".
   """
 
   use GoogleApi.Gax.ModelBase

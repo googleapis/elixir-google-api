@@ -21,30 +21,30 @@ defmodule GoogleApi.ServiceControl.V1.Model.LogEntry do
 
   ## Attributes
 
-  - httpRequest (GoogleApi.ServiceControl.V1.Model.HttpRequest.t): Optional. Information about the HTTP request associated with this
-  log entry, if applicable. Defaults to `nil`.
-  - insertId (String.t): A unique ID for the log entry used for deduplication. If omitted,
-  the implementation will generate one based on operation_id. Defaults to `nil`.
-  - labels (map()): A set of user-defined (key, value) data that provides additional
-  information about the log entry. Defaults to `nil`.
-  - name (String.t): Required. The log to which this log entry belongs. Examples: `"syslog"`,
-  `"book_log"`. Defaults to `nil`.
-  - operation (GoogleApi.ServiceControl.V1.Model.LogEntryOperation.t): Optional. Information about an operation associated with the log entry, if
-  applicable. Defaults to `nil`.
-  - protoPayload (map()): The log entry payload, represented as a protocol buffer that is
-  expressed as a JSON object. The only accepted type currently is
-  AuditLog. Defaults to `nil`.
-  - severity (String.t): The severity of the log entry. The default value is
-  `LogSeverity.DEFAULT`. Defaults to `nil`.
-  - structPayload (map()): The log entry payload, represented as a structure that
-  is expressed as a JSON object. Defaults to `nil`.
-  - textPayload (String.t): The log entry payload, represented as a Unicode string (UTF-8). Defaults to `nil`.
-  - timestamp (DateTime.t): The time the event described by the log entry occurred. If
-  omitted, defaults to operation start time. Defaults to `nil`.
-  - trace (String.t): Optional. Resource name of the trace associated with the log entry, if any.
-  If this field contains a relative resource name, you can assume the name is
-  relative to `//tracing.googleapis.com`. Example:
-  `projects/my-projectid/traces/06796866738c859f2f19b7cfb3214824` Defaults to `nil`.
+  *   `httpRequest` (*type:* `GoogleApi.ServiceControl.V1.Model.HttpRequest.t`, *default:* `nil`) - Optional. Information about the HTTP request associated with this
+      log entry, if applicable.
+  *   `insertId` (*type:* `String.t`, *default:* `nil`) - A unique ID for the log entry used for deduplication. If omitted,
+      the implementation will generate one based on operation_id.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - A set of user-defined (key, value) data that provides additional
+      information about the log entry.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The log to which this log entry belongs. Examples: `"syslog"`,
+      `"book_log"`.
+  *   `operation` (*type:* `GoogleApi.ServiceControl.V1.Model.LogEntryOperation.t`, *default:* `nil`) - Optional. Information about an operation associated with the log entry, if
+      applicable.
+  *   `protoPayload` (*type:* `map()`, *default:* `nil`) - The log entry payload, represented as a protocol buffer that is
+      expressed as a JSON object. The only accepted type currently is
+      AuditLog.
+  *   `severity` (*type:* `String.t`, *default:* `nil`) - The severity of the log entry. The default value is
+      `LogSeverity.DEFAULT`.
+  *   `structPayload` (*type:* `map()`, *default:* `nil`) - The log entry payload, represented as a structure that
+      is expressed as a JSON object.
+  *   `textPayload` (*type:* `String.t`, *default:* `nil`) - The log entry payload, represented as a Unicode string (UTF-8).
+  *   `timestamp` (*type:* `DateTime.t`, *default:* `nil`) - The time the event described by the log entry occurred. If
+      omitted, defaults to operation start time.
+  *   `trace` (*type:* `String.t`, *default:* `nil`) - Optional. Resource name of the trace associated with the log entry, if any.
+      If this field contains a relative resource name, you can assume the name is
+      relative to `//tracing.googleapis.com`. Example:
+      `projects/my-projectid/traces/06796866738c859f2f19b7cfb3214824`
   """
 
   use GoogleApi.Gax.ModelBase
