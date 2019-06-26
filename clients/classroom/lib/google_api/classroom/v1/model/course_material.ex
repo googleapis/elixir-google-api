@@ -21,10 +21,10 @@ defmodule GoogleApi.Classroom.V1.Model.CourseMaterial do
 
   ## Attributes
 
-  - driveFile (GoogleApi.Classroom.V1.Model.DriveFile.t): Google Drive file attachment. Defaults to `nil`.
-  - form (GoogleApi.Classroom.V1.Model.Form.t): Google Forms attachment. Defaults to `nil`.
-  - link (GoogleApi.Classroom.V1.Model.Link.t): Link atatchment. Defaults to `nil`.
-  - youTubeVideo (GoogleApi.Classroom.V1.Model.YouTubeVideo.t): Youtube video attachment. Defaults to `nil`.
+  *   `driveFile` (*type:* `GoogleApi.Classroom.V1.Model.DriveFile.t`, *default:* `nil`) - Google Drive file attachment.
+  *   `form` (*type:* `GoogleApi.Classroom.V1.Model.Form.t`, *default:* `nil`) - Google Forms attachment.
+  *   `link` (*type:* `GoogleApi.Classroom.V1.Model.Link.t`, *default:* `nil`) - Link atatchment.
+  *   `youTubeVideo` (*type:* `GoogleApi.Classroom.V1.Model.YouTubeVideo.t`, *default:* `nil`) - Youtube video attachment.
   """
 
   use GoogleApi.Gax.ModelBase

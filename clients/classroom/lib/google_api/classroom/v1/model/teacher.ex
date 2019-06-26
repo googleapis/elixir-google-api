@@ -21,20 +21,20 @@ defmodule GoogleApi.Classroom.V1.Model.Teacher do
 
   ## Attributes
 
-  - courseId (String.t): Identifier of the course.
+  *   `courseId` (*type:* `String.t`, *default:* `nil`) - Identifier of the course.
 
-  Read-only. Defaults to `nil`.
-  - profile (GoogleApi.Classroom.V1.Model.UserProfile.t): Global user information for the teacher.
+      Read-only.
+  *   `profile` (*type:* `GoogleApi.Classroom.V1.Model.UserProfile.t`, *default:* `nil`) - Global user information for the teacher.
 
-  Read-only. Defaults to `nil`.
-  - userId (String.t): Identifier of the user.
+      Read-only.
+  *   `userId` (*type:* `String.t`, *default:* `nil`) - Identifier of the user.
 
-  When specified as a parameter of a request, this identifier can be one of
-  the following:
+      When specified as a parameter of a request, this identifier can be one of
+      the following:
 
-  * the numeric identifier for the user
-  * the email address of the user
-  * the string literal `"me"`, indicating the requesting user Defaults to `nil`.
+      * the numeric identifier for the user
+      * the email address of the user
+      * the string literal `"me"`, indicating the requesting user
   """
 
   use GoogleApi.Gax.ModelBase

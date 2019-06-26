@@ -23,12 +23,12 @@ defmodule GoogleApi.Classroom.V1.Model.TimeOfDay do
 
   ## Attributes
 
-  - hours (integer()): Hours of day in 24 hour format. Should be from 0 to 23. An API may choose
-  to allow the value "24:00:00" for scenarios like business closing time. Defaults to `nil`.
-  - minutes (integer()): Minutes of hour of day. Must be from 0 to 59. Defaults to `nil`.
-  - nanos (integer()): Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999. Defaults to `nil`.
-  - seconds (integer()): Seconds of minutes of the time. Must normally be from 0 to 59. An API may
-  allow the value 60 if it allows leap-seconds. Defaults to `nil`.
+  *   `hours` (*type:* `integer()`, *default:* `nil`) - Hours of day in 24 hour format. Should be from 0 to 23. An API may choose
+      to allow the value "24:00:00" for scenarios like business closing time.
+  *   `minutes` (*type:* `integer()`, *default:* `nil`) - Minutes of hour of day. Must be from 0 to 59.
+  *   `nanos` (*type:* `integer()`, *default:* `nil`) - Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999.
+  *   `seconds` (*type:* `integer()`, *default:* `nil`) - Seconds of minutes of the time. Must normally be from 0 to 59. An API may
+      allow the value 60 if it allows leap-seconds.
   """
 
   use GoogleApi.Gax.ModelBase

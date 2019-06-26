@@ -26,65 +26,65 @@ defmodule GoogleApi.Classroom.V1.Model.StudentSubmission do
 
   ## Attributes
 
-  - alternateLink (String.t): Absolute link to the submission in the Classroom web UI.
+  *   `alternateLink` (*type:* `String.t`, *default:* `nil`) - Absolute link to the submission in the Classroom web UI.
 
-  Read-only. Defaults to `nil`.
-  - assignedGrade (float()): Optional grade. If unset, no grade was set.
-  This value must be non-negative. Decimal (i.e. non-integer) values are
-  allowed, but will be rounded to two decimal places.
+      Read-only.
+  *   `assignedGrade` (*type:* `float()`, *default:* `nil`) - Optional grade. If unset, no grade was set.
+      This value must be non-negative. Decimal (i.e. non-integer) values are
+      allowed, but will be rounded to two decimal places.
 
-  This may be modified only by course teachers. Defaults to `nil`.
-  - assignmentSubmission (GoogleApi.Classroom.V1.Model.AssignmentSubmission.t): Submission content when course_work_type is ASSIGNMENT.
+      This may be modified only by course teachers.
+  *   `assignmentSubmission` (*type:* `GoogleApi.Classroom.V1.Model.AssignmentSubmission.t`, *default:* `nil`) - Submission content when course_work_type is ASSIGNMENT.
 
-  Students can modify this content using
-  google.classroom.Work.ModifyAttachments. Defaults to `nil`.
-  - associatedWithDeveloper (boolean()): Whether this student submission is associated with the Developer Console
-  project making the request.
+      Students can modify this content using
+      google.classroom.Work.ModifyAttachments.
+  *   `associatedWithDeveloper` (*type:* `boolean()`, *default:* `nil`) - Whether this student submission is associated with the Developer Console
+      project making the request.
 
-  See google.classroom.Work.CreateCourseWork for more
-  details.
+      See google.classroom.Work.CreateCourseWork for more
+      details.
 
-  Read-only. Defaults to `nil`.
-  - courseId (String.t): Identifier of the course.
+      Read-only.
+  *   `courseId` (*type:* `String.t`, *default:* `nil`) - Identifier of the course.
 
-  Read-only. Defaults to `nil`.
-  - courseWorkId (String.t): Identifier for the course work this corresponds to.
+      Read-only.
+  *   `courseWorkId` (*type:* `String.t`, *default:* `nil`) - Identifier for the course work this corresponds to.
 
-  Read-only. Defaults to `nil`.
-  - courseWorkType (String.t): Type of course work this submission is for.
+      Read-only.
+  *   `courseWorkType` (*type:* `String.t`, *default:* `nil`) - Type of course work this submission is for.
 
-  Read-only. Defaults to `nil`.
-  - creationTime (DateTime.t): Creation time of this submission.
-  This may be unset if the student has not accessed this item.
+      Read-only.
+  *   `creationTime` (*type:* `DateTime.t`, *default:* `nil`) - Creation time of this submission.
+      This may be unset if the student has not accessed this item.
 
-  Read-only. Defaults to `nil`.
-  - draftGrade (float()): Optional pending grade. If unset, no grade was set.
-  This value must be non-negative. Decimal (i.e. non-integer) values are
-  allowed, but will be rounded to two decimal places.
+      Read-only.
+  *   `draftGrade` (*type:* `float()`, *default:* `nil`) - Optional pending grade. If unset, no grade was set.
+      This value must be non-negative. Decimal (i.e. non-integer) values are
+      allowed, but will be rounded to two decimal places.
 
-  This is only visible to and modifiable by course teachers. Defaults to `nil`.
-  - id (String.t): Classroom-assigned Identifier for the student submission.
-  This is unique among submissions for the relevant course work.
+      This is only visible to and modifiable by course teachers.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Classroom-assigned Identifier for the student submission.
+      This is unique among submissions for the relevant course work.
 
-  Read-only. Defaults to `nil`.
-  - late (boolean()): Whether this submission is late.
+      Read-only.
+  *   `late` (*type:* `boolean()`, *default:* `nil`) - Whether this submission is late.
 
-  Read-only. Defaults to `nil`.
-  - multipleChoiceSubmission (GoogleApi.Classroom.V1.Model.MultipleChoiceSubmission.t): Submission content when course_work_type is MULTIPLE_CHOICE_QUESTION. Defaults to `nil`.
-  - shortAnswerSubmission (GoogleApi.Classroom.V1.Model.ShortAnswerSubmission.t): Submission content when course_work_type is SHORT_ANSWER_QUESTION. Defaults to `nil`.
-  - state (String.t): State of this submission.
+      Read-only.
+  *   `multipleChoiceSubmission` (*type:* `GoogleApi.Classroom.V1.Model.MultipleChoiceSubmission.t`, *default:* `nil`) - Submission content when course_work_type is MULTIPLE_CHOICE_QUESTION.
+  *   `shortAnswerSubmission` (*type:* `GoogleApi.Classroom.V1.Model.ShortAnswerSubmission.t`, *default:* `nil`) - Submission content when course_work_type is SHORT_ANSWER_QUESTION.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - State of this submission.
 
-  Read-only. Defaults to `nil`.
-  - submissionHistory (list(GoogleApi.Classroom.V1.Model.SubmissionHistory.t)): The history of the submission (includes state and grade histories).
+      Read-only.
+  *   `submissionHistory` (*type:* `list(GoogleApi.Classroom.V1.Model.SubmissionHistory.t)`, *default:* `nil`) - The history of the submission (includes state and grade histories).
 
-  Read-only. Defaults to `nil`.
-  - updateTime (DateTime.t): Last update time of this submission.
-  This may be unset if the student has not accessed this item.
+      Read-only.
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Last update time of this submission.
+      This may be unset if the student has not accessed this item.
 
-  Read-only. Defaults to `nil`.
-  - userId (String.t): Identifier for the student that owns this submission.
+      Read-only.
+  *   `userId` (*type:* `String.t`, *default:* `nil`) - Identifier for the student that owns this submission.
 
-  Read-only. Defaults to `nil`.
+      Read-only.
   """
 
   use GoogleApi.Gax.ModelBase

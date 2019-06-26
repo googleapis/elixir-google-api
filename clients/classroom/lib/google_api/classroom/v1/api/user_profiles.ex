@@ -34,32 +34,33 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
 
   ## Parameters
 
-  - connection (GoogleApi.Classroom.V1.Connection): Connection to server
-  - user_id (String.t): Identifier of the profile to return. The identifier can be one of the
-  following:
+  *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
+  *   `user_id` (*type:* `String.t`) - Identifier of the profile to return. The identifier can be one of the
+      following:
 
-  * the numeric identifier for the user
-  * the email address of the user
-  * the string literal `"me"`, indicating the requesting user
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+      * the numeric identifier for the user
+      * the email address of the user
+      * the string literal `"me"`, indicating the requesting user
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Classroom.V1.Model.UserProfile{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Classroom.V1.Model.UserProfile{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec classroom_user_profiles_get(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec classroom_user_profiles_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Classroom.V1.Model.UserProfile.t()} | {:error, Tesla.Env.t()}
   def classroom_user_profiles_get(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -104,49 +105,51 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
   This method returns the following error codes:
 
   * `PERMISSION_DENIED` if the current user does not have permission to
-  manage guardians, if the guardian in question has already rejected
-  too many requests for that student, if guardians are not enabled for the
-  domain in question, or for other access errors.
+    manage guardians, if the guardian in question has already rejected
+    too many requests for that student, if guardians are not enabled for the
+    domain in question, or for other access errors.
   * `RESOURCE_EXHAUSTED` if the student or guardian has exceeded the guardian
-  link limit.
+    link limit.
   * `INVALID_ARGUMENT` if the guardian email address is not valid (for
-  example, if it is too long), or if the format of the student ID provided
-  cannot be recognized (it is not an email address, nor a `user_id` from
-  this API). This error will also be returned if read-only fields are set,
-  or if the `state` field is set to to a value other than `PENDING`.
+    example, if it is too long), or if the format of the student ID provided
+    cannot be recognized (it is not an email address, nor a `user_id` from
+    this API). This error will also be returned if read-only fields are set,
+    or if the `state` field is set to to a value other than `PENDING`.
   * `NOT_FOUND` if the student ID provided is a valid student ID, but
-  Classroom has no record of that student.
+    Classroom has no record of that student.
   * `ALREADY_EXISTS` if there is already a pending guardian invitation for
-  the student and `invited_email_address` provided, or if the provided
-  `invited_email_address` matches the Google account of an existing
-  `Guardian` for this user.
+    the student and `invited_email_address` provided, or if the provided
+    `invited_email_address` matches the Google account of an existing
+    `Guardian` for this user.
 
   ## Parameters
 
-  - connection (GoogleApi.Classroom.V1.Connection): Connection to server
-  - student_id (String.t): ID of the student (in standard format)
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.Classroom.V1.Model.GuardianInvitation.t): 
+  *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
+  *   `student_id` (*type:* `String.t`) - ID of the student (in standard format)
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Classroom.V1.Model.GuardianInvitation.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Classroom.V1.Model.GuardianInvitation{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Classroom.V1.Model.GuardianInvitation{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec classroom_user_profiles_guardian_invitations_create(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Classroom.V1.Model.GuardianInvitation.t()} | {:error, Tesla.Env.t()}
   def classroom_user_profiles_guardian_invitations_create(
@@ -189,43 +192,45 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
   This method returns the following error codes:
 
   * `PERMISSION_DENIED` if the requesting user is not permitted to view
-  guardian invitations for the student identified by the `student_id`, if
-  guardians are not enabled for the domain in question, or for other
-  access errors.
+    guardian invitations for the student identified by the `student_id`, if
+    guardians are not enabled for the domain in question, or for other
+    access errors.
   * `INVALID_ARGUMENT` if a `student_id` is specified, but its format cannot
-  be recognized (it is not an email address, nor a `student_id` from the
-  API, nor the literal string `me`).
+    be recognized (it is not an email address, nor a `student_id` from the
+    API, nor the literal string `me`).
   * `NOT_FOUND` if Classroom cannot find any record of the given student or
-  `invitation_id`. May also be returned if the student exists, but the
-  requesting user does not have access to see that student.
+    `invitation_id`. May also be returned if the student exists, but the
+    requesting user does not have access to see that student.
 
   ## Parameters
 
-  - connection (GoogleApi.Classroom.V1.Connection): Connection to server
-  - student_id (String.t): The ID of the student whose guardian invitation is being requested.
-  - invitation_id (String.t): The `id` field of the `GuardianInvitation` being requested.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
+  *   `student_id` (*type:* `String.t`) - The ID of the student whose guardian invitation is being requested.
+  *   `invitation_id` (*type:* `String.t`) - The `id` field of the `GuardianInvitation` being requested.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Classroom.V1.Model.GuardianInvitation{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Classroom.V1.Model.GuardianInvitation{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec classroom_user_profiles_guardian_invitations_get(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Classroom.V1.Model.GuardianInvitation.t()} | {:error, Tesla.Env.t()}
   def classroom_user_profiles_guardian_invitations_get(
@@ -270,65 +275,67 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
   This method returns the following error codes:
 
   * `PERMISSION_DENIED` if a `student_id` is specified, and the requesting
-  user is not permitted to view guardian invitations for that student, if
-  `"-"` is specified as the `student_id` and the user is not a domain
-  administrator, if guardians are not enabled for the domain in question,
-  or for other access errors.
+    user is not permitted to view guardian invitations for that student, if
+    `"-"` is specified as the `student_id` and the user is not a domain
+    administrator, if guardians are not enabled for the domain in question,
+    or for other access errors.
   * `INVALID_ARGUMENT` if a `student_id` is specified, but its format cannot
-  be recognized (it is not an email address, nor a `student_id` from the
-  API, nor the literal string `me`). May also be returned if an invalid
-  `page_token` or `state` is provided.
+    be recognized (it is not an email address, nor a `student_id` from the
+    API, nor the literal string `me`). May also be returned if an invalid
+    `page_token` or `state` is provided.
   * `NOT_FOUND` if a `student_id` is specified, and its format can be
-  recognized, but Classroom has no record of that student.
+    recognized, but Classroom has no record of that student.
 
   ## Parameters
 
-  - connection (GoogleApi.Classroom.V1.Connection): Connection to server
-  - student_id (String.t): The ID of the student whose guardian invitations are to be returned.
-  The identifier can be one of the following:
+  *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
+  *   `student_id` (*type:* `String.t`) - The ID of the student whose guardian invitations are to be returned.
+      The identifier can be one of the following:
 
-  * the numeric identifier for the user
-  * the email address of the user
-  * the string literal `"me"`, indicating the requesting user
-  * the string literal `"-"`, indicating that results should be returned for
-  all students that the requesting user is permitted to view guardian
-  invitations.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :invitedEmailAddress (String.t): If specified, only results with the specified `invited_email_address`
-  will be returned.
-    - :pageSize (integer()): Maximum number of items to return. Zero or unspecified indicates that the
-  server may assign a maximum.
+      * the numeric identifier for the user
+      * the email address of the user
+      * the string literal `"me"`, indicating the requesting user
+      * the string literal `"-"`, indicating that results should be returned for
+        all students that the requesting user is permitted to view guardian
+        invitations.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:invitedEmailAddress` (*type:* `String.t`) - If specified, only results with the specified `invited_email_address`
+          will be returned.
+      *   `:pageSize` (*type:* `integer()`) - Maximum number of items to return. Zero or unspecified indicates that the
+          server may assign a maximum.
 
-  The server may return fewer than the specified number of results.
-    - :pageToken (String.t): nextPageToken
-  value returned from a previous
-  list call,
-  indicating that the subsequent page of results should be returned.
+          The server may return fewer than the specified number of results.
+      *   `:pageToken` (*type:* `String.t`) - nextPageToken
+          value returned from a previous
+          list call,
+          indicating that the subsequent page of results should be returned.
 
-  The list request
-  must be otherwise identical to the one that resulted in this token.
-    - :states (list(String.t)): If specified, only results with the specified `state` values will be
-  returned. Otherwise, results with a `state` of `PENDING` will be returned.
+          The list request
+          must be otherwise identical to the one that resulted in this token.
+      *   `:states` (*type:* `list(String.t)`) - If specified, only results with the specified `state` values will be
+          returned. Otherwise, results with a `state` of `PENDING` will be returned.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Classroom.V1.Model.ListGuardianInvitationsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Classroom.V1.Model.ListGuardianInvitationsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec classroom_user_profiles_guardian_invitations_list(
           Tesla.Env.client(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.Classroom.V1.Model.ListGuardianInvitationsResponse.t()}
@@ -381,54 +388,56 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
   This method returns the following error codes:
 
   * `PERMISSION_DENIED` if the current user does not have permission to
-  manage guardians, if guardians are not enabled for the domain in question
-  or for other access errors.
+    manage guardians, if guardians are not enabled for the domain in question
+    or for other access errors.
   * `FAILED_PRECONDITION` if the guardian link is not in the `PENDING` state.
   * `INVALID_ARGUMENT` if the format of the student ID provided
-  cannot be recognized (it is not an email address, nor a `user_id` from
-  this API), or if the passed `GuardianInvitation` has a `state` other than
-  `COMPLETE`, or if it modifies fields other than `state`.
+    cannot be recognized (it is not an email address, nor a `user_id` from
+    this API), or if the passed `GuardianInvitation` has a `state` other than
+    `COMPLETE`, or if it modifies fields other than `state`.
   * `NOT_FOUND` if the student ID provided is a valid student ID, but
-  Classroom has no record of that student, or if the `id` field does not
-  refer to a guardian invitation known to Classroom.
+    Classroom has no record of that student, or if the `id` field does not
+    refer to a guardian invitation known to Classroom.
 
   ## Parameters
 
-  - connection (GoogleApi.Classroom.V1.Connection): Connection to server
-  - student_id (String.t): The ID of the student whose guardian invitation is to be modified.
-  - invitation_id (String.t): The `id` field of the `GuardianInvitation` to be modified.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :updateMask (String.t): Mask that identifies which fields on the course to update.
-  This field is required to do an update. The update will fail if invalid
-  fields are specified. The following fields are valid:
+  *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
+  *   `student_id` (*type:* `String.t`) - The ID of the student whose guardian invitation is to be modified.
+  *   `invitation_id` (*type:* `String.t`) - The `id` field of the `GuardianInvitation` to be modified.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:updateMask` (*type:* `String.t`) - Mask that identifies which fields on the course to update.
+          This field is required to do an update. The update will fail if invalid
+          fields are specified. The following fields are valid:
 
-  * `state`
+          * `state`
 
-  When set in a query parameter, this field should be specified as
+          When set in a query parameter, this field should be specified as
 
-  `updateMask=<field1>,<field2>,...`
-    - :body (GoogleApi.Classroom.V1.Model.GuardianInvitation.t): 
+          `updateMask=<field1>,<field2>,...`
+      *   `:body` (*type:* `GoogleApi.Classroom.V1.Model.GuardianInvitation.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Classroom.V1.Model.GuardianInvitation{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Classroom.V1.Model.GuardianInvitation{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec classroom_user_profiles_guardian_invitations_patch(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Classroom.V1.Model.GuardianInvitation.t()} | {:error, Tesla.Env.t()}
   def classroom_user_profiles_guardian_invitations_patch(
@@ -477,48 +486,50 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
   This method returns the following error codes:
 
   * `PERMISSION_DENIED` if no user that matches the provided `student_id`
-  is visible to the requesting user, if the requesting user is not
-  permitted to manage guardians for the student identified by the
-  `student_id`, if guardians are not enabled for the domain in question,
-  or for other access errors.
+    is visible to the requesting user, if the requesting user is not
+    permitted to manage guardians for the student identified by the
+    `student_id`, if guardians are not enabled for the domain in question,
+    or for other access errors.
   * `INVALID_ARGUMENT` if a `student_id` is specified, but its format cannot
-  be recognized (it is not an email address, nor a `student_id` from the
-  API).
+    be recognized (it is not an email address, nor a `student_id` from the
+    API).
   * `NOT_FOUND` if the requesting user is permitted to modify guardians for
-  the requested `student_id`, but no `Guardian` record exists for that
-  student with the provided `guardian_id`.
+    the requested `student_id`, but no `Guardian` record exists for that
+    student with the provided `guardian_id`.
 
   ## Parameters
 
-  - connection (GoogleApi.Classroom.V1.Connection): Connection to server
-  - student_id (String.t): The student whose guardian is to be deleted. One of the following:
+  *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
+  *   `student_id` (*type:* `String.t`) - The student whose guardian is to be deleted. One of the following:
 
-  * the numeric identifier for the user
-  * the email address of the user
-  * the string literal `"me"`, indicating the requesting user
-  - guardian_id (String.t): The `id` field from a `Guardian`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+      * the numeric identifier for the user
+      * the email address of the user
+      * the string literal `"me"`, indicating the requesting user
+  *   `guardian_id` (*type:* `String.t`) - The `id` field from a `Guardian`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Classroom.V1.Model.Empty{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Classroom.V1.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec classroom_user_profiles_guardians_delete(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Classroom.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
   def classroom_user_profiles_guardians_delete(
@@ -562,48 +573,50 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
   This method returns the following error codes:
 
   * `PERMISSION_DENIED` if no user that matches the provided `student_id`
-  is visible to the requesting user, if the requesting user is not
-  permitted to view guardian information for the student identified by the
-  `student_id`, if guardians are not enabled for the domain in question,
-  or for other access errors.
+    is visible to the requesting user, if the requesting user is not
+    permitted to view guardian information for the student identified by the
+    `student_id`, if guardians are not enabled for the domain in question,
+    or for other access errors.
   * `INVALID_ARGUMENT` if a `student_id` is specified, but its format cannot
-  be recognized (it is not an email address, nor a `student_id` from the
-  API, nor the literal string `me`).
+    be recognized (it is not an email address, nor a `student_id` from the
+    API, nor the literal string `me`).
   * `NOT_FOUND` if the requesting user is permitted to view guardians for
-  the requested `student_id`, but no `Guardian` record exists for that
-  student that matches the provided `guardian_id`.
+    the requested `student_id`, but no `Guardian` record exists for that
+    student that matches the provided `guardian_id`.
 
   ## Parameters
 
-  - connection (GoogleApi.Classroom.V1.Connection): Connection to server
-  - student_id (String.t): The student whose guardian is being requested. One of the following:
+  *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
+  *   `student_id` (*type:* `String.t`) - The student whose guardian is being requested. One of the following:
 
-  * the numeric identifier for the user
-  * the email address of the user
-  * the string literal `"me"`, indicating the requesting user
-  - guardian_id (String.t): The `id` field from a `Guardian`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+      * the numeric identifier for the user
+      * the email address of the user
+      * the string literal `"me"`, indicating the requesting user
+  *   `guardian_id` (*type:* `String.t`) - The `id` field from a `Guardian`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Classroom.V1.Model.Guardian{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Classroom.V1.Model.Guardian{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec classroom_user_profiles_guardians_get(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Classroom.V1.Model.Guardian.t()} | {:error, Tesla.Env.t()}
   def classroom_user_profiles_guardians_get(
@@ -651,62 +664,68 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
   This method returns the following error codes:
 
   * `PERMISSION_DENIED` if a `student_id` is specified, and the requesting
-  user is not permitted to view guardian information for that student, if
-  `"-"` is specified as the `student_id` and the user is not a domain
-  administrator, if guardians are not enabled for the domain in question,
-  if the `invited_email_address` filter is set by a user who is not a
-  domain administrator, or for other access errors.
+    user is not permitted to view guardian information for that student, if
+    `"-"` is specified as the `student_id` and the user is not a domain
+    administrator, if guardians are not enabled for the domain in question,
+    if the `invited_email_address` filter is set by a user who is not a
+    domain administrator, or for other access errors.
   * `INVALID_ARGUMENT` if a `student_id` is specified, but its format cannot
-  be recognized (it is not an email address, nor a `student_id` from the
-  API, nor the literal string `me`). May also be returned if an invalid
-  `page_token` is provided.
+    be recognized (it is not an email address, nor a `student_id` from the
+    API, nor the literal string `me`). May also be returned if an invalid
+    `page_token` is provided.
   * `NOT_FOUND` if a `student_id` is specified, and its format can be
-  recognized, but Classroom has no record of that student.
+    recognized, but Classroom has no record of that student.
 
   ## Parameters
 
-  - connection (GoogleApi.Classroom.V1.Connection): Connection to server
-  - student_id (String.t): Filter results by the student who the guardian is linked to.
-  The identifier can be one of the following:
+  *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
+  *   `student_id` (*type:* `String.t`) - Filter results by the student who the guardian is linked to.
+      The identifier can be one of the following:
 
-  * the numeric identifier for the user
-  * the email address of the user
-  * the string literal `"me"`, indicating the requesting user
-  * the string literal `"-"`, indicating that results should be returned for
-  all students that the requesting user has access to view.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :invitedEmailAddress (String.t): Filter results by the email address that the original invitation was sent
-  to, resulting in this guardian link.
-  This filter can only be used by domain administrators.
-    - :pageSize (integer()): Maximum number of items to return. Zero or unspecified indicates that the
-  server may assign a maximum.
+      * the numeric identifier for the user
+      * the email address of the user
+      * the string literal `"me"`, indicating the requesting user
+      * the string literal `"-"`, indicating that results should be returned for
+        all students that the requesting user has access to view.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:invitedEmailAddress` (*type:* `String.t`) - Filter results by the email address that the original invitation was sent
+          to, resulting in this guardian link.
+          This filter can only be used by domain administrators.
+      *   `:pageSize` (*type:* `integer()`) - Maximum number of items to return. Zero or unspecified indicates that the
+          server may assign a maximum.
 
-  The server may return fewer than the specified number of results.
-    - :pageToken (String.t): nextPageToken
-  value returned from a previous
-  list call,
-  indicating that the subsequent page of results should be returned.
+          The server may return fewer than the specified number of results.
+      *   `:pageToken` (*type:* `String.t`) - nextPageToken
+          value returned from a previous
+          list call,
+          indicating that the subsequent page of results should be returned.
 
-  The list request
-  must be otherwise identical to the one that resulted in this token.
+          The list request
+          must be otherwise identical to the one that resulted in this token.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Classroom.V1.Model.ListGuardiansResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Classroom.V1.Model.ListGuardiansResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec classroom_user_profiles_guardians_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec classroom_user_profiles_guardians_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.Classroom.V1.Model.ListGuardiansResponse.t()} | {:error, Tesla.Env.t()}
   def classroom_user_profiles_guardians_list(
         connection,

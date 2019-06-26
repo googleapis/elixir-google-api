@@ -41,44 +41,45 @@ defmodule GoogleApi.Classroom.V1.Api.Registrations do
   This method may return the following error codes:
 
   * `PERMISSION_DENIED` if:
-    * the authenticated user does not have permission to receive
-      notifications from the requested field; or
-    * the credential provided does not include the appropriate scope for
-      the requested feed.
-    * another access error is encountered.
+      * the authenticated user does not have permission to receive
+        notifications from the requested field; or
+      * the credential provided does not include the appropriate scope for
+        the requested feed.
+      * another access error is encountered.
   * `INVALID_ARGUMENT` if:
-    * no `cloudPubsubTopic` is specified, or the specified
-      `cloudPubsubTopic` is not valid; or
-    * no `feed` is specified, or the specified `feed` is not valid.
+      * no `cloudPubsubTopic` is specified, or the specified
+        `cloudPubsubTopic` is not valid; or
+      * no `feed` is specified, or the specified `feed` is not valid.
   * `NOT_FOUND` if:
-    * the specified `feed` cannot be located, or the requesting user does
-      not have permission to determine whether or not it exists; or
-    * the specified `cloudPubsubTopic` cannot be located, or Classroom has
-      not been granted permission to publish to it.
+      * the specified `feed` cannot be located, or the requesting user does
+        not have permission to determine whether or not it exists; or
+      * the specified `cloudPubsubTopic` cannot be located, or Classroom has
+        not been granted permission to publish to it.
 
   ## Parameters
 
-  - connection (GoogleApi.Classroom.V1.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.Classroom.V1.Model.Registration.t): 
+  *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Classroom.V1.Model.Registration.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Classroom.V1.Model.Registration{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Classroom.V1.Model.Registration{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec classroom_registrations_create(Tesla.Env.client(), keyword()) ::
+  @spec classroom_registrations_create(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Classroom.V1.Model.Registration.t()} | {:error, Tesla.Env.t()}
   def classroom_registrations_create(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -113,27 +114,28 @@ defmodule GoogleApi.Classroom.V1.Api.Registrations do
 
   ## Parameters
 
-  - connection (GoogleApi.Classroom.V1.Connection): Connection to server
-  - registration_id (String.t): The `registration_id` of the `Registration` to be deleted.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
+  *   `registration_id` (*type:* `String.t`) - The `registration_id` of the `Registration` to be deleted.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Classroom.V1.Model.Empty{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Classroom.V1.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec classroom_registrations_delete(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec classroom_registrations_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Classroom.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
   def classroom_registrations_delete(
         connection,

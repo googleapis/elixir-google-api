@@ -21,7 +21,7 @@ defmodule GoogleApi.Classroom.V1.Model.MultipleChoiceSubmission do
 
   ## Attributes
 
-  - answer (String.t): Student's select choice. Defaults to `nil`.
+  *   `answer` (*type:* `String.t`, *default:* `nil`) - Student's select choice.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,9 +21,9 @@ defmodule GoogleApi.Classroom.V1.Model.ListGuardianInvitationsResponse do
 
   ## Attributes
 
-  - guardianInvitations (list(GoogleApi.Classroom.V1.Model.GuardianInvitation.t)): Guardian invitations that matched the list request. Defaults to `nil`.
-  - nextPageToken (String.t): Token identifying the next page of results to return. If empty, no further
-  results are available. Defaults to `nil`.
+  *   `guardianInvitations` (*type:* `list(GoogleApi.Classroom.V1.Model.GuardianInvitation.t)`, *default:* `nil`) - Guardian invitations that matched the list request.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token identifying the next page of results to return. If empty, no further
+      results are available.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,8 +21,8 @@ defmodule GoogleApi.Classroom.V1.Model.Assignment do
 
   ## Attributes
 
-  - studentWorkFolder (GoogleApi.Classroom.V1.Model.DriveFolder.t): Drive folder where attachments from student submissions are placed.
-  This is only populated for course teachers and administrators. Defaults to `nil`.
+  *   `studentWorkFolder` (*type:* `GoogleApi.Classroom.V1.Model.DriveFolder.t`, *default:* `nil`) - Drive folder where attachments from student submissions are placed.
+      This is only populated for course teachers and administrators.
   """
 
   use GoogleApi.Gax.ModelBase

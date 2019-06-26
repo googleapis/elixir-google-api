@@ -22,8 +22,8 @@ defmodule GoogleApi.Classroom.V1.Model.IndividualStudentsOptions do
 
   ## Attributes
 
-  - studentIds (list(String.t)): Identifiers for the students that have access to the
-  coursework/announcement. Defaults to `nil`.
+  *   `studentIds` (*type:* `list(String.t)`, *default:* `nil`) - Identifiers for the students that have access to the
+      coursework/announcement.
   """
 
   use GoogleApi.Gax.ModelBase

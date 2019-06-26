@@ -21,7 +21,7 @@ defmodule GoogleApi.Classroom.V1.Model.ShortAnswerSubmission do
 
   ## Attributes
 
-  - answer (String.t): Student response to a short-answer question. Defaults to `nil`.
+  *   `answer` (*type:* `String.t`, *default:* `nil`) - Student response to a short-answer question.
   """
 
   use GoogleApi.Gax.ModelBase

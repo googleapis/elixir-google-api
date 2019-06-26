@@ -22,16 +22,16 @@ defmodule GoogleApi.Classroom.V1.Model.GuardianInvitation do
 
   ## Attributes
 
-  - creationTime (DateTime.t): The time that this invitation was created.
+  *   `creationTime` (*type:* `DateTime.t`, *default:* `nil`) - The time that this invitation was created.
 
-  Read-only. Defaults to `nil`.
-  - invitationId (String.t): Unique identifier for this invitation.
+      Read-only.
+  *   `invitationId` (*type:* `String.t`, *default:* `nil`) - Unique identifier for this invitation.
 
-  Read-only. Defaults to `nil`.
-  - invitedEmailAddress (String.t): Email address that the invitation was sent to.
-  This field is only visible to domain administrators. Defaults to `nil`.
-  - state (String.t): The state that this invitation is in. Defaults to `nil`.
-  - studentId (String.t): ID of the student (in standard format) Defaults to `nil`.
+      Read-only.
+  *   `invitedEmailAddress` (*type:* `String.t`, *default:* `nil`) - Email address that the invitation was sent to.
+      This field is only visible to domain administrators.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - The state that this invitation is in.
+  *   `studentId` (*type:* `String.t`, *default:* `nil`) - ID of the student (in standard format)
   """
 
   use GoogleApi.Gax.ModelBase

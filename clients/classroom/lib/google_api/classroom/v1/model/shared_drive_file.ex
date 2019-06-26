@@ -21,8 +21,8 @@ defmodule GoogleApi.Classroom.V1.Model.SharedDriveFile do
 
   ## Attributes
 
-  - driveFile (GoogleApi.Classroom.V1.Model.DriveFile.t): Drive file details. Defaults to `nil`.
-  - shareMode (String.t): Mechanism by which students access the Drive item. Defaults to `nil`.
+  *   `driveFile` (*type:* `GoogleApi.Classroom.V1.Model.DriveFile.t`, *default:* `nil`) - Drive file details.
+  *   `shareMode` (*type:* `String.t`, *default:* `nil`) - Mechanism by which students access the Drive item.
   """
 
   use GoogleApi.Gax.ModelBase

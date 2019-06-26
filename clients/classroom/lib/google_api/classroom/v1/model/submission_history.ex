@@ -22,8 +22,8 @@ defmodule GoogleApi.Classroom.V1.Model.SubmissionHistory do
 
   ## Attributes
 
-  - gradeHistory (GoogleApi.Classroom.V1.Model.GradeHistory.t): The grade history information of the submission, if present. Defaults to `nil`.
-  - stateHistory (GoogleApi.Classroom.V1.Model.StateHistory.t): The state history information of the submission, if present. Defaults to `nil`.
+  *   `gradeHistory` (*type:* `GoogleApi.Classroom.V1.Model.GradeHistory.t`, *default:* `nil`) - The grade history information of the submission, if present.
+  *   `stateHistory` (*type:* `GoogleApi.Classroom.V1.Model.StateHistory.t`, *default:* `nil`) - The state history information of the submission, if present.
   """
 
   use GoogleApi.Gax.ModelBase

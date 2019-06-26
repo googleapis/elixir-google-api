@@ -30,13 +30,13 @@ defmodule GoogleApi.Classroom.V1.Model.Date do
 
   ## Attributes
 
-  - day (integer()): Day of month. Must be from 1 to 31 and valid for the year and month, or 0
-  if specifying a year by itself or a year and month where the day is not
-  significant. Defaults to `nil`.
-  - month (integer()): Month of year. Must be from 1 to 12, or 0 if specifying a year without a
-  month and day. Defaults to `nil`.
-  - year (integer()): Year of date. Must be from 1 to 9999, or 0 if specifying a date without
-  a year. Defaults to `nil`.
+  *   `day` (*type:* `integer()`, *default:* `nil`) - Day of month. Must be from 1 to 31 and valid for the year and month, or 0
+      if specifying a year by itself or a year and month where the day is not
+      significant.
+  *   `month` (*type:* `integer()`, *default:* `nil`) - Month of year. Must be from 1 to 12, or 0 if specifying a year without a
+      month and day.
+  *   `year` (*type:* `integer()`, *default:* `nil`) - Year of date. Must be from 1 to 9999, or 0 if specifying a date without
+      a year.
   """
 
   use GoogleApi.Gax.ModelBase

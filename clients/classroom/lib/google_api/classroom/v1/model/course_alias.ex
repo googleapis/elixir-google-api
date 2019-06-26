@@ -35,14 +35,14 @@ defmodule GoogleApi.Classroom.V1.Model.CourseAlias do
 
   ## Attributes
 
-  - alias (String.t): Alias string. The format of the string indicates the desired alias scoping.
+  *   `alias` (*type:* `String.t`, *default:* `nil`) - Alias string. The format of the string indicates the desired alias scoping.
 
-  * `d:<name>` indicates a domain-scoped alias.
-  Example: `d:math_101`
-  * `p:<name>` indicates a project-scoped alias.
-  Example: `p:abc123`
+      * `d:<name>` indicates a domain-scoped alias.
+        Example: `d:math_101`
+      * `p:<name>` indicates a project-scoped alias.
+        Example: `p:abc123`
 
-  This field has a maximum length of 256 characters. Defaults to `nil`.
+      This field has a maximum length of 256 characters.
   """
 
   use GoogleApi.Gax.ModelBase

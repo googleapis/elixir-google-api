@@ -21,9 +21,9 @@ defmodule GoogleApi.Classroom.V1.Model.StateHistory do
 
   ## Attributes
 
-  - actorUserId (String.t): The teacher or student who made the change Defaults to `nil`.
-  - state (String.t): The workflow pipeline stage. Defaults to `nil`.
-  - stateTimestamp (DateTime.t): When the submission entered this state. Defaults to `nil`.
+  *   `actorUserId` (*type:* `String.t`, *default:* `nil`) - The teacher or student who made the change
+  *   `state` (*type:* `String.t`, *default:* `nil`) - The workflow pipeline stage.
+  *   `stateTimestamp` (*type:* `DateTime.t`, *default:* `nil`) - When the submission entered this state.
   """
 
   use GoogleApi.Gax.ModelBase

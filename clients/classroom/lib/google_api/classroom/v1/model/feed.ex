@@ -22,11 +22,11 @@ defmodule GoogleApi.Classroom.V1.Model.Feed do
 
   ## Attributes
 
-  - courseRosterChangesInfo (GoogleApi.Classroom.V1.Model.CourseRosterChangesInfo.t): Information about a `Feed` with a `feed_type` of `COURSE_ROSTER_CHANGES`.
-  This field must be specified if `feed_type` is `COURSE_ROSTER_CHANGES`. Defaults to `nil`.
-  - courseWorkChangesInfo (GoogleApi.Classroom.V1.Model.CourseWorkChangesInfo.t): Information about a `Feed` with a `feed_type` of `COURSE_WORK_CHANGES`.
-  This field must be specified if `feed_type` is `COURSE_WORK_CHANGES`. Defaults to `nil`.
-  - feedType (String.t): The type of feed. Defaults to `nil`.
+  *   `courseRosterChangesInfo` (*type:* `GoogleApi.Classroom.V1.Model.CourseRosterChangesInfo.t`, *default:* `nil`) - Information about a `Feed` with a `feed_type` of `COURSE_ROSTER_CHANGES`.
+      This field must be specified if `feed_type` is `COURSE_ROSTER_CHANGES`.
+  *   `courseWorkChangesInfo` (*type:* `GoogleApi.Classroom.V1.Model.CourseWorkChangesInfo.t`, *default:* `nil`) - Information about a `Feed` with a `feed_type` of `COURSE_WORK_CHANGES`.
+      This field must be specified if `feed_type` is `COURSE_WORK_CHANGES`.
+  *   `feedType` (*type:* `String.t`, *default:* `nil`) - The type of feed.
   """
 
   use GoogleApi.Gax.ModelBase

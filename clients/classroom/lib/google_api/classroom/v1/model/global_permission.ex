@@ -21,7 +21,7 @@ defmodule GoogleApi.Classroom.V1.Model.GlobalPermission do
 
   ## Attributes
 
-  - permission (String.t): Permission value. Defaults to `nil`.
+  *   `permission` (*type:* `String.t`, *default:* `nil`) - Permission value.
   """
 
   use GoogleApi.Gax.ModelBase
