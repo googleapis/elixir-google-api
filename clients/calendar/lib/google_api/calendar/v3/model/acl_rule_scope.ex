@@ -21,12 +21,12 @@ defmodule GoogleApi.Calendar.V3.Model.AclRuleScope do
 
   ## Attributes
 
-  - type (String.t): The type of the scope. Possible values are:  
-  - "default" - The public scope. This is the default value. 
-  - "user" - Limits the scope to a single user. 
-  - "group" - Limits the scope to a group. 
-  - "domain" - Limits the scope to a domain.  Note: The permissions granted to the "default", or public, scope apply to any user, authenticated or not. Defaults to `nil`.
-  - value (String.t): The email address of a user or group, or the name of a domain, depending on the scope type. Omitted for type "default". Defaults to `nil`.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the scope. Possible values are:  
+      - "default" - The public scope. This is the default value. 
+      - "user" - Limits the scope to a single user. 
+      - "group" - Limits the scope to a group. 
+      - "domain" - Limits the scope to a domain.  Note: The permissions granted to the "default", or public, scope apply to any user, authenticated or not.
+  *   `value` (*type:* `String.t`, *default:* `nil`) - The email address of a user or group, or the name of a domain, depending on the scope type. Omitted for type "default".
   """
 
   use GoogleApi.Gax.ModelBase

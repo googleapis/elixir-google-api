@@ -21,21 +21,21 @@ defmodule GoogleApi.Calendar.V3.Model.EventAttendee do
 
   ## Attributes
 
-  - additionalGuests (integer()): Number of additional guests. Optional. The default is 0. Defaults to `0`.
-  - comment (String.t): The attendee's response comment. Optional. Defaults to `nil`.
-  - displayName (String.t): The attendee's name, if available. Optional. Defaults to `nil`.
-  - email (String.t): The attendee's email address, if available. This field must be present when adding an attendee. It must be a valid email address as per RFC5322.
-  Required when adding an attendee. Defaults to `nil`.
-  - id (String.t): The attendee's Profile ID, if available. It corresponds to the id field in the People collection of the Google+ API Defaults to `nil`.
-  - optional (boolean()): Whether this is an optional attendee. Optional. The default is False. Defaults to `false`.
-  - organizer (boolean()): Whether the attendee is the organizer of the event. Read-only. The default is False. Defaults to `nil`.
-  - resource (boolean()): Whether the attendee is a resource. Can only be set when the attendee is added to the event for the first time. Subsequent modifications are ignored. Optional. The default is False. Defaults to `false`.
-  - responseStatus (String.t): The attendee's response status. Possible values are:  
-  - "needsAction" - The attendee has not responded to the invitation. 
-  - "declined" - The attendee has declined the invitation. 
-  - "tentative" - The attendee has tentatively accepted the invitation. 
-  - "accepted" - The attendee has accepted the invitation. Defaults to `nil`.
-  - self (boolean()): Whether this entry represents the calendar on which this copy of the event appears. Read-only. The default is False. Defaults to `false`.
+  *   `additionalGuests` (*type:* `integer()`, *default:* `0`) - Number of additional guests. Optional. The default is 0.
+  *   `comment` (*type:* `String.t`, *default:* `nil`) - The attendee's response comment. Optional.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The attendee's name, if available. Optional.
+  *   `email` (*type:* `String.t`, *default:* `nil`) - The attendee's email address, if available. This field must be present when adding an attendee. It must be a valid email address as per RFC5322.
+      Required when adding an attendee.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The attendee's Profile ID, if available. It corresponds to the id field in the People collection of the Google+ API
+  *   `optional` (*type:* `boolean()`, *default:* `false`) - Whether this is an optional attendee. Optional. The default is False.
+  *   `organizer` (*type:* `boolean()`, *default:* `nil`) - Whether the attendee is the organizer of the event. Read-only. The default is False.
+  *   `resource` (*type:* `boolean()`, *default:* `false`) - Whether the attendee is a resource. Can only be set when the attendee is added to the event for the first time. Subsequent modifications are ignored. Optional. The default is False.
+  *   `responseStatus` (*type:* `String.t`, *default:* `nil`) - The attendee's response status. Possible values are:  
+      - "needsAction" - The attendee has not responded to the invitation. 
+      - "declined" - The attendee has declined the invitation. 
+      - "tentative" - The attendee has tentatively accepted the invitation. 
+      - "accepted" - The attendee has accepted the invitation.
+  *   `self` (*type:* `boolean()`, *default:* `false`) - Whether this entry represents the calendar on which this copy of the event appears. Read-only. The default is False.
   """
 
   use GoogleApi.Gax.ModelBase

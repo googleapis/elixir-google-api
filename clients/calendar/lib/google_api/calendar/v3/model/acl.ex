@@ -21,11 +21,11 @@ defmodule GoogleApi.Calendar.V3.Model.Acl do
 
   ## Attributes
 
-  - etag (String.t): ETag of the collection. Defaults to `nil`.
-  - items (list(GoogleApi.Calendar.V3.Model.AclRule.t)): List of rules on the access control list. Defaults to `nil`.
-  - kind (String.t): Type of the collection ("calendar#acl"). Defaults to `calendar#acl`.
-  - nextPageToken (String.t): Token used to access the next page of this result. Omitted if no further results are available, in which case nextSyncToken is provided. Defaults to `nil`.
-  - nextSyncToken (String.t): Token used at a later point in time to retrieve only the entries that have changed since this result was returned. Omitted if further results are available, in which case nextPageToken is provided. Defaults to `nil`.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the collection.
+  *   `items` (*type:* `list(GoogleApi.Calendar.V3.Model.AclRule.t)`, *default:* `nil`) - List of rules on the access control list.
+  *   `kind` (*type:* `String.t`, *default:* `calendar#acl`) - Type of the collection ("calendar#acl").
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token used to access the next page of this result. Omitted if no further results are available, in which case nextSyncToken is provided.
+  *   `nextSyncToken` (*type:* `String.t`, *default:* `nil`) - Token used at a later point in time to retrieve only the entries that have changed since this result was returned. Omitted if further results are available, in which case nextPageToken is provided.
   """
 
   use GoogleApi.Gax.ModelBase

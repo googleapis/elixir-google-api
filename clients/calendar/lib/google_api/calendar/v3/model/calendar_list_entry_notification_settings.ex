@@ -21,7 +21,7 @@ defmodule GoogleApi.Calendar.V3.Model.CalendarListEntryNotificationSettings do
 
   ## Attributes
 
-  - notifications (list(GoogleApi.Calendar.V3.Model.CalendarNotification.t)): The list of notifications set for this calendar. Defaults to `nil`.
+  *   `notifications` (*type:* `list(GoogleApi.Calendar.V3.Model.CalendarNotification.t)`, *default:* `nil`) - The list of notifications set for this calendar.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,7 +21,7 @@ defmodule GoogleApi.Calendar.V3.Model.ConferenceParametersAddOnParameters do
 
   ## Attributes
 
-  - parameters (map()):  Defaults to `nil`.
+  *   `parameters` (*type:* `map()`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

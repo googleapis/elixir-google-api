@@ -28,24 +28,25 @@ defmodule GoogleApi.Calendar.V3.Api.Acl do
 
   ## Parameters
 
-  - connection (GoogleApi.Calendar.V3.Connection): Connection to server
-  - calendar_id (String.t): Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
-  - rule_id (String.t): ACL rule identifier.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.Calendar.V3.Connection.t`) - Connection to server
+  *   `calendar_id` (*type:* `String.t`) - Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
+  *   `rule_id` (*type:* `String.t`) - ACL rule identifier.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %{}} on success
-  {:error, info} on failure
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec calendar_acl_delete(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+  @spec calendar_acl_delete(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
   def calendar_acl_delete(connection, calendar_id, rule_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -77,24 +78,25 @@ defmodule GoogleApi.Calendar.V3.Api.Acl do
 
   ## Parameters
 
-  - connection (GoogleApi.Calendar.V3.Connection): Connection to server
-  - calendar_id (String.t): Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
-  - rule_id (String.t): ACL rule identifier.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.Calendar.V3.Connection.t`) - Connection to server
+  *   `calendar_id` (*type:* `String.t`) - Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
+  *   `rule_id` (*type:* `String.t`) - ACL rule identifier.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Calendar.V3.Model.AclRule{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Calendar.V3.Model.AclRule{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec calendar_acl_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+  @spec calendar_acl_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Calendar.V3.Model.AclRule.t()} | {:error, Tesla.Env.t()}
   def calendar_acl_get(connection, calendar_id, rule_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -126,25 +128,26 @@ defmodule GoogleApi.Calendar.V3.Api.Acl do
 
   ## Parameters
 
-  - connection (GoogleApi.Calendar.V3.Connection): Connection to server
-  - calendar_id (String.t): Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :sendNotifications (boolean()): Whether to send notifications about the calendar sharing change. Optional. The default is True.
-    - :body (GoogleApi.Calendar.V3.Model.AclRule.t): 
+  *   `connection` (*type:* `GoogleApi.Calendar.V3.Connection.t`) - Connection to server
+  *   `calendar_id` (*type:* `String.t`) - Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:sendNotifications` (*type:* `boolean()`) - Whether to send notifications about the calendar sharing change. Optional. The default is True.
+      *   `:body` (*type:* `GoogleApi.Calendar.V3.Model.AclRule.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Calendar.V3.Model.AclRule{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Calendar.V3.Model.AclRule{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec calendar_acl_insert(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec calendar_acl_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Calendar.V3.Model.AclRule.t()} | {:error, Tesla.Env.t()}
   def calendar_acl_insert(connection, calendar_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -177,30 +180,31 @@ defmodule GoogleApi.Calendar.V3.Api.Acl do
 
   ## Parameters
 
-  - connection (GoogleApi.Calendar.V3.Connection): Connection to server
-  - calendar_id (String.t): Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :maxResults (integer()): Maximum number of entries returned on one result page. By default the value is 100 entries. The page size can never be larger than 250 entries. Optional.
-    - :pageToken (String.t): Token specifying which result page to return. Optional.
-    - :showDeleted (boolean()): Whether to include deleted ACLs in the result. Deleted ACLs are represented by role equal to "none". Deleted ACLs will always be included if syncToken is provided. Optional. The default is False.
-    - :syncToken (String.t): Token obtained from the nextSyncToken field returned on the last page of results from the previous list request. It makes the result of this list request contain only entries that have changed since then. All entries deleted since the previous list request will always be in the result set and it is not allowed to set showDeleted to False.
-  If the syncToken expires, the server will respond with a 410 GONE response code and the client should clear its storage and perform a full synchronization without any syncToken.
-  Learn more about incremental synchronization.
-  Optional. The default is to return all entries.
+  *   `connection` (*type:* `GoogleApi.Calendar.V3.Connection.t`) - Connection to server
+  *   `calendar_id` (*type:* `String.t`) - Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:maxResults` (*type:* `integer()`) - Maximum number of entries returned on one result page. By default the value is 100 entries. The page size can never be larger than 250 entries. Optional.
+      *   `:pageToken` (*type:* `String.t`) - Token specifying which result page to return. Optional.
+      *   `:showDeleted` (*type:* `boolean()`) - Whether to include deleted ACLs in the result. Deleted ACLs are represented by role equal to "none". Deleted ACLs will always be included if syncToken is provided. Optional. The default is False.
+      *   `:syncToken` (*type:* `String.t`) - Token obtained from the nextSyncToken field returned on the last page of results from the previous list request. It makes the result of this list request contain only entries that have changed since then. All entries deleted since the previous list request will always be in the result set and it is not allowed to set showDeleted to False.
+          If the syncToken expires, the server will respond with a 410 GONE response code and the client should clear its storage and perform a full synchronization without any syncToken.
+          Learn more about incremental synchronization.
+          Optional. The default is to return all entries.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Calendar.V3.Model.Acl{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Calendar.V3.Model.Acl{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec calendar_acl_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec calendar_acl_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Calendar.V3.Model.Acl.t()} | {:error, Tesla.Env.t()}
   def calendar_acl_list(connection, calendar_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -235,26 +239,27 @@ defmodule GoogleApi.Calendar.V3.Api.Acl do
 
   ## Parameters
 
-  - connection (GoogleApi.Calendar.V3.Connection): Connection to server
-  - calendar_id (String.t): Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
-  - rule_id (String.t): ACL rule identifier.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :sendNotifications (boolean()): Whether to send notifications about the calendar sharing change. Note that there are no notifications on access removal. Optional. The default is True.
-    - :body (GoogleApi.Calendar.V3.Model.AclRule.t): 
+  *   `connection` (*type:* `GoogleApi.Calendar.V3.Connection.t`) - Connection to server
+  *   `calendar_id` (*type:* `String.t`) - Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
+  *   `rule_id` (*type:* `String.t`) - ACL rule identifier.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:sendNotifications` (*type:* `boolean()`) - Whether to send notifications about the calendar sharing change. Note that there are no notifications on access removal. Optional. The default is True.
+      *   `:body` (*type:* `GoogleApi.Calendar.V3.Model.AclRule.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Calendar.V3.Model.AclRule{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Calendar.V3.Model.AclRule{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec calendar_acl_patch(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+  @spec calendar_acl_patch(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Calendar.V3.Model.AclRule.t()} | {:error, Tesla.Env.t()}
   def calendar_acl_patch(connection, calendar_id, rule_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -288,26 +293,27 @@ defmodule GoogleApi.Calendar.V3.Api.Acl do
 
   ## Parameters
 
-  - connection (GoogleApi.Calendar.V3.Connection): Connection to server
-  - calendar_id (String.t): Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
-  - rule_id (String.t): ACL rule identifier.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :sendNotifications (boolean()): Whether to send notifications about the calendar sharing change. Note that there are no notifications on access removal. Optional. The default is True.
-    - :body (GoogleApi.Calendar.V3.Model.AclRule.t): 
+  *   `connection` (*type:* `GoogleApi.Calendar.V3.Connection.t`) - Connection to server
+  *   `calendar_id` (*type:* `String.t`) - Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
+  *   `rule_id` (*type:* `String.t`) - ACL rule identifier.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:sendNotifications` (*type:* `boolean()`) - Whether to send notifications about the calendar sharing change. Note that there are no notifications on access removal. Optional. The default is True.
+      *   `:body` (*type:* `GoogleApi.Calendar.V3.Model.AclRule.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Calendar.V3.Model.AclRule{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Calendar.V3.Model.AclRule{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec calendar_acl_update(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+  @spec calendar_acl_update(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Calendar.V3.Model.AclRule.t()} | {:error, Tesla.Env.t()}
   def calendar_acl_update(connection, calendar_id, rule_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -341,31 +347,32 @@ defmodule GoogleApi.Calendar.V3.Api.Acl do
 
   ## Parameters
 
-  - connection (GoogleApi.Calendar.V3.Connection): Connection to server
-  - calendar_id (String.t): Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :maxResults (integer()): Maximum number of entries returned on one result page. By default the value is 100 entries. The page size can never be larger than 250 entries. Optional.
-    - :pageToken (String.t): Token specifying which result page to return. Optional.
-    - :showDeleted (boolean()): Whether to include deleted ACLs in the result. Deleted ACLs are represented by role equal to "none". Deleted ACLs will always be included if syncToken is provided. Optional. The default is False.
-    - :syncToken (String.t): Token obtained from the nextSyncToken field returned on the last page of results from the previous list request. It makes the result of this list request contain only entries that have changed since then. All entries deleted since the previous list request will always be in the result set and it is not allowed to set showDeleted to False.
-  If the syncToken expires, the server will respond with a 410 GONE response code and the client should clear its storage and perform a full synchronization without any syncToken.
-  Learn more about incremental synchronization.
-  Optional. The default is to return all entries.
-    - :resource (GoogleApi.Calendar.V3.Model.Channel.t): 
+  *   `connection` (*type:* `GoogleApi.Calendar.V3.Connection.t`) - Connection to server
+  *   `calendar_id` (*type:* `String.t`) - Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:maxResults` (*type:* `integer()`) - Maximum number of entries returned on one result page. By default the value is 100 entries. The page size can never be larger than 250 entries. Optional.
+      *   `:pageToken` (*type:* `String.t`) - Token specifying which result page to return. Optional.
+      *   `:showDeleted` (*type:* `boolean()`) - Whether to include deleted ACLs in the result. Deleted ACLs are represented by role equal to "none". Deleted ACLs will always be included if syncToken is provided. Optional. The default is False.
+      *   `:syncToken` (*type:* `String.t`) - Token obtained from the nextSyncToken field returned on the last page of results from the previous list request. It makes the result of this list request contain only entries that have changed since then. All entries deleted since the previous list request will always be in the result set and it is not allowed to set showDeleted to False.
+          If the syncToken expires, the server will respond with a 410 GONE response code and the client should clear its storage and perform a full synchronization without any syncToken.
+          Learn more about incremental synchronization.
+          Optional. The default is to return all entries.
+      *   `:resource` (*type:* `GoogleApi.Calendar.V3.Model.Channel.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Calendar.V3.Model.Channel{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Calendar.V3.Model.Channel{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec calendar_acl_watch(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec calendar_acl_watch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Calendar.V3.Model.Channel.t()} | {:error, Tesla.Env.t()}
   def calendar_acl_watch(connection, calendar_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

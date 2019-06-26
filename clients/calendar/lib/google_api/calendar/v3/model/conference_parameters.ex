@@ -21,7 +21,7 @@ defmodule GoogleApi.Calendar.V3.Model.ConferenceParameters do
 
   ## Attributes
 
-  - addOnParameters (GoogleApi.Calendar.V3.Model.ConferenceParametersAddOnParameters.t): Additional add-on specific data. Defaults to `nil`.
+  *   `addOnParameters` (*type:* `GoogleApi.Calendar.V3.Model.ConferenceParametersAddOnParameters.t`, *default:* `nil`) - Additional add-on specific data.
   """
 
   use GoogleApi.Gax.ModelBase

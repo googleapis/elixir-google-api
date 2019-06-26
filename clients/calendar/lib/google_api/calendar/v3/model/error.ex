@@ -21,12 +21,12 @@ defmodule GoogleApi.Calendar.V3.Model.Error do
 
   ## Attributes
 
-  - domain (String.t): Domain, or broad category, of the error. Defaults to `nil`.
-  - reason (String.t): Specific reason for the error. Some of the possible values are:  
-  - "groupTooBig" - The group of users requested is too large for a single query. 
-  - "tooManyCalendarsRequested" - The number of calendars requested is too large for a single query. 
-  - "notFound" - The requested resource was not found. 
-  - "internalError" - The API service has encountered an internal error.  Additional error types may be added in the future, so clients should gracefully handle additional error statuses not included in this list. Defaults to `nil`.
+  *   `domain` (*type:* `String.t`, *default:* `nil`) - Domain, or broad category, of the error.
+  *   `reason` (*type:* `String.t`, *default:* `nil`) - Specific reason for the error. Some of the possible values are:  
+      - "groupTooBig" - The group of users requested is too large for a single query. 
+      - "tooManyCalendarsRequested" - The number of calendars requested is too large for a single query. 
+      - "notFound" - The requested resource was not found. 
+      - "internalError" - The API service has encountered an internal error.  Additional error types may be added in the future, so clients should gracefully handle additional error statuses not included in this list.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,10 +21,10 @@ defmodule GoogleApi.Calendar.V3.Model.CreateConferenceRequest do
 
   ## Attributes
 
-  - conferenceSolutionKey (GoogleApi.Calendar.V3.Model.ConferenceSolutionKey.t): The conference solution, such as Hangouts or Hangouts Meet. Defaults to `nil`.
-  - requestId (String.t): The client-generated unique ID for this request.
-  Clients should regenerate this ID for every new request. If an ID provided is the same as for the previous request, the request is ignored. Defaults to `nil`.
-  - status (GoogleApi.Calendar.V3.Model.ConferenceRequestStatus.t): The status of the conference create request. Defaults to `nil`.
+  *   `conferenceSolutionKey` (*type:* `GoogleApi.Calendar.V3.Model.ConferenceSolutionKey.t`, *default:* `nil`) - The conference solution, such as Hangouts or Hangouts Meet.
+  *   `requestId` (*type:* `String.t`, *default:* `nil`) - The client-generated unique ID for this request.
+      Clients should regenerate this ID for every new request. If an ID provided is the same as for the previous request, the request is ignored.
+  *   `status` (*type:* `GoogleApi.Calendar.V3.Model.ConferenceRequestStatus.t`, *default:* `nil`) - The status of the conference create request.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,9 +21,9 @@ defmodule GoogleApi.Calendar.V3.Model.ConferenceSolution do
 
   ## Attributes
 
-  - iconUri (String.t): The user-visible icon for this solution. Defaults to `nil`.
-  - key (GoogleApi.Calendar.V3.Model.ConferenceSolutionKey.t): The key which can uniquely identify the conference solution for this event. Defaults to `nil`.
-  - name (String.t): The user-visible name of this solution. Not localized. Defaults to `nil`.
+  *   `iconUri` (*type:* `String.t`, *default:* `nil`) - The user-visible icon for this solution.
+  *   `key` (*type:* `GoogleApi.Calendar.V3.Model.ConferenceSolutionKey.t`, *default:* `nil`) - The key which can uniquely identify the conference solution for this event.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The user-visible name of this solution. Not localized.
   """
 
   use GoogleApi.Gax.ModelBase

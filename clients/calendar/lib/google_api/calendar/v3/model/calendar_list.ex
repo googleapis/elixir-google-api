@@ -21,11 +21,11 @@ defmodule GoogleApi.Calendar.V3.Model.CalendarList do
 
   ## Attributes
 
-  - etag (String.t): ETag of the collection. Defaults to `nil`.
-  - items (list(GoogleApi.Calendar.V3.Model.CalendarListEntry.t)): Calendars that are present on the user's calendar list. Defaults to `nil`.
-  - kind (String.t): Type of the collection ("calendar#calendarList"). Defaults to `calendar#calendarList`.
-  - nextPageToken (String.t): Token used to access the next page of this result. Omitted if no further results are available, in which case nextSyncToken is provided. Defaults to `nil`.
-  - nextSyncToken (String.t): Token used at a later point in time to retrieve only the entries that have changed since this result was returned. Omitted if further results are available, in which case nextPageToken is provided. Defaults to `nil`.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the collection.
+  *   `items` (*type:* `list(GoogleApi.Calendar.V3.Model.CalendarListEntry.t)`, *default:* `nil`) - Calendars that are present on the user's calendar list.
+  *   `kind` (*type:* `String.t`, *default:* `calendar#calendarList`) - Type of the collection ("calendar#calendarList").
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token used to access the next page of this result. Omitted if no further results are available, in which case nextSyncToken is provided.
+  *   `nextSyncToken` (*type:* `String.t`, *default:* `nil`) - Token used at a later point in time to retrieve only the entries that have changed since this result was returned. Omitted if further results are available, in which case nextPageToken is provided.
   """
 
   use GoogleApi.Gax.ModelBase

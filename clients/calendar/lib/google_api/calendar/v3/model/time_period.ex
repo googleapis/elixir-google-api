@@ -21,8 +21,8 @@ defmodule GoogleApi.Calendar.V3.Model.TimePeriod do
 
   ## Attributes
 
-  - end (DateTime.t): The (exclusive) end of the time period. Defaults to `nil`.
-  - start (DateTime.t): The (inclusive) start of the time period. Defaults to `nil`.
+  *   `end` (*type:* `DateTime.t`, *default:* `nil`) - The (exclusive) end of the time period.
+  *   `start` (*type:* `DateTime.t`, *default:* `nil`) - The (inclusive) start of the time period.
   """
 
   use GoogleApi.Gax.ModelBase

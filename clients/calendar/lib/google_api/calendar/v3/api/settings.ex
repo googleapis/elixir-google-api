@@ -28,23 +28,24 @@ defmodule GoogleApi.Calendar.V3.Api.Settings do
 
   ## Parameters
 
-  - connection (GoogleApi.Calendar.V3.Connection): Connection to server
-  - setting (String.t): The id of the user setting.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.Calendar.V3.Connection.t`) - Connection to server
+  *   `setting` (*type:* `String.t`) - The id of the user setting.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Calendar.V3.Model.Setting{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Calendar.V3.Model.Setting{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec calendar_settings_get(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec calendar_settings_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Calendar.V3.Model.Setting.t()} | {:error, Tesla.Env.t()}
   def calendar_settings_get(connection, setting, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -75,28 +76,29 @@ defmodule GoogleApi.Calendar.V3.Api.Settings do
 
   ## Parameters
 
-  - connection (GoogleApi.Calendar.V3.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :maxResults (integer()): Maximum number of entries returned on one result page. By default the value is 100 entries. The page size can never be larger than 250 entries. Optional.
-    - :pageToken (String.t): Token specifying which result page to return. Optional.
-    - :syncToken (String.t): Token obtained from the nextSyncToken field returned on the last page of results from the previous list request. It makes the result of this list request contain only entries that have changed since then.
-  If the syncToken expires, the server will respond with a 410 GONE response code and the client should clear its storage and perform a full synchronization without any syncToken.
-  Learn more about incremental synchronization.
-  Optional. The default is to return all entries.
+  *   `connection` (*type:* `GoogleApi.Calendar.V3.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:maxResults` (*type:* `integer()`) - Maximum number of entries returned on one result page. By default the value is 100 entries. The page size can never be larger than 250 entries. Optional.
+      *   `:pageToken` (*type:* `String.t`) - Token specifying which result page to return. Optional.
+      *   `:syncToken` (*type:* `String.t`) - Token obtained from the nextSyncToken field returned on the last page of results from the previous list request. It makes the result of this list request contain only entries that have changed since then.
+          If the syncToken expires, the server will respond with a 410 GONE response code and the client should clear its storage and perform a full synchronization without any syncToken.
+          Learn more about incremental synchronization.
+          Optional. The default is to return all entries.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Calendar.V3.Model.Settings{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Calendar.V3.Model.Settings{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec calendar_settings_list(Tesla.Env.client(), keyword()) ::
+  @spec calendar_settings_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Calendar.V3.Model.Settings.t()} | {:error, Tesla.Env.t()}
   def calendar_settings_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -128,29 +130,30 @@ defmodule GoogleApi.Calendar.V3.Api.Settings do
 
   ## Parameters
 
-  - connection (GoogleApi.Calendar.V3.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :maxResults (integer()): Maximum number of entries returned on one result page. By default the value is 100 entries. The page size can never be larger than 250 entries. Optional.
-    - :pageToken (String.t): Token specifying which result page to return. Optional.
-    - :syncToken (String.t): Token obtained from the nextSyncToken field returned on the last page of results from the previous list request. It makes the result of this list request contain only entries that have changed since then.
-  If the syncToken expires, the server will respond with a 410 GONE response code and the client should clear its storage and perform a full synchronization without any syncToken.
-  Learn more about incremental synchronization.
-  Optional. The default is to return all entries.
-    - :resource (GoogleApi.Calendar.V3.Model.Channel.t): 
+  *   `connection` (*type:* `GoogleApi.Calendar.V3.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:maxResults` (*type:* `integer()`) - Maximum number of entries returned on one result page. By default the value is 100 entries. The page size can never be larger than 250 entries. Optional.
+      *   `:pageToken` (*type:* `String.t`) - Token specifying which result page to return. Optional.
+      *   `:syncToken` (*type:* `String.t`) - Token obtained from the nextSyncToken field returned on the last page of results from the previous list request. It makes the result of this list request contain only entries that have changed since then.
+          If the syncToken expires, the server will respond with a 410 GONE response code and the client should clear its storage and perform a full synchronization without any syncToken.
+          Learn more about incremental synchronization.
+          Optional. The default is to return all entries.
+      *   `:resource` (*type:* `GoogleApi.Calendar.V3.Model.Channel.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Calendar.V3.Model.Channel{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Calendar.V3.Model.Channel{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec calendar_settings_watch(Tesla.Env.client(), keyword()) ::
+  @spec calendar_settings_watch(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Calendar.V3.Model.Channel.t()} | {:error, Tesla.Env.t()}
   def calendar_settings_watch(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

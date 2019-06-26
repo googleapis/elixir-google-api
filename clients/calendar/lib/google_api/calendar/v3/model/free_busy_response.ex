@@ -21,11 +21,11 @@ defmodule GoogleApi.Calendar.V3.Model.FreeBusyResponse do
 
   ## Attributes
 
-  - calendars (%{optional(String.t) => GoogleApi.Calendar.V3.Model.FreeBusyCalendar.t}): List of free/busy information for calendars. Defaults to `nil`.
-  - groups (%{optional(String.t) => GoogleApi.Calendar.V3.Model.FreeBusyGroup.t}): Expansion of groups. Defaults to `nil`.
-  - kind (String.t): Type of the resource ("calendar#freeBusy"). Defaults to `calendar#freeBusy`.
-  - timeMax (DateTime.t): The end of the interval. Defaults to `nil`.
-  - timeMin (DateTime.t): The start of the interval. Defaults to `nil`.
+  *   `calendars` (*type:* `%{optional(String.t) => GoogleApi.Calendar.V3.Model.FreeBusyCalendar.t}`, *default:* `nil`) - List of free/busy information for calendars.
+  *   `groups` (*type:* `%{optional(String.t) => GoogleApi.Calendar.V3.Model.FreeBusyGroup.t}`, *default:* `nil`) - Expansion of groups.
+  *   `kind` (*type:* `String.t`, *default:* `calendar#freeBusy`) - Type of the resource ("calendar#freeBusy").
+  *   `timeMax` (*type:* `DateTime.t`, *default:* `nil`) - The end of the interval.
+  *   `timeMin` (*type:* `DateTime.t`, *default:* `nil`) - The start of the interval.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,8 +21,8 @@ defmodule GoogleApi.Calendar.V3.Model.FreeBusyCalendar do
 
   ## Attributes
 
-  - busy (list(GoogleApi.Calendar.V3.Model.TimePeriod.t)): List of time ranges during which this calendar should be regarded as busy. Defaults to `nil`.
-  - errors (list(GoogleApi.Calendar.V3.Model.Error.t)): Optional error(s) (if computation for the calendar failed). Defaults to `nil`.
+  *   `busy` (*type:* `list(GoogleApi.Calendar.V3.Model.TimePeriod.t)`, *default:* `nil`) - List of time ranges during which this calendar should be regarded as busy.
+  *   `errors` (*type:* `list(GoogleApi.Calendar.V3.Model.Error.t)`, *default:* `nil`) - Optional error(s) (if computation for the calendar failed).
   """
 
   use GoogleApi.Gax.ModelBase

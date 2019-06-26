@@ -21,16 +21,16 @@ defmodule GoogleApi.Calendar.V3.Model.AclRule do
 
   ## Attributes
 
-  - etag (String.t): ETag of the resource. Defaults to `nil`.
-  - id (String.t): Identifier of the ACL rule. Defaults to `nil`.
-  - kind (String.t): Type of the resource ("calendar#aclRule"). Defaults to `calendar#aclRule`.
-  - role (String.t): The role assigned to the scope. Possible values are:  
-  - "none" - Provides no access. 
-  - "freeBusyReader" - Provides read access to free/busy information. 
-  - "reader" - Provides read access to the calendar. Private events will appear to users with reader access, but event details will be hidden. 
-  - "writer" - Provides read and write access to the calendar. Private events will appear to users with writer access, and event details will be visible. 
-  - "owner" - Provides ownership of the calendar. This role has all of the permissions of the writer role with the additional ability to see and manipulate ACLs. Defaults to `nil`.
-  - scope (GoogleApi.Calendar.V3.Model.AclRuleScope.t): The scope of the rule. Defaults to `nil`.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Identifier of the ACL rule.
+  *   `kind` (*type:* `String.t`, *default:* `calendar#aclRule`) - Type of the resource ("calendar#aclRule").
+  *   `role` (*type:* `String.t`, *default:* `nil`) - The role assigned to the scope. Possible values are:  
+      - "none" - Provides no access. 
+      - "freeBusyReader" - Provides read access to free/busy information. 
+      - "reader" - Provides read access to the calendar. Private events will appear to users with reader access, but event details will be hidden. 
+      - "writer" - Provides read and write access to the calendar. Private events will appear to users with writer access, and event details will be visible. 
+      - "owner" - Provides ownership of the calendar. This role has all of the permissions of the writer role with the additional ability to see and manipulate ACLs.
+  *   `scope` (*type:* `GoogleApi.Calendar.V3.Model.AclRuleScope.t`, *default:* `nil`) - The scope of the rule.
   """
 
   use GoogleApi.Gax.ModelBase

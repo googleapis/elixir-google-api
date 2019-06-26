@@ -21,8 +21,8 @@ defmodule GoogleApi.Calendar.V3.Model.EventSource do
 
   ## Attributes
 
-  - title (String.t): Title of the source; for example a title of a web page or an email subject. Defaults to `nil`.
-  - url (String.t): URL of the source pointing to a resource. The URL scheme must be HTTP or HTTPS. Defaults to `nil`.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - Title of the source; for example a title of a web page or an email subject.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - URL of the source pointing to a resource. The URL scheme must be HTTP or HTTPS.
   """
 
   use GoogleApi.Gax.ModelBase
