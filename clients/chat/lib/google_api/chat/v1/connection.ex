@@ -20,6 +20,8 @@ defmodule GoogleApi.Chat.V1.Connection do
   Handle Tesla connections for GoogleApi.Chat.V1.
   """
 
+  @type t :: Tesla.Env.client()
+
   use GoogleApi.Gax.Connection,
     scopes: [],
     otp_app: :google_api_chat,

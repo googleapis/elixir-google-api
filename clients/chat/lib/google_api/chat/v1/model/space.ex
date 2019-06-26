@@ -21,11 +21,11 @@ defmodule GoogleApi.Chat.V1.Model.Space do
 
   ## Attributes
 
-  - displayName (String.t): Output only. The display name (only if the space is a room). Defaults to `nil`.
-  - name (String.t): Resource name of the space, in the form "spaces/*".
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Output only. The display name (only if the space is a room).
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of the space, in the form "spaces/*".
 
-  Example: spaces/AAAAMpdlehYs Defaults to `nil`.
-  - type (String.t): Output only. The type of a space. Defaults to `nil`.
+      Example: spaces/AAAAMpdlehYs
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Output only. The type of a space.
   """
 
   use GoogleApi.Gax.ModelBase

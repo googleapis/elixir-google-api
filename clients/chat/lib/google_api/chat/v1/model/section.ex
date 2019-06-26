@@ -24,8 +24,8 @@ defmodule GoogleApi.Chat.V1.Model.Section do
 
   ## Attributes
 
-  - header (String.t): The header of the section, text formatted supported. Defaults to `nil`.
-  - widgets (list(GoogleApi.Chat.V1.Model.WidgetMarkup.t)): A section must contain at least 1 widget. Defaults to `nil`.
+  *   `header` (*type:* `String.t`, *default:* `nil`) - The header of the section, text formatted supported.
+  *   `widgets` (*type:* `list(GoogleApi.Chat.V1.Model.WidgetMarkup.t)`, *default:* `nil`) - A section must contain at least 1 widget.
   """
 
   use GoogleApi.Gax.ModelBase

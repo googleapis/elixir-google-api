@@ -21,8 +21,8 @@ defmodule GoogleApi.Chat.V1.Model.TextButton do
 
   ## Attributes
 
-  - onClick (GoogleApi.Chat.V1.Model.OnClick.t): The onclick action of the button. Defaults to `nil`.
-  - text (String.t): The text of the button. Defaults to `nil`.
+  *   `onClick` (*type:* `GoogleApi.Chat.V1.Model.OnClick.t`, *default:* `nil`) - The onclick action of the button.
+  *   `text` (*type:* `String.t`, *default:* `nil`) - The text of the button.
   """
 
   use GoogleApi.Gax.ModelBase

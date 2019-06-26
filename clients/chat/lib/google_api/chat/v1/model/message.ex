@@ -21,27 +21,27 @@ defmodule GoogleApi.Chat.V1.Model.Message do
 
   ## Attributes
 
-  - actionResponse (GoogleApi.Chat.V1.Model.ActionResponse.t): Input only. Parameters that a bot can use to configure how its response is
-  posted. Defaults to `nil`.
-  - annotations (list(GoogleApi.Chat.V1.Model.Annotation.t)): Output only. Annotations associated with the text in this message. Defaults to `nil`.
-  - argumentText (String.t): Plain-text body of the message with all bot mentions stripped out. Defaults to `nil`.
-  - cards (list(GoogleApi.Chat.V1.Model.Card.t)): Rich, formatted and interactive cards that can be used to display UI
-  elements such as: formatted texts, buttons, clickable images. Cards are
-  normally displayed below the plain-text body of the message. Defaults to `nil`.
-  - createTime (DateTime.t): Output only. The time at which the message was created in Hangouts Chat
-  server. Defaults to `nil`.
-  - fallbackText (String.t): A plain-text description of the message's cards, used when the actual cards
-  cannot be displayed (e.g. mobile notifications). Defaults to `nil`.
-  - name (String.t): Resource name, in the form "spaces/*/messages/*".
+  *   `actionResponse` (*type:* `GoogleApi.Chat.V1.Model.ActionResponse.t`, *default:* `nil`) - Input only. Parameters that a bot can use to configure how its response is
+      posted.
+  *   `annotations` (*type:* `list(GoogleApi.Chat.V1.Model.Annotation.t)`, *default:* `nil`) - Output only. Annotations associated with the text in this message.
+  *   `argumentText` (*type:* `String.t`, *default:* `nil`) - Plain-text body of the message with all bot mentions stripped out.
+  *   `cards` (*type:* `list(GoogleApi.Chat.V1.Model.Card.t)`, *default:* `nil`) - Rich, formatted and interactive cards that can be used to display UI
+      elements such as: formatted texts, buttons, clickable images. Cards are
+      normally displayed below the plain-text body of the message.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which the message was created in Hangouts Chat
+      server.
+  *   `fallbackText` (*type:* `String.t`, *default:* `nil`) - A plain-text description of the message's cards, used when the actual cards
+      cannot be displayed (e.g. mobile notifications).
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name, in the form "spaces/*/messages/*".
 
-  Example: spaces/AAAAMpdlehY/messages/UMxbHmzDlr4.UMxbHmzDlr4 Defaults to `nil`.
-  - previewText (String.t): Text for generating preview chips. This text will not be displayed to the
-  user, but any links to images, web pages, videos, etc. included here will
-  generate preview chips. Defaults to `nil`.
-  - sender (GoogleApi.Chat.V1.Model.User.t): The user who created the message. Defaults to `nil`.
-  - space (GoogleApi.Chat.V1.Model.Space.t): The space the message belongs to. Defaults to `nil`.
-  - text (String.t): Plain-text body of the message. Defaults to `nil`.
-  - thread (GoogleApi.Chat.V1.Model.Thread.t): The thread the message belongs to. Defaults to `nil`.
+      Example: spaces/AAAAMpdlehY/messages/UMxbHmzDlr4.UMxbHmzDlr4
+  *   `previewText` (*type:* `String.t`, *default:* `nil`) - Text for generating preview chips. This text will not be displayed to the
+      user, but any links to images, web pages, videos, etc. included here will
+      generate preview chips.
+  *   `sender` (*type:* `GoogleApi.Chat.V1.Model.User.t`, *default:* `nil`) - The user who created the message.
+  *   `space` (*type:* `GoogleApi.Chat.V1.Model.Space.t`, *default:* `nil`) - The space the message belongs to.
+  *   `text` (*type:* `String.t`, *default:* `nil`) - Plain-text body of the message.
+  *   `thread` (*type:* `GoogleApi.Chat.V1.Model.Thread.t`, *default:* `nil`) - The thread the message belongs to.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,7 +21,7 @@ defmodule GoogleApi.Chat.V1.Model.TextParagraph do
 
   ## Attributes
 
-  - text (String.t):  Defaults to `nil`.
+  *   `text` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

@@ -24,8 +24,8 @@ defmodule GoogleApi.Chat.V1.Model.CardAction do
 
   ## Attributes
 
-  - actionLabel (String.t): The label used to be displayed in the action menu item. Defaults to `nil`.
-  - onClick (GoogleApi.Chat.V1.Model.OnClick.t): The onclick action for this action item. Defaults to `nil`.
+  *   `actionLabel` (*type:* `String.t`, *default:* `nil`) - The label used to be displayed in the action menu item.
+  *   `onClick` (*type:* `GoogleApi.Chat.V1.Model.OnClick.t`, *default:* `nil`) - The onclick action for this action item.
   """
 
   use GoogleApi.Gax.ModelBase

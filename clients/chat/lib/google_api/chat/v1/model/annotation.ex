@@ -27,29 +27,29 @@ defmodule GoogleApi.Chat.V1.Model.Annotation do
   The corresponding annotations metadata:
   ```
   "annotations":[{
-  "type":"USER_MENTION",
-  "startIndex":6,
-  "length":7,
-  "userMention": {
-    "user": {
-      "name":"users/107946847022116401880",
-      "displayName":"FooBot",
-      "avatarUrl":"https://goo.gl/aeDtrS",
-      "type":"BOT"
-    },
-    "type":"MENTION"
-   }
+    "type":"USER_MENTION",
+    "startIndex":6,
+    "length":7,
+    "userMention": {
+      "user": {
+        "name":"users/107946847022116401880",
+        "displayName":"FooBot",
+        "avatarUrl":"https://goo.gl/aeDtrS",
+        "type":"BOT"
+      },
+      "type":"MENTION"
+     }
   }]
   ```
 
   ## Attributes
 
-  - length (integer()): Length of the substring in the plain-text message body this annotation
-  corresponds to. Defaults to `nil`.
-  - startIndex (integer()): Start index (0-based, inclusive) in the plain-text message body this
-  annotation corresponds to. Defaults to `nil`.
-  - type (String.t): The type of this annotation. Defaults to `nil`.
-  - userMention (GoogleApi.Chat.V1.Model.UserMentionMetadata.t): The metadata of user mention. Defaults to `nil`.
+  *   `length` (*type:* `integer()`, *default:* `nil`) - Length of the substring in the plain-text message body this annotation
+      corresponds to.
+  *   `startIndex` (*type:* `integer()`, *default:* `nil`) - Start index (0-based, inclusive) in the plain-text message body this
+      annotation corresponds to.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of this annotation.
+  *   `userMention` (*type:* `GoogleApi.Chat.V1.Model.UserMentionMetadata.t`, *default:* `nil`) - The metadata of user mention.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -28,29 +28,30 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
 
   ## Parameters
 
-  - connection (GoogleApi.Chat.V1.Connection): Connection to server
-  - name (String.t): Required. Resource name of the space, in the form "spaces/*".
+  *   `connection` (*type:* `GoogleApi.Chat.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required. Resource name of the space, in the form "spaces/*".
 
-  Example: spaces/AAAAMpdlehY
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+      Example: spaces/AAAAMpdlehY
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Chat.V1.Model.Space{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Chat.V1.Model.Space{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec chat_spaces_get(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec chat_spaces_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Chat.V1.Model.Space.t()} | {:error, Tesla.Env.t()}
   def chat_spaces_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -85,30 +86,31 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
 
   ## Parameters
 
-  - connection (GoogleApi.Chat.V1.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :pageSize (integer()): Requested page size. The value is capped at 1000.
-  Server may return fewer results than requested.
-  If unspecified, server will default to 100.
-    - :pageToken (String.t): A token identifying a page of results the server should return.
+  *   `connection` (*type:* `GoogleApi.Chat.V1.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. The value is capped at 1000.
+          Server may return fewer results than requested.
+          If unspecified, server will default to 100.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Chat.V1.Model.ListSpacesResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Chat.V1.Model.ListSpacesResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec chat_spaces_list(Tesla.Env.client(), keyword()) ::
+  @spec chat_spaces_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Chat.V1.Model.ListSpacesResponse.t()} | {:error, Tesla.Env.t()}
   def chat_spaces_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -143,30 +145,31 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
 
   ## Parameters
 
-  - connection (GoogleApi.Chat.V1.Connection): Connection to server
-  - name (String.t): Required. Resource name of the membership to be retrieved, in the form
-  "spaces/*/members/*".
+  *   `connection` (*type:* `GoogleApi.Chat.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required. Resource name of the membership to be retrieved, in the form
+      "spaces/*/members/*".
 
-  Example: spaces/AAAAMpdlehY/members/105115627578887013105
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+      Example: spaces/AAAAMpdlehY/members/105115627578887013105
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Chat.V1.Model.Membership{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Chat.V1.Model.Membership{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec chat_spaces_members_get(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec chat_spaces_members_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Chat.V1.Model.Membership.t()} | {:error, Tesla.Env.t()}
   def chat_spaces_members_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -201,34 +204,35 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
 
   ## Parameters
 
-  - connection (GoogleApi.Chat.V1.Connection): Connection to server
-  - parent (String.t): Required. The resource name of the space for which membership list is to be
-  fetched, in the form "spaces/*".
+  *   `connection` (*type:* `GoogleApi.Chat.V1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. The resource name of the space for which membership list is to be
+      fetched, in the form "spaces/*".
 
-  Example: spaces/AAAAMpdlehY
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :pageSize (integer()): Requested page size. The value is capped at 1000.
-  Server may return fewer results than requested.
-  If unspecified, server will default to 100.
-    - :pageToken (String.t): A token identifying a page of results the server should return.
+      Example: spaces/AAAAMpdlehY
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. The value is capped at 1000.
+          Server may return fewer results than requested.
+          If unspecified, server will default to 100.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Chat.V1.Model.ListMembershipsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Chat.V1.Model.ListMembershipsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec chat_spaces_members_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec chat_spaces_members_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Chat.V1.Model.ListMembershipsResponse.t()} | {:error, Tesla.Env.t()}
   def chat_spaces_members_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -265,38 +269,39 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
 
   ## Parameters
 
-  - connection (GoogleApi.Chat.V1.Connection): Connection to server
-  - parent (String.t): Required. Space resource name, in the form "spaces/*".
-  Example: spaces/AAAAMpdlehY
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :threadKey (String.t): Opaque thread identifier string that can be specified to group messages
-  into a single thread. If this is the first message with a given thread
-  identifier, a new thread is created. Subsequent messages with the same
-  thread identifier will be posted into the same thread. This relieves bots
-  and webhooks from having to store the Hangouts Chat thread ID of a thread (created earlier by them) to post
-  further updates to it.
+  *   `connection` (*type:* `GoogleApi.Chat.V1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. Space resource name, in the form "spaces/*".
+      Example: spaces/AAAAMpdlehY
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:threadKey` (*type:* `String.t`) - Opaque thread identifier string that can be specified to group messages
+          into a single thread. If this is the first message with a given thread
+          identifier, a new thread is created. Subsequent messages with the same
+          thread identifier will be posted into the same thread. This relieves bots
+          and webhooks from having to store the Hangouts Chat thread ID of a thread (created earlier by them) to post
+          further updates to it.
 
-  Has no effect if thread field,
-  corresponding to an existing thread, is set in message.
-    - :body (GoogleApi.Chat.V1.Model.Message.t): 
+          Has no effect if thread field,
+          corresponding to an existing thread, is set in message.
+      *   `:body` (*type:* `GoogleApi.Chat.V1.Model.Message.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Chat.V1.Model.Message{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Chat.V1.Model.Message{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec chat_spaces_messages_create(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec chat_spaces_messages_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Chat.V1.Model.Message.t()} | {:error, Tesla.Env.t()}
   def chat_spaces_messages_create(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -333,30 +338,31 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
 
   ## Parameters
 
-  - connection (GoogleApi.Chat.V1.Connection): Connection to server
-  - name (String.t): Required. Resource name of the message to be deleted, in the form
-  "spaces/*/messages/*"
+  *   `connection` (*type:* `GoogleApi.Chat.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required. Resource name of the message to be deleted, in the form
+      "spaces/*/messages/*"
 
-  Example: spaces/AAAAMpdlehY/messages/UMxbHmzDlr4.UMxbHmzDlr4
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+      Example: spaces/AAAAMpdlehY/messages/UMxbHmzDlr4.UMxbHmzDlr4
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Chat.V1.Model.Empty{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Chat.V1.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec chat_spaces_messages_delete(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec chat_spaces_messages_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Chat.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
   def chat_spaces_messages_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -391,30 +397,31 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
 
   ## Parameters
 
-  - connection (GoogleApi.Chat.V1.Connection): Connection to server
-  - name (String.t): Required. Resource name of the message to be retrieved, in the form
-  "spaces/*/messages/*".
+  *   `connection` (*type:* `GoogleApi.Chat.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required. Resource name of the message to be retrieved, in the form
+      "spaces/*/messages/*".
 
-  Example: spaces/AAAAMpdlehY/messages/UMxbHmzDlr4.UMxbHmzDlr4
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+      Example: spaces/AAAAMpdlehY/messages/UMxbHmzDlr4.UMxbHmzDlr4
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Chat.V1.Model.Message{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Chat.V1.Model.Message{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec chat_spaces_messages_get(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec chat_spaces_messages_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Chat.V1.Model.Message.t()} | {:error, Tesla.Env.t()}
   def chat_spaces_messages_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -449,33 +456,34 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
 
   ## Parameters
 
-  - connection (GoogleApi.Chat.V1.Connection): Connection to server
-  - name (String.t): Resource name, in the form "spaces/*/messages/*".
+  *   `connection` (*type:* `GoogleApi.Chat.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Resource name, in the form "spaces/*/messages/*".
 
-  Example: spaces/AAAAMpdlehY/messages/UMxbHmzDlr4.UMxbHmzDlr4
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :updateMask (String.t): Required. The field paths to be updated.
+      Example: spaces/AAAAMpdlehY/messages/UMxbHmzDlr4.UMxbHmzDlr4
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:updateMask` (*type:* `String.t`) - Required. The field paths to be updated.
 
-  Currently supported field paths: "text", "cards".
-    - :body (GoogleApi.Chat.V1.Model.Message.t): 
+          Currently supported field paths: "text", "cards".
+      *   `:body` (*type:* `GoogleApi.Chat.V1.Model.Message.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Chat.V1.Model.Message{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Chat.V1.Model.Message{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec chat_spaces_messages_update(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec chat_spaces_messages_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Chat.V1.Model.Message.t()} | {:error, Tesla.Env.t()}
   def chat_spaces_messages_update(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

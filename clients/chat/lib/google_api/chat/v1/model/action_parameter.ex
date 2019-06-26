@@ -24,8 +24,8 @@ defmodule GoogleApi.Chat.V1.Model.ActionParameter do
 
   ## Attributes
 
-  - key (String.t): The name of the parameter for the action script. Defaults to `nil`.
-  - value (String.t): The value of the parameter. Defaults to `nil`.
+  *   `key` (*type:* `String.t`, *default:* `nil`) - The name of the parameter for the action script.
+  *   `value` (*type:* `String.t`, *default:* `nil`) - The value of the parameter.
   """
 
   use GoogleApi.Gax.ModelBase

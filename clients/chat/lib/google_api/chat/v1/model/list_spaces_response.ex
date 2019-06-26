@@ -21,10 +21,10 @@ defmodule GoogleApi.Chat.V1.Model.ListSpacesResponse do
 
   ## Attributes
 
-  - nextPageToken (String.t): Continuation token to retrieve the next page of results. It will be empty
-  for the last page of results. Tokens expire in an hour. An error is thrown
-  if an expired token is passed. Defaults to `nil`.
-  - spaces (list(GoogleApi.Chat.V1.Model.Space.t)): List of spaces in the requested (or first) page. Defaults to `nil`.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Continuation token to retrieve the next page of results. It will be empty
+      for the last page of results. Tokens expire in an hour. An error is thrown
+      if an expired token is passed.
+  *   `spaces` (*type:* `list(GoogleApi.Chat.V1.Model.Space.t)`, *default:* `nil`) - List of spaces in the requested (or first) page.
   """
 
   use GoogleApi.Gax.ModelBase

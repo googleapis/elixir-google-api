@@ -21,8 +21,8 @@ defmodule GoogleApi.Chat.V1.Model.OnClick do
 
   ## Attributes
 
-  - action (GoogleApi.Chat.V1.Model.FormAction.t): A form action will be trigger by this onclick if specified. Defaults to `nil`.
-  - openLink (GoogleApi.Chat.V1.Model.OpenLink.t): This onclick triggers an open link action if specified. Defaults to `nil`.
+  *   `action` (*type:* `GoogleApi.Chat.V1.Model.FormAction.t`, *default:* `nil`) - A form action will be trigger by this onclick if specified.
+  *   `openLink` (*type:* `GoogleApi.Chat.V1.Model.OpenLink.t`, *default:* `nil`) - This onclick triggers an open link action if specified.
   """
 
   use GoogleApi.Gax.ModelBase

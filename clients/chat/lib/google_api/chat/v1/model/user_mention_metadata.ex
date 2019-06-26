@@ -21,8 +21,8 @@ defmodule GoogleApi.Chat.V1.Model.UserMentionMetadata do
 
   ## Attributes
 
-  - type (String.t): The type of user mention. Defaults to `nil`.
-  - user (GoogleApi.Chat.V1.Model.User.t): The user mentioned. Defaults to `nil`.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of user mention.
+  *   `user` (*type:* `GoogleApi.Chat.V1.Model.User.t`, *default:* `nil`) - The user mentioned.
   """
 
   use GoogleApi.Gax.ModelBase

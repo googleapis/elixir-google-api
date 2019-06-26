@@ -21,12 +21,12 @@ defmodule GoogleApi.Chat.V1.Model.ImageButton do
 
   ## Attributes
 
-  - icon (String.t): The icon specified by an enum that indices to an icon provided by Chat
-  API. Defaults to `nil`.
-  - iconUrl (String.t): The icon specified by a URL. Defaults to `nil`.
-  - name (String.t): The name of this image_button which will be used for accessibility.
-  Default value will be provided if developers don't specify. Defaults to `nil`.
-  - onClick (GoogleApi.Chat.V1.Model.OnClick.t): The onclick action. Defaults to `nil`.
+  *   `icon` (*type:* `String.t`, *default:* `nil`) - The icon specified by an enum that indices to an icon provided by Chat
+      API.
+  *   `iconUrl` (*type:* `String.t`, *default:* `nil`) - The icon specified by a URL.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of this image_button which will be used for accessibility.
+      Default value will be provided if developers don't specify.
+  *   `onClick` (*type:* `GoogleApi.Chat.V1.Model.OnClick.t`, *default:* `nil`) - The onclick action.
   """
 
   use GoogleApi.Gax.ModelBase

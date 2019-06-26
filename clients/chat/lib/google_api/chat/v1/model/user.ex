@@ -21,9 +21,9 @@ defmodule GoogleApi.Chat.V1.Model.User do
 
   ## Attributes
 
-  - displayName (String.t): The user's display name. Defaults to `nil`.
-  - name (String.t): Resource name, in the format "users/*". Defaults to `nil`.
-  - type (String.t): User type. Defaults to `nil`.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The user's display name.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name, in the format "users/*".
+  *   `type` (*type:* `String.t`, *default:* `nil`) - User type.
   """
 
   use GoogleApi.Gax.ModelBase
