@@ -33,6 +33,6 @@ defmodule GoogleApi.AppEngine.V1.Connection do
       # View your data across Google Cloud Platform services
       "https://www.googleapis.com/auth/cloud-platform.read-only"
     ],
-    otp_app: :google_api_appengine,
+    otp_app: :google_api_app_engine,
     base_url: "https://appengine.googleapis.com/"
 end
