@@ -30,6 +30,6 @@ defmodule GoogleApi.CloudResourceManager.V1.Connection do
       # View your data across Google Cloud Platform services
       "https://www.googleapis.com/auth/cloud-platform.read-only"
     ],
-    otp_app: :google_api_cloudresourcemanager,
+    otp_app: :google_api_cloud_resource_manager,
     base_url: "https://cloudresourcemanager.googleapis.com/"
 end
