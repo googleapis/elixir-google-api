@@ -27,6 +27,6 @@ defmodule GoogleApi.AndroidManagement.V1.Connection do
       # Manage Android devices and apps for your customers
       "https://www.googleapis.com/auth/androidmanagement"
     ],
-    otp_app: :google_api_androidmanagement,
+    otp_app: :google_api_android_management,
     base_url: "https://androidmanagement.googleapis.com/"
 end
