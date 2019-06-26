@@ -21,14 +21,14 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Model.ListGroupStatsResponse do
 
   ## Attributes
 
-  - errorGroupStats (list(GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorGroupStats.t)): The error group stats which match the given request. Defaults to `nil`.
-  - nextPageToken (String.t): If non-empty, more results are available.
-  Pass this token, along with the same query parameters as the first
-  request, to view the next page of results. Defaults to `nil`.
-  - timeRangeBegin (DateTime.t): The timestamp specifies the start time to which the request was restricted.
-  The start time is set based on the requested time range. It may be adjusted
-  to a later time if a project has exceeded the storage quota and older data
-  has been deleted. Defaults to `nil`.
+  *   `errorGroupStats` (*type:* `list(GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorGroupStats.t)`, *default:* `nil`) - The error group stats which match the given request.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If non-empty, more results are available.
+      Pass this token, along with the same query parameters as the first
+      request, to view the next page of results.
+  *   `timeRangeBegin` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp specifies the start time to which the request was restricted.
+      The start time is set based on the requested time range. It may be adjusted
+      to a later time if a project has exceeded the storage quota and older data
+      has been deleted.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,11 +21,11 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorGroup do
 
   ## Attributes
 
-  - groupId (String.t): Group IDs are unique for a given project. If the same kind of error
-  occurs in different service contexts, it will receive the same group ID. Defaults to `nil`.
-  - name (String.t): The group resource name.
-  Example: <code>projects/my-project-123/groups/my-groupid</code> Defaults to `nil`.
-  - trackingIssues (list(GoogleApi.CloudErrorReporting.V1beta1.Model.TrackingIssue.t)): Associated tracking issues. Defaults to `nil`.
+  *   `groupId` (*type:* `String.t`, *default:* `nil`) - Group IDs are unique for a given project. If the same kind of error
+      occurs in different service contexts, it will receive the same group ID.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The group resource name.
+      Example: <code>projects/my-project-123/groups/my-groupid</code>
+  *   `trackingIssues` (*type:* `list(GoogleApi.CloudErrorReporting.V1beta1.Model.TrackingIssue.t)`, *default:* `nil`) - Associated tracking issues.
   """
 
   use GoogleApi.Gax.ModelBase

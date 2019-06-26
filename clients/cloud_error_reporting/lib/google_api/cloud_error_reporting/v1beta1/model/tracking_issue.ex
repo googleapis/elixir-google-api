@@ -21,8 +21,8 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Model.TrackingIssue do
 
   ## Attributes
 
-  - url (String.t): A URL pointing to a related entry in an issue tracking system.
-  Example: https://github.com/user/project/issues/4 Defaults to `nil`.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - A URL pointing to a related entry in an issue tracking system.
+      Example: https://github.com/user/project/issues/4
   """
 
   use GoogleApi.Gax.ModelBase

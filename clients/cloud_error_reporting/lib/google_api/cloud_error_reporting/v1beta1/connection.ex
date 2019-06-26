@@ -20,6 +20,8 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Connection do
   Handle Tesla connections for GoogleApi.CloudErrorReporting.V1beta1.
   """
 
+  @type t :: Tesla.Env.client()
+
   use GoogleApi.Gax.Connection,
     scopes: [
       # View and manage your data across Google Cloud Platform services

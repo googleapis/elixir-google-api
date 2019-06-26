@@ -28,31 +28,37 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudErrorReporting.V1beta1.Connection): Connection to server
-  - projects_id (String.t): Part of `projectName`. [Required] The resource name of the Google Cloud Platform project. Written
-  as `projects/` plus the
-  [Google Cloud Platform project
-  ID](https://support.google.com/cloud/answer/6158840).
-  Example: `projects/my-project-123`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.CloudErrorReporting.V1beta1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `projectName`. [Required] The resource name of the Google Cloud Platform project. Written
+      as `projects/` plus the
+      [Google Cloud Platform project
+      ID](https://support.google.com/cloud/answer/6158840).
+      Example: `projects/my-project-123`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudErrorReporting.V1beta1.Model.DeleteEventsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudErrorReporting.V1beta1.Model.DeleteEventsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec clouderrorreporting_projects_delete_events(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec clouderrorreporting_projects_delete_events(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.CloudErrorReporting.V1beta1.Model.DeleteEventsResponse.t()}
           | {:error, Tesla.Env.t()}
   def clouderrorreporting_projects_delete_events(
@@ -95,41 +101,47 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudErrorReporting.V1beta1.Connection): Connection to server
-  - projects_id (String.t): Part of `projectName`. [Required] The resource name of the Google Cloud Platform project. Written
-  as `projects/` plus the
-  [Google Cloud Platform project
-  ID](https://support.google.com/cloud/answer/6158840).
-  Example: `projects/my-project-123`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :groupId (String.t): [Required] The group for which events shall be returned.
-    - :pageSize (integer()): [Optional] The maximum number of results to return per response.
-    - :pageToken (String.t): [Optional] A `next_page_token` provided by a previous response.
-    - :serviceFilter.resourceType (String.t): [Optional] The exact value to match against
-  [`ServiceContext.resource_type`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.resource_type).
-    - :serviceFilter.service (String.t): [Optional] The exact value to match against
-  [`ServiceContext.service`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.service).
-    - :serviceFilter.version (String.t): [Optional] The exact value to match against
-  [`ServiceContext.version`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.version).
-    - :timeRange.period (String.t): Restricts the query to the specified time range.
+  *   `connection` (*type:* `GoogleApi.CloudErrorReporting.V1beta1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `projectName`. [Required] The resource name of the Google Cloud Platform project. Written
+      as `projects/` plus the
+      [Google Cloud Platform project
+      ID](https://support.google.com/cloud/answer/6158840).
+      Example: `projects/my-project-123`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:groupId` (*type:* `String.t`) - [Required] The group for which events shall be returned.
+      *   `:pageSize` (*type:* `integer()`) - [Optional] The maximum number of results to return per response.
+      *   `:pageToken` (*type:* `String.t`) - [Optional] A `next_page_token` provided by a previous response.
+      *   `:serviceFilter.resourceType` (*type:* `String.t`) - [Optional] The exact value to match against
+          [`ServiceContext.resource_type`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.resource_type).
+      *   `:serviceFilter.service` (*type:* `String.t`) - [Optional] The exact value to match against
+          [`ServiceContext.service`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.service).
+      *   `:serviceFilter.version` (*type:* `String.t`) - [Optional] The exact value to match against
+          [`ServiceContext.version`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.version).
+      *   `:timeRange.period` (*type:* `String.t`) - Restricts the query to the specified time range.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudErrorReporting.V1beta1.Model.ListEventsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudErrorReporting.V1beta1.Model.ListEventsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec clouderrorreporting_projects_events_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec clouderrorreporting_projects_events_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.CloudErrorReporting.V1beta1.Model.ListEventsResponse.t()}
           | {:error, Tesla.Env.t()}
   def clouderrorreporting_projects_events_list(
@@ -187,32 +199,38 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudErrorReporting.V1beta1.Connection): Connection to server
-  - projects_id (String.t): Part of `projectName`. [Required] The resource name of the Google Cloud Platform project. Written
-  as `projects/` plus the
-  [Google Cloud Platform project
-  ID](https://support.google.com/cloud/answer/6158840). Example:
-  `projects/my-project-123`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.CloudErrorReporting.V1beta1.Model.ReportedErrorEvent.t): 
+  *   `connection` (*type:* `GoogleApi.CloudErrorReporting.V1beta1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `projectName`. [Required] The resource name of the Google Cloud Platform project. Written
+      as `projects/` plus the
+      [Google Cloud Platform project
+      ID](https://support.google.com/cloud/answer/6158840). Example:
+      `projects/my-project-123`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.CloudErrorReporting.V1beta1.Model.ReportedErrorEvent.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudErrorReporting.V1beta1.Model.ReportErrorEventResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudErrorReporting.V1beta1.Model.ReportErrorEventResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec clouderrorreporting_projects_events_report(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec clouderrorreporting_projects_events_report(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.CloudErrorReporting.V1beta1.Model.ReportErrorEventResponse.t()}
           | {:error, Tesla.Env.t()}
   def clouderrorreporting_projects_events_report(
@@ -256,53 +274,59 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudErrorReporting.V1beta1.Connection): Connection to server
-  - projects_id (String.t): Part of `projectName`. [Required] The resource name of the Google Cloud Platform project. Written
-  as <code>projects/</code> plus the
-  <a href="https://support.google.com/cloud/answer/6158840">Google Cloud
-  Platform project ID</a>.
+  *   `connection` (*type:* `GoogleApi.CloudErrorReporting.V1beta1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `projectName`. [Required] The resource name of the Google Cloud Platform project. Written
+      as <code>projects/</code> plus the
+      <a href="https://support.google.com/cloud/answer/6158840">Google Cloud
+      Platform project ID</a>.
 
-  Example: <code>projects/my-project-123</code>.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :alignment (String.t): [Optional] The alignment of the timed counts to be returned.
-  Default is `ALIGNMENT_EQUAL_AT_END`.
-    - :alignmentTime (DateTime.t): [Optional] Time where the timed counts shall be aligned if rounded
-  alignment is chosen. Default is 00:00 UTC.
-    - :groupId (list(String.t)): [Optional] List all <code>ErrorGroupStats</code> with these IDs.
-    - :order (String.t): [Optional] The sort order in which the results are returned.
-  Default is `COUNT_DESC`.
-    - :pageSize (integer()): [Optional] The maximum number of results to return per response.
-  Default is 20.
-    - :pageToken (String.t): [Optional] A `next_page_token` provided by a previous response. To view
-  additional results, pass this token along with the identical query
-  parameters as the first request.
-    - :serviceFilter.resourceType (String.t): [Optional] The exact value to match against
-  [`ServiceContext.resource_type`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.resource_type).
-    - :serviceFilter.service (String.t): [Optional] The exact value to match against
-  [`ServiceContext.service`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.service).
-    - :serviceFilter.version (String.t): [Optional] The exact value to match against
-  [`ServiceContext.version`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.version).
-    - :timeRange.period (String.t): Restricts the query to the specified time range.
-    - :timedCountDuration (String.t): [Optional] The preferred duration for a single returned `TimedCount`.
-  If not set, no timed counts are returned.
+      Example: <code>projects/my-project-123</code>.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:alignment` (*type:* `String.t`) - [Optional] The alignment of the timed counts to be returned.
+          Default is `ALIGNMENT_EQUAL_AT_END`.
+      *   `:alignmentTime` (*type:* `DateTime.t`) - [Optional] Time where the timed counts shall be aligned if rounded
+          alignment is chosen. Default is 00:00 UTC.
+      *   `:groupId` (*type:* `list(String.t)`) - [Optional] List all <code>ErrorGroupStats</code> with these IDs.
+      *   `:order` (*type:* `String.t`) - [Optional] The sort order in which the results are returned.
+          Default is `COUNT_DESC`.
+      *   `:pageSize` (*type:* `integer()`) - [Optional] The maximum number of results to return per response.
+          Default is 20.
+      *   `:pageToken` (*type:* `String.t`) - [Optional] A `next_page_token` provided by a previous response. To view
+          additional results, pass this token along with the identical query
+          parameters as the first request.
+      *   `:serviceFilter.resourceType` (*type:* `String.t`) - [Optional] The exact value to match against
+          [`ServiceContext.resource_type`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.resource_type).
+      *   `:serviceFilter.service` (*type:* `String.t`) - [Optional] The exact value to match against
+          [`ServiceContext.service`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.service).
+      *   `:serviceFilter.version` (*type:* `String.t`) - [Optional] The exact value to match against
+          [`ServiceContext.version`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.version).
+      *   `:timeRange.period` (*type:* `String.t`) - Restricts the query to the specified time range.
+      *   `:timedCountDuration` (*type:* `String.t`) - [Optional] The preferred duration for a single returned `TimedCount`.
+          If not set, no timed counts are returned.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudErrorReporting.V1beta1.Model.ListGroupStatsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudErrorReporting.V1beta1.Model.ListGroupStatsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec clouderrorreporting_projects_group_stats_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec clouderrorreporting_projects_group_stats_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.CloudErrorReporting.V1beta1.Model.ListGroupStatsResponse.t()}
           | {:error, Tesla.Env.t()}
   def clouderrorreporting_projects_group_stats_list(
@@ -356,38 +380,40 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudErrorReporting.V1beta1.Connection): Connection to server
-  - projects_id (String.t): Part of `groupName`. [Required] The group resource name. Written as
-  <code>projects/<var>projectID</var>/groups/<var>group_name</var></code>.
-  Call
-  <a href="/error-reporting/reference/rest/v1beta1/projects.groupStats/list">
-  <code>groupStats.list</code></a> to return a list of groups belonging to
-  this project.
+  *   `connection` (*type:* `GoogleApi.CloudErrorReporting.V1beta1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `groupName`. [Required] The group resource name. Written as
+      <code>projects/<var>projectID</var>/groups/<var>group_name</var></code>.
+      Call
+      <a href="/error-reporting/reference/rest/v1beta1/projects.groupStats/list">
+      <code>groupStats.list</code></a> to return a list of groups belonging to
+      this project.
 
-  Example: <code>projects/my-project-123/groups/my-group</code>
-  - groups_id (String.t): Part of `groupName`. See documentation of `projectsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+      Example: <code>projects/my-project-123/groups/my-group</code>
+  *   `groups_id` (*type:* `String.t`) - Part of `groupName`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorGroup{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorGroup{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec clouderrorreporting_projects_groups_get(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorGroup.t()}
@@ -435,33 +461,35 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
 
   ## Parameters
 
-  - connection (GoogleApi.CloudErrorReporting.V1beta1.Connection): Connection to server
-  - projects_id (String.t): Part of `group.name`. The group resource name.
-  Example: <code>projects/my-project-123/groups/my-groupid</code>
-  - groups_id (String.t): Part of `group.name`. See documentation of `projectsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorGroup.t): 
+  *   `connection` (*type:* `GoogleApi.CloudErrorReporting.V1beta1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `group.name`. The group resource name.
+      Example: <code>projects/my-project-123/groups/my-groupid</code>
+  *   `groups_id` (*type:* `String.t`) - Part of `group.name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorGroup.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorGroup{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorGroup{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec clouderrorreporting_projects_groups_update(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorGroup.t()}
