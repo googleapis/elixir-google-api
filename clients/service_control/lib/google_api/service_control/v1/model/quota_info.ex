@@ -21,34 +21,34 @@ defmodule GoogleApi.ServiceControl.V1.Model.QuotaInfo do
 
   ## Attributes
 
-  - limitExceeded (list(String.t)): Quota Metrics that have exceeded quota limits.
-  For QuotaGroup-based quota, this is QuotaGroup.name
-  For QuotaLimit-based quota, this is QuotaLimit.name
-  See: google.api.Quota
-  Deprecated: Use quota_metrics to get per quota group limit exceeded status. Defaults to `nil`.
-  - quotaConsumed (map()): Map of quota group name to the actual number of tokens consumed. If the
-  quota check was not successful, then this will not be populated due to no
-  quota consumption.
+  *   `limitExceeded` (*type:* `list(String.t)`, *default:* `nil`) - Quota Metrics that have exceeded quota limits.
+      For QuotaGroup-based quota, this is QuotaGroup.name
+      For QuotaLimit-based quota, this is QuotaLimit.name
+      See: google.api.Quota
+      Deprecated: Use quota_metrics to get per quota group limit exceeded status.
+  *   `quotaConsumed` (*type:* `map()`, *default:* `nil`) - Map of quota group name to the actual number of tokens consumed. If the
+      quota check was not successful, then this will not be populated due to no
+      quota consumption.
 
-  We are not merging this field with 'quota_metrics' field because of the
-  complexity of scaling in Chemist client code base. For simplicity, we will
-  keep this field for Castor (that scales quota usage) and 'quota_metrics'
-  for SuperQuota (that doesn't scale quota usage).
-  Defaults to `nil`.
-  - quotaMetrics (list(GoogleApi.ServiceControl.V1.Model.MetricValueSet.t)): Quota metrics to indicate the usage. Depending on the check request, one or
-  more of the following metrics will be included:
+      We are not merging this field with 'quota_metrics' field because of the
+      complexity of scaling in Chemist client code base. For simplicity, we will
+      keep this field for Castor (that scales quota usage) and 'quota_metrics'
+      for SuperQuota (that doesn't scale quota usage).
 
-  1. For rate quota, per quota group or per quota metric incremental usage
-  will be specified using the following delta metric:
-  "serviceruntime.googleapis.com/api/consumer/quota_used_count"
+  *   `quotaMetrics` (*type:* `list(GoogleApi.ServiceControl.V1.Model.MetricValueSet.t)`, *default:* `nil`) - Quota metrics to indicate the usage. Depending on the check request, one or
+      more of the following metrics will be included:
 
-  2. For allocation quota, per quota metric total usage will be specified
-  using the following gauge metric:
-  "serviceruntime.googleapis.com/allocation/consumer/quota_used_count"
+      1. For rate quota, per quota group or per quota metric incremental usage
+      will be specified using the following delta metric:
+        "serviceruntime.googleapis.com/api/consumer/quota_used_count"
 
-  3. For both rate quota and allocation quota, the quota limit reached
-  condition will be specified using the following boolean metric:
-  "serviceruntime.googleapis.com/quota/exceeded" Defaults to `nil`.
+      2. For allocation quota, per quota metric total usage will be specified
+      using the following gauge metric:
+        "serviceruntime.googleapis.com/allocation/consumer/quota_used_count"
+
+      3. For both rate quota and allocation quota, the quota limit reached
+      condition will be specified using the following boolean metric:
+        "serviceruntime.googleapis.com/quota/exceeded"
   """
 
   use GoogleApi.Gax.ModelBase

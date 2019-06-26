@@ -21,10 +21,10 @@ defmodule GoogleApi.ServiceControl.V1.Model.CheckInfo do
 
   ## Attributes
 
-  - consumerInfo (GoogleApi.ServiceControl.V1.Model.ConsumerInfo.t): Consumer info of this check. Defaults to `nil`.
-  - unusedArguments (list(String.t)): A list of fields and label keys that are ignored by the server.
-  The client doesn't need to send them for following requests to improve
-  performance and allow better aggregation. Defaults to `nil`.
+  *   `consumerInfo` (*type:* `GoogleApi.ServiceControl.V1.Model.ConsumerInfo.t`, *default:* `nil`) - Consumer info of this check.
+  *   `unusedArguments` (*type:* `list(String.t)`, *default:* `nil`) - A list of fields and label keys that are ignored by the server.
+      The client doesn't need to send them for following requests to improve
+      performance and allow better aggregation.
   """
 
   use GoogleApi.Gax.ModelBase
