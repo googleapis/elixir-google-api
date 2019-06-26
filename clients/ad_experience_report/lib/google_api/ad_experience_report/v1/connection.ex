@@ -27,6 +27,6 @@ defmodule GoogleApi.AdExperienceReport.V1.Connection do
       # Test scope for access to the Zoo service
       "https://www.googleapis.com/auth/xapi.zoo"
     ],
-    otp_app: :google_api_adexperiencereport,
+    otp_app: :google_api_ad_experience_report,
     base_url: "https://adexperiencereport.googleapis.com/"
 end
