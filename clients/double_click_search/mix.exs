@@ -1,7 +1,7 @@
 defmodule GoogleApi.DoubleClickSearch.V2.Mixfile do
   use Mix.Project
 
-  @version "0.2.0"
+  @version "0.3.0"
 
   def project do
     [app: :google_api_double_click_search,
