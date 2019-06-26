@@ -21,10 +21,10 @@ defmodule GoogleApi.Logging.V2.Model.LogLine do
 
   ## Attributes
 
-  - logMessage (String.t): App-provided log message. Defaults to `nil`.
-  - severity (String.t): Severity of this log entry. Defaults to `nil`.
-  - sourceLocation (GoogleApi.Logging.V2.Model.SourceLocation.t): Where in the source code this log message was written. Defaults to `nil`.
-  - time (DateTime.t): Approximate time when this log entry was made. Defaults to `nil`.
+  *   `logMessage` (*type:* `String.t`, *default:* `nil`) - App-provided log message.
+  *   `severity` (*type:* `String.t`, *default:* `nil`) - Severity of this log entry.
+  *   `sourceLocation` (*type:* `GoogleApi.Logging.V2.Model.SourceLocation.t`, *default:* `nil`) - Where in the source code this log message was written.
+  *   `time` (*type:* `DateTime.t`, *default:* `nil`) - Approximate time when this log entry was made.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,9 +21,9 @@ defmodule GoogleApi.Logging.V2.Model.BucketOptions do
 
   ## Attributes
 
-  - explicitBuckets (GoogleApi.Logging.V2.Model.Explicit.t): The explicit buckets. Defaults to `nil`.
-  - exponentialBuckets (GoogleApi.Logging.V2.Model.Exponential.t): The exponential buckets. Defaults to `nil`.
-  - linearBuckets (GoogleApi.Logging.V2.Model.Linear.t): The linear bucket. Defaults to `nil`.
+  *   `explicitBuckets` (*type:* `GoogleApi.Logging.V2.Model.Explicit.t`, *default:* `nil`) - The explicit buckets.
+  *   `exponentialBuckets` (*type:* `GoogleApi.Logging.V2.Model.Exponential.t`, *default:* `nil`) - The exponential buckets.
+  *   `linearBuckets` (*type:* `GoogleApi.Logging.V2.Model.Linear.t`, *default:* `nil`) - The linear bucket.
   """
 
   use GoogleApi.Gax.ModelBase

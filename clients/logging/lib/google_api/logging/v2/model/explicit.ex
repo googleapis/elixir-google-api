@@ -21,7 +21,7 @@ defmodule GoogleApi.Logging.V2.Model.Explicit do
 
   ## Attributes
 
-  - bounds (list(float())): The values must be monotonically increasing. Defaults to `nil`.
+  *   `bounds` (*type:* `list(float())`, *default:* `nil`) - The values must be monotonically increasing.
   """
 
   use GoogleApi.Gax.ModelBase

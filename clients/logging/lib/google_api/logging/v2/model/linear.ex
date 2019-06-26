@@ -21,9 +21,9 @@ defmodule GoogleApi.Logging.V2.Model.Linear do
 
   ## Attributes
 
-  - numFiniteBuckets (integer()): Must be greater than 0. Defaults to `nil`.
-  - offset (float()): Lower bound of the first bucket. Defaults to `nil`.
-  - width (float()): Must be greater than 0. Defaults to `nil`.
+  *   `numFiniteBuckets` (*type:* `integer()`, *default:* `nil`) - Must be greater than 0.
+  *   `offset` (*type:* `float()`, *default:* `nil`) - Lower bound of the first bucket.
+  *   `width` (*type:* `float()`, *default:* `nil`) - Must be greater than 0.
   """
 
   use GoogleApi.Gax.ModelBase

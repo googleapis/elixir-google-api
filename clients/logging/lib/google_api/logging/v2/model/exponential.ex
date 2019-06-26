@@ -21,9 +21,9 @@ defmodule GoogleApi.Logging.V2.Model.Exponential do
 
   ## Attributes
 
-  - growthFactor (float()): Must be greater than 1. Defaults to `nil`.
-  - numFiniteBuckets (integer()): Must be greater than 0. Defaults to `nil`.
-  - scale (float()): Must be greater than 0. Defaults to `nil`.
+  *   `growthFactor` (*type:* `float()`, *default:* `nil`) - Must be greater than 1.
+  *   `numFiniteBuckets` (*type:* `integer()`, *default:* `nil`) - Must be greater than 0.
+  *   `scale` (*type:* `float()`, *default:* `nil`) - Must be greater than 0.
   """
 
   use GoogleApi.Gax.ModelBase

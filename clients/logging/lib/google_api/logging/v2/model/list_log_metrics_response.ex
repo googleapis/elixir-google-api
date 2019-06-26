@@ -21,8 +21,8 @@ defmodule GoogleApi.Logging.V2.Model.ListLogMetricsResponse do
 
   ## Attributes
 
-  - metrics (list(GoogleApi.Logging.V2.Model.LogMetric.t)): A list of logs-based metrics. Defaults to `nil`.
-  - nextPageToken (String.t): If there might be more results than appear in this response, then nextPageToken is included. To get the next set of results, call this method again using the value of nextPageToken as pageToken. Defaults to `nil`.
+  *   `metrics` (*type:* `list(GoogleApi.Logging.V2.Model.LogMetric.t)`, *default:* `nil`) - A list of logs-based metrics.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If there might be more results than appear in this response, then nextPageToken is included. To get the next set of results, call this method again using the value of nextPageToken as pageToken.
   """
 
   use GoogleApi.Gax.ModelBase

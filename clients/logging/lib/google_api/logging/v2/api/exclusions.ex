@@ -28,35 +28,41 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
 
   ## Parameters
 
-  - connection (GoogleApi.Logging.V2.Connection): Connection to server
-  - v2_id (String.t): Part of `parent`. Required. The parent resource in which to create the exclusion:
-  "projects/[PROJECT_ID]"
-  "organizations/[ORGANIZATION_ID]"
-  "billingAccounts/[BILLING_ACCOUNT_ID]"
-  "folders/[FOLDER_ID]"
-  Examples: "projects/my-logging-project", "organizations/123456789".
-  - v2_id1 (String.t): Part of `parent`. See documentation of `v2Id`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.Logging.V2.Model.LogExclusion.t): 
+  *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
+  *   `v2_id` (*type:* `String.t`) - Part of `parent`. Required. The parent resource in which to create the exclusion:
+      "projects/[PROJECT_ID]"
+      "organizations/[ORGANIZATION_ID]"
+      "billingAccounts/[BILLING_ACCOUNT_ID]"
+      "folders/[FOLDER_ID]"
+      Examples: "projects/my-logging-project", "organizations/123456789".
+  *   `v2_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v2Id`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Logging.V2.Model.LogExclusion.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Logging.V2.Model.LogExclusion{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Logging.V2.Model.LogExclusion{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec logging_exclusions_create(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.Logging.V2.Model.LogExclusion.t()} | {:error, Tesla.Env.t()}
+  @spec logging_exclusions_create(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.Logging.V2.Model.LogExclusion.t()} | {:error, Tesla.Env.t()}
   def logging_exclusions_create(connection, v2_id, v2_id1, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -92,38 +98,40 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
 
   ## Parameters
 
-  - connection (GoogleApi.Logging.V2.Connection): Connection to server
-  - v2_id (String.t): Part of `name`. Required. The resource name of an existing exclusion to delete:
-  "projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]"
-  "organizations/[ORGANIZATION_ID]/exclusions/[EXCLUSION_ID]"
-  "billingAccounts/[BILLING_ACCOUNT_ID]/exclusions/[EXCLUSION_ID]"
-  "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]"
-  Example: "projects/my-project-id/exclusions/my-exclusion-id".
-  - v2_id1 (String.t): Part of `name`. See documentation of `v2Id`.
-  - exclusions_id (String.t): Part of `name`. See documentation of `v2Id`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
+  *   `v2_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of an existing exclusion to delete:
+      "projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]"
+      "organizations/[ORGANIZATION_ID]/exclusions/[EXCLUSION_ID]"
+      "billingAccounts/[BILLING_ACCOUNT_ID]/exclusions/[EXCLUSION_ID]"
+      "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]"
+      Example: "projects/my-project-id/exclusions/my-exclusion-id".
+  *   `v2_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
+  *   `exclusions_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Logging.V2.Model.Empty{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Logging.V2.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec logging_exclusions_delete(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Logging.V2.Model.Empty.t()} | {:error, Tesla.Env.t()}
   def logging_exclusions_delete(
@@ -168,35 +176,42 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
 
   ## Parameters
 
-  - connection (GoogleApi.Logging.V2.Connection): Connection to server
-  - v2_id (String.t): Part of `name`. Required. The resource name of an existing exclusion:
-  "projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]"
-  "organizations/[ORGANIZATION_ID]/exclusions/[EXCLUSION_ID]"
-  "billingAccounts/[BILLING_ACCOUNT_ID]/exclusions/[EXCLUSION_ID]"
-  "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]"
-  Example: "projects/my-project-id/exclusions/my-exclusion-id".
-  - v2_id1 (String.t): Part of `name`. See documentation of `v2Id`.
-  - exclusions_id (String.t): Part of `name`. See documentation of `v2Id`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
+  *   `v2_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of an existing exclusion:
+      "projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]"
+      "organizations/[ORGANIZATION_ID]/exclusions/[EXCLUSION_ID]"
+      "billingAccounts/[BILLING_ACCOUNT_ID]/exclusions/[EXCLUSION_ID]"
+      "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]"
+      Example: "projects/my-project-id/exclusions/my-exclusion-id".
+  *   `v2_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
+  *   `exclusions_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Logging.V2.Model.LogExclusion{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Logging.V2.Model.LogExclusion{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec logging_exclusions_get(Tesla.Env.client(), String.t(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.Logging.V2.Model.LogExclusion.t()} | {:error, Tesla.Env.t()}
+  @spec logging_exclusions_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.Logging.V2.Model.LogExclusion.t()} | {:error, Tesla.Env.t()}
   def logging_exclusions_get(
         connection,
         v2_id,
@@ -239,35 +254,36 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
 
   ## Parameters
 
-  - connection (GoogleApi.Logging.V2.Connection): Connection to server
-  - v2_id (String.t): Part of `parent`. Required. The parent resource whose exclusions are to be listed.
-  "projects/[PROJECT_ID]"
-  "organizations/[ORGANIZATION_ID]"
-  "billingAccounts/[BILLING_ACCOUNT_ID]"
-  "folders/[FOLDER_ID]"
+  *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
+  *   `v2_id` (*type:* `String.t`) - Part of `parent`. Required. The parent resource whose exclusions are to be listed.
+      "projects/[PROJECT_ID]"
+      "organizations/[ORGANIZATION_ID]"
+      "billingAccounts/[BILLING_ACCOUNT_ID]"
+      "folders/[FOLDER_ID]"
 
-  - v2_id1 (String.t): Part of `parent`. See documentation of `v2Id`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :pageSize (integer()): Optional. The maximum number of results to return from this request. Non-positive values are ignored. The presence of nextPageToken in the response indicates that more results might be available.
-    - :pageToken (String.t): Optional. If present, then retrieve the next batch of results from the preceding call to this method. pageToken must be the value of nextPageToken from the previous response. The values of other method parameters should be identical to those in the previous call.
+  *   `v2_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v2Id`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of results to return from this request. Non-positive values are ignored. The presence of nextPageToken in the response indicates that more results might be available.
+      *   `:pageToken` (*type:* `String.t`) - Optional. If present, then retrieve the next batch of results from the preceding call to this method. pageToken must be the value of nextPageToken from the previous response. The values of other method parameters should be identical to those in the previous call.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Logging.V2.Model.ListExclusionsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Logging.V2.Model.ListExclusionsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec logging_exclusions_list(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+  @spec logging_exclusions_list(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Logging.V2.Model.ListExclusionsResponse.t()} | {:error, Tesla.Env.t()}
   def logging_exclusions_list(connection, v2_id, v2_id1, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -305,40 +321,42 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
 
   ## Parameters
 
-  - connection (GoogleApi.Logging.V2.Connection): Connection to server
-  - v2_id (String.t): Part of `name`. Required. The resource name of the exclusion to update:
-  "projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]"
-  "organizations/[ORGANIZATION_ID]/exclusions/[EXCLUSION_ID]"
-  "billingAccounts/[BILLING_ACCOUNT_ID]/exclusions/[EXCLUSION_ID]"
-  "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]"
-  Example: "projects/my-project-id/exclusions/my-exclusion-id".
-  - v2_id1 (String.t): Part of `name`. See documentation of `v2Id`.
-  - exclusions_id (String.t): Part of `name`. See documentation of `v2Id`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :updateMask (String.t): Required. A nonempty list of fields to change in the existing exclusion. New values for the fields are taken from the corresponding fields in the LogExclusion included in this request. Fields not mentioned in update_mask are not changed and are ignored in the request.For example, to change the filter and description of an exclusion, specify an update_mask of "filter,description".
-    - :body (GoogleApi.Logging.V2.Model.LogExclusion.t): 
+  *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
+  *   `v2_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the exclusion to update:
+      "projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]"
+      "organizations/[ORGANIZATION_ID]/exclusions/[EXCLUSION_ID]"
+      "billingAccounts/[BILLING_ACCOUNT_ID]/exclusions/[EXCLUSION_ID]"
+      "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]"
+      Example: "projects/my-project-id/exclusions/my-exclusion-id".
+  *   `v2_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
+  *   `exclusions_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:updateMask` (*type:* `String.t`) - Required. A nonempty list of fields to change in the existing exclusion. New values for the fields are taken from the corresponding fields in the LogExclusion included in this request. Fields not mentioned in update_mask are not changed and are ignored in the request.For example, to change the filter and description of an exclusion, specify an update_mask of "filter,description".
+      *   `:body` (*type:* `GoogleApi.Logging.V2.Model.LogExclusion.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Logging.V2.Model.LogExclusion{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Logging.V2.Model.LogExclusion{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec logging_exclusions_patch(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Logging.V2.Model.LogExclusion.t()} | {:error, Tesla.Env.t()}
   def logging_exclusions_patch(

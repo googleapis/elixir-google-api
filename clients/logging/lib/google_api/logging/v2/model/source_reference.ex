@@ -21,8 +21,8 @@ defmodule GoogleApi.Logging.V2.Model.SourceReference do
 
   ## Attributes
 
-  - repository (String.t): Optional. A URI string identifying the repository. Example: "https://github.com/GoogleCloudPlatform/kubernetes.git" Defaults to `nil`.
-  - revisionId (String.t): The canonical and persistent identifier of the deployed revision. Example (git): "0035781c50ec7aa23385dc841529ce8a4b70db1b" Defaults to `nil`.
+  *   `repository` (*type:* `String.t`, *default:* `nil`) - Optional. A URI string identifying the repository. Example: "https://github.com/GoogleCloudPlatform/kubernetes.git"
+  *   `revisionId` (*type:* `String.t`, *default:* `nil`) - The canonical and persistent identifier of the deployed revision. Example (git): "0035781c50ec7aa23385dc841529ce8a4b70db1b"
   """
 
   use GoogleApi.Gax.ModelBase

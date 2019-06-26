@@ -21,8 +21,8 @@ defmodule GoogleApi.Logging.V2.Model.ListMonitoredResourceDescriptorsResponse do
 
   ## Attributes
 
-  - nextPageToken (String.t): If there might be more results than those appearing in this response, then nextPageToken is included. To get the next set of results, call this method again using the value of nextPageToken as pageToken. Defaults to `nil`.
-  - resourceDescriptors (list(GoogleApi.Logging.V2.Model.MonitoredResourceDescriptor.t)): A list of resource descriptors. Defaults to `nil`.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If there might be more results than those appearing in this response, then nextPageToken is included. To get the next set of results, call this method again using the value of nextPageToken as pageToken.
+  *   `resourceDescriptors` (*type:* `list(GoogleApi.Logging.V2.Model.MonitoredResourceDescriptor.t)`, *default:* `nil`) - A list of resource descriptors.
   """
 
   use GoogleApi.Gax.ModelBase

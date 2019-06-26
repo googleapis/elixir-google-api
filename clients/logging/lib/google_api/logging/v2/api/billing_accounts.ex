@@ -28,34 +28,39 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
 
   ## Parameters
 
-  - connection (GoogleApi.Logging.V2.Connection): Connection to server
-  - billing_accounts_id (String.t): Part of `parent`. Required. The parent resource in which to create the exclusion:
-  "projects/[PROJECT_ID]"
-  "organizations/[ORGANIZATION_ID]"
-  "billingAccounts/[BILLING_ACCOUNT_ID]"
-  "folders/[FOLDER_ID]"
-  Examples: "projects/my-logging-project", "organizations/123456789".
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :body (GoogleApi.Logging.V2.Model.LogExclusion.t): 
+  *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
+  *   `billing_accounts_id` (*type:* `String.t`) - Part of `parent`. Required. The parent resource in which to create the exclusion:
+      "projects/[PROJECT_ID]"
+      "organizations/[ORGANIZATION_ID]"
+      "billingAccounts/[BILLING_ACCOUNT_ID]"
+      "folders/[FOLDER_ID]"
+      Examples: "projects/my-logging-project", "organizations/123456789".
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Logging.V2.Model.LogExclusion.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Logging.V2.Model.LogExclusion{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Logging.V2.Model.LogExclusion{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec logging_billing_accounts_exclusions_create(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, GoogleApi.Logging.V2.Model.LogExclusion.t()} | {:error, Tesla.Env.t()}
+  @spec logging_billing_accounts_exclusions_create(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.Logging.V2.Model.LogExclusion.t()} | {:error, Tesla.Env.t()}
   def logging_billing_accounts_exclusions_create(
         connection,
         billing_accounts_id,
@@ -95,36 +100,38 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
 
   ## Parameters
 
-  - connection (GoogleApi.Logging.V2.Connection): Connection to server
-  - billing_accounts_id (String.t): Part of `name`. Required. The resource name of an existing exclusion to delete:
-  "projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]"
-  "organizations/[ORGANIZATION_ID]/exclusions/[EXCLUSION_ID]"
-  "billingAccounts/[BILLING_ACCOUNT_ID]/exclusions/[EXCLUSION_ID]"
-  "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]"
-  Example: "projects/my-project-id/exclusions/my-exclusion-id".
-  - exclusions_id (String.t): Part of `name`. See documentation of `billingAccountsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
+  *   `billing_accounts_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of an existing exclusion to delete:
+      "projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]"
+      "organizations/[ORGANIZATION_ID]/exclusions/[EXCLUSION_ID]"
+      "billingAccounts/[BILLING_ACCOUNT_ID]/exclusions/[EXCLUSION_ID]"
+      "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]"
+      Example: "projects/my-project-id/exclusions/my-exclusion-id".
+  *   `exclusions_id` (*type:* `String.t`) - Part of `name`. See documentation of `billingAccountsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Logging.V2.Model.Empty{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Logging.V2.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec logging_billing_accounts_exclusions_delete(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Logging.V2.Model.Empty.t()} | {:error, Tesla.Env.t()}
   def logging_billing_accounts_exclusions_delete(
@@ -167,36 +174,38 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
 
   ## Parameters
 
-  - connection (GoogleApi.Logging.V2.Connection): Connection to server
-  - billing_accounts_id (String.t): Part of `name`. Required. The resource name of an existing exclusion:
-  "projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]"
-  "organizations/[ORGANIZATION_ID]/exclusions/[EXCLUSION_ID]"
-  "billingAccounts/[BILLING_ACCOUNT_ID]/exclusions/[EXCLUSION_ID]"
-  "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]"
-  Example: "projects/my-project-id/exclusions/my-exclusion-id".
-  - exclusions_id (String.t): Part of `name`. See documentation of `billingAccountsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
+  *   `billing_accounts_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of an existing exclusion:
+      "projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]"
+      "organizations/[ORGANIZATION_ID]/exclusions/[EXCLUSION_ID]"
+      "billingAccounts/[BILLING_ACCOUNT_ID]/exclusions/[EXCLUSION_ID]"
+      "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]"
+      Example: "projects/my-project-id/exclusions/my-exclusion-id".
+  *   `exclusions_id` (*type:* `String.t`) - Part of `name`. See documentation of `billingAccountsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Logging.V2.Model.LogExclusion{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Logging.V2.Model.LogExclusion{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec logging_billing_accounts_exclusions_get(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Logging.V2.Model.LogExclusion.t()} | {:error, Tesla.Env.t()}
   def logging_billing_accounts_exclusions_get(
@@ -239,34 +248,40 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
 
   ## Parameters
 
-  - connection (GoogleApi.Logging.V2.Connection): Connection to server
-  - billing_accounts_id (String.t): Part of `parent`. Required. The parent resource whose exclusions are to be listed.
-  "projects/[PROJECT_ID]"
-  "organizations/[ORGANIZATION_ID]"
-  "billingAccounts/[BILLING_ACCOUNT_ID]"
-  "folders/[FOLDER_ID]"
+  *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
+  *   `billing_accounts_id` (*type:* `String.t`) - Part of `parent`. Required. The parent resource whose exclusions are to be listed.
+      "projects/[PROJECT_ID]"
+      "organizations/[ORGANIZATION_ID]"
+      "billingAccounts/[BILLING_ACCOUNT_ID]"
+      "folders/[FOLDER_ID]"
 
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :pageSize (integer()): Optional. The maximum number of results to return from this request. Non-positive values are ignored. The presence of nextPageToken in the response indicates that more results might be available.
-    - :pageToken (String.t): Optional. If present, then retrieve the next batch of results from the preceding call to this method. pageToken must be the value of nextPageToken from the previous response. The values of other method parameters should be identical to those in the previous call.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of results to return from this request. Non-positive values are ignored. The presence of nextPageToken in the response indicates that more results might be available.
+      *   `:pageToken` (*type:* `String.t`) - Optional. If present, then retrieve the next batch of results from the preceding call to this method. pageToken must be the value of nextPageToken from the previous response. The values of other method parameters should be identical to those in the previous call.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Logging.V2.Model.ListExclusionsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Logging.V2.Model.ListExclusionsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec logging_billing_accounts_exclusions_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec logging_billing_accounts_exclusions_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.Logging.V2.Model.ListExclusionsResponse.t()} | {:error, Tesla.Env.t()}
   def logging_billing_accounts_exclusions_list(
         connection,
@@ -308,38 +323,40 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
 
   ## Parameters
 
-  - connection (GoogleApi.Logging.V2.Connection): Connection to server
-  - billing_accounts_id (String.t): Part of `name`. Required. The resource name of the exclusion to update:
-  "projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]"
-  "organizations/[ORGANIZATION_ID]/exclusions/[EXCLUSION_ID]"
-  "billingAccounts/[BILLING_ACCOUNT_ID]/exclusions/[EXCLUSION_ID]"
-  "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]"
-  Example: "projects/my-project-id/exclusions/my-exclusion-id".
-  - exclusions_id (String.t): Part of `name`. See documentation of `billingAccountsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :updateMask (String.t): Required. A nonempty list of fields to change in the existing exclusion. New values for the fields are taken from the corresponding fields in the LogExclusion included in this request. Fields not mentioned in update_mask are not changed and are ignored in the request.For example, to change the filter and description of an exclusion, specify an update_mask of "filter,description".
-    - :body (GoogleApi.Logging.V2.Model.LogExclusion.t): 
+  *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
+  *   `billing_accounts_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the exclusion to update:
+      "projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]"
+      "organizations/[ORGANIZATION_ID]/exclusions/[EXCLUSION_ID]"
+      "billingAccounts/[BILLING_ACCOUNT_ID]/exclusions/[EXCLUSION_ID]"
+      "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]"
+      Example: "projects/my-project-id/exclusions/my-exclusion-id".
+  *   `exclusions_id` (*type:* `String.t`) - Part of `name`. See documentation of `billingAccountsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:updateMask` (*type:* `String.t`) - Required. A nonempty list of fields to change in the existing exclusion. New values for the fields are taken from the corresponding fields in the LogExclusion included in this request. Fields not mentioned in update_mask are not changed and are ignored in the request.For example, to change the filter and description of an exclusion, specify an update_mask of "filter,description".
+      *   `:body` (*type:* `GoogleApi.Logging.V2.Model.LogExclusion.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Logging.V2.Model.LogExclusion{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Logging.V2.Model.LogExclusion{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec logging_billing_accounts_exclusions_patch(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Logging.V2.Model.LogExclusion.t()} | {:error, Tesla.Env.t()}
   def logging_billing_accounts_exclusions_patch(
@@ -384,36 +401,38 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
 
   ## Parameters
 
-  - connection (GoogleApi.Logging.V2.Connection): Connection to server
-  - billing_accounts_id (String.t): Part of `logName`. Required. The resource name of the log to delete:
-  "projects/[PROJECT_ID]/logs/[LOG_ID]"
-  "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
-  "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
-  "folders/[FOLDER_ID]/logs/[LOG_ID]"
-  [LOG_ID] must be URL-encoded. For example, "projects/my-project-id/logs/syslog", "organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity". For more information about log names, see LogEntry.
-  - logs_id (String.t): Part of `logName`. See documentation of `billingAccountsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
+  *   `billing_accounts_id` (*type:* `String.t`) - Part of `logName`. Required. The resource name of the log to delete:
+      "projects/[PROJECT_ID]/logs/[LOG_ID]"
+      "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
+      "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
+      "folders/[FOLDER_ID]/logs/[LOG_ID]"
+      [LOG_ID] must be URL-encoded. For example, "projects/my-project-id/logs/syslog", "organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity". For more information about log names, see LogEntry.
+  *   `logs_id` (*type:* `String.t`) - Part of `logName`. See documentation of `billingAccountsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Logging.V2.Model.Empty{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Logging.V2.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec logging_billing_accounts_logs_delete(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Logging.V2.Model.Empty.t()} | {:error, Tesla.Env.t()}
   def logging_billing_accounts_logs_delete(
@@ -456,34 +475,35 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
 
   ## Parameters
 
-  - connection (GoogleApi.Logging.V2.Connection): Connection to server
-  - billing_accounts_id (String.t): Part of `parent`. Required. The resource name that owns the logs:
-  "projects/[PROJECT_ID]"
-  "organizations/[ORGANIZATION_ID]"
-  "billingAccounts/[BILLING_ACCOUNT_ID]"
-  "folders/[FOLDER_ID]"
+  *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
+  *   `billing_accounts_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name that owns the logs:
+      "projects/[PROJECT_ID]"
+      "organizations/[ORGANIZATION_ID]"
+      "billingAccounts/[BILLING_ACCOUNT_ID]"
+      "folders/[FOLDER_ID]"
 
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :pageSize (integer()): Optional. The maximum number of results to return from this request. Non-positive values are ignored. The presence of nextPageToken in the response indicates that more results might be available.
-    - :pageToken (String.t): Optional. If present, then retrieve the next batch of results from the preceding call to this method. pageToken must be the value of nextPageToken from the previous response. The values of other method parameters should be identical to those in the previous call.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of results to return from this request. Non-positive values are ignored. The presence of nextPageToken in the response indicates that more results might be available.
+      *   `:pageToken` (*type:* `String.t`) - Optional. If present, then retrieve the next batch of results from the preceding call to this method. pageToken must be the value of nextPageToken from the previous response. The values of other method parameters should be identical to those in the previous call.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Logging.V2.Model.ListLogsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Logging.V2.Model.ListLogsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec logging_billing_accounts_logs_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec logging_billing_accounts_logs_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Logging.V2.Model.ListLogsResponse.t()} | {:error, Tesla.Env.t()}
   def logging_billing_accounts_logs_list(
         connection,
@@ -525,35 +545,40 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
 
   ## Parameters
 
-  - connection (GoogleApi.Logging.V2.Connection): Connection to server
-  - billing_accounts_id (String.t): Part of `parent`. Required. The resource in which to create the sink:
-  "projects/[PROJECT_ID]"
-  "organizations/[ORGANIZATION_ID]"
-  "billingAccounts/[BILLING_ACCOUNT_ID]"
-  "folders/[FOLDER_ID]"
-  Examples: "projects/my-logging-project", "organizations/123456789".
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :uniqueWriterIdentity (boolean()): Optional. Determines the kind of IAM identity returned as writer_identity in the new sink. If this value is omitted or set to false, and if the sink's parent is a project, then the value returned as writer_identity is the same group or service account used by Logging before the addition of writer identities to this API. The sink's destination must be in the same project as the sink itself.If this field is set to true, or if the sink is owned by a non-project resource such as an organization, then the value of writer_identity will be a unique service account used only for exports from the new sink. For more information, see writer_identity in LogSink.
-    - :body (GoogleApi.Logging.V2.Model.LogSink.t): 
+  *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
+  *   `billing_accounts_id` (*type:* `String.t`) - Part of `parent`. Required. The resource in which to create the sink:
+      "projects/[PROJECT_ID]"
+      "organizations/[ORGANIZATION_ID]"
+      "billingAccounts/[BILLING_ACCOUNT_ID]"
+      "folders/[FOLDER_ID]"
+      Examples: "projects/my-logging-project", "organizations/123456789".
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:uniqueWriterIdentity` (*type:* `boolean()`) - Optional. Determines the kind of IAM identity returned as writer_identity in the new sink. If this value is omitted or set to false, and if the sink's parent is a project, then the value returned as writer_identity is the same group or service account used by Logging before the addition of writer identities to this API. The sink's destination must be in the same project as the sink itself.If this field is set to true, or if the sink is owned by a non-project resource such as an organization, then the value of writer_identity will be a unique service account used only for exports from the new sink. For more information, see writer_identity in LogSink.
+      *   `:body` (*type:* `GoogleApi.Logging.V2.Model.LogSink.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Logging.V2.Model.LogSink{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Logging.V2.Model.LogSink{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec logging_billing_accounts_sinks_create(Tesla.Env.client(), String.t(), keyword()) ::
-          {:ok, GoogleApi.Logging.V2.Model.LogSink.t()} | {:error, Tesla.Env.t()}
+  @spec logging_billing_accounts_sinks_create(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.Logging.V2.Model.LogSink.t()} | {:error, Tesla.Env.t()}
   def logging_billing_accounts_sinks_create(
         connection,
         billing_accounts_id,
@@ -594,36 +619,38 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
 
   ## Parameters
 
-  - connection (GoogleApi.Logging.V2.Connection): Connection to server
-  - billing_accounts_id (String.t): Part of `sinkName`. Required. The full resource name of the sink to delete, including the parent resource and the sink identifier:
-  "projects/[PROJECT_ID]/sinks/[SINK_ID]"
-  "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
-  "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
-  "folders/[FOLDER_ID]/sinks/[SINK_ID]"
-  Example: "projects/my-project-id/sinks/my-sink-id".
-  - sinks_id (String.t): Part of `sinkName`. See documentation of `billingAccountsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
+  *   `billing_accounts_id` (*type:* `String.t`) - Part of `sinkName`. Required. The full resource name of the sink to delete, including the parent resource and the sink identifier:
+      "projects/[PROJECT_ID]/sinks/[SINK_ID]"
+      "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
+      "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
+      "folders/[FOLDER_ID]/sinks/[SINK_ID]"
+      Example: "projects/my-project-id/sinks/my-sink-id".
+  *   `sinks_id` (*type:* `String.t`) - Part of `sinkName`. See documentation of `billingAccountsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Logging.V2.Model.Empty{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Logging.V2.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec logging_billing_accounts_sinks_delete(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Logging.V2.Model.Empty.t()} | {:error, Tesla.Env.t()}
   def logging_billing_accounts_sinks_delete(
@@ -666,34 +693,40 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
 
   ## Parameters
 
-  - connection (GoogleApi.Logging.V2.Connection): Connection to server
-  - billing_accounts_id (String.t): Part of `sinkName`. Required. The resource name of the sink:
-  "projects/[PROJECT_ID]/sinks/[SINK_ID]"
-  "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
-  "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
-  "folders/[FOLDER_ID]/sinks/[SINK_ID]"
-  Example: "projects/my-project-id/sinks/my-sink-id".
-  - sinks_id (String.t): Part of `sinkName`. See documentation of `billingAccountsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
+  *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
+  *   `billing_accounts_id` (*type:* `String.t`) - Part of `sinkName`. Required. The resource name of the sink:
+      "projects/[PROJECT_ID]/sinks/[SINK_ID]"
+      "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
+      "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
+      "folders/[FOLDER_ID]/sinks/[SINK_ID]"
+      Example: "projects/my-project-id/sinks/my-sink-id".
+  *   `sinks_id` (*type:* `String.t`) - Part of `sinkName`. See documentation of `billingAccountsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Logging.V2.Model.LogSink{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Logging.V2.Model.LogSink{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec logging_billing_accounts_sinks_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.Logging.V2.Model.LogSink.t()} | {:error, Tesla.Env.t()}
+  @spec logging_billing_accounts_sinks_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.Logging.V2.Model.LogSink.t()} | {:error, Tesla.Env.t()}
   def logging_billing_accounts_sinks_get(
         connection,
         billing_accounts_id,
@@ -734,34 +767,35 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
 
   ## Parameters
 
-  - connection (GoogleApi.Logging.V2.Connection): Connection to server
-  - billing_accounts_id (String.t): Part of `parent`. Required. The parent resource whose sinks are to be listed:
-  "projects/[PROJECT_ID]"
-  "organizations/[ORGANIZATION_ID]"
-  "billingAccounts/[BILLING_ACCOUNT_ID]"
-  "folders/[FOLDER_ID]"
+  *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
+  *   `billing_accounts_id` (*type:* `String.t`) - Part of `parent`. Required. The parent resource whose sinks are to be listed:
+      "projects/[PROJECT_ID]"
+      "organizations/[ORGANIZATION_ID]"
+      "billingAccounts/[BILLING_ACCOUNT_ID]"
+      "folders/[FOLDER_ID]"
 
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :pageSize (integer()): Optional. The maximum number of results to return from this request. Non-positive values are ignored. The presence of nextPageToken in the response indicates that more results might be available.
-    - :pageToken (String.t): Optional. If present, then retrieve the next batch of results from the preceding call to this method. pageToken must be the value of nextPageToken from the previous response. The values of other method parameters should be identical to those in the previous call.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of results to return from this request. Non-positive values are ignored. The presence of nextPageToken in the response indicates that more results might be available.
+      *   `:pageToken` (*type:* `String.t`) - Optional. If present, then retrieve the next batch of results from the preceding call to this method. pageToken must be the value of nextPageToken from the previous response. The values of other method parameters should be identical to those in the previous call.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Logging.V2.Model.ListSinksResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Logging.V2.Model.ListSinksResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec logging_billing_accounts_sinks_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec logging_billing_accounts_sinks_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Logging.V2.Model.ListSinksResponse.t()} | {:error, Tesla.Env.t()}
   def logging_billing_accounts_sinks_list(
         connection,
@@ -803,42 +837,44 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
 
   ## Parameters
 
-  - connection (GoogleApi.Logging.V2.Connection): Connection to server
-  - billing_accounts_id (String.t): Part of `sinkName`. Required. The full resource name of the sink to update, including the parent resource and the sink identifier:
-  "projects/[PROJECT_ID]/sinks/[SINK_ID]"
-  "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
-  "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
-  "folders/[FOLDER_ID]/sinks/[SINK_ID]"
-  Example: "projects/my-project-id/sinks/my-sink-id".
-  - sinks_id (String.t): Part of `sinkName`. See documentation of `billingAccountsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :uniqueWriterIdentity (boolean()): Optional. See sinks.create for a description of this field. When updating a sink, the effect of this field on the value of writer_identity in the updated sink depends on both the old and new values of this field:
-  If the old and new values of this field are both false or both true, then there is no change to the sink's writer_identity.
-  If the old value is false and the new value is true, then writer_identity is changed to a unique service account.
-  It is an error if the old value is true and the new value is set to false or defaulted to false.
-    - :updateMask (String.t): Optional. Field mask that specifies the fields in sink that need an update. A sink field will be overwritten if, and only if, it is in the update mask. name and output only fields cannot be updated.An empty updateMask is temporarily treated as using the following mask for backwards compatibility purposes:  destination,filter,includeChildren At some point in the future, behavior will be removed and specifying an empty updateMask will be an error.For a detailed FieldMask definition, see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMaskExample: updateMask=filter.
-    - :body (GoogleApi.Logging.V2.Model.LogSink.t): 
+  *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
+  *   `billing_accounts_id` (*type:* `String.t`) - Part of `sinkName`. Required. The full resource name of the sink to update, including the parent resource and the sink identifier:
+      "projects/[PROJECT_ID]/sinks/[SINK_ID]"
+      "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
+      "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
+      "folders/[FOLDER_ID]/sinks/[SINK_ID]"
+      Example: "projects/my-project-id/sinks/my-sink-id".
+  *   `sinks_id` (*type:* `String.t`) - Part of `sinkName`. See documentation of `billingAccountsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:uniqueWriterIdentity` (*type:* `boolean()`) - Optional. See sinks.create for a description of this field. When updating a sink, the effect of this field on the value of writer_identity in the updated sink depends on both the old and new values of this field:
+          If the old and new values of this field are both false or both true, then there is no change to the sink's writer_identity.
+          If the old value is false and the new value is true, then writer_identity is changed to a unique service account.
+          It is an error if the old value is true and the new value is set to false or defaulted to false.
+      *   `:updateMask` (*type:* `String.t`) - Optional. Field mask that specifies the fields in sink that need an update. A sink field will be overwritten if, and only if, it is in the update mask. name and output only fields cannot be updated.An empty updateMask is temporarily treated as using the following mask for backwards compatibility purposes:  destination,filter,includeChildren At some point in the future, behavior will be removed and specifying an empty updateMask will be an error.For a detailed FieldMask definition, see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMaskExample: updateMask=filter.
+      *   `:body` (*type:* `GoogleApi.Logging.V2.Model.LogSink.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Logging.V2.Model.LogSink{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Logging.V2.Model.LogSink{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec logging_billing_accounts_sinks_patch(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Logging.V2.Model.LogSink.t()} | {:error, Tesla.Env.t()}
   def logging_billing_accounts_sinks_patch(
@@ -884,42 +920,44 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
 
   ## Parameters
 
-  - connection (GoogleApi.Logging.V2.Connection): Connection to server
-  - billing_accounts_id (String.t): Part of `sinkName`. Required. The full resource name of the sink to update, including the parent resource and the sink identifier:
-  "projects/[PROJECT_ID]/sinks/[SINK_ID]"
-  "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
-  "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
-  "folders/[FOLDER_ID]/sinks/[SINK_ID]"
-  Example: "projects/my-project-id/sinks/my-sink-id".
-  - sinks_id (String.t): Part of `sinkName`. See documentation of `billingAccountsId`.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :$.xgafv (String.t): V1 error format.
-    - :access_token (String.t): OAuth access token.
-    - :alt (String.t): Data format for response.
-    - :callback (String.t): JSONP
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-    - :uploadType (String.t): Legacy upload protocol for media (e.g. "media", "multipart").
-    - :upload_protocol (String.t): Upload protocol for media (e.g. "raw", "multipart").
-    - :uniqueWriterIdentity (boolean()): Optional. See sinks.create for a description of this field. When updating a sink, the effect of this field on the value of writer_identity in the updated sink depends on both the old and new values of this field:
-  If the old and new values of this field are both false or both true, then there is no change to the sink's writer_identity.
-  If the old value is false and the new value is true, then writer_identity is changed to a unique service account.
-  It is an error if the old value is true and the new value is set to false or defaulted to false.
-    - :updateMask (String.t): Optional. Field mask that specifies the fields in sink that need an update. A sink field will be overwritten if, and only if, it is in the update mask. name and output only fields cannot be updated.An empty updateMask is temporarily treated as using the following mask for backwards compatibility purposes:  destination,filter,includeChildren At some point in the future, behavior will be removed and specifying an empty updateMask will be an error.For a detailed FieldMask definition, see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMaskExample: updateMask=filter.
-    - :body (GoogleApi.Logging.V2.Model.LogSink.t): 
+  *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
+  *   `billing_accounts_id` (*type:* `String.t`) - Part of `sinkName`. Required. The full resource name of the sink to update, including the parent resource and the sink identifier:
+      "projects/[PROJECT_ID]/sinks/[SINK_ID]"
+      "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
+      "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
+      "folders/[FOLDER_ID]/sinks/[SINK_ID]"
+      Example: "projects/my-project-id/sinks/my-sink-id".
+  *   `sinks_id` (*type:* `String.t`) - Part of `sinkName`. See documentation of `billingAccountsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:uniqueWriterIdentity` (*type:* `boolean()`) - Optional. See sinks.create for a description of this field. When updating a sink, the effect of this field on the value of writer_identity in the updated sink depends on both the old and new values of this field:
+          If the old and new values of this field are both false or both true, then there is no change to the sink's writer_identity.
+          If the old value is false and the new value is true, then writer_identity is changed to a unique service account.
+          It is an error if the old value is true and the new value is set to false or defaulted to false.
+      *   `:updateMask` (*type:* `String.t`) - Optional. Field mask that specifies the fields in sink that need an update. A sink field will be overwritten if, and only if, it is in the update mask. name and output only fields cannot be updated.An empty updateMask is temporarily treated as using the following mask for backwards compatibility purposes:  destination,filter,includeChildren At some point in the future, behavior will be removed and specifying an empty updateMask will be an error.For a detailed FieldMask definition, see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMaskExample: updateMask=filter.
+      *   `:body` (*type:* `GoogleApi.Logging.V2.Model.LogSink.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Logging.V2.Model.LogSink{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Logging.V2.Model.LogSink{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec logging_billing_accounts_sinks_update(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Logging.V2.Model.LogSink.t()} | {:error, Tesla.Env.t()}
   def logging_billing_accounts_sinks_update(

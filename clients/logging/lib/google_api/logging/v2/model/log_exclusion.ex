@@ -21,12 +21,12 @@ defmodule GoogleApi.Logging.V2.Model.LogExclusion do
 
   ## Attributes
 
-  - createTime (DateTime.t): Output only. The creation timestamp of the exclusion.This field may not be present for older exclusions. Defaults to `nil`.
-  - description (String.t): Optional. A description of this exclusion. Defaults to `nil`.
-  - disabled (boolean()): Optional. If set to True, then this exclusion is disabled and it does not exclude any log entries. You can update an exclusion to change the value of this field. Defaults to `nil`.
-  - filter (String.t): Required. An advanced logs filter that matches the log entries to be excluded. By using the sample function, you can exclude less than 100% of the matching log entries. For example, the following filter matches 99% of low-severity log entries from load balancers:"resource.type=http_load_balancer severity<ERROR sample(insertId, 0.99)" Defaults to `nil`.
-  - name (String.t): Required. A client-assigned identifier, such as "load-balancer-exclusion". Identifiers are limited to 100 characters and can include only letters, digits, underscores, hyphens, and periods. Defaults to `nil`.
-  - updateTime (DateTime.t): Output only. The last update timestamp of the exclusion.This field may not be present for older exclusions. Defaults to `nil`.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The creation timestamp of the exclusion.This field may not be present for older exclusions.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. A description of this exclusion.
+  *   `disabled` (*type:* `boolean()`, *default:* `nil`) - Optional. If set to True, then this exclusion is disabled and it does not exclude any log entries. You can update an exclusion to change the value of this field.
+  *   `filter` (*type:* `String.t`, *default:* `nil`) - Required. An advanced logs filter that matches the log entries to be excluded. By using the sample function, you can exclude less than 100% of the matching log entries. For example, the following filter matches 99% of low-severity log entries from load balancers:"resource.type=http_load_balancer severity<ERROR sample(insertId, 0.99)"
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. A client-assigned identifier, such as "load-balancer-exclusion". Identifiers are limited to 100 characters and can include only letters, digits, underscores, hyphens, and periods.
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last update timestamp of the exclusion.This field may not be present for older exclusions.
   """
 
   use GoogleApi.Gax.ModelBase
