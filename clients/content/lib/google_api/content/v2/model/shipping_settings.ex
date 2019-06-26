@@ -21,9 +21,9 @@ defmodule GoogleApi.Content.V2.Model.ShippingSettings do
 
   ## Attributes
 
-  - accountId (String.t): The ID of the account to which these account shipping settings belong. Ignored upon update, always present in get request responses. Defaults to `nil`.
-  - postalCodeGroups (list(GoogleApi.Content.V2.Model.PostalCodeGroup.t)): A list of postal code groups that can be referred to in services. Optional. Defaults to `nil`.
-  - services (list(GoogleApi.Content.V2.Model.Service.t)): The target account's list of services. Optional. Defaults to `nil`.
+  *   `accountId` (*type:* `String.t`, *default:* `nil`) - The ID of the account to which these account shipping settings belong. Ignored upon update, always present in get request responses.
+  *   `postalCodeGroups` (*type:* `list(GoogleApi.Content.V2.Model.PostalCodeGroup.t)`, *default:* `nil`) - A list of postal code groups that can be referred to in services. Optional.
+  *   `services` (*type:* `list(GoogleApi.Content.V2.Model.Service.t)`, *default:* `nil`) - The target account's list of services. Optional.
   """
 
   use GoogleApi.Gax.ModelBase

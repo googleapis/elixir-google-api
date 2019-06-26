@@ -21,9 +21,9 @@ defmodule GoogleApi.Content.V2.Model.PosDataProvidersPosDataProvider do
 
   ## Attributes
 
-  - displayName (String.t): The display name of Pos data Provider. Defaults to `nil`.
-  - fullName (String.t): The full name of this POS data Provider. Defaults to `nil`.
-  - providerId (String.t): The ID of the account. Defaults to `nil`.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name of Pos data Provider.
+  *   `fullName` (*type:* `String.t`, *default:* `nil`) - The full name of this POS data Provider.
+  *   `providerId` (*type:* `String.t`, *default:* `nil`) - The ID of the account.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,9 +21,9 @@ defmodule GoogleApi.Content.V2.Model.AccountsLinkRequest do
 
   ## Attributes
 
-  - action (String.t): Action to perform for this link. The "request" action is only available to select merchants. Defaults to `nil`.
-  - linkType (String.t): Type of the link between the two accounts. Defaults to `nil`.
-  - linkedAccountId (String.t): The ID of the linked account. Defaults to `nil`.
+  *   `action` (*type:* `String.t`, *default:* `nil`) - Action to perform for this link. The "request" action is only available to select merchants.
+  *   `linkType` (*type:* `String.t`, *default:* `nil`) - Type of the link between the two accounts.
+  *   `linkedAccountId` (*type:* `String.t`, *default:* `nil`) - The ID of the linked account.
   """
 
   use GoogleApi.Gax.ModelBase

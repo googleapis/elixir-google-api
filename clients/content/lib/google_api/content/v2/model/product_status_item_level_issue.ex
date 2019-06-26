@@ -21,14 +21,14 @@ defmodule GoogleApi.Content.V2.Model.ProductStatusItemLevelIssue do
 
   ## Attributes
 
-  - attributeName (String.t): The attribute's name, if the issue is caused by a single attribute. Defaults to `nil`.
-  - code (String.t): The error code of the issue. Defaults to `nil`.
-  - description (String.t): A short issue description in English. Defaults to `nil`.
-  - destination (String.t): The destination the issue applies to. Defaults to `nil`.
-  - detail (String.t): A detailed issue description in English. Defaults to `nil`.
-  - documentation (String.t): The URL of a web page to help with resolving this issue. Defaults to `nil`.
-  - resolution (String.t): Whether the issue can be resolved by the merchant. Defaults to `nil`.
-  - servability (String.t): How this issue affects serving of the offer. Defaults to `nil`.
+  *   `attributeName` (*type:* `String.t`, *default:* `nil`) - The attribute's name, if the issue is caused by a single attribute.
+  *   `code` (*type:* `String.t`, *default:* `nil`) - The error code of the issue.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - A short issue description in English.
+  *   `destination` (*type:* `String.t`, *default:* `nil`) - The destination the issue applies to.
+  *   `detail` (*type:* `String.t`, *default:* `nil`) - A detailed issue description in English.
+  *   `documentation` (*type:* `String.t`, *default:* `nil`) - The URL of a web page to help with resolving this issue.
+  *   `resolution` (*type:* `String.t`, *default:* `nil`) - Whether the issue can be resolved by the merchant.
+  *   `servability` (*type:* `String.t`, *default:* `nil`) - How this issue affects serving of the offer.
   """
 
   use GoogleApi.Gax.ModelBase

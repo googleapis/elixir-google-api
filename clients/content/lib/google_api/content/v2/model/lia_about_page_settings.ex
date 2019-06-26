@@ -21,8 +21,8 @@ defmodule GoogleApi.Content.V2.Model.LiaAboutPageSettings do
 
   ## Attributes
 
-  - status (String.t): The status of the verification process for the About page. Defaults to `nil`.
-  - url (String.t): The URL for the About page. Defaults to `nil`.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - The status of the verification process for the About page.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - The URL for the About page.
   """
 
   use GoogleApi.Gax.ModelBase

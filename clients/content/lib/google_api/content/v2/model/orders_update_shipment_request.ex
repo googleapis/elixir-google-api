@@ -21,12 +21,12 @@ defmodule GoogleApi.Content.V2.Model.OrdersUpdateShipmentRequest do
 
   ## Attributes
 
-  - carrier (String.t): The carrier handling the shipment. Not updated if missing. See shipments[].carrier in the  Orders resource representation for a list of acceptable values. Defaults to `nil`.
-  - deliveryDate (String.t): Date on which the shipment has been delivered, in ISO 8601 format. Optional and can be provided only if status is delivered. Defaults to `nil`.
-  - operationId (String.t): The ID of the operation. Unique across all operations for a given order. Defaults to `nil`.
-  - shipmentId (String.t): The ID of the shipment. Defaults to `nil`.
-  - status (String.t): New status for the shipment. Not updated if missing. Defaults to `nil`.
-  - trackingId (String.t): The tracking ID for the shipment. Not updated if missing. Defaults to `nil`.
+  *   `carrier` (*type:* `String.t`, *default:* `nil`) - The carrier handling the shipment. Not updated if missing. See shipments[].carrier in the  Orders resource representation for a list of acceptable values.
+  *   `deliveryDate` (*type:* `String.t`, *default:* `nil`) - Date on which the shipment has been delivered, in ISO 8601 format. Optional and can be provided only if status is delivered.
+  *   `operationId` (*type:* `String.t`, *default:* `nil`) - The ID of the operation. Unique across all operations for a given order.
+  *   `shipmentId` (*type:* `String.t`, *default:* `nil`) - The ID of the shipment.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - New status for the shipment. Not updated if missing.
+  *   `trackingId` (*type:* `String.t`, *default:* `nil`) - The tracking ID for the shipment. Not updated if missing.
   """
 
   use GoogleApi.Gax.ModelBase

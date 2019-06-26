@@ -21,7 +21,7 @@ defmodule GoogleApi.Content.V2.Model.OrderpaymentsNotifyAuthDeclinedRequest do
 
   ## Attributes
 
-  - declineReason (String.t): Reason why payment authorization was declined. Defaults to `nil`.
+  *   `declineReason` (*type:* `String.t`, *default:* `nil`) - Reason why payment authorization was declined.
   """
 
   use GoogleApi.Gax.ModelBase

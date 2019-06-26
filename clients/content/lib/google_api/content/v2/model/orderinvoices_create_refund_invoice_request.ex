@@ -21,11 +21,11 @@ defmodule GoogleApi.Content.V2.Model.OrderinvoicesCreateRefundInvoiceRequest do
 
   ## Attributes
 
-  - invoiceId (String.t): [required] The ID of the invoice. Defaults to `nil`.
-  - operationId (String.t): [required] The ID of the operation, unique across all operations for a given order. Defaults to `nil`.
-  - refundOnlyOption (GoogleApi.Content.V2.Model.OrderinvoicesCustomBatchRequestEntryCreateRefundInvoiceRefundOption.t): Option to create a refund-only invoice. Exactly one of refundOnlyOption or returnOption must be provided. Defaults to `nil`.
-  - returnOption (GoogleApi.Content.V2.Model.OrderinvoicesCustomBatchRequestEntryCreateRefundInvoiceReturnOption.t): Option to create an invoice for a refund and mark all items within the invoice as returned. Exactly one of refundOnlyOption or returnOption must be provided. Defaults to `nil`.
-  - shipmentInvoices (list(GoogleApi.Content.V2.Model.ShipmentInvoice.t)): Invoice details for different shipment groups. Defaults to `nil`.
+  *   `invoiceId` (*type:* `String.t`, *default:* `nil`) - [required] The ID of the invoice.
+  *   `operationId` (*type:* `String.t`, *default:* `nil`) - [required] The ID of the operation, unique across all operations for a given order.
+  *   `refundOnlyOption` (*type:* `GoogleApi.Content.V2.Model.OrderinvoicesCustomBatchRequestEntryCreateRefundInvoiceRefundOption.t`, *default:* `nil`) - Option to create a refund-only invoice. Exactly one of refundOnlyOption or returnOption must be provided.
+  *   `returnOption` (*type:* `GoogleApi.Content.V2.Model.OrderinvoicesCustomBatchRequestEntryCreateRefundInvoiceReturnOption.t`, *default:* `nil`) - Option to create an invoice for a refund and mark all items within the invoice as returned. Exactly one of refundOnlyOption or returnOption must be provided.
+  *   `shipmentInvoices` (*type:* `list(GoogleApi.Content.V2.Model.ShipmentInvoice.t)`, *default:* `nil`) - Invoice details for different shipment groups.
   """
 
   use GoogleApi.Gax.ModelBase

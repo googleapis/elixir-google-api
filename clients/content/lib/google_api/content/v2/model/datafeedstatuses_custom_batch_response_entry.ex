@@ -21,9 +21,9 @@ defmodule GoogleApi.Content.V2.Model.DatafeedstatusesCustomBatchResponseEntry do
 
   ## Attributes
 
-  - batchId (integer()): The ID of the request entry this entry responds to. Defaults to `nil`.
-  - datafeedStatus (GoogleApi.Content.V2.Model.DatafeedStatus.t): The requested data feed status. Defined if and only if the request was successful. Defaults to `nil`.
-  - errors (GoogleApi.Content.V2.Model.Errors.t): A list of errors defined if and only if the request failed. Defaults to `nil`.
+  *   `batchId` (*type:* `integer()`, *default:* `nil`) - The ID of the request entry this entry responds to.
+  *   `datafeedStatus` (*type:* `GoogleApi.Content.V2.Model.DatafeedStatus.t`, *default:* `nil`) - The requested data feed status. Defined if and only if the request was successful.
+  *   `errors` (*type:* `GoogleApi.Content.V2.Model.Errors.t`, *default:* `nil`) - A list of errors defined if and only if the request failed.
   """
 
   use GoogleApi.Gax.ModelBase

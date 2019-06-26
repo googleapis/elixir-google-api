@@ -21,17 +21,17 @@ defmodule GoogleApi.Content.V2.Model.LiasettingsCustomBatchRequestEntry do
 
   ## Attributes
 
-  - accountId (String.t): The ID of the account for which to get/update account shipping settings. Defaults to `nil`.
-  - batchId (integer()): An entry ID, unique within the batch request. Defaults to `nil`.
-  - contactEmail (String.t): Inventory validation contact email. Required only for SetInventoryValidationContact. Defaults to `nil`.
-  - contactName (String.t): Inventory validation contact name. Required only for SetInventoryValidationContact. Defaults to `nil`.
-  - country (String.t): The country code. Required only for RequestInventoryVerification. Defaults to `nil`.
-  - gmbEmail (String.t): The GMB account. Required only for RequestGmbAccess. Defaults to `nil`.
-  - liaSettings (GoogleApi.Content.V2.Model.LiaSettings.t): The account Lia settings to update. Only defined if the method is update. Defaults to `nil`.
-  - merchantId (String.t): The ID of the managing account. Defaults to `nil`.
-  - method (String.t):  Defaults to `nil`.
-  - posDataProviderId (String.t): The ID of POS data provider. Required only for SetPosProvider. Defaults to `nil`.
-  - posExternalAccountId (String.t): The account ID by which this merchant is known to the POS provider. Defaults to `nil`.
+  *   `accountId` (*type:* `String.t`, *default:* `nil`) - The ID of the account for which to get/update account shipping settings.
+  *   `batchId` (*type:* `integer()`, *default:* `nil`) - An entry ID, unique within the batch request.
+  *   `contactEmail` (*type:* `String.t`, *default:* `nil`) - Inventory validation contact email. Required only for SetInventoryValidationContact.
+  *   `contactName` (*type:* `String.t`, *default:* `nil`) - Inventory validation contact name. Required only for SetInventoryValidationContact.
+  *   `country` (*type:* `String.t`, *default:* `nil`) - The country code. Required only for RequestInventoryVerification.
+  *   `gmbEmail` (*type:* `String.t`, *default:* `nil`) - The GMB account. Required only for RequestGmbAccess.
+  *   `liaSettings` (*type:* `GoogleApi.Content.V2.Model.LiaSettings.t`, *default:* `nil`) - The account Lia settings to update. Only defined if the method is update.
+  *   `merchantId` (*type:* `String.t`, *default:* `nil`) - The ID of the managing account.
+  *   `method` (*type:* `String.t`, *default:* `nil`) - 
+  *   `posDataProviderId` (*type:* `String.t`, *default:* `nil`) - The ID of POS data provider. Required only for SetPosProvider.
+  *   `posExternalAccountId` (*type:* `String.t`, *default:* `nil`) - The account ID by which this merchant is known to the POS provider.
   """
 
   use GoogleApi.Gax.ModelBase

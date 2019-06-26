@@ -21,8 +21,8 @@ defmodule GoogleApi.Content.V2.Model.OrderpaymentsNotifyAuthApprovedRequest do
 
   ## Attributes
 
-  - authAmountPretax (GoogleApi.Content.V2.Model.Price.t): Authorized amount for pre-tax charge on user's credit card. Defaults to `nil`.
-  - authAmountTax (GoogleApi.Content.V2.Model.Price.t): Authorized amount for tax charge on user's credit card. Defaults to `nil`.
+  *   `authAmountPretax` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - Authorized amount for pre-tax charge on user's credit card.
+  *   `authAmountTax` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - Authorized amount for tax charge on user's credit card.
   """
 
   use GoogleApi.Gax.ModelBase

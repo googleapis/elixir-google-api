@@ -21,8 +21,8 @@ defmodule GoogleApi.Content.V2.Model.AccountstatusesCustomBatchResponse do
 
   ## Attributes
 
-  - entries (list(GoogleApi.Content.V2.Model.AccountstatusesCustomBatchResponseEntry.t)): The result of the execution of the batch requests. Defaults to `nil`.
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "content#accountstatusesCustomBatchResponse". Defaults to `content#accountstatusesCustomBatchResponse`.
+  *   `entries` (*type:* `list(GoogleApi.Content.V2.Model.AccountstatusesCustomBatchResponseEntry.t)`, *default:* `nil`) - The result of the execution of the batch requests.
+  *   `kind` (*type:* `String.t`, *default:* `content#accountstatusesCustomBatchResponse`) - Identifies what kind of resource this is. Value: the fixed string "content#accountstatusesCustomBatchResponse".
   """
 
   use GoogleApi.Gax.ModelBase

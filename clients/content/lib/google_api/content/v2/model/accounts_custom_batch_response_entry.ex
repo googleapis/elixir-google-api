@@ -21,11 +21,11 @@ defmodule GoogleApi.Content.V2.Model.AccountsCustomBatchResponseEntry do
 
   ## Attributes
 
-  - account (GoogleApi.Content.V2.Model.Account.t): The retrieved, created, or updated account. Not defined if the method was delete, claimwebsite or link. Defaults to `nil`.
-  - batchId (integer()): The ID of the request entry this entry responds to. Defaults to `nil`.
-  - errors (GoogleApi.Content.V2.Model.Errors.t): A list of errors defined if and only if the request failed. Defaults to `nil`.
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "content#accountsCustomBatchResponseEntry". Defaults to `content#accountsCustomBatchResponseEntry`.
-  - linkStatus (String.t): Deprecated. This field is never set. Defaults to `nil`.
+  *   `account` (*type:* `GoogleApi.Content.V2.Model.Account.t`, *default:* `nil`) - The retrieved, created, or updated account. Not defined if the method was delete, claimwebsite or link.
+  *   `batchId` (*type:* `integer()`, *default:* `nil`) - The ID of the request entry this entry responds to.
+  *   `errors` (*type:* `GoogleApi.Content.V2.Model.Errors.t`, *default:* `nil`) - A list of errors defined if and only if the request failed.
+  *   `kind` (*type:* `String.t`, *default:* `content#accountsCustomBatchResponseEntry`) - Identifies what kind of resource this is. Value: the fixed string "content#accountsCustomBatchResponseEntry".
+  *   `linkStatus` (*type:* `String.t`, *default:* `nil`) - Deprecated. This field is never set.
   """
 
   use GoogleApi.Gax.ModelBase

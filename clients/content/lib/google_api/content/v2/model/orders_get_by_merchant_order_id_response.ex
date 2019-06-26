@@ -21,8 +21,8 @@ defmodule GoogleApi.Content.V2.Model.OrdersGetByMerchantOrderIdResponse do
 
   ## Attributes
 
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "content#ordersGetByMerchantOrderIdResponse". Defaults to `content#ordersGetByMerchantOrderIdResponse`.
-  - order (GoogleApi.Content.V2.Model.Order.t): The requested order. Defaults to `nil`.
+  *   `kind` (*type:* `String.t`, *default:* `content#ordersGetByMerchantOrderIdResponse`) - Identifies what kind of resource this is. Value: the fixed string "content#ordersGetByMerchantOrderIdResponse".
+  *   `order` (*type:* `GoogleApi.Content.V2.Model.Order.t`, *default:* `nil`) - The requested order.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,9 +21,9 @@ defmodule GoogleApi.Content.V2.Model.AccountstatusesListResponse do
 
   ## Attributes
 
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "content#accountstatusesListResponse". Defaults to `content#accountstatusesListResponse`.
-  - nextPageToken (String.t): The token for the retrieval of the next page of account statuses. Defaults to `nil`.
-  - resources (list(GoogleApi.Content.V2.Model.AccountStatus.t)):  Defaults to `nil`.
+  *   `kind` (*type:* `String.t`, *default:* `content#accountstatusesListResponse`) - Identifies what kind of resource this is. Value: the fixed string "content#accountstatusesListResponse".
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The token for the retrieval of the next page of account statuses.
+  *   `resources` (*type:* `list(GoogleApi.Content.V2.Model.AccountStatus.t)`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,11 +21,11 @@ defmodule GoogleApi.Content.V2.Model.AccountAddress do
 
   ## Attributes
 
-  - country (String.t): CLDR country code (e.g. "US"). Defaults to `nil`.
-  - locality (String.t): City, town or commune. May also include dependent localities or sublocalities (e.g. neighborhoods or suburbs). Defaults to `nil`.
-  - postalCode (String.t): Postal code or ZIP (e.g. "94043"). Defaults to `nil`.
-  - region (String.t): Top-level administrative subdivision of the country. For example, a state like California ("CA") or a province like Quebec ("QC"). Defaults to `nil`.
-  - streetAddress (String.t): Street-level part of the address. Defaults to `nil`.
+  *   `country` (*type:* `String.t`, *default:* `nil`) - CLDR country code (e.g. "US").
+  *   `locality` (*type:* `String.t`, *default:* `nil`) - City, town or commune. May also include dependent localities or sublocalities (e.g. neighborhoods or suburbs).
+  *   `postalCode` (*type:* `String.t`, *default:* `nil`) - Postal code or ZIP (e.g. "94043").
+  *   `region` (*type:* `String.t`, *default:* `nil`) - Top-level administrative subdivision of the country. For example, a state like California ("CA") or a province like Quebec ("QC").
+  *   `streetAddress` (*type:* `String.t`, *default:* `nil`) - Street-level part of the address.
   """
 
   use GoogleApi.Gax.ModelBase

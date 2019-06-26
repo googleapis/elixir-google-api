@@ -20,6 +20,8 @@ defmodule GoogleApi.Content.V2.Connection do
   Handle Tesla connections for GoogleApi.Content.V2.
   """
 
+  @type t :: Tesla.Env.client()
+
   use GoogleApi.Gax.Connection,
     scopes: [
       # Manage your product listings and accounts for Google Shopping

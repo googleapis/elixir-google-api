@@ -21,11 +21,11 @@ defmodule GoogleApi.Content.V2.Model.AccountStatusProducts do
 
   ## Attributes
 
-  - channel (String.t): The channel the data applies to. Defaults to `nil`.
-  - country (String.t): The country the data applies to. Defaults to `nil`.
-  - destination (String.t): The destination the data applies to. Defaults to `nil`.
-  - itemLevelIssues (list(GoogleApi.Content.V2.Model.AccountStatusItemLevelIssue.t)): List of item-level issues. Defaults to `nil`.
-  - statistics (GoogleApi.Content.V2.Model.AccountStatusStatistics.t): Aggregated product statistics. Defaults to `nil`.
+  *   `channel` (*type:* `String.t`, *default:* `nil`) - The channel the data applies to.
+  *   `country` (*type:* `String.t`, *default:* `nil`) - The country the data applies to.
+  *   `destination` (*type:* `String.t`, *default:* `nil`) - The destination the data applies to.
+  *   `itemLevelIssues` (*type:* `list(GoogleApi.Content.V2.Model.AccountStatusItemLevelIssue.t)`, *default:* `nil`) - List of item-level issues.
+  *   `statistics` (*type:* `GoogleApi.Content.V2.Model.AccountStatusStatistics.t`, *default:* `nil`) - Aggregated product statistics.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,20 +21,20 @@ defmodule GoogleApi.Content.V2.Model.TestOrderLineItemProduct do
 
   ## Attributes
 
-  - brand (String.t): Brand of the item. Defaults to `nil`.
-  - channel (String.t): Deprecated. Defaults to `nil`.
-  - condition (String.t): Condition or state of the item. Defaults to `nil`.
-  - contentLanguage (String.t): The two-letter ISO 639-1 language code for the item. Defaults to `nil`.
-  - fees (list(GoogleApi.Content.V2.Model.OrderLineItemProductFee.t)): Fees for the item. Optional. Defaults to `nil`.
-  - gtin (String.t): Global Trade Item Number (GTIN) of the item. Optional. Defaults to `nil`.
-  - imageLink (String.t): URL of an image of the item. Defaults to `nil`.
-  - itemGroupId (String.t): Shared identifier for all variants of the same product. Optional. Defaults to `nil`.
-  - mpn (String.t): Manufacturer Part Number (MPN) of the item. Optional. Defaults to `nil`.
-  - offerId (String.t): An identifier of the item. Defaults to `nil`.
-  - price (GoogleApi.Content.V2.Model.Price.t): The price for the product. Tax is automatically calculated for MFL orders. For non-MFL orders, tax settings from Merchant Center are applied. Defaults to `nil`.
-  - targetCountry (String.t): The CLDR territory code of the target country of the product. Defaults to `nil`.
-  - title (String.t): The title of the product. Defaults to `nil`.
-  - variantAttributes (list(GoogleApi.Content.V2.Model.OrderLineItemProductVariantAttribute.t)): Variant attributes for the item. Optional. Defaults to `nil`.
+  *   `brand` (*type:* `String.t`, *default:* `nil`) - Brand of the item.
+  *   `channel` (*type:* `String.t`, *default:* `nil`) - Deprecated.
+  *   `condition` (*type:* `String.t`, *default:* `nil`) - Condition or state of the item.
+  *   `contentLanguage` (*type:* `String.t`, *default:* `nil`) - The two-letter ISO 639-1 language code for the item.
+  *   `fees` (*type:* `list(GoogleApi.Content.V2.Model.OrderLineItemProductFee.t)`, *default:* `nil`) - Fees for the item. Optional.
+  *   `gtin` (*type:* `String.t`, *default:* `nil`) - Global Trade Item Number (GTIN) of the item. Optional.
+  *   `imageLink` (*type:* `String.t`, *default:* `nil`) - URL of an image of the item.
+  *   `itemGroupId` (*type:* `String.t`, *default:* `nil`) - Shared identifier for all variants of the same product. Optional.
+  *   `mpn` (*type:* `String.t`, *default:* `nil`) - Manufacturer Part Number (MPN) of the item. Optional.
+  *   `offerId` (*type:* `String.t`, *default:* `nil`) - An identifier of the item.
+  *   `price` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - The price for the product. Tax is automatically calculated for MFL orders. For non-MFL orders, tax settings from Merchant Center are applied.
+  *   `targetCountry` (*type:* `String.t`, *default:* `nil`) - The CLDR territory code of the target country of the product.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - The title of the product.
+  *   `variantAttributes` (*type:* `list(GoogleApi.Content.V2.Model.OrderLineItemProductVariantAttribute.t)`, *default:* `nil`) - Variant attributes for the item. Optional.
   """
 
   use GoogleApi.Gax.ModelBase

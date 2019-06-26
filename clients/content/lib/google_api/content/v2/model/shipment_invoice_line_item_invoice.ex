@@ -21,10 +21,10 @@ defmodule GoogleApi.Content.V2.Model.ShipmentInvoiceLineItemInvoice do
 
   ## Attributes
 
-  - lineItemId (String.t): ID of the line item. Either lineItemId or productId must be set. Defaults to `nil`.
-  - productId (String.t): ID of the product. This is the REST ID used in the products service. Either lineItemId or productId must be set. Defaults to `nil`.
-  - shipmentUnitIds (list(String.t)): [required] The shipment unit ID is assigned by the merchant and defines individual quantities within a line item. The same ID can be assigned to units that are the same while units that differ must be assigned a different ID (for example: free or promotional units). Defaults to `nil`.
-  - unitInvoice (GoogleApi.Content.V2.Model.UnitInvoice.t): [required] Invoice details for a single unit. Defaults to `nil`.
+  *   `lineItemId` (*type:* `String.t`, *default:* `nil`) - ID of the line item. Either lineItemId or productId must be set.
+  *   `productId` (*type:* `String.t`, *default:* `nil`) - ID of the product. This is the REST ID used in the products service. Either lineItemId or productId must be set.
+  *   `shipmentUnitIds` (*type:* `list(String.t)`, *default:* `nil`) - [required] The shipment unit ID is assigned by the merchant and defines individual quantities within a line item. The same ID can be assigned to units that are the same while units that differ must be assigned a different ID (for example: free or promotional units).
+  *   `unitInvoice` (*type:* `GoogleApi.Content.V2.Model.UnitInvoice.t`, *default:* `nil`) - [required] Invoice details for a single unit.
   """
 
   use GoogleApi.Gax.ModelBase

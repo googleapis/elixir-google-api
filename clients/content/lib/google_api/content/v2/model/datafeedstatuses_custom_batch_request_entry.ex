@@ -21,12 +21,12 @@ defmodule GoogleApi.Content.V2.Model.DatafeedstatusesCustomBatchRequestEntry do
 
   ## Attributes
 
-  - batchId (integer()): An entry ID, unique within the batch request. Defaults to `nil`.
-  - country (String.t): The country for which to get the datafeed status. If this parameter is provided then language must also be provided. Note that for multi-target datafeeds this parameter is required. Defaults to `nil`.
-  - datafeedId (String.t): The ID of the data feed to get. Defaults to `nil`.
-  - language (String.t): The language for which to get the datafeed status. If this parameter is provided then country must also be provided. Note that for multi-target datafeeds this parameter is required. Defaults to `nil`.
-  - merchantId (String.t): The ID of the managing account. Defaults to `nil`.
-  - method (String.t):  Defaults to `nil`.
+  *   `batchId` (*type:* `integer()`, *default:* `nil`) - An entry ID, unique within the batch request.
+  *   `country` (*type:* `String.t`, *default:* `nil`) - The country for which to get the datafeed status. If this parameter is provided then language must also be provided. Note that for multi-target datafeeds this parameter is required.
+  *   `datafeedId` (*type:* `String.t`, *default:* `nil`) - The ID of the data feed to get.
+  *   `language` (*type:* `String.t`, *default:* `nil`) - The language for which to get the datafeed status. If this parameter is provided then country must also be provided. Note that for multi-target datafeeds this parameter is required.
+  *   `merchantId` (*type:* `String.t`, *default:* `nil`) - The ID of the managing account.
+  *   `method` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

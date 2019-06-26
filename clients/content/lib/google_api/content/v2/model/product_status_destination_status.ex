@@ -21,10 +21,10 @@ defmodule GoogleApi.Content.V2.Model.ProductStatusDestinationStatus do
 
   ## Attributes
 
-  - approvalPending (boolean()): Whether the approval status might change due to further processing. Defaults to `nil`.
-  - approvalStatus (String.t): The destination's approval status. Defaults to `nil`.
-  - destination (String.t): The name of the destination Defaults to `nil`.
-  - intention (String.t): Provided for backward compatibility only. Always set to "required". Defaults to `nil`.
+  *   `approvalPending` (*type:* `boolean()`, *default:* `nil`) - Whether the approval status might change due to further processing.
+  *   `approvalStatus` (*type:* `String.t`, *default:* `nil`) - The destination's approval status.
+  *   `destination` (*type:* `String.t`, *default:* `nil`) - The name of the destination
+  *   `intention` (*type:* `String.t`, *default:* `nil`) - Provided for backward compatibility only. Always set to "required".
   """
 
   use GoogleApi.Gax.ModelBase

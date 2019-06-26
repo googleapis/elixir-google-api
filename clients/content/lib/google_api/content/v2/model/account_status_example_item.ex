@@ -21,11 +21,11 @@ defmodule GoogleApi.Content.V2.Model.AccountStatusExampleItem do
 
   ## Attributes
 
-  - itemId (String.t):  Defaults to `nil`.
-  - link (String.t):  Defaults to `nil`.
-  - submittedValue (String.t):  Defaults to `nil`.
-  - title (String.t):  Defaults to `nil`.
-  - valueOnLandingPage (String.t):  Defaults to `nil`.
+  *   `itemId` (*type:* `String.t`, *default:* `nil`) - 
+  *   `link` (*type:* `String.t`, *default:* `nil`) - 
+  *   `submittedValue` (*type:* `String.t`, *default:* `nil`) - 
+  *   `title` (*type:* `String.t`, *default:* `nil`) - 
+  *   `valueOnLandingPage` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

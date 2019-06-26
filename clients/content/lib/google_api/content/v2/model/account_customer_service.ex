@@ -21,9 +21,9 @@ defmodule GoogleApi.Content.V2.Model.AccountCustomerService do
 
   ## Attributes
 
-  - email (String.t): Customer service email. Defaults to `nil`.
-  - phoneNumber (String.t): Customer service phone number. Defaults to `nil`.
-  - url (String.t): Customer service URL. Defaults to `nil`.
+  *   `email` (*type:* `String.t`, *default:* `nil`) - Customer service email.
+  *   `phoneNumber` (*type:* `String.t`, *default:* `nil`) - Customer service phone number.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - Customer service URL.
   """
 
   use GoogleApi.Gax.ModelBase

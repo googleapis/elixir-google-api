@@ -21,9 +21,9 @@ defmodule GoogleApi.Content.V2.Model.ProductsListResponse do
 
   ## Attributes
 
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "content#productsListResponse". Defaults to `content#productsListResponse`.
-  - nextPageToken (String.t): The token for the retrieval of the next page of products. Defaults to `nil`.
-  - resources (list(GoogleApi.Content.V2.Model.Product.t)):  Defaults to `nil`.
+  *   `kind` (*type:* `String.t`, *default:* `content#productsListResponse`) - Identifies what kind of resource this is. Value: the fixed string "content#productsListResponse".
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The token for the retrieval of the next page of products.
+  *   `resources` (*type:* `list(GoogleApi.Content.V2.Model.Product.t)`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

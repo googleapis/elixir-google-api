@@ -21,10 +21,10 @@ defmodule GoogleApi.Content.V2.Model.AccountStatusStatistics do
 
   ## Attributes
 
-  - active (String.t): Number of active offers. Defaults to `nil`.
-  - disapproved (String.t): Number of disapproved offers. Defaults to `nil`.
-  - expiring (String.t): Number of expiring offers. Defaults to `nil`.
-  - pending (String.t): Number of pending offers. Defaults to `nil`.
+  *   `active` (*type:* `String.t`, *default:* `nil`) - Number of active offers.
+  *   `disapproved` (*type:* `String.t`, *default:* `nil`) - Number of disapproved offers.
+  *   `expiring` (*type:* `String.t`, *default:* `nil`) - Number of expiring offers.
+  *   `pending` (*type:* `String.t`, *default:* `nil`) - Number of pending offers.
   """
 
   use GoogleApi.Gax.ModelBase

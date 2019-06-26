@@ -21,8 +21,8 @@ defmodule GoogleApi.Content.V2.Model.OrdersReturnLineItemResponse do
 
   ## Attributes
 
-  - executionStatus (String.t): The status of the execution. Defaults to `nil`.
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "content#ordersReturnLineItemResponse". Defaults to `content#ordersReturnLineItemResponse`.
+  *   `executionStatus` (*type:* `String.t`, *default:* `nil`) - The status of the execution.
+  *   `kind` (*type:* `String.t`, *default:* `content#ordersReturnLineItemResponse`) - Identifies what kind of resource this is. Value: the fixed string "content#ordersReturnLineItemResponse".
   """
 
   use GoogleApi.Gax.ModelBase

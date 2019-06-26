@@ -21,8 +21,8 @@ defmodule GoogleApi.Content.V2.Model.AccountIdentifier do
 
   ## Attributes
 
-  - aggregatorId (String.t): The aggregator ID, set for aggregators and subaccounts (in that case, it represents the aggregator of the subaccount). Defaults to `nil`.
-  - merchantId (String.t): The merchant account ID, set for individual accounts and subaccounts. Defaults to `nil`.
+  *   `aggregatorId` (*type:* `String.t`, *default:* `nil`) - The aggregator ID, set for aggregators and subaccounts (in that case, it represents the aggregator of the subaccount).
+  *   `merchantId` (*type:* `String.t`, *default:* `nil`) - The merchant account ID, set for individual accounts and subaccounts.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,14 +21,14 @@ defmodule GoogleApi.Content.V2.Model.Service do
 
   ## Attributes
 
-  - active (boolean()): A boolean exposing the active status of the shipping service. Required. Defaults to `nil`.
-  - currency (String.t): The CLDR code of the currency to which this service applies. Must match that of the prices in rate groups. Defaults to `nil`.
-  - deliveryCountry (String.t): The CLDR territory code of the country to which the service applies. Required. Defaults to `nil`.
-  - deliveryTime (GoogleApi.Content.V2.Model.DeliveryTime.t): Time spent in various aspects from order to the delivery of the product. Required. Defaults to `nil`.
-  - eligibility (String.t): Eligibility for this service. Defaults to `nil`.
-  - minimumOrderValue (GoogleApi.Content.V2.Model.Price.t): Minimum order value for this service. If set, indicates that customers will have to spend at least this amount. All prices within a service must have the same currency. Defaults to `nil`.
-  - name (String.t): Free-form name of the service. Must be unique within target account. Required. Defaults to `nil`.
-  - rateGroups (list(GoogleApi.Content.V2.Model.RateGroup.t)): Shipping rate group definitions. Only the last one is allowed to have an empty applicableShippingLabels, which means "everything else". The other applicableShippingLabels must not overlap. Defaults to `nil`.
+  *   `active` (*type:* `boolean()`, *default:* `nil`) - A boolean exposing the active status of the shipping service. Required.
+  *   `currency` (*type:* `String.t`, *default:* `nil`) - The CLDR code of the currency to which this service applies. Must match that of the prices in rate groups.
+  *   `deliveryCountry` (*type:* `String.t`, *default:* `nil`) - The CLDR territory code of the country to which the service applies. Required.
+  *   `deliveryTime` (*type:* `GoogleApi.Content.V2.Model.DeliveryTime.t`, *default:* `nil`) - Time spent in various aspects from order to the delivery of the product. Required.
+  *   `eligibility` (*type:* `String.t`, *default:* `nil`) - Eligibility for this service.
+  *   `minimumOrderValue` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - Minimum order value for this service. If set, indicates that customers will have to spend at least this amount. All prices within a service must have the same currency.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Free-form name of the service. Must be unique within target account. Required.
+  *   `rateGroups` (*type:* `list(GoogleApi.Content.V2.Model.RateGroup.t)`, *default:* `nil`) - Shipping rate group definitions. Only the last one is allowed to have an empty applicableShippingLabels, which means "everything else". The other applicableShippingLabels must not overlap.
   """
 
   use GoogleApi.Gax.ModelBase

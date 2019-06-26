@@ -21,15 +21,15 @@ defmodule GoogleApi.Content.V2.Model.OrdersUpdateLineItemShippingDetailsRequest 
 
   ## Attributes
 
-  - deliverByDate (String.t): Updated delivery by date, in ISO 8601 format. If not specified only ship by date is updated.
+  *   `deliverByDate` (*type:* `String.t`, *default:* `nil`) - Updated delivery by date, in ISO 8601 format. If not specified only ship by date is updated.
 
-  Provided date should be within 1 year timeframe and can not be a date in the past. Defaults to `nil`.
-  - lineItemId (String.t): The ID of the line item to set metadata. Either lineItemId or productId is required. Defaults to `nil`.
-  - operationId (String.t): The ID of the operation. Unique across all operations for a given order. Defaults to `nil`.
-  - productId (String.t): The ID of the product to set metadata. This is the REST ID used in the products service. Either lineItemId or productId is required. Defaults to `nil`.
-  - shipByDate (String.t): Updated ship by date, in ISO 8601 format. If not specified only deliver by date is updated.
+      Provided date should be within 1 year timeframe and can not be a date in the past.
+  *   `lineItemId` (*type:* `String.t`, *default:* `nil`) - The ID of the line item to set metadata. Either lineItemId or productId is required.
+  *   `operationId` (*type:* `String.t`, *default:* `nil`) - The ID of the operation. Unique across all operations for a given order.
+  *   `productId` (*type:* `String.t`, *default:* `nil`) - The ID of the product to set metadata. This is the REST ID used in the products service. Either lineItemId or productId is required.
+  *   `shipByDate` (*type:* `String.t`, *default:* `nil`) - Updated ship by date, in ISO 8601 format. If not specified only deliver by date is updated.
 
-  Provided date should be within 1 year timeframe and can not be a date in the past. Defaults to `nil`.
+      Provided date should be within 1 year timeframe and can not be a date in the past.
   """
 
   use GoogleApi.Gax.ModelBase

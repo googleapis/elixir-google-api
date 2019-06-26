@@ -21,10 +21,10 @@ defmodule GoogleApi.Content.V2.Model.CustomAttribute do
 
   ## Attributes
 
-  - name (String.t): The name of the attribute. Underscores will be replaced by spaces upon insertion. Defaults to `nil`.
-  - type (String.t): The type of the attribute. Defaults to `nil`.
-  - unit (String.t): Free-form unit of the attribute. Unit can only be used for values of type int, float, or price. Defaults to `nil`.
-  - value (String.t): The value of the attribute. Defaults to `nil`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the attribute. Underscores will be replaced by spaces upon insertion.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the attribute.
+  *   `unit` (*type:* `String.t`, *default:* `nil`) - Free-form unit of the attribute. Unit can only be used for values of type int, float, or price.
+  *   `value` (*type:* `String.t`, *default:* `nil`) - The value of the attribute.
   """
 
   use GoogleApi.Gax.ModelBase

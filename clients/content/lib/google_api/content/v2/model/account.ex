@@ -21,18 +21,18 @@ defmodule GoogleApi.Content.V2.Model.Account do
 
   ## Attributes
 
-  - adultContent (boolean()): Indicates whether the merchant sells adult content. Defaults to `nil`.
-  - adwordsLinks (list(GoogleApi.Content.V2.Model.AccountAdwordsLink.t)): List of linked AdWords accounts that are active or pending approval. To create a new link request, add a new link with status active to the list. It will remain in a pending state until approved or rejected either in the AdWords interface or through the  AdWords API. To delete an active link, or to cancel a link request, remove it from the list. Defaults to `nil`.
-  - businessInformation (GoogleApi.Content.V2.Model.AccountBusinessInformation.t): The business information of the account. Defaults to `nil`.
-  - googleMyBusinessLink (GoogleApi.Content.V2.Model.AccountGoogleMyBusinessLink.t): The GMB account which is linked or in the process of being linked with the Merchant Center account. Defaults to `nil`.
-  - id (String.t): Merchant Center account ID. Defaults to `nil`.
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "content#account". Defaults to `content#account`.
-  - name (String.t): Display name for the account. Defaults to `nil`.
-  - reviewsUrl (String.t): [DEPRECATED] This field is never returned and will be ignored if provided. Defaults to `nil`.
-  - sellerId (String.t): Client-specific, locally-unique, internal ID for the child account. Defaults to `nil`.
-  - users (list(GoogleApi.Content.V2.Model.AccountUser.t)): Users with access to the account. Every account (except for subaccounts) must have at least one admin user. Defaults to `nil`.
-  - websiteUrl (String.t): The merchant's website. Defaults to `nil`.
-  - youtubeChannelLinks (list(GoogleApi.Content.V2.Model.AccountYouTubeChannelLink.t)): List of linked YouTube channels that are active or pending approval. To create a new link request, add a new link with status active to the list. It will remain in a pending state until approved or rejected in the YT Creator Studio interface. To delete an active link, or to cancel a link request, remove it from the list. Defaults to `nil`.
+  *   `adultContent` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the merchant sells adult content.
+  *   `adwordsLinks` (*type:* `list(GoogleApi.Content.V2.Model.AccountAdwordsLink.t)`, *default:* `nil`) - List of linked AdWords accounts that are active or pending approval. To create a new link request, add a new link with status active to the list. It will remain in a pending state until approved or rejected either in the AdWords interface or through the  AdWords API. To delete an active link, or to cancel a link request, remove it from the list.
+  *   `businessInformation` (*type:* `GoogleApi.Content.V2.Model.AccountBusinessInformation.t`, *default:* `nil`) - The business information of the account.
+  *   `googleMyBusinessLink` (*type:* `GoogleApi.Content.V2.Model.AccountGoogleMyBusinessLink.t`, *default:* `nil`) - The GMB account which is linked or in the process of being linked with the Merchant Center account.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Merchant Center account ID.
+  *   `kind` (*type:* `String.t`, *default:* `content#account`) - Identifies what kind of resource this is. Value: the fixed string "content#account".
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Display name for the account.
+  *   `reviewsUrl` (*type:* `String.t`, *default:* `nil`) - [DEPRECATED] This field is never returned and will be ignored if provided.
+  *   `sellerId` (*type:* `String.t`, *default:* `nil`) - Client-specific, locally-unique, internal ID for the child account.
+  *   `users` (*type:* `list(GoogleApi.Content.V2.Model.AccountUser.t)`, *default:* `nil`) - Users with access to the account. Every account (except for subaccounts) must have at least one admin user.
+  *   `websiteUrl` (*type:* `String.t`, *default:* `nil`) - The merchant's website.
+  *   `youtubeChannelLinks` (*type:* `list(GoogleApi.Content.V2.Model.AccountYouTubeChannelLink.t)`, *default:* `nil`) - List of linked YouTube channels that are active or pending approval. To create a new link request, add a new link with status active to the list. It will remain in a pending state until approved or rejected in the YT Creator Studio interface. To delete an active link, or to cancel a link request, remove it from the list.
   """
 
   use GoogleApi.Gax.ModelBase

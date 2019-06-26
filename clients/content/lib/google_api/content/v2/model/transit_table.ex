@@ -21,9 +21,9 @@ defmodule GoogleApi.Content.V2.Model.TransitTable do
 
   ## Attributes
 
-  - postalCodeGroupNames (list(String.t)): A list of postal group names. The last value can be "all other locations". Example: ["zone 1", "zone 2", "all other locations"]. The referred postal code groups must match the delivery country of the service. Defaults to `nil`.
-  - rows (list(GoogleApi.Content.V2.Model.TransitTableTransitTimeRow.t)):  Defaults to `nil`.
-  - transitTimeLabels (list(String.t)): A list of transit time labels. The last value can be "all other labels". Example: ["food", "electronics", "all other labels"]. Defaults to `nil`.
+  *   `postalCodeGroupNames` (*type:* `list(String.t)`, *default:* `nil`) - A list of postal group names. The last value can be "all other locations". Example: ["zone 1", "zone 2", "all other locations"]. The referred postal code groups must match the delivery country of the service.
+  *   `rows` (*type:* `list(GoogleApi.Content.V2.Model.TransitTableTransitTimeRow.t)`, *default:* `nil`) - 
+  *   `transitTimeLabels` (*type:* `list(String.t)`, *default:* `nil`) - A list of transit time labels. The last value can be "all other labels". Example: ["food", "electronics", "all other labels"].
   """
 
   use GoogleApi.Gax.ModelBase

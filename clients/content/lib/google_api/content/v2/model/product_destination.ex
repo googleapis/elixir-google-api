@@ -21,8 +21,8 @@ defmodule GoogleApi.Content.V2.Model.ProductDestination do
 
   ## Attributes
 
-  - destinationName (String.t): The name of the destination. Defaults to `nil`.
-  - intention (String.t): Whether the destination is required, excluded or should be validated. Defaults to `nil`.
+  *   `destinationName` (*type:* `String.t`, *default:* `nil`) - The name of the destination.
+  *   `intention` (*type:* `String.t`, *default:* `nil`) - Whether the destination is required, excluded or should be validated.
   """
 
   use GoogleApi.Gax.ModelBase

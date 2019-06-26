@@ -28,23 +28,24 @@ defmodule GoogleApi.Content.V2.Api.Datafeedstatuses do
 
   ## Parameters
 
-  - connection (GoogleApi.Content.V2.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.Content.V2.Model.DatafeedstatusesCustomBatchRequest.t): 
+  *   `connection` (*type:* `GoogleApi.Content.V2.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.Content.V2.Model.DatafeedstatusesCustomBatchRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Content.V2.Model.DatafeedstatusesCustomBatchResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Content.V2.Model.DatafeedstatusesCustomBatchResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec content_datafeedstatuses_custombatch(Tesla.Env.client(), keyword()) ::
+  @spec content_datafeedstatuses_custombatch(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.DatafeedstatusesCustomBatchResponse.t()}
           | {:error, Tesla.Env.t()}
   def content_datafeedstatuses_custombatch(connection, optional_params \\ [], opts \\ []) do
@@ -77,27 +78,33 @@ defmodule GoogleApi.Content.V2.Api.Datafeedstatuses do
 
   ## Parameters
 
-  - connection (GoogleApi.Content.V2.Connection): Connection to server
-  - merchant_id (String.t): The ID of the account that manages the datafeed. This account cannot be a multi-client account.
-  - datafeed_id (String.t): The ID of the datafeed.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :country (String.t): The country for which to get the datafeed status. If this parameter is provided then language must also be provided. Note that this parameter is required for feeds targeting multiple countries and languages, since a feed may have a different status for each target.
-    - :language (String.t): The language for which to get the datafeed status. If this parameter is provided then country must also be provided. Note that this parameter is required for feeds targeting multiple countries and languages, since a feed may have a different status for each target.
+  *   `connection` (*type:* `GoogleApi.Content.V2.Connection.t`) - Connection to server
+  *   `merchant_id` (*type:* `String.t`) - The ID of the account that manages the datafeed. This account cannot be a multi-client account.
+  *   `datafeed_id` (*type:* `String.t`) - The ID of the datafeed.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:country` (*type:* `String.t`) - The country for which to get the datafeed status. If this parameter is provided then language must also be provided. Note that this parameter is required for feeds targeting multiple countries and languages, since a feed may have a different status for each target.
+      *   `:language` (*type:* `String.t`) - The language for which to get the datafeed status. If this parameter is provided then country must also be provided. Note that this parameter is required for feeds targeting multiple countries and languages, since a feed may have a different status for each target.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Content.V2.Model.DatafeedStatus{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Content.V2.Model.DatafeedStatus{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec content_datafeedstatuses_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.Content.V2.Model.DatafeedStatus.t()} | {:error, Tesla.Env.t()}
+  @spec content_datafeedstatuses_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.Content.V2.Model.DatafeedStatus.t()} | {:error, Tesla.Env.t()}
   def content_datafeedstatuses_get(
         connection,
         merchant_id,
@@ -136,25 +143,26 @@ defmodule GoogleApi.Content.V2.Api.Datafeedstatuses do
 
   ## Parameters
 
-  - connection (GoogleApi.Content.V2.Connection): Connection to server
-  - merchant_id (String.t): The ID of the account that manages the datafeeds. This account cannot be a multi-client account.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :maxResults (integer()): The maximum number of products to return in the response, used for paging.
-    - :pageToken (String.t): The token returned by the previous request.
+  *   `connection` (*type:* `GoogleApi.Content.V2.Connection.t`) - Connection to server
+  *   `merchant_id` (*type:* `String.t`) - The ID of the account that manages the datafeeds. This account cannot be a multi-client account.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:maxResults` (*type:* `integer()`) - The maximum number of products to return in the response, used for paging.
+      *   `:pageToken` (*type:* `String.t`) - The token returned by the previous request.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Content.V2.Model.DatafeedstatusesListResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Content.V2.Model.DatafeedstatusesListResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec content_datafeedstatuses_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec content_datafeedstatuses_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.DatafeedstatusesListResponse.t()}
           | {:error, Tesla.Env.t()}
   def content_datafeedstatuses_list(connection, merchant_id, optional_params \\ [], opts \\ []) do

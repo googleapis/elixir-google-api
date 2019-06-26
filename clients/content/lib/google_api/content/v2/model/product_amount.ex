@@ -21,9 +21,9 @@ defmodule GoogleApi.Content.V2.Model.ProductAmount do
 
   ## Attributes
 
-  - priceAmount (GoogleApi.Content.V2.Model.Price.t): The pre-tax or post-tax price depending on the location of the order. Defaults to `nil`.
-  - remittedTaxAmount (GoogleApi.Content.V2.Model.Price.t): Remitted tax value. Defaults to `nil`.
-  - taxAmount (GoogleApi.Content.V2.Model.Price.t): Tax value. Defaults to `nil`.
+  *   `priceAmount` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - The pre-tax or post-tax price depending on the location of the order.
+  *   `remittedTaxAmount` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - Remitted tax value.
+  *   `taxAmount` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - Tax value.
   """
 
   use GoogleApi.Gax.ModelBase

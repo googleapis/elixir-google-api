@@ -21,13 +21,13 @@ defmodule GoogleApi.Content.V2.Model.ProductShipping do
 
   ## Attributes
 
-  - country (String.t): The CLDR territory code of the country to which an item will ship. Defaults to `nil`.
-  - locationGroupName (String.t): The location where the shipping is applicable, represented by a location group name. Defaults to `nil`.
-  - locationId (String.t): The numeric ID of a location that the shipping rate applies to as defined in the AdWords API. Defaults to `nil`.
-  - postalCode (String.t): The postal code range that the shipping rate applies to, represented by a postal code, a postal code prefix followed by a * wildcard, a range between two postal codes or two postal code prefixes of equal length. Defaults to `nil`.
-  - price (GoogleApi.Content.V2.Model.Price.t): Fixed shipping price, represented as a number. Defaults to `nil`.
-  - region (String.t): The geographic region to which a shipping rate applies. Defaults to `nil`.
-  - service (String.t): A free-form description of the service class or delivery speed. Defaults to `nil`.
+  *   `country` (*type:* `String.t`, *default:* `nil`) - The CLDR territory code of the country to which an item will ship.
+  *   `locationGroupName` (*type:* `String.t`, *default:* `nil`) - The location where the shipping is applicable, represented by a location group name.
+  *   `locationId` (*type:* `String.t`, *default:* `nil`) - The numeric ID of a location that the shipping rate applies to as defined in the AdWords API.
+  *   `postalCode` (*type:* `String.t`, *default:* `nil`) - The postal code range that the shipping rate applies to, represented by a postal code, a postal code prefix followed by a * wildcard, a range between two postal codes or two postal code prefixes of equal length.
+  *   `price` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - Fixed shipping price, represented as a number.
+  *   `region` (*type:* `String.t`, *default:* `nil`) - The geographic region to which a shipping rate applies.
+  *   `service` (*type:* `String.t`, *default:* `nil`) - A free-form description of the service class or delivery speed.
   """
 
   use GoogleApi.Gax.ModelBase

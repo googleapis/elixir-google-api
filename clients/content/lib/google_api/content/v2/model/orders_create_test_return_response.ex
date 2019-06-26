@@ -21,8 +21,8 @@ defmodule GoogleApi.Content.V2.Model.OrdersCreateTestReturnResponse do
 
   ## Attributes
 
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "content#ordersCreateTestReturnResponse". Defaults to `content#ordersCreateTestReturnResponse`.
-  - returnId (String.t): The ID of the newly created test order return. Defaults to `nil`.
+  *   `kind` (*type:* `String.t`, *default:* `content#ordersCreateTestReturnResponse`) - Identifies what kind of resource this is. Value: the fixed string "content#ordersCreateTestReturnResponse".
+  *   `returnId` (*type:* `String.t`, *default:* `nil`) - The ID of the newly created test order return.
   """
 
   use GoogleApi.Gax.ModelBase

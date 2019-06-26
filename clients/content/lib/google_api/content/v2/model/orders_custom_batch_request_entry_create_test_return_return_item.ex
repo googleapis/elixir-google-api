@@ -21,8 +21,8 @@ defmodule GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryCreateTestRetu
 
   ## Attributes
 
-  - lineItemId (String.t): The ID of the line item to return. Defaults to `nil`.
-  - quantity (integer()): Quantity that is returned. Defaults to `nil`.
+  *   `lineItemId` (*type:* `String.t`, *default:* `nil`) - The ID of the line item to return.
+  *   `quantity` (*type:* `integer()`, *default:* `nil`) - Quantity that is returned.
   """
 
   use GoogleApi.Gax.ModelBase

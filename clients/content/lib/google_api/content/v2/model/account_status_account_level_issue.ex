@@ -21,13 +21,13 @@ defmodule GoogleApi.Content.V2.Model.AccountStatusAccountLevelIssue do
 
   ## Attributes
 
-  - country (String.t): Country for which this issue is reported. Defaults to `nil`.
-  - destination (String.t): The destination the issue applies to. Defaults to `nil`.
-  - detail (String.t): Additional details about the issue. Defaults to `nil`.
-  - documentation (String.t): The URL of a web page to help resolving this issue. Defaults to `nil`.
-  - id (String.t): Issue identifier. Defaults to `nil`.
-  - severity (String.t): Severity of the issue. Defaults to `nil`.
-  - title (String.t): Short description of the issue. Defaults to `nil`.
+  *   `country` (*type:* `String.t`, *default:* `nil`) - Country for which this issue is reported.
+  *   `destination` (*type:* `String.t`, *default:* `nil`) - The destination the issue applies to.
+  *   `detail` (*type:* `String.t`, *default:* `nil`) - Additional details about the issue.
+  *   `documentation` (*type:* `String.t`, *default:* `nil`) - The URL of a web page to help resolving this issue.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Issue identifier.
+  *   `severity` (*type:* `String.t`, *default:* `nil`) - Severity of the issue.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - Short description of the issue.
   """
 
   use GoogleApi.Gax.ModelBase

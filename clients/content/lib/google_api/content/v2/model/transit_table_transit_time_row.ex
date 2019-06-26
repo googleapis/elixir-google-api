@@ -21,7 +21,7 @@ defmodule GoogleApi.Content.V2.Model.TransitTableTransitTimeRow do
 
   ## Attributes
 
-  - values (list(GoogleApi.Content.V2.Model.TransitTableTransitTimeRowTransitTimeValue.t)):  Defaults to `nil`.
+  *   `values` (*type:* `list(GoogleApi.Content.V2.Model.TransitTableTransitTimeRowTransitTimeValue.t)`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,10 +21,10 @@ defmodule GoogleApi.Content.V2.Model.LiaInventorySettings do
 
   ## Attributes
 
-  - inventoryVerificationContactEmail (String.t): The email of the contact for the inventory verification process. Defaults to `nil`.
-  - inventoryVerificationContactName (String.t): The name of the contact for the inventory verification process. Defaults to `nil`.
-  - inventoryVerificationContactStatus (String.t): The status of the verification contact. Defaults to `nil`.
-  - status (String.t): The status of the inventory verification process. Defaults to `nil`.
+  *   `inventoryVerificationContactEmail` (*type:* `String.t`, *default:* `nil`) - The email of the contact for the inventory verification process.
+  *   `inventoryVerificationContactName` (*type:* `String.t`, *default:* `nil`) - The name of the contact for the inventory verification process.
+  *   `inventoryVerificationContactStatus` (*type:* `String.t`, *default:* `nil`) - The status of the verification contact.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - The status of the inventory verification process.
   """
 
   use GoogleApi.Gax.ModelBase

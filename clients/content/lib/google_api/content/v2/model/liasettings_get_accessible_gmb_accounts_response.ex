@@ -21,9 +21,9 @@ defmodule GoogleApi.Content.V2.Model.LiasettingsGetAccessibleGmbAccountsResponse
 
   ## Attributes
 
-  - accountId (String.t): The ID of the account. Defaults to `nil`.
-  - gmbAccounts (list(GoogleApi.Content.V2.Model.GmbAccountsGmbAccount.t)): A list of GMB accounts which are available to the merchant. Defaults to `nil`.
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "content#liasettingsGetAccessibleGmbAccountsResponse". Defaults to `content#liasettingsGetAccessibleGmbAccountsResponse`.
+  *   `accountId` (*type:* `String.t`, *default:* `nil`) - The ID of the account.
+  *   `gmbAccounts` (*type:* `list(GoogleApi.Content.V2.Model.GmbAccountsGmbAccount.t)`, *default:* `nil`) - A list of GMB accounts which are available to the merchant.
+  *   `kind` (*type:* `String.t`, *default:* `content#liasettingsGetAccessibleGmbAccountsResponse`) - Identifies what kind of resource this is. Value: the fixed string "content#liasettingsGetAccessibleGmbAccountsResponse".
   """
 
   use GoogleApi.Gax.ModelBase

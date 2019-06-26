@@ -21,7 +21,7 @@ defmodule GoogleApi.Content.V2.Model.OrdersAcknowledgeRequest do
 
   ## Attributes
 
-  - operationId (String.t): The ID of the operation. Unique across all operations for a given order. Defaults to `nil`.
+  *   `operationId` (*type:* `String.t`, *default:* `nil`) - The ID of the operation. Unique across all operations for a given order.
   """
 
   use GoogleApi.Gax.ModelBase

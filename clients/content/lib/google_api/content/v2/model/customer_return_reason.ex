@@ -21,8 +21,8 @@ defmodule GoogleApi.Content.V2.Model.CustomerReturnReason do
 
   ## Attributes
 
-  - description (String.t):  Defaults to `nil`.
-  - reasonCode (String.t):  Defaults to `nil`.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - 
+  *   `reasonCode` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

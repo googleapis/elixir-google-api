@@ -21,8 +21,8 @@ defmodule GoogleApi.Content.V2.Model.LiaOnDisplayToOrderSettings do
 
   ## Attributes
 
-  - shippingCostPolicyUrl (String.t): Shipping cost and policy URL. Defaults to `nil`.
-  - status (String.t): The status of the ?On display to order? feature. Defaults to `nil`.
+  *   `shippingCostPolicyUrl` (*type:* `String.t`, *default:* `nil`) - Shipping cost and policy URL.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - The status of the ?On display to order? feature.
   """
 
   use GoogleApi.Gax.ModelBase

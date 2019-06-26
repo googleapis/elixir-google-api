@@ -21,10 +21,10 @@ defmodule GoogleApi.Content.V2.Model.TestOrderCustomer do
 
   ## Attributes
 
-  - email (String.t): Email address of the customer. Defaults to `nil`.
-  - explicitMarketingPreference (boolean()): Deprecated. Please use marketingRightsInfo instead. Defaults to `nil`.
-  - fullName (String.t): Full name of the customer. Defaults to `nil`.
-  - marketingRightsInfo (GoogleApi.Content.V2.Model.TestOrderCustomerMarketingRightsInfo.t): Customer's marketing preferences. Defaults to `nil`.
+  *   `email` (*type:* `String.t`, *default:* `nil`) - Email address of the customer.
+  *   `explicitMarketingPreference` (*type:* `boolean()`, *default:* `nil`) - Deprecated. Please use marketingRightsInfo instead.
+  *   `fullName` (*type:* `String.t`, *default:* `nil`) - Full name of the customer.
+  *   `marketingRightsInfo` (*type:* `GoogleApi.Content.V2.Model.TestOrderCustomerMarketingRightsInfo.t`, *default:* `nil`) - Customer's marketing preferences.
   """
 
   use GoogleApi.Gax.ModelBase

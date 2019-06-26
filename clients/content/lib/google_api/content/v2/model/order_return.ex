@@ -21,11 +21,11 @@ defmodule GoogleApi.Content.V2.Model.OrderReturn do
 
   ## Attributes
 
-  - actor (String.t): The actor that created the refund. Defaults to `nil`.
-  - creationDate (String.t): Date on which the item has been created, in ISO 8601 format. Defaults to `nil`.
-  - quantity (integer()): Quantity that is returned. Defaults to `nil`.
-  - reason (String.t): The reason for the return. Defaults to `nil`.
-  - reasonText (String.t): The explanation of the reason. Defaults to `nil`.
+  *   `actor` (*type:* `String.t`, *default:* `nil`) - The actor that created the refund.
+  *   `creationDate` (*type:* `String.t`, *default:* `nil`) - Date on which the item has been created, in ISO 8601 format.
+  *   `quantity` (*type:* `integer()`, *default:* `nil`) - Quantity that is returned.
+  *   `reason` (*type:* `String.t`, *default:* `nil`) - The reason for the return.
+  *   `reasonText` (*type:* `String.t`, *default:* `nil`) - The explanation of the reason.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,23 +21,23 @@ defmodule GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntry do
 
   ## Attributes
 
-  - batchId (integer()): An entry ID, unique within the batch request. Defaults to `nil`.
-  - cancel (GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryCancel.t): Required for cancel method. Defaults to `nil`.
-  - cancelLineItem (GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryCancelLineItem.t): Required for cancelLineItem method. Defaults to `nil`.
-  - inStoreRefundLineItem (GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryInStoreRefundLineItem.t): Required for inStoreReturnLineItem method. Defaults to `nil`.
-  - merchantId (String.t): The ID of the managing account. Defaults to `nil`.
-  - merchantOrderId (String.t): The merchant order ID. Required for updateMerchantOrderId and getByMerchantOrderId methods. Defaults to `nil`.
-  - method (String.t): The method to apply. Defaults to `nil`.
-  - operationId (String.t): The ID of the operation. Unique across all operations for a given order. Required for all methods beside get and getByMerchantOrderId. Defaults to `nil`.
-  - orderId (String.t): The ID of the order. Required for all methods beside getByMerchantOrderId. Defaults to `nil`.
-  - refund (GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryRefund.t): Required for refund method. Defaults to `nil`.
-  - rejectReturnLineItem (GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryRejectReturnLineItem.t): Required for rejectReturnLineItem method. Defaults to `nil`.
-  - returnLineItem (GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryReturnLineItem.t): Required for returnLineItem method. Defaults to `nil`.
-  - returnRefundLineItem (GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryReturnRefundLineItem.t): Required for returnRefundLineItem method. Defaults to `nil`.
-  - setLineItemMetadata (GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntrySetLineItemMetadata.t): Required for setLineItemMetadata method. Defaults to `nil`.
-  - shipLineItems (GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryShipLineItems.t): Required for shipLineItems method. Defaults to `nil`.
-  - updateLineItemShippingDetails (GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryUpdateLineItemShippingDetails.t): Required for updateLineItemShippingDate method. Defaults to `nil`.
-  - updateShipment (GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryUpdateShipment.t): Required for updateShipment method. Defaults to `nil`.
+  *   `batchId` (*type:* `integer()`, *default:* `nil`) - An entry ID, unique within the batch request.
+  *   `cancel` (*type:* `GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryCancel.t`, *default:* `nil`) - Required for cancel method.
+  *   `cancelLineItem` (*type:* `GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryCancelLineItem.t`, *default:* `nil`) - Required for cancelLineItem method.
+  *   `inStoreRefundLineItem` (*type:* `GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryInStoreRefundLineItem.t`, *default:* `nil`) - Required for inStoreReturnLineItem method.
+  *   `merchantId` (*type:* `String.t`, *default:* `nil`) - The ID of the managing account.
+  *   `merchantOrderId` (*type:* `String.t`, *default:* `nil`) - The merchant order ID. Required for updateMerchantOrderId and getByMerchantOrderId methods.
+  *   `method` (*type:* `String.t`, *default:* `nil`) - The method to apply.
+  *   `operationId` (*type:* `String.t`, *default:* `nil`) - The ID of the operation. Unique across all operations for a given order. Required for all methods beside get and getByMerchantOrderId.
+  *   `orderId` (*type:* `String.t`, *default:* `nil`) - The ID of the order. Required for all methods beside getByMerchantOrderId.
+  *   `refund` (*type:* `GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryRefund.t`, *default:* `nil`) - Required for refund method.
+  *   `rejectReturnLineItem` (*type:* `GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryRejectReturnLineItem.t`, *default:* `nil`) - Required for rejectReturnLineItem method.
+  *   `returnLineItem` (*type:* `GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryReturnLineItem.t`, *default:* `nil`) - Required for returnLineItem method.
+  *   `returnRefundLineItem` (*type:* `GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryReturnRefundLineItem.t`, *default:* `nil`) - Required for returnRefundLineItem method.
+  *   `setLineItemMetadata` (*type:* `GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntrySetLineItemMetadata.t`, *default:* `nil`) - Required for setLineItemMetadata method.
+  *   `shipLineItems` (*type:* `GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryShipLineItems.t`, *default:* `nil`) - Required for shipLineItems method.
+  *   `updateLineItemShippingDetails` (*type:* `GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryUpdateLineItemShippingDetails.t`, *default:* `nil`) - Required for updateLineItemShippingDate method.
+  *   `updateShipment` (*type:* `GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryUpdateShipment.t`, *default:* `nil`) - Required for updateShipment method.
   """
 
   use GoogleApi.Gax.ModelBase

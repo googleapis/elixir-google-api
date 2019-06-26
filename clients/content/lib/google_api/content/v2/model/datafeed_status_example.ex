@@ -21,9 +21,9 @@ defmodule GoogleApi.Content.V2.Model.DatafeedStatusExample do
 
   ## Attributes
 
-  - itemId (String.t): The ID of the example item. Defaults to `nil`.
-  - lineNumber (String.t): Line number in the data feed where the example is found. Defaults to `nil`.
-  - value (String.t): The problematic value. Defaults to `nil`.
+  *   `itemId` (*type:* `String.t`, *default:* `nil`) - The ID of the example item.
+  *   `lineNumber` (*type:* `String.t`, *default:* `nil`) - Line number in the data feed where the example is found.
+  *   `value` (*type:* `String.t`, *default:* `nil`) - The problematic value.
   """
 
   use GoogleApi.Gax.ModelBase

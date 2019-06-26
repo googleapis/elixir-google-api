@@ -21,13 +21,13 @@ defmodule GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryInStoreRefundL
 
   ## Attributes
 
-  - amountPretax (GoogleApi.Content.V2.Model.Price.t): The amount that is refunded. Required. Defaults to `nil`.
-  - amountTax (GoogleApi.Content.V2.Model.Price.t): Tax amount that correspond to refund amount in amountPretax. Required. Defaults to `nil`.
-  - lineItemId (String.t): The ID of the line item to return. Either lineItemId or productId is required. Defaults to `nil`.
-  - productId (String.t): The ID of the product to return. This is the REST ID used in the products service. Either lineItemId or productId is required. Defaults to `nil`.
-  - quantity (integer()): The quantity to return and refund. Defaults to `nil`.
-  - reason (String.t): The reason for the return. Defaults to `nil`.
-  - reasonText (String.t): The explanation of the reason. Defaults to `nil`.
+  *   `amountPretax` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - The amount that is refunded. Required.
+  *   `amountTax` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - Tax amount that correspond to refund amount in amountPretax. Required.
+  *   `lineItemId` (*type:* `String.t`, *default:* `nil`) - The ID of the line item to return. Either lineItemId or productId is required.
+  *   `productId` (*type:* `String.t`, *default:* `nil`) - The ID of the product to return. This is the REST ID used in the products service. Either lineItemId or productId is required.
+  *   `quantity` (*type:* `integer()`, *default:* `nil`) - The quantity to return and refund.
+  *   `reason` (*type:* `String.t`, *default:* `nil`) - The reason for the return.
+  *   `reasonText` (*type:* `String.t`, *default:* `nil`) - The explanation of the reason.
   """
 
   use GoogleApi.Gax.ModelBase

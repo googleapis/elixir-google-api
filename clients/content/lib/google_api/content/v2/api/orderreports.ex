@@ -28,30 +28,32 @@ defmodule GoogleApi.Content.V2.Api.Orderreports do
 
   ## Parameters
 
-  - connection (GoogleApi.Content.V2.Connection): Connection to server
-  - merchant_id (String.t): The ID of the account that manages the order. This cannot be a multi-client account.
-  - disbursement_start_date (String.t): The first date which disbursements occurred. In ISO 8601 format.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :disbursementEndDate (String.t): The last date which disbursements occurred. In ISO 8601 format. Default: current date.
-    - :maxResults (integer()): The maximum number of disbursements to return in the response, used for paging.
-    - :pageToken (String.t): The token returned by the previous request.
+  *   `connection` (*type:* `GoogleApi.Content.V2.Connection.t`) - Connection to server
+  *   `merchant_id` (*type:* `String.t`) - The ID of the account that manages the order. This cannot be a multi-client account.
+  *   `disbursement_start_date` (*type:* `String.t`) - The first date which disbursements occurred. In ISO 8601 format.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:disbursementEndDate` (*type:* `String.t`) - The last date which disbursements occurred. In ISO 8601 format. Default: current date.
+      *   `:maxResults` (*type:* `integer()`) - The maximum number of disbursements to return in the response, used for paging.
+      *   `:pageToken` (*type:* `String.t`) - The token returned by the previous request.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Content.V2.Model.OrderreportsListDisbursementsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Content.V2.Model.OrderreportsListDisbursementsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec content_orderreports_listdisbursements(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.Content.V2.Model.OrderreportsListDisbursementsResponse.t()}
@@ -97,32 +99,34 @@ defmodule GoogleApi.Content.V2.Api.Orderreports do
 
   ## Parameters
 
-  - connection (GoogleApi.Content.V2.Connection): Connection to server
-  - merchant_id (String.t): The ID of the account that manages the order. This cannot be a multi-client account.
-  - disbursement_id (String.t): The Google-provided ID of the disbursement (found in Wallet).
-  - transaction_start_date (String.t): The first date in which transaction occurred. In ISO 8601 format.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :maxResults (integer()): The maximum number of disbursements to return in the response, used for paging.
-    - :pageToken (String.t): The token returned by the previous request.
-    - :transactionEndDate (String.t): The last date in which transaction occurred. In ISO 8601 format. Default: current date.
+  *   `connection` (*type:* `GoogleApi.Content.V2.Connection.t`) - Connection to server
+  *   `merchant_id` (*type:* `String.t`) - The ID of the account that manages the order. This cannot be a multi-client account.
+  *   `disbursement_id` (*type:* `String.t`) - The Google-provided ID of the disbursement (found in Wallet).
+  *   `transaction_start_date` (*type:* `String.t`) - The first date in which transaction occurred. In ISO 8601 format.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:maxResults` (*type:* `integer()`) - The maximum number of disbursements to return in the response, used for paging.
+      *   `:pageToken` (*type:* `String.t`) - The token returned by the previous request.
+      *   `:transactionEndDate` (*type:* `String.t`) - The last date in which transaction occurred. In ISO 8601 format. Default: current date.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Content.V2.Model.OrderreportsListTransactionsResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Content.V2.Model.OrderreportsListTransactionsResponse{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec content_orderreports_listtransactions(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.Content.V2.Model.OrderreportsListTransactionsResponse.t()}

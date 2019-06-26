@@ -21,9 +21,9 @@ defmodule GoogleApi.Content.V2.Model.PostalCodeGroup do
 
   ## Attributes
 
-  - country (String.t): The CLDR territory code of the country the postal code group applies to. Required. Defaults to `nil`.
-  - name (String.t): The name of the postal code group, referred to in headers. Required. Defaults to `nil`.
-  - postalCodeRanges (list(GoogleApi.Content.V2.Model.PostalCodeRange.t)): A range of postal codes. Required. Defaults to `nil`.
+  *   `country` (*type:* `String.t`, *default:* `nil`) - The CLDR territory code of the country the postal code group applies to. Required.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the postal code group, referred to in headers. Required.
+  *   `postalCodeRanges` (*type:* `list(GoogleApi.Content.V2.Model.PostalCodeRange.t)`, *default:* `nil`) - A range of postal codes. Required.
   """
 
   use GoogleApi.Gax.ModelBase

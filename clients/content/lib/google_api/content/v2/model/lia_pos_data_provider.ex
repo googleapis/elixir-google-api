@@ -21,8 +21,8 @@ defmodule GoogleApi.Content.V2.Model.LiaPosDataProvider do
 
   ## Attributes
 
-  - posDataProviderId (String.t): The ID of the POS data provider. Defaults to `nil`.
-  - posExternalAccountId (String.t): The account ID by which this merchant is known to the POS data provider. Defaults to `nil`.
+  *   `posDataProviderId` (*type:* `String.t`, *default:* `nil`) - The ID of the POS data provider.
+  *   `posExternalAccountId` (*type:* `String.t`, *default:* `nil`) - The account ID by which this merchant is known to the POS data provider.
   """
 
   use GoogleApi.Gax.ModelBase

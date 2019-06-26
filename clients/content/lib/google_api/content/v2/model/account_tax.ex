@@ -21,9 +21,9 @@ defmodule GoogleApi.Content.V2.Model.AccountTax do
 
   ## Attributes
 
-  - accountId (String.t): The ID of the account to which these account tax settings belong. Defaults to `nil`.
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "content#accountTax". Defaults to `content#accountTax`.
-  - rules (list(GoogleApi.Content.V2.Model.AccountTaxTaxRule.t)): Tax rules. Updating the tax rules will enable US taxes (not reversible). Defining no rules is equivalent to not charging tax at all. Defaults to `nil`.
+  *   `accountId` (*type:* `String.t`, *default:* `nil`) - The ID of the account to which these account tax settings belong.
+  *   `kind` (*type:* `String.t`, *default:* `content#accountTax`) - Identifies what kind of resource this is. Value: the fixed string "content#accountTax".
+  *   `rules` (*type:* `list(GoogleApi.Content.V2.Model.AccountTaxTaxRule.t)`, *default:* `nil`) - Tax rules. Updating the tax rules will enable US taxes (not reversible). Defining no rules is equivalent to not charging tax at all.
   """
 
   use GoogleApi.Gax.ModelBase

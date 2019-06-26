@@ -21,12 +21,12 @@ defmodule GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryShipLineItems 
 
   ## Attributes
 
-  - carrier (String.t): Deprecated. Please use shipmentInfo instead. The carrier handling the shipment. See shipments[].carrier in the  Orders resource representation for a list of acceptable values. Defaults to `nil`.
-  - lineItems (list(GoogleApi.Content.V2.Model.OrderShipmentLineItemShipment.t)): Line items to ship. Defaults to `nil`.
-  - shipmentGroupId (String.t): ID of the shipment group. Required for orders that use the orderinvoices service. Defaults to `nil`.
-  - shipmentId (String.t): Deprecated. Please use shipmentInfo instead. The ID of the shipment. Defaults to `nil`.
-  - shipmentInfos (list(GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryShipLineItemsShipmentInfo.t)): Shipment information. This field is repeated because a single line item can be shipped in several packages (and have several tracking IDs). Defaults to `nil`.
-  - trackingId (String.t): Deprecated. Please use shipmentInfo instead. The tracking ID for the shipment. Defaults to `nil`.
+  *   `carrier` (*type:* `String.t`, *default:* `nil`) - Deprecated. Please use shipmentInfo instead. The carrier handling the shipment. See shipments[].carrier in the  Orders resource representation for a list of acceptable values.
+  *   `lineItems` (*type:* `list(GoogleApi.Content.V2.Model.OrderShipmentLineItemShipment.t)`, *default:* `nil`) - Line items to ship.
+  *   `shipmentGroupId` (*type:* `String.t`, *default:* `nil`) - ID of the shipment group. Required for orders that use the orderinvoices service.
+  *   `shipmentId` (*type:* `String.t`, *default:* `nil`) - Deprecated. Please use shipmentInfo instead. The ID of the shipment.
+  *   `shipmentInfos` (*type:* `list(GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryShipLineItemsShipmentInfo.t)`, *default:* `nil`) - Shipment information. This field is repeated because a single line item can be shipped in several packages (and have several tracking IDs).
+  *   `trackingId` (*type:* `String.t`, *default:* `nil`) - Deprecated. Please use shipmentInfo instead. The tracking ID for the shipment.
   """
 
   use GoogleApi.Gax.ModelBase

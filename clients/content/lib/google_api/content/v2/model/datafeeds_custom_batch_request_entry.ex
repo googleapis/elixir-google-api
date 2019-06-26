@@ -21,11 +21,11 @@ defmodule GoogleApi.Content.V2.Model.DatafeedsCustomBatchRequestEntry do
 
   ## Attributes
 
-  - batchId (integer()): An entry ID, unique within the batch request. Defaults to `nil`.
-  - datafeed (GoogleApi.Content.V2.Model.Datafeed.t): The data feed to insert. Defaults to `nil`.
-  - datafeedId (String.t): The ID of the data feed to get, delete or fetch. Defaults to `nil`.
-  - merchantId (String.t): The ID of the managing account. Defaults to `nil`.
-  - method (String.t):  Defaults to `nil`.
+  *   `batchId` (*type:* `integer()`, *default:* `nil`) - An entry ID, unique within the batch request.
+  *   `datafeed` (*type:* `GoogleApi.Content.V2.Model.Datafeed.t`, *default:* `nil`) - The data feed to insert.
+  *   `datafeedId` (*type:* `String.t`, *default:* `nil`) - The ID of the data feed to get, delete or fetch.
+  *   `merchantId` (*type:* `String.t`, *default:* `nil`) - The ID of the managing account.
+  *   `method` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

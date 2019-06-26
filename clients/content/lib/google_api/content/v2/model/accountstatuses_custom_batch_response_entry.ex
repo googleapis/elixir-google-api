@@ -21,9 +21,9 @@ defmodule GoogleApi.Content.V2.Model.AccountstatusesCustomBatchResponseEntry do
 
   ## Attributes
 
-  - accountStatus (GoogleApi.Content.V2.Model.AccountStatus.t): The requested account status. Defined if and only if the request was successful. Defaults to `nil`.
-  - batchId (integer()): The ID of the request entry this entry responds to. Defaults to `nil`.
-  - errors (GoogleApi.Content.V2.Model.Errors.t): A list of errors defined if and only if the request failed. Defaults to `nil`.
+  *   `accountStatus` (*type:* `GoogleApi.Content.V2.Model.AccountStatus.t`, *default:* `nil`) - The requested account status. Defined if and only if the request was successful.
+  *   `batchId` (*type:* `integer()`, *default:* `nil`) - The ID of the request entry this entry responds to.
+  *   `errors` (*type:* `GoogleApi.Content.V2.Model.Errors.t`, *default:* `nil`) - A list of errors defined if and only if the request failed.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,8 +21,8 @@ defmodule GoogleApi.Content.V2.Model.ProductShippingWeight do
 
   ## Attributes
 
-  - unit (String.t): The unit of value. Defaults to `nil`.
-  - value (float()): The weight of the product used to calculate the shipping cost of the item. Defaults to `nil`.
+  *   `unit` (*type:* `String.t`, *default:* `nil`) - The unit of value.
+  *   `value` (*type:* `float()`, *default:* `nil`) - The weight of the product used to calculate the shipping cost of the item.
   """
 
   use GoogleApi.Gax.ModelBase

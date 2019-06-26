@@ -21,9 +21,9 @@ defmodule GoogleApi.Content.V2.Model.OrdersCancelRequest do
 
   ## Attributes
 
-  - operationId (String.t): The ID of the operation. Unique across all operations for a given order. Defaults to `nil`.
-  - reason (String.t): The reason for the cancellation. Defaults to `nil`.
-  - reasonText (String.t): The explanation of the reason. Defaults to `nil`.
+  *   `operationId` (*type:* `String.t`, *default:* `nil`) - The ID of the operation. Unique across all operations for a given order.
+  *   `reason` (*type:* `String.t`, *default:* `nil`) - The reason for the cancellation.
+  *   `reasonText` (*type:* `String.t`, *default:* `nil`) - The explanation of the reason.
   """
 
   use GoogleApi.Gax.ModelBase

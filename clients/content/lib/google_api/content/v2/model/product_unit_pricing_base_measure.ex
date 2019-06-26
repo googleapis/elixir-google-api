@@ -21,8 +21,8 @@ defmodule GoogleApi.Content.V2.Model.ProductUnitPricingBaseMeasure do
 
   ## Attributes
 
-  - unit (String.t): The unit of the denominator. Defaults to `nil`.
-  - value (String.t): The denominator of the unit price. Defaults to `nil`.
+  *   `unit` (*type:* `String.t`, *default:* `nil`) - The unit of the denominator.
+  *   `value` (*type:* `String.t`, *default:* `nil`) - The denominator of the unit price.
   """
 
   use GoogleApi.Gax.ModelBase

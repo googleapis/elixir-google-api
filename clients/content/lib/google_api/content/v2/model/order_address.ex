@@ -21,18 +21,18 @@ defmodule GoogleApi.Content.V2.Model.OrderAddress do
 
   ## Attributes
 
-  - country (String.t): CLDR country code (e.g. "US"). Defaults to `nil`.
-  - fullAddress (list(String.t)): Strings representing the lines of the printed label for mailing the order, for example:
-  John Smith
-  1600 Amphitheatre Parkway
-  Mountain View, CA, 94043
-  United States Defaults to `nil`.
-  - isPostOfficeBox (boolean()): Whether the address is a post office box. Defaults to `nil`.
-  - locality (String.t): City, town or commune. May also include dependent localities or sublocalities (e.g. neighborhoods or suburbs). Defaults to `nil`.
-  - postalCode (String.t): Postal Code or ZIP (e.g. "94043"). Defaults to `nil`.
-  - recipientName (String.t): Name of the recipient. Defaults to `nil`.
-  - region (String.t): Top-level administrative subdivision of the country. For example, a state like California ("CA") or a province like Quebec ("QC"). Defaults to `nil`.
-  - streetAddress (list(String.t)): Street-level part of the address. Defaults to `nil`.
+  *   `country` (*type:* `String.t`, *default:* `nil`) - CLDR country code (e.g. "US").
+  *   `fullAddress` (*type:* `list(String.t)`, *default:* `nil`) - Strings representing the lines of the printed label for mailing the order, for example:
+      John Smith
+      1600 Amphitheatre Parkway
+      Mountain View, CA, 94043
+      United States
+  *   `isPostOfficeBox` (*type:* `boolean()`, *default:* `nil`) - Whether the address is a post office box.
+  *   `locality` (*type:* `String.t`, *default:* `nil`) - City, town or commune. May also include dependent localities or sublocalities (e.g. neighborhoods or suburbs).
+  *   `postalCode` (*type:* `String.t`, *default:* `nil`) - Postal Code or ZIP (e.g. "94043").
+  *   `recipientName` (*type:* `String.t`, *default:* `nil`) - Name of the recipient.
+  *   `region` (*type:* `String.t`, *default:* `nil`) - Top-level administrative subdivision of the country. For example, a state like California ("CA") or a province like Quebec ("QC").
+  *   `streetAddress` (*type:* `list(String.t)`, *default:* `nil`) - Street-level part of the address.
   """
 
   use GoogleApi.Gax.ModelBase

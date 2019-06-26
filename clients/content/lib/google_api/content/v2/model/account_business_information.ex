@@ -21,9 +21,9 @@ defmodule GoogleApi.Content.V2.Model.AccountBusinessInformation do
 
   ## Attributes
 
-  - address (GoogleApi.Content.V2.Model.AccountAddress.t): The address of the business. Defaults to `nil`.
-  - customerService (GoogleApi.Content.V2.Model.AccountCustomerService.t): The customer service information of the business. Defaults to `nil`.
-  - phoneNumber (String.t): The phone number of the business. Defaults to `nil`.
+  *   `address` (*type:* `GoogleApi.Content.V2.Model.AccountAddress.t`, *default:* `nil`) - The address of the business.
+  *   `customerService` (*type:* `GoogleApi.Content.V2.Model.AccountCustomerService.t`, *default:* `nil`) - The customer service information of the business.
+  *   `phoneNumber` (*type:* `String.t`, *default:* `nil`) - The phone number of the business.
   """
 
   use GoogleApi.Gax.ModelBase

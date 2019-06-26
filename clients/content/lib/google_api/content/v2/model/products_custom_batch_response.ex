@@ -21,8 +21,8 @@ defmodule GoogleApi.Content.V2.Model.ProductsCustomBatchResponse do
 
   ## Attributes
 
-  - entries (list(GoogleApi.Content.V2.Model.ProductsCustomBatchResponseEntry.t)): The result of the execution of the batch requests. Defaults to `nil`.
-  - kind (String.t): Identifies what kind of resource this is. Value: the fixed string "content#productsCustomBatchResponse". Defaults to `content#productsCustomBatchResponse`.
+  *   `entries` (*type:* `list(GoogleApi.Content.V2.Model.ProductsCustomBatchResponseEntry.t)`, *default:* `nil`) - The result of the execution of the batch requests.
+  *   `kind` (*type:* `String.t`, *default:* `content#productsCustomBatchResponse`) - Identifies what kind of resource this is. Value: the fixed string "content#productsCustomBatchResponse".
   """
 
   use GoogleApi.Gax.ModelBase
