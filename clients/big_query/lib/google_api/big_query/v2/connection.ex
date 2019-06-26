@@ -45,6 +45,6 @@ defmodule GoogleApi.BigQuery.V2.Connection do
       # Manage your data in Google Cloud Storage
       "https://www.googleapis.com/auth/devstorage.read_write"
     ],
-    otp_app: :google_api_bigquery,
+    otp_app: :google_api_big_query,
     base_url: "https://www.googleapis.com/"
 end
