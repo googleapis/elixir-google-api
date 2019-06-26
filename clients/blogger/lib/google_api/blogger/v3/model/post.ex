@@ -21,25 +21,25 @@ defmodule GoogleApi.Blogger.V3.Model.Post do
 
   ## Attributes
 
-  - author (GoogleApi.Blogger.V3.Model.PostAuthor.t): The author of this Post. Defaults to `nil`.
-  - blog (GoogleApi.Blogger.V3.Model.PostBlog.t): Data about the blog containing this Post. Defaults to `nil`.
-  - content (String.t): The content of the Post. May contain HTML markup. Defaults to `nil`.
-  - customMetaData (String.t): The JSON meta-data for the Post. Defaults to `nil`.
-  - etag (String.t): Etag of the resource. Defaults to `nil`.
-  - id (String.t): The identifier of this Post. Defaults to `nil`.
-  - images (list(GoogleApi.Blogger.V3.Model.PostImages.t)): Display image for the Post. Defaults to `nil`.
-  - kind (String.t): The kind of this entity. Always blogger#post Defaults to `blogger#post`.
-  - labels (list(String.t)): The list of labels this Post was tagged with. Defaults to `nil`.
-  - location (GoogleApi.Blogger.V3.Model.PostLocation.t): The location for geotagged posts. Defaults to `nil`.
-  - published (DateTime.t): RFC 3339 date-time when this Post was published. Defaults to `nil`.
-  - readerComments (String.t): Comment control and display setting for readers of this post. Defaults to `nil`.
-  - replies (GoogleApi.Blogger.V3.Model.PostReplies.t): The container of comments on this Post. Defaults to `nil`.
-  - selfLink (String.t): The API REST URL to fetch this resource from. Defaults to `nil`.
-  - status (String.t): Status of the post. Only set for admin-level requests Defaults to `nil`.
-  - title (String.t): The title of the Post. Defaults to `nil`.
-  - titleLink (String.t): The title link URL, similar to atom's related link. Defaults to `nil`.
-  - updated (DateTime.t): RFC 3339 date-time when this Post was last updated. Defaults to `nil`.
-  - url (String.t): The URL where this Post is displayed. Defaults to `nil`.
+  *   `author` (*type:* `GoogleApi.Blogger.V3.Model.PostAuthor.t`, *default:* `nil`) - The author of this Post.
+  *   `blog` (*type:* `GoogleApi.Blogger.V3.Model.PostBlog.t`, *default:* `nil`) - Data about the blog containing this Post.
+  *   `content` (*type:* `String.t`, *default:* `nil`) - The content of the Post. May contain HTML markup.
+  *   `customMetaData` (*type:* `String.t`, *default:* `nil`) - The JSON meta-data for the Post.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of the resource.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The identifier of this Post.
+  *   `images` (*type:* `list(GoogleApi.Blogger.V3.Model.PostImages.t)`, *default:* `nil`) - Display image for the Post.
+  *   `kind` (*type:* `String.t`, *default:* `blogger#post`) - The kind of this entity. Always blogger#post
+  *   `labels` (*type:* `list(String.t)`, *default:* `nil`) - The list of labels this Post was tagged with.
+  *   `location` (*type:* `GoogleApi.Blogger.V3.Model.PostLocation.t`, *default:* `nil`) - The location for geotagged posts.
+  *   `published` (*type:* `DateTime.t`, *default:* `nil`) - RFC 3339 date-time when this Post was published.
+  *   `readerComments` (*type:* `String.t`, *default:* `nil`) - Comment control and display setting for readers of this post.
+  *   `replies` (*type:* `GoogleApi.Blogger.V3.Model.PostReplies.t`, *default:* `nil`) - The container of comments on this Post.
+  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - The API REST URL to fetch this resource from.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - Status of the post. Only set for admin-level requests
+  *   `title` (*type:* `String.t`, *default:* `nil`) - The title of the Post.
+  *   `titleLink` (*type:* `String.t`, *default:* `nil`) - The title link URL, similar to atom's related link.
+  *   `updated` (*type:* `DateTime.t`, *default:* `nil`) - RFC 3339 date-time when this Post was last updated.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - The URL where this Post is displayed.
   """
 
   use GoogleApi.Gax.ModelBase

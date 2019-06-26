@@ -21,9 +21,9 @@ defmodule GoogleApi.Blogger.V3.Model.BlogUserInfo do
 
   ## Attributes
 
-  - blog (GoogleApi.Blogger.V3.Model.Blog.t): The Blog resource. Defaults to `nil`.
-  - blog_user_info (GoogleApi.Blogger.V3.Model.BlogPerUserInfo.t): Information about a User for the Blog. Defaults to `nil`.
-  - kind (String.t): The kind of this entity. Always blogger#blogUserInfo Defaults to `blogger#blogUserInfo`.
+  *   `blog` (*type:* `GoogleApi.Blogger.V3.Model.Blog.t`, *default:* `nil`) - The Blog resource.
+  *   `blog_user_info` (*type:* `GoogleApi.Blogger.V3.Model.BlogPerUserInfo.t`, *default:* `nil`) - Information about a User for the Blog.
+  *   `kind` (*type:* `String.t`, *default:* `blogger#blogUserInfo`) - The kind of this entity. Always blogger#blogUserInfo
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,11 +21,11 @@ defmodule GoogleApi.Blogger.V3.Model.PostPerUserInfo do
 
   ## Attributes
 
-  - blogId (String.t): ID of the Blog that the post resource belongs to. Defaults to `nil`.
-  - hasEditAccess (boolean()): True if the user has Author level access to the post. Defaults to `nil`.
-  - kind (String.t): The kind of this entity. Always blogger#postPerUserInfo Defaults to `blogger#postPerUserInfo`.
-  - postId (String.t): ID of the Post resource. Defaults to `nil`.
-  - userId (String.t): ID of the User. Defaults to `nil`.
+  *   `blogId` (*type:* `String.t`, *default:* `nil`) - ID of the Blog that the post resource belongs to.
+  *   `hasEditAccess` (*type:* `boolean()`, *default:* `nil`) - True if the user has Author level access to the post.
+  *   `kind` (*type:* `String.t`, *default:* `blogger#postPerUserInfo`) - The kind of this entity. Always blogger#postPerUserInfo
+  *   `postId` (*type:* `String.t`, *default:* `nil`) - ID of the Post resource.
+  *   `userId` (*type:* `String.t`, *default:* `nil`) - ID of the User.
   """
 
   use GoogleApi.Gax.ModelBase

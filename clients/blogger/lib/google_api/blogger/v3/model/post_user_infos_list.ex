@@ -21,9 +21,9 @@ defmodule GoogleApi.Blogger.V3.Model.PostUserInfosList do
 
   ## Attributes
 
-  - items (list(GoogleApi.Blogger.V3.Model.PostUserInfo.t)): The list of Posts with User information for the post, for this Blog. Defaults to `nil`.
-  - kind (String.t): The kind of this entity. Always blogger#postList Defaults to `blogger#postUserInfosList`.
-  - nextPageToken (String.t): Pagination token to fetch the next page, if one exists. Defaults to `nil`.
+  *   `items` (*type:* `list(GoogleApi.Blogger.V3.Model.PostUserInfo.t)`, *default:* `nil`) - The list of Posts with User information for the post, for this Blog.
+  *   `kind` (*type:* `String.t`, *default:* `blogger#postUserInfosList`) - The kind of this entity. Always blogger#postList
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Pagination token to fetch the next page, if one exists.
   """
 
   use GoogleApi.Gax.ModelBase

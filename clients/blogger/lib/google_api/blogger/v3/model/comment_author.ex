@@ -21,10 +21,10 @@ defmodule GoogleApi.Blogger.V3.Model.CommentAuthor do
 
   ## Attributes
 
-  - displayName (String.t): The display name. Defaults to `nil`.
-  - id (String.t): The identifier of the Comment creator. Defaults to `nil`.
-  - image (GoogleApi.Blogger.V3.Model.CommentAuthorImage.t): The comment creator's avatar. Defaults to `nil`.
-  - url (String.t): The URL of the Comment creator's Profile page. Defaults to `nil`.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The identifier of the Comment creator.
+  *   `image` (*type:* `GoogleApi.Blogger.V3.Model.CommentAuthorImage.t`, *default:* `nil`) - The comment creator's avatar.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - The URL of the Comment creator's Profile page.
   """
 
   use GoogleApi.Gax.ModelBase

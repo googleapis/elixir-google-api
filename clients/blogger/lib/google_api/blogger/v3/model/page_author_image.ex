@@ -21,7 +21,7 @@ defmodule GoogleApi.Blogger.V3.Model.PageAuthorImage do
 
   ## Attributes
 
-  - url (String.t): The page author's avatar URL. Defaults to `nil`.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - The page author's avatar URL.
   """
 
   use GoogleApi.Gax.ModelBase

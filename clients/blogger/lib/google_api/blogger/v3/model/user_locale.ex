@@ -21,9 +21,9 @@ defmodule GoogleApi.Blogger.V3.Model.UserLocale do
 
   ## Attributes
 
-  - country (String.t): The user's country setting. Defaults to `nil`.
-  - language (String.t): The user's language setting. Defaults to `nil`.
-  - variant (String.t): The user's language variant setting. Defaults to `nil`.
+  *   `country` (*type:* `String.t`, *default:* `nil`) - The user's country setting.
+  *   `language` (*type:* `String.t`, *default:* `nil`) - The user's language setting.
+  *   `variant` (*type:* `String.t`, *default:* `nil`) - The user's language variant setting.
   """
 
   use GoogleApi.Gax.ModelBase

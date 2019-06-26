@@ -21,10 +21,10 @@ defmodule GoogleApi.Blogger.V3.Model.PostAuthor do
 
   ## Attributes
 
-  - displayName (String.t): The display name. Defaults to `nil`.
-  - id (String.t): The identifier of the Post creator. Defaults to `nil`.
-  - image (GoogleApi.Blogger.V3.Model.PostAuthorImage.t): The Post author's avatar. Defaults to `nil`.
-  - url (String.t): The URL of the Post creator's Profile page. Defaults to `nil`.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The identifier of the Post creator.
+  *   `image` (*type:* `GoogleApi.Blogger.V3.Model.PostAuthorImage.t`, *default:* `nil`) - The Post author's avatar.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - The URL of the Post creator's Profile page.
   """
 
   use GoogleApi.Gax.ModelBase

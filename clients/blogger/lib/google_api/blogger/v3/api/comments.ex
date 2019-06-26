@@ -28,29 +28,31 @@ defmodule GoogleApi.Blogger.V3.Api.Comments do
 
   ## Parameters
 
-  - connection (GoogleApi.Blogger.V3.Connection): Connection to server
-  - blog_id (String.t): The ID of the Blog.
-  - post_id (String.t): The ID of the Post.
-  - comment_id (String.t): The ID of the comment to mark as not spam.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.Blogger.V3.Connection.t`) - Connection to server
+  *   `blog_id` (*type:* `String.t`) - The ID of the Blog.
+  *   `post_id` (*type:* `String.t`) - The ID of the Post.
+  *   `comment_id` (*type:* `String.t`) - The ID of the comment to mark as not spam.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Blogger.V3.Model.Comment{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Blogger.V3.Model.Comment{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec blogger_comments_approve(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Blogger.V3.Model.Comment.t()} | {:error, Tesla.Env.t()}
   def blogger_comments_approve(
@@ -91,26 +93,33 @@ defmodule GoogleApi.Blogger.V3.Api.Comments do
 
   ## Parameters
 
-  - connection (GoogleApi.Blogger.V3.Connection): Connection to server
-  - blog_id (String.t): The ID of the Blog.
-  - post_id (String.t): The ID of the Post.
-  - comment_id (String.t): The ID of the comment to delete.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.Blogger.V3.Connection.t`) - Connection to server
+  *   `blog_id` (*type:* `String.t`) - The ID of the Blog.
+  *   `post_id` (*type:* `String.t`) - The ID of the Post.
+  *   `comment_id` (*type:* `String.t`) - The ID of the comment to delete.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %{}} on success
-  {:error, info} on failure
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec blogger_comments_delete(Tesla.Env.client(), String.t(), String.t(), String.t(), keyword()) ::
-          {:ok, nil} | {:error, Tesla.Env.t()}
+  @spec blogger_comments_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
   def blogger_comments_delete(
         connection,
         blog_id,
@@ -149,27 +158,34 @@ defmodule GoogleApi.Blogger.V3.Api.Comments do
 
   ## Parameters
 
-  - connection (GoogleApi.Blogger.V3.Connection): Connection to server
-  - blog_id (String.t): ID of the blog to containing the comment.
-  - post_id (String.t): ID of the post to fetch posts from.
-  - comment_id (String.t): The ID of the comment to get.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :view (String.t): Access level for the requested comment (default: READER). Note that some comments will require elevated permissions, for example comments where the parent posts which is in a draft state, or comments that are pending moderation.
+  *   `connection` (*type:* `GoogleApi.Blogger.V3.Connection.t`) - Connection to server
+  *   `blog_id` (*type:* `String.t`) - ID of the blog to containing the comment.
+  *   `post_id` (*type:* `String.t`) - ID of the post to fetch posts from.
+  *   `comment_id` (*type:* `String.t`) - The ID of the comment to get.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:view` (*type:* `String.t`) - Access level for the requested comment (default: READER). Note that some comments will require elevated permissions, for example comments where the parent posts which is in a draft state, or comments that are pending moderation.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Blogger.V3.Model.Comment{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Blogger.V3.Model.Comment{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec blogger_comments_get(Tesla.Env.client(), String.t(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.Blogger.V3.Model.Comment.t()} | {:error, Tesla.Env.t()}
+  @spec blogger_comments_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.Blogger.V3.Model.Comment.t()} | {:error, Tesla.Env.t()}
   def blogger_comments_get(
         connection,
         blog_id,
@@ -209,31 +225,32 @@ defmodule GoogleApi.Blogger.V3.Api.Comments do
 
   ## Parameters
 
-  - connection (GoogleApi.Blogger.V3.Connection): Connection to server
-  - blog_id (String.t): ID of the blog to fetch comments from.
-  - post_id (String.t): ID of the post to fetch posts from.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :endDate (DateTime.t): Latest date of comment to fetch, a date-time with RFC 3339 formatting.
-    - :fetchBodies (boolean()): Whether the body content of the comments is included.
-    - :maxResults (integer()): Maximum number of comments to include in the result.
-    - :pageToken (String.t): Continuation token if request is paged.
-    - :startDate (DateTime.t): Earliest date of comment to fetch, a date-time with RFC 3339 formatting.
-    - :status (list(String.t)): 
-    - :view (String.t): Access level with which to view the returned result. Note that some fields require elevated access.
+  *   `connection` (*type:* `GoogleApi.Blogger.V3.Connection.t`) - Connection to server
+  *   `blog_id` (*type:* `String.t`) - ID of the blog to fetch comments from.
+  *   `post_id` (*type:* `String.t`) - ID of the post to fetch posts from.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:endDate` (*type:* `DateTime.t`) - Latest date of comment to fetch, a date-time with RFC 3339 formatting.
+      *   `:fetchBodies` (*type:* `boolean()`) - Whether the body content of the comments is included.
+      *   `:maxResults` (*type:* `integer()`) - Maximum number of comments to include in the result.
+      *   `:pageToken` (*type:* `String.t`) - Continuation token if request is paged.
+      *   `:startDate` (*type:* `DateTime.t`) - Earliest date of comment to fetch, a date-time with RFC 3339 formatting.
+      *   `:status` (*type:* `list(String.t)`) - 
+      *   `:view` (*type:* `String.t`) - Access level with which to view the returned result. Note that some fields require elevated access.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Blogger.V3.Model.CommentList{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Blogger.V3.Model.CommentList{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec blogger_comments_list(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+  @spec blogger_comments_list(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Blogger.V3.Model.CommentList.t()} | {:error, Tesla.Env.t()}
   def blogger_comments_list(connection, blog_id, post_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -272,29 +289,30 @@ defmodule GoogleApi.Blogger.V3.Api.Comments do
 
   ## Parameters
 
-  - connection (GoogleApi.Blogger.V3.Connection): Connection to server
-  - blog_id (String.t): ID of the blog to fetch comments from.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :endDate (DateTime.t): Latest date of comment to fetch, a date-time with RFC 3339 formatting.
-    - :fetchBodies (boolean()): Whether the body content of the comments is included.
-    - :maxResults (integer()): Maximum number of comments to include in the result.
-    - :pageToken (String.t): Continuation token if request is paged.
-    - :startDate (DateTime.t): Earliest date of comment to fetch, a date-time with RFC 3339 formatting.
-    - :status (list(String.t)): 
+  *   `connection` (*type:* `GoogleApi.Blogger.V3.Connection.t`) - Connection to server
+  *   `blog_id` (*type:* `String.t`) - ID of the blog to fetch comments from.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:endDate` (*type:* `DateTime.t`) - Latest date of comment to fetch, a date-time with RFC 3339 formatting.
+      *   `:fetchBodies` (*type:* `boolean()`) - Whether the body content of the comments is included.
+      *   `:maxResults` (*type:* `integer()`) - Maximum number of comments to include in the result.
+      *   `:pageToken` (*type:* `String.t`) - Continuation token if request is paged.
+      *   `:startDate` (*type:* `DateTime.t`) - Earliest date of comment to fetch, a date-time with RFC 3339 formatting.
+      *   `:status` (*type:* `list(String.t)`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Blogger.V3.Model.CommentList{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Blogger.V3.Model.CommentList{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec blogger_comments_list_by_blog(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec blogger_comments_list_by_blog(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Blogger.V3.Model.CommentList.t()} | {:error, Tesla.Env.t()}
   def blogger_comments_list_by_blog(connection, blog_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -331,29 +349,31 @@ defmodule GoogleApi.Blogger.V3.Api.Comments do
 
   ## Parameters
 
-  - connection (GoogleApi.Blogger.V3.Connection): Connection to server
-  - blog_id (String.t): The ID of the Blog.
-  - post_id (String.t): The ID of the Post.
-  - comment_id (String.t): The ID of the comment to mark as spam.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.Blogger.V3.Connection.t`) - Connection to server
+  *   `blog_id` (*type:* `String.t`) - The ID of the Blog.
+  *   `post_id` (*type:* `String.t`) - The ID of the Post.
+  *   `comment_id` (*type:* `String.t`) - The ID of the comment to mark as spam.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Blogger.V3.Model.Comment{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Blogger.V3.Model.Comment{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec blogger_comments_mark_as_spam(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Blogger.V3.Model.Comment.t()} | {:error, Tesla.Env.t()}
   def blogger_comments_mark_as_spam(
@@ -394,29 +414,31 @@ defmodule GoogleApi.Blogger.V3.Api.Comments do
 
   ## Parameters
 
-  - connection (GoogleApi.Blogger.V3.Connection): Connection to server
-  - blog_id (String.t): The ID of the Blog.
-  - post_id (String.t): The ID of the Post.
-  - comment_id (String.t): The ID of the comment to delete content from.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.Blogger.V3.Connection.t`) - Connection to server
+  *   `blog_id` (*type:* `String.t`) - The ID of the Blog.
+  *   `post_id` (*type:* `String.t`) - The ID of the Post.
+  *   `comment_id` (*type:* `String.t`) - The ID of the comment to delete content from.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Blogger.V3.Model.Comment{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Blogger.V3.Model.Comment{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec blogger_comments_remove_content(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Blogger.V3.Model.Comment.t()} | {:error, Tesla.Env.t()}
   def blogger_comments_remove_content(

@@ -21,12 +21,12 @@ defmodule GoogleApi.Blogger.V3.Model.BlogPerUserInfo do
 
   ## Attributes
 
-  - blogId (String.t): ID of the Blog resource Defaults to `nil`.
-  - hasAdminAccess (boolean()): True if the user has Admin level access to the blog. Defaults to `nil`.
-  - kind (String.t): The kind of this entity. Always blogger#blogPerUserInfo Defaults to `blogger#blogPerUserInfo`.
-  - photosAlbumKey (String.t): The Photo Album Key for the user when adding photos to the blog Defaults to `nil`.
-  - role (String.t): Access permissions that the user has for the blog (ADMIN, AUTHOR, or READER). Defaults to `nil`.
-  - userId (String.t): ID of the User Defaults to `nil`.
+  *   `blogId` (*type:* `String.t`, *default:* `nil`) - ID of the Blog resource
+  *   `hasAdminAccess` (*type:* `boolean()`, *default:* `nil`) - True if the user has Admin level access to the blog.
+  *   `kind` (*type:* `String.t`, *default:* `blogger#blogPerUserInfo`) - The kind of this entity. Always blogger#blogPerUserInfo
+  *   `photosAlbumKey` (*type:* `String.t`, *default:* `nil`) - The Photo Album Key for the user when adding photos to the blog
+  *   `role` (*type:* `String.t`, *default:* `nil`) - Access permissions that the user has for the blog (ADMIN, AUTHOR, or READER).
+  *   `userId` (*type:* `String.t`, *default:* `nil`) - ID of the User
   """
 
   use GoogleApi.Gax.ModelBase

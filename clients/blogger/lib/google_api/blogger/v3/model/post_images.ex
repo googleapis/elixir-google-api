@@ -21,7 +21,7 @@ defmodule GoogleApi.Blogger.V3.Model.PostImages do
 
   ## Attributes
 
-  - url (String.t):  Defaults to `nil`.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

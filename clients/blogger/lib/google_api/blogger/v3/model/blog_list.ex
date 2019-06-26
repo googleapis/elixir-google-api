@@ -21,9 +21,9 @@ defmodule GoogleApi.Blogger.V3.Model.BlogList do
 
   ## Attributes
 
-  - blogUserInfos (list(GoogleApi.Blogger.V3.Model.BlogUserInfo.t)): Admin level list of blog per-user information Defaults to `nil`.
-  - items (list(GoogleApi.Blogger.V3.Model.Blog.t)): The list of Blogs this user has Authorship or Admin rights over. Defaults to `nil`.
-  - kind (String.t): The kind of this entity. Always blogger#blogList Defaults to `blogger#blogList`.
+  *   `blogUserInfos` (*type:* `list(GoogleApi.Blogger.V3.Model.BlogUserInfo.t)`, *default:* `nil`) - Admin level list of blog per-user information
+  *   `items` (*type:* `list(GoogleApi.Blogger.V3.Model.Blog.t)`, *default:* `nil`) - The list of Blogs this user has Authorship or Admin rights over.
+  *   `kind` (*type:* `String.t`, *default:* `blogger#blogList`) - The kind of this entity. Always blogger#blogList
   """
 
   use GoogleApi.Gax.ModelBase

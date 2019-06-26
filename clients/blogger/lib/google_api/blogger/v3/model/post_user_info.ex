@@ -21,9 +21,9 @@ defmodule GoogleApi.Blogger.V3.Model.PostUserInfo do
 
   ## Attributes
 
-  - kind (String.t): The kind of this entity. Always blogger#postUserInfo Defaults to `blogger#postUserInfo`.
-  - post (GoogleApi.Blogger.V3.Model.Post.t): The Post resource. Defaults to `nil`.
-  - post_user_info (GoogleApi.Blogger.V3.Model.PostPerUserInfo.t): Information about a User for the Post. Defaults to `nil`.
+  *   `kind` (*type:* `String.t`, *default:* `blogger#postUserInfo`) - The kind of this entity. Always blogger#postUserInfo
+  *   `post` (*type:* `GoogleApi.Blogger.V3.Model.Post.t`, *default:* `nil`) - The Post resource.
+  *   `post_user_info` (*type:* `GoogleApi.Blogger.V3.Model.PostPerUserInfo.t`, *default:* `nil`) - Information about a User for the Post.
   """
 
   use GoogleApi.Gax.ModelBase

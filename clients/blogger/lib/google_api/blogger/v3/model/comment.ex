@@ -21,17 +21,17 @@ defmodule GoogleApi.Blogger.V3.Model.Comment do
 
   ## Attributes
 
-  - author (GoogleApi.Blogger.V3.Model.CommentAuthor.t): The author of this Comment. Defaults to `nil`.
-  - blog (GoogleApi.Blogger.V3.Model.CommentBlog.t): Data about the blog containing this comment. Defaults to `nil`.
-  - content (String.t): The actual content of the comment. May include HTML markup. Defaults to `nil`.
-  - id (String.t): The identifier for this resource. Defaults to `nil`.
-  - inReplyTo (GoogleApi.Blogger.V3.Model.CommentInReplyTo.t): Data about the comment this is in reply to. Defaults to `nil`.
-  - kind (String.t): The kind of this entry. Always blogger#comment Defaults to `blogger#comment`.
-  - post (GoogleApi.Blogger.V3.Model.CommentPost.t): Data about the post containing this comment. Defaults to `nil`.
-  - published (DateTime.t): RFC 3339 date-time when this comment was published. Defaults to `nil`.
-  - selfLink (String.t): The API REST URL to fetch this resource from. Defaults to `nil`.
-  - status (String.t): The status of the comment (only populated for admin users) Defaults to `nil`.
-  - updated (DateTime.t): RFC 3339 date-time when this comment was last updated. Defaults to `nil`.
+  *   `author` (*type:* `GoogleApi.Blogger.V3.Model.CommentAuthor.t`, *default:* `nil`) - The author of this Comment.
+  *   `blog` (*type:* `GoogleApi.Blogger.V3.Model.CommentBlog.t`, *default:* `nil`) - Data about the blog containing this comment.
+  *   `content` (*type:* `String.t`, *default:* `nil`) - The actual content of the comment. May include HTML markup.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The identifier for this resource.
+  *   `inReplyTo` (*type:* `GoogleApi.Blogger.V3.Model.CommentInReplyTo.t`, *default:* `nil`) - Data about the comment this is in reply to.
+  *   `kind` (*type:* `String.t`, *default:* `blogger#comment`) - The kind of this entry. Always blogger#comment
+  *   `post` (*type:* `GoogleApi.Blogger.V3.Model.CommentPost.t`, *default:* `nil`) - Data about the post containing this comment.
+  *   `published` (*type:* `DateTime.t`, *default:* `nil`) - RFC 3339 date-time when this comment was published.
+  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - The API REST URL to fetch this resource from.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - The status of the comment (only populated for admin users)
+  *   `updated` (*type:* `DateTime.t`, *default:* `nil`) - RFC 3339 date-time when this comment was last updated.
   """
 
   use GoogleApi.Gax.ModelBase

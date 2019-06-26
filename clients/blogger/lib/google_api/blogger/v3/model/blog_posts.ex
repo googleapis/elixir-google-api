@@ -21,9 +21,9 @@ defmodule GoogleApi.Blogger.V3.Model.BlogPosts do
 
   ## Attributes
 
-  - items (list(GoogleApi.Blogger.V3.Model.Post.t)): The List of Posts for this Blog. Defaults to `nil`.
-  - selfLink (String.t): The URL of the container for posts in this blog. Defaults to `nil`.
-  - totalItems (integer()): The count of posts in this blog. Defaults to `nil`.
+  *   `items` (*type:* `list(GoogleApi.Blogger.V3.Model.Post.t)`, *default:* `nil`) - The List of Posts for this Blog.
+  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - The URL of the container for posts in this blog.
+  *   `totalItems` (*type:* `integer()`, *default:* `nil`) - The count of posts in this blog.
   """
 
   use GoogleApi.Gax.ModelBase

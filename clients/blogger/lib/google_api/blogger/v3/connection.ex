@@ -20,6 +20,8 @@ defmodule GoogleApi.Blogger.V3.Connection do
   Handle Tesla connections for GoogleApi.Blogger.V3.
   """
 
+  @type t :: Tesla.Env.client()
+
   use GoogleApi.Gax.Connection,
     scopes: [
       # Manage your Blogger account

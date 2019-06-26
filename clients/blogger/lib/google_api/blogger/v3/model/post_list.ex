@@ -21,10 +21,10 @@ defmodule GoogleApi.Blogger.V3.Model.PostList do
 
   ## Attributes
 
-  - etag (String.t): Etag of the response. Defaults to `nil`.
-  - items (list(GoogleApi.Blogger.V3.Model.Post.t)): The list of Posts for this Blog. Defaults to `nil`.
-  - kind (String.t): The kind of this entity. Always blogger#postList Defaults to `blogger#postList`.
-  - nextPageToken (String.t): Pagination token to fetch the next page, if one exists. Defaults to `nil`.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of the response.
+  *   `items` (*type:* `list(GoogleApi.Blogger.V3.Model.Post.t)`, *default:* `nil`) - The list of Posts for this Blog.
+  *   `kind` (*type:* `String.t`, *default:* `blogger#postList`) - The kind of this entity. Always blogger#postList
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Pagination token to fetch the next page, if one exists.
   """
 
   use GoogleApi.Gax.ModelBase
