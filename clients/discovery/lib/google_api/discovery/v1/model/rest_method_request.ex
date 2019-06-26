@@ -21,8 +21,8 @@ defmodule GoogleApi.Discovery.V1.Model.RestMethodRequest do
 
   ## Attributes
 
-  - $ref (String.t): Schema ID for the request schema. Defaults to `nil`.
-  - parameterName (String.t): parameter name. Defaults to `nil`.
+  *   `$ref` (*type:* `String.t`, *default:* `nil`) - Schema ID for the request schema.
+  *   `parameterName` (*type:* `String.t`, *default:* `nil`) - parameter name.
   """
 
   use GoogleApi.Gax.ModelBase

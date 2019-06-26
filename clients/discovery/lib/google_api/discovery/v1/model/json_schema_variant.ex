@@ -21,8 +21,8 @@ defmodule GoogleApi.Discovery.V1.Model.JsonSchemaVariant do
 
   ## Attributes
 
-  - discriminant (String.t): The name of the type discriminant property. Defaults to `nil`.
-  - map (list(GoogleApi.Discovery.V1.Model.JsonSchemaVariantMap.t)): The map of discriminant value to schema to use for parsing.. Defaults to `nil`.
+  *   `discriminant` (*type:* `String.t`, *default:* `nil`) - The name of the type discriminant property.
+  *   `map` (*type:* `list(GoogleApi.Discovery.V1.Model.JsonSchemaVariantMap.t)`, *default:* `nil`) - The map of discriminant value to schema to use for parsing..
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,8 +21,8 @@ defmodule GoogleApi.Discovery.V1.Model.RestMethodMediaUploadProtocols do
 
   ## Attributes
 
-  - resumable (GoogleApi.Discovery.V1.Model.RestMethodMediaUploadProtocolsResumable.t): Supports the Resumable Media Upload protocol. Defaults to `nil`.
-  - simple (GoogleApi.Discovery.V1.Model.RestMethodMediaUploadProtocolsSimple.t): Supports uploading as a single HTTP request. Defaults to `nil`.
+  *   `resumable` (*type:* `GoogleApi.Discovery.V1.Model.RestMethodMediaUploadProtocolsResumable.t`, *default:* `nil`) - Supports the Resumable Media Upload protocol.
+  *   `simple` (*type:* `GoogleApi.Discovery.V1.Model.RestMethodMediaUploadProtocolsSimple.t`, *default:* `nil`) - Supports uploading as a single HTTP request.
   """
 
   use GoogleApi.Gax.ModelBase

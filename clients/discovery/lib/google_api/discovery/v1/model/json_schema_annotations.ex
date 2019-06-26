@@ -21,7 +21,7 @@ defmodule GoogleApi.Discovery.V1.Model.JsonSchemaAnnotations do
 
   ## Attributes
 
-  - required (list(String.t)): A list of methods for which this property is required on requests. Defaults to `nil`.
+  *   `required` (*type:* `list(String.t)`, *default:* `nil`) - A list of methods for which this property is required on requests.
   """
 
   use GoogleApi.Gax.ModelBase

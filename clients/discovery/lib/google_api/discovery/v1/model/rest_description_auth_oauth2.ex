@@ -21,7 +21,7 @@ defmodule GoogleApi.Discovery.V1.Model.RestDescriptionAuthOauth2 do
 
   ## Attributes
 
-  - scopes (map()): Available OAuth 2.0 scopes. Defaults to `nil`.
+  *   `scopes` (*type:* `map()`, *default:* `nil`) - Available OAuth 2.0 scopes.
   """
 
   use GoogleApi.Gax.ModelBase

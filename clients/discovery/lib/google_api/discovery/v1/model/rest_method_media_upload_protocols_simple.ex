@@ -21,8 +21,8 @@ defmodule GoogleApi.Discovery.V1.Model.RestMethodMediaUploadProtocolsSimple do
 
   ## Attributes
 
-  - multipart (boolean()): True if this endpoint supports upload multipart media. Defaults to `true`.
-  - path (String.t): The URI path to be used for upload. Should be used in conjunction with the basePath property at the api-level. Defaults to `nil`.
+  *   `multipart` (*type:* `boolean()`, *default:* `true`) - True if this endpoint supports upload multipart media.
+  *   `path` (*type:* `String.t`, *default:* `nil`) - The URI path to be used for upload. Should be used in conjunction with the basePath property at the api-level.
   """
 
   use GoogleApi.Gax.ModelBase
