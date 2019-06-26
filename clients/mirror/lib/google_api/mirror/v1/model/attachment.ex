@@ -21,10 +21,10 @@ defmodule GoogleApi.Mirror.V1.Model.Attachment do
 
   ## Attributes
 
-  - contentType (String.t): The MIME type of the attachment. Defaults to `nil`.
-  - contentUrl (String.t): The URL for the content. Defaults to `nil`.
-  - id (String.t): The ID of the attachment. Defaults to `nil`.
-  - isProcessingContent (boolean()): Indicates that the contentUrl is not available because the attachment content is still being processed. If the caller wishes to retrieve the content, it should try again later. Defaults to `nil`.
+  *   `contentType` (*type:* `String.t`, *default:* `nil`) - The MIME type of the attachment.
+  *   `contentUrl` (*type:* `String.t`, *default:* `nil`) - The URL for the content.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The ID of the attachment.
+  *   `isProcessingContent` (*type:* `boolean()`, *default:* `nil`) - Indicates that the contentUrl is not available because the attachment content is still being processed. If the caller wishes to retrieve the content, it should try again later.
   """
 
   use GoogleApi.Gax.ModelBase

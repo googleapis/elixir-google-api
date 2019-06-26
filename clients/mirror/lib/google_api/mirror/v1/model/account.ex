@@ -21,10 +21,10 @@ defmodule GoogleApi.Mirror.V1.Model.Account do
 
   ## Attributes
 
-  - authTokens (list(GoogleApi.Mirror.V1.Model.AuthToken.t)):  Defaults to `nil`.
-  - features (list(String.t)):  Defaults to `nil`.
-  - password (String.t):  Defaults to `nil`.
-  - userData (list(GoogleApi.Mirror.V1.Model.UserData.t)):  Defaults to `nil`.
+  *   `authTokens` (*type:* `list(GoogleApi.Mirror.V1.Model.AuthToken.t)`, *default:* `nil`) - 
+  *   `features` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `password` (*type:* `String.t`, *default:* `nil`) - 
+  *   `userData` (*type:* `list(GoogleApi.Mirror.V1.Model.UserData.t)`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

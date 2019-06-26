@@ -21,8 +21,8 @@ defmodule GoogleApi.Mirror.V1.Model.LocationsListResponse do
 
   ## Attributes
 
-  - items (list(GoogleApi.Mirror.V1.Model.Location.t)): The list of locations. Defaults to `nil`.
-  - kind (String.t): The type of resource. This is always mirror#locationsList. Defaults to `mirror#locationsList`.
+  *   `items` (*type:* `list(GoogleApi.Mirror.V1.Model.Location.t)`, *default:* `nil`) - The list of locations.
+  *   `kind` (*type:* `String.t`, *default:* `mirror#locationsList`) - The type of resource. This is always mirror#locationsList.
   """
 
   use GoogleApi.Gax.ModelBase

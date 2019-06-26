@@ -21,8 +21,8 @@ defmodule GoogleApi.Mirror.V1.Model.ContactsListResponse do
 
   ## Attributes
 
-  - items (list(GoogleApi.Mirror.V1.Model.Contact.t)): Contact list. Defaults to `nil`.
-  - kind (String.t): The type of resource. This is always mirror#contacts. Defaults to `mirror#contacts`.
+  *   `items` (*type:* `list(GoogleApi.Mirror.V1.Model.Contact.t)`, *default:* `nil`) - Contact list.
+  *   `kind` (*type:* `String.t`, *default:* `mirror#contacts`) - The type of resource. This is always mirror#contacts.
   """
 
   use GoogleApi.Gax.ModelBase

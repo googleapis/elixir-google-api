@@ -21,8 +21,8 @@ defmodule GoogleApi.Mirror.V1.Model.SubscriptionsListResponse do
 
   ## Attributes
 
-  - items (list(GoogleApi.Mirror.V1.Model.Subscription.t)): The list of subscriptions. Defaults to `nil`.
-  - kind (String.t): The type of resource. This is always mirror#subscriptionsList. Defaults to `mirror#subscriptionsList`.
+  *   `items` (*type:* `list(GoogleApi.Mirror.V1.Model.Subscription.t)`, *default:* `nil`) - The list of subscriptions.
+  *   `kind` (*type:* `String.t`, *default:* `mirror#subscriptionsList`) - The type of resource. This is always mirror#subscriptionsList.
   """
 
   use GoogleApi.Gax.ModelBase

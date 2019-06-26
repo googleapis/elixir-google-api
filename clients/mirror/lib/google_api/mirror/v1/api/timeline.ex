@@ -28,23 +28,24 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
 
   ## Parameters
 
-  - connection (GoogleApi.Mirror.V1.Connection): Connection to server
-  - id (String.t): The ID of the timeline item.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.Mirror.V1.Connection.t`) - Connection to server
+  *   `id` (*type:* `String.t`) - The ID of the timeline item.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %{}} on success
-  {:error, info} on failure
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec mirror_timeline_delete(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec mirror_timeline_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
   def mirror_timeline_delete(connection, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -75,23 +76,24 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
 
   ## Parameters
 
-  - connection (GoogleApi.Mirror.V1.Connection): Connection to server
-  - id (String.t): The ID of the timeline item.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.Mirror.V1.Connection.t`) - Connection to server
+  *   `id` (*type:* `String.t`) - The ID of the timeline item.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Mirror.V1.Model.TimelineItem{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Mirror.V1.Model.TimelineItem{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec mirror_timeline_get(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec mirror_timeline_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Mirror.V1.Model.TimelineItem.t()} | {:error, Tesla.Env.t()}
   def mirror_timeline_get(connection, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -122,23 +124,24 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
 
   ## Parameters
 
-  - connection (GoogleApi.Mirror.V1.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.Mirror.V1.Model.TimelineItem.t): 
+  *   `connection` (*type:* `GoogleApi.Mirror.V1.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.Mirror.V1.Model.TimelineItem.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Mirror.V1.Model.TimelineItem{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Mirror.V1.Model.TimelineItem{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec mirror_timeline_insert(Tesla.Env.client(), keyword()) ::
+  @spec mirror_timeline_insert(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Mirror.V1.Model.TimelineItem.t()} | {:error, Tesla.Env.t()}
   def mirror_timeline_insert(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -168,24 +171,25 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
 
   ## Parameters
 
-  - connection (GoogleApi.Mirror.V1.Connection): Connection to server
-  - upload_type (String.t): Upload type. Must be "resumable".
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.Mirror.V1.Model.TimelineItem.t): 
+  *   `connection` (*type:* `GoogleApi.Mirror.V1.Connection.t`) - Connection to server
+  *   `upload_type` (*type:* `String.t`) - Upload type. Must be "resumable".
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.Mirror.V1.Model.TimelineItem.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %{}} on success
-  {:error, info} on failure
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec mirror_timeline_insert_resumable(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec mirror_timeline_insert_resumable(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, nil} | {:error, Tesla.Env.t()}
   def mirror_timeline_insert_resumable(connection, upload_type, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -216,29 +220,31 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
 
   ## Parameters
 
-  - connection (GoogleApi.Mirror.V1.Connection): Connection to server
-  - upload_type (String.t): Upload type. Must be "multipart".
-  - metadata (GoogleApi.Mirror.V1.Model.TimelineItem.t): object metadata
-  - data (String.t): Path to file
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.Mirror.V1.Connection.t`) - Connection to server
+  *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
+  *   `metadata` (*type:* `GoogleApi.Mirror.V1.Model.TimelineItem.t`) - object metadata
+  *   `data` (*type:* `String.t`) - Path to file
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Mirror.V1.Model.TimelineItem{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Mirror.V1.Model.TimelineItem{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec mirror_timeline_insert_simple(
           Tesla.Env.client(),
           String.t(),
           GoogleApi.Mirror.V1.Model.TimelineItem.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Mirror.V1.Model.TimelineItem.t()} | {:error, Tesla.Env.t()}
   def mirror_timeline_insert_simple(
@@ -278,29 +284,30 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
 
   ## Parameters
 
-  - connection (GoogleApi.Mirror.V1.Connection): Connection to server
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :bundleId (String.t): If provided, only items with the given bundleId will be returned.
-    - :includeDeleted (boolean()): If true, tombstone records for deleted items will be returned.
-    - :maxResults (integer()): The maximum number of items to include in the response, used for paging.
-    - :orderBy (String.t): Controls the order in which timeline items are returned.
-    - :pageToken (String.t): Token for the page of results to return.
-    - :pinnedOnly (boolean()): If true, only pinned items will be returned.
-    - :sourceItemId (String.t): If provided, only items with the given sourceItemId will be returned.
+  *   `connection` (*type:* `GoogleApi.Mirror.V1.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:bundleId` (*type:* `String.t`) - If provided, only items with the given bundleId will be returned.
+      *   `:includeDeleted` (*type:* `boolean()`) - If true, tombstone records for deleted items will be returned.
+      *   `:maxResults` (*type:* `integer()`) - The maximum number of items to include in the response, used for paging.
+      *   `:orderBy` (*type:* `String.t`) - Controls the order in which timeline items are returned.
+      *   `:pageToken` (*type:* `String.t`) - Token for the page of results to return.
+      *   `:pinnedOnly` (*type:* `boolean()`) - If true, only pinned items will be returned.
+      *   `:sourceItemId` (*type:* `String.t`) - If provided, only items with the given sourceItemId will be returned.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Mirror.V1.Model.TimelineListResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Mirror.V1.Model.TimelineListResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec mirror_timeline_list(Tesla.Env.client(), keyword()) ::
+  @spec mirror_timeline_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Mirror.V1.Model.TimelineListResponse.t()} | {:error, Tesla.Env.t()}
   def mirror_timeline_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -336,24 +343,25 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
 
   ## Parameters
 
-  - connection (GoogleApi.Mirror.V1.Connection): Connection to server
-  - id (String.t): The ID of the timeline item.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.Mirror.V1.Model.TimelineItem.t): 
+  *   `connection` (*type:* `GoogleApi.Mirror.V1.Connection.t`) - Connection to server
+  *   `id` (*type:* `String.t`) - The ID of the timeline item.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.Mirror.V1.Model.TimelineItem.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Mirror.V1.Model.TimelineItem{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Mirror.V1.Model.TimelineItem{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec mirror_timeline_patch(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec mirror_timeline_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Mirror.V1.Model.TimelineItem.t()} | {:error, Tesla.Env.t()}
   def mirror_timeline_patch(connection, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -385,24 +393,25 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
 
   ## Parameters
 
-  - connection (GoogleApi.Mirror.V1.Connection): Connection to server
-  - id (String.t): The ID of the timeline item.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.Mirror.V1.Model.TimelineItem.t): 
+  *   `connection` (*type:* `GoogleApi.Mirror.V1.Connection.t`) - Connection to server
+  *   `id` (*type:* `String.t`) - The ID of the timeline item.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.Mirror.V1.Model.TimelineItem.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Mirror.V1.Model.TimelineItem{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Mirror.V1.Model.TimelineItem{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec mirror_timeline_update(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec mirror_timeline_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Mirror.V1.Model.TimelineItem.t()} | {:error, Tesla.Env.t()}
   def mirror_timeline_update(connection, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -434,26 +443,32 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
 
   ## Parameters
 
-  - connection (GoogleApi.Mirror.V1.Connection): Connection to server
-  - id (String.t): The ID of the timeline item.
-  - upload_type (String.t): Upload type. Must be "resumable".
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.Mirror.V1.Model.TimelineItem.t): 
+  *   `connection` (*type:* `GoogleApi.Mirror.V1.Connection.t`) - Connection to server
+  *   `id` (*type:* `String.t`) - The ID of the timeline item.
+  *   `upload_type` (*type:* `String.t`) - Upload type. Must be "resumable".
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.Mirror.V1.Model.TimelineItem.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %{}} on success
-  {:error, info} on failure
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec mirror_timeline_update_resumable(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, nil} | {:error, Tesla.Env.t()}
+  @spec mirror_timeline_update_resumable(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
   def mirror_timeline_update_resumable(
         connection,
         id,
@@ -491,24 +506,25 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
 
   ## Parameters
 
-  - connection (GoogleApi.Mirror.V1.Connection): Connection to server
-  - id (String.t): The ID of the timeline item.
-  - upload_type (String.t): Upload type. Must be "multipart".
-  - metadata (GoogleApi.Mirror.V1.Model.TimelineItem.t): object metadata
-  - data (String.t): Path to file
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.Mirror.V1.Connection.t`) - Connection to server
+  *   `id` (*type:* `String.t`) - The ID of the timeline item.
+  *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
+  *   `metadata` (*type:* `GoogleApi.Mirror.V1.Model.TimelineItem.t`) - object metadata
+  *   `data` (*type:* `String.t`) - Path to file
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Mirror.V1.Model.TimelineItem{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Mirror.V1.Model.TimelineItem{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec mirror_timeline_update_simple(
           Tesla.Env.client(),
@@ -516,6 +532,7 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
           String.t(),
           GoogleApi.Mirror.V1.Model.TimelineItem.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Mirror.V1.Model.TimelineItem.t()} | {:error, Tesla.Env.t()}
   def mirror_timeline_update_simple(
@@ -558,25 +575,31 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
 
   ## Parameters
 
-  - connection (GoogleApi.Mirror.V1.Connection): Connection to server
-  - item_id (String.t): The ID of the timeline item the attachment belongs to.
-  - attachment_id (String.t): The ID of the attachment.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.Mirror.V1.Connection.t`) - Connection to server
+  *   `item_id` (*type:* `String.t`) - The ID of the timeline item the attachment belongs to.
+  *   `attachment_id` (*type:* `String.t`) - The ID of the attachment.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %{}} on success
-  {:error, info} on failure
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec mirror_timeline_attachments_delete(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, nil} | {:error, Tesla.Env.t()}
+  @spec mirror_timeline_attachments_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
   def mirror_timeline_attachments_delete(
         connection,
         item_id,
@@ -613,25 +636,31 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
 
   ## Parameters
 
-  - connection (GoogleApi.Mirror.V1.Connection): Connection to server
-  - item_id (String.t): The ID of the timeline item the attachment belongs to.
-  - attachment_id (String.t): The ID of the attachment.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.Mirror.V1.Connection.t`) - Connection to server
+  *   `item_id` (*type:* `String.t`) - The ID of the timeline item the attachment belongs to.
+  *   `attachment_id` (*type:* `String.t`) - The ID of the attachment.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Mirror.V1.Model.Attachment{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Mirror.V1.Model.Attachment{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec mirror_timeline_attachments_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.Mirror.V1.Model.Attachment.t()} | {:error, Tesla.Env.t()}
+  @spec mirror_timeline_attachments_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.Mirror.V1.Model.Attachment.t()} | {:error, Tesla.Env.t()}
   def mirror_timeline_attachments_get(
         connection,
         item_id,
@@ -668,23 +697,24 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
 
   ## Parameters
 
-  - connection (GoogleApi.Mirror.V1.Connection): Connection to server
-  - item_id (String.t): The ID of the timeline item the attachment belongs to.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.Mirror.V1.Connection.t`) - Connection to server
+  *   `item_id` (*type:* `String.t`) - The ID of the timeline item the attachment belongs to.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Mirror.V1.Model.Attachment{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Mirror.V1.Model.Attachment{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec mirror_timeline_attachments_insert(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec mirror_timeline_attachments_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Mirror.V1.Model.Attachment.t()} | {:error, Tesla.Env.t()}
   def mirror_timeline_attachments_insert(connection, item_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -715,27 +745,29 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
 
   ## Parameters
 
-  - connection (GoogleApi.Mirror.V1.Connection): Connection to server
-  - item_id (String.t): The ID of the timeline item the attachment belongs to.
-  - upload_type (String.t): Upload type. Must be "resumable".
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.Mirror.V1.Connection.t`) - Connection to server
+  *   `item_id` (*type:* `String.t`) - The ID of the timeline item the attachment belongs to.
+  *   `upload_type` (*type:* `String.t`) - Upload type. Must be "resumable".
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %{}} on success
-  {:error, info} on failure
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec mirror_timeline_attachments_insert_resumable(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, nil} | {:error, Tesla.Env.t()}
   def mirror_timeline_attachments_insert_resumable(
@@ -774,24 +806,25 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
 
   ## Parameters
 
-  - connection (GoogleApi.Mirror.V1.Connection): Connection to server
-  - item_id (String.t): The ID of the timeline item the attachment belongs to.
-  - upload_type (String.t): Upload type. Must be "multipart".
-  - metadata (String.t): string metadata
-  - data (String.t): Path to file
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.Mirror.V1.Connection.t`) - Connection to server
+  *   `item_id` (*type:* `String.t`) - The ID of the timeline item the attachment belongs to.
+  *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
+  *   `metadata` (*type:* `String.t`) - string metadata
+  *   `data` (*type:* `String.t`) - Path to file
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Mirror.V1.Model.Attachment{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Mirror.V1.Model.Attachment{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec mirror_timeline_attachments_insert_simple(
           Tesla.Env.client(),
@@ -799,6 +832,7 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Mirror.V1.Model.Attachment.t()} | {:error, Tesla.Env.t()}
   def mirror_timeline_attachments_insert_simple(
@@ -841,23 +875,24 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
 
   ## Parameters
 
-  - connection (GoogleApi.Mirror.V1.Connection): Connection to server
-  - item_id (String.t): The ID of the timeline item whose attachments should be listed.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.Mirror.V1.Connection.t`) - Connection to server
+  *   `item_id` (*type:* `String.t`) - The ID of the timeline item whose attachments should be listed.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Mirror.V1.Model.AttachmentsListResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Mirror.V1.Model.AttachmentsListResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec mirror_timeline_attachments_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec mirror_timeline_attachments_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Mirror.V1.Model.AttachmentsListResponse.t()} | {:error, Tesla.Env.t()}
   def mirror_timeline_attachments_list(connection, item_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

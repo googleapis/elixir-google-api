@@ -21,8 +21,8 @@ defmodule GoogleApi.Mirror.V1.Model.AttachmentsListResponse do
 
   ## Attributes
 
-  - items (list(GoogleApi.Mirror.V1.Model.Attachment.t)): The list of attachments. Defaults to `nil`.
-  - kind (String.t): The type of resource. This is always mirror#attachmentsList. Defaults to `mirror#attachmentsList`.
+  *   `items` (*type:* `list(GoogleApi.Mirror.V1.Model.Attachment.t)`, *default:* `nil`) - The list of attachments.
+  *   `kind` (*type:* `String.t`, *default:* `mirror#attachmentsList`) - The type of resource. This is always mirror#attachmentsList.
   """
 
   use GoogleApi.Gax.ModelBase

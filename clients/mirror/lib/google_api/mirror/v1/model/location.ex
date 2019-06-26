@@ -21,14 +21,14 @@ defmodule GoogleApi.Mirror.V1.Model.Location do
 
   ## Attributes
 
-  - accuracy (float()): The accuracy of the location fix in meters. Defaults to `nil`.
-  - address (String.t): The full address of the location. Defaults to `nil`.
-  - displayName (String.t): The name to be displayed. This may be a business name or a user-defined place, such as "Home". Defaults to `nil`.
-  - id (String.t): The ID of the location. Defaults to `nil`.
-  - kind (String.t): The type of resource. This is always mirror#location. Defaults to `mirror#location`.
-  - latitude (float()): The latitude, in degrees. Defaults to `nil`.
-  - longitude (float()): The longitude, in degrees. Defaults to `nil`.
-  - timestamp (DateTime.t): The time at which this location was captured, formatted according to RFC 3339. Defaults to `nil`.
+  *   `accuracy` (*type:* `float()`, *default:* `nil`) - The accuracy of the location fix in meters.
+  *   `address` (*type:* `String.t`, *default:* `nil`) - The full address of the location.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The name to be displayed. This may be a business name or a user-defined place, such as "Home".
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The ID of the location.
+  *   `kind` (*type:* `String.t`, *default:* `mirror#location`) - The type of resource. This is always mirror#location.
+  *   `latitude` (*type:* `float()`, *default:* `nil`) - The latitude, in degrees.
+  *   `longitude` (*type:* `float()`, *default:* `nil`) - The longitude, in degrees.
+  *   `timestamp` (*type:* `DateTime.t`, *default:* `nil`) - The time at which this location was captured, formatted according to RFC 3339.
   """
 
   use GoogleApi.Gax.ModelBase

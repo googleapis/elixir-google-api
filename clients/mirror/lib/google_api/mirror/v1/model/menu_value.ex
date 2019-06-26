@@ -21,12 +21,12 @@ defmodule GoogleApi.Mirror.V1.Model.MenuValue do
 
   ## Attributes
 
-  - displayName (String.t): The name to display for the menu item. If you specify this property for a built-in menu item, the default contextual voice command for that menu item is not shown. Defaults to `nil`.
-  - iconUrl (String.t): URL of an icon to display with the menu item. Defaults to `nil`.
-  - state (String.t): The state that this value applies to. Allowed values are:  
-  - DEFAULT - Default value shown when displayed in the menuItems list. 
-  - PENDING - Value shown when the menuItem has been selected by the user but can still be cancelled. 
-  - CONFIRMED - Value shown when the menuItem has been selected by the user and can no longer be cancelled. Defaults to `nil`.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The name to display for the menu item. If you specify this property for a built-in menu item, the default contextual voice command for that menu item is not shown.
+  *   `iconUrl` (*type:* `String.t`, *default:* `nil`) - URL of an icon to display with the menu item.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - The state that this value applies to. Allowed values are:  
+      - DEFAULT - Default value shown when displayed in the menuItems list. 
+      - PENDING - Value shown when the menuItem has been selected by the user but can still be cancelled. 
+      - CONFIRMED - Value shown when the menuItem has been selected by the user and can no longer be cancelled.
   """
 
   use GoogleApi.Gax.ModelBase

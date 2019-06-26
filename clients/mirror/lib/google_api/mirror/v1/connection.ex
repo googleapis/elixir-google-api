@@ -20,6 +20,8 @@ defmodule GoogleApi.Mirror.V1.Connection do
   Handle Tesla connections for GoogleApi.Mirror.V1.
   """
 
+  @type t :: Tesla.Env.client()
+
   use GoogleApi.Gax.Connection,
     scopes: [
       # View your location

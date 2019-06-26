@@ -21,9 +21,9 @@ defmodule GoogleApi.Mirror.V1.Model.TimelineListResponse do
 
   ## Attributes
 
-  - items (list(GoogleApi.Mirror.V1.Model.TimelineItem.t)): Items in the timeline. Defaults to `nil`.
-  - kind (String.t): The type of resource. This is always mirror#timeline. Defaults to `mirror#timeline`.
-  - nextPageToken (String.t): The next page token. Provide this as the pageToken parameter in the request to retrieve the next page of results. Defaults to `nil`.
+  *   `items` (*type:* `list(GoogleApi.Mirror.V1.Model.TimelineItem.t)`, *default:* `nil`) - Items in the timeline.
+  *   `kind` (*type:* `String.t`, *default:* `mirror#timeline`) - The type of resource. This is always mirror#timeline.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The next page token. Provide this as the pageToken parameter in the request to retrieve the next page of results.
   """
 
   use GoogleApi.Gax.ModelBase

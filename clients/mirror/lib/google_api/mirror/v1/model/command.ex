@@ -21,9 +21,9 @@ defmodule GoogleApi.Mirror.V1.Model.Command do
 
   ## Attributes
 
-  - type (String.t): The type of operation this command corresponds to. Allowed values are:  
-  - TAKE_A_NOTE - Shares a timeline item with the transcription of user speech from the "Take a note" voice menu command.  
-  - POST_AN_UPDATE - Shares a timeline item with the transcription of user speech from the "Post an update" voice menu command. Defaults to `nil`.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of operation this command corresponds to. Allowed values are:  
+      - TAKE_A_NOTE - Shares a timeline item with the transcription of user speech from the "Take a note" voice menu command.  
+      - POST_AN_UPDATE - Shares a timeline item with the transcription of user speech from the "Post an update" voice menu command.
   """
 
   use GoogleApi.Gax.ModelBase

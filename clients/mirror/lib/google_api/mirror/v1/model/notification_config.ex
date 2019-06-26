@@ -21,9 +21,9 @@ defmodule GoogleApi.Mirror.V1.Model.NotificationConfig do
 
   ## Attributes
 
-  - deliveryTime (DateTime.t): The time at which the notification should be delivered. Defaults to `nil`.
-  - level (String.t): Describes how important the notification is. Allowed values are:  
-  - DEFAULT - Notifications of default importance. A chime will be played to alert users. Defaults to `nil`.
+  *   `deliveryTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the notification should be delivered.
+  *   `level` (*type:* `String.t`, *default:* `nil`) - Describes how important the notification is. Allowed values are:  
+      - DEFAULT - Notifications of default importance. A chime will be played to alert users.
   """
 
   use GoogleApi.Gax.ModelBase
