@@ -21,12 +21,12 @@ defmodule GoogleApi.CloudResourceManager.V1.Model.FolderOperation do
 
   ## Attributes
 
-  - destinationParent (String.t): The resource name of the folder or organization we are either creating
-  the folder under or moving the folder to. Defaults to `nil`.
-  - displayName (String.t): The display name of the folder. Defaults to `nil`.
-  - operationType (String.t): The type of this operation. Defaults to `nil`.
-  - sourceParent (String.t): The resource name of the folder's parent.
-  Only applicable when the operation_type is MOVE. Defaults to `nil`.
+  *   `destinationParent` (*type:* `String.t`, *default:* `nil`) - The resource name of the folder or organization we are either creating
+      the folder under or moving the folder to.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name of the folder.
+  *   `operationType` (*type:* `String.t`, *default:* `nil`) - The type of this operation.
+  *   `sourceParent` (*type:* `String.t`, *default:* `nil`) - The resource name of the folder's parent.
+      Only applicable when the operation_type is MOVE.
   """
 
   use GoogleApi.Gax.ModelBase

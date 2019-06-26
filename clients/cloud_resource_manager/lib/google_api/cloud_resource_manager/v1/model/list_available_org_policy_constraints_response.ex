@@ -24,8 +24,8 @@ defmodule GoogleApi.CloudResourceManager.V1.Model.ListAvailableOrgPolicyConstrai
 
   ## Attributes
 
-  - constraints (list(GoogleApi.CloudResourceManager.V1.Model.Constraint.t)): The collection of constraints that are settable on the request resource. Defaults to `nil`.
-  - nextPageToken (String.t): Page token used to retrieve the next page. This is currently not used. Defaults to `nil`.
+  *   `constraints` (*type:* `list(GoogleApi.CloudResourceManager.V1.Model.Constraint.t)`, *default:* `nil`) - The collection of constraints that are settable on the request resource.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Page token used to retrieve the next page. This is currently not used.
   """
 
   use GoogleApi.Gax.ModelBase

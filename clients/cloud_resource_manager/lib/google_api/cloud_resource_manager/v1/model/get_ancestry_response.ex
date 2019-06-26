@@ -21,9 +21,9 @@ defmodule GoogleApi.CloudResourceManager.V1.Model.GetAncestryResponse do
 
   ## Attributes
 
-  - ancestor (list(GoogleApi.CloudResourceManager.V1.Model.Ancestor.t)): Ancestors are ordered from bottom to top of the resource hierarchy. The
-  first ancestor is the project itself, followed by the project's parent,
-  etc.. Defaults to `nil`.
+  *   `ancestor` (*type:* `list(GoogleApi.CloudResourceManager.V1.Model.Ancestor.t)`, *default:* `nil`) - Ancestors are ordered from bottom to top of the resource hierarchy. The
+      first ancestor is the project itself, followed by the project's parent,
+      etc..
   """
 
   use GoogleApi.Gax.ModelBase

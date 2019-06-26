@@ -22,10 +22,10 @@ defmodule GoogleApi.CloudResourceManager.V1.Model.ListOrgPoliciesResponse do
 
   ## Attributes
 
-  - nextPageToken (String.t): Page token used to retrieve the next page. This is currently not used, but
-  the server may at any point start supplying a valid token. Defaults to `nil`.
-  - policies (list(GoogleApi.CloudResourceManager.V1.Model.OrgPolicy.t)): The `Policies` that are set on the resource. It will be empty if no
-  `Policies` are set. Defaults to `nil`.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Page token used to retrieve the next page. This is currently not used, but
+      the server may at any point start supplying a valid token.
+  *   `policies` (*type:* `list(GoogleApi.CloudResourceManager.V1.Model.OrgPolicy.t)`, *default:* `nil`) - The `Policies` that are set on the resource. It will be empty if no
+      `Policies` are set.
   """
 
   use GoogleApi.Gax.ModelBase

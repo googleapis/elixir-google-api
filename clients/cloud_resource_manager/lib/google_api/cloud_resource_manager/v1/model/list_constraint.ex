@@ -22,12 +22,12 @@ defmodule GoogleApi.CloudResourceManager.V1.Model.ListConstraint do
 
   ## Attributes
 
-  - suggestedValue (String.t): Optional. The Google Cloud Console will try to default to a configuration
-  that matches the value specified in this `Constraint`. Defaults to `nil`.
-  - supportsUnder (boolean()): Indicates whether subtrees of Cloud Resource Manager resource hierarchy
-  can be used in `Policy.allowed_values` and `Policy.denied_values`. For
-  example, `"under:folders/123"` would match any resource under the
-  'folders/123' folder. Defaults to `nil`.
+  *   `suggestedValue` (*type:* `String.t`, *default:* `nil`) - Optional. The Google Cloud Console will try to default to a configuration
+      that matches the value specified in this `Constraint`.
+  *   `supportsUnder` (*type:* `boolean()`, *default:* `nil`) - Indicates whether subtrees of Cloud Resource Manager resource hierarchy
+      can be used in `Policy.allowed_values` and `Policy.denied_values`. For
+      example, `"under:folders/123"` would match any resource under the
+      'folders/123' folder.
   """
 
   use GoogleApi.Gax.ModelBase

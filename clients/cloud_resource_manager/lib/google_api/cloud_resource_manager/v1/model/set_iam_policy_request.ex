@@ -21,15 +21,15 @@ defmodule GoogleApi.CloudResourceManager.V1.Model.SetIamPolicyRequest do
 
   ## Attributes
 
-  - policy (GoogleApi.CloudResourceManager.V1.Model.Policy.t): REQUIRED: The complete policy to be applied to the `resource`. The size of
-  the policy is limited to a few 10s of KB. An empty policy is a
-  valid policy but certain Cloud Platform services (such as Projects)
-  might reject them. Defaults to `nil`.
-  - updateMask (String.t): OPTIONAL: A FieldMask specifying which fields of the policy to modify. Only
-  the fields in the mask will be modified. If no mask is provided, the
-  following default mask is used:
-  paths: "bindings, etag"
-  This field is only used by Cloud IAM. Defaults to `nil`.
+  *   `policy` (*type:* `GoogleApi.CloudResourceManager.V1.Model.Policy.t`, *default:* `nil`) - REQUIRED: The complete policy to be applied to the `resource`. The size of
+      the policy is limited to a few 10s of KB. An empty policy is a
+      valid policy but certain Cloud Platform services (such as Projects)
+      might reject them.
+  *   `updateMask` (*type:* `String.t`, *default:* `nil`) - OPTIONAL: A FieldMask specifying which fields of the policy to modify. Only
+      the fields in the mask will be modified. If no mask is provided, the
+      following default mask is used:
+      paths: "bindings, etag"
+      This field is only used by Cloud IAM.
   """
 
   use GoogleApi.Gax.ModelBase
