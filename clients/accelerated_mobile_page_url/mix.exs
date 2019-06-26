@@ -1,7 +1,7 @@
 defmodule GoogleApi.AcceleratedMobilePageUrl.V1.Mixfile do
   use Mix.Project
 
-  @version "0.2.1"
+  @version "0.3.0"
 
   def project do
     [app: :google_api_accelerated_mobile_page_url,

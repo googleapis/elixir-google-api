@@ -24,6 +24,6 @@ defmodule GoogleApi.AcceleratedMobilePageUrl.V1.Connection do
 
   use GoogleApi.Gax.Connection,
     scopes: [],
-    otp_app: :google_api_acceleratedmobilepageurl,
+    otp_app: :google_api_accelerated_mobile_page_url,
     base_url: "https://acceleratedmobilepageurl.googleapis.com/"
 end
