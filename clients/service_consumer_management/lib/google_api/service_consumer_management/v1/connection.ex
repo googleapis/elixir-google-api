@@ -27,6 +27,6 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Connection do
       # View and manage your data across Google Cloud Platform services
       "https://www.googleapis.com/auth/cloud-platform"
     ],
-    otp_app: :google_api_serviceconsumermanagement,
+    otp_app: :google_api_service_consumer_management,
     base_url: "https://serviceconsumermanagement.googleapis.com/"
 end
