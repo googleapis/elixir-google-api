@@ -1,7 +1,7 @@
 defmodule GoogleApi.ServiceConsumerManagement.V1.Mixfile do
   use Mix.Project
 
-  @version "0.3.0"
+  @version "0.4.0"
 
   def project do
     [app: :google_api_service_consumer_management,
