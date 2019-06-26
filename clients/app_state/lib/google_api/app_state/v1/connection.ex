@@ -27,6 +27,6 @@ defmodule GoogleApi.AppState.V1.Connection do
       # View and manage your data for this application
       "https://www.googleapis.com/auth/appstate"
     ],
-    otp_app: :google_api_appstate,
+    otp_app: :google_api_app_state,
     base_url: "https://www.googleapis.com/appstate/v1/"
 end
