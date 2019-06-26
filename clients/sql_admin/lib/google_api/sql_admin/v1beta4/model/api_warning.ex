@@ -21,8 +21,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.ApiWarning do
 
   ## Attributes
 
-  - code (String.t): Code to uniquely identify the warning type. Defaults to `nil`.
-  - message (String.t): The warning message. Defaults to `nil`.
+  *   `code` (*type:* `String.t`, *default:* `nil`) - Code to uniquely identify the warning type.
+  *   `message` (*type:* `String.t`, *default:* `nil`) - The warning message.
   """
 
   use GoogleApi.Gax.ModelBase

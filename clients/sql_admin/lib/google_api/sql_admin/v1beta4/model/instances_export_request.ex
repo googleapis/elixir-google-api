@@ -21,7 +21,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.InstancesExportRequest do
 
   ## Attributes
 
-  - exportContext (GoogleApi.SQLAdmin.V1beta4.Model.ExportContext.t): Contains details about the export operation. Defaults to `nil`.
+  *   `exportContext` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.ExportContext.t`, *default:* `nil`) - Contains details about the export operation.
   """
 
   use GoogleApi.Gax.ModelBase

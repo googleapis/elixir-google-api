@@ -21,7 +21,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.InstancesDemoteMasterRequest do
 
   ## Attributes
 
-  - demoteMasterContext (GoogleApi.SQLAdmin.V1beta4.Model.DemoteMasterContext.t): Contains details about the demoteMaster operation. Defaults to `nil`.
+  *   `demoteMasterContext` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.DemoteMasterContext.t`, *default:* `nil`) - Contains details about the demoteMaster operation.
   """
 
   use GoogleApi.Gax.ModelBase

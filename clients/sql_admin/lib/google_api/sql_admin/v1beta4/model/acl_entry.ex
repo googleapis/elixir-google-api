@@ -21,10 +21,10 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.AclEntry do
 
   ## Attributes
 
-  - expirationTime (DateTime.t): The time when this access control entry expires in RFC 3339 format, for example 2012-11-15T16:19:00.094Z. Defaults to `nil`.
-  - kind (String.t): This is always sql#aclEntry. Defaults to `sql#aclEntry`.
-  - name (String.t): An optional label to identify this entry. Defaults to `nil`.
-  - value (String.t): The whitelisted value for the access control list. Defaults to `nil`.
+  *   `expirationTime` (*type:* `DateTime.t`, *default:* `nil`) - The time when this access control entry expires in RFC 3339 format, for example 2012-11-15T16:19:00.094Z.
+  *   `kind` (*type:* `String.t`, *default:* `sql#aclEntry`) - This is always sql#aclEntry.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - An optional label to identify this entry.
+  *   `value` (*type:* `String.t`, *default:* `nil`) - The whitelisted value for the access control list.
   """
 
   use GoogleApi.Gax.ModelBase

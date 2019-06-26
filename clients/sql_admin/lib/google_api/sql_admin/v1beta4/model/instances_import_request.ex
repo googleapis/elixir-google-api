@@ -21,7 +21,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.InstancesImportRequest do
 
   ## Attributes
 
-  - importContext (GoogleApi.SQLAdmin.V1beta4.Model.ImportContext.t): Contains details about the import operation. Defaults to `nil`.
+  *   `importContext` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.ImportContext.t`, *default:* `nil`) - Contains details about the import operation.
   """
 
   use GoogleApi.Gax.ModelBase

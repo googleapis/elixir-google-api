@@ -21,7 +21,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.InstancesTruncateLogRequest do
 
   ## Attributes
 
-  - truncateLogContext (GoogleApi.SQLAdmin.V1beta4.Model.TruncateLogContext.t): Contains details about the truncate log operation. Defaults to `nil`.
+  *   `truncateLogContext` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.TruncateLogContext.t`, *default:* `nil`) - Contains details about the truncate log operation.
   """
 
   use GoogleApi.Gax.ModelBase

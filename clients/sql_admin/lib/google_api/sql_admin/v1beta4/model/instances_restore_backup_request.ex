@@ -21,7 +21,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.InstancesRestoreBackupRequest do
 
   ## Attributes
 
-  - restoreBackupContext (GoogleApi.SQLAdmin.V1beta4.Model.RestoreBackupContext.t): Parameters required to perform the restore backup operation. Defaults to `nil`.
+  *   `restoreBackupContext` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.RestoreBackupContext.t`, *default:* `nil`) - Parameters required to perform the restore backup operation.
   """
 
   use GoogleApi.Gax.ModelBase

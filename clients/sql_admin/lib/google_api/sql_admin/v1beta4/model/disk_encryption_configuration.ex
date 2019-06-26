@@ -21,8 +21,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.DiskEncryptionConfiguration do
 
   ## Attributes
 
-  - kind (String.t): This is always sql#diskEncryptionConfiguration. Defaults to `sql#diskEncryptionConfiguration`.
-  - kmsKeyName (String.t): KMS key resource name Defaults to `nil`.
+  *   `kind` (*type:* `String.t`, *default:* `sql#diskEncryptionConfiguration`) - This is always sql#diskEncryptionConfiguration.
+  *   `kmsKeyName` (*type:* `String.t`, *default:* `nil`) - KMS key resource name
   """
 
   use GoogleApi.Gax.ModelBase

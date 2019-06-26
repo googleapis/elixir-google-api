@@ -21,7 +21,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.SslCertsCreateEphemeralRequest do
 
   ## Attributes
 
-  - public_key (String.t): PEM encoded public key to include in the signed certificate. Defaults to `nil`.
+  *   `public_key` (*type:* `String.t`, *default:* `nil`) - PEM encoded public key to include in the signed certificate.
   """
 
   use GoogleApi.Gax.ModelBase

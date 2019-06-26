@@ -21,7 +21,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.InstancesCloneRequest do
 
   ## Attributes
 
-  - cloneContext (GoogleApi.SQLAdmin.V1beta4.Model.CloneContext.t): Contains details about the clone operation. Defaults to `nil`.
+  *   `cloneContext` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.CloneContext.t`, *default:* `nil`) - Contains details about the clone operation.
   """
 
   use GoogleApi.Gax.ModelBase

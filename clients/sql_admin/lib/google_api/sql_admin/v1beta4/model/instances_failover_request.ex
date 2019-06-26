@@ -21,7 +21,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.InstancesFailoverRequest do
 
   ## Attributes
 
-  - failoverContext (GoogleApi.SQLAdmin.V1beta4.Model.FailoverContext.t): Failover Context. Defaults to `nil`.
+  *   `failoverContext` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.FailoverContext.t`, *default:* `nil`) - Failover Context.
   """
 
   use GoogleApi.Gax.ModelBase

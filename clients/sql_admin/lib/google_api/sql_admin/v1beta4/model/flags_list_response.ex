@@ -21,8 +21,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.FlagsListResponse do
 
   ## Attributes
 
-  - items (list(GoogleApi.SQLAdmin.V1beta4.Model.Flag.t)): List of flags. Defaults to `nil`.
-  - kind (String.t): This is always sql#flagsList. Defaults to `sql#flagsList`.
+  *   `items` (*type:* `list(GoogleApi.SQLAdmin.V1beta4.Model.Flag.t)`, *default:* `nil`) - List of flags.
+  *   `kind` (*type:* `String.t`, *default:* `sql#flagsList`) - This is always sql#flagsList.
   """
 
   use GoogleApi.Gax.ModelBase

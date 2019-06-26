@@ -28,25 +28,31 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
 
   ## Parameters
 
-  - connection (GoogleApi.SQLAdmin.V1beta4.Connection): Connection to server
-  - project (String.t): Project ID of the project that contains the instance.
-  - instance (String.t): Cloud SQL instance ID. This does not include the project ID.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.SQLAdmin.V1beta4.Connection.t`) - Connection to server
+  *   `project` (*type:* `String.t`) - Project ID of the project that contains the instance.
+  *   `instance` (*type:* `String.t`) - Cloud SQL instance ID. This does not include the project ID.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec sql_instances_add_server_ca(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
+  @spec sql_instances_add_server_ca(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def sql_instances_add_server_ca(
         connection,
         project,
@@ -83,25 +89,26 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
 
   ## Parameters
 
-  - connection (GoogleApi.SQLAdmin.V1beta4.Connection): Connection to server
-  - project (String.t): Project ID of the source as well as the clone Cloud SQL instance.
-  - instance (String.t): The ID of the Cloud SQL instance to be cloned (source). This does not include the project ID.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.SQLAdmin.V1beta4.Model.InstancesCloneRequest.t): 
+  *   `connection` (*type:* `GoogleApi.SQLAdmin.V1beta4.Connection.t`) - Connection to server
+  *   `project` (*type:* `String.t`) - Project ID of the source as well as the clone Cloud SQL instance.
+  *   `instance` (*type:* `String.t`) - The ID of the Cloud SQL instance to be cloned (source). This does not include the project ID.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.InstancesCloneRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec sql_instances_clone(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+  @spec sql_instances_clone(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def sql_instances_clone(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -134,24 +141,25 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
 
   ## Parameters
 
-  - connection (GoogleApi.SQLAdmin.V1beta4.Connection): Connection to server
-  - project (String.t): Project ID of the project that contains the instance to be deleted.
-  - instance (String.t): Cloud SQL instance ID. This does not include the project ID.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.SQLAdmin.V1beta4.Connection.t`) - Connection to server
+  *   `project` (*type:* `String.t`) - Project ID of the project that contains the instance to be deleted.
+  *   `instance` (*type:* `String.t`) - Cloud SQL instance ID. This does not include the project ID.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec sql_instances_delete(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+  @spec sql_instances_delete(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def sql_instances_delete(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -183,26 +191,32 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
 
   ## Parameters
 
-  - connection (GoogleApi.SQLAdmin.V1beta4.Connection): Connection to server
-  - project (String.t): ID of the project that contains the instance.
-  - instance (String.t): Cloud SQL instance name.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.SQLAdmin.V1beta4.Model.InstancesDemoteMasterRequest.t): 
+  *   `connection` (*type:* `GoogleApi.SQLAdmin.V1beta4.Connection.t`) - Connection to server
+  *   `project` (*type:* `String.t`) - ID of the project that contains the instance.
+  *   `instance` (*type:* `String.t`) - Cloud SQL instance name.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.InstancesDemoteMasterRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec sql_instances_demote_master(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
+  @spec sql_instances_demote_master(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def sql_instances_demote_master(
         connection,
         project,
@@ -240,25 +254,26 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
 
   ## Parameters
 
-  - connection (GoogleApi.SQLAdmin.V1beta4.Connection): Connection to server
-  - project (String.t): Project ID of the project that contains the instance to be exported.
-  - instance (String.t): Cloud SQL instance ID. This does not include the project ID.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.SQLAdmin.V1beta4.Model.InstancesExportRequest.t): 
+  *   `connection` (*type:* `GoogleApi.SQLAdmin.V1beta4.Connection.t`) - Connection to server
+  *   `project` (*type:* `String.t`) - Project ID of the project that contains the instance to be exported.
+  *   `instance` (*type:* `String.t`) - Cloud SQL instance ID. This does not include the project ID.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.InstancesExportRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec sql_instances_export(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+  @spec sql_instances_export(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def sql_instances_export(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -291,25 +306,26 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
 
   ## Parameters
 
-  - connection (GoogleApi.SQLAdmin.V1beta4.Connection): Connection to server
-  - project (String.t): ID of the project that contains the read replica.
-  - instance (String.t): Cloud SQL instance ID. This does not include the project ID.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.SQLAdmin.V1beta4.Model.InstancesFailoverRequest.t): 
+  *   `connection` (*type:* `GoogleApi.SQLAdmin.V1beta4.Connection.t`) - Connection to server
+  *   `project` (*type:* `String.t`) - ID of the project that contains the read replica.
+  *   `instance` (*type:* `String.t`) - Cloud SQL instance ID. This does not include the project ID.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.InstancesFailoverRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec sql_instances_failover(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+  @spec sql_instances_failover(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def sql_instances_failover(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -342,24 +358,25 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
 
   ## Parameters
 
-  - connection (GoogleApi.SQLAdmin.V1beta4.Connection): Connection to server
-  - project (String.t): Project ID of the project that contains the instance.
-  - instance (String.t): Database instance ID. This does not include the project ID.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.SQLAdmin.V1beta4.Connection.t`) - Connection to server
+  *   `project` (*type:* `String.t`) - Project ID of the project that contains the instance.
+  *   `instance` (*type:* `String.t`) - Database instance ID. This does not include the project ID.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec sql_instances_get(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+  @spec sql_instances_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance.t()} | {:error, Tesla.Env.t()}
   def sql_instances_get(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -391,25 +408,26 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
 
   ## Parameters
 
-  - connection (GoogleApi.SQLAdmin.V1beta4.Connection): Connection to server
-  - project (String.t): Project ID of the project that contains the instance.
-  - instance (String.t): Cloud SQL instance ID. This does not include the project ID.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.SQLAdmin.V1beta4.Model.InstancesImportRequest.t): 
+  *   `connection` (*type:* `GoogleApi.SQLAdmin.V1beta4.Connection.t`) - Connection to server
+  *   `project` (*type:* `String.t`) - Project ID of the project that contains the instance.
+  *   `instance` (*type:* `String.t`) - Cloud SQL instance ID. This does not include the project ID.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.InstancesImportRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec sql_instances_import(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+  @spec sql_instances_import(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def sql_instances_import(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -442,24 +460,25 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
 
   ## Parameters
 
-  - connection (GoogleApi.SQLAdmin.V1beta4.Connection): Connection to server
-  - project (String.t): Project ID of the project to which the newly created Cloud SQL instances should belong.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance.t): 
+  *   `connection` (*type:* `GoogleApi.SQLAdmin.V1beta4.Connection.t`) - Connection to server
+  *   `project` (*type:* `String.t`) - Project ID of the project to which the newly created Cloud SQL instances should belong.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec sql_instances_insert(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec sql_instances_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def sql_instances_insert(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -491,26 +510,27 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
 
   ## Parameters
 
-  - connection (GoogleApi.SQLAdmin.V1beta4.Connection): Connection to server
-  - project (String.t): Project ID of the project for which to list Cloud SQL instances.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :filter (String.t): An expression for filtering the results of the request, such as by name or label.
-    - :maxResults (integer()): The maximum number of results to return per response.
-    - :pageToken (String.t): A previously-returned page token representing part of the larger set of results to view.
+  *   `connection` (*type:* `GoogleApi.SQLAdmin.V1beta4.Connection.t`) - Connection to server
+  *   `project` (*type:* `String.t`) - Project ID of the project for which to list Cloud SQL instances.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:filter` (*type:* `String.t`) - An expression for filtering the results of the request, such as by name or label.
+      *   `:maxResults` (*type:* `integer()`) - The maximum number of results to return per response.
+      *   `:pageToken` (*type:* `String.t`) - A previously-returned page token representing part of the larger set of results to view.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.SQLAdmin.V1beta4.Model.InstancesListResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.SQLAdmin.V1beta4.Model.InstancesListResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec sql_instances_list(Tesla.Env.client(), String.t(), keyword()) ::
+  @spec sql_instances_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.InstancesListResponse.t()}
           | {:error, Tesla.Env.t()}
   def sql_instances_list(connection, project, optional_params \\ [], opts \\ []) do
@@ -547,24 +567,31 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
 
   ## Parameters
 
-  - connection (GoogleApi.SQLAdmin.V1beta4.Connection): Connection to server
-  - project (String.t): Project ID of the project that contains the instance.
-  - instance (String.t): Cloud SQL instance ID. This does not include the project ID.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.SQLAdmin.V1beta4.Connection.t`) - Connection to server
+  *   `project` (*type:* `String.t`) - Project ID of the project that contains the instance.
+  *   `instance` (*type:* `String.t`) - Cloud SQL instance ID. This does not include the project ID.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.SQLAdmin.V1beta4.Model.InstancesListServerCasResponse{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.SQLAdmin.V1beta4.Model.InstancesListServerCasResponse{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec sql_instances_list_server_cas(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+  @spec sql_instances_list_server_cas(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.InstancesListServerCasResponse.t()}
           | {:error, Tesla.Env.t()}
   def sql_instances_list_server_cas(
@@ -605,25 +632,26 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
 
   ## Parameters
 
-  - connection (GoogleApi.SQLAdmin.V1beta4.Connection): Connection to server
-  - project (String.t): Project ID of the project that contains the instance.
-  - instance (String.t): Cloud SQL instance ID. This does not include the project ID.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance.t): 
+  *   `connection` (*type:* `GoogleApi.SQLAdmin.V1beta4.Connection.t`) - Connection to server
+  *   `project` (*type:* `String.t`) - Project ID of the project that contains the instance.
+  *   `instance` (*type:* `String.t`) - Cloud SQL instance ID. This does not include the project ID.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec sql_instances_patch(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+  @spec sql_instances_patch(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def sql_instances_patch(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -656,25 +684,31 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
 
   ## Parameters
 
-  - connection (GoogleApi.SQLAdmin.V1beta4.Connection): Connection to server
-  - project (String.t): ID of the project that contains the read replica.
-  - instance (String.t): Cloud SQL read replica instance name.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.SQLAdmin.V1beta4.Connection.t`) - Connection to server
+  *   `project` (*type:* `String.t`) - ID of the project that contains the read replica.
+  *   `instance` (*type:* `String.t`) - Cloud SQL read replica instance name.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec sql_instances_promote_replica(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
+  @spec sql_instances_promote_replica(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def sql_instances_promote_replica(
         connection,
         project,
@@ -711,25 +745,31 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
 
   ## Parameters
 
-  - connection (GoogleApi.SQLAdmin.V1beta4.Connection): Connection to server
-  - project (String.t): Project ID of the project that contains the instance.
-  - instance (String.t): Cloud SQL instance ID. This does not include the project ID.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.SQLAdmin.V1beta4.Connection.t`) - Connection to server
+  *   `project` (*type:* `String.t`) - Project ID of the project that contains the instance.
+  *   `instance` (*type:* `String.t`) - Cloud SQL instance ID. This does not include the project ID.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec sql_instances_reset_ssl_config(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
+  @spec sql_instances_reset_ssl_config(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def sql_instances_reset_ssl_config(
         connection,
         project,
@@ -766,24 +806,25 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
 
   ## Parameters
 
-  - connection (GoogleApi.SQLAdmin.V1beta4.Connection): Connection to server
-  - project (String.t): Project ID of the project that contains the instance to be restarted.
-  - instance (String.t): Cloud SQL instance ID. This does not include the project ID.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.SQLAdmin.V1beta4.Connection.t`) - Connection to server
+  *   `project` (*type:* `String.t`) - Project ID of the project that contains the instance to be restarted.
+  *   `instance` (*type:* `String.t`) - Cloud SQL instance ID. This does not include the project ID.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec sql_instances_restart(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+  @spec sql_instances_restart(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def sql_instances_restart(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -815,26 +856,32 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
 
   ## Parameters
 
-  - connection (GoogleApi.SQLAdmin.V1beta4.Connection): Connection to server
-  - project (String.t): Project ID of the project that contains the instance.
-  - instance (String.t): Cloud SQL instance ID. This does not include the project ID.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.SQLAdmin.V1beta4.Model.InstancesRestoreBackupRequest.t): 
+  *   `connection` (*type:* `GoogleApi.SQLAdmin.V1beta4.Connection.t`) - Connection to server
+  *   `project` (*type:* `String.t`) - Project ID of the project that contains the instance.
+  *   `instance` (*type:* `String.t`) - Cloud SQL instance ID. This does not include the project ID.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.InstancesRestoreBackupRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec sql_instances_restore_backup(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
+  @spec sql_instances_restore_backup(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def sql_instances_restore_backup(
         connection,
         project,
@@ -872,26 +919,32 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
 
   ## Parameters
 
-  - connection (GoogleApi.SQLAdmin.V1beta4.Connection): Connection to server
-  - project (String.t): Project ID of the project that contains the instance.
-  - instance (String.t): Cloud SQL instance ID. This does not include the project ID.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.SQLAdmin.V1beta4.Model.InstancesRotateServerCaRequest.t): 
+  *   `connection` (*type:* `GoogleApi.SQLAdmin.V1beta4.Connection.t`) - Connection to server
+  *   `project` (*type:* `String.t`) - Project ID of the project that contains the instance.
+  *   `instance` (*type:* `String.t`) - Cloud SQL instance ID. This does not include the project ID.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.InstancesRotateServerCaRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec sql_instances_rotate_server_ca(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
+  @spec sql_instances_rotate_server_ca(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def sql_instances_rotate_server_ca(
         connection,
         project,
@@ -929,25 +982,31 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
 
   ## Parameters
 
-  - connection (GoogleApi.SQLAdmin.V1beta4.Connection): Connection to server
-  - project (String.t): ID of the project that contains the read replica.
-  - instance (String.t): Cloud SQL read replica instance name.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.SQLAdmin.V1beta4.Connection.t`) - Connection to server
+  *   `project` (*type:* `String.t`) - ID of the project that contains the read replica.
+  *   `instance` (*type:* `String.t`) - Cloud SQL read replica instance name.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec sql_instances_start_replica(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
+  @spec sql_instances_start_replica(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def sql_instances_start_replica(
         connection,
         project,
@@ -984,25 +1043,31 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
 
   ## Parameters
 
-  - connection (GoogleApi.SQLAdmin.V1beta4.Connection): Connection to server
-  - project (String.t): ID of the project that contains the read replica.
-  - instance (String.t): Cloud SQL read replica instance name.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.SQLAdmin.V1beta4.Connection.t`) - Connection to server
+  *   `project` (*type:* `String.t`) - ID of the project that contains the read replica.
+  *   `instance` (*type:* `String.t`) - Cloud SQL read replica instance name.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec sql_instances_stop_replica(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
+  @spec sql_instances_stop_replica(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def sql_instances_stop_replica(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -1033,26 +1098,32 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
 
   ## Parameters
 
-  - connection (GoogleApi.SQLAdmin.V1beta4.Connection): Connection to server
-  - project (String.t): Project ID of the Cloud SQL project.
-  - instance (String.t): Cloud SQL instance ID. This does not include the project ID.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.SQLAdmin.V1beta4.Model.InstancesTruncateLogRequest.t): 
+  *   `connection` (*type:* `GoogleApi.SQLAdmin.V1beta4.Connection.t`) - Connection to server
+  *   `project` (*type:* `String.t`) - Project ID of the Cloud SQL project.
+  *   `instance` (*type:* `String.t`) - Cloud SQL instance ID. This does not include the project ID.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.InstancesTruncateLogRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec sql_instances_truncate_log(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
-          {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
+  @spec sql_instances_truncate_log(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def sql_instances_truncate_log(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -1084,25 +1155,26 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
 
   ## Parameters
 
-  - connection (GoogleApi.SQLAdmin.V1beta4.Connection): Connection to server
-  - project (String.t): Project ID of the project that contains the instance.
-  - instance (String.t): Cloud SQL instance ID. This does not include the project ID.
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance.t): 
+  *   `connection` (*type:* `GoogleApi.SQLAdmin.V1beta4.Connection.t`) - Connection to server
+  *   `project` (*type:* `String.t`) - Project ID of the project that contains the instance.
+  *   `instance` (*type:* `String.t`) - Cloud SQL instance ID. This does not include the project ID.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.SQLAdmin.V1beta4.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
   """
-  @spec sql_instances_update(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+  @spec sql_instances_update(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def sql_instances_update(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

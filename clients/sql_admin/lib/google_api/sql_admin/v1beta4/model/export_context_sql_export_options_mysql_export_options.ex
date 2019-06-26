@@ -21,7 +21,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.ExportContextSqlExportOptionsMysqlExp
 
   ## Attributes
 
-  - masterData (integer()): Option to include SQL statement required to set up replication. If set to 1, the dump file includes a CHANGE MASTER TO statement with the binary log coordinates. If set to 2, the CHANGE MASTER TO statement is written as a SQL comment, and has no effect. All other values are ignored. Defaults to `nil`.
+  *   `masterData` (*type:* `integer()`, *default:* `nil`) - Option to include SQL statement required to set up replication. If set to 1, the dump file includes a CHANGE MASTER TO statement with the binary log coordinates. If set to 2, the CHANGE MASTER TO statement is written as a SQL comment, and has no effect. All other values are ignored.
   """
 
   use GoogleApi.Gax.ModelBase

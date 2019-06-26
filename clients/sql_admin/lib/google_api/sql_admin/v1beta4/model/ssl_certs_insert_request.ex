@@ -21,7 +21,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.SslCertsInsertRequest do
 
   ## Attributes
 
-  - commonName (String.t): User supplied name. Must be a distinct name from the other certificates for this instance. Defaults to `nil`.
+  *   `commonName` (*type:* `String.t`, *default:* `nil`) - User supplied name. Must be a distinct name from the other certificates for this instance.
   """
 
   use GoogleApi.Gax.ModelBase
