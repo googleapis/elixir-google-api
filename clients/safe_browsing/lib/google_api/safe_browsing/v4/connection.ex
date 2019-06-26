@@ -20,6 +20,8 @@ defmodule GoogleApi.SafeBrowsing.V4.Connection do
   Handle Tesla connections for GoogleApi.SafeBrowsing.V4.
   """
 
+  @type t :: Tesla.Env.client()
+
   use GoogleApi.Gax.Connection,
     scopes: [],
     otp_app: :google_api_safebrowsing,

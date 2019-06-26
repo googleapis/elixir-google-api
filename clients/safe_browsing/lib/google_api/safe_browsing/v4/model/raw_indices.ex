@@ -21,7 +21,7 @@ defmodule GoogleApi.SafeBrowsing.V4.Model.RawIndices do
 
   ## Attributes
 
-  - indices (list(integer())): The indices to remove from a lexicographically-sorted local list. Defaults to `nil`.
+  *   `indices` (*type:* `list(integer())`, *default:* `nil`) - The indices to remove from a lexicographically-sorted local list.
   """
 
   use GoogleApi.Gax.ModelBase

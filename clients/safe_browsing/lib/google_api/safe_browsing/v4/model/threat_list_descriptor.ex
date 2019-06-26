@@ -23,9 +23,9 @@ defmodule GoogleApi.SafeBrowsing.V4.Model.ThreatListDescriptor do
 
   ## Attributes
 
-  - platformType (String.t): The platform type targeted by the list's entries. Defaults to `nil`.
-  - threatEntryType (String.t): The entry types contained in the list. Defaults to `nil`.
-  - threatType (String.t): The threat type posed by the list's entries. Defaults to `nil`.
+  *   `platformType` (*type:* `String.t`, *default:* `nil`) - The platform type targeted by the list's entries.
+  *   `threatEntryType` (*type:* `String.t`, *default:* `nil`) - The entry types contained in the list.
+  *   `threatType` (*type:* `String.t`, *default:* `nil`) - The threat type posed by the list's entries.
   """
 
   use GoogleApi.Gax.ModelBase

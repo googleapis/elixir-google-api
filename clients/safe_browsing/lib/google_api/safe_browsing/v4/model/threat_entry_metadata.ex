@@ -22,7 +22,7 @@ defmodule GoogleApi.SafeBrowsing.V4.Model.ThreatEntryMetadata do
 
   ## Attributes
 
-  - entries (list(GoogleApi.SafeBrowsing.V4.Model.MetadataEntry.t)): The metadata entries. Defaults to `nil`.
+  *   `entries` (*type:* `list(GoogleApi.SafeBrowsing.V4.Model.MetadataEntry.t)`, *default:* `nil`) - The metadata entries.
   """
 
   use GoogleApi.Gax.ModelBase

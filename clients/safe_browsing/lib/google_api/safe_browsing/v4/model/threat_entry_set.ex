@@ -22,16 +22,16 @@ defmodule GoogleApi.SafeBrowsing.V4.Model.ThreatEntrySet do
 
   ## Attributes
 
-  - compressionType (String.t): The compression type for the entries in this set. Defaults to `nil`.
-  - rawHashes (GoogleApi.SafeBrowsing.V4.Model.RawHashes.t): The raw SHA256-formatted entries. Defaults to `nil`.
-  - rawIndices (GoogleApi.SafeBrowsing.V4.Model.RawIndices.t): The raw removal indices for a local list. Defaults to `nil`.
-  - riceHashes (GoogleApi.SafeBrowsing.V4.Model.RiceDeltaEncoding.t): The encoded 4-byte prefixes of SHA256-formatted entries, using a
-  Golomb-Rice encoding. The hashes are converted to uint32, sorted in
-  ascending order, then delta encoded and stored as encoded_data. Defaults to `nil`.
-  - riceIndices (GoogleApi.SafeBrowsing.V4.Model.RiceDeltaEncoding.t): The encoded local, lexicographically-sorted list indices, using a
-  Golomb-Rice encoding. Used for sending compressed removal indices. The
-  removal indices (uint32) are sorted in ascending order, then delta encoded
-  and stored as encoded_data. Defaults to `nil`.
+  *   `compressionType` (*type:* `String.t`, *default:* `nil`) - The compression type for the entries in this set.
+  *   `rawHashes` (*type:* `GoogleApi.SafeBrowsing.V4.Model.RawHashes.t`, *default:* `nil`) - The raw SHA256-formatted entries.
+  *   `rawIndices` (*type:* `GoogleApi.SafeBrowsing.V4.Model.RawIndices.t`, *default:* `nil`) - The raw removal indices for a local list.
+  *   `riceHashes` (*type:* `GoogleApi.SafeBrowsing.V4.Model.RiceDeltaEncoding.t`, *default:* `nil`) - The encoded 4-byte prefixes of SHA256-formatted entries, using a
+      Golomb-Rice encoding. The hashes are converted to uint32, sorted in
+      ascending order, then delta encoded and stored as encoded_data.
+  *   `riceIndices` (*type:* `GoogleApi.SafeBrowsing.V4.Model.RiceDeltaEncoding.t`, *default:* `nil`) - The encoded local, lexicographically-sorted list indices, using a
+      Golomb-Rice encoding. Used for sending compressed removal indices. The
+      removal indices (uint32) are sorted in ascending order, then delta encoded
+      and stored as encoded_data.
   """
 
   use GoogleApi.Gax.ModelBase

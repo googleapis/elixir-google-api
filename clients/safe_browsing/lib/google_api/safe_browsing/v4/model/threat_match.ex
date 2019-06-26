@@ -21,13 +21,13 @@ defmodule GoogleApi.SafeBrowsing.V4.Model.ThreatMatch do
 
   ## Attributes
 
-  - cacheDuration (String.t): The cache lifetime for the returned match. Clients must not cache this
-  response for more than this duration to avoid false positives. Defaults to `nil`.
-  - platformType (String.t): The platform type matching this threat. Defaults to `nil`.
-  - threat (GoogleApi.SafeBrowsing.V4.Model.ThreatEntry.t): The threat matching this threat. Defaults to `nil`.
-  - threatEntryMetadata (GoogleApi.SafeBrowsing.V4.Model.ThreatEntryMetadata.t): Optional metadata associated with this threat. Defaults to `nil`.
-  - threatEntryType (String.t): The threat entry type matching this threat. Defaults to `nil`.
-  - threatType (String.t): The threat type matching this threat. Defaults to `nil`.
+  *   `cacheDuration` (*type:* `String.t`, *default:* `nil`) - The cache lifetime for the returned match. Clients must not cache this
+      response for more than this duration to avoid false positives.
+  *   `platformType` (*type:* `String.t`, *default:* `nil`) - The platform type matching this threat.
+  *   `threat` (*type:* `GoogleApi.SafeBrowsing.V4.Model.ThreatEntry.t`, *default:* `nil`) - The threat matching this threat.
+  *   `threatEntryMetadata` (*type:* `GoogleApi.SafeBrowsing.V4.Model.ThreatEntryMetadata.t`, *default:* `nil`) - Optional metadata associated with this threat.
+  *   `threatEntryType` (*type:* `String.t`, *default:* `nil`) - The threat entry type matching this threat.
+  *   `threatType` (*type:* `String.t`, *default:* `nil`) - The threat type matching this threat.
   """
 
   use GoogleApi.Gax.ModelBase

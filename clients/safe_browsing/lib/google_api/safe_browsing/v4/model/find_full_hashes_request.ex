@@ -21,11 +21,11 @@ defmodule GoogleApi.SafeBrowsing.V4.Model.FindFullHashesRequest do
 
   ## Attributes
 
-  - apiClient (GoogleApi.SafeBrowsing.V4.Model.ClientInfo.t): Client metadata associated with callers of higher-level APIs built on top
-  of the client's implementation. Defaults to `nil`.
-  - client (GoogleApi.SafeBrowsing.V4.Model.ClientInfo.t): The client metadata. Defaults to `nil`.
-  - clientStates (list(String.t)): The current client states for each of the client's local threat lists. Defaults to `nil`.
-  - threatInfo (GoogleApi.SafeBrowsing.V4.Model.ThreatInfo.t): The lists and hashes to be checked. Defaults to `nil`.
+  *   `apiClient` (*type:* `GoogleApi.SafeBrowsing.V4.Model.ClientInfo.t`, *default:* `nil`) - Client metadata associated with callers of higher-level APIs built on top
+      of the client's implementation.
+  *   `client` (*type:* `GoogleApi.SafeBrowsing.V4.Model.ClientInfo.t`, *default:* `nil`) - The client metadata.
+  *   `clientStates` (*type:* `list(String.t)`, *default:* `nil`) - The current client states for each of the client's local threat lists.
+  *   `threatInfo` (*type:* `GoogleApi.SafeBrowsing.V4.Model.ThreatInfo.t`, *default:* `nil`) - The lists and hashes to be checked.
   """
 
   use GoogleApi.Gax.ModelBase

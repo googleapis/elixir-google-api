@@ -21,20 +21,20 @@ defmodule GoogleApi.SafeBrowsing.V4.Model.Constraints do
 
   ## Attributes
 
-  - deviceLocation (String.t): A client's physical location, expressed as a ISO 31166-1 alpha-2
-  region code. Defaults to `nil`.
-  - language (String.t): Requests the lists for a specific language. Expects ISO 639 alpha-2
-  format. Defaults to `nil`.
-  - maxDatabaseEntries (integer()): Sets the maximum number of entries that the client is willing to have
-  in the local database. This should be a power of 2 between 2**10 and
-  2**20. If zero, no database size limit is set. Defaults to `nil`.
-  - maxUpdateEntries (integer()): The maximum size in number of entries. The update will not contain more
-  entries than this value.  This should be a power of 2 between 2**10 and
-  2**20.  If zero, no update size limit is set. Defaults to `nil`.
-  - region (String.t): Requests the list for a specific geographic location. If not set the
-  server may pick that value based on the user's IP address. Expects ISO
-  3166-1 alpha-2 format. Defaults to `nil`.
-  - supportedCompressions (list(String.t)): The compression types supported by the client. Defaults to `nil`.
+  *   `deviceLocation` (*type:* `String.t`, *default:* `nil`) - A client's physical location, expressed as a ISO 31166-1 alpha-2
+      region code.
+  *   `language` (*type:* `String.t`, *default:* `nil`) - Requests the lists for a specific language. Expects ISO 639 alpha-2
+      format.
+  *   `maxDatabaseEntries` (*type:* `integer()`, *default:* `nil`) - Sets the maximum number of entries that the client is willing to have
+      in the local database. This should be a power of 2 between 2**10 and
+      2**20. If zero, no database size limit is set.
+  *   `maxUpdateEntries` (*type:* `integer()`, *default:* `nil`) - The maximum size in number of entries. The update will not contain more
+      entries than this value.  This should be a power of 2 between 2**10 and
+      2**20.  If zero, no update size limit is set.
+  *   `region` (*type:* `String.t`, *default:* `nil`) - Requests the list for a specific geographic location. If not set the
+      server may pick that value based on the user's IP address. Expects ISO
+      3166-1 alpha-2 format.
+  *   `supportedCompressions` (*type:* `list(String.t)`, *default:* `nil`) - The compression types supported by the client.
   """
 
   use GoogleApi.Gax.ModelBase

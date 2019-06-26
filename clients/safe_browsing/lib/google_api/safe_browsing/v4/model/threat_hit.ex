@@ -21,13 +21,13 @@ defmodule GoogleApi.SafeBrowsing.V4.Model.ThreatHit do
 
   ## Attributes
 
-  - clientInfo (GoogleApi.SafeBrowsing.V4.Model.ClientInfo.t): Client-reported identification. Defaults to `nil`.
-  - entry (GoogleApi.SafeBrowsing.V4.Model.ThreatEntry.t): The threat entry responsible for the hit. Full hash should be reported for
-  hash-based hits. Defaults to `nil`.
-  - platformType (String.t): The platform type reported. Defaults to `nil`.
-  - resources (list(GoogleApi.SafeBrowsing.V4.Model.ThreatSource.t)): The resources related to the threat hit. Defaults to `nil`.
-  - threatType (String.t): The threat type reported. Defaults to `nil`.
-  - userInfo (GoogleApi.SafeBrowsing.V4.Model.UserInfo.t): Details about the user that encountered the threat. Defaults to `nil`.
+  *   `clientInfo` (*type:* `GoogleApi.SafeBrowsing.V4.Model.ClientInfo.t`, *default:* `nil`) - Client-reported identification.
+  *   `entry` (*type:* `GoogleApi.SafeBrowsing.V4.Model.ThreatEntry.t`, *default:* `nil`) - The threat entry responsible for the hit. Full hash should be reported for
+      hash-based hits.
+  *   `platformType` (*type:* `String.t`, *default:* `nil`) - The platform type reported.
+  *   `resources` (*type:* `list(GoogleApi.SafeBrowsing.V4.Model.ThreatSource.t)`, *default:* `nil`) - The resources related to the threat hit.
+  *   `threatType` (*type:* `String.t`, *default:* `nil`) - The threat type reported.
+  *   `userInfo` (*type:* `GoogleApi.SafeBrowsing.V4.Model.UserInfo.t`, *default:* `nil`) - Details about the user that encountered the threat.
   """
 
   use GoogleApi.Gax.ModelBase

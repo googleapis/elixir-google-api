@@ -22,15 +22,15 @@ defmodule GoogleApi.SafeBrowsing.V4.Model.RiceDeltaEncoding do
 
   ## Attributes
 
-  - encodedData (String.t): The encoded deltas that are encoded using the Golomb-Rice coder. Defaults to `nil`.
-  - firstValue (String.t): The offset of the first entry in the encoded data, or, if only a single
-  integer was encoded, that single integer's value. If the field is empty or
-  missing, assume zero. Defaults to `nil`.
-  - numEntries (integer()): The number of entries that are delta encoded in the encoded data. If only a
-  single integer was encoded, this will be zero and the single value will be
-  stored in `first_value`. Defaults to `nil`.
-  - riceParameter (integer()): The Golomb-Rice parameter, which is a number between 2 and 28. This field
-  is missing (that is, zero) if `num_entries` is zero. Defaults to `nil`.
+  *   `encodedData` (*type:* `String.t`, *default:* `nil`) - The encoded deltas that are encoded using the Golomb-Rice coder.
+  *   `firstValue` (*type:* `String.t`, *default:* `nil`) - The offset of the first entry in the encoded data, or, if only a single
+      integer was encoded, that single integer's value. If the field is empty or
+      missing, assume zero.
+  *   `numEntries` (*type:* `integer()`, *default:* `nil`) - The number of entries that are delta encoded in the encoded data. If only a
+      single integer was encoded, this will be zero and the single value will be
+      stored in `first_value`.
+  *   `riceParameter` (*type:* `integer()`, *default:* `nil`) - The Golomb-Rice parameter, which is a number between 2 and 28. This field
+      is missing (that is, zero) if `num_entries` is zero.
   """
 
   use GoogleApi.Gax.ModelBase
