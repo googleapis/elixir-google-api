@@ -28,29 +28,31 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
 
   ## Parameters
 
-  - connection (GoogleApi.Licensing.V1.Connection): Connection to server
-  - product_id (String.t): Name for product
-  - sku_id (String.t): Name for sku
-  - user_id (String.t): email id or unique Id of the user
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.Licensing.V1.Connection.t`) - Connection to server
+  *   `product_id` (*type:* `String.t`) - Name for product
+  *   `sku_id` (*type:* `String.t`) - Name for sku
+  *   `user_id` (*type:* `String.t`) - email id or unique Id of the user
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %{}} on success
-  {:error, info} on failure
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec licensing_license_assignments_delete(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, nil} | {:error, Tesla.Env.t()}
   def licensing_license_assignments_delete(
@@ -91,29 +93,31 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
 
   ## Parameters
 
-  - connection (GoogleApi.Licensing.V1.Connection): Connection to server
-  - product_id (String.t): Name for product
-  - sku_id (String.t): Name for sku
-  - user_id (String.t): email id or unique Id of the user
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
+  *   `connection` (*type:* `GoogleApi.Licensing.V1.Connection.t`) - Connection to server
+  *   `product_id` (*type:* `String.t`) - Name for product
+  *   `sku_id` (*type:* `String.t`) - Name for sku
+  *   `user_id` (*type:* `String.t`) - email id or unique Id of the user
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Licensing.V1.Model.LicenseAssignment{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Licensing.V1.Model.LicenseAssignment{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec licensing_license_assignments_get(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Licensing.V1.Model.LicenseAssignment.t()} | {:error, Tesla.Env.t()}
   def licensing_license_assignments_get(
@@ -154,28 +158,30 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
 
   ## Parameters
 
-  - connection (GoogleApi.Licensing.V1.Connection): Connection to server
-  - product_id (String.t): Name for product
-  - sku_id (String.t): Name for sku
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.Licensing.V1.Model.LicenseAssignmentInsert.t): 
+  *   `connection` (*type:* `GoogleApi.Licensing.V1.Connection.t`) - Connection to server
+  *   `product_id` (*type:* `String.t`) - Name for product
+  *   `sku_id` (*type:* `String.t`) - Name for sku
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.Licensing.V1.Model.LicenseAssignmentInsert.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Licensing.V1.Model.LicenseAssignment{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Licensing.V1.Model.LicenseAssignment{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec licensing_license_assignments_insert(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Licensing.V1.Model.LicenseAssignment.t()} | {:error, Tesla.Env.t()}
   def licensing_license_assignments_insert(
@@ -215,29 +221,31 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
 
   ## Parameters
 
-  - connection (GoogleApi.Licensing.V1.Connection): Connection to server
-  - product_id (String.t): Name for product
-  - customer_id (String.t): CustomerId represents the customer for whom licenseassignments are queried
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :maxResults (integer()): Maximum number of campaigns to return at one time. Must be positive. Optional. Default value is 100.
-    - :pageToken (String.t): Token to fetch the next page.Optional. By default server will return first page
+  *   `connection` (*type:* `GoogleApi.Licensing.V1.Connection.t`) - Connection to server
+  *   `product_id` (*type:* `String.t`) - Name for product
+  *   `customer_id` (*type:* `String.t`) - CustomerId represents the customer for whom licenseassignments are queried
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:maxResults` (*type:* `integer()`) - Maximum number of campaigns to return at one time. Must be positive. Optional. Default value is 100.
+      *   `:pageToken` (*type:* `String.t`) - Token to fetch the next page.Optional. By default server will return first page
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Licensing.V1.Model.LicenseAssignmentList{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Licensing.V1.Model.LicenseAssignmentList{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec licensing_license_assignments_list_for_product(
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.Licensing.V1.Model.LicenseAssignmentList.t()} | {:error, Tesla.Env.t()}
@@ -279,31 +287,33 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
 
   ## Parameters
 
-  - connection (GoogleApi.Licensing.V1.Connection): Connection to server
-  - product_id (String.t): Name for product
-  - sku_id (String.t): Name for sku
-  - customer_id (String.t): CustomerId represents the customer for whom licenseassignments are queried
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :maxResults (integer()): Maximum number of campaigns to return at one time. Must be positive. Optional. Default value is 100.
-    - :pageToken (String.t): Token to fetch the next page.Optional. By default server will return first page
+  *   `connection` (*type:* `GoogleApi.Licensing.V1.Connection.t`) - Connection to server
+  *   `product_id` (*type:* `String.t`) - Name for product
+  *   `sku_id` (*type:* `String.t`) - Name for sku
+  *   `customer_id` (*type:* `String.t`) - CustomerId represents the customer for whom licenseassignments are queried
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:maxResults` (*type:* `integer()`) - Maximum number of campaigns to return at one time. Must be positive. Optional. Default value is 100.
+      *   `:pageToken` (*type:* `String.t`) - Token to fetch the next page.Optional. By default server will return first page
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Licensing.V1.Model.LicenseAssignmentList{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Licensing.V1.Model.LicenseAssignmentList{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec licensing_license_assignments_list_for_product_and_sku(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.Licensing.V1.Model.LicenseAssignmentList.t()} | {:error, Tesla.Env.t()}
@@ -347,30 +357,32 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
 
   ## Parameters
 
-  - connection (GoogleApi.Licensing.V1.Connection): Connection to server
-  - product_id (String.t): Name for product
-  - sku_id (String.t): Name for sku for which license would be revoked
-  - user_id (String.t): email id or unique Id of the user
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.Licensing.V1.Model.LicenseAssignment.t): 
+  *   `connection` (*type:* `GoogleApi.Licensing.V1.Connection.t`) - Connection to server
+  *   `product_id` (*type:* `String.t`) - Name for product
+  *   `sku_id` (*type:* `String.t`) - Name for sku for which license would be revoked
+  *   `user_id` (*type:* `String.t`) - email id or unique Id of the user
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.Licensing.V1.Model.LicenseAssignment.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Licensing.V1.Model.LicenseAssignment{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Licensing.V1.Model.LicenseAssignment{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec licensing_license_assignments_patch(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Licensing.V1.Model.LicenseAssignment.t()} | {:error, Tesla.Env.t()}
   def licensing_license_assignments_patch(
@@ -412,30 +424,32 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
 
   ## Parameters
 
-  - connection (GoogleApi.Licensing.V1.Connection): Connection to server
-  - product_id (String.t): Name for product
-  - sku_id (String.t): Name for sku for which license would be revoked
-  - user_id (String.t): email id or unique Id of the user
-  - optional_params (keyword()): [optional] Optional parameters
-    - :alt (String.t): Data format for the response.
-    - :fields (String.t): Selector specifying which fields to include in a partial response.
-    - :key (String.t): API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-    - :oauth_token (String.t): OAuth 2.0 token for the current user.
-    - :prettyPrint (boolean()): Returns response with indentations and line breaks.
-    - :quotaUser (String.t): An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    - :userIp (String.t): Deprecated. Please use quotaUser instead.
-    - :body (GoogleApi.Licensing.V1.Model.LicenseAssignment.t): 
+  *   `connection` (*type:* `GoogleApi.Licensing.V1.Connection.t`) - Connection to server
+  *   `product_id` (*type:* `String.t`) - Name for product
+  *   `sku_id` (*type:* `String.t`) - Name for sku for which license would be revoked
+  *   `user_id` (*type:* `String.t`) - email id or unique Id of the user
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.Licensing.V1.Model.LicenseAssignment.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  {:ok, %GoogleApi.Licensing.V1.Model.LicenseAssignment{}} on success
-  {:error, info} on failure
+  *   `{:ok, %GoogleApi.Licensing.V1.Model.LicenseAssignment{}}` on success
+  *   `{:error, info}` on failure
   """
   @spec licensing_license_assignments_update(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
+          keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Licensing.V1.Model.LicenseAssignment.t()} | {:error, Tesla.Env.t()}
   def licensing_license_assignments_update(

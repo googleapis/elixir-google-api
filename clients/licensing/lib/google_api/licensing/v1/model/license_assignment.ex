@@ -21,14 +21,14 @@ defmodule GoogleApi.Licensing.V1.Model.LicenseAssignment do
 
   ## Attributes
 
-  - etags (String.t): ETag of the resource. Defaults to `nil`.
-  - kind (String.t): Identifies the resource as a LicenseAssignment. Defaults to `licensing#licenseAssignment`.
-  - productId (String.t): Id of the product. Defaults to `nil`.
-  - productName (String.t): Display Name of the product. Defaults to `nil`.
-  - selfLink (String.t): Link to this page. Defaults to `nil`.
-  - skuId (String.t): Id of the sku of the product. Defaults to `nil`.
-  - skuName (String.t): Display Name of the sku of the product. Defaults to `nil`.
-  - userId (String.t): Email id of the user. Defaults to `nil`.
+  *   `etags` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
+  *   `kind` (*type:* `String.t`, *default:* `licensing#licenseAssignment`) - Identifies the resource as a LicenseAssignment.
+  *   `productId` (*type:* `String.t`, *default:* `nil`) - Id of the product.
+  *   `productName` (*type:* `String.t`, *default:* `nil`) - Display Name of the product.
+  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - Link to this page.
+  *   `skuId` (*type:* `String.t`, *default:* `nil`) - Id of the sku of the product.
+  *   `skuName` (*type:* `String.t`, *default:* `nil`) - Display Name of the sku of the product.
+  *   `userId` (*type:* `String.t`, *default:* `nil`) - Email id of the user.
   """
 
   use GoogleApi.Gax.ModelBase
