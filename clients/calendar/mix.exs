@@ -1,7 +1,7 @@
 defmodule GoogleApi.Calendar.V3.Mixfile do
   use Mix.Project
 
-  @version "0.7.0"
+  @version "0.6.1"
 
   def project do
     [app: :google_api_calendar,
