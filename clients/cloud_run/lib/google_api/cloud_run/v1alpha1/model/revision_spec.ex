@@ -44,7 +44,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.RevisionSpec do
       latest generation of the desired state.
 
       Read-only.
-  *   `serviceAccountName` (*type:* `String.t`, *default:* `nil`) - Not currently used by Cloud Run.
+  *   `serviceAccountName` (*type:* `String.t`, *default:* `nil`) - Email address of the IAM service account associated with the revision
+      of the service. The service account represents the identity of the
+      running revision, and determines what permissions the revision has. If
+      not provided, the revision will use the project's default service account.
   *   `servingState` (*type:* `String.t`, *default:* `nil`) - ServingState holds a value describing the state the resources
       are in for this Revision.
       Users must not specify this when creating a revision. It is expected

@@ -27,6 +27,6 @@ defmodule GoogleApi.CloudRun.V1alpha1.Connection do
       # View and manage your data across Google Cloud Platform services
       "https://www.googleapis.com/auth/cloud-platform"
     ],
-    otp_app: :google_api_run,
+    otp_app: :google_api_cloud_run,
     base_url: "https://run.googleapis.com/"
 end

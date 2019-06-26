@@ -22,7 +22,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ServiceStatus do
   ## Attributes
 
   *   `address` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.Addressable.t`, *default:* `nil`) - From RouteStatus.
-      Similar to domain, information on where the service is available on HTTP.
+      Similar to url, information on where the service is available on HTTP.
   *   `conditions` (*type:* `list(GoogleApi.CloudRun.V1alpha1.Model.ServiceCondition.t)`, *default:* `nil`) - Conditions communicates information about ongoing/complete
       reconciliation processes that bring the "spec" inline with the observed
       state of the world.
@@ -49,6 +49,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ServiceStatus do
       These entries will always contain RevisionName references.
       When ConfigurationName appears in the spec, this will hold the
       LatestReadyRevisionName that we last observed.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - From RouteStatus.
+      URL holds the url that will distribute traffic over the provided traffic
+      targets. It generally has the form
+      https://{route-hash}-{project-hash}-{cluster-level-suffix}.a.run.app
   """
 
   use GoogleApi.Gax.ModelBase
@@ -60,7 +64,8 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ServiceStatus do
           :latestCreatedRevisionName => String.t(),
           :latestReadyRevisionName => String.t(),
           :observedGeneration => integer(),
-          :traffic => list(GoogleApi.CloudRun.V1alpha1.Model.TrafficTarget.t())
+          :traffic => list(GoogleApi.CloudRun.V1alpha1.Model.TrafficTarget.t()),
+          :url => String.t()
         }
 
   field(:address, as: GoogleApi.CloudRun.V1alpha1.Model.Addressable)
@@ -70,6 +75,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ServiceStatus do
   field(:latestReadyRevisionName)
   field(:observedGeneration)
   field(:traffic, as: GoogleApi.CloudRun.V1alpha1.Model.TrafficTarget, type: :list)
+  field(:url)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudRun.V1alpha1.Model.ServiceStatus do
