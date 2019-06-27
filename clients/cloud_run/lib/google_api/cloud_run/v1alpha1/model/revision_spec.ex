@@ -39,6 +39,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.RevisionSpec do
   *   `containers` (*type:* `list(GoogleApi.CloudRun.V1alpha1.Model.Container.t)`, *default:* `nil`) - Containers holds the single container that defines the unit of execution
       for this Revision. In the context of a Revision, we disallow a number of
       fields on this Container, including: name and lifecycle.
+      In Cloud Run, only a single container may be provided.
   *   `generation` (*type:* `integer()`, *default:* `nil`) - Deprecated and not currently populated by Cloud Run. See
       metadata.generation instead, which is the sequence number containing the
       latest generation of the desired state.

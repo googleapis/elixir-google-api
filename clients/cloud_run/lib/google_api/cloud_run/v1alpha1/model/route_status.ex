@@ -26,10 +26,11 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.RouteStatus do
   *   `conditions` (*type:* `list(GoogleApi.CloudRun.V1alpha1.Model.RouteCondition.t)`, *default:* `nil`) - Conditions communicates information about ongoing/complete
       reconciliation processes that bring the "spec" inline with the observed
       state of the world.
-  *   `domain` (*type:* `String.t`, *default:* `nil`) - Domain holds the top-level domain that will distribute traffic over the
-      provided targets. It generally has the form
-      https://{route-hash}-{project-hash}-{cluster-level-suffix}.a.run.app
-  *   `domainInternal` (*type:* `String.t`, *default:* `nil`) - For Cloud Run, identifical to domain.
+  *   `domain` (*type:* `String.t`, *default:* `nil`) - Deprecated - use url instead.
+      Domain holds the top-level domain that will distribute traffic over the
+      provided targets.
+  *   `domainInternal` (*type:* `String.t`, *default:* `nil`) - Deprecated - use address instead.
+      For Cloud Run, identifical to domain.
   *   `observedGeneration` (*type:* `integer()`, *default:* `nil`) - ObservedGeneration is the 'Generation' of the Route that
       was last processed by the controller.
 
