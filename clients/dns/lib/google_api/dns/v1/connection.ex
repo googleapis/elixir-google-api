@@ -37,5 +37,5 @@ defmodule GoogleApi.DNS.V1.Connection do
       "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
     ],
     otp_app: :google_api_dns,
-    base_url: "https://www.googleapis.com/dns/v1/projects/"
+    base_url: "https://dns.googleapis.com/dns/v1/projects/"
 end
