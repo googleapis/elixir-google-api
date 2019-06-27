@@ -427,7 +427,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
   end
 
   @doc """
-  Generates a set of file IDs which can be provided in create requests.
+  Generates a set of file IDs which can be provided in create or copy requests.
 
   ## Parameters
 
