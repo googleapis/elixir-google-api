@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.Addressable do
 
   ## Attributes
 
-  *   `hostname` (*type:* `String.t`, *default:* `nil`) - 
+  *   `hostname` (*type:* `String.t`, *default:* `nil`) - Deprecated - use url instead.
   *   `url` (*type:* `String.t`, *default:* `nil`) - 
   """
 
