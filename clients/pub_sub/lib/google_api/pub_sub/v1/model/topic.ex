@@ -27,12 +27,9 @@ defmodule GoogleApi.PubSub.V1.Model.Topic do
       The expected format is `projects/*/locations/*/keyRings/*/cryptoKeys/*`.
   *   `labels` (*type:* `map()`, *default:* `nil`) - See <a href="https://cloud.google.com/pubsub/docs/labels"> Creating and
       managing labels</a>.
-  *   `messageStoragePolicy` (*type:* `GoogleApi.PubSub.V1.Model.MessageStoragePolicy.t`, *default:* `nil`) - Policy constraining how messages published to the topic may be stored. It
-      is determined when the topic is created based on the policy configured at
-      the project level. It must not be set by the caller in the request to
-      CreateTopic or to UpdateTopic. This field will be populated in the
-      responses for GetTopic, CreateTopic, and UpdateTopic: if not present in the
-      response, then no constraints are in effect.
+  *   `messageStoragePolicy` (*type:* `GoogleApi.PubSub.V1.Model.MessageStoragePolicy.t`, *default:* `nil`) - Policy constraining the set of Google Cloud Platform regions where messages
+      published to the topic may be stored. If not present, then no constraints
+      are in effect.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the topic. It must have the format
       `"projects/{project}/topics/{topic}"`. `{topic}` must start with a letter,
       and contain only letters (`[A-Za-z]`), numbers (`[0-9]`), dashes (`-`),
