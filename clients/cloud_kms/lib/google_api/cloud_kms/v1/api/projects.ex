@@ -326,6 +326,10 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:options.requestedPolicyVersion` (*type:* `integer()`) - Optional. The policy format version to be returned.
+          Acceptable values are 0 and 1.
+          If the value is 0, or the field is omitted, policy format version 1 will be
+          returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -360,7 +364,8 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query
+      :upload_protocol => :query,
+      :"options.requestedPolicyVersion" => :query
     }
 
     request =
@@ -402,6 +407,11 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:filter` (*type:* `String.t`) - Optional. Only include resources that match the filter in the response
+          (https://cloud.google.com/kms/docs/sorting-and-filtering).
+      *   `:orderBy` (*type:* `String.t`) - Optional. Specify how the results should be sorted. If not specified, the
+          results will be sorted in the default order
+          (https://cloud.google.com/kms/docs/sorting-and-filtering).
       *   `:pageSize` (*type:* `integer()`) - Optional limit on the number of KeyRings to include in the
           response.  Further KeyRings can subsequently be obtained by
           including the ListKeyRingsResponse.next_page_token in a subsequent
@@ -441,6 +451,8 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :filter => :query,
+      :orderBy => :query,
       :pageSize => :query,
       :pageToken => :query
     }
@@ -656,6 +668,11 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:cryptoKeyId` (*type:* `String.t`) - Required. It must be unique within a KeyRing and match the regular
           expression `[a-zA-Z0-9_-]{1,63}`
+      *   `:skipInitialVersionCreation` (*type:* `boolean()`) - If set to true, the request will create a CryptoKey without any
+          CryptoKeyVersions. You must manually call
+          CreateCryptoKeyVersion or
+          ImportCryptoKeyVersion
+          before you can use this CryptoKey.
       *   `:body` (*type:* `GoogleApi.CloudKMS.V1.Model.CryptoKey.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -693,6 +710,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       :uploadType => :query,
       :upload_protocol => :query,
       :cryptoKeyId => :query,
+      :skipInitialVersionCreation => :query,
       :body => :body
     }
 
@@ -992,6 +1010,10 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:options.requestedPolicyVersion` (*type:* `integer()`) - Optional. The policy format version to be returned.
+          Acceptable values are 0 and 1.
+          If the value is 0, or the field is omitted, policy format version 1 will be
+          returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1028,7 +1050,8 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query
+      :upload_protocol => :query,
+      :"options.requestedPolicyVersion" => :query
     }
 
     request =
@@ -1072,6 +1095,11 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:filter` (*type:* `String.t`) - Optional. Only include resources that match the filter in the response
+          (https://cloud.google.com/kms/docs/sorting-and-filtering).
+      *   `:orderBy` (*type:* `String.t`) - Optional. Specify how the results should be sorted. If not specified, the
+          results will be sorted in the default order
+          (https://cloud.google.com/kms/docs/sorting-and-filtering).
       *   `:pageSize` (*type:* `integer()`) - Optional limit on the number of CryptoKeys to include in the
           response.  Further CryptoKeys can subsequently be obtained by
           including the ListCryptoKeysResponse.next_page_token in a subsequent
@@ -1115,6 +1143,8 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :filter => :query,
+      :orderBy => :query,
       :pageSize => :query,
       :pageToken => :query,
       :versionView => :query
@@ -2021,6 +2051,93 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   end
 
   @doc """
+  Imports a new CryptoKeyVersion into an existing CryptoKey using the
+  wrapped key material provided in the request.
+
+  The version ID will be assigned the next sequential id within the
+  CryptoKey.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the CryptoKey to
+      be imported into.
+  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `key_rings_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `crypto_keys_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.CloudKMS.V1.Model.ImportCryptoKeyVersionRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_import(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion.t()} | {:error, Tesla.Env.t()}
+  def cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_import(
+        connection,
+        projects_id,
+        locations_id,
+        key_rings_id,
+        crypto_keys_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}/cryptoKeys/{cryptoKeysId}/cryptoKeyVersions:import",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1),
+          "cryptoKeysId" => URI.encode(crypto_keys_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion{}])
+  end
+
+  @doc """
   Lists CryptoKeyVersions.
 
   ## Parameters
@@ -2043,6 +2160,11 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:filter` (*type:* `String.t`) - Optional. Only include resources that match the filter in the response
+          (https://cloud.google.com/kms/docs/sorting-and-filtering).
+      *   `:orderBy` (*type:* `String.t`) - Optional. Specify how the results should be sorted. If not specified, the
+          results will be sorted in the default order
+          (https://cloud.google.com/kms/docs/sorting-and-filtering).
       *   `:pageSize` (*type:* `integer()`) - Optional limit on the number of CryptoKeyVersions to
           include in the response. Further CryptoKeyVersions can
           subsequently be obtained by including the
@@ -2090,6 +2212,8 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :filter => :query,
+      :orderBy => :query,
       :pageSize => :query,
       :pageToken => :query,
       :view => :query
@@ -2304,6 +2428,170 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   end
 
   @doc """
+  Create a new ImportJob within a KeyRing.
+
+  ImportJob.import_method is required.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the KeyRing associated with the
+      ImportJobs.
+  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `key_rings_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:importJobId` (*type:* `String.t`) - Required. It must be unique within a KeyRing and match the regular
+          expression `[a-zA-Z0-9_-]{1,63}`
+      *   `:body` (*type:* `GoogleApi.CloudKMS.V1.Model.ImportJob.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.CloudKMS.V1.Model.ImportJob{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec cloudkms_projects_locations_key_rings_import_jobs_create(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.CloudKMS.V1.Model.ImportJob.t()} | {:error, Tesla.Env.t()}
+  def cloudkms_projects_locations_key_rings_import_jobs_create(
+        connection,
+        projects_id,
+        locations_id,
+        key_rings_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :importJobId => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}/importJobs",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudKMS.V1.Model.ImportJob{}])
+  end
+
+  @doc """
+  Returns metadata for a given ImportJob.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the ImportJob to get.
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `key_rings_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `import_jobs_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.CloudKMS.V1.Model.ImportJob{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec cloudkms_projects_locations_key_rings_import_jobs_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.CloudKMS.V1.Model.ImportJob.t()} | {:error, Tesla.Env.t()}
+  def cloudkms_projects_locations_key_rings_import_jobs_get(
+        connection,
+        projects_id,
+        locations_id,
+        key_rings_id,
+        import_jobs_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}/importJobs/{importJobsId}",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1),
+          "importJobsId" => URI.encode(import_jobs_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudKMS.V1.Model.ImportJob{}])
+  end
+
+  @doc """
   Gets the access control policy for a resource.
   Returns an empty policy if the resource exists and does not have a policy
   set.
@@ -2328,6 +2616,10 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:options.requestedPolicyVersion` (*type:* `integer()`) - Optional. The policy format version to be returned.
+          Acceptable values are 0 and 1.
+          If the value is 0, or the field is omitted, policy format version 1 will be
+          returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2364,7 +2656,8 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query
+      :upload_protocol => :query,
+      :"options.requestedPolicyVersion" => :query
     }
 
     request =
@@ -2384,6 +2677,99 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     connection
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.CloudKMS.V1.Model.Policy{}])
+  end
+
+  @doc """
+  Lists ImportJobs.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name of the KeyRing to list, in the format
+      `projects/*/locations/*/keyRings/*`.
+  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `key_rings_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:filter` (*type:* `String.t`) - Optional. Only include resources that match the filter in the response
+          (https://cloud.google.com/kms/docs/sorting-and-filtering).
+      *   `:orderBy` (*type:* `String.t`) - Optional. Specify how the results should be sorted. If not specified, the
+          results will be sorted in the default order
+          (https://cloud.google.com/kms/docs/sorting-and-filtering).
+      *   `:pageSize` (*type:* `integer()`) - Optional limit on the number of ImportJobs to include in the
+          response. Further ImportJobs can subsequently be obtained by
+          including the ListImportJobsResponse.next_page_token in a subsequent
+          request. If unspecified, the server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - Optional pagination token, returned earlier via
+          ListImportJobsResponse.next_page_token.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.CloudKMS.V1.Model.ListImportJobsResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec cloudkms_projects_locations_key_rings_import_jobs_list(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.CloudKMS.V1.Model.ListImportJobsResponse.t()} | {:error, Tesla.Env.t()}
+  def cloudkms_projects_locations_key_rings_import_jobs_list(
+        connection,
+        projects_id,
+        locations_id,
+        key_rings_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :filter => :query,
+      :orderBy => :query,
+      :pageSize => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}/importJobs",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudKMS.V1.Model.ListImportJobsResponse{}])
   end
 
   @doc """

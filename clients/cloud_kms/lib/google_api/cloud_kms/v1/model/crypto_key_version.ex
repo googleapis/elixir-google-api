@@ -45,6 +45,14 @@ defmodule GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion do
       DESTROY_SCHEDULED.
   *   `generateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time this CryptoKeyVersion's key material was
       generated.
+  *   `importFailureReason` (*type:* `String.t`, *default:* `nil`) - Output only. The root cause of an import failure. Only present if
+      state is
+      IMPORT_FAILED.
+  *   `importJob` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the ImportJob used to import this
+      CryptoKeyVersion. Only present if the underlying key material was
+      imported.
+  *   `importTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which this CryptoKeyVersion's key material
+      was imported.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name for this CryptoKeyVersion in the format
       `projects/*/locations/*/keyRings/*/cryptoKeys/*/cryptoKeyVersions/*`.
   *   `protectionLevel` (*type:* `String.t`, *default:* `nil`) - Output only. The ProtectionLevel describing how crypto operations are
@@ -61,6 +69,9 @@ defmodule GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion do
           :destroyEventTime => DateTime.t(),
           :destroyTime => DateTime.t(),
           :generateTime => DateTime.t(),
+          :importFailureReason => String.t(),
+          :importJob => String.t(),
+          :importTime => DateTime.t(),
           :name => String.t(),
           :protectionLevel => String.t(),
           :state => String.t()
@@ -72,6 +83,9 @@ defmodule GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion do
   field(:destroyEventTime, as: DateTime)
   field(:destroyTime, as: DateTime)
   field(:generateTime, as: DateTime)
+  field(:importFailureReason)
+  field(:importJob)
+  field(:importTime, as: DateTime)
   field(:name)
   field(:protectionLevel)
   field(:state)

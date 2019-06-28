@@ -55,7 +55,8 @@ defmodule GoogleApi.CloudKMS.V1.Model.CryptoKey do
       primary. For other keys, this field will be omitted.
   *   `purpose` (*type:* `String.t`, *default:* `nil`) - The immutable purpose of this CryptoKey.
   *   `rotationPeriod` (*type:* `String.t`, *default:* `nil`) - next_rotation_time will be advanced by this period when the service
-      automatically rotates a key. Must be at least one day.
+      automatically rotates a key. Must be at least 24 hours and at most
+      876,000 hours.
 
       If rotation_period is set, next_rotation_time must also be set.
 
