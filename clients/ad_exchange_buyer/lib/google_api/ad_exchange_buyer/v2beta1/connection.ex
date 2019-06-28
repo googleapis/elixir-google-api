@@ -27,6 +27,6 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Connection do
       # Manage your Ad Exchange buyer account configuration
       "https://www.googleapis.com/auth/adexchange.buyer"
     ],
-    otp_app: :google_api_adexchangebuyer2,
+    otp_app: :google_api_ad_exchange_buyer,
     base_url: "https://adexchangebuyer.googleapis.com/"
 end
