@@ -39,6 +39,16 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2InputAudioConfig 
       [Cloud Speech API
       documentation](https://cloud.google.com/speech-to-text/docs/basics) for
       more details.
+  *   `singleUtterance` (*type:* `boolean()`, *default:* `nil`) - Optional. If `false` (default), recognition does not cease until the
+      client closes the stream.
+      If `true`, the recognizer will detect a single spoken utterance in input
+      audio. Recognition ceases when it detects the audio's voice has
+      stopped or paused. In this case, once a detected intent is received, the
+      client should close the stream and start a new request with a new stream as
+      needed.
+      Note: This setting is relevant only for streaming methods.
+      Note: When specified, InputAudioConfig.single_utterance takes precedence
+      over StreamingDetectIntentRequest.single_utterance.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -48,7 +58,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2InputAudioConfig 
           :languageCode => String.t(),
           :modelVariant => String.t(),
           :phraseHints => list(String.t()),
-          :sampleRateHertz => integer()
+          :sampleRateHertz => integer(),
+          :singleUtterance => boolean()
         }
 
   field(:audioEncoding)
@@ -56,6 +67,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2InputAudioConfig 
   field(:modelVariant)
   field(:phraseHints, type: :list)
   field(:sampleRateHertz)
+  field(:singleUtterance)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2InputAudioConfig do
