@@ -22,16 +22,24 @@ defmodule GoogleApi.Storage.V1.Model.BucketIamConfiguration do
   ## Attributes
 
   *   `bucketPolicyOnly` (*type:* `GoogleApi.Storage.V1.Model.BucketIamConfigurationBucketPolicyOnly.t`, *default:* `nil`) - The bucket's Bucket Policy Only configuration.
+  *   `uniformBucketLevelAccess` (*type:* `GoogleApi.Storage.V1.Model.BucketIamConfigurationUniformBucketLevelAccess.t`, *default:* `nil`) - The bucket's uniform bucket-level access configuration.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :bucketPolicyOnly =>
-            GoogleApi.Storage.V1.Model.BucketIamConfigurationBucketPolicyOnly.t()
+            GoogleApi.Storage.V1.Model.BucketIamConfigurationBucketPolicyOnly.t(),
+          :uniformBucketLevelAccess =>
+            GoogleApi.Storage.V1.Model.BucketIamConfigurationUniformBucketLevelAccess.t()
         }
 
   field(:bucketPolicyOnly, as: GoogleApi.Storage.V1.Model.BucketIamConfigurationBucketPolicyOnly)
+
+  field(
+    :uniformBucketLevelAccess,
+    as: GoogleApi.Storage.V1.Model.BucketIamConfigurationUniformBucketLevelAccess
+  )
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Storage.V1.Model.BucketIamConfiguration do
