@@ -200,11 +200,6 @@
     "url": "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest"
   },
   {
-    "version": "v2",
-    "name": "ConsumerSurveys",
-    "url": "https://www.googleapis.com/discovery/v1/apis/consumersurveys/v2/rest"
-  },
-  {
     "version": "v1",
     "name": "Container",
     "url": "https://container.googleapis.com/$discovery/rest?version=v1"
@@ -240,9 +235,9 @@
     "url": "https://www.googleapis.com/discovery/v1/apis/deploymentmanager/v2/rest"
   },
   {
-    "version": "v2.8",
+    "version": "v3.3",
     "name": "DFAReporting",
-    "url": "https://www.googleapis.com/discovery/v1/apis/dfareporting/v2.8/rest"
+    "url": "https://www.googleapis.com/discovery/v1/apis/dfareporting/v3.3/rest",
   },
   {
     "version": "v2",
@@ -263,11 +258,6 @@
     "version": "v2",
     "name": "DLP",
     "url": "https://dlp.googleapis.com/$discovery/rest?version=v2"
-  },
-  {
-    "version": "v2beta1",
-    "name": "DLP",
-    "url": "https://dlp.googleapis.com/$discovery/rest?version=v2beta1"
   },
   {
     "version": "v1",
@@ -440,11 +430,6 @@
     "url": "https://www.googleapis.com/discovery/v1/apis/pagespeedonline/v4/rest"
   },
   {
-    "version": "v2",
-    "name": "Partners",
-    "url": "https://partners.googleapis.com/$discovery/rest?version=v2"
-  },
-  {
     "version": "v1",
     "name": "People",
     "url": "https://people.googleapis.com/$discovery/rest?version=v1"
@@ -485,14 +470,9 @@
     "url": "https://redis.googleapis.com/$discovery/rest?version=v1beta1"
   },
   {
-    "version": "v1beta2",
-    "name": "ReplicaPool",
-    "url": "https://www.googleapis.com/discovery/v1/apis/replicapool/v1beta2/rest"
-  },
-  {
     "version": "v1beta1",
-    "name": "ReplicaPoolUpdater",
-    "url": "https://www.googleapis.com/discovery/v1/apis/replicapoolupdater/v1beta1/rest"
+    "name": "ReplicaPool",
+    "url": "https://www.googleapis.com/discovery/v1/apis/replicapool/v1beta1/rest",
   },
   {
     "version": "v1",
@@ -570,11 +550,6 @@
     "url": "https://spanner.googleapis.com/$discovery/rest?version=v1"
   },
   {
-    "version": "v1explorer",
-    "name": "Spectrum",
-    "url": "https://www.googleapis.com/discovery/v1/apis/spectrum/v1explorer/rest"
-  },
-  {
     "version": "v1",
     "name": "Speech",
     "url": "https://speech.googleapis.com/$discovery/rest?version=v1"
@@ -608,11 +583,6 @@
     "version": "v2",
     "name": "TagManager",
     "url": "https://www.googleapis.com/discovery/v1/apis/tagmanager/v2/rest"
-  },
-  {
-    "version": "v1beta2",
-    "name": "TaskQueue",
-    "url": "https://www.googleapis.com/discovery/v1/apis/taskqueue/v1beta2/rest"
   },
   {
     "version": "v1",
@@ -660,11 +630,6 @@
     "url": "https://videointelligence.googleapis.com/$discovery/rest?version=v1"
   },
   {
-    "version": "v1beta1",
-    "name": "VideoIntelligence",
-    "url": "https://videointelligence.googleapis.com/$discovery/rest?version=v1beta1"
-  },
-  {
     "version": "v1",
     "name": "Vision",
     "url": "https://vision.googleapis.com/$discovery/rest?version=v1"
@@ -693,6 +658,11 @@
     "version": "v1",
     "name": "YouTubeAnalytics",
     "url": "https://www.googleapis.com/discovery/v1/apis/youtubeAnalytics/v1/rest"
+  },
+  {
+    "version": "v2",
+    "url": "https://youtubeanalytics.googleapis.com/$discovery/rest?version=v2",
+    "name": "YouTubeAnalytics"
   },
   {
     "version": "v1",
