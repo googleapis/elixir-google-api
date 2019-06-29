@@ -17,7 +17,7 @@
 
 defmodule <%= namespace %>.Api.<%= api.name %> do
   @moduledoc """
-  <%= indent_subsequent(api.description, 2) %>
+  <%= render_description(api.description, indent_subsequent: 2) %>
   """
 
   alias <%= namespace %>.Connection
@@ -25,14 +25,14 @@ defmodule <%= namespace %>.Api.<%= api.name %> do
 
   <%= for endpoint <- api.endpoints do %>
   @doc """
-  <%= indent_subsequent(endpoint.description, 2) %>
+  <%= render_description(endpoint.description, indent_subsequent: 2) %>
 
   ## Parameters
 
   *   `connection` (*type:* `<%= namespace %>.Connection.t`) - Connection to server<%= for parameter <- endpoint.required_parameters do %>
-  *   `<%= parameter.variable_name %>` (*type:* `<%= parameter.type.typespec %>`) - <%= indent_subsequent(parameter.description, 6) %><% end %>
+  *   `<%= parameter.variable_name %>` (*type:* `<%= parameter.type.typespec %>`) - <%= render_description(parameter.description, indent_subsequent: 6) %><% end %>
   *   `optional_params` (*type:* `keyword()`) - Optional parameters<%= for parameter <- global_optional_parameters ++ endpoint.optional_parameters do %>
-      *   `:<%= parameter.name %>` (*type:* `<%= parameter.type.typespec %>`) - <%= indent_subsequent(parameter.description, 10) %><% end %>
+      *   `:<%= parameter.name %>` (*type:* `<%= parameter.type.typespec %>`) - <%= render_description(parameter.description, indent_subsequent: 10) %><% end %>
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns

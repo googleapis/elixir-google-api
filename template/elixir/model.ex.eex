@@ -17,11 +17,11 @@
 
 defmodule <%= namespace %>.Model.<%= model.name %> do
   @moduledoc """
-  <%= indent_subsequent(model.description, 2) %>
+  <%= render_description(model.description, indent_subsequent: 2) %>
 
   ## Attributes
   <%= for property <- model.properties do %>
-  *   `<%= property.name %>` (*type:* `<%= property.type.typespec %>`, *default:* `<%= GoogleApis.Generator.ElixirGenerator.Model.value_string(property.default) %>`) - <%= indent_subsequent(property.description, 6) %><% end %>
+  *   `<%= property.name %>` (*type:* `<%= property.type.typespec %>`, *default:* `<%= GoogleApis.Generator.ElixirGenerator.Model.value_string(property.default) %>`) - <%= render_description(property.description, indent_subsequent: 6) %><% end %>
   """
 
   use GoogleApi.Gax.ModelBase
