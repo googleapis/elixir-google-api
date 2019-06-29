@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.Reservation do
   @moduledoc """
-  Reservation resource NextID: 13
+  Represents a reservation resource. A reservation ensures that capacity is held in a specific zone even if the reserved VMs are not running. For more information, read  Reserving zonal resources. (== resource_for beta.reservations ==) (== resource_for v1.reservations ==) (== NextID: 13 ==)
 
   ## Attributes
 
@@ -29,7 +29,7 @@ defmodule GoogleApi.Compute.V1.Model.Reservation do
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined fully-qualified URL for this resource.
   *   `specificReservation` (*type:* `GoogleApi.Compute.V1.Model.AllocationSpecificSKUReservation.t`, *default:* `nil`) - Reservation for instances with specific machine shapes.
-  *   `specificReservationRequired` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the reservation can be consumed by VMs with "any reservation" defined. If the field is set, then only VMs that target the reservation by name using --reservation-affinity can consume this reservation.
+  *   `specificReservationRequired` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the reservation can be consumed by VMs with affinity for "any" reservation. If the field is set, then only VMs that target the reservation by name can consume from this reservation.
   *   `status` (*type:* `String.t`, *default:* `nil`) - [Output Only] The status of the reservation.
   *   `zone` (*type:* `String.t`, *default:* `nil`) - Zone in which the reservation resides, must be provided if reservation is created with commitment creation.
   """
