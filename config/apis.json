@@ -237,7 +237,7 @@
   {
     "version": "v3.3",
     "name": "DFAReporting",
-    "url": "https://www.googleapis.com/discovery/v1/apis/dfareporting/v3.3/rest",
+    "url": "https://www.googleapis.com/discovery/v1/apis/dfareporting/v3.3/rest"
   },
   {
     "version": "v2",
@@ -472,7 +472,7 @@
   {
     "version": "v1beta1",
     "name": "ReplicaPool",
-    "url": "https://www.googleapis.com/discovery/v1/apis/replicapool/v1beta1/rest",
+    "url": "https://www.googleapis.com/discovery/v1/apis/replicapool/v1beta1/rest"
   },
   {
     "version": "v1",
