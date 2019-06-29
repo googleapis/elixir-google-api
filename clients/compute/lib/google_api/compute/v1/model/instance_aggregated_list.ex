@@ -22,7 +22,7 @@ defmodule GoogleApi.Compute.V1.Model.InstanceAggregatedList do
   ## Attributes
 
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] Unique identifier for the resource; defined by the server.
-  *   `items` (*type:* `%{optional(String.t) => GoogleApi.Compute.V1.Model.InstancesScopedList.t}`, *default:* `nil`) - A list of InstancesScopedList resources.
+  *   `items` (*type:* `%{optional(String.t) => GoogleApi.Compute.V1.Model.InstancesScopedList.t}`, *default:* `nil`) - An object that contains a list of instances scoped by zone.
   *   `kind` (*type:* `String.t`, *default:* `compute#instanceAggregatedList`) - [Output Only] Type of resource. Always compute#instanceAggregatedList for aggregated lists of Instance resources.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for this resource.

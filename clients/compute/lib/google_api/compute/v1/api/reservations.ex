@@ -292,7 +292,7 @@ defmodule GoogleApi.Compute.V1.Api.Reservations do
   end
 
   @doc """
-  Creates a new reservation.
+  Creates a new reservation. For more information, read Reserving zonal resources.
 
   ## Parameters
 
