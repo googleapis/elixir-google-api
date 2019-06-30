@@ -30,6 +30,6 @@ defmodule GoogleApi.Webmaster.V3.Connection do
       # View Search Console data for your verified sites
       "https://www.googleapis.com/auth/webmasters.readonly"
     ],
-    otp_app: :google_api_webmasters,
+    otp_app: :google_api_webmaster,
     base_url: "https://www.googleapis.com/webmasters/v3/"
 end
