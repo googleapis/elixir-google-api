@@ -38,10 +38,14 @@ defmodule GoogleApis.Generator.ElixirGenerator.Renderer do
     :base_url
   ])
 
-  defp indent_subsequent(nil, _spaces), do: nil
+  defp render_description(nil, _args), do: nil
 
-  defp indent_subsequent(str, spaces) do
+  defp render_description(str, args) do
+    spaces = Keyword.get(args, :indent_subsequent, 0)
     prefix = " " |> List.duplicate(spaces) |> Enum.join()
-    String.replace(str, ~r{(\n+)([^\n])}, "\\1#{prefix}\\2")
+    str
+    |> String.replace("\"\"\"", "\\\"\\\"\\\"")
+    |> String.replace("\\", "\\\\")
+    |> String.replace(~r{(\n+)([^\n])}, "\\1#{prefix}\\2")
   end
 end
