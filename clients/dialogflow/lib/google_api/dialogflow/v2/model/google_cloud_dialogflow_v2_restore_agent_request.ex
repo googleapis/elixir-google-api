@@ -24,14 +24,14 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2RestoreAgentReque
   *   `agentContent` (*type:* `String.t`, *default:* `nil`) - The agent to restore.
 
       Example for how to restore an agent via the command line:
-      <pre>curl \
-        'https://dialogflow.googleapis.com/v2/projects/&lt;project_name&gt;/agent:restore\
-         -X POST \
+      <pre>curl \\
+        'https://dialogflow.googleapis.com/v2/projects/&lt;project_name&gt;/agent:restore\\
+         -X POST \\
          -H 'Authorization: Bearer '$(gcloud auth application-default
-         print-access-token) \
-         -H 'Accept: application/json' \
-         -H 'Content-Type: application/json' \
-         --compressed \
+         print-access-token) \\
+         -H 'Accept: application/json' \\
+         -H 'Content-Type: application/json' \\
+         --compressed \\
          --data-binary "{
              'agentContent': '$(cat &lt;agent zip file&gt; | base64 -w 0)'
          }"</pre>
