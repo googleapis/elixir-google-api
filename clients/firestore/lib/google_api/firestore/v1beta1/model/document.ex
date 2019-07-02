@@ -50,8 +50,8 @@ defmodule GoogleApi.Firestore.V1beta1.Model.Document do
 
       Within a field path, a quoted field name starts and ends with `` ` `` and
       may contain any character. Some characters, including `` ` ``, must be
-      escaped using a `\`. For example, `` `x&y` `` represents `x&y` and
-      `` `bak\`tik` `` represents `` bak`tik ``.
+      escaped using a `\\`. For example, `` `x&y` `` represents `x&y` and
+      `` `bak\\`tik` `` represents `` bak`tik ``.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the document, for example
       `projects/{project_id}/databases/{database_id}/documents/{document_path}`.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which the document was last changed.
