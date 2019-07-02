@@ -24,7 +24,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CreateStoredInfoTypeRequest d
   *   `config` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredInfoTypeConfig.t`, *default:* `nil`) - Configuration of the storedInfoType to create.
   *   `storedInfoTypeId` (*type:* `String.t`, *default:* `nil`) - The storedInfoType ID can contain uppercase and lowercase letters,
       numbers, and hyphens; that is, it must match the regular
-      expression: `[a-zA-Z\\d-_]+`. The maximum length is 100
+      expression: `[a-zA-Z\\\\d-_]+`. The maximum length is 100
       characters. Can be empty to allow the system to generate one.
   """
 

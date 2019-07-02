@@ -889,7 +889,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
           * inspected_storage = cloud_storage AND state = done
           * inspected_storage = cloud_storage OR inspected_storage = bigquery
           * inspected_storage = cloud_storage AND (state = done OR state = canceled)
-          * end_time > \"2017-12-12T00:00:00+00:00\"
+          * end_time > \\"2017-12-12T00:00:00+00:00\\"
 
           The length of this field should be no more than 500 characters.
       *   `:orderBy` (*type:* `String.t`) - Optional comma separated list of fields to order by,
@@ -1637,7 +1637,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
           * inspected_storage = cloud_storage AND status = HEALTHY
           * inspected_storage = cloud_storage OR inspected_storage = bigquery
           * inspected_storage = cloud_storage AND (state = PAUSED OR state = HEALTHY)
-          * last_run_time > \"2017-12-12T00:00:00+00:00\"
+          * last_run_time > \\"2017-12-12T00:00:00+00:00\\"
 
           The length of this field should be no more than 500 characters.
       *   `:orderBy` (*type:* `String.t`) - Optional comma separated list of triggeredJob fields to order by,
