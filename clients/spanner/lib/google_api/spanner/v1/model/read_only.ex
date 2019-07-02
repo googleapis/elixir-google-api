@@ -53,7 +53,7 @@ defmodule GoogleApi.Spanner.V1.Model.ReadOnly do
 
       Note that this option can only be used in single-use transactions.
 
-      A timestamp in RFC3339 UTC \"Zulu\" format, accurate to nanoseconds.
+      A timestamp in RFC3339 UTC \\"Zulu\\" format, accurate to nanoseconds.
       Example: `"2014-10-02T15:01:23.045123456Z"`.
   *   `readTimestamp` (*type:* `DateTime.t`, *default:* `nil`) - Executes all reads at the given timestamp. Unlike other modes,
       reads at a specific timestamp are repeatable; the same read at
@@ -65,7 +65,7 @@ defmodule GoogleApi.Spanner.V1.Model.ReadOnly do
       for coordinating many reads against a consistent snapshot of the
       data.
 
-      A timestamp in RFC3339 UTC \"Zulu\" format, accurate to nanoseconds.
+      A timestamp in RFC3339 UTC \\"Zulu\\" format, accurate to nanoseconds.
       Example: `"2014-10-02T15:01:23.045123456Z"`.
   *   `returnReadTimestamp` (*type:* `boolean()`, *default:* `nil`) - If true, the Cloud Spanner-selected read timestamp is included in
       the Transaction message that describes the transaction.
