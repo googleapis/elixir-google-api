@@ -237,7 +237,8 @@ defmodule GoogleApi.BigQuery.V2.Api.Routines do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:maxResults` (*type:* `integer()`) - The maximum number of results per page.
+      *   `:maxResults` (*type:* `integer()`) - The maximum number of results to return in a single response page.
+          Leverage the page tokens to iterate through the entire collection.
       *   `:pageToken` (*type:* `String.t`) - Page token, returned by a previous call, to request the next page of
           results
   *   `opts` (*type:* `keyword()`) - Call options
