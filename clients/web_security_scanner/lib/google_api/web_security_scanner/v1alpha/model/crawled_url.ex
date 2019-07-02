@@ -23,13 +23,10 @@ defmodule GoogleApi.WebSecurityScanner.V1alpha.Model.CrawledUrl do
 
   ## Attributes
 
-  *   `body` (*type:* `String.t`, *default:* `nil`) - Output only.
-      The body of the request that was used to visit the URL.
-  *   `httpMethod` (*type:* `String.t`, *default:* `nil`) - Output only.
-      The http method of the request that was used to visit the URL, in
+  *   `body` (*type:* `String.t`, *default:* `nil`) - Output only. The body of the request that was used to visit the URL.
+  *   `httpMethod` (*type:* `String.t`, *default:* `nil`) - Output only. The http method of the request that was used to visit the URL, in
       uppercase.
-  *   `url` (*type:* `String.t`, *default:* `nil`) - Output only.
-      The URL that was crawled.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - Output only. The URL that was crawled.
   """
 
   use GoogleApi.Gax.ModelBase

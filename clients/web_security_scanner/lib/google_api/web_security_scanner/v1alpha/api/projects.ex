@@ -29,8 +29,7 @@ defmodule GoogleApi.WebSecurityScanner.V1alpha.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.WebSecurityScanner.V1alpha.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required.
-      The parent resource name where the scan is created, which should be a
+  *   `parent` (*type:* `String.t`) - Required. The parent resource name where the scan is created, which should be a
       project resource name in the format 'projects/{projectId}'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
@@ -100,8 +99,7 @@ defmodule GoogleApi.WebSecurityScanner.V1alpha.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.WebSecurityScanner.V1alpha.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required.
-      The resource name of the ScanConfig to be deleted. The name follows the
+  *   `name` (*type:* `String.t`) - Required. The resource name of the ScanConfig to be deleted. The name follows the
       format of 'projects/{projectId}/scanConfigs/{scanConfigId}'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
@@ -167,8 +165,7 @@ defmodule GoogleApi.WebSecurityScanner.V1alpha.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.WebSecurityScanner.V1alpha.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required.
-      The resource name of the ScanConfig to be returned. The name follows the
+  *   `name` (*type:* `String.t`) - Required. The resource name of the ScanConfig to be returned. The name follows the
       format of 'projects/{projectId}/scanConfigs/{scanConfigId}'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
@@ -236,8 +233,7 @@ defmodule GoogleApi.WebSecurityScanner.V1alpha.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.WebSecurityScanner.V1alpha.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required.
-      The parent resource name, which should be a project resource name in the
+  *   `parent` (*type:* `String.t`) - Required. The parent resource name, which should be a project resource name in the
       format 'projects/{projectId}'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
@@ -330,8 +326,7 @@ defmodule GoogleApi.WebSecurityScanner.V1alpha.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Required.
-          The update mask applies to the resource. For the `FieldMask` definition,
+      *   `:updateMask` (*type:* `String.t`) - Required. The update mask applies to the resource. For the `FieldMask` definition,
           see
           https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
       *   `:body` (*type:* `GoogleApi.WebSecurityScanner.V1alpha.Model.ScanConfig.t`) - 
@@ -391,8 +386,7 @@ defmodule GoogleApi.WebSecurityScanner.V1alpha.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.WebSecurityScanner.V1alpha.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required.
-      The resource name of the ScanConfig to be used. The name follows the
+  *   `name` (*type:* `String.t`) - Required. The resource name of the ScanConfig to be used. The name follows the
       format of 'projects/{projectId}/scanConfigs/{scanConfigId}'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
@@ -461,8 +455,7 @@ defmodule GoogleApi.WebSecurityScanner.V1alpha.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.WebSecurityScanner.V1alpha.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required.
-      The resource name of the ScanRun to be returned. The name follows the
+  *   `name` (*type:* `String.t`) - Required. The resource name of the ScanRun to be returned. The name follows the
       format of
       'projects/{projectId}/scanConfigs/{scanConfigId}/scanRuns/{scanRunId}'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -531,8 +524,7 @@ defmodule GoogleApi.WebSecurityScanner.V1alpha.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.WebSecurityScanner.V1alpha.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required.
-      The parent resource name, which should be a scan resource name in the
+  *   `parent` (*type:* `String.t`) - Required. The parent resource name, which should be a scan resource name in the
       format 'projects/{projectId}/scanConfigs/{scanConfigId}'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
@@ -610,8 +602,7 @@ defmodule GoogleApi.WebSecurityScanner.V1alpha.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.WebSecurityScanner.V1alpha.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required.
-      The resource name of the ScanRun to be stopped. The name follows the
+  *   `name` (*type:* `String.t`) - Required. The resource name of the ScanRun to be stopped. The name follows the
       format of
       'projects/{projectId}/scanConfigs/{scanConfigId}/scanRuns/{scanRunId}'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -681,8 +672,7 @@ defmodule GoogleApi.WebSecurityScanner.V1alpha.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.WebSecurityScanner.V1alpha.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required.
-      The parent resource name, which should be a scan run resource name in the
+  *   `parent` (*type:* `String.t`) - Required. The parent resource name, which should be a scan run resource name in the
       format
       'projects/{projectId}/scanConfigs/{scanConfigId}/scanRuns/{scanRunId}'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -761,8 +751,7 @@ defmodule GoogleApi.WebSecurityScanner.V1alpha.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.WebSecurityScanner.V1alpha.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required.
-      The parent resource name, which should be a scan run resource name in the
+  *   `parent` (*type:* `String.t`) - Required. The parent resource name, which should be a scan run resource name in the
       format
       'projects/{projectId}/scanConfigs/{scanConfigId}/scanRuns/{scanRunId}'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -833,8 +822,7 @@ defmodule GoogleApi.WebSecurityScanner.V1alpha.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.WebSecurityScanner.V1alpha.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required.
-      The resource name of the Finding to be returned. The name follows the
+  *   `name` (*type:* `String.t`) - Required. The resource name of the Finding to be returned. The name follows the
       format of
       'projects/{projectId}/scanConfigs/{scanConfigId}/scanRuns/{scanRunId}/findings/{findingId}'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -902,8 +890,7 @@ defmodule GoogleApi.WebSecurityScanner.V1alpha.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.WebSecurityScanner.V1alpha.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required.
-      The parent resource name, which should be a scan run resource name in the
+  *   `parent` (*type:* `String.t`) - Required. The parent resource name, which should be a scan run resource name in the
       format
       'projects/{projectId}/scanConfigs/{scanConfigId}/scanRuns/{scanRunId}'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
