@@ -18,7 +18,7 @@
 defmodule GoogleApi.Testing.V1.Model.AndroidTestLoop do
   @moduledoc """
   A test of an Android Application with a Test Loop.
-  The intent \<intent-name\> will be implicitly added, since Games is the only
+  The intent \\<intent-name\\> will be implicitly added, since Games is the only
   user of this api, for the time being.
 
   ## Attributes
