@@ -23,14 +23,15 @@ defmodule GoogleApi.DFAReporting.V33.Model.Conversion do
 
   *   `childDirectedTreatment` (*type:* `boolean()`, *default:* `nil`) - Whether this particular request may come from a user under the age of 13, under COPPA compliance.
   *   `customVariables` (*type:* `list(GoogleApi.DFAReporting.V33.Model.CustomFloodlightVariable.t)`, *default:* `nil`) - Custom floodlight variables.
-  *   `encryptedUserId` (*type:* `String.t`, *default:* `nil`) - The alphanumeric encrypted user ID. When set, encryptionInfo should also be specified. This field is mutually exclusive with encryptedUserIdCandidates[], mobileDeviceId and gclid. This or encryptedUserIdCandidates[] or mobileDeviceId or gclid is a required field.
-  *   `encryptedUserIdCandidates` (*type:* `list(String.t)`, *default:* `nil`) - A list of the alphanumeric encrypted user IDs. Any user ID with exposure prior to the conversion timestamp will be used in the inserted conversion. If no such user ID is found then the conversion will be rejected with NO_COOKIE_MATCH_FOUND error. When set, encryptionInfo should also be specified. This field may only be used when calling batchinsert; it is not supported by batchupdate. This field is mutually exclusive with encryptedUserId, mobileDeviceId and gclid. This or encryptedUserId or mobileDeviceId or gclid is a required field.
+  *   `encryptedUserId` (*type:* `String.t`, *default:* `nil`) - The alphanumeric encrypted user ID. When set, encryptionInfo should also be specified. This field is mutually exclusive with encryptedUserIdCandidates[], matchId, mobileDeviceId and gclid. This or encryptedUserIdCandidates[] or matchId or mobileDeviceId or gclid is a required field.
+  *   `encryptedUserIdCandidates` (*type:* `list(String.t)`, *default:* `nil`) - A list of the alphanumeric encrypted user IDs. Any user ID with exposure prior to the conversion timestamp will be used in the inserted conversion. If no such user ID is found then the conversion will be rejected with NO_COOKIE_MATCH_FOUND error. When set, encryptionInfo should also be specified. This field may only be used when calling batchinsert; it is not supported by batchupdate. This field is mutually exclusive with encryptedUserId, matchId, mobileDeviceId and gclid. This or encryptedUserId or matchId or mobileDeviceId or gclid is a required field.
   *   `floodlightActivityId` (*type:* `String.t`, *default:* `nil`) - Floodlight Activity ID of this conversion. This is a required field.
   *   `floodlightConfigurationId` (*type:* `String.t`, *default:* `nil`) - Floodlight Configuration ID of this conversion. This is a required field.
-  *   `gclid` (*type:* `String.t`, *default:* `nil`) - The Google click ID. This field is mutually exclusive with encryptedUserId, encryptedUserIdCandidates[] and mobileDeviceId. This or encryptedUserId or encryptedUserIdCandidates[] or mobileDeviceId is a required field.
+  *   `gclid` (*type:* `String.t`, *default:* `nil`) - The Google click ID. This field is mutually exclusive with encryptedUserId, encryptedUserIdCandidates[], matchId and mobileDeviceId. This or encryptedUserId or encryptedUserIdCandidates[] or matchId or mobileDeviceId is a required field.
   *   `kind` (*type:* `String.t`, *default:* `dfareporting#conversion`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#conversion".
   *   `limitAdTracking` (*type:* `boolean()`, *default:* `nil`) - Whether Limit Ad Tracking is enabled. When set to true, the conversion will be used for reporting but not targeting. This will prevent remarketing.
-  *   `mobileDeviceId` (*type:* `String.t`, *default:* `nil`) - The mobile device ID. This field is mutually exclusive with encryptedUserId, encryptedUserIdCandidates[] and gclid. This or encryptedUserId or encryptedUserIdCandidates[] or gclid is a required field.
+  *   `matchId` (*type:* `String.t`, *default:* `nil`) - The match ID field. A match ID is your own first-party identifier that has been synced with Google using the match ID feature in Floodlight. This field is mutually exclusive with encryptedUserId, encryptedUserIdCandidates[],mobileDeviceId and gclid. This or encryptedUserId or encryptedUserIdCandidates[] or mobileDeviceId or gclid is a required field.
+  *   `mobileDeviceId` (*type:* `String.t`, *default:* `nil`) - The mobile device ID. This field is mutually exclusive with encryptedUserId, encryptedUserIdCandidates[], matchId and gclid. This or encryptedUserId or encryptedUserIdCandidates[] or matchId or gclid is a required field.
   *   `nonPersonalizedAd` (*type:* `boolean()`, *default:* `nil`) - Whether the conversion was for a non personalized ad.
   *   `ordinal` (*type:* `String.t`, *default:* `nil`) - The ordinal of the conversion. Use this field to control how conversions of the same user and day are de-duplicated. This is a required field.
   *   `quantity` (*type:* `String.t`, *default:* `nil`) - The quantity of the conversion.
@@ -51,6 +52,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.Conversion do
           :gclid => String.t(),
           :kind => String.t(),
           :limitAdTracking => boolean(),
+          :matchId => String.t(),
           :mobileDeviceId => String.t(),
           :nonPersonalizedAd => boolean(),
           :ordinal => String.t(),
@@ -75,6 +77,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.Conversion do
   field(:gclid)
   field(:kind)
   field(:limitAdTracking)
+  field(:matchId)
   field(:mobileDeviceId)
   field(:nonPersonalizedAd)
   field(:ordinal)

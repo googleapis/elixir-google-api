@@ -22,7 +22,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.UniversalAdId do
   ## Attributes
 
   *   `registry` (*type:* `String.t`, *default:* `nil`) - Registry used for the Ad ID value.
-  *   `value` (*type:* `String.t`, *default:* `nil`) - ID value for this creative. Only alphanumeric characters and the following symbols are valid: "_/\-". Maximum length is 64 characters. Read only when registry is DCM.
+  *   `value` (*type:* `String.t`, *default:* `nil`) - ID value for this creative. Only alphanumeric characters and the following symbols are valid: "_/\\-". Maximum length is 64 characters. Read only when registry is DCM.
   """
 
   use GoogleApi.Gax.ModelBase
