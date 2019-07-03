@@ -23,7 +23,7 @@ defmodule GoogleApi.Tasks.V1.Model.Task do
 
   *   `completed` (*type:* `DateTime.t`, *default:* `nil`) - Completion date of the task (as a RFC 3339 timestamp). This field is omitted if the task has not been completed.
   *   `deleted` (*type:* `boolean()`, *default:* `nil`) - Flag indicating whether the task has been deleted. The default if False.
-  *   `due` (*type:* `DateTime.t`, *default:* `nil`) - Due date of the task (as a RFC 3339 timestamp). Optional.
+  *   `due` (*type:* `DateTime.t`, *default:* `nil`) - Due date of the task (as a RFC 3339 timestamp). Optional. The due date only records date information; the time portion of the timestamp is discarded when setting the due date. It isn't possible to read or write the time that a task is due via the API.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
   *   `hidden` (*type:* `boolean()`, *default:* `nil`) - Flag indicating whether the task is hidden. This is the case if the task had been marked completed when the task list was last cleared. The default is False. This field is read-only.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Task identifier.
