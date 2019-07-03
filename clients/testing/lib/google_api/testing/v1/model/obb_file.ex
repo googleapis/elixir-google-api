@@ -26,7 +26,7 @@ defmodule GoogleApi.Testing.V1.Model.ObbFile do
       Android
       e.g. [main|patch].0300110.com.example.android.obb
       which will be installed into
-        \<shared-storage\>/Android/obb/\<package-name\>/
+        \\<shared-storage\\>/Android/obb/\\<package-name\\>/
       on the device.
   """
 
