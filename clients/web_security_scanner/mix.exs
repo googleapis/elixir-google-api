@@ -1,7 +1,7 @@
 defmodule GoogleApi.WebSecurityScanner.V1alpha.Mixfile do
   use Mix.Project
 
-  @version "0.3.0"
+  @version "0.3.1"
 
   def project do
     [app: :google_api_web_security_scanner,
