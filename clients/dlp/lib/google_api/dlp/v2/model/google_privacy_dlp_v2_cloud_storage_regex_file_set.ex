@@ -44,7 +44,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CloudStorageRegexFileSet do
 
   Some other common use cases:
 
-  * `{bucket_name: "mybucket", exclude_regex: [".*\.pdf"]}` will include all
+  * `{bucket_name: "mybucket", exclude_regex: [".*\\.pdf"]}` will include all
   files in `mybucket` except for .pdf files
   * `{bucket_name: "mybucket", include_regex: ["directory/[^/]+"]}` will
   include all files directly under `gs://mybucket/directory/`, without matching

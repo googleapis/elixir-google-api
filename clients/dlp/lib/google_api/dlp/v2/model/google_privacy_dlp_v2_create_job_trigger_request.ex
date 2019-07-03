@@ -24,7 +24,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CreateJobTriggerRequest do
   *   `jobTrigger` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2JobTrigger.t`, *default:* `nil`) - The JobTrigger to create.
   *   `triggerId` (*type:* `String.t`, *default:* `nil`) - The trigger id can contain uppercase and lowercase letters,
       numbers, and hyphens; that is, it must match the regular
-      expression: `[a-zA-Z\\d-_]+`. The maximum length is 100
+      expression: `[a-zA-Z\\\\d-_]+`. The maximum length is 100
       characters. Can be empty to allow the system to generate one.
   """
 
