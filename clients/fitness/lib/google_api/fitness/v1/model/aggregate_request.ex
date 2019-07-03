@@ -27,7 +27,7 @@ defmodule GoogleApi.Fitness.V1.Model.AggregateRequest do
   *   `bucketBySession` (*type:* `GoogleApi.Fitness.V1.Model.BucketBySession.t`, *default:* `nil`) - Specifies that data be aggregated by user sessions. Data that does not fall within the time range of a session will not be included in the response. Mutually exclusive of other bucketing specifications.
   *   `bucketByTime` (*type:* `GoogleApi.Fitness.V1.Model.BucketByTime.t`, *default:* `nil`) - Specifies that data be aggregated by a single time interval. Mutually exclusive of other bucketing specifications.
   *   `endTimeMillis` (*type:* `String.t`, *default:* `nil`) - The end of a window of time. Data that intersects with this time window will be aggregated. The time is in milliseconds since epoch, inclusive.
-  *   `filteredDataQualityStandard` (*type:* `list(String.t)`, *default:* `nil`) - DO NOT POPULATE THIS FIELD. As data quality standards are deprecated, filling it in will result in no data sources being returned. It will be removed in a future version entirely.
+  *   `filteredDataQualityStandard` (*type:* `list(String.t)`, *default:* `nil`) - DO NOT POPULATE THIS FIELD. It is ignored.
   *   `startTimeMillis` (*type:* `String.t`, *default:* `nil`) - The start of a window of time. Data that intersects with this time window will be aggregated. The time is in milliseconds since epoch, inclusive.
   """
 
