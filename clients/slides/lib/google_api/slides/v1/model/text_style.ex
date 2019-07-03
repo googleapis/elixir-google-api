@@ -72,7 +72,7 @@ defmodule GoogleApi.Slides.V1.Model.TextStyle do
       * Setting a link on a text range that overlaps with an existing link will
         also update the existing link to point to the new URL.
       * Links are not settable on newline characters. As a result, setting a link
-        on a text range that crosses a paragraph boundary, such as `"ABC\n123"`,
+        on a text range that crosses a paragraph boundary, such as `"ABC\\n123"`,
         will separate the newline character(s) into their own text runs. The
         link will be applied separately to the runs before and after the newline.
       * Removing a link will update the text style of the range to match the
