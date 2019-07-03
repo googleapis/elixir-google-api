@@ -24,6 +24,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Dataset do
   *   `access` (*type:* `list(GoogleApi.BigQuery.V2.Model.DatasetAccess.t)`, *default:* `nil`) - [Optional] An array of objects that define dataset access for one or more entities. You can set this property when inserting or updating a dataset in order to control who is allowed to access the data. If unspecified at dataset creation time, BigQuery adds default dataset access for the following entities: access.specialGroup: projectReaders; access.role: READER; access.specialGroup: projectWriters; access.role: WRITER; access.specialGroup: projectOwners; access.role: OWNER; access.userByEmail: [dataset creator email]; access.role: OWNER;
   *   `creationTime` (*type:* `String.t`, *default:* `nil`) - [Output-only] The time when this dataset was created, in milliseconds since the epoch.
   *   `datasetReference` (*type:* `GoogleApi.BigQuery.V2.Model.DatasetReference.t`, *default:* `nil`) - [Required] A reference that identifies the dataset.
+  *   `defaultEncryptionConfiguration` (*type:* `GoogleApi.BigQuery.V2.Model.EncryptionConfiguration.t`, *default:* `nil`) - 
   *   `defaultPartitionExpirationMs` (*type:* `String.t`, *default:* `nil`) - [Optional] The default partition expiration for all partitioned tables in the dataset, in milliseconds. Once this property is set, all newly-created partitioned tables in the dataset will have an expirationMs property in the timePartitioning settings set to this value, and changing the value will only affect new tables, not existing ones. The storage in a partition will have an expiration time of its partition time plus this value. Setting this property overrides the use of defaultTableExpirationMs for partitioned tables: only one of defaultTableExpirationMs and defaultPartitionExpirationMs will be used for any new partitioned table. If you provide an explicit timePartitioning.expirationMs when creating or updating a partitioned table, that value takes precedence over the default partition expiration time indicated by this property.
   *   `defaultTableExpirationMs` (*type:* `String.t`, *default:* `nil`) - [Optional] The default lifetime of all tables in the dataset, in milliseconds. The minimum value is 3600000 milliseconds (one hour). Once this property is set, all newly-created tables in the dataset will have an expirationTime property set to the creation time plus the value in this property, and changing the value will only affect new tables, not existing ones. When the expirationTime for a given table is reached, that table will be deleted automatically. If a table's expirationTime is modified or removed before the table expires, or if you provide an explicit expirationTime when creating a table, that value takes precedence over the default expiration time indicated by this property.
   *   `description` (*type:* `String.t`, *default:* `nil`) - [Optional] A user-friendly description of the dataset.
@@ -43,6 +44,8 @@ defmodule GoogleApi.BigQuery.V2.Model.Dataset do
           :access => list(GoogleApi.BigQuery.V2.Model.DatasetAccess.t()),
           :creationTime => String.t(),
           :datasetReference => GoogleApi.BigQuery.V2.Model.DatasetReference.t(),
+          :defaultEncryptionConfiguration =>
+            GoogleApi.BigQuery.V2.Model.EncryptionConfiguration.t(),
           :defaultPartitionExpirationMs => String.t(),
           :defaultTableExpirationMs => String.t(),
           :description => String.t(),
@@ -59,6 +62,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Dataset do
   field(:access, as: GoogleApi.BigQuery.V2.Model.DatasetAccess, type: :list)
   field(:creationTime)
   field(:datasetReference, as: GoogleApi.BigQuery.V2.Model.DatasetReference)
+  field(:defaultEncryptionConfiguration, as: GoogleApi.BigQuery.V2.Model.EncryptionConfiguration)
   field(:defaultPartitionExpirationMs)
   field(:defaultTableExpirationMs)
   field(:description)
