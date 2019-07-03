@@ -452,16 +452,16 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
             Values must be one of the Beacon.Stability enum values (case
             insensitive). Accepts multiple filters which will be combined with
             OR logic.
-          * **place\_id:`"<string>"`**
-            For example: **place\_id:"ChIJVSZzVR8FdkgRXGmmm6SslKw="**
+          * **place\\_id:`"<string>"`**
+            For example: **place\\_id:"ChIJVSZzVR8FdkgRXGmmm6SslKw="**
             Returns beacons explicitly registered at the given place, expressed as
             a Place ID obtained from [Google Places API](/places/place-id). Does not
             match places inside the given place. Does not consider the beacon's
             actual location (which may be different from its registered place).
             Accepts multiple filters that will be combined with OR logic. The place
             ID must be double-quoted.
-          * **registration\_time`[<|>|<=|>=]<integer>`**
-            For example: **registration\_time>=1433116800**
+          * **registration\\_time`[<|>|<=|>=]<integer>`**
+            For example: **registration\\_time>=1433116800**
             Returns beacons whose registration time matches the given filter.
             Supports the operators: <, >, <=, and >=. Timestamp must be expressed as
             an integer number of seconds since midnight January 1, 1970 UTC. Accepts
@@ -480,14 +480,14 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
             Returns beacons which have a property of the given name and value.
             Supports multiple filters which will be combined with OR logic.
             The entire name=value string must be double-quoted as one string.
-          * **attachment\_type:`"<string>"`**
+          * **attachment\\_type:`"<string>"`**
             For example: **attachment_type:"my-namespace/my-type"**
             Returns beacons having at least one attachment of the given namespaced
             type. Supports "any within this namespace" via the partial wildcard
             syntax: "my-namespace/*". Supports multiple filters which will be
             combined with OR logic. The string must be double-quoted.
-          * **indoor\_level:`"<string>"`**
-            For example: **indoor\_level:"1"**
+          * **indoor\\_level:`"<string>"`**
+            For example: **indoor\\_level:"1"**
             Returns beacons which are located on the given indoor level. Accepts
             multiple filters that will be combined with OR logic.
 
