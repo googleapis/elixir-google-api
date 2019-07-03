@@ -29,10 +29,10 @@ defmodule GoogleApi.CloudResourceManager.V1.Model.Project do
   *   `labels` (*type:* `map()`, *default:* `nil`) - The labels associated with this Project.
 
       Label keys must be between 1 and 63 characters long and must conform
-      to the following regular expression: \[a-z\](\[-a-z0-9\]*\[a-z0-9\])?.
+      to the following regular expression: \\[a-z\\](\\[-a-z0-9\\]*\\[a-z0-9\\])?.
 
       Label values must be between 0 and 63 characters long and must conform
-      to the regular expression (\[a-z\](\[-a-z0-9\]*\[a-z0-9\])?)?. A label
+      to the regular expression (\\[a-z\\](\\[-a-z0-9\\]*\\[a-z0-9\\])?)?. A label
       value can be empty.
 
       No more than 256 labels can be associated with a given resource.
