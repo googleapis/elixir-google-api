@@ -61,7 +61,7 @@ defmodule GoogleApi.Composer.V1beta1.Model.SoftwareConfig do
   *   `imageVersion` (*type:* `String.t`, *default:* `nil`) - The version of the software running in the environment.
       This encapsulates both the version of Cloud Composer functionality and the
       version of Apache Airflow. It must match the regular expression
-      `composer-([0-9]+\.[0-9]+\.[0-9]+|latest)-airflow-[0-9]+\.[0-9]+(\.[0-9]+.*)?`.
+      `composer-([0-9]+\\.[0-9]+\\.[0-9]+|latest)-airflow-[0-9]+\\.[0-9]+(\\.[0-9]+.*)?`.
       When used as input, the server also checks if the provided version is
       supported and denies the request for an unsupported version.
 
