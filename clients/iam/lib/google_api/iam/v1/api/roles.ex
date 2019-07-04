@@ -29,10 +29,33 @@ defmodule GoogleApi.IAM.V1.Api.Roles do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `roles_id` (*type:* `String.t`) - Part of `name`. The resource name of the role in one of the following formats:
-      `roles/{ROLE_NAME}`
-      `organizations/{ORGANIZATION_ID}/roles/{ROLE_NAME}`
-      `projects/{PROJECT_ID}/roles/{ROLE_NAME}`
+  *   `roles_id` (*type:* `String.t`) - Part of `name`. The `name` parameter's value depends on the target resource for the
+      request, namely
+      [`roles`](/iam/reference/rest/v1/roles),
+      [`projects`](/iam/reference/rest/v1/projects.roles), or
+      [`organizations`](/iam/reference/rest/v1/organizations.roles). Each
+      resource type's `name` value format is described below:
+
+      * [`roles.get()`](/iam/reference/rest/v1/roles/get): `roles/{ROLE_NAME}`.
+        This method returns results from all
+        [predefined roles](/iam/docs/understanding-roles#predefined_roles) in
+        Cloud IAM. Example request URL:
+        `https://iam.googleapis.com/v1/roles/{ROLE_NAME}`
+
+      * [`projects.roles.get()`](/iam/reference/rest/v1/projects.roles/get):
+        `projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`. This method returns only
+        [custom roles](/iam/docs/understanding-custom-roles) that have been
+        created at the project level. Example request URL:
+        `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`
+
+      * [`organizations.roles.get()`](/iam/reference/rest/v1/organizations.roles/get):
+        `organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`. This method
+        returns only [custom roles](/iam/docs/understanding-custom-roles) that
+        have been created at the organization level. Example request URL:
+        `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`
+
+      Note: Wildcard (*) values are invalid; you must specify a complete project
+      ID or organization ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -102,10 +125,33 @@ defmodule GoogleApi.IAM.V1.Api.Roles do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - Optional limit on the number of roles to include in the response.
       *   `:pageToken` (*type:* `String.t`) - Optional pagination token returned in an earlier ListRolesResponse.
-      *   `:parent` (*type:* `String.t`) - The resource name of the parent resource in one of the following formats:
-          `` (empty string) -- this refers to curated roles.
-          `organizations/{ORGANIZATION_ID}`
-          `projects/{PROJECT_ID}`
+      *   `:parent` (*type:* `String.t`) - The `parent` parameter's value depends on the target resource for the
+          request, namely
+          [`roles`](/iam/reference/rest/v1/roles),
+          [`projects`](/iam/reference/rest/v1/projects.roles), or
+          [`organizations`](/iam/reference/rest/v1/organizations.roles). Each
+          resource type's `parent` value format is described below:
+
+          * [`roles.list()`](/iam/reference/rest/v1/roles/list): An empty string.
+            This method doesn't require a resource; it simply returns all
+            [predefined roles](/iam/docs/understanding-roles#predefined_roles) in
+            Cloud IAM. Example request URL:
+            `https://iam.googleapis.com/v1/roles`
+
+          * [`projects.roles.list()`](/iam/reference/rest/v1/projects.roles/list):
+            `projects/{PROJECT_ID}`. This method lists all project-level
+            [custom roles](/iam/docs/understanding-custom-roles).
+            Example request URL:
+            `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles`
+
+          * [`organizations.roles.list()`](/iam/reference/rest/v1/organizations.roles/list):
+            `organizations/{ORGANIZATION_ID}`. This method lists all
+            organization-level [custom roles](/iam/docs/understanding-custom-roles).
+            Example request URL:
+            `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles`
+
+          Note: Wildcard (*) values are invalid; you must specify a complete project
+          ID or organization ID.
       *   `:showDeleted` (*type:* `boolean()`) - Include Roles that have been deleted.
       *   `:view` (*type:* `String.t`) - Optional view for the returned Role objects. When `FULL` is specified,
           the `includedPermissions` field is returned, which includes a list of all

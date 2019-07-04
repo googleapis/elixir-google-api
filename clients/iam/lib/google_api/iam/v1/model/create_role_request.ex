@@ -22,7 +22,7 @@ defmodule GoogleApi.IAM.V1.Model.CreateRoleRequest do
   ## Attributes
 
   *   `role` (*type:* `GoogleApi.IAM.V1.Model.Role.t`, *default:* `nil`) - The Role resource to create.
-  *   `roleId` (*type:* `String.t`, *default:* `nil`) - The role id to use for this role.
+  *   `roleId` (*type:* `String.t`, *default:* `nil`) - The role ID to use for this role.
   """
 
   use GoogleApi.Gax.ModelBase
