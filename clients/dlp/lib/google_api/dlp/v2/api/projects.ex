@@ -1764,6 +1764,89 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   end
 
   @doc """
+  De-identifies potentially sensitive info from a ContentItem.
+  This method has limits on input size and output size.
+  See https://cloud.google.com/dlp/docs/deidentify-sensitive-data to
+  learn more.
+
+  When no InfoTypes or CustomInfoTypes are specified in this request, the
+  system will automatically choose what detectors to run. By default this may
+  be all types, but may change over time as detectors are updated.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - The parent resource name, for example projects/my-project-id.
+  *   `location` (*type:* `String.t`) - The geographic location to process de-identification. Reserved for future
+      extensions.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyContentRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyContentResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dlp_projects_locations_content_deidentify(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyContentResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def dlp_projects_locations_content_deidentify(
+        connection,
+        parent,
+        location,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v2/{+parent}/locations/{location}/content:deidentify", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1),
+        "location" => URI.encode(location, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyContentResponse{}]
+    )
+  end
+
+  @doc """
   Creates a pre-built stored infoType to be used for inspection.
   See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
   learn more.

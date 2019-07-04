@@ -25,6 +25,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Action do
   *   `jobNotificationEmails` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2JobNotificationEmails.t`, *default:* `nil`) - Enable email notification to project owners and editors on job's
       completion/failure.
   *   `pubSub` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PublishToPubSub.t`, *default:* `nil`) - Publish a notification to a pubsub topic.
+  *   `publishFindingsToCloudDataCatalog` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PublishFindingsToCloudDataCatalog.t`, *default:* `nil`) - Publish findings to Cloud Datahub.
   *   `publishSummaryToCscc` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PublishSummaryToCscc.t`, *default:* `nil`) - Publish summary to Cloud Security Command Center (Alpha).
   *   `saveFindings` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SaveFindings.t`, *default:* `nil`) - Save resulting findings in a provided location.
   """
@@ -35,6 +36,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Action do
           :jobNotificationEmails =>
             GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2JobNotificationEmails.t(),
           :pubSub => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PublishToPubSub.t(),
+          :publishFindingsToCloudDataCatalog =>
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PublishFindingsToCloudDataCatalog.t(),
           :publishSummaryToCscc =>
             GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PublishSummaryToCscc.t(),
           :saveFindings => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SaveFindings.t()
@@ -46,6 +49,12 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Action do
   )
 
   field(:pubSub, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PublishToPubSub)
+
+  field(
+    :publishFindingsToCloudDataCatalog,
+    as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PublishFindingsToCloudDataCatalog
+  )
+
   field(:publishSummaryToCscc, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PublishSummaryToCscc)
   field(:saveFindings, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SaveFindings)
 end
