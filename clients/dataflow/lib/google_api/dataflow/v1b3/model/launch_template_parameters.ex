@@ -24,6 +24,10 @@ defmodule GoogleApi.Dataflow.V1b3.Model.LaunchTemplateParameters do
   *   `environment` (*type:* `GoogleApi.Dataflow.V1b3.Model.RuntimeEnvironment.t`, *default:* `nil`) - The runtime environment for the job.
   *   `jobName` (*type:* `String.t`, *default:* `nil`) - Required. The job name to use for the created job.
   *   `parameters` (*type:* `map()`, *default:* `nil`) - The runtime parameters to pass to the job.
+  *   `transformNameMapping` (*type:* `map()`, *default:* `nil`) - Only applicable when updating a pipeline. Map of transform name prefixes of
+      the job to be replaced to the corresponding name prefixes of the new job.
+  *   `update` (*type:* `boolean()`, *default:* `nil`) - If set, replace the existing pipeline with the name specified by jobName
+      with this pipeline, preserving state.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,12 +35,16 @@ defmodule GoogleApi.Dataflow.V1b3.Model.LaunchTemplateParameters do
   @type t :: %__MODULE__{
           :environment => GoogleApi.Dataflow.V1b3.Model.RuntimeEnvironment.t(),
           :jobName => String.t(),
-          :parameters => map()
+          :parameters => map(),
+          :transformNameMapping => map(),
+          :update => boolean()
         }
 
   field(:environment, as: GoogleApi.Dataflow.V1b3.Model.RuntimeEnvironment)
   field(:jobName)
   field(:parameters, type: :map)
+  field(:transformNameMapping, type: :map)
+  field(:update)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.LaunchTemplateParameters do

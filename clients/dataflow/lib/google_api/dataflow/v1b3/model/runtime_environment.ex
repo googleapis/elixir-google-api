@@ -28,6 +28,9 @@ defmodule GoogleApi.Dataflow.V1b3.Model.RuntimeEnvironment do
       page.
   *   `bypassTempDirValidation` (*type:* `boolean()`, *default:* `nil`) - Whether to bypass the safety checks for the job's temporary directory.
       Use with caution.
+  *   `kmsKeyName` (*type:* `String.t`, *default:* `nil`) - Optional. Name for the Cloud KMS key for the job.
+      Key format is:
+      projects/<project>/locations/<location>/keyRings/<keyring>/cryptoKeys/<key>
   *   `machineType` (*type:* `String.t`, *default:* `nil`) - The machine type to use for the job. Defaults to the value from the
       template if not specified.
   *   `maxWorkers` (*type:* `integer()`, *default:* `nil`) - The maximum number of Google Compute Engine instances to be made
@@ -51,6 +54,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.RuntimeEnvironment do
           :additionalExperiments => list(String.t()),
           :additionalUserLabels => map(),
           :bypassTempDirValidation => boolean(),
+          :kmsKeyName => String.t(),
           :machineType => String.t(),
           :maxWorkers => integer(),
           :network => String.t(),
@@ -64,6 +68,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.RuntimeEnvironment do
   field(:additionalExperiments, type: :list)
   field(:additionalUserLabels, type: :map)
   field(:bypassTempDirValidation)
+  field(:kmsKeyName)
   field(:machineType)
   field(:maxWorkers)
   field(:network)
