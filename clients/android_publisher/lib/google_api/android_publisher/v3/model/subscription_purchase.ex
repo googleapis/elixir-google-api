@@ -38,6 +38,9 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.SubscriptionPurchase do
   *   `expiryTimeMillis` (*type:* `String.t`, *default:* `nil`) - Time at which the subscription will expire, in milliseconds since the Epoch.
   *   `familyName` (*type:* `String.t`, *default:* `nil`) - The family name of the user when the subscription was purchased. Only present for purchases made with 'Subscribe with Google'.
   *   `givenName` (*type:* `String.t`, *default:* `nil`) - The given name of the user when the subscription was purchased. Only present for purchases made with 'Subscribe with Google'.
+  *   `introductoryPriceInfo` (*type:* `GoogleApi.AndroidPublisher.V3.Model.IntroductoryPriceInfo.t`, *default:* `nil`) - Introductory price information of the subscription. This is only present when the subscription was purchased with an introductory price.
+
+      This field does not indicate the subscription is currently in introductory price period.
   *   `kind` (*type:* `String.t`, *default:* `androidpublisher#subscriptionPurchase`) - This kind represents a subscriptionPurchase object in the androidpublisher service.
   *   `linkedPurchaseToken` (*type:* `String.t`, *default:* `nil`) - The purchase token of the originating purchase if this subscription is one of the following:  
       - Re-signup of a canceled but non-lapsed subscription 
@@ -76,6 +79,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.SubscriptionPurchase do
           :expiryTimeMillis => String.t(),
           :familyName => String.t(),
           :givenName => String.t(),
+          :introductoryPriceInfo => GoogleApi.AndroidPublisher.V3.Model.IntroductoryPriceInfo.t(),
           :kind => String.t(),
           :linkedPurchaseToken => String.t(),
           :orderId => String.t(),
@@ -106,6 +110,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.SubscriptionPurchase do
   field(:expiryTimeMillis)
   field(:familyName)
   field(:givenName)
+  field(:introductoryPriceInfo, as: GoogleApi.AndroidPublisher.V3.Model.IntroductoryPriceInfo)
   field(:kind)
   field(:linkedPurchaseToken)
   field(:orderId)
