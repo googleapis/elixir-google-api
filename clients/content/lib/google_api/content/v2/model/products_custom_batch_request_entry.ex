@@ -22,6 +22,7 @@ defmodule GoogleApi.Content.V2.Model.ProductsCustomBatchRequestEntry do
   ## Attributes
 
   *   `batchId` (*type:* `integer()`, *default:* `nil`) - An entry ID, unique within the batch request.
+  *   `feedId` (*type:* `String.t`, *default:* `nil`) - The ContentAPI feed id.
   *   `merchantId` (*type:* `String.t`, *default:* `nil`) - The ID of the managing account.
   *   `method` (*type:* `String.t`, *default:* `nil`) - 
   *   `product` (*type:* `GoogleApi.Content.V2.Model.Product.t`, *default:* `nil`) - The product to insert. Only required if the method is insert.
@@ -32,6 +33,7 @@ defmodule GoogleApi.Content.V2.Model.ProductsCustomBatchRequestEntry do
 
   @type t :: %__MODULE__{
           :batchId => integer(),
+          :feedId => String.t(),
           :merchantId => String.t(),
           :method => String.t(),
           :product => GoogleApi.Content.V2.Model.Product.t(),
@@ -39,6 +41,7 @@ defmodule GoogleApi.Content.V2.Model.ProductsCustomBatchRequestEntry do
         }
 
   field(:batchId)
+  field(:feedId)
   field(:merchantId)
   field(:method)
   field(:product, as: GoogleApi.Content.V2.Model.Product)

@@ -783,7 +783,7 @@ defmodule GoogleApi.Content.V2.Api.Orders do
       *   `:pageToken` (*type:* `String.t`) - The token returned by the previous request.
       *   `:placedDateEnd` (*type:* `String.t`) - Obtains orders placed before this date (exclusively), in ISO 8601 format.
       *   `:placedDateStart` (*type:* `String.t`) - Obtains orders placed after this date (inclusively), in ISO 8601 format.
-      *   `:statuses` (*type:* `list(String.t)`) - Obtains orders that match any of the specified statuses. Multiple values can be specified with comma separation. Additionally, please note that active is a shortcut for pendingShipment and partiallyShipped, and completed is a shortcut for shipped, partiallyDelivered, delivered, partiallyReturned, returned, and canceled.
+      *   `:statuses` (*type:* `list(String.t)`) - Obtains orders that match any of the specified statuses. Please note that active is a shortcut for pendingShipment and partiallyShipped, and completed is a shortcut for shipped, partiallyDelivered, delivered, partiallyReturned, returned, and canceled.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
