@@ -1,7 +1,7 @@
 defmodule GoogleApi.TextToSpeech.V1beta1.Mixfile do
   use Mix.Project
 
-  @version "0.3.0"
+  @version "0.2.2"
 
   def project do
     [app: :google_api_text_to_speech,
