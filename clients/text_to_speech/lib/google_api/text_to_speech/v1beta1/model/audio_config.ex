@@ -22,13 +22,13 @@ defmodule GoogleApi.TextToSpeech.V1beta1.Model.AudioConfig do
   ## Attributes
 
   *   `audioEncoding` (*type:* `String.t`, *default:* `nil`) - Required. The format of the audio byte stream.
-  *   `effectsProfileId` (*type:* `list(String.t)`, *default:* `nil`) - Input only. Optional. An identifier which selects 'audio effects' profiles
+  *   `effectsProfileId` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Input only. An identifier which selects 'audio effects' profiles
       that are applied on (post synthesized) text to speech. Effects are applied
       on top of each other in the order they are given. See
       [audio
       profiles](https://cloud.google.com/text-to-speech/docs/audio-profiles) for
       current supported profile ids.
-  *   `pitch` (*type:* `float()`, *default:* `nil`) - Input only. Optional. Speaking pitch, in the range [-20.0, 20.0]. 20 means
+  *   `pitch` (*type:* `float()`, *default:* `nil`) - Optional. Input only. Speaking pitch, in the range [-20.0, 20.0]. 20 means
       increase 20 semitones from the original pitch. -20 means decrease 20
       semitones from the original pitch.
   *   `sampleRateHertz` (*type:* `integer()`, *default:* `nil`) - The synthesis sample rate (in hertz) for this audio. Optional. When this is
@@ -38,11 +38,11 @@ defmodule GoogleApi.TextToSpeech.V1beta1.Model.AudioConfig do
       quality), unless the specified sample rate is not supported for the
       encoding chosen, in which case it will fail the request and return
       google.rpc.Code.INVALID_ARGUMENT.
-  *   `speakingRate` (*type:* `float()`, *default:* `nil`) - Input only. Optional. Speaking rate/speed, in the range [0.25, 4.0]. 1.0 is
+  *   `speakingRate` (*type:* `float()`, *default:* `nil`) - Optional. Input only. Speaking rate/speed, in the range [0.25, 4.0]. 1.0 is
       the normal native speed supported by the specific voice. 2.0 is twice as
       fast, and 0.5 is half as fast. If unset(0.0), defaults to the native 1.0
       speed. Any other values < 0.25 or > 4.0 will return an error.
-  *   `volumeGainDb` (*type:* `float()`, *default:* `nil`) - Input only. Optional. Volume gain (in dB) of the normal native volume
+  *   `volumeGainDb` (*type:* `float()`, *default:* `nil`) - Optional. Input only. Volume gain (in dB) of the normal native volume
       supported by the specific voice, in the range [-96.0, 16.0]. If unset, or
       set to a value of 0.0 (dB), will play at normal native signal amplitude. A
       value of -6.0 (dB) will play at approximately half the amplitude of the
