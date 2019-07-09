@@ -38,7 +38,6 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ConfigurationSpec do
       Cloud Run does not currently support referencing a build that is
       responsible for materializing the container image from source.
   *   `template` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.RevisionTemplate.t`, *default:* `nil`) - Template holds the latest specification for the Revision to be stamped out.
-      Not currently supported by Cloud Run.
   """
 
   use GoogleApi.Gax.ModelBase

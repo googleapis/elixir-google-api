@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ListRevisionsResponse do
 
   ## Attributes
 
-  *   `apiVersion` (*type:* `String.t`, *default:* `nil`) - The API version for this call such as "v1alpha1".
+  *   `apiVersion` (*type:* `String.t`, *default:* `nil`) - The API version for this call such as "serving.knative.dev/v1alpha1".
   *   `items` (*type:* `list(GoogleApi.CloudRun.V1alpha1.Model.Revision.t)`, *default:* `nil`) - List of Revisions.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of this resource, in this case "RevisionList".
   *   `metadata` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.ListMeta.t`, *default:* `nil`) - Metadata associated with this revision list.

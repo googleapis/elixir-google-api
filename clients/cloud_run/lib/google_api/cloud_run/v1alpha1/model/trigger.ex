@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.Trigger do
 
   ## Attributes
 
-  *   `apiVersion` (*type:* `String.t`, *default:* `nil`) - The API version for this call such as "v1alpha1".
+  *   `apiVersion` (*type:* `String.t`, *default:* `nil`) - The API version for this call such as "eventing.knative.dev/v1alpha1".
   *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of resource, in this case "Trigger".
   *   `metadata` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.ObjectMeta.t`, *default:* `nil`) - Metadata associated with this Trigger.
   *   `spec` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.TriggerSpec.t`, *default:* `nil`) - Spec defines the desired state of the Trigger.

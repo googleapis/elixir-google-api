@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ListRoutesResponse do
 
   ## Attributes
 
-  *   `apiVersion` (*type:* `String.t`, *default:* `nil`) - The API version for this call such as "v1alpha1".
+  *   `apiVersion` (*type:* `String.t`, *default:* `nil`) - The API version for this call such as "serving.knative.dev/v1alpha1".
   *   `items` (*type:* `list(GoogleApi.CloudRun.V1alpha1.Model.Route.t)`, *default:* `nil`) - List of Routes.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of this resource, in this case always "RouteList".
   *   `metadata` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.ListMeta.t`, *default:* `nil`) - Metadata associated with this Route list.

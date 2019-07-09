@@ -30,7 +30,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.Route do
 
   ## Attributes
 
-  *   `apiVersion` (*type:* `String.t`, *default:* `nil`) - The API version for this call such as "v1alpha1".
+  *   `apiVersion` (*type:* `String.t`, *default:* `nil`) - The API version for this call such as "serving.knative.dev/v1alpha1".
   *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of this resource, in this case always "Route".
   *   `metadata` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.ObjectMeta.t`, *default:* `nil`) - Metadata associated with this Route, including name, namespace, labels,
       and annotations.
