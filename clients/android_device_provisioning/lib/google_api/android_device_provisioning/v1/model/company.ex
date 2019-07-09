@@ -21,7 +21,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.Company do
 
   ## Attributes
 
-  *   `adminEmails` (*type:* `list(String.t)`, *default:* `nil`) - Input only. Optional. Email address of customer's users in the admin role.
+  *   `adminEmails` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Input only. Email address of customer's users in the admin role.
       Each email address must be associated with a Google Account.
   *   `companyId` (*type:* `String.t`, *default:* `nil`) - Output only. The ID of the company. Assigned by the server.
   *   `companyName` (*type:* `String.t`, *default:* `nil`) - Required. The name of the company. For example _XYZ Corp_. Displayed to the
