@@ -46,5 +46,5 @@ defmodule GoogleApi.BigQuery.V2.Connection do
       "https://www.googleapis.com/auth/devstorage.read_write"
     ],
     otp_app: :google_api_big_query,
-    base_url: "https://www.googleapis.com/"
+    base_url: "https://bigquery.googleapis.com/"
 end
