@@ -47,14 +47,8 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ServiceSpec do
       +optional
   *   `template` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.RevisionTemplate.t`, *default:* `nil`) - Template holds the latest specification for the Revision to
       be stamped out.
-
-      Not currently supported by Cloud Run.
   *   `traffic` (*type:* `list(GoogleApi.CloudRun.V1alpha1.Model.TrafficTarget.t)`, *default:* `nil`) - Traffic specifies how to distribute traffic over a collection of Knative
-      Revisions and Configurations. This will replace existing service specs
-      (ServiceSpecRunLatest, ServiceSpecPinnedType, ServiceSpecReleaseType, and
-      ServiceSpecManualType).
-
-      Not currently supported by Cloud Run.
+      Revisions and Configurations.
   """
 
   use GoogleApi.Gax.ModelBase

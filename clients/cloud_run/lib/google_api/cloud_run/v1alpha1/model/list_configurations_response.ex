@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ListConfigurationsResponse do
 
   ## Attributes
 
-  *   `apiVersion` (*type:* `String.t`, *default:* `nil`) - The API version for this call such as "v1alpha1".
+  *   `apiVersion` (*type:* `String.t`, *default:* `nil`) - The API version for this call such as "serving.knative.dev/v1alpha1".
   *   `items` (*type:* `list(GoogleApi.CloudRun.V1alpha1.Model.Configuration.t)`, *default:* `nil`) - List of Configurations.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of this resource, in this case "ConfigurationList".
   *   `metadata` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.ListMeta.t`, *default:* `nil`) - Metadata associated with this Configuration list.

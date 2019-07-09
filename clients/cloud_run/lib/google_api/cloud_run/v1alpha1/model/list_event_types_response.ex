@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ListEventTypesResponse do
 
   ## Attributes
 
-  *   `apiVersion` (*type:* `String.t`, *default:* `nil`) - The API version for this call such as "v1alpha1".
+  *   `apiVersion` (*type:* `String.t`, *default:* `nil`) - The API version for this call such as "eventing.knative.dev/v1alpha1".
   *   `items` (*type:* `list(GoogleApi.CloudRun.V1alpha1.Model.EventType.t)`, *default:* `nil`) - List of EventTypes.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of this resource, in this case "EventTypeList".
   *   `metadata` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.ListMeta.t`, *default:* `nil`) - Metadata associated with this EventType list.

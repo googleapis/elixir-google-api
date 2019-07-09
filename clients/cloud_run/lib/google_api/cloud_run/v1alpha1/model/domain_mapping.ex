@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.DomainMapping do
 
   ## Attributes
 
-  *   `apiVersion` (*type:* `String.t`, *default:* `nil`) - The API version for this call such as "v1alpha1".
+  *   `apiVersion` (*type:* `String.t`, *default:* `nil`) - The API version for this call such as "domains.cloudrun.com/v1alpha1".
   *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of resource, in this case "DomainMapping".
   *   `metadata` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.ObjectMeta.t`, *default:* `nil`) - Metadata associated with this BuildTemplate.
   *   `spec` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.DomainMappingSpec.t`, *default:* `nil`) - The spec for this DomainMapping.

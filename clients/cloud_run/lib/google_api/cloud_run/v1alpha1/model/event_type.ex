@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.EventType do
 
   ## Attributes
 
-  *   `apiVersion` (*type:* `String.t`, *default:* `nil`) - The API version for this call such as "v1alpha1".
+  *   `apiVersion` (*type:* `String.t`, *default:* `nil`) - The API version for this call such as "eventing.knative.dev/v1alpha1".
   *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of resource, in this case "EventType".
   *   `metadata` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.ObjectMeta.t`, *default:* `nil`) - Metadata associated with this EventType.
   *   `spec` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.EventTypeSpec.t`, *default:* `nil`) - Spec defines the desired state of the EventType.
