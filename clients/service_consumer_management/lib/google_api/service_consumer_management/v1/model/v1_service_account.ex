@@ -22,8 +22,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.V1ServiceAccount do
   ## Attributes
 
   *   `email` (*type:* `String.t`, *default:* `nil`) - The email address of the service account.
-  *   `iamAccountName` (*type:* `String.t`, *default:* `nil`) - The IAM resource name of the service account in the following format:
-      projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}.
+  *   `iamAccountName` (*type:* `String.t`, *default:* `nil`) - Deprecated. See b/136209818.
   *   `name` (*type:* `String.t`, *default:* `nil`) - P4 SA resource name.
 
       An example name would be:
