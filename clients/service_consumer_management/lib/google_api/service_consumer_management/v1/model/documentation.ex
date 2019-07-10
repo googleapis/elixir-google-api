@@ -93,6 +93,10 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.Documentation do
   *   `rules` (*type:* `list(GoogleApi.ServiceConsumerManagement.V1.Model.DocumentationRule.t)`, *default:* `nil`) - A list of documentation rules that apply to individual API elements.
 
       **NOTE:** All service configuration rules follow "last one wins" order.
+  *   `serviceRootUrl` (*type:* `String.t`, *default:* `nil`) - Specifies the service root url if the default one (the service name
+      from the yaml file) is not suitable. This can be seen in any fully
+      specified service urls as well as sections that show a base that other
+      urls are relative to.
   *   `summary` (*type:* `String.t`, *default:* `nil`) - A short summary of what the service does. Can only be provided by
       plain text.
   """
@@ -104,6 +108,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.Documentation do
           :overview => String.t(),
           :pages => list(GoogleApi.ServiceConsumerManagement.V1.Model.Page.t()),
           :rules => list(GoogleApi.ServiceConsumerManagement.V1.Model.DocumentationRule.t()),
+          :serviceRootUrl => String.t(),
           :summary => String.t()
         }
 
@@ -111,6 +116,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.Documentation do
   field(:overview)
   field(:pages, as: GoogleApi.ServiceConsumerManagement.V1.Model.Page, type: :list)
   field(:rules, as: GoogleApi.ServiceConsumerManagement.V1.Model.DocumentationRule, type: :list)
+  field(:serviceRootUrl)
   field(:summary)
 end
 
