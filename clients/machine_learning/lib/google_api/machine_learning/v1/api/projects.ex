@@ -359,6 +359,10 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:options.requestedPolicyVersion` (*type:* `integer()`) - Optional. The policy format version to be returned.
+          Acceptable values are 0 and 1.
+          If the value is 0, or the field is omitted, policy format version 1 will be
+          returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -393,7 +397,8 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query
+      :upload_protocol => :query,
+      :"options.requestedPolicyVersion" => :query
     }
 
     request =
@@ -1120,6 +1125,10 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:options.requestedPolicyVersion` (*type:* `integer()`) - Optional. The policy format version to be returned.
+          Acceptable values are 0 and 1.
+          If the value is 0, or the field is omitted, policy format version 1 will be
+          returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1154,7 +1163,8 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query
+      :upload_protocol => :query,
+      :"options.requestedPolicyVersion" => :query
     }
 
     request =
