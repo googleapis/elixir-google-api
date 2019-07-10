@@ -17,7 +17,9 @@
 
 defmodule GoogleApi.Compute.V1.Model.SecurityPolicy do
   @moduledoc """
-  A security policy is comprised of one or more rules. It can also be associated with one or more 'targets'. (== resource_for v1.securityPolicies ==) (== resource_for beta.securityPolicies ==)
+  Represents a Cloud Armor Security Policy resource.
+
+  Only external backend services that use load balancers can reference a Security Policy. For more information, read  Cloud Armor Security Policy Concepts. (== resource_for v1.securityPolicies ==) (== resource_for beta.securityPolicies ==)
 
   ## Attributes
 

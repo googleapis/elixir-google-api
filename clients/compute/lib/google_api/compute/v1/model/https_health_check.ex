@@ -17,7 +17,9 @@
 
 defmodule GoogleApi.Compute.V1.Model.HttpsHealthCheck do
   @moduledoc """
-  An HttpsHealthCheck resource. This resource defines a template for how individual instances should be checked for health, via HTTPS.
+  Represents a legacy HTTPS Health Check resource.
+
+  Legacy health checks are required by network load balancers. For more information, read Health Check Concepts.
 
   ## Attributes
 
