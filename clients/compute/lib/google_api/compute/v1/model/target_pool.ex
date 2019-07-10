@@ -17,7 +17,9 @@
 
 defmodule GoogleApi.Compute.V1.Model.TargetPool do
   @moduledoc """
-  A TargetPool resource. This resource defines a pool of instances, an associated HttpHealthCheck resource, and the fallback target pool. (== resource_for beta.targetPools ==) (== resource_for v1.targetPools ==)
+  Represents a Target Pool resource.
+
+  Target pools are used for network TCP/UDP load balancing. A target pool references member instances, an associated legacy HttpHealthCheck resource, and, optionally, a backup target pool. For more information, read Using target pools. (== resource_for beta.targetPools ==) (== resource_for v1.targetPools ==)
 
   ## Attributes
 

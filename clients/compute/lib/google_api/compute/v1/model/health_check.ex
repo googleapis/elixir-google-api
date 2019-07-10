@@ -17,7 +17,11 @@
 
 defmodule GoogleApi.Compute.V1.Model.HealthCheck do
   @moduledoc """
-  An HealthCheck resource. This resource defines a template for how individual virtual machines should be checked for health, via one of the supported protocols.
+  Represents a Health Check resource.
+
+  Health checks are used for most GCP load balancers and managed instance group auto-healing. For more information, read Health Check Concepts.
+
+  To perform health checks on network load balancers, you must use either httpHealthChecks or httpsHealthChecks.
 
   ## Attributes
 

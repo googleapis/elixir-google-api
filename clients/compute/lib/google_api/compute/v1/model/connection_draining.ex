@@ -21,7 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.ConnectionDraining do
 
   ## Attributes
 
-  *   `drainingTimeoutSec` (*type:* `integer()`, *default:* `nil`) - Time for which instance will be drained (not accept new connections, but still work to finish started).
+  *   `drainingTimeoutSec` (*type:* `integer()`, *default:* `nil`) - The amount of time in seconds to allow existing connections to persist while on unhealthy backend VMs. Only applicable if the protocol is not UDP. The valid range is [0, 3600].
   """
 
   use GoogleApi.Gax.ModelBase

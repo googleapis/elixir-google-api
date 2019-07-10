@@ -22,7 +22,7 @@ defmodule GoogleApi.Compute.V1.Model.SchedulingNodeAffinity do
   ## Attributes
 
   *   `key` (*type:* `String.t`, *default:* `nil`) - Corresponds to the label key of Node resource.
-  *   `operator` (*type:* `String.t`, *default:* `nil`) - Defines the operation of node selection.
+  *   `operator` (*type:* `String.t`, *default:* `nil`) - Defines the operation of node selection. Valid operators are IN for affinity and NOT_IN for anti-affinity.
   *   `values` (*type:* `list(String.t)`, *default:* `nil`) - Corresponds to the label values of Node resource.
   """
 
