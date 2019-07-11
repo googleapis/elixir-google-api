@@ -39,6 +39,10 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1QueryResult 
       `name`, `display_name` and `webhook_state`.
   *   `intentDetectionConfidence` (*type:* `number()`, *default:* `nil`) - The intent detection confidence. Values range from 0.0
       (completely uncertain) to 1.0 (completely certain).
+      This value is for informational purpose only and is only used to
+      help match the best intent within the classification threshold.
+      This value may change for the same end-user expression at any time due to a
+      model retraining or change in implementation.
       If there are `multiple knowledge_answers` messages, this value is set to
       the greatest `knowledgeAnswers.match_confidence` value in the list.
   *   `knowledgeAnswers` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1KnowledgeAnswers.t`, *default:* `nil`) - The result from Knowledge Connector (if any), ordered by decreasing
