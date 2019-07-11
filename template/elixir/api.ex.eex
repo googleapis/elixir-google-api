@@ -32,7 +32,7 @@ defmodule <%= namespace %>.Api.<%= api.name %> do
   *   `connection` (*type:* `<%= namespace %>.Connection.t`) - Connection to server<%= for parameter <- endpoint.required_parameters do %>
   *   `<%= parameter.variable_name %>` (*type:* `<%= parameter.type.typespec %>`) - <%= render_description(parameter.description, indent_subsequent: 6) %><% end %>
   *   `optional_params` (*type:* `keyword()`) - Optional parameters<%= for parameter <- global_optional_parameters ++ endpoint.optional_parameters do %>
-      *   `:<%= parameter.name %>` (*type:* `<%= parameter.type.typespec %>`) - <%= render_description(parameter.description, indent_subsequent: 10) %><% end %>
+      *   `<%= render_atom(parameter.name) %>` (*type:* `<%= parameter.type.typespec %>`) - <%= render_description(parameter.description, indent_subsequent: 10) %><% end %>
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
