@@ -50,7 +50,7 @@ defmodule GoogleApis.Generator.ElixirGenerator.Renderer do
   end
 
   defp render_atom(str) do
-    if Regex.match?(~r{^[[:alpha:]]\w*[\?!]?$}, str) do
+    if Regex.match?(~r{^[a-zA-Z_]\w*[\?!]?$}, str) do
       ":#{str}"
     else
       ":\"#{str}\""
