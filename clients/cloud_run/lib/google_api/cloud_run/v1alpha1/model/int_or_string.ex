@@ -26,7 +26,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.IntOrString do
 
   *   `intVal` (*type:* `integer()`, *default:* `nil`) - The int value.
   *   `strVal` (*type:* `String.t`, *default:* `nil`) - The string value.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the value.
+  *   `type` (*type:* `integer()`, *default:* `nil`) - The type of the value.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -34,7 +34,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.IntOrString do
   @type t :: %__MODULE__{
           :intVal => integer(),
           :strVal => String.t(),
-          :type => String.t()
+          :type => integer()
         }
 
   field(:intVal)
