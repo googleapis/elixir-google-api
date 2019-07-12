@@ -33,8 +33,6 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.TrafficTarget do
       ready Revision of the Configuration should be used for this traffic
       target. When provided LatestRevision must be true if RevisionName is
       empty; it must be false when RevisionName is non-empty.
-
-      Not currently supported in Cloud Run.
       +optional
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name is optionally used to expose a dedicated hostname for referencing this
       target exclusively.

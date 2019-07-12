@@ -40,7 +40,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.SecurityContext do
   *   `readOnlyRootFilesystem` (*type:* `boolean()`, *default:* `nil`) - Whether this container has a read-only root filesystem.
       Default is false.
       +optional
-  *   `runAsGroup` (*type:* `String.t`, *default:* `nil`) - The GID to run the entrypoint of the container process.
+  *   `runAsGroup` (*type:* `integer()`, *default:* `nil`) - The GID to run the entrypoint of the container process.
       Uses runtime default if unset.
       May also be set in PodSecurityContext.  If set in both SecurityContext and
       PodSecurityContext, the value specified in SecurityContext takes
@@ -52,7 +52,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.SecurityContext do
       May also be set in PodSecurityContext.  If set in both SecurityContext and
       PodSecurityContext, the value specified in SecurityContext takes
       precedence. +optional
-  *   `runAsUser` (*type:* `String.t`, *default:* `nil`) - The UID to run the entrypoint of the container process.
+  *   `runAsUser` (*type:* `integer()`, *default:* `nil`) - The UID to run the entrypoint of the container process.
       Defaults to user specified in image metadata if unspecified.
       May also be set in PodSecurityContext.  If set in both SecurityContext and
       PodSecurityContext, the value specified in SecurityContext takes
@@ -71,9 +71,9 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.SecurityContext do
           :capabilities => GoogleApi.CloudRun.V1alpha1.Model.Capabilities.t(),
           :privileged => boolean(),
           :readOnlyRootFilesystem => boolean(),
-          :runAsGroup => String.t(),
+          :runAsGroup => integer(),
           :runAsNonRoot => boolean(),
-          :runAsUser => String.t(),
+          :runAsUser => integer(),
           :seLinuxOptions => GoogleApi.CloudRun.V1alpha1.Model.SELinuxOptions.t()
         }
 
