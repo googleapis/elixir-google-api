@@ -48,4 +48,12 @@ defmodule GoogleApis.Generator.ElixirGenerator.Renderer do
     |> String.replace("\\", "\\\\")
     |> String.replace(~r{(\n+)([^\n])}, "\\1#{prefix}\\2")
   end
+
+  defp render_atom(str) do
+    if Regex.match?(~r{^[a-zA-Z_]\w*[\?!]?$}, str) do
+      ":#{str}"
+    else
+      ":\"#{str}\""
+    end
+  end
 end
