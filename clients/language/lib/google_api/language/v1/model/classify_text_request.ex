@@ -21,7 +21,7 @@ defmodule GoogleApi.Language.V1.Model.ClassifyTextRequest do
 
   ## Attributes
 
-  *   `document` (*type:* `GoogleApi.Language.V1.Model.Document.t`, *default:* `nil`) - Input document.
+  *   `document` (*type:* `GoogleApi.Language.V1.Model.Document.t`, *default:* `nil`) - Required. Input document.
   """
 
   use GoogleApi.Gax.ModelBase
