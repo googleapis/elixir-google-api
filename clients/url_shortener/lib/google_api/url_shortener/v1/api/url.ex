@@ -134,7 +134,7 @@ defmodule GoogleApi.UrlShortener.V1.Api.Url do
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:projection` (*type:* `String.t`) - Additional information to return.
-      *   `:start-token` (*type:* `String.t`) - Token for requesting successive pages of results.
+      *   `:"start-token"` (*type:* `String.t`) - Token for requesting successive pages of results.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
