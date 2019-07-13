@@ -36,7 +36,7 @@ defmodule GoogleApi.Logging.V2.Api.Organizations do
       "folders/[FOLDER_ID]"
       Examples: "projects/my-logging-project", "organizations/123456789".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -109,7 +109,7 @@ defmodule GoogleApi.Logging.V2.Api.Organizations do
       Example: "projects/my-project-id/exclusions/my-exclusion-id".
   *   `exclusions_id` (*type:* `String.t`) - Part of `name`. See documentation of `organizationsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -183,7 +183,7 @@ defmodule GoogleApi.Logging.V2.Api.Organizations do
       Example: "projects/my-project-id/exclusions/my-exclusion-id".
   *   `exclusions_id` (*type:* `String.t`) - Part of `name`. See documentation of `organizationsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -256,7 +256,7 @@ defmodule GoogleApi.Logging.V2.Api.Organizations do
       "folders/[FOLDER_ID]"
 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -332,7 +332,7 @@ defmodule GoogleApi.Logging.V2.Api.Organizations do
       Example: "projects/my-project-id/exclusions/my-exclusion-id".
   *   `exclusions_id` (*type:* `String.t`) - Part of `name`. See documentation of `organizationsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -410,7 +410,7 @@ defmodule GoogleApi.Logging.V2.Api.Organizations do
       [LOG_ID] must be URL-encoded. For example, "projects/my-project-id/logs/syslog", "organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity". For more information about log names, see LogEntry.
   *   `logs_id` (*type:* `String.t`) - Part of `logName`. See documentation of `organizationsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -483,7 +483,7 @@ defmodule GoogleApi.Logging.V2.Api.Organizations do
       "folders/[FOLDER_ID]"
 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -553,7 +553,7 @@ defmodule GoogleApi.Logging.V2.Api.Organizations do
       "folders/[FOLDER_ID]"
       Examples: "projects/my-logging-project", "organizations/123456789".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -624,7 +624,7 @@ defmodule GoogleApi.Logging.V2.Api.Organizations do
       Example: "projects/my-project-id/sinks/my-sink-id".
   *   `sinks_id` (*type:* `String.t`) - Part of `sinkName`. See documentation of `organizationsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -698,7 +698,7 @@ defmodule GoogleApi.Logging.V2.Api.Organizations do
       Example: "projects/my-project-id/sinks/my-sink-id".
   *   `sinks_id` (*type:* `String.t`) - Part of `sinkName`. See documentation of `organizationsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -771,7 +771,7 @@ defmodule GoogleApi.Logging.V2.Api.Organizations do
       "folders/[FOLDER_ID]"
 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -842,7 +842,7 @@ defmodule GoogleApi.Logging.V2.Api.Organizations do
       Example: "projects/my-project-id/sinks/my-sink-id".
   *   `sinks_id` (*type:* `String.t`) - Part of `sinkName`. See documentation of `organizationsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -925,7 +925,7 @@ defmodule GoogleApi.Logging.V2.Api.Organizations do
       Example: "projects/my-project-id/sinks/my-sink-id".
   *   `sinks_id` (*type:* `String.t`) - Part of `sinkName`. See documentation of `organizationsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
