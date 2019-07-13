@@ -1,7 +1,7 @@
 defmodule GoogleApi.CloudTrace.V2.Mixfile do
   use Mix.Project
 
-  @version "0.8.0"
+  @version "0.10.0"
 
   def project() do
     [

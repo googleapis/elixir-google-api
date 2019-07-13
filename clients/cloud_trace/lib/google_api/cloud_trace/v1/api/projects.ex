@@ -35,7 +35,7 @@ defmodule GoogleApi.CloudTrace.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.CloudTrace.V1.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - ID of the Cloud project where the trace data is stored.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -94,7 +94,7 @@ defmodule GoogleApi.CloudTrace.V1.Api.Projects do
   *   `project_id` (*type:* `String.t`) - ID of the Cloud project where the trace data is stored.
   *   `trace_id` (*type:* `String.t`) - ID of the trace to return.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -162,7 +162,7 @@ defmodule GoogleApi.CloudTrace.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.CloudTrace.V1.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - ID of the Cloud project where the trace data is stored.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
