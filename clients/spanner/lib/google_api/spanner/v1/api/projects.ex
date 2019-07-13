@@ -32,7 +32,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   *   `name` (*type:* `String.t`) - Required. The name of the requested instance configuration. Values are of
       the form `projects/<project>/instanceConfigs/<config>`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -94,7 +94,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
       configurations is requested. Values are of the form
       `projects/<project>`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -204,7 +204,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   *   `parent` (*type:* `String.t`) - Required. The name of the project in which to create the instance. Values
       are of the form `projects/<project>`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -273,7 +273,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   *   `name` (*type:* `String.t`) - Required. The name of the instance to be deleted. Values are of the form
       `projects/<project>/instances/<instance>`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -330,7 +330,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   *   `name` (*type:* `String.t`) - Required. The name of the requested instance. Values are of the form
       `projects/<project>/instances/<instance>`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -390,7 +390,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Spanner.V1.Connection.t`) - Connection to server
   *   `resource` (*type:* `String.t`) - REQUIRED: The Cloud Spanner resource for which the policy is being retrieved. The format is `projects/<project ID>/instances/<instance ID>` for instance resources and `projects/<project ID>/instances/<instance ID>/databases/<database ID>` for database resources.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -458,7 +458,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   *   `parent` (*type:* `String.t`) - Required. The name of the project for which a list of instances is
       requested. Values are of the form `projects/<project>`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -583,7 +583,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
       `projects/<project>/instances/a-z*[a-z0-9]`. The final
       segment of the name must be between 2 and 64 characters in length.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -645,7 +645,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Spanner.V1.Connection.t`) - Connection to server
   *   `resource` (*type:* `String.t`) - REQUIRED: The Cloud Spanner resource for which the policy is being set. The format is `projects/<project ID>/instances/<instance ID>` for instance resources and `projects/<project ID>/instances/<instance ID>/databases/<database ID>` for databases resources.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -717,7 +717,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Spanner.V1.Connection.t`) - Connection to server
   *   `resource` (*type:* `String.t`) - REQUIRED: The Cloud Spanner resource for which permissions are being tested. The format is `projects/<project ID>/instances/<instance ID>` for instance resources and `projects/<project ID>/instances/<instance ID>/databases/<database ID>` for database resources.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -794,7 +794,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   *   `parent` (*type:* `String.t`) - Required. The name of the instance that will serve the new database.
       Values are of the form `projects/<project>/instances/<instance>`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -861,7 +861,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Spanner.V1.Connection.t`) - Connection to server
   *   `database` (*type:* `String.t`) - Required. The database to be dropped.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -927,7 +927,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   *   `name` (*type:* `String.t`) - Required. The name of the requested database. Values are of the form
       `projects/<project>/instances/<instance>/databases/<database>`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -994,7 +994,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Spanner.V1.Connection.t`) - Connection to server
   *   `database` (*type:* `String.t`) - Required. The database whose schema we wish to get.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1065,7 +1065,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Spanner.V1.Connection.t`) - Connection to server
   *   `resource` (*type:* `String.t`) - REQUIRED: The Cloud Spanner resource for which the policy is being retrieved. The format is `projects/<project ID>/instances/<instance ID>` for instance resources and `projects/<project ID>/instances/<instance ID>/databases/<database ID>` for database resources.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1133,7 +1133,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   *   `parent` (*type:* `String.t`) - Required. The instance whose databases should be listed.
       Values are of the form `projects/<project>/instances/<instance>`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1209,7 +1209,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Spanner.V1.Connection.t`) - Connection to server
   *   `resource` (*type:* `String.t`) - REQUIRED: The Cloud Spanner resource for which the policy is being set. The format is `projects/<project ID>/instances/<instance ID>` for instance resources and `projects/<project ID>/instances/<instance ID>/databases/<database ID>` for databases resources.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1281,7 +1281,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Spanner.V1.Connection.t`) - Connection to server
   *   `resource` (*type:* `String.t`) - REQUIRED: The Cloud Spanner resource for which permissions are being tested. The format is `projects/<project ID>/instances/<instance ID>` for instance resources and `projects/<project ID>/instances/<instance ID>/databases/<database ID>` for database resources.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1356,7 +1356,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Spanner.V1.Connection.t`) - Connection to server
   *   `database` (*type:* `String.t`) - Required. The database to update.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1432,7 +1432,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Spanner.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - The name of the operation resource to be cancelled.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1500,7 +1500,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Spanner.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - The name of the operation resource to be deleted.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1567,7 +1567,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Spanner.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - The name of the operation resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1641,7 +1641,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Spanner.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - The name of the operation's parent resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1716,7 +1716,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Spanner.V1.Connection.t`) - Connection to server
   *   `session` (*type:* `String.t`) - Required. The session in which the transaction runs.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1790,7 +1790,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Spanner.V1.Connection.t`) - Connection to server
   *   `session` (*type:* `String.t`) - Required. The session in which the transaction to be committed is running.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1875,7 +1875,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Spanner.V1.Connection.t`) - Connection to server
   *   `database` (*type:* `String.t`) - Required. The database in which the new session is created.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1944,7 +1944,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Spanner.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - Required. The name of the session to delete.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2027,7 +2027,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Spanner.V1.Connection.t`) - Connection to server
   *   `session` (*type:* `String.t`) - Required. The session in which the DML statements should be performed.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2105,7 +2105,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Spanner.V1.Connection.t`) - Connection to server
   *   `session` (*type:* `String.t`) - Required. The session in which the SQL query should be performed.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2176,7 +2176,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Spanner.V1.Connection.t`) - Connection to server
   *   `session` (*type:* `String.t`) - Required. The session in which the SQL query should be performed.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2245,7 +2245,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Spanner.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - Required. The name of the session to retrieve.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2310,7 +2310,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Spanner.V1.Connection.t`) - Connection to server
   *   `database` (*type:* `String.t`) - Required. The database in which to list sessions.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2403,7 +2403,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Spanner.V1.Connection.t`) - Connection to server
   *   `session` (*type:* `String.t`) - Required. The session used to create the partitions.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2482,7 +2482,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Spanner.V1.Connection.t`) - Connection to server
   *   `session` (*type:* `String.t`) - Required. The session used to create the partitions.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2561,7 +2561,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Spanner.V1.Connection.t`) - Connection to server
   *   `session` (*type:* `String.t`) - Required. The session in which the read should be performed.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2635,7 +2635,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Spanner.V1.Connection.t`) - Connection to server
   *   `session` (*type:* `String.t`) - Required. The session in which the transaction to roll back is running.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2706,7 +2706,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Spanner.V1.Connection.t`) - Connection to server
   *   `session` (*type:* `String.t`) - Required. The session in which the read should be performed.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2782,7 +2782,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Spanner.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - The name of the operation resource to be cancelled.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2850,7 +2850,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Spanner.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - The name of the operation resource to be deleted.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2917,7 +2917,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Spanner.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - The name of the operation resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2991,7 +2991,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Spanner.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - The name of the operation's parent resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
