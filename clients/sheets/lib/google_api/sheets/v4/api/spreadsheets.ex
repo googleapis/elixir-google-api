@@ -49,7 +49,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
   *   `connection` (*type:* `GoogleApi.Sheets.V4.Connection.t`) - Connection to server
   *   `spreadsheet_id` (*type:* `String.t`) - The spreadsheet to apply the updates to.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -114,7 +114,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
 
   *   `connection` (*type:* `GoogleApi.Sheets.V4.Connection.t`) - Connection to server
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -190,7 +190,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
   *   `connection` (*type:* `GoogleApi.Sheets.V4.Connection.t`) - Connection to server
   *   `spreadsheet_id` (*type:* `String.t`) - The spreadsheet to request.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -272,7 +272,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
   *   `connection` (*type:* `GoogleApi.Sheets.V4.Connection.t`) - Connection to server
   *   `spreadsheet_id` (*type:* `String.t`) - The spreadsheet to request.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -342,7 +342,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
   *   `spreadsheet_id` (*type:* `String.t`) - The ID of the spreadsheet to retrieve metadata from.
   *   `metadata_id` (*type:* `integer()`) - The ID of the developer metadata to retrieve.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -414,7 +414,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
   *   `connection` (*type:* `GoogleApi.Sheets.V4.Connection.t`) - Connection to server
   *   `spreadsheet_id` (*type:* `String.t`) - The ID of the spreadsheet to retrieve metadata from.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -487,7 +487,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
   *   `spreadsheet_id` (*type:* `String.t`) - The ID of the spreadsheet containing the sheet to copy.
   *   `sheet_id` (*type:* `integer()`) - The ID of the sheet to copy.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -572,7 +572,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
   *   `range` (*type:* `String.t`) - The A1 notation of a range to search for a logical table of data.
       Values will be appended after the last row of the table.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -661,7 +661,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
   *   `connection` (*type:* `GoogleApi.Sheets.V4.Connection.t`) - Connection to server
   *   `spreadsheet_id` (*type:* `String.t`) - The ID of the spreadsheet to update.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -733,7 +733,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
   *   `connection` (*type:* `GoogleApi.Sheets.V4.Connection.t`) - Connection to server
   *   `spreadsheet_id` (*type:* `String.t`) - The ID of the spreadsheet to update.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -805,7 +805,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
   *   `connection` (*type:* `GoogleApi.Sheets.V4.Connection.t`) - Connection to server
   *   `spreadsheet_id` (*type:* `String.t`) - The ID of the spreadsheet to retrieve data from.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -887,7 +887,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
   *   `connection` (*type:* `GoogleApi.Sheets.V4.Connection.t`) - Connection to server
   *   `spreadsheet_id` (*type:* `String.t`) - The ID of the spreadsheet to retrieve data from.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -961,7 +961,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
   *   `connection` (*type:* `GoogleApi.Sheets.V4.Connection.t`) - Connection to server
   *   `spreadsheet_id` (*type:* `String.t`) - The ID of the spreadsheet to update.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1032,7 +1032,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
   *   `connection` (*type:* `GoogleApi.Sheets.V4.Connection.t`) - Connection to server
   *   `spreadsheet_id` (*type:* `String.t`) - The ID of the spreadsheet to update.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1107,7 +1107,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
   *   `spreadsheet_id` (*type:* `String.t`) - The ID of the spreadsheet to update.
   *   `range` (*type:* `String.t`) - The A1 notation of the values to clear.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1179,7 +1179,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
   *   `spreadsheet_id` (*type:* `String.t`) - The ID of the spreadsheet to retrieve data from.
   *   `range` (*type:* `String.t`) - The A1 notation of the values to retrieve.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1266,7 +1266,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
   *   `spreadsheet_id` (*type:* `String.t`) - The ID of the spreadsheet to update.
   *   `range` (*type:* `String.t`) - The A1 notation of the values to update.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
