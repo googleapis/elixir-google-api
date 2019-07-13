@@ -30,7 +30,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
 
   *   `connection` (*type:* `GoogleApi.AndroidManagement.V1.Connection.t`) - Connection to server
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -92,7 +92,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
   *   `connection` (*type:* `GoogleApi.AndroidManagement.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - The name of the enterprise in the form enterprises/{enterpriseId}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -148,7 +148,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
   *   `connection` (*type:* `GoogleApi.AndroidManagement.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - The name of the enterprise in the form enterprises/{enterpriseId}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -208,7 +208,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
   *   `connection` (*type:* `GoogleApi.AndroidManagement.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - The name of the application in the form enterprises/{enterpriseId}/applications/{package_name}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -275,7 +275,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
   *   `connection` (*type:* `GoogleApi.AndroidManagement.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - The name of the device in the form enterprises/{enterpriseId}/devices/{deviceId}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -342,7 +342,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
   *   `connection` (*type:* `GoogleApi.AndroidManagement.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - The name of the device in the form enterprises/{enterpriseId}/devices/{deviceId}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -407,7 +407,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
   *   `connection` (*type:* `GoogleApi.AndroidManagement.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - The name of the device in the form enterprises/{enterpriseId}/devices/{deviceId}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -474,7 +474,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
   *   `connection` (*type:* `GoogleApi.AndroidManagement.V1.Connection.t`) - Connection to server
   *   `parent` (*type:* `String.t`) - The name of the enterprise in the form enterprises/{enterpriseId}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -547,7 +547,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
   *   `connection` (*type:* `GoogleApi.AndroidManagement.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - The name of the device in the form enterprises/{enterpriseId}/devices/{deviceId}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -616,7 +616,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
   *   `connection` (*type:* `GoogleApi.AndroidManagement.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - The name of the operation resource to be cancelled.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -681,7 +681,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
   *   `connection` (*type:* `GoogleApi.AndroidManagement.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - The name of the operation resource to be deleted.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -746,7 +746,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
   *   `connection` (*type:* `GoogleApi.AndroidManagement.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - The name of the operation resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -811,7 +811,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
   *   `connection` (*type:* `GoogleApi.AndroidManagement.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - The name of the operation's parent resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -886,7 +886,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
   *   `connection` (*type:* `GoogleApi.AndroidManagement.V1.Connection.t`) - Connection to server
   *   `parent` (*type:* `String.t`) - The name of the enterprise in the form enterprises/{enterpriseId}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -955,7 +955,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
   *   `connection` (*type:* `GoogleApi.AndroidManagement.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - The name of the enrollment token in the form enterprises/{enterpriseId}/enrollmentTokens/{enrollmentTokenId}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1020,7 +1020,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
   *   `connection` (*type:* `GoogleApi.AndroidManagement.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - The name of the policy in the form enterprises/{enterpriseId}/policies/{policyId}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1085,7 +1085,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
   *   `connection` (*type:* `GoogleApi.AndroidManagement.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - The name of the policy in the form enterprises/{enterpriseId}/policies/{policyId}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1150,7 +1150,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
   *   `connection` (*type:* `GoogleApi.AndroidManagement.V1.Connection.t`) - Connection to server
   *   `parent` (*type:* `String.t`) - The name of the enterprise in the form enterprises/{enterpriseId}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1223,7 +1223,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
   *   `connection` (*type:* `GoogleApi.AndroidManagement.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - The name of the policy in the form enterprises/{enterpriseId}/policies/{policyId}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1292,7 +1292,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
   *   `connection` (*type:* `GoogleApi.AndroidManagement.V1.Connection.t`) - Connection to server
   *   `parent` (*type:* `String.t`) - The name of the enterprise in the form enterprises/{enterpriseId}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1359,7 +1359,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
   *   `connection` (*type:* `GoogleApi.AndroidManagement.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - The name of the web app in the form enterprises/{enterpriseId}/webApps/{packageName}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1424,7 +1424,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
   *   `connection` (*type:* `GoogleApi.AndroidManagement.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - The name of the web app in the form enterprises/{enterpriseId}/webApp/{packageName}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1489,7 +1489,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
   *   `connection` (*type:* `GoogleApi.AndroidManagement.V1.Connection.t`) - Connection to server
   *   `parent` (*type:* `String.t`) - The name of the enterprise in the form enterprises/{enterpriseId}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1562,7 +1562,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
   *   `connection` (*type:* `GoogleApi.AndroidManagement.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - The name of the web app in the form enterprises/{enterpriseId}/webApps/{packageName}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1631,7 +1631,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
   *   `connection` (*type:* `GoogleApi.AndroidManagement.V1.Connection.t`) - Connection to server
   *   `parent` (*type:* `String.t`) - The name of the enterprise in the form enterprises/{enterpriseId}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
