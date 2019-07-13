@@ -44,7 +44,7 @@ defmodule GoogleApi.Classroom.V1.Api.Invitations do
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
   *   `id` (*type:* `String.t`) - Identifier of the invitation to accept.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -110,7 +110,7 @@ defmodule GoogleApi.Classroom.V1.Api.Invitations do
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -172,7 +172,7 @@ defmodule GoogleApi.Classroom.V1.Api.Invitations do
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
   *   `id` (*type:* `String.t`) - Identifier of the invitation to delete.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -234,7 +234,7 @@ defmodule GoogleApi.Classroom.V1.Api.Invitations do
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
   *   `id` (*type:* `String.t`) - Identifier of the invitation to return.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -297,7 +297,7 @@ defmodule GoogleApi.Classroom.V1.Api.Invitations do
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP

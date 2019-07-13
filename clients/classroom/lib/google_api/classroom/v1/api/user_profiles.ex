@@ -42,7 +42,7 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
       * the email address of the user
       * the string literal `"me"`, indicating the requesting user
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -127,7 +127,7 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
   *   `student_id` (*type:* `String.t`) - ID of the student (in standard format)
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -208,7 +208,7 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
   *   `student_id` (*type:* `String.t`) - The ID of the student whose guardian invitation is being requested.
   *   `invitation_id` (*type:* `String.t`) - The `id` field of the `GuardianInvitation` being requested.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -299,7 +299,7 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
         all students that the requesting user is permitted to view guardian
         invitations.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -405,7 +405,7 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
   *   `student_id` (*type:* `String.t`) - The ID of the student whose guardian invitation is to be modified.
   *   `invitation_id` (*type:* `String.t`) - The `id` field of the `GuardianInvitation` to be modified.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -507,7 +507,7 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
       * the string literal `"me"`, indicating the requesting user
   *   `guardian_id` (*type:* `String.t`) - The `id` field from a `Guardian`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -594,7 +594,7 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
       * the string literal `"me"`, indicating the requesting user
   *   `guardian_id` (*type:* `String.t`) - The `id` field from a `Guardian`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -688,7 +688,7 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
       * the string literal `"-"`, indicating that results should be returned for
         all students that the requesting user has access to view.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
