@@ -31,7 +31,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Dataflow.V1b3.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - The ID of the Cloud Platform project that the snapshot belongs to.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -97,7 +97,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Dataflow.V1b3.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - The project to send the WorkerMessages to.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -158,7 +158,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Dataflow.V1b3.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - The project which owns the jobs.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -235,7 +235,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Dataflow.V1b3.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - The ID of the Cloud Platform project that the job belongs to.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -308,7 +308,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   *   `project_id` (*type:* `String.t`) - The ID of the Cloud Platform project that the job belongs to.
   *   `job_id` (*type:* `String.t`) - The job ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -389,7 +389,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   *   `project_id` (*type:* `String.t`) - A project id.
   *   `job_id` (*type:* `String.t`) - The job to get messages for.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -471,7 +471,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Dataflow.V1b3.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - The project which owns the jobs.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -543,7 +543,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   *   `project_id` (*type:* `String.t`) - The project which owns the job to be snapshotted.
   *   `job_id` (*type:* `String.t`) - The job to be snapshotted.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -620,7 +620,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   *   `project_id` (*type:* `String.t`) - The ID of the Cloud Platform project that the job belongs to.
   *   `job_id` (*type:* `String.t`) - The job ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -695,7 +695,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   *   `project_id` (*type:* `String.t`) - The project id.
   *   `job_id` (*type:* `String.t`) - The job id.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -768,7 +768,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   *   `project_id` (*type:* `String.t`) - The project id.
   *   `job_id` (*type:* `String.t`) - The job id.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -849,7 +849,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   *   `project_id` (*type:* `String.t`) - A project id.
   *   `job_id` (*type:* `String.t`) - The job to get messages about.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -940,7 +940,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   *   `project_id` (*type:* `String.t`) - Identifies the project this worker belongs to.
   *   `job_id` (*type:* `String.t`) - Identifies the workflow job this worker belongs to.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1012,7 +1012,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   *   `project_id` (*type:* `String.t`) - The project which owns the WorkItem's job.
   *   `job_id` (*type:* `String.t`) - The job which the WorkItem is part of.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1089,7 +1089,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
       contains the job.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1172,7 +1172,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
       contains this job.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1256,7 +1256,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       contains this job.
   *   `job_id` (*type:* `String.t`) - The job ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1339,7 +1339,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       contains the job specified by job_id.
   *   `job_id` (*type:* `String.t`) - The job to get messages for.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1423,7 +1423,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
       contains this job.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1504,7 +1504,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   *   `location` (*type:* `String.t`) - The location that contains this job.
   *   `job_id` (*type:* `String.t`) - The job to be snapshotted.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1587,7 +1587,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       contains this job.
   *   `job_id` (*type:* `String.t`) - The job ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1664,7 +1664,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       contains the job specified by job_id.
   *   `job_id` (*type:* `String.t`) - The job id.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1746,7 +1746,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       contains the job specified by job_id.
   *   `job_id` (*type:* `String.t`) - The job id.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1836,7 +1836,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       contains the job specified by job_id.
   *   `job_id` (*type:* `String.t`) - The job to get messages about.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1927,7 +1927,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   *   `location` (*type:* `String.t`) - The location to list snapshots in.
   *   `job_id` (*type:* `String.t`) - If specified, list snapshots created from this job.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2003,7 +2003,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       contains the WorkItem's job.
   *   `job_id` (*type:* `String.t`) - Identifies the workflow job this worker belongs to.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2084,7 +2084,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       contains the WorkItem's job.
   *   `job_id` (*type:* `String.t`) - The job which the WorkItem is part of.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2166,7 +2166,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   *   `location` (*type:* `String.t`) - The location that contains this snapshot.
   *   `snapshot_id` (*type:* `String.t`) - The ID of the snapshot.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2241,7 +2241,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   *   `location` (*type:* `String.t`) - The location that contains this snapshot.
   *   `snapshot_id` (*type:* `String.t`) - The ID of the snapshot.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2313,7 +2313,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   *   `project_id` (*type:* `String.t`) - The project ID to list snapshots for.
   *   `location` (*type:* `String.t`) - The location to list snapshots in.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2390,7 +2390,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to
       which to direct the request.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2463,7 +2463,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to
       which to direct the request.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2536,7 +2536,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to
       which to direct the request.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2614,7 +2614,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to
       which to direct the request.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2625,9 +2625,9 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:dynamicTemplate.gcsPath` (*type:* `String.t`) - Path to dynamic template spec file on GCS.
+      *   `:"dynamicTemplate.gcsPath"` (*type:* `String.t`) - Path to dynamic template spec file on GCS.
           The file must be a Json serialized DynamicTemplateFieSpec object.
-      *   `:dynamicTemplate.stagingLocation` (*type:* `String.t`) - Cloud Storage path for staging dependencies.
+      *   `:"dynamicTemplate.stagingLocation"` (*type:* `String.t`) - Cloud Storage path for staging dependencies.
           Must be a valid Cloud Storage URL, beginning with `gs://`.
       *   `:gcsPath` (*type:* `String.t`) - A Cloud Storage path to the template from which to create
           the job.
@@ -2700,7 +2700,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   *   `project_id` (*type:* `String.t`) - The ID of the Cloud Platform project that the snapshot belongs to.
   *   `snapshot_id` (*type:* `String.t`) - The ID of the snapshot.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2770,7 +2770,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Dataflow.V1b3.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - The project ID to list snapshots for.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2830,7 +2830,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Dataflow.V1b3.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - Required. The ID of the Cloud Platform project that the job belongs to.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2893,7 +2893,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Dataflow.V1b3.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - Required. The ID of the Cloud Platform project that the job belongs to.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2959,7 +2959,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Dataflow.V1b3.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - Required. The ID of the Cloud Platform project that the job belongs to.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2970,9 +2970,9 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:dynamicTemplate.gcsPath` (*type:* `String.t`) - Path to dynamic template spec file on GCS.
+      *   `:"dynamicTemplate.gcsPath"` (*type:* `String.t`) - Path to dynamic template spec file on GCS.
           The file must be a Json serialized DynamicTemplateFieSpec object.
-      *   `:dynamicTemplate.stagingLocation` (*type:* `String.t`) - Cloud Storage path for staging dependencies.
+      *   `:"dynamicTemplate.stagingLocation"` (*type:* `String.t`) - Cloud Storage path for staging dependencies.
           Must be a valid Cloud Storage URL, beginning with `gs://`.
       *   `:gcsPath` (*type:* `String.t`) - A Cloud Storage path to the template from which to create
           the job.
