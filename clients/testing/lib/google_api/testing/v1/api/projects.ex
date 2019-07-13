@@ -40,7 +40,7 @@ defmodule GoogleApi.Testing.V1.Api.Projects do
   *   `project_id` (*type:* `String.t`) - Cloud project that owns the test.
   *   `test_matrix_id` (*type:* `String.t`) - Test matrix that will be canceled.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -117,7 +117,7 @@ defmodule GoogleApi.Testing.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Testing.V1.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - The GCE project under which this job will run.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -198,7 +198,7 @@ defmodule GoogleApi.Testing.V1.Api.Projects do
   *   `project_id` (*type:* `String.t`) - Cloud project that owns the test matrix.
   *   `test_matrix_id` (*type:* `String.t`) - Unique test matrix id which was assigned by the service.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
