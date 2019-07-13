@@ -32,7 +32,7 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Datastore.V1.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - The ID of the project against which to make the request.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -90,7 +90,7 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Datastore.V1.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - The ID of the project against which to make the request.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -155,7 +155,7 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Datastore.V1.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - The ID of the project against which to make the request.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -220,7 +220,7 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Datastore.V1.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - Project ID against which to make the request.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -285,7 +285,7 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Datastore.V1.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - Project ID against which to make the request.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -346,7 +346,7 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Datastore.V1.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - The ID of the project against which to make the request.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -405,7 +405,7 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Datastore.V1.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - The ID of the project against which to make the request.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -463,7 +463,7 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Datastore.V1.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - The ID of the project against which to make the request.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -521,7 +521,7 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Datastore.V1.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - The ID of the project against which to make the request.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -580,7 +580,7 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
   *   `project_id` (*type:* `String.t`) - Project ID against which to make the request.
   *   `index_id` (*type:* `String.t`) - The resource ID of the index to get.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -654,7 +654,7 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Datastore.V1.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - Project ID against which to make the request.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -729,7 +729,7 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Datastore.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - The name of the operation resource to be cancelled.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -788,7 +788,7 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Datastore.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - The name of the operation resource to be deleted.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -846,7 +846,7 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Datastore.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - The name of the operation resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -914,7 +914,7 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Datastore.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - The name of the operation's parent resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
