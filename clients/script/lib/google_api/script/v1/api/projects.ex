@@ -31,7 +31,7 @@ defmodule GoogleApi.Script.V1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.Script.V1.Connection.t`) - Connection to server
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -87,7 +87,7 @@ defmodule GoogleApi.Script.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Script.V1.Connection.t`) - Connection to server
   *   `script_id` (*type:* `String.t`) - The script project's Drive ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -144,7 +144,7 @@ defmodule GoogleApi.Script.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Script.V1.Connection.t`) - Connection to server
   *   `script_id` (*type:* `String.t`) - The script project's Drive ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -204,7 +204,7 @@ defmodule GoogleApi.Script.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Script.V1.Connection.t`) - Connection to server
   *   `script_id` (*type:* `String.t`) - Required field indicating the script to get metrics for.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -215,7 +215,7 @@ defmodule GoogleApi.Script.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:metricsFilter.deploymentId` (*type:* `String.t`) - Optional field indicating a specific deployment to retrieve metrics from.
+      *   `:"metricsFilter.deploymentId"` (*type:* `String.t`) - Optional field indicating a specific deployment to retrieve metrics from.
       *   `:metricsGranularity` (*type:* `String.t`) - Required field indicating what granularity of metrics are returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -268,7 +268,7 @@ defmodule GoogleApi.Script.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Script.V1.Connection.t`) - Connection to server
   *   `script_id` (*type:* `String.t`) - The script project's Drive ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -326,7 +326,7 @@ defmodule GoogleApi.Script.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Script.V1.Connection.t`) - Connection to server
   *   `script_id` (*type:* `String.t`) - The script project's Drive ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -385,7 +385,7 @@ defmodule GoogleApi.Script.V1.Api.Projects do
   *   `script_id` (*type:* `String.t`) - The script project's Drive ID.
   *   `deployment_id` (*type:* `String.t`) - The deployment ID to be undeployed.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -454,7 +454,7 @@ defmodule GoogleApi.Script.V1.Api.Projects do
   *   `script_id` (*type:* `String.t`) - The script project's Drive ID.
   *   `deployment_id` (*type:* `String.t`) - The deployment ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -522,7 +522,7 @@ defmodule GoogleApi.Script.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Script.V1.Connection.t`) - Connection to server
   *   `script_id` (*type:* `String.t`) - The script project's Drive ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -584,7 +584,7 @@ defmodule GoogleApi.Script.V1.Api.Projects do
   *   `script_id` (*type:* `String.t`) - The script project's Drive ID.
   *   `deployment_id` (*type:* `String.t`) - The deployment ID for this deployment.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -655,7 +655,7 @@ defmodule GoogleApi.Script.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Script.V1.Connection.t`) - Connection to server
   *   `script_id` (*type:* `String.t`) - The script project's Drive ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -714,7 +714,7 @@ defmodule GoogleApi.Script.V1.Api.Projects do
   *   `script_id` (*type:* `String.t`) - The script project's Drive ID.
   *   `version_number` (*type:* `integer()`) - The version number.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -782,7 +782,7 @@ defmodule GoogleApi.Script.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Script.V1.Connection.t`) - Connection to server
   *   `script_id` (*type:* `String.t`) - The script project's Drive ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP

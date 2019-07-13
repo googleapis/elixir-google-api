@@ -45,7 +45,7 @@ defmodule GoogleApi.Script.V1.Api.Scripts do
   *   `script_id` (*type:* `String.t`) - The script ID of the script to be executed. To find the script ID, open
       the project in the script editor and select **File > Project properties**.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
