@@ -36,7 +36,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
   *   `parent` (*type:* `String.t`) - Required. The parent resource ID in the format `partners/[PARTNER_ID]` that
       identifies the reseller.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -107,7 +107,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
   *   `connection` (*type:* `GoogleApi.AndroidDeviceProvisioning.V1.Connection.t`) - Connection to server
   *   `partner_id` (*type:* `String.t`) - Required. The ID of the reseller partner.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -182,7 +182,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
   *   `connection` (*type:* `GoogleApi.AndroidDeviceProvisioning.V1.Connection.t`) - Connection to server
   *   `partner_id` (*type:* `String.t`) - Required. The ID of the reseller partner.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -255,7 +255,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
   *   `connection` (*type:* `GoogleApi.AndroidDeviceProvisioning.V1.Connection.t`) - Connection to server
   *   `partner_id` (*type:* `String.t`) - Required. The ID of the reseller partner.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -326,7 +326,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
   *   `connection` (*type:* `GoogleApi.AndroidDeviceProvisioning.V1.Connection.t`) - Connection to server
   *   `partner_id` (*type:* `String.t`) - Required. The ID of the reseller partner.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -405,7 +405,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
   *   `connection` (*type:* `GoogleApi.AndroidDeviceProvisioning.V1.Connection.t`) - Connection to server
   *   `partner_id` (*type:* `String.t`) - Required. The ID of the reseller partner.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -477,7 +477,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
   *   `name` (*type:* `String.t`) - Required. The device API resource name in the format
       `partners/[PARTNER_ID]/devices/[DEVICE_ID]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -544,7 +544,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
   *   `metadata_owner_id` (*type:* `String.t`) - Required. The owner of the newly set metadata. Set this to the partner ID.
   *   `device_id` (*type:* `String.t`) - Required. The ID of the device.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -619,7 +619,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
   *   `connection` (*type:* `GoogleApi.AndroidDeviceProvisioning.V1.Connection.t`) - Connection to server
   *   `partner_id` (*type:* `String.t`) - Required. The ID of the reseller partner.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -689,7 +689,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
   *   `connection` (*type:* `GoogleApi.AndroidDeviceProvisioning.V1.Connection.t`) - Connection to server
   *   `partner_id` (*type:* `String.t`) - Required. The reseller partner ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -763,7 +763,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
   *   `connection` (*type:* `GoogleApi.AndroidDeviceProvisioning.V1.Connection.t`) - Connection to server
   *   `partner_id` (*type:* `String.t`) - Required. The reseller partner ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -834,7 +834,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
   *   `connection` (*type:* `GoogleApi.AndroidDeviceProvisioning.V1.Connection.t`) - Connection to server
   *   `parent` (*type:* `String.t`) - Required. The resource name in the format `partners/[PARTNER_ID]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -908,7 +908,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
   *   `parent` (*type:* `String.t`) - Required. The resource name in the format
       `partners/[PARTNER_ID]/vendors/[VENDOR_ID]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
