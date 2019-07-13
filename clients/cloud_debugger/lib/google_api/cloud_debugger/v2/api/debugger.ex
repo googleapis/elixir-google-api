@@ -30,7 +30,7 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Debugger do
 
   *   `connection` (*type:* `GoogleApi.CloudDebugger.V2.Connection.t`) - Connection to server
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -96,7 +96,7 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Debugger do
   *   `debuggee_id` (*type:* `String.t`) - ID of the debuggee whose breakpoint to delete.
   *   `breakpoint_id` (*type:* `String.t`) - ID of the breakpoint to delete.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -168,7 +168,7 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Debugger do
   *   `debuggee_id` (*type:* `String.t`) - ID of the debuggee whose breakpoint to get.
   *   `breakpoint_id` (*type:* `String.t`) - ID of the breakpoint to get.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -243,7 +243,7 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Debugger do
   *   `connection` (*type:* `GoogleApi.CloudDebugger.V2.Connection.t`) - Connection to server
   *   `debuggee_id` (*type:* `String.t`) - ID of the debuggee whose breakpoints to list.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -254,7 +254,7 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Debugger do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:action.value` (*type:* `String.t`) - Only breakpoints with the specified action will pass the filter.
+      *   `:"action.value"` (*type:* `String.t`) - Only breakpoints with the specified action will pass the filter.
       *   `:clientVersion` (*type:* `String.t`) - The client version making the call.
           Schema: `domain/type/version` (e.g., `google.com/intellij/v1`).
       *   `:includeAllUsers` (*type:* `boolean()`) - When set to `true`, the response includes the list of breakpoints set by
@@ -332,7 +332,7 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Debugger do
   *   `connection` (*type:* `GoogleApi.CloudDebugger.V2.Connection.t`) - Connection to server
   *   `debuggee_id` (*type:* `String.t`) - ID of the debuggee where the breakpoint is to be set.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP

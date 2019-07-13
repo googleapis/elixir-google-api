@@ -39,7 +39,7 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Controller do
 
   *   `connection` (*type:* `GoogleApi.CloudDebugger.V2.Connection.t`) - Connection to server
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -110,7 +110,7 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Controller do
   *   `connection` (*type:* `GoogleApi.CloudDebugger.V2.Connection.t`) - Connection to server
   *   `debuggee_id` (*type:* `String.t`) - Identifies the debuggee.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -199,7 +199,7 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Controller do
   *   `debuggee_id` (*type:* `String.t`) - Identifies the debuggee being debugged.
   *   `id` (*type:* `String.t`) - Breakpoint identifier, unique in the scope of the debuggee.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
