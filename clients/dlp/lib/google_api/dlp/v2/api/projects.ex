@@ -38,7 +38,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
   *   `parent` (*type:* `String.t`) - The parent resource name, for example projects/my-project-id.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -107,7 +107,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
   *   `parent` (*type:* `String.t`) - The parent resource name, for example projects/my-project-id.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -171,7 +171,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
   *   `parent` (*type:* `String.t`) - The parent resource name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -236,7 +236,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   *   `parent` (*type:* `String.t`) - The parent resource name, for example projects/my-project-id or
       organizations/my-org-id.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -311,7 +311,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
       for example `organizations/433245324/deidentifyTemplates/432452342` or
       projects/project-id/deidentifyTemplates/432452342.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -380,7 +380,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
       example `organizations/433245324/deidentifyTemplates/432452342` or
       projects/project-id/deidentifyTemplates/432452342.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -447,7 +447,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   *   `parent` (*type:* `String.t`) - The parent resource name, for example projects/my-project-id or
       organizations/my-org-id.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -541,7 +541,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
       example `organizations/433245324/deidentifyTemplates/432452342` or
       projects/project-id/deidentifyTemplates/432452342.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -611,7 +611,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - The name of the DlpJob resource to be cancelled.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -675,7 +675,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
   *   `parent` (*type:* `String.t`) - The parent resource name, for example projects/my-project-id.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -737,7 +737,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - The name of the DlpJob resource to be deleted.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -795,7 +795,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - The name of the DlpJob resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -853,7 +853,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
   *   `parent` (*type:* `String.t`) - The parent resource name, for example projects/my-project-id.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -968,7 +968,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
   *   `parent` (*type:* `String.t`) - The parent resource name, for example projects/my-project-id.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1032,7 +1032,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   *   `parent` (*type:* `String.t`) - The parent resource name, for example projects/my-project-id or
       organizations/my-org-id.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1101,7 +1101,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
       example `organizations/433245324/inspectTemplates/432452342` or
       projects/project-id/inspectTemplates/432452342.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1164,7 +1164,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
       example `organizations/433245324/inspectTemplates/432452342` or
       projects/project-id/inspectTemplates/432452342.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1225,7 +1225,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   *   `parent` (*type:* `String.t`) - The parent resource name, for example projects/my-project-id or
       organizations/my-org-id.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1307,7 +1307,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
       example `organizations/433245324/inspectTemplates/432452342` or
       projects/project-id/inspectTemplates/432452342.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1370,7 +1370,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   *   `name` (*type:* `String.t`) - Resource name of the trigger to activate, for example
       `projects/dlp-test-project/jobTriggers/53234423`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1430,7 +1430,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
   *   `parent` (*type:* `String.t`) - The parent resource name, for example projects/my-project-id.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1490,7 +1490,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   *   `name` (*type:* `String.t`) - Resource name of the project and the triggeredJob, for example
       `projects/dlp-test-project/jobTriggers/53234423`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1548,7 +1548,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   *   `name` (*type:* `String.t`) - Resource name of the project and the triggeredJob, for example
       `projects/dlp-test-project/jobTriggers/53234423`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1605,7 +1605,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
   *   `parent` (*type:* `String.t`) - The parent resource name, for example `projects/my-project-id`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1713,7 +1713,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   *   `name` (*type:* `String.t`) - Resource name of the project and the triggeredJob, for example
       `projects/dlp-test-project/jobTriggers/53234423`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1780,7 +1780,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   *   `location` (*type:* `String.t`) - The geographic location to process de-identification. Reserved for future
       extensions.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1857,7 +1857,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   *   `parent` (*type:* `String.t`) - The parent resource name, for example projects/my-project-id or
       organizations/my-org-id.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1927,7 +1927,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
       example `organizations/433245324/storedInfoTypes/432452342` or
       projects/project-id/storedInfoTypes/432452342.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1991,7 +1991,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
       example `organizations/433245324/storedInfoTypes/432452342` or
       projects/project-id/storedInfoTypes/432452342.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2053,7 +2053,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   *   `parent` (*type:* `String.t`) - The parent resource name, for example projects/my-project-id or
       organizations/my-org-id.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2138,7 +2138,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
       example `organizations/433245324/storedInfoTypes/432452342` or
       projects/project-id/storedInfoTypes/432452342.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
