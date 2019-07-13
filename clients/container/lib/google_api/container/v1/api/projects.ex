@@ -32,7 +32,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   *   `parent` (*type:* `String.t`) - The parent project where subnetworks are usable.
       Specified in the format 'projects/*'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -115,7 +115,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   *   `name` (*type:* `String.t`) - The name (project and location) of the server config to get,
       specified in the format 'projects/*/locations/*'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -189,7 +189,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   *   `name` (*type:* `String.t`) - The name (project, location, cluster id) of the cluster to complete IP
       rotation. Specified in the format 'projects/*/locations/*/clusters/*'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -269,7 +269,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   *   `parent` (*type:* `String.t`) - The parent (project and location) where the cluster will be created.
       Specified in the format 'projects/*/locations/*'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -345,7 +345,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   *   `name` (*type:* `String.t`) - The name (project, location, cluster) of the cluster to delete.
       Specified in the format 'projects/*/locations/*/clusters/*'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -423,7 +423,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   *   `name` (*type:* `String.t`) - The name (project, location, cluster) of the cluster to retrieve.
       Specified in the format 'projects/*/locations/*/clusters/*'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -504,7 +504,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   *   `parent` (*type:* `String.t`) - The cluster (project, location, cluster id) to get keys for. Specified in
       the format 'projects/*/locations/*/clusters/*'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -573,7 +573,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       Specified in the format 'projects/*/locations/*'.
       Location "-" matches all zones and all regions.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -649,7 +649,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   *   `name` (*type:* `String.t`) - The name (project, location, cluster) of the cluster to set addons.
       Specified in the format 'projects/*/locations/*/clusters/*'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -717,7 +717,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   *   `name` (*type:* `String.t`) - The name (project, location, cluster id) of the cluster to set legacy abac.
       Specified in the format 'projects/*/locations/*/clusters/*'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -785,7 +785,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   *   `name` (*type:* `String.t`) - The name (project, location, cluster) of the cluster to set locations.
       Specified in the format 'projects/*/locations/*/clusters/*'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -853,7 +853,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   *   `name` (*type:* `String.t`) - The name (project, location, cluster) of the cluster to set logging.
       Specified in the format 'projects/*/locations/*/clusters/*'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -922,7 +922,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       policy.
       Specified in the format 'projects/*/locations/*/clusters/*'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -992,7 +992,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   *   `name` (*type:* `String.t`) - The name (project, location, cluster) of the cluster to set auth.
       Specified in the format 'projects/*/locations/*/clusters/*'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1060,7 +1060,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   *   `name` (*type:* `String.t`) - The name (project, location, cluster) of the cluster to set monitoring.
       Specified in the format 'projects/*/locations/*/clusters/*'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1128,7 +1128,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   *   `name` (*type:* `String.t`) - The name (project, location, cluster id) of the cluster to set networking
       policy. Specified in the format 'projects/*/locations/*/clusters/*'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1196,7 +1196,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   *   `name` (*type:* `String.t`) - The name (project, location, cluster id) of the cluster to set labels.
       Specified in the format 'projects/*/locations/*/clusters/*'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1264,7 +1264,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   *   `name` (*type:* `String.t`) - The name (project, location, cluster id) of the cluster to start IP
       rotation. Specified in the format 'projects/*/locations/*/clusters/*'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1332,7 +1332,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   *   `name` (*type:* `String.t`) - The name (project, location, cluster) of the cluster to update.
       Specified in the format 'projects/*/locations/*/clusters/*'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1400,7 +1400,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   *   `name` (*type:* `String.t`) - The name (project, location, cluster) of the cluster to update.
       Specified in the format 'projects/*/locations/*/clusters/*'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1469,7 +1469,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       created. Specified in the format
       'projects/*/locations/*/clusters/*'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1538,7 +1538,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       delete. Specified in the format
       'projects/*/locations/*/clusters/*/nodePools/*'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1620,7 +1620,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       get. Specified in the format
       'projects/*/locations/*/clusters/*/nodePools/*'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1701,7 +1701,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   *   `parent` (*type:* `String.t`) - The parent (project, location, cluster id) where the node pools will be
       listed. Specified in the format 'projects/*/locations/*/clusters/*'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1782,7 +1782,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       rollback upgrade.
       Specified in the format 'projects/*/locations/*/clusters/*/nodePools/*'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1851,7 +1851,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       autoscaler settings. Specified in the format
       'projects/*/locations/*/clusters/*/nodePools/*'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1920,7 +1920,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       management properties. Specified in the format
       'projects/*/locations/*/clusters/*/nodePools/*'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1989,7 +1989,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       size.
       Specified in the format 'projects/*/locations/*/clusters/*/nodePools/*'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2058,7 +2058,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       update. Specified in the format
       'projects/*/locations/*/clusters/*/nodePools/*'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2132,7 +2132,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   *   `parent` (*type:* `String.t`) - The cluster (project, location, cluster id) to get the discovery document
       for. Specified in the format 'projects/*/locations/*/clusters/*'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2192,7 +2192,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   *   `name` (*type:* `String.t`) - The name (project, location, operation id) of the operation to cancel.
       Specified in the format 'projects/*/locations/*/operations/*'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2260,7 +2260,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   *   `name` (*type:* `String.t`) - The name (project, location, operation id) of the operation to get.
       Specified in the format 'projects/*/locations/*/operations/*'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2339,7 +2339,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       Specified in the format 'projects/*/locations/*'.
       Location "-" matches all zones and all regions.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2418,7 +2418,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       [zone](/compute/docs/zones#available) to return operations for.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2497,7 +2497,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster to upgrade.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2578,7 +2578,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2672,7 +2672,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       resides.
       This field has been deprecated and replaced by the parent field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2758,7 +2758,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster to delete.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2840,7 +2840,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster to retrieve.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2922,7 +2922,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster to update.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -3002,7 +3002,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       resides, or "-" for all zones.
       This field has been deprecated and replaced by the parent field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -3083,7 +3083,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster to upgrade.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -3164,7 +3164,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster to upgrade.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -3245,7 +3245,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster to upgrade.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -3326,7 +3326,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster to upgrade.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -3407,7 +3407,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -3488,7 +3488,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       resides.
   *   `cluster_id` (*type:* `String.t`) - The name of the cluster to update.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -3574,7 +3574,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster to upgrade.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -3658,7 +3658,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -3742,7 +3742,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -3826,7 +3826,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster to upgrade.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -3909,7 +3909,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   *   `node_pool_id` (*type:* `String.t`) - Deprecated. The name of the node pool to upgrade.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -3996,7 +3996,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster.
       This field has been deprecated and replaced by the parent field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -4079,7 +4079,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   *   `node_pool_id` (*type:* `String.t`) - Deprecated. The name of the node pool to delete.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -4170,7 +4170,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   *   `node_pool_id` (*type:* `String.t`) - Deprecated. The name of the node pool.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -4259,7 +4259,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster.
       This field has been deprecated and replaced by the parent field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -4345,7 +4345,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   *   `node_pool_id` (*type:* `String.t`) - Deprecated. The name of the node pool to rollback.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -4434,7 +4434,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   *   `node_pool_id` (*type:* `String.t`) - Deprecated. The name of the node pool to update.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -4523,7 +4523,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   *   `node_pool_id` (*type:* `String.t`) - Deprecated. The name of the node pool to update.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -4612,7 +4612,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   *   `node_pool_id` (*type:* `String.t`) - Deprecated. The name of the node pool to upgrade.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -4698,7 +4698,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   *   `operation_id` (*type:* `String.t`) - Deprecated. The server-assigned `name` of the operation.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -4779,7 +4779,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   *   `operation_id` (*type:* `String.t`) - Deprecated. The server-assigned `name` of the operation.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -4858,7 +4858,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       [zone](/compute/docs/zones#available) to return operations for, or `-` for
       all zones. This field has been deprecated and replaced by the parent field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
