@@ -44,7 +44,7 @@ defmodule GoogleApi.ServiceControl.V1.Api.Services do
 
       See google.api.Service for the definition of a service name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -135,7 +135,7 @@ defmodule GoogleApi.ServiceControl.V1.Api.Services do
       [google.api.Service](https://cloud.google.com/service-management/reference/rpc/google.api#google.api.Service)
       for the definition of a service name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -211,7 +211,7 @@ defmodule GoogleApi.ServiceControl.V1.Api.Services do
       [google.api.Service](https://cloud.google.com/service-management/reference/rpc/google.api#google.api.Service)
       for the definition of a service name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
