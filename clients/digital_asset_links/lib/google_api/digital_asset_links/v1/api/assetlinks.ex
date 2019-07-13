@@ -52,7 +52,7 @@ defmodule GoogleApi.DigitalAssetLinks.V1.Api.Assetlinks do
 
   *   `connection` (*type:* `GoogleApi.DigitalAssetLinks.V1.Connection.t`) - Connection to server
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -79,7 +79,7 @@ defmodule GoogleApi.DigitalAssetLinks.V1.Api.Assetlinks do
           Example: A query with relation `delegate_permission/common.handle_all_urls`
           matches an asset link with relation
           `delegate_permission/common.handle_all_urls`.
-      *   `:source.androidApp.certificate.sha256Fingerprint` (*type:* `String.t`) - The uppercase SHA-265 fingerprint of the certificate.  From the PEM
+      *   `:"source.androidApp.certificate.sha256Fingerprint"` (*type:* `String.t`) - The uppercase SHA-265 fingerprint of the certificate.  From the PEM
            certificate, it can be acquired like this:
 
               $ keytool -printcert -file $CERTFILE | grep SHA256:
@@ -100,11 +100,11 @@ defmodule GoogleApi.DigitalAssetLinks.V1.Api.Assetlinks do
           certificate into the DER format, compute the SHA-256 hash of that string
           and represent the result as a hexstring (that is, uppercase hexadecimal
           representations of each octet, separated by colons).
-      *   `:source.androidApp.packageName` (*type:* `String.t`) - Android App assets are naturally identified by their Java package name.
+      *   `:"source.androidApp.packageName"` (*type:* `String.t`) - Android App assets are naturally identified by their Java package name.
           For example, the Google Maps app uses the package name
           `com.google.android.apps.maps`.
           REQUIRED
-      *   `:source.web.site` (*type:* `String.t`) - Web assets are identified by a URL that contains only the scheme, hostname
+      *   `:"source.web.site"` (*type:* `String.t`) - Web assets are identified by a URL that contains only the scheme, hostname
           and port parts.  The format is
 
               http[s]://<hostname>[:<port>]
@@ -137,7 +137,7 @@ defmodule GoogleApi.DigitalAssetLinks.V1.Api.Assetlinks do
             *   `https://google.com/`          (hostname does not match)
             *   `https://www.google.com:444/`  (port does not match)
           REQUIRED
-      *   `:target.androidApp.certificate.sha256Fingerprint` (*type:* `String.t`) - The uppercase SHA-265 fingerprint of the certificate.  From the PEM
+      *   `:"target.androidApp.certificate.sha256Fingerprint"` (*type:* `String.t`) - The uppercase SHA-265 fingerprint of the certificate.  From the PEM
            certificate, it can be acquired like this:
 
               $ keytool -printcert -file $CERTFILE | grep SHA256:
@@ -158,11 +158,11 @@ defmodule GoogleApi.DigitalAssetLinks.V1.Api.Assetlinks do
           certificate into the DER format, compute the SHA-256 hash of that string
           and represent the result as a hexstring (that is, uppercase hexadecimal
           representations of each octet, separated by colons).
-      *   `:target.androidApp.packageName` (*type:* `String.t`) - Android App assets are naturally identified by their Java package name.
+      *   `:"target.androidApp.packageName"` (*type:* `String.t`) - Android App assets are naturally identified by their Java package name.
           For example, the Google Maps app uses the package name
           `com.google.android.apps.maps`.
           REQUIRED
-      *   `:target.web.site` (*type:* `String.t`) - Web assets are identified by a URL that contains only the scheme, hostname
+      *   `:"target.web.site"` (*type:* `String.t`) - Web assets are identified by a URL that contains only the scheme, hostname
           and port parts.  The format is
 
               http[s]://<hostname>[:<port>]
