@@ -30,7 +30,7 @@ defmodule GoogleApi.CloudBilling.V1.Api.Services do
 
   *   `connection` (*type:* `GoogleApi.CloudBilling.V1.Connection.t`) - Connection to server
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -92,7 +92,7 @@ defmodule GoogleApi.CloudBilling.V1.Api.Services do
   *   `parent` (*type:* `String.t`) - The name of the service.
       Example: "services/DA34-426B-A397"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP

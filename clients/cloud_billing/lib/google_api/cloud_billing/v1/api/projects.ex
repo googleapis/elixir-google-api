@@ -35,7 +35,7 @@ defmodule GoogleApi.CloudBilling.V1.Api.Projects do
   *   `name` (*type:* `String.t`) - The resource name of the project for which billing information is
       retrieved. For example, `projects/tokyo-rain-123`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -127,7 +127,7 @@ defmodule GoogleApi.CloudBilling.V1.Api.Projects do
   *   `name` (*type:* `String.t`) - The resource name of the project associated with the billing information
       that you want to update. For example, `projects/tokyo-rain-123`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
