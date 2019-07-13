@@ -37,7 +37,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   *   `name` (*type:* `String.t`) - The data source in the form:
       `projects/{project_id}/dataSources/{data_source_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -110,7 +110,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   *   `name` (*type:* `String.t`) - The field will contain name of the resource requested, for example:
       `projects/{project_id}/dataSources/{data_source_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -178,7 +178,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   *   `parent` (*type:* `String.t`) - The BigQuery project id for which data sources should be returned.
       Must be in the form: `projects/{project_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -255,7 +255,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - Resource name for the location.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -320,7 +320,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - The resource that owns the locations collection, if applicable.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -401,7 +401,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   *   `name` (*type:* `String.t`) - The data source in the form:
       `projects/{project_id}/dataSources/{data_source_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -474,7 +474,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   *   `name` (*type:* `String.t`) - The field will contain name of the resource requested, for example:
       `projects/{project_id}/dataSources/{data_source_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -542,7 +542,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   *   `parent` (*type:* `String.t`) - The BigQuery project id for which data sources should be returned.
       Must be in the form: `projects/{project_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -622,7 +622,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
       If specified location and location of the destination bigquery dataset
       do not match - the request will fail.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -719,7 +719,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   *   `name` (*type:* `String.t`) - The field will contain name of the resource requested, for example:
       `projects/{project_id}/transferConfigs/{config_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -785,7 +785,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   *   `name` (*type:* `String.t`) - The field will contain name of the resource requested, for example:
       `projects/{project_id}/transferConfigs/{config_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -855,7 +855,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   *   `parent` (*type:* `String.t`) - The BigQuery project id for which data sources
       should be returned: `projects/{project_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -941,7 +941,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
       is not provided, usually a uuid, even though it is not guaranteed or
       required, will be generated for config_id.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1043,7 +1043,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   *   `parent` (*type:* `String.t`) - Transfer configuration name in the form:
       `projects/{project_id}/transferConfigs/{config_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1118,7 +1118,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   *   `parent` (*type:* `String.t`) - Transfer configuration name in the form:
       `projects/{project_id}/transferConfigs/{config_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1190,7 +1190,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   *   `name` (*type:* `String.t`) - The field will contain name of the resource requested, for example:
       `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1256,7 +1256,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   *   `name` (*type:* `String.t`) - The field will contain name of the resource requested, for example:
       `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1324,7 +1324,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
       Format of transfer configuration resource name is:
       `projects/{project_id}/transferConfigs/{config_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1406,7 +1406,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   *   `parent` (*type:* `String.t`) - Transfer run name in the form:
       `projects/{project_id}/transferConfigs/{config_Id}/runs/{run_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1489,7 +1489,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
       If specified location and location of the destination bigquery dataset
       do not match - the request will fail.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1586,7 +1586,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   *   `name` (*type:* `String.t`) - The field will contain name of the resource requested, for example:
       `projects/{project_id}/transferConfigs/{config_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1652,7 +1652,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   *   `name` (*type:* `String.t`) - The field will contain name of the resource requested, for example:
       `projects/{project_id}/transferConfigs/{config_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1722,7 +1722,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   *   `parent` (*type:* `String.t`) - The BigQuery project id for which data sources
       should be returned: `projects/{project_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1808,7 +1808,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
       is not provided, usually a uuid, even though it is not guaranteed or
       required, will be generated for config_id.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1910,7 +1910,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   *   `parent` (*type:* `String.t`) - Transfer configuration name in the form:
       `projects/{project_id}/transferConfigs/{config_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1985,7 +1985,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   *   `parent` (*type:* `String.t`) - Transfer configuration name in the form:
       `projects/{project_id}/transferConfigs/{config_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2057,7 +2057,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   *   `name` (*type:* `String.t`) - The field will contain name of the resource requested, for example:
       `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2123,7 +2123,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   *   `name` (*type:* `String.t`) - The field will contain name of the resource requested, for example:
       `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2191,7 +2191,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
       Format of transfer configuration resource name is:
       `projects/{project_id}/transferConfigs/{config_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2273,7 +2273,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   *   `parent` (*type:* `String.t`) - Transfer run name in the form:
       `projects/{project_id}/transferConfigs/{config_Id}/runs/{run_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
