@@ -31,7 +31,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   *   `connection` (*type:* `GoogleApi.Vault.V1.Connection.t`) - Connection to server
   *   `matter_id` (*type:* `String.t`) - The matter ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -89,7 +89,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   *   `connection` (*type:* `GoogleApi.Vault.V1.Connection.t`) - Connection to server
   *   `matter_id` (*type:* `String.t`) - The matter ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -148,7 +148,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
 
   *   `connection` (*type:* `GoogleApi.Vault.V1.Connection.t`) - Connection to server
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -204,7 +204,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   *   `connection` (*type:* `GoogleApi.Vault.V1.Connection.t`) - Connection to server
   *   `matter_id` (*type:* `String.t`) - The matter ID
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -260,7 +260,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   *   `connection` (*type:* `GoogleApi.Vault.V1.Connection.t`) - Connection to server
   *   `matter_id` (*type:* `String.t`) - The matter ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -317,7 +317,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
 
   *   `connection` (*type:* `GoogleApi.Vault.V1.Connection.t`) - Connection to server
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -381,7 +381,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   *   `connection` (*type:* `GoogleApi.Vault.V1.Connection.t`) - Connection to server
   *   `matter_id` (*type:* `String.t`) - The matter ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -439,7 +439,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   *   `connection` (*type:* `GoogleApi.Vault.V1.Connection.t`) - Connection to server
   *   `matter_id` (*type:* `String.t`) - The matter ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -497,7 +497,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   *   `connection` (*type:* `GoogleApi.Vault.V1.Connection.t`) - Connection to server
   *   `matter_id` (*type:* `String.t`) - The matter ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -558,7 +558,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   *   `connection` (*type:* `GoogleApi.Vault.V1.Connection.t`) - Connection to server
   *   `matter_id` (*type:* `String.t`) - The matter ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -616,7 +616,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   *   `connection` (*type:* `GoogleApi.Vault.V1.Connection.t`) - Connection to server
   *   `matter_id` (*type:* `String.t`) - The matter ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -675,7 +675,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   *   `matter_id` (*type:* `String.t`) - The matter ID.
   *   `export_id` (*type:* `String.t`) - The export ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -744,7 +744,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   *   `matter_id` (*type:* `String.t`) - The matter ID.
   *   `export_id` (*type:* `String.t`) - The export ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -812,7 +812,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   *   `connection` (*type:* `GoogleApi.Vault.V1.Connection.t`) - Connection to server
   *   `matter_id` (*type:* `String.t`) - The matter ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -875,7 +875,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   *   `matter_id` (*type:* `String.t`) - The matter ID.
   *   `hold_id` (*type:* `String.t`) - The hold ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -945,7 +945,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   *   `connection` (*type:* `GoogleApi.Vault.V1.Connection.t`) - Connection to server
   *   `matter_id` (*type:* `String.t`) - The matter ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1004,7 +1004,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   *   `matter_id` (*type:* `String.t`) - The matter ID.
   *   `hold_id` (*type:* `String.t`) - The hold ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1073,7 +1073,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   *   `matter_id` (*type:* `String.t`) - The matter ID.
   *   `hold_id` (*type:* `String.t`) - The hold ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1133,7 +1133,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   *   `connection` (*type:* `GoogleApi.Vault.V1.Connection.t`) - Connection to server
   *   `matter_id` (*type:* `String.t`) - The matter ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1200,7 +1200,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   *   `matter_id` (*type:* `String.t`) - The matter ID.
   *   `hold_id` (*type:* `String.t`) - The hold ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1274,7 +1274,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   *   `matter_id` (*type:* `String.t`) - The matter ID.
   *   `hold_id` (*type:* `String.t`) - The ID of the hold.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1347,7 +1347,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   *   `matter_id` (*type:* `String.t`) - The matter ID.
   *   `hold_id` (*type:* `String.t`) - The hold ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1420,7 +1420,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   *   `hold_id` (*type:* `String.t`) - The hold ID.
   *   `account_id` (*type:* `String.t`) - The ID of the account to remove from the hold.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1495,7 +1495,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   *   `matter_id` (*type:* `String.t`) - The matter ID.
   *   `hold_id` (*type:* `String.t`) - The hold ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1565,7 +1565,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   *   `matter_id` (*type:* `String.t`) - The matter id of the parent matter for which the saved query is to be
       created.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1625,7 +1625,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       deleted.
   *   `saved_query_id` (*type:* `String.t`) - Id of the saved query to be deleted.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1695,7 +1695,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       retrieved.
   *   `saved_query_id` (*type:* `String.t`) - Id of the saved query to be retrieved.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1765,7 +1765,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   *   `matter_id` (*type:* `String.t`) - The matter id of the parent matter for which the saved queries are to be
       retrieved.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
