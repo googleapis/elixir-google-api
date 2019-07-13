@@ -33,7 +33,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
       services/{service}
       {service} the name of a service, for example 'service.googleapis.com'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -137,7 +137,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
   *   `parent` (*type:* `String.t`) - Name of the tenancy unit.
       Such as 'services/service.googleapis.com/projects/12345/tenancyUnits/abcd'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -225,7 +225,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
   *   `name` (*type:* `String.t`) - Name of the tenancy unit.
       Such as 'services/service.googleapis.com/projects/12345/tenancyUnits/abcd'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -307,7 +307,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
   *   `name` (*type:* `String.t`) - Name of the tenancy unit that the project will be attached to.
       Such as 'services/service.googleapis.com/projects/12345/tenancyUnits/abcd'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -383,7 +383,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
       {service} the name of a managed service, such as 'service.googleapis.com'.
       Enables service binding using the new tenancy unit.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -456,7 +456,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
   *   `connection` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - Name of the tenancy unit to be deleted.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -535,7 +535,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
   *   `name` (*type:* `String.t`) - Name of the tenancy unit.
       Such as 'services/service.googleapis.com/projects/12345/tenancyUnits/abcd'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -615,7 +615,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
       {resource id} is the consumer numeric id, such as project number: '123456'.
       {service} the name of a service, such as 'service.googleapis.com'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -700,7 +700,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
   *   `name` (*type:* `String.t`) - Name of the tenancy unit.
       Such as 'services/service.googleapis.com/projects/12345/tenancyUnits/abcd'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -778,7 +778,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
   *   `name` (*type:* `String.t`) - Name of the tenancy unit.
       Such as 'services/service.googleapis.com/projects/12345/tenancyUnits/abcd'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
