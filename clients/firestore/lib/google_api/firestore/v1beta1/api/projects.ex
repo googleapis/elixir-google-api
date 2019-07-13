@@ -39,7 +39,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   *   `name` (*type:* `String.t`) - Database to export. Should be of the form:
       `projects/{project_id}/databases/{database_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -115,7 +115,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   *   `name` (*type:* `String.t`) - Database to import into. Should be of the form:
       `projects/{project_id}/databases/{database_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -190,7 +190,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   *   `database` (*type:* `String.t`) - The database name. In the format:
       `projects/{project_id}/databases/{database_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -262,7 +262,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   *   `database` (*type:* `String.t`) - The database name. In the format:
       `projects/{project_id}/databases/{database_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -334,7 +334,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   *   `database` (*type:* `String.t`) - The database name. In the format:
       `projects/{project_id}/databases/{database_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -404,7 +404,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
       `projects/{project_id}/databases/{database_id}/documents/chatrooms/{chatroom_id}`
   *   `collection_id` (*type:* `String.t`) - The collection ID, relative to `parent`, to list. For example: `chatrooms`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -418,7 +418,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
       *   `:documentId` (*type:* `String.t`) - The client-assigned document ID to use for this document.
 
           Optional. If not specified, an ID will be assigned by the service.
-      *   `:mask.fieldPaths` (*type:* `list(String.t)`) - The list of field paths in the mask. See Document.fields for a field
+      *   `:"mask.fieldPaths"` (*type:* `list(String.t)`) - The list of field paths in the mask. See Document.fields for a field
           path syntax reference.
       *   `:body` (*type:* `GoogleApi.Firestore.V1beta1.Model.Document.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -482,7 +482,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   *   `name` (*type:* `String.t`) - The resource name of the Document to delete. In the format:
       `projects/{project_id}/databases/{database_id}/documents/{document_path}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -493,9 +493,9 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:currentDocument.exists` (*type:* `boolean()`) - When set to `true`, the target document must exist.
+      *   `:"currentDocument.exists"` (*type:* `boolean()`) - When set to `true`, the target document must exist.
           When set to `false`, the target document must not exist.
-      *   `:currentDocument.updateTime` (*type:* `DateTime.t`) - When set, the target document must exist and have been last updated at
+      *   `:"currentDocument.updateTime"` (*type:* `DateTime.t`) - When set, the target document must exist and have been last updated at
           that time.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -554,7 +554,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   *   `name` (*type:* `String.t`) - The resource name of the Document to get. In the format:
       `projects/{project_id}/databases/{database_id}/documents/{document_path}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -565,7 +565,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:mask.fieldPaths` (*type:* `list(String.t)`) - The list of field paths in the mask. See Document.fields for a field
+      *   `:"mask.fieldPaths"` (*type:* `list(String.t)`) - The list of field paths in the mask. See Document.fields for a field
           path syntax reference.
       *   `:readTime` (*type:* `DateTime.t`) - Reads the version of the document at the given time.
           This may not be older than 60 seconds.
@@ -634,7 +634,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   *   `collection_id` (*type:* `String.t`) - The collection ID, relative to `parent`, to list. For example: `chatrooms`
       or `messages`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -645,7 +645,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:mask.fieldPaths` (*type:* `list(String.t)`) - The list of field paths in the mask. See Document.fields for a field
+      *   `:"mask.fieldPaths"` (*type:* `list(String.t)`) - The list of field paths in the mask. See Document.fields for a field
           path syntax reference.
       *   `:orderBy` (*type:* `String.t`) - The order to sort results by. For example: `priority desc, name`.
       *   `:pageSize` (*type:* `integer()`) - The maximum number of documents to return.
@@ -731,7 +731,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
       For example:
       `projects/my-project/databases/my-database/documents/chatrooms/my-chatroom`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -803,7 +803,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   *   `database` (*type:* `String.t`) - The database name. In the format:
       `projects/{project_id}/databases/{database_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -871,7 +871,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   *   `name` (*type:* `String.t`) - The resource name of the document, for example
       `projects/{project_id}/databases/{database_id}/documents/{document_path}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -882,13 +882,13 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:currentDocument.exists` (*type:* `boolean()`) - When set to `true`, the target document must exist.
+      *   `:"currentDocument.exists"` (*type:* `boolean()`) - When set to `true`, the target document must exist.
           When set to `false`, the target document must not exist.
-      *   `:currentDocument.updateTime` (*type:* `DateTime.t`) - When set, the target document must exist and have been last updated at
+      *   `:"currentDocument.updateTime"` (*type:* `DateTime.t`) - When set, the target document must exist and have been last updated at
           that time.
-      *   `:mask.fieldPaths` (*type:* `list(String.t)`) - The list of field paths in the mask. See Document.fields for a field
+      *   `:"mask.fieldPaths"` (*type:* `list(String.t)`) - The list of field paths in the mask. See Document.fields for a field
           path syntax reference.
-      *   `:updateMask.fieldPaths` (*type:* `list(String.t)`) - The list of field paths in the mask. See Document.fields for a field
+      *   `:"updateMask.fieldPaths"` (*type:* `list(String.t)`) - The list of field paths in the mask. See Document.fields for a field
           path syntax reference.
       *   `:body` (*type:* `GoogleApi.Firestore.V1beta1.Model.Document.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -951,7 +951,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   *   `database` (*type:* `String.t`) - The database name. In the format:
       `projects/{project_id}/databases/{database_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1023,7 +1023,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
       `projects/my-project/databases/my-database/documents` or
       `projects/my-project/databases/my-database/documents/chatrooms/my-chatroom`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1093,7 +1093,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
       `projects/{project_id}/databases/{database_id}`.
       This is only required in the first message.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1173,7 +1173,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   *   `parent` (*type:* `String.t`) - The name of the database this index will apply to. For example:
       `projects/{project_id}/databases/{database_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1245,7 +1245,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   *   `name` (*type:* `String.t`) - The index name. For example:
       `projects/{project_id}/databases/{database_id}/indexes/{index_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1311,7 +1311,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   *   `name` (*type:* `String.t`) - The name of the index. For example:
       `projects/{project_id}/databases/{database_id}/indexes/{index_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1381,7 +1381,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   *   `parent` (*type:* `String.t`) - The database name. For example:
       `projects/{project_id}/databases/{database_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
