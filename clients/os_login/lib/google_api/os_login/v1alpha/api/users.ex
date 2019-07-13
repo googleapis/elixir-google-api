@@ -32,7 +32,7 @@ defmodule GoogleApi.OSLogin.V1alpha.Api.Users do
   *   `connection` (*type:* `GoogleApi.OSLogin.V1alpha.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - The unique ID for the user in format `users/{user}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -96,7 +96,7 @@ defmodule GoogleApi.OSLogin.V1alpha.Api.Users do
   *   `connection` (*type:* `GoogleApi.OSLogin.V1alpha.Connection.t`) - Connection to server
   *   `parent` (*type:* `String.t`) - The unique ID for the user in format `users/{user}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -161,7 +161,7 @@ defmodule GoogleApi.OSLogin.V1alpha.Api.Users do
       by the project ID they are associated with. A reference to the POSIX
       account is in format `users/{user}/projects/{project}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -221,7 +221,7 @@ defmodule GoogleApi.OSLogin.V1alpha.Api.Users do
       their SHA-256 fingerprint. The fingerprint of the public key is in format
       `users/{user}/sshPublicKeys/{fingerprint}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -279,7 +279,7 @@ defmodule GoogleApi.OSLogin.V1alpha.Api.Users do
       by their SHA-256 fingerprint. The fingerprint of the public key is in
       format `users/{user}/sshPublicKeys/{fingerprint}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -338,7 +338,7 @@ defmodule GoogleApi.OSLogin.V1alpha.Api.Users do
       their SHA-256 fingerprint. The fingerprint of the public key is in format
       `users/{user}/sshPublicKeys/{fingerprint}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
