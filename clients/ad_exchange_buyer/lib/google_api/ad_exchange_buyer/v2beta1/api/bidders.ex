@@ -41,7 +41,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
         whose bidder is 123: `bidders/123/accounts/456`
   *   `accounts_id` (*type:* `String.t`) - Part of `ownerName`. See documentation of `biddersId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -129,7 +129,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
   *   `accounts_id` (*type:* `String.t`) - Part of `name`. See documentation of `biddersId`.
   *   `filter_sets_id` (*type:* `String.t`) - Part of `name`. See documentation of `biddersId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -216,7 +216,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
   *   `accounts_id` (*type:* `String.t`) - Part of `name`. See documentation of `biddersId`.
   *   `filter_sets_id` (*type:* `String.t`) - Part of `name`. See documentation of `biddersId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -301,7 +301,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
         whose bidder is 123: `bidders/123/accounts/456`
   *   `accounts_id` (*type:* `String.t`) - Part of `ownerName`. See documentation of `biddersId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -395,7 +395,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
   *   `accounts_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
   *   `filter_sets_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -495,7 +495,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
   *   `accounts_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
   *   `filter_sets_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -595,7 +595,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
   *   `accounts_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
   *   `filter_sets_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -696,7 +696,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
   *   `accounts_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
   *   `filter_sets_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -796,7 +796,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
   *   `accounts_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
   *   `filter_sets_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -900,7 +900,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       See
       [creative-status-codes](https://developers.google.com/authorized-buyers/rtb/downloads/creative-status-codes).
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1012,7 +1012,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       [creative-status-codes](https://developers.google.com/authorized-buyers/rtb/downloads/creative-status-codes).
       Details are only available for statuses 10, 14, 15, 17, 18, 19, 86, and 87.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1119,7 +1119,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
   *   `accounts_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
   *   `filter_sets_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1219,7 +1219,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
   *   `accounts_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
   *   `filter_sets_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1319,7 +1319,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
   *   `accounts_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
   *   `filter_sets_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1416,7 +1416,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       - For an account-level filter set for the child seat buyer account 456
         whose bidder is 123: `bidders/123/accounts/456`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1500,7 +1500,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
         whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
   *   `filter_sets_id` (*type:* `String.t`) - Part of `name`. See documentation of `biddersId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1580,7 +1580,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
         whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
   *   `filter_sets_id` (*type:* `String.t`) - Part of `name`. See documentation of `biddersId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1658,7 +1658,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       - For an account-level filter set for the child seat buyer account 456
         whose bidder is 123: `bidders/123/accounts/456`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1748,7 +1748,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
         whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
   *   `filter_sets_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1841,7 +1841,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
         whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
   *   `filter_sets_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1937,7 +1937,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
         whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
   *   `filter_sets_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2034,7 +2034,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
         whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
   *   `filter_sets_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2130,7 +2130,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
         whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
   *   `filter_sets_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2227,7 +2227,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       See
       [creative-status-codes](https://developers.google.com/authorized-buyers/rtb/downloads/creative-status-codes).
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2335,7 +2335,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       [creative-status-codes](https://developers.google.com/authorized-buyers/rtb/downloads/creative-status-codes).
       Details are only available for statuses 10, 14, 15, 17, 18, 19, 86, and 87.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2438,7 +2438,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
         whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
   *   `filter_sets_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2534,7 +2534,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
         whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
   *   `filter_sets_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2627,7 +2627,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
         whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
   *   `filter_sets_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
