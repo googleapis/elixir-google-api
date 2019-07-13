@@ -31,7 +31,7 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.TPU.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - Resource name for the location.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -87,7 +87,7 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.TPU.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - The resource that owns the locations collection, if applicable.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -149,7 +149,7 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.TPU.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - The resource name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -214,7 +214,7 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.TPU.V1.Connection.t`) - Connection to server
   *   `parent` (*type:* `String.t`) - The parent resource name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -288,7 +288,7 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.TPU.V1.Connection.t`) - Connection to server
   *   `parent` (*type:* `String.t`) - The parent resource name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -348,7 +348,7 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.TPU.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - The resource name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -404,7 +404,7 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.TPU.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - The resource name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -460,7 +460,7 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.TPU.V1.Connection.t`) - Connection to server
   *   `parent` (*type:* `String.t`) - The parent resource name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -520,7 +520,7 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.TPU.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - The resource name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -578,7 +578,7 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.TPU.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - The resource name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -636,7 +636,7 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.TPU.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - The resource name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -703,7 +703,7 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.TPU.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - The name of the operation resource to be cancelled.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -771,7 +771,7 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.TPU.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - The name of the operation resource to be deleted.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -838,7 +838,7 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.TPU.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - The name of the operation resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -907,7 +907,7 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.TPU.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - The name of the operation's parent resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -973,7 +973,7 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.TPU.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - The resource name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1038,7 +1038,7 @@ defmodule GoogleApi.TPU.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.TPU.V1.Connection.t`) - Connection to server
   *   `parent` (*type:* `String.t`) - The parent resource name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
