@@ -31,7 +31,7 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
 
   *   `connection` (*type:* `GoogleApi.People.V1.Connection.t`) - Connection to server
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -91,7 +91,7 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
 
   *   `connection` (*type:* `GoogleApi.People.V1.Connection.t`) - Connection to server
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -148,7 +148,7 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
   *   `connection` (*type:* `GoogleApi.People.V1.Connection.t`) - Connection to server
   *   `contact_groups_id` (*type:* `String.t`) - Part of `resourceName`. The resource name of the contact group to delete.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -212,7 +212,7 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
   *   `connection` (*type:* `GoogleApi.People.V1.Connection.t`) - Connection to server
   *   `contact_groups_id` (*type:* `String.t`) - Part of `resourceName`. The resource name of the contact group to get.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -270,7 +270,7 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
 
   *   `connection` (*type:* `GoogleApi.People.V1.Connection.t`) - Connection to server
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -335,7 +335,7 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
   *   `contact_groups_id` (*type:* `String.t`) - Part of `contactGroup.resourceName`. The resource name for the contact group, assigned by the server. An ASCII
       string, in the form of `contactGroups/`<var>contact_group_id</var>.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -402,7 +402,7 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
   *   `connection` (*type:* `GoogleApi.People.V1.Connection.t`) - Connection to server
   *   `contact_groups_id` (*type:* `String.t`) - Part of `resourceName`. The resource name of the contact group to modify.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
