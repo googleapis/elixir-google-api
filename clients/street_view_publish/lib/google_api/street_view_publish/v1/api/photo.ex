@@ -48,7 +48,7 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photo do
 
   *   `connection` (*type:* `GoogleApi.StreetViewPublish.V1.Connection.t`) - Connection to server
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -110,7 +110,7 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photo do
   *   `connection` (*type:* `GoogleApi.StreetViewPublish.V1.Connection.t`) - Connection to server
   *   `photo_id` (*type:* `String.t`) - Required. ID of the Photo.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -176,7 +176,7 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photo do
   *   `connection` (*type:* `GoogleApi.StreetViewPublish.V1.Connection.t`) - Connection to server
   *   `photo_id` (*type:* `String.t`) - Required. ID of the Photo.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -259,7 +259,7 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photo do
 
   *   `connection` (*type:* `GoogleApi.StreetViewPublish.V1.Connection.t`) - Connection to server
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -331,7 +331,7 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photo do
   *   `connection` (*type:* `GoogleApi.StreetViewPublish.V1.Connection.t`) - Connection to server
   *   `id` (*type:* `String.t`) - Required. A unique identifier for a photo.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
