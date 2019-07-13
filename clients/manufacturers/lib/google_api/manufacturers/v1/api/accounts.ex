@@ -43,7 +43,7 @@ defmodule GoogleApi.Manufacturers.V1.Api.Accounts do
       `product_id`     -   The ID of the product. For more information, see
                            https://support.google.com/manufacturers/answer/6124116#id.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -129,7 +129,7 @@ defmodule GoogleApi.Manufacturers.V1.Api.Accounts do
       `product_id`     -   The ID of the product. For more information, see
                            https://support.google.com/manufacturers/answer/6124116#id.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -202,7 +202,7 @@ defmodule GoogleApi.Manufacturers.V1.Api.Accounts do
 
       `account_id` - The ID of the Manufacturer Center account.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -293,7 +293,7 @@ defmodule GoogleApi.Manufacturers.V1.Api.Accounts do
       `product_id`     -   The ID of the product. For more information, see
                            https://support.google.com/manufacturers/answer/6124116#id.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
