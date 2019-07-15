@@ -55,7 +55,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       Format is `projects/{project}/snapshots/{snap}`.
   *   `snapshots_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -136,7 +136,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       Format is `projects/{project}/snapshots/{snap}`.
   *   `snapshots_id` (*type:* `String.t`) - Part of `snapshot`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -210,7 +210,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       Format is `projects/{project}/snapshots/{snap}`.
   *   `snapshots_id` (*type:* `String.t`) - Part of `snapshot`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -282,7 +282,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       See the operation documentation for the appropriate value for this field.
   *   `snapshots_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -293,6 +293,10 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:"options.requestedPolicyVersion"` (*type:* `integer()`) - Optional. The policy format version to be returned.
+          Acceptable values are 0 and 1.
+          If the value is 0, or the field is omitted, policy format version 1 will be
+          returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -325,7 +329,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query
+      :upload_protocol => :query,
+      :"options.requestedPolicyVersion" => :query
     }
 
     request =
@@ -356,7 +361,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   *   `projects_id` (*type:* `String.t`) - Part of `project`. The name of the project in which to list snapshots.
       Format is `projects/{project-id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -424,7 +429,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   *   `projects_id` (*type:* `String.t`) - Part of `snapshot.name`. The name of the snapshot.
   *   `snapshots_id` (*type:* `String.t`) - Part of `snapshot.name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -497,7 +502,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       See the operation documentation for the appropriate value for this field.
   *   `snapshots_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -575,7 +580,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       See the operation documentation for the appropriate value for this field.
   *   `snapshots_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -655,7 +660,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       Format is `projects/{project}/subscriptions/{sub}`.
   *   `subscriptions_id` (*type:* `String.t`) - Part of `subscription`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -743,7 +748,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       in length, and it must not start with `"goog"`.
   *   `subscriptions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -819,7 +824,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       Format is `projects/{project}/subscriptions/{sub}`.
   *   `subscriptions_id` (*type:* `String.t`) - Part of `subscription`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -889,7 +894,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       Format is `projects/{project}/subscriptions/{sub}`.
   *   `subscriptions_id` (*type:* `String.t`) - Part of `subscription`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -961,7 +966,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       See the operation documentation for the appropriate value for this field.
   *   `subscriptions_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -972,6 +977,10 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:"options.requestedPolicyVersion"` (*type:* `integer()`) - Optional. The policy format version to be returned.
+          Acceptable values are 0 and 1.
+          If the value is 0, or the field is omitted, policy format version 1 will be
+          returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1004,7 +1013,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query
+      :upload_protocol => :query,
+      :"options.requestedPolicyVersion" => :query
     }
 
     request =
@@ -1030,7 +1040,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   *   `projects_id` (*type:* `String.t`) - Part of `project`. The name of the project in which to list subscriptions.
       Format is `projects/{project-id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1103,7 +1113,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       Format is `projects/{project}/subscriptions/{sub}`.
   *   `subscriptions_id` (*type:* `String.t`) - Part of `subscription`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1183,7 +1193,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       Format is `projects/{project}/subscriptions/{sub}`.
   *   `subscriptions_id` (*type:* `String.t`) - Part of `subscription`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1263,7 +1273,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       in length, and it must not start with `"goog"`.
   *   `subscriptions_id` (*type:* `String.t`) - Part of `subscription.name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1337,7 +1347,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       Format is `projects/{project}/subscriptions/{sub}`.
   *   `subscriptions_id` (*type:* `String.t`) - Part of `subscription`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1415,7 +1425,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   *   `projects_id` (*type:* `String.t`) - Part of `subscription`. The subscription to affect.
   *   `subscriptions_id` (*type:* `String.t`) - Part of `subscription`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1488,7 +1498,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       See the operation documentation for the appropriate value for this field.
   *   `subscriptions_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1566,7 +1576,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       See the operation documentation for the appropriate value for this field.
   *   `subscriptions_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1649,7 +1659,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       must not start with `"goog"`.
   *   `topics_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1725,7 +1735,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       Format is `projects/{project}/topics/{topic}`.
   *   `topics_id` (*type:* `String.t`) - Part of `topic`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1795,7 +1805,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       Format is `projects/{project}/topics/{topic}`.
   *   `topics_id` (*type:* `String.t`) - Part of `topic`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1867,7 +1877,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       See the operation documentation for the appropriate value for this field.
   *   `topics_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1878,6 +1888,10 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:"options.requestedPolicyVersion"` (*type:* `integer()`) - Optional. The policy format version to be returned.
+          Acceptable values are 0 and 1.
+          If the value is 0, or the field is omitted, policy format version 1 will be
+          returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1910,7 +1924,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query
+      :upload_protocol => :query,
+      :"options.requestedPolicyVersion" => :query
     }
 
     request =
@@ -1936,7 +1951,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   *   `projects_id` (*type:* `String.t`) - Part of `project`. The name of the project in which to list topics.
       Format is `projects/{project-id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2005,7 +2020,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       must not start with `"goog"`.
   *   `topics_id` (*type:* `String.t`) - Part of `topic.name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2078,7 +2093,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       Format is `projects/{project}/topics/{topic}`.
   *   `topics_id` (*type:* `String.t`) - Part of `topic`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2151,7 +2166,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       See the operation documentation for the appropriate value for this field.
   *   `topics_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2229,7 +2244,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       See the operation documentation for the appropriate value for this field.
   *   `topics_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2308,7 +2323,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       Format is `projects/{project}/topics/{topic}`.
   *   `topics_id` (*type:* `String.t`) - Part of `topic`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2386,7 +2401,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       Format is `projects/{project}/topics/{topic}`.
   *   `topics_id` (*type:* `String.t`) - Part of `topic`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
