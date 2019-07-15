@@ -30,7 +30,7 @@ defmodule GoogleApi.Jobs.V2.Api.Companies do
 
   *   `connection` (*type:* `GoogleApi.Jobs.V2.Connection.t`) - Connection to server
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -89,7 +89,7 @@ defmodule GoogleApi.Jobs.V2.Api.Companies do
       The resource name of the company to be deleted,
       such as, "companies/0000aaaa-1111-bbbb-2222-cccc3333dddd".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -148,7 +148,7 @@ defmodule GoogleApi.Jobs.V2.Api.Companies do
       Resource name of the company to retrieve,
       such as "companies/0000aaaa-1111-bbbb-2222-cccc3333dddd".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -203,7 +203,7 @@ defmodule GoogleApi.Jobs.V2.Api.Companies do
 
   *   `connection` (*type:* `GoogleApi.Jobs.V2.Connection.t`) - Connection to server
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -281,7 +281,7 @@ defmodule GoogleApi.Jobs.V2.Api.Companies do
       company is created, for example,
       "companies/0000aaaa-1111-bbbb-2222-cccc3333dddd".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -366,7 +366,7 @@ defmodule GoogleApi.Jobs.V2.Api.Companies do
       The resource name of the company that owns the jobs to be listed,
       such as, "companies/0000aaaa-1111-bbbb-2222-cccc3333dddd".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
