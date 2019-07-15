@@ -33,7 +33,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
 
   *   `connection` (*type:* `GoogleApi.ServiceManagement.V1.Connection.t`) - Connection to server
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -95,7 +95,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   *   `service_name` (*type:* `String.t`) - The name of the service.  See the [overview](/service-management/overview)
       for naming requirements.  For example: `example.googleapis.com`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -161,7 +161,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   *   `service_name` (*type:* `String.t`) - Name of the service to disable. Specifying an unknown service name
       will cause the request to fail.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -230,7 +230,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   *   `service_name` (*type:* `String.t`) - Name of the service to enable. Specifying an unknown service name will
       cause the request to fail.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -302,7 +302,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
 
   *   `connection` (*type:* `GoogleApi.ServiceManagement.V1.Connection.t`) - Connection to server
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -371,7 +371,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   *   `service_name` (*type:* `String.t`) - The name of the service.  See the `ServiceManager` overview for naming
       requirements.  For example: `example.googleapis.com`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -428,7 +428,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   *   `service_name` (*type:* `String.t`) - The name of the service.  See the [overview](/service-management/overview)
       for naming requirements.  For example: `example.googleapis.com`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -504,7 +504,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested.
       See the operation documentation for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -578,7 +578,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
 
   *   `connection` (*type:* `GoogleApi.ServiceManagement.V1.Connection.t`) - Connection to server
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -651,7 +651,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified.
       See the operation documentation for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -725,7 +725,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested.
       See the operation documentation for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -802,7 +802,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   *   `service_name` (*type:* `String.t`) - The name of the service. See the [overview](/service-management/overview)
       for naming requirements. For example: `example.googleapis.com`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -871,7 +871,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   *   `service_name` (*type:* `String.t`) - The name of the service.  See the [overview](/service-management/overview)
       for naming requirements.  For example: `example.googleapis.com`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -943,7 +943,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
       This field must be specified for the server to return all fields, including
       `SourceInfo`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1016,7 +1016,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   *   `service_name` (*type:* `String.t`) - The name of the service.  See the [overview](/service-management/overview)
       for naming requirements.  For example: `example.googleapis.com`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1103,7 +1103,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   *   `service_name` (*type:* `String.t`) - The name of the service.  See the [overview](/service-management/overview)
       for naming requirements.  For example: `example.googleapis.com`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1173,7 +1173,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested.
       See the operation documentation for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1242,7 +1242,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified.
       See the operation documentation for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1316,7 +1316,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested.
       See the operation documentation for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1401,7 +1401,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   *   `service_name` (*type:* `String.t`) - The name of the service.  See the [overview](/service-management/overview)
       for naming requirements.  For example: `example.googleapis.com`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1479,7 +1479,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
       for naming requirements.  For example: `example.googleapis.com`.
   *   `rollout_id` (*type:* `String.t`) - The id of the rollout resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1549,7 +1549,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   *   `service_name` (*type:* `String.t`) - The name of the service.  See the [overview](/service-management/overview)
       for naming requirements.  For example: `example.googleapis.com`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
