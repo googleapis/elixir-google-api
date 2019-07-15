@@ -39,7 +39,7 @@ defmodule GoogleApi.StorageTransfer.V1.Api.GoogleServiceAccounts do
   *   `project_id` (*type:* `String.t`) - Required. The ID of the Google Cloud Platform Console project that the
       Google service account is associated with.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
