@@ -31,7 +31,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
   *   `projects_id` (*type:* `String.t`) - Part of `name`. The project in which to create the alerting policy. The format is projects/[PROJECT_ID].Note that this field names the parent container in which the alerting policy will be written, not the name of the created policy. The alerting policy that is returned will have a name that contains a normalized representation of this name as a prefix but adds a suffix of the form /alertPolicies/[POLICY_ID], identifying the policy in the container.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -101,7 +101,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       For more information, see AlertPolicy.
   *   `alert_policies_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -172,7 +172,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
 
   *   `alert_policies_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -242,7 +242,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       projects/[PROJECT_ID]
       Note that this field names the parent container in which the alerting policies to be listed are stored. To retrieve a single alerting policy by name, use the GetAlertPolicy operation, instead.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -322,7 +322,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       [ALERT_POLICY_ID] is assigned by Stackdriver Monitoring when the policy is created. When calling the alertPolicies.create method, do not include the name field in the alerting policy passed as part of the request.
   *   `alert_policies_id` (*type:* `String.t`) - Part of `alertPolicy.name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -396,7 +396,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
   *   `projects_id` (*type:* `String.t`) - Part of `name`. The project in which to create the time series. The format is "projects/PROJECT_ID_OR_NUMBER".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -467,7 +467,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
   *   `projects_id` (*type:* `String.t`) - Part of `name`. The project in which to create the group. The format is "projects/{project_id_or_number}".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -533,7 +533,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   *   `projects_id` (*type:* `String.t`) - Part of `name`. The group to delete. The format is "projects/{project_id_or_number}/groups/{group_id}".
   *   `groups_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -604,7 +604,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   *   `projects_id` (*type:* `String.t`) - Part of `name`. The group to retrieve. The format is "projects/{project_id_or_number}/groups/{group_id}".
   *   `groups_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -672,7 +672,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
   *   `projects_id` (*type:* `String.t`) - Part of `name`. The project whose groups are to be listed. The format is "projects/{project_id_or_number}".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -739,7 +739,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   *   `projects_id` (*type:* `String.t`) - Part of `group.name`. Output only. The name of this group. The format is "projects/{project_id_or_number}/groups/{group_id}". When creating a group, this field is ignored and a new name is created consisting of the project specified in the call to CreateGroup and a unique {group_id} that is generated automatically.
   *   `groups_id` (*type:* `String.t`) - Part of `group.name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -812,7 +812,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   *   `projects_id` (*type:* `String.t`) - Part of `name`. The group whose members are listed. The format is "projects/{project_id_or_number}/groups/{group_id}".
   *   `groups_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -826,8 +826,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       *   `:filter` (*type:* `String.t`) - An optional list filter describing the members to be returned. The filter may reference the type, labels, and metadata of monitored resources that comprise the group. For example, to return only resources representing Compute Engine VM instances, use this filter:
           resource.type = "gce_instance"
 
-      *   `:interval.endTime` (*type:* `DateTime.t`) - Required. The end of the time interval.
-      *   `:interval.startTime` (*type:* `DateTime.t`) - Optional. The beginning of the time interval. The default value for the start time is the end time. The start time must not be later than the end time.
+      *   `:"interval.endTime"` (*type:* `DateTime.t`) - Required. The end of the time interval.
+      *   `:"interval.startTime"` (*type:* `DateTime.t`) - Optional. The beginning of the time interval. The default value for the start time is the end time. The start time must not be later than the end time.
       *   `:pageSize` (*type:* `integer()`) - A positive number that is the maximum number of results to return.
       *   `:pageToken` (*type:* `String.t`) - If this field is not empty then it must contain the nextPageToken value returned by a previous call to this method. Using this field causes the method to return additional results from the previous method call.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -896,7 +896,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
   *   `projects_id` (*type:* `String.t`) - Part of `name`. The project on which to execute the request. The format is "projects/{project_id_or_number}".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -964,7 +964,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   *   `projects_id` (*type:* `String.t`) - Part of `name`. The metric descriptor on which to execute the request. The format is "projects/{project_id_or_number}/metricDescriptors/{metric_id}". An example of {metric_id} is: "custom.googleapis.com/my_test_metric".
   *   `metric_descriptors_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1033,7 +1033,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   *   `projects_id` (*type:* `String.t`) - Part of `name`. The metric descriptor on which to execute the request. The format is "projects/{project_id_or_number}/metricDescriptors/{metric_id}". An example value of {metric_id} is "compute.googleapis.com/instance/disk/read_bytes_count".
   *   `metric_descriptors_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1101,7 +1101,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
   *   `projects_id` (*type:* `String.t`) - Part of `name`. The project on which to execute the request. The format is "projects/{project_id_or_number}".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1179,7 +1179,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   *   `projects_id` (*type:* `String.t`) - Part of `name`. The monitored resource descriptor to get. The format is "projects/{project_id_or_number}/monitoredResourceDescriptors/{resource_type}". The {resource_type} is a predefined type, such as cloudsql_database.
   *   `monitored_resource_descriptors_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1255,7 +1255,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
   *   `projects_id` (*type:* `String.t`) - Part of `name`. The project on which to execute the request. The format is "projects/{project_id_or_number}".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1333,7 +1333,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   *   `projects_id` (*type:* `String.t`) - Part of `name`. The channel type for which to execute the request. The format is projects/[PROJECT_ID]/notificationChannelDescriptors/{channel_type}.
   *   `notification_channel_descriptors_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1411,7 +1411,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       projects/[PROJECT_ID]
       Note that this names the parent container in which to look for the descriptors; to retrieve a single descriptor by name, use the GetNotificationChannelDescriptor operation, instead.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1487,7 +1487,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       projects/[PROJECT_ID]
       Note that this names the container into which the channel will be written. This does not name the newly created channel. The resulting channel's name will have a normalized version of this field as a prefix, but will add /notificationChannels/[CHANNEL_ID] to identify the channel.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1556,7 +1556,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   *   `projects_id` (*type:* `String.t`) - Part of `name`. The channel for which to execute the request. The format is projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID].
   *   `notification_channels_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1627,7 +1627,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   *   `projects_id` (*type:* `String.t`) - Part of `name`. The channel for which to execute the request. The format is projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID].
   *   `notification_channels_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1697,7 +1697,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   *   `projects_id` (*type:* `String.t`) - Part of `name`. The notification channel for which a verification code is to be generated and retrieved. This must name a channel that is already verified; if the specified channel is not verified, the request will fail.
   *   `notification_channels_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1776,7 +1776,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
   *   `projects_id` (*type:* `String.t`) - Part of `name`. The project on which to execute the request. The format is projects/[PROJECT_ID]. That is, this names the container in which to look for the notification channels; it does not name a specific channel. To query a specific channel by REST resource name, use the GetNotificationChannel operation.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1856,7 +1856,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       The [CHANNEL_ID] is automatically assigned by the server on creation.
   *   `notification_channels_id` (*type:* `String.t`) - Part of `notificationChannel.name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1930,7 +1930,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   *   `projects_id` (*type:* `String.t`) - Part of `name`. The notification channel to which to send a verification code.
   *   `notification_channels_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2005,7 +2005,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   *   `projects_id` (*type:* `String.t`) - Part of `name`. The notification channel to verify.
   *   `notification_channels_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2080,7 +2080,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
   *   `projects_id` (*type:* `String.t`) - Part of `name`. The project on which to execute the request. The format is "projects/{project_id_or_number}".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2147,7 +2147,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
   *   `projects_id` (*type:* `String.t`) - Part of `name`. The project on which to execute the request. The format is "projects/{project_id_or_number}".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2158,16 +2158,16 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:aggregation.alignmentPeriod` (*type:* `String.t`) - The alignment period for per-time series alignment. If present, alignmentPeriod must be at least 60 seconds. After per-time series alignment, each time series will contain data points only on the period boundaries. If perSeriesAligner is not specified or equals ALIGN_NONE, then this field is ignored. If perSeriesAligner is specified and does not equal ALIGN_NONE, then this field must be defined; otherwise an error is returned.
-      *   `:aggregation.crossSeriesReducer` (*type:* `String.t`) - The approach to be used to combine time series. Not all reducer functions may be applied to all time series, depending on the metric type and the value type of the original time series. Reduction may change the metric type of value type of the time series.Time series data must be aligned in order to perform cross-time series reduction. If crossSeriesReducer is specified, then perSeriesAligner must be specified and not equal ALIGN_NONE and alignmentPeriod must be specified; otherwise, an error is returned.
-      *   `:aggregation.groupByFields` (*type:* `list(String.t)`) - The set of fields to preserve when crossSeriesReducer is specified. The groupByFields determine how the time series are partitioned into subsets prior to applying the aggregation function. Each subset contains time series that have the same value for each of the grouping fields. Each individual time series is a member of exactly one subset. The crossSeriesReducer is applied to each subset of time series. It is not possible to reduce across different resource types, so this field implicitly contains resource.type. Fields not specified in groupByFields are aggregated away. If groupByFields is not specified and all the time series have the same resource type, then the time series are aggregated into a single output time series. If crossSeriesReducer is not defined, this field is ignored.
-      *   `:aggregation.perSeriesAligner` (*type:* `String.t`) - The approach to be used to align individual time series. Not all alignment functions may be applied to all time series, depending on the metric type and value type of the original time series. Alignment may change the metric type or the value type of the time series.Time series data must be aligned in order to perform cross-time series reduction. If crossSeriesReducer is specified, then perSeriesAligner must be specified and not equal ALIGN_NONE and alignmentPeriod must be specified; otherwise, an error is returned.
+      *   `:"aggregation.alignmentPeriod"` (*type:* `String.t`) - The alignment period for per-time series alignment. If present, alignmentPeriod must be at least 60 seconds. After per-time series alignment, each time series will contain data points only on the period boundaries. If perSeriesAligner is not specified or equals ALIGN_NONE, then this field is ignored. If perSeriesAligner is specified and does not equal ALIGN_NONE, then this field must be defined; otherwise an error is returned.
+      *   `:"aggregation.crossSeriesReducer"` (*type:* `String.t`) - The approach to be used to combine time series. Not all reducer functions may be applied to all time series, depending on the metric type and the value type of the original time series. Reduction may change the metric type of value type of the time series.Time series data must be aligned in order to perform cross-time series reduction. If crossSeriesReducer is specified, then perSeriesAligner must be specified and not equal ALIGN_NONE and alignmentPeriod must be specified; otherwise, an error is returned.
+      *   `:"aggregation.groupByFields"` (*type:* `list(String.t)`) - The set of fields to preserve when crossSeriesReducer is specified. The groupByFields determine how the time series are partitioned into subsets prior to applying the aggregation function. Each subset contains time series that have the same value for each of the grouping fields. Each individual time series is a member of exactly one subset. The crossSeriesReducer is applied to each subset of time series. It is not possible to reduce across different resource types, so this field implicitly contains resource.type. Fields not specified in groupByFields are aggregated away. If groupByFields is not specified and all the time series have the same resource type, then the time series are aggregated into a single output time series. If crossSeriesReducer is not defined, this field is ignored.
+      *   `:"aggregation.perSeriesAligner"` (*type:* `String.t`) - The approach to be used to align individual time series. Not all alignment functions may be applied to all time series, depending on the metric type and value type of the original time series. Alignment may change the metric type or the value type of the time series.Time series data must be aligned in order to perform cross-time series reduction. If crossSeriesReducer is specified, then perSeriesAligner must be specified and not equal ALIGN_NONE and alignmentPeriod must be specified; otherwise, an error is returned.
       *   `:filter` (*type:* `String.t`) - A monitoring filter that specifies which time series should be returned. The filter must specify a single metric type, and can additionally specify metric labels and other information. For example:
           metric.type = "compute.googleapis.com/instance/cpu/usage_time" AND
               metric.labels.instance_name = "my-instance-name"
 
-      *   `:interval.endTime` (*type:* `DateTime.t`) - Required. The end of the time interval.
-      *   `:interval.startTime` (*type:* `DateTime.t`) - Optional. The beginning of the time interval. The default value for the start time is the end time. The start time must not be later than the end time.
+      *   `:"interval.endTime"` (*type:* `DateTime.t`) - Required. The end of the time interval.
+      *   `:"interval.startTime"` (*type:* `DateTime.t`) - Optional. The beginning of the time interval. The default value for the start time is the end time. The start time must not be later than the end time.
       *   `:orderBy` (*type:* `String.t`) - Unsupported: must be left blank. The points in each time series are returned in reverse time order.
       *   `:pageSize` (*type:* `integer()`) - A positive number that is the maximum number of results to return. If page_size is empty or more than 100,000 results, the effective page_size is 100,000 results. If view is set to FULL, this is the maximum number of Points returned. If view is set to HEADERS, this is the maximum number of TimeSeries returned.
       *   `:pageToken` (*type:* `String.t`) - If this field is not empty then it must contain the nextPageToken value returned by a previous call to this method. Using this field causes the method to return additional results from the previous method call.
@@ -2234,7 +2234,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
   *   `projects_id` (*type:* `String.t`) - Part of `parent`. The project in which to create the uptime check. The format  is projects/[PROJECT_ID].
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2302,7 +2302,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   *   `projects_id` (*type:* `String.t`) - Part of `name`. The uptime check configuration to delete. The format  is projects/[PROJECT_ID]/uptimeCheckConfigs/[UPTIME_CHECK_ID].
   *   `uptime_check_configs_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2371,7 +2371,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   *   `projects_id` (*type:* `String.t`) - Part of `name`. The uptime check configuration to retrieve. The format  is projects/[PROJECT_ID]/uptimeCheckConfigs/[UPTIME_CHECK_ID].
   *   `uptime_check_configs_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2439,7 +2439,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
   *   `projects_id` (*type:* `String.t`) - Part of `parent`. The project whose uptime check configurations are listed. The format  is projects/[PROJECT_ID].
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2513,7 +2513,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   *   `projects_id` (*type:* `String.t`) - Part of `uptimeCheckConfig.name`. A unique resource name for this UptimeCheckConfig. The format is:projects/[PROJECT_ID]/uptimeCheckConfigs/[UPTIME_CHECK_ID].This field should be omitted when creating the uptime check configuration; on create, the resource name is assigned by the server and included in the response.
   *   `uptime_check_configs_id` (*type:* `String.t`) - Part of `uptimeCheckConfig.name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
