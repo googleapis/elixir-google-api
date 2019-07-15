@@ -37,7 +37,7 @@ defmodule GoogleApi.Logging.V2.Api.Sinks do
       Examples: "projects/my-logging-project", "organizations/123456789".
   *   `v2_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v2Id`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -105,7 +105,7 @@ defmodule GoogleApi.Logging.V2.Api.Sinks do
   *   `v2_id1` (*type:* `String.t`) - Part of `sinkName`. See documentation of `v2Id`.
   *   `sinks_id` (*type:* `String.t`) - Part of `sinkName`. See documentation of `v2Id`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -176,7 +176,7 @@ defmodule GoogleApi.Logging.V2.Api.Sinks do
   *   `v2_id1` (*type:* `String.t`) - Part of `sinkName`. See documentation of `v2Id`.
   *   `sinks_id` (*type:* `String.t`) - Part of `sinkName`. See documentation of `v2Id`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -246,7 +246,7 @@ defmodule GoogleApi.Logging.V2.Api.Sinks do
 
   *   `v2_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v2Id`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -314,7 +314,7 @@ defmodule GoogleApi.Logging.V2.Api.Sinks do
   *   `v2_id1` (*type:* `String.t`) - Part of `sinkName`. See documentation of `v2Id`.
   *   `sinks_id` (*type:* `String.t`) - Part of `sinkName`. See documentation of `v2Id`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
