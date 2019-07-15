@@ -92,7 +92,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version do
       predictable billing. Beware that latency and error rates will increase
       if the traffic exceeds that capability of the system to serve it based
       on the selected number of nodes.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Required.The name specified for the version when it was created.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The name specified for the version when it was created.
 
       The version name must be unique within the model it is created in.
   *   `packageUris` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Cloud Storage paths (`gs://…`) of packages for [custom

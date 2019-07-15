@@ -34,7 +34,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.MachineLearning.V1.Connection.t`) - Connection to server
   *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The project name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -98,7 +98,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
 
       Authorization: requires the `predict` permission on the specified resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -160,7 +160,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the job to cancel.
   *   `jobs_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -222,7 +222,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.MachineLearning.V1.Connection.t`) - Connection to server
   *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The project name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -284,7 +284,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the job to get the description of.
   *   `jobs_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -348,7 +348,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       See the operation documentation for the appropriate value for this field.
   *   `jobs_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -359,6 +359,10 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:"options.requestedPolicyVersion"` (*type:* `integer()`) - Optional. The policy format version to be returned.
+          Acceptable values are 0 and 1.
+          If the value is 0, or the field is omitted, policy format version 1 will be
+          returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -393,7 +397,8 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query
+      :upload_protocol => :query,
+      :"options.requestedPolicyVersion" => :query
     }
 
     request =
@@ -423,7 +428,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.MachineLearning.V1.Connection.t`) - Connection to server
   *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the project for which to list jobs.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -506,7 +511,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The job name.
   *   `jobs_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -591,7 +596,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       See the operation documentation for the appropriate value for this field.
   *   `jobs_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -673,7 +678,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       See the operation documentation for the appropriate value for this field.
   *   `jobs_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -750,7 +755,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the location.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -823,7 +828,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the project for which available locations are to be
       listed (since some locations might be whitelisted for specific projects).
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -898,7 +903,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.MachineLearning.V1.Connection.t`) - Connection to server
   *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The project name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -964,7 +969,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the model.
   *   `models_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1039,7 +1044,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the model.
   *   `models_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1109,7 +1114,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       See the operation documentation for the appropriate value for this field.
   *   `models_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1120,6 +1125,10 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:"options.requestedPolicyVersion"` (*type:* `integer()`) - Optional. The policy format version to be returned.
+          Acceptable values are 0 and 1.
+          If the value is 0, or the field is omitted, policy format version 1 will be
+          returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1154,7 +1163,8 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query
+      :upload_protocol => :query,
+      :"options.requestedPolicyVersion" => :query
     }
 
     request =
@@ -1187,7 +1197,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.MachineLearning.V1.Connection.t`) - Connection to server
   *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the project whose models are to be listed.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1263,7 +1273,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The project name.
   *   `models_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1350,7 +1360,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       See the operation documentation for the appropriate value for this field.
   *   `models_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1432,7 +1442,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       See the operation documentation for the appropriate value for this field.
   *   `models_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1515,7 +1525,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the model.
   *   `models_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1599,7 +1609,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   *   `models_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `versions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1681,7 +1691,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   *   `models_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `versions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1764,7 +1774,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the model for which to list the version.
   *   `models_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1855,7 +1865,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   *   `models_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `versions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1956,7 +1966,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   *   `models_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `versions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2046,7 +2056,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the operation resource to be cancelled.
   *   `operations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2121,7 +2131,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the operation resource.
   *   `operations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2202,7 +2212,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.MachineLearning.V1.Connection.t`) - Connection to server
   *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the operation's parent resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
