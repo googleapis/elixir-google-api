@@ -30,7 +30,7 @@ defmodule GoogleApi.People.V1.Api.People do
 
   *   `connection` (*type:* `GoogleApi.People.V1.Connection.t`) - Connection to server
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -88,7 +88,7 @@ defmodule GoogleApi.People.V1.Api.People do
   *   `connection` (*type:* `GoogleApi.People.V1.Connection.t`) - Connection to server
   *   `people_id` (*type:* `String.t`) - Part of `resourceName`. The resource name of the contact to delete.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -154,7 +154,7 @@ defmodule GoogleApi.People.V1.Api.People do
         identifies the contact as returned by
       [`people.connections.list`](/people/api/rest/v1/people.connections/list).
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -198,7 +198,7 @@ defmodule GoogleApi.People.V1.Api.People do
           * taglines
           * urls
           * userDefined
-      *   `:requestMask.includeField` (*type:* `String.t`) - **Required.** Comma-separated list of person fields to be included in the
+      *   `:"requestMask.includeField"` (*type:* `String.t`) - **Required.** Comma-separated list of person fields to be included in the
           response. Each path should start with `person.`: for example,
           `person.names` or `person.photos`.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -251,7 +251,7 @@ defmodule GoogleApi.People.V1.Api.People do
 
   *   `connection` (*type:* `GoogleApi.People.V1.Connection.t`) - Connection to server
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -295,7 +295,7 @@ defmodule GoogleApi.People.V1.Api.People do
           * taglines
           * urls
           * userDefined
-      *   `:requestMask.includeField` (*type:* `String.t`) - **Required.** Comma-separated list of person fields to be included in the
+      *   `:"requestMask.includeField"` (*type:* `String.t`) - **Required.** Comma-separated list of person fields to be included in the
           response. Each path should start with `person.`: for example,
           `person.names` or `person.photos`.
       *   `:resourceNames` (*type:* `list(String.t)`) - The resource names of the people to provide information about.
@@ -367,7 +367,7 @@ defmodule GoogleApi.People.V1.Api.People do
       with a max length of 27 characters, in the form of
       `people/`<var>person_id</var>.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -453,7 +453,7 @@ defmodule GoogleApi.People.V1.Api.People do
   *   `connection` (*type:* `GoogleApi.People.V1.Connection.t`) - Connection to server
   *   `people_id` (*type:* `String.t`) - Part of `resourceName`. The resource name to return connections for. Only `people/me` is valid.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -500,7 +500,7 @@ defmodule GoogleApi.People.V1.Api.People do
           * taglines
           * urls
           * userDefined
-      *   `:requestMask.includeField` (*type:* `String.t`) - **Required.** Comma-separated list of person fields to be included in the
+      *   `:"requestMask.includeField"` (*type:* `String.t`) - **Required.** Comma-separated list of person fields to be included in the
           response. Each path should start with `person.`: for example,
           `person.names` or `person.photos`.
       *   `:requestSyncToken` (*type:* `boolean()`) - Whether the response should include a sync token, which can be used to get
