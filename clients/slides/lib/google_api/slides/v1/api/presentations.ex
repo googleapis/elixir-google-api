@@ -51,7 +51,7 @@ defmodule GoogleApi.Slides.V1.Api.Presentations do
   *   `connection` (*type:* `GoogleApi.Slides.V1.Connection.t`) - Connection to server
   *   `presentation_id` (*type:* `String.t`) - The presentation to apply the updates to.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -120,7 +120,7 @@ defmodule GoogleApi.Slides.V1.Api.Presentations do
 
   *   `connection` (*type:* `GoogleApi.Slides.V1.Connection.t`) - Connection to server
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -176,7 +176,7 @@ defmodule GoogleApi.Slides.V1.Api.Presentations do
   *   `connection` (*type:* `GoogleApi.Slides.V1.Connection.t`) - Connection to server
   *   `presentation_id` (*type:* `String.t`) - The ID of the presentation to retrieve.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -233,7 +233,7 @@ defmodule GoogleApi.Slides.V1.Api.Presentations do
   *   `presentation_id` (*type:* `String.t`) - The ID of the presentation to retrieve.
   *   `page_object_id` (*type:* `String.t`) - The object ID of the page to retrieve.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -306,7 +306,7 @@ defmodule GoogleApi.Slides.V1.Api.Presentations do
   *   `presentation_id` (*type:* `String.t`) - The ID of the presentation to retrieve.
   *   `page_object_id` (*type:* `String.t`) - The object ID of the page whose thumbnail to retrieve.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -317,10 +317,10 @@ defmodule GoogleApi.Slides.V1.Api.Presentations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:thumbnailProperties.mimeType` (*type:* `String.t`) - The optional mime type of the thumbnail image.
+      *   `:"thumbnailProperties.mimeType"` (*type:* `String.t`) - The optional mime type of the thumbnail image.
 
           If you don't specify the mime type, the default mime type will be PNG.
-      *   `:thumbnailProperties.thumbnailSize` (*type:* `String.t`) - The optional thumbnail image size.
+      *   `:"thumbnailProperties.thumbnailSize"` (*type:* `String.t`) - The optional thumbnail image size.
 
           If you don't specify the size, the server chooses a default size of the
           image.
