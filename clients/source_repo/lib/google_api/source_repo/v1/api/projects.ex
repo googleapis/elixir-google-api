@@ -32,7 +32,7 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
   *   `name` (*type:* `String.t`) - The name of the requested project. Values are of the form
       `projects/<project>`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -89,7 +89,7 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
   *   `name` (*type:* `String.t`) - The name of the requested project. Values are of the form
       `projects/<project>`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -151,7 +151,7 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
   *   `parent` (*type:* `String.t`) - The project in which to create the repo. Values are of the form
       `projects/<project>`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -210,7 +210,7 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
   *   `name` (*type:* `String.t`) - The name of the repo to delete. Values are of the form
       `projects/<project>/repos/<repo>`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -267,7 +267,7 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
   *   `name` (*type:* `String.t`) - The name of the requested repository. Values are of the form
       `projects/<project>/repos/<repo>`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -326,7 +326,7 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
   *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested.
       See the operation documentation for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -393,7 +393,7 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
   *   `name` (*type:* `String.t`) - The project ID whose repos should be listed. Values are of the form
       `projects/<project>`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -457,7 +457,7 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
   *   `name` (*type:* `String.t`) - The name of the requested repository. Values are of the form
       `projects/<project>/repos/<repo>`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -517,7 +517,7 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
   *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified.
       See the operation documentation for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -587,7 +587,7 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
   *   `name` (*type:* `String.t`) - The name of the repo to synchronize. Values are of the form
       `projects/<project>/repos/<repo>`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -648,7 +648,7 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
   *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested.
       See the operation documentation for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
