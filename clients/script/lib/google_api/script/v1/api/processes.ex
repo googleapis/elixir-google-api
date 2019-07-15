@@ -31,7 +31,7 @@ defmodule GoogleApi.Script.V1.Api.Processes do
 
   *   `connection` (*type:* `GoogleApi.Script.V1.Connection.t`) - Connection to server
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -46,23 +46,23 @@ defmodule GoogleApi.Script.V1.Api.Processes do
           50.
       *   `:pageToken` (*type:* `String.t`) - The token for continuing a previous list request on the next page. This
           should be set to the value of `nextPageToken` from a previous response.
-      *   `:userProcessFilter.deploymentId` (*type:* `String.t`) - Optional field used to limit returned processes to those originating from
+      *   `:"userProcessFilter.deploymentId"` (*type:* `String.t`) - Optional field used to limit returned processes to those originating from
           projects with a specific deployment ID.
-      *   `:userProcessFilter.endTime` (*type:* `DateTime.t`) - Optional field used to limit returned processes to those that completed
+      *   `:"userProcessFilter.endTime"` (*type:* `DateTime.t`) - Optional field used to limit returned processes to those that completed
           on or before the given timestamp.
-      *   `:userProcessFilter.functionName` (*type:* `String.t`) - Optional field used to limit returned processes to those originating from
+      *   `:"userProcessFilter.functionName"` (*type:* `String.t`) - Optional field used to limit returned processes to those originating from
           a script function with the given function name.
-      *   `:userProcessFilter.projectName` (*type:* `String.t`) - Optional field used to limit returned processes to those originating from
+      *   `:"userProcessFilter.projectName"` (*type:* `String.t`) - Optional field used to limit returned processes to those originating from
           projects with project names containing a specific string.
-      *   `:userProcessFilter.scriptId` (*type:* `String.t`) - Optional field used to limit returned processes to those originating from
+      *   `:"userProcessFilter.scriptId"` (*type:* `String.t`) - Optional field used to limit returned processes to those originating from
           projects with a specific script ID.
-      *   `:userProcessFilter.startTime` (*type:* `DateTime.t`) - Optional field used to limit returned processes to those that were
+      *   `:"userProcessFilter.startTime"` (*type:* `DateTime.t`) - Optional field used to limit returned processes to those that were
           started on or after the given timestamp.
-      *   `:userProcessFilter.statuses` (*type:* `list(String.t)`) - Optional field used to limit returned processes to those having one of
+      *   `:"userProcessFilter.statuses"` (*type:* `list(String.t)`) - Optional field used to limit returned processes to those having one of
           the specified process statuses.
-      *   `:userProcessFilter.types` (*type:* `list(String.t)`) - Optional field used to limit returned processes to those having one of
+      *   `:"userProcessFilter.types"` (*type:* `list(String.t)`) - Optional field used to limit returned processes to those having one of
           the specified process types.
-      *   `:userProcessFilter.userAccessLevels` (*type:* `list(String.t)`) - Optional field used to limit returned processes to those having one of
+      *   `:"userProcessFilter.userAccessLevels"` (*type:* `list(String.t)`) - Optional field used to limit returned processes to those having one of
           the specified user access levels.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -118,7 +118,7 @@ defmodule GoogleApi.Script.V1.Api.Processes do
 
   *   `connection` (*type:* `GoogleApi.Script.V1.Connection.t`) - Connection to server
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -134,19 +134,19 @@ defmodule GoogleApi.Script.V1.Api.Processes do
       *   `:pageToken` (*type:* `String.t`) - The token for continuing a previous list request on the next page. This
           should be set to the value of `nextPageToken` from a previous response.
       *   `:scriptId` (*type:* `String.t`) - The script ID of the project whose processes are listed.
-      *   `:scriptProcessFilter.deploymentId` (*type:* `String.t`) - Optional field used to limit returned processes to those originating from
+      *   `:"scriptProcessFilter.deploymentId"` (*type:* `String.t`) - Optional field used to limit returned processes to those originating from
           projects with a specific deployment ID.
-      *   `:scriptProcessFilter.endTime` (*type:* `DateTime.t`) - Optional field used to limit returned processes to those that completed
+      *   `:"scriptProcessFilter.endTime"` (*type:* `DateTime.t`) - Optional field used to limit returned processes to those that completed
           on or before the given timestamp.
-      *   `:scriptProcessFilter.functionName` (*type:* `String.t`) - Optional field used to limit returned processes to those originating from
+      *   `:"scriptProcessFilter.functionName"` (*type:* `String.t`) - Optional field used to limit returned processes to those originating from
           a script function with the given function name.
-      *   `:scriptProcessFilter.startTime` (*type:* `DateTime.t`) - Optional field used to limit returned processes to those that were
+      *   `:"scriptProcessFilter.startTime"` (*type:* `DateTime.t`) - Optional field used to limit returned processes to those that were
           started on or after the given timestamp.
-      *   `:scriptProcessFilter.statuses` (*type:* `list(String.t)`) - Optional field used to limit returned processes to those having one of
+      *   `:"scriptProcessFilter.statuses"` (*type:* `list(String.t)`) - Optional field used to limit returned processes to those having one of
           the specified process statuses.
-      *   `:scriptProcessFilter.types` (*type:* `list(String.t)`) - Optional field used to limit returned processes to those having one of
+      *   `:"scriptProcessFilter.types"` (*type:* `list(String.t)`) - Optional field used to limit returned processes to those having one of
           the specified process types.
-      *   `:scriptProcessFilter.userAccessLevels` (*type:* `list(String.t)`) - Optional field used to limit returned processes to those having one of
+      *   `:"scriptProcessFilter.userAccessLevels"` (*type:* `list(String.t)`) - Optional field used to limit returned processes to those having one of
           the specified user access levels.
   *   `opts` (*type:* `keyword()`) - Call options
 
