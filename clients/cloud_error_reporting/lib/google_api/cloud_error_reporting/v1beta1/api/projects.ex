@@ -35,7 +35,7 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
       ID](https://support.google.com/cloud/answer/6158840).
       Example: `projects/my-project-123`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -108,7 +108,7 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
       ID](https://support.google.com/cloud/answer/6158840).
       Example: `projects/my-project-123`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -122,13 +122,13 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
       *   `:groupId` (*type:* `String.t`) - [Required] The group for which events shall be returned.
       *   `:pageSize` (*type:* `integer()`) - [Optional] The maximum number of results to return per response.
       *   `:pageToken` (*type:* `String.t`) - [Optional] A `next_page_token` provided by a previous response.
-      *   `:serviceFilter.resourceType` (*type:* `String.t`) - [Optional] The exact value to match against
+      *   `:"serviceFilter.resourceType"` (*type:* `String.t`) - [Optional] The exact value to match against
           [`ServiceContext.resource_type`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.resource_type).
-      *   `:serviceFilter.service` (*type:* `String.t`) - [Optional] The exact value to match against
+      *   `:"serviceFilter.service"` (*type:* `String.t`) - [Optional] The exact value to match against
           [`ServiceContext.service`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.service).
-      *   `:serviceFilter.version` (*type:* `String.t`) - [Optional] The exact value to match against
+      *   `:"serviceFilter.version"` (*type:* `String.t`) - [Optional] The exact value to match against
           [`ServiceContext.version`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.version).
-      *   `:timeRange.period` (*type:* `String.t`) - Restricts the query to the specified time range.
+      *   `:"timeRange.period"` (*type:* `String.t`) - Restricts the query to the specified time range.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -206,7 +206,7 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
       ID](https://support.google.com/cloud/answer/6158840). Example:
       `projects/my-project-123`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -282,7 +282,7 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
 
       Example: <code>projects/my-project-123</code>.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -305,13 +305,13 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
       *   `:pageToken` (*type:* `String.t`) - [Optional] A `next_page_token` provided by a previous response. To view
           additional results, pass this token along with the identical query
           parameters as the first request.
-      *   `:serviceFilter.resourceType` (*type:* `String.t`) - [Optional] The exact value to match against
+      *   `:"serviceFilter.resourceType"` (*type:* `String.t`) - [Optional] The exact value to match against
           [`ServiceContext.resource_type`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.resource_type).
-      *   `:serviceFilter.service` (*type:* `String.t`) - [Optional] The exact value to match against
+      *   `:"serviceFilter.service"` (*type:* `String.t`) - [Optional] The exact value to match against
           [`ServiceContext.service`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.service).
-      *   `:serviceFilter.version` (*type:* `String.t`) - [Optional] The exact value to match against
+      *   `:"serviceFilter.version"` (*type:* `String.t`) - [Optional] The exact value to match against
           [`ServiceContext.version`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.version).
-      *   `:timeRange.period` (*type:* `String.t`) - Restricts the query to the specified time range.
+      *   `:"timeRange.period"` (*type:* `String.t`) - Restricts the query to the specified time range.
       *   `:timedCountDuration` (*type:* `String.t`) - [Optional] The preferred duration for a single returned `TimedCount`.
           If not set, no timed counts are returned.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -391,7 +391,7 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
       Example: <code>projects/my-project-123/groups/my-group</code>
   *   `groups_id` (*type:* `String.t`) - Part of `groupName`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -466,7 +466,7 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
       Example: <code>projects/my-project-123/groups/my-groupid</code>
   *   `groups_id` (*type:* `String.t`) - Part of `group.name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
