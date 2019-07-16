@@ -30,7 +30,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Customers do
 
   *   `connection` (*type:* `GoogleApi.AndroidDeviceProvisioning.V1.Connection.t`) - Connection to server
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -95,7 +95,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Customers do
   *   `parent` (*type:* `String.t`) - Required. The customer that manages the configuration. An API resource name
       in the format `customers/[CUSTOMER_ID]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -169,7 +169,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Customers do
       `customers/[CUSTOMER_ID]/configurations/[CONFIGURATION_ID]`. If the
       configuration is applied to any devices, the API call fails.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -236,7 +236,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Customers do
   *   `name` (*type:* `String.t`) - Required. The configuration to get. An API resource name in the format
       `customers/[CUSTOMER_ID]/configurations/[CONFIGURATION_ID]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -306,7 +306,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Customers do
   *   `parent` (*type:* `String.t`) - Required. The customer that manages the listed configurations. An API
       resource name in the format `customers/[CUSTOMER_ID]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -382,7 +382,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Customers do
       `customers/[CUSTOMER_ID]/configurations/[CONFIGURATION_ID]`. Assigned by
       the server.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -461,7 +461,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Customers do
   *   `parent` (*type:* `String.t`) - Required. The customer managing the device. An API resource name in the
       format `customers/[CUSTOMER_ID]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -530,7 +530,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Customers do
   *   `name` (*type:* `String.t`) - Required. The device to get. An API resource name in the format
       `customers/[CUSTOMER_ID]/devices/[DEVICE_ID]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -597,7 +597,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Customers do
   *   `parent` (*type:* `String.t`) - Required. The customer managing the devices. An API resource name in the
       format `customers/[CUSTOMER_ID]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -673,7 +673,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Customers do
   *   `parent` (*type:* `String.t`) - Required. The customer managing the device in the format
       `customers/[CUSTOMER_ID]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -746,7 +746,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Customers do
   *   `parent` (*type:* `String.t`) - Required. The customer managing the device. An API resource name in the
       format `customers/[CUSTOMER_ID]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -816,7 +816,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Customers do
   *   `parent` (*type:* `String.t`) - Required. The customer that can use the DPCs in configurations. An API
       resource name in the format `customers/[CUSTOMER_ID]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
