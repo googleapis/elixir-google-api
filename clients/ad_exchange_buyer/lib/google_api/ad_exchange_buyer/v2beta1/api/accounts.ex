@@ -32,7 +32,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   *   `account_id` (*type:* `String.t`) - Unique numerical account ID for the buyer of which the client buyer
       is a customer; the sponsor buyer to create a client for. (required)
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -100,7 +100,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   *   `account_id` (*type:* `String.t`) - Numerical account ID of the client's sponsor buyer. (required)
   *   `client_account_id` (*type:* `String.t`) - Numerical account ID of the client buyer to retrieve. (required)
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -168,7 +168,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
   *   `account_id` (*type:* `String.t`) - Unique numerical account ID of the sponsor buyer to list the clients for.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -253,7 +253,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       is a customer; the sponsor buyer to update a client for. (required)
   *   `client_account_id` (*type:* `String.t`) - Unique numerical account ID of the client to update. (required)
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -326,7 +326,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   *   `client_account_id` (*type:* `String.t`) - Numerical account ID of the client buyer that the user
       should be associated with. (required)
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -403,7 +403,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       to be retrieved is associated with. (required)
   *   `invitation_id` (*type:* `String.t`) - Numerical identifier of the user invitation to retrieve. (required)
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -488,7 +488,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       to list all the invitations for all the clients
       of a given sponsor buyer.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -574,7 +574,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       that the user to be retrieved is associated with. (required)
   *   `user_id` (*type:* `String.t`) - Numerical identifier of the user to retrieve. (required)
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -653,7 +653,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       to list all the client users for all the clients
       of a given sponsor buyer.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -739,7 +739,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       is associated with. (required)
   *   `user_id` (*type:* `String.t`) - Numerical identifier of the user to retrieve. (required)
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -816,7 +816,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       creatives.list
       method.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -887,7 +887,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   *   `account_id` (*type:* `String.t`) - The account the creative belongs to.
   *   `creative_id` (*type:* `String.t`) - The ID of the creative to retrieve.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -956,7 +956,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   *   `account_id` (*type:* `String.t`) - The account to list the creatives from.
       Specify "-" to list all creatives the current user has access to.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1055,7 +1055,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   *   `creative_id` (*type:* `String.t`) - The creative ID of the creative to stop notifications for.
       Specify "-" to specify stopping account level notifications.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1132,7 +1132,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       creatives.list
       method.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1208,7 +1208,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       sent, only a single notification will be sent to the
       creative-level notification topic.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1279,7 +1279,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   *   `account_id` (*type:* `String.t`) - The account the creative belongs to.
   *   `creative_id` (*type:* `String.t`) - The ID of the creative associated with the deal.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1355,7 +1355,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   *   `creative_id` (*type:* `String.t`) - The creative ID to list the associations from.
       Specify "-" to list all creatives under the above account.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1450,7 +1450,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   *   `account_id` (*type:* `String.t`) - The account the creative belongs to.
   *   `creative_id` (*type:* `String.t`) - The ID of the creative associated with the deal.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1525,7 +1525,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
   *   `account_id` (*type:* `String.t`) - Account ID of the buyer.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1608,7 +1608,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   *   `account_id` (*type:* `String.t`) - Account ID of the buyer.
   *   `product_id` (*type:* `String.t`) - The ID for the product to get the head revision for.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1677,7 +1677,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
   *   `account_id` (*type:* `String.t`) - Account ID of the buyer.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1762,7 +1762,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   *   `account_id` (*type:* `String.t`) - Account ID of the buyer.
   *   `proposal_id` (*type:* `String.t`) - The ID of the proposal to accept.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1836,7 +1836,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   *   `account_id` (*type:* `String.t`) - Account ID of the buyer.
   *   `proposal_id` (*type:* `String.t`) - The ID of the proposal to attach the note to.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1909,7 +1909,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   *   `account_id` (*type:* `String.t`) - Account ID of the buyer.
   *   `proposal_id` (*type:* `String.t`) - The ID of the proposal to cancel negotiation for.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1985,7 +1985,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   *   `account_id` (*type:* `String.t`) - Account ID of the buyer.
   *   `proposal_id` (*type:* `String.t`) - The ID of the proposal to mark as setup completed.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2056,7 +2056,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
   *   `account_id` (*type:* `String.t`) - Account ID of the buyer.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2125,7 +2125,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   *   `account_id` (*type:* `String.t`) - Account ID of the buyer.
   *   `proposal_id` (*type:* `String.t`) - The unique ID of the proposal
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2198,7 +2198,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
   *   `account_id` (*type:* `String.t`) - Account ID of the buyer.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2288,7 +2288,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   *   `account_id` (*type:* `String.t`) - Account ID of the buyer.
   *   `proposal_id` (*type:* `String.t`) - The ID of the proposal to pause.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2369,7 +2369,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   *   `account_id` (*type:* `String.t`) - Account ID of the buyer.
   *   `proposal_id` (*type:* `String.t`) - The ID of the proposal to resume.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2452,7 +2452,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   *   `account_id` (*type:* `String.t`) - Account ID of the buyer.
   *   `proposal_id` (*type:* `String.t`) - The unique ID of the proposal.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2523,7 +2523,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   *   `account_id` (*type:* `String.t`) - Account ID of the buyer.
   *   `publisher_profile_id` (*type:* `String.t`) - The id for the publisher profile to get.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2595,7 +2595,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
   *   `account_id` (*type:* `String.t`) - Account ID of the buyer.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
