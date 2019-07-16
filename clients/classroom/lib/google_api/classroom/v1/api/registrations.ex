@@ -60,7 +60,7 @@ defmodule GoogleApi.Classroom.V1.Api.Registrations do
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -117,7 +117,7 @@ defmodule GoogleApi.Classroom.V1.Api.Registrations do
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
   *   `registration_id` (*type:* `String.t`) - The `registration_id` of the `Registration` to be deleted.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
