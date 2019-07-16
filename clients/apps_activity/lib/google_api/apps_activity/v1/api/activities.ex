@@ -37,8 +37,8 @@ defmodule GoogleApi.AppsActivity.V1.Api.Activities do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:drive.ancestorId` (*type:* `String.t`) - Identifies the Drive folder containing the items for which to return activities.
-      *   `:drive.fileId` (*type:* `String.t`) - Identifies the Drive item to return activities for.
+      *   `:"drive.ancestorId"` (*type:* `String.t`) - Identifies the Drive folder containing the items for which to return activities.
+      *   `:"drive.fileId"` (*type:* `String.t`) - Identifies the Drive item to return activities for.
       *   `:groupingStrategy` (*type:* `String.t`) - Indicates the strategy to use when grouping singleEvents items in the associated combinedEvent object.
       *   `:pageSize` (*type:* `integer()`) - The maximum number of events to return on a page. The response includes a continuation token if there are more events.
       *   `:pageToken` (*type:* `String.t`) - A token to retrieve a specific page of results.
