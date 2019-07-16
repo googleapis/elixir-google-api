@@ -32,7 +32,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   *   `parent` (*type:* `String.t`) - Required. The project of this agent.
       Format: `projects/<Project ID>`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -96,7 +96,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   *   `parent` (*type:* `String.t`) - Required. The project that the agent to delete is associated with.
       Format: `projects/<Project ID>`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -153,7 +153,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   *   `parent` (*type:* `String.t`) - Required. The project that the agent to fetch is associated with.
       Format: `projects/<Project ID>`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -215,7 +215,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   *   `parent` (*type:* `String.t`) - Required. The project that the agent to export is associated with.
       Format: `projects/<Project ID>`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -283,7 +283,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   *   `parent` (*type:* `String.t`) - Required. The project that the agent to import is associated with.
       Format: `projects/<Project ID>`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -350,7 +350,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   *   `parent` (*type:* `String.t`) - Required. The project that the agent to restore is associated with.
       Format: `projects/<Project ID>`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -418,7 +418,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   *   `parent` (*type:* `String.t`) - Required. The project to list agents from.
       Format: `projects/<Project ID or '-'>`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -486,7 +486,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   *   `parent` (*type:* `String.t`) - Required. The project that the agent to train is associated with.
       Format: `projects/<Project ID>`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -550,7 +550,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   *   `parent` (*type:* `String.t`) - Required. The name of the agent to delete all entities types for. Format:
       `projects/<Project ID>/agent`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -624,7 +624,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   *   `parent` (*type:* `String.t`) - Required. The name of the agent to update or create entity types in.
       Format: `projects/<Project ID>/agent`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -696,7 +696,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   *   `parent` (*type:* `String.t`) - Required. The agent to create a entity type for.
       Format: `projects/<Project ID>/agent`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -775,7 +775,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   *   `name` (*type:* `String.t`) - Required. The name of the entity type to delete.
       Format: `projects/<Project ID>/agent/entityTypes/<EntityType ID>`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -842,7 +842,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   *   `name` (*type:* `String.t`) - Required. The name of the entity type.
       Format: `projects/<Project ID>/agent/entityTypes/<EntityType ID>`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -919,7 +919,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   *   `parent` (*type:* `String.t`) - Required. The agent to list all entity types from.
       Format: `projects/<Project ID>/agent`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1004,7 +1004,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       EntityTypes.BatchUpdateEntityTypes methods.
       Format: `projects/<Project ID>/agent/entityTypes/<Entity Type ID>`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1087,7 +1087,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   *   `parent` (*type:* `String.t`) - Required. The name of the entity type to create entities in. Format:
       `projects/<Project ID>/agent/entityTypes/<Entity Type ID>`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1161,7 +1161,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   *   `parent` (*type:* `String.t`) - Required. The name of the entity type to delete entries for. Format:
       `projects/<Project ID>/agent/entityTypes/<Entity Type ID>`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1237,7 +1237,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   *   `parent` (*type:* `String.t`) - Required. The name of the entity type to update or create entities in.
       Format: `projects/<Project ID>/agent/entityTypes/<Entity Type ID>`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1311,7 +1311,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   *   `parent` (*type:* `String.t`) - Required. The name of the agent to delete all entities types for. Format:
       `projects/<Project ID>/agent`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1385,7 +1385,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   *   `parent` (*type:* `String.t`) - Required. The name of the agent to update or create intents in.
       Format: `projects/<Project ID>/agent`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1457,7 +1457,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   *   `parent` (*type:* `String.t`) - Required. The agent to create a intent for.
       Format: `projects/<Project ID>/agent`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1539,7 +1539,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       indirect followup intents, we also delete them.
       Format: `projects/<Project ID>/agent/intents/<Intent ID>`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1606,7 +1606,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   *   `name` (*type:* `String.t`) - Required. The name of the intent.
       Format: `projects/<Project ID>/agent/intents/<Intent ID>`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1680,7 +1680,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   *   `parent` (*type:* `String.t`) - Required. The agent to list all intents from.
       Format: `projects/<Project ID>/agent`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1767,7 +1767,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       methods.
       Format: `projects/<Project ID>/agent/intents/<Intent ID>`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1845,7 +1845,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   *   `parent` (*type:* `String.t`) - Required. The name of the session to delete all contexts from. Format:
       `projects/<Project ID>/agent/sessions/<Session ID>`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1918,7 +1918,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       some type of user identifier (preferably hashed). The length of the session
       ID must not exceed 36 bytes.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1993,7 +1993,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   *   `parent` (*type:* `String.t`) - Required. The session to create a context for.
       Format: `projects/<Project ID>/agent/sessions/<Session ID>`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2065,7 +2065,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   *   `name` (*type:* `String.t`) - Required. The name of the context to delete. Format:
       `projects/<Project ID>/agent/sessions/<Session ID>/contexts/<Context ID>`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2132,7 +2132,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   *   `name` (*type:* `String.t`) - Required. The name of the context. Format:
       `projects/<Project ID>/agent/sessions/<Session ID>/contexts/<Context ID>`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2202,7 +2202,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   *   `parent` (*type:* `String.t`) - Required. The session to list all contexts from.
       Format: `projects/<Project ID>/agent/sessions/<Session ID>`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2281,7 +2281,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       The `Context ID` is always converted to lowercase, may only contain
       characters in [a-zA-Z0-9_-%] and may be at most 250 bytes long.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2358,7 +2358,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   *   `parent` (*type:* `String.t`) - Required. The session to create a session entity type for.
       Format: `projects/<Project ID>/agent/sessions/<Session ID>`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2431,7 +2431,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       `projects/<Project ID>/agent/sessions/<Session ID>/entityTypes/<Entity Type
       Display Name>`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2499,7 +2499,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       `projects/<Project ID>/agent/sessions/<Session ID>/entityTypes/<Entity Type
       Display Name>`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2569,7 +2569,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   *   `parent` (*type:* `String.t`) - Required. The session to list all session entity types from.
       Format: `projects/<Project ID>/agent/sessions/<Session ID>`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2653,7 +2653,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       `<Entity Type Display Name>` must be the display name of an existing entity
       type in the same agent that will be overridden or supplemented.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2728,7 +2728,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - The name of the operation resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -2796,7 +2796,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - The name of the operation's parent resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
