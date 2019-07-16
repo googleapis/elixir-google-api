@@ -43,13 +43,13 @@ defmodule GoogleApi.Analytics.V3.Api.Data do
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:dimensions` (*type:* `String.t`) - A comma-separated list of Analytics dimensions. E.g., 'ga:browser,ga:city'.
       *   `:filters` (*type:* `String.t`) - A comma-separated list of dimension or metric filters to be applied to Analytics data.
-      *   `:include-empty-rows` (*type:* `boolean()`) - The response will include empty rows if this parameter is set to true, the default is true
-      *   `:max-results` (*type:* `integer()`) - The maximum number of entries to include in this feed.
+      *   `:"include-empty-rows"` (*type:* `boolean()`) - The response will include empty rows if this parameter is set to true, the default is true
+      *   `:"max-results"` (*type:* `integer()`) - The maximum number of entries to include in this feed.
       *   `:output` (*type:* `String.t`) - The selected format for the response. Default format is JSON.
       *   `:samplingLevel` (*type:* `String.t`) - The desired sampling level.
       *   `:segment` (*type:* `String.t`) - An Analytics segment to be applied to data.
       *   `:sort` (*type:* `String.t`) - A comma-separated list of dimensions or metrics that determine the sort order for Analytics data.
-      *   `:start-index` (*type:* `integer()`) - An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+      *   `:"start-index"` (*type:* `integer()`) - An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -129,10 +129,10 @@ defmodule GoogleApi.Analytics.V3.Api.Data do
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:dimensions` (*type:* `String.t`) - A comma-separated list of Multi-Channel Funnels dimensions. E.g., 'mcf:source,mcf:medium'.
       *   `:filters` (*type:* `String.t`) - A comma-separated list of dimension or metric filters to be applied to the Analytics data.
-      *   `:max-results` (*type:* `integer()`) - The maximum number of entries to include in this feed.
+      *   `:"max-results"` (*type:* `integer()`) - The maximum number of entries to include in this feed.
       *   `:samplingLevel` (*type:* `String.t`) - The desired sampling level.
       *   `:sort` (*type:* `String.t`) - A comma-separated list of dimensions or metrics that determine the sort order for the Analytics data.
-      *   `:start-index` (*type:* `integer()`) - An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+      *   `:"start-index"` (*type:* `integer()`) - An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -207,7 +207,7 @@ defmodule GoogleApi.Analytics.V3.Api.Data do
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:dimensions` (*type:* `String.t`) - A comma-separated list of real time dimensions. E.g., 'rt:medium,rt:city'.
       *   `:filters` (*type:* `String.t`) - A comma-separated list of dimension or metric filters to be applied to real time data.
-      *   `:max-results` (*type:* `integer()`) - The maximum number of entries to include in this feed.
+      *   `:"max-results"` (*type:* `integer()`) - The maximum number of entries to include in this feed.
       *   `:sort` (*type:* `String.t`) - A comma-separated list of dimensions or metrics that determine the sort order for real time data.
   *   `opts` (*type:* `keyword()`) - Call options
 

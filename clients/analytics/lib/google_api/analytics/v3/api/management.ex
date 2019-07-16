@@ -37,8 +37,8 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:max-results` (*type:* `integer()`) - The maximum number of account summaries to include in this response, where the largest acceptable value is 1000.
-      *   `:start-index` (*type:* `integer()`) - An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+      *   `:"max-results"` (*type:* `integer()`) - The maximum number of account summaries to include in this response, where the largest acceptable value is 1000.
+      *   `:"start-index"` (*type:* `integer()`) - An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -207,8 +207,8 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:max-results` (*type:* `integer()`) - The maximum number of account-user links to include in this response.
-      *   `:start-index` (*type:* `integer()`) - An index of the first account-user link to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+      *   `:"max-results"` (*type:* `integer()`) - The maximum number of account-user links to include in this response.
+      *   `:"start-index"` (*type:* `integer()`) - An index of the first account-user link to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -330,8 +330,8 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:max-results` (*type:* `integer()`) - The maximum number of accounts to include in this response.
-      *   `:start-index` (*type:* `integer()`) - An index of the first account to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+      *   `:"max-results"` (*type:* `integer()`) - The maximum number of accounts to include in this response.
+      *   `:"start-index"` (*type:* `integer()`) - An index of the first account to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -428,8 +428,8 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:max-results` (*type:* `integer()`) - The maximum number of custom data sources to include in this response.
-      *   `:start-index` (*type:* `integer()`) - A 1-based index of the first custom data source to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+      *   `:"max-results"` (*type:* `integer()`) - The maximum number of custom data sources to include in this response.
+      *   `:"start-index"` (*type:* `integer()`) - A 1-based index of the first custom data source to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -630,8 +630,8 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:max-results` (*type:* `integer()`) - The maximum number of custom dimensions to include in this response.
-      *   `:start-index` (*type:* `integer()`) - An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+      *   `:"max-results"` (*type:* `integer()`) - The maximum number of custom dimensions to include in this response.
+      *   `:"start-index"` (*type:* `integer()`) - An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -976,8 +976,8 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:max-results` (*type:* `integer()`) - The maximum number of custom metrics to include in this response.
-      *   `:start-index` (*type:* `integer()`) - An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+      *   `:"max-results"` (*type:* `integer()`) - The maximum number of custom metrics to include in this response.
+      *   `:"start-index"` (*type:* `integer()`) - An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1403,8 +1403,8 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:max-results` (*type:* `integer()`) - The maximum number of experiments to include in this response.
-      *   `:start-index` (*type:* `integer()`) - An index of the first experiment to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+      *   `:"max-results"` (*type:* `integer()`) - The maximum number of experiments to include in this response.
+      *   `:"start-index"` (*type:* `integer()`) - An index of the first experiment to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1798,8 +1798,8 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:max-results` (*type:* `integer()`) - The maximum number of filters to include in this response.
-      *   `:start-index` (*type:* `integer()`) - An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+      *   `:"max-results"` (*type:* `integer()`) - The maximum number of filters to include in this response.
+      *   `:"start-index"` (*type:* `integer()`) - An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2120,8 +2120,8 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:max-results` (*type:* `integer()`) - The maximum number of goals to include in this response.
-      *   `:start-index` (*type:* `integer()`) - An index of the first goal to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+      *   `:"max-results"` (*type:* `integer()`) - The maximum number of goals to include in this response.
+      *   `:"start-index"` (*type:* `integer()`) - An index of the first goal to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2554,8 +2554,8 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:max-results` (*type:* `integer()`) - The maximum number of profile filter links to include in this response.
-      *   `:start-index` (*type:* `integer()`) - An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+      *   `:"max-results"` (*type:* `integer()`) - The maximum number of profile filter links to include in this response.
+      *   `:"start-index"` (*type:* `integer()`) - An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2916,8 +2916,8 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:max-results` (*type:* `integer()`) - The maximum number of profile-user links to include in this response.
-      *   `:start-index` (*type:* `integer()`) - An index of the first profile-user link to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+      *   `:"max-results"` (*type:* `integer()`) - The maximum number of profile-user links to include in this response.
+      *   `:"start-index"` (*type:* `integer()`) - An index of the first profile-user link to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -3263,8 +3263,8 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:max-results` (*type:* `integer()`) - The maximum number of views (profiles) to include in this response.
-      *   `:start-index` (*type:* `integer()`) - An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+      *   `:"max-results"` (*type:* `integer()`) - The maximum number of views (profiles) to include in this response.
+      *   `:"start-index"` (*type:* `integer()`) - An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -3673,8 +3673,8 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:max-results` (*type:* `integer()`) - The maximum number of remarketing audiences to include in this response.
-      *   `:start-index` (*type:* `integer()`) - An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+      *   `:"max-results"` (*type:* `integer()`) - The maximum number of remarketing audiences to include in this response.
+      *   `:"start-index"` (*type:* `integer()`) - An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
       *   `:type` (*type:* `String.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -3882,8 +3882,8 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:max-results` (*type:* `integer()`) - The maximum number of segments to include in this response.
-      *   `:start-index` (*type:* `integer()`) - An index of the first segment to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+      *   `:"max-results"` (*type:* `integer()`) - The maximum number of segments to include in this response.
+      *   `:"start-index"` (*type:* `integer()`) - An index of the first segment to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -4148,8 +4148,8 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:max-results` (*type:* `integer()`) - The maximum number of unsampled reports to include in this response.
-      *   `:start-index` (*type:* `integer()`) - An index of the first unsampled report to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+      *   `:"max-results"` (*type:* `integer()`) - The maximum number of unsampled reports to include in this response.
+      *   `:"start-index"` (*type:* `integer()`) - An index of the first unsampled report to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -4362,8 +4362,8 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:max-results` (*type:* `integer()`) - The maximum number of uploads to include in this response.
-      *   `:start-index` (*type:* `integer()`) - A 1-based index of the first upload to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+      *   `:"max-results"` (*type:* `integer()`) - The maximum number of uploads to include in this response.
+      *   `:"start-index"` (*type:* `integer()`) - A 1-based index of the first upload to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -4857,8 +4857,8 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:max-results` (*type:* `integer()`) - The maximum number of webProperty-Google Ads links to include in this response.
-      *   `:start-index` (*type:* `integer()`) - An index of the first webProperty-Google Ads link to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+      *   `:"max-results"` (*type:* `integer()`) - The maximum number of webProperty-Google Ads links to include in this response.
+      *   `:"start-index"` (*type:* `integer()`) - An index of the first webProperty-Google Ads link to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -5189,8 +5189,8 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:max-results` (*type:* `integer()`) - The maximum number of web properties to include in this response.
-      *   `:start-index` (*type:* `integer()`) - An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+      *   `:"max-results"` (*type:* `integer()`) - The maximum number of web properties to include in this response.
+      *   `:"start-index"` (*type:* `integer()`) - An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -5517,8 +5517,8 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:max-results` (*type:* `integer()`) - The maximum number of webProperty-user Links to include in this response.
-      *   `:start-index` (*type:* `integer()`) - An index of the first webProperty-user link to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+      *   `:"max-results"` (*type:* `integer()`) - The maximum number of webProperty-user Links to include in this response.
+      *   `:"start-index"` (*type:* `integer()`) - An index of the first webProperty-user link to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
