@@ -34,7 +34,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `registries_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -116,7 +116,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
       For example, `projects/example-project/locations/us-central1`.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -189,7 +189,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `registries_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -266,7 +266,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `registries_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -345,7 +345,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `registries_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -423,7 +423,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
       `projects/example-project/locations/us-central1`.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -507,7 +507,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   *   `locations_id` (*type:* `String.t`) - Part of `deviceRegistry.name`. See documentation of `projectsId`.
   *   `registries_id` (*type:* `String.t`) - Part of `deviceRegistry.name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -593,7 +593,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `registries_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -674,7 +674,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `registries_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -757,7 +757,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `registries_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -841,7 +841,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `registries_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -922,7 +922,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   *   `registries_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `devices_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1004,7 +1004,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   *   `registries_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `devices_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1087,7 +1087,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `registries_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1105,15 +1105,15 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
       *   `:fieldMask` (*type:* `String.t`) - The fields of the `Device` resource to be returned in the response. The
           fields `id` and `num_id` are always returned, along with any
           other fields specified.
-      *   `:gatewayListOptions.associationsDeviceId` (*type:* `String.t`) - If set, returns only the gateways with which the specified device is
+      *   `:"gatewayListOptions.associationsDeviceId"` (*type:* `String.t`) - If set, returns only the gateways with which the specified device is
           associated. The device ID can be numeric (`num_id`) or the user-defined
           string (`id`). For example, if `456` is specified, returns only the
           gateways to which the device with `num_id` 456 is bound.
-      *   `:gatewayListOptions.associationsGatewayId` (*type:* `String.t`) - If set, only devices associated with the specified gateway are returned.
+      *   `:"gatewayListOptions.associationsGatewayId"` (*type:* `String.t`) - If set, only devices associated with the specified gateway are returned.
           The gateway ID can be numeric (`num_id`) or the user-defined string
           (`id`). For example, if `123` is specified, only devices bound to the
           gateway with `num_id` 123 are returned.
-      *   `:gatewayListOptions.gatewayType` (*type:* `String.t`) - If `GATEWAY` is specified, only gateways are returned. If `NON_GATEWAY`
+      *   `:"gatewayListOptions.gatewayType"` (*type:* `String.t`) - If `GATEWAY` is specified, only gateways are returned. If `NON_GATEWAY`
           is specified, only non-gateway devices are returned. If
           `GATEWAY_TYPE_UNSPECIFIED` is specified, all devices are returned.
       *   `:pageSize` (*type:* `integer()`) - The maximum number of devices to return in the response. If this value
@@ -1201,7 +1201,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   *   `registries_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `devices_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1287,7 +1287,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   *   `registries_id` (*type:* `String.t`) - Part of `device.name`. See documentation of `projectsId`.
   *   `devices_id` (*type:* `String.t`) - Part of `device.name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1388,7 +1388,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   *   `registries_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `devices_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1477,7 +1477,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   *   `registries_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `devices_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1568,7 +1568,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   *   `registries_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `devices_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1657,7 +1657,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   *   `registries_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `groups_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1741,7 +1741,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   *   `registries_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `groups_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1826,7 +1826,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   *   `registries_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `groups_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1913,7 +1913,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   *   `registries_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `groups_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:$.xgafv` (*type:* `String.t`) - V1 error format.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
@@ -1931,15 +1931,15 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
       *   `:fieldMask` (*type:* `String.t`) - The fields of the `Device` resource to be returned in the response. The
           fields `id` and `num_id` are always returned, along with any
           other fields specified.
-      *   `:gatewayListOptions.associationsDeviceId` (*type:* `String.t`) - If set, returns only the gateways with which the specified device is
+      *   `:"gatewayListOptions.associationsDeviceId"` (*type:* `String.t`) - If set, returns only the gateways with which the specified device is
           associated. The device ID can be numeric (`num_id`) or the user-defined
           string (`id`). For example, if `456` is specified, returns only the
           gateways to which the device with `num_id` 456 is bound.
-      *   `:gatewayListOptions.associationsGatewayId` (*type:* `String.t`) - If set, only devices associated with the specified gateway are returned.
+      *   `:"gatewayListOptions.associationsGatewayId"` (*type:* `String.t`) - If set, only devices associated with the specified gateway are returned.
           The gateway ID can be numeric (`num_id`) or the user-defined string
           (`id`). For example, if `123` is specified, only devices bound to the
           gateway with `num_id` 123 are returned.
-      *   `:gatewayListOptions.gatewayType` (*type:* `String.t`) - If `GATEWAY` is specified, only gateways are returned. If `NON_GATEWAY`
+      *   `:"gatewayListOptions.gatewayType"` (*type:* `String.t`) - If `GATEWAY` is specified, only gateways are returned. If `NON_GATEWAY`
           is specified, only non-gateway devices are returned. If
           `GATEWAY_TYPE_UNSPECIFIED` is specified, all devices are returned.
       *   `:pageSize` (*type:* `integer()`) - The maximum number of devices to return in the response. If this value
