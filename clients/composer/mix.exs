@@ -1,7 +1,7 @@
 defmodule GoogleApi.Composer.V1beta1.Mixfile do
   use Mix.Project
 
-  @version "0.6.1"
+  @version "0.7.0"
 
   def project do
     [app: :google_api_composer,
