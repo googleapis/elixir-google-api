@@ -63,7 +63,8 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.CohortGroup do
       - The cohort definition date ranges need not be aligned to the calendar
         week and month boundaries.
       - The `viewId` must be an
-        [app view ID](https://support.google.com/analytics/answer/2649553#WebVersusAppViews)
+        [app view
+        ID](https://support.google.com/analytics/answer/2649553#WebVersusAppViews)
   """
 
   use GoogleApi.Gax.ModelBase

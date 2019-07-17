@@ -48,7 +48,8 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.ReportRequest do
       following expression selects `ga:browser` dimension which starts with
       Firefox; `ga:browser=~^Firefox`. For more information on dimensions
       and metric filters, see
-      [Filters reference](https://developers.google.com/analytics/devguides/reporting/core/v3/reference#filters).
+      [Filters
+      reference](https://developers.google.com/analytics/devguides/reporting/core/v3/reference#filters).
   *   `hideTotals` (*type:* `boolean()`, *default:* `nil`) - If set to true, hides the total of all metrics for all the matching rows,
       for every date range. The default false and will return the totals.
   *   `hideValueRanges` (*type:* `boolean()`, *default:* `nil`) - If set to true, hides the minimum and maximum across all matching rows.
