@@ -1,7 +1,7 @@
 defmodule GoogleApi.AnalyticsReporting.V4.Mixfile do
   use Mix.Project
 
-  @version "0.5.0"
+  @version "0.6.0"
 
   def project do
     [app: :google_api_analytics_reporting,
