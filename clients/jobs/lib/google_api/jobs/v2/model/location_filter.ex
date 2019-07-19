@@ -23,15 +23,10 @@ defmodule GoogleApi.Jobs.V2.Model.LocationFilter do
 
   ## Attributes
 
-  *   `distanceInMiles` (*type:* `float()`, *default:* `nil`) - Optional.
-
-
-      The distance_in_miles is applied when the location being searched for is
+  *   `distanceInMiles` (*type:* `float()`, *default:* `nil`) - Optional. The distance_in_miles is applied when the location being searched for is
       identified as a city or smaller. When the location being searched for is a
       state or larger, this field is ignored.
-  *   `isTelecommute` (*type:* `boolean()`, *default:* `nil`) - Optional.
-
-      Allows the client to return jobs without a
+  *   `isTelecommute` (*type:* `boolean()`, *default:* `nil`) - Optional. Allows the client to return jobs without a
       set location, specifically, telecommuting jobs (telecomuting is considered
       by the service as a special location.
       Job.allow_telecommute indicates if a job permits telecommuting.
@@ -44,16 +39,10 @@ defmodule GoogleApi.Jobs.V2.Model.LocationFilter do
       such as "Mountain View" or "telecommuting" jobs. However, when used in
       combination with other location filters, telecommuting jobs can be
       treated as less relevant than other jobs in the search response.
-  *   `latLng` (*type:* `GoogleApi.Jobs.V2.Model.LatLng.t`, *default:* `nil`) - Optional.
-
-      The latitude and longitude of the geographic center from which to
+  *   `latLng` (*type:* `GoogleApi.Jobs.V2.Model.LatLng.t`, *default:* `nil`) - Optional. The latitude and longitude of the geographic center from which to
       search. This field is ignored if `location_name` is provided.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Optional.
-
-      The address name, such as "Mountain View" or "Bay Area".
-  *   `regionCode` (*type:* `String.t`, *default:* `nil`) - Optional.
-
-      CLDR region code of the country/region of the address. This will be used
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. The address name, such as "Mountain View" or "Bay Area".
+  *   `regionCode` (*type:* `String.t`, *default:* `nil`) - Optional. CLDR region code of the country/region of the address. This will be used
       to address ambiguity of the user-input location, e.g. "Liverpool"
       against "Liverpool, NY, US" or "Liverpool, UK".
 

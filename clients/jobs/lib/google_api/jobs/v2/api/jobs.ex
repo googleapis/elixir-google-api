@@ -145,9 +145,7 @@ defmodule GoogleApi.Jobs.V2.Api.Jobs do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Jobs.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required.
-
-      The resource name of the job to be deleted, such as "jobs/11111111".
+  *   `name` (*type:* `String.t`) - Required. The resource name of the job to be deleted, such as "jobs/11111111".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -271,9 +269,7 @@ defmodule GoogleApi.Jobs.V2.Api.Jobs do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Jobs.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required.
-
-      The resource name of the job to retrieve, such as "jobs/11111111".
+  *   `name` (*type:* `String.t`) - Required. The resource name of the job to retrieve, such as "jobs/11111111".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -409,9 +405,7 @@ defmodule GoogleApi.Jobs.V2.Api.Jobs do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Required.
-
-          The filter string specifies the jobs to be enumerated.
+      *   `:filter` (*type:* `String.t`) - Required. The filter string specifies the jobs to be enumerated.
 
           Supported operator: =, AND
 
@@ -424,25 +418,19 @@ defmodule GoogleApi.Jobs.V2.Api.Jobs do
 
           * companyName = "companies/123"
           * companyName = "companies/123" AND requisitionId = "req-1"
-      *   `:idsOnly` (*type:* `boolean()`) - Optional.
-
-          If set to `true`, only Job.name, Job.requisition_id and
+      *   `:idsOnly` (*type:* `boolean()`) - Optional. If set to `true`, only Job.name, Job.requisition_id and
           Job.language_code will be returned.
 
           A typical use case is to synchronize job repositories.
 
           Defaults to false.
-      *   `:pageSize` (*type:* `integer()`) - Optional.
-
-          The maximum number of jobs to be returned per page of results.
+      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of jobs to be returned per page of results.
 
           If ids_only is set to true, the maximum allowed page size
           is 1000. Otherwise, the maximum allowed page size is 100.
 
           Default is 100 if empty or a number < 1 is specified.
-      *   `:pageToken` (*type:* `String.t`) - Optional.
-
-          The starting point of a query result.
+      *   `:pageToken` (*type:* `String.t`) - Optional. The starting point of a query result.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns

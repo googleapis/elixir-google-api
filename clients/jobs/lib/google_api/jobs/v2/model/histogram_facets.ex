@@ -23,13 +23,9 @@ defmodule GoogleApi.Jobs.V2.Model.HistogramFacets do
 
   ## Attributes
 
-  *   `compensationHistogramFacets` (*type:* `list(GoogleApi.Jobs.V2.Model.CompensationHistogramRequest.t)`, *default:* `nil`) - Optional.
-
-      Specifies compensation field-based histogram requests.
+  *   `compensationHistogramFacets` (*type:* `list(GoogleApi.Jobs.V2.Model.CompensationHistogramRequest.t)`, *default:* `nil`) - Optional. Specifies compensation field-based histogram requests.
       Duplicate values of CompensationHistogramRequest.type are not allowed.
-  *   `customAttributeHistogramFacets` (*type:* `list(GoogleApi.Jobs.V2.Model.CustomAttributeHistogramRequest.t)`, *default:* `nil`) - Optional.
-
-      Specifies the custom attributes histogram requests.
+  *   `customAttributeHistogramFacets` (*type:* `list(GoogleApi.Jobs.V2.Model.CustomAttributeHistogramRequest.t)`, *default:* `nil`) - Optional. Specifies the custom attributes histogram requests.
       Duplicate values of CustomAttributeHistogramRequest.key are not
       allowed.
   *   `simpleHistogramFacets` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Specifies the simple type of histogram facets, for example,

@@ -23,12 +23,8 @@ defmodule GoogleApi.Jobs.V2.Model.ExtendedCompensationInfoCompensationRange do
 
   ## Attributes
 
-  *   `max` (*type:* `GoogleApi.Jobs.V2.Model.ExtendedCompensationInfoDecimal.t`, *default:* `nil`) - Required.
-
-      Maximum value.
-  *   `min` (*type:* `GoogleApi.Jobs.V2.Model.ExtendedCompensationInfoDecimal.t`, *default:* `nil`) - Required.
-
-      Minimum value.
+  *   `max` (*type:* `GoogleApi.Jobs.V2.Model.ExtendedCompensationInfoDecimal.t`, *default:* `nil`) - Required. Maximum value.
+  *   `min` (*type:* `GoogleApi.Jobs.V2.Model.ExtendedCompensationInfoDecimal.t`, *default:* `nil`) - Required. Minimum value.
   """
 
   use GoogleApi.Gax.ModelBase

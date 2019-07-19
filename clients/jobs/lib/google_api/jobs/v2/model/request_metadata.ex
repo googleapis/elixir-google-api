@@ -25,13 +25,9 @@ defmodule GoogleApi.Jobs.V2.Model.RequestMetadata do
 
   ## Attributes
 
-  *   `deviceInfo` (*type:* `GoogleApi.Jobs.V2.Model.DeviceInfo.t`, *default:* `nil`) - Optional.
-
-      The type of device used by the job seeker at the time of the call to the
+  *   `deviceInfo` (*type:* `GoogleApi.Jobs.V2.Model.DeviceInfo.t`, *default:* `nil`) - Optional. The type of device used by the job seeker at the time of the call to the
       service.
-  *   `domain` (*type:* `String.t`, *default:* `nil`) - Required.
-
-      The client-defined scope or source of the service call, which typically
+  *   `domain` (*type:* `String.t`, *default:* `nil`) - Required. The client-defined scope or source of the service call, which typically
       is the domain on
       which the service has been implemented and is currently being run.
 
@@ -43,9 +39,7 @@ defmodule GoogleApi.Jobs.V2.Model.RequestMetadata do
       If this field is not available for some reason, send "UNKNOWN". Note that
       any improvements to the service model for a particular tenant site rely on
       this field being set correctly to some domain.
-  *   `sessionId` (*type:* `String.t`, *default:* `nil`) - Required.
-
-      A unique session identification string. A session is defined as the
+  *   `sessionId` (*type:* `String.t`, *default:* `nil`) - Required. A unique session identification string. A session is defined as the
       duration of an end user's interaction with the service over a period.
       Obfuscate this field for privacy concerns before
       providing it to the API.
@@ -53,9 +47,7 @@ defmodule GoogleApi.Jobs.V2.Model.RequestMetadata do
       If this field is not available for some reason, please send "UNKNOWN". Note
       that any improvements to the service model for a particular tenant site,
       rely on this field being set correctly to some unique session_id.
-  *   `userId` (*type:* `String.t`, *default:* `nil`) - Required.
-
-      A unique user identification string, as determined by the client. The
+  *   `userId` (*type:* `String.t`, *default:* `nil`) - Required. A unique user identification string, as determined by the client. The
       client is responsible for ensuring client-level uniqueness of this value
       in order to have the strongest positive impact on search quality.
       Obfuscate this field for privacy concerns before

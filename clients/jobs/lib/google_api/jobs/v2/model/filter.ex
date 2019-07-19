@@ -25,9 +25,7 @@ defmodule GoogleApi.Jobs.V2.Model.Filter do
 
   ## Attributes
 
-  *   `requisitionId` (*type:* `String.t`, *default:* `nil`) - Required.
-
-      The requisition ID (or posting ID) assigned by the client to identify a
+  *   `requisitionId` (*type:* `String.t`, *default:* `nil`) - Required. The requisition ID (or posting ID) assigned by the client to identify a
       job. This is intended for client identification and tracking of
       listings.
       name takes precedence over this field

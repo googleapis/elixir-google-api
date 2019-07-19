@@ -23,9 +23,7 @@ defmodule GoogleApi.Jobs.V2.Model.BatchDeleteJobsRequest do
 
   ## Attributes
 
-  *   `filter` (*type:* `String.t`, *default:* `nil`) - Required.
-
-      The filter string specifies the jobs to be deleted.
+  *   `filter` (*type:* `String.t`, *default:* `nil`) - Required. The filter string specifies the jobs to be deleted.
 
       Supported operator: =, AND
 

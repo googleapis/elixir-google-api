@@ -21,9 +21,7 @@ defmodule GoogleApi.Jobs.V2.Model.CustomAttribute do
 
   ## Attributes
 
-  *   `filterable` (*type:* `boolean()`, *default:* `nil`) - Optional.
-
-      If the `filterable` flag is true, custom field values are searchable.
+  *   `filterable` (*type:* `boolean()`, *default:* `nil`) - Optional. If the `filterable` flag is true, custom field values are searchable.
       If false, values are not searchable.
 
       Default is false.

@@ -30,15 +30,9 @@ defmodule GoogleApi.Jobs.V2.Model.ExtendedCompensationInfoCompensationEntry do
 
   ## Attributes
 
-  *   `amount` (*type:* `GoogleApi.Jobs.V2.Model.ExtendedCompensationInfoDecimal.t`, *default:* `nil`) - Optional.
-
-      Monetary amount.
-  *   `description` (*type:* `String.t`, *default:* `nil`) - Optional.
-
-      Compensation description.
-  *   `expectedUnitsPerYear` (*type:* `GoogleApi.Jobs.V2.Model.ExtendedCompensationInfoDecimal.t`, *default:* `nil`) - Optional.
-
-      Expected number of units paid each year. If not specified, when
+  *   `amount` (*type:* `GoogleApi.Jobs.V2.Model.ExtendedCompensationInfoDecimal.t`, *default:* `nil`) - Optional. Monetary amount.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. Compensation description.
+  *   `expectedUnitsPerYear` (*type:* `GoogleApi.Jobs.V2.Model.ExtendedCompensationInfoDecimal.t`, *default:* `nil`) - Optional. Expected number of units paid each year. If not specified, when
       Job.employment_types is FULLTIME, a default value is inferred
       based on unit. Default values:
       - HOURLY: 2080
@@ -46,20 +40,12 @@ defmodule GoogleApi.Jobs.V2.Model.ExtendedCompensationInfoCompensationEntry do
       - WEEKLY: 52
       - MONTHLY: 12
       - ANNUAL: 1
-  *   `range` (*type:* `GoogleApi.Jobs.V2.Model.ExtendedCompensationInfoCompensationRange.t`, *default:* `nil`) - Optional.
-
-      Compensation range.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Required.
-
-      Compensation type.
-  *   `unit` (*type:* `String.t`, *default:* `nil`) - Optional.
-
-      Frequency of the specified amount.
+  *   `range` (*type:* `GoogleApi.Jobs.V2.Model.ExtendedCompensationInfoCompensationRange.t`, *default:* `nil`) - Optional. Compensation range.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Required. Compensation type.
+  *   `unit` (*type:* `String.t`, *default:* `nil`) - Optional. Frequency of the specified amount.
 
       Default is CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED.
-  *   `unspecified` (*type:* `boolean()`, *default:* `nil`) - Optional.
-
-      Indicates compensation amount and range are unset.
+  *   `unspecified` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates compensation amount and range are unset.
   """
 
   use GoogleApi.Gax.ModelBase

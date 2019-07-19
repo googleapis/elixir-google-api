@@ -21,15 +21,11 @@ defmodule GoogleApi.Jobs.V2.Model.CompensationRange do
 
   ## Attributes
 
-  *   `max` (*type:* `GoogleApi.Jobs.V2.Model.Money.t`, *default:* `nil`) - Optional.
-
-      The maximum amount of compensation. If left empty, the value is set
+  *   `max` (*type:* `GoogleApi.Jobs.V2.Model.Money.t`, *default:* `nil`) - Optional. The maximum amount of compensation. If left empty, the value is set
       to a maximal compensation value and the currency code is set to
       match the currency code of
       min_compensation.
-  *   `min` (*type:* `GoogleApi.Jobs.V2.Model.Money.t`, *default:* `nil`) - Optional.
-
-      The minimum amount of compensation. If left empty, the value is set
+  *   `min` (*type:* `GoogleApi.Jobs.V2.Model.Money.t`, *default:* `nil`) - Optional. The minimum amount of compensation. If left empty, the value is set
       to zero and the currency code is set to match the
       currency code of max_compensation.
   """

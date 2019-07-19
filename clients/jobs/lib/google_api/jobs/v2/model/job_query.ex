@@ -23,26 +23,20 @@ defmodule GoogleApi.Jobs.V2.Model.JobQuery do
 
   ## Attributes
 
-  *   `categories` (*type:* `list(String.t)`, *default:* `nil`) - Optional.
-
-      The category filter specifies the categories of jobs to search against.
+  *   `categories` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The category filter specifies the categories of jobs to search against.
       See Category for more information.
 
       If a value is not specified, jobs from any category are searched against.
 
       If multiple values are specified, jobs from any of the specified
       categories are searched against.
-  *   `commuteFilter` (*type:* `GoogleApi.Jobs.V2.Model.CommutePreference.t`, *default:* `nil`) - Optional.
-
-       Allows filtering jobs by commute time with different travel methods (for
+  *   `commuteFilter` (*type:* `GoogleApi.Jobs.V2.Model.CommutePreference.t`, *default:* `nil`) - Optional. Allows filtering jobs by commute time with different travel methods (for
        example, driving or public transit). Note: This only works with COMMUTE
        MODE. When specified, [JobQuery.location_filters] is
        ignored.
 
        Currently we don't support sorting by commute time.
-  *   `companyDisplayNames` (*type:* `list(String.t)`, *default:* `nil`) - Optional.
-
-      This filter specifies the exact company display
+  *   `companyDisplayNames` (*type:* `list(String.t)`, *default:* `nil`) - Optional. This filter specifies the exact company display
       name of the jobs to search against.
 
       If a value isn't specified, jobs within the search results are
@@ -52,9 +46,7 @@ defmodule GoogleApi.Jobs.V2.Model.JobQuery do
       associated with any of the specified companies.
 
       At most 20 company display name filters are allowed.
-  *   `companyNames` (*type:* `list(String.t)`, *default:* `nil`) - Optional.
-
-      This filter specifies the company entities to search against.
+  *   `companyNames` (*type:* `list(String.t)`, *default:* `nil`) - Optional. This filter specifies the company entities to search against.
 
       If a value isn't specified, jobs are searched for against all
       companies.
@@ -63,16 +55,12 @@ defmodule GoogleApi.Jobs.V2.Model.JobQuery do
       companies specified.
 
       At most 20 company filters are allowed.
-  *   `compensationFilter` (*type:* `GoogleApi.Jobs.V2.Model.CompensationFilter.t`, *default:* `nil`) - Optional.
-
-      This search filter is applied only to
+  *   `compensationFilter` (*type:* `GoogleApi.Jobs.V2.Model.CompensationFilter.t`, *default:* `nil`) - Optional. This search filter is applied only to
       Job.compensation_info. For example, if the filter is specified
       as "Hourly job with per-hour compensation > $15", only jobs meeting
       these criteria are searched. If a filter isn't defined, all open jobs
       are searched.
-  *   `customAttributeFilter` (*type:* `String.t`, *default:* `nil`) - Optional.
-
-      This filter specifies a structured syntax to match against the
+  *   `customAttributeFilter` (*type:* `String.t`, *default:* `nil`) - Optional. This filter specifies a structured syntax to match against the
       Job.custom_attributes marked as `filterable`.
 
       The syntax for this expression is a subset of Google SQL syntax.
@@ -92,16 +80,12 @@ defmodule GoogleApi.Jobs.V2.Model.JobQuery do
 
       Sample Query:
       (key1 = "TEST" OR LOWER(key1)="test" OR NOT EMPTY(key1)) AND key2 > 100
-  *   `disableSpellCheck` (*type:* `boolean()`, *default:* `nil`) - Optional.
-
-      This flag controls the spell-check feature. If false, the
+  *   `disableSpellCheck` (*type:* `boolean()`, *default:* `nil`) - Optional. This flag controls the spell-check feature. If false, the
       service attempts to correct a misspelled query,
       for example, "enginee" is corrected to "engineer".
 
       Defaults to false: a spell check is performed.
-  *   `employmentTypes` (*type:* `list(String.t)`, *default:* `nil`) - Optional.
-
-      The employment type filter specifies the employment type of jobs to
+  *   `employmentTypes` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The employment type filter specifies the employment type of jobs to
       search against, such as EmploymentType.FULL_TIME.
 
       If a value is not specified, jobs in the search results include any
@@ -109,9 +93,7 @@ defmodule GoogleApi.Jobs.V2.Model.JobQuery do
 
       If multiple values are specified, jobs in the search results include
       any of the specified employment types.
-  *   `languageCodes` (*type:* `list(String.t)`, *default:* `nil`) - Optional.
-
-      This filter specifies the locale of jobs to search against,
+  *   `languageCodes` (*type:* `list(String.t)`, *default:* `nil`) - Optional. This filter specifies the locale of jobs to search against,
       for example, "en-US".
 
       If a value isn't specified, the search results can contain jobs in any
@@ -123,9 +105,7 @@ defmodule GoogleApi.Jobs.V2.Model.JobQuery do
       [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47).
 
       At most 10 language code filters are allowed.
-  *   `locationFilters` (*type:* `list(GoogleApi.Jobs.V2.Model.LocationFilter.t)`, *default:* `nil`) - Optional.
-
-      The location filter specifies geo-regions containing the jobs to
+  *   `locationFilters` (*type:* `list(GoogleApi.Jobs.V2.Model.LocationFilter.t)`, *default:* `nil`) - Optional. The location filter specifies geo-regions containing the jobs to
       search against. See LocationFilter for more information.
 
       If a location value isn't specified, jobs fitting the other search
@@ -137,15 +117,11 @@ defmodule GoogleApi.Jobs.V2.Model.JobQuery do
       distance is used for all locations.
 
       At most 5 location filters are allowed.
-  *   `publishDateRange` (*type:* `String.t`, *default:* `nil`) - Optional.
-
-      Jobs published within a range specified by this filter are searched
+  *   `publishDateRange` (*type:* `String.t`, *default:* `nil`) - Optional. Jobs published within a range specified by this filter are searched
       against, for example, DateRange.PAST_MONTH. If a value isn't
       specified, all open jobs are searched against regardless of their
       published date.
-  *   `query` (*type:* `String.t`, *default:* `nil`) - Optional.
-
-      The query string that matches against the job title, description, and
+  *   `query` (*type:* `String.t`, *default:* `nil`) - Optional. The query string that matches against the job title, description, and
       location fields.
 
       The maximum query size is 255 bytes.

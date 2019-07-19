@@ -23,9 +23,7 @@ defmodule GoogleApi.Jobs.V2.Model.SearchJobsRequest do
 
   ## Attributes
 
-  *   `disableRelevanceThresholding` (*type:* `boolean()`, *default:* `nil`) - Optional.
-
-      Controls whether to disable relevance thresholding. Relevance
+  *   `disableRelevanceThresholding` (*type:* `boolean()`, *default:* `nil`) - Optional. Controls whether to disable relevance thresholding. Relevance
       thresholding removes jobs that have low relevance in search results,
       for example, removing "Assistant to the CEO" positions from the search
       results of a search for "CEO".
@@ -34,16 +32,12 @@ defmodule GoogleApi.Jobs.V2.Model.SearchJobsRequest do
       search requests.
 
       Defaults to false.
-  *   `enableBroadening` (*type:* `boolean()`, *default:* `nil`) - Optional.
-
-      Controls whether to broaden the search when it produces sparse results.
+  *   `enableBroadening` (*type:* `boolean()`, *default:* `nil`) - Optional. Controls whether to broaden the search when it produces sparse results.
       Broadened queries append results to the end of the matching results
       list.
 
       Defaults to false.
-  *   `enablePreciseResultSize` (*type:* `boolean()`, *default:* `nil`) - Optional.
-
-      Controls if the search job request requires the return of a precise
+  *   `enablePreciseResultSize` (*type:* `boolean()`, *default:* `nil`) - Optional. Controls if the search job request requires the return of a precise
       count of the first 300 results. Setting this to `true` ensures
       consistency in the number of results per page. Best practice is to set this
       value to true if a client allows users to jump directly to a
@@ -58,20 +52,12 @@ defmodule GoogleApi.Jobs.V2.Model.SearchJobsRequest do
 
       Restrictions on the scope of the search request, such as filtering
       by location.
-  *   `histogramFacets` (*type:* `GoogleApi.Jobs.V2.Model.HistogramFacets.t`, *default:* `nil`) - Optional.
-
-      Restrictions on what fields to perform histogram on, such as
+  *   `histogramFacets` (*type:* `GoogleApi.Jobs.V2.Model.HistogramFacets.t`, *default:* `nil`) - Optional. Restrictions on what fields to perform histogram on, such as
       `COMPANY_SIZE` etc.
-  *   `jobView` (*type:* `String.t`, *default:* `nil`) - Optional.
-
-      The number of job attributes returned for jobs in the
+  *   `jobView` (*type:* `String.t`, *default:* `nil`) - Optional. The number of job attributes returned for jobs in the
       search response. Defaults to JobView.SMALL if no value is specified.
-  *   `mode` (*type:* `String.t`, *default:* `nil`) - Required.
-
-      Mode of a search.
-  *   `offset` (*type:* `integer()`, *default:* `nil`) - Optional.
-
-      An integer that specifies the current offset (that is, starting result
+  *   `mode` (*type:* `String.t`, *default:* `nil`) - Required. Mode of a search.
+  *   `offset` (*type:* `integer()`, *default:* `nil`) - Optional. An integer that specifies the current offset (that is, starting result
       location, amongst the jobs deemed by the API as relevant) in search
       results. This field is only considered if page_token is unset.
 
@@ -85,27 +71,17 @@ defmodule GoogleApi.Jobs.V2.Model.SearchJobsRequest do
 
       The criteria determining how search results are sorted.
       Defaults to SortBy.RELEVANCE_DESC if no value is specified.
-  *   `pageSize` (*type:* `integer()`, *default:* `nil`) - Optional.
-
-      A limit on the number of jobs returned in the search results.
+  *   `pageSize` (*type:* `integer()`, *default:* `nil`) - Optional. A limit on the number of jobs returned in the search results.
       Increasing this value above the default value of 10 can increase search
       response time. The value can be between 1 and 100.
-  *   `pageToken` (*type:* `String.t`, *default:* `nil`) - Optional.
-
-      The token specifying the current offset within
+  *   `pageToken` (*type:* `String.t`, *default:* `nil`) - Optional. The token specifying the current offset within
       search results. See SearchJobsResponse.next_page_token for
       an explanation of how to obtain the next set of query results.
-  *   `query` (*type:* `GoogleApi.Jobs.V2.Model.JobQuery.t`, *default:* `nil`) - Optional.
-
-      Query used to search against jobs, such as keyword, location filters, etc.
-  *   `requestMetadata` (*type:* `GoogleApi.Jobs.V2.Model.RequestMetadata.t`, *default:* `nil`) - Required.
-
-      The meta information collected about the job searcher, used to improve the
+  *   `query` (*type:* `GoogleApi.Jobs.V2.Model.JobQuery.t`, *default:* `nil`) - Optional. Query used to search against jobs, such as keyword, location filters, etc.
+  *   `requestMetadata` (*type:* `GoogleApi.Jobs.V2.Model.RequestMetadata.t`, *default:* `nil`) - Required. The meta information collected about the job searcher, used to improve the
       search quality of the service. The identifiers, (such as `user_id`) are
       provided by users, and must be unique and consistent.
-  *   `sortBy` (*type:* `String.t`, *default:* `nil`) - Optional.
-
-      The criteria determining how search results are sorted.
+  *   `sortBy` (*type:* `String.t`, *default:* `nil`) - Optional. The criteria determining how search results are sorted.
       Defaults to SortBy.RELEVANCE_DESC if no value is specified.
   """
 
