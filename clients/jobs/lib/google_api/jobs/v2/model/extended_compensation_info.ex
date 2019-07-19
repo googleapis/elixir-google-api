@@ -23,31 +23,19 @@ defmodule GoogleApi.Jobs.V2.Model.ExtendedCompensationInfo do
 
   ## Attributes
 
-  *   `annualizedBaseCompensationRange` (*type:* `GoogleApi.Jobs.V2.Model.ExtendedCompensationInfoCompensationRange.t`, *default:* `nil`) - Output only.
-
-      Annualized base compensation range.
-  *   `annualizedBaseCompensationUnspecified` (*type:* `boolean()`, *default:* `nil`) - Output only.
-
-      Indicates annualized base compensation range cannot be derived, due to
+  *   `annualizedBaseCompensationRange` (*type:* `GoogleApi.Jobs.V2.Model.ExtendedCompensationInfoCompensationRange.t`, *default:* `nil`) - Output only. Annualized base compensation range.
+  *   `annualizedBaseCompensationUnspecified` (*type:* `boolean()`, *default:* `nil`) - Output only. Indicates annualized base compensation range cannot be derived, due to
       the job's base compensation entry cannot be annualized.
       See CompensationEntry for explanation on annualization and base
       compensation entry.
-  *   `annualizedTotalCompensationRange` (*type:* `GoogleApi.Jobs.V2.Model.ExtendedCompensationInfoCompensationRange.t`, *default:* `nil`) - Output only.
-
-      Annualized total compensation range.
-  *   `annualizedTotalCompensationUnspecified` (*type:* `boolean()`, *default:* `nil`) - Output only.
-
-      Indicates annualized total compensation range cannot be derived, due to
+  *   `annualizedTotalCompensationRange` (*type:* `GoogleApi.Jobs.V2.Model.ExtendedCompensationInfoCompensationRange.t`, *default:* `nil`) - Output only. Annualized total compensation range.
+  *   `annualizedTotalCompensationUnspecified` (*type:* `boolean()`, *default:* `nil`) - Output only. Indicates annualized total compensation range cannot be derived, due to
       the job's all CompensationEntry cannot be annualized.
       See CompensationEntry for explanation on annualization and base
       compensation entry.
-  *   `currency` (*type:* `String.t`, *default:* `nil`) - Optional.
-
-      A 3-letter [ISO 4217](https://www.iso.org/iso-4217-currency-codes.html)
+  *   `currency` (*type:* `String.t`, *default:* `nil`) - Optional. A 3-letter [ISO 4217](https://www.iso.org/iso-4217-currency-codes.html)
       currency code.
-  *   `entries` (*type:* `list(GoogleApi.Jobs.V2.Model.ExtendedCompensationInfoCompensationEntry.t)`, *default:* `nil`) - Optional.
-
-      Job compensation information.
+  *   `entries` (*type:* `list(GoogleApi.Jobs.V2.Model.ExtendedCompensationInfoCompensationEntry.t)`, *default:* `nil`) - Optional. Job compensation information.
 
       At most one entry can be of type
       ExtendedCompensationInfo.CompensationType.BASE, which is

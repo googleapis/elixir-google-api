@@ -26,9 +26,7 @@ defmodule GoogleApi.Jobs.V2.Model.GetHistogramRequest do
 
   ## Attributes
 
-  *   `allowBroadening` (*type:* `boolean()`, *default:* `nil`) - Optional.
-
-      Controls whether to broaden the search to avoid too few results for a
+  *   `allowBroadening` (*type:* `boolean()`, *default:* `nil`) - Optional. Controls whether to broaden the search to avoid too few results for a
       given query in instances where a search has sparse results. Results from a
       broadened query is a superset of the results from the original query.
 
@@ -38,16 +36,12 @@ defmodule GoogleApi.Jobs.V2.Model.GetHistogramRequest do
       Optional.
 
       Restrictions on the scope of the histogram.
-  *   `query` (*type:* `GoogleApi.Jobs.V2.Model.JobQuery.t`, *default:* `nil`) - Optional.
-
-      Query used to search against jobs, such as keyword, location filters, etc.
+  *   `query` (*type:* `GoogleApi.Jobs.V2.Model.JobQuery.t`, *default:* `nil`) - Optional. Query used to search against jobs, such as keyword, location filters, etc.
   *   `requestMetadata` (*type:* `GoogleApi.Jobs.V2.Model.RequestMetadata.t`, *default:* `nil`) - Meta information, such as `user_id`, collected from the job searcher or
       other entity conducting a job search, is used to improve the service's
       search quality. Users determine identifier values, which must be
       unique and consist.
-  *   `searchTypes` (*type:* `list(String.t)`, *default:* `nil`) - Required.
-
-      A list of facets that specify the histogram data to be calculated
+  *   `searchTypes` (*type:* `list(String.t)`, *default:* `nil`) - Required. A list of facets that specify the histogram data to be calculated
       against and returned.
 
       Histogram response times can be slow, and counts

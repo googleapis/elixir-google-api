@@ -23,13 +23,9 @@ defmodule GoogleApi.Jobs.V2.Model.JobProcessingOptions do
 
   ## Attributes
 
-  *   `disableStreetAddressResolution` (*type:* `boolean()`, *default:* `nil`) - Optional.
-
-      If set to `true`, the service does not attempt to resolve a
+  *   `disableStreetAddressResolution` (*type:* `boolean()`, *default:* `nil`) - Optional. If set to `true`, the service does not attempt to resolve a
       more precise address for the job.
-  *   `htmlSanitization` (*type:* `String.t`, *default:* `nil`) - Optional.
-
-      Option for job HTML content sanitization. Applied fields are:
+  *   `htmlSanitization` (*type:* `String.t`, *default:* `nil`) - Optional. Option for job HTML content sanitization. Applied fields are:
 
       * description
       * applicationInstruction

@@ -30,12 +30,8 @@ defmodule GoogleApi.Jobs.V2.Model.UpdateJobRequest do
 
       If set to `true`, the service does not attempt resolve a more precise
       address for the job.
-  *   `job` (*type:* `GoogleApi.Jobs.V2.Model.Job.t`, *default:* `nil`) - Required.
-
-      The Job to be updated.
-  *   `processingOptions` (*type:* `GoogleApi.Jobs.V2.Model.JobProcessingOptions.t`, *default:* `nil`) - Optional.
-
-      Options for job processing.
+  *   `job` (*type:* `GoogleApi.Jobs.V2.Model.Job.t`, *default:* `nil`) - Required. The Job to be updated.
+  *   `processingOptions` (*type:* `GoogleApi.Jobs.V2.Model.JobProcessingOptions.t`, *default:* `nil`) - Optional. Options for job processing.
 
       UpdateJobRequest.disable_street_address_resolution is ignored if this
       flag is set.

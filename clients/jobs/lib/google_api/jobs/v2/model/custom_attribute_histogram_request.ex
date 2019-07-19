@@ -23,15 +23,11 @@ defmodule GoogleApi.Jobs.V2.Model.CustomAttributeHistogramRequest do
 
   ## Attributes
 
-  *   `key` (*type:* `String.t`, *default:* `nil`) - Required.
-
-      Specifies the custom field key to perform a histogram on. If specified
+  *   `key` (*type:* `String.t`, *default:* `nil`) - Required. Specifies the custom field key to perform a histogram on. If specified
       without `long_value_histogram_bucketing_option`, histogram on string values
       of the given `key` is triggered, otherwise histogram is performed on long
       values.
-  *   `longValueHistogramBucketingOption` (*type:* `GoogleApi.Jobs.V2.Model.NumericBucketingOption.t`, *default:* `nil`) - Optional.
-
-      Specifies buckets used to perform a range histogram on Job's
+  *   `longValueHistogramBucketingOption` (*type:* `GoogleApi.Jobs.V2.Model.NumericBucketingOption.t`, *default:* `nil`) - Optional. Specifies buckets used to perform a range histogram on Job's
       filterable long custom field values, or min/max value requirements.
   *   `stringValueHistogram` (*type:* `boolean()`, *default:* `nil`) - Optional. If set to true, the response will include the histogram value for
       each key as a string.

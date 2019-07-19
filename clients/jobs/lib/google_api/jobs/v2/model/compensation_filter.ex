@@ -23,18 +23,10 @@ defmodule GoogleApi.Jobs.V2.Model.CompensationFilter do
 
   ## Attributes
 
-  *   `includeJobsWithUnspecifiedCompensationRange` (*type:* `boolean()`, *default:* `nil`) - Optional.
-
-      Whether to include jobs whose compensation range is unspecified.
-  *   `range` (*type:* `GoogleApi.Jobs.V2.Model.CompensationRange.t`, *default:* `nil`) - Optional.
-
-      Compensation range.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Required.
-
-      Type of filter.
-  *   `units` (*type:* `list(String.t)`, *default:* `nil`) - Required.
-
-      Specify desired `base compensation entry's`
+  *   `includeJobsWithUnspecifiedCompensationRange` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether to include jobs whose compensation range is unspecified.
+  *   `range` (*type:* `GoogleApi.Jobs.V2.Model.CompensationRange.t`, *default:* `nil`) - Optional. Compensation range.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Required. Type of filter.
+  *   `units` (*type:* `list(String.t)`, *default:* `nil`) - Required. Specify desired `base compensation entry's`
       CompensationInfo.CompensationUnit.
   """
 

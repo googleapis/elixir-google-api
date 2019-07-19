@@ -23,19 +23,11 @@ defmodule GoogleApi.Jobs.V2.Model.CompanyInfoSource do
 
   ## Attributes
 
-  *   `freebaseMid` (*type:* `String.t`, *default:* `nil`) - Optional.
-
-      The Google's Knowledge Graph value for the employer's company.
-  *   `gplusId` (*type:* `String.t`, *default:* `nil`) - Optional.
-
-      The numeric identifier for the employer's Google+ business page.
-  *   `mapsCid` (*type:* `String.t`, *default:* `nil`) - Optional.
-
-      The numeric identifier for the employer's headquarters on Google Maps,
+  *   `freebaseMid` (*type:* `String.t`, *default:* `nil`) - Optional. The Google's Knowledge Graph value for the employer's company.
+  *   `gplusId` (*type:* `String.t`, *default:* `nil`) - Optional. The numeric identifier for the employer's Google+ business page.
+  *   `mapsCid` (*type:* `String.t`, *default:* `nil`) - Optional. The numeric identifier for the employer's headquarters on Google Maps,
       namely, the Google Maps CID (cell id).
-  *   `unknownTypeId` (*type:* `String.t`, *default:* `nil`) - Optional.
-
-      A Google identifier that does not match any of the other types.
+  *   `unknownTypeId` (*type:* `String.t`, *default:* `nil`) - Optional. A Google identifier that does not match any of the other types.
   """
 
   use GoogleApi.Gax.ModelBase

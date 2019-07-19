@@ -30,12 +30,8 @@ defmodule GoogleApi.Jobs.V2.Model.CreateJobRequest do
 
       If set to `true`, the service does not attempt to resolve a
       more precise address for the job.
-  *   `job` (*type:* `GoogleApi.Jobs.V2.Model.Job.t`, *default:* `nil`) - Required.
-
-      The Job to be created.
-  *   `processingOptions` (*type:* `GoogleApi.Jobs.V2.Model.JobProcessingOptions.t`, *default:* `nil`) - Optional.
-
-      Options for job processing.
+  *   `job` (*type:* `GoogleApi.Jobs.V2.Model.Job.t`, *default:* `nil`) - Required. The Job to be created.
+  *   `processingOptions` (*type:* `GoogleApi.Jobs.V2.Model.JobProcessingOptions.t`, *default:* `nil`) - Optional. Options for job processing.
   """
 
   use GoogleApi.Gax.ModelBase

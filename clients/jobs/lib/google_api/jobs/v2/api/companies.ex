@@ -84,9 +84,7 @@ defmodule GoogleApi.Jobs.V2.Api.Companies do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Jobs.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required.
-
-      The resource name of the company to be deleted,
+  *   `name` (*type:* `String.t`) - Required. The resource name of the company to be deleted,
       such as, "companies/0000aaaa-1111-bbbb-2222-cccc3333dddd".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -143,9 +141,7 @@ defmodule GoogleApi.Jobs.V2.Api.Companies do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Jobs.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required.
-
-      Resource name of the company to retrieve,
+  *   `name` (*type:* `String.t`) - Required. Resource name of the company to retrieve,
       such as "companies/0000aaaa-1111-bbbb-2222-cccc3333dddd".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -214,21 +210,15 @@ defmodule GoogleApi.Jobs.V2.Api.Companies do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:mustHaveOpenJobs` (*type:* `boolean()`) - Optional.
-
-          Set to true if the companies request must have open jobs.
+      *   `:mustHaveOpenJobs` (*type:* `boolean()`) - Optional. Set to true if the companies request must have open jobs.
 
           Defaults to false.
 
           If true, at most page_size of companies are fetched, among which
           only those with open jobs are returned.
-      *   `:pageSize` (*type:* `integer()`) - Optional.
-
-          The maximum number of companies to be returned, at most 100.
+      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of companies to be returned, at most 100.
           Default is 100 if a non-positive number is provided.
-      *   `:pageToken` (*type:* `String.t`) - Optional.
-
-          The starting indicator from which to return results.
+      *   `:pageToken` (*type:* `String.t`) - Optional. The starting indicator from which to return results.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -361,9 +351,7 @@ defmodule GoogleApi.Jobs.V2.Api.Companies do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Jobs.V2.Connection.t`) - Connection to server
-  *   `company_name` (*type:* `String.t`) - Required.
-
-      The resource name of the company that owns the jobs to be listed,
+  *   `company_name` (*type:* `String.t`) - Required. The resource name of the company that owns the jobs to be listed,
       such as, "companies/0000aaaa-1111-bbbb-2222-cccc3333dddd".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -377,9 +365,7 @@ defmodule GoogleApi.Jobs.V2.Api.Companies do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:idsOnly` (*type:* `boolean()`) - Optional.
-
-          If set to `true`, only job ID, job requisition ID and language code will be
+      *   `:idsOnly` (*type:* `boolean()`) - Optional. If set to `true`, only job ID, job requisition ID and language code will be
           returned.
 
           A typical use is to synchronize job repositories.
@@ -393,23 +379,17 @@ defmodule GoogleApi.Jobs.V2.Api.Companies do
           Set to true if the total number of open jobs is to be returned.
 
           Defaults to false.
-      *   `:jobRequisitionId` (*type:* `String.t`) - Optional.
-
-          The requisition ID, also known as posting ID, assigned by the company
+      *   `:jobRequisitionId` (*type:* `String.t`) - Optional. The requisition ID, also known as posting ID, assigned by the company
           to the job.
 
           The maximum number of allowable characters is 225.
-      *   `:pageSize` (*type:* `integer()`) - Optional.
-
-          The maximum number of jobs to be returned per page of results.
+      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of jobs to be returned per page of results.
 
           If ids_only is set to true, the maximum allowed page size
           is 1000. Otherwise, the maximum allowed page size is 100.
 
           Default is 100 if empty or a number < 1 is specified.
-      *   `:pageToken` (*type:* `String.t`) - Optional.
-
-          The starting point of a query result.
+      *   `:pageToken` (*type:* `String.t`) - Optional. The starting point of a query result.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns

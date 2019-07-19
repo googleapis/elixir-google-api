@@ -23,12 +23,8 @@ defmodule GoogleApi.Jobs.V2.Model.CustomFieldFilter do
 
   ## Attributes
 
-  *   `queries` (*type:* `list(String.t)`, *default:* `nil`) - Required.
-
-      The query strings for the filter.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Optional.
-
-      The type of filter.
+  *   `queries` (*type:* `list(String.t)`, *default:* `nil`) - Required. The query strings for the filter.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Optional. The type of filter.
       Defaults to FilterType.OR.
   """
 

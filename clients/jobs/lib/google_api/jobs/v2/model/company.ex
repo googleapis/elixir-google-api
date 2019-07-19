@@ -23,72 +23,50 @@ defmodule GoogleApi.Jobs.V2.Model.Company do
 
   ## Attributes
 
-  *   `careerPageLink` (*type:* `String.t`, *default:* `nil`) - Optional.
-
-      The URL to employer's career site or careers page on the employer's web
+  *   `careerPageLink` (*type:* `String.t`, *default:* `nil`) - Optional. The URL to employer's career site or careers page on the employer's web
       site.
-  *   `companyInfoSources` (*type:* `list(GoogleApi.Jobs.V2.Model.CompanyInfoSource.t)`, *default:* `nil`) - Optional.
-
-      Identifiers external to the application that help to further identify
+  *   `companyInfoSources` (*type:* `list(GoogleApi.Jobs.V2.Model.CompanyInfoSource.t)`, *default:* `nil`) - Optional. Identifiers external to the application that help to further identify
       the employer.
-  *   `companySize` (*type:* `String.t`, *default:* `nil`) - Optional.
-
-      The employer's company size.
+  *   `companySize` (*type:* `String.t`, *default:* `nil`) - Optional. The employer's company size.
   *   `disableLocationOptimization` (*type:* `boolean()`, *default:* `nil`) - Deprecated. Do not use this field.
 
       Optional.
 
       This field is no longer used. Any value set to it is ignored.
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required.
-
-      The name of the employer to be displayed with the job,
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The name of the employer to be displayed with the job,
       for example, "Google, LLC.".
-  *   `distributorBillingCompanyId` (*type:* `String.t`, *default:* `nil`) - Optional.
-
-      The unique company identifier provided by the client to identify an
+  *   `distributorBillingCompanyId` (*type:* `String.t`, *default:* `nil`) - Optional. The unique company identifier provided by the client to identify an
       employer for billing purposes. Recommended practice is to use
       the distributor_company_id.
 
       Defaults to same value as distributor_company_id when a value
       is not provided.
-  *   `distributorCompanyId` (*type:* `String.t`, *default:* `nil`) - Required.
-
-      A client's company identifier, used to uniquely identify the
+  *   `distributorCompanyId` (*type:* `String.t`, *default:* `nil`) - Required. A client's company identifier, used to uniquely identify the
       company. If an employer has a subsidiary or sub-brand, such as "Alphabet"
       and "Google", which the client wishes to use as the company displayed on
       the job. Best practice is to create a distinct company identifier for each
       distinct brand displayed.
 
       The maximum number of allowed characters is 255.
-  *   `eeoText` (*type:* `String.t`, *default:* `nil`) - Optional.
-
-      Equal Employment Opportunity legal disclaimer text to be
+  *   `eeoText` (*type:* `String.t`, *default:* `nil`) - Optional. Equal Employment Opportunity legal disclaimer text to be
       associated with all jobs, and typically to be displayed in all
       roles.
 
       The maximum number of allowed characters is 500.
-  *   `hiringAgency` (*type:* `boolean()`, *default:* `nil`) - Optional.
-
-      Set to true if it is the hiring agency that post jobs for other
+  *   `hiringAgency` (*type:* `boolean()`, *default:* `nil`) - Optional. Set to true if it is the hiring agency that post jobs for other
       employers.
 
       Defaults to false if not provided.
-  *   `hqLocation` (*type:* `String.t`, *default:* `nil`) - Optional.
-
-      The street address of the company's main headquarters, which may be
+  *   `hqLocation` (*type:* `String.t`, *default:* `nil`) - Optional. The street address of the company's main headquarters, which may be
       different from the job location. The service attempts
       to geolocate the provided address, and populates a more specific
       location wherever possible in structured_company_hq_location.
-  *   `imageUrl` (*type:* `String.t`, *default:* `nil`) - Optional.
-
-      A URL that hosts the employer's company logo. If provided,
+  *   `imageUrl` (*type:* `String.t`, *default:* `nil`) - Optional. A URL that hosts the employer's company logo. If provided,
       the logo image should be squared at 80x80 pixels.
 
       The url must be a Google Photos or Google Album url.
       Only images in these Google sub-domains are accepted.
-  *   `keywordSearchableCustomAttributes` (*type:* `list(String.t)`, *default:* `nil`) - Optional.
-
-      A list of keys of filterable Job.custom_attributes, whose
+  *   `keywordSearchableCustomAttributes` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A list of keys of filterable Job.custom_attributes, whose
       corresponding `string_values` are used in keyword search. Jobs with
       `string_values` under these specified field keys are returned if any
       of the values matches the search keyword. Custom field values with
@@ -108,13 +86,9 @@ defmodule GoogleApi.Jobs.V2.Model.Company do
       The resource name for a company. This is generated by the service when a
       company is created, for example,
       "companies/0000aaaa-1111-bbbb-2222-cccc3333dddd".
-  *   `structuredCompanyHqLocation` (*type:* `GoogleApi.Jobs.V2.Model.JobLocation.t`, *default:* `nil`) - Output only.
-
-      A structured headquarters location of the company,
+  *   `structuredCompanyHqLocation` (*type:* `GoogleApi.Jobs.V2.Model.JobLocation.t`, *default:* `nil`) - Output only. A structured headquarters location of the company,
       resolved from hq_location if possible.
-  *   `suspended` (*type:* `boolean()`, *default:* `nil`) - Output only.
-
-      Indicates whether a company is flagged to be suspended from public
+  *   `suspended` (*type:* `boolean()`, *default:* `nil`) - Output only. Indicates whether a company is flagged to be suspended from public
       availability by the service when job content appears suspicious,
       abusive, or spammy.
   *   `title` (*type:* `String.t`, *default:* `nil`) - Deprecated. Use display_name instead.
@@ -123,9 +97,7 @@ defmodule GoogleApi.Jobs.V2.Model.Company do
 
       The name of the employer to be displayed with the job,
       for example, "Google, LLC.".
-  *   `website` (*type:* `String.t`, *default:* `nil`) - Optional.
-
-      The URL representing the company's primary web site or home page,
+  *   `website` (*type:* `String.t`, *default:* `nil`) - Optional. The URL representing the company's primary web site or home page,
       such as, "www.google.com".
   """
 

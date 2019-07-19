@@ -42,12 +42,8 @@ defmodule GoogleApi.Jobs.V2.Api.V2 do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:companyName` (*type:* `String.t`) - Optional.
-
-          If provided, restricts completion to the specified company.
-      *   `:languageCode` (*type:* `String.t`) - Required.
-
-          The language of the query. This is
+      *   `:companyName` (*type:* `String.t`) - Optional. If provided, restricts completion to the specified company.
+      *   `:languageCode` (*type:* `String.t`) - Required. The language of the query. This is
           the BCP-47 language code, such as "en-US" or "sr-Latn".
           For more information, see
           [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47).
@@ -62,19 +58,11 @@ defmodule GoogleApi.Jobs.V2.Api.V2 do
           For CompletionType.COMBINED type, only open jobs with same
           language_code or companies having open jobs with same
           language_code are returned.
-      *   `:pageSize` (*type:* `integer()`) - Required.
-
-          Completion result count.
+      *   `:pageSize` (*type:* `integer()`) - Required. Completion result count.
           The maximum allowed page size is 10.
-      *   `:query` (*type:* `String.t`) - Required.
-
-          The query used to generate suggestions.
-      *   `:scope` (*type:* `String.t`) - Optional.
-
-          The scope of the completion. The defaults is CompletionScope.PUBLIC.
-      *   `:type` (*type:* `String.t`) - Optional.
-
-          The completion topic. The default is CompletionType.COMBINED.
+      *   `:query` (*type:* `String.t`) - Required. The query used to generate suggestions.
+      *   `:scope` (*type:* `String.t`) - Optional. The scope of the completion. The defaults is CompletionScope.PUBLIC.
+      *   `:type` (*type:* `String.t`) - Optional. The completion topic. The default is CompletionType.COMBINED.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns

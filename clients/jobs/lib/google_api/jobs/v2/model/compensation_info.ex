@@ -29,23 +29,17 @@ defmodule GoogleApi.Jobs.V2.Model.CompensationInfo do
       As an alternative, compensation_amount_min and
       compensation_amount_max may be used to define a range of
       compensation.
-  *   `annualizedBaseCompensationRange` (*type:* `GoogleApi.Jobs.V2.Model.CompensationRange.t`, *default:* `nil`) - Output only.
-
-      Annualized base compensation range. Computed as
+  *   `annualizedBaseCompensationRange` (*type:* `GoogleApi.Jobs.V2.Model.CompensationRange.t`, *default:* `nil`) - Output only. Annualized base compensation range. Computed as
       base compensation entry's CompensationEntry.compensation times
       CompensationEntry.expected_units_per_year.
 
       See CompensationEntry for explanation on compensation annualization.
-  *   `annualizedTotalCompensationRange` (*type:* `GoogleApi.Jobs.V2.Model.CompensationRange.t`, *default:* `nil`) - Output only.
-
-      Annualized total compensation range. Computed as
+  *   `annualizedTotalCompensationRange` (*type:* `GoogleApi.Jobs.V2.Model.CompensationRange.t`, *default:* `nil`) - Output only. Annualized total compensation range. Computed as
       all compensation entries' CompensationEntry.compensation times
       CompensationEntry.expected_units_per_year.
 
       See CompensationEntry for explanation on compensation annualization.
-  *   `entries` (*type:* `list(GoogleApi.Jobs.V2.Model.CompensationEntry.t)`, *default:* `nil`) - Optional.
-
-      Job compensation information.
+  *   `entries` (*type:* `list(GoogleApi.Jobs.V2.Model.CompensationEntry.t)`, *default:* `nil`) - Optional. Job compensation information.
 
       At most one entry can be of type
       CompensationInfo.CompensationType.BASE, which is

@@ -23,23 +23,17 @@ defmodule GoogleApi.Jobs.V2.Model.Job do
 
   ## Attributes
 
-  *   `requisitionId` (*type:* `String.t`, *default:* `nil`) - Required.
-
-      The requisition ID, also referred to as the posting ID, assigned by the
+  *   `requisitionId` (*type:* `String.t`, *default:* `nil`) - Required. The requisition ID, also referred to as the posting ID, assigned by the
       client to identify a job. This field is intended to be used by clients
       for client identification and tracking of listings. A job is not allowed
       to be created if there is another job with the same requisition_id,
       company_name and language_code.
 
       The maximum number of allowed characters is 255.
-  *   `startDate` (*type:* `GoogleApi.Jobs.V2.Model.Date.t`, *default:* `nil`) - Optional.
-
-      The start date of the job in UTC time zone. Typically this field
+  *   `startDate` (*type:* `GoogleApi.Jobs.V2.Model.Date.t`, *default:* `nil`) - Optional. The start date of the job in UTC time zone. Typically this field
       is used for contracting engagements.
       Dates prior to 1970/1/1 and invalid date formats are ignored.
-  *   `benefits` (*type:* `list(String.t)`, *default:* `nil`) - Optional.
-
-      The benefits included with the job.
+  *   `benefits` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The benefits included with the job.
   *   `filterableCustomFields` (*type:* `%{optional(String.t) => GoogleApi.Jobs.V2.Model.CustomField.t}`, *default:* `nil`) - Deprecated. Use custom_attributes instead.
 
       Optional.
@@ -62,9 +56,7 @@ defmodule GoogleApi.Jobs.V2.Model.Job do
       Output only.
 
       The name of the company listing the job.
-  *   `companyDisplayName` (*type:* `String.t`, *default:* `nil`) - Output only.
-
-      The name of the company listing the job.
+  *   `companyDisplayName` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the company listing the job.
   *   `applicationEmailList` (*type:* `list(String.t)`, *default:* `nil`) - Optional but at least one of application_urls,
       application_email_list or application_instruction must be
       specified.
@@ -79,16 +71,10 @@ defmodule GoogleApi.Jobs.V2.Model.Job do
       The resource name of the company listing the job, such as
       /companies/foo. This field takes precedence over the
       distributor-assigned company identifier, distributor_company_id.
-  *   `level` (*type:* `String.t`, *default:* `nil`) - Optional.
-
-      The experience level associated with the job, such as "Entry Level".
-  *   `educationLevels` (*type:* `list(String.t)`, *default:* `nil`) - Optional.
-
-      The desired education level for the job, such as
+  *   `level` (*type:* `String.t`, *default:* `nil`) - Optional. The experience level associated with the job, such as "Entry Level".
+  *   `educationLevels` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The desired education level for the job, such as
       "Bachelors", "Masters", "Doctorate".
-  *   `languageCode` (*type:* `String.t`, *default:* `nil`) - Optional.
-
-      The language of the posting. This field is distinct from
+  *   `languageCode` (*type:* `String.t`, *default:* `nil`) - Optional. The language of the posting. This field is distinct from
       any requirements for fluency that are associated with the job.
 
       Language codes must be in BCP-47 format, such as "en-US" or "sr-Latn".
@@ -160,9 +146,7 @@ defmodule GoogleApi.Jobs.V2.Model.Job do
       this field, and is the recommended field to use to identify companies.
 
       The maximum number of allowed characters is 255.
-  *   `compensationInfo` (*type:* `GoogleApi.Jobs.V2.Model.CompensationInfo.t`, *default:* `nil`) - Optional.
-
-      Job compensation information.
+  *   `compensationInfo` (*type:* `GoogleApi.Jobs.V2.Model.CompensationInfo.t`, *default:* `nil`) - Optional. Job compensation information.
   *   `applicationUrls` (*type:* `list(String.t)`, *default:* `nil`) - Optional but at least one of application_urls,
       application_email_list or application_instruction must be
       specified.
@@ -210,15 +194,11 @@ defmodule GoogleApi.Jobs.V2.Model.Job do
       expiry_time, or the masks are empty meaning that every field is
       updated, the job posting expires after 30 days from the job's last
       update time. Otherwise the expiration date isn't updated.
-  *   `department` (*type:* `String.t`, *default:* `nil`) - Optional.
-
-      The department or functional area within the company with the open
+  *   `department` (*type:* `String.t`, *default:* `nil`) - Optional. The department or functional area within the company with the open
       position.
 
       The maximum number of allowed characters is 255.
-  *   `endDate` (*type:* `GoogleApi.Jobs.V2.Model.Date.t`, *default:* `nil`) - Optional.
-
-      The end date of the job in UTC time zone. Typically this field
+  *   `endDate` (*type:* `GoogleApi.Jobs.V2.Model.Date.t`, *default:* `nil`) - Optional. The end date of the job in UTC time zone. Typically this field
       is used for contracting engagements.
       Dates prior to 1970/1/1 and invalid date formats are ignored.
   *   `unindexedCustomFields` (*type:* `%{optional(String.t) => GoogleApi.Jobs.V2.Model.CustomField.t}`, *default:* `nil`) - Deprecated. Use custom_attributes instead.
@@ -231,9 +211,7 @@ defmodule GoogleApi.Jobs.V2.Model.Job do
       against them, nor can the client use them to list jobs.
 
       The key of the map can be any valid string.
-  *   `qualifications` (*type:* `String.t`, *default:* `nil`) - Optional.
-
-      A description of the qualifications required to perform the
+  *   `qualifications` (*type:* `String.t`, *default:* `nil`) - Optional. A description of the qualifications required to perform the
       job. The use of this field is recommended
       as an alternative to using the more general description field.
 
@@ -241,9 +219,7 @@ defmodule GoogleApi.Jobs.V2.Model.Job do
       bold, italic, ordered list, and unordered list markup tags.
 
       The maximum number of allowed characters is 10,000.
-  *   `responsibilities` (*type:* `String.t`, *default:* `nil`) - Optional.
-
-      A description of job responsibilities. The use of this field is
+  *   `responsibilities` (*type:* `String.t`, *default:* `nil`) - Optional. A description of job responsibilities. The use of this field is
       recommended as an alternative to using the more general description
       field.
 
@@ -251,9 +227,7 @@ defmodule GoogleApi.Jobs.V2.Model.Job do
       bold, italic, ordered list, and unordered list markup tags.
 
       The maximum number of allowed characters is 10,000.
-  *   `publishDate` (*type:* `GoogleApi.Jobs.V2.Model.Date.t`, *default:* `nil`) - Optional.
-
-      The date this job was most recently published in UTC format. The default
+  *   `publishDate` (*type:* `GoogleApi.Jobs.V2.Model.Date.t`, *default:* `nil`) - Optional. The date this job was most recently published in UTC format. The default
       value is the time the request arrives at the server.
   *   `locations` (*type:* `list(String.t)`, *default:* `nil`) - Optional but strongly recommended for the best service experience.
 
@@ -272,33 +246,23 @@ defmodule GoogleApi.Jobs.V2.Model.Job do
       for better search experience.
 
       The maximum number of allowed characters is 500.
-  *   `visibility` (*type:* `String.t`, *default:* `nil`) - Optional.
-
-      The visibility of the job.
+  *   `visibility` (*type:* `String.t`, *default:* `nil`) - Optional. The visibility of the job.
       Defaults to JobVisibility.PRIVATE if not specified.
       Currently only JobVisibility.PRIVATE is supported.
-  *   `region` (*type:* `String.t`, *default:* `nil`) - Optional.
-
-      The job Region (for example, state, country) throughout which the job
+  *   `region` (*type:* `String.t`, *default:* `nil`) - Optional. The job Region (for example, state, country) throughout which the job
       is available. If this field is set, a
       LocationFilter in a search query within the job region
       finds this job if an exact location match is not specified.
       If this field is set, setting job locations
       to the same location level as this field is strongly recommended.
-  *   `jobTitle` (*type:* `String.t`, *default:* `nil`) - Required.
-
-      The title of the job, such as "Software Engineer"
+  *   `jobTitle` (*type:* `String.t`, *default:* `nil`) - Required. The title of the job, such as "Software Engineer"
 
       The maximum number of allowed characters is 500.
-  *   `incentives` (*type:* `String.t`, *default:* `nil`) - Optional.
-
-      A description of bonus, commission, and other compensation
+  *   `incentives` (*type:* `String.t`, *default:* `nil`) - Optional. A description of bonus, commission, and other compensation
       incentives associated with the job not including salary or pay.
 
       The maximum number of allowed characters is 10,000.
-  *   `promotionValue` (*type:* `integer()`, *default:* `nil`) - Optional.
-
-      A promotion value of the job, as determined by the client.
+  *   `promotionValue` (*type:* `integer()`, *default:* `nil`) - Optional. A promotion value of the job, as determined by the client.
       The value determines the sort order of the jobs returned when searching for
       jobs using the featured jobs search call, with higher promotional values
       being returned first and ties being resolved by relevance sort. Only the
@@ -310,17 +274,11 @@ defmodule GoogleApi.Jobs.V2.Model.Job do
       Resource name assigned to a job by the API, for example, "/jobs/foo". Use
       of this field in job queries and API calls is preferred over the use of
       requisition_id since this value is unique.
-  *   `referenceUrl` (*type:* `String.t`, *default:* `nil`) - Output only.
-
-      The URL of a web page that displays job details.
-  *   `employmentTypes` (*type:* `list(String.t)`, *default:* `nil`) - Optional.
-
-      The employment type(s) of a job, for example,
+  *   `referenceUrl` (*type:* `String.t`, *default:* `nil`) - Output only. The URL of a web page that displays job details.
+  *   `employmentTypes` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The employment type(s) of a job, for example,
       full time or
       part time.
-  *   `description` (*type:* `String.t`, *default:* `nil`) - Required.
-
-      The description of the job, which typically includes a multi-paragraph
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Required. The description of the job, which typically includes a multi-paragraph
       description of the company and related information. Separate fields are
       provided on the job object for responsibilities,
       qualifications, and other job characteristics. Use of
@@ -330,9 +288,7 @@ defmodule GoogleApi.Jobs.V2.Model.Job do
       bold, italic, ordered list, and unordered list markup tags.
 
       The maximum number of allowed characters is 100,000.
-  *   `customAttributes` (*type:* `%{optional(String.t) => GoogleApi.Jobs.V2.Model.CustomAttribute.t}`, *default:* `nil`) - Optional.
-
-      A map of fields to hold both filterable and non-filterable custom job
+  *   `customAttributes` (*type:* `%{optional(String.t) => GoogleApi.Jobs.V2.Model.CustomAttribute.t}`, *default:* `nil`) - Optional. A map of fields to hold both filterable and non-filterable custom job
       attributes that are not covered by the provided structured fields.
 
       This field is a more general combination of the deprecated id-based
@@ -347,15 +303,9 @@ defmodule GoogleApi.Jobs.V2.Model.Job do
       allowed, with each string no more than 255 characters. For unfilterable
       `string_values`, the maximum total size of `string_values` across all keys
       is 50KB.
-  *   `jobLocations` (*type:* `list(GoogleApi.Jobs.V2.Model.JobLocation.t)`, *default:* `nil`) - Output only.
-
-      Structured locations of the job, resolved from locations.
-  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only.
-
-      The timestamp when this job was created.
-  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only.
-
-      The timestamp when this job was last updated.
+  *   `jobLocations` (*type:* `list(GoogleApi.Jobs.V2.Model.JobLocation.t)`, *default:* `nil`) - Output only. Structured locations of the job, resolved from locations.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when this job was created.
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when this job was last updated.
   """
 
   use GoogleApi.Gax.ModelBase
