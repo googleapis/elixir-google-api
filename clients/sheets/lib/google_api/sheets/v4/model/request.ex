@@ -42,6 +42,8 @@ defmodule GoogleApi.Sheets.V4.Model.Request do
   *   `insertRange` (*type:* `GoogleApi.Sheets.V4.Model.InsertRangeRequest.t`, *default:* `nil`) - Inserts new cells in a sheet, shifting the existing cells.
   *   `mergeCells` (*type:* `GoogleApi.Sheets.V4.Model.MergeCellsRequest.t`, *default:* `nil`) - Merges cells together.
   *   `addFilterView` (*type:* `GoogleApi.Sheets.V4.Model.AddFilterViewRequest.t`, *default:* `nil`) - Adds a filter view.
+  *   `deleteDuplicates` (*type:* `GoogleApi.Sheets.V4.Model.DeleteDuplicatesRequest.t`, *default:* `nil`) - Removes rows containing duplicate values in specified columns of a cell
+      range.
   *   `sortRange` (*type:* `GoogleApi.Sheets.V4.Model.SortRangeRequest.t`, *default:* `nil`) - Sorts data in a range.
   *   `autoFill` (*type:* `GoogleApi.Sheets.V4.Model.AutoFillRequest.t`, *default:* `nil`) - Automatically fills in more data based on existing data.
   *   `updateSpreadsheetProperties` (*type:* `GoogleApi.Sheets.V4.Model.UpdateSpreadsheetPropertiesRequest.t`, *default:* `nil`) - Updates the spreadsheet's properties.
@@ -66,6 +68,7 @@ defmodule GoogleApi.Sheets.V4.Model.Request do
   *   `appendCells` (*type:* `GoogleApi.Sheets.V4.Model.AppendCellsRequest.t`, *default:* `nil`) - Appends cells after the last row with data in a sheet.
   *   `randomizeRange` (*type:* `GoogleApi.Sheets.V4.Model.RandomizeRangeRequest.t`, *default:* `nil`) - Randomizes the order of the rows in a range.
   *   `deleteDeveloperMetadata` (*type:* `GoogleApi.Sheets.V4.Model.DeleteDeveloperMetadataRequest.t`, *default:* `nil`) - Deletes developer metadata
+  *   `trimWhitespace` (*type:* `GoogleApi.Sheets.V4.Model.TrimWhitespaceRequest.t`, *default:* `nil`) - Trims cells of whitespace (such as spaces, tabs, or new lines).
   *   `deleteRange` (*type:* `GoogleApi.Sheets.V4.Model.DeleteRangeRequest.t`, *default:* `nil`) - Deletes a range of cells from a sheet, shifting the remaining cells.
   *   `deleteBanding` (*type:* `GoogleApi.Sheets.V4.Model.DeleteBandingRequest.t`, *default:* `nil`) - Removes a banded range
   *   `updateEmbeddedObjectPosition` (*type:* `GoogleApi.Sheets.V4.Model.UpdateEmbeddedObjectPositionRequest.t`, *default:* `nil`) - Updates an embedded object's (e.g. chart, image) position.
@@ -105,6 +108,7 @@ defmodule GoogleApi.Sheets.V4.Model.Request do
           :insertRange => GoogleApi.Sheets.V4.Model.InsertRangeRequest.t(),
           :mergeCells => GoogleApi.Sheets.V4.Model.MergeCellsRequest.t(),
           :addFilterView => GoogleApi.Sheets.V4.Model.AddFilterViewRequest.t(),
+          :deleteDuplicates => GoogleApi.Sheets.V4.Model.DeleteDuplicatesRequest.t(),
           :sortRange => GoogleApi.Sheets.V4.Model.SortRangeRequest.t(),
           :autoFill => GoogleApi.Sheets.V4.Model.AutoFillRequest.t(),
           :updateSpreadsheetProperties =>
@@ -133,6 +137,7 @@ defmodule GoogleApi.Sheets.V4.Model.Request do
           :randomizeRange => GoogleApi.Sheets.V4.Model.RandomizeRangeRequest.t(),
           :deleteDeveloperMetadata =>
             GoogleApi.Sheets.V4.Model.DeleteDeveloperMetadataRequest.t(),
+          :trimWhitespace => GoogleApi.Sheets.V4.Model.TrimWhitespaceRequest.t(),
           :deleteRange => GoogleApi.Sheets.V4.Model.DeleteRangeRequest.t(),
           :deleteBanding => GoogleApi.Sheets.V4.Model.DeleteBandingRequest.t(),
           :updateEmbeddedObjectPosition =>
@@ -175,6 +180,7 @@ defmodule GoogleApi.Sheets.V4.Model.Request do
   field(:insertRange, as: GoogleApi.Sheets.V4.Model.InsertRangeRequest)
   field(:mergeCells, as: GoogleApi.Sheets.V4.Model.MergeCellsRequest)
   field(:addFilterView, as: GoogleApi.Sheets.V4.Model.AddFilterViewRequest)
+  field(:deleteDuplicates, as: GoogleApi.Sheets.V4.Model.DeleteDuplicatesRequest)
   field(:sortRange, as: GoogleApi.Sheets.V4.Model.SortRangeRequest)
   field(:autoFill, as: GoogleApi.Sheets.V4.Model.AutoFillRequest)
 
@@ -209,6 +215,7 @@ defmodule GoogleApi.Sheets.V4.Model.Request do
   field(:appendCells, as: GoogleApi.Sheets.V4.Model.AppendCellsRequest)
   field(:randomizeRange, as: GoogleApi.Sheets.V4.Model.RandomizeRangeRequest)
   field(:deleteDeveloperMetadata, as: GoogleApi.Sheets.V4.Model.DeleteDeveloperMetadataRequest)
+  field(:trimWhitespace, as: GoogleApi.Sheets.V4.Model.TrimWhitespaceRequest)
   field(:deleteRange, as: GoogleApi.Sheets.V4.Model.DeleteRangeRequest)
   field(:deleteBanding, as: GoogleApi.Sheets.V4.Model.DeleteBandingRequest)
 

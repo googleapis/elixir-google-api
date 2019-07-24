@@ -32,9 +32,11 @@ defmodule GoogleApi.Sheets.V4.Model.Response do
   *   `deleteConditionalFormatRule` (*type:* `GoogleApi.Sheets.V4.Model.DeleteConditionalFormatRuleResponse.t`, *default:* `nil`) - A reply from deleting a conditional format rule.
   *   `deleteDeveloperMetadata` (*type:* `GoogleApi.Sheets.V4.Model.DeleteDeveloperMetadataResponse.t`, *default:* `nil`) - A reply from deleting a developer metadata entry.
   *   `deleteDimensionGroup` (*type:* `GoogleApi.Sheets.V4.Model.DeleteDimensionGroupResponse.t`, *default:* `nil`) - A reply from deleting a dimension group.
+  *   `deleteDuplicates` (*type:* `GoogleApi.Sheets.V4.Model.DeleteDuplicatesResponse.t`, *default:* `nil`) - A reply from removing rows containing duplicate values.
   *   `duplicateFilterView` (*type:* `GoogleApi.Sheets.V4.Model.DuplicateFilterViewResponse.t`, *default:* `nil`) - A reply from duplicating a filter view.
   *   `duplicateSheet` (*type:* `GoogleApi.Sheets.V4.Model.DuplicateSheetResponse.t`, *default:* `nil`) - A reply from duplicating a sheet.
   *   `findReplace` (*type:* `GoogleApi.Sheets.V4.Model.FindReplaceResponse.t`, *default:* `nil`) - A reply from doing a find/replace.
+  *   `trimWhitespace` (*type:* `GoogleApi.Sheets.V4.Model.TrimWhitespaceResponse.t`, *default:* `nil`) - A reply from trimming whitespace.
   *   `updateConditionalFormatRule` (*type:* `GoogleApi.Sheets.V4.Model.UpdateConditionalFormatRuleResponse.t`, *default:* `nil`) - A reply from updating a conditional format rule.
   *   `updateDeveloperMetadata` (*type:* `GoogleApi.Sheets.V4.Model.UpdateDeveloperMetadataResponse.t`, *default:* `nil`) - A reply from updating a developer metadata entry.
   *   `updateEmbeddedObjectPosition` (*type:* `GoogleApi.Sheets.V4.Model.UpdateEmbeddedObjectPositionResponse.t`, *default:* `nil`) - A reply from updating an embedded object's position.
@@ -57,9 +59,11 @@ defmodule GoogleApi.Sheets.V4.Model.Response do
           :deleteDeveloperMetadata =>
             GoogleApi.Sheets.V4.Model.DeleteDeveloperMetadataResponse.t(),
           :deleteDimensionGroup => GoogleApi.Sheets.V4.Model.DeleteDimensionGroupResponse.t(),
+          :deleteDuplicates => GoogleApi.Sheets.V4.Model.DeleteDuplicatesResponse.t(),
           :duplicateFilterView => GoogleApi.Sheets.V4.Model.DuplicateFilterViewResponse.t(),
           :duplicateSheet => GoogleApi.Sheets.V4.Model.DuplicateSheetResponse.t(),
           :findReplace => GoogleApi.Sheets.V4.Model.FindReplaceResponse.t(),
+          :trimWhitespace => GoogleApi.Sheets.V4.Model.TrimWhitespaceResponse.t(),
           :updateConditionalFormatRule =>
             GoogleApi.Sheets.V4.Model.UpdateConditionalFormatRuleResponse.t(),
           :updateDeveloperMetadata =>
@@ -84,9 +88,11 @@ defmodule GoogleApi.Sheets.V4.Model.Response do
 
   field(:deleteDeveloperMetadata, as: GoogleApi.Sheets.V4.Model.DeleteDeveloperMetadataResponse)
   field(:deleteDimensionGroup, as: GoogleApi.Sheets.V4.Model.DeleteDimensionGroupResponse)
+  field(:deleteDuplicates, as: GoogleApi.Sheets.V4.Model.DeleteDuplicatesResponse)
   field(:duplicateFilterView, as: GoogleApi.Sheets.V4.Model.DuplicateFilterViewResponse)
   field(:duplicateSheet, as: GoogleApi.Sheets.V4.Model.DuplicateSheetResponse)
   field(:findReplace, as: GoogleApi.Sheets.V4.Model.FindReplaceResponse)
+  field(:trimWhitespace, as: GoogleApi.Sheets.V4.Model.TrimWhitespaceResponse)
 
   field(
     :updateConditionalFormatRule,
