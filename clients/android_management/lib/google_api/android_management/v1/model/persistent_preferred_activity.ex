@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AndroidManagement.V1.Model.PersistentPreferredActivity do
   @moduledoc """
-  A default activity for handling intents that match a particular intent filter.
+  A default activity for handling intents that match a particular intent filter. Note: To set up a kiosk, use InstallType to KIOSK rather than use persistent preferred activities.
 
   ## Attributes
 
