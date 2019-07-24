@@ -23,6 +23,7 @@ defmodule GoogleApi.Genomics.V1.Model.WorkerAssignedEvent do
   ## Attributes
 
   *   `instance` (*type:* `String.t`, *default:* `nil`) - The worker's instance name.
+  *   `machineType` (*type:* `String.t`, *default:* `nil`) - The machine type that was assigned for the worker.
   *   `zone` (*type:* `String.t`, *default:* `nil`) - The zone the worker is running in.
   """
 
@@ -30,10 +31,12 @@ defmodule GoogleApi.Genomics.V1.Model.WorkerAssignedEvent do
 
   @type t :: %__MODULE__{
           :instance => String.t(),
+          :machineType => String.t(),
           :zone => String.t()
         }
 
   field(:instance)
+  field(:machineType)
   field(:zone)
 end
 
