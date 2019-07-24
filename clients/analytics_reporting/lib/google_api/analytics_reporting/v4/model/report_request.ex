@@ -41,7 +41,7 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.ReportRequest do
       before any dimensions are aggregated, so that the returned metrics
       represent the total for only the relevant dimensions.
   *   `dimensions` (*type:* `list(GoogleApi.AnalyticsReporting.V4.Model.Dimension.t)`, *default:* `nil`) - The dimensions requested.
-      Requests can have a total of 7 dimensions.
+      Requests can have a total of 9 dimensions.
   *   `filtersExpression` (*type:* `String.t`, *default:* `nil`) - Dimension or metric filters that restrict the data returned for your
       request. To use the `filtersExpression`, supply a dimension or metric on
       which to filter, followed by the filter expression. For example, the
