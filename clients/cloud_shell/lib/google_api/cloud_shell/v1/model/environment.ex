@@ -44,6 +44,8 @@ defmodule GoogleApi.CloudShell.V1.Model.Environment do
   *   `sshUsername` (*type:* `String.t`, *default:* `nil`) - Output only. Username that clients should use when initiating SSH sessions
       with the environment.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. Current execution state of this environment.
+  *   `webHost` (*type:* `String.t`, *default:* `nil`) - Output only. Host to which clients can connect to initiate HTTPS or WSS
+      connections with the environment.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -56,7 +58,8 @@ defmodule GoogleApi.CloudShell.V1.Model.Environment do
           :sshHost => String.t(),
           :sshPort => integer(),
           :sshUsername => String.t(),
-          :state => String.t()
+          :state => String.t(),
+          :webHost => String.t()
         }
 
   field(:dockerImage)
@@ -67,6 +70,7 @@ defmodule GoogleApi.CloudShell.V1.Model.Environment do
   field(:sshPort)
   field(:sshUsername)
   field(:state)
+  field(:webHost)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudShell.V1.Model.Environment do
