@@ -32,6 +32,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics2 do
   *   `modelTrainingExpectedTotalIteration` (*type:* `String.t`, *default:* `nil`) - [Output-only, Beta] Deprecated; do not use.
   *   `numDmlAffectedRows` (*type:* `String.t`, *default:* `nil`) - [Output-only] The number of rows affected by a DML statement. Present only for DML statements INSERT, UPDATE or DELETE.
   *   `queryPlan` (*type:* `list(GoogleApi.BigQuery.V2.Model.ExplainQueryStage.t)`, *default:* `nil`) - [Output-only] Describes execution plan for the query.
+  *   `referencedRoutines` (*type:* `list(GoogleApi.BigQuery.V2.Model.RoutineReference.t)`, *default:* `nil`) - [Output-only] Referenced routines (persistent user-defined functions and stored procedures) for the job.
   *   `referencedTables` (*type:* `list(GoogleApi.BigQuery.V2.Model.TableReference.t)`, *default:* `nil`) - [Output-only] Referenced tables for the job. Queries that reference more than 50 tables will not have a complete list.
   *   `reservationUsage` (*type:* `list(GoogleApi.BigQuery.V2.Model.JobStatistics2ReservationUsage.t)`, *default:* `nil`) - [Output-only] Job resource usage breakdown by reservation.
   *   `schema` (*type:* `GoogleApi.BigQuery.V2.Model.TableSchema.t`, *default:* `nil`) - [Output-only] The schema of the results. Present only for successful dry run of non-legacy SQL queries.
@@ -59,6 +60,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics2 do
           :modelTrainingExpectedTotalIteration => String.t(),
           :numDmlAffectedRows => String.t(),
           :queryPlan => list(GoogleApi.BigQuery.V2.Model.ExplainQueryStage.t()),
+          :referencedRoutines => list(GoogleApi.BigQuery.V2.Model.RoutineReference.t()),
           :referencedTables => list(GoogleApi.BigQuery.V2.Model.TableReference.t()),
           :reservationUsage =>
             list(GoogleApi.BigQuery.V2.Model.JobStatistics2ReservationUsage.t()),
@@ -84,6 +86,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics2 do
   field(:modelTrainingExpectedTotalIteration)
   field(:numDmlAffectedRows)
   field(:queryPlan, as: GoogleApi.BigQuery.V2.Model.ExplainQueryStage, type: :list)
+  field(:referencedRoutines, as: GoogleApi.BigQuery.V2.Model.RoutineReference, type: :list)
   field(:referencedTables, as: GoogleApi.BigQuery.V2.Model.TableReference, type: :list)
 
   field(
