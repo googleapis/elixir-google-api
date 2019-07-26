@@ -35,7 +35,7 @@ defmodule GoogleApi.ServiceManagement.V1.Model.Binding do
          who is authenticated with a Google account or a service account.
 
       * `user:{emailid}`: An email address that represents a specific Google
-         account. For example, `alice@gmail.com` .
+         account. For example, `alice@example.com` .
 
 
       * `serviceAccount:{emailid}`: An email address that represents a service
