@@ -77,7 +77,7 @@ defmodule GoogleApi.ServiceManagement.V1.Model.Policy do
       ensure that their change will be applied to the same version of the policy.
 
       If no `etag` is provided in the call to `setIamPolicy`, then the existing
-      policy is overwritten.
+      policy is overwritten blindly.
   *   `version` (*type:* `integer()`, *default:* `nil`) - Deprecated.
   """
 
