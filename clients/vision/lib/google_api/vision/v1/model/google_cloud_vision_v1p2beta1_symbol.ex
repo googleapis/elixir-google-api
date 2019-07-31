@@ -35,7 +35,7 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1Symbol do
            2----3
            |    |
            1----0
-        and the vertice order will still be (0, 1, 2, 3).
+        and the vertex order will still be (0, 1, 2, 3).
   *   `confidence` (*type:* `number()`, *default:* `nil`) - Confidence of the OCR results for the symbol. Range [0, 1].
   *   `property` (*type:* `GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1TextAnnotationTextProperty.t`, *default:* `nil`) - Additional information detected for the symbol.
   *   `text` (*type:* `String.t`, *default:* `nil`) - The actual UTF-8 representation of the symbol.

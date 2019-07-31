@@ -23,7 +23,8 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1AnnotateFileRespon
   ## Attributes
 
   *   `inputConfig` (*type:* `GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1InputConfig.t`, *default:* `nil`) - Information about the file for which this response is generated.
-  *   `responses` (*type:* `list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1AnnotateImageResponse.t)`, *default:* `nil`) - Individual responses to images found within the file.
+  *   `responses` (*type:* `list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1AnnotateImageResponse.t)`, *default:* `nil`) - Individual responses to images found within the file. This field will be
+      empty if the `error` field is set.
   *   `totalPages` (*type:* `integer()`, *default:* `nil`) - This field gives the total number of pages in the file.
   """
 
