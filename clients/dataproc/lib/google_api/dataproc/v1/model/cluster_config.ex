@@ -33,6 +33,7 @@ defmodule GoogleApi.Dataproc.V1.Model.ClusterConfig do
         ... worker specific actions ...
       fi
 
+  *   `lifecycleConfig` (*type:* `GoogleApi.Dataproc.V1.Model.LifecycleConfig.t`, *default:* `nil`) - Optional. Lifecycle setting for the cluster.
   *   `masterConfig` (*type:* `GoogleApi.Dataproc.V1.Model.InstanceGroupConfig.t`, *default:* `nil`) - Optional. The Compute Engine config settings for the master instance in a cluster.
   *   `secondaryWorkerConfig` (*type:* `GoogleApi.Dataproc.V1.Model.InstanceGroupConfig.t`, *default:* `nil`) - Optional. The Compute Engine config settings for additional worker instances in a cluster.
   *   `securityConfig` (*type:* `GoogleApi.Dataproc.V1.Model.SecurityConfig.t`, *default:* `nil`) - Optional. Security settings for the cluster.
@@ -48,6 +49,7 @@ defmodule GoogleApi.Dataproc.V1.Model.ClusterConfig do
           :gceClusterConfig => GoogleApi.Dataproc.V1.Model.GceClusterConfig.t(),
           :initializationActions =>
             list(GoogleApi.Dataproc.V1.Model.NodeInitializationAction.t()),
+          :lifecycleConfig => GoogleApi.Dataproc.V1.Model.LifecycleConfig.t(),
           :masterConfig => GoogleApi.Dataproc.V1.Model.InstanceGroupConfig.t(),
           :secondaryWorkerConfig => GoogleApi.Dataproc.V1.Model.InstanceGroupConfig.t(),
           :securityConfig => GoogleApi.Dataproc.V1.Model.SecurityConfig.t(),
@@ -65,6 +67,7 @@ defmodule GoogleApi.Dataproc.V1.Model.ClusterConfig do
     type: :list
   )
 
+  field(:lifecycleConfig, as: GoogleApi.Dataproc.V1.Model.LifecycleConfig)
   field(:masterConfig, as: GoogleApi.Dataproc.V1.Model.InstanceGroupConfig)
   field(:secondaryWorkerConfig, as: GoogleApi.Dataproc.V1.Model.InstanceGroupConfig)
   field(:securityConfig, as: GoogleApi.Dataproc.V1.Model.SecurityConfig)

@@ -21,7 +21,7 @@ defmodule GoogleApi.Dataproc.V1.Model.InstanceGroupConfig do
 
   ## Attributes
 
-  *   `accelerators` (*type:* `list(GoogleApi.Dataproc.V1.Model.AcceleratorConfig.t)`, *default:* `nil`) - Optional. The Compute Engine accelerator configuration for these instances.Beta Feature: This feature is still under development. It may be changed before final release.
+  *   `accelerators` (*type:* `list(GoogleApi.Dataproc.V1.Model.AcceleratorConfig.t)`, *default:* `nil`) - Optional. The Compute Engine accelerator configuration for these instances.
   *   `diskConfig` (*type:* `GoogleApi.Dataproc.V1.Model.DiskConfig.t`, *default:* `nil`) - Optional. Disk option config settings.
   *   `imageUri` (*type:* `String.t`, *default:* `nil`) - Optional. The Compute Engine image resource used for cluster instances. It can be specified or may be inferred from SoftwareConfig.image_version.
   *   `instanceNames` (*type:* `list(String.t)`, *default:* `nil`) - Output only. The list of instance names. Cloud Dataproc derives the names from cluster_name, num_instances, and the instance group.
