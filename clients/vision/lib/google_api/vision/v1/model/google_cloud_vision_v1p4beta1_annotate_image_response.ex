@@ -33,12 +33,14 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1AnnotateImageRespo
       This annotation provides the structural hierarchy for the OCR detected
       text.
   *   `imagePropertiesAnnotation` (*type:* `GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1ImageProperties.t`, *default:* `nil`) - If present, image properties were extracted successfully.
+  *   `imageQualityAnnotation` (*type:* `GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1ImageQuality.t`, *default:* `nil`) - If present, image quality calculation has completed successfully.
   *   `labelAnnotations` (*type:* `list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1EntityAnnotation.t)`, *default:* `nil`) - If present, label detection has completed successfully.
   *   `landmarkAnnotations` (*type:* `list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1EntityAnnotation.t)`, *default:* `nil`) - If present, landmark detection has completed successfully.
   *   `localizedObjectAnnotations` (*type:* `list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1LocalizedObjectAnnotation.t)`, *default:* `nil`) - If present, localized object detection has completed successfully.
       This will be sorted descending by confidence score.
   *   `logoAnnotations` (*type:* `list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1EntityAnnotation.t)`, *default:* `nil`) - If present, logo detection has completed successfully.
   *   `productSearchResults` (*type:* `GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1ProductSearchResults.t`, *default:* `nil`) - If present, product search has completed successfully.
+  *   `qualityOptimizationResult` (*type:* `GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1QualityOptimizationResult.t`, *default:* `nil`) - If present, image quality optimization has completed successfully.
   *   `safeSearchAnnotation` (*type:* `GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1SafeSearchAnnotation.t`, *default:* `nil`) - If present, safe-search annotation has completed successfully.
   *   `textAnnotations` (*type:* `list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1EntityAnnotation.t)`, *default:* `nil`) - If present, text (OCR) detection has completed successfully.
   *   `webDetection` (*type:* `GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1WebDetection.t`, *default:* `nil`) - If present, web detection has completed successfully.
@@ -58,6 +60,8 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1AnnotateImageRespo
             GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1TextAnnotation.t(),
           :imagePropertiesAnnotation =>
             GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1ImageProperties.t(),
+          :imageQualityAnnotation =>
+            GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1ImageQuality.t(),
           :labelAnnotations =>
             list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1EntityAnnotation.t()),
           :landmarkAnnotations =>
@@ -70,6 +74,8 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1AnnotateImageRespo
             list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1EntityAnnotation.t()),
           :productSearchResults =>
             GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1ProductSearchResults.t(),
+          :qualityOptimizationResult =>
+            GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1QualityOptimizationResult.t(),
           :safeSearchAnnotation =>
             GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1SafeSearchAnnotation.t(),
           :textAnnotations =>
@@ -103,6 +109,11 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1AnnotateImageRespo
   )
 
   field(
+    :imageQualityAnnotation,
+    as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1ImageQuality
+  )
+
+  field(
     :labelAnnotations,
     as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1EntityAnnotation,
     type: :list
@@ -129,6 +140,11 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1AnnotateImageRespo
   field(
     :productSearchResults,
     as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1ProductSearchResults
+  )
+
+  field(
+    :qualityOptimizationResult,
+    as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1QualityOptimizationResult
   )
 
   field(

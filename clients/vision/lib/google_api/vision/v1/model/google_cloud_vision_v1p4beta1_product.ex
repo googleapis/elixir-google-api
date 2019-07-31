@@ -45,7 +45,11 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1Product do
       to be supported soon.
 
       Multiple values can be assigned to the same key. One product may have up to
-      100 product_labels.
+      500 product_labels.
+
+      Notice that the total number of distinct product_labels over all products
+      in one ProductSet cannot exceed 1M, otherwise the product search pipeline
+      will refuse to work for that ProductSet.
   """
 
   use GoogleApi.Gax.ModelBase

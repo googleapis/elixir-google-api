@@ -38,7 +38,7 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1Paragraph do
         and the vertex order will still be (0, 1, 2, 3).
   *   `confidence` (*type:* `number()`, *default:* `nil`) - Confidence of the OCR results for the paragraph. Range [0, 1].
   *   `property` (*type:* `GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1TextAnnotationTextProperty.t`, *default:* `nil`) - Additional information detected for the paragraph.
-  *   `words` (*type:* `list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1Word.t)`, *default:* `nil`) - List of words in this paragraph.
+  *   `words` (*type:* `list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1Word.t)`, *default:* `nil`) - List of all words in this paragraph.
   """
 
   use GoogleApi.Gax.ModelBase
