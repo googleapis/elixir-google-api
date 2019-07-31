@@ -26,6 +26,8 @@ defmodule GoogleApi.AdExperienceReport.V1.Model.PlatformSummary do
   *   `filterStatus` (*type:* `String.t`, *default:* `nil`) - The ad filtering status of the site.
   *   `lastChangeTime` (*type:* `DateTime.t`, *default:* `nil`) - The last time that the site changed status.
   *   `region` (*type:* `list(String.t)`, *default:* `nil`) - The assigned regions for the site and platform.
+      No longer populated, because there is no longer any semantic difference
+      between sites in different regions.
   *   `reportUrl` (*type:* `String.t`, *default:* `nil`) - A link that leads to a full ad experience report.
   *   `underReview` (*type:* `boolean()`, *default:* `nil`) - Whether the site is currently under review.
   """
