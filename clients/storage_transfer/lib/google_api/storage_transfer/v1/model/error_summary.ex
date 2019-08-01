@@ -26,8 +26,8 @@ defmodule GoogleApi.StorageTransfer.V1.Model.ErrorSummary do
   *   `errorCount` (*type:* `String.t`, *default:* `nil`) - Required. Count of this type of error.
   *   `errorLogEntries` (*type:* `list(GoogleApi.StorageTransfer.V1.Model.ErrorLogEntry.t)`, *default:* `nil`) - Error samples.
 
-      No more than 100 error log entries may be recorded for a given
-      error code for a single task.
+      At most 5 error log entries will be recorded for a given
+      error code for a single transfer operation.
   """
 
   use GoogleApi.Gax.ModelBase
