@@ -36,7 +36,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1QueryResult 
       Note: This is a legacy field, `fulfillment_messages` should be preferred.
   *   `intent` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1Intent.t`, *default:* `nil`) - The intent that matched the conversational query. Some, not
       all fields are filled in this message, including but not limited to:
-      `name`, `display_name` and `webhook_state`.
+      `name`, `display_name`, `end_interaction` and `is_fallback`.
   *   `intentDetectionConfidence` (*type:* `number()`, *default:* `nil`) - The intent detection confidence. Values range from 0.0
       (completely uncertain) to 1.0 (completely certain).
       This value is for informational purpose only and is only used to
