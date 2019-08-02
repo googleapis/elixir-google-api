@@ -47,6 +47,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Device do
   *   `policyName` (*type:* `String.t`, *default:* `nil`) - The name of the policy applied to the device, in the form enterprises/{enterpriseId}/policies/{policyId}. If not specified, the policy_name for the device's user is applied. This field can be modified by a patch request. You can specify only the policyId when calling enterprises.devices.patch, as long as the policyId doesn’t contain any slashes. The rest of the policy name is inferred.
   *   `powerManagementEvents` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.PowerManagementEvent.t)`, *default:* `nil`) - Power management events on the device in chronological order. This information is only available if powerManagementEventsEnabled is true in the device's policy.
   *   `previousDeviceNames` (*type:* `list(String.t)`, *default:* `nil`) - If the same physical device has been enrolled multiple times, this field contains its previous device names. The serial number is used as the unique identifier to determine if the same physical device has enrolled previously. The names are in chronological order.
+  *   `securityPosture` (*type:* `GoogleApi.AndroidManagement.V1.Model.SecurityPosture.t`, *default:* `nil`) - Device's security posture value that reflects how secure the device is.
   *   `softwareInfo` (*type:* `GoogleApi.AndroidManagement.V1.Model.SoftwareInfo.t`, *default:* `nil`) - Detailed information about the device software. This information is only available if softwareInfoEnabled is true in the device's policy.
   *   `state` (*type:* `String.t`, *default:* `nil`) - The state to be applied to the device. This field can be modified by a patch request. Note that when calling enterprises.devices.patch, ACTIVE and DISABLED are the only allowable values. To enter the device into a DELETED state, call enterprises.devices.delete.
   *   `systemProperties` (*type:* `map()`, *default:* `nil`) - Map of selected system properties name and value related to the device.
@@ -85,6 +86,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Device do
           :powerManagementEvents =>
             list(GoogleApi.AndroidManagement.V1.Model.PowerManagementEvent.t()),
           :previousDeviceNames => list(String.t()),
+          :securityPosture => GoogleApi.AndroidManagement.V1.Model.SecurityPosture.t(),
           :softwareInfo => GoogleApi.AndroidManagement.V1.Model.SoftwareInfo.t(),
           :state => String.t(),
           :systemProperties => map(),
@@ -142,6 +144,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Device do
   )
 
   field(:previousDeviceNames, type: :list)
+  field(:securityPosture, as: GoogleApi.AndroidManagement.V1.Model.SecurityPosture)
   field(:softwareInfo, as: GoogleApi.AndroidManagement.V1.Model.SoftwareInfo)
   field(:state)
   field(:systemProperties, type: :map)
