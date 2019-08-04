@@ -30,6 +30,9 @@ defmodule GoogleApi.BigQuery.V2.Connection do
       # Insert data into Google BigQuery
       "https://www.googleapis.com/auth/bigquery.insertdata",
 
+      # View your data in Google BigQuery
+      "https://www.googleapis.com/auth/bigquery.readonly",
+
       # View and manage your data across Google Cloud Platform services
       "https://www.googleapis.com/auth/cloud-platform",
 
