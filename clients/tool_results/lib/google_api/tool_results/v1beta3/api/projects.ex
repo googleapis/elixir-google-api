@@ -848,15 +848,9 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ToolResults.V1beta3.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - A Project id.
-
-      Required.
-  *   `history_id` (*type:* `String.t`) - A History id.
-
-      Required.
-  *   `execution_id` (*type:* `String.t`) - A Execution id.
-
-      Required.
+  *   `project_id` (*type:* `String.t`) - Required. A Project id.
+  *   `history_id` (*type:* `String.t`) - Required. A History id.
+  *   `execution_id` (*type:* `String.t`) - Required. An Execution id.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
