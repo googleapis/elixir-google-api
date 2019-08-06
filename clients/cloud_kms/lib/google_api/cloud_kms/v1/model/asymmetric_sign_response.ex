@@ -21,15 +21,19 @@ defmodule GoogleApi.CloudKMS.V1.Model.AsymmetricSignResponse do
 
   ## Attributes
 
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the CryptoKeyVersion used for signing. Check
+      this field to verify that the intended resource was used for signing.
   *   `signature` (*type:* `String.t`, *default:* `nil`) - The created signature.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :name => String.t(),
           :signature => String.t()
         }
 
+  field(:name)
   field(:signature)
 end
 

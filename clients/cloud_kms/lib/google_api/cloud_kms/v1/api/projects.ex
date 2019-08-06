@@ -407,11 +407,14 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Optional. Only include resources that match the filter in the response
-          (https://cloud.google.com/kms/docs/sorting-and-filtering).
+      *   `:filter` (*type:* `String.t`) - Optional. Only include resources that match the filter in the response. For
+          more information, see
+          [Sorting and filtering list
+          results](https://cloud.google.com/kms/docs/sorting-and-filtering).
       *   `:orderBy` (*type:* `String.t`) - Optional. Specify how the results should be sorted. If not specified, the
-          results will be sorted in the default order
-          (https://cloud.google.com/kms/docs/sorting-and-filtering).
+          results will be sorted in the default order.  For more information, see
+          [Sorting and filtering list
+          results](https://cloud.google.com/kms/docs/sorting-and-filtering).
       *   `:pageSize` (*type:* `integer()`) - Optional limit on the number of KeyRings to include in the
           response.  Further KeyRings can subsequently be obtained by
           including the ListKeyRingsResponse.next_page_token in a subsequent
@@ -1095,11 +1098,14 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Optional. Only include resources that match the filter in the response
-          (https://cloud.google.com/kms/docs/sorting-and-filtering).
+      *   `:filter` (*type:* `String.t`) - Optional. Only include resources that match the filter in the response. For
+          more information, see
+          [Sorting and filtering list
+          results](https://cloud.google.com/kms/docs/sorting-and-filtering).
       *   `:orderBy` (*type:* `String.t`) - Optional. Specify how the results should be sorted. If not specified, the
-          results will be sorted in the default order
-          (https://cloud.google.com/kms/docs/sorting-and-filtering).
+          results will be sorted in the default order. For more information, see
+          [Sorting and filtering list
+          results](https://cloud.google.com/kms/docs/sorting-and-filtering).
       *   `:pageSize` (*type:* `integer()`) - Optional limit on the number of CryptoKeys to include in the
           response.  Further CryptoKeys can subsequently be obtained by
           including the ListCryptoKeysResponse.next_page_token in a subsequent
@@ -2160,11 +2166,14 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Optional. Only include resources that match the filter in the response
-          (https://cloud.google.com/kms/docs/sorting-and-filtering).
+      *   `:filter` (*type:* `String.t`) - Optional. Only include resources that match the filter in the response. For
+          more information, see
+          [Sorting and filtering list
+          results](https://cloud.google.com/kms/docs/sorting-and-filtering).
       *   `:orderBy` (*type:* `String.t`) - Optional. Specify how the results should be sorted. If not specified, the
-          results will be sorted in the default order
-          (https://cloud.google.com/kms/docs/sorting-and-filtering).
+          results will be sorted in the default order. For more information, see
+          [Sorting and filtering list
+          results](https://cloud.google.com/kms/docs/sorting-and-filtering).
       *   `:pageSize` (*type:* `integer()`) - Optional limit on the number of CryptoKeyVersions to
           include in the response. Further CryptoKeyVersions can
           subsequently be obtained by including the
@@ -2701,11 +2710,14 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Optional. Only include resources that match the filter in the response
-          (https://cloud.google.com/kms/docs/sorting-and-filtering).
+      *   `:filter` (*type:* `String.t`) - Optional. Only include resources that match the filter in the response. For
+          more information, see
+          [Sorting and filtering list
+          results](https://cloud.google.com/kms/docs/sorting-and-filtering).
       *   `:orderBy` (*type:* `String.t`) - Optional. Specify how the results should be sorted. If not specified, the
-          results will be sorted in the default order
-          (https://cloud.google.com/kms/docs/sorting-and-filtering).
+          results will be sorted in the default order. For more information, see
+          [Sorting and filtering list
+          results](https://cloud.google.com/kms/docs/sorting-and-filtering).
       *   `:pageSize` (*type:* `integer()`) - Optional limit on the number of ImportJobs to include in the
           response. Further ImportJobs can subsequently be obtained by
           including the ListImportJobsResponse.next_page_token in a subsequent
