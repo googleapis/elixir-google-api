@@ -22,7 +22,7 @@ defmodule GoogleApi.Games.V1.Model.ProfileSettings do
   ## Attributes
 
   *   `kind` (*type:* `String.t`, *default:* `games#profileSettings`) - Uniquely identifies the type of this resource. Value is always the fixed string games#profileSettings.
-  *   `profileVisible` (*type:* `boolean()`, *default:* `nil`) - The player's current profile visibility. This field is visible to both 1P and 3P APIs.
+  *   `profileVisible` (*type:* `boolean()`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase
