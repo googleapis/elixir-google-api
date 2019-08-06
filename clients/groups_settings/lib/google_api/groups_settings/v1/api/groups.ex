@@ -29,7 +29,7 @@ defmodule GoogleApi.GroupsSettings.V1.Api.Groups do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GroupsSettings.V1.Connection.t`) - Connection to server
-  *   `group_unique_id` (*type:* `String.t`) - The resource ID
+  *   `group_unique_id` (*type:* `String.t`) - The group's email address.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
@@ -77,7 +77,7 @@ defmodule GoogleApi.GroupsSettings.V1.Api.Groups do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GroupsSettings.V1.Connection.t`) - Connection to server
-  *   `group_unique_id` (*type:* `String.t`) - The resource ID
+  *   `group_unique_id` (*type:* `String.t`) - The group's email address.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
@@ -127,7 +127,7 @@ defmodule GoogleApi.GroupsSettings.V1.Api.Groups do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GroupsSettings.V1.Connection.t`) - Connection to server
-  *   `group_unique_id` (*type:* `String.t`) - The resource ID
+  *   `group_unique_id` (*type:* `String.t`) - The group's email address.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.

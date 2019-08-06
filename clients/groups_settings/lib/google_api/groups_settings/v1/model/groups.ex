@@ -21,67 +21,268 @@ defmodule GoogleApi.GroupsSettings.V1.Model.Groups do
 
   ## Attributes
 
-  *   `whoCanMoveTopicsOut` (*type:* `String.t`, *default:* `nil`) - Permission to move topics out of the group or forum. Possible values are: NONE OWNERS_ONLY OWNERS_AND_MANAGERS ALL_MEMBERS
-  *   `maxMessageBytes` (*type:* `integer()`, *default:* `nil`) - Maximum message size allowed.
-  *   `primaryLanguage` (*type:* `String.t`, *default:* `nil`) - Primary language for the group.
-  *   `whoCanHideAbuse` (*type:* `String.t`, *default:* `nil`) - Permission to hide posts by reporting them as abuse. Possible values are: NONE OWNERS_ONLY MANAGERS_ONLY OWNERS_AND_MANAGERS ALL_MEMBERS
-  *   `whoCanDeleteAnyPost` (*type:* `String.t`, *default:* `nil`) - Permission to delete replies to topics. Possible values are: NONE OWNERS_ONLY OWNERS_AND_MANAGERS ALL_MEMBERS
-  *   `whoCanBanUsers` (*type:* `String.t`, *default:* `nil`) - Permission to ban users. Possible values are: NONE OWNERS_ONLY OWNERS_AND_MANAGERS ALL_MEMBERS
-  *   `customFooterText` (*type:* `String.t`, *default:* `nil`) - Custom footer text.
-  *   `whoCanAssistContent` (*type:* `String.t`, *default:* `nil`) - Permission for content assistants. Possible values are: Possible values are: NONE OWNERS_ONLY MANAGERS_ONLY OWNERS_AND_MANAGERS ALL_MEMBERS
-  *   `enableCollaborativeInbox` (*type:* `String.t`, *default:* `nil`) - If a primary Collab Inbox feature is enabled.
-  *   `whoCanJoin` (*type:* `String.t`, *default:* `nil`) - Permissions to join the group. Possible values are: ANYONE_CAN_JOIN ALL_IN_DOMAIN_CAN_JOIN INVITED_CAN_JOIN CAN_REQUEST_TO_JOIN
-  *   `replyTo` (*type:* `String.t`, *default:* `nil`) - Whome should the default reply to a message go to. Possible values are: REPLY_TO_CUSTOM REPLY_TO_SENDER REPLY_TO_LIST REPLY_TO_OWNER REPLY_TO_IGNORE REPLY_TO_MANAGERS
-  *   `whoCanModifyMembers` (*type:* `String.t`, *default:* `nil`) - Permission to modify members (change member roles). Possible values are: NONE OWNERS_ONLY OWNERS_AND_MANAGERS ALL_MEMBERS
-  *   `whoCanAddReferences` (*type:* `String.t`, *default:* `nil`) - Permission to add references to a topic. Possible values are: NONE OWNERS_ONLY MANAGERS_ONLY OWNERS_AND_MANAGERS ALL_MEMBERS
-  *   `whoCanInvite` (*type:* `String.t`, *default:* `nil`) - Permissions to invite members. Possible values are: ALL_MEMBERS_CAN_INVITE ALL_MANAGERS_CAN_INVITE ALL_OWNERS_CAN_INVITE NONE_CAN_INVITE
-  *   `archiveOnly` (*type:* `String.t`, *default:* `nil`) - If the group is archive only
-  *   `isArchived` (*type:* `String.t`, *default:* `nil`) - If the contents of the group are archived.
-  *   `whoCanMarkNoResponseNeeded` (*type:* `String.t`, *default:* `nil`) - Permission to mark a topic as not needing a response. Possible values are: NONE OWNERS_ONLY MANAGERS_ONLY OWNERS_AND_MANAGERS ALL_MEMBERS
-  *   `sendMessageDenyNotification` (*type:* `String.t`, *default:* `nil`) - Should the member be notified if his message is denied by owner.
-  *   `favoriteRepliesOnTop` (*type:* `String.t`, *default:* `nil`) - If favorite replies should be displayed above other replies.
-  *   `whoCanPostAnnouncements` (*type:* `String.t`, *default:* `nil`) - Permission to post announcements, a special topic type. Possible values are: NONE OWNERS_ONLY OWNERS_AND_MANAGERS ALL_MEMBERS
-  *   `customReplyTo` (*type:* `String.t`, *default:* `nil`) - Default email to which reply to any message should go.
-  *   `membersCanPostAsTheGroup` (*type:* `String.t`, *default:* `nil`) - Can members post using the group email address.
-  *   `whoCanDiscoverGroup` (*type:* `String.t`, *default:* `nil`) - Permission for who can discover the group. Possible values are: ALL_MEMBERS_CAN_DISCOVER ALL_IN_DOMAIN_CAN_DISCOVER ANYONE_CAN_DISCOVER
-  *   `whoCanMarkFavoriteReplyOnAnyTopic` (*type:* `String.t`, *default:* `nil`) - Permission to mark any other user's post as a favorite reply. Possible values are: NONE OWNERS_ONLY MANAGERS_ONLY OWNERS_AND_MANAGERS ALL_MEMBERS
-  *   `whoCanLockTopics` (*type:* `String.t`, *default:* `nil`) - Permission to lock topics. Possible values are: NONE OWNERS_ONLY OWNERS_AND_MANAGERS ALL_MEMBERS
-  *   `whoCanMoveTopicsIn` (*type:* `String.t`, *default:* `nil`) - Permission to move topics into the group or forum. Possible values are: NONE OWNERS_ONLY OWNERS_AND_MANAGERS ALL_MEMBERS
-  *   `includeCustomFooter` (*type:* `String.t`, *default:* `nil`) - Whether to include custom footer.
-  *   `whoCanAdd` (*type:* `String.t`, *default:* `nil`) - Permissions to add members. Possible values are: ALL_MANAGERS_CAN_ADD ALL_OWNERS_CAN_ADD ALL_MEMBERS_CAN_ADD NONE_CAN_ADD
-  *   `whoCanMarkDuplicate` (*type:* `String.t`, *default:* `nil`) - Permission to mark a topic as a duplicate of another topic. Possible values are: NONE OWNERS_ONLY MANAGERS_ONLY OWNERS_AND_MANAGERS ALL_MEMBERS
-  *   `messageModerationLevel` (*type:* `String.t`, *default:* `nil`) - Moderation level for messages. Possible values are: MODERATE_ALL_MESSAGES MODERATE_NON_MEMBERS MODERATE_NEW_MEMBERS MODERATE_NONE
-  *   `whoCanViewMembership` (*type:* `String.t`, *default:* `nil`) - Permissions to view membership. Possible values are: ALL_IN_DOMAIN_CAN_VIEW ALL_MEMBERS_CAN_VIEW ALL_MANAGERS_CAN_VIEW ALL_OWNERS_CAN_VIEW
-  *   `whoCanPostMessage` (*type:* `String.t`, *default:* `nil`) - Permissions to post messages to the group. Possible values are: NONE_CAN_POST ALL_MANAGERS_CAN_POST ALL_MEMBERS_CAN_POST ALL_OWNERS_CAN_POST ALL_IN_DOMAIN_CAN_POST ANYONE_CAN_POST
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the Group
-  *   `showInGroupDirectory` (*type:* `String.t`, *default:* `nil`) - Is the group listed in groups directory
-  *   `whoCanTakeTopics` (*type:* `String.t`, *default:* `nil`) - Permission to take topics in a forum. Possible values are: NONE OWNERS_ONLY MANAGERS_ONLY OWNERS_AND_MANAGERS ALL_MEMBERS
-  *   `whoCanUnmarkFavoriteReplyOnAnyTopic` (*type:* `String.t`, *default:* `nil`) - Permission to unmark any post from a favorite reply. Possible values are: NONE OWNERS_ONLY MANAGERS_ONLY OWNERS_AND_MANAGERS ALL_MEMBERS
-  *   `whoCanMarkFavoriteReplyOnOwnTopic` (*type:* `String.t`, *default:* `nil`) - Permission to mark a post for a topic they started as a favorite reply. Possible values are: NONE OWNERS_ONLY MANAGERS_ONLY OWNERS_AND_MANAGERS ALL_MEMBERS
-  *   `whoCanDeleteTopics` (*type:* `String.t`, *default:* `nil`) - Permission to delete topics. Possible values are: NONE OWNERS_ONLY OWNERS_AND_MANAGERS ALL_MEMBERS
-  *   `kind` (*type:* `String.t`, *default:* `groupsSettings#groups`) - The type of the resource.
-  *   `spamModerationLevel` (*type:* `String.t`, *default:* `nil`) - Moderation level for messages detected as spam. Possible values are: ALLOW MODERATE SILENTLY_MODERATE REJECT
-  *   `includeInGlobalAddressList` (*type:* `String.t`, *default:* `nil`) - If this groups should be included in global address list or not.
-  *   `whoCanModerateMembers` (*type:* `String.t`, *default:* `nil`) - Permission for membership moderation. Possible values are: NONE OWNERS_ONLY OWNERS_AND_MANAGERS ALL_MEMBERS
-  *   `whoCanContactOwner` (*type:* `String.t`, *default:* `nil`) - Permission to contact owner of the group via web UI. Possible values are: ANYONE_CAN_CONTACT ALL_IN_DOMAIN_CAN_CONTACT ALL_MEMBERS_CAN_CONTACT ALL_MANAGERS_CAN_CONTACT
-  *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the group
-  *   `email` (*type:* `String.t`, *default:* `nil`) - Email id of the group
-  *   `whoCanLeaveGroup` (*type:* `String.t`, *default:* `nil`) - Permission to leave the group. Possible values are: ALL_MANAGERS_CAN_LEAVE ALL_OWNERS_CAN_LEAVE ALL_MEMBERS_CAN_LEAVE NONE_CAN_LEAVE
-  *   `messageDisplayFont` (*type:* `String.t`, *default:* `nil`) - Default message display font. Possible values are: DEFAULT_FONT FIXED_WIDTH_FONT
-  *   `allowGoogleCommunication` (*type:* `String.t`, *default:* `nil`) - Is google allowed to contact admins.
-  *   `allowWebPosting` (*type:* `String.t`, *default:* `nil`) - If posting from web is allowed.
-  *   `customRolesEnabledForSettingsToBeMerged` (*type:* `String.t`, *default:* `nil`) - If any of the settings that will be merged have custom roles which is anything other than owners, managers, or group scopes.
-  *   `whoCanApproveMembers` (*type:* `String.t`, *default:* `nil`) - Permission to approve members. Possible values are: ALL_OWNERS_CAN_APPROVE ALL_MANAGERS_CAN_APPROVE ALL_MEMBERS_CAN_APPROVE NONE_CAN_APPROVE
-  *   `whoCanViewGroup` (*type:* `String.t`, *default:* `nil`) - Permissions to view group. Possible values are: ANYONE_CAN_VIEW ALL_IN_DOMAIN_CAN_VIEW ALL_MEMBERS_CAN_VIEW ALL_MANAGERS_CAN_VIEW ALL_OWNERS_CAN_VIEW
-  *   `whoCanModifyTagsAndCategories` (*type:* `String.t`, *default:* `nil`) - Permission to change tags and categories. Possible values are: NONE OWNERS_ONLY MANAGERS_ONLY OWNERS_AND_MANAGERS ALL_MEMBERS
-  *   `whoCanAssignTopics` (*type:* `String.t`, *default:* `nil`) - Permission to assign topics in a forum to another user. Possible values are: NONE OWNERS_ONLY MANAGERS_ONLY OWNERS_AND_MANAGERS ALL_MEMBERS
-  *   `defaultMessageDenyNotificationText` (*type:* `String.t`, *default:* `nil`) - Default message deny notification message
-  *   `whoCanUnassignTopic` (*type:* `String.t`, *default:* `nil`) - Permission to unassign any topic in a forum. Possible values are: NONE OWNERS_ONLY MANAGERS_ONLY OWNERS_AND_MANAGERS ALL_MEMBERS
-  *   `whoCanMakeTopicsSticky` (*type:* `String.t`, *default:* `nil`) - Permission to make topics appear at the top of the topic list. Possible values are: NONE OWNERS_ONLY MANAGERS_ONLY OWNERS_AND_MANAGERS ALL_MEMBERS
-  *   `allowExternalMembers` (*type:* `String.t`, *default:* `nil`) - Are external members allowed to join the group.
-  *   `whoCanEnterFreeFormTags` (*type:* `String.t`, *default:* `nil`) - Permission to enter free form tags for topics in a forum. Possible values are: NONE OWNERS_ONLY MANAGERS_ONLY OWNERS_AND_MANAGERS ALL_MEMBERS
-  *   `whoCanModerateContent` (*type:* `String.t`, *default:* `nil`) - Permission for content moderation. Possible values are: NONE OWNERS_ONLY OWNERS_AND_MANAGERS ALL_MEMBERS
-  *   `whoCanApproveMessages` (*type:* `String.t`, *default:* `nil`) - Permission to approve pending messages in the moderation queue. Possible values are: NONE OWNERS_ONLY OWNERS_AND_MANAGERS ALL_MEMBERS
+  *   `whoCanMoveTopicsOut` (*type:* `String.t`, *default:* `nil`) - Deprecated. This is merged into the new whoCanModerateContent setting. Specifies who can move topics out of the group or forum. Possible values are:  
+      - ALL_MEMBERS 
+      - OWNERS_AND_MANAGERS 
+      - OWNERS_ONLY 
+      - NONE
+  *   `maxMessageBytes` (*type:* `integer()`, *default:* `nil`) - Deprecated. The maximum size of a message is 25Mb.
+  *   `primaryLanguage` (*type:* `String.t`, *default:* `nil`) - The primary language for group. For a group's primary language use the language tags from the G Suite languages found at G Suite Email Settings API Email Language Tags.
+  *   `whoCanHideAbuse` (*type:* `String.t`, *default:* `nil`) - Deprecated. This is merged into the new whoCanModerateContent setting. Specifies who can hide posts by reporting them as abuse. Possible values are:  
+      - ALL_MEMBERS 
+      - OWNERS_AND_MANAGERS 
+      - OWNERS_ONLY 
+      - NONE
+  *   `whoCanDeleteAnyPost` (*type:* `String.t`, *default:* `nil`) - Deprecated. This is merged into the new whoCanModerateContent setting. Specifies who can delete replies to topics. (Authors can always delete their own posts). Possible values are:  
+      - ALL_MEMBERS 
+      - OWNERS_AND_MANAGERS 
+      - OWNERS_ONLY 
+      - NONE
+  *   `whoCanBanUsers` (*type:* `String.t`, *default:* `nil`) - Specifies who can deny membership to users. This permission will be deprecated once it is merged into the new whoCanModerateMembers setting. Possible values are:  
+      - ALL_MEMBERS 
+      - OWNERS_AND_MANAGERS 
+      - OWNERS_ONLY 
+      - NONE
+  *   `customFooterText` (*type:* `String.t`, *default:* `nil`) - Set the content of custom footer text. The maximum number of characters is 1,000.
+  *   `whoCanAssistContent` (*type:* `String.t`, *default:* `nil`) - Specifies who can moderate metadata. Possible values are:  
+      - ALL_MEMBERS 
+      - OWNERS_AND_MANAGERS 
+      - MANAGERS_ONLY 
+      - OWNERS_ONLY 
+      - NONE
+  *   `enableCollaborativeInbox` (*type:* `String.t`, *default:* `nil`) - Specifies whether a collaborative inbox will remain turned on for the group. Possible values are:  
+      - true 
+      - false
+  *   `whoCanJoin` (*type:* `String.t`, *default:* `nil`) - Permission to join group. Possible values are:  
+      - ANYONE_CAN_JOIN: Anyone in the account domain can join. This includes accounts with multiple domains. 
+      - ALL_IN_DOMAIN_CAN_JOIN: Any Internet user who is outside your domain can access your Google Groups service and view the list of groups in your Groups directory. Warning: Group owners can add external addresses, outside of the domain to their groups. They can also allow people outside your domain to join their groups. If you later disable this option, any external addresses already added to users' groups remain in those groups. 
+      - INVITED_CAN_JOIN: Candidates for membership can be invited to join.  
+      - CAN_REQUEST_TO_JOIN: Non members can request an invitation to join.
+  *   `replyTo` (*type:* `String.t`, *default:* `nil`) - Specifies who should the default reply go to. Possible values are:  
+      - REPLY_TO_CUSTOM: For replies to messages, use the group's custom email address.
+      When the group's ReplyTo property is set to REPLY_TO_CUSTOM, the customReplyTo property holds the custom email address used when replying to a message. If the group's ReplyTo property is set to REPLY_TO_CUSTOM, the customReplyTo property must have a value. Otherwise an error is returned.
+       
+      - REPLY_TO_SENDER: The reply sent to author of message. 
+      - REPLY_TO_LIST: This reply message is sent to the group. 
+      - REPLY_TO_OWNER: The reply is sent to the owner(s) of the group. This does not include the group's managers. 
+      - REPLY_TO_IGNORE: Group users individually decide where the message reply is sent. 
+      - REPLY_TO_MANAGERS: This reply message is sent to the group's managers, which includes all managers and the group owner.
+  *   `whoCanModifyMembers` (*type:* `String.t`, *default:* `nil`) - Deprecated. This is merged into the new whoCanModerateMembers setting. Specifies who can change group members' roles. Possible values are:  
+      - ALL_MEMBERS 
+      - OWNERS_AND_MANAGERS 
+      - OWNERS_ONLY 
+      - NONE
+  *   `whoCanAddReferences` (*type:* `String.t`, *default:* `nil`) - Deprecated. This functionality is no longer supported in the Google Groups UI. The value is always "NONE".
+  *   `whoCanInvite` (*type:* `String.t`, *default:* `nil`) - Deprecated. This is merged into the new whoCanModerateMembers setting. Permissions to invite new members. Possible values are:  
+      - ALL_MEMBERS_CAN_INVITE: Managers and members can invite a new member candidate. 
+      - ALL_MANAGERS_CAN_INVITE: Only managers can invite a new member. This includes the group's owner. 
+      - ALL_OWNERS_CAN_INVITE: Only owners can invite a new member. 
+      - NONE_CAN_INVITE: No one can invite a new member candidate.
+  *   `archiveOnly` (*type:* `String.t`, *default:* `nil`) - Allows the group to be archived only. Possible values are:  
+      - true: Group is archived and the group is inactive. New messages to this group are rejected. The older archived messages are browseable and searchable.  
+      - If true, the whoCanPostMessage property is set to NONE_CAN_POST.  
+      - If reverted from true to false, whoCanPostMessages is set to ALL_MANAGERS_CAN_POST.  
+      - false: The group is active and can receive messages.  
+      - When false, updating whoCanPostMessage to NONE_CAN_POST, results in an error.
+  *   `isArchived` (*type:* `String.t`, *default:* `nil`) - Allows the Group contents to be archived. Possible values are:  
+      - true: Archive messages sent to the group. 
+      - false: Do not keep an archive of messages sent to this group. If false, previously archived messages remain in the archive.
+  *   `whoCanMarkNoResponseNeeded` (*type:* `String.t`, *default:* `nil`) - Deprecated. This is merged into the new whoCanAssistContent setting. Permission to mark a topic as not needing a response. Possible values are:  
+      - ALL_MEMBERS 
+      - OWNERS_AND_MANAGERS 
+      - MANAGERS_ONLY 
+      - OWNERS_ONLY 
+      - NONE
+  *   `sendMessageDenyNotification` (*type:* `String.t`, *default:* `nil`) - Allows a member to be notified if the member's message to the group is denied by the group owner. Possible values are:  
+      - true: When a message is rejected, send the deny message notification to the message author.
+      The defaultMessageDenyNotificationText property is dependent on the sendMessageDenyNotification property being true.
+       
+      - false: When a message is rejected, no notification is sent.
+  *   `favoriteRepliesOnTop` (*type:* `String.t`, *default:* `nil`) - Indicates if favorite replies should be displayed above other replies.  
+      - true: Favorite replies will be displayed above other replies. 
+      - false: Favorite replies will not be displayed above other replies.
+  *   `whoCanPostAnnouncements` (*type:* `String.t`, *default:* `nil`) - Deprecated. This is merged into the new whoCanModerateContent setting. Specifies who can post announcements, a special topic type. Possible values are:  
+      - ALL_MEMBERS 
+      - OWNERS_AND_MANAGERS 
+      - OWNERS_ONLY 
+      - NONE
+  *   `customReplyTo` (*type:* `String.t`, *default:* `nil`) - An email address used when replying to a message if the replyTo property is set to REPLY_TO_CUSTOM. This address is defined by an account administrator.  
+      - When the group's ReplyTo property is set to REPLY_TO_CUSTOM, the customReplyTo property holds a custom email address used when replying to a message. 
+      - If the group's ReplyTo property is set to REPLY_TO_CUSTOM, the customReplyTo property must have a text value or an error is returned.
+  *   `membersCanPostAsTheGroup` (*type:* `String.t`, *default:* `nil`) - Enables members to post messages as the group. Possible values are:  
+      - true: Group member can post messages using the group's email address instead of their own email address. Message appear to originate from the group itself. Note: When true, any message moderation settings on individual users or new members do not apply to posts made on behalf of the group. 
+      - false: Members can not post in behalf of the group's email address.
+  *   `whoCanDiscoverGroup` (*type:* `String.t`, *default:* `nil`) - Specifies the set of users for whom this group is discoverable. Possible values are:  
+      - ANYONE_CAN_DISCOVER 
+      - ALL_IN_DOMAIN_CAN_DISCOVER 
+      - ALL_MEMBERS_CAN_DISCOVER
+  *   `whoCanMarkFavoriteReplyOnAnyTopic` (*type:* `String.t`, *default:* `nil`) - Deprecated. This is merged into the new whoCanAssistContent setting. Permission to mark any other user's post as a favorite reply. Possible values are:  
+      - ALL_MEMBERS 
+      - OWNERS_AND_MANAGERS 
+      - MANAGERS_ONLY 
+      - OWNERS_ONLY 
+      - NONE
+  *   `whoCanLockTopics` (*type:* `String.t`, *default:* `nil`) - Deprecated. This is merged into the new whoCanModerateContent setting. Specifies who can prevent users from posting replies to topics. Possible values are:  
+      - ALL_MEMBERS 
+      - OWNERS_AND_MANAGERS 
+      - OWNERS_ONLY 
+      - NONE
+  *   `whoCanMoveTopicsIn` (*type:* `String.t`, *default:* `nil`) - Deprecated. This is merged into the new whoCanModerateContent setting. Specifies who can move topics into the group or forum. Possible values are:  
+      - ALL_MEMBERS 
+      - OWNERS_AND_MANAGERS 
+      - OWNERS_ONLY 
+      - NONE
+  *   `includeCustomFooter` (*type:* `String.t`, *default:* `nil`) - Whether to include custom footer. Possible values are:  
+      - true 
+      - false
+  *   `whoCanAdd` (*type:* `String.t`, *default:* `nil`) - Deprecated. This is merged into the new whoCanModerateMembers setting. Permissions to add members. Possible values are:  
+      - ALL_MEMBERS_CAN_ADD: Managers and members can directly add new members. 
+      - ALL_MANAGERS_CAN_ADD: Only managers can directly add new members. this includes the group's owner. 
+      - ALL_OWNERS_CAN_ADD: Only owners can directly add new members. 
+      - NONE_CAN_ADD: No one can directly add new members.
+  *   `whoCanMarkDuplicate` (*type:* `String.t`, *default:* `nil`) - Deprecated. This is merged into the new whoCanAssistContent setting. Permission to mark a topic as a duplicate of another topic. Possible values are:  
+      - ALL_MEMBERS 
+      - OWNERS_AND_MANAGERS 
+      - MANAGERS_ONLY 
+      - OWNERS_ONLY 
+      - NONE
+  *   `messageModerationLevel` (*type:* `String.t`, *default:* `nil`) - Moderation level of incoming messages. Possible values are:  
+      - MODERATE_ALL_MESSAGES: All messages are sent to the group owner's email address for approval. If approved, the message is sent to the group. 
+      - MODERATE_NON_MEMBERS: All messages from non group members are sent to the group owner's email address for approval. If approved, the message is sent to the group. 
+      - MODERATE_NEW_MEMBERS: All messages from new members are sent to the group owner's email address for approval. If approved, the message is sent to the group. 
+      - MODERATE_NONE: No moderator approval is required. Messages are delivered directly to the group. Note: When the whoCanPostMessage is set to ANYONE_CAN_POST, we recommend the messageModerationLevel be set to MODERATE_NON_MEMBERS to protect the group from possible spam.
+      When memberCanPostAsTheGroup is true, any message moderation settings on individual users or new members will not apply to posts made on behalf of the group.
+  *   `whoCanViewMembership` (*type:* `String.t`, *default:* `nil`) - Permissions to view membership. Possible values are:  
+      - ALL_IN_DOMAIN_CAN_VIEW: Anyone in the account can view the group members list.
+      If a group already has external members, those members can still send email to this group.
+       
+      - ALL_MEMBERS_CAN_VIEW: The group members can view the group members list. 
+      - ALL_MANAGERS_CAN_VIEW: The group managers can view group members list.
+  *   `whoCanPostMessage` (*type:* `String.t`, *default:* `nil`) - Permissions to post messages. Possible values are:  
+      - NONE_CAN_POST: The group is disabled and archived. No one can post a message to this group.  
+      - When archiveOnly is false, updating whoCanPostMessage to NONE_CAN_POST, results in an error. 
+      - If archiveOnly is reverted from true to false, whoCanPostMessages is set to ALL_MANAGERS_CAN_POST.  
+      - ALL_MANAGERS_CAN_POST: Managers, including group owners, can post messages. 
+      - ALL_MEMBERS_CAN_POST: Any group member can post a message. 
+      - ALL_OWNERS_CAN_POST: Only group owners can post a message. 
+      - ALL_IN_DOMAIN_CAN_POST: Anyone in the account can post a message.  
+      - ANYONE_CAN_POST: Any Internet user who outside your account can access your Google Groups service and post a message. Note: When whoCanPostMessage is set to ANYONE_CAN_POST, we recommend the messageModerationLevel be set to MODERATE_NON_MEMBERS to protect the group from possible spam.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the group, which has a maximum size of 75 characters.
+  *   `showInGroupDirectory` (*type:* `String.t`, *default:* `nil`) - Deprecated. This is merged into the new whoCanDiscoverGroup setting. Allows the group to be visible in the Groups Directory. Possible values are:  
+      - true: All groups in the account are listed in the Groups directory. 
+      - false: All groups in the account are not listed in the directory.
+  *   `whoCanTakeTopics` (*type:* `String.t`, *default:* `nil`) - Deprecated. This is merged into the new whoCanAssistContent setting. Permission to take topics in a forum. Possible values are:  
+      - ALL_MEMBERS 
+      - OWNERS_AND_MANAGERS 
+      - MANAGERS_ONLY 
+      - OWNERS_ONLY 
+      - NONE
+  *   `whoCanUnmarkFavoriteReplyOnAnyTopic` (*type:* `String.t`, *default:* `nil`) - Deprecated. This is merged into the new whoCanAssistContent setting. Permission to unmark any post from a favorite reply. Possible values are:  
+      - ALL_MEMBERS 
+      - OWNERS_AND_MANAGERS 
+      - MANAGERS_ONLY 
+      - OWNERS_ONLY 
+      - NONE
+  *   `whoCanMarkFavoriteReplyOnOwnTopic` (*type:* `String.t`, *default:* `nil`) - Deprecated. This is merged into the new whoCanAssistContent setting. Permission to mark a post for a topic they started as a favorite reply. Possible values are:  
+      - ALL_MEMBERS 
+      - OWNERS_AND_MANAGERS 
+      - MANAGERS_ONLY 
+      - OWNERS_ONLY 
+      - NONE
+  *   `whoCanDeleteTopics` (*type:* `String.t`, *default:* `nil`) - Deprecated. This is merged into the new whoCanModerateContent setting. Specifies who can delete topics. Possible values are:  
+      - ALL_MEMBERS 
+      - OWNERS_AND_MANAGERS 
+      - OWNERS_ONLY 
+      - NONE
+  *   `kind` (*type:* `String.t`, *default:* `groupsSettings#groups`) - The type of the resource. It is always groupsSettings#groups.
+  *   `spamModerationLevel` (*type:* `String.t`, *default:* `nil`) - Specifies moderation levels for messages detected as spam. Possible values are:  
+      - ALLOW: Post the message to the group. 
+      - MODERATE: Send the message to the moderation queue. This is the default. 
+      - SILENTLY_MODERATE: Send the message to the moderation queue, but do not send notification to moderators. 
+      - REJECT: Immediately reject the message.
+  *   `includeInGlobalAddressList` (*type:* `String.t`, *default:* `nil`) - Enables the group to be included in the Global Address List. For more information, see the help center. Possible values are:  
+      - true: Group is included in the Global Address List. 
+      - false: Group is not included in the Global Address List.
+  *   `whoCanModerateMembers` (*type:* `String.t`, *default:* `nil`) - Specifies who can manage members. Possible values are:  
+      - ALL_MEMBERS 
+      - OWNERS_AND_MANAGERS 
+      - OWNERS_ONLY 
+      - NONE
+  *   `whoCanContactOwner` (*type:* `String.t`, *default:* `nil`) - Permission to contact owner of the group via web UI. Possible values are:  
+      - ALL_IN_DOMAIN_CAN_CONTACT 
+      - ALL_MANAGERS_CAN_CONTACT 
+      - ALL_MEMBERS_CAN_CONTACT 
+      - ANYONE_CAN_CONTACT
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the group. This property value may be an empty string if no group description has been entered. If entered, the maximum group description is no more than 300 characters.
+  *   `email` (*type:* `String.t`, *default:* `nil`) - The group's email address. This property can be updated using the Directory API. Note: Only a group owner can change a group's email address. A group manager can't do this.
+      When you change your group's address using the Directory API or the control panel, you are changing the address your subscribers use to send email and the web address people use to access your group. People can't reach your group by visiting the old address.
+  *   `whoCanLeaveGroup` (*type:* `String.t`, *default:* `nil`) - Permission to leave the group. Possible values are:  
+      - ALL_MANAGERS_CAN_LEAVE 
+      - ALL_MEMBERS_CAN_LEAVE 
+      - NONE_CAN_LEAVE
+  *   `messageDisplayFont` (*type:* `String.t`, *default:* `nil`) - Deprecated. The default message display font always has a value of "DEFAULT_FONT".
+  *   `allowGoogleCommunication` (*type:* `String.t`, *default:* `nil`) - Deprecated. Allows Google to contact administrator of the group.  
+      - true: Allow Google to contact managers of this group. Occasionally Google may send updates on the latest features, ask for input on new features, or ask for permission to highlight your group. 
+      - false: Google can not contact managers of this group.
+  *   `allowWebPosting` (*type:* `String.t`, *default:* `nil`) - Allows posting from web. Possible values are:  
+      - true: Allows any member to post to the group forum. 
+      - false: Members only use Gmail to communicate with the group.
+  *   `customRolesEnabledForSettingsToBeMerged` (*type:* `String.t`, *default:* `nil`) - Specifies whether the group has a custom role that's included in one of the settings being merged. This field is read-only and update/patch requests to it are ignored. Possible values are:  
+      - true 
+      - false
+  *   `whoCanApproveMembers` (*type:* `String.t`, *default:* `nil`) - Specifies who can approve members who ask to join groups. This permission will be deprecated once it is merged into the new whoCanModerateMembers setting. Possible values are:  
+      - ALL_MEMBERS_CAN_APPROVE 
+      - ALL_MANAGERS_CAN_APPROVE 
+      - ALL_OWNERS_CAN_APPROVE 
+      - NONE_CAN_APPROVE
+  *   `whoCanViewGroup` (*type:* `String.t`, *default:* `nil`) - Permissions to view group messages. Possible values are:  
+      - ANYONE_CAN_VIEW: Any Internet user can view the group's messages.  
+      - ALL_IN_DOMAIN_CAN_VIEW: Anyone in your account can view this group's messages. 
+      - ALL_MEMBERS_CAN_VIEW: All group members can view the group's messages. 
+      - ALL_MANAGERS_CAN_VIEW: Any group manager can view this group's messages.
+  *   `whoCanModifyTagsAndCategories` (*type:* `String.t`, *default:* `nil`) - Deprecated. This is merged into the new whoCanAssistContent setting. Permission to change tags and categories. Possible values are:  
+      - ALL_MEMBERS 
+      - OWNERS_AND_MANAGERS 
+      - MANAGERS_ONLY 
+      - OWNERS_ONLY 
+      - NONE
+  *   `whoCanAssignTopics` (*type:* `String.t`, *default:* `nil`) - Deprecated. This is merged into the new whoCanAssistContent setting. Permission to assign topics in a forum to another user. Possible values are:  
+      - ALL_MEMBERS 
+      - OWNERS_AND_MANAGERS 
+      - MANAGERS_ONLY 
+      - OWNERS_ONLY 
+      - NONE
+  *   `defaultMessageDenyNotificationText` (*type:* `String.t`, *default:* `nil`) - When a message is rejected, this is text for the rejection notification sent to the message's author. By default, this property is empty and has no value in the API's response body. The maximum notification text size is 10,000 characters. Note: Requires sendMessageDenyNotification property to be true.
+  *   `whoCanUnassignTopic` (*type:* `String.t`, *default:* `nil`) - Deprecated. This is merged into the new whoCanAssistContent setting. Permission to unassign any topic in a forum. Possible values are:  
+      - ALL_MEMBERS 
+      - OWNERS_AND_MANAGERS 
+      - MANAGERS_ONLY 
+      - OWNERS_ONLY 
+      - NONE
+  *   `whoCanMakeTopicsSticky` (*type:* `String.t`, *default:* `nil`) - Deprecated. This is merged into the new whoCanModerateContent setting. Specifies who can make topics appear at the top of the topic list. Possible values are:  
+      - ALL_MEMBERS 
+      - OWNERS_AND_MANAGERS 
+      - OWNERS_ONLY 
+      - NONE
+  *   `allowExternalMembers` (*type:* `String.t`, *default:* `nil`) - Identifies whether members external to your organization can join the group. Possible values are:  
+      - true: G Suite users external to your organization can become members of this group. 
+      - false: Users not belonging to the organization are not allowed to become members of this group.
+  *   `whoCanEnterFreeFormTags` (*type:* `String.t`, *default:* `nil`) - Deprecated. This is merged into the new whoCanAssistContent setting. Permission to enter free form tags for topics in a forum. Possible values are:  
+      - ALL_MEMBERS 
+      - OWNERS_AND_MANAGERS 
+      - MANAGERS_ONLY 
+      - OWNERS_ONLY 
+      - NONE
+  *   `whoCanModerateContent` (*type:* `String.t`, *default:* `nil`) - Specifies who can moderate content. Possible values are:  
+      - ALL_MEMBERS 
+      - OWNERS_AND_MANAGERS 
+      - OWNERS_ONLY 
+      - NONE
+  *   `whoCanApproveMessages` (*type:* `String.t`, *default:* `nil`) - Deprecated. This is merged into the new whoCanModerateContent setting. Specifies who can approve pending messages in the moderation queue. Possible values are:  
+      - ALL_MEMBERS 
+      - OWNERS_AND_MANAGERS 
+      - OWNERS_ONLY 
+      - NONE
   """
 
   use GoogleApi.Gax.ModelBase
