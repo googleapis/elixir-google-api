@@ -29,20 +29,18 @@ defmodule GoogleApi.Spanner.V1.Model.PartitionQueryRequest do
       SQL type for some or all of the SQL query parameters. See the
       definition of Type for more information
       about SQL types.
-  *   `params` (*type:* `map()`, *default:* `nil`) - The SQL query string can contain parameter placeholders. A parameter
-      placeholder consists of `'@'` followed by the parameter
-      name. Parameter names consist of any combination of letters,
-      numbers, and underscores.
+  *   `params` (*type:* `map()`, *default:* `nil`) - Parameter names and values that bind to placeholders in the SQL string.
+
+      A parameter placeholder consists of the `@` character followed by the
+      parameter name (for example, `@firstName`). Parameter names can contain
+      letters, numbers, and underscores.
 
       Parameters can appear anywhere that a literal value is expected.  The same
       parameter name can be used more than once, for example:
-        `"WHERE id > @msg_id AND id < @msg_id + 100"`
 
-      It is an error to execute an SQL query with unbound parameters.
+      `"WHERE id > @msg_id AND id < @msg_id + 100"`
 
-      Parameter values are specified using `params`, which is a JSON
-      object whose keys are parameter names, and whose values are the
-      corresponding parameter values.
+      It is an error to execute a SQL statement with unbound parameters.
   *   `partitionOptions` (*type:* `GoogleApi.Spanner.V1.Model.PartitionOptions.t`, *default:* `nil`) - Additional options that affect how many partitions are created.
   *   `sql` (*type:* `String.t`, *default:* `nil`) - The query request to generate partitions for. The request will fail if
       the query is not root partitionable. The query plan of a root
