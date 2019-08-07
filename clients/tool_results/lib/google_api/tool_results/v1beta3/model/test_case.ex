@@ -21,6 +21,9 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.TestCase do
 
   ## Attributes
 
+  *   `elapsedTime` (*type:* `GoogleApi.ToolResults.V1beta3.Model.Duration.t`, *default:* `nil`) - The elapsed run time of the test case.
+
+      Required.
   *   `endTime` (*type:* `GoogleApi.ToolResults.V1beta3.Model.Timestamp.t`, *default:* `nil`) - The end time of the test case.
 
       Optional.
@@ -48,6 +51,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.TestCase do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :elapsedTime => GoogleApi.ToolResults.V1beta3.Model.Duration.t(),
           :endTime => GoogleApi.ToolResults.V1beta3.Model.Timestamp.t(),
           :skippedMessage => String.t(),
           :stackTraces => list(GoogleApi.ToolResults.V1beta3.Model.StackTrace.t()),
@@ -58,6 +62,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.TestCase do
           :toolOutputs => list(GoogleApi.ToolResults.V1beta3.Model.ToolOutputReference.t())
         }
 
+  field(:elapsedTime, as: GoogleApi.ToolResults.V1beta3.Model.Duration)
   field(:endTime, as: GoogleApi.ToolResults.V1beta3.Model.Timestamp)
   field(:skippedMessage)
   field(:stackTraces, as: GoogleApi.ToolResults.V1beta3.Model.StackTrace, type: :list)
