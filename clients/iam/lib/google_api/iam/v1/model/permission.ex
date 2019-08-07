@@ -26,6 +26,8 @@ defmodule GoogleApi.IAM.V1.Model.Permission do
   *   `description` (*type:* `String.t`, *default:* `nil`) - A brief description of what this Permission is used for.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of this Permission.
   *   `onlyInPredefinedRoles` (*type:* `boolean()`, *default:* `nil`) - This permission can ONLY be used in predefined roles.
+  *   `primaryPermission` (*type:* `String.t`, *default:* `nil`) - The preferred name for this permission. If present, then this permission is
+      an alias of, and equivalent to, the listed primary_permission.
   *   `stage` (*type:* `String.t`, *default:* `nil`) - The current launch stage of the permission.
   *   `title` (*type:* `String.t`, *default:* `nil`) - The title of this Permission.
   """
@@ -38,6 +40,7 @@ defmodule GoogleApi.IAM.V1.Model.Permission do
           :description => String.t(),
           :name => String.t(),
           :onlyInPredefinedRoles => boolean(),
+          :primaryPermission => String.t(),
           :stage => String.t(),
           :title => String.t()
         }
@@ -47,6 +50,7 @@ defmodule GoogleApi.IAM.V1.Model.Permission do
   field(:description)
   field(:name)
   field(:onlyInPredefinedRoles)
+  field(:primaryPermission)
   field(:stage)
   field(:title)
 end

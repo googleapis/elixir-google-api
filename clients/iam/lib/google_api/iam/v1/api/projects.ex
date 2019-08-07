@@ -796,9 +796,10 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
   *   `projects_id` (*type:* `String.t`) - Part of `name`. The resource name of the service account in the following format:
-      `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT_UNIQUE_ID}'.
+      `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
       Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
-      the account.
+      the account. The `ACCOUNT` value can be the `email` address or the
+      `unique_id` of the service account.
   *   `service_accounts_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -972,7 +973,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:"options.requestedPolicyVersion"` (*type:* `integer()`) - Optional. The policy format version to be returned.
-          Acceptable values are 0 and 1.
+          Acceptable values are 0, 1, and 3.
           If the value is 0, or the field is omitted, policy format version 1 will be
           returned.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -1523,7 +1524,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
   *   `projects_id` (*type:* `String.t`) - Part of `name`. The resource name of the service account in the following format:
-      `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT_UNIQUE_ID}'.
+      `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT_UNIQUE_ID}`.
       Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
       the account.
   *   `service_accounts_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
