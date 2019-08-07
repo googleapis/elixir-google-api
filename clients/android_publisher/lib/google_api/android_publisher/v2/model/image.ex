@@ -23,6 +23,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Model.Image do
 
   *   `id` (*type:* `String.t`, *default:* `nil`) - A unique id representing this image.
   *   `sha1` (*type:* `String.t`, *default:* `nil`) - A sha1 hash of the image that was uploaded.
+  *   `sha256` (*type:* `String.t`, *default:* `nil`) - A sha256 hash of the image that was uploaded.
   *   `url` (*type:* `String.t`, *default:* `nil`) - A URL that will serve a preview of the image.
   """
 
@@ -31,11 +32,13 @@ defmodule GoogleApi.AndroidPublisher.V2.Model.Image do
   @type t :: %__MODULE__{
           :id => String.t(),
           :sha1 => String.t(),
+          :sha256 => String.t(),
           :url => String.t()
         }
 
   field(:id)
   field(:sha1)
+  field(:sha256)
   field(:url)
 end
 
