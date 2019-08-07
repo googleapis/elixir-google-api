@@ -30,6 +30,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.StatusReportingSettings do
   *   `networkInfoEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether network info reporting is enabled.
   *   `powerManagementEventsEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether power management event reporting is enabled.
   *   `softwareInfoEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether software info reporting is enabled.
+  *   `systemPropertiesEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether system properties reporting is enabled.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -44,7 +45,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.StatusReportingSettings do
           :memoryInfoEnabled => boolean(),
           :networkInfoEnabled => boolean(),
           :powerManagementEventsEnabled => boolean(),
-          :softwareInfoEnabled => boolean()
+          :softwareInfoEnabled => boolean(),
+          :systemPropertiesEnabled => boolean()
         }
 
   field(
@@ -60,6 +62,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.StatusReportingSettings do
   field(:networkInfoEnabled)
   field(:powerManagementEventsEnabled)
   field(:softwareInfoEnabled)
+  field(:systemPropertiesEnabled)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AndroidManagement.V1.Model.StatusReportingSettings do
