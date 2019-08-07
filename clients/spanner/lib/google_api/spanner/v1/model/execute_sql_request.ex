@@ -30,20 +30,18 @@ defmodule GoogleApi.Spanner.V1.Model.ExecuteSqlRequest do
       SQL type for some or all of the SQL statement parameters. See the
       definition of Type for more information
       about SQL types.
-  *   `params` (*type:* `map()`, *default:* `nil`) - The SQL string can contain parameter placeholders. A parameter
-      placeholder consists of `'@'` followed by the parameter
-      name. Parameter names consist of any combination of letters,
-      numbers, and underscores.
+  *   `params` (*type:* `map()`, *default:* `nil`) - Parameter names and values that bind to placeholders in the SQL string.
+
+      A parameter placeholder consists of the `@` character followed by the
+      parameter name (for example, `@firstName`). Parameter names can contain
+      letters, numbers, and underscores.
 
       Parameters can appear anywhere that a literal value is expected.  The same
       parameter name can be used more than once, for example:
-        `"WHERE id > @msg_id AND id < @msg_id + 100"`
 
-      It is an error to execute an SQL statement with unbound parameters.
+      `"WHERE id > @msg_id AND id < @msg_id + 100"`
 
-      Parameter values are specified using `params`, which is a JSON
-      object whose keys are parameter names, and whose values are the
-      corresponding parameter values.
+      It is an error to execute a SQL statement with unbound parameters.
   *   `partitionToken` (*type:* `String.t`, *default:* `nil`) - If present, results will be restricted to the specified partition
       previously created using PartitionQuery().  There must be an exact
       match for the values of fields common to this message and the
@@ -57,7 +55,7 @@ defmodule GoogleApi.Spanner.V1.Model.ExecuteSqlRequest do
       enables the new SQL statement execution to resume where the last one left
       off. The rest of the request parameters must exactly match the
       request that yielded this token.
-  *   `seqno` (*type:* `String.t`, *default:* `nil`) - A per-transaction sequence number used to identify this request. This
+  *   `seqno` (*type:* `String.t`, *default:* `nil`) - A per-transaction sequence number used to identify this request. This field
       makes each request idempotent such that if the request is received multiple
       times, at most one will succeed.
 
@@ -68,19 +66,16 @@ defmodule GoogleApi.Spanner.V1.Model.ExecuteSqlRequest do
 
       Required for DML statements. Ignored for queries.
   *   `sql` (*type:* `String.t`, *default:* `nil`) - Required. The SQL string.
-  *   `transaction` (*type:* `GoogleApi.Spanner.V1.Model.TransactionSelector.t`, *default:* `nil`) - The transaction to use. If none is provided, the default is a
-      temporary read-only transaction with strong concurrency.
-
-      The transaction to use.
+  *   `transaction` (*type:* `GoogleApi.Spanner.V1.Model.TransactionSelector.t`, *default:* `nil`) - The transaction to use.
 
       For queries, if none is provided, the default is a temporary read-only
       transaction with strong concurrency.
 
-      Standard DML statements require a ReadWrite transaction. Single-use
-      transactions are not supported (to avoid replay).  The caller must
-      either supply an existing transaction ID or begin a new transaction.
+      Standard DML statements require a read-write transaction. To protect
+      against replays, single-use transactions are not supported.  The caller
+      must either supply an existing transaction ID or begin a new transaction.
 
-      Partitioned DML requires an existing PartitionedDml transaction ID.
+      Partitioned DML requires an existing Partitioned DML transaction ID.
   """
 
   use GoogleApi.Gax.ModelBase

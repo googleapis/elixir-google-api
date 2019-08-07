@@ -17,23 +17,29 @@
 
 defmodule GoogleApi.Spanner.V1.Model.ExecuteBatchDmlRequest do
   @moduledoc """
-  The request for ExecuteBatchDml
+  The request for ExecuteBatchDml.
 
   ## Attributes
 
-  *   `seqno` (*type:* `String.t`, *default:* `nil`) - A per-transaction sequence number used to identify this request. This is
-      used in the same space as the seqno in
-      ExecuteSqlRequest. See more details
-      in ExecuteSqlRequest.
-  *   `statements` (*type:* `list(GoogleApi.Spanner.V1.Model.Statement.t)`, *default:* `nil`) - The list of statements to execute in this batch. Statements are executed
-      serially, such that the effects of statement i are visible to statement
-      i+1. Each statement must be a DML statement. Execution will stop at the
-      first failed statement; the remaining statements will not run.
+  *   `seqno` (*type:* `String.t`, *default:* `nil`) - A per-transaction sequence number used to identify this request. This field
+      makes each request idempotent such that if the request is received multiple
+      times, at most one will succeed.
 
-      REQUIRES: `statements_size()` > 0.
-  *   `transaction` (*type:* `GoogleApi.Spanner.V1.Model.TransactionSelector.t`, *default:* `nil`) - The transaction to use. A ReadWrite transaction is required. Single-use
-      transactions are not supported (to avoid replay).  The caller must either
-      supply an existing transaction ID or begin a new transaction.
+      The sequence number must be monotonically increasing within the
+      transaction. If a request arrives for the first time with an out-of-order
+      sequence number, the transaction may be aborted. Replays of previously
+      handled requests will yield the same response as the first execution.
+  *   `statements` (*type:* `list(GoogleApi.Spanner.V1.Model.Statement.t)`, *default:* `nil`) - The list of statements to execute in this batch. Statements are executed
+      serially, such that the effects of statement `i` are visible to statement
+      `i+1`. Each statement must be a DML statement. Execution stops at the
+      first failed statement; the remaining statements are not executed.
+
+      Callers must provide at least one statement.
+  *   `transaction` (*type:* `GoogleApi.Spanner.V1.Model.TransactionSelector.t`, *default:* `nil`) - The transaction to use. Must be a read-write transaction.
+
+      To protect against replays, single-use transactions are not supported. The
+      caller must either supply an existing transaction ID or begin a new
+      transaction.
   """
 
   use GoogleApi.Gax.ModelBase
