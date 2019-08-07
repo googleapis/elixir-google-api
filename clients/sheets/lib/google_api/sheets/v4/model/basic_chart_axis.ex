@@ -29,6 +29,7 @@ defmodule GoogleApi.Sheets.V4.Model.BasicChartAxis do
   *   `title` (*type:* `String.t`, *default:* `nil`) - The title of this axis. If set, this overrides any title inferred
       from headers of the data.
   *   `titleTextPosition` (*type:* `GoogleApi.Sheets.V4.Model.TextPosition.t`, *default:* `nil`) - The axis title text position.
+  *   `viewWindowOptions` (*type:* `GoogleApi.Sheets.V4.Model.ChartAxisViewWindowOptions.t`, *default:* `nil`) - The view window options for this axis.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -37,13 +38,15 @@ defmodule GoogleApi.Sheets.V4.Model.BasicChartAxis do
           :format => GoogleApi.Sheets.V4.Model.TextFormat.t(),
           :position => String.t(),
           :title => String.t(),
-          :titleTextPosition => GoogleApi.Sheets.V4.Model.TextPosition.t()
+          :titleTextPosition => GoogleApi.Sheets.V4.Model.TextPosition.t(),
+          :viewWindowOptions => GoogleApi.Sheets.V4.Model.ChartAxisViewWindowOptions.t()
         }
 
   field(:format, as: GoogleApi.Sheets.V4.Model.TextFormat)
   field(:position)
   field(:title)
   field(:titleTextPosition, as: GoogleApi.Sheets.V4.Model.TextPosition)
+  field(:viewWindowOptions, as: GoogleApi.Sheets.V4.Model.ChartAxisViewWindowOptions)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.BasicChartAxis do
