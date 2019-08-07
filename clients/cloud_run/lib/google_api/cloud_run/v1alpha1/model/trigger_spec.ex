@@ -26,10 +26,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.TriggerSpec do
 
       Not currently supported by Cloud Run.
   *   `filter` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.TriggerFilter.t`, *default:* `nil`) - Filter is the filter to apply against all events from the Broker. Only
-      events that pass this filter will be sent to the Subscriber. If not
-      specified, will default to allowing all events.
-
-      This must be specified in Cloud Run.
+      events that pass this filter will be sent to the Subscriber.
+  *   `importers` (*type:* `list(GoogleApi.CloudRun.V1alpha1.Model.TriggerImporterSpec.t)`, *default:* `nil`) - Specification of the importers that will provide events to the trigger.
+      Note, for Cloud Run, the importers will only be used if a filter is not
+      specified.
   *   `subscriber` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.SubscriberSpec.t`, *default:* `nil`) - Subscriber is the addressable that receives events from the Broker that
       pass the Filter. It is required.
 
@@ -42,11 +42,13 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.TriggerSpec do
   @type t :: %__MODULE__{
           :broker => String.t(),
           :filter => GoogleApi.CloudRun.V1alpha1.Model.TriggerFilter.t(),
+          :importers => list(GoogleApi.CloudRun.V1alpha1.Model.TriggerImporterSpec.t()),
           :subscriber => GoogleApi.CloudRun.V1alpha1.Model.SubscriberSpec.t()
         }
 
   field(:broker)
   field(:filter, as: GoogleApi.CloudRun.V1alpha1.Model.TriggerFilter)
+  field(:importers, as: GoogleApi.CloudRun.V1alpha1.Model.TriggerImporterSpec, type: :list)
   field(:subscriber, as: GoogleApi.CloudRun.V1alpha1.Model.SubscriberSpec)
 end
 

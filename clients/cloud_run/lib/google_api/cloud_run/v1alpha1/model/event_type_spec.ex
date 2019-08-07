@@ -24,6 +24,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.EventTypeSpec do
   *   `broker` (*type:* `String.t`, *default:* `nil`) - Refers to the Broker that can provide the EventType.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Description is a string describing what the EventType is about.
       +optional
+  *   `importer` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.EventTypeImporter.t`, *default:* `nil`) - The importer that provides this EventType to the eventing mesh.
   *   `schema` (*type:* `String.t`, *default:* `nil`) - Schema is a URI with the EventType schema. It may be a JSON schema, a
       protobuf schema, etc.
       +optional
@@ -38,6 +39,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.EventTypeSpec do
   @type t :: %__MODULE__{
           :broker => String.t(),
           :description => String.t(),
+          :importer => GoogleApi.CloudRun.V1alpha1.Model.EventTypeImporter.t(),
           :schema => String.t(),
           :source => String.t(),
           :type => String.t()
@@ -45,6 +47,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.EventTypeSpec do
 
   field(:broker)
   field(:description)
+  field(:importer, as: GoogleApi.CloudRun.V1alpha1.Model.EventTypeImporter)
   field(:schema)
   field(:source)
   field(:type)
