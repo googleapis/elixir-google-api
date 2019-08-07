@@ -23,6 +23,7 @@ defmodule GoogleApi.YouTube.V3.Model.LiveBroadcastSnippet do
 
   *   `actualEndTime` (*type:* `DateTime.t`, *default:* `nil`) - The date and time that the broadcast actually ended. This information is only available once the broadcast's state is complete. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
   *   `actualStartTime` (*type:* `DateTime.t`, *default:* `nil`) - The date and time that the broadcast actually started. This information is only available once the broadcast's state is live. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
+  *   `broadcastType` (*type:* `String.t`, *default:* `nil`) - 
   *   `channelId` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube uses to uniquely identify the channel that is publishing the broadcast.
   *   `description` (*type:* `String.t`, *default:* `nil`) - The broadcast's description. As with the title, you can set this field by modifying the broadcast resource or by setting the description field of the corresponding video resource.
   *   `isDefaultBroadcast` (*type:* `boolean()`, *default:* `nil`) - 
@@ -39,6 +40,7 @@ defmodule GoogleApi.YouTube.V3.Model.LiveBroadcastSnippet do
   @type t :: %__MODULE__{
           :actualEndTime => DateTime.t(),
           :actualStartTime => DateTime.t(),
+          :broadcastType => String.t(),
           :channelId => String.t(),
           :description => String.t(),
           :isDefaultBroadcast => boolean(),
@@ -52,6 +54,7 @@ defmodule GoogleApi.YouTube.V3.Model.LiveBroadcastSnippet do
 
   field(:actualEndTime, as: DateTime)
   field(:actualStartTime, as: DateTime)
+  field(:broadcastType)
   field(:channelId)
   field(:description)
   field(:isDefaultBroadcast)
