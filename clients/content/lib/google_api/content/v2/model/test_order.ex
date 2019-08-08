@@ -29,7 +29,7 @@ defmodule GoogleApi.Content.V2.Model.TestOrder do
   *   `paymentMethod` (*type:* `GoogleApi.Content.V2.Model.TestOrderPaymentMethod.t`, *default:* `nil`) - The details of the payment method.
   *   `predefinedDeliveryAddress` (*type:* `String.t`, *default:* `nil`) - Identifier of one of the predefined delivery addresses for the delivery.
   *   `promotions` (*type:* `list(GoogleApi.Content.V2.Model.OrderLegacyPromotion.t)`, *default:* `nil`) - Deprecated. Ignored if provided.
-  *   `shippingCost` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - The price of shipping for all items. Shipping tax is automatically calculated for MFL orders. For non-MFL orders, tax settings from Merchant Center are applied. Note that shipping is not taxed in certain states.
+  *   `shippingCost` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - The price of shipping for all items. Shipping tax is automatically calculated for orders where marketplace facilitator tax laws are applicable. Otherwise, tax settings from Merchant Center are applied. Note that shipping is not taxed in certain states.
   *   `shippingCostTax` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - Deprecated. Ignored if provided.
   *   `shippingOption` (*type:* `String.t`, *default:* `nil`) - The requested shipping option.
   """
