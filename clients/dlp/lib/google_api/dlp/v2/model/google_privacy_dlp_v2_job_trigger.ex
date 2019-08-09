@@ -33,7 +33,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2JobTrigger do
   *   `lastRunTime` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp of the last time this trigger executed, output only field.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Unique resource name for the triggeredJob, assigned by the service when the
       triggeredJob is created, for example
-      `projects/dlp-test-project/triggeredJobs/53234423`.
+      `projects/dlp-test-project/jobTriggers/53234423`.
   *   `status` (*type:* `String.t`, *default:* `nil`) - A status for this trigger. [required]
   *   `triggers` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Trigger.t)`, *default:* `nil`) - A list of triggers which will be OR'ed together. Only one in the list
       needs to trigger for a job to be started. The list may contain only
