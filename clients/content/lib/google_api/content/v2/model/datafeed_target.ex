@@ -23,7 +23,7 @@ defmodule GoogleApi.Content.V2.Model.DatafeedTarget do
 
   *   `country` (*type:* `String.t`, *default:* `nil`) - The country where the items in the feed will be included in the search index, represented as a  CLDR territory code.
   *   `excludedDestinations` (*type:* `list(String.t)`, *default:* `nil`) - The list of destinations to exclude for this target (corresponds to unchecked check boxes in Merchant Center).
-  *   `includedDestinations` (*type:* `list(String.t)`, *default:* `nil`) - The list of destinations to include for this target (corresponds to checked check boxes in Merchant Center). Default destinations are always included unless provided in the excluded_destination field.
+  *   `includedDestinations` (*type:* `list(String.t)`, *default:* `nil`) - The list of destinations to include for this target (corresponds to checked check boxes in Merchant Center). Default destinations are always included unless provided in excludedDestinations.
   *   `language` (*type:* `String.t`, *default:* `nil`) - The two-letter ISO 639-1 language of the items in the feed. Must be a valid language for targets[].country.
   """
 
