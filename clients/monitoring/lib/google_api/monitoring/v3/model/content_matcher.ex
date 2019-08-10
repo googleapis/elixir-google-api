@@ -22,15 +22,18 @@ defmodule GoogleApi.Monitoring.V3.Model.ContentMatcher do
   ## Attributes
 
   *   `content` (*type:* `String.t`, *default:* `nil`) - String or regex content to match (max 1024 bytes)
+  *   `matcher` (*type:* `String.t`, *default:* `nil`) - The matcher representing content match options which the check will run with. If the field is not specified (in previous versions), the option is set to be CONTAINS_STRING which performs content substring matching.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :content => String.t()
+          :content => String.t(),
+          :matcher => String.t()
         }
 
   field(:content)
+  field(:matcher)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Monitoring.V3.Model.ContentMatcher do

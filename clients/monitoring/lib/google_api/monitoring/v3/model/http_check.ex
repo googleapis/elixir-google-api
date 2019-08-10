@@ -27,6 +27,7 @@ defmodule GoogleApi.Monitoring.V3.Model.HttpCheck do
   *   `path` (*type:* `String.t`, *default:* `nil`) - The path to the page to run the check against. Will be combined with the host (specified within the MonitoredResource) and port to construct the full URL. Optional (defaults to "/"). If the provided path does not begin with "/", it will be prepended automatically.
   *   `port` (*type:* `integer()`, *default:* `nil`) - The port to the page to run the check against. Will be combined with host (specified within the MonitoredResource) and path to construct the full URL. Optional (defaults to 80 without SSL, or 443 with SSL).
   *   `useSsl` (*type:* `boolean()`, *default:* `nil`) - If true, use HTTPS instead of HTTP to run the check.
+  *   `validateSsl` (*type:* `boolean()`, *default:* `nil`) - Boolean specifying whether to validate SSL certificates. Only applies to uptime_url checks. If use_ssl is false, setting this to true has no effect.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -37,7 +38,8 @@ defmodule GoogleApi.Monitoring.V3.Model.HttpCheck do
           :maskHeaders => boolean(),
           :path => String.t(),
           :port => integer(),
-          :useSsl => boolean()
+          :useSsl => boolean(),
+          :validateSsl => boolean()
         }
 
   field(:authInfo, as: GoogleApi.Monitoring.V3.Model.BasicAuthentication)
@@ -46,6 +48,7 @@ defmodule GoogleApi.Monitoring.V3.Model.HttpCheck do
   field(:path)
   field(:port)
   field(:useSsl)
+  field(:validateSsl)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Monitoring.V3.Model.HttpCheck do

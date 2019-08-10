@@ -35,6 +35,7 @@ defmodule GoogleApi.Monitoring.V3.Model.AlertPolicy do
       projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID]
 
   *   `userLabels` (*type:* `map()`, *default:* `nil`) - User-supplied key/value data to be used for organizing and identifying the AlertPolicy objects.The field can contain up to 64 entries. Each key and value is limited to 63 Unicode characters or 128 bytes, whichever is smaller. Labels and values can contain only lowercase letters, numerals, underscores, and dashes. Keys must begin with a letter.
+  *   `validity` (*type:* `GoogleApi.Monitoring.V3.Model.Status.t`, *default:* `nil`) - Read-only description of how the alert policy is invalid. OK if the alert policy is valid. If not OK, the alert policy will not generate incidents.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -49,7 +50,8 @@ defmodule GoogleApi.Monitoring.V3.Model.AlertPolicy do
           :mutationRecord => GoogleApi.Monitoring.V3.Model.MutationRecord.t(),
           :name => String.t(),
           :notificationChannels => list(String.t()),
-          :userLabels => map()
+          :userLabels => map(),
+          :validity => GoogleApi.Monitoring.V3.Model.Status.t()
         }
 
   field(:combiner)
@@ -62,6 +64,7 @@ defmodule GoogleApi.Monitoring.V3.Model.AlertPolicy do
   field(:name)
   field(:notificationChannels, type: :list)
   field(:userLabels, type: :map)
+  field(:validity, as: GoogleApi.Monitoring.V3.Model.Status)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Monitoring.V3.Model.AlertPolicy do
