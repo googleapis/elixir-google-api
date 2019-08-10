@@ -40,8 +40,10 @@ defmodule GoogleApi.ServiceControl.V1.Model.Resource do
   *   `service` (*type:* `String.t`, *default:* `nil`) - The name of the service that this resource belongs to, such as
       `pubsub.googleapis.com`. The service may be different from the DNS
       hostname that actually serves the request.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the resource. The scheme is platform-specific because
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the resource. The syntax is platform-specific because
       different platforms define their resources differently.
+
+      For Google APIs, the type format must be "{service}/{kind}".
   """
 
   use GoogleApi.Gax.ModelBase
