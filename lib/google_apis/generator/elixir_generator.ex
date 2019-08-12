@@ -46,6 +46,8 @@ defmodule GoogleApis.Generator.ElixirGenerator do
     |> load_apis
     |> write_api_files
     |> write_connection
+    |> write_mix_exs
+    |> write_readme
   end
 
   defp load_models(token) do
@@ -87,10 +89,71 @@ defmodule GoogleApis.Generator.ElixirGenerator do
       path,
       Renderer.connection(token.namespace, scopes, otp_app, token.base_url)
     )
+
+    token
+  end
+
+  defp write_mix_exs(token) do
+    path = Path.join(token.root_dir, "mix.exs")
+    IO.puts("Writing mix.exs")
+
+    api_title = api_title_for(token.rest_description)
+    docs_link = docs_link_for(token.rest_description)
+    version = version_from_mix_exs(path)
+
+    File.write!(
+      path,
+      Renderer.mix_exs(token.root_namespace, token.library_name, api_title, docs_link, version)
+    )
+
+    token
+  end
+
+  defp write_readme(token) do
+    path = Path.join(token.root_dir, "README.md")
+    IO.puts("Writing README.md")
+
+    api_title = api_title_for(token.rest_description)
+    docs_link = docs_link_for(token.rest_description)
+    description = description_for(token.rest_description)
+    version = token.root_dir |> Path.join("mix.exs") |> version_from_mix_exs() |> Version.parse!()
+    version_requirement = "~> #{version.major}.#{version.minor}"
+    library_name = "google_api_#{token.library_name}"
+
+    File.write!(
+      path,
+      Renderer.readme(
+        token.root_namespace,
+        library_name,
+        api_title,
+        docs_link,
+        version_requirement,
+        description
+      )
+    )
+
+    token
   end
 
   defp scopes_for(%{auth: nil}), do: []
   defp scopes_for(%{auth: %{oauth2: %{scopes: scopes}}}), do: scopes
+
+  defp api_title_for(%{title: title}) when is_binary(title), do: title
+
+  defp docs_link_for(%{documentationLink: link}) when is_binary(link), do: link
+  defp docs_link_for(_), do: "https://cloud.google.com/"
+
+  defp description_for(%{description: desc}) when is_binary(desc), do: desc
+  defp description_for(_), do: ""
+
+  defp version_from_mix_exs(path, default_version \\ "0.1.0") do
+    with {:ok, old_content} <- File.read(path),
+         [_, version] <- Regex.run(~r{@version "([\d\.]+)"}, old_content) do
+      version
+    else
+      _ -> default_version
+    end
+  end
 
   defp write_model_files(%{models: models, namespace: namespace, base_dir: base_dir} = token) do
     models

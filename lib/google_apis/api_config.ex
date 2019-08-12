@@ -41,8 +41,12 @@ defmodule GoogleApis.ApiConfig do
     Macro.underscore(name)
   end
 
-  def library_namespace(%{name: name} = api_config) do
-    "GoogleApi.#{name}.#{module_version(api_config)}"
+  def library_namespace(api_config) do
+    "#{library_root_namespace(api_config)}.#{module_version(api_config)}"
+  end
+
+  def library_root_namespace(%{name: name}) do
+    "GoogleApi.#{name}"
   end
 
   def module_version(%{version: version}) do
