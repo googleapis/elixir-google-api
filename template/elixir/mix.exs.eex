@@ -30,7 +30,7 @@ defmodule <%= namespace %>.Mixfile do
       description: description(),
       package: package(),
       deps: deps(),
-      source_url: "https://github.com/GoogleCloudPlatform/elixir-google-api/tree/master/clients/<%= library_name %>"
+      source_url: "https://github.com/googleapis/elixir-google-api/tree/master/clients/<%= library_name %>"
     ]
   end
 
