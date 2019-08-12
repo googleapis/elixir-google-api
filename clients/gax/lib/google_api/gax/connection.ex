@@ -118,7 +118,7 @@ defmodule GoogleApi.Gax.Connection do
     Keyword.put(output, :query, query_params)
   end
 
-  @gax_version GoogleApi.Gax.MixProject.project() |> Keyword.get(:version, "")
+  @gax_version Mix.Project.config() |> Keyword.get(:version, "")
 
   defp build_headers(output, header_params, library_version) do
     {other_api_client, other_headers} = find_api_client_headers(header_params, [], [])
