@@ -1,0 +1,23 @@
+# <%= namespace %>
+
+Client library for <%= api_title %> from Google.
+
+<%= description %>
+
+## Installation
+
+Install this package from [Hex](https://hex.pm) by adding
+`<%= library_name %>` to your list of dependencies in `mix.exs`:
+
+```elixir
+def deps do
+  [{:<%= library_name %>, "<%= version_requirement %>"}]
+end
+```
+
+## For more information
+
+Product documentation is available at [<%= docs_link %>](<%= docs_link %>).
+
+Library reference documentation is published on Hexdocs at
+[https://hexdocs.pm/<%= library_name %>](https://hexdocs.pm/<%= library_name %>).

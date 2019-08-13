@@ -38,11 +38,29 @@ defmodule GoogleApis.Generator.ElixirGenerator.Renderer do
     :base_url
   ])
 
+  EEx.function_from_file(:def, :mix_exs, Path.expand("./template/elixir/mix.exs.eex"), [
+    :namespace,
+    :library_name,
+    :api_title,
+    :docs_link,
+    :version
+  ])
+
+  EEx.function_from_file(:def, :readme, Path.expand("./template/elixir/README.md.eex"), [
+    :namespace,
+    :library_name,
+    :api_title,
+    :docs_link,
+    :version_requirement,
+    :description
+  ])
+
   defp render_description(nil, _args), do: nil
 
   defp render_description(str, args) do
     spaces = Keyword.get(args, :indent_subsequent, 0)
     prefix = " " |> List.duplicate(spaces) |> Enum.join()
+
     str
     |> String.replace("\"\"\"", "\\\"\\\"\\\"")
     |> String.replace("\\", "\\\\")

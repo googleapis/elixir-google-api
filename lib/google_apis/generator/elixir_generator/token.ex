@@ -25,6 +25,8 @@ defmodule GoogleApis.Generator.ElixirGenerator.Token do
           :filename => String.t(),
           :library_name => String.t(),
           :namespace => String.t(),
+          :root_namespace => String.t(),
+          :root_dir => String.t(),
           :base_dir => String.t(),
           :base_url => String.t(),
           :rest_description => RestDescription.t(),
@@ -39,6 +41,8 @@ defmodule GoogleApis.Generator.ElixirGenerator.Token do
     :filename,
     :library_name,
     :namespace,
+    :root_namespace,
+    :root_dir,
     :base_dir,
     :base_url,
     :rest_description,
@@ -53,6 +57,9 @@ defmodule GoogleApis.Generator.ElixirGenerator.Token do
     filename = ApiConfig.file(api_config)
     library_name = ApiConfig.library_name(api_config)
     namespace = ApiConfig.library_namespace(api_config)
+    root_namespace = ApiConfig.library_root_namespace(api_config)
+
+    root_dir = Path.join(["clients", library_name])
 
     base_dir =
       Path.join([
@@ -83,6 +90,8 @@ defmodule GoogleApis.Generator.ElixirGenerator.Token do
       filename: filename,
       library_name: library_name,
       namespace: namespace,
+      root_namespace: root_namespace,
+      root_dir: root_dir,
       base_dir: base_dir,
       base_url: base_url,
       rest_description: rest_description,
